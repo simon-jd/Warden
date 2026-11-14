@@ -1,0 +1,25 @@
+{
+  "observations": [
+    {
+      "log": "history-i3-go-red.log",
+      "at": "2026-10-24T21:00:06Z",
+      "disk_charge_bytes": 4338671616,
+      "service_memory_bytes": 2000000000
+    },
+    {
+      "log": "history-i3-go-green.log",
+      "at": "2026-10-24T21:06:47Z",
+      "disk_charge_bytes": 4340944896,
+      "service_memory_bytes": 2000000000
+    },
+    {
+      "log": "code-tests.log",
+      "at": "2026-10-24T21:07:43Z",
+      "disk_charge_bytes": 4343353344,
+      "service_memory_bytes": 2000000000
+    }
+  ],
+  "max_disk_charge_bytes": 4343353344,
+  "max_service_memory_bytes": 2000000000,
+  "meaning": "admission accounting and configured limits; not measured peak RSS"
+}

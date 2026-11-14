@@ -1,0 +1,12 @@
+{
+  "command": "python3 -I -B scripts/test_check_threat_model_links.py",
+  "source_commit": "dc0db033fb4e546849269a1b0f8ea921bbeacaaf",
+  "status": "fulfilled",
+  "value": {
+    "chunk_id": "3bb53e",
+    "wall_time_seconds": 0.000009954,
+    "exit_code": 0,
+    "original_token_count": 195,
+    "output": "test_escape_absolute_private_and_uri_rejected (__main__.LinkBehavior.test_escape_absolute_private_and_uri_rejected) ... ok\ntest_missing_target_and_fragment_have_source_line (__main__.LinkBehavior.test_missing_target_and_fragment_have_source_line) ... ok\ntest_symlink_file_and_directory_escape_rejected (__main__.LinkBehavior.test_symlink_file_and_directory_escape_rejected) ... ok\ntest_unreadable_source_nonfile_and_nonmarkdown_fragment_fail (__main__.LinkBehavior.test_unreadable_source_nonfile_and_nonmarkdown_fragment_fail) ... ok\ntest_valid_files_fragments_references_and_fenced_example (__main__.LinkBehavior.test_valid_files_fragments_references_and_fenced_example) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.003s\n\nOK\n"
+  }
+}

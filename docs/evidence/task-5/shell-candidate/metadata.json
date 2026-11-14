@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-25T00:44:33.206932+00:00",
+  "scope": "read-only future corpus material candidate; no shell/attack/build/ABI/daemon execution",
+  "shell_candidate": {
+    "path": "/usr/bin/dash",
+    "uid": 0,
+    "gid": 0,
+    "mode": "0o755",
+    "nlink": 1,
+    "bytes": 129856,
+    "sha256": "c626229526bb58ec2d0f585f3c3ae1412e6f973b4353385042d11c38d8426917",
+    "header20_hex": "7f454c4602010100000000000000000003003e00"
+  },
+  "inspection_tool": {
+    "path": "/usr/bin/x86_64-linux-gnu-readelf",
+    "uid": 0,
+    "gid": 0,
+    "mode": "0o755",
+    "nlink": 1,
+    "bytes": 818312,
+    "sha256": "c857339616bbbfa5eba32733e22365048903fbaf6ed2126b897dd138bcb741fc",
+    "header20_hex": "7f454c4602010100000000000000000003003e00"
+  },
+  "dynamic_needed_records": [
+    "0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]"
+  ],
+  "dynamic_output_bytes": 1453,
+  "dynamic_output_sha256": "0d1e94fa5461a886cfa98078c42155da7f058d7893f6853ab30588c269e9b595",
+  "publisher_signature_verified": false,
+  "shell_executed": false,
+  "guest_compatibility_verified": false,
+  "project_resource_created": false
+}

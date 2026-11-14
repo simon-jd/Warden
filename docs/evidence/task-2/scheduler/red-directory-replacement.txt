@@ -1,0 +1,5 @@
+--- FAIL: TestGateRefusesReplacedDirectory (0.00s)
+    gate_test.go:124: replacement directory forgot consumed run
+FAIL
+FAIL	warden/runtimes/gate	0.003s
+FAIL

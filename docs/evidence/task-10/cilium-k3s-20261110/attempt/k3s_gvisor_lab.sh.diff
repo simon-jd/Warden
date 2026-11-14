@@ -1,0 +1,313 @@
+diff --git a/scripts/k3s_gvisor_lab.sh b/scripts/k3s_gvisor_lab.sh
+index 85e964e..6277cbe 100755
+--- a/scripts/k3s_gvisor_lab.sh
++++ b/scripts/k3s_gvisor_lab.sh
+@@ -1,15 +1,16 @@
+ #!/usr/bin/env bash
+-# One-node k3s + gVisor lab for Task 3 (runtimes/gvisor) and later the Cilium
+-# checks. The node is one Docker container, warden-k3s-gvisor, built from
+-# scratch out of the pinned k3s and runsc in .tools/ plus warden-gvisor-init
+-# and the pause binary built from this tree; nothing is pulled. It sits on the
+-# --internal network warden-k3s (no route out); the host reaches the API
+-# server on the node's address there. State is in .cache/k3s-gvisor/lab:
+-# kubeconfig (0600), lab.env (what the live tests read) and node-manifest.txt.
++# One-node k3s + gVisor lab for Task 3 (runtimes/gvisor) and, with --cilium,
++# the Cilium checks of Tasks 7, 10 and 14. The node is one Docker container,
++# warden-k3s-gvisor, built from scratch out of the pinned k3s and runsc in
++# .tools/ plus warden-gvisor-init and the pause binary built from this tree;
++# nothing is pulled by Docker. It sits on the --internal network warden-k3s
++# (no route out); the host reaches the API server on the node's address there.
++# State is in .cache/k3s-gvisor/lab: kubeconfig (0600), lab.env (what the live
++# tests read) and node-manifest.txt.
+ #
+-#   scripts/k3s_gvisor_lab.sh run <command...>   up, run the command, always down
++#   scripts/k3s_gvisor_lab.sh run [--cilium] <command...>   up, run the command, always down
+ #   scripts/k3s_gvisor_lab.sh env <command...>   run the command with lab.env exported
+-#   scripts/k3s_gvisor_lab.sh up | down | status
++#   scripts/k3s_gvisor_lab.sh up [--cilium] | down | status
+ #   scripts/k3s_gvisor_lab.sh purge              down, and remove the lab images
+ #
+ # The node container is privileged (as kind's nodes are): runsc and kubelet
+@@ -20,18 +21,39 @@
+ # it is capped at 4 GiB, 4 CPUs and 4096 tasks. `up` and `down` record the
+ # protected sysctls and a hash of the loaded module list; `down` fails if
+ # either changed.
++#
++# --cilium replaces the bridge CNI with Cilium 1.20.4 (chart and images from
++# scripts/restore-tools.sh cilium, values in policies/cilium/lab/). The node's
++# PID 1 is then warden-node-init, which makes /proc/sys read-only except net
++# before it starts k3s, because Cilium's agent writes global kernel sysctls.
++# The node also joins warden-k3s-world, an --internal network in 198.18.0.0/15
++# (not RFC 1918, so Cilium sees it as "world") where the tests run their
++# origin servers and where warden-k3s-imds stands in for the cloud metadata
++# server at 169.254.169.254 (routed inside the node only). CoreDNS serves
++# kube-dns with fixed names for those addresses (policies/cilium/lab/coredns.yaml).
+ set -euo pipefail
+ root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
++cd "$root"
+ name=warden-k3s-gvisor
+ net=warden-k3s
++world_net=warden-k3s-world
++imds=warden-k3s-imds
+ node_image=warden-k3s-gvisor:lab
++cilium_image=warden-k3s-gvisor:cilium
+ pause_image=warden-lab/pause:1
+ state=$root/.cache/k3s-gvisor/lab
+ kubeconfig=$state/kubeconfig
+ envfile=$state/lab.env
+ go=$root/.tools/go/bin/go
++helm=$root/.tools/helm/helm
++cilium_tools=$root/.tools/cilium
++# The origin and metadata images run on the host's Docker, as in the Docker
++# egress lab (controlplane/internal/scheduler/egress_live_test.go).
++imds_image=nginx:1.29-alpine
+ sysctls=(vm.overcommit_memory vm.panic_on_oom kernel.panic kernel.panic_on_oops kernel.keys.root_maxkeys
+-  kernel.keys.root_maxbytes fs.inotify.max_user_instances fs.inotify.max_user_watches net.ipv4.ip_forward)
++  kernel.keys.root_maxbytes fs.inotify.max_user_instances fs.inotify.max_user_watches net.ipv4.ip_forward
++  kernel.timer_migration kernel.unprivileged_bpf_disabled kernel.perf_event_paranoid net.core.bpf_jit_enable
++  net.ipv4.conf.all.rp_filter net.ipv4.fib_multipath_use_neigh)
+ 
+ gobuild() { # out pkg
+   env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off CGO_ENABLED=0 \
+@@ -44,18 +66,20 @@ host_snapshot() {
+   printf 'modules_sha256=%s\n' "$(cut -d' ' -f1 /proc/modules | sort | sha256sum | cut -d' ' -f1)"
+ }
+ 
+-build() {
++build() { # bridge|cilium
+   [[ -x $root/.tools/k3s/k3s ]] || "$root/scripts/restore-tools.sh" k3s
+   [[ -x $root/.tools/gvisor/runsc ]] || "$root/scripts/restore-tools.sh" gvisor
+   [[ -x $go ]] || "$root/scripts/restore-tools.sh" go
+   local ctx=$state/node-ctx pctx=$state/pause-ctx
+   rm -rf "$ctx" "$pctx"
+-  mkdir -p "$ctx/cni-bin" "$pctx" "$root/.cache/warden-lab"
++  mkdir -p "$ctx/cni-bin" "$ctx/cni-conf" "$pctx" "$root/.cache/warden-lab"
+   cp "$root"/runtimes/gvisor/lab/node/* "$ctx/"
++  if [[ $1 == bridge ]]; then mv "$ctx/10-warden.conflist" "$ctx/cni-conf/"; else rm "$ctx/10-warden.conflist"; fi
+   ln "$root/.tools/k3s/k3s" "$ctx/k3s" 2>/dev/null || cp "$root/.tools/k3s/k3s" "$ctx/k3s"
+   cp -a "$root/.tools/gvisor/runsc" "$root/.tools/gvisor/containerd-shim-runsc-v1" "$root/.tools/gvisor/gvisor-bin" "$ctx/"
+   for p in bridge host-local loopback; do ln -s /var/lib/rancher/k3s/data/current/bin/cni "$ctx/cni-bin/$p"; done
+   gobuild "$ctx/gvisor-init" ./runtimes/gvisor/cmd/warden-gvisor-init
++  gobuild "$ctx/node-init" ./runtimes/gvisor/lab/nodeinit
+   gobuild "$pctx/pause" ./runtimes/gvisor/lab/pause
+   # The conformance probe, the same image the runc lab imports.
+   gobuild "$root/.cache/warden-lab/warden-probe" ./runtimes/conformance/guest
+@@ -66,55 +90,129 @@ build() {
+   # Every input of the node, hashed; its hash is the node config identity.
+   (cd "$ctx" && find . -type f -print0 | sort -z | xargs -0 sha256sum
+    find . -type l -printf '%p -> %l\n' | sort) >"$state/node-manifest.txt"
+-  docker build -q --label project=warden -t "$node_image" "$ctx" >/dev/null
++  if [[ $1 == cilium ]]; then
++    # The chart, the values and the images the node imports are inputs too.
++    (cd "$cilium_tools" && sha256sum cilium-*.tgz images/*.oci.tar) >>"$state/node-manifest.txt"
++    sha256sum "$root/policies/cilium/lab/cilium-values.yaml" "$root/policies/cilium/lab/coredns.yaml" |
++      sed "s#$root/##" >>"$state/node-manifest.txt"
++  fi
++  docker build -q --label project=warden -t "$([[ $1 == cilium ]] && echo "$cilium_image" || echo "$node_image")" "$ctx" >/dev/null
+ }
+ 
+ kubectl() { docker exec -i "$name" kubectl "$@"; }
+ uid() { kubectl get "$@" -o 'jsonpath={.metadata.uid}'; }
+ 
+-up() {
++# A fresh internal network; with a subnet argument, exactly that subnet.
++make_net() { # name [subnet]
++  if docker network inspect "$1" >/dev/null 2>&1; then
++    [[ $(docker network inspect -f '{{.Internal}} {{index .Labels "project"}}' "$1") == "true warden" ]] || {
++      echo "$1 exists and is not a Warden internal network" >&2; return 1; }
++    docker network rm "$1" >/dev/null
++  fi
++  docker network create --internal --label project=warden ${2:+--subnet "$2"} "$1" >/dev/null
++}
++
++# A /24 in 198.18.0.0/15 (RFC 2544 benchmarking, never routed publicly) that
++# no other Docker network uses.
++make_world_net() {
++  local x
++  for x in $(seq 18 120); do
++    make_net "$world_net" "198.18.$x.0/24" 2>/dev/null && { echo "198.18.$x"; return 0; }
++  done
++  echo "no free /24 in 198.18.18.0-198.18.120.0 for $world_net" >&2
++  return 1
++}
++
++import_oci() { # archive
++  docker exec -i "$name" ctr -n k8s.io images import - <"$1" >/dev/null
++}
++
++cilium_up() { # node-ip world-prefix
++  local ip=$1 world=$2 img
++  for img in "$cilium_tools"/images/*.oci.tar; do import_oci "$img"; done
++  "$helm" template cilium "$(ls "$cilium_tools"/cilium-*.tgz)" --namespace kube-system \
++    -f "$root/policies/cilium/lab/cilium-values.yaml" --set k8sServiceHost="$ip" >"$state/cilium-rendered.yaml"
++  kubectl apply -f - <"$state/cilium-rendered.yaml" >/dev/null
++  kubectl -n kube-system rollout status ds/cilium --timeout=300s >/dev/null
++  kubectl -n kube-system rollout status deploy/cilium-operator --timeout=180s >/dev/null
++  sed "s/@WORLD@/$world/g" "$root/policies/cilium/lab/coredns.yaml" | kubectl apply -f - >/dev/null
++  kubectl -n kube-system rollout status deploy/coredns --timeout=180s >/dev/null
++  # The metadata stand-in: nginx answering "warden-lab-imds" on 169.254.169.254:80,
++  # an address it adds to its own loopback; the node routes that one address
++  # to it. Nothing on the host routes there.
++  printf 'server { listen 80 default_server; default_type text/plain; location / { return 200 "warden-lab-imds\\n"; } }\n' >"$state/imds.conf"
++  chmod 644 "$state/imds.conf"
++  docker run -d --name "$imds" --label project=warden --network "$world_net" --ip "$world.30" --cap-add NET_ADMIN \
++    --memory 32m --pids-limit 32 -v "$state/imds.conf:/etc/nginx/conf.d/default.conf:ro" \
++    --entrypoint sh "$imds_image" -c 'ip addr add 169.254.169.254/32 dev lo && exec nginx -g "daemon off;"' >/dev/null
++  docker exec "$name" ip route replace 169.254.169.254/32 via "$world.30"
++  # What Cilium runs with, for the evidence.
++  kubectl -n kube-system exec ds/cilium -c cilium-agent -- cilium-dbg status --verbose >"$state/cilium-status.txt"
++  kubectl -n kube-system exec ds/cilium -c cilium-agent -- cilium-dbg version >"$state/cilium-version.txt"
++}
++
++up() { # [--cilium]
++  local cni=bridge
++  [[ ${1:-} == --cilium ]] && cni=cilium
+   if docker container inspect "$name" >/dev/null 2>&1; then
+     echo "$name already exists; run '$0 down' first" >&2
+     return 1
+   fi
+   mkdir -p "$state" && chmod 700 "$state"
+-  host_snapshot >"$state/host-before.txt"
+-  build
+-  if docker network inspect "$net" >/dev/null 2>&1; then
+-    [[ $(docker network inspect -f '{{.Internal}} {{index .Labels "project"}}' "$net") == "true warden" ]] || {
+-      docker network rm "$net" >/dev/null; }
++  echo "$cni" >"$state/cni"
++  if [[ $cni == cilium ]]; then
++    [[ -x $helm ]] || "$root/scripts/restore-tools.sh" helm
++    [[ -d $cilium_tools/images ]] || "$root/scripts/restore-tools.sh" cilium
+   fi
++  host_snapshot >"$state/host-before.txt"
++  build "$cni"
+   # k3s finds its node IP through the default route, and an internal
+   # network has none, so the node gets a fixed address and --node-ip. A
+   # fixed address needs a user-configured subnet: take the one Docker picks.
+-  if ! docker network inspect "$net" >/dev/null 2>&1; then
+-    docker network create --internal --label project=warden "$net" >/dev/null
++  if ! docker network inspect "$net" >/dev/null 2>&1 ||
++     [[ $(docker network inspect -f '{{.Internal}} {{index .Labels "project"}}' "$net") != "true warden" ]]; then
++    make_net "$net"
+     local subnet
+     subnet=$(docker network inspect -f '{{(index .IPAM.Config 0).Subnet}}' "$net")
+-    docker network rm "$net" >/dev/null
+-    docker network create --internal --label project=warden --subnet "$subnet" "$net" >/dev/null
++    make_net "$net" "$subnet"
+   fi
+   local ip
+   ip=$(python3 -I -c 'import ipaddress,sys; print(ipaddress.ip_network(sys.argv[1])[10])' \
+     "$(docker network inspect -f '{{(index .IPAM.Config 0).Subnet}}' "$net")")
+-  docker run -d --name "$name" --label project=warden --hostname warden-gvisor \
+-    --privileged --cgroupns=private --memory 4g --memory-swap 4g --cpus 4 --pids-limit 4096 \
+-    --tmpfs /run --tmpfs /var/run --tmpfs /tmp --network "$net" --ip "$ip" "$node_image" server --node-ip "$ip" >/dev/null
++  local run=(--name "$name" --label project=warden --hostname warden-gvisor
++    --privileged --cgroupns=private --memory 4g --memory-swap 4g --cpus 4 --pids-limit 4096
++    --tmpfs /run --tmpfs /var/run --tmpfs /tmp --network "$net" --ip "$ip")
++  local world=""
++  if [[ $cni == cilium ]]; then
++    world=$(make_world_net)
++    docker create "${run[@]}" --entrypoint /warden-node-init "$cilium_image" server --node-ip "$ip" >/dev/null
++    docker network connect --ip "$world.10" "$world_net" "$name"
++    docker start "$name" >/dev/null
++  else
++    docker run -d "${run[@]}" "$node_image" server --node-ip "$ip" >/dev/null
++  fi
+   local i
++  # Without a CNI (Cilium mode, before Cilium runs) the node registers but is not Ready.
+   for i in $(seq 1 90); do
+-    kubectl get node warden-gvisor 2>/dev/null | grep -q ' Ready ' && break
+-    [[ $i == 90 ]] && { echo "node not Ready after 180 s" >&2; return 1; }
++    kubectl get node warden-gvisor >/dev/null 2>&1 && break
++    [[ $i == 90 ]] && { echo "node not registered after 180 s" >&2; return 1; }
+     sleep 2
+   done
+   local digest
+   digest=$(cat "$root/.cache/warden-lab/image-digest")
+-  docker exec -i "$name" ctr -n k8s.io images import - <"$state/pause.tar" >/dev/null
+-  docker exec -i "$name" ctr -n k8s.io images import - <"$root/.cache/warden-lab/probe.oci.tar" >/dev/null
++  import_oci "$state/pause.tar"
++  import_oci "$root/.cache/warden-lab/probe.oci.tar"
+   # The archive names the image warden-lab/probe:conformance. CRI resolves
+   # only normalized names, and a run refers to the image by digest.
+   docker exec "$name" ctr -n k8s.io images tag warden-lab/probe:conformance docker.io/warden-lab/probe:conformance >/dev/null
+   docker exec "$name" ctr -n k8s.io images tag warden-lab/probe:conformance "docker.io/warden-lab/probe@$digest" >/dev/null
+   docker exec "$name" ctr -n k8s.io images rm warden-lab/probe:conformance >/dev/null
++  [[ $cni == cilium ]] && cilium_up "$ip" "$world"
++  for i in $(seq 1 90); do
++    kubectl get node warden-gvisor 2>/dev/null | grep -q ' Ready ' && break
++    [[ $i == 90 ]] && { echo "node not Ready after 180 s" >&2; return 1; }
++    sleep 2
++  done
+   kubectl apply -f - >/dev/null <<'Y'
+ apiVersion: node.k8s.io/v1
+ kind: RuntimeClass
+@@ -136,19 +234,32 @@ WARDEN_GVISOR_NAMESPACE_UID=$(uid namespace warden-lab)
+ WARDEN_GVISOR_CLUSTER_UID=$(uid namespace kube-system)
+ WARDEN_GVISOR_NODE_CONFIG_SHA256=$(sha256sum "$state/node-manifest.txt" | cut -d' ' -f1)
+ WARDEN_LAB_IMAGE_DIGEST=$digest
++WARDEN_K3S_NODE_IP=$ip
++WARDEN_K3S_CNI=$cni
+ E
+-  echo "lab up: $name on $net ($ip), probe $digest"
++  if [[ $cni == cilium ]]; then
++    cat >>"$envfile" <<E
++WARDEN_CILIUM_WORLD_NETWORK=$world_net
++WARDEN_CILIUM_WORLD_PREFIX=$world
++WARDEN_CILIUM_IMDS_CONTAINER=$imds
++E
++  fi
++  echo "lab up ($cni): $name on $net ($ip)${world:+ and $world_net ($world.10)}, probe $digest"
+ }
+ 
+ down() {
+-  local rc=0
+-  if docker container inspect "$name" >/dev/null 2>&1; then
+-    [[ $(docker inspect -f '{{index .Config.Labels "project"}}' "$name") == warden ]] || { echo "$name is not a Warden container" >&2; return 1; }
+-    docker rm -f "$name" >/dev/null
+-  fi
+-  if docker network inspect "$net" >/dev/null 2>&1; then
+-    docker network rm "$net" >/dev/null || { echo "$net still in use; left in place" >&2; rc=1; }
+-  fi
++  local rc=0 c n
++  for c in "$imds" "$name"; do
++    if docker container inspect "$c" >/dev/null 2>&1; then
++      [[ $(docker inspect -f '{{index .Config.Labels "project"}}' "$c") == warden ]] || { echo "$c is not a Warden container" >&2; return 1; }
++      docker rm -f "$c" >/dev/null
++    fi
++  done
++  for n in "$world_net" "$net"; do
++    if docker network inspect "$n" >/dev/null 2>&1; then
++      docker network rm "$n" >/dev/null || { echo "$n still in use; left in place" >&2; rc=1; }
++    fi
++  done
+   rm -f "$kubeconfig" "$envfile"
+   if [[ -f $state/host-before.txt ]]; then
+     host_snapshot >"$state/host-after.txt"
+@@ -162,10 +273,10 @@ down() {
+ }
+ 
+ case "${1:-}" in
+-  up) up ;;
++  up) shift; up "$@" ;;
+   down) down ;;
+   status) docker ps -a --filter "name=^$name\$" --format '{{.Names}} {{.Status}}'; [[ -f $envfile ]] && cat "$envfile" ;;
+-  purge) down; docker image rm "$node_image" "$pause_image" >/dev/null 2>&1 || true ;;
++  purge) down; docker image rm "$node_image" "$cilium_image" "$pause_image" >/dev/null 2>&1 || true ;;
+   env)
+     shift
+     [[ -f $envfile ]] || { echo "no lab is up ($envfile missing)" >&2; exit 1; }
+@@ -177,10 +288,12 @@ case "${1:-}" in
+     ;;
+   run)
+     shift
+-    [[ $# -gt 0 ]] || { echo "usage: $0 run <command...>" >&2; exit 2; }
++    flag=()
++    [[ ${1:-} == --cilium ]] && { flag=(--cilium); shift; }
++    [[ $# -gt 0 ]] || { echo "usage: $0 run [--cilium] <command...>" >&2; exit 2; }
+     trap down EXIT
+-    up
++    up "${flag[@]}"
+     "$@"
+     ;;
+-  *) echo "usage: $0 up|down|status|purge|env <command...>|run <command...>" >&2; exit 2 ;;
++  *) echo "usage: $0 up [--cilium]|down|status|purge|env <command...>|run [--cilium] <command...>" >&2; exit 2 ;;
+ esac

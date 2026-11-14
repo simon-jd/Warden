@@ -1,0 +1,71 @@
+=== RUN   TestDNSScoreTXT4KiBAlert
+    exfil_test.go:126: SCORING_FIXTURE_OK payload_bytes=4096 queries=128 span=31.75s first31_mean=4.529606776303
+--- PASS: TestDNSScoreTXT4KiBAlert (0.00s)
+=== RUN   TestDNSScoreNormalCDNNoAlert
+=== RUN   TestDNSScoreNormalCDNNoAlert/d111111abcdef8.cloudfront.net
+=== RUN   TestDNSScoreNormalCDNNoAlert/a1.g.akamaiedge.net
+=== RUN   TestDNSScoreNormalCDNNoAlert/assets.example.com
+=== RUN   TestDNSScoreNormalCDNNoAlert/www.example.co.uk
+--- PASS: TestDNSScoreNormalCDNNoAlert (0.00s)
+    --- PASS: TestDNSScoreNormalCDNNoAlert/d111111abcdef8.cloudfront.net (0.00s)
+    --- PASS: TestDNSScoreNormalCDNNoAlert/a1.g.akamaiedge.net (0.00s)
+    --- PASS: TestDNSScoreNormalCDNNoAlert/assets.example.com (0.00s)
+    --- PASS: TestDNSScoreNormalCDNNoAlert/www.example.co.uk (0.00s)
+=== RUN   TestDNSScoreStrictCountAndRepeatedAllTypes
+--- PASS: TestDNSScoreStrictCountAndRepeatedAllTypes (0.00s)
+=== RUN   TestDNSScoreStrictEntropyAndPerQueryMean
+--- PASS: TestDNSScoreStrictEntropyAndPerQueryMean (0.00s)
+=== RUN   TestDNSScoreSlidingWindowBoundary
+--- PASS: TestDNSScoreSlidingWindowBoundary (0.00s)
+=== RUN   TestDNSScoreCanonicalSuffixAndNoCDNExemption
+=== RUN   TestDNSScoreCanonicalSuffixAndNoCDNExemption/ABCDEFGHIJKLMNOPQRSTUVWXYZ234567.EXAMPLE.CO.UK.
+=== RUN   TestDNSScoreCanonicalSuffixAndNoCDNExemption/abcdefghijklmnop.qrstuvwxyz234567.example.com
+=== RUN   TestDNSScoreCanonicalSuffixAndNoCDNExemption/abcdefghijklmnopqrstuvwxyz234567.customer.cloudfront.net
+--- PASS: TestDNSScoreCanonicalSuffixAndNoCDNExemption (0.00s)
+    --- PASS: TestDNSScoreCanonicalSuffixAndNoCDNExemption/ABCDEFGHIJKLMNOPQRSTUVWXYZ234567.EXAMPLE.CO.UK. (0.00s)
+    --- PASS: TestDNSScoreCanonicalSuffixAndNoCDNExemption/abcdefghijklmnop.qrstuvwxyz234567.example.com (0.00s)
+    --- PASS: TestDNSScoreCanonicalSuffixAndNoCDNExemption/abcdefghijklmnopqrstuvwxyz234567.customer.cloudfront.net (0.00s)
+=== RUN   TestDNSScoreEarliestWindowAndInputUnchanged
+--- PASS: TestDNSScoreEarliestWindowAndInputUnchanged (0.00s)
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/empty_run
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/zero_qtype
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/empty_label
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/double_terminal_dot
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/overlong_label
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/overlong_name
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/unicode
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/trailing_hyphen
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/underscore
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/no_registrable_domain
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/ip_literal
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/mixed_tenant
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/mixed_run
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/zero_time
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/empty_name
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/leading_hyphen
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/whitespace
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/empty_tenant
+--- PASS: TestDNSScoreRejectsInvalidOrMixedBatch (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/empty_run (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/zero_qtype (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/empty_label (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/double_terminal_dot (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/overlong_label (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/overlong_name (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/unicode (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/trailing_hyphen (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/underscore (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/no_registrable_domain (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/ip_literal (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/mixed_tenant (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/mixed_run (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/zero_time (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/empty_name (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/leading_hyphen (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/whitespace (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/empty_tenant (0.00s)
+=== RUN   TestDNSScoreTimestampTiesUseCompleteWindow
+--- PASS: TestDNSScoreTimestampTiesUseCompleteWindow (0.00s)
+PASS
+ok  	warden/detect/dns_exfil	0.011s

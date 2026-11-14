@@ -1,0 +1,3 @@
+# Transcribed from `kubectl -n kube-system describe pod -l k8s-app=cilium` during
+# attempt 1 (about 17:51 PST). The node was torn down afterwards.
+Warning  Failed  spec.initContainers{mount-bpf-fs}: Error: failed to generate container "b7108bf8ad6a75bef8025879793d103c1464510918e79e9280a9327fd2bc03e5" spec: failed to generate spec: path "/sys/fs/bpf" is mounted on "/sys" but it is not a shared mount

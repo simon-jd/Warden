@@ -1,0 +1,5 @@
+--- FAIL: TestWorkerLifecycleBoundedConcurrencyAndShutdown (0.14s)
+    scheduler_test.go:333: shutdown falsely reported complete empty output: lost=0
+FAIL
+FAIL	warden/controlplane/internal/scheduler	0.148s
+FAIL

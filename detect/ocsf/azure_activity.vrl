@@ -1,0 +1,28 @@
+# Azure REST EventData record, not the storage-export or Log Analytics schema.
+message = string!(.message)
+assert!(length(message) <= 16384, "record_size")
+raw = object!(parse_json!(message))
+assert!(length(raw) <= 64, "field_count")
+operation = string!(raw.operationName.value)
+uid = string!(raw.eventDataId)
+caller = string!(raw.caller)
+ip = string!(raw.httpRequest.clientIpAddress)
+assert!(operation != "" && uid != "" && caller != "", "required_context")
+assert!(is_ipv4(ip) || is_ipv6(ip), "source_ip")
+time = to_unix_timestamp(parse_timestamp!(string!(raw.eventTimestamp), format: "%+"), unit: "milliseconds")
+# ARM /write does not distinguish create from update; preserve it as Other.
+activity = 99
+if ends_with(operation, "/read") { activity = 2 }
+if ends_with(operation, "/delete") { activity = 4 }
+status = 0
+if raw.status.value == "Succeeded" { status = 1 }
+if raw.status.value == "Failed" { status = 2 }
+unmapped = {}
+for_each(raw) -> |key, value| {
+  if !includes(["eventTimestamp", "operationName", "caller", "httpRequest", "eventDataId", "status", "level", "claims"], key) {
+    unmapped = set!(unmapped, [key], value)
+  }
+}
+assert!(length(encode_json(unmapped)) <= 2048, "unmapped_size")
+. = {"activity_id": activity, "category_uid": 6, "class_uid": 6003, "type_uid": 600300 + activity, "severity_id": 0, "time": time, "metadata": {"version": "1.3.0", "product": {"name": "Azure Activity Log", "vendor_name": "Microsoft"}, "uid": uid}, "api": {"operation": operation}, "actor": {"user": {"uid": caller}}, "src_endpoint": {"ip": ip}, "status_id": status, "unmapped": unmapped}
+if activity == 99 { .activity_name = operation }

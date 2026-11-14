@@ -1,0 +1,35 @@
+COMMAND: .cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/bin/go test ./... -count=1 -json
+EXIT: 1
+Passed test events: 82; skipped test events: 8; passing package events: 3
+SKIPPED:
+warden/controlplane/internal/apilab/TestHTTPPostgresRuntime
+warden/runtimes/runc/TestConformance/ForkBombCappedByPids
+warden/runtimes/runc/TestConformance/RootfsReadOnly
+warden/runtimes/runc/TestConformance/NoNetworkByDefault
+warden/runtimes/runc/TestConformance/RunsAsNonRoot
+warden/runtimes/runc/TestConformance/TimeoutKillsProcessGroup
+warden/runtimes/runc/TestConformance/MemoryLimitOOMKilled
+warden/runtimes/runc/TestConformance/SeccompBlocksMountAndPtrace
+?   	warden/controlplane/cmd/warden-api	[no test files]
+FAIL
+FAIL	warden/controlplane/internal/api	0.006s
+?   	warden/controlplane/internal/canonical	[no test files]
+FAIL
+FAIL
+FAIL	warden/controlplane/internal/runs	0.002s
+FAIL	warden/controlplane/internal/audit	0.002s
+ok  	warden/controlplane/internal/apilab	0.004s
+?   	warden/controlplane/internal/tenant	[no test files]
+?   	warden/controlplane/internal/testutil	[no test files]
+?   	warden/policies/seccomp	[no test files]
+?   	warden/runtimes	[no test files]
+?   	warden/runtimes/conformance	[no test files]
+?   	warden/runtimes/conformance/guest	[no test files]
+FAIL
+FAIL	warden/controlplane/internal/store	0.003s
+FAIL
+FAIL	warden/controlplane/internal/scheduler	0.008s
+ok  	warden/runtimes/gvisor	0.012s
+ok  	warden/runtimes/gate	0.049s
+FAIL
+FAIL	warden/runtimes/runc	0.081s

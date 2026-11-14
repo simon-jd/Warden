@@ -1,0 +1,10 @@
+ciliumclusterwidenetworkpolicy.cilium.io/warden-quarantine created
+pod/spike-t created
+pod/spike-c created
+pod/spike-t condition met
+pod/spike-c condition met
+pod/spike-t labeled
+Warning: Immediate deletion does not wait for confirmation that the running resource has been terminated. The resource may continue to run on the cluster indefinitely.
+pod "spike-t" force deleted from warden-lab namespace
+pod "spike-c" force deleted from warden-lab namespace
+ciliumclusterwidenetworkpolicy.cilium.io "warden-quarantine" deleted

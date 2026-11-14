@@ -1,0 +1,38 @@
+{
+  "all_source_hashes_match_commit": true,
+  "dispatch_base": "1fb644b1a6b00165bb08e4447ba7550241b729f5",
+  "kind": "subsequent read-only comparison, not reconstructed run evidence",
+  "post_manifest_sha256": "ed6aa9a2eb83cde19ba2be1c8f564c116ec100265ebd4ca6346d2ed506c5697d",
+  "pre_manifest_sha256": "ed6aa9a2eb83cde19ba2be1c8f564c116ec100265ebd4ca6346d2ed506c5697d",
+  "runs": [
+    {
+      "changed_snapshots": [
+        "scripts/test_identity_cache_continue.py"
+      ],
+      "pre_equals_post": true,
+      "source_files": 145,
+      "stage": "continuation-fix2-red-01"
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_continue.py",
+        "scripts/test_identity_cache_continue.py"
+      ],
+      "pre_equals_post": true,
+      "source_files": 145,
+      "stage": "continuation-fix2-green-02"
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_continue.py",
+        "scripts/test_identity_cache_continue.py"
+      ],
+      "pre_equals_post": true,
+      "source_files": 145,
+      "stage": "continuation-fix2-cover-03"
+    }
+  ],
+  "source_commit": "4c369be5aa5072a549ec34ba987a912646855d7e",
+  "source_files": 145,
+  "unchanged_dispatch_sources": 143
+}

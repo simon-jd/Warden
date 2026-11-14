@@ -1,0 +1,61 @@
+INERT Task11 fixR1of5 focused GREEN; root FULLREAD/admission before actual. BASE0beb321125600fda112bb8c08355457d481938cb. Same nativeUID1000/require_escalated /bin/bash login=false tty=false cwd=/home/postedism/Desktop/Warden for each. Sequential focused test then only aggstaticvalidate; previous stage knownPASS required. No five unchanged normalizer fullgoldens, old27 batch, agent/BP/material/version run.
+
+Before EACH stage separately this fresh budget, known normal0:
+ulimit -t 20
+ulimit -v 262144
+ulimit -f 1024
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 7137167168 --service-memory-bytes 13000000000 --download-bytes 0
+
+Before test separately exact memory/namespace check, known normal0:
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'
+import os,pathlib,resource,signal
+resource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)
+assert os.geteuid()==1000
+m={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}
+a=int(m['MemAvailable'].split()[0])*1024
+assert a>=5000000000
+assert not os.path.lexists('.cache/task11-fix1-green')
+print('MemAvailable',a,'resident_reserve',13000000000,'new_run_absent',True)
+PY
+
+Exact focused17case test body:
+set -eu
+ulimit -t 45
+ulimit -v 2929687
+ulimit -f 1024
+ulimit -n 128
+ulimit -c 0
+mkdir -m 700 .cache/task11-fix1-green
+mkdir -m 700 .cache/task11-fix1-green/tmp
+set -- detect/vector/aggregator.toml detect/ocsf/tests/warden_audit.toml detect/ocsf/tests/routing.toml detect/ocsf/tests/warden_collisions.toml detect/ocsf/tests/production_routes.toml
+for f do test -f "$f"; done
+test "$#" -eq 5
+set -C
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 VECTOR_THREADS=2 TMPDIR=/home/postedism/Desktop/Warden/.cache/task11-fix1-green/tmp /usr/bin/timeout --signal=TERM --kill-after=10s 50s /home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector test "$@" > .cache/task11-fix1-green/output 2>&1
+
+Before aggregatorvalidate separately same fresh budget above again, then THIS memory/namespace check known0:
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'
+import os,pathlib,resource,signal
+resource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)
+assert os.geteuid()==1000
+m={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}
+a=int(m['MemAvailable'].split()[0])*1024
+assert a>=5000000000
+assert not os.path.lexists('.cache/task11-fix1-validate')
+print('MemAvailable',a,'resident_reserve',13000000000,'new_run_absent',True)
+PY
+
+Exact aggregator-only static body:
+set -eu
+ulimit -t 45
+ulimit -v 2929687
+ulimit -f 1024
+ulimit -n 128
+ulimit -c 0
+mkdir -m 700 .cache/task11-fix1-validate
+mkdir -m 700 .cache/task11-fix1-validate/tmp
+set -C
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 VECTOR_THREADS=2 TMPDIR=/home/postedism/Desktop/Warden/.cache/task11-fix1-validate/tmp /usr/bin/timeout --signal=TERM --kill-after=10s 50s /home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector validate --no-environment --skip-healthchecks detect/vector/aggregator.toml > .cache/task11-fix1-validate/output 2>&1
+
+Freeze after minimal reserved top-level tenant/run exists assertion; directproduction routes/redactor definitions only (00-topology contains comments). Cases: oldWardenfullgolden1, oldclassroute/redactor5, newcollision2, newsource-route labels6+unmatched1+relatedWardenreject2=17. Native pinned unitrunner clears sources/sinks (retained063cabb src/config/unit_test/mod.rs98-122), not a startup/productionIO test. NewVRL affects agg compilation, so staticvalidate necessary; prod config/otherVRL/old27fixtures except00topology byte-unchanged.
+Caps inherited exact original reviewed60whole TERM50/kill10, CPU45/AS<=3GB/outputcombined1MiB/NOFILE128/core0/threads2/ownTMP64MiB, freshR+Q5GB+remaining2137167168<=12GB/resident13GB/MemAvail5GB. NoHOME/umask or host changes. Full raw/request/response/polls+nonempty named outputs retained. Unknown/resource/timeout STOP/no search. Ordinary source/config errors retain realhistory and changed freeze; no duplicate unaffected GREEN. OldBP FAILED/inert3/code/clocks/thresholds/report19033B unchanged, I3/I4/I5 OPEN; no Goal/Task11 completion or Task6actual authority.

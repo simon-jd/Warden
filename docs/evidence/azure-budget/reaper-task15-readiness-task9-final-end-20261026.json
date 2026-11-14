@@ -1,0 +1,22 @@
+{
+  "request": {
+    "cmd": "bash scripts/azure_reaper.sh",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "sandbox_permissions": "require_escalated",
+    "justification": "Task9 已按2/2 STOP收尾后执行本轮最终固定reaper，仅本项目rg-warden-lab到期清理/确认，不操作受保护RG或创建任何资源。",
+    "yield_time_ms": 1000,
+    "max_output_tokens": 1200
+  },
+  "events": [
+    {
+      "chunk_id": "9ba284",
+      "wall_time_seconds": 0.812029105,
+      "exit_code": 0,
+      "original_token_count": 37,
+      "output": "{\"at\": \"2026-10-26T04:42:25Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+    }
+  ]
+}

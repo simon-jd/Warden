@@ -1,0 +1,3 @@
+id: kernel-module
+technique: T1547.006
+success_signal: WARDEN_kernel_module

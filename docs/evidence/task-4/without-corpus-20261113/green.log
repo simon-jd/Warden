@@ -1,0 +1,58 @@
+# GREEN: the same tests after the --without-corpus option (firecracker_lab.py, firecracker_code.py, driver.go)
+# 2026-11-13T18:32:31Z head 34bb59e  M runtimes/firecracker/driver.go  M runtimes/firecracker/driver_test.go  M scripts/firecracker_code.py  M scripts/firecracker_lab.py  M scripts/test_firecracker_lab.py ?? docs/evidence/task-4/without-corpus-20261113/ 
+$ TMPDIR=.cache/test-tmp python3 -I -B -m unittest discover -s scripts -t scripts -p test_firecracker_lab.py -v
+test_all_six_privileged_modes_require_interactive_fixed_entrypoint (test_firecracker_lab.DevicePolicyModeTests.test_all_six_privileged_modes_require_interactive_fixed_entrypoint) ... ok
+test_completed_outer_cannot_release_without_cgroup_absence (test_firecracker_lab.DeviceReleaseTests.test_completed_outer_cannot_release_without_cgroup_absence) ... ok
+test_capacity_leaves_exact_host_allowance (test_firecracker_lab.FirecrackerLabTests.test_capacity_leaves_exact_host_allowance) ... ok
+test_live_profile_has_only_exact_kvm_and_eight_caps (test_firecracker_lab.FirecrackerLabTests.test_live_profile_has_only_exact_kvm_and_eight_caps) ... ok
+test_material_pin_distinguishes_computed_and_published (test_firecracker_lab.FirecrackerLabTests.test_material_pin_distinguishes_computed_and_published) ... ok
+test_package_limit_fails_before_archive_write (test_firecracker_lab.FirecrackerLabTests.test_package_limit_fails_before_archive_write) ... ok
+test_arbitrary_source_and_identity_are_rejected (test_firecracker_lab.InitialReadonlyBindingTests.test_arbitrary_source_and_identity_are_rejected) ... ok
+test_fixed_live_realpath_is_initial_readonly (test_firecracker_lab.InitialReadonlyBindingTests.test_fixed_live_realpath_is_initial_readonly) ... ok
+test_inspection_rejects_rw_extra_mounts_alias_and_propagation (test_firecracker_lab.InitialReadonlyBindingTests.test_inspection_rejects_rw_extra_mounts_alias_and_propagation) ... ok
+test_real_held_fd_rejects_replacement_symlink_and_mode_change (test_firecracker_lab.InitialReadonlyBindingTests.test_real_held_fd_rejects_replacement_symlink_and_mode_change) ... ok
+test_smoke_is_fixed_capless_ro_only (test_firecracker_lab.InitialReadonlyBindingTests.test_smoke_is_fixed_capless_ro_only) ... ok
+test_archived_actual_eight_prefixed_capabilities_pass (test_firecracker_lab.InspectedCapabilityTests.test_archived_actual_eight_prefixed_capabilities_pass) ... ok
+test_missing_extra_invalid_names_and_types_fail (test_firecracker_lab.InspectedCapabilityTests.test_missing_extra_invalid_names_and_types_fail) ... ok
+test_other_deny_conditions_remain (test_firecracker_lab.InspectedCapabilityTests.test_other_deny_conditions_remain) ... ok
+test_oversized_raw_bounds_fail_with_bounded_diagnostic (test_firecracker_lab.InspectedCapabilityTests.test_oversized_raw_bounds_fail_with_bounded_diagnostic) ... ok
+test_raw_bounds_are_logged_before_rejection (test_firecracker_lab.InspectedCapabilityTests.test_raw_bounds_are_logged_before_rejection) ... ok
+test_descriptor_id_is_distinct_from_verified_config_id (test_firecracker_lab.LoadedImageIdentityTests.test_descriptor_id_is_distinct_from_verified_config_id) ... ok
+test_walks_without_following_links (test_firecracker_lab.OperatorOwnedTests.test_walks_without_following_links) ... ok
+test_only_capacity_pressure_gets_the_raised_pid_limit (test_firecracker_lab.OuterPidsTests.test_only_capacity_pressure_gets_the_raised_pid_limit) ... ok
+test_cli_takes_the_option_for_prepare_and_actual_modes (test_firecracker_lab.PackageVariantTests.test_cli_takes_the_option_for_prepare_and_actual_modes) ... ok
+test_corpus_inputs_are_not_touched_without_corpus (test_firecracker_lab.PackageVariantTests.test_corpus_inputs_are_not_touched_without_corpus) ... ok
+test_default_build_is_unchanged_and_the_corpus_free_one_skips_the_helper (test_firecracker_lab.PackageVariantTests.test_default_build_is_unchanged_and_the_corpus_free_one_skips_the_helper) ... ok
+test_default_prepare_still_packs_the_corpus (test_firecracker_lab.PackageVariantTests.test_default_prepare_still_packs_the_corpus) ... ok
+test_execute_refuses_a_package_of_the_other_variant (test_firecracker_lab.PackageVariantTests.test_execute_refuses_a_package_of_the_other_variant) ... ok
+test_execute_refuses_a_receipt_whose_manifest_variant_differs (test_firecracker_lab.PackageVariantTests.test_execute_refuses_a_receipt_whose_manifest_variant_differs) ... ok
+test_prepare_without_corpus_packs_no_corpus_and_records_its_variant (test_firecracker_lab.PackageVariantTests.test_prepare_without_corpus_packs_no_corpus_and_records_its_variant) ... ok
+test_variant_names (test_firecracker_lab.PackageVariantTests.test_variant_names) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.567s
+
+OK
+exit 0
+
+$ TMPDIR=.cache/test-tmp python3 -I -B -m unittest discover -s scripts -t scripts -p 'test_*.py'
+----------------------------------------------------------------------
+Ran 299 tests in 49.796s
+
+OK
+exit 0
+
+$ go test -count=1 -v -run '^TestPackageVariantMatchesContents$' ./runtimes/firecracker
+=== RUN   TestPackageVariantMatchesContents
+--- PASS: TestPackageVariantMatchesContents (0.00s)
+PASS
+ok  	warden/runtimes/firecracker	0.004s
+exit 0
+
+$ go test -count=1 -shuffle=on ./runtimes/firecracker/...
+ok  	warden/runtimes/firecracker	1.475s
+?   	warden/runtimes/firecracker/cmd/agent	[no test files]
+?   	warden/runtimes/firecracker/cmd/lab	[no test files]
+?   	warden/runtimes/firecracker/cmd/rootfs	[no test files]
+ok  	warden/runtimes/firecracker/guest	0.006s
+exit 0

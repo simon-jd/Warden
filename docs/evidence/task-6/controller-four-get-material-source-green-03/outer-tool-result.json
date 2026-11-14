@@ -1,0 +1,24 @@
+{
+  "request": {
+    "cmd": "python3 -B docs/evidence/task-6/controller-four-get-material-source-green-03/run.py",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "sandbox_permissions": "require_escalated",
+    "justification": "运行授权material有限夹具GREEN3，修正fake文件open的mode形参；保留前次失败，CPU30/AS512MiB/FSIZE32MiB/最早测量45秒，无实际host/socket/caller。",
+    "yield_time_ms": 1000,
+    "max_output_tokens": 3000
+  },
+  "initial": {
+    "chunk_id": "bcfbb5",
+    "wall_time_seconds": 0.935449833,
+    "exit_code": 0,
+    "original_token_count": 332,
+    "output": "{\"changed_source_snapshots\": [\"scripts/identity_cache_control.py\", \"scripts/identity_cache_observe.py\", \"scripts/test_identity_cache_control.py\", \"docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py\", \"docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py\"], \"command\": [\"python3\", \"-B\", \"docs/evidence/task-6/controller-four-get-material-source-green-03/run.py\"], \"completion_requires_process_exit_zero\": true, \"controller_files\": 2, \"dispatch_base\": \"b5780a09cb3c0a81b37207dca31ad5c2103c4395\", \"duration_seconds\": 0.9773192070424557, \"errors\": 0, \"exit_code\": 0, \"failures\": 0, \"limits\": {\"address_bytes\": 536870912, \"cpu_seconds\": 30, \"file_bytes\": 33554432, \"wall_seconds\": 45}, \"live_cache_access\": false, \"skipped\": 0, \"source_commit_at_launch\": \"b5780a09cb3c0a81b37207dca31ad5c2103c4395\", \"source_files\": 150, \"source_unchanged\": true, \"started_utc\": \"2026-10-25T16:44:29.028452+00:00\", \"test_target\": \"material focused generated GREEN; new source context and transport/terminal boundaries\", \"tested_prefix_sha256\": \"7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa\", \"tests_run\": 18, \"timing_scope\": \"earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded\", \"whole_wall_until_receipt_seconds\": 1.0009156350279227}\n"
+  },
+  "final": {
+    "chunk_id": "bcfbb5",
+    "wall_time_seconds": 0.935449833,
+    "exit_code": 0,
+    "original_token_count": 332,
+    "output": "{\"changed_source_snapshots\": [\"scripts/identity_cache_control.py\", \"scripts/identity_cache_observe.py\", \"scripts/test_identity_cache_control.py\", \"docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py\", \"docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py\"], \"command\": [\"python3\", \"-B\", \"docs/evidence/task-6/controller-four-get-material-source-green-03/run.py\"], \"completion_requires_process_exit_zero\": true, \"controller_files\": 2, \"dispatch_base\": \"b5780a09cb3c0a81b37207dca31ad5c2103c4395\", \"duration_seconds\": 0.9773192070424557, \"errors\": 0, \"exit_code\": 0, \"failures\": 0, \"limits\": {\"address_bytes\": 536870912, \"cpu_seconds\": 30, \"file_bytes\": 33554432, \"wall_seconds\": 45}, \"live_cache_access\": false, \"skipped\": 0, \"source_commit_at_launch\": \"b5780a09cb3c0a81b37207dca31ad5c2103c4395\", \"source_files\": 150, \"source_unchanged\": true, \"started_utc\": \"2026-10-25T16:44:29.028452+00:00\", \"test_target\": \"material focused generated GREEN; new source context and transport/terminal boundaries\", \"tested_prefix_sha256\": \"7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa\", \"tests_run\": 18, \"timing_scope\": \"earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded\", \"whole_wall_until_receipt_seconds\": 1.0009156350279227}\n"
+  }
+}

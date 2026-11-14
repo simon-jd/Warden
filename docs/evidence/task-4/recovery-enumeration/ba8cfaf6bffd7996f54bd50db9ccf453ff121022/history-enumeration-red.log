@@ -1,0 +1,23 @@
+test_enumeration_never_implicitly_follows_omitted_link_targets (test_firecracker_recovery.MaterialPolicyTests.test_enumeration_never_implicitly_follows_omitted_link_targets) ... FAIL
+
+======================================================================
+FAIL: test_enumeration_never_implicitly_follows_omitted_link_targets (test_firecracker_recovery.MaterialPolicyTests.test_enumeration_never_implicitly_follows_omitted_link_targets)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 392, in test_enumeration_never_implicitly_follows_omitted_link_targets
+    material = recovery.select_stdlib()
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery.py", line 660, in select_stdlib
+    for directory, dirs, files in os.walk(STDLIB, followlinks=False, onerror=fail):
+                                  ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 383, in walk
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 356, in is_dir
+    def is_dir(self, *, follow_symlinks=True): return self.classify('is_dir', follow_symlinks)
+                                                      ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 354, in classify
+    raise AssertionError('following DirEntry.' + method + ' for ' + self.name)
+AssertionError: following DirEntry.is_dir for sitecustomize.py
+
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+FAILED (failures=1)

@@ -1,0 +1,31 @@
+=== RUN   TestDrainWaitsForTailAfterExitBeforeCancel
+    review_test.go:26: exit silently lost buffered tail: ""
+--- FAIL: TestDrainWaitsForTailAfterExitBeforeCancel (0.02s)
+=== RUN   TestDrainTimeoutReturnsTruncationError
+    review_test.go:30: unfinished FIFO reported complete
+--- FAIL: TestDrainTimeoutReturnsTruncationError (0.00s)
+=== RUN   TestSocketRejectsSymlinkAliases
+=== RUN   TestSocketRejectsSymlinkAliases/socket
+    review_test.go:39: dedicated-daemon guard accepted symlink alias
+=== RUN   TestSocketRejectsSymlinkAliases/parent
+    review_test.go:39: dedicated-daemon guard accepted symlink alias
+=== RUN   TestSocketRejectsSymlinkAliases/dangling
+    review_test.go:39: dedicated-daemon guard accepted symlink alias
+--- FAIL: TestSocketRejectsSymlinkAliases (0.00s)
+    --- FAIL: TestSocketRejectsSymlinkAliases/socket (0.00s)
+    --- FAIL: TestSocketRejectsSymlinkAliases/parent (0.00s)
+    --- FAIL: TestSocketRejectsSymlinkAliases/dangling (0.00s)
+=== RUN   TestSocketRejectsRegularFileAndWrongDaemon
+    review_test.go:44: shared/wrong daemon PID accepted
+--- FAIL: TestSocketRejectsRegularFileAndWrongDaemon (0.00s)
+=== RUN   TestSocketAcceptsOwnedDedicatedUnixListener
+--- PASS: TestSocketAcceptsOwnedDedicatedUnixListener (0.00s)
+=== RUN   TestLogOverflowReportsDroppedBytes
+    review_test.go:50: overflow silently reported complete logs: {Code:0 LogsTruncated:false DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true}
+--- FAIL: TestLogOverflowReportsDroppedBytes (0.00s)
+=== RUN   TestPauseIsAllowedWhileMountRemainsDenied
+    review_test.go:53: fork fixture children cannot block; pause denied
+--- FAIL: TestPauseIsAllowedWhileMountRemainsDenied (0.00s)
+FAIL
+FAIL	warden/runtimes/runc	0.027s
+FAIL

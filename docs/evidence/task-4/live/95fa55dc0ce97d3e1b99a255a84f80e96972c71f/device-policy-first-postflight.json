@@ -1,0 +1,240 @@
+{
+  "utc": "2026-10-24T22:20:03.867821+00:00",
+  "source": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f",
+  "scope": "Independent controller read-only postflight for one actual device-policy gate; no VM/worker/Gate/jailer created; not peak RSS or other acceptance.",
+  "identity": {
+    "image": "sha256:474bdb0e35d58664664f04d3649023f0be9c9f17afa812db31941d837c5e80de",
+    "image_bytes": 148194207,
+    "labels": {
+      "owner": "codex-warden",
+      "project": "warden",
+      "session": "31fe1d1db274bee9b2a26bc7ac39a603",
+      "task": "firecracker",
+      "ttl": "2026-10-24T23:18:53.277143+00:00"
+    },
+    "mode": "device-policy",
+    "source": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f"
+  },
+  "receipt": {
+    "container": "1983f32de7b63f0318fffe4fc6faebdd53458708c075490b40a1891a2be8cf97",
+    "host_cgroup": "0::/system.slice/docker-1983f32de7b63f0318fffe4fc6faebdd53458708c075490b40a1891a2be8cf97.scope",
+    "host_pid": 2369528,
+    "host_starttime": 67809080,
+    "image": "sha256:474bdb0e35d58664664f04d3649023f0be9c9f17afa812db31941d837c5e80de",
+    "outer": {
+      "cgroup_ns": "cgroup:[4026536071]",
+      "device": 30,
+      "inode": 2114882,
+      "kind": "warden-device-receipt-v1",
+      "mount_id": 506,
+      "mount_ns": "mnt:[4026536050]",
+      "pid": 1,
+      "policy_sha256": "bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404",
+      "policy_version": "warden-tun-deny-v1"
+    },
+    "parent_identity": [
+      30,
+      75,
+      0
+    ],
+    "target_identity": [
+      30,
+      2114882,
+      0
+    ]
+  },
+  "absence": {
+    "container": "1983f32de7b63f0318fffe4fc6faebdd53458708c075490b40a1891a2be8cf97",
+    "target_identity": [
+      30,
+      2114882,
+      0
+    ],
+    "parent_identity": [
+      30,
+      75,
+      0
+    ],
+    "exact_original_entry_absent": true,
+    "meaning": "exact owned cgroup path removed; not synchronous kernel allocator GC"
+  },
+  "independent_exact_entry_absent": true,
+  "live_directory": {
+    "device": 66307,
+    "inode": 56377637,
+    "uid": 1000,
+    "mode": "0o700",
+    "empty": true
+  },
+  "charge": {
+    "version": 1,
+    "reserved_bytes": 5000000000,
+    "released": true
+  },
+  "owned_images_all": [],
+  "owned_containers_all": [],
+  "outstanding_bytes": 0,
+  "preflight": {
+    "additional_bytes": "0",
+    "at": "2026-10-24T22:20:03Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 271703977984,
+    "project_allocated_bytes": 4013797376,
+    "service_memory_bytes": "1000000000"
+  },
+  "protected_sysctls": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "protected_baseline_match": true,
+  "public_structured_output": [
+    {
+      "owned_image_charge": 0,
+      "outstanding": 0,
+      "additional": 5000000000,
+      "service_memory": 5000000000
+    },
+    {
+      "additional_bytes": "5000000000",
+      "at": "2026-10-24T22:18:53Z",
+      "download_bytes": "0",
+      "event": "local-preflight",
+      "free_bytes": 271731105792,
+      "project_allocated_bytes": 4013760512,
+      "service_memory_bytes": "5000000000"
+    },
+    {
+      "owned_image_charge": 0,
+      "outstanding": 5000000000,
+      "additional": 0,
+      "service_memory": 5000000000
+    },
+    {
+      "additional_bytes": "5000000000",
+      "at": "2026-10-24T22:18:54Z",
+      "download_bytes": "0",
+      "event": "local-preflight",
+      "free_bytes": 271731089408,
+      "project_allocated_bytes": 4013764608,
+      "service_memory_bytes": "5000000000"
+    },
+    {
+      "owned_image_charge": 360388414,
+      "outstanding": 5000000000,
+      "additional": 0,
+      "service_memory": 5000000000
+    },
+    {
+      "additional_bytes": "5360388414",
+      "at": "2026-10-24T22:18:57Z",
+      "download_bytes": "0",
+      "event": "local-preflight",
+      "free_bytes": 271582638080,
+      "project_allocated_bytes": 4013768704,
+      "service_memory_bytes": "5000000000"
+    },
+    {
+      "kind": "warden-device-receipt-v1",
+      "pid": 1,
+      "cgroup_ns": "cgroup:[4026536071]",
+      "mount_ns": "mnt:[4026536050]",
+      "device": 30,
+      "inode": 2114882,
+      "mount_id": 506,
+      "policy_version": "warden-tun-deny-v1",
+      "policy_sha256": "bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404"
+    },
+    {
+      "device_policy_query_effective": false,
+      "flags": 2,
+      "ids": [
+        64732
+      ]
+    },
+    {
+      "device_policy_query_effective": true,
+      "flags": 0,
+      "ids": [
+        64732
+      ]
+    },
+    {
+      "device_policy_query_effective": false,
+      "flags": 2,
+      "ids": [
+        64732,
+        64733
+      ]
+    },
+    {
+      "device_policy_query_effective": true,
+      "flags": 0,
+      "ids": [
+        64732,
+        64733
+      ]
+    },
+    {
+      "kind": "warden-device-receipt-v1",
+      "pid": 1,
+      "cgroup_ns": "cgroup:[4026536071]",
+      "mount_ns": "mnt:[4026536050]",
+      "device": 30,
+      "inode": 2114882,
+      "mount_id": 506,
+      "policy_version": "warden-tun-deny-v1",
+      "policy_sha256": "bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404"
+    },
+    {
+      "device_policy_query_effective": false,
+      "flags": 2,
+      "ids": [
+        64732
+      ]
+    },
+    {
+      "device_policy_query_effective": true,
+      "flags": 0,
+      "ids": [
+        64732
+      ]
+    },
+    {
+      "device_policy_query_effective": false,
+      "flags": 2,
+      "ids": [
+        64732,
+        64733
+      ]
+    },
+    {
+      "device_policy_query_effective": true,
+      "flags": 0,
+      "ids": [
+        64732,
+        64733
+      ]
+    },
+    {
+      "owned_image_charge": 0,
+      "outstanding": 0,
+      "additional": 0,
+      "service_memory": 0
+    },
+    {
+      "additional_bytes": "0",
+      "at": "2026-10-24T22:19:00Z",
+      "download_bytes": "0",
+      "event": "local-preflight",
+      "free_bytes": 271730720768,
+      "project_allocated_bytes": 4013793280,
+      "service_memory_bytes": "0"
+    }
+  ],
+  "public_log_sha256": "0ef5226f65a5a42a14958a433f081264cc7aae8d234b1a1029576f834cccaaa0"
+}

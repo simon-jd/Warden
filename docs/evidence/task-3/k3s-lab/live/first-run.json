@@ -1,0 +1,9 @@
+{
+  "utc": "2026-10-24T06:52:21.214871+00:00",
+  "head": "d925e3f3f3a30b10a409d1f1ea632824d4d63243",
+  "source_commit": "a3193fbc56e6105f0720c0b8040aa441632b575d",
+  "review_full_range": "0be4325..a193dab",
+  "review_fix_range": "a193dab..cb76a2d",
+  "command": "/usr/bin/time -v python3 -B scripts/k3s_lab.py bootstrap --other-service-memory-bytes 0 --reviewed-live-profile",
+  "scope": "Dedicated bootstrap/readiness/public identity/cleanup only; no tenant Pod or Job, Azure or GPU."
+}

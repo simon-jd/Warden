@@ -1,0 +1,25 @@
+test_preparation_requires_independent_terminal_marker (test_controller_cache_continuation_invoker_20261025.InvokerTests.test_preparation_requires_independent_terminal_marker) ... FAIL
+test_outer_gate_requires_independent_terminal_marker (test_controller_cache_continuation_invoker_20261025.InvokerTests.test_outer_gate_requires_independent_terminal_marker) ... FAIL
+
+======================================================================
+FAIL: test_preparation_requires_independent_terminal_marker (test_controller_cache_continuation_invoker_20261025.InvokerTests.test_preparation_requires_independent_terminal_marker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 20, in test_preparation_requires_independent_terminal_marker
+    with self.assertRaises((ValueError, FileNotFoundError)):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'ValueError'>, <class 'FileNotFoundError'>) not raised
+
+======================================================================
+FAIL: test_outer_gate_requires_independent_terminal_marker (test_controller_cache_continuation_invoker_20261025.InvokerTests.test_outer_gate_requires_independent_terminal_marker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 30, in test_outer_gate_requires_independent_terminal_marker
+    with self.assertRaises((ValueError, FileNotFoundError)):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'ValueError'>, <class 'FileNotFoundError'>) not raised
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.046s
+
+FAILED (failures=2)

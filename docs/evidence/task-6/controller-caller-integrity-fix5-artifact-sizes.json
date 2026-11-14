@@ -1,0 +1,2194 @@
+{
+  "accounting_scope": "public indexed files only; index itself/Git/total-disk/RSS/other root docs excluded; mirror separately stated",
+  "allocated_bytes_excluding_index": 2867200,
+  "artifact_count": 310,
+  "artifacts": {
+    "docs/evidence/task-6/continuation-controller-operations-execution-plan.md": {
+      "allocated_bytes": 90112,
+      "baseline_allocated_bytes": 81920,
+      "baseline_bytes": 77887,
+      "bytes": 90095,
+      "sha256": "e3996d2be4ffb4b3bd684ca46316766b306d54a7b7a514ab9bfc170990019892"
+    },
+    "docs/evidence/task-6/controller-approval-writer-plan.md": {
+      "allocated_bytes": 45056,
+      "baseline_allocated_bytes": 28672,
+      "baseline_bytes": 28459,
+      "bytes": 41533,
+      "sha256": "7da82564f369bba947a8144bdf1dc340cf8b7e30e285949380bbcbd868605629"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-candidate.js": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 12373,
+      "sha256": "7441ed1a8acf65caed11aa3621c4ec9768ab9d2e2f8424c7ada9bc8ec51710d0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-fixture.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10877,
+      "sha256": "8a0cc3ffa15a99eb5b0541512c0dae74e5bc58b6f8d670ed170876a9007ee89b"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/baseline.json": {
+      "allocated_bytes": 20480,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 17042,
+      "sha256": "5a2f57c6b88d49812e4e2a501a6721e3a00eb4e86c2ee10717a7b477c3d05825"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/candidate.js": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 12373,
+      "sha256": "7441ed1a8acf65caed11aa3621c4ec9768ab9d2e2f8424c7ada9bc8ec51710d0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/execute.js": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 380,
+      "sha256": "0ad29bda92891f6128076a4e28ca5c1e2e79cf4072e7026353726b4df12fd48f"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/fixture.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10877,
+      "sha256": "8a0cc3ffa15a99eb5b0541512c0dae74e5bc58b6f8d670ed170876a9007ee89b"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/metadata.py": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 3336,
+      "sha256": "dabf4f3aaad51a0eac720f29e3793dbd0d46f835c9942e6ead03a5a715061cf0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/outer-tool-result.json": {
+      "allocated_bytes": 65536,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 63433,
+      "sha256": "85d6b44cfe7db1513eb69fac82694fad8501d4f814953c03039db0760af2bbc9"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/post-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 427,
+      "sha256": "4f9d6c12ebe4a0eb32056d3a9a9c6f94b538b12dc78a0ecaec3185f931428cd6"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/post-controller.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/post-receipt.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 808,
+      "sha256": "d0b4eda779ae6c7774589672756ae1e4f290c02ec9b9ab288b170dcb5db78b17"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/post-source.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/pre-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 427,
+      "sha256": "4f9d6c12ebe4a0eb32056d3a9a9c6f94b538b12dc78a0ecaec3185f931428cd6"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/pre-controller.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/pre-receipt.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 807,
+      "sha256": "0d2aca888d500bfa5a72b249692cf16a156144f70e00728fc78f3bddbaa743c8"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/pre-source.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-green-01/baseline.json": {
+      "allocated_bytes": 20480,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 17042,
+      "sha256": "fb291d36e780ac92550ce96bccb600591be6a29d747027f3d1f3ec51579e61ed"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-green-01/candidate.js": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 12373,
+      "sha256": "7441ed1a8acf65caed11aa3621c4ec9768ab9d2e2f8424c7ada9bc8ec51710d0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-green-01/execute.js": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 380,
+      "sha256": "fa26b7536e8005e0e1e09faca9c47b14786a1cf577876607ebb7bad8a37f742f"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-green-01/fixture.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10877,
+      "sha256": "8a0cc3ffa15a99eb5b0541512c0dae74e5bc58b6f8d670ed170876a9007ee89b"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-green-01/metadata.py": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 3336,
+      "sha256": "dabf4f3aaad51a0eac720f29e3793dbd0d46f835c9942e6ead03a5a715061cf0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-green-01/outer-tool-result.json": {
+      "allocated_bytes": 65536,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 63435,
+      "sha256": "7e3112ba820515e197496122f87471958fa359cebc6424740a8e6a7dc5684269"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-green-01/post-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 427,
+      "sha256": "4f9d6c12ebe4a0eb32056d3a9a9c6f94b538b12dc78a0ecaec3185f931428cd6"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-green-01/post-controller.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-green-01/post-receipt.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 808,
+      "sha256": "6546d4f7b281177b4f279d7ff07b8d0c1a9c834a098b11f5be1d308c2ba0d7a0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-green-01/post-source.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-green-01/pre-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 427,
+      "sha256": "4f9d6c12ebe4a0eb32056d3a9a9c6f94b538b12dc78a0ecaec3185f931428cd6"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-green-01/pre-controller.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-green-01/pre-receipt.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 807,
+      "sha256": "d54fbc8e732899bc35cac176ab413b479bda4458ad39e33e9ba7ec4d06f7b25a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-green-01/pre-source.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-red-01/baseline.json": {
+      "allocated_bytes": 20480,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 17042,
+      "sha256": "fb291d36e780ac92550ce96bccb600591be6a29d747027f3d1f3ec51579e61ed"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-red-01/candidate.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 11852,
+      "sha256": "9d1be21f84edd0fdf21a64def1b03626a79035fb65bb561cd7a36acc28218052"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-red-01/execute.js": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 376,
+      "sha256": "db88019c2360f5e426fa1a5cfc021b655181043ee71ea372b348bf1b418c9385"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-red-01/fixture.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10877,
+      "sha256": "8a0cc3ffa15a99eb5b0541512c0dae74e5bc58b6f8d670ed170876a9007ee89b"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-red-01/metadata.py": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 3336,
+      "sha256": "dabf4f3aaad51a0eac720f29e3793dbd0d46f835c9942e6ead03a5a715061cf0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-red-01/outer-tool-result.json": {
+      "allocated_bytes": 57344,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 53391,
+      "sha256": "aca04420b6d23059710c4b5261ced093e225741c74e52af711eb53aa763c4a26"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-red-01/post-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 419,
+      "sha256": "69e62386428a923dfe53af9bb45efd52c550f6befc648141455bea0e8889d682"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-red-01/post-controller.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-red-01/post-receipt.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 800,
+      "sha256": "1da05ad80f3f8fa41fd2ff982eff421113b4244b4f86f9fe8628bb703c96c70d"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-red-01/post-source.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-red-01/pre-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 419,
+      "sha256": "69e62386428a923dfe53af9bb45efd52c550f6befc648141455bea0e8889d682"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-red-01/pre-controller.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-red-01/pre-receipt.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 799,
+      "sha256": "0910d0993197be3d486ff227f12e70766b06ba3f9dadba484021d2c234b11fac"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-red-01/pre-source.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-baseline.json": {
+      "allocated_bytes": 20480,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 16969,
+      "sha256": "fdec218e5a252c88d5dbfadcd1479bbff4ecbd57800cab1ca514f95f758c2f7a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-integrity.json": {
+      "allocated_bytes": 73728,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 70397,
+      "sha256": "5b3594c62620c8dd89950a85d3e8c8cf1fe0cff8c5b591b9b9501a0c2e2c2d6b"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-candidate.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 11526,
+      "sha256": "dd9553eec47723a1159bc421478cad1b9ad21a97d639f8783a2abdf700f66e13"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-fixture.js": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 12699,
+      "sha256": "6783d92bae44aaedf1b21540aa368bd2d5ea2724715c4c9b309dfd85079baebb"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-cover-01/baseline.json": {
+      "allocated_bytes": 20480,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 17042,
+      "sha256": "5a2f57c6b88d49812e4e2a501a6721e3a00eb4e86c2ee10717a7b477c3d05825"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-cover-01/candidate.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 11526,
+      "sha256": "dd9553eec47723a1159bc421478cad1b9ad21a97d639f8783a2abdf700f66e13"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-cover-01/execute.js": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 380,
+      "sha256": "40c9ca726e7edcb4be61d17b9f65ed932621a4f8e7812ae7aec929a8aa3c4a80"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-cover-01/fixture.js": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 12699,
+      "sha256": "6783d92bae44aaedf1b21540aa368bd2d5ea2724715c4c9b309dfd85079baebb"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-cover-01/metadata.py": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 3336,
+      "sha256": "dabf4f3aaad51a0eac720f29e3793dbd0d46f835c9942e6ead03a5a715061cf0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-cover-01/outer-tool-result.json": {
+      "allocated_bytes": 65536,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 62099,
+      "sha256": "5e47e03cd493268624191a78ccc9d4d03e5e3979bf32a90cce578f49a73c70c5"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-cover-01/post-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 427,
+      "sha256": "b88f18d3cf6a3d7b5af971ec5c6bbc1cfd8b3850b73e968d682c74ac136d728c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-cover-01/post-controller.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-cover-01/post-receipt.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 808,
+      "sha256": "5dbdb20a29fd4d4d0a598b39bfdb13ec8a587f7c25d46098b55561f0e19b754f"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-cover-01/post-source.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-cover-01/pre-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 427,
+      "sha256": "b88f18d3cf6a3d7b5af971ec5c6bbc1cfd8b3850b73e968d682c74ac136d728c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-cover-01/pre-controller.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-cover-01/pre-receipt.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 807,
+      "sha256": "1385961c601eb567c932031dd05bccd19717d772c2dc8df08ff163ec2ca5fca9"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-cover-01/pre-source.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-green-01/baseline.json": {
+      "allocated_bytes": 20480,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 17042,
+      "sha256": "fb291d36e780ac92550ce96bccb600591be6a29d747027f3d1f3ec51579e61ed"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-green-01/candidate.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 11526,
+      "sha256": "dd9553eec47723a1159bc421478cad1b9ad21a97d639f8783a2abdf700f66e13"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-green-01/execute.js": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 380,
+      "sha256": "111b6f967cbf5bcfff989897fa8ea378a3cbcaef35de2d6f3e88f4de272d6d4d"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-green-01/fixture.js": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 12699,
+      "sha256": "6783d92bae44aaedf1b21540aa368bd2d5ea2724715c4c9b309dfd85079baebb"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-green-01/metadata.py": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 3336,
+      "sha256": "dabf4f3aaad51a0eac720f29e3793dbd0d46f835c9942e6ead03a5a715061cf0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-green-01/outer-tool-result.json": {
+      "allocated_bytes": 65536,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 62099,
+      "sha256": "e76154af287aff84c78a4022bdc1c3b0ea167103160ce2f565aa4f99ceff5203"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-green-01/post-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 427,
+      "sha256": "b88f18d3cf6a3d7b5af971ec5c6bbc1cfd8b3850b73e968d682c74ac136d728c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-green-01/post-controller.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-green-01/post-receipt.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 808,
+      "sha256": "e7d2fc1e28173108b5229ce19af854151ac20825cbf3cb2d0a3ba9521d98b271"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-green-01/post-source.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-green-01/pre-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 427,
+      "sha256": "b88f18d3cf6a3d7b5af971ec5c6bbc1cfd8b3850b73e968d682c74ac136d728c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-green-01/pre-controller.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-green-01/pre-receipt.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 807,
+      "sha256": "9f7fb08584d1ee7c9142e5cb4de35e52a3fcc5c2d19e4359c8c3ea484a3f3e68"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-green-01/pre-source.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-red-01/baseline.json": {
+      "allocated_bytes": 20480,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 17042,
+      "sha256": "fb291d36e780ac92550ce96bccb600591be6a29d747027f3d1f3ec51579e61ed"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-red-01/candidate.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10842,
+      "sha256": "58095573ef0f31c78429d9dd5169ced6ea58c5c23f04526b651f73b1eb8b73b1"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-red-01/execute.js": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 376,
+      "sha256": "985403278d512e5b7acc9da58e6c5d4e36937b0b33a9bdad7e62e15ec1346149"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-red-01/fixture.js": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 12699,
+      "sha256": "6783d92bae44aaedf1b21540aa368bd2d5ea2724715c4c9b309dfd85079baebb"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-red-01/metadata.py": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 3336,
+      "sha256": "dabf4f3aaad51a0eac720f29e3793dbd0d46f835c9942e6ead03a5a715061cf0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-red-01/outer-tool-result.json": {
+      "allocated_bytes": 57344,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 54778,
+      "sha256": "49cd760722f00a9b61e6ecb20de53d42cbef3ca1fef84189ea0a3b69b71c0e7b"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-red-01/post-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 428,
+      "sha256": "78a615798f14c4c6471d56a6072e689d85539f766dcfb50ad93ff90ab2a5140c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-red-01/post-controller.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-red-01/post-receipt.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 809,
+      "sha256": "288e34ea85cfc084b97f790efd0b475c7a4923241e2e11782fb58b9c9cd553bc"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-red-01/post-source.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-red-01/pre-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 428,
+      "sha256": "78a615798f14c4c6471d56a6072e689d85539f766dcfb50ad93ff90ab2a5140c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-red-01/pre-controller.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-red-01/pre-receipt.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 808,
+      "sha256": "ee9569b1838af7a5ff885acc7956ea5243b5994a5e993c0121ebd76cebb6e3cd"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-material-js-red-01/pre-source.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-missing-and-cleanup.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1655,
+      "sha256": "3441c273e48b70dcd122bd53c9896792471cae199f13dbc2c2c799f44d3b7601"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/baseline.json": {
+      "allocated_bytes": 20480,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 16969,
+      "sha256": "fdec218e5a252c88d5dbfadcd1479bbff4ecbd57800cab1ca514f95f758c2f7a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/cap-as-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1759,
+      "sha256": "b32edbf97dcd68692a99ed9cfc1c0ce13fe1fd17a9e75f465d4f6fb40071a892"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/cap-as-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "1708e150d8a0d154b1ad618e4e8e2f2a6c03bc732812be32f54e7f74cb383981"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/cap-as-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10226,
+      "sha256": "bc69a357698c7f6f1bd8dfda413322543c1b0eb47e3fa1a7078d1a82a2cb9bd5"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/cap-as-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/cap-as-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 889,
+      "sha256": "46ca8dedb0644ffdb3f48c42d422e913488e13b93117c0052a25a2ccc6039edd"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/cap-cpu-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1764,
+      "sha256": "f1fd11a6fc509367f5c7a89a868c5991a4e70e16e3f3d4653cad9bcf4c21b950"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/cap-cpu-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "142e5ebd329e0cd87efed20d6b8aaf2a1be59fb52be03424f0b80a5dfdd91aee"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/cap-cpu-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10227,
+      "sha256": "a61e013e1560ecf8dcc42bb6a411f01a5dfd7356ac853daf74fb892b13e577ac"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/cap-cpu-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/cap-cpu-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 892,
+      "sha256": "a8315e8d3fd29799242ba4370aa34cf473acfe235833e68a3584f092d0ae484c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/cap-fsize-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1758,
+      "sha256": "977894ba90f2ca7d7dce82f0aaa506001e53a914f6cce99d8d983c59b4d80244"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/cap-fsize-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "72d9eb070cb26ba0a71c6091b8e6f3b0dfb6169096f41b1671e96b9f9b78a42c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/cap-fsize-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10229,
+      "sha256": "e8d29a95837cf9af3eca17c7edcd0d67468ce4b22acc258e9e44a7bc529bd944"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/cap-fsize-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/cap-fsize-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 890,
+      "sha256": "7e8e9e0c6fa42ed5776f7c03a8513f1bd1d6b8912e464b0655d30d8def6bb9d9"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/controller-caller-integrity-fix5-approval-candidate.js": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 12373,
+      "sha256": "7441ed1a8acf65caed11aa3621c4ec9768ab9d2e2f8424c7ada9bc8ec51710d0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/controller-caller-integrity-fix5-approval-fixture.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10877,
+      "sha256": "8a0cc3ffa15a99eb5b0541512c0dae74e5bc58b6f8d670ed170876a9007ee89b"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/controller-caller-integrity-fix5-material-candidate.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 11526,
+      "sha256": "dd9553eec47723a1159bc421478cad1b9ad21a97d639f8783a2abdf700f66e13"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/controller-caller-integrity-fix5-material-fixture.js": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 12699,
+      "sha256": "6783d92bae44aaedf1b21540aa368bd2d5ea2724715c4c9b309dfd85079baebb"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/controller-caller-integrity-fix5-native-fixture.py": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 14182,
+      "sha256": "614f71b87c709737092cf058cd85478f569c4500f4b425e735fa26158424c0fa"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/dir-fsync-approval-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 231,
+      "sha256": "01ab90004133bead8df63a24dfcc9c0c5fd3222ae55f5c8f2af7249346597d14"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/dir-fsync-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 2184,
+      "sha256": "72809face5211f3c199ee511b218d8a06c27466f12da549e7795f198745395c7"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/dir-fsync-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "781dfbb4ac064b64f2830d4560ce6ea464b3da18b51712f6d407193100f8d196"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/dir-fsync-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10229,
+      "sha256": "3994f92e52e8d92bfb84e9ac5cae396679a726a343236c2cd5fc98567ae373ad"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/dir-fsync-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/dir-fsync-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 670,
+      "sha256": "e9e0feee61ba8d5379649885ae7a6a7cb3d7a4600109708e557967cc1f121698"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/existing-approval-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 21,
+      "sha256": "6062f8a082b5d49c11675ca8f251815976a1795b5d05a8f35df1adf96eead1b6"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/existing-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1760,
+      "sha256": "f850a3e7eedb34af3ffdcd729fb946035c3ed44e3c960614cd67398e31445ba2"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/existing-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "38fb2874db73cb31beb8ef781d47b6f10a24b40067769c4b5419cc7337982712"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/existing-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10228,
+      "sha256": "a6eb70bda20ba7193bacc58f897540cecaaaa15d50c3ed9b62c56b1c07c700c4"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/existing-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/existing-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 668,
+      "sha256": "ee7962ae5e25e283e9719ae2a5ee00d25c0a408fb5b8fffef0d79b99583485e0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/happy-approval-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 231,
+      "sha256": "01ab90004133bead8df63a24dfcc9c0c5fd3222ae55f5c8f2af7249346597d14"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/happy-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 2384,
+      "sha256": "69670ee5aae9b46d5d1a0ae3dfd76c1152450b525b1b76c7e72e5e648abc4a91"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/happy-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "284f44345368d5e18fb50baf23980972be71db4694aca249c2f6db3c54b1eab7"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/happy-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10225,
+      "sha256": "c766fc56ae41e8788af62dd44b36c2aaa9f35d3fdbc35bfdf7776151605002e9"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/happy-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/happy-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 869,
+      "sha256": "4032085a6b7d643b7c1a91780f4b8a79774fdf2f298a5a33e09c314e94bced52"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/intent.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 689,
+      "sha256": "a7d58d4d88d633b5b6563fa9a7e6181c1999736d254af019269d05c97be90659"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/outer-tool-result.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 4067,
+      "sha256": "40028ec8daceef880f6a96d20019a4b6f496e1ed26041747aab5c2e59adfcfbe"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/post-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 835,
+      "sha256": "cb5f1eeedd5ae3c43a20c8270c258c559c34f17f681a7c6008f66cd8124cf671"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/post-controller_sources.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/post-output-approval-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 231,
+      "sha256": "01ab90004133bead8df63a24dfcc9c0c5fd3222ae55f5c8f2af7249346597d14"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/post-output-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 2389,
+      "sha256": "35d308ddf5fe294496559c37266b4182c50eab7eae11948282a21f735721579b"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/post-output-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "297eb3fb092774c6e66977cd12212e8fb255530591f7bacdcbbd23db9fa10742"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/post-output-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10231,
+      "sha256": "8f5c8fe822fcfb207b9708681d5db28c3daa367aa994de865fae0725b6edfab1"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/post-output-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "2d8321d4afc4df29adc920e5fe312757c230f0d097a0edb42dc7605baed94f20"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/post-output-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 874,
+      "sha256": "cb90e20179b4e914dc88da4f3a7204c497986c2428891b30552cd2215f070bd4"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/post-sources.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/pre-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 835,
+      "sha256": "cb5f1eeedd5ae3c43a20c8270c258c559c34f17f681a7c6008f66cd8124cf671"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/pre-controller_sources.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/pre-sources.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/receipt.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1955,
+      "sha256": "2f793cd848387adbd8ee2ab4987080eb44db23300b2030d67722054622209a89"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/short-write-approval-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 231,
+      "sha256": "01ab90004133bead8df63a24dfcc9c0c5fd3222ae55f5c8f2af7249346597d14"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/short-write-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 2390,
+      "sha256": "46e17b71bb60d54e07ae3e677be374a8144363d029b6f33945fc57fa370ecc67"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/short-write-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "eec2bb874c8cf99dd410780cc136f1f2339e73b5d3d1f5348488a8ce76580d89"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/short-write-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10231,
+      "sha256": "bebaa9dc142cbf9230e10529475c6f1d6a9c50851eb73c88a7411bf0d3fa0910"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/short-write-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/short-write-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 875,
+      "sha256": "4a40f80dd5058b17dfddbe7a366b5feabdceed75c1bb110fb2c0c2a0f8477098"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/symlink-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1535,
+      "sha256": "c20a928d0e7f8642f042baf2d1c33da675f383899a10e87084df4641ac5d7502"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/symlink-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "f7dad5cf20d70e33a0dd791ac769f664580d5c9148a1a89fa10e3aafcac70b2c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/symlink-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10227,
+      "sha256": "c39abba080213149d79f03e4c8dbb5ebb1a791300290dc83f4d912104f6791cf"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/symlink-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/symlink-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 667,
+      "sha256": "e1402817644846be12e9a4aace4fefbfe8cdf1b71d8b72f96566ab08fd8f03df"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/wrong-proof-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1541,
+      "sha256": "a30e2213f00b8c4e0df5f66155aff0c2dd9badc85df0c8be3b505c08325aa15e"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/wrong-proof-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "3606a1642543c1af66f8f1bc63da907b2533153963cbb6338db6cbb9c351088d"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/wrong-proof-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10231,
+      "sha256": "7e233002d726066e92f9f3cef69412cfe0dc57b0becff956af1c909d6c908a6c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/wrong-proof-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-cover-01/wrong-proof-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 671,
+      "sha256": "90baab0a2d2ae3b091a0a5e07d3b1c36d36916b990d44b8ccce30e718efc7954"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-fixture.py": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 14182,
+      "sha256": "614f71b87c709737092cf058cd85478f569c4500f4b425e735fa26158424c0fa"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/baseline.json": {
+      "allocated_bytes": 20480,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 16969,
+      "sha256": "fdec218e5a252c88d5dbfadcd1479bbff4ecbd57800cab1ca514f95f758c2f7a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/cap-cpu-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "58aa9b05d196a0d67920dbb4aebf0080519a98a1180c5bd1eb9a8d3947a1527c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/cap-cpu-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10227,
+      "sha256": "5dc44014a02a80865bf83958c864ee94388c686deb3d7153079f74cfbd411a9e"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/cap-cpu-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 892,
+      "sha256": "a8315e8d3fd29799242ba4370aa34cf473acfe235833e68a3584f092d0ae484c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/controller-caller-integrity-fix5-approval-candidate.js": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 12373,
+      "sha256": "7441ed1a8acf65caed11aa3621c4ec9768ab9d2e2f8424c7ada9bc8ec51710d0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/controller-caller-integrity-fix5-approval-fixture.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10877,
+      "sha256": "8a0cc3ffa15a99eb5b0541512c0dae74e5bc58b6f8d670ed170876a9007ee89b"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/controller-caller-integrity-fix5-material-candidate.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 11526,
+      "sha256": "dd9553eec47723a1159bc421478cad1b9ad21a97d639f8783a2abdf700f66e13"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/controller-caller-integrity-fix5-material-fixture.js": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 12699,
+      "sha256": "6783d92bae44aaedf1b21540aa368bd2d5ea2724715c4c9b309dfd85079baebb"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/controller-caller-integrity-fix5-native-fixture.py": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 14033,
+      "sha256": "35913d683a20bf8f0cb40ed24b8b286f7c9a6db77fc1f478e4b0a09054d7de0c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/dir-fsync-approval-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 231,
+      "sha256": "01ab90004133bead8df63a24dfcc9c0c5fd3222ae55f5c8f2af7249346597d14"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/dir-fsync-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 2184,
+      "sha256": "4f5f864fa008ac8441cf0b94543bb99d51cdf96edca60be2b5c4a2ed85d4873d"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/dir-fsync-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "8905c059e24eefb710cf7b605afb0939c254e10363287e82b5f1c9403560704e"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/dir-fsync-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10229,
+      "sha256": "f9f03c0820879700375ae05df3939a271911203c5caa3fb93ae945d9f4ee2da4"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/dir-fsync-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/dir-fsync-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 670,
+      "sha256": "e9e0feee61ba8d5379649885ae7a6a7cb3d7a4600109708e557967cc1f121698"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/existing-approval-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 21,
+      "sha256": "6062f8a082b5d49c11675ca8f251815976a1795b5d05a8f35df1adf96eead1b6"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/existing-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1760,
+      "sha256": "ef9e7b8eb8a272f9681c385aff640f6460083ba1395c043f0052605dadba5475"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/existing-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "d164ff1ce80844c481648cd915d933a5390370143acd29dd81013c0995e201db"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/existing-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10228,
+      "sha256": "6848ca7329b123050d8326ee5551a0a723dbecd0ab8ac47cb0ddbe763b135173"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/existing-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/existing-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 668,
+      "sha256": "ee7962ae5e25e283e9719ae2a5ee00d25c0a408fb5b8fffef0d79b99583485e0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/happy-approval-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 231,
+      "sha256": "01ab90004133bead8df63a24dfcc9c0c5fd3222ae55f5c8f2af7249346597d14"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/happy-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 2384,
+      "sha256": "2d8f647e7f4b37691576380aaf9d5084f07b9cbca2217240d4ecd30c5bb3e571"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/happy-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "b6056271fe2d49788e4340b21e9a4aa9ff907ec0eed5bbd11ef2377699b7aeac"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/happy-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10225,
+      "sha256": "348c4993cbb5571cd6f77f63a4881d3ece8fd4b941073bbd22f1204f506879ae"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/happy-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/happy-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 869,
+      "sha256": "bfbedf9ca5d0ee35ee5d0d6489a1c8030f6cb92afb15065315163839ffdfa3f4"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/intent.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 689,
+      "sha256": "e4b9e12d52fcb73e0ab1d295619096f1094aaed70ec317b6d84186b2e30c45df"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/outer-tool-result.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1957,
+      "sha256": "07ab79e18e9092be323378ecaf2775c43625c9bfc71a0d1c8a6cdb45c2827388"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/post-output-approval-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 231,
+      "sha256": "01ab90004133bead8df63a24dfcc9c0c5fd3222ae55f5c8f2af7249346597d14"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/post-output-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 2389,
+      "sha256": "1f36189a318a6e6e9ab8cfa2b84eff64bace841cc847a9004e06eb89acb237ea"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/post-output-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "1f0ffaf68cde4d9533270ced1c9ac8c45e406ef62b0152d6734f2f7f7b17266d"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/post-output-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10231,
+      "sha256": "5c2fdaf668bbcb384d7b012537c343816cbe87c73e6838074a46e79ed1ff9b84"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/post-output-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "2d8321d4afc4df29adc920e5fe312757c230f0d097a0edb42dc7605baed94f20"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/post-output-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 874,
+      "sha256": "7f391bd7806a8f506a8ff7f087e5edda37e689b1a49ddcf9bb3e10dfdb2a4605"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/pre-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 835,
+      "sha256": "5e955fe6fd310895bb5a368e23e8bb9a7000c620a139cfc4058d47d161194c8b"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/pre-controller_sources.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/pre-sources.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/short-write-approval-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 231,
+      "sha256": "01ab90004133bead8df63a24dfcc9c0c5fd3222ae55f5c8f2af7249346597d14"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/short-write-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 2390,
+      "sha256": "d39d264d554e435126eb313b691dbfd2a68e381c650f12762e7159af47909df0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/short-write-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "b3b2b23417af14ab226aeda6a2999cdda8af61323b364d570d6be3bb6d4eb24f"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/short-write-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10231,
+      "sha256": "123d6c04e1a9e57bd7c6d1ceddcd7e9c2139f4bf30864f5eda8bf4bc8ae27517"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/short-write-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/short-write-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 875,
+      "sha256": "c5c0aebfd8760c490a651808c04619f297d8d26e46ccc8747088801e9db4ed6a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/symlink-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1535,
+      "sha256": "c20a928d0e7f8642f042baf2d1c33da675f383899a10e87084df4641ac5d7502"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/symlink-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "dc5960d8908f8a116ac5d18c0d75117773cf025cd1c470f7d90609c75dbf1600"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/symlink-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10227,
+      "sha256": "6fee0c906e1604db91e40be08691d59bfe562896e5af5de6dac160e2097b80e0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/symlink-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/symlink-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 667,
+      "sha256": "e1402817644846be12e9a4aace4fefbfe8cdf1b71d8b72f96566ab08fd8f03df"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/wrong-proof-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1541,
+      "sha256": "a30e2213f00b8c4e0df5f66155aff0c2dd9badc85df0c8be3b505c08325aa15e"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/wrong-proof-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "53e3b1110f046d6b1d3d40779897b4c1bae8ea1293a80422358d529389af03cc"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/wrong-proof-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10231,
+      "sha256": "4471076e057cac51d8882f3981e14573b46896c195ff1c99108c6f77273adfe4"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/wrong-proof-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-01/wrong-proof-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 671,
+      "sha256": "90baab0a2d2ae3b091a0a5e07d3b1c36d36916b990d44b8ccce30e718efc7954"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/baseline.json": {
+      "allocated_bytes": 20480,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 16969,
+      "sha256": "fdec218e5a252c88d5dbfadcd1479bbff4ecbd57800cab1ca514f95f758c2f7a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/cap-as-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1759,
+      "sha256": "b32edbf97dcd68692a99ed9cfc1c0ce13fe1fd17a9e75f465d4f6fb40071a892"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/cap-as-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "9ec200250b1dc64c3df030c29c79772cac634ca546a66b3079641c57c6c21c6e"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/cap-as-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10226,
+      "sha256": "d9cc0e5c27fde8fce295e9e467a66380c10f7abea66f2fc8a1ce6ab01835c978"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/cap-as-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/cap-as-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 889,
+      "sha256": "46ca8dedb0644ffdb3f48c42d422e913488e13b93117c0052a25a2ccc6039edd"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/cap-cpu-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1764,
+      "sha256": "f1fd11a6fc509367f5c7a89a868c5991a4e70e16e3f3d4653cad9bcf4c21b950"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/cap-cpu-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "67e8d58cd5ca0f6925db7cac2a3c5ba94b679dc02a4aec30003d1f088e6d2258"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/cap-cpu-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10227,
+      "sha256": "0867f46fffb16801f50e52f5f7084ca57375fe93b5bdf071dc0ca7d7177b3447"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/cap-cpu-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/cap-cpu-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 892,
+      "sha256": "a8315e8d3fd29799242ba4370aa34cf473acfe235833e68a3584f092d0ae484c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/cap-fsize-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1758,
+      "sha256": "977894ba90f2ca7d7dce82f0aaa506001e53a914f6cce99d8d983c59b4d80244"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/cap-fsize-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "263233b1aa2f964f09b73346fa0d21f396b2eb51b05f6363a518b55ebb5fdd9e"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/cap-fsize-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10229,
+      "sha256": "bc3aa5037c2fb1cf9da260d22de736a73f10b5334464b557e2f97fe89a3bc540"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/cap-fsize-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/cap-fsize-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 890,
+      "sha256": "7e8e9e0c6fa42ed5776f7c03a8513f1bd1d6b8912e464b0655d30d8def6bb9d9"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/controller-caller-integrity-fix5-approval-candidate.js": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 12373,
+      "sha256": "7441ed1a8acf65caed11aa3621c4ec9768ab9d2e2f8424c7ada9bc8ec51710d0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/controller-caller-integrity-fix5-approval-fixture.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10877,
+      "sha256": "8a0cc3ffa15a99eb5b0541512c0dae74e5bc58b6f8d670ed170876a9007ee89b"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/controller-caller-integrity-fix5-material-candidate.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 11526,
+      "sha256": "dd9553eec47723a1159bc421478cad1b9ad21a97d639f8783a2abdf700f66e13"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/controller-caller-integrity-fix5-material-fixture.js": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 12699,
+      "sha256": "6783d92bae44aaedf1b21540aa368bd2d5ea2724715c4c9b309dfd85079baebb"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/controller-caller-integrity-fix5-native-fixture.py": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 14182,
+      "sha256": "614f71b87c709737092cf058cd85478f569c4500f4b425e735fa26158424c0fa"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/dir-fsync-approval-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 231,
+      "sha256": "01ab90004133bead8df63a24dfcc9c0c5fd3222ae55f5c8f2af7249346597d14"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/dir-fsync-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 2184,
+      "sha256": "f90075901a259e907f83fdce56b041f5e9666358819b0a4bd130e10f3f24aa37"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/dir-fsync-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "a7ea23dd60b494d0fd0f4256fb72ebe96b785bfb640dce90fd0f5d2a4388d03f"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/dir-fsync-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10229,
+      "sha256": "74406afcfae4a307ea0f5f04cd728bfc7a07a42538a352077ff6df0e740a4c9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/dir-fsync-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/dir-fsync-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 670,
+      "sha256": "e9e0feee61ba8d5379649885ae7a6a7cb3d7a4600109708e557967cc1f121698"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/existing-approval-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 21,
+      "sha256": "6062f8a082b5d49c11675ca8f251815976a1795b5d05a8f35df1adf96eead1b6"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/existing-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1760,
+      "sha256": "2abc8b9b35056f7996b95abba955937e6ea311a5d646a8e89dc8ab820e6d5ce4"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/existing-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "a2c6a7e7d9c3434351d8d7243fc8b7f19ed6d7065412bc9763a66bb8ce6600e8"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/existing-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10228,
+      "sha256": "7ab1e28c712b27e29d82ecc82bb8bb098c659be46e3d727665dd547776187b1e"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/existing-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/existing-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 668,
+      "sha256": "ee7962ae5e25e283e9719ae2a5ee00d25c0a408fb5b8fffef0d79b99583485e0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/happy-approval-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 231,
+      "sha256": "01ab90004133bead8df63a24dfcc9c0c5fd3222ae55f5c8f2af7249346597d14"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/happy-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 2384,
+      "sha256": "4a2742c56c5af5fcd564d72f02a22d2b5b63d05471b45373c994ed5899220d5c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/happy-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "250b4b952b022933cf380c21cca61f3fc7d93ca05f723e1427afe11102185a90"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/happy-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10225,
+      "sha256": "f1f56c34319e46b9ccf788534e5c7ef565878150ea9922e67b2f5eee3bebabdd"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/happy-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/happy-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 869,
+      "sha256": "160919c029bdd7f3a1cbc4947ff7c4c0d79f5d07df6910b0a616910719376815"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/intent.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 689,
+      "sha256": "5a94455327afff925e30ec18058fd8494c22fe87453d83ba97ee6ca4d518f0f7"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/outer-tool-result.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 4069,
+      "sha256": "1d54023d13218391e84217b60c7cb39744fa6413a80ea288d949b5ddb3437d87"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/post-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 835,
+      "sha256": "cb5f1eeedd5ae3c43a20c8270c258c559c34f17f681a7c6008f66cd8124cf671"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/post-controller_sources.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/post-output-approval-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 231,
+      "sha256": "01ab90004133bead8df63a24dfcc9c0c5fd3222ae55f5c8f2af7249346597d14"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/post-output-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 2389,
+      "sha256": "221812993a18bbde3868f7755a3e05c30a5435b0bfa3615030e58d808db0d97d"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/post-output-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "f66ad1390a04645fdd2070626d0bd4fbf4665aebb0158aa4c078b83a68aba61f"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/post-output-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10231,
+      "sha256": "8f897e8a3a9828048b263f386a55025a97fde2aa504bef0fb26ed4262bbd6e4e"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/post-output-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "2d8321d4afc4df29adc920e5fe312757c230f0d097a0edb42dc7605baed94f20"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/post-output-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 874,
+      "sha256": "72b7066c8eaf846c3e5049f07cbff6a31f8f38c25ec111897b3b751137e9332a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/post-sources.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/pre-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 835,
+      "sha256": "cb5f1eeedd5ae3c43a20c8270c258c559c34f17f681a7c6008f66cd8124cf671"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/pre-controller_sources.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/pre-sources.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/receipt.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1956,
+      "sha256": "8d549869585cd816b2e2b7fd0e0380e348db98586a45d0dbd8c35b368f124d75"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/short-write-approval-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 231,
+      "sha256": "01ab90004133bead8df63a24dfcc9c0c5fd3222ae55f5c8f2af7249346597d14"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/short-write-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 2390,
+      "sha256": "0b61d9fa8cc845b1af5513ce5d628ab6563e8dc967c0fd4011fd0d6410ab789c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/short-write-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "e726366ff94fe873c968b5e0b5bb28c8c35d570f70662ac0cfc9fa3ba4f730b0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/short-write-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10231,
+      "sha256": "64bfa41f0087b040b0a6d828e1e64774bef485bdaaf4416e4a804ee12ab3fd49"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/short-write-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/short-write-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 875,
+      "sha256": "35cd9cbb5fd57c59a03629a4e223e93b85489b1c4ec012438c316e3ba3b8f65c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/symlink-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1535,
+      "sha256": "c20a928d0e7f8642f042baf2d1c33da675f383899a10e87084df4641ac5d7502"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/symlink-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "c727515e326e6452a93c63dbbcb0cd075c4e079f19f57b9fa10e793a722cfed6"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/symlink-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10227,
+      "sha256": "837874d872f26d7421d7397e1d806bc66eb3b1d5401cf493e202e0894c91b93d"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/symlink-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/symlink-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 667,
+      "sha256": "e1402817644846be12e9a4aace4fefbfe8cdf1b71d8b72f96566ab08fd8f03df"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/wrong-proof-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1541,
+      "sha256": "a30e2213f00b8c4e0df5f66155aff0c2dd9badc85df0c8be3b505c08325aa15e"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/wrong-proof-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 532,
+      "sha256": "5137d9eb5c0cf5a1784d2663c8e2f5119a29c64643652cb29db4aa8dc3724f9f"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/wrong-proof-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10231,
+      "sha256": "7ca6f66cd272464842d2196dcf3d34155385cdd9897034c775bbe6373e65dade"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/wrong-proof-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-green-02/wrong-proof-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 671,
+      "sha256": "90baab0a2d2ae3b091a0a5e07d3b1c36d36916b990d44b8ccce30e718efc7954"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/baseline.json": {
+      "allocated_bytes": 20480,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 16969,
+      "sha256": "fdec218e5a252c88d5dbfadcd1479bbff4ecbd57800cab1ca514f95f758c2f7a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/controller-caller-integrity-fix5-approval-candidate.js": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 12373,
+      "sha256": "7441ed1a8acf65caed11aa3621c4ec9768ab9d2e2f8424c7ada9bc8ec51710d0"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/controller-caller-integrity-fix5-approval-fixture.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10877,
+      "sha256": "8a0cc3ffa15a99eb5b0541512c0dae74e5bc58b6f8d670ed170876a9007ee89b"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/controller-caller-integrity-fix5-material-candidate.js": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 11526,
+      "sha256": "dd9553eec47723a1159bc421478cad1b9ad21a97d639f8783a2abdf700f66e13"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/controller-caller-integrity-fix5-material-fixture.js": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 12699,
+      "sha256": "6783d92bae44aaedf1b21540aa368bd2d5ea2724715c4c9b309dfd85079baebb"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/controller-caller-integrity-fix5-native-fixture.py": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 14033,
+      "sha256": "35913d683a20bf8f0cb40ed24b8b286f7c9a6db77fc1f478e4b0a09054d7de0c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/intent.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 687,
+      "sha256": "163cb8dd3e089fd0d04de2d3cd7f2defdf3c0c7b671c557008766a114a60c33a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/old-cwd-sentinel-observation.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1539,
+      "sha256": "bc51ed6dc658296d3bd7f248a8a116a521538b3d3ad35fc43b164f913ccadaa8"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/old-cwd-sentinel-request.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 522,
+      "sha256": "354cfd16cdf3e6e58c1f45434ded292fa99f41f7f07dc8c0b4c96bee71272a6c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/old-cwd-sentinel-stdin.py": {
+      "allocated_bytes": 12288,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 10236,
+      "sha256": "283f7f391155c957db72b96313accf3642d2d58cc09beec0bc8c52de57bcc3b2"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/old-cwd-sentinel-summary-observed.bin": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 255,
+      "sha256": "76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/old-cwd-sentinel-terminal.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 652,
+      "sha256": "7999563e534a540c76845b6f513b2e203fe032712990a22d203ff1056948bb25"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/outer-tool-result.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1755,
+      "sha256": "87950e10b0d4545e8dfdca00330b04e7843f82a33a2cf990a8c0b98e611c372b"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/post-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 835,
+      "sha256": "5e955fe6fd310895bb5a368e23e8bb9a7000c620a139cfc4058d47d161194c8b"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/post-controller_sources.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/post-sources.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/pre-code.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 835,
+      "sha256": "5e955fe6fd310895bb5a368e23e8bb9a7000c620a139cfc4058d47d161194c8b"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/pre-controller_sources.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 302,
+      "sha256": "0d31e7e0f39dac5cbe57d8aa30ae5f8cbec1a719608b7891f087ba003f1b0b9c"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/pre-sources.json": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15999,
+      "sha256": "ebd31c546c3366fa2210943e19ff628655d8c77781f1c08b6df25b8afea5f202"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-native-red-01/receipt.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 548,
+      "sha256": "c5e09261a2365a9f278626e0920786aefe31eb6c2b5def803dc870cec0abb6de"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-substage-report.md": {
+      "allocated_bytes": 16384,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 15885,
+      "sha256": "3d567146defcc7f58a1a457484987344badd98f195ef1e6903e18561c5b19087"
+    },
+    "docs/evidence/task-6/controller-caller-integrity-fix5-text-map.json": {
+      "allocated_bytes": 4096,
+      "baseline_allocated_bytes": 0,
+      "baseline_bytes": 0,
+      "bytes": 1796,
+      "sha256": "7e1e3a81ae77504db55ba1737a399188fa119ec4f62fa949f8813d83e5e92fda"
+    }
+  },
+  "baseline_allocated_bytes": 110592,
+  "baseline_logical_bytes": 106346,
+  "canonical150plus2_unchanged": true,
+  "dispatch_base": "50a8f7ca76b65348210752d7a7a93108d4237f8a",
+  "logical_bytes_excluding_index": 1988043,
+  "net_allocated_bytes_excluding_index": 2756608,
+  "net_logical_bytes_excluding_index": 1881697,
+  "report_mirror": {
+    "allocated_bytes": 16384,
+    "byteequal": true,
+    "bytes": 15885,
+    "path": ".superpowers/sdd/2-warden-security-plan/task-6-caller-integrity-fix5-report.md",
+    "sha256": "3d567146defcc7f58a1a457484987344badd98f195ef1e6903e18561c5b19087"
+  },
+  "root_docs_excluded": true,
+  "source_commit": "8bf623b6b5fc04a1d2c0a979a274cfeb3f643f51",
+  "source_frozen_unchanged": true
+}

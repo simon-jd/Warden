@@ -1,0 +1,9 @@
+# What bwrap --unshare-net leaves in the namespace that make test-terraform uses, 2026-11-13T03:00:18Z, host home-ubuntu
+# bubblewrap 0.11.1; HEAD cc185de
+$ /usr/bin/bwrap --dev-bind / / --unshare-net --die-with-parent ip link show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+exit 0
+$ /usr/bin/bwrap --dev-bind / / --unshare-net --die-with-parent ip -br addr
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+exit 0

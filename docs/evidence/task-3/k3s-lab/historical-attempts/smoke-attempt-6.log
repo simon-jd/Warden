@@ -1,0 +1,39 @@
+{"owned_image_charge": 0, "outstanding_charge": 0}
+{"additional_bytes": "6000000000", "at": "2026-10-24T06:23:15Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 359435005952, "project_allocated_bytes": 3020087296, "service_memory_bytes": "7000000000"}
+{"rootfs_bytes": 496030290, "archive_bytes": 496599040, "manifest_sha256": "f39c3429f36125e3a3d9ee0e7d8a33da046bc1cc82335b4cafab3e71fa83bbfd"}
+{"owned_image_charge": 0, "outstanding_charge": 0}
+{"additional_bytes": "6000000000", "at": "2026-10-24T06:23:23Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 358937251840, "project_allocated_bytes": 3516801024, "service_memory_bytes": "7000000000"}
+k3s version v1.36.5+k3s1 (3dd98cc5)
+go version go1.26.8
+containerd github.com/k3s-io/containerd/v2 v2.3.4-k3s1.36
+runsc version release-20261019.0
+spec: 1.2.1
+containerd-shim-runsc-v1:
+  Version:  2.1.5+unknown
+  Revision: 
+  Go version: go1.27.2
+Capless k3s/runsc ABI smoke complete; node/tenant/conformance NOT EXECUTED
+public evidence directory: /home/postedism/Desktop/Warden/.cache/warden-lab/docker-32b44760d7c2722da15ebdaefbceb21e
+	Command being timed: "python3 -B scripts/k3s_lab.py smoke --other-service-memory-bytes 0"
+	User time (seconds): 6.87
+	System time (seconds): 1.23
+	Percent of CPU this job got: 34%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:23.33
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 803492
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 4
+	Minor (reclaiming a frame) page faults: 480349
+	Voluntary context switches: 19951
+	Involuntary context switches: 200
+	Swaps: 0
+	File system inputs: 384
+	File system outputs: 970184
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

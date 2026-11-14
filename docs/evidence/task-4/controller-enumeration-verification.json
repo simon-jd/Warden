@@ -1,0 +1,10 @@
+{
+  "source": "ba8cfaf6bffd7996f54bd50db9ccf453ff121022",
+  "changed_host_function_only": "select_stdlib",
+  "unchanged_host_functions": 50,
+  "unchanged_bindings": 14,
+  "prior_index_artifacts": 11,
+  "new_index_artifacts": 7,
+  "tests_or_actual_operations_rerun": false,
+  "all_match": true
+}

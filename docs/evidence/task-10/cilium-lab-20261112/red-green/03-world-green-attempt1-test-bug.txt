@@ -1,0 +1,31 @@
+# GREEN: scripts/test_k3s_lab_world.py with world.py
+# head a9ce3b9, 2026-11-12T19:41:30-08:00
+# git status --short:
+#   ?? docs/evidence/task-10/cilium-lab-20261112/red-green/03-world-green.txt
+#   ?? docs/evidence/task-10/cilium-lab-20261112/red-green/03-world-red.txt
+#   ?? runtimes/gvisor/lab/cilium/
+#   ?? scripts/test_k3s_lab_world.py
+# python3 -I -B -m unittest discover -s scripts -t scripts -p test_k3s_lab_world.py -v
+test_dns_answers_other_types_nxdomain (test_k3s_lab_world.WorldTest.test_dns_answers_other_types_nxdomain) ... ok
+test_dns_answers_txt_and_logs_the_name (test_k3s_lab_world.WorldTest.test_dns_answers_txt_and_logs_the_name) ... ok
+test_dns_ignores_garbage (test_k3s_lab_world.WorldTest.test_dns_ignores_garbage) ... ok
+test_http_answers_the_body_and_logs_the_host (test_k3s_lab_world.WorldTest.test_http_answers_the_body_and_logs_the_host) ... /usr/lib/python3.14/unittest/case.py:615: ResourceWarning: unclosed <socket.socket fd=4, family=2, type=1, proto=6, laddr=('127.0.0.1', 55218), raddr=('127.0.0.1', 35469)>
+  result = method()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_stream_logs_lines_and_sends_heartbeats (test_k3s_lab_world.WorldTest.test_stream_logs_lines_and_sends_heartbeats) ... FAIL
+
+======================================================================
+FAIL: test_stream_logs_lines_and_sends_heartbeats (test_k3s_lab_world.WorldTest.test_stream_logs_lines_and_sends_heartbeats)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_k3s_lab_world.py", line 83, in test_stream_logs_lines_and_sends_heartbeats
+    self.assertTrue(self.logged[-1].startswith('close %s ' % conn), self.logged[-1])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : rx 1 pod-a 2 100.020
+
+----------------------------------------------------------------------
+Ran 5 tests in 6.014s
+
+FAILED (failures=1)
+exit=1

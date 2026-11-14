@@ -1,0 +1,40 @@
+57c57
+< fs.dentry-state = 16688011	15846641	45	0	5020168	0
+---
+> fs.dentry-state = 16692998	15851488	45	0	5021291	0
+65c65
+< fs.file-nr = 28864	0	9223372036854775807
+---
+> fs.file-nr = 29044	0	9223372036854775807
+69,70c69,70
+< fs.inode-nr = 14371679	3659877
+< fs.inode-state = 14371679	3659877	0	0	0	0	0
+---
+> fs.inode-nr = 14375538	3659877
+> fs.inode-state = 14375538	3659877	0	0	0	0	0
+93,94c93,94
+< fs.quota.cache_hits = 2233935
+< fs.quota.drops = 2186685
+---
+> fs.quota.cache_hits = 2234505
+> fs.quota.drops = 2187254
+96c96
+< fs.quota.lookups = 2233943
+---
+> fs.quota.lookups = 2234513
+98c98
+< fs.quota.syncs = 35034
+---
+> fs.quota.syncs = 35056
+177c177
+< kernel.ns_last_pid = 3060873
+---
+> kernel.ns_last_pid = 3077221
+216c216
+< kernel.random.uuid = 9371662c-1c00-49c5-b7a2-ae55e6cc3dd2
+---
+> kernel.random.uuid = c70178c2-d280-4742-90fc-bfeb5a59548e
+7259c7259
+< net.netfilter.nf_conntrack_count = 4155
+---
+> net.netfilter.nf_conntrack_count = 3558

@@ -1,0 +1,40 @@
+apiVersion: cli.kyverno.io/v1alpha1
+kind: Test
+metadata:
+  name: warden-unbound-denies
+policies:
+  - ../verify-images.yaml
+  - ../block-kev.yaml
+resources:
+  - resources.yaml
+results:
+  - policy: warden-verify-images-unbound
+    rule: deny-unbound-image-trust
+    resources: [unsigned-unbound]
+    kind: Pod
+    result: fail
+  - policy: warden-verify-images-unbound
+    rule: deny-unbound-image-trust
+    resources: [would-be-signed-unbound]
+    kind: Pod
+    result: fail
+  - policy: warden-verify-images-unbound
+    rule: deny-unbound-image-trust
+    resources: [would-be-kev-unbound]
+    kind: Pod
+    result: fail
+  - policy: warden-block-kev-unbound
+    rule: deny-unbound-scan-trust
+    resources: [unsigned-unbound]
+    kind: Pod
+    result: fail
+  - policy: warden-block-kev-unbound
+    rule: deny-unbound-scan-trust
+    resources: [would-be-signed-unbound]
+    kind: Pod
+    result: fail
+  - policy: warden-block-kev-unbound
+    rule: deny-unbound-scan-trust
+    resources: [would-be-kev-unbound]
+    kind: Pod
+    result: fail

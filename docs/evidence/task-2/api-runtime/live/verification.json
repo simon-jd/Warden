@@ -1,0 +1,33 @@
+{
+  "checked_utc": "2026-10-24T05:33:33.277536+00:00",
+  "command": "python3 -B scripts/runtime_lab_docker.py api --other-service-memory-bytes 0 --reviewed-live-profile",
+  "exit_code": 0,
+  "test": "TestHTTPPostgresRuntime",
+  "elapsed_seconds": 2.16,
+  "live_skips": 0,
+  "audit_entries": 26,
+  "audit_verify": "PASS",
+  "implementation_sha": "09eed7b622bc70081eb751ea42dd0c81bd5c1395",
+  "reviewed_code_head": "a894232",
+  "execution_head": "3db4a15",
+  "evidence_sha256": {
+    "live/README.md": "76d454749802a93a974056bdfa7e1c09f3074e942f18ae17798b439f1e045fd7",
+    "live/charge.json": "25fd7efe8d33b031a647c5b8f6e95a1afed520d11292dd9b08b6aff2d41af8e1",
+    "live/containerd.log": "f1b9567464890db8fdc2904fcdbf9d0386363f69d0bfce3ec2dc12a3b25b52ed",
+    "live/containerd.toml": "2980cf510421b66d4262bd8363ad51a6f46011c3000fc8541665813354d39f8d",
+    "live/gate/FMAWUNLAQQW45TY7GTOGRFGDEM": "3e1d6a9879f7c3449784a674a5270b3592a665acc6a4fea66c4b12ca5f507a29",
+    "live/gate/GHELQEWRWGIXBMOPG46AVTVMFI": "938a9a9c00d51f420eb88c838a0270d6f078d4d9aade5ad15563ee87233a2a50",
+    "live/gate/K5HAFNJHZXUERZF6GPML5LDJDI": "eff64b343dcb2b1dc113648e7089b9ce9f8a7f6c7808a03a2cffb4ad7302f606",
+    "live/gate/P7WROBMVRQ6Q6JEFUWNVS4HRUI": "eff64b343dcb2b1dc113648e7089b9ce9f8a7f6c7808a03a2cffb4ad7302f606",
+    "live/gate/X6UFO3GGROOV5QQ4G5KMK2FPII": "eff64b343dcb2b1dc113648e7089b9ce9f8a7f6c7808a03a2cffb4ad7302f606",
+    "live/gate/admission": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "live/gate/node": "ebb4bc45ecdb69723af820bd5e95a6befd42e7f63f46b0cf6fccc66ac9e53aa2",
+    "live/gate/retirement": "c259ee523728debb30625f4d4a6a1ab0d6c6d7d6d70c600b044817ce80a8daf0",
+    "live/gate/retirement-binding": "9362cd2e3631f2e80246580e47e733745ab4ac617986bad442559e413a8371ec",
+    "live/identity.json": "eb23bd8da6fe7af576f4652f4f808eb8eb1c90bb5891e16d6fcc7d016e1c43c2",
+    "live/manifest.json": "f779e37304caf704af2c27626f1eb0c818e8e1c62f2bf8bcdfd9096774ba37ee",
+    "live/postflight-budget.txt": "f6d3a32c65ee8d8b589b40bf8b2a994fa654df530f6dfac30953a2b0e66800a2",
+    "live/postflight.json": "220f45133867316f3a2fb693ebc50275fb99c8d3c517123fffcde1e3107da8e7",
+    "live-first.txt": "94d4eb5fa68e3245f7c9cd8329536f3dc56349e3fe612331b325dd9fe4000af0"
+  }
+}

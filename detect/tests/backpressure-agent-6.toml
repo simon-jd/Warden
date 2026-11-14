@@ -1,0 +1,114 @@
+# Six-input variant of backpressure-agent.toml (BP_INPUTS=6): the same six
+# spool_* -> label_* inputs as detect/vector/agent.toml, each on its own
+# acknowledged http_server listener, all into the same agent_forward sink.
+# Used to calibrate WardenVectorAgentForwardGap for six inputs.
+data_dir = "${BP_DATA}"
+
+[sources.spool_aks]
+type = "http_server"
+address = "${BP_LISTEN_AKS}"
+framing.method = "newline_delimited"
+decoding.codec = "json"
+acknowledgements.enabled = true
+
+[transforms.label_aks]
+type = "remap"
+inputs = ["spool_aks"]
+source = '.warden_source = "aks"'
+
+[sources.spool_azure]
+type = "http_server"
+address = "${BP_LISTEN_AZURE}"
+framing.method = "newline_delimited"
+decoding.codec = "json"
+acknowledgements.enabled = true
+
+[transforms.label_azure]
+type = "remap"
+inputs = ["spool_azure"]
+source = '.warden_source = "azure"'
+
+[sources.spool_k3s]
+type = "http_server"
+address = "${BP_LISTEN_K3S}"
+framing.method = "newline_delimited"
+decoding.codec = "json"
+acknowledgements.enabled = true
+
+[transforms.label_k3s]
+type = "remap"
+inputs = ["spool_k3s"]
+source = '.warden_source = "k3s"'
+
+[sources.spool_tetragon]
+type = "http_server"
+address = "${BP_LISTEN_TETRAGON}"
+framing.method = "newline_delimited"
+decoding.codec = "json"
+acknowledgements.enabled = true
+
+[transforms.label_tetragon]
+type = "remap"
+inputs = ["spool_tetragon"]
+source = '.warden_source = "tetragon"'
+
+[sources.spool_vnet]
+type = "http_server"
+address = "${BP_LISTEN_VNET}"
+framing.method = "newline_delimited"
+decoding.codec = "json"
+acknowledgements.enabled = true
+
+[transforms.label_vnet]
+type = "remap"
+inputs = ["spool_vnet"]
+source = '.warden_source = "vnet"'
+
+[sources.spool_warden]
+type = "http_server"
+address = "${BP_LISTEN_WARDEN}"
+framing.method = "newline_delimited"
+decoding.codec = "json"
+acknowledgements.enabled = true
+
+[transforms.label_warden]
+type = "remap"
+inputs = ["spool_warden"]
+source = '.warden_source = "warden"'
+
+[sinks.agent_forward]
+type = "vector"
+inputs = ["label_aks", "label_azure", "label_k3s", "label_tetragon", "label_vnet", "label_warden"]
+address = "${BP_AGG}"
+acknowledgements.enabled = true
+buffer.type = "disk"
+buffer.max_size = 268435488
+buffer.when_full = "${BP_WHEN_FULL}"
+
+[sources.metrics]
+type = "internal_metrics"
+namespace = "vector"
+scrape_interval_secs = 0.5
+
+[sinks.metrics_export]
+type = "prometheus_exporter"
+inputs = ["metrics"]
+address = "${BP_PROM_EXPORT}"
+buffer.type = "memory"
+buffer.max_events = 500
+buffer.when_full = "block"
+
+[transforms.bp_metrics]
+type = "filter"
+inputs = ["metrics"]
+# Plus every discard/drop counter of any component, so a loss can be traced.
+condition = '(.tags.component_id == "agent_forward" && includes(["buffer_byte_size", "buffer_events", "buffer_discarded_events_total", "component_discarded_events_total"], .name)) || contains(string!(.name), "discard") || contains(string!(.name), "drop")'
+
+[sinks.metrics_file]
+type = "file"
+inputs = ["bp_metrics"]
+path = "${BP_METRICS}"
+encoding.codec = "json"
+buffer.type = "memory"
+buffer.max_events = 64
+buffer.when_full = "block"

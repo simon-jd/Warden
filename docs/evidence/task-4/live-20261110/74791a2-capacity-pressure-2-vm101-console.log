@@ -1,0 +1,17 @@
+2026-11-11T00:18:40.356242813 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:main] Running Firecracker v1.17.0
+2026-11-11T00:18:40.356323217 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:main] Listening on API socket ("/api.sock").
+2026-11-11T00:18:40.356640452 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:fc_api] API server started.
+2026-11-11T00:18:40.356689860 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:fc_api] The API server received a Put request on "/machine-config" with body "{\"mem_size_mib\":128,\"smt\":false,\"vcpu_count\":1}".
+2026-11-11T00:18:40.356712641 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:fc_api] The request was executed successfully. Status code: 204 No Content.
+2026-11-11T00:18:40.356917838 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:fc_api] The API server received a Put request on "/boot-source" with body "{\"boot_args\":\"console=ttyS0 reboot=k panic=1 pci=off root=/dev/vda ro init=/agent WARDEN_FC_GUEST=1\",\"kernel_image_path\":\"/kernel\"}".
+2026-11-11T00:18:40.356951231 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:fc_api] The request was executed successfully. Status code: 204 No Content.
+2026-11-11T00:18:40.357083992 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:fc_api] The API server received a Put request on "/drives/rootfs" with body "{\"drive_id\":\"rootfs\",\"is_read_only\":true,\"is_root_device\":true,\"path_on_host\":\"/agent.ext4\"}".
+2026-11-11T00:18:40.357140693 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:fc_api] The request was executed successfully. Status code: 204 No Content.
+2026-11-11T00:18:40.357257137 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:fc_api] The API server received a Put request on "/drives/payload" with body "{\"drive_id\":\"payload\",\"is_read_only\":true,\"is_root_device\":false,\"path_on_host\":\"/payload.ext4\"}".
+2026-11-11T00:18:40.357289727 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:fc_api] The request was executed successfully. Status code: 204 No Content.
+2026-11-11T00:18:40.357377578 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:fc_api] The API server received a Put request on "/vsock" with body "{\"guest_cid\":3,\"uds_path\":\"/control.sock\"}".
+2026-11-11T00:18:40.357447976 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:fc_api] The request was executed successfully. Status code: 204 No Content.
+2026-11-11T00:18:40.357552668 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:fc_api] The API server received a Put request on "/actions" with body "{\"action_type\":\"InstanceStart\"}".
+2026-11-11T00:18:40.365380934 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:main] Artificially kick devices
+2026-11-11T00:18:40.365482379 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:fc_vcpu 0] Received a VcpuEvent::Resume message with immediate_exit enabled. immediate_exit was disabled before proceeding
+2026-11-11T00:18:40.365501630 [warden-7IXZ55DM2RUYWVAXOIVHPMFKIE:fc_api] The request was executed successfully. Status code: 204 No Content.

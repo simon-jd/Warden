@@ -1,0 +1,215 @@
+test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) ... 
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault=None) ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='lost-create') ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='wrong-command') ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='failed-helper') ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='drift') ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='unknown-absence') ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='image-rm') ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='ordinary-guard') ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='tar-drift') ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='tar-alias') ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='tar-fsync') ... ERROR
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 140, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    stack.enter_context(patch.object(host, 'TAR_IDENTITY', archive_identity))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 530, in enter_context
+    result = _enter(cm)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1510, in __enter__
+    original, local = self.get_original()
+                      ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1480, in get_original
+    raise AttributeError(
+        "%s does not have the attribute %r" % (target, name)
+    )
+AttributeError: <module 'k3s_lab_recover' from '/tmp/warden-round4-red/k3s_lab_recover.py'> does not have the attribute 'TAR_IDENTITY'
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='lost-create')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 140, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    stack.enter_context(patch.object(host, 'TAR_IDENTITY', archive_identity))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 530, in enter_context
+    result = _enter(cm)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1510, in __enter__
+    original, local = self.get_original()
+                      ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1480, in get_original
+    raise AttributeError(
+        "%s does not have the attribute %r" % (target, name)
+    )
+AttributeError: <module 'k3s_lab_recover' from '/tmp/warden-round4-red/k3s_lab_recover.py'> does not have the attribute 'TAR_IDENTITY'
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='wrong-command')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 140, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    stack.enter_context(patch.object(host, 'TAR_IDENTITY', archive_identity))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 530, in enter_context
+    result = _enter(cm)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1510, in __enter__
+    original, local = self.get_original()
+                      ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1480, in get_original
+    raise AttributeError(
+        "%s does not have the attribute %r" % (target, name)
+    )
+AttributeError: <module 'k3s_lab_recover' from '/tmp/warden-round4-red/k3s_lab_recover.py'> does not have the attribute 'TAR_IDENTITY'
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='failed-helper')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 140, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    stack.enter_context(patch.object(host, 'TAR_IDENTITY', archive_identity))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 530, in enter_context
+    result = _enter(cm)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1510, in __enter__
+    original, local = self.get_original()
+                      ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1480, in get_original
+    raise AttributeError(
+        "%s does not have the attribute %r" % (target, name)
+    )
+AttributeError: <module 'k3s_lab_recover' from '/tmp/warden-round4-red/k3s_lab_recover.py'> does not have the attribute 'TAR_IDENTITY'
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='drift')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 140, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    stack.enter_context(patch.object(host, 'TAR_IDENTITY', archive_identity))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 530, in enter_context
+    result = _enter(cm)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1510, in __enter__
+    original, local = self.get_original()
+                      ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1480, in get_original
+    raise AttributeError(
+        "%s does not have the attribute %r" % (target, name)
+    )
+AttributeError: <module 'k3s_lab_recover' from '/tmp/warden-round4-red/k3s_lab_recover.py'> does not have the attribute 'TAR_IDENTITY'
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='unknown-absence')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 140, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    stack.enter_context(patch.object(host, 'TAR_IDENTITY', archive_identity))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 530, in enter_context
+    result = _enter(cm)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1510, in __enter__
+    original, local = self.get_original()
+                      ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1480, in get_original
+    raise AttributeError(
+        "%s does not have the attribute %r" % (target, name)
+    )
+AttributeError: <module 'k3s_lab_recover' from '/tmp/warden-round4-red/k3s_lab_recover.py'> does not have the attribute 'TAR_IDENTITY'
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='image-rm')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 140, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    stack.enter_context(patch.object(host, 'TAR_IDENTITY', archive_identity))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 530, in enter_context
+    result = _enter(cm)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1510, in __enter__
+    original, local = self.get_original()
+                      ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1480, in get_original
+    raise AttributeError(
+        "%s does not have the attribute %r" % (target, name)
+    )
+AttributeError: <module 'k3s_lab_recover' from '/tmp/warden-round4-red/k3s_lab_recover.py'> does not have the attribute 'TAR_IDENTITY'
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='ordinary-guard')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 140, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    stack.enter_context(patch.object(host, 'TAR_IDENTITY', archive_identity))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 530, in enter_context
+    result = _enter(cm)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1510, in __enter__
+    original, local = self.get_original()
+                      ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1480, in get_original
+    raise AttributeError(
+        "%s does not have the attribute %r" % (target, name)
+    )
+AttributeError: <module 'k3s_lab_recover' from '/tmp/warden-round4-red/k3s_lab_recover.py'> does not have the attribute 'TAR_IDENTITY'
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='tar-drift')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 140, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    stack.enter_context(patch.object(host, 'TAR_IDENTITY', archive_identity))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 530, in enter_context
+    result = _enter(cm)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1510, in __enter__
+    original, local = self.get_original()
+                      ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1480, in get_original
+    raise AttributeError(
+        "%s does not have the attribute %r" % (target, name)
+    )
+AttributeError: <module 'k3s_lab_recover' from '/tmp/warden-round4-red/k3s_lab_recover.py'> does not have the attribute 'TAR_IDENTITY'
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='tar-alias')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 140, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    stack.enter_context(patch.object(host, 'TAR_IDENTITY', archive_identity))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 530, in enter_context
+    result = _enter(cm)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1510, in __enter__
+    original, local = self.get_original()
+                      ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1480, in get_original
+    raise AttributeError(
+        "%s does not have the attribute %r" % (target, name)
+    )
+AttributeError: <module 'k3s_lab_recover' from '/tmp/warden-round4-red/k3s_lab_recover.py'> does not have the attribute 'TAR_IDENTITY'
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='tar-fsync')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 140, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    stack.enter_context(patch.object(host, 'TAR_IDENTITY', archive_identity))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 530, in enter_context
+    result = _enter(cm)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1510, in __enter__
+    original, local = self.get_original()
+                      ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1480, in get_original
+    raise AttributeError(
+        "%s does not have the attribute %r" % (target, name)
+    )
+AttributeError: <module 'k3s_lab_recover' from '/tmp/warden-round4-red/k3s_lab_recover.py'> does not have the attribute 'TAR_IDENTITY'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.005s
+
+FAILED (errors=11)

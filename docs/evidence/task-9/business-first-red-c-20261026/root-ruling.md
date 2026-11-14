@@ -1,0 +1,13 @@
+# Task9 原三项首次真实语义RED：接受并仅准实现
+
+root全文读取15583B caller/e3c9ef9667900a630c364ae8a901065ef1f4891b237539e54ef9b389ae265ac1、13054B精确diff、报告/freeze及原jit源码/三业务测试。精确完整新增预测1750780416B比此前暂估1.75GB多780416B，root明确按原12GB总限核算，并未提高任何运行上限。9d0d81 fresh总11847588864B/12GB，剩余152411136B；resident15.5GB/16GB。
+
+唯一e13247/session9752→003bd2 known0，仅表示wrapper已完成候选收口；Go真实exit1。18.7645秒，root全文20事件/40raw7863B、1707B status及所有State/logs：TestSelfApprovalRejected在指定self-approval ErrSelfApproval断言失败；TestGrantExpiresAndBindingRemoved在external grant/expiry移除断言失败；TestAuditRecordedForGrantAndExpiry在真实审计链缺grant/expiry事件断言失败，同时真实Task1 PostgreSQL audit Verify completed。三者durable Request先成功，无build/startup/连接/OOM/skip/timeout冒充业务RED。只允许的六条go downloading来自networknone内file:///proxy固定本地材料，不是外部下载。root接受这次FIRST_RED，旧两次基础设施失败仍非业务RED。
+
+PG曾FINAL_POSTGRES_READY，Go exited1/OOMfalse，owner bad10173f33a31e2307f54c5f24fbb26及两个CID的精确name/label/ID/State一致。两个CID分别正向核对、rm-f-v0/最终exactname absence，自有CLI组known收尾。全部12原source/F/M不变；N9465856B、raw/源码投影/材料全部保留，公开red-source是当时12个只读输入快照，不是已完成产品。
+
+来源以追加的pg-initdb-candidate-provenance-correction-20261026.json为准：source=coordinator_agent，human_response=false，grounded_in_existing_user_scope=true。旧519dc4记录/命名/引文/提交、旧metadata UNKNOWN_FAILURE/false及全部实际结果不改。协调父是在既有普通执行范围内裁定，不是新真人答复/授权卡，不能升级GPU/宿主/条款/费用/公开发布权限。
+
+现只准原唯一Task9作者按原brief实施本地JIT组件，保留原三测试语义和RED证据，准备一次首次受影响GREEN的全新source freeze/caller；实际GREEN仍root全文/fresh另准，原90秒/离线材料/原cgroup/12GB/16GB门禁保持。GREEN若失败只诊断保留原因和具体修正，不无修改重跑或弱化断言。之后独立Spec+Quality review按原连续最多5轮，不提前接受Task9整体或真实Kubernetes/Entra部署。认证/授权端口和bindings fixture不代表真实RBAC，真实identity/adapters/expiry定时部署验收仍需单独证据。
+
+原业务2/2永久消费，本次恢复harness attempt3一次也已消费；diagnostics3/3、metadata1/1保持spent，不能重放。Task15原5/5/CODE524288B耗尽仍硬STOP/源码未应用；Task10评分RED准备保留，其caller静态收尾问题尚未准入。Goal active，整个项目未完成。

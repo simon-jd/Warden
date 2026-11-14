@@ -1,0 +1,19 @@
+{
+  "request": {
+    "cmd": "/usr/bin/timeout --signal=TERM --kill-after=3s 42s /usr/bin/python3 -I -B - <<'PY'\nimport urllib.request,json,hashlib,time\nend=time.monotonic()+36\nurls=[('release','https://api.github.com/repos/kyverno/kyverno/releases/tags/v1.19.2'),('test_source','https://raw.githubusercontent.com/kyverno/kyverno/v1.19.2/cmd/cli/kubectl-kyverno/commands/test/test.go')]\nresult=[]\nfor kind,url in urls:\n assert time.monotonic()<end\n req=urllib.request.Request(url,headers={'User-Agent':'warden-static-primary-check','Accept':'application/vnd.github+json' if kind=='release' else 'text/plain'})\n with urllib.request.urlopen(req,timeout=min(10,max(1,end-time.monotonic()))) as r:\n  assert r.status==200 and r.url==url\n  raw=r.read(524289)\n  assert len(raw)<=524288 and time.monotonic()<end\n item={'kind':kind,'url':url,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}\n if kind=='release':\n  j=json.loads(raw)\n  assert j['tag_name']=='v1.19.2' and not j['draft'] and not j['prerelease']\n  wanted={'kyverno-cli_v1.19.2_linux_x86_64.tar.gz','checksums.txt','checksums.txt.sigstore.json'}\n  item['published_at']=j['published_at']\n  item['assets']=[{k:a[k] for k in ['name','size','digest','browser_download_url']} for a in j['assets'] if a['name'] in wanted]\n  assert {a['name'] for a in item['assets']}==wanted\n else:\n  lines=raw.decode().splitlines()\n  item['skip_related_lines']=[{'line':i+1,'text':s} for i,s in enumerate(lines) if 'RuleStatusSkip' in s or 'case engineapi.RuleStatus' in s or 'rc.Pass' in s or 'rc.Skip' in s]\n result.append(item)\nprint(json.dumps(result,sort_keys=True))\nPY",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "yield_time_ms": 1000,
+    "max_output_tokens": 3500
+  },
+  "result": {
+    "chunk_id": "4186fd",
+    "wall_time_seconds": 0.431972402,
+    "exit_code": 0,
+    "original_token_count": 318,
+    "output": "[{\"assets\": [{\"browser_download_url\": \"https://github.com/kyverno/kyverno/releases/download/v1.19.2/checksums.txt\", \"digest\": \"sha256:f06301cec9bd1ed8e22fb94572fabd98726facd45de01b274db8ed283f36a822\", \"name\": \"checksums.txt\", \"size\": 830}, {\"browser_download_url\": \"https://github.com/kyverno/kyverno/releases/download/v1.19.2/checksums.txt.sigstore.json\", \"digest\": \"sha256:c6299581ae93e69b60e56fa86d89b4a2f66d7eebfba0be45cebc6b792de00e64\", \"name\": \"checksums.txt.sigstore.json\", \"size\": 10079}, {\"browser_download_url\": \"https://github.com/kyverno/kyverno/releases/download/v1.19.2/kyverno-cli_v1.19.2_linux_x86_64.tar.gz\", \"digest\": \"sha256:357eaf1df8bc24ddd5a73979fadeaae6a032e8710f11af264229756e4956bf4a\", \"name\": \"kyverno-cli_v1.19.2_linux_x86_64.tar.gz\", \"size\": 53485462}], \"bytes\": 78263, \"kind\": \"release\", \"published_at\": \"2026-10-20T23:50:19Z\", \"sha256\": \"03c4beb46f52ece3b3b5af294266b3204f1b6b7d9572487b1c02cd0ed5c8f3b8\", \"url\": \"https://api.github.com/repos/kyverno/kyverno/releases/tags/v1.19.2\"}, {\"bytes\": 37743, \"kind\": \"test_source\", \"sha256\": \"b739e5ac91b5d0980bb8d38a0cd1a6c99058f984565bc486408c973af5037c9f\", \"skip_related_lines\": [], \"url\": \"https://raw.githubusercontent.com/kyverno/kyverno/v1.19.2/cmd/cli/kubectl-kyverno/commands/test/test.go\"}]\n"
+  },
+  "polls": []
+}

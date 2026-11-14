@@ -1,0 +1,16 @@
+vm.overcommit_memory=1
+vm.panic_on_oom=0
+kernel.panic=10
+kernel.panic_on_oops=1
+kernel.keys.root_maxkeys=1000000
+kernel.keys.root_maxbytes=25000000
+fs.inotify.max_user_instances=512
+fs.inotify.max_user_watches=524288
+net.ipv4.ip_forward=1
+kernel.timer_migration=1
+kernel.unprivileged_bpf_disabled=1
+kernel.perf_event_paranoid=4
+net.core.bpf_jit_enable=1
+net.ipv4.conf.all.rp_filter=2
+net.ipv4.fib_multipath_use_neigh=0
+modules_sha256=e6d91ff20b2def9d7921e1e1e0643e80eeab86038b619a479a9fa30791e13d9f

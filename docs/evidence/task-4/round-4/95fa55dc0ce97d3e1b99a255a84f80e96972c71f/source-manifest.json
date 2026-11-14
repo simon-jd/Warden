@@ -1,0 +1,146 @@
+{
+  "source": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f",
+  "tested_source": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f",
+  "source_parent": "c0aac786212b59414ba2d21f46b09a266f94e90d",
+  "fix_base": "da5b501929c70ad46b3edfd346c986dda747126a",
+  "original_dispatch_base": "ad1ede992409dbea92be531f83ecb4e988ddd19f",
+  "files": {
+    "docs/firecracker-lab.md": {
+      "sha256": "83bf7a960cb9d9b7b39eca815f0ca4e3db8817eecc3877045f57405ab0a69f32",
+      "mode": "0o644"
+    },
+    "scripts/firecracker_lab.py": {
+      "sha256": "551ba57ba4081155a612d0282a9a9299910390c67322b2042041642d45cafb0b",
+      "mode": "0o644"
+    },
+    "scripts/test_firecracker_device_receipt.py": {
+      "sha256": "bf2e6d760b6a20a36d65c18223ae6651a55ec4602330705406d6b13dc97678cb",
+      "mode": "0o644"
+    },
+    "scripts/test_firecracker_lab.py": {
+      "sha256": "828f5f5c271222f2dfbca5577009e998bb510b684158a866f9837cf5f1366e3b",
+      "mode": "0o644"
+    }
+  },
+  "unchanged_interfaces_and_profiles": {
+    "runtimes/conformance/suite.go": {
+      "sha256": "0f840d48bd15b53ef59a24db34424ebeb5b330a413bd85edda9737bf3b0621ed",
+      "mode": "0o664",
+      "identical_to_fix_base_and_parent": true
+    },
+    "runtimes/firecracker/device_gate.go": {
+      "sha256": "62db9b4066b31e88bbab23d450ed59f3ffa2124b4f2447fc862aeb87a4d5c5d0",
+      "mode": "0o644",
+      "identical_to_fix_base_and_parent": true
+    },
+    "runtimes/firecracker/device_policy.go": {
+      "sha256": "7d9161b75588f642b11a448831fc54d98b03c2874d0180d98a4f67f14139419d",
+      "mode": "0o644",
+      "identical_to_fix_base_and_parent": true
+    },
+    "runtimes/firecracker/device_policy_test.go": {
+      "sha256": "79618f492d9dd3f4bc5ffad1d9ad1c8de43a32f68b2f8aabd0019e9c2dddad92",
+      "mode": "0o644",
+      "identical_to_fix_base_and_parent": true
+    },
+    "runtimes/firecracker/driver.go": {
+      "sha256": "4132c95539e1eca6f95d0b288b5b24c1263cb89a39b2d12656b7d9b1ca648dd7",
+      "mode": "0o644",
+      "identical_to_fix_base_and_parent": true
+    },
+    "runtimes/firecracker/shutdown.go": {
+      "sha256": "61ec1b2f167aeea83815a3b51ba0cd19e140b6a1dbdd9f8454c1046f4bcf1350",
+      "mode": "0o644",
+      "identical_to_fix_base_and_parent": true
+    },
+    "runtimes/firecracker/supervisor.go": {
+      "sha256": "8a6f0a7a9c94df87388c6ee601597fcbe0047c043e3eb51ceae071a939761d0f",
+      "mode": "0o644",
+      "identical_to_fix_base_and_parent": true
+    },
+    "runtimes/gate/admission.go": {
+      "sha256": "3aabb68f81513df1a571da54f371a114aa552a8b79c693e45ad807318f70d1fc",
+      "mode": "0o644",
+      "identical_to_fix_base_and_parent": true
+    },
+    "runtimes/gate/gate.go": {
+      "sha256": "0b5a5b140a7124c9d2a65567694e5b662d13bb99b7fdcd1cedadc434273f8284",
+      "mode": "0o644",
+      "identical_to_fix_base_and_parent": true
+    },
+    "runtimes/gate/retirement.go": {
+      "sha256": "962cfa63ac1f252e95375c63d076f079abc6ddf0a851b6b61f5b76f55b9c428f",
+      "mode": "0o664",
+      "identical_to_fix_base_and_parent": true
+    },
+    "scripts/azure_guard.py": {
+      "sha256": "303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48",
+      "mode": "0o664",
+      "identical_to_fix_base_and_parent": true
+    },
+    "scripts/firecracker_code.py": {
+      "sha256": "56abda58b8a822b7bc1ce7311025763878e7110c2d4cfabd84203dce556db4dd",
+      "mode": "0o644",
+      "identical_to_fix_base_and_parent": true
+    },
+    "scripts/firecracker_device_receipt.py": {
+      "sha256": "c9d10f1cea6f60a15a7d70b818121538b93b76e5d42a94eb3fbe62594855da4b",
+      "mode": "0o644",
+      "identical_to_fix_base_and_parent": true
+    },
+    "scripts/go.sh": {
+      "sha256": "8682e3c696de6ee3a597554edda7f30ddfd2afbdcac8c90b2216b1a2523ad463",
+      "mode": "0o775",
+      "identical_to_fix_base_and_parent": true
+    },
+    "scripts/k3s_lab.py": {
+      "sha256": "65b746e1bc715203b56b98f85517a9bc109f0d19984a36455d308da03489167e",
+      "mode": "0o644",
+      "identical_to_fix_base_and_parent": true
+    },
+    "scripts/k3s_lab_init.py": {
+      "sha256": "df9d551de26c306b4e45439138173c169c6e6fe6f39eac012b7805bf3f48944a",
+      "mode": "0o644",
+      "identical_to_fix_base_and_parent": true
+    },
+    "scripts/runtime_lab_docker.py": {
+      "sha256": "affadf0269b18f4352902801c2992e7a5cf14b57639d62be173a8619185f5773",
+      "mode": "0o644",
+      "identical_to_fix_base_and_parent": true
+    },
+    "scripts/runtime_lab_paths.py": {
+      "sha256": "0ce3287feab8197839cf2e7e1cf297fd5cad0e740069023b188e4c366b643f84",
+      "mode": "0o644",
+      "identical_to_fix_base_and_parent": true
+    }
+  },
+  "unchanged_lab_profile_functions": {
+    "live_args": {
+      "sha256": "a8baec7aa91ac2542bbe1ce32d28ebc44c3b410e3c202711b93ab1f2bb3d47b0",
+      "scope": "exact function source text; unchanged from FIX_BASE"
+    },
+    "mount_smoke_args": {
+      "sha256": "c8e8529e4a5f77ca4c72056bb292d314425e2d57578c75635c989bf4d3dabea8",
+      "scope": "exact function source text; unchanged from FIX_BASE"
+    },
+    "session_env": {
+      "sha256": "88d5903b8ff16b29d782fc9531e530c40afdb0fc45d9e1a89f255978c80b59c4",
+      "scope": "exact function source text; unchanged from FIX_BASE"
+    },
+    "prepare": {
+      "sha256": "9db7926e5e0530effe373727b92e8db181c988cc30e597f5060305668084f890",
+      "scope": "exact function source text; unchanged from FIX_BASE"
+    },
+    "execute": {
+      "sha256": "2e8b3698106ad40cc95e978c6abbb8e928790119fb3c5e001694d2ea0bdbaff7",
+      "scope": "exact function source text; unchanged from FIX_BASE"
+    },
+    "guard": {
+      "sha256": "a8bd4f647e0ceda7a8b80a7a13af1f839c71d4e7fbff25f67da66d1162ffe4f6",
+      "scope": "exact function source text; unchanged from FIX_BASE"
+    }
+  },
+  "go_suite_rerun": false,
+  "python_covering_tests": 24,
+  "no_actual_container_or_device_execution": true
+}

@@ -1,0 +1,9 @@
+test_inspected_stdin_lifetime_allows_ack_eof_and_rejects_daemon_hold (test_firecracker_device_receipt.ReceiptTests.test_inspected_stdin_lifetime_allows_ack_eof_and_rejects_daemon_hold) ... ok
+test_fixed_transcript_ack_only_after_correlated_receipt (test_firecracker_device_receipt.ReceiptTests.test_fixed_transcript_ack_only_after_correlated_receipt) ... ok
+test_fixed_transcript_refuses_wrong_extra_and_empty_ack (test_firecracker_device_receipt.ReceiptTests.test_fixed_transcript_refuses_wrong_extra_and_empty_ack) ... ok
+test_all_six_privileged_modes_require_interactive_fixed_entrypoint (test_firecracker_lab.DevicePolicyModeTests.test_all_six_privileged_modes_require_interactive_fixed_entrypoint) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.213s
+
+OK

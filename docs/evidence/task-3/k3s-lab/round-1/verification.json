@@ -1,0 +1,41 @@
+{
+  "capability_bootstrap_executed": false,
+  "evidence_sha256": {
+    "commands.txt": "c3554453aaa071db08e0914d8c0f58e587c242a6ad612c9e8d53aa4b75a05303",
+    "covering-tests.txt": "002256142bf11c1a5a1f864298c93fa15c64a58472b3485d40da5f1dfee91d9e",
+    "final-focused.txt": "3398f97b8a829f9c604e93d5c6acc1da2711cd0a40091f82127787ba4d0ac040",
+    "green-initial.txt": "d9adc4b6dbe54983706dc386ed036dff527f3aec4e39fa11560de73918436459",
+    "input-hashes.json": "db09f3419bca0492f683efabce9e33c7b7df8642af61370e00d082ffa41d3025",
+    "red-rotation.txt": "40a559fb68f5ef53600c4ea8e661f42d65a11daf1bbdeba45463d90de1ec2aa5",
+    "red.txt": "f0fe6f0638d6de5714d334f8e75438d9a1e3e78849eecdfea613ae95a930f025",
+    "report.md": "767dcae1ffc42a46c4cf5b4465f3fc28cc9aac3ed916247ebecf1d912b0893e1",
+    "sources.json": "4fee13176c97a840203c567842168ccb69e07075631670359867153fa8dd60ca"
+  },
+  "final_verification": {
+    "additional_focused_group": 15,
+    "distinct_tests": 54,
+    "exit": 0,
+    "failed": 0,
+    "main_groups": [
+      31,
+      17,
+      5
+    ],
+    "skipped": 0
+  },
+  "initial_red": {
+    "errors": 0,
+    "exit": 1,
+    "failures": 12,
+    "tests": 28
+  },
+  "new_image_manifest": false,
+  "real_docker_mutations": 0,
+  "rotation_red": {
+    "exit": 1,
+    "failures": 1,
+    "tests": 1
+  },
+  "source_commit": "a3193fbc56e6105f0720c0b8040aa441632b575d",
+  "status": "DONE_WITH_CONCERNS"
+}

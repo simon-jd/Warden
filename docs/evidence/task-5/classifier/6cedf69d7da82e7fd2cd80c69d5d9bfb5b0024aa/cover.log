@@ -1,0 +1,125 @@
+{"image_id": "sha256:a688600ca24f8a4d3ca77f95b0dd40704a9fc787c826660eb7ba0b641b8b175d", "owned_image_charge": 0, "outstanding": 5000000000}
+{"additional_bytes": "5512000000", "at": "2026-10-25T09:01:20Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 266039681024, "project_allocated_bytes": 4192636928, "service_memory_bytes": "3000000000"}
+{"container_id": "6777d8a2786417fd017ec159205d4d73e17e2536c93f93ce84f7da49886b66df", "labels": {"project": "warden", "owner": "codex-warden", "session": "2642bf148823496ead4f4d537df4977b", "task": "matrix-code", "ttl": "2026-10-25T10:01:20.618499+00:00"}}
+{"inspected_host_config": {"Binds": null, "ContainerIDFile": "", "LogConfig": {"Type": "json-file", "Config": {"max-file": "1", "max-size": "10m"}}, "NetworkMode": "none", "PortBindings": {}, "RestartPolicy": {"Name": "no", "MaximumRetryCount": 0}, "AutoRemove": false, "VolumeDriver": "", "VolumesFrom": null, "ConsoleSize": [0, 0], "CapAdd": null, "CapDrop": ["ALL"], "CgroupnsMode": "private", "Dns": null, "DnsOptions": [], "DnsSearch": [], "ExtraHosts": null, "GroupAdd": null, "IpcMode": "private", "Cgroup": "", "Links": null, "OomScoreAdj": 0, "PidMode": "", "Privileged": false, "PublishAllPorts": false, "ReadonlyRootfs": true, "SecurityOpt": ["no-new-privileges"], "Tmpfs": {"/tmp": "rw,exec,nosuid,nodev,size=268435456"}, "UTSMode": "", "UsernsMode": "", "ShmSize": 67108864, "Runtime": "runc", "Isolation": "", "CpuShares": 0, "Memory": 2000000000, "NanoCpus": 2000000000, "CgroupParent": "", "BlkioWeight": 0, "BlkioWeightDevice": [], "BlkioDeviceReadBps": [], "BlkioDeviceWriteBps": [], "BlkioDeviceReadIOps": [], "BlkioDeviceWriteIOps": [], "CpuPeriod": 0, "CpuQuota": 0, "CpuRealtimePeriod": 0, "CpuRealtimeRuntime": 0, "CpusetCpus": "", "CpusetMems": "", "Devices": [], "DeviceCgroupRules": null, "DeviceRequests": null, "MemoryReservation": 0, "MemorySwap": 2000000000, "MemorySwappiness": null, "OomKillDisable": false, "PidsLimit": 256, "Ulimits": null, "CpuCount": 0, "CpuPercent": 0, "IOMaximumIOps": 0, "IOMaximumBandwidth": 0, "Mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden", "Target": "/workspace", "ReadOnly": true}, {"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/firecracker-code", "Target": "/workspace/.cache/firecracker-code"}], "MaskedPaths": ["/proc/acpi", "/proc/asound", "/proc/interrupts", "/proc/kcore", "/proc/keys", "/proc/latency_stats", "/proc/sched_debug", "/proc/scsi", "/proc/timer_list", "/proc/timer_stats", "/sys/devices/virtual/powercap", "/sys/firmware", "/sys/devices/system/cpu/cpu0/thermal_throttle", "/sys/devices/system/cpu/cpu1/thermal_throttle", "/sys/devices/system/cpu/cpu2/thermal_throttle", "/sys/devices/system/cpu/cpu3/thermal_throttle", "/sys/devices/system/cpu/cpu4/thermal_throttle", "/sys/devices/system/cpu/cpu5/thermal_throttle", "/sys/devices/system/cpu/cpu6/thermal_throttle", "/sys/devices/system/cpu/cpu7/thermal_throttle", "/sys/devices/system/cpu/cpu8/thermal_throttle", "/sys/devices/system/cpu/cpu9/thermal_throttle", "/sys/devices/system/cpu/cpu10/thermal_throttle", "/sys/devices/system/cpu/cpu11/thermal_throttle", "/sys/devices/system/cpu/cpu12/thermal_throttle", "/sys/devices/system/cpu/cpu13/thermal_throttle", "/sys/devices/system/cpu/cpu14/thermal_throttle", "/sys/devices/system/cpu/cpu15/thermal_throttle", "/sys/devices/system/cpu/cpu16/thermal_throttle", "/sys/devices/system/cpu/cpu17/thermal_throttle", "/sys/devices/system/cpu/cpu18/thermal_throttle", "/sys/devices/system/cpu/cpu19/thermal_throttle", "/sys/devices/system/cpu/cpu20/thermal_throttle", "/sys/devices/system/cpu/cpu21/thermal_throttle", "/sys/devices/system/cpu/cpu22/thermal_throttle", "/sys/devices/system/cpu/cpu23/thermal_throttle", "/sys/devices/system/cpu/cpu24/thermal_throttle", "/sys/devices/system/cpu/cpu25/thermal_throttle", "/sys/devices/system/cpu/cpu26/thermal_throttle", "/sys/devices/system/cpu/cpu27/thermal_throttle", "/sys/devices/system/cpu/cpu28/thermal_throttle", "/sys/devices/system/cpu/cpu29/thermal_throttle", "/sys/devices/system/cpu/cpu30/thermal_throttle", "/sys/devices/system/cpu/cpu31/thermal_throttle"], "ReadonlyPaths": ["/proc/bus", "/proc/fs", "/proc/irq", "/proc/sys", "/proc/sysrq-trigger"]}}
+=== RUN   TestMatrixClassifiesFixture
+--- PASS: TestMatrixClassifiesFixture (0.00s)
+=== RUN   TestUnexecutedFixturesStayUnevaluated
+=== RUN   TestUnexecutedFixturesStayUnevaluated/not_run
+=== RUN   TestUnexecutedFixturesStayUnevaluated/prerequisite_unavailable
+=== RUN   TestUnexecutedFixturesStayUnevaluated/scenario_unavailable
+--- PASS: TestUnexecutedFixturesStayUnevaluated (0.00s)
+    --- PASS: TestUnexecutedFixturesStayUnevaluated/not_run (0.00s)
+    --- PASS: TestUnexecutedFixturesStayUnevaluated/prerequisite_unavailable (0.00s)
+    --- PASS: TestUnexecutedFixturesStayUnevaluated/scenario_unavailable (0.00s)
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/zero_fixture
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/unattributed_fixture
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/pretend_live_provenance
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/not_run_with_execution
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/absent_execution
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/invented_prerequisite
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/unknown_identity
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/run_mismatch
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/image_mismatch
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/corpus_mismatch
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/attack_mismatch
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/runtime_mismatch
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/objective_mismatch
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/invalid_negative_exit
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/unknown_exit
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/missing_entry
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/guest_entry_string
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/unbound_evidence
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/empty_evidence_reference
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/missing_predicate
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/duplicate_event
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/guest_objective_claim
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/invented_source
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/primitive_alone
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/marker_alone
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/kill_success_is_not_objective_evidence
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/forged_detector
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/invented_claim
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/guest_limit_string
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/opposed_outcomes
+=== RUN   TestAmbiguousFixturesNeverProduceVerdicts/marker_contradicts_denial
+--- PASS: TestAmbiguousFixturesNeverProduceVerdicts (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/zero_fixture (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/unattributed_fixture (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/pretend_live_provenance (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/not_run_with_execution (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/absent_execution (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/invented_prerequisite (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/unknown_identity (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/run_mismatch (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/image_mismatch (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/corpus_mismatch (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/attack_mismatch (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/runtime_mismatch (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/objective_mismatch (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/invalid_negative_exit (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/unknown_exit (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/missing_entry (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/guest_entry_string (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/unbound_evidence (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/empty_evidence_reference (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/missing_predicate (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/duplicate_event (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/guest_objective_claim (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/invented_source (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/primitive_alone (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/marker_alone (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/kill_success_is_not_objective_evidence (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/forged_detector (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/invented_claim (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/guest_limit_string (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/opposed_outcomes (0.00s)
+    --- PASS: TestAmbiguousFixturesNeverProduceVerdicts/marker_contradicts_denial (0.00s)
+=== RUN   TestIncompleteExecutionCannotBeClassified
+=== RUN   TestIncompleteExecutionCannotBeClassified/setup
+=== RUN   TestIncompleteExecutionCannotBeClassified/start
+=== RUN   TestIncompleteExecutionCannotBeClassified/wait
+=== RUN   TestIncompleteExecutionCannotBeClassified/transport
+=== RUN   TestIncompleteExecutionCannotBeClassified/kill
+=== RUN   TestIncompleteExecutionCannotBeClassified/unknown
+=== RUN   TestIncompleteExecutionCannotBeClassified/logs_
+=== RUN   TestIncompleteExecutionCannotBeClassified/logs_truncated
+=== RUN   TestIncompleteExecutionCannotBeClassified/logs_dropped
+=== RUN   TestIncompleteExecutionCannotBeClassified/logs_read_error
+=== RUN   TestIncompleteExecutionCannotBeClassified/logs_close_error
+=== RUN   TestIncompleteExecutionCannotBeClassified/logs_unknown
+=== RUN   TestIncompleteExecutionCannotBeClassified/cleanup_
+=== RUN   TestIncompleteExecutionCannotBeClassified/cleanup_unknown
+=== RUN   TestIncompleteExecutionCannotBeClassified/cleanup_nonempty
+=== RUN   TestIncompleteExecutionCannotBeClassified/cleanup_outer_deleted_only
+--- PASS: TestIncompleteExecutionCannotBeClassified (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/setup (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/start (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/wait (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/transport (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/kill (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/unknown (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/logs_ (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/logs_truncated (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/logs_dropped (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/logs_read_error (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/logs_close_error (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/logs_unknown (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/cleanup_ (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/cleanup_unknown (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/cleanup_nonempty (0.00s)
+    --- PASS: TestIncompleteExecutionCannotBeClassified/cleanup_outer_deleted_only (0.00s)
+=== RUN   TestExitOrKillCannotProvePolicyDenial
+=== RUN   TestExitOrKillCannotProvePolicyDenial/0
+=== RUN   TestExitOrKillCannotProvePolicyDenial/1
+=== RUN   TestExitOrKillCannotProvePolicyDenial/137
+--- PASS: TestExitOrKillCannotProvePolicyDenial (0.00s)
+    --- PASS: TestExitOrKillCannotProvePolicyDenial/0 (0.00s)
+    --- PASS: TestExitOrKillCannotProvePolicyDenial/1 (0.00s)
+    --- PASS: TestExitOrKillCannotProvePolicyDenial/137 (0.00s)
+=== RUN   TestResultPreservesFixtureSourcesWithoutAliasing
+--- PASS: TestResultPreservesFixtureSourcesWithoutAliasing (0.00s)
+PASS
+ok  	warden/attacks/matrix	0.002s
+{"removed_container": "6777d8a2786417fd017ec159205d4d73e17e2536c93f93ce84f7da49886b66df"}

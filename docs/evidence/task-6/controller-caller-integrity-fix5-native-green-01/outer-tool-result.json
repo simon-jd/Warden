@@ -1,0 +1,26 @@
+{
+  "request": {
+    "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C python3 -I -S -B docs/evidence/task-6/controller-caller-integrity-fix5-native-fixture.py green-01 50a8f7ca76b65348210752d7a7a93108d4237f8a",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "yield_time_ms": 1000,
+    "max_output_tokens": 3000
+  },
+  "initial": {
+    "chunk_id": "e13bcf",
+    "wall_time_seconds": 0.117735444,
+    "exit_code": 1,
+    "original_token_count": 150,
+    "output": "Traceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/docs/evidence/task-6/controller-caller-integrity-fix5-native-fixture.py\", line 165, in <module>\n    telemetry=json.loads(stderr.decode().split('FIXTURE_TELEMETRY ',1)[1]);result['telemetry']=telemetry\n  File \"/usr/lib/python3.14/json/__init__.py\", line 352, in loads\n    return _default_decoder.decode(s)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"/usr/lib/python3.14/json/decoder.py\", line 348, in decode\n    raise JSONDecodeError(\"Extra data\", s, end)\njson.decoder.JSONDecodeError: Extra data: line 2 column 1 (char 504)\n"
+  },
+  "polls": [],
+  "final": {
+    "chunk_id": "e13bcf",
+    "wall_time_seconds": 0.117735444,
+    "exit_code": 1,
+    "original_token_count": 150,
+    "output": "Traceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/docs/evidence/task-6/controller-caller-integrity-fix5-native-fixture.py\", line 165, in <module>\n    telemetry=json.loads(stderr.decode().split('FIXTURE_TELEMETRY ',1)[1]);result['telemetry']=telemetry\n  File \"/usr/lib/python3.14/json/__init__.py\", line 352, in loads\n    return _default_decoder.decode(s)\n           ~~~~~~~~~~~~~~~~~~~~~~~^^^\n  File \"/usr/lib/python3.14/json/decoder.py\", line 348, in decode\n    raise JSONDecodeError(\"Extra data\", s, end)\njson.decoder.JSONDecodeError: Extra data: line 2 column 1 (char 504)\n"
+  }
+}

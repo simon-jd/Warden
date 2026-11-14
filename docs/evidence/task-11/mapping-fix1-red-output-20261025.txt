@@ -1,0 +1,19 @@
+Running tests
+test warden_rejects_reserved_tenant_collision ... failed
+test warden_rejects_reserved_run_collision_nonstring ... failed
+
+failures:
+
+test warden_rejects_reserved_tenant_collision:
+
+checks for transforms ["reject_redact"] failed: no events received. Topology may be disconnected or transform is missing inputs.
+
+check for transforms ["norm_warden"] failed: expected no outputs
+
+
+test warden_rejects_reserved_run_collision_nonstring:
+
+checks for transforms ["reject_redact"] failed: no events received. Topology may be disconnected or transform is missing inputs.
+
+check for transforms ["norm_warden"] failed: expected no outputs
+

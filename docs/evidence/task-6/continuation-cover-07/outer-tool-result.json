@@ -1,0 +1,8 @@
+{
+  "kind": "direct exec tool result, preserved after command completion",
+  "chunk_id": "9ccb34",
+  "wall_time_seconds": 1.352655492,
+  "exit_code": 0,
+  "original_token_count": 212,
+  "output": "{\"changed_source_snapshots\": [\"scripts/identity_cache_continue.py\", \"scripts/test_identity_cache_continue.py\"], \"command\": [\"python3\", \"-B\", \"docs/evidence/task-6/continuation-cover-07/run.py\"], \"completion_requires_process_exit_zero\": true, \"dispatch_base\": \"333dfa155ed1670ebceff3c20fb0228c365f17d3\", \"duration_seconds\": 1.4149543720996007, \"errors\": 0, \"exit_code\": 0, \"failures\": 0, \"limits\": {\"address_bytes\": 536870912, \"cpu_seconds\": 30, \"file_bytes\": 33554432, \"wall_seconds\": 45}, \"live_cache_access\": false, \"skipped\": 0, \"source_commit_at_launch\": \"93051e37849f6bfeb8416ef3883f65034f6dff09\", \"source_files\": 145, \"source_unchanged\": true, \"started_utc\": \"2026-10-25T11:11:06.999138+00:00\", \"test_target\": \"test_identity_cache_continue only, unittest in process\", \"tests_run\": 44, \"whole_wall_until_receipt_seconds\": 1.4168460459914058}\n"
+}

@@ -1,0 +1,63 @@
+{
+  "utc": "2026-10-24T20:50:32.092392+00:00",
+  "objects": {
+    "image": [],
+    "container": []
+  },
+  "outstanding": 5000000000,
+  "charged_sessions": [
+    {
+      "path": ".cache/warden-lab/docker-firecracker-f9b2d15672401a1c43b47412ec73a118",
+      "charge": {
+        "version": 1,
+        "reserved_bytes": 5000000000,
+        "released": false
+      },
+      "files": [
+        "charge.json",
+        "identity.json",
+        "live"
+      ],
+      "identity.json": {
+        "image": "sha256:576951e884611773d64605528b7a4a02bf4363c590957c5d7ab49f9bfe9d377f",
+        "image_bytes": 147434287,
+        "labels": {
+          "owner": "codex-warden",
+          "project": "warden",
+          "session": "f9b2d15672401a1c43b47412ec73a118",
+          "task": "firecracker",
+          "ttl": "2026-10-24T21:49:18.992104+00:00"
+        },
+        "mode": "boot",
+        "source": "135c3b866f07692ad846cc48c8c5bde0cf91ee33"
+      },
+      "live": {
+        "mode": "0o700",
+        "uid": 1000,
+        "device": 66307,
+        "inode": 56377433,
+        "names": []
+      }
+    }
+  ],
+  "preflight": {
+    "additional_bytes": "5000000000",
+    "at": "2026-10-24T20:50:32Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 269178925056,
+    "project_allocated_bytes": 3826458624,
+    "service_memory_bytes": "1000000000"
+  },
+  "protected_sysctls": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "protected_baseline_match": true,
+  "scope": "Independent read-only first boot failure postflight; reservation retained, no cleanup/release and no new start.",
+  "controller_diagnostic_note": "First read-only pass stopped on an older non-session docker-* entry without charge.json; corrected enumeration only reads existing charge files, same as accepted outstanding_bytes."
+}

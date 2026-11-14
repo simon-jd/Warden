@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-4/recovery-material/05505bebb316a180c39e6e75f4a101e3c57224f1/verify-command.py", line 88, in <module>
+    assert stat.S_IMODE(artifact.stat().st_mode) == 0o644, child
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: README.md

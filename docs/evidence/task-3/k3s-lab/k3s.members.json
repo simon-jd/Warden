@@ -1,0 +1,122 @@
+{
+  "bin/.links": {
+    "bytes": 6202,
+    "sha256": "956df8e121f05a9410541e17825f48195e9f2f8ecccd2b243c0af274a664abd5"
+  },
+  "bin/.sha256sums": {
+    "bytes": 2177,
+    "sha256": "4611cc8fd8a806227c10dfdc5215f9319703ae1de6d88e4b2d51334be720dd05"
+  },
+  "bin/aux/ebtables-legacy": {
+    "bytes": 84800,
+    "sha256": "5729ff6ed3f5799bc6ad0597398c4f72125a367c7d1338d739ac9332cb56d7c6"
+  },
+  "bin/aux/ebtablesd": {
+    "bytes": 88864,
+    "sha256": "31011241b0f255570a116618b515ce8a020012b5f0d7d421e453b8a8f62591b0"
+  },
+  "bin/aux/ebtablesu": {
+    "bytes": 30072,
+    "sha256": "fcbdb2dbf71c34e4d1da7275ae52c34e636efd432ec00337d1be67447f5bfd60"
+  },
+  "bin/aux/iptables-apply": {
+    "bytes": 7052,
+    "sha256": "76bca4f1bec8c7d46125d473cef3de3c8202799c14f5d14c608f25814db5e685"
+  },
+  "bin/aux/iptables-detect.sh": {
+    "bytes": 7996,
+    "sha256": "baf828389b1545c6867573daddd042df435b140ead8b2f758a3f3e3677fd4e80"
+  },
+  "bin/aux/nft": {
+    "bytes": 1084416,
+    "sha256": "adfbf2d8a44800a157c70497d43b23c945c1fd40b50bf9912269fe02c41df8e4"
+  },
+  "bin/aux/xtables-legacy-multi": {
+    "bytes": 557232,
+    "sha256": "3185fa422b2ea3c68fe7b8a31a38597600ee6efb8a16f5a03b88f00a75cc082b"
+  },
+  "bin/aux/xtables-nft-multi": {
+    "bytes": 752048,
+    "sha256": "c6e1ec96c3c7649d12e1e85d6b6ba71e9eeae890beb3dab10a86f918d283a9a7"
+  },
+  "bin/aux/xtables-set-mode.sh": {
+    "bytes": 2214,
+    "sha256": "454dcddfe5d3ec102c60d7ac363a33e602c803b020acd9602acf5747ac1f77f0"
+  },
+  "bin/blkid": {
+    "bytes": 313664,
+    "sha256": "9425498f7f5fbce385ad28a41e9977f45e0fdf83935aa878e7d5133f0cf6291d"
+  },
+  "bin/busybox": {
+    "bytes": 816816,
+    "sha256": "ffd5b8ba3d28ca693b53a0011aa2929258cc33b0810368c826fcbbac19d274ff"
+  },
+  "bin/check-config": {
+    "bytes": 14335,
+    "sha256": "6bcb732ad5185b8e6589d38b2d21a67c677b45336e418dddba027283ebfea5d4"
+  },
+  "bin/cni": {
+    "bytes": 5271714,
+    "sha256": "278f6a5ec650e0c31d440e36094d796dc981353ebbe783db0ddfd10c9b4e84e4"
+  },
+  "bin/conntrack": {
+    "bytes": 200048,
+    "sha256": "94e9a8f906d41a14135d2e102b72a3b03f3d41f7a202265ed6574d5ad0e4aac2"
+  },
+  "bin/containerd-shim-runc-v2": {
+    "bytes": 14622882,
+    "sha256": "8a491bbf543b945c8e54eeab9cda876bfa770225a34361742f558b02e5c2c8ac"
+  },
+  "bin/coreutils": {
+    "bytes": 1335520,
+    "sha256": "e7f55cdde4463b90c4a193636709c9927892efe87230f3c30f5eb3ad11af9c23"
+  },
+  "bin/ethtool": {
+    "bytes": 264472,
+    "sha256": "eea622518f787f2f8d8e9e5060b0977aedc327a8b40c83d404671b19f0df53f9"
+  },
+  "bin/find": {
+    "bytes": 293808,
+    "sha256": "e648053e398e10e08af95a0f0a242fa1211b79c3d86205e6ce9bb23d43197f32"
+  },
+  "bin/fuse-overlayfs": {
+    "bytes": 448632,
+    "sha256": "9edb2d03a71447bc234c185b1764d070dc76d39da6a1bbf1cd862c1e558d59f0"
+  },
+  "bin/ip": {
+    "bytes": 610688,
+    "sha256": "67a02e1fbf79c5bb9c7602044a79e01d7e44a2d03661a9e52ea129ebbfb4fca1"
+  },
+  "bin/ipset": {
+    "bytes": 204320,
+    "sha256": "7c2bdfa3459c755a815cf86f4e55e65af8cfeeb837b0f27925709566774cb995"
+  },
+  "bin/k3s": {
+    "bytes": 223922456,
+    "sha256": "3c8f814620506fa560e9737638f2190bdb1e4cd5356aaeb90b20309d88b58873"
+  },
+  "bin/losetup": {
+    "bytes": 206368,
+    "sha256": "99b60b72d04f9f73da710ae115bd40f06975544b5b83b8f8607c314472b6516f"
+  },
+  "bin/nsenter": {
+    "bytes": 104096,
+    "sha256": "a99413c7f4d6f6b5e00bb4483af4ade80ab3e36ac06aa2f3a08047a187101fe7"
+  },
+  "bin/pigz": {
+    "bytes": 182120,
+    "sha256": "7329af2588904b2aa1c2f60418ca0d4ec6b4227f1887516d6252f00e2e95ad67"
+  },
+  "bin/runc": {
+    "bytes": 12275504,
+    "sha256": "d8f59265a83f7c411df82d81e2d073568d6c50c0478a12af9038d3e759b723e3"
+  },
+  "bin/slirp4netns": {
+    "bytes": 1150000,
+    "sha256": "a7b3d6ec81012e1fe4f9237c7cf987b56ee1b80e4d7e332976de17f3ef3d76b1"
+  },
+  "bin/xargs": {
+    "bytes": 104192,
+    "sha256": "40037d4abfd3875848b5574857cbb84b715901b4b8554c0499ee3620cb900f7e"
+  }
+}

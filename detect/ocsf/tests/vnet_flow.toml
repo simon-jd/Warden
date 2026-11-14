@@ -1,0 +1,14 @@
+[[tests]]
+name = "vnet_tuple_full_golden"
+[[tests.inputs]]
+insert_at = "norm_vnet"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "vnet"
+message = '''{"flowLogVersion":4,"flowLogGUID":"flow-1","flowRecords":{"flows":[{"aclID":"acl-1","flowGroups":[{"rule":"fixture-rule","flowTuples":["1767225600,192.0.2.20,198.51.100.20,12345,443,6,O,E,NX,1,64,1,64"]}]}]}}'''
+[[tests.outputs]]
+extract_from = "norm_vnet"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"activity_id":6,"category_uid":4,"class_uid":4001,"type_uid":400106,"severity_id":0,"time":1767225600000,"metadata":{"version":"1.3.0","product":{"name":"Azure VNet Flow Logs","vendor_name":"Microsoft"}},"src_endpoint":{"ip":"192.0.2.20","port":12345},"dst_endpoint":{"ip":"198.51.100.20","port":443},"unmapped":{"acl_id":"acl-1","rule":"fixture-rule","protocol":6,"direction":"O","flow_state":"E","encryption_state":"NX","source":"vnet","log_guid":"flow-1","tuple_index":0,"record_fields":{},"traffic_counts":["1","64","1","64"]}})'''
+

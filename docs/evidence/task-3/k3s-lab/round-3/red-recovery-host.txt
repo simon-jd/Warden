@@ -1,0 +1,35 @@
+test_accounting_excludes_only_exact_reserved_child_and_counts_all_images (test_k3s_lab_recovery.RecoveryHostTest.test_accounting_excludes_only_exact_reserved_child_and_counts_all_images) ... FAIL
+test_budget_preserves_six_gb_plus_images_and_helper_charge (test_k3s_lab_recovery.RecoveryHostTest.test_budget_preserves_six_gb_plus_images_and_helper_charge) ... FAIL
+test_profile_uses_retained_image_and_only_two_capabilities (test_k3s_lab_recovery.RecoveryHostTest.test_profile_uses_retained_image_and_only_two_capabilities) ... FAIL
+
+======================================================================
+FAIL: test_accounting_excludes_only_exact_reserved_child_and_counts_all_images (test_k3s_lab_recovery.RecoveryHostTest.test_accounting_excludes_only_exact_reserved_child_and_counts_all_images)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 88, in setUp
+    self.assertIsNotNone(HOST_SPEC, 'fixed host recovery boundary not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : fixed host recovery boundary not implemented
+
+======================================================================
+FAIL: test_budget_preserves_six_gb_plus_images_and_helper_charge (test_k3s_lab_recovery.RecoveryHostTest.test_budget_preserves_six_gb_plus_images_and_helper_charge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 88, in setUp
+    self.assertIsNotNone(HOST_SPEC, 'fixed host recovery boundary not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : fixed host recovery boundary not implemented
+
+======================================================================
+FAIL: test_profile_uses_retained_image_and_only_two_capabilities (test_k3s_lab_recovery.RecoveryHostTest.test_profile_uses_retained_image_and_only_two_capabilities)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 88, in setUp
+    self.assertIsNotNone(HOST_SPEC, 'fixed host recovery boundary not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : fixed host recovery boundary not implemented
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+FAILED (failures=3)

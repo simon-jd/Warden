@@ -1,0 +1,52 @@
+# Helm values for Cilium 1.20.4 on the one-node k3s lab
+# (scripts/k3s_gvisor_lab.sh up --cilium); k8sServiceHost is set at render
+# time to the node's address. Chosen so that nothing in the node needs a
+# kernel module the host has not loaded, and nothing writes a global sysctl:
+#   - kube-proxy replacement, native routing, BPF masquerade and BPF host
+#     routing: no tunnel device (vxlan/geneve) and no iptables data path;
+#   - BPF TPROXY for the DNS proxy and no iptables rules at all
+#     (install-iptables-rules=false): the rules Cilium would otherwise add
+#     need xt_socket, xt_TPROXY and xt_CT, which the host has not loaded and a
+#     privileged node would make the kernel load;
+#   - tcx attachment (kernel 7.0), so no sch_ingress/cls_bpf;
+#   - no sysctlfix init container (it writes the node's /etc/sysctl.d);
+#   - images were fetched by digest (scripts/oci_fetch.py) and imported into
+#     the node, so pods use the tag with pullPolicy Never.
+k8sServicePort: 6443
+kubeProxyReplacement: true
+routingMode: native
+ipv4NativeRoutingCIDR: 10.42.0.0/16
+autoDirectNodeRoutes: false
+ipam:
+  mode: kubernetes
+ipv6:
+  enabled: false
+enableIPv4Masquerade: true
+# The node has no default route (internal Docker networks), so Cilium cannot
+# pick its devices itself: eth0 is the cluster network, eth1 the lab "world".
+devices: eth+
+bpf:
+  masquerade: true
+  hostLegacyRouting: false
+  tproxy: true
+  datapathMode: veth
+  enableTCX: true
+l7Proxy: true
+envoy:
+  enabled: false
+hubble:
+  enabled: false
+sysctlfix:
+  enabled: false
+cni:
+  exclusive: true
+image:
+  useDigest: false
+  pullPolicy: Never
+operator:
+  replicas: 1
+  image:
+    useDigest: false
+    pullPolicy: Never
+extraConfig:
+  install-iptables-rules: "false"

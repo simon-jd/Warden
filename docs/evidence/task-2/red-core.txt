@@ -1,0 +1,35 @@
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/mutable-image
+    runc_test.go:26: unsafe launch accepted
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/traversal-id
+    runc_test.go:26: unsafe launch accepted
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/allowlist-unimplemented
+    runc_test.go:26: unsafe launch accepted
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/none-with-domains
+    runc_test.go:26: unsafe launch accepted
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/zero-memory
+    runc_test.go:26: unsafe launch accepted
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/empty-cmd
+    runc_test.go:26: unsafe launch accepted
+--- FAIL: TestRejectsUnsafeLaunchBeforeConnecting (0.00s)
+    --- FAIL: TestRejectsUnsafeLaunchBeforeConnecting/mutable-image (0.00s)
+    --- FAIL: TestRejectsUnsafeLaunchBeforeConnecting/traversal-id (0.00s)
+    --- FAIL: TestRejectsUnsafeLaunchBeforeConnecting/allowlist-unimplemented (0.00s)
+    --- FAIL: TestRejectsUnsafeLaunchBeforeConnecting/none-with-domains (0.00s)
+    --- FAIL: TestRejectsUnsafeLaunchBeforeConnecting/zero-memory (0.00s)
+    --- FAIL: TestRejectsUnsafeLaunchBeforeConnecting/empty-cmd (0.00s)
+=== RUN   TestOCISecurityAndResourceEnforcement
+    runc_test.go:30: security spec missing
+--- FAIL: TestOCISecurityAndResourceEnforcement (0.00s)
+=== RUN   TestBoundedLogsDiscardOverflowWithoutBlocking
+    runc_test.go:40: unbounded or missing logs "" <nil>
+--- FAIL: TestBoundedLogsDiscardOverflowWithoutBlocking (0.00s)
+=== RUN   TestCgroupRejectsSymlinkEscape
+    runc_test.go:44: symlink cgroup accepted
+--- FAIL: TestCgroupRejectsSymlinkEscape (0.00s)
+=== RUN   TestKillWaitsForEntireSubtree
+    runc_test.go:50: claimed cleanup while descendant still populated: <nil>
+--- FAIL: TestKillWaitsForEntireSubtree (0.00s)
+FAIL
+FAIL	warden/runtimes/runc	0.002s
+FAIL

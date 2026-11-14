@@ -1,0 +1,16 @@
+{
+  "base": "798bf98da93cd17d557d43efae0c60b44791fadf",
+  "committed_public_paths_match_worktree": true,
+  "evidence": "955ef5da9d0044ab7ec1d8d4db31c8cd38286175",
+  "evidence_bytes": 96201,
+  "evidence_paths": 23,
+  "index_empty": true,
+  "launcher_precision_note": "Author report uses normalized stdin launcher python3 -B -. Actual root launchers were /usr/bin/python3 -I -B with the exact extracted .py.txt files (RED/format/cover); frozen Python bodies and Go argv were unchanged. Root native-events preserve literal requests; this note corrects launcher syntax without rewriting original evidence.",
+  "report_bytes": 13115,
+  "report_mirror_equal": true,
+  "source": "2ff0602893bbe39ebc472da79fbd8f518bedc3f9",
+  "source_bytes": 58092,
+  "source_paths": 7,
+  "tests_rerun": false,
+  "whole_task14": "OPEN"
+}

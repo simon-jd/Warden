@@ -1,0 +1,5 @@
+taskset -c 0-7,16-31 python3 -I -B detect/falco/detector.py down
+warden-detect-falco-host stopped and removed
+warden-detect-collector-host stopped
+host modules added none, removed none; sysctls changed none (counters changed: fs.dentry-state, fs.file-nr, fs.inode-nr, fs.inode-state, fs.quota.cache_hits, fs.quota.drops, fs.quota.lookups, fs.quota.syncs, kernel.ns_last_pid, net.netfilter.nf_conntrack_count)
+exit 0

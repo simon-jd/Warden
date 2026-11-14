@@ -1,0 +1,482 @@
+{
+  "scope": "Task11 admitted frozen affected cover; goldens and static validations PASS; sole backpressure FAIL, no retry. All exposed requests/results/polls included, not hidden wire proof.",
+  "initial_source_freeze": {
+    "request": {
+      "cmd": "/usr/bin/python3 -I -S -B - <<'PY'\nimport pathlib,hashlib,json\npaths=[\"detect/README.md\",\"detect/ocsf/azure_activity.vrl\",\"detect/ocsf/k8s_audit.vrl\",\"detect/ocsf/tests/00-topology.toml\",\"detect/ocsf/tests/aks_audit.toml\",\"detect/ocsf/tests/azure_activity.toml\",\"detect/ocsf/tests/k3s_audit.toml\",\"detect/ocsf/tests/negative.toml\",\"detect/ocsf/tests/routing.toml\",\"detect/ocsf/tests/tetragon.toml\",\"detect/ocsf/tests/vnet_flow.toml\",\"detect/ocsf/tests/warden_audit.toml\",\"detect/ocsf/tetragon.vrl\",\"detect/ocsf/vnet_flow.vrl\",\"detect/ocsf/warden_audit.vrl\",\"detect/tests/backpressure.toml\",\"detect/tests/backpressure_test.py\",\"detect/tests/backpressure_test.sh\",\"detect/vector/agent.toml\",\"detect/vector/aggregator.toml\",\"detect/vector/buffer-alerts.yml\"]\nrows=[{'path':p,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()} for p in paths for b in [pathlib.Path(p).read_bytes()]]\nassert sum(r['bytes'] for r in rows)<=262144\nprint(json.dumps({'source_scope_bytes':sum(r['bytes'] for r in rows),'files':rows},sort_keys=True))\nPY",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "login": false,
+      "max_output_tokens": 6000
+    },
+    "response": {
+      "chunk_id": "6aa94c",
+      "wall_time_seconds": 0.000008063,
+      "exit_code": 0,
+      "original_token_count": 727,
+      "output": "{\"files\": [{\"bytes\": 8207, \"path\": \"detect/README.md\", \"sha256\": \"1bc8e3a033387351cd15c38b0cc3b0ffa94e7adfd9f70457bdddb5e3ce156af1\"}, {\"bytes\": 1641, \"path\": \"detect/ocsf/azure_activity.vrl\", \"sha256\": \"3d2a58ffb798d414680fa47008d600bd12506c2f6bdd7c81303baeb855b3734f\"}, {\"bytes\": 2501, \"path\": \"detect/ocsf/k8s_audit.vrl\", \"sha256\": \"b986c927c7bda0f774325f88108661312d3ffee1b5976753ce5b1b67aa28545b\"}, {\"bytes\": 1820, \"path\": \"detect/ocsf/tests/00-topology.toml\", \"sha256\": \"553072fc6c10401eb2f04f07a728529d46df1e103f6cfc42a061c24ce7b2a3fc\"}, {\"bytes\": 1027, \"path\": \"detect/ocsf/tests/aks_audit.toml\", \"sha256\": \"4b8aea304f18fbea7575575a9ab07a2833a84a6d11db97f3a79bf849a34f5249\"}, {\"bytes\": 2883, \"path\": \"detect/ocsf/tests/azure_activity.toml\", \"sha256\": \"b5f4da63db07eb86efc553231199f5f07ac9a4d854e6d3b30b0009313992cfa6\"}, {\"bytes\": 940, \"path\": \"detect/ocsf/tests/k3s_audit.toml\", \"sha256\": \"c1f391746fbaacc33f1dead8283f332a455803071220c51d64d73f67424694c7\"}, {\"bytes\": 10009, \"path\": \"detect/ocsf/tests/negative.toml\", \"sha256\": \"4c3e8a6cb8660d3fe17a9b20d243085ba4bd679cb618b778a9ac4506bf7480fa\"}, {\"bytes\": 2002, \"path\": \"detect/ocsf/tests/routing.toml\", \"sha256\": \"5ade9d73cef7a31de875d903fffdcf26f05a7de226bd2d4f01905c5a0381415f\"}, {\"bytes\": 947, \"path\": \"detect/ocsf/tests/tetragon.toml\", \"sha256\": \"a8ea9002e19ff6e4850fb50f3522a057576b85904e8bac0e2d17679a9ac24fce\"}, {\"bytes\": 1021, \"path\": \"detect/ocsf/tests/vnet_flow.toml\", \"sha256\": \"9ec1010672ab4d78c3580eeedc2fa5c3dd91e05a4aa812f581051cec1415ee1d\"}, {\"bytes\": 1011, \"path\": \"detect/ocsf/tests/warden_audit.toml\", \"sha256\": \"4d55a91418e925f653cd7f089b6c1b60c5d046ff6c5894a6b1b0b57e13c9dc61\"}, {\"bytes\": 1341, \"path\": \"detect/ocsf/tetragon.vrl\", \"sha256\": \"1a947fe294d423e1e437f3a4134c4757cc109cb797430c98e985f3819ed1b9f0\"}, {\"bytes\": 3369, \"path\": \"detect/ocsf/vnet_flow.vrl\", \"sha256\": \"0b701f6557551dfceda4ae0ef0e63823b63d514ad0c1e66f82040e98c7dfc7af\"}, {\"bytes\": 1644, \"path\": \"detect/ocsf/warden_audit.vrl\", \"sha256\": \"96257a8ea2c42613432a2a1d0ae5662a88cb5c4e9ec75891b8af6693579ad4ab\"}, {\"bytes\": 1274, \"path\": \"detect/tests/backpressure.toml\", \"sha256\": \"0161e16fd9f2b6da7710e9d17ad300eebb4815caf6fecbcfcd776eb61582c008\"}, {\"bytes\": 22965, \"path\": \"detect/tests/backpressure_test.py\", \"sha256\": \"99de6f6691b2109c771c1bd92c205961cdefe40872d24cc8a9a242c7af97cb5c\"}, {\"bytes\": 271, \"path\": \"detect/tests/backpressure_test.sh\", \"sha256\": \"11662c5ef0cc769b6212bb3d4def36be57a8d0279dac00b0c137024b258cb81b\"}, {\"bytes\": 2089, \"path\": \"detect/vector/agent.toml\", \"sha256\": \"1558f086300191e2db3c7425a2472c87dc9718afffecada7e5eaa66d9aed8af4\"}, {\"bytes\": 4231, \"path\": \"detect/vector/aggregator.toml\", \"sha256\": \"1b77c42e198212017e25a8c81f6bd9e1da1c004a89dd9e29038b95252ff1b33e\"}, {\"bytes\": 846, \"path\": \"detect/vector/buffer-alerts.yml\", \"sha256\": \"1678fa8a8614502931a10f85b974c94745c4fd4c03f67f389dc964a2b83a3baf\"}], \"source_scope_bytes\": 72039}\n"
+    }
+  },
+  "bp_only_freeze": {
+    "request": {
+      "cmd": "/usr/bin/python3 -I -S -B - <<'PY'\nimport pathlib,hashlib,json\np=pathlib.Path('detect/tests/backpressure_test.py');b=p.read_bytes();print(json.dumps({'path':str(p),'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'only_change':'final cleanup truncated output is FAIL; golden/production configs unchanged'}))\nPY",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "login": false,
+      "max_output_tokens": 1000
+    },
+    "response": {
+      "chunk_id": "061463",
+      "wall_time_seconds": 0.000018289,
+      "exit_code": 0,
+      "original_token_count": 59,
+      "output": "{\"path\": \"detect/tests/backpressure_test.py\", \"bytes\": 23085, \"sha256\": \"1828e0d8fd488c86dd93b023d5c6975166e3010b4cddbf23bf54eadcfa8db025\", \"only_change\": \"final cleanup truncated output is FAIL; golden/production configs unchanged\"}\n"
+    }
+  },
+  "trace": [
+    {
+      "stage": "cover-golden-budget",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "ulimit -t 20\nulimit -v 262144\nulimit -f 1024\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 7137167168 --service-memory-bytes 13000000000 --download-bytes 0",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 admitted frozen golden cover fresh native budget guard.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "faad6a",
+        "wall_time_seconds": 0.240712004,
+        "exit_code": 0,
+        "original_token_count": 56,
+        "output": "{\"additional_bytes\": \"7137167168\", \"at\": \"2026-10-25T21:47:57Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 261752913920, \"project_allocated_bytes\": 4446605312, \"service_memory_bytes\": \"13000000000\"}\n"
+      }
+    },
+    {
+      "stage": "cover-golden-memory",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport os,pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\nassert os.geteuid()==1000\nm={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}\na=int(m['MemAvailable'].split()[0])*1024\nassert a>=5000000000\nassert not os.path.lexists('.cache/task11-cover-golden')\nprint('MemAvailable',a,'resident_reserve',13000000000,'new_run_absent',True)\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 admitted golden cover fresh native memory and fixed new run absence.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "378733",
+        "wall_time_seconds": 0.000044355,
+        "exit_code": 0,
+        "original_token_count": 19,
+        "output": "MemAvailable 86753808384 resident_reserve 13000000000 new_run_absent True\n"
+      }
+    },
+    {
+      "stage": "cover-golden",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "set -eu\nulimit -t 45\nulimit -v 2929687\nulimit -f 1024\nulimit -n 128\nulimit -c 0\nmkdir -m 700 .cache/task11-cover-golden\nmkdir -m 700 .cache/task11-cover-golden/tmp\nset -- detect/ocsf/tests/00-topology.toml detect/ocsf/tests/aks_audit.toml detect/ocsf/tests/azure_activity.toml detect/ocsf/tests/k3s_audit.toml detect/ocsf/tests/negative.toml detect/ocsf/tests/routing.toml detect/ocsf/tests/tetragon.toml detect/ocsf/tests/vnet_flow.toml detect/ocsf/tests/warden_audit.toml\nfor f do test -f \"$f\"; done\ntest \"$#\" -eq 9\nset -C\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 VECTOR_THREADS=2 TMPDIR=/home/postedism/Desktop/Warden/.cache/task11-cover-golden/tmp /usr/bin/timeout --signal=TERM --kill-after=10s 50s /home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector test \"$@\" > .cache/task11-cover-golden/output 2>&1",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Run root-admitted first implemented golden cover against the fixed nine TOMLs, under reviewed limits; no production config/service/network.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "b48c73",
+        "wall_time_seconds": 1.474744905,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "stage": "cover-golden-postread",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\np=pathlib.Path('.cache/task11-cover-golden/output'); b=p.read_bytes(); assert len(b)<=1048576; print('bytes',len(b)); print(b.decode())\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Read all retained bounded implemented golden output after known normal exit.",
+        "max_output_tokens": 4000
+      },
+      "response": {
+        "chunk_id": "3d8b35",
+        "wall_time_seconds": 0.00004173,
+        "exit_code": 0,
+        "original_token_count": 305,
+        "output": "bytes 1206\nRunning tests\ntest aks_audit_full_golden ... passed\ntest azure_rest_full_golden ... passed\ntest azure_2_crud ... passed\ntest azure_4_crud ... passed\ntest k3s_audit_full_golden ... passed\ntest azure_rejects_invalid_without_raw_body ... passed\ntest aks_rejects_invalid_without_raw_body ... passed\ntest k3s_rejects_invalid_without_raw_body ... passed\ntest tetragon_rejects_invalid_without_raw_body ... passed\ntest warden_rejects_invalid_without_raw_body ... passed\ntest vnet_rejects_invalid_without_raw_body ... passed\ntest azure_invalid_eventTimestamp ... passed\ntest azure_invalid_caller ... passed\ntest azure_invalid_ip ... passed\ntest azure_unknown_overflow_visible ... passed\ntest k3s_no_actor_rejected ... passed\ntest tetragon_no_parent_actor_rejected ... passed\ntest observation_is_not_occurrence ... passed\ntest vnet_malformed_tuple_rejected ... passed\ntest route_api_literal_class ... passed\ntest route_process_literal_class ... passed\ntest route_network_literal_class ... passed\ntest reject_route_wrong_version ... passed\ntest reject_route_unknown_class ... passed\ntest tetragon_exec_full_golden ... passed\ntest vnet_tuple_full_golden ... passed\ntest warden_synthetic_context_full_golden ... passed\n\n"
+      }
+    },
+    {
+      "stage": "cover-agent-budget",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "ulimit -t 20\nulimit -v 262144\nulimit -f 1024\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 7137167168 --service-memory-bytes 13000000000 --download-bytes 0",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 admitted agent no-environment validation fresh native budget guard.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "756f8a",
+        "wall_time_seconds": 0.216540557,
+        "exit_code": 0,
+        "original_token_count": 56,
+        "output": "{\"additional_bytes\": \"7137167168\", \"at\": \"2026-10-25T21:48:32Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 261756043264, \"project_allocated_bytes\": 4446609408, \"service_memory_bytes\": \"13000000000\"}\n"
+      }
+    },
+    {
+      "stage": "cover-agent-memory",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport os,pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\nassert os.geteuid()==1000\nm={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}\na=int(m['MemAvailable'].split()[0])*1024\nassert a>=5000000000\nassert not os.path.lexists('.cache/task11-cover-agent')\nprint('MemAvailable',a,'resident_reserve',13000000000,'new_run_absent',True)\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 agent validation fresh native memory and fixed new output absence.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "e084c1",
+        "wall_time_seconds": 0.000018318,
+        "exit_code": 0,
+        "original_token_count": 19,
+        "output": "MemAvailable 86676336640 resident_reserve 13000000000 new_run_absent True\n"
+      }
+    },
+    {
+      "stage": "cover-agent",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "set -eu\nulimit -t 45\nulimit -v 2929687\nulimit -f 1024\nulimit -n 128\nulimit -c 0\nmkdir -m 700 .cache/task11-cover-agent\nmkdir -m 700 .cache/task11-cover-agent/tmp\nset -C\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 VECTOR_THREADS=2 TMPDIR=/home/postedism/Desktop/Warden/.cache/task11-cover-agent/tmp /usr/bin/timeout --signal=TERM --kill-after=10s 50s /home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector validate --no-environment --skip-healthchecks detect/vector/agent.toml > .cache/task11-cover-agent/output 2>&1",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Root-admitted agent static validation only, with pinned --no-environment --skip-healthchecks; no startup or healthcheck.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "8e51db",
+        "wall_time_seconds": 0.000007785,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "stage": "cover-agent-postread",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\np=pathlib.Path('.cache/task11-cover-agent/output'); b=p.read_bytes(); assert len(b)<=1048576; print('bytes',len(b)); print(b.decode())\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Read all retained bounded agent static validation output after known normal exit.",
+        "max_output_tokens": 4000
+      },
+      "response": {
+        "chunk_id": "24bc40",
+        "wall_time_seconds": 0.000015099,
+        "exit_code": 0,
+        "original_token_count": 32,
+        "output": "bytes 116\n√ Loaded [\"detect/vector/agent.toml\"]\n-------------------------------------\n                            Validated\n\n"
+      }
+    },
+    {
+      "stage": "cover-aggregator-budget",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "ulimit -t 20\nulimit -v 262144\nulimit -f 1024\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 7137167168 --service-memory-bytes 13000000000 --download-bytes 0",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 admitted aggregator no-environment validation fresh native budget guard.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "613375",
+        "wall_time_seconds": 0.228252538,
+        "exit_code": 0,
+        "original_token_count": 56,
+        "output": "{\"additional_bytes\": \"7137167168\", \"at\": \"2026-10-25T21:49:01Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 261755445248, \"project_allocated_bytes\": 4446613504, \"service_memory_bytes\": \"13000000000\"}\n"
+      }
+    },
+    {
+      "stage": "cover-aggregator-memory",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport os,pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\nassert os.geteuid()==1000\nm={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}\na=int(m['MemAvailable'].split()[0])*1024\nassert a>=5000000000\nassert not os.path.lexists('.cache/task11-cover-aggregator')\nprint('MemAvailable',a,'resident_reserve',13000000000,'new_run_absent',True)\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 aggregator validation fresh native memory and fixed new output absence.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "1636a4",
+        "wall_time_seconds": 0.000027879,
+        "exit_code": 0,
+        "original_token_count": 19,
+        "output": "MemAvailable 86744322048 resident_reserve 13000000000 new_run_absent True\n"
+      }
+    },
+    {
+      "stage": "cover-aggregator",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "set -eu\nulimit -t 45\nulimit -v 2929687\nulimit -f 1024\nulimit -n 128\nulimit -c 0\nmkdir -m 700 .cache/task11-cover-aggregator\nmkdir -m 700 .cache/task11-cover-aggregator/tmp\nset -C\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 VECTOR_THREADS=2 TMPDIR=/home/postedism/Desktop/Warden/.cache/task11-cover-aggregator/tmp /usr/bin/timeout --signal=TERM --kill-after=10s 50s /home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector validate --no-environment --skip-healthchecks detect/vector/aggregator.toml > .cache/task11-cover-aggregator/output 2>&1",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Root-admitted aggregator static validation only, --no-environment --skip-healthchecks; no production listeners/backend/healthcheck.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "3e0d6f",
+        "wall_time_seconds": 0.000010301,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "stage": "cover-aggregator-postread",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\np=pathlib.Path('.cache/task11-cover-aggregator/output'); b=p.read_bytes(); assert len(b)<=1048576; print('bytes',len(b)); print(b.decode())\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Read all retained bounded aggregator static validation output after known normal exit.",
+        "max_output_tokens": 4000
+      },
+      "response": {
+        "chunk_id": "a41dd0",
+        "wall_time_seconds": 0.000011855,
+        "exit_code": 0,
+        "original_token_count": 36,
+        "output": "bytes 131\n√ Loaded [\"detect/vector/aggregator.toml\"]\n------------------------------------------\n                                 Validated\n\n"
+      }
+    },
+    {
+      "stage": "cover-backpressure-budget",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "ulimit -t 20\nulimit -v 262144\nulimit -f 1024\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 7137167168 --service-memory-bytes 13000000000 --download-bytes 0",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 admitted sole backpressure fixture fresh native budget guard with Q5GB and all remaining buffer maxima.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "c5ba18",
+        "wall_time_seconds": 0.237385361,
+        "exit_code": 0,
+        "original_token_count": 56,
+        "output": "{\"additional_bytes\": \"7137167168\", \"at\": \"2026-10-25T21:49:25Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 261754560512, \"project_allocated_bytes\": 4446617600, \"service_memory_bytes\": \"13000000000\"}\n"
+      }
+    },
+    {
+      "stage": "cover-backpressure-memory",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport os,pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\nassert os.geteuid()==1000\nm={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}\na=int(m['MemAvailable'].split()[0])*1024\nassert a>=5000000000\nassert not os.path.lexists('.cache/task11-backpressure-call')\nassert not os.path.lexists('.cache/task11-backpressure')\nprint('MemAvailable',a,'resident_reserve',13000000000,'new_run_absent',True)\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 sole backpressure run fresh native memory and both fixed new owned directory absence checks.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "ca9e6b",
+        "wall_time_seconds": 0.000025387,
+        "exit_code": 0,
+        "original_token_count": 19,
+        "output": "MemAvailable 86102568960 resident_reserve 13000000000 new_run_absent True\n"
+      }
+    },
+    {
+      "stage": "cover-backpressure",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "set -eu\nmkdir -m 700 .cache/task11-backpressure-call\nset -C\nexec /bin/sh detect/tests/backpressure_test.sh > .cache/task11-backpressure-call/output 2>&1",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Run root-FULLREAD admitted unique Task11 loopback backpressure package, exact frozen driver/config and 180-second outer deadline, retained owned child/socket cleanup; no service/cloud/production traffic.",
+        "max_output_tokens": 2000,
+        "yield_time_ms": 1000
+      },
+      "response": {
+        "chunk_id": "ea8359",
+        "wall_time_seconds": 1.000957101,
+        "session_id": 34528,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "stage": "cover-backpressure-poll",
+      "kind": "write_stdin",
+      "request": {
+        "session_id": 34528,
+        "chars": "",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "4b342a",
+        "wall_time_seconds": 5.001089391,
+        "session_id": 34528,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "stage": "cover-backpressure-poll",
+      "kind": "write_stdin",
+      "request": {
+        "session_id": 34528,
+        "chars": "",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "2c17fc",
+        "wall_time_seconds": 5.000276411,
+        "session_id": 34528,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "stage": "cover-backpressure-poll",
+      "kind": "write_stdin",
+      "request": {
+        "session_id": 34528,
+        "chars": "",
+        "yield_time_ms": 30000,
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "12e248",
+        "wall_time_seconds": 30.000642619,
+        "session_id": 34528,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "stage": "cover-backpressure-poll",
+      "kind": "write_stdin",
+      "request": {
+        "session_id": 34528,
+        "chars": "",
+        "yield_time_ms": 30000,
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "80abc5",
+        "wall_time_seconds": 9.644388801,
+        "exit_code": 1,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "stage": "cover-backpressure-postread",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\np=pathlib.Path('.cache/task11-backpressure-call/output'); b=p.read_bytes(); assert len(b)<=1048576; print('bytes',len(b)); print(b.decode())\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Read the retained bounded sole backpressure driver output after known exit1; determine exact failure without retry.",
+        "max_output_tokens": 4000
+      },
+      "response": {
+        "chunk_id": "4d6eb6",
+        "wall_time_seconds": 0.000011242,
+        "exit_code": 0,
+        "original_token_count": 520,
+        "output": "bytes 2067\n{\"accepted\": 31077, \"detail\": \"invalid occupancy gauge\", \"error\": \"ValueError\", \"historical_pid\": 3845660, \"output_truncated\": false, \"partial\": {\"stderr\": {\"bytes\": 818, \"path\": \"/home/postedism/Desktop/Warden/.cache/task11-backpressure/vector.stderr\"}, \"stdout\": {\"bytes\": 0, \"path\": \"/home/postedism/Desktop/Warden/.cache/task11-backpressure/vector.stdout\"}}, \"peak_buffer_bytes\": 134207432.0, \"received\": 31076, \"result\": \"failed-before-cleanup\", \"stalls\": [{\"end\": 90.68288775999099, \"peak_occupancy_during_stall\": null, \"phase\": \"burst_release\", \"seconds\": 0.07883984001819044, \"stall_overlap_seconds\": 0, \"start\": 90.6040479199728}, {\"end\": 90.97710148897022, \"peak_occupancy_during_stall\": null, \"phase\": \"burst_release\", \"seconds\": 0.14733333594631404, \"stall_overlap_seconds\": 0, \"start\": 90.8297681530239}, {\"end\": 91.24201008398086, \"peak_occupancy_during_stall\": null, \"phase\": \"burst_release\", \"seconds\": 0.14802837499883026, \"stall_overlap_seconds\": 0, \"start\": 91.09398170898203}, {\"end\": 91.41395130800083, \"peak_occupancy_during_stall\": null, \"phase\": \"burst_release\", \"seconds\": 0.10942565195728093, \"stall_overlap_seconds\": 0, \"start\": 91.30452565604355}, {\"end\": 91.8216770470608, \"peak_occupancy_during_stall\": null, \"phase\": \"burst_release\", \"seconds\": 0.2970352880656719, \"stall_overlap_seconds\": 0, \"start\": 91.52464175899513}, {\"end\": 92.10332352598198, \"peak_occupancy_during_stall\": null, \"phase\": \"burst_release\", \"seconds\": 0.08952054393012077, \"stall_overlap_seconds\": 0, \"start\": 92.01380298205186}, {\"end\": 92.21578606800176, \"peak_occupancy_during_stall\": null, \"phase\": \"burst_release\", \"seconds\": 0.07769327994901687, \"stall_overlap_seconds\": 0, \"start\": 92.13809278805275}, {\"end\": 92.53441737603862, \"peak_occupancy_during_stall\": null, \"phase\": \"burst_release\", \"seconds\": 0.27647546504158527, \"stall_overlap_seconds\": 0, \"start\": 92.25794191099703}]}\n{\"child_return\": 0, \"cleanup\": \"known-terminal\", \"historical_pid\": 3845660, \"peer_joined\": true}\n{\"detail\": \"invalid occupancy gauge\", \"error\": \"ValueError\", \"result\": \"FAIL\"}\n\n"
+      }
+    },
+    {
+      "stage": "cover-output-archive-readonly",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport pathlib,resource,signal,stat,json,hashlib\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));resource.setrlimit(resource.RLIMIT_FSIZE,(2097152,2097152));signal.alarm(10)\nr=pathlib.Path('/home/postedism/Desktop/Warden'); pairs=[('.cache/task11-cover-golden/output','golden-output-20261025.txt',1048576),('.cache/task11-cover-agent/output','agent-validation-output-20261025.txt',1048576),('.cache/task11-cover-aggregator/output','aggregator-validation-output-20261025.txt',1048576),('.cache/task11-backpressure-call/output','backpressure-driver-output-20261025.txt',1048576),('.cache/task11-backpressure/vector.stdout','backpressure-vector-stdout-20261025.txt',524288),('.cache/task11-backpressure/vector.stderr','backpressure-vector-stderr-20261025.txt',524288),('.cache/task11-backpressure/metrics.ndjson','backpressure-metrics-20261025.ndjson',2097152)]\nrows=[]; negative=[]\nfor src,dst,cap in pairs:\n p=r/src;s=p.lstat();assert stat.S_ISREG(s.st_mode) and s.st_uid==1000 and s.st_nlink==1 and s.st_size<=cap\n b=p.read_bytes();assert len(b)==s.st_size\n d=r/'docs/evidence/task-11'/dst\n with d.open('xb') as f: assert f.write(b)==len(b)\n rows.append({'source':str(p),'archive':str(d.relative_to(r)),'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()})\n if src.endswith('vector.stderr'):print('VECTOR_STDERR',b.decode())\n if src.endswith('metrics.ndjson'):\n  for n,line in enumerate(b.splitlines(),1):\n   m=json.loads(line)\n   if 'gauge' in m and m['gauge']['value']<0: negative.append({'line':n,'metric':m})\n  print('NEGATIVE_GAUGES',json.dumps(negative[:8],sort_keys=True),'total',len(negative))\nprint(json.dumps({'retained_artifacts':rows},sort_keys=True))\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Read and archive only bounded retained synthetic Task11 outputs/metrics after known terminal; diagnose original invalid gauge without test retry, no source changes.",
+        "max_output_tokens": 6000
+      },
+      "response": {
+        "chunk_id": "9c44f8",
+        "wall_time_seconds": 0.000011492,
+        "exit_code": 0,
+        "original_token_count": 913,
+        "output": "VECTOR_STDERR 2026-10-25T21:49:34.316668Z  INFO vector::app: Log level is enabled. level=\"info\"\n2026-10-25T21:49:34.316973Z  INFO vector::app: Loading configs. paths=[\"detect/tests/backpressure.toml\"]\n2026-10-25T21:49:34.320680Z  INFO vector::sources::file_descriptors: Capturing stdin.\n2026-10-25T21:49:34.363698Z  INFO vector::topology::running: Running healthchecks.\n2026-10-25T21:49:34.363746Z  INFO vector::topology::builder: Healthcheck disabled.\n2026-10-25T21:49:34.363746Z  INFO vector: Vector has started. debug=\"false\" version=\"0.45.0\" arch=\"x86_64\" revision=\"063cabb 2025-02-24 14:52:02.810034614\"\n2026-10-25T21:49:34.363753Z  INFO vector::topology::builder: Healthcheck passed.\n2026-10-25T21:49:34.363755Z  INFO vector::app: API is disabled, enable by setting `api.enabled` to `true` and use commands like `vector top`.\n2026-10-25T21:51:20.427666Z  INFO vector::signal: Signal received. signal=\"SIGTERM\"\n2026-10-25T21:51:20.427807Z  INFO vector: Vector has stopped.\n2026-10-25T21:51:20.429565Z  INFO vector::topology::running: Shutting down... Waiting on running components. remaining_components=\"metrics_file, bp_http\" time_remaining=\"59 seconds left\"\n\nNEGATIVE_GAUGES [{\"line\": 417, \"metric\": {\"gauge\": {\"value\": -16616.0}, \"kind\": \"absolute\", \"name\": \"buffer_byte_size\", \"namespace\": \"vector\", \"tags\": {\"buffer_type\": \"disk\", \"component_id\": \"bp_http\", \"component_kind\": \"sink\", \"component_type\": \"http\", \"host\": \"postedism-ubuntu-system-selfuse\", \"stage\": \"0\"}, \"timestamp\": \"2026-10-25T21:51:20.364871038Z\"}}, {\"line\": 418, \"metric\": {\"gauge\": {\"value\": -1.0}, \"kind\": \"absolute\", \"name\": \"buffer_events\", \"namespace\": \"vector\", \"tags\": {\"buffer_type\": \"disk\", \"component_id\": \"bp_http\", \"component_kind\": \"sink\", \"component_type\": \"http\", \"host\": \"postedism-ubuntu-system-selfuse\", \"stage\": \"0\"}, \"timestamp\": \"2026-10-25T21:51:20.364871038Z\"}}] total 2\n{\"retained_artifacts\": [{\"archive\": \"docs/evidence/task-11/golden-output-20261025.txt\", \"bytes\": 1206, \"sha256\": \"94b71e8f40f96037f3cd81f2f1ad5a5ebcf98f126da13d7b9cac90a00826926f\", \"source\": \"/home/postedism/Desktop/Warden/.cache/task11-cover-golden/output\"}, {\"archive\": \"docs/evidence/task-11/agent-validation-output-20261025.txt\", \"bytes\": 116, \"sha256\": \"da625f0b56c75e8e63f578539b5820f32178715cec2bd74c304b4fecc1f69153\", \"source\": \"/home/postedism/Desktop/Warden/.cache/task11-cover-agent/output\"}, {\"archive\": \"docs/evidence/task-11/aggregator-validation-output-20261025.txt\", \"bytes\": 131, \"sha256\": \"0091ac7a09bb4b5b2770737c615c7861c1b2453a753391315f2d2e0540f3cb99\", \"source\": \"/home/postedism/Desktop/Warden/.cache/task11-cover-aggregator/output\"}, {\"archive\": \"docs/evidence/task-11/backpressure-driver-output-20261025.txt\", \"bytes\": 2067, \"sha256\": \"0dec095b03dc4ef4ec5456d138569f098c746bc49a4dd9e439ad38bc498d7ebe\", \"source\": \"/home/postedism/Desktop/Warden/.cache/task11-backpressure-call/output\"}, {\"archive\": \"docs/evidence/task-11/backpressure-vector-stdout-20261025.txt\", \"bytes\": 0, \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"source\": \"/home/postedism/Desktop/Warden/.cache/task11-backpressure/vector.stdout\"}, {\"archive\": \"docs/evidence/task-11/backpressure-vector-stderr-20261025.txt\", \"bytes\": 1151, \"sha256\": \"4a6a3629f79eeac4fe5d6a30899184f095ca1d4d4dd46ea2eca37972be0fdb19\", \"source\": \"/home/postedism/Desktop/Warden/.cache/task11-backpressure/vector.stderr\"}, {\"archive\": \"docs/evidence/task-11/backpressure-metrics-20261025.ndjson\", \"bytes\": 122479, \"sha256\": \"bc029f2068c738e340c76f6d14bd60e3797517bbf59c35b860798661c3704870\", \"source\": \"/home/postedism/Desktop/Warden/.cache/task11-backpressure/metrics.ndjson\"}]}\n"
+      }
+    },
+    {
+      "stage": "cover-terminal-artifact-footprint",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport pathlib,resource,signal,stat,json,os\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\nrows=[]\nfor name in ('task11-cover-golden','task11-cover-agent','task11-cover-aggregator','task11-backpressure','task11-backpressure-call'):\n p=pathlib.Path('.cache')/name; count=allocated=0; files=[]\n for d,ds,fs in os.walk(p,followlinks=False):\n  assert len(ds)<=32\n  for n in fs:\n   q=pathlib.Path(d)/n;s=q.lstat();count+=1;assert count<=64 and stat.S_ISREG(s.st_mode) and s.st_uid==1000 and s.st_nlink==1\n   allocated+=s.st_blocks*512;files.append({'path':str(q),'bytes':s.st_size,'allocated_bytes':s.st_blocks*512})\n rows.append({'owned_tree':str(p),'files':files,'allocated_bytes':allocated,'tmp_entries':len(list((p/'tmp').iterdir())) if (p/'tmp').is_dir() else None})\nb=pathlib.Path('docs/evidence/task-11/backpressure-metrics-20261025.ndjson').read_bytes();assert len(b)<=2097152\nmetrics=[json.loads(l) for l in b.splitlines()]\ncounts={};values={}\nfor m in metrics:\n k=m['name'];counts[k]=counts.get(k,0)+1\n if 'gauge' in m:values.setdefault(k,[]).append(m['gauge']['value'])\nprint(json.dumps({'owned_tree_postread':rows,'retained_metric_rows':len(metrics),'metric_counts':counts,'gauge_ranges':{k:[min(v),max(v)] for k,v in values.items()},'discard_series_present':'buffer_discarded_events_total' in counts,'scope':'read original owned terminal-run artifacts only; no process scan/test/retry'},sort_keys=True))\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Bounded read of exact completed Task11-owned run trees and original synthetic metric ranges; no processes, deletion, retries or new test.",
+        "max_output_tokens": 5000
+      },
+      "response": {
+        "chunk_id": "750c46",
+        "wall_time_seconds": 0.000013378,
+        "exit_code": 0,
+        "original_token_count": 459,
+        "output": "{\"discard_series_present\": false, \"gauge_ranges\": {\"buffer_byte_size\": [-16616.0, 134207432.0], \"buffer_events\": [-1.0, 8077.0]}, \"metric_counts\": {\"buffer_byte_size\": 209, \"buffer_events\": 209}, \"owned_tree_postread\": [{\"allocated_bytes\": 4096, \"files\": [{\"allocated_bytes\": 4096, \"bytes\": 1206, \"path\": \".cache/task11-cover-golden/output\"}], \"owned_tree\": \".cache/task11-cover-golden\", \"tmp_entries\": 0}, {\"allocated_bytes\": 4096, \"files\": [{\"allocated_bytes\": 4096, \"bytes\": 116, \"path\": \".cache/task11-cover-agent/output\"}], \"owned_tree\": \".cache/task11-cover-agent\", \"tmp_entries\": 0}, {\"allocated_bytes\": 4096, \"files\": [{\"allocated_bytes\": 4096, \"bytes\": 131, \"path\": \".cache/task11-cover-aggregator/output\"}], \"owned_tree\": \".cache/task11-cover-aggregator\", \"tmp_entries\": 0}, {\"allocated_bytes\": 1994752, \"files\": [{\"allocated_bytes\": 4096, \"bytes\": 1151, \"path\": \".cache/task11-backpressure/vector.stderr\"}, {\"allocated_bytes\": 122880, \"bytes\": 122479, \"path\": \".cache/task11-backpressure/metrics.ndjson\"}, {\"allocated_bytes\": 0, \"bytes\": 0, \"path\": \".cache/task11-backpressure/vector.stdout\"}, {\"allocated_bytes\": 4096, \"bytes\": 24, \"path\": \".cache/task11-backpressure/data/buffer/v2/bp_http/buffer.db\"}, {\"allocated_bytes\": 1863680, \"bytes\": 1860992, \"path\": \".cache/task11-backpressure/data/buffer/v2/bp_http/buffer-data-4.dat\"}, {\"allocated_bytes\": 0, \"bytes\": 0, \"path\": \".cache/task11-backpressure/data/buffer/v2/bp_http/buffer.lock\"}], \"owned_tree\": \".cache/task11-backpressure\", \"tmp_entries\": 0}, {\"allocated_bytes\": 4096, \"files\": [{\"allocated_bytes\": 4096, \"bytes\": 2067, \"path\": \".cache/task11-backpressure-call/output\"}], \"owned_tree\": \".cache/task11-backpressure-call\", \"tmp_entries\": null}], \"retained_metric_rows\": 418, \"scope\": \"read original owned terminal-run artifacts only; no process scan/test/retry\"}\n"
+      }
+    }
+  ]
+}

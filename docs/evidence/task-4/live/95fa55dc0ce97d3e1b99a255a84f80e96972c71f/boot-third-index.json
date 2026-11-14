@@ -1,0 +1,26 @@
+{
+  "source": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f",
+  "scope": "One failed boot after actual VMM/kernel start; stopped scene and5GB retained; no fullguard/retirement success",
+  "files": {
+    "package-verification-boot.json": {
+      "sha256": "5eaeb1519a098e3bd60a55fe99837320c1e22793d8ee8a5e887928abd5a89b45",
+      "bytes": 5643
+    },
+    "boot-third.json": {
+      "sha256": "b89b41005b2fca55c0982389111c3cc94c9e44cf468958f176790db1e8a0b55f",
+      "bytes": 660
+    },
+    "boot-third.log": {
+      "sha256": "57f3eb0624a4770d8876f551c9e2a1789ca20d849386c783146b81889391bcbc",
+      "bytes": 11433
+    },
+    "boot-third-postflight.json": {
+      "sha256": "09ce6c7174264593d4e37ef63e34aabf679d8cb54d845092738b54d00227edd0",
+      "bytes": 3421
+    },
+    "boot-third.md": {
+      "sha256": "226f18ee45163f780a22fcd11d15fad719e14967c3b29cbc7bfbd2d7ac5c6a49",
+      "bytes": 2766
+    }
+  }
+}

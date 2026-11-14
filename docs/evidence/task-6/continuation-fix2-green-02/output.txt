@@ -1,0 +1,9 @@
+test_prepared_replaced_during_parent_fsync_refuses_before_mutation (test_identity_cache_continue.ContinuationTests.test_prepared_replaced_during_parent_fsync_refuses_before_mutation) ... ok
+test_prepared_altered_during_parent_fsync_refuses_before_mutation (test_identity_cache_continue.ContinuationTests.test_prepared_altered_during_parent_fsync_refuses_before_mutation) ... ok
+test_ready_replaced_during_parent_fsync_refuses_before_unlink (test_identity_cache_continue.ContinuationTests.test_ready_replaced_during_parent_fsync_refuses_before_unlink) ... ok
+test_ready_altered_during_parent_fsync_refuses_before_unlink (test_identity_cache_continue.ContinuationTests.test_ready_altered_during_parent_fsync_refuses_before_unlink) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.196s
+
+OK

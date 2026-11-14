@@ -1,0 +1,31 @@
+{
+  "phase": "DIAGNOSTIC_ONLY",
+  "allowance": "1/1",
+  "execution": "NOT_ADMITTED_NOT_RUN",
+  "first_red": "SPENT_2/2_UNCHANGED",
+  "consumed_b_sha256": "97349ca69ba1311a16d2f7bf3a4f36f5958e65899d11a6e5b020bd1e43f7e5cc",
+  "historical_source_freeze_sha256": "8f498b9220b29dd8b26753950a1896631265df3a6e2a3abf810872eb2e5be6a8",
+  "historical_material_manifest_sha256": "1ca3cbfa3cf4a3ba960dc4ced03f8eb24d2e8429e9ae5e7b0e34d3d08b54fbbd",
+  "files": [
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-pg-startup-diagnostic-20261026.py.txt",
+      "bytes": 12283,
+      "sha256": "d4f01316984c4d33425c0e4dcc006a1d22becceee8b99ca9e91016ff8341da70"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-pg-startup-diagnostic-20261026.diff",
+      "bytes": 16042,
+      "sha256": "13a4f02092ed744bc265e175c6f7d3564e0cbff4dd07b407d8c80d2bd2ab2a6f"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-pg-startup-diagnostic-20261026.md",
+      "bytes": 7410,
+      "sha256": "2b1df128af1ca928c2439e4c24b472b53318cd93ffcef80997153614adee6afe"
+    },
+    {
+      "path": "docs/COORDINATOR-TASK9-DIAG-TASK15-CODE-20261026.json",
+      "bytes": 5408,
+      "sha256": "12d7f2b2506f2340b2913f4e42c0732d3ca42476ad0eba605a617af6f8d6c9f5"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "suspend-tenant",
+  "trigger": "rule-a",
+  "steps": [
+    {"name": "SuspendTenant", "resource": {"type": "tenant", "id": "tenant-a"}}
+  ],
+  "requires_approval": true
+}

@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-24T22:13:41.557184+00:00",
+  "source": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f",
+  "evidence": "caf9c445bdefc93388de357f1a4c1a26a14c028a",
+  "source_files_verified": 4,
+  "unchanged_interfaces_verified": 18,
+  "unchanged_functions_verified": 6,
+  "evidence_entries_verified": 14,
+  "old_tracked_evidence_files_unchanged": 142,
+  "old_index_entries_verified": [
+    36,
+    13,
+    16,
+    9,
+    17
+  ],
+  "python_recorded_pass": 24,
+  "all_go_sources_unchanged": true,
+  "exact_report_readme": true,
+  "scope": "Independent controller source/evidence byte+mode+AST-function hashes and recorded log verification only; no tests or Docker/device/BPF/VM/cloud operations rerun."
+}

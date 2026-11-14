@@ -1,0 +1,127 @@
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_azure_guard.py   # review-round tests added, guard unchanged
+F.FF.FFF.F..........................F.....F.F..F..........EF..........
+======================================================================
+ERROR: test_teardown_check_finds_role_assignments_of_the_drill_principals (test_azure_guard.AzureGuardTests.test_teardown_check_finds_role_assignments_of_the_drill_principals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 629, in test_teardown_check_finds_role_assignments_of_the_drill_principals
+    self.assertIn('role_assignments', json.loads(p.stdout.splitlines()[-1])['found'])
+                                                 ~~~~~~~~~~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+
+======================================================================
+FAIL: test_a_network_watcher_the_drill_caused_is_deleted_by_down (test_azure_guard.AzureGuardTests.test_a_network_watcher_the_drill_caused_is_deleted_by_down)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 593, in test_a_network_watcher_the_drill_caused_is_deleted_by_down
+    self.assertEqual(self.aks_reserve(plan).returncode, 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_aks_drill_cap_is_ninety_percent_of_two_dollars (test_azure_guard.AzureGuardTests.test_aks_drill_cap_is_ninety_percent_of_two_dollars)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 384, in test_aks_drill_cap_is_ninety_percent_of_two_dollars
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : guard refused: AKS needs the user's approval first: premium os disk, network watcher autocreate (docs/aks-drill.md)
+
+
+======================================================================
+FAIL: test_aks_drill_reserves_the_approved_cluster_and_its_identity (test_azure_guard.AzureGuardTests.test_aks_drill_reserves_the_approved_cluster_and_its_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 286, in test_aks_drill_reserves_the_approved_cluster_and_its_identity
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : guard refused: AKS needs the user's approval first: premium os disk, network watcher autocreate (docs/aks-drill.md)
+
+
+======================================================================
+FAIL: test_aks_is_refused_while_an_approval_is_pending (test_azure_guard.AzureGuardTests.test_aks_is_refused_while_an_approval_is_pending) (pending='premium_os_disk')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 318, in test_aks_is_refused_while_an_approval_is_pending
+    self.assertIn(pending.replace('_', ' '), p.stderr)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'premium os disk' not found in 'Traceback (most recent call last):\n  File "<string>", line 1, in <module>\n    from scripts import azure_guard as g; from datetime import datetime; g.utc_now=lambda: datetime.fromisoformat("2026-10-24T04:00:00+00:00"); g.ROOT=__import__("pathlib").Path(\'/tmp/tmpxnixhkzb/project\'); g.SCOPE_FILE=__import__("pathlib").Path(\'/tmp/tmpxnixhkzb/azure-subscription\'); g.AKS_PRIVATE=__import__("pathlib").Path(\'/tmp/tmpxnixhkzb/private\'); g.AKS_APPROVALS[\'premium_os_disk\']=False; g.main()\n                                                                                                                                                                                                                                                                                                                                                                     ^^^^^^^^^^^^^^^\nAttributeError: module \'scripts.azure_guard\' has no attribute \'AKS_APPROVALS\'\n'
+
+======================================================================
+FAIL: test_aks_is_refused_while_an_approval_is_pending (test_azure_guard.AzureGuardTests.test_aks_is_refused_while_an_approval_is_pending) (pending='network_watcher_autocreate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 318, in test_aks_is_refused_while_an_approval_is_pending
+    self.assertIn(pending.replace('_', ' '), p.stderr)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'network watcher autocreate' not found in 'Traceback (most recent call last):\n  File "<string>", line 1, in <module>\n    from scripts import azure_guard as g; from datetime import datetime; g.utc_now=lambda: datetime.fromisoformat("2026-10-24T04:00:00+00:00"); g.ROOT=__import__("pathlib").Path(\'/tmp/tmpxnixhkzb/project\'); g.SCOPE_FILE=__import__("pathlib").Path(\'/tmp/tmpxnixhkzb/azure-subscription\'); g.AKS_PRIVATE=__import__("pathlib").Path(\'/tmp/tmpxnixhkzb/private\'); g.AKS_APPROVALS[\'network_watcher_autocreate\']=False; g.main()\n                                                                                                                                                                                                                                                                                                                                                                     ^^^^^^^^^^^^^^^\nAttributeError: module \'scripts.azure_guard\' has no attribute \'AKS_APPROVALS\'\n'
+
+======================================================================
+FAIL: test_aks_meters_must_be_the_drill_billing_identities (test_azure_guard.AzureGuardTests.test_aks_meters_must_be_the_drill_billing_identities)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 346, in test_aks_meters_must_be_the_drill_billing_identities
+    self.assertEqual(self.aks_reserve(plan).returncode, 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_aks_refuses_a_region_the_location_policy_denies (test_azure_guard.AzureGuardTests.test_aks_refuses_a_region_the_location_policy_denies)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 568, in test_aks_refuses_a_region_the_location_policy_denies
+    self.assertEqual(self.aks_reserve(plan).returncode, 0, 'a policy that is not enforced does not deny')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : a policy that is not enforced does not deny
+
+======================================================================
+FAIL: test_ledger_keeps_no_subscription_id_or_local_path (test_azure_guard.AzureGuardTests.test_ledger_keeps_no_subscription_id_or_local_path)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 528, in test_ledger_keeps_no_subscription_id_or_local_path
+    self.assertEqual(self.aks_reserve(self.aks_plan()).returncode, 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_network_watcher_is_judged_against_its_state_before_the_drill (test_azure_guard.AzureGuardTests.test_network_watcher_is_judged_against_its_state_before_the_drill)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 571, in test_network_watcher_is_judged_against_its_state_before_the_drill
+    self.assertEqual(self.aks_reserve(self.aks_plan()).returncode, 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_only_one_aks_cluster_is_ever_reserved (test_azure_guard.AzureGuardTests.test_only_one_aks_cluster_is_ever_reserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 392, in test_only_one_aks_cluster_is_ever_reserved
+    self.assertEqual(self.aks_reserve(self.aks_plan()).returncode, 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_other_worktrees_ledgers_count_toward_the_caps (test_azure_guard.AzureGuardTests.test_other_worktrees_ledgers_count_toward_the_caps)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 647, in test_other_worktrees_ledgers_count_toward_the_caps
+    self.assertNotEqual(self.reserve(self.plan('0.2')).returncode, 0, '5.30 + 0.60 > 5.40')
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0 : 5.30 + 0.60 > 5.40
+
+======================================================================
+FAIL: test_teardown_check_passes_only_when_nothing_of_the_drill_is_left (test_azure_guard.AzureGuardTests.test_teardown_check_passes_only_when_nothing_of_the_drill_is_left)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 495, in test_teardown_check_passes_only_when_nothing_of_the_drill_is_left
+    self.assertEqual(p.returncode, 0, p.stderr + p.stdout)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : usage: -c [-h] {teardown-check,reap,down,reserve,render,preflight} ...
+-c: error: unrecognized arguments: --ledger /tmp/tmpfbsfo2re/ledger.json
+
+
+----------------------------------------------------------------------
+Ran 69 tests in 12.581s
+
+FAILED (failures=12, errors=1)

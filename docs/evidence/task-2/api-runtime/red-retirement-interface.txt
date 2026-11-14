@@ -1,0 +1,6 @@
+# warden/runtimes/gate_test [warden/runtimes/gate.test]
+runtimes/gate/retirement_test.go:34:20: g.BindRetirement undefined (type *gate.Gate has no field or method BindRetirement)
+runtimes/gate/retirement_test.go:37:20: g.Reconciliation undefined (type *gate.Gate has no field or method Reconciliation)
+runtimes/gate/retirement_test.go:39:20: undefined: gate.Reconciliation
+FAIL	warden/runtimes/gate [build failed]
+FAIL

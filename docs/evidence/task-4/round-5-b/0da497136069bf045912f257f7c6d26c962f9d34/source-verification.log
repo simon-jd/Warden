@@ -1,0 +1,5 @@
+PASS: six source files; original tenant prefix, startOwned and retirement checks preserved.
+PASS: fixed selector/1GB host allowance only; 13 runtime/Gate/device/guard bindings unchanged.
+PASS: real RED2fail, focused GREEN7pass; one committed covering59pass/4explicit-live-skips.
+PASS: all four code containers exactly removed; full pre/post guards include retained Q5GB; six sysctls unchanged.
+No old recovery/index crawl or actual VM/device mode.

@@ -1,0 +1,1821 @@
+{
+  "after": {
+    "exact_stopped_identity": true,
+    "held_outer_identity": true,
+    "held_tar_identity": true,
+    "private_child_identity": true,
+    "scope_absent": true
+  },
+  "before": {
+    "exact_stopped_identity": true,
+    "held_outer_identity": true,
+    "held_tar_identity": true,
+    "private_child_identity": true,
+    "scope_absent": true
+  },
+  "budget": {
+    "accounted_disk_bytes": 11023353730,
+    "all_owned_image_charges": 1434749826,
+    "helper_reserve_bytes": 64000000,
+    "outstanding_bytes": 6000000000,
+    "project_allocated_bytes": 3524603904,
+    "service_memory_bytes": 320000000
+  },
+  "head": {
+    "containerd.log": {
+      "bytes": 0,
+      "mode": 384,
+      "status": 200
+    },
+    "containerd.toml": {
+      "bytes": 124,
+      "mode": 384,
+      "status": 200
+    },
+    "io": {
+      "status": 404
+    },
+    "root": {
+      "status": 404
+    },
+    "startup-private.log": {
+      "bytes": 154227,
+      "mode": 384,
+      "status": 200
+    },
+    "state": {
+      "status": 404
+    }
+  },
+  "logs": {
+    "containerd": {
+      "status": 404
+    },
+    "k3s": {
+      "status": 404
+    },
+    "snapshot": {
+      "bytes": 154227,
+      "context": "synthetic-classification-only",
+      "exact_issue_counts": {
+        "ca-watcher-emfile": 16,
+        "cert-watcher-emfile": 32,
+        "cri-cni-watcher-emfile": 1,
+        "cri-service-unimplemented": 238,
+        "flexvolume-missing-default": 1,
+        "flexvolume-ro-default": 1
+      },
+      "lines": 1099,
+      "ready_proven": false,
+      "records": [
+        {
+          "sha256": "14eacbdeb17d19a694347caff8ef0ad4cd0b48bf49e886ee4aeac69ddd02e264",
+          "source": "k3s",
+          "template_enum": "certificate-cache"
+        },
+        {
+          "sha256": "4b0dbb7daede8961bf991824f47e5b67a3981611b76f71790d3786b5c00c5fe1",
+          "source": "k3s",
+          "template_enum": "core-initializing"
+        },
+        {
+          "sha256": "6654cdc5ac414233651a05b57a3e1fa52408f81fe99f682afb15a5694dcb125b",
+          "source": "k3s",
+          "template_enum": "safe-kernel-denial"
+        },
+        {
+          "sha256": "3b2334d402c9688ddf9f92d5c838b29ac05fbbf58f5312e080879dcda87822ab",
+          "source": "k3s",
+          "template_enum": "safe-kernel-denial"
+        },
+        {
+          "sha256": "1fbe47d021360ed34542655ade330ed94bdca24357c9bdc4d690480bd09a0254",
+          "source": "k3s",
+          "template_enum": "safe-kernel-denial"
+        },
+        {
+          "sha256": "48bd0acf7c79dd40d5ef6f018872abe51db2d3ed129641192e1efc944fd29848",
+          "source": "k3s",
+          "template_enum": "safe-kernel-denial"
+        },
+        {
+          "sha256": "64be727d50423b3c9e55238b0e03678397301177d0a35d25ae2ff4f8349feebd",
+          "source": "k3s",
+          "template_enum": "safe-kernel-denial"
+        },
+        {
+          "sha256": "de4cb3e3379b5537570573e0afc8feb77c7d6bca68e70f084a05afb7fc462f9e",
+          "source": "k3s",
+          "template_enum": "safe-kernel-denial"
+        },
+        {
+          "sha256": "84721e5a570f8f91190cd98f3fd52a8f78da00ede2bfc143ce7f5bcc11dabde2",
+          "source": "k3s",
+          "template_enum": "core-initializing"
+        },
+        {
+          "sha256": "a7805a229d06a68b69e17671108647d9446be544970c4105672e429f0f8e17c3",
+          "source": "k3s",
+          "template_enum": "empty-metrics-manifest"
+        },
+        {
+          "sha256": "4ff00e50d96a4311aa0c8bc34992547b28ea4876039fc3242d9993a0e74a2863",
+          "source": "k3s",
+          "template_enum": "empty-api:apiextensions.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "89e6e82c8d0722e6a28306ac638259d5848629599277c61569b082b51b146e09",
+          "source": "k3s",
+          "template_enum": "empty-api:authentication.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "89288875a046ff2e05bacdf90719339a141ae47ce1b0601d4cad346df508a8c2",
+          "source": "k3s",
+          "template_enum": "empty-api:authentication.k8s.io/v1alpha1"
+        },
+        {
+          "sha256": "bfea2942220e491fffe02c20650a023ce3db0c78575d62cd4529397c6002df46",
+          "source": "k3s",
+          "template_enum": "empty-api:authorization.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "48ad6e7cc362e8d7775afe3de367fed5a70c578dac881e954a28cb1a6b087512",
+          "source": "k3s",
+          "template_enum": "empty-api:batch/v1beta1"
+        },
+        {
+          "sha256": "cd590148a6def58b993c3d346cdbeaed173856f8c0b0ae5e67caa4bcf983429e",
+          "source": "k3s",
+          "template_enum": "empty-api:certificates.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "0a443fa5f36b6f48afc9f0cd4058502ccec249b6b3db4b063d968738fe4c540d",
+          "source": "k3s",
+          "template_enum": "empty-api:certificates.k8s.io/v1alpha1"
+        },
+        {
+          "sha256": "49a74d3f4e826e09dfd4da6c4d932f0b0c0cadb00baf693eec6e4cf58abf9640",
+          "source": "k3s",
+          "template_enum": "empty-api:coordination.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "f8dab1e93f5831cf1d8b781a8e11d4c976dc43ae8eeb9c50486e557e5ef606f3",
+          "source": "k3s",
+          "template_enum": "empty-api:coordination.k8s.io/v1alpha2"
+        },
+        {
+          "sha256": "9115d741282326478779f7dbe62fc952b080aa0ff69f571d86a066864ae58aa5",
+          "source": "k3s",
+          "template_enum": "empty-api:discovery.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "1710a79aa1b84092e9902de7df6b257d0651fa5325a72e4e9b169404c7a6a0e9",
+          "source": "k3s",
+          "template_enum": "empty-api:networking.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "86b06e277754b46eb1f45e50240725941e3e4a7aae87b2ea3472bc5934111cd2",
+          "source": "k3s",
+          "template_enum": "empty-api:node.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "641026a55fb655b7ce1c11721ae45ce22ea6999779006e9ba403d70775bf41fe",
+          "source": "k3s",
+          "template_enum": "empty-api:node.k8s.io/v1alpha1"
+        },
+        {
+          "sha256": "d0ccba370082354fe30523a43f3f7d8ef48e48fe4b5c0cda525a3e3f385fdb43",
+          "source": "k3s",
+          "template_enum": "empty-api:policy/v1beta1"
+        },
+        {
+          "sha256": "90c3805baa4f85d4997d5868e24598fbec362756dd8743647979071c4dede494",
+          "source": "k3s",
+          "template_enum": "empty-api:rbac.authorization.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "35015d543384c308ae89bd0c081e8cb7b951061d9852b321ad37c357353ef976",
+          "source": "k3s",
+          "template_enum": "empty-api:rbac.authorization.k8s.io/v1alpha1"
+        },
+        {
+          "sha256": "221b2954250d23527b1ae9f34064e42b90789aebf3600c5d6a0a7766d371f81c",
+          "source": "k3s",
+          "template_enum": "empty-api:scheduling.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "bedaa71b47254807ad2b621f2036279b24227b9928d2ab42495924dc0321d0e5",
+          "source": "k3s",
+          "template_enum": "empty-api:scheduling.k8s.io/v1alpha2"
+        },
+        {
+          "sha256": "e35d41847fdf5e580602d28ad428025648063e2493f251e2670acfe238540b80",
+          "source": "k3s",
+          "template_enum": "empty-api:storage.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "beda2dd8d2037fd63744a3bd945e419844d50a684fcacc7f540fd2d9ca3f7bb9",
+          "source": "k3s",
+          "template_enum": "empty-api:storage.k8s.io/v1alpha1"
+        },
+        {
+          "sha256": "3f69706a18c48027b461bd0a83d2244ca9e70c31a2aa597d43bf5b2927162df9",
+          "source": "k3s",
+          "template_enum": "empty-api:flowcontrol.apiserver.k8s.io/v1beta3"
+        },
+        {
+          "sha256": "0f28caeea3ffde5a9e3bd02edd67d33cacf65096944f247847275bbfaf4ff700",
+          "source": "k3s",
+          "template_enum": "empty-api:flowcontrol.apiserver.k8s.io/v1beta2"
+        },
+        {
+          "sha256": "d7f61e2decc04590afa201ae5dc8d525505651dac025dd31f7ed549da5f27776",
+          "source": "k3s",
+          "template_enum": "empty-api:flowcontrol.apiserver.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "47015dcc70e64894f73b9d2eb71ce62317b312fa83625515437c762ea7728bfe",
+          "source": "k3s",
+          "template_enum": "empty-api:apps/v1beta2"
+        },
+        {
+          "sha256": "d06fde6ecf41df06d4dd4ebf2dd3fef0159ff76b29ce5437d2bd06fc007491db",
+          "source": "k3s",
+          "template_enum": "empty-api:apps/v1beta1"
+        },
+        {
+          "sha256": "95ef3c5d1f56046d4bd943408548560b54d359b91d8044ff753dfdb97bc4af38",
+          "source": "k3s",
+          "template_enum": "empty-api:admissionregistration.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "c93faebaff0c434a3ae0c44726f6e4395710b433a2901f42151613bf21bc4159",
+          "source": "k3s",
+          "template_enum": "empty-api:admissionregistration.k8s.io/v1alpha1"
+        },
+        {
+          "sha256": "d90740b478f92e62e8f6ceaf4c2cc74e6821d5e2d3172947548be3065bc1ca04",
+          "source": "k3s",
+          "template_enum": "empty-api:events.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "b8cbea25a61e05cac8b77f997a67651c22a83d1d4f627185b1fdd497dac9c8c5",
+          "source": "k3s",
+          "template_enum": "empty-api:resource.k8s.io/v1beta2"
+        },
+        {
+          "sha256": "52e2060c4664f7f05a986ff1bace32f72d0c237ae83bf74b0fdb2941c2daafd8",
+          "source": "k3s",
+          "template_enum": "empty-api:resource.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "73efe4bfeebc8066cb118bfe85d6a7fb2a93713c5290f93ab3593c7ac5166e64",
+          "source": "k3s",
+          "template_enum": "empty-api:resource.k8s.io/v1alpha3"
+        },
+        {
+          "sha256": "2ebbb69914a747ba2c4c067fb6866b7f71b4d4d65463b56444edd7d7fd0f201a",
+          "source": "k3s",
+          "template_enum": "empty-api:apiregistration.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "9854cf659d23f03d3ad942c4a57af1c2fad9b93e62702808fa723e03dc3fbf00",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "3ca68130a89fd576c694f8970464c23dfb1eb57d557b7a57d787b31467bb7e14",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "9da997d03157a1fcaffab4481217b2d27826649df33cf481884b0a400f3bc50b",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "91fb88ec513bcb9c36d50b98cc08159d6e9b81840ec7c7ac8756bdf7dbf00cdb",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "5a423d04917451e1cbd1fb4547b97421950949c5f9ed955c1872ca321c9ee468",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "ff468d5fbb82a84fb2f3f8b025c5f851289efef346061b3748d1fcd6d1628a1e",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "b6fe5b86a0b70922192f748d69f977b0a83cf27909d80318cb0dfbc273917a1b",
+          "source": "k3s",
+          "template_enum": "lease-namespace"
+        },
+        {
+          "sha256": "03bf75954c4cdca58017266ee9770a0ead6b19fe6646bb55de9d4fd927d3bfea",
+          "source": "k3s",
+          "template_enum": "legacy-configmap-namespace"
+        },
+        {
+          "sha256": "6408df02b6ef72e61c2bda98d42d07a3a30a9c390275bffcf361305ada69a2aa",
+          "source": "k3s",
+          "template_enum": "service-namespace"
+        },
+        {
+          "sha256": "0ddc0ba618b038261dc979a617c9d0890c4df8d93bb2e82e83f8123a66832160",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "db66d2655d296c76343e8d7e66661c5e9d3e7a51a85d440e155a49637ab5c5ae",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "151a884a83f2b88fbfbd3cb795783d0624b5a756479829545d59d0b273df81ae",
+          "source": "k3s",
+          "template_enum": "reset-endpoints"
+        },
+        {
+          "sha256": "3520433784022f1ee0fa093a9a54e0113799e1a6f18a940969e91121692f87db",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "06ac35587294494db96846b66c35dfdd523c1718d5a4fab8d8de6b9b61a664b8",
+          "source": "k3s",
+          "template_enum": "empty-metrics-manifest"
+        },
+        {
+          "sha256": "fcfb19a6cdc7b8fed36cfdefa3fcb82996d29e9df41018e5753734143dd1e421",
+          "source": "k3s",
+          "template_enum": "empty-metrics-manifest"
+        },
+        {
+          "sha256": "ab8b2c2aa3df3002801618c07f4bdc48d889845095f737b77a4b576aa5755fa1",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "e0f1ee3cb187d58cbfc031a4a21647f37f51d15e8689b235bbe471945a159594",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "d1aa3143cc1f19915a409f8cf483b4fcc022ac280e13c0fc0b7fd394fa725a0e",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "9c8d49fca48a57b01f3fc32a6411ed5d37856592e2cdcb5175866c4b60e156bc",
+          "source": "k3s",
+          "template_enum": "flexvolume-missing-default"
+        },
+        {
+          "sha256": "791bff9dbf11a530b7dbc7a62fffd6616a6c5efbc6e071e39e906a356a9affd7",
+          "source": "k3s",
+          "template_enum": "flexvolume-ro-default"
+        },
+        {
+          "sha256": "d2b9622b2fd9203bf5453e1e94784e2253cf20068df1193b891bb0708d974799",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "abd3bfecbd822e956c7577ef52e12b4230f070b38fe2832b487c983956b82eeb",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "6f2a2b0a194c80b43c199fe3e161283ca494cca51134f48b9534804de85dd38e",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "b8562279de2fdd140ad5386ebd36f21546c083190b8064b22c1ea02e0f679aeb",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "036259663c43b7661e85cbfbe82164c72063e7aebfc911ebf07a880b2049ea51",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "5b7c709e5867c3334ce04e3e4bc5d8b9a36435a14f5e62ef4b003bd3509e49e4",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "0852d4b1285173d9534ba389bc4a9d8c9ad21d25ce1d91c2419ecdeaf30c42af",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "f43784cd1b20b729d0b6ad505f1f22dc7e22db7a9e426c1c3696d96b4cf7722e",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "ebb47797d9af52058184b3d31692c68a66946a7f2708528be2e641d054820e78",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "22957e11c7dee0360d91e167d3d8281b0c3789b8e88dcc4d131e0de97bfae312",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "47f13d8c22ce14ac6d3a63037a3d2f53b3b8a1cad910b35bb78a78237bdcd065",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "1406bc31ce33b32447470bd9e3980b031611a90aed4781757beb82de4a5cff78",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "15e4578532898a42cf7f73bcf1eec9be1d5aab0e95ec5c81d469966628feb46c",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "ddb4185682b34a6aab5c90ba5621e359055ed7b1d55cdb1d1c9ce1b9ece8afe1",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "4c38bf7856627273ce19f583cc016347b046b620fe818d2855caa4cd6f7b6070",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "290a8db6fb9511bb59989200e432093a24770f18a02e5868bded1207dd1232bf",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "080ec0ff0d3f82cc9662dbb7729bc016715899c3ce5221db2ee1369bd7d8053d",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "59f726c59466c4dbb9a1e80b1c2adb353d56906c0aa9e6f27421df61f19ce7f5",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "b18334143a021b7b6d53d47ebbf95f7b3350824cac245b2fd8b73dbcc398a19e",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "d4b02251e1824bca55897e14354beb60ae0c0f85fc45572a25eb29008782d31a",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "7f41ace3c06a3493e517efb42f0930b35f478240ddf304f67c311b36044118c2",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "f4db90efcfbf836f14e970420cf9bf4cfb1ebca30f5a40068a4a1978d2cb742e",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "f7f400ed83f3798b78285130923446310d8e56d9dd4bdfbd73b28246f1e3de5c",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "96af6b9e1fa37288343ea3dd5ed5aa9b8f9c0e1131a213a11ee98d578d33c7cd",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "67931911fc165550a0bdda51db9a8d05cc6fa83798a4298012c85a7ad5d96da9",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "d6be1190899fefb95fdc9254e5fe8bae216e0c85abd130bbf16899d3446dbd55",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "9d0473e478b6dbfa0c10f328e6b1074bd08a377bd13db9d8f1149216b1e054d7",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "7ddf5e10f450d1bcf37eaabb1d9b3fe90ea70a81b86b6852a6e669e1aea42623",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "5e534fbd7606549b8343a6846589dd9fb3caea345e27804d55f8e5b999cc125f",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "9ac093580894b95ae183a3a4154db4724d302637db10ea0c91f1765c5d52930b",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "8c24b109f470717e50fcba952fcf47001eb8ccb148f473f781fd746a53498fb3",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "ac329f3af5df813d52515e5bff76d5785aab9ec5ec47c99f59a49132b91500ae",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "d0cecf0aa8faaaffca0ee2398088a731de8f2d441ac3d846ab3be4bb2e003d18",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "5a218f6bf03ba1d3eed26e1149ab21a36064ff5523327e56a0f0a2ab66b9ba7a",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "f2026123c5c197f9d1af6831e232ad03f941d19aaded3ae2b84774a5a9848b48",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "575d18f92193ae66b619746a59512b0dcc3434858276c7c7ddbfdce626c4c3de",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "30c2e3ab58ce5b0955cfe9f8e9e7b0e54f794f969294ec5c4e344040295abde0",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "901a2fae334631c45f20d8b7941f92e4ddf702a81065b6eda823b9c5a7dd6188",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "a8c608873307fae53f61333a8a6fb7587b289e1091db6aad31d9459806cbd6d2",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "a071dda95374840ff11d67a5ef51bd1f282fc3fdad6b15f91bcf0a8a31db2e7a",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "60910e82b79fb4cacc0d8b3f063f49fc37eab7bd098cead2334cc0cb0c17248a",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "a52320810b11693bf99176b4c7f34e9665de00afea855221b90ab7d8f167d905",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "ee2a799927bcc4979a64f80223982572553dbbfeb267d6cb63438dbad10f5999",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "f0fce737b62ce67269b440ae3cf930c20ea62bce525a2d31253e72cdfa710431",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "a9ab95a9ea845dcb2c848e1023edb29511b8835feb4e1978454c76da8f6b2c98",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "6f50314ef645447801c72fd35288bf784d3aca56af50b946f309ba56a3707308",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "0295bf702232a3d76fe46f3a95b8c11e89ee7aa97fe508110a0e4bb078ea6ebc",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "c5ea5dc672d244dc493fc41c6668229cde7b8bdd93e0a66a8bde11101b71adda",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "999b89424eb8dc144cd36e196ece4a00ebf610a600eff7613b9d1b0bdf2a855e",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "c7ef71ffb5655337502c5b614641836e9b0d33543d55b8cda4ac047222502040",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "119f7463dd41bc9d83e954a670097d3cfe7c9c50c576ce53a354d7ff4bc667d7",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "ed11b36638f1e9e3a7db6420fd0d12df94a63ea5b4726c7a0ad078f4cdc39f2c",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "e229cae93f9dc5ff276811a10307198ca66ca68b1173db6538f184658e782476",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "817cb8a024a4feb4a54dace7f0cacf7e1513db1a977a38277b59c598cf47fbd2",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "53fde15fe48186b4b170c976954f3b6d1603bfbf453220f4cfffc79d6e8efca7",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "cb7662d96904fdf9c52069718ad5c437e0b4c1045af1271bacc1536ef97fb2a4",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "496bf776ed9ae66d085160602989d8248c162d5f64a3c49c765d11660d2abd81",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "f8dee845c5932ca1c2bd6c02b6e926b8df8d1ba58d231354129b1ff0094bf408",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "1431546199209be556fd17991ec3808656bcb4d4910bb7085f0e8e48465873c2",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "fdf6b5866a8095b7a70dabedfba8a7d6583973a6f86b7eee6ce061e20208e0a1",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "595ee7b8549786458a51e40021c54988f64832ef543580386f7a876fcdadec4e",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "f675d1535a568e2ff76d31b8b93b259d81947f05b3c42f102803747f87ef2732",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "ce37f3e8db717eaf58c90d740712c59f699fed07334fe16a200de7212e922a23",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "e88ffdd19fe88cfab9ca5270529a6cc6a3b9c886dcb29e7e235d8f37f8b89919",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "7cc5d7db272d032f61b51e214ec0d38ac49de85b128af9f56b1efc47c99ca383",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "67d4b55c6e3d570fcadc060e49d46fec3b7554f877a75ab7e3e4964305a529c9",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "17e60399093103be6619d34b6bc47c179365b87a441e17c8519c56827ce4fc02",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "9ce8c96c3e7812b26a9013d1ee01bf46f6e09c6eeb3250f6459416b623de5e0b",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "7f04a50a3095116aeb60da4644d5e4bbb0deb0677b4db128cd618f74e855fa4b",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "b4b7a0c04c0357b23f3f4f9358ae6e0704910ff9b8c6bf2f51b46a4979049bdf",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "16c1946e73d88454770309a2efc608ed873c1ec12d7fbc230b8f8c409c430cd9",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "b8ace02661e8d5348de9db76033d25cf21ad2c226876b96f69388be49dbedd2e",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "1cc002d5b16c4e564c164e34bc0cf0d147c5d420c8ab51f025782da5a8cc4238",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "50c7794ca9578fe0e910f0021498f3f8dfed53abb02d8c11c0ff7092e56eb0d5",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "9c2f83c1669136d3c3788d4eda8b69ed4c11d3e1f8a7ed5ec973ab7fff3027d7",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "430de1db31075bef9d4dc37db61d16d0b4bf331e26d677dcbc10071bf6518cad",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "2007cf4f1415ab08d1a56832ccfe98e02be2ef1b5938f8e4a0b9297c939c015e",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "04b702b40096baf4f089899964c635db821cca4e6304eb092d5888070b496fee",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "2007cf4f1415ab08d1a56832ccfe98e02be2ef1b5938f8e4a0b9297c939c015e",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "cfcb53d1c643cda2ac4b7ec18dc0b2bf650a3a38a59f2d042e1d64752fa89056",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "1c89b9771f359f97c084baf116fa96a4299344efe0c92c00c98f6f2bcc6da7b2",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "dec49c24383a8ad90d52ab77cfe94ea4854776187c048853ecfd8a55186d0b4e",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "404834a013438940370f9fd6ea5c6abe26d496eecbc896faca6bc187dfaebea3",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "3f2299039e7e6bfbdf00d0a10cc4a32aa5a0ad1d2b595cdcf6176621dc75baf6",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "bbed8addce333a95b78e6300f50325c7cb348cf9de11ed5f9078dbd5836c0ea3",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "3f1df5f3920c86845405ed1203f66991f08f57ebf1e2935a76af2bda554e8db5",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "536537572ecdfcfc862b32d314a64e1d71471803bee8ce5577e972a6033e371e",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "e3d5b4623dae3d878232e5df1e69fff72a67fb9a7df777a445540933c951411d",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "fe8ba708a2cc29fc9e6002d95bc2215f5d709be8496c0c627a9004565fb640c1",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "8d7fee773ceff5d2cd87849b9d2ffed3a9242932d7bd2e0579115868d7ed4101",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "9616be77b41241435d83daf8d1c20a1c2147f53b4a40f6d1347f81f247099551",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "4a37492aab90dd63d7ab40bab0136ddbf360cc9f2baa51c85f47af3daf86a4e6",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "7a7e707b8e2abf843f592aedeab3a492ebb2a971cdcb8dfb19aa45ab3286b2bd",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "4a2cc7e643a9c6a964826350a72202f390c73b3ccd5742a0490d819e548cfae7",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "2652ad713acb4def2d51324679e79c22595a0c3a69cf68013a05d61fa1ab5dfc",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "6fe35cdbc773ccbe9c893ff3fd09a9d97c68bbc9bc1af7e69f07ac52b8b7fc41",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "12c082227e55f1cd9b00cd6868ab7ef8ffe0d0d3438f8b80e46389f92e23b603",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "b24e86890251ec0e47f973767aec437f1e77acb6c9a94dd14d111ca4a1805705",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "a3975d532238a7eaa535aaae2375d01a8ef1520b69664d138af4900b0beaa4ba",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "df705bc08c989d9525be1acbae85b7c7bd609e2d6de21a623a4a9ad1ebad6905",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "74f1caa8f49137705622856209eec470676aff76a8deead7605f486e708cf9af",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "649e94f284f530b9b5d4e84156d602ec4d67caede22013622cb221c9b30a5e55",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "ebec54d0ff2d7218629a568e71e1cb936a469790cb3d71078ff27bca88cc5163",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "fb87207393ccc768fdd99908be87c22b11501a1a492d4c527b15a969057f49c8",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "0cd22a61be4f2c2c6607e06a00e383ca1f86bb8445796e31695cd4c3b0af0f0c",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "38e9e03924c1d6884fa1d788049658498b365bd96c47e9ef979b58253ffe5cb3",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "095ef6a1f55ddb6f3c56c9f205f89369400085c3f271636db8741ab4f626df67",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "159edf05392ff95b39bbefab96e2402e70a81153173322912226e949407a892a",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "e9834b60a403b764848460b38a2e0ee00cab6e9f7066f12b5ac299404d946999",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "65b26424002e9062ab9f205b2803b5d297d6b4009d84dbfc9a087c476ce1e0bf",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "d0c23844a97d636b80b857764780b7a85a5ef2df249c741b3257ab5473d94cdd",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "32ad84aea975e10c1dc3b4392b1a5cc125891f362f7321936d9c0635ac8b6bf6",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "ba83a2b878092f2c0906f2cf171aad23b31eaaa07cfce1bb7d88159a2bda85d4",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "b51b6f91dad047d158af04eb3025e30a3f2dfe26e314897ce2535322798f4e10",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "006e7b635c4066e7a8dbec768c1cc43be268d6082664db0a446d69f5e2280a4f",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "f066e0dbdc35bb78704dda90968f4d77ed3a7162f7b311a51dac66a7dbfb08a8",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "8c36585c1df5ac34548318cae71bed5ee2db0356e9b84c28be2fe4410ab7d5ec",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "7ace7f342bd992fe612f6529c5d018e8e752bc54bc3ed2978875739baec44d67",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "fd4bcf07f0a1c21615cd9894c236cab27cd937a3b5febf6c805c429e8ea816f5",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "679cbb947778ea80691300a9f09524291b270f9ea29a699a8f357d5a042569d8",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "9275ebadb26a035409699f9e9aa0c8cf2791e5118409d1304bb46f255ecb97bd",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "5b1fb44d5ba696a3f045c5b6b690875a1b4eef9682f6ca919ac13935aec8e534",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "a59afedca3c0c41266b78ab214bf51c40759cd2872334401c57bce82b35b10d7",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "2023761fa51a49ed89d92fd4204fda2d8b8a1cb0d400f96a5a00ce061fc1753f",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "2535a1e559220f394e3b9b9b21cedeb185cf5f37ea7dd2ecd4348ef0942e3365",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "14a41f282d0b37da6672dc85c4d74688090c673275e9aece5d01d3b0903e483b",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "932f4c292266d6d195cbc85d83517924a51b072a4b054a1be6367bfba9855cc6",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "df68683b91f19859269ea92f95611e83009bd4e40b6b6937699af5144342f090",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "d7e291ff680ca0929cef17a869ee3253399675e8c60a0d5b11ad1a3722948540",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "174081cedb9cde17d953bb56b92afbaf937b148b9993591e584d1b39cf0e972f",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "5d221c0199091bbf3ecf9bbf53014b9f4bae175ea9b0b9b8bd6444582b92a6a4",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "7bc11e8e625e78c99075c6a8c9efb8972b4ef61716bc11a0439a94f1ccd4bfbd",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "1fbae4197414e5b6d58685fcebea7af76f5bdc9373b0b5d0a6208671b6a8eda8",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "db2efe9a1976b23d3f46c4ca1ffa85e0fa052379aadaf362f7f0ff2c9d988821",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "5285eaeeb624f0a8939b00f767c8f581a8ea052aef418d8b273a89e4d9ed5f9f",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "70b5fea30180316bd8758128d1d649b978ec3c545947ddceb51fd64eef229dda",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "f3f763368d281c9225e4c851741ea55fc03fef26e47a8ac5f119ca196a066a7b",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "249180a99e5c25b3a5c015e8524acfd95cf44226515497fce2d26e61019152ce",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "d43250210a3162fb38d6c383e1fc2aa515a18d0a54c265b0056717cb6d999948",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "8bd0cf87cc16131d87e22c90c7767069a5f71f144bdb780bdde7707940883093",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "9e8e858e893c64d8dd6dc83d4091adb3f0de5992718cc32ac45e7fbacd87f4f4",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "315bdd74d01c9cdd077bd9a930ce4b221ed9188203ecc62018784bf2cf2789b0",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "c92a63e6749cec1801e50b0c7b77b21048b0d1915f5e3a261f5b8f87e179ec3e",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "8b55ec153fd8af38b5958a0855746e1e3ebc5d630ab63787590fde5996a6eaea",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "48408b4f50893f6805118d7a31f12cd60864187cfab50c781741a63ac670d09f",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "0af4bc9b44c20aa4ef91d1fbddf5129d2ffd2f91a3a1b866cc9c879a1755a87a",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "1781376898ec2a13c1fb11bf2d6d30519289887f6f5a84eb84829429c529abf6",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "9846e6328ea352b36bc180515d04a5fba4851f185d8d76f9a28ce9e678988221",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "af24578c51fb3b1ed38f36c02c0761ef12e432ea63f19f625d3d57df0f86212c",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "af24578c51fb3b1ed38f36c02c0761ef12e432ea63f19f625d3d57df0f86212c",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "f4ca378ae499e8d9cdaf6ba966a4fbca4bdd069053f562238d3ace5b772dfe57",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "3e8a3b3481d1f3d937da23edee9535b549c57c5b3af565f03e5bb54507ea3fda",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "e936b27d41706b56179787d967b03fc4e1b929a7846ed6563829610491c8e22b",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "76526f3e583cd948bea042b910382466b71cbe34bf30117f9d194788c4111ab6",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "38ca9ebc5cc5a170045245a9b05da888641b4373124e4606d610e3ced4623dbf",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "1a2661b957b4e948d9bab20364f771e47a46c68c071dd311ff8b0479d1f6648e",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "b908c9f1c4d6d88ffdc7a00f2c337b1b2ffe4374ba7af51de364731f7a9d0b1a",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "407378b24bd62b7e814907ae73f9b5769478a70e4159595fcbd73326a5bd8a49",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "32ad3a375e6ad50e44229732c14e4a8c432c3ad015dd4c2be07f82fb7d1d31e2",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "7a7344ccf732ac0e4f98a899afaf81e860e35e963b2bd186e286ca935cdc62fb",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "d768e69a561cd3b61c7da1b66b20043cbe41874478a2cc7138fece9754feeaf3",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "fa6362a7d3fd221c1b27c7bb713c5c0085f6a1a83ee7756332fc16724e77caaf",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "83d192d4258ce2b1c5b5029211dcefb252355c4bbec1b9f95d55189af8e1bb7b",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "1251065cc2aafc08325c00d16ec4a2497655b317cde67483aec7b30c5925d9c7",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "573b5032351ad98384f1dc541dee4cad50f9d623954b894fa2f813d25ced117c",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "b0b60a6f3aa0fdcb2135535f73aa54b9dd562ea31a35e5e2fdd25ff4dcca7694",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "5c648d28c8fbb678037782d41783fb23d4228a4579e537e8ae7d101974556583",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "f798795788633ab654dc4fe5659e3ab9a2a89c26e6f9c26d49bdd99154956bf0",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "c9d92943618b5a53fd334d04b84a625b074f065f5ec320e8151ad3c7744580ad",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "bdac76e7636ba9ab45fc9f7b04dc4a4bba8ac653f94dd1c84d7fce6db27100c9",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "c36595bde6d19693ff7b5644b74307bcb27b2d50592a75fe68a85ded86790fd7",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "600a13e2bad8d563818dcf4399b20ace21944b8c67f327601bddfbc561da5751",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "5be2d2003860509e0e84a95d4802e482c85010a26987e59aca4fcbfd413a7da7",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "6498df5de128009d9a26d3e32c6d856989fd8d00d314d82583bd9f9ffa431206",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "530e7eff33db30ef0365b1ee5236ebc2d9a67d7233fef8aba960f37479bd11f0",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "8619f41686754a8b868cbea930563d52afed6f1a7cc564591286e6a29b1c1257",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "9aad717446c75c959bdaa621486ce7b360476edb3c70f9f8cab1f613fe5e18f0",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "107102d157ade3874c7116b6d14417d948d887381af55b938bbc09c4ca286c20",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "0b408e560a1654d9a3e8f45356e70e7fdc20083a852884bfe8ed3121510ae04e",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "2c39ed41fafd9bfbd1cc1e0d8ddf4db2a13635cd6002e1dfd065dc1ada412ee5",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "67cddeab0d82c021d4112cc16e13fd54115e4e26444eea6968e0dd3e390bd63c",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "9526da5bd4a22cb8642ff9f19fa61aba8cbee31a2fd26407c7d1d8abc7ddaa03",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "ec124c344915721679854148f2578b41d2db0038d636724be92ef27a9e02e9b9",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "e7d1093cce97f2b2eed27bcc1e0ae2f1736567d3c95549f4b7485a0ec8d7babf",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "6de0644de0d14da3d818a83427f1d778188e9c8b95e159d64e6df23ad1c69744",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "9694cecf2a2e415f1e53351c1311b2b61ac8fa825375fad25b8a60924e1935c2",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "203f50711b270c67ecf8d604936e6a4463d7f4ed426f23eb0d01e566c6bb1a9e",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "daeb9da17a9ed60b5f490d05a3b6fa1658215bf866d996d359d3d382ba5782f3",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "44f7aa02d74eccb9ab76d455482b280612d96978a00558dc94d39ab02f3cdaa7",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "a53dff335265965e38c5424975c647d32e670228cfb51eb93302a0c82d014bd9",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "699c6327aa613d0d247e8b21d02b007812c744456b7847bc9b23f076c3789981",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "1e3343802cd0e136ef432fd1640e5d17bdb6218059e1c884c04fd15a551ad550",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "1f9272e7dbb53a438f3ad3c30f6e071b8519c4aeab29178952277ff671cbc59b",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "f8a8dfcb312deb2ce0790cdbb7258a8333dfbf31b2edf04f149fcf1a39fce323",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "23da1fee4be957760e30c76d41f014a81a64c6a9d002f655b0c57d96b1222417",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "c268dceec7e5edd9627d551f8e246bd2da683e604fc0c49597a00a16a8fc5a70",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "3f782b0de5c7ae96358e8516d0eef9c66954687aabd2cdbcf25b471110683287",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "adddbd18afb8b4a1a39ec3f64d0c14c18a01fbbf9e01a6edb833cecb38c493ce",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "e7baa5823063b28555b662cdda48620aa1e0a368de0e89d9a250b643f0d7eea1",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "62e7a5fdd16c5cb4f701acb685f6a318b9e6386b9a78b8b562bde6d8418f8885",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "81247f44d4e3f6f6301fc1780b0bd0adbd4fcc20bd2208d6cd2c07ce88e2904d",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "20d6c95d0b5461025fd04b5e9ead5a114a9edb552f253cf7fb0f29955de2a9d7",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "7e362f5989251af8d62c277c324ed66de0a2a148cdcf7c6c76982d63b8ce9774",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "61437ade456d08853dceb3ab6bd4de18d8b6e5b4fc9bb3eb19d8332927a4b861",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "b4f828f42503be15566c7e10710e3964d4601e1e3696db607f4734d21fd58c18",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "b4f828f42503be15566c7e10710e3964d4601e1e3696db607f4734d21fd58c18",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "02d782e26d0c374b520cbe6429b957d46a38e13b3684547d6500ab02f0b9f1a3",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "394ef5e23a31a27f6d269dff1d2d42f089955e30368d3402f16806011ed0e183",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "d21b710108e679c5af1c32954333118457472a483361826181e9386e0f7583f6",
+          "source": "k3s",
+          "template_enum": "ca-watcher-emfile"
+        },
+        {
+          "sha256": "773318bf510f741d287f2a0546728cbf9a47617867b3a82af57e00a63cc7163e",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "f8947a403f3f24545a9bc0321e5e9122dea2849551497f5fd67100adb635bf7c",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "a305b342706d56c906290c94007b175c635602efe056c09b53fe45a6718a5860",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "e35211e3eb1c914dc24067666f24c8bc54fee35df07aa8b1efd3711c74126ee9",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "97ad5ca97526fc5748e5d5aecb5d5ceed2713bf623a1d32cc08246e88bd45878",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "a98aa38584a7df94f69588e0fefa6a1c1990b1d2883f4ff2fd4c1348fda57d48",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "d5bfdabe09cd7d50645f6131eb32aefe1f43c3b7a6c42c20b6267ea665864d2b",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "d53d48333900b822232ed1cf5bcaf24eb37390a64a3b62de8fa54f2925286a12",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "4e57abb65d46225c1d4c91fa0dc63c427beac51ac73bed9572b0d9a27317c349",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "a189e8387816e76b82341d8f29b365f38469bb0263d46e342b6a28a9dfa5a511",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "ca952f4626694291c9510fca7114cc822f36b3c627cb1b63129a9826f9376f3b",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "ef47b12d442e0e0951eeaf952d969afb322f476a8fa7ab7351f14dcb61b34185",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "4e74896445ba781b751959f8c1aabb7c2c82f279801899302e83c5f79cb8941a",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "dcd904c74a4c25e7ea1d637516cab6af29e612c3a1c238a3c33836dc2bc5c20b",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "86ec8c16e2c5fc06abccddffd95aa04a4b4de17efe06a15b062585315d79e9e5",
+          "source": "k3s",
+          "template_enum": "cert-watcher-emfile"
+        },
+        {
+          "sha256": "c4b9e7b4e8137739620fd9210fd0b60535ffdf5c65e0a3541ab5e53df74d8d47",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "70038081554e38a32a545eb24778d339511ac397fc22ce1473e664333e5b3549",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "899bdf979fcff81ce0b8f018ac26fe49c0fe68c9b2b2de4b1ed2a60ae1072335",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "c67368d8ae16fc14b01c0efeb2e5d5646efe7c846b2c93285111344222ef0463",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "cdd9a808b85b607239e55e6e7f893c0c25f679c541309621e86234c126a67578",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "f280a5f7fe69599b37968ec0d96d46bc5b089a08bdbf048fce9acc9b17ade992",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "8078eb481614273d9f58b7c91060d6dce92e55d4a0007e035a4c43872e50bf4f",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "745b4611bfae7902c059fd3eb6b68999221cc6a3e3652517529ad7c47f0ec06d",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "a797d0bdb788424182808f39cefa5210981bbb9501f847025032fbcc40485770",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "3be7750f6b602ae44371c85a5c8b60cd8c603bf19e5de599bb432198f3fc2d7d",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "9567f4a2f7e02d9beaf30527cadb7996a7738afd77239f24a6106d0232be9a38",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "1ffaa2dee3251eda26f9fc14af51db71811fca752852a9eb6ed23f4a5e8a3154",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "fb0f9775a5d8a953ae670d408817175efe0f7e608bb16df5492861b26d69fb18",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "9827e733dffd18f93bf9b741cff5d5ff1d106f6cd4cf4715376e0668a7efa629",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "0759c9355f70f46d060ed45b509fcd5094d93c356635ae67c7628544ddcbd84b",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "b0ef1ee7d170b7cc8c03c7569b5821c03045fb943324b822ceb9788a71ce6021",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "61adeac6f3700fbf3f5ce54ad333847292ee81b0bb47d5171e76c18669ac8dd0",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "8f7a3b4f59122e61a7ac8e3606f78e0c1e9152def12a34f9a34e691e44136d75",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "248cecfcf7ae27dc72d6b5a0f53d0a806d877cd6628516d8a61ae277d885779e",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "dc0ca2fad5967e019ee36caee2001e0c604e21b42da77d97c45932734f479424",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "bfbd59e5b3845459f40f8690de7dc2c4bb765152506602d4c418b0dbac81b4a1",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "e08a3a08a451e41358f866805c4db18b541efe3eab71450f9586138aa6ab6df3",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "3ca735b2167e91c7911faacb3bd8d961cecfea0a65e9537a87009120df9b2638",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "7da7b30ae09185e8ba4ede47029374dd5a5bc3f80a47429fecf2362903c12183",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "5f22940834ccf14f9687629f9b7ce6a94e902d4ed465e0e9e74947a0c65ed911",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "0410eabe59d48595f903c5aab0bfdfe2f8e66a3fb13b74f79410f4ab4b59a122",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "5e9d873a65b8a2c5ef703067e5b106327f80735dbd3c6830c547f2e582a8fd55",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "1337250bbc5a1d2ab3764d74767dcffb428866db823a93f9f21f8f5c605f517d",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "12ac2308cea28432738edd0fc16faa8736d0072c3493f8bbd5a1e5592e04574a",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "09ae9b7ccfc9ec9183e3b481c81b39999e73e431ec155c6f62e483136cc0a03a",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "cd53ab7bd9eb7af3d7cbd0378c3d0dbea2d3c496eef0de216822b42b52d64c31",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "cd628a73d8810ac572e5d5acc6537de324fde5caa1da465bb4301a24e6517f19",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "160d98cea117880081cb853b69af206345a197492546ffd3cd2c1975540a8528",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "0ab8cdd7bd128119d6c732d418492228796ce2c4a8e6a081efedcd5ba07dfee0",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "63358ddbba3d253daae110d72a334a5ab6eccaef439461089a1f515665ee4527",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "dd25282e880ef87587563cb4f474dd6f7ceebe49c10c3e9e5533daed64b5d99a",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "aa7dc077bc3abfb853aef47616916445868e0d0c7df3115e46d8fcf9fa38923b",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "6154c4332f67c53574d59dd26972a4e15e5a28ee2a641e8967b557d49106bbde",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "5de70a286085391cebae999e73cae5b6d10fd2c5dda4f1d926e5a4f0547e446d",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "d96e7136dab08bb5d831ccd5cb406d590eb4037453f61a1585c3dacf3280318f",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "d6f9de8976e1c2d76f67ef14738402bd10adf404fcedddd5ad2fcbe6a49b1f94",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "8e60a8b08d5736aa09ab731b39f3235415e6dd1e661ce0298f3ddd8028bf6d12",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "8573ce6b7a474ae57e6b93ccf4941d280a72a71ee6a2b7eb3854e5d28a3b4e33",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "0d61cbc61e5e3e788e98f30f2331ed1114a6035ccfc30d11ad3505fde6e55c13",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "4a224a0f6e0fea05cc4fb9fa84c804a084353c997aa19e3475b719b0c3450ca3",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "aa9c05c8852092629a6c1536c47308c53c2e34db48b6627ce0f45db6a05ae76d",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "36bac562ebee1d7e68cc3fcd0b24e7b2d016600ce792de40046c450d58ae4735",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "27c1b8aa56fa847f236086533679b6ac10e294d76d1c362289cd3c959d5309cb",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "e8418389a3266fa65630aa043d58306b44ad4ebaa8a218df1c5cdc7a64ce3235",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "15abeb6fb6ac50527eaeebfa0b3f0c0f1d3430baf7990943aa30dc432564a17f",
+          "source": "k3s",
+          "template_enum": "cri-service-unimplemented"
+        },
+        {
+          "sha256": "997eac84e13adc60f5bf2e73507b1133d5c2fa70b7b3df5c26791a82ba9eabbb",
+          "source": "containerd",
+          "template_enum": "v3-migration"
+        },
+        {
+          "sha256": "70989ccd6b1123af34ee52f7c9175d22bcc9cf5fe0ee57c024e12a6f72cc4628",
+          "source": "containerd",
+          "template_enum": "fsverity-unsupported"
+        },
+        {
+          "sha256": "93ab518c68b24e4f281185b7cafae92e9b3638089320f96b2ed56d536be791be",
+          "source": "containerd",
+          "template_enum": "cri-cni-watcher-emfile"
+        }
+      ],
+      "sha256": "805ea89785a0720d6399eb92b3f26b63e2b944aaea3fd42d3ee9932dc36ce68b",
+      "template_counts": {
+        "ca-watcher-emfile": 16,
+        "cert-watcher-emfile": 32,
+        "certificate-cache": 1,
+        "core-initializing": 2,
+        "cri-cni-watcher-emfile": 1,
+        "cri-service-unimplemented": 238,
+        "empty-api:admissionregistration.k8s.io/v1alpha1": 1,
+        "empty-api:admissionregistration.k8s.io/v1beta1": 1,
+        "empty-api:apiextensions.k8s.io/v1beta1": 1,
+        "empty-api:apiregistration.k8s.io/v1beta1": 1,
+        "empty-api:apps/v1beta1": 1,
+        "empty-api:apps/v1beta2": 1,
+        "empty-api:authentication.k8s.io/v1alpha1": 1,
+        "empty-api:authentication.k8s.io/v1beta1": 1,
+        "empty-api:authorization.k8s.io/v1beta1": 1,
+        "empty-api:batch/v1beta1": 1,
+        "empty-api:certificates.k8s.io/v1alpha1": 1,
+        "empty-api:certificates.k8s.io/v1beta1": 1,
+        "empty-api:coordination.k8s.io/v1alpha2": 1,
+        "empty-api:coordination.k8s.io/v1beta1": 1,
+        "empty-api:discovery.k8s.io/v1beta1": 1,
+        "empty-api:events.k8s.io/v1beta1": 1,
+        "empty-api:flowcontrol.apiserver.k8s.io/v1beta1": 1,
+        "empty-api:flowcontrol.apiserver.k8s.io/v1beta2": 1,
+        "empty-api:flowcontrol.apiserver.k8s.io/v1beta3": 1,
+        "empty-api:networking.k8s.io/v1beta1": 1,
+        "empty-api:node.k8s.io/v1alpha1": 1,
+        "empty-api:node.k8s.io/v1beta1": 1,
+        "empty-api:policy/v1beta1": 1,
+        "empty-api:rbac.authorization.k8s.io/v1alpha1": 1,
+        "empty-api:rbac.authorization.k8s.io/v1beta1": 1,
+        "empty-api:resource.k8s.io/v1alpha3": 1,
+        "empty-api:resource.k8s.io/v1beta1": 1,
+        "empty-api:resource.k8s.io/v1beta2": 1,
+        "empty-api:scheduling.k8s.io/v1alpha2": 1,
+        "empty-api:scheduling.k8s.io/v1beta1": 1,
+        "empty-api:storage.k8s.io/v1alpha1": 1,
+        "empty-api:storage.k8s.io/v1beta1": 1,
+        "empty-metrics-manifest": 3,
+        "flexvolume-missing-default": 1,
+        "flexvolume-ro-default": 1,
+        "fsverity-unsupported": 1,
+        "lease-namespace": 1,
+        "legacy-configmap-namespace": 1,
+        "reset-endpoints": 1,
+        "safe-kernel-denial": 6,
+        "service-namespace": 1,
+        "v3-migration": 1
+      }
+    }
+  },
+  "remaining_content_budget": 31845773
+}

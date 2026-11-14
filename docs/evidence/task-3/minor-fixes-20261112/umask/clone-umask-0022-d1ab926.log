@@ -1,0 +1,117 @@
+# scratch clone /tmp/w3m-clone-0022 of ~/Desktop/Warden-task3 at d1ab926, umask 0022 for git clone and make
+# 2026-11-12T09:20:26-08:00, load 3.41 3.19 3.21
+# head d1ab9268f40bb904f5574d28324ab06d405a1325
+# git status --short:
+#   (end)
+# modes:
+#   drwxr-xr-x postedism /tmp/w3m-clone-0022
+#   drwxr-xr-x postedism /tmp/w3m-clone-0022/.cache
+#   drwxr-xr-x postedism /tmp/w3m-clone-0022/.tools
+#   drwxrwxrwt root /tmp
+# $ make test
+pkgs=$(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/tmp/w3m-clone-0022/.cache/go-build GOMODCACHE=/tmp/w3m-clone-0022/.cache/go-mod GOPATH=/tmp/w3m-clone-0022/.cache/go HOME=/tmp/w3m-clone-0022/.cache/home TMPDIR=/tmp/w3m-clone-0022/.cache/test-tmp /tmp/w3m-clone-0022/.tools/go/bin/go list -buildvcs=false ./...) && pkgs=$(printf '%s\n' $pkgs | grep -Ev '^$|^warden/docs/') || exit 1; env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/tmp/w3m-clone-0022/.cache/go-build GOMODCACHE=/tmp/w3m-clone-0022/.cache/go-mod GOPATH=/tmp/w3m-clone-0022/.cache/go HOME=/tmp/w3m-clone-0022/.cache/home TMPDIR=/tmp/w3m-clone-0022/.cache/test-tmp WARDEN_KYVERNO=/tmp/w3m-clone-0022/.tools/kyverno/kyverno /tmp/w3m-clone-0022/.tools/go/bin/go test -buildvcs=false -count=1 -shuffle=on  $pkgs
+ok  	warden/attacks/matrix	0.004s
+ok  	warden/controlplane/cmd/warden-api	0.004s
+ok  	warden/controlplane/internal/api	0.006s
+ok  	warden/controlplane/internal/apilab	0.005s
+ok  	warden/controlplane/internal/audit	0.003s
+ok  	warden/controlplane/internal/authn	6.225s
+?   	warden/controlplane/internal/canonical	[no test files]
+ok  	warden/controlplane/internal/jit	0.005s
+ok  	warden/controlplane/internal/runs	0.003s
+ok  	warden/controlplane/internal/scheduler	0.009s
+ok  	warden/controlplane/internal/scim	0.004s
+ok  	warden/controlplane/internal/store	0.004s
+?   	warden/controlplane/internal/tenant	[no test files]
+?   	warden/controlplane/internal/testutil	[no test files]
+ok  	warden/detect/dns_exfil	0.005s
+ok  	warden/identity/tests	0.004s
+ok  	warden/identity/vault	0.004s
+ok  	warden/policies/seccomp	0.005s
+ok  	warden/respond	1.041s
+ok  	warden/respond/kindlab	0.003s
+?   	warden/runtimes	[no test files]
+ok  	warden/runtimes/conformance	6.018s
+ok  	warden/runtimes/conformance/guest	0.008s
+ok  	warden/runtimes/firecracker	0.222s
+?   	warden/runtimes/firecracker/cmd/agent	[no test files]
+?   	warden/runtimes/firecracker/cmd/lab	[no test files]
+?   	warden/runtimes/firecracker/cmd/rootfs	[no test files]
+ok  	warden/runtimes/firecracker/guest	0.007s
+ok  	warden/runtimes/gate	0.080s
+ok  	warden/runtimes/gvisor	0.608s
+?   	warden/runtimes/gvisor/cmd/warden-gvisor-init	[no test files]
+?   	warden/runtimes/gvisor/lab/pause	[no test files]
+ok  	warden/runtimes/gvisor/supervisor	0.003s
+ok  	warden/runtimes/runc	0.090s
+ok  	warden/supplychain/kyvernolab	0.483s
+ok  	warden/vuln	0.023s
+ok  	warden/vuln/cmd/vulnfeeds	0.006s
+python3 -I -B -m unittest discover -s scripts -t scripts
+............................................................................................................................................................................................................
+----------------------------------------------------------------------
+Ran 204 tests in 12.061s
+
+OK
+python3 -E -s -B -m unittest detect.report.test_coverage detect.report.test_detection_metrics \
+	detect.tests.backpressure_test
+................s....../usr/lib/python3.14/unittest/case.py:615: ResourceWarning: unclosed <socket.socket fd=3, family=2, type=1, proto=0, laddr=('127.0.0.1', 42049)>
+  result = method()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..............
+----------------------------------------------------------------------
+Ran 37 tests in 1.028s
+
+OK (skipped=1)
+scripts/restore-tools.sh python
+/tmp/w3m-clone-0022/.tools/py/bin/python -E -s -B -m unittest detect.sigma.test_contract detect.sigma.test_rules
+............ss
+----------------------------------------------------------------------
+Ran 14 tests in 0.105s
+
+OK (skipped=2)
+env -i PATH=/usr/bin:/bin HOME=/tmp/w3m-clone-0022/.cache/home /tmp/w3m-clone-0022/.tools/vector/bin/vector test \
+	detect/vector/aggregator.toml detect/ocsf/tests/*.toml
+Running tests
+test aks_audit_full_golden ... passed
+test azure_rest_full_golden ... passed
+test azure_2_crud ... passed
+test azure_4_crud ... passed
+test k3s_audit_full_golden ... passed
+test azure_rejects_invalid_without_raw_body ... passed
+test aks_rejects_invalid_without_raw_body ... passed
+test k3s_rejects_invalid_without_raw_body ... passed
+test tetragon_rejects_invalid_without_raw_body ... passed
+test warden_rejects_invalid_without_raw_body ... passed
+test vnet_rejects_invalid_without_raw_body ... passed
+test azure_invalid_eventTimestamp ... passed
+test azure_invalid_caller ... passed
+test azure_invalid_ip ... passed
+test azure_unknown_overflow_visible ... passed
+test k3s_no_actor_rejected ... passed
+test tetragon_no_parent_actor_rejected ... passed
+test observation_is_not_occurrence ... passed
+test vnet_malformed_tuple_rejected ... passed
+test production_source_label_azure ... passed
+test production_source_label_aks ... passed
+test production_source_label_k3s ... passed
+test production_source_label_vnet ... passed
+test production_source_label_tetragon ... passed
+test production_source_label_warden ... passed
+test production_unknown_source_redacted ... passed
+test production_raw_warden_rejected ... passed
+test production_warden_observation_not_occurrence ... passed
+test route_api_literal_class ... passed
+test route_process_literal_class ... passed
+test route_network_literal_class ... passed
+test reject_route_wrong_version ... passed
+test reject_route_unknown_class ... passed
+test tetragon_exec_full_golden ... passed
+test vnet_tuple_full_golden ... passed
+test warden_synthetic_context_full_golden ... passed
+test warden_rejects_reserved_tenant_collision ... passed
+test warden_rejects_reserved_run_collision_nonstring ... passed
+backpressure two-hop configs (1 and 6 inputs): valid (block, drop_newest)
+make test: all offline suites passed
+# make test exit: 0
+# end 2026-11-12T09:20:56-08:00

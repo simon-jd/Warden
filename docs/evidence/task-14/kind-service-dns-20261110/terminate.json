@@ -1,0 +1,131 @@
+{
+  "approval": "fixture authority (test wiring, not a real approver identity)",
+  "exits-on-sigterm": {
+    "alert_to_peer_saw_close_ms": {
+      "max": 85,
+      "min": 50.4,
+      "p50": 52.2,
+      "p95": 85
+    },
+    "alert_to_pod_object_gone_ms": {
+      "max": 82.3,
+      "min": 50.4,
+      "p50": 54,
+      "p95": 82.3
+    },
+    "handle_ms": {
+      "max": 78.3,
+      "min": 46.9,
+      "p50": 47.8,
+      "p95": 78.3
+    }
+  },
+  "ignores-sigterm": {
+    "alert_to_peer_saw_close_ms": {
+      "max": 2072.3,
+      "min": 2044.5,
+      "p50": 2065.7,
+      "p95": 2072.3
+    },
+    "alert_to_pod_object_gone_ms": {
+      "max": 51.3,
+      "min": 36.3,
+      "p50": 49.3,
+      "p95": 51.3
+    },
+    "handle_ms": {
+      "max": 48.9,
+      "min": 35.4,
+      "p50": 46.8,
+      "p95": 48.9
+    }
+  },
+  "load": {
+    "loadavg_end": "2.86 5.47 4.30 5/6334 485570",
+    "loadavg_start": "4.56 6.14 4.45 11/6333 478612",
+    "nproc": 32
+  },
+  "measure": "peer (echo pod) logs when its read of the open connection returns EOF or an error; time from Handle start",
+  "runs": [
+    {
+      "alert_to_peer_saw_close_ms": 2071.4,
+      "alert_to_pod_object_gone_ms": 47.4,
+      "handle_ms": 44.5,
+      "persist_old_ok_1to2s_after_isolate": 10,
+      "pod": "t0",
+      "pod_ip": "10.244.0.13",
+      "variant": "ignores-sigterm"
+    },
+    {
+      "alert_to_peer_saw_close_ms": 2072.3,
+      "alert_to_pod_object_gone_ms": 50.9,
+      "handle_ms": 46.8,
+      "persist_old_ok_1to2s_after_isolate": 10,
+      "pod": "t1",
+      "pod_ip": "10.244.0.14",
+      "variant": "ignores-sigterm"
+    },
+    {
+      "alert_to_peer_saw_close_ms": 2057.9,
+      "alert_to_pod_object_gone_ms": 49.3,
+      "handle_ms": 48.4,
+      "persist_old_ok_1to2s_after_isolate": 10,
+      "pod": "t2",
+      "pod_ip": "10.244.0.15",
+      "variant": "ignores-sigterm"
+    },
+    {
+      "alert_to_peer_saw_close_ms": 2065.7,
+      "alert_to_pod_object_gone_ms": 51.3,
+      "handle_ms": 48.9,
+      "persist_old_ok_1to2s_after_isolate": 10,
+      "pod": "t3",
+      "pod_ip": "10.244.0.16",
+      "variant": "ignores-sigterm"
+    },
+    {
+      "alert_to_peer_saw_close_ms": 2044.5,
+      "alert_to_pod_object_gone_ms": 36.3,
+      "handle_ms": 35.4,
+      "persist_old_ok_1to2s_after_isolate": 10,
+      "pod": "t4",
+      "pod_ip": "10.244.0.17",
+      "variant": "ignores-sigterm"
+    },
+    {
+      "alert_to_peer_saw_close_ms": 52.2,
+      "alert_to_pod_object_gone_ms": 54,
+      "handle_ms": 47.8,
+      "persist_old_ok_1to2s_after_isolate": 9,
+      "pod": "c0",
+      "pod_ip": "10.244.0.18",
+      "variant": "exits-on-sigterm"
+    },
+    {
+      "alert_to_peer_saw_close_ms": 50.4,
+      "alert_to_pod_object_gone_ms": 50.4,
+      "handle_ms": 46.9,
+      "persist_old_ok_1to2s_after_isolate": 10,
+      "pod": "c1",
+      "pod_ip": "10.244.0.19",
+      "variant": "exits-on-sigterm"
+    },
+    {
+      "alert_to_peer_saw_close_ms": 85,
+      "alert_to_pod_object_gone_ms": 82.3,
+      "handle_ms": 78.3,
+      "persist_old_ok_1to2s_after_isolate": 10,
+      "pod": "c2",
+      "pod_ip": "10.244.0.20",
+      "variant": "exits-on-sigterm"
+    }
+  ],
+  "terminate_runs": 5,
+  "terminator_rbac": {
+    "create pods/exec": false,
+    "delete pods kube-system": false,
+    "delete pods warden-sandbox": true,
+    "get secrets warden-sandbox": false,
+    "patch pods warden-sandbox": false
+  }
+}

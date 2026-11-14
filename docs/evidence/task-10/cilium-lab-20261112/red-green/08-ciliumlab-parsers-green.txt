@@ -1,0 +1,24 @@
+# 2026-11-12T23:40:13-08:00 head 082cc71; git status --short:
+?? controlplane/internal/ciliumlab/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run1-1945/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2-attempt1/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2/
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/08-ciliumlab-parsers-green-attempt1-test-bug.txt
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/08-ciliumlab-parsers-green.txt
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/08-ciliumlab-parsers-red.txt
+$ taskset -c 0-7,16-31 .tools/go/bin/go test -buildvcs=false -count=1 -v ./controlplane/internal/ciliumlab (Makefile GOENV)
+=== RUN   TestParseNetResultsKeepsEveryCaseOnce
+--- PASS: TestParseNetResultsKeepsEveryCaseOnce (0.00s)
+=== RUN   TestParseLogReadsWorldAndProbeLines
+--- PASS: TestParseLogReadsWorldAndProbeLines (0.00s)
+=== RUN   TestStreamSeparatesTheDirectionsAndTheStreams
+--- PASS: TestStreamSeparatesTheDirectionsAndTheStreams (0.00s)
+=== RUN   TestCountLastAndMaxGap
+--- PASS: TestCountLastAndMaxGap (0.00s)
+=== RUN   TestMeasureFindsWhenAStreamStopped
+--- PASS: TestMeasureFindsWhenAStreamStopped (0.00s)
+=== RUN   TestNearestRank
+--- PASS: TestNearestRank (0.00s)
+PASS
+ok  	warden/controlplane/internal/ciliumlab	0.002s
+exit 0

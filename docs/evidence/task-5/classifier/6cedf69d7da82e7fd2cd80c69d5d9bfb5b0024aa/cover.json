@@ -1,0 +1,54 @@
+{
+  "mode": "matrix-code",
+  "source_head": "6cedf69d7da82e7fd2cd80c69d5d9bfb5b0024aa",
+  "source_manifest_before": {
+    "attacks/matrix/classify.go": "0bb89a5a2fb43356d377f4dc1cad9e4be01eff0f4e78147e3b4eb6fac230bf58",
+    "attacks/matrix/classify_test.go": "135120f1798c71e97a18d5fa2c2403a360d4b10119070bcfa8d3cda5db6cba7e",
+    "scripts/firecracker_code.py": "8f1c5726d7803e3c1462e261d8c6a752ef0d6fb772dc971e6ed7301a31bdf779"
+  },
+  "started_utc": "2026-10-25T09:01:18.923173+00:00",
+  "before": {
+    "containers": [],
+    "images": [],
+    "image_charge": 0,
+    "outstanding": 5000000000
+  },
+  "sysctls_before": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "exit_code": 0,
+  "source_manifest_after": {
+    "attacks/matrix/classify.go": "0bb89a5a2fb43356d377f4dc1cad9e4be01eff0f4e78147e3b4eb6fac230bf58",
+    "attacks/matrix/classify_test.go": "135120f1798c71e97a18d5fa2c2403a360d4b10119070bcfa8d3cda5db6cba7e",
+    "scripts/firecracker_code.py": "8f1c5726d7803e3c1462e261d8c6a752ef0d6fb772dc971e6ed7301a31bdf779"
+  },
+  "after": {
+    "containers": [],
+    "images": [],
+    "image_charge": 0,
+    "outstanding": 5000000000
+  },
+  "sysctls_after": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "ordinary_postflight": {
+    "additional_bytes": "5000000000",
+    "at": "2026-10-25T09:01:22Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 266039201792,
+    "project_allocated_bytes": 4193091584,
+    "service_memory_bytes": "1000000000"
+  },
+  "finished_utc": "2026-10-25T09:01:22.272180+00:00"
+}

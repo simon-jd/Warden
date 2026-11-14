@@ -1,0 +1,10 @@
+{
+  "k3s": {
+    "url": "https://github.com/k3s-io/k3s/releases/download/v1.36.5%2Bk3s1/sha256sum-amd64.txt",
+    "raw": "f72c4147b0cc9068e1c81d4c3d163e37a37d38ac22608fb6f736789e27e87188  k3s-airgap-images-amd64.tar\n53b76460862db28d81651e5bb1f7d9dbdf32adb25bc35b6db8b1d4c2423efb56  k3s-airgap-images-amd64.tar.gz\n7d939471907df2d4e537a9c308bf94173e453fff4a2e9e77e9ae92a64be3007f  k3s-airgap-images-amd64.tar.zst\nd73847bcd3c5fccef0115b372e2f9a91f3032dc84bbf71518a4617565294d313  k3s\n"
+  },
+  "gvisor": {
+    "url": "https://github.com/google/gvisor/releases/download/release-20261019.0/SHA256SUMS",
+    "raw": "5790f89dc94b091b5aa0f0b6596aa4391606b3fe5f069e68f440576f3388abd8  gvisor-aarch64.tar.bz2\n88556c21468a066d872a055425958c83fcbafc79c6477a195b18070c77f856d0  gvisor-aarch64.tar.zstd\n1298e8ed9c3fee900f00d2ea96ec2d79d80ed93f2175812f29b7e7da718041a3  gvisor-x86_64.tar.bz2\n8637abfb50f81552af25ca08f7172589c09292a7c881efe8d9e09a9f3b6bec7b  gvisor-x86_64.tar.zstd\n"
+  }
+}

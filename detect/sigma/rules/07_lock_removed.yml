@@ -1,0 +1,28 @@
+{
+  "title": "Resource lock deletion action",
+  "id": "1e994d5d-1ab5-5b63-ad54-67a5a17b95a6",
+  "status": "experimental",
+  "description": "Action or binary indicator only; no adversary intent or technique success is established. Synthetic fixtures; ATT&CK tags describe related investigation scenarios, not observed technique success.",
+  "references": [],
+  "author": "Warden",
+  "date": "2026-10-25",
+  "logsource": {
+    "product": "azure",
+    "service": "activity"
+  },
+  "detection": {
+    "source": {
+      "class_uid": 6003,
+      "metadata.product.name": "azure activity log",
+      "status_id": 1
+    },
+    "action": {
+      "api.operation": "microsoft.authorization/locks/delete"
+    },
+    "condition": "source and action"
+  },
+  "falsepositives": [
+    "Authorized administration, developer/debug tooling, permitted workloads or unrelated protocol use; tune local IP/principal allowlists."
+  ],
+  "level": "medium"
+}

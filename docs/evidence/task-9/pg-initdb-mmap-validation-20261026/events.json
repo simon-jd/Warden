@@ -1,0 +1,274 @@
+[
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{{.Name}}",
+      "warden-task9-pg-initdb-mmap-20261026-a"
+    ],
+    "rc": 1,
+    "out": "\n",
+    "err": "Error response from daemon: No such container: warden-task9-pg-initdb-mmap-20261026-a\n",
+    "failure": ""
+  },
+  {
+    "args": [
+      "run",
+      "--pull=never",
+      "--name",
+      "warden-task9-pg-initdb-mmap-20261026-a",
+      "--cidfile",
+      "/home/postedism/Desktop/Warden/.cache/task9-pg-initdb-mmap-validation-20261026-a/warden-task9-pg-initdb-mmap-20261026-a.cid",
+      "--label",
+      "warden.test=task9",
+      "--label",
+      "warden.owner=0e9179f5dfcf775a8f02bd243c259e29",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--user",
+      "postgres",
+      "--memory",
+      "512m",
+      "--memory-swap",
+      "512m",
+      "--pids-limit",
+      "96",
+      "--cpus",
+      "2",
+      "--shm-size",
+      "1m",
+      "--log-driver",
+      "local",
+      "--log-opt",
+      "max-size=1m",
+      "--log-opt",
+      "max-file=1",
+      "--log-opt",
+      "compress=false",
+      "-d",
+      "--tmpfs",
+      "/var/lib/postgresql:rw,noexec,nosuid,nodev,size=192m,mode=1777",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,nodev,size=8m,mode=1777",
+      "--mount",
+      "type=bind,src=/home/postedism/Desktop/Warden/.cache/task9-pg-initdb-mmap-validation-20261026-a/socket,dst=/var/run/postgresql",
+      "-e",
+      "PGDATA=/var/lib/postgresql/task9",
+      "-e",
+      "POSTGRES_DB=warden_test",
+      "-e",
+      "POSTGRES_HOST_AUTH_METHOD=trust",
+      "-e",
+      "POSTGRES_INITDB_ARGS=-c dynamic_shared_memory_type=mmap",
+      "sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873",
+      "postgres",
+      "-c",
+      "listen_addresses=",
+      "-c",
+      "unix_socket_directories=/var/run/postgresql",
+      "-c",
+      "unix_socket_permissions=0777",
+      "-c",
+      "shared_buffers=32MB",
+      "-c",
+      "max_connections=20",
+      "-c",
+      "max_parallel_workers=0",
+      "-c",
+      "dynamic_shared_memory_type=mmap",
+      "-c",
+      "max_wal_size=32MB",
+      "-c",
+      "min_wal_size=32MB"
+    ],
+    "rc": 0,
+    "out": "793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{\"id\":{{json .Id}},\"name\":{{json .Name}},\"owner\":{{json (index .Config.Labels \"warden.owner\")}}}",
+      "793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa"
+    ],
+    "rc": 0,
+    "out": "{\"id\":\"793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa\",\"name\":\"/warden-task9-pg-initdb-mmap-20261026-a\",\"owner\":\"0e9179f5dfcf775a8f02bd243c259e29\"}\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "exec",
+      "--user",
+      "postgres",
+      "793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa",
+      "/bin/sh",
+      "-c",
+      "test \"$(cat /proc/1/comm)\" = postgres && exec pg_isready -h /var/run/postgresql -U postgres -d warden_test -t 1"
+    ],
+    "rc": 1,
+    "out": "",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "exec",
+      "--user",
+      "postgres",
+      "793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa",
+      "/bin/sh",
+      "-c",
+      "test \"$(cat /proc/1/comm)\" = postgres && exec pg_isready -h /var/run/postgresql -U postgres -d warden_test -t 1"
+    ],
+    "rc": 1,
+    "out": "",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "exec",
+      "--user",
+      "postgres",
+      "793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa",
+      "/bin/sh",
+      "-c",
+      "test \"$(cat /proc/1/comm)\" = postgres && exec pg_isready -h /var/run/postgresql -U postgres -d warden_test -t 1"
+    ],
+    "rc": 1,
+    "out": "",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "exec",
+      "--user",
+      "postgres",
+      "793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa",
+      "/bin/sh",
+      "-c",
+      "test \"$(cat /proc/1/comm)\" = postgres && exec pg_isready -h /var/run/postgresql -U postgres -d warden_test -t 1"
+    ],
+    "rc": 1,
+    "out": "",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "exec",
+      "--user",
+      "postgres",
+      "793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa",
+      "/bin/sh",
+      "-c",
+      "test \"$(cat /proc/1/comm)\" = postgres && exec pg_isready -h /var/run/postgresql -U postgres -d warden_test -t 1"
+    ],
+    "rc": 2,
+    "out": "/var/run/postgresql:5432 - no response\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "exec",
+      "--user",
+      "postgres",
+      "793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa",
+      "/bin/sh",
+      "-c",
+      "test \"$(cat /proc/1/comm)\" = postgres && exec pg_isready -h /var/run/postgresql -U postgres -d warden_test -t 1"
+    ],
+    "rc": 0,
+    "out": "/var/run/postgresql:5432 - accepting connections\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{\"id\":{{json .Id}},\"name\":{{json .Name}},\"owner\":{{json (index .Config.Labels \"warden.owner\")}}}",
+      "793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa"
+    ],
+    "rc": 0,
+    "out": "{\"id\":\"793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa\",\"name\":\"/warden-task9-pg-initdb-mmap-20261026-a\",\"owner\":\"0e9179f5dfcf775a8f02bd243c259e29\"}\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa"
+    ],
+    "rc": 0,
+    "out": "{\"Status\":\"running\",\"Running\":true,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":1798408,\"ExitCode\":0,\"Error\":\"\",\"StartedAt\":\"2026-10-26T07:11:26.567837377Z\",\"FinishedAt\":\"0001-01-01T00:00:00Z\"}\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "logs",
+      "--tail",
+      "80",
+      "793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa"
+    ],
+    "rc": 0,
+    "out": "The files belonging to this database system will be owned by user \"postgres\".\nThis user must also own the server process.\n\nThe database cluster will be initialized with locale \"en_US.utf8\".\nThe default database encoding has accordingly been set to \"UTF8\".\nThe default text search configuration will be set to \"english\".\n\nData page checksums are enabled.\n\nfixing permissions on existing directory /var/lib/postgresql/task9 ... ok\ncreating subdirectories ... ok\nselecting dynamic shared memory implementation ... posix\nselecting default \"max_connections\" ... 100\nselecting default \"shared_buffers\" ... 128MB\nselecting default time zone ... UTC\ncreating configuration files ... ok\nrunning bootstrap script ... ok\nperforming post-bootstrap initialization ... ok\nsyncing data to disk ... ok\n\n\nSuccess. You can now start the database server using:\n\n    pg_ctl -D /var/lib/postgresql/task9 -l logfile start\n\nwaiting for server to start....2026-10-26 07:11:27.194 UTC [50] LOG:  starting PostgreSQL 18.6 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit\n2026-10-26 07:11:27.203 UTC [50] LOG:  listening on Unix socket \"/var/run/postgresql/.s.PGSQL.5432\"\n2026-10-26 07:11:27.205 UTC [56] LOG:  database system was shut down at 2026-10-26 07:11:27 UTC\n2026-10-26 07:11:27.209 UTC [50] LOG:  database system is ready to accept connections\n done\nserver started\nCREATE DATABASE\n\n\n/usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*\n\nwaiting for server to shut down....2026-10-26 07:11:27.335 UTC [50] LOG:  received fast shutdown request\n2026-10-26 07:11:27.335 UTC [50] LOG:  aborting any active transactions\n2026-10-26 07:11:27.337 UTC [50] LOG:  background worker \"logical replication launcher\" (PID 59) exited with exit code 1\n2026-10-26 07:11:27.338 UTC [54] LOG:  shutting down\n2026-10-26 07:11:27.338 UTC [54] LOG:  checkpoint starting: shutdown immediate\n2026-10-26 07:11:27.347 UTC [54] LOG:  checkpoint complete: wrote 943 buffers (23.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.009 s, sync=0.001 s, total=0.010 s; sync files=303, longest=0.001 s, average=0.000 s; distance=4362 kB, estimate=4362 kB; lsn=0/1BA8810, redo lsn=0/1BA8810\n2026-10-26 07:11:27.353 UTC [50] LOG:  database system is shut down\n done\nserver stopped\n\nPostgreSQL init process complete; ready for start up.\n\n",
+    "err": "chmod: /var/run/postgresql: Operation not permitted\n********************************************************************************\nWARNING: POSTGRES_HOST_AUTH_METHOD has been set to \"trust\". This will allow\n         anyone with access to the Postgres port to access your database without\n         a password, even if POSTGRES_PASSWORD is set. See PostgreSQL\n         documentation about \"trust\":\n         https://www.postgresql.org/docs/current/auth-trust.html\n         In Docker's default configuration, this is effectively any other\n         container on the same system.\n\n         It is not recommended to use POSTGRES_HOST_AUTH_METHOD=trust. Replace\n         it with \"-e POSTGRES_PASSWORD=password\" instead to set a password in\n         \"docker run\".\n********************************************************************************\nsh: locale: not found\n2026-10-26 07:11:27.004 UTC [30] WARNING:  no usable system locales were found\ninitdb: warning: enabling \"trust\" authentication for local connections\ninitdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.\n2026-10-26 07:11:27.443 UTC [1] LOG:  starting PostgreSQL 18.6 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit\n2026-10-26 07:11:27.452 UTC [1] LOG:  listening on Unix socket \"/var/run/postgresql/.s.PGSQL.5432\"\n2026-10-26 07:11:27.454 UTC [86] LOG:  database system was shut down at 2026-10-26 07:11:27 UTC\n2026-10-26 07:11:27.457 UTC [1] LOG:  database system is ready to accept connections\n",
+    "failure": ""
+  },
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{\"id\":{{json .Id}},\"name\":{{json .Name}},\"owner\":{{json (index .Config.Labels \"warden.owner\")}}}",
+      "793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa"
+    ],
+    "rc": 0,
+    "out": "{\"id\":\"793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa\",\"name\":\"/warden-task9-pg-initdb-mmap-20261026-a\",\"owner\":\"0e9179f5dfcf775a8f02bd243c259e29\"}\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "rm",
+      "-f",
+      "-v",
+      "793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa"
+    ],
+    "rc": 0,
+    "out": "793ba1678f91de2c5eeebf78094a9046ac88baf5e8f911a931111beca26027fa\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{{.Name}}",
+      "warden-task9-pg-initdb-mmap-20261026-a"
+    ],
+    "rc": 1,
+    "out": "\n",
+    "err": "Error response from daemon: No such container: warden-task9-pg-initdb-mmap-20261026-a\n",
+    "failure": ""
+  }
+]

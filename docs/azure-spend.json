@@ -1,0 +1,293 @@
+{
+  "version": 2,
+  "subscription_sha256": "503ce89b01e3a6c0ed97695907a921784d6cf996827101bba5e2923b88d64b2b",
+  "group": "rg-warden-lab",
+  "reservations": [
+    {
+      "reservation": "3415ba85-b49c-46f1-8334-cb7b7c0d0dc2",
+      "session": "aks-20261114T0011Z",
+      "id": "resourceGroups/rg-warden-lab/providers/Microsoft.ContainerService/managedClusters/warden-lab-aks",
+      "kind": "aks",
+      "sku": "free",
+      "region": "swedencentral",
+      "start": "2026-11-14T00:11:00Z",
+      "end": "2026-11-14T05:26:00Z",
+      "estimate_usd": "0.97726184",
+      "deleted_at": "2026-11-14T00:29:06Z",
+      "tags": {
+        "project": "warden",
+        "owner": "warden-lab",
+        "ttl": "2026-11-14T05:26:00Z",
+        "est_usd_per_hour": "0.186145112381",
+        "warden_session": "aks-20261114T0011Z",
+        "warden_reservation": "3415ba85-b49c-46f1-8334-cb7b7c0d0dc2"
+      },
+      "components": [
+        {
+          "category": "aks_control_plane",
+          "price_usd": "0.05",
+          "quantity": "5.25",
+          "unit": "1 Hour",
+          "selector": {
+            "armRegionName": "swedencentral",
+            "armSkuName": "FreeTierInfrastructureCost",
+            "meterId": "3558846b-fb83-5b2b-aebe-fdeed0bf8b65",
+            "meterName": "FreeTierInfrastructureCost Uptime SLA",
+            "productName": "Azure Kubernetes Service",
+            "serviceName": "Azure Kubernetes Service",
+            "skuName": "FreeTierInfrastructureCost",
+            "unitOfMeasure": "1 Hour"
+          },
+          "quote_sha256": "a7de2e5450a78d97ed20b43d9c5c14c0bf97adbc5b961d008dd3feacc1eeaa92",
+          "quote_source_path": "docs/evidence/azure/prices/aks-drill-20261113-swedencentral/aks.json",
+          "quote_url": "https://prices.azure.com/api/retail/prices?%24filter=armRegionName+eq+%27swedencentral%27+and+serviceName+eq+%27Azure+Kubernetes+Service%27+and+priceType+eq+%27Consumption%27&currencyCode=USD",
+          "retrieved_at": "2026-11-13T23:58:50.526039+00:00"
+        },
+        {
+          "category": "vm",
+          "price_usd": "0.0778",
+          "quantity": "5.25",
+          "unit": "1 Hour",
+          "selector": {
+            "armRegionName": "swedencentral",
+            "armSkuName": "Standard_B2as_v2",
+            "meterId": "94d8b801-9235-5ed6-8d63-bd3587db6c3d",
+            "meterName": "B2as v2",
+            "productName": "Virtual Machines Basv2 Series",
+            "serviceName": "Virtual Machines",
+            "skuName": "B2as v2",
+            "unitOfMeasure": "1 Hour"
+          },
+          "quote_sha256": "7dcbe61c664c222c87060b219763a0c5dab4117aeb9717e2e5dbadaf7955a547",
+          "quote_source_path": "docs/evidence/azure/prices/aks-drill-20261113-swedencentral/vm.json",
+          "quote_url": "https://prices.azure.com/api/retail/prices?%24filter=armRegionName+eq+%27swedencentral%27+and+serviceName+eq+%27Virtual+Machines%27+and+armSkuName+eq+%27Standard_B2as_v2%27+and+priceType+eq+%27Consumption%27&currencyCode=USD",
+          "retrieved_at": "2026-11-13T23:58:50.839846+00:00"
+        },
+        {
+          "category": "os_disk",
+          "price_usd": "5.8072",
+          "quantity": "0.0072",
+          "unit": "1/Month",
+          "selector": {
+            "armRegionName": "swedencentral",
+            "armSkuName": "",
+            "meterId": "739a9a9c-bcb1-54fe-b44f-e8773d6f1e41",
+            "meterName": "P4 LRS Disk",
+            "productName": "Premium SSD Managed Disks",
+            "serviceName": "Storage",
+            "skuName": "P4 LRS",
+            "unitOfMeasure": "1/Month"
+          },
+          "quote_sha256": "b16a62c64a0edb516585e3dfe21721a1162badc634f96d4270b903bc4c8ba0f8",
+          "quote_source_path": "docs/evidence/azure/prices/aks-drill-20261113-swedencentral/disk.json",
+          "quote_url": "https://prices.azure.com/api/retail/prices?%24filter=armRegionName+eq+%27swedencentral%27+and+serviceName+eq+%27Storage%27+and+productName+eq+%27Premium+SSD+Managed+Disks%27+and+skuName+eq+%27P4+LRS%27+and+priceType+eq+%27Consumption%27&currencyCode=USD",
+          "retrieved_at": "2026-11-13T23:58:51.110177+00:00"
+        },
+        {
+          "category": "load_balancer",
+          "price_usd": "0.025",
+          "quantity": "5.25",
+          "unit": "1 Hour",
+          "selector": {
+            "armRegionName": "Global",
+            "armSkuName": "",
+            "meterId": "27827eb0-7f60-4928-940b-f5fe15e7a4cb",
+            "meterName": "Standard Included LB Rules and Outbound Rules",
+            "productName": "Load Balancer",
+            "serviceName": "Load Balancer",
+            "skuName": "Standard",
+            "unitOfMeasure": "1 Hour"
+          },
+          "quote_sha256": "4363606d6e1daf692fc9234ca422039dcba267c06d0dc83f7dfdee6b288602b0",
+          "quote_source_path": "docs/evidence/azure/prices/aks-drill-20261113-swedencentral/load-balancer.json",
+          "quote_url": "https://prices.azure.com/api/retail/prices?%24filter=armRegionName+eq+%27Global%27+and+serviceName+eq+%27Load+Balancer%27+and+priceType+eq+%27Consumption%27&currencyCode=USD",
+          "retrieved_at": "2026-11-13T23:58:51.385306+00:00"
+        },
+        {
+          "category": "load_balancer_data",
+          "price_usd": "0.005",
+          "quantity": "4",
+          "unit": "1 GB",
+          "selector": {
+            "armRegionName": "Global",
+            "armSkuName": "",
+            "meterId": "dfc7cc11-fbe2-41c8-b6fa-24a574223938",
+            "meterName": "Standard Data Processed",
+            "productName": "Load Balancer",
+            "serviceName": "Load Balancer",
+            "skuName": "Standard",
+            "unitOfMeasure": "1 GB"
+          },
+          "quote_sha256": "4363606d6e1daf692fc9234ca422039dcba267c06d0dc83f7dfdee6b288602b0",
+          "quote_source_path": "docs/evidence/azure/prices/aks-drill-20261113-swedencentral/load-balancer.json",
+          "quote_url": "https://prices.azure.com/api/retail/prices?%24filter=armRegionName+eq+%27Global%27+and+serviceName+eq+%27Load+Balancer%27+and+priceType+eq+%27Consumption%27&currencyCode=USD",
+          "retrieved_at": "2026-11-13T23:58:51.385306+00:00"
+        },
+        {
+          "category": "public_ip",
+          "price_usd": "0.005",
+          "quantity": "5.25",
+          "unit": "1 Hour",
+          "selector": {
+            "armRegionName": "swedencentral",
+            "armSkuName": "",
+            "meterId": "9c150bf9-2bad-430e-a53c-c213804f49ef",
+            "meterName": "Standard IPv4 Static Public IP",
+            "productName": "IP Addresses",
+            "serviceName": "Virtual Network",
+            "skuName": "Standard",
+            "unitOfMeasure": "1 Hour"
+          },
+          "quote_sha256": "a71b73107d46b99984e2b3427828fba6a33cd23d691f6e280ecd8919236ff2ab",
+          "quote_source_path": "docs/evidence/azure/prices/aks-drill-20261113-swedencentral/public-ip.json",
+          "quote_url": "https://prices.azure.com/api/retail/prices?%24filter=armRegionName+eq+%27swedencentral%27+and+serviceName+eq+%27Virtual+Network%27+and+productName+eq+%27IP+Addresses%27+and+priceType+eq+%27Consumption%27&currencyCode=USD",
+          "retrieved_at": "2026-11-13T23:58:51.682553+00:00"
+        },
+        {
+          "category": "network",
+          "price_usd": "0.087",
+          "quantity": "1",
+          "unit": "1 GB",
+          "selector": {
+            "armRegionName": "swedencentral",
+            "armSkuName": "",
+            "meterId": "9995d93a-7d35-4d3f-9c69-7a7fea447ef4",
+            "meterName": "Standard Data Transfer Out",
+            "productName": "Rtn Preference: MGN",
+            "serviceName": "Bandwidth",
+            "skuName": "Standard",
+            "unitOfMeasure": "1 GB"
+          },
+          "quote_sha256": "955a2890612c0176e7833ddce0fc723c17f28beb644157ed91bf6a94f8ad15ec",
+          "quote_source_path": "docs/evidence/azure/prices/aks-drill-20261113-swedencentral/bandwidth.json",
+          "quote_url": "https://prices.azure.com/api/retail/prices?%24filter=armRegionName+eq+%27swedencentral%27+and+serviceName+eq+%27Bandwidth%27+and+productName+eq+%27Rtn+Preference%3A+MGN%27+and+priceType+eq+%27Consumption%27&currencyCode=USD",
+          "retrieved_at": "2026-11-13T23:58:51.966324+00:00",
+          "tier_minimum_units": "100"
+        }
+      ],
+      "configuration": {
+        "tier": "free",
+        "kubernetes_version": "1.36.5",
+        "dns_prefix": "warden-lab-aks",
+        "node_count": 1,
+        "node_vm_size": "Standard_B2as_v2",
+        "node_vcpus": 2,
+        "quota_family": "standardBasv2Family",
+        "max_pods": 30,
+        "os_disk_type": "Managed",
+        "os_disk_gb": 30,
+        "os_disk_sku": "Premium_LRS",
+        "node_resource_group": "rg-warden-lab-aks-nodes",
+        "network_plugin": "azure",
+        "network_plugin_mode": "overlay",
+        "network_dataplane": "cilium",
+        "outbound_type": "loadBalancer",
+        "load_balancer_sku": "standard",
+        "outbound_ips": 1,
+        "oidc_issuer": true,
+        "workload_identity": true,
+        "addons": [],
+        "acns": false,
+        "log_analytics": false,
+        "diagnostic_settings": false,
+        "csi_drivers": false,
+        "ssh": false,
+        "local_accounts": true,
+        "auto_upgrade": "none",
+        "node_os_upgrade": "None"
+      },
+      "preconditions": {
+        "allowed_locations": [
+          "norwayeast",
+          "francecentral",
+          "denmarkeast",
+          "swedencentral",
+          "westus"
+        ],
+        "network_watcher": {
+          "existed": true,
+          "name": "NetworkWatcher_swedencentral",
+          "resourceGroup": "NetworkWatcherRG",
+          "sha256": "42270ba22f6ac064345bdece711991b2f7894dbdb9dc4d165efb52bd6cac6822"
+        }
+      }
+    },
+    {
+      "reservation": "ea6c0a64-be2c-4708-a754-ff992b4a35a5",
+      "session": "aks-20261114T0011Z",
+      "id": "resourceGroups/rg-warden-lab/providers/Microsoft.ManagedIdentity/userAssignedIdentities/warden-lab-controlplane",
+      "kind": "identity",
+      "sku": "UserAssigned",
+      "region": "swedencentral",
+      "start": "2026-11-14T00:11:00Z",
+      "end": "2026-11-14T05:26:00Z",
+      "estimate_usd": "0",
+      "deleted_at": "2026-11-14T00:29:06Z",
+      "tags": {
+        "project": "warden",
+        "owner": "warden-lab",
+        "ttl": "2026-11-14T05:26:00Z",
+        "est_usd_per_hour": "0",
+        "warden_session": "aks-20261114T0011Z",
+        "warden_reservation": "ea6c0a64-be2c-4708-a754-ff992b4a35a5"
+      },
+      "components": [],
+      "configuration": {
+        "product": "Managed Identity",
+        "no_meter_quote": "docs/evidence/azure/prices/aks-drill-20261113-swedencentral/managed-identity.json"
+      }
+    }
+  ],
+  "directory_objects": [
+    {
+      "task": "6",
+      "objects": "warden-lab-api：应用1、服务主体1；用户本人对它的appRoleAssignment建过2个（01:17:06Z、01:23:34Z），第1个01:23:15Z删除，第2个随服务主体删除；没有客户端密钥",
+      "created": "2026-11-11T01:16:38Z（应用）、01:16:40Z（服务主体）",
+      "deleted": "2026-11-11T02:38:55Z（服务主体）、02:39:16Z（应用）",
+      "estimate_usd": "0",
+      "price_source": "Retail Prices API（serviceName含Entra、Active Directory）及微软External ID定价页：没有对应的计量",
+      "price_checked": "2026-11-12T06:42:01Z",
+      "evidence": "evidence/task-6/entra-objects-20261110.txt"
+    },
+    {
+      "task": "8 keyprobe",
+      "objects": "warden-lab-keyprobe：应用1、客户端密钥1（Graph默认期限731天）；没有服务主体",
+      "created": "2026-11-11T04:27:44Z（应用）、04:27:45Z（密钥）",
+      "deleted": "2026-11-11T04:27:48Z（应用连同密钥）",
+      "estimate_usd": "0",
+      "price_source": "Retail Prices API（serviceName含Entra、Active Directory）及微软External ID定价页：没有对应的计量",
+      "price_checked": "2026-11-12T06:42:01Z",
+      "evidence": "evidence/task-8/longlived-audit-live-20261110.txt"
+    },
+    {
+      "task": "14 run0",
+      "objects": "warden-lab-respond：应用1、服务主体1、客户端密钥1（24 h）",
+      "created": "2026-11-11T04:34:09Z–04:34:11Z",
+      "deleted": "密钥在告警时由动作删除；2026-11-11T04:44:27Z（服务主体）、04:44:28Z（应用）",
+      "estimate_usd": "0",
+      "price_source": "Retail Prices API（serviceName含Entra、Active Directory）及微软External ID定价页：没有对应的计量",
+      "price_checked": "2026-11-12T06:42:01Z",
+      "evidence": "evidence/task-14/azure-entra-objects-20261111.txt"
+    },
+    {
+      "task": "14 run1",
+      "objects": "warden-lab-respond-1…5：应用5、服务主体5、客户端密钥5（各24 h）",
+      "created": "2026-11-11T04:48:37Z–04:48:51Z",
+      "deleted": "密钥在告警时由动作删除；服务主体和应用2026-11-11T05:00:43Z–05:10:35Z",
+      "estimate_usd": "0",
+      "price_source": "Retail Prices API（serviceName含Entra、Active Directory）及微软External ID定价页：没有对应的计量",
+      "price_checked": "2026-11-12T06:42:01Z",
+      "evidence": "evidence/task-14/azure-entra-objects-20261111.txt"
+    },
+    {
+      "task": "14 run2",
+      "objects": "warden-lab-respond-1…5：应用5、服务主体5、客户端密钥5（各24 h）",
+      "created": "2026-11-11T15:28:11Z–15:28:25Z",
+      "deleted": "密钥在告警时由动作删除；服务主体和应用2026-11-11T15:41:20Z–15:50:12Z",
+      "estimate_usd": "0",
+      "price_source": "Retail Prices API（serviceName含Entra、Active Directory）及微软External ID定价页：没有对应的计量",
+      "price_checked": "2026-11-12T06:42:01Z",
+      "evidence": "evidence/task-14/azure-entra-objects-20261111.txt"
+    }
+  ]
+}

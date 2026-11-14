@@ -1,0 +1,18 @@
+env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS='-mod=readonly -buildvcs=false' GOCACHE=/home/postedism/Desktop/Warden-cloud/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-cloud/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-cloud/.cache/go HOME=/home/postedism/Desktop/Warden-cloud/.cache/home TMPDIR=/home/postedism/Desktop/Warden-cloud/.cache/t WARDEN_LIVE_AZURE=1 WARDEN_AZ=$(command -v az) AZURE_CONFIG_DIR=/home/postedism/.azure \
+	WARDEN_AZURE_REPS=5 AZURE_OUT=/home/postedism/Desktop/Warden-cloud/.cache/task8-14/s2/run2.json \
+	/home/postedism/Desktop/Warden-cloud/.tools/go/bin/go test -count=1 -v -timeout 150m -run '^TestLiveDisableAzureAppCredential$' ./respond/azurelab
+=== RUN   TestLiveDisableAzureAppCredential
+rep 1: created application 00000000-0000-0000-0000-000000000024 (appId 00000000-0000-0000-0000-000000000011); if this run dies: az ad app delete --id 00000000-0000-0000-0000-000000000024
+rep 2: created application 00000000-0000-0000-0000-000000000034 (appId 00000000-0000-0000-0000-000000000016); if this run dies: az ad app delete --id 00000000-0000-0000-0000-000000000034
+rep 3: created application 00000000-0000-0000-0000-000000000021 (appId 00000000-0000-0000-0000-000000000015); if this run dies: az ad app delete --id 00000000-0000-0000-0000-000000000021
+rep 4: created application 00000000-0000-0000-0000-000000000025 (appId 00000000-0000-0000-0000-000000000008); if this run dies: az ad app delete --id 00000000-0000-0000-0000-000000000025
+rep 5: created application 00000000-0000-0000-0000-000000000029 (appId 00000000-0000-0000-0000-000000000007); if this run dies: az ad app delete --id 00000000-0000-0000-0000-000000000029
+rep 2: handle 1483.5 ms, graph absent 1483.5 ms, token refused first 8003.1 ms, stable 571319.4 ms (confirmed true), 433 successes after first refusal
+rep 1: handle 1361.2 ms, graph absent 1361.2 ms, token refused first 17010 ms, stable 274154.6 ms (confirmed true), 113 successes after first refusal
+rep 4: handle 1110.0 ms, graph absent 1110.0 ms, token refused first 7004.6 ms, stable 595405.3 ms (confirmed true), 114 successes after first refusal
+rep 3: handle 1711.5 ms, graph absent 1711.5 ms, token refused first 5002.4 ms, stable 592386 ms (confirmed true), 189 successes after first refusal
+rep 5: handle 1055.7 ms, graph absent 1055.7 ms, token refused first 9005.4 ms, stable 590010.7 ms (confirmed true), 182 successes after first refusal
+    live_test.go:508: summary {"alert_to_first_token_refusal_ms":{"max":17010,"min":5002.4,"n":5,"p50":8003.1,"p95":17010},"alert_to_graph_absent_ms":{"max":1711.5,"min":1055.7,"n":5,"p50":1361.2,"p95":1711.5},"alert_to_last_token_success_ms":{"max":594405.1,"min":273153.7,"n":5,"p50":589010,"p95":594405.1},"alert_to_stable_token_refusal_ms":{"max":595405.3,"min":274154.6,"n":5,"p50":590010.7,"p95":595405.3},"distinct_alert_deleted_credential_ms":{"max":1083.7,"min":892.4,"n":5,"p50":979.3,"p95":1083.7},"handle_ms":{"max":1711.5,"min":1055.7,"n":5,"p50":1361.2,"p95":1711.5},"replay_ms":{"max":0.1,"min":0,"n":5,"p50":0,"p95":0.1},"secret_added_to_first_token_ms":{"max":12007.7,"min":4003,"n":5,"p50":7004.6,"p95":12007.7},"secret_added_to_stable_token_ms":{"max":595352.8,"min":89051.7,"n":5,"p50":577332.7,"p95":595352.8}}
+--- PASS: TestLiveDisableAzureAppCredential (1606.41s)
+PASS
+ok  	warden/respond/azurelab	1606.410s

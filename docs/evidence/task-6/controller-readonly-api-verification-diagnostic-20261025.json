@@ -1,0 +1,22 @@
+{
+  "origin": "root-controller metadata verification, not product/test run",
+  "failure": "prior prefix selection included controller-invoker-source-plan-prefix.json, producing 102 rather than the 101 run artifacts",
+  "correction": "select only red/green/cover numbered run directories; the old prefix record remains untouched",
+  "outputs_written_before_failure": false,
+  "tests_or_worker_artifacts_regenerated": false,
+  "first_verifier_source_sha256_before_correction": "f743facfffb1cf625f83cdb141e0dff715882bc9a734e5fd4c80e8300287ca76",
+  "actual_structured_tool_return": {
+    "chunk_id": "65a796",
+    "wall_time_seconds": 0.270454981,
+    "exit_code": 1,
+    "original_token_count": 89,
+    "output": "Traceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/docs/evidence/task-6/controller-readonly-api-verification-command-20261025.py\", line 89, in <module>\n    assert len(prior_rows) == index['preserved_prior_seven_run_file_count'] == 101\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  "corrected_actual_structured_tool_return": {
+    "chunk_id": "cdf483",
+    "wall_time_seconds": 0.53814574,
+    "exit_code": 0,
+    "original_token_count": 67,
+    "output": "{\"status\": \"PASS\", \"artifacts\": 66, \"complete_runs\": 4, \"partial_runs\": 1, \"frozen_tests\": 149, \"raw_bytes\": 1138517, \"view_bytes\": 756005, \"raw_blocks\": 69, \"duplicate_blocks\": 22, \"result\": \"docs/evidence/task-6/controller-readonly-api-verification-20261025.json\"}\n"
+  }
+}

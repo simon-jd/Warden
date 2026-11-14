@@ -1,0 +1,16 @@
+..E
+======================================================================
+ERROR: test_retired_gate_markers_are_retained_and_returned_by_fd (test_runtime_lab_cleanup.OwnedCleanupTests.test_retired_gate_markers_are_retained_and_returned_by_fd)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_cleanup.py", line 43, in test_retired_gate_markers_are_retained_and_returned_by_fd
+    cleanup_owned(None, None, None, False, session, release_evidence=True)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/runtime_lab_runner.py", line 118, in cleanup_owned
+    raise CleanupError(failures)
+runtime_lab_runner.CleanupError: return owned evidence: ValueError('unknown session state; evidence ownership preserved')
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.009s
+
+FAILED (errors=1)

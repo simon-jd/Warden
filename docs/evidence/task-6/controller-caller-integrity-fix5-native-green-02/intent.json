@@ -1,0 +1,24 @@
+{
+  "body_sha256": "cfe6d2a9db0b2a7d00526a174bcc530fb611e84ecde7bc62a8f1f6ab125530f2",
+  "dispatch_base": "50a8f7ca76b65348210752d7a7a93108d4237f8a",
+  "label": "green-02",
+  "old_launch_seam": "-S -B disables unrelated real site while preserving cwd import exposure; old full -B startup is not executed",
+  "optional_site_view": "not used; sys.flags/no site/stdlb origins observed",
+  "parent_limits": {
+    "as": [
+      536870912,
+      536870912
+    ],
+    "cpu": [
+      30,
+      30
+    ],
+    "fsize": [
+      33554432,
+      33554432
+    ]
+  },
+  "production_paths_accessible": false,
+  "source_commit_at_launch": "50a8f7ca76b65348210752d7a7a93108d4237f8a",
+  "wall_seconds": 45
+}

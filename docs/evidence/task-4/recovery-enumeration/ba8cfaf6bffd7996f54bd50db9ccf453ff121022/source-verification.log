@@ -1,0 +1,9 @@
+{
+  "source": "ba8cfaf6bffd7996f54bd50db9ccf453ff121022",
+  "changed_host_function_only": "select_stdlib",
+  "unchanged_host_functions": 50,
+  "all_other_test_AST_unchanged": true,
+  "unchanged_bindings": 14,
+  "immediate_prior_index_artifacts": 11,
+  "all_match": true
+}

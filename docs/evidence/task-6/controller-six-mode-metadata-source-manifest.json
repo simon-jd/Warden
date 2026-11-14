@@ -1,0 +1,40 @@
+{
+  "dispatch_base": "ac0bf10feca7825bd81f3d20f896763d6ae003cd",
+  "files": {
+    "docs/evidence/task-6/continuation-controller-operations-execution-plan.md": {
+      "allocated_bytes": 135168,
+      "bytes": 135091,
+      "sha256": "b8bde9c79d038690284d3d8c40d2ade0125ecedb1a69eba40e9212c2f28c1a5a"
+    },
+    "docs/evidence/task-6/controller-six-mode-metadata-baseline.json": {
+      "allocated_bytes": 4096,
+      "bytes": 852,
+      "sha256": "e45c34738df54abbfc6a4066601c5a288a65699c9588b23b3c2ab2058b3560fe"
+    },
+    "docs/evidence/task-6/controller-six-mode-metadata-candidate.md": {
+      "allocated_bytes": 28672,
+      "bytes": 25638,
+      "sha256": "fba173360172a5b5a80d08398aab05ec800c82124cfa6482fe28a873b3c84eb5"
+    },
+    "docs/evidence/task-6/controller-six-mode-metadata-events-fixture.js": {
+      "allocated_bytes": 8192,
+      "bytes": 5313,
+      "sha256": "900cbc724f42d99772a169ff6b630d585c00defb8b3d4358a2f54b07a05c93f8"
+    },
+    "docs/evidence/task-6/controller-six-mode-metadata-execute.js": {
+      "allocated_bytes": 4096,
+      "bytes": 1987,
+      "sha256": "ee54795b00414c6d217bc140ad7828b18929b1d15aefd0393d60df3b7c291412"
+    },
+    "docs/evidence/task-6/controller-six-mode-metadata-verification.py": {
+      "allocated_bytes": 12288,
+      "bytes": 12038,
+      "sha256": "9e959371e05edf7703a8d4bf26bea88214bfcf2d1252b0c278edb46790bca51c"
+    }
+  },
+  "plan_prefix": {
+    "bytes": 109113,
+    "sha256": "1c341b2f6bc3420245a6327d64501dd8c8f2f416d6b9f9f3c28b928218d240ea"
+  },
+  "scope": "only changed/new six-mode source files and preserved plan prefix; no canonical or old-runtime campaign"
+}

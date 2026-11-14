@@ -1,0 +1,307 @@
+{
+  "runtime": "gvisor",
+  "image_digest": "sha256:f804f1f7a59533ac540a7760e01ee9eed72943412bb53a3c2f7dd9e1ecbe52a8",
+  "corpus_digest": "sha256:541438cdbd805a8b4558cae8a9eaea5fe9d72b0d8a68d1258b93b832cfb9c091",
+  "limits": {
+    "CPU": 1,
+    "MemoryMiB": 512,
+    "Pids": 128,
+    "TimeoutS": 60
+  },
+  "cells": [
+    {
+      "attack": "arp-spoof",
+      "technique": "T1557.002",
+      "runtime": "gvisor",
+      "run_id": "U7QPI3XHRKISOB7CW56OVBEMOQ",
+      "started_at": "2026-11-14T15:29:18.876199882Z",
+      "finished_at": "2026-11-14T15:29:21.588793538Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED arp-spoof operation not permitted\n"
+    },
+    {
+      "attack": "disk-fill",
+      "technique": "T1499.003",
+      "runtime": "gvisor",
+      "run_id": "642EECGJEQ6SAMOT6THFBOUS3M",
+      "started_at": "2026-11-14T15:29:21.588800832Z",
+      "finished_at": "2026-11-14T15:29:24.575959904Z",
+      "verdict": "error",
+      "reason": "probe objective or denial not recorded",
+      "exit": {
+        "Code": 3,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_INCONCLUSIVE disk-fill tmpfs quota at 64 MiB: write /dev/shm/warden-attack-fill: no space left on device\n"
+    },
+    {
+      "attack": "dns-exfil",
+      "technique": "T1048.003",
+      "runtime": "gvisor",
+      "run_id": "MGMOC6E5WEIHETDXDRQGVXN7LE",
+      "started_at": "2026-11-14T15:29:24.575969Z",
+      "finished_at": "2026-11-14T15:29:27.609649475Z",
+      "verdict": "error",
+      "reason": "probe objective or denial not recorded",
+      "exit": {
+        "Code": 3,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 5,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_INCONCLUSIVE dns-exfil lookup aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.invalid on [2001:4860:4860::8888]:53: dial udp [2001:4860:4860::8888]:53: connect: network is unreachable\n"
+    },
+    {
+      "attack": "fork-bomb",
+      "technique": "T1499.003",
+      "runtime": "gvisor",
+      "run_id": "7S7T2YCBXNAH72RFM3OMOWHHIU",
+      "started_at": "2026-11-14T15:29:27.609655804Z",
+      "finished_at": "2026-11-14T15:29:31.573652143Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 1,
+        "PeakPids": 128,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED fork-bomb fork stopped at 31: fork/exec /warden-attack: resource temporarily unavailable\n"
+    },
+    {
+      "attack": "kernel-module",
+      "technique": "T1547.006",
+      "runtime": "gvisor",
+      "run_id": "XCVPAA7SW3OOEESCZPDICQBMNA",
+      "started_at": "2026-11-14T15:29:31.573659639Z",
+      "finished_at": "2026-11-14T15:29:34.60389679Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED kernel-module init_module denied EPERM\n"
+    },
+    {
+      "attack": "memory-exhaustion",
+      "technique": "T1499.003",
+      "runtime": "gvisor",
+      "run_id": "7NU4VVDKNMMXOYOYAA63EDRJT4",
+      "started_at": "2026-11-14T15:29:34.603905052Z",
+      "finished_at": "2026-11-14T15:29:37.643978616Z",
+      "verdict": "missed",
+      "reason": "success signal in the output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_SUCCESS memory-exhaustion 576 MiB touched\nWARDEN_memory_exhaustion\n"
+    },
+    {
+      "attack": "metadata-host",
+      "technique": "T1552.005",
+      "runtime": "gvisor",
+      "run_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA",
+      "started_at": "2026-11-14T15:29:37.643986025Z",
+      "finished_at": "2026-11-14T15:29:40.626512015Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED metadata-host dial tcp: lookup metadata.google.internal on [2001:4860:4860::8888]:53: dial udp [2001:4860:4860::8888]:53: connect: network is unreachable\n"
+    },
+    {
+      "attack": "metadata-ip",
+      "technique": "T1552.005",
+      "runtime": "gvisor",
+      "run_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM",
+      "started_at": "2026-11-14T15:29:40.626518705Z",
+      "finished_at": "2026-11-14T15:29:43.653489372Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 5,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED metadata-ip dial tcp 169.254.169.254:80: connect: network is unreachable\n"
+    },
+    {
+      "attack": "mount-unshare",
+      "technique": "T1611",
+      "runtime": "gvisor",
+      "run_id": "LVBVS7LGVAXL53CPECZ24SUDGI",
+      "started_at": "2026-11-14T15:29:43.6534965Z",
+      "finished_at": "2026-11-14T15:29:46.643126589Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED mount-unshare unshare=operation not permitted mount=operation not permitted\n"
+    },
+    {
+      "attack": "proc-leak",
+      "technique": "T1082",
+      "runtime": "gvisor",
+      "run_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ",
+      "started_at": "2026-11-14T15:29:46.643133224Z",
+      "finished_at": "2026-11-14T15:29:49.665295722Z",
+      "verdict": "error",
+      "reason": "probe objective or denial not recorded",
+      "exit": {
+        "Code": 3,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 5,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_INCONCLUSIVE proc-leak open /proc/1/environ: permission denied\n"
+    },
+    {
+      "attack": "ptrace",
+      "technique": "T1055",
+      "runtime": "gvisor",
+      "run_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4",
+      "started_at": "2026-11-14T15:29:49.665303356Z",
+      "finished_at": "2026-11-14T15:29:52.640753686Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 5,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED ptrace operation not permitted\n"
+    },
+    {
+      "attack": "raw-socket",
+      "technique": "T1016",
+      "runtime": "gvisor",
+      "run_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM",
+      "started_at": "2026-11-14T15:29:52.640761782Z",
+      "finished_at": "2026-11-14T15:29:55.66437974Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED raw-socket operation not permitted\n"
+    },
+    {
+      "attack": "reverse-shell",
+      "technique": "T1059.004",
+      "runtime": "gvisor",
+      "run_id": "BB4ONSI7D36MYN2DI2TKWXS7MI",
+      "started_at": "2026-11-14T15:29:55.664388197Z",
+      "finished_at": "2026-11-14T15:29:58.637153913Z",
+      "verdict": "error",
+      "reason": "probe objective or denial not recorded",
+      "exit": {
+        "Code": 3,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 5,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_INCONCLUSIVE reverse-shell dial tcp 192.0.2.1:4444: connect: network is unreachable\n"
+    },
+    {
+      "attack": "sys-leak",
+      "technique": "T1082",
+      "runtime": "gvisor",
+      "run_id": "PYL4PZ7446CFCTAGUC34WZUEUQ",
+      "started_at": "2026-11-14T15:29:58.637159166Z",
+      "finished_at": "2026-11-14T15:30:01.673510767Z",
+      "verdict": "error",
+      "reason": "probe objective or denial not recorded",
+      "exit": {
+        "Code": 3,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 5,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_INCONCLUSIVE sys-leak CPU topology readable (4 bytes, contents withheld)\n"
+    }
+  ]
+}

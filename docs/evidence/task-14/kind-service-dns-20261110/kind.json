@@ -1,0 +1,146 @@
+{
+  "cordon": {
+    "alert_to_new_pod_unschedulable_ms": 175.7,
+    "handle_ms": 49.9,
+    "pod_scheduled_after_uncordon": true,
+    "replay_noop": true
+  },
+  "isolate": {
+    "alert_to_both_blocked_ms": {
+      "max": 79.8,
+      "min": 36.2,
+      "p50": 55.2,
+      "p95": 79.8
+    },
+    "alert_to_egress_blocked_ms": {
+      "max": 79.8,
+      "min": 27.3,
+      "p50": 55.2,
+      "p95": 79.8
+    },
+    "alert_to_ingress_blocked_ms": {
+      "max": 74,
+      "min": 36.1,
+      "p50": 53.3,
+      "p95": 74
+    },
+    "control_fail_probes": 0,
+    "handle_ms": {
+      "max": 46.8,
+      "min": 21.3,
+      "p50": 30.3,
+      "p95": 46.8
+    },
+    "persist_old_ok_samples_1to3s_after_isolation": 200,
+    "probe": "fresh TCP connect every 50 ms (0.3 s timeout) to pod IPs (no kube-proxy, see podIP); time = attempt start of the first failed probe",
+    "release_to_healthy_ms": {
+      "max": 1144.6,
+      "min": 716,
+      "p50": 935.6,
+      "p95": 1144.6
+    },
+    "replays_noop": 10,
+    "runs": [
+      {
+        "alert": "kind-isolate-00",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 33.2,
+        "handle_ms": 34.9,
+        "ingress_blocked_ms": 44.2,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-01",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 52.1,
+        "handle_ms": 21.3,
+        "ingress_blocked_ms": 36.1,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-02",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 61.8,
+        "handle_ms": 30.3,
+        "ingress_blocked_ms": 58.8,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-03",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 57.4,
+        "handle_ms": 28.5,
+        "ingress_blocked_ms": 63.4,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-04",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 61.6,
+        "handle_ms": 46.8,
+        "ingress_blocked_ms": 54.6,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-05",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 79.8,
+        "handle_ms": 44.1,
+        "ingress_blocked_ms": 67.8,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-06",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 27.3,
+        "handle_ms": 24.3,
+        "ingress_blocked_ms": 53.3,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-07",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 31.2,
+        "handle_ms": 26.7,
+        "ingress_blocked_ms": 36.2,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-08",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 72,
+        "handle_ms": 36.8,
+        "ingress_blocked_ms": 74,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-09",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 55.2,
+        "handle_ms": 39.4,
+        "ingress_blocked_ms": 43.2,
+        "persist_old_ok_after_isolation": 20
+      }
+    ]
+  },
+  "isolate_runs": 10,
+  "load": {
+    "loadavg_end": "5.66 6.42 4.51 3/6288 476420",
+    "loadavg_start": "8.31 6.75 4.47 14/6325 472092",
+    "nproc": 32
+  },
+  "node": "warden-respond-control-plane",
+  "persist_fail_samples_1to10s_run0": 0,
+  "persist_old_ok_samples_1to10s_run0": 90,
+  "responder_rbac": {
+    "create pods/exec": false,
+    "delete nodes": false,
+    "delete pods warden-sandbox": false,
+    "get secrets warden-sandbox": false,
+    "patch nodes": true,
+    "patch pods kube-system": false,
+    "patch pods warden-sandbox": true
+  },
+  "server_version": "v1.34.11",
+  "token_ttl_s": 599.616669474
+}

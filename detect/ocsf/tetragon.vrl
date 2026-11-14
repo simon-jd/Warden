@@ -1,0 +1,22 @@
+# process_exec only. Connect/file event policies/telemetry remain separate work.
+message = string!(.message)
+assert!(length(message) <= 16384, "record_size")
+r = object!(parse_json!(message))
+p = object!(r.process_exec.process)
+a = object!(r.process_exec.parent)
+uid = string!(p.exec_id)
+parent_uid = string!(a.exec_id)
+node = string!(r.node_name)
+name = string!(p.binary)
+parent_name = string!(a.binary)
+pid = int!(p.pid)
+parent_pid = int!(a.pid)
+assert!(uid != "" && parent_uid != "" && node != "" && name != "" && parent_name != "", "required_context")
+assert!(pid >= 0 && parent_pid >= 0, "pid_range")
+time = to_unix_timestamp(parse_timestamp!(string!(r.time), format: "%+"), unit: "milliseconds")
+unmapped = {}
+for_each(r) -> |key, value| {
+  if !includes(["time", "node_name", "process_exec"], key) { unmapped = set!(unmapped, [key], value) }
+}
+assert!(length(encode_json(unmapped)) <= 2048, "unmapped_size")
+. = {"activity_id": 1, "category_uid": 1, "class_uid": 1007, "type_uid": 100701, "severity_id": 0, "time": time, "metadata": {"version": "1.3.0", "product": {"name": "Tetragon", "vendor_name": "Cilium"}, "uid": uid}, "actor": {"process": {"pid": parent_pid, "uid": parent_uid, "name": parent_name}}, "device": {"uid": node, "name": node, "type_id": 0}, "process": {"pid": pid, "uid": uid, "name": name}, "unmapped": unmapped}

@@ -1,0 +1,582 @@
+{
+  "artifact_bytes_excluding_index": 1706172,
+  "artifact_rows": 79,
+  "at_utc": "2026-10-25T15:44:36.440246+00:00",
+  "canonical": 150,
+  "controller": 2,
+  "diagnostic_note": "First metadata verifier omitted the newly retained request key from expected tool-record shape, exit1 before any proof/view write. Corrected verifier validates request too; worker evidence/tests unchanged. Actual failure preserved separately.",
+  "dispatch_base": "0766662fd4dd88b9e77812554909898a71b96e13",
+  "ignored_report_mirror_bytes": 14048,
+  "index_bytes": 53984,
+  "net_growth_including_index": 1520936,
+  "package_bytes_including_index": 1760156,
+  "plan_prefix": {
+    "append_bytes": 17227,
+    "bytes": 40886,
+    "sha256": "9fc37f2f9803ed5b5492356f527b9abf6ae2e21b52267981c52a799c7fee405c"
+  },
+  "prior_history": "60 API hashes match old index;101 prior run hashes match declared prior index; exact Git changes exclude those paths, old API partial post/receipt remain absent. No old semantic crawl.",
+  "raw_whitespace_note": "Historical GREEN1/output.txt:161 interrupted unittest trailing whitespace retained verbatim; not a current source cleanup/bypass.",
+  "review_head": "bb7224cdc9ce4106b39c3a7ddad514d9e5ac6175",
+  "review_view": {
+    "omitted_exact_duplicate_bodies": [
+      {
+        "block_sha256": "869fb7d7f1a1f4ffddd34bbf55a272e081dc5c51d77d8e1210d060b3815f43ed",
+        "body_bytes": 302,
+        "body_sha256": "10be732897dbc69611acb203df6127b04a313b515a98f49b11df91e78739cd23",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/post-controller.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/pre-controller.json"
+      },
+      {
+        "block_sha256": "8ed1e40c460cc8b8b2215b9ebae6840e393c0f1177a0c7d3f75792fe4624682d",
+        "body_bytes": 15999,
+        "body_sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/post-source.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/pre-source.json"
+      },
+      {
+        "block_sha256": "bed5bbd374322af10d86367c280dbd0e12c2b7843d090ea145c38159f1cb4768",
+        "body_bytes": 89929,
+        "body_sha256": "eb6bf6de8761b22012e621aad7d25571eabba01d6cd8c89b206415e9da0f46a2",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/scripts/test_identity_cache_control.py",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "c1866cc3c32b43b883da07dddfd5eaa1ebbf7ac1da7e67f17445ff35bd2ce390",
+        "body_bytes": 302,
+        "body_sha256": "ab684568509f59c46866ed635028cedf03378341727b12380870ae918e144aee",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/post-controller.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/pre-controller.json"
+      },
+      {
+        "block_sha256": "c3593c21e64527d66d8ab86bf378646a8286bbaf4fa129a025b40d8c11b51d89",
+        "body_bytes": 15999,
+        "body_sha256": "ba5f4d35f3bc7fbb4f1abb15445553733d7ba88efa2d8734cbf6ebb417c5df90",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/post-source.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/pre-source.json"
+      },
+      {
+        "block_sha256": "fe4cd9efe7c2d4c8fd32f5f9b1fb36b35ca407fe2c29deb4b4e9244ad72da367",
+        "body_bytes": 16749,
+        "body_sha256": "daed5906edc4afca1631b501f5dd380041f16cd911eb5fbf1efd7d34dd4e091c",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/baseline.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/baseline.json"
+      },
+      {
+        "block_sha256": "79dff69c0bb73f9fb12c4669c8d1aa36016024ef0569999a143f400349ee5542",
+        "body_bytes": 25874,
+        "body_sha256": "a59651fe438f1f035d73b4d319e9ee5a47217c82e56a8016402df3ece7fa256d",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py"
+      },
+      {
+        "block_sha256": "7cbaad0446ea07615a1eea66f993b9bac5f9bf69bbb5e6474575327457143da0",
+        "body_bytes": 4821,
+        "body_sha256": "20754530fbaab07a27a6d0ec343dee2ac2239dcd28401eb844058184619fc199",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/scripts/identity_cache_control.py",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/changed-source/scripts/identity_cache_control.py"
+      },
+      {
+        "block_sha256": "20f6ad79e87f6eeb13838b9316040358220fec9df7a1bc646f93906d49203b97",
+        "body_bytes": 71769,
+        "body_sha256": "9389182719aa261afe491e1b3620e1b62781035c258f2f34a360e29352adbceb",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/scripts/identity_cache_observe.py",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/changed-source/scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "0e5878eff064c5a650d0cb6d2381e79a3a327f26eda2b392bd75e723c1e736b8",
+        "body_bytes": 89929,
+        "body_sha256": "eb6bf6de8761b22012e621aad7d25571eabba01d6cd8c89b206415e9da0f46a2",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/scripts/test_identity_cache_control.py",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "629aff882c03d5eca7826b048e6c98e4f503ce78378064b74bc7202d778ee21a",
+        "body_bytes": 15999,
+        "body_sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/post-source.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/post-source.json"
+      },
+      {
+        "block_sha256": "2a8c6e3dfd210bf798e3820a2c6ce263df42bdb9a08f6adcac25a46fa83809b4",
+        "body_bytes": 302,
+        "body_sha256": "d91623211a11ea237af4ae45a90b3d1421a4aa7186d48eabe43ef6cc194ec875",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/post-controller.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/pre-controller.json"
+      },
+      {
+        "block_sha256": "94004bf36e107c96db3020671c3e3b2c44630f7c5d0274f20c4474ea79f0c807",
+        "body_bytes": 15999,
+        "body_sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/post-source.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/pre-source.json"
+      },
+      {
+        "block_sha256": "54e38b8f30651376f69652907a471bef74eac7121251015f00fd0768cf99e7f8",
+        "body_bytes": 4431,
+        "body_sha256": "6515d1a74d1f58cf44a433642ac5b84b828df0c2c25ea937ebd8f820b6fe3fc4",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/run.py",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/run.py"
+      },
+      {
+        "block_sha256": "e811db80a24dfe22ae82d03f40296512c94d99031dc03c0b032d1113762ca49c",
+        "body_bytes": 16749,
+        "body_sha256": "daed5906edc4afca1631b501f5dd380041f16cd911eb5fbf1efd7d34dd4e091c",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/baseline.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/baseline.json"
+      },
+      {
+        "block_sha256": "c2432ced03334712311cf3ecc0a1c7a2b313a20273d3b22e91b004204c6e67de",
+        "body_bytes": 25874,
+        "body_sha256": "a59651fe438f1f035d73b4d319e9ee5a47217c82e56a8016402df3ece7fa256d",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py"
+      },
+      {
+        "block_sha256": "edc3a06b8ca640808c445653449cae3e0fae62f05f08f3b804178609f43ee08c",
+        "body_bytes": 51863,
+        "body_sha256": "695973e5761113ac22d59eca83f8a0d1fec3f51d1909a7beafdbab81817eb3c2",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      },
+      {
+        "block_sha256": "0a476b8429e459ddf4698fca86706d66a18ef0b22e583fcb5c2c40c134afac95",
+        "body_bytes": 4821,
+        "body_sha256": "20754530fbaab07a27a6d0ec343dee2ac2239dcd28401eb844058184619fc199",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/scripts/identity_cache_control.py",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/changed-source/scripts/identity_cache_control.py"
+      },
+      {
+        "block_sha256": "22a61853e1a0f24c23373a2f12eb79b5ac90d56f1e94339b1c986c65421b2499",
+        "body_bytes": 71769,
+        "body_sha256": "9389182719aa261afe491e1b3620e1b62781035c258f2f34a360e29352adbceb",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/scripts/identity_cache_observe.py",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/changed-source/scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "a57e934a3c18af6b0a729365826f201d1fe0702062b20bc245239d576dffd900",
+        "body_bytes": 89929,
+        "body_sha256": "eb6bf6de8761b22012e621aad7d25571eabba01d6cd8c89b206415e9da0f46a2",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/scripts/test_identity_cache_control.py",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "1595bcee9309c25566d298a9db41d3cca9a8c3bf8861aed797ad6806dd60feea",
+        "body_bytes": 302,
+        "body_sha256": "10be732897dbc69611acb203df6127b04a313b515a98f49b11df91e78739cd23",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/post-controller.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/post-controller.json"
+      },
+      {
+        "block_sha256": "42ca0c0e4e851477375f56a494f8f420db3ce343d9458712b8bf7de8d8667c0e",
+        "body_bytes": 15999,
+        "body_sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/post-source.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/post-source.json"
+      },
+      {
+        "block_sha256": "0bc491d7d8e8a46d487bbb1940d0e035fedac196ee2e9ad821796dff82d14ddc",
+        "body_bytes": 302,
+        "body_sha256": "10be732897dbc69611acb203df6127b04a313b515a98f49b11df91e78739cd23",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/post-controller.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/pre-controller.json"
+      },
+      {
+        "block_sha256": "bcbe6430b376749747b88ba65208f74b8536c37e645ae1295e5ba85c0561afe6",
+        "body_bytes": 15999,
+        "body_sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/post-source.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/pre-source.json"
+      },
+      {
+        "block_sha256": "6f8ea0508ac875657e897b85f7db0a31cbbea3e422c5f9dcabba0ea5508244b5",
+        "body_bytes": 16749,
+        "body_sha256": "daed5906edc4afca1631b501f5dd380041f16cd911eb5fbf1efd7d34dd4e091c",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/baseline.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/baseline.json"
+      },
+      {
+        "block_sha256": "0c04a94ad7d6b7456b43c1d2978342e07c3216509a0a275aadb82c27d537391f",
+        "body_bytes": 302,
+        "body_sha256": "0d14502067d710319945600a504ad77adabe4d5c5b5a9b20cd1e22754753c916",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/post-controller.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/pre-controller.json"
+      },
+      {
+        "block_sha256": "c05ded8ede3aa296efb320853fce8482e4b90ebc17fb7c7e051c667950420608",
+        "body_bytes": 15999,
+        "body_sha256": "36a6e24e177180be1f9ff339d88c3cf59e8abdeaebbb172e3c165577ebbbe265",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/post-source.json",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/pre-source.json"
+      }
+    ],
+    "raw_blocks": 85,
+    "raw_bytes": 1647755,
+    "raw_path": ".superpowers/sdd/2-warden-security-plan/review-0766662..bb7224c.diff",
+    "raw_sha256": "0ce4e529648d5c64fe6f60b51bd25a5f8c788046c7747678af8a7bcca1ee6fb9",
+    "retained_blocks": [
+      {
+        "block_sha256": "d77180b86e1380d01169365f24957f9e4471913f2fbee7eb1cab16676eb85c04",
+        "path": "docs/STATUS.md"
+      },
+      {
+        "block_sha256": "eb56a44f2a2f448a7881626846d64cbca58bb03e7dfbe769891dd47b5a204c6a",
+        "path": "docs/evidence/plan-review.md"
+      },
+      {
+        "block_sha256": "4240b1ff748b52d20d377d5267ecdad35b5a35ad7d3299ba9c30a281b2c7eb76",
+        "path": "docs/evidence/task-6/continuation-controller-operations-execution-plan.md"
+      },
+      {
+        "block_sha256": "916321ac335c307a5e0f0d8401a7c2f3340f8ea0c3a5e379d1e3c6a675d497f9",
+        "path": "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py"
+      },
+      {
+        "block_sha256": "3a21dd170f0ff9706d7a4c51f43f12cc672ad6402a8773093984096d4fd468c7",
+        "path": "docs/evidence/task-6/controller-four-get-material-proposal.md"
+      },
+      {
+        "block_sha256": "62e2b4771c36f4dbf42feaa1fea58f7b95530cad221c558d0bdfde7f382a5549",
+        "path": "docs/evidence/task-6/controller-four-get-material-rulings.md"
+      },
+      {
+        "block_sha256": "155115fb933285cdea16142707133f414b0c9650aa3eb5023efa386e7dad7cb5",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-artifact-sizes.json"
+      },
+      {
+        "block_sha256": "22dd7038505750a15cd215ec2773f0dac6be5c8dbc6e6e36a364139ec2e3b611",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-rulings.md"
+      },
+      {
+        "block_sha256": "c0f7cd54a0a9f78420328a44eeb9ed6dadcc896747eb6566066b83bef2db0aa3",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/baseline.json"
+      },
+      {
+        "block_sha256": "f2ee59e295545abc68ee6c8db56e18b038cdbf10fde5be8cd86c194d71f6b811",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py"
+      },
+      {
+        "block_sha256": "faa06f446d4bf44151da3223e6dcb279d0079f6e3908071ef7118d63e9014c2c",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      },
+      {
+        "block_sha256": "86cb8237018aae273834d718c335890b0877f1daee2587e778b4a649502641ce",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/scripts/identity_cache_control.py"
+      },
+      {
+        "block_sha256": "4461d6c5de4c30d5dad9902d636fff88842b0de38cae9d52a621a8fbdf00045e",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "20763471456e3b98e0f8b11a1bee393ca1ff5c2e8c4c43ed83fc7f43ee1d3d47",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "06d9ef05d3302c5ede61a6a7f37e02d84904911365f321ba8f5402ba6b069ad0",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/intent.json"
+      },
+      {
+        "block_sha256": "aaa0ee04d0fde98a12b5aedeb7a20b7e87f70c956e9f9535d69125bd67499be7",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "4f9e9bbc58edeb64381a0b06a5abfb43019e9490a9d8a3b14fe0795cbeccc111",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/output.txt"
+      },
+      {
+        "block_sha256": "6a862f0d5d0f1e3e9bed9d5e94feb3f674e58360a552a45e7271a0be0633e2ab",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/post-controller.json"
+      },
+      {
+        "block_sha256": "13f878203da16ec8c36672f4c33826234fc55112f3ddbf0f30b7d2ef1be5e675",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/post-source.json"
+      },
+      {
+        "block_sha256": "4dac20b295c21892cbc35b2c8a42ca50ebd50c7357e653c0196bef0d3296a23f",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/receipt.json"
+      },
+      {
+        "block_sha256": "1824b8e01ac8f836836a89a78f5d5b7c653db167fc4e6b8bb86f7cd8aa58ef1a",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/run.py"
+      },
+      {
+        "block_sha256": "b28dd79f8eeea92e776d4603e68e2bb353dc0be32f9b142257cc4910f1376589",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/baseline.json"
+      },
+      {
+        "block_sha256": "5dca23d8cba0c66551af8cbb7229e82187a7405b29eeb876ccce14da8055ce4c",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py"
+      },
+      {
+        "block_sha256": "6c6775e43db60efe3405d762f3f566cdb34977754b40df3ae2d51a47fd4bd0b7",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      },
+      {
+        "block_sha256": "972a9467a688fc215e55dec51efc6712e7f565570804ccb1c2948514f2cfea4d",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/changed-source/scripts/identity_cache_control.py"
+      },
+      {
+        "block_sha256": "e4ea8f9285121f1319544c5cb716dfbcff0a1a3c26381709de5bb200f19aab25",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/changed-source/scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "348cb4a3136c8f40137c4837449ee46196182b98310face782f84ae7d0444f87",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/intent.json"
+      },
+      {
+        "block_sha256": "1a0a30905a67a9d19faba1faaf157800a29c961fead3c90dc8a9586c7f1ab035",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "42d1883dfe06256bd26f6d5fdc33222d85f464cceb740bce0a90cbb10c343617",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/output.txt"
+      },
+      {
+        "block_sha256": "75b04ba993fd21e1ed8a2a84c4f19565626def12e44b6067f656d500d04fe3f6",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/post-controller.json"
+      },
+      {
+        "block_sha256": "4bf70409c4522570953b50e4afe50cf97c141bd31452ddf6393f172acbd6d4ed",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/post-source.json"
+      },
+      {
+        "block_sha256": "32b91661aa776bcbafc65e1a93682a58567ea2f593c1707b1f885aee1421e580",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/receipt.json"
+      },
+      {
+        "block_sha256": "ea68722ef03b4298eb40311821c3d5e7ea65aac0dc3c1eedc80eeaaeb987a43a",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/run.py"
+      },
+      {
+        "block_sha256": "740fd0e2c11b46b3235b62029c53c54a9391e3d80382c4d3a6cdaae0378e55bd",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      },
+      {
+        "block_sha256": "63b7385764762a3ea19857c03a795e20f9fc51f21791a0292f6cfd375fe2526e",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/intent.json"
+      },
+      {
+        "block_sha256": "e05282c03d960028ead9b4c40c1c130ebee5b20a00759c5e79409fe799b2c856",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "12a4bfdff8c867980b2e61a84d4e614f49a4a896303b39983dfc9506af19bd30",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/output.txt"
+      },
+      {
+        "block_sha256": "07a8d51ac14c0c34a3233558c5a91d88251b7057776b80236223acf1ce46bb7f",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/post-controller.json"
+      },
+      {
+        "block_sha256": "0d9c70891716c8aa41c0c1314c260bf53de6ceadb227b70626446f631e982892",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/receipt.json"
+      },
+      {
+        "block_sha256": "3b9994b8def45ef6f59586c963f6a99c5b9090e829810b2964e8d4aef5e68f1b",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/intent.json"
+      },
+      {
+        "block_sha256": "c0bb02ba1fe3f31c8d05b09023e4926995f7c711fc57801bde2eec818eaffb27",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "2d69953fd8151c98dba8eec530efdf0ff55a04a70dec30e6f29da31c74ebdb28",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/output.txt"
+      },
+      {
+        "block_sha256": "ee1296415b2f99d8a048be92a681800d0fbb297cb2eb728e9d24681b8fbab16b",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/receipt.json"
+      },
+      {
+        "block_sha256": "41225c71cbfd4995e5cc239cf90683d970e1bfcd055597d19b9a0ad4a56794a4",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/run.py"
+      },
+      {
+        "block_sha256": "bb48e4adcb04fa29c55cb333f575d82b0d818a6fd2760c12d8e5fff6206c91f2",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-plan-prefix.json"
+      },
+      {
+        "block_sha256": "14524fef53b7844ffadaaacb4e44519890810e7b20c077f9b4ed4f1702533449",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      },
+      {
+        "block_sha256": "617c6b1a97a0e74d5d7f718435922b84aa4a8bffccecf2daf8eca3ad4c3473ad",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/intent.json"
+      },
+      {
+        "block_sha256": "26f58d7486b0e5b9014d929f5d216a41453df7f6044b2e3171d4623058acb58a",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "13f3224abc74c856778f19132441beb1917c3e1b19aae0b1bfa767611368561d",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/output.txt"
+      },
+      {
+        "block_sha256": "58c064f62a0f9268b72a4068492d911ae82b7bcd428b1e2337630c137cead16e",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/post-controller.json"
+      },
+      {
+        "block_sha256": "104ebc879e016c7c7a488486708aac21ae1f885932a60e151eafa374273e1b6f",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/post-source.json"
+      },
+      {
+        "block_sha256": "bcfd9f06e9ca1dd9c7f40a30df11c54b8312fcf1666426058608c98a3d39745d",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/receipt.json"
+      },
+      {
+        "block_sha256": "6ac1b90ff40e60617a520691021c966c4f2aaf9762aa50f82227605b5ca66220",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/run.py"
+      },
+      {
+        "block_sha256": "24915110a77b01a3b2bfbede269eb638f7c6d381ca7629844c0d9279a1ef2a7a",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-substage-report.md"
+      },
+      {
+        "block_sha256": "5f21c377dde5bc1f9e4759adff6fc022cff12166f96c64e68fe2927434066b26",
+        "path": "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      },
+      {
+        "block_sha256": "5dd96cdeb1ab7c53d6977bf87fd07048f6e2ff42f752194915d9f5be1a4bec52",
+        "path": "scripts/identity_cache_control.py"
+      },
+      {
+        "block_sha256": "17b50aff30d99f38867393769a10396d31ad40588dd7fd152bf6c522a081baad",
+        "path": "scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "0272ce5133028b9d236fe80ea91d9d546b04b51d509f41da7fc8ffd9b9ad538f",
+        "path": "scripts/test_identity_cache_control.py"
+      }
+    ],
+    "view_bytes": 940252,
+    "view_path": ".superpowers/sdd/2-warden-security-plan/review-0766662..bb7224c-deduplicated-view.diff",
+    "view_sha256": "0f8b74ad4eb9a002a4a8af40e171e1e618393518bf2bb09ee3537200d5aaecd5"
+  },
+  "root_coordinator_paths": [
+    "docs/STATUS.md",
+    "docs/evidence/plan-review.md",
+    "docs/evidence/task-6/controller-four-get-material-proposal.md",
+    "docs/evidence/task-6/controller-four-get-material-rulings.md",
+    "docs/evidence/task-6/controller-terminal-reconcile-rulings.md"
+  ],
+  "runs": [
+    {
+      "canonical": 150,
+      "changed_sources": [
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      ],
+      "controller": 2,
+      "entry_to_receipt_seconds": 0.11113697802647948,
+      "errors": 0,
+      "exit_code": 1,
+      "failures": 2,
+      "host_read_incident": false,
+      "pre_post_equal": true,
+      "run": "red-01",
+      "terminal_chunk": "b2e771",
+      "tests": 2,
+      "tool_format": "actual request plus initial terminal"
+    },
+    {
+      "canonical": 150,
+      "changed_sources": [
+        "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py",
+        "scripts/identity_cache_control.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "controller": 2,
+      "entry_to_receipt_seconds": 3.641583321033977,
+      "errors": 4,
+      "exit_code": 1,
+      "failures": 2,
+      "host_read_incident": true,
+      "pre_post_equal": true,
+      "run": "green-01",
+      "terminal_chunk": "267684",
+      "tests": 165,
+      "tool_format": "actual request plus initial/final"
+    },
+    {
+      "canonical": 150,
+      "changed_sources": [
+        "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py",
+        "scripts/identity_cache_control.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "controller": 2,
+      "entry_to_receipt_seconds": 4.698069912963547,
+      "errors": 1,
+      "exit_code": 1,
+      "failures": 0,
+      "host_read_incident": false,
+      "pre_post_equal": true,
+      "run": "green-02",
+      "terminal_chunk": "8aee64",
+      "tests": 174,
+      "tool_format": "actual request plus initial/final"
+    },
+    {
+      "canonical": 150,
+      "changed_sources": [
+        "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py",
+        "scripts/identity_cache_control.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "controller": 2,
+      "entry_to_receipt_seconds": 2.9449991279980168,
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "host_read_incident": false,
+      "pre_post_equal": true,
+      "run": "green-03",
+      "terminal_chunk": "5bd8f7",
+      "tests": 26,
+      "tool_format": "actual request plus initial/final"
+    },
+    {
+      "canonical": 150,
+      "changed_sources": [
+        "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py",
+        "scripts/identity_cache_control.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "controller": 2,
+      "entry_to_receipt_seconds": 4.838229252956808,
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "host_read_incident": false,
+      "pre_post_equal": true,
+      "run": "cover-01",
+      "terminal_chunk": "15c583",
+      "tests": 177,
+      "tool_format": "actual request plus initial/final"
+    }
+  ],
+  "scope": "Verifier only public/Git reads and AST byte-segment comparisons, no project imports/tests/host/private/runtime/cloud operations. The separate GREEN1 fixture own-host read incident is disclosed, not reclassified as fake.",
+  "source": "a05d077cd4885b5ddc662e0a8854ba0a8208b7da",
+  "source_bytes": 244256,
+  "status": "PASS",
+  "unchanged_canonical": 147,
+  "unchanged_observer_components": {
+    "ClockBudget": "0314ac4de684e3e7eb7902a83f751e9c88f69de3057c33cb810e76779e2d9d2e",
+    "Deadline": "80e7e4d319d83c325cb18a3f0d2359564a4726b82127b945c5046d85dce1a0a3",
+    "OwnClock": "9fd99da4da5fedb8c43f5cc2db350fe8e468ca13ec1026d3a0c1a88817ed9194",
+    "OwnedProcess": "6ecabbc32d707652e598e5daa5c25f58ecb91c8336f5c5af294ce08eed9dafc5",
+    "ReadOnlyDocker": "4067d1ad799074d2b1832792b2709bd3cc47383316723a44c232fae7d9c79828",
+    "_docker_anchor": "fb1bd1f75e062e75b5df027369891b9924783f0e537a352e3791f078848f65cc",
+    "_docker_headers": "ed7b049b8821ae16f4252de62a4ae301616bd6e7a435153be57615b0ff1f7bd9",
+    "docker_adapter": "894b0da37e4bd7d027342fda420c868556622d5f62bf13f90c69d94f86b2e7e9",
+    "read": "1d2984d707254ca8872be4ee9a4717af1ed5bc0730d881aa33b3a71747260768"
+  },
+  "worker_evidence": "e9d44ea1d82948960295ba3d46351acb3f4bf86b"
+}

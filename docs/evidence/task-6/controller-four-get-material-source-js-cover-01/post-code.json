@@ -1,0 +1,12 @@
+{
+  "candidate": {
+    "bytes": 10842,
+    "path": "docs/evidence/task-6/controller-four-get-material-source-caller-candidate.js",
+    "sha256": "58095573ef0f31c78429d9dd5169ced6ea58c5c23f04526b651f73b1eb8b73b1"
+  },
+  "fixture": {
+    "bytes": 10578,
+    "path": "docs/evidence/task-6/controller-four-get-material-source-caller-fixture.js",
+    "sha256": "41d7755dbef715914e54d3732c326d2db1a0c42fd0c9360c2971f3164fc973a9"
+  }
+}

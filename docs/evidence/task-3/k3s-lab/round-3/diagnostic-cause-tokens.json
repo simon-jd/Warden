@@ -1,0 +1,105 @@
+{
+  "raw_persisted": false,
+  "fixed_token_matches": [
+    {
+      "line_number": 32,
+      "safe_fixed_tokens": [
+        "listener",
+        "listen"
+      ]
+    },
+    {
+      "line_number": 39,
+      "safe_fixed_tokens": [
+        "runtime",
+        "ready",
+        "not ready"
+      ]
+    },
+    {
+      "line_number": 42,
+      "safe_fixed_tokens": [
+        "failed"
+      ]
+    },
+    {
+      "line_number": 43,
+      "safe_fixed_tokens": [
+        "failed"
+      ]
+    },
+    {
+      "line_number": 44,
+      "safe_fixed_tokens": [
+        "failed"
+      ]
+    },
+    {
+      "line_number": 45,
+      "safe_fixed_tokens": [
+        "failed"
+      ]
+    },
+    {
+      "line_number": 46,
+      "safe_fixed_tokens": [
+        "failed"
+      ]
+    },
+    {
+      "line_number": 47,
+      "safe_fixed_tokens": [
+        "failed"
+      ]
+    },
+    {
+      "line_number": 70,
+      "safe_fixed_tokens": [
+        "/etc/rancher/k3s",
+        "/etc/rancher",
+        "failed",
+        "write"
+      ]
+    },
+    {
+      "line_number": 74,
+      "safe_fixed_tokens": [
+        "runtime",
+        "ready",
+        "not ready"
+      ]
+    },
+    {
+      "line_number": 75,
+      "safe_fixed_tokens": [
+        "containerd"
+      ]
+    },
+    {
+      "line_number": 81,
+      "safe_fixed_tokens": [
+        "configuration",
+        "containerd"
+      ]
+    },
+    {
+      "line_number": 84,
+      "safe_fixed_tokens": [
+        "v1",
+        "failed",
+        "check",
+        "containerd"
+      ]
+    },
+    {
+      "line_number": 173,
+      "safe_fixed_tokens": [
+        "/var/run",
+        "failed to create socket",
+        "NRI",
+        "nri",
+        "failed"
+      ]
+    }
+  ]
+}

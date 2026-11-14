@@ -1,0 +1,147 @@
+{
+  "utc": "2026-10-24T06:35:13.238519+00:00",
+  "dispatch_base": "0be4325b8362114daac107000300ead4220d5734",
+  "source_commit": "30617f2fa13ae2f302472cbf5d3d9a70d72a81a3",
+  "review_head": "a193dabf27de82a01d99a6382fb628d95644ecbc",
+  "checked": [
+    {
+      "group": "source_files_sha256",
+      "path": "docs/k3s-runtime-lab.md",
+      "sha256": "2eb5d308e705e1357b028f02b008798c13726042d5c45bc2841e81549e7c6899"
+    },
+    {
+      "group": "source_files_sha256",
+      "path": "scripts/k3s_lab.py",
+      "sha256": "7c30fd5ffea255b07561ec54962ac975c48bc84323588ed0375b097b584574a9"
+    },
+    {
+      "group": "source_files_sha256",
+      "path": "scripts/k3s_lab_init.py",
+      "sha256": "a89d70f0d51dda9ab4311b5470aeec86d11a96aca71c8f49921250fc654be0e3"
+    },
+    {
+      "group": "source_files_sha256",
+      "path": "scripts/k3s_lab_materials.py",
+      "sha256": "e5633e68f33bf49dddca59708f830ea1d4532d2898f34a18b8472c59a2332598"
+    },
+    {
+      "group": "source_files_sha256",
+      "path": "scripts/runtime_lab_docker.py",
+      "sha256": "ad42ffdbed4fac9e66c8e351933ae284dbcd9750446249ddc094a688770648b8"
+    },
+    {
+      "group": "source_files_sha256",
+      "path": "scripts/test_k3s_lab.py",
+      "sha256": "4c06175d1538f9c358b0ad58472919a46d7ad648ec12b3d6ab88743d18d3c396"
+    },
+    {
+      "group": "source_files_sha256",
+      "path": "scripts/test_k3s_lab_init.py",
+      "sha256": "2daf449851b2a9cce5eda193aeffa66dfed8a20ff56b946e2ea124df3745afa6"
+    },
+    {
+      "group": "source_files_sha256",
+      "path": "scripts/test_k3s_lab_materials.py",
+      "sha256": "596d2b470b4c63d357db34cdfa50300a96cd6f5d1bad5537e4590c766ff3d1e9"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "README.md",
+      "sha256": "763539b72dd272d897400d459e0a35289560570dd43e1382d6c1b7f5068ad323"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "capless-smoke.txt",
+      "sha256": "340cc8bb114d0e306e2af46628c4ad2eed6f49c1728158304e64273cde0b57de"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "charge.json",
+      "sha256": "f831de6f21a3c9bcaebc7287c9ec766aec65a220a8548639297430116c14e18a"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "gvisor.tar.bz2.members.json",
+      "sha256": "ff149c08f4f8061435f61719aa7e290bd7deeaecd0181c8aa58fc4ec12145367"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "historical-attempts/smoke-attempt-1.log",
+      "sha256": "53c35e9c87bd19cf6a60275e11c76857041adef812fa2a5cec887fdf45026cc2"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "historical-attempts/smoke-attempt-2.log",
+      "sha256": "b4301a6944e2d71d39da797465e61e57fc7dc5d3ea0748126da0fe84818f9b39"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "historical-attempts/smoke-attempt-3.log",
+      "sha256": "27b72b12a3390911b5d2a4d13817e499026a97d71145ac7c5fbfeb60e4ab2810"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "historical-attempts/smoke-attempt-4.log",
+      "sha256": "305c9b98dcf67d22809c4e5875e3dda63893597503779be6ab2c65296f4d576a"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "historical-attempts/smoke-attempt-5.log",
+      "sha256": "4281634fe328b87ea2c6e969d54502ecb43a960ee2907564f85d8dcb0df2292d"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "historical-attempts/smoke-attempt-6.log",
+      "sha256": "09fc682e498dae98c6aae523403f097264c22a87b7b5251cb9022982f7ae75cd"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "identity.json",
+      "sha256": "e659c29b8d06813e52fd73e1c62a0d0a717d2460829efaa2fefeec67d580f649"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "k3s.members.json",
+      "sha256": "759117f66c45cf4e51d1ea2bb31ae30769f78fee48595bdbbe5905d218b2b298"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "manifest.json",
+      "sha256": "f39c3429f36125e3a3d9ee0e7d8a33da046bc1cc82335b4cafab3e71fa83bbfd"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "official-checksums.json",
+      "sha256": "ac8f7fb1e64ec22539e05646ae20f73fb844b4897d61a35b05938be925b18f7d"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "postflight.txt",
+      "sha256": "b41c845b7222fb46ef6432a118454a3663f828daf17341f6ddde5db21adb0506"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "sources.json",
+      "sha256": "ee80b1a54b98a28dd75df41edf1ba835d919817c5b1e10fa9b242f07e77ba67e"
+    },
+    {
+      "group": "evidence_sha256",
+      "path": "tests.txt",
+      "sha256": "e14748faea11a9d89694193bed687d720eb0998f4be2e4c9652e1be47e40cce6"
+    },
+    {
+      "group": "cached_official_material",
+      "path": ".cache/warden-k3s-materials/gvisor.tar.bz2",
+      "sha256": "1298e8ed9c3fee900f00d2ea96ec2d79d80ed93f2175812f29b7e7da718041a3",
+      "bytes": 73621897
+    },
+    {
+      "group": "cached_official_material",
+      "path": ".cache/warden-k3s-materials/k3s",
+      "sha256": "d73847bcd3c5fccef0115b372e2f9a91f3032dc84bbf71518a4617565294d313",
+      "bytes": 79077538
+    }
+  ],
+  "report_copy_byte_identical": true,
+  "note": "Hash verification only; does not validate runtime behavior or claim node startup."
+}

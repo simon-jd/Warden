@@ -1,0 +1,119 @@
+"""Synthetic local semantics; real signature, provenance, and KEV admissions remain UNRUN."""
+
+from pathlib import Path
+import sys
+import unittest
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from supplychain import assess_scan, render_binding  # noqa: E402
+
+
+DIGEST = "sha256:" + "a" * 64
+IMAGE = "ghcr.io/synthetic-owner/synthetic-repo/warden-api"
+BINDING = {
+    "repository": "synthetic-owner/synthetic-repo",
+    "ref": "refs/heads/main",
+    "image_repository": IMAGE,
+    "image_digest": DIGEST,
+}
+
+
+def synthetic_report(matches):
+    # Opaque synthetic DB marker exercises presence only; it is not trusted DB
+    # provenance or a claim about Grype's as-yet-unconfirmed DB JSON schema.
+    return {
+        "matches": matches,
+        "ignoredMatches": [],
+        "source": {"type": "image", "target": {"repoDigests": [f"{IMAGE}@{DIGEST}"]}},
+        "descriptor": {"name": "grype", "version": "0.121.0",
+                       "db": {"syntheticFixtureOnly": True}},
+    }
+
+
+def match(cve, *, severity="High", fix_state="not-fixed", kev=(), related=()):
+    return {
+        "vulnerability": {
+            "id": cve, "severity": severity,
+            "fix": {"state": fix_state,
+                    "versions": ["9.9.9"] if fix_state == "fixed" else []},
+            "knownExploited": [{"cve": item} for item in kev],
+        },
+        "relatedVulnerabilities": [
+            {"id": item, "knownExploited": [{"cve": item}]} for item in related
+        ],
+        "artifact": {"name": "synthetic-package", "version": "1.0.0"},
+    }
+
+
+class RenderBindingTests(unittest.TestCase):
+    def test_valid_binding_covers_every_image_and_exact_identity(self):
+        result = render_binding(BINDING)
+        self.assertTrue(result["accepted"])
+        self.assertEqual(result["status"], "rendered")
+        policies = result["policies"]
+        self.assertIn("verify-images.yaml", policies)
+        self.assertIn("block-kev.yaml", policies)
+        verify = policies["verify-images.yaml"]
+        self.assertIn('imageReferences: ["*"]', verify)
+        self.assertIn(BINDING["repository"], verify)
+        self.assertIn(BINDING["ref"], verify)
+        self.assertIn(BINDING["image_repository"], verify)
+        self.assertIn(DIGEST, verify)
+
+    def test_missing_binding_rejected_without_policy(self):
+        for omitted in BINDING:
+            with self.subTest(omitted=omitted):
+                partial = {k: v for k, v in BINDING.items() if k != omitted}
+                result = render_binding(partial)
+                self.assertEqual(result["status"], "rejected")
+                self.assertFalse(result["accepted"])
+                self.assertIsNone(result["policies"])
+
+    def test_malformed_digest_rejected_without_policy(self):
+        invalid = dict(BINDING, image_digest="sha256:not-a-digest")
+        result = render_binding(invalid)
+        self.assertEqual(result["status"], "rejected")
+        self.assertIsNone(result["policies"])
+
+
+class AssessScanTests(unittest.TestCase):
+    def test_fixable_critical_blocks_unfiltered_scan(self):
+        report = synthetic_report([match("CVE-2026-1001", severity="Critical", fix_state="fixed")])
+        result = assess_scan(report, DIGEST)
+        self.assertEqual(result["status"], "assessed")
+        self.assertFalse(result["release_allowed"])
+        self.assertIn("fixable-critical", result["block_reasons"])
+        self.assertIn("CVE-2026-1001", result["fixable_critical"])
+
+    def test_not_fixed_kev_still_blocks(self):
+        report = synthetic_report([match("CVE-2026-1002", kev=("CVE-2026-1002",))])
+        result = assess_scan(report, DIGEST)
+        self.assertEqual(result["status"], "assessed")
+        self.assertFalse(result["release_allowed"])
+        self.assertIn("kev", result["block_reasons"])
+        self.assertIn("CVE-2026-1002", result["kev_cves"])
+
+    def test_related_kev_cve_is_not_lost(self):
+        report = synthetic_report([match("GHSA-synthetic-aaaa-bbbb", related=("CVE-2026-1003",))])
+        result = assess_scan(report, DIGEST)
+        self.assertEqual(result["status"], "assessed")
+        self.assertIn("CVE-2026-1003", result["kev_cves"])
+        self.assertFalse(result["release_allowed"])
+
+    def test_ignored_matches_rejected(self):
+        report = synthetic_report([])
+        report["ignoredMatches"] = [match("CVE-2026-1004")]
+        result = assess_scan(report, DIGEST)
+        self.assertEqual(result["status"], "rejected")
+        self.assertFalse(result["release_allowed"])
+
+    def test_missing_db_evidence_rejected(self):
+        report = synthetic_report([])
+        del report["descriptor"]["db"]
+        result = assess_scan(report, DIGEST)
+        self.assertEqual(result["status"], "rejected")
+        self.assertFalse(result["release_allowed"])
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-26T06:55:22.921338+00:00",
+  "phase": "Task9 compatibility failure archive ONLY",
+  "R": 5092200448,
+  "all_holds_and_full_new_phase_plus_Task10_prep": 6050200576,
+  "total": 11142401024,
+  "cap": 12000000000,
+  "Task9_output_copy_Git_subreserve": 41943040,
+  "Task9_Git_new_increment_upper": 33554432,
+  "one_temp_index_copy_upper": 655360,
+  "Git_objects_baseline_after_Task15_closed_commit": 34553856,
+  "Task15_original_publication_end_head": "507debdda8a0a4bf5b10b3796b433f3ce6e52bc7",
+  "Task15_original_CODE_524288_and_publication_1MiB_not_reused_or_reset": true,
+  "prior_source_all_unverified_unstaged": true
+}

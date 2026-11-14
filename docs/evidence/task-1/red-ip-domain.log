@@ -1,0 +1,7 @@
+=== RUN   TestRejectsIPAllowlistEntries
+    api_test.go:294: IP literal 127.0.0.1 accepted status=201
+    api_test.go:294: IP literal 169.254.169.254 accepted status=201
+--- FAIL: TestRejectsIPAllowlistEntries (0.10s)
+FAIL
+FAIL	warden/controlplane/internal/api	0.102s
+FAIL

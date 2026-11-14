@@ -1,0 +1,39 @@
+# Task 6 step 3: can the signed-in user configure Entra SCIM provisioning? (read-only probes)
+# Host home-ubuntu, Azure CLI 2.91.0, signed in as a member user of the university tenant.
+# Target: service principal of warden-lab-api (object 00000000-0000-0000-0000-000000000003), owned by the user.
+# Redacted: tenant ID -> <tenant-id>, user object ID -> <user-oid>, request/trace/correlation IDs -> <id>.
+
+### Graph token of the Azure CLI (decoded locally; token not printed)
+aud https://graph.microsoft.com/  appid 04b07795-8ddb-461a-bbee-02f9e1bf7b46 (Azure CLI)  ver 1.0  idtyp user
+scp Application.ReadWrite.All AppRoleAssignment.ReadWrite.All AuditLog.Read.All DelegatedPermissionGrant.ReadWrite.All Directory.AccessAsUser.All email Group.ReadWrite.All openid profile SubjectNameRegistration.ReadWrite User.Read.All User.ReadWrite.All
+wids ['b79fbf4d-3ef9-4689-8143-76b194e85509']   (not in the built-in roles reference; none of Application Administrator 9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3, Cloud Application Administrator 158c047a-c907-4556-b7ef-446551a6b5f7, Hybrid Identity Administrator 8ac3fc64-6eca-42ea-9e69-59f4c7b60eb2)
+=> no Synchronization.Read.All / Synchronization.ReadWrite.All in the token
+
+### 2026-11-11T01:19:37Z GET https://graph.microsoft.com/v1.0/servicePrincipals/00000000-0000-0000-0000-000000000003/synchronization/jobs
+rc=1
+ERROR: Unauthorized({"error":{"code":"UnknownError","message":"","innerError":{"date":"2026-11-11T01:19:39","request-id":"<id>","client-request-id":"<id>"}}})
+### 2026-11-11T01:19:39Z GET https://graph.microsoft.com/v1.0/servicePrincipals/00000000-0000-0000-0000-000000000003/synchronization/templates
+rc=1
+ERROR: Unauthorized({"error":{"code":"UnknownError","message":"","innerError":{"date":"2026-11-11T01:19:40","request-id":"<id>","client-request-id":"<id>"}}})
+### 2026-11-11T01:19:40Z GET https://graph.microsoft.com/beta/servicePrincipals/00000000-0000-0000-0000-000000000003/synchronization/jobs
+rc=1
+ERROR: Unauthorized({"error":{"code":"UnknownError","message":"","innerError":{"date":"2026-11-11T01:19:42","request-id":"<id>","client-request-id":"<id>"}}})
+### 2026-11-11T01:19:42Z GET https://graph.microsoft.com/v1.0/applicationTemplates/8adf8e6e-67b2-4cf2-a259-e3dc5476c621?$select=id,displayName,supportedProvisioningTypes,supportedSingleSignOnModes
+rc=0
+{"@odata.context": "https://graph.microsoft.com/v1.0/$metadata#applicationTemplates(id,displayName,supportedProvisioningTypes,supportedSingleSignOnModes)/$entity", "displayName": "Custom", "id": "8adf8e6e-67b2-4cf2-a259-e3dc5476c621", "supportedProvisioningTypes": ["sync"], "supportedSingleSignOnModes": ["password", "saml", "external"]}
+### 2026-11-11T01:19:42Z own license details (skuPartNumber, Entra plans only)
+POWER_BI_STANDARD []
+M365EDU_A5_STUUSEBNFT ['INTUNE_A:PendingInput', 'MFA_PREMIUM:Success', 'AAD_PREMIUM:Success', 'AAD_PREMIUM_P2:Success', 'AAD_BASIC_EDU:Success']
+### 2026-11-11T01:19:43Z token for Graph Synchronization.ReadWrite.All (non-interactive)
+rc=1
+ERROR: AADSTS65002: Consent between first party application '04b07795-8ddb-461a-bbee-02f9e1bf7b46' and first party resource '00000003-0000-0000-c000-000000000000' must be configured via preauthorization - applications owned and operated by Microsoft must get approval from the API owner before requesting tokens for that API. Trace ID: <id> Correlation ID: <id> Timestamp: 2026-11-11 01:19:43Z
+Run the command below to authenticate interactively; additional arguments may be added as needed:
+az logout
+az login --tenant "<tenant-id>" --scope "https://graph.microsoft.com/Synchronization.ReadWrite.All"
+
+### Sources (fetched 2026-11-10)
+- https://learn.microsoft.com/en-us/entra/fundamentals/licensing : row 'Automated user provisioning to SaaS apps' is checked for Free, P1, P2, Governance, Suite; 'Automated group provisioning to SaaS apps' is not checked for Free.
+- https://learn.microsoft.com/en-us/graph/permissions-reference : Synchronization.ReadWrite.All (delegated 7bb27fa3-ea8f-4d67-a916-87715b6188bd) AdminConsentRequired Yes.
+- https://learn.microsoft.com/en-us/graph/api/synchronization-synchronization-post-jobs : delegated least privileged permission Synchronization.ReadWrite.All; supported roles Application Administrator, Cloud Application Administrator.
+- https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/overview-assign-app-owners : 'As an owner of an enterprise application ... a user can manage the organization-specific configuration of the application. This configuration includes single sign-on, provisioning, and user assignment.'
+- https://learn.microsoft.com/en-us/entra/identity/app-provisioning/use-scim-to-provision-users-and-groups : non-gallery app; endpoint must accept TLS 1.2 with the listed cipher suites from the AzureActiveDirectory IP ranges (or the on-premises provisioning agent); sync cycle every 40 minutes; default user mapping mailNickname -> externalId.

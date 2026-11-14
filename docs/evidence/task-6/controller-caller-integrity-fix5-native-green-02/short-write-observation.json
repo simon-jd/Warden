@@ -1,0 +1,62 @@
+{
+  "approval_bytes_hex": "7b2262696e64696e67223a7b2266697874757265223a747275657d2c2263617074757265645f6174223a2267656e657261746564222c22636865636b706f696e745f6279746573223a3132332c22636865636b706f696e745f736861323536223a2261616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161222c227374617465223a22617070726f766564222c2276657273696f6e223a312c227772697465725f6261736973223a2267656e6572617465642066697874757265227d0a",
+  "approval_exists": true,
+  "approval_metadata": [
+    47,
+    2632072,
+    1000,
+    1000,
+    33152,
+    1,
+    231,
+    1792950460771514240,
+    1792950460771514240,
+    8
+  ],
+  "approval_symlink": false,
+  "exit_code": 0,
+  "name": "short-write",
+  "passed": true,
+  "sentinel_observed": false,
+  "stderr": "FIXTURE_TELEMETRY {\"counts\": {\"blocked\": 2, \"fsyncs\": 2, \"opens\": 11, \"preads\": 14, \"root_routes\": 1, \"writes\": 2}, \"flags\": {\"dont_write_bytecode\": 1, \"isolated\": 1, \"no_site\": 1}, \"held_remaining\": 0, \"injected\": false, \"limits\": {\"as\": [134217728, 134217728], \"cpu\": [5, 5], \"fsize\": [1048576, 1048576]}, \"origins\": {\"json\": \"/usr/lib/python3.14/json/__init__.py\", \"resource\": \"/usr/lib/python3.14/lib-dynload/resource.cpython-314-x86_64-linux-gnu.so\", \"signal\": \"/usr/lib/python3.14/signal.py\"}, \"site_loaded\": false}\n",
+  "stdout": "{\"approval\":{\"bytes\":231,\"metadata\":[47,2632072,1000,1000,33152,1,231,1792950460771514240,1792950460771514240,8],\"sha256\":\"01ab90004133bead8df63a24dfcc9c0c5fd3222ae55f5c8f2af7249346597d14\"}}\n",
+  "summary_unchanged": true,
+  "telemetry": {
+    "counts": {
+      "blocked": 2,
+      "fsyncs": 2,
+      "opens": 11,
+      "preads": 14,
+      "root_routes": 1,
+      "writes": 2
+    },
+    "flags": {
+      "dont_write_bytecode": 1,
+      "isolated": 1,
+      "no_site": 1
+    },
+    "held_remaining": 0,
+    "injected": false,
+    "limits": {
+      "as": [
+        134217728,
+        134217728
+      ],
+      "cpu": [
+        5,
+        5
+      ],
+      "fsize": [
+        1048576,
+        1048576
+      ]
+    },
+    "origins": {
+      "json": "/usr/lib/python3.14/json/__init__.py",
+      "resource": "/usr/lib/python3.14/lib-dynload/resource.cpython-314-x86_64-linux-gnu.so",
+      "signal": "/usr/lib/python3.14/signal.py"
+    },
+    "site_loaded": false
+  },
+  "timed_out": false
+}

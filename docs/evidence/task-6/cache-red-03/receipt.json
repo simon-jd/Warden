@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "scripts/test_identity_cache.py"
+  ],
+  "exit_code": 1,
+  "duration_seconds": 0.15718674659729004,
+  "source_unchanged": true,
+  "source_files": 139,
+  "classification": "behavior/API RED: fixed permission-tightening API absent",
+  "fixture_only": true
+}

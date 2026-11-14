@@ -1,0 +1,6 @@
+=== RUN   TestPidfdRequiresActualOriginalProcessExit
+    retirement_kernel_test.go:17: live process accepted as exited: true <nil>
+--- FAIL: TestPidfdRequiresActualOriginalProcessExit (0.00s)
+FAIL
+FAIL	warden/runtimes/gate	0.002s
+FAIL

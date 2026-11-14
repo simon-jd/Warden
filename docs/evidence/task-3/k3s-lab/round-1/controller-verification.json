@@ -1,0 +1,8 @@
+{
+  "utc": "2026-10-24T06:49:54.437005+00:00",
+  "source_commit": "a3193fbc56e6105f0720c0b8040aa441632b575d",
+  "review_head": "cb76a2d",
+  "hashes_checked": 21,
+  "private_report_ends_with_tracked_fix_report": true,
+  "note": "Hash verification only; no tests or Docker mutations."
+}

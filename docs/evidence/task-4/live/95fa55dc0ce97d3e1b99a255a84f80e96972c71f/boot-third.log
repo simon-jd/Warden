@@ -1,0 +1,64 @@
+{"owned_image_charge": 0, "outstanding": 0, "additional": 5000000000, "service_memory": 5000000000}
+{"additional_bytes": "5000000000", "at": "2026-10-24T22:22:48Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 273140043776, "project_allocated_bytes": 4013953024, "service_memory_bytes": "5000000000"}
+{"owned_image_charge": 0, "outstanding": 5000000000, "additional": 0, "service_memory": 5000000000}
+{"additional_bytes": "5000000000", "at": "2026-10-24T22:22:49Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 273140035584, "project_allocated_bytes": 4013957120, "service_memory_bytes": "5000000000"}
+{"owned_image_charge": 360388410, "outstanding": 5000000000, "additional": 0, "service_memory": 5000000000}
+{"additional_bytes": "5360388410", "at": "2026-10-24T22:22:52Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 272991645696, "project_allocated_bytes": 4013961216, "service_memory_bytes": "5000000000"}
+{"inspected_host_config": {"Binds": null, "ContainerIDFile": "", "LogConfig": {"Type": "json-file", "Config": {"max-file": "2", "max-size": "10m"}}, "NetworkMode": "none", "PortBindings": {}, "RestartPolicy": {"Name": "no", "MaximumRetryCount": 0}, "AutoRemove": false, "VolumeDriver": "", "VolumesFrom": null, "ConsoleSize": [0, 0], "CapAdd": ["CAP_CHOWN", "CAP_DAC_OVERRIDE", "CAP_KILL", "CAP_MKNOD", "CAP_SETGID", "CAP_SETUID", "CAP_SYS_ADMIN", "CAP_SYS_CHROOT"], "CapDrop": ["ALL"], "CgroupnsMode": "private", "Dns": null, "DnsOptions": [], "DnsSearch": [], "ExtraHosts": null, "GroupAdd": null, "IpcMode": "private", "Cgroup": "", "Links": null, "OomScoreAdj": 0, "PidMode": "", "Privileged": false, "PublishAllPorts": false, "ReadonlyRootfs": true, "SecurityOpt": ["no-new-privileges", "apparmor=unconfined", "seccomp=unconfined"], "Tmpfs": {"/run": "rw,nosuid,nodev,size=64m", "/tmp": "rw,nosuid,nodev,size=64m"}, "UTSMode": "", "UsernsMode": "", "ShmSize": 67108864, "Runtime": "runc", "Isolation": "", "CpuShares": 0, "Memory": 4000000000, "NanoCpus": 2000000000, "CgroupParent": "", "BlkioWeight": 0, "BlkioWeightDevice": [], "BlkioDeviceReadBps": [], "BlkioDeviceWriteBps": [], "BlkioDeviceReadIOps": [], "BlkioDeviceWriteIOps": [], "CpuPeriod": 0, "CpuQuota": 0, "CpuRealtimePeriod": 0, "CpuRealtimeRuntime": 0, "CpusetCpus": "", "CpusetMems": "", "Devices": [{"PathOnHost": "/dev/kvm", "PathInContainer": "/dev/kvm", "CgroupPermissions": "rw"}], "DeviceCgroupRules": null, "DeviceRequests": null, "MemoryReservation": 0, "MemorySwap": 4000000000, "MemorySwappiness": null, "OomKillDisable": false, "PidsLimit": 512, "Ulimits": null, "CpuCount": 0, "CpuPercent": 0, "IOMaximumIOps": 0, "IOMaximumBandwidth": 0, "Mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/warden-lab/docker-firecracker-89c9296e79ce14c5dd30e0d5e4772f1d/live", "Target": "/opt/warden/session", "ReadOnly": true, "BindOptions": {"Propagation": "rprivate"}}], "MaskedPaths": ["/proc/acpi", "/proc/asound", "/proc/interrupts", "/proc/kcore", "/proc/keys", "/proc/latency_stats", "/proc/sched_debug", "/proc/scsi", "/proc/timer_list", "/proc/timer_stats", "/sys/devices/virtual/powercap", "/sys/firmware", "/sys/devices/system/cpu/cpu0/thermal_throttle", "/sys/devices/system/cpu/cpu1/thermal_throttle", "/sys/devices/system/cpu/cpu2/thermal_throttle", "/sys/devices/system/cpu/cpu3/thermal_throttle", "/sys/devices/system/cpu/cpu4/thermal_throttle", "/sys/devices/system/cpu/cpu5/thermal_throttle", "/sys/devices/system/cpu/cpu6/thermal_throttle", "/sys/devices/system/cpu/cpu7/thermal_throttle", "/sys/devices/system/cpu/cpu8/thermal_throttle", "/sys/devices/system/cpu/cpu9/thermal_throttle", "/sys/devices/system/cpu/cpu10/thermal_throttle", "/sys/devices/system/cpu/cpu11/thermal_throttle", "/sys/devices/system/cpu/cpu12/thermal_throttle", "/sys/devices/system/cpu/cpu13/thermal_throttle", "/sys/devices/system/cpu/cpu14/thermal_throttle", "/sys/devices/system/cpu/cpu15/thermal_throttle", "/sys/devices/system/cpu/cpu16/thermal_throttle", "/sys/devices/system/cpu/cpu17/thermal_throttle", "/sys/devices/system/cpu/cpu18/thermal_throttle", "/sys/devices/system/cpu/cpu19/thermal_throttle", "/sys/devices/system/cpu/cpu20/thermal_throttle", "/sys/devices/system/cpu/cpu21/thermal_throttle", "/sys/devices/system/cpu/cpu22/thermal_throttle", "/sys/devices/system/cpu/cpu23/thermal_throttle", "/sys/devices/system/cpu/cpu24/thermal_throttle", "/sys/devices/system/cpu/cpu25/thermal_throttle", "/sys/devices/system/cpu/cpu26/thermal_throttle", "/sys/devices/system/cpu/cpu27/thermal_throttle", "/sys/devices/system/cpu/cpu28/thermal_throttle", "/sys/devices/system/cpu/cpu29/thermal_throttle", "/sys/devices/system/cpu/cpu30/thermal_throttle", "/sys/devices/system/cpu/cpu31/thermal_throttle"], "ReadonlyPaths": ["/proc/bus", "/proc/fs", "/proc/irq", "/proc/sys", "/proc/sysrq-trigger"]}, "inspected_mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/warden-lab/docker-firecracker-89c9296e79ce14c5dd30e0d5e4772f1d/live", "Destination": "/opt/warden/session", "Mode": "", "RW": false, "Propagation": "rprivate"}]}
+original owner or complete retirement unavailable: cleanup_pending
+{"kind":"warden-device-receipt-v1","pid":1,"cgroup_ns":"cgroup:[4026537031]","mount_ns":"mnt:[4026536060]","device":30,"inode":2116013,"mount_id":9736,"policy_version":"warden-tun-deny-v1","policy_sha256":"bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404"}
+{"device_policy_query_effective":false,"flags":2,"ids":[64769]}
+{"device_policy_query_effective":true,"flags":0,"ids":[64769]}
+{"device_policy_query_effective":false,"flags":2,"ids":[64769,64770]}
+{"device_policy_query_effective":true,"flags":0,"ids":[64769,64770]}
+device policy verified: version=warden-tun-deny-v1 sha256=bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404 program_id=64770; TUN rw EPERM, basics and KVM API12; no VM from probe
+=== RUN   TestFirecrackerBoot
+    lab_test.go:54: VMM exited before guest readiness; bounded VMM diagnostics: 2026-10-24T22:22:53.737879936 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:main] Running Firecracker v1.17.0
+        2026-10-24T22:22:53.737983605 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:main] Listening on API socket ("/api.sock").
+        2026-10-24T22:22:53.738156915 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_api] API server started.
+        2026-10-24T22:22:53.739518482 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_api] The API server received a Put request on "/machine-config" with body "{\"mem_size_mib\":640,\"smt\":false,\"vcpu_count\":1}".
+        2026-10-24T22:22:53.739546634 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_api] The request was executed successfully. Status code: 204 No Content.
+        2026-10-24T22:22:53.739750510 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_api] The API server received a Put request on "/boot-source" with body "{\"boot_args\":\"console=ttyS0 reboot=k panic=1 pci=off root=/dev/vda ro init=/agent WARDEN_FC_GUEST=1\",\"kernel_image_path\":\"/kernel\"}".
+        2026-10-24T22:22:53.739789340 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_api] The request was executed successfully. Status code: 204 No Content.
+        2026-10-24T22:22:53.739976454 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_api] The API server received a Put request on "/drives/rootfs" with body "{\"drive_id\":\"rootfs\",\"is_read_only\":true,\"is_root_device\":true,\"path_on_host\":\"/agent.ext4\"}".
+        2026-10-24T22:22:53.740057388 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_api] The request was executed successfully. Status code: 204 No Content.
+        2026-10-24T22:22:53.740221057 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_api] The API server received a Put request on "/drives/payload" with body "{\"drive_id\":\"payload\",\"is_read_only\":true,\"is_root_device\":false,\"path_on_host\":\"/payload.ext4\"}".
+        2026-10-24T22:22:53.740273100 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_api] The request was executed successfully. Status code: 204 No Content.
+        2026-10-24T22:22:53.740406766 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_api] The API server received a Put request on "/vsock" with body "{\"guest_cid\":3,\"uds_path\":\"/control.sock\"}".
+        2026-10-24T22:22:53.740507286 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_api] The request was executed successfully. Status code: 204 No Content.
+        2026-10-24T22:22:53.740669385 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_api] The API server received a Put request on "/actions" with body "{\"action_type\":\"InstanceStart\"}".
+        2026-10-24T22:22:53.752377948 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:main] Artificially kick devices
+        2026-10-24T22:22:53.752458657 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_vcpu 0] Received a VcpuEvent::Resume message with immediate_exit enabled. immediate_exit was disabled before proceeding
+        2026-10-24T22:22:53.752484043 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_api] The request was executed successfully. Status code: 204 No Content.
+        2026-10-24T22:22:53.757408355 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_vcpu 0] vcpu: IO write @ 0xcf8:0x4 failed: Failed to find address range.
+        2026-10-24T22:22:53.757423483 [warden-7J2G4KCYZWPQ3B53EV4TR2RXAI:fc_vcpu 0] vcpu: IO read @ 0xcfc:0x2 failed: Failed to find address range.
+        [    0.000000] Linux version 6.18.54+ (root@2685db8dbf72) (gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #1 SMP PREEMPT_DYNAMIC Fri Oct 23 16:23:37 UTC 2026
+        [    0.000000] Command line: console=ttyS0 reboot=k panic=1 pci=off root=/dev/vda ro init=/agent WARDEN_FC_GUEST=1 pci=off root=/dev/vda ro virtio_mmio.device=4K@0xc0001000:5 virtio_mmio.device=4K@0xc0002000:6 virtio_mmio.device=4K@0xc0003000:7
+        [    0.000000] KASLR disabled
+        [    0.000000] BIOS-provided physical RAM map:
+        [    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+        [    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x00000000000fffff] reserved
+        [    0.000000] BIOS-e820: [mem 0x0000000000100000-0x0000000027ffffff] usable
+        [    0.000000] BIOS-e820: [mem 0x00000000eec00000-0x00000000febfffff] reserved
+        [    0.000000] NX (Execute Disable) protection: active
+        [    0.000000] APIC: Static calls initialized
+        [    0.000000] DMI not present or invalid.
+        [    0.000000] Hypervisor detected: KVM
+        [    0.000000]
+    lab_test.go:28: original process/FD/data retirement: original owner or complete retirement unavailable: cleanup_pending
+        creation outcome unknown; runtime quiescence required
+--- FAIL: TestFirecrackerBoot (2.12s)
+FAIL
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 393, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 392, in main
+    else:execute(args.mode,args.other_service_memory_bytes)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 356, in execute
+    log=device_gate.run()
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_device_receipt.py", line 134, in run
+    if self.child.wait(timeout=10)!=0:raise RuntimeError('owned device-policy outer failed')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: owned device-policy outer failed

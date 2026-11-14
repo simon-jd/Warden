@@ -1,0 +1,42 @@
+# Owned loopback fixture only; no production source/sink is started.
+data_dir = "${T11_BP_DATA}"
+[sources.fixture]
+type = "stdin"
+max_length = 16384
+framing.method = "newline_delimited"
+decoding.codec = "json"
+[sinks.bp_http]
+type = "http"
+inputs = ["fixture"]
+uri = "${T11_BP_URI}"
+method = "post"
+compression = "none"
+encoding.codec = "json"
+encoding.only_fields = ["activity_id", "category_uid", "class_uid", "type_uid", "severity_id", "time", "metadata", "src_endpoint", "dst_endpoint", "unmapped"]
+framing.method = "newline_delimited"
+batch.max_events = 1
+batch.max_bytes = 32768
+batch.timeout_secs = 0.1
+request.concurrency = 1
+request.timeout_secs = 90
+request.retry_attempts = 3
+healthcheck.enabled = false
+buffer.type = "disk"
+buffer.max_size = 268435488
+buffer.when_full = "block"
+[sources.metrics]
+type = "internal_metrics"
+namespace = "vector"
+scrape_interval_secs = 0.5
+[transforms.fixture_metrics]
+type = "filter"
+inputs = ["metrics"]
+condition = '.tags.component_id == "bp_http" && includes(["buffer_byte_size", "buffer_events", "buffer_discarded_events_total"], .name)'
+[sinks.metrics_file]
+type = "file"
+inputs = ["fixture_metrics"]
+path = "${T11_BP_METRICS}"
+encoding.codec = "json"
+buffer.type = "memory"
+buffer.max_events = 32
+buffer.when_full = "block"

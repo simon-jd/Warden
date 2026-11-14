@@ -1,0 +1,12 @@
+test_real_archived_storage_quote_cannot_price_different_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_real_archived_storage_quote_cannot_price_different_declared_profile) ... ok
+test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) ... ok
+test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) ... ok
+test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) ... ok
+test_keyvault_profile_requires_future_exact_priced_support (scripts.test_azure_guard.AzureGuardTests.test_keyvault_profile_requires_future_exact_priced_support) ... ok
+test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (scripts.test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) ... ok
+test_default_expiry_still_deletes_owned_resource_with_lost_extra_binding (scripts.test_azure_guard.AzureGuardTests.test_default_expiry_still_deletes_owned_resource_with_lost_extra_binding) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.553s
+
+OK

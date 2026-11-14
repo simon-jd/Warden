@@ -1,0 +1,7 @@
+test_lost_create_response_keeps_durable_labels_envelope_and_charge (test_firecracker_recovery.WorkflowTests.test_lost_create_response_keeps_durable_labels_envelope_and_charge) ... ok
+test_restore_receipt_cannot_release_charge_or_claim_retirement (test_firecracker_recovery.WorkflowTests.test_restore_receipt_cannot_release_charge_or_claim_retirement) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+OK

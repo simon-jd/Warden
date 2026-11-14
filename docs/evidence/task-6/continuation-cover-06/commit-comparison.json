@@ -1,0 +1,8 @@
+{
+  "kind": "subsequent read-only comparison, not a replacement for prospective manifests",
+  "mismatches": [],
+  "post_sha256": "2586ee50d27dcd5f2939108695af1cccb1e82213256ac5d902b230cb2a3b4688",
+  "pre_sha256": "2586ee50d27dcd5f2939108695af1cccb1e82213256ac5d902b230cb2a3b4688",
+  "source_commit": "93051e37849f6bfeb8416ef3883f65034f6dff09",
+  "source_files": 145
+}

@@ -1,0 +1,42 @@
+test_returns_backend_reference (detect.sigma.test_contract.AdapterRedTest.test_returns_backend_reference) ... FAIL
+test_reports_tagged_and_unassigned_rules (detect.report.test_coverage.CoverageRedTest.test_reports_tagged_and_unassigned_rules) ... FAIL
+
+======================================================================
+FAIL: test_returns_backend_reference (detect.sigma.test_contract.AdapterRedTest.test_returns_backend_reference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/detect/sigma/test_contract.py", line 43, in test_returns_backend_reference
+    self.assertEqual(convert_rule(REFERENCE_RULE), reference)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != ['class_uid:6003 AND metadata.product.name[86 chars]ite']
+
+Second list contains 1 additional elements.
+First extra element 0:
+'class_uid:6003 AND metadata.product.name:"azure activity log" AND api.operation:microsoft.authorization\\/roleassignments\\/write'
+
+- []
++ ['class_uid:6003 AND metadata.product.name:"azure activity log" AND '
++  'api.operation:microsoft.authorization\\/roleassignments\\/write']
+
+======================================================================
+FAIL: test_reports_tagged_and_unassigned_rules (detect.report.test_coverage.CoverageRedTest.test_reports_tagged_and_unassigned_rules)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/detect/report/test_coverage.py", line 20, in test_reports_tagged_and_unassigned_rules
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        summarize_rules(rules),
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+AssertionError: {'rule_count': 0, 'tagged_rule_count': 0, 'unassigned_ru[61 chars]: []} != {'rule_count': 2, 'tagged_rule_count': 1, 'unassigned_ru[342 chars]']}]}
+Diff is 764 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+FAILED (failures=2)
+{"assertion_failures": 2, "errors": 0, "skips": 0, "tests_run": 2, "unexpected_successes": 0}

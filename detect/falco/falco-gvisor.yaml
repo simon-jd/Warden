@@ -1,0 +1,9 @@
+# The gVisor instance (Falco 0.43.1, the last release with the gVisor
+# engine). runsc in the k3s lab node connects to the socket that
+# gvisor-pod-init.json names; root is an empty directory, so Falco attaches
+# only to sandboxes created after it started.
+engine:
+  kind: gvisor
+  gvisor:
+    config: /etc/warden-detect/gvisor-pod-init.json
+    root: /run/warden-runsc-root

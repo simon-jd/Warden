@@ -1,0 +1,5 @@
+$ go test -count=1 -run TestIsRegionIgnoresCase ./controlplane/internal/aksdrill   # test only
+# warden/controlplane/internal/aksdrill [warden/controlplane/internal/aksdrill.test]
+controlplane/internal/aksdrill/aksdrill_test.go:118:13: undefined: IsRegion
+FAIL	warden/controlplane/internal/aksdrill [build failed]
+FAIL

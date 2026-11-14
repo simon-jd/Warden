@@ -1,0 +1,44 @@
+test_anchor_replacement_refuses_both_renamed_and_replacement_tree (__main__.IdentityCacheTests.test_anchor_replacement_refuses_both_renamed_and_replacement_tree) ... ok
+test_change_after_scan_refuses_before_deletion (__main__.IdentityCacheTests.test_change_after_scan_refuses_before_deletion) ... ok
+test_changed_layout_after_tightening_prevents_unlink (__main__.IdentityCacheTests.test_changed_layout_after_tightening_prevents_unlink) ... ok
+test_cli_rejects_all_path_and_mode_arguments_before_open (__main__.IdentityCacheTests.test_cli_rejects_all_path_and_mode_arguments_before_open) ... ok
+test_deletes_only_derived_entries_keeps_buckets_and_metadata_without_reads (__main__.IdentityCacheTests.test_deletes_only_derived_entries_keeps_buckets_and_metadata_without_reads) ... ok
+test_executable_directory_must_contain_exactly_one_plain_executable (__main__.IdentityCacheTests.test_executable_directory_must_contain_exactly_one_plain_executable) ... ok
+test_existing_intent_or_intent_alias_refuses_without_chmod (__main__.IdentityCacheTests.test_existing_intent_or_intent_alias_refuses_without_chmod) ... ok
+test_fifo_rejected_without_blocking_open (__main__.IdentityCacheTests.test_fifo_rejected_without_blocking_open) ... ok
+test_file_replacement_after_scan_is_not_removed (__main__.IdentityCacheTests.test_file_replacement_after_scan_is_not_removed) ... ok
+test_fixed_main_in_private_fixture_keeps_other_caches_and_records_completion (__main__.IdentityCacheTests.test_fixed_main_in_private_fixture_keeps_other_caches_and_records_completion) ... ERROR
+test_fixed_tightening_persists_intent_then_reduces_permissions_before_unlink (__main__.IdentityCacheTests.test_fixed_tightening_persists_intent_then_reduces_permissions_before_unlink) ... ok
+test_group_writable_root_bucket_file_rejected (__main__.IdentityCacheTests.test_group_writable_root_bucket_file_rejected) ... ok
+test_hardlink_file_rejected (__main__.IdentityCacheTests.test_hardlink_file_rejected) ... ok
+test_intent_durability_failure_prevents_all_permission_changes (__main__.IdentityCacheTests.test_intent_durability_failure_prevents_all_permission_changes) ... ok
+test_legacy_plan_cannot_unlink_without_completed_tightening (__main__.IdentityCacheTests.test_legacy_plan_cannot_unlink_without_completed_tightening) ... ok
+test_lock_busy_and_wrong_lock_layout_fail_without_cache_access (__main__.IdentityCacheTests.test_lock_busy_and_wrong_lock_layout_fail_without_cache_access) ... ok
+test_malformed_action_length_rejected (__main__.IdentityCacheTests.test_malformed_action_length_rejected) ... ok
+test_missing_bucket_rejected (__main__.IdentityCacheTests.test_missing_bucket_rejected) ... ok
+test_partial_tightening_keeps_intent_and_narrowed_modes_and_never_unlinks (__main__.IdentityCacheTests.test_partial_tightening_keeps_intent_and_narrowed_modes_and_never_unlinks) ... ok
+test_symlink_root_bucket_file_rejected (__main__.IdentityCacheTests.test_symlink_root_bucket_file_rejected) ... ok
+test_tightening_replacement_after_plan_has_no_mutation (__main__.IdentityCacheTests.test_tightening_replacement_after_plan_has_no_mutation) ... ok
+test_unknown_bucket_entry_and_wrong_hash_prefix_fail (__main__.IdentityCacheTests.test_unknown_bucket_entry_and_wrong_hash_prefix_fail) ... ok
+test_unknown_entry_added_after_scan_refuses_before_deletion (__main__.IdentityCacheTests.test_unknown_entry_added_after_scan_refuses_before_deletion) ... ok
+test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent (__main__.IdentityCacheTests.test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent) ... ok
+test_unknown_top_entry_fails_before_any_deletion (__main__.IdentityCacheTests.test_unknown_top_entry_fails_before_any_deletion) ... ok
+test_wrong_owner_rejected (__main__.IdentityCacheTests.test_wrong_owner_rejected) ... ok
+
+======================================================================
+ERROR: test_fixed_main_in_private_fixture_keeps_other_caches_and_records_completion (__main__.IdentityCacheTests.test_fixed_main_in_private_fixture_keeps_other_caches_and_records_completion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 325, in test_fixed_main_in_private_fixture_keeps_other_caches_and_records_completion
+    cache.main([])
+    ~~~~~~~~~~^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache.py", line 386, in main
+    lab = trusted_directory(str(ROOT / '.cache/warden-lab'), 1000)
+  File "/home/postedism/Desktop/Warden/scripts/runtime_lab_paths.py", line 25, in trusted_directory
+    raise ValueError('untrusted directory owner')
+ValueError: untrusted directory owner
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.241s
+
+FAILED (errors=1)

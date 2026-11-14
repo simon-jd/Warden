@@ -1,0 +1,29 @@
+{
+  "preparation_guard": {
+    "request": {
+      "cmd": "set -e\nulimit -c 0\nulimit -v 262144\nulimit -f 2048\nulimit -t 20\ntimeout --signal=TERM --kill-after=5s 40s python3 -I -B - <<'PY'\nfrom pathlib import Path\nimport hashlib,json,os,runpy,stat,subprocess,sys\nW=Path('/home/postedism/Desktop/Warden');assert Path.cwd()==W and os.getuid()==1000\nN=W/'.superpowers/sdd/2-warden-security-plan/task15-code-readiness-r2-20261026';assert not os.path.lexists(N)\np=W/'docs/COORDINATOR-TASK9-DIAG-TASK15-CODE-20261026.json';assert hashlib.sha256(p.read_bytes()).hexdigest()=='12d7f2b2506f2340b2913f4e42c0732d3ca42476ad0eba605a617af6f8d6c9f5'\ns=(W/'.git/index').lstat();assert stat.S_ISREG(s.st_mode) and s.st_uid==1000\nassert subprocess.run(['git','diff','--quiet','f5ebf06100660ae930d33b0bdb5acfc9fde97eb1','--','.github/workflows/build.yml','scripts/supplychain.py','controlplane/Dockerfile','.dockerignore','policies/kyverno'],timeout=10).returncode==0\nmem=next(int(x.split()[1])*1024 for x in Path('/proc/meminfo').read_text().splitlines() if x.startswith('MemAvailable:'));assert mem>=1000000000\nprint(json.dumps({'task15_revision_allowance':1,'task15_continuous_fix_round':'2/5_SOURCE_PREPARATION','new_namespace_absent':True,'source_baseline_unchanged':True,'index_allocated_bytes':s.st_blocks*512,'code_total_cap':524288,'ordinary_index_copy_leaves':524288-s.st_blocks*512,'mode':'CODE_DIFF_READINESS_ONLY_NO_GIT_INDEX_MUTATION','external_logger_hold':2097152,'external_task15_tmp_hold':131072,'MemAvailable_bytes':mem}),flush=True)\nsys.argv=['scripts/azure_guard.py','preflight','--additional-bytes','5002752512','--service-memory-bytes','10000000000','--download-bytes','0']\nrunpy.run_path('scripts/azure_guard.py',run_name='__main__')\nPY",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "sandbox_permissions": "require_escalated",
+      "justification": "Task9已终态/作者停止，按新协调只核Task15单次<=512KiB CODE准备fresh预算与原源一致性；包含日志2MiB/四tmp/Q，明确无Git/index写或runtime权限。",
+      "yield_time_ms": 1000,
+      "max_output_tokens": 2000
+    },
+    "result": {
+      "chunk_id": "1dff90",
+      "wall_time_seconds": 0.285228102,
+      "exit_code": 0,
+      "original_token_count": 159,
+      "output": "{\"task15_revision_allowance\": 1, \"task15_continuous_fix_round\": \"2/5_SOURCE_PREPARATION\", \"new_namespace_absent\": true, \"source_baseline_unchanged\": true, \"index_allocated_bytes\": 516096, \"code_total_cap\": 524288, \"ordinary_index_copy_leaves\": 8192, \"mode\": \"CODE_DIFF_READINESS_ONLY_NO_GIT_INDEX_MUTATION\", \"external_logger_hold\": 2097152, \"external_task15_tmp_hold\": 131072, \"MemAvailable_bytes\": 95460057088}\n{\"additional_bytes\": \"5002752512\", \"at\": \"2026-10-26T05:12:39Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 241557630976, \"project_allocated_bytes\": 5052895232, \"service_memory_bytes\": \"10000000000\"}\n"
+    }
+  },
+  "root_handoff": {
+    "chunk_id": "63a83f",
+    "wall_time_seconds": 0.112156096,
+    "exit_code": 0,
+    "original_token_count": 211,
+    "output": "{\n  \"utc\": \"2026-10-26T05:22:46.856474+00:00\",\n  \"kind\": \"task15-code-r2-narrow-root-handoff\",\n  \"base\": \"f5ebf06100660ae930d33b0bdb5acfc9fde97eb1\",\n  \"head\": \"1f54cb9ad02a5beb12e7c95f0975537cd015abd0\",\n  \"manifest_files_checked\": 33,\n  \"manifest_source_bytes\": 143408,\n  \"product_three_paths_equal_f5\": true,\n  \"index_write\": false,\n  \"root_before_allocated\": 5090652160,\n  \"all_extra_reservations\": 6258605056,\n  \"total_reserved\": 11349257216,\n  \"disk_cap\": 12000000000,\n  \"old_code_cap\": 524288,\n  \"author_bundle_allocated\": 94208,\n  \"packet_bytes\": 52593,\n  \"packet_sha256\": \"22b751ffd7d6fc77cfb9d29bf7d4a0ae224fe27bbac8eaf7ace6952396e12950\",\n  \"bundle_post_packet_allocated\": 147456,\n  \"publication_new_cap\": 1048576,\n  \"publication_used\": 0,\n  \"source_or_runtime_acceptance\": false,\n  \"tests_run\": false\n}\nFINAL_BUNDLE_ALLOCATED 151552\n"
+  }
+}

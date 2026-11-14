@@ -1,0 +1,11 @@
+# make check, plain, in the worktree ~/Desktop/Warden-cloud (branch cloud-identity); make under taskset -c 0-7,16-31
+# head e1e864259986d89e9d5b0232f511522c381439f2
+# git status --short:
+#   (end)
+# start 2026-11-12T18:32:09-08:00, load 3.73 3.75 3.18
+pkgs=$(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-cloud/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-cloud/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-cloud/.cache/go HOME=/home/postedism/Desktop/Warden-cloud/.cache/home TMPDIR=/home/postedism/Desktop/Warden-cloud/.cache/test-tmp /home/postedism/Desktop/Warden-cloud/.tools/go/bin/go list -buildvcs=false ./...) && pkgs=$(printf '%s\n' $pkgs | grep -Ev '^$|^warden/docs/') || exit 1; env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-cloud/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-cloud/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-cloud/.cache/go HOME=/home/postedism/Desktop/Warden-cloud/.cache/home TMPDIR=/home/postedism/Desktop/Warden-cloud/.cache/test-tmp /home/postedism/Desktop/Warden-cloud/.tools/go/bin/go vet -buildvcs=false $pkgs
+shellcheck -S warning scripts/*.sh
+# make check exit: 0
+# end 2026-11-12T18:32:09-08:00, load 3.73 3.75 3.18
+# git status --short after:
+#   (end)

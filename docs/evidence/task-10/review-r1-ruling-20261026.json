@@ -1,0 +1,25 @@
+{
+  "decision": "ACCEPT_INITIAL_I1_REQUIRE_ORIGINAL_TASK10_R1_5",
+  "reviewer": "/root/task10_component_review",
+  "reviewed_source": "e2fbb97f05f4d062e7a310f23a3907b4be127cc6",
+  "Critical": 0,
+  "Important": 1,
+  "Minor": 1,
+  "I1": "Untrusted QNAME/hostname-validation error erases qualifying batch; valid underscore/TLD questions rejected. Not acceptable to defer to absent collector validation.",
+  "M1": "Address meaningful expiration-only-crossing regression in same affected fix if budget permits; not an implementation-mirroring test.",
+  "sequence": "Only new I1 regression against unchanged0a9e6854 production -> root bounded exact admission and genuine RED -> original author minimal fix/observable rejected telemetry + M1 case -> one affected cover -> same reviewer scoped R1 re-review. No old9/34 suite replay or counter reset.",
+  "budget": {
+    "original_author_preparation_used": 249856,
+    "original_author_cap": 262144,
+    "remaining_source_test_report_delta": 12288,
+    "old_counter_not_reset": true,
+    "root_owned_runtime_preparation_and_public_evidence": "Root coordinates exact existing caller with fresh paths/test gates under ORIGINAL per-attempt1MiB source/evidence forecast; included in fullR/12GB. No author newpacket/caller files and no new authorCODE allowance. Root must fullread/fresh normaladmit exact case. Product/source finding fixes remain original author, never root.",
+    "runtime": "Same90/80/87/89s, raw64KiB,oldUNKNOWN9GB+native fullnew15.777995264GB≤16GB, work768MiB forecast, Q/allholds unchanged"
+  },
+  "full_Task10": "OPEN actual Cilium/Host/SNI/proxy/scheduler/runc/collector acceptance, independent of scoringfix",
+  "provenance": {
+    "source": "root_agent_in_existing_user_scope",
+    "human_response": false
+  },
+  "at": "2026-10-26T10:15:41.357675+00:00"
+}

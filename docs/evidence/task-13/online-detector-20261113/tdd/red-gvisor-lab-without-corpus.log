@@ -1,0 +1,83 @@
+# RED, gVisor lab --without-corpus and GVISOR_LAB_FLAGS, before the change (0aaa0c7, 2026-11-14T01:35:24Z)
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -s scripts -t scripts -p "test_k3s_gvisor_lab.py" -k corpus -k either_order
+.FFF.FFF
+======================================================================
+FAIL: test_run_takes_the_lab_options_in_either_order (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_takes_the_lab_options_in_either_order) (flags=['--without-corpus'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-detect/scripts/test_k3s_gvisor_lab.py", line 425, in test_run_takes_the_lab_options_in_either_order
+    self.assertEqual(r.returncode, 0, r.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 127 != 0 : /tmp/tmpgtc3ukbx/repo/scripts/k3s_gvisor_lab.sh: line 510: --without-corpus: command not found
+
+
+======================================================================
+FAIL: test_run_takes_the_lab_options_in_either_order (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_takes_the_lab_options_in_either_order) (flags=['--cilium', '--without-corpus'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-detect/scripts/test_k3s_gvisor_lab.py", line 425, in test_run_takes_the_lab_options_in_either_order
+    self.assertEqual(r.returncode, 0, r.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 127 != 0 : /tmp/tmpgtc3ukbx/repo/scripts/k3s_gvisor_lab.sh: line 510: --without-corpus: command not found
+
+
+======================================================================
+FAIL: test_run_takes_the_lab_options_in_either_order (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_takes_the_lab_options_in_either_order) (flags=['--without-corpus', '--cilium'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-detect/scripts/test_k3s_gvisor_lab.py", line 425, in test_run_takes_the_lab_options_in_either_order
+    self.assertEqual(r.returncode, 0, r.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 127 != 0 : /tmp/tmpgtc3ukbx/repo/scripts/k3s_gvisor_lab.sh: line 510: --without-corpus: command not found
+
+
+======================================================================
+FAIL: test_up_without_corpus_builds_and_imports_no_corpus (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_without_corpus_builds_and_imports_no_corpus) (mode=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-detect/scripts/test_k3s_gvisor_lab.py", line 400, in test_up_without_corpus_builds_and_imports_no_corpus
+    self.assertEqual(r.returncode, 0, r.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : unknown option --without-corpus
+
+
+======================================================================
+FAIL: test_up_without_corpus_builds_and_imports_no_corpus (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_without_corpus_builds_and_imports_no_corpus) (mode=['--cilium'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-detect/scripts/test_k3s_gvisor_lab.py", line 401, in test_up_without_corpus_builds_and_imports_no_corpus
+    self.assertFalse((cache / 'warden-attack').exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_up_without_corpus_needs_no_corpus_image (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_without_corpus_needs_no_corpus_image)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-detect/scripts/test_k3s_gvisor_lab.py", line 416, in test_up_without_corpus_needs_no_corpus_image
+    self.assertEqual(r.returncode, 0, r.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : unknown option --without-corpus
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 6.206s
+
+FAILED (failures=6)
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -s scripts -t scripts -p "test_makefile.py" -k gvisor_target
+F
+======================================================================
+FAIL: test_gvisor_target_passes_lab_options_and_keeps_its_default (test_makefile.MakefileGoTargetsTest.test_gvisor_target_passes_lab_options_and_keeps_its_default)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-detect/scripts/test_makefile.py", line 192, in test_gvisor_target_passes_lab_options_and_keeps_its_default
+    self.assertTrue(command(flagged.stdout).startswith(
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "scripts/k3s_gvisor_lab.sh run --without-corpus scripts/k3s_gvisor_lab.sh env "), command(flagged.stdout))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : scripts/k3s_gvisor_lab.sh run scripts/k3s_gvisor_lab.sh env  	env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-detect/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-detect/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-detect/.cache/go HOME=/home/postedism/Desktop/Warden-detect/.cache/home TMPDIR=/tmp/tmpngo5zey1/test-tmp WARDEN_LIVE_GVISOR=1 WARDEN_GVISOR_COLD_STARTS= GVISOR_OUT= /tmp/tmpngo5zey1/go test -buildvcs=false -count=1 -v -timeout 40m -run '^(TestGVisorConformance|TestGVisorColdStarts)$' ./runtimes/gvisor
+
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+FAILED (failures=1)

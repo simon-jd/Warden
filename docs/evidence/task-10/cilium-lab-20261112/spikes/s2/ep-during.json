@@ -1,0 +1,1012 @@
+[
+  {
+    "id": 20,
+    "spec": {
+      "label-configuration": {},
+      "options": {
+        "Debug": "Disabled",
+        "DebugLB": "Disabled",
+        "DebugPolicy": "Disabled",
+        "DropNotification": "Enabled",
+        "MonitorAggregationLevel": "Medium",
+        "PolicyAuditMode": "Disabled",
+        "PolicyVerdictNotification": "Enabled",
+        "SourceIPVerification": "Enabled",
+        "TraceNotification": "Enabled"
+      }
+    },
+    "status": {
+      "controllers": [
+        {
+          "configuration": {
+            "error-retry": true,
+            "error-retry-base": "2s",
+            "interval": "1s"
+          },
+          "name": "endpoint-20-regeneration-recovery",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "0001-01-01T00:00:00.000Z"
+          },
+          "uuid": "b3327a78-db75-4ca5-9151-654d48b4ffd1"
+        },
+        {
+          "configuration": {
+            "error-retry": true,
+            "interval": "5m0s"
+          },
+          "name": "resolve-identity-20",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T16:03:48.557Z",
+            "success-count": 102
+          },
+          "uuid": "c709d2c5-5ff4-4ba9-b979-7a98e9d9d370"
+        },
+        {
+          "configuration": {
+            "error-retry": true,
+            "interval": "15m0s"
+          },
+          "name": "sync-policymap-20",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T15:53:51.072Z",
+            "success-count": 34
+          },
+          "uuid": "9387edf3-b577-444f-8402-f855bc23431f"
+        }
+      ],
+      "external-identifiers": {},
+      "health": {
+        "bpf": "OK",
+        "connected": true,
+        "overallHealth": "OK",
+        "policy": "OK"
+      },
+      "identity": {
+        "id": 1,
+        "labels": [
+          "reserved:host",
+          "k8s:node-role.kubernetes.io/control-plane=true"
+        ]
+      },
+      "labels": {
+        "derived": [
+          "k8s:node-role.kubernetes.io/control-plane=true",
+          "reserved:host"
+        ],
+        "realized": {},
+        "security-relevant": [
+          "k8s:node-role.kubernetes.io/control-plane=true",
+          "reserved:host"
+        ]
+      },
+      "log": [
+        {
+          "code": "OK",
+          "message": "Successfully regenerated endpoint program (Reason: PeriodicRegeneration)",
+          "state": "ready",
+          "timestamp": "2026-11-13T16:04:48Z"
+        }
+      ],
+      "networking": {
+        "addressing": [
+          {}
+        ],
+        "host-mac": "62:d5:c2:e0:99:a3",
+        "interface-index": 5,
+        "interface-name": "cilium_host",
+        "mac": "62:d5:c2:e0:99:a3"
+      },
+      "policy": {
+        "proxy-statistics": [],
+        "realized": {
+          "allowed-egress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "allowed-ingress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "build": 58,
+          "denied-egress-identities": null,
+          "denied-ingress-identities": null,
+          "id": 1,
+          "l4": {
+            "egress": [],
+            "ingress": []
+          },
+          "policy-enabled": "none",
+          "policy-revision": 58
+        },
+        "spec": {
+          "allowed-egress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "allowed-ingress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "build": 56,
+          "denied-egress-identities": null,
+          "denied-ingress-identities": null,
+          "id": 1,
+          "l4": {
+            "egress": [],
+            "ingress": []
+          },
+          "policy-enabled": "none",
+          "policy-revision": 56
+        }
+      },
+      "realized": {
+        "label-configuration": {},
+        "options": {
+          "Debug": "Disabled",
+          "DebugLB": "Disabled",
+          "DebugPolicy": "Disabled",
+          "DropNotification": "Enabled",
+          "MonitorAggregationLevel": "Medium",
+          "PolicyAuditMode": "Disabled",
+          "PolicyVerdictNotification": "Enabled",
+          "SourceIPVerification": "Enabled",
+          "TraceNotification": "Enabled"
+        }
+      },
+      "state": "ready"
+    }
+  },
+  {
+    "id": 390,
+    "spec": {
+      "label-configuration": {
+        "user": [
+          "k8s:warden.dev/quarantine=true"
+        ]
+      },
+      "options": {
+        "Debug": "Disabled",
+        "DebugLB": "Disabled",
+        "DebugPolicy": "Disabled",
+        "DropNotification": "Enabled",
+        "MonitorAggregationLevel": "Medium",
+        "PolicyAuditMode": "Disabled",
+        "PolicyVerdictNotification": "Enabled",
+        "SourceIPVerification": "Enabled",
+        "TraceNotification": "Enabled"
+      }
+    },
+    "status": {
+      "controllers": [
+        {
+          "configuration": {
+            "error-retry": true,
+            "error-retry-base": "2s",
+            "interval": "1s"
+          },
+          "name": "endpoint-390-regeneration-recovery",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "0001-01-01T00:00:00.000Z"
+          },
+          "uuid": "76ef277d-73d0-4e1d-8ce9-884f01aa01e7"
+        },
+        {
+          "configuration": {
+            "error-retry": true,
+            "interval": "5m0s"
+          },
+          "name": "resolve-identity-390",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T16:05:30.977Z",
+            "success-count": 1
+          },
+          "uuid": "83aec5f2-2148-45ac-a494-6b2fdd4e628c"
+        },
+        {
+          "configuration": {
+            "error-retry": true
+          },
+          "name": "resolve-labels-warden-lab/spike-t",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T16:05:30.977Z",
+            "success-count": 1
+          },
+          "uuid": "ee32c65e-5630-4767-b862-852c5ac4c174"
+        },
+        {
+          "configuration": {
+            "error-retry": true
+          },
+          "name": "sync-pod-labels-with-cilium-endpoint (390)",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T16:05:34.909Z",
+            "success-count": 1
+          },
+          "uuid": "18d947dc-b0f7-44bc-ab8e-b897e226fbd7"
+        },
+        {
+          "configuration": {
+            "error-retry": true,
+            "interval": "15m0s"
+          },
+          "name": "sync-policymap-390",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T16:05:31.057Z",
+            "success-count": 1
+          },
+          "uuid": "53ee7fa9-3f8e-40cb-a0b8-92b0c72f3757"
+        },
+        {
+          "configuration": {
+            "error-retry": true,
+            "interval": "10s"
+          },
+          "name": "sync-to-k8s-ciliumendpoint (390)",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T16:05:30.986Z",
+            "success-count": 2
+          },
+          "uuid": "01ac4993-fc11-4a11-8b90-9a55a83ac27a"
+        }
+      ],
+      "external-identifiers": {
+        "cni-attachment-id": "20adb51ec398f815c79b1f49f0e332e4256021c24a8ea28ae2fe354cf3b8d1c5:eth0"
+      },
+      "health": {
+        "bpf": "Disabled",
+        "connected": true,
+        "overallHealth": "Disabled",
+        "policy": "Bootstrap"
+      },
+      "identity": {
+        "id": 53849,
+        "labels": [
+          "k8s:app=spike-t",
+          "k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=warden-lab",
+          "k8s:io.cilium.k8s.policy.cluster=default",
+          "k8s:io.cilium.k8s.policy.serviceaccount=default",
+          "k8s:io.kubernetes.pod.namespace=warden-lab",
+          "k8s:warden.dev/sandbox=true",
+          "k8s:warden.dev/test=spike"
+        ]
+      },
+      "labels": {
+        "realized": {
+          "user": [
+            "k8s:warden.dev/quarantine=true"
+          ]
+        },
+        "security-relevant": [
+          "k8s:app=spike-t",
+          "k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=warden-lab",
+          "k8s:io.cilium.k8s.policy.cluster=default",
+          "k8s:io.cilium.k8s.policy.serviceaccount=default",
+          "k8s:io.kubernetes.pod.namespace=warden-lab",
+          "k8s:warden.dev/sandbox=true",
+          "k8s:warden.dev/test=spike"
+        ]
+      },
+      "log": [
+        {
+          "code": "OK",
+          "message": "Triggering identity resolution due to updated identity labels",
+          "state": "waiting-for-identity",
+          "timestamp": "2026-11-13T16:05:34Z"
+        }
+      ],
+      "networking": {
+        "addressing": [
+          {
+            "ipv4": "10.42.0.163",
+            "ipv4-pool-name": "default"
+          }
+        ],
+        "container-interface-name": "eth0",
+        "host-mac": "1e:29:26:2c:84:e2",
+        "interface-index": 71,
+        "interface-name": "lxc4f78f113d37e",
+        "mac": "86:85:40:a4:46:64"
+      },
+      "policy": {
+        "proxy-policy-revision": 58,
+        "proxy-statistics": [],
+        "realized": {
+          "allowed-egress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "allowed-ingress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "build": 58,
+          "denied-egress-identities": null,
+          "denied-ingress-identities": null,
+          "id": 53849,
+          "l4": {
+            "egress": [],
+            "ingress": []
+          },
+          "policy-enabled": "none",
+          "policy-revision": 58
+        },
+        "spec": {
+          "allowed-egress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "allowed-ingress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "build": 58,
+          "denied-egress-identities": null,
+          "denied-ingress-identities": null,
+          "id": 53849,
+          "l4": {
+            "egress": [],
+            "ingress": []
+          },
+          "policy-enabled": "none",
+          "policy-revision": 58
+        }
+      },
+      "realized": {
+        "label-configuration": {
+          "user": [
+            "k8s:warden.dev/quarantine=true"
+          ]
+        },
+        "options": {
+          "Debug": "Disabled",
+          "DebugLB": "Disabled",
+          "DebugPolicy": "Disabled",
+          "DropNotification": "Enabled",
+          "MonitorAggregationLevel": "Medium",
+          "PolicyAuditMode": "Disabled",
+          "PolicyVerdictNotification": "Enabled",
+          "SourceIPVerification": "Enabled",
+          "TraceNotification": "Enabled"
+        }
+      },
+      "state": "waiting-for-identity"
+    }
+  },
+  {
+    "id": 1090,
+    "spec": {
+      "label-configuration": {},
+      "options": {
+        "Debug": "Disabled",
+        "DebugLB": "Disabled",
+        "DebugPolicy": "Disabled",
+        "DropNotification": "Enabled",
+        "MonitorAggregationLevel": "Medium",
+        "PolicyAuditMode": "Disabled",
+        "PolicyVerdictNotification": "Enabled",
+        "SourceIPVerification": "Enabled",
+        "TraceNotification": "Enabled"
+      }
+    },
+    "status": {
+      "controllers": [
+        {
+          "configuration": {
+            "error-retry": true,
+            "error-retry-base": "2s",
+            "interval": "1s"
+          },
+          "name": "endpoint-1090-regeneration-recovery",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "0001-01-01T00:00:00.000Z"
+          },
+          "uuid": "4b2221b8-fd59-49af-bd0d-368eaecc27d5"
+        },
+        {
+          "configuration": {
+            "error-retry": true,
+            "interval": "5m0s"
+          },
+          "name": "resolve-identity-1090",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T16:03:55.043Z",
+            "success-count": 102
+          },
+          "uuid": "967dcb52-aee3-4bbc-a486-ec29d6e4ffc3"
+        },
+        {
+          "configuration": {
+            "error-retry": true
+          },
+          "name": "resolve-labels-kube-system/coredns-7754b5dfb8-gggcr",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T07:38:54.986Z",
+            "success-count": 1
+          },
+          "uuid": "de3042bb-9a84-4fc4-a72f-0368e11d23df"
+        },
+        {
+          "configuration": {
+            "error-retry": true,
+            "interval": "15m0s"
+          },
+          "name": "sync-policymap-1090",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T15:53:55.080Z",
+            "success-count": 34
+          },
+          "uuid": "a8f423ea-de03-414a-a6aa-daeb6742544c"
+        },
+        {
+          "configuration": {
+            "error-retry": true,
+            "interval": "10s"
+          },
+          "name": "sync-to-k8s-ciliumendpoint (1090)",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T16:05:37.046Z",
+            "success-count": 3042
+          },
+          "uuid": "e5b03ede-5919-4ad6-805f-12b5c63d7f42"
+        }
+      ],
+      "external-identifiers": {
+        "cni-attachment-id": "deedf6aba50a0323ae585e071b5fbf95b91d9ce94bbee69c04b1fda86baf0854:eth0"
+      },
+      "health": {
+        "bpf": "OK",
+        "connected": true,
+        "overallHealth": "OK",
+        "policy": "OK"
+      },
+      "identity": {
+        "id": 10966,
+        "labels": [
+          "gen:io.cilium.k8s.named-ports=dns.UDP.53_dns-tcp.TCP.53",
+          "k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system",
+          "k8s:io.cilium.k8s.policy.cluster=default",
+          "k8s:io.cilium.k8s.policy.serviceaccount=coredns",
+          "k8s:io.kubernetes.pod.namespace=kube-system",
+          "k8s:k8s-app=kube-dns"
+        ]
+      },
+      "labels": {
+        "derived": [
+          "k8s:pod-template-hash=7754b5dfb8"
+        ],
+        "realized": {},
+        "security-relevant": [
+          "gen:io.cilium.k8s.named-ports=dns.UDP.53_dns-tcp.TCP.53",
+          "k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system",
+          "k8s:io.cilium.k8s.policy.cluster=default",
+          "k8s:io.cilium.k8s.policy.serviceaccount=coredns",
+          "k8s:io.kubernetes.pod.namespace=kube-system",
+          "k8s:k8s-app=kube-dns"
+        ]
+      },
+      "log": [
+        {
+          "code": "OK",
+          "message": "Successfully regenerated endpoint program (Reason: PeriodicRegeneration)",
+          "state": "ready",
+          "timestamp": "2026-11-13T16:04:48Z"
+        }
+      ],
+      "namedPorts": [
+        {
+          "name": "dns",
+          "port": 53,
+          "protocol": "UDP"
+        },
+        {
+          "name": "dns-tcp",
+          "port": 53,
+          "protocol": "TCP"
+        }
+      ],
+      "networking": {
+        "addressing": [
+          {
+            "ipv4": "10.42.0.254",
+            "ipv4-pool-name": "default"
+          }
+        ],
+        "container-interface-name": "eth0",
+        "host-mac": "d6:8b:bb:e2:9f:ca",
+        "interface-index": 9,
+        "interface-name": "lxc9705af572da5",
+        "mac": "32:eb:f1:e7:ab:47"
+      },
+      "policy": {
+        "proxy-policy-revision": 1,
+        "proxy-statistics": [],
+        "realized": {
+          "allowed-egress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "allowed-ingress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "build": 58,
+          "denied-egress-identities": null,
+          "denied-ingress-identities": null,
+          "id": 10966,
+          "l4": {
+            "egress": [],
+            "ingress": []
+          },
+          "policy-enabled": "none",
+          "policy-revision": 58
+        },
+        "spec": {
+          "allowed-egress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "allowed-ingress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "build": 56,
+          "denied-egress-identities": null,
+          "denied-ingress-identities": null,
+          "id": 10966,
+          "l4": {
+            "egress": [],
+            "ingress": []
+          },
+          "policy-enabled": "none",
+          "policy-revision": 56
+        }
+      },
+      "realized": {
+        "label-configuration": {},
+        "options": {
+          "Debug": "Disabled",
+          "DebugLB": "Disabled",
+          "DebugPolicy": "Disabled",
+          "DropNotification": "Enabled",
+          "MonitorAggregationLevel": "Medium",
+          "PolicyAuditMode": "Disabled",
+          "PolicyVerdictNotification": "Enabled",
+          "SourceIPVerification": "Enabled",
+          "TraceNotification": "Enabled"
+        }
+      },
+      "state": "ready"
+    }
+  },
+  {
+    "id": 3016,
+    "spec": {
+      "label-configuration": {},
+      "options": {
+        "Debug": "Disabled",
+        "DebugLB": "Disabled",
+        "DebugPolicy": "Disabled",
+        "DropNotification": "Enabled",
+        "MonitorAggregationLevel": "Medium",
+        "PolicyAuditMode": "Disabled",
+        "PolicyVerdictNotification": "Enabled",
+        "SourceIPVerification": "Enabled",
+        "TraceNotification": "Enabled"
+      }
+    },
+    "status": {
+      "controllers": [
+        {
+          "configuration": {
+            "error-retry": true,
+            "error-retry-base": "2s",
+            "interval": "1s"
+          },
+          "name": "endpoint-3016-regeneration-recovery",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "0001-01-01T00:00:00.000Z"
+          },
+          "uuid": "76e63f18-7f05-4f1a-a7cd-566b88bbcf98"
+        },
+        {
+          "configuration": {
+            "error-retry": true,
+            "interval": "5m0s"
+          },
+          "name": "resolve-identity-3016",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T16:05:31.114Z",
+            "success-count": 1
+          },
+          "uuid": "35fb628d-ada7-4e1b-afa2-c04cd766b36a"
+        },
+        {
+          "configuration": {
+            "error-retry": true
+          },
+          "name": "resolve-labels-warden-lab/spike-c",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T16:05:31.114Z",
+            "success-count": 1
+          },
+          "uuid": "5e954634-e1c1-4126-9a38-aa14068876a2"
+        },
+        {
+          "configuration": {
+            "error-retry": true,
+            "interval": "15m0s"
+          },
+          "name": "sync-policymap-3016",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T16:05:31.195Z",
+            "success-count": 1
+          },
+          "uuid": "e6a986b0-780c-490e-9deb-c97ffe92877f"
+        },
+        {
+          "configuration": {
+            "error-retry": true,
+            "interval": "10s"
+          },
+          "name": "sync-to-k8s-ciliumendpoint (3016)",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T16:05:31.123Z",
+            "success-count": 2
+          },
+          "uuid": "17bc9bf0-9fda-4a49-9750-1eff34e419e4"
+        }
+      ],
+      "external-identifiers": {
+        "cni-attachment-id": "678e20623bb7ffecbc3f7b179b0cc2d1a14168fc8b5d6647e3c0371192fb9df6:eth0"
+      },
+      "health": {
+        "bpf": "OK",
+        "connected": true,
+        "overallHealth": "OK",
+        "policy": "OK"
+      },
+      "identity": {
+        "id": 42053,
+        "labels": [
+          "k8s:app=spike-c",
+          "k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=warden-lab",
+          "k8s:io.cilium.k8s.policy.cluster=default",
+          "k8s:io.cilium.k8s.policy.serviceaccount=default",
+          "k8s:io.kubernetes.pod.namespace=warden-lab",
+          "k8s:warden.dev/sandbox=true",
+          "k8s:warden.dev/test=spike"
+        ]
+      },
+      "labels": {
+        "realized": {},
+        "security-relevant": [
+          "k8s:app=spike-c",
+          "k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=warden-lab",
+          "k8s:io.cilium.k8s.policy.cluster=default",
+          "k8s:io.cilium.k8s.policy.serviceaccount=default",
+          "k8s:io.kubernetes.pod.namespace=warden-lab",
+          "k8s:warden.dev/sandbox=true",
+          "k8s:warden.dev/test=spike"
+        ]
+      },
+      "log": [
+        {
+          "code": "OK",
+          "message": "Successfully regenerated endpoint program (Reason: LabelsUpdate)",
+          "state": "ready",
+          "timestamp": "2026-11-13T16:05:31Z"
+        }
+      ],
+      "networking": {
+        "addressing": [
+          {
+            "ipv4": "10.42.0.152",
+            "ipv4-pool-name": "default"
+          }
+        ],
+        "container-interface-name": "eth0",
+        "host-mac": "f6:93:bd:af:da:3d",
+        "interface-index": 73,
+        "interface-name": "lxcc71394852b5c",
+        "mac": "12:66:5f:a5:64:56"
+      },
+      "policy": {
+        "proxy-policy-revision": 58,
+        "proxy-statistics": [],
+        "realized": {
+          "allowed-egress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "allowed-ingress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "build": 58,
+          "denied-egress-identities": null,
+          "denied-ingress-identities": null,
+          "id": 42053,
+          "l4": {
+            "egress": [],
+            "ingress": []
+          },
+          "policy-enabled": "none",
+          "policy-revision": 58
+        },
+        "spec": {
+          "allowed-egress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "allowed-ingress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "build": 58,
+          "denied-egress-identities": null,
+          "denied-ingress-identities": null,
+          "id": 42053,
+          "l4": {
+            "egress": [],
+            "ingress": []
+          },
+          "policy-enabled": "none",
+          "policy-revision": 58
+        }
+      },
+      "realized": {
+        "label-configuration": {},
+        "options": {
+          "Debug": "Disabled",
+          "DebugLB": "Disabled",
+          "DebugPolicy": "Disabled",
+          "DropNotification": "Enabled",
+          "MonitorAggregationLevel": "Medium",
+          "PolicyAuditMode": "Disabled",
+          "PolicyVerdictNotification": "Enabled",
+          "SourceIPVerification": "Enabled",
+          "TraceNotification": "Enabled"
+        }
+      },
+      "state": "ready"
+    }
+  },
+  {
+    "id": 3169,
+    "spec": {
+      "label-configuration": {},
+      "options": {
+        "Debug": "Disabled",
+        "DebugLB": "Disabled",
+        "DebugPolicy": "Disabled",
+        "DropNotification": "Enabled",
+        "MonitorAggregationLevel": "Medium",
+        "PolicyAuditMode": "Disabled",
+        "PolicyVerdictNotification": "Enabled",
+        "SourceIPVerification": "Enabled",
+        "TraceNotification": "Enabled"
+      }
+    },
+    "status": {
+      "controllers": [
+        {
+          "configuration": {
+            "error-retry": true,
+            "error-retry-base": "2s",
+            "interval": "1s"
+          },
+          "name": "endpoint-3169-regeneration-recovery",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "0001-01-01T00:00:00.000Z"
+          },
+          "uuid": "c47d41f6-de0d-4f99-9240-e69e046b397e"
+        },
+        {
+          "configuration": {
+            "error-retry": true,
+            "interval": "5m0s"
+          },
+          "name": "resolve-identity-3169",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T16:03:49.576Z",
+            "success-count": 102
+          },
+          "uuid": "4352c058-50f2-41c7-a0c7-7e2f611c5e86"
+        },
+        {
+          "configuration": {
+            "error-retry": true,
+            "interval": "15m0s"
+          },
+          "name": "sync-policymap-3169",
+          "status": {
+            "last-failure-timestamp": "0001-01-01T00:00:00.000Z",
+            "last-success-timestamp": "2026-11-13T15:53:51.533Z",
+            "success-count": 34
+          },
+          "uuid": "fe0aaed3-0f3e-45b2-be50-2a2caef87ab1"
+        }
+      ],
+      "external-identifiers": {},
+      "health": {
+        "bpf": "OK",
+        "connected": true,
+        "overallHealth": "OK",
+        "policy": "OK"
+      },
+      "identity": {
+        "id": 4,
+        "labels": [
+          "reserved:health"
+        ]
+      },
+      "labels": {
+        "realized": {},
+        "security-relevant": [
+          "reserved:health"
+        ]
+      },
+      "log": [
+        {
+          "code": "OK",
+          "message": "Successfully regenerated endpoint program (Reason: PeriodicRegeneration)",
+          "state": "ready",
+          "timestamp": "2026-11-13T16:04:48Z"
+        }
+      ],
+      "networking": {
+        "addressing": [
+          {
+            "ipv4": "10.42.0.162",
+            "ipv4-pool-name": "default"
+          }
+        ],
+        "host-mac": "ae:71:11:7e:b4:26",
+        "interface-index": 7,
+        "interface-name": "lxc_health",
+        "mac": "c2:3e:6f:ba:d8:4f"
+      },
+      "policy": {
+        "proxy-policy-revision": 1,
+        "proxy-statistics": [],
+        "realized": {
+          "allowed-egress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "allowed-ingress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "build": 58,
+          "denied-egress-identities": null,
+          "denied-ingress-identities": null,
+          "id": 4,
+          "l4": {
+            "egress": [],
+            "ingress": []
+          },
+          "policy-enabled": "none",
+          "policy-revision": 58
+        },
+        "spec": {
+          "allowed-egress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "allowed-ingress-identities": [
+            0,
+            11,
+            12,
+            13,
+            14
+          ],
+          "build": 56,
+          "denied-egress-identities": null,
+          "denied-ingress-identities": null,
+          "id": 4,
+          "l4": {
+            "egress": [],
+            "ingress": []
+          },
+          "policy-enabled": "none",
+          "policy-revision": 56
+        }
+      },
+      "realized": {
+        "label-configuration": {},
+        "options": {
+          "Debug": "Disabled",
+          "DebugLB": "Disabled",
+          "DebugPolicy": "Disabled",
+          "DropNotification": "Enabled",
+          "MonitorAggregationLevel": "Medium",
+          "PolicyAuditMode": "Disabled",
+          "PolicyVerdictNotification": "Enabled",
+          "SourceIPVerification": "Enabled",
+          "TraceNotification": "Enabled"
+        }
+      },
+      "state": "ready"
+    }
+  }
+]
+

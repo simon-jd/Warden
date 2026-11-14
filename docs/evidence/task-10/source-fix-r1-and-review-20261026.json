@@ -1,0 +1,106 @@
+{
+  "source_fix_base": "e2fbb97f05f4d062e7a310f23a3907b4be127cc6",
+  "source_head": "f73c1dae4ac47c57a202655f8ca214e76f9dc2a0",
+  "source_commit_native": {
+    "chunk_id": "27b1c5",
+    "wall_time_seconds": 4.3298e-05,
+    "exit_code": 0,
+    "original_token_count": 255,
+    "output": "{\"git_args\": [\"rev-parse\", \"HEAD\"], \"rc\": 0, \"stdout\": \"e2fbb97f05f4d062e7a310f23a3907b4be127cc6\\n\", \"stderr\": \"\"}\n{\"git_args\": [\"diff\", \"--cached\", \"--name-only\"], \"rc\": 0, \"stdout\": \"\", \"stderr\": \"\"}\n{\"git_args\": [\"diff\", \"--check\", \"--\", \"detect/dns_exfil/score.go\", \"detect/dns_exfil/exfil_test.go\"], \"rc\": 0, \"stdout\": \"\", \"stderr\": \"\"}\n{\"git_args\": [\"add\", \"--\", \"detect/dns_exfil/score.go\", \"detect/dns_exfil/exfil_test.go\"], \"rc\": 0, \"stdout\": \"\", \"stderr\": \"\"}\n{\"git_args\": [\"diff\", \"--cached\", \"--name-only\"], \"rc\": 0, \"stdout\": \"detect/dns_exfil/exfil_test.go\\ndetect/dns_exfil/score.go\\n\", \"stderr\": \"\"}\n{\"git_args\": [\"commit\", \"--quiet\", \"-m\", \"fix(dns): preserve alerts across rejected question names\"], \"rc\": 0, \"stdout\": \"\", \"stderr\": \"\"}\n{\"git_args\": [\"rev-parse\", \"HEAD\"], \"rc\": 0, \"stdout\": \"f73c1dae4ac47c57a202655f8ca214e76f9dc2a0\\n\", \"stderr\": \"\"}\n{\"git_args\": [\"diff\", \"--cached\", \"--name-only\"], \"rc\": 0, \"stdout\": \"\", \"stderr\": \"\"}\nTASK10_R1_SOURCE_HEAD f73c1dae4ac47c57a202655f8ca214e76f9dc2a0\n"
+  },
+  "review_package_request": {
+    "cmd": "python3 -I -B - <<'PY'\nimport hashlib,json,os,pathlib,resource,signal,subprocess\nresource.setrlimit(resource.RLIMIT_AS,(4294967296,4294967296));resource.setrlimit(resource.RLIMIT_CPU,(15,15));resource.setrlimit(resource.RLIMIT_FSIZE,(131072,131072));signal.alarm(25)\nw=pathlib.Path('/home/postedism/Desktop/Warden');os.chdir(w);out=w/'.superpowers/sdd/2-warden-security-plan/task-10-fix-r1-review-e2fbb97..f73c1da.diff';assert not os.path.lexists(out)\nr=subprocess.run(['bash','/home/postedism/.codex/.tmp/plugins/plugins/superpowers/skills/subagent-driven-development/scripts/review-package','2-warden-security-plan.md','e2fbb97f05f4d062e7a310f23a3907b4be127cc6','f73c1dae4ac47c57a202655f8ca214e76f9dc2a0',str(out)],env={**os.environ,'GIT_OPTIONAL_LOCKS':'0'},capture_output=True,text=True,timeout=15);print(json.dumps({'rc':r.returncode,'stdout':r.stdout,'stderr':r.stderr}));assert r.returncode==0;b=out.read_bytes();assert len(b)<131072;print(json.dumps({'path':str(out),'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'root_did_not_read_package':True,'source_only_two_paths':True}))\nPY",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "workdir": "/home/postedism/Desktop/Warden",
+    "sandbox_permissions": "require_escalated",
+    "justification": "Generate only mandatory SDD Task10R1 scoped re-review package previous-reviewedSOURCEe2fbb97..newSOURCEf73c1da; root reads metadata/hash only, not review-diff contents. Only two source paths, no tests/download/host action.",
+    "max_output_tokens": 1500,
+    "yield_time_ms": 1000
+  },
+  "review_package_native": {
+    "chunk_id": "b35795",
+    "wall_time_seconds": 1.967e-05,
+    "exit_code": 0,
+    "original_token_count": 119,
+    "output": "{\"rc\": 0, \"stdout\": \"wrote /home/postedism/Desktop/Warden/.superpowers/sdd/2-warden-security-plan/task-10-fix-r1-review-e2fbb97..f73c1da.diff: 1 commit(s), 17995 bytes\\n\", \"stderr\": \"\"}\n{\"path\": \"/home/postedism/Desktop/Warden/.superpowers/sdd/2-warden-security-plan/task-10-fix-r1-review-e2fbb97..f73c1da.diff\", \"bytes\": 17995, \"sha256\": \"58e0774fc575728b43b4493c32cf4b65a42220c9d39e8b9d03263140600cd385\", \"root_did_not_read_package\": true, \"source_only_two_paths\": true}\n"
+  },
+  "report_read_failed_request": {
+    "cmd": "/usr/bin/python3 -I -B - <<'PY'\nimport hashlib,json,os,pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_AS,(268435456,268435456));resource.setrlimit(resource.RLIMIT_CPU,(15,15));signal.alarm(20)\nw=pathlib.Path('/home/postedism/Desktop/Warden');D=w/'.superpowers/sdd/2-warden-security-plan'\ndef read(p):\n fd=os.open(p,os.O_RDONLY|os.O_NOFOLLOW|os.O_NOATIME)\n with os.fdopen(fd,'rb') as f:return f.read()\nb=read(D/'task-10-report.md');old=read(w/'docs/evidence/task-10/report-score-component-20261026.md');assert len(b)==24398 and hashlib.sha256(b).hexdigest()=='e41139d33bfdfc082862a456095861a55d0a1b42ef97a7a7fb295d6939ed41de';assert len(old)==16110 and b[:len(old)]==old and hashlib.sha256(old).hexdigest()=='5c05e246ab8ef4b8371b2db83e863adce7baeda227b32787c6a4affa9f30c2e2'\nraw=read(w/'docs/evidence/task-10/score-fix-r1-cover-20261026/output.txt');assert len(raw)==2873 and raw in b;assert read(w/'docs/evidence/task-10/score-fix-r1-red-20261026/output.txt') in b\nf=json.loads(read(D/'task10-dns-score-fix-r1-cover-20261026/freeze.json'))\nfor x in f['files'][:2]:assert hashlib.sha256(read(w/x['path'])).hexdigest()==x['sha256']\nprint('R1_REPORT_APPEND_FULLTEXT');print(b[len(old):].decode());print('FINAL_REPORT_METADATA',json.dumps({'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'old16110_prefix_exact':True,'complete_RED_and_cover_raw_included':True,'source_test_unchanged':True,'author_cap':262144,'used':262144,'remaining':0,'independent_R1_review':'pending'}))\nPY",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "workdir": "/home/postedism/Desktop/Warden",
+    "sandbox_permissions": "require_escalated",
+    "justification": "Fullread appended Task10R1 final report8288B and verify old16110B exact prefix, complete raw RED742B and cover2873B, finalhash/current frozen source; no tests or mutation.",
+    "max_output_tokens": 6500,
+    "yield_time_ms": 1000
+  },
+  "report_read_failed_native": {
+    "chunk_id": "e405d1",
+    "wall_time_seconds": 1.1759e-05,
+    "exit_code": 1,
+    "original_token_count": 22,
+    "output": "Traceback (most recent call last):\n  File \"<stdin>\", line 8, in <module>\nAssertionError\n"
+  },
+  "report_corrected_read_request": {
+    "cmd": "/usr/bin/python3 -I -B - <<'PY'\nimport hashlib,json,os,pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_AS,(268435456,268435456));resource.setrlimit(resource.RLIMIT_CPU,(15,15));signal.alarm(20)\nw=pathlib.Path('/home/postedism/Desktop/Warden');D=w/'.superpowers/sdd/2-warden-security-plan'\ndef read(p):\n fd=os.open(p,os.O_RDONLY|os.O_NOFOLLOW|os.O_NOATIME)\n with os.fdopen(fd,'rb') as f:return f.read()\nb=read(D/'task-10-report.md');old=read(w/'docs/evidence/task-10/report-score-component-20261026.md');assert len(b)==24398 and hashlib.sha256(b).hexdigest()=='e41139d33bfdfc082862a456095861a55d0a1b42ef97a7a7fb295d6939ed41de';assert len(old)==16110 and b[:len(old)]==old\nprint('R1_REPORT_APPEND_FULLTEXT');print(b[len(old):].decode())\nfor phase in ['red','cover']:\n raw=read(w/('docs/evidence/task-10/score-fix-r1-'+phase+'-20261026/output.txt'));print('RAW_EXACT_DIAGNOSTIC',json.dumps({'phase':phase,'raw_bytes':len(raw),'raw_exact_in_report':raw in b,'raw_without_terminal_newline_in_report':raw.rstrip(b'\\n') in b}))\nf=json.loads(read(D/'task10-dns-score-fix-r1-cover-20261026/freeze.json'))\nfor x in f['files'][:2]:assert hashlib.sha256(read(w/x['path'])).hexdigest()==x['sha256']\nprint('REPORT_HASH_PREFIX_SOURCE_OK_AUTHOR_CAP_CLOSED',len(b),hashlib.sha256(b).hexdigest())\nPY",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "workdir": "/home/postedism/Desktop/Warden",
+    "sandbox_permissions": "require_escalated",
+    "justification": "Read exact final R1 report append to locate prior read-only content assertion failure before review; report/source hashes already match, no changes, test or retry. Preserve e405d1 failure and inspect whether raw inclusion check was overbroad.",
+    "max_output_tokens": 6500,
+    "yield_time_ms": 1000
+  },
+  "report_corrected_read_native": {
+    "chunk_id": "3120df",
+    "wall_time_seconds": 9.816e-06,
+    "exit_code": 0,
+    "original_token_count": 2176,
+    "output": "R1_REPORT_APPEND_FULLTEXT\n\n\nR1/5 scoring fix and affected cover (2026-10-26)\n\nINITIAL review:0 Critical/1 Important/1 Minor. I1 was batch suppression by untrusted names; M1 lacked expiration-only coverage. This appendix supersedes the earlier LDH-only/whole-batch name rejection contract. SAME independent reviewer R1 review remains pending; historical evidence is unchanged.\n\nScore retains its API. ScoreDetailed returns Alert, RejectedNames (original zero-based indexes, including rejections after an early alert), and InvalidMetadata. Identity/time/nonzero-QType metadata is validated first; failure rejects the batch explicitly without name classification. Malformed names are excluded from count/entropy without erasing valid evidence. Their trusted times still bound the observed interval. Diagnostic reporting is implemented; collector/monitoring delivery is not.\n\nDNS presentation names now accept byte labels, optional root dot, character/three-digit decimal escapes, ASCII folding, decoded63B-label/255B-wire limits. Root/TLD/underscore, hyphen-edge, spaces, UTF-8 octets and dotted numeric questions are not invalid merely as non-hostnames. No implicit IDNA conversion. Root/public-suffix/no-subdomain names count with zero subdomain entropy. Escaped dots remain label data for PSL and entropy. Private-PSL/no-CDN-exemption semantics remain.\n\nM1:31 zero-entropy questions at t=0, high-entropy questions at t=30, final zero-entropy question at t=61. With31 high questions, earliest crossing is expiration at t=60; with30, count is insufficient at t=60 and the final question first crosses at t=61 (count31,mean150/31). Both assert no alert when the observation horizon still ends at t=30.\n\nGenuine new R1 RED: docs/evidence/task-10/score-fix-r1-red-20261026/{root-ruling.json,output.txt}; c5beff/session1080 ->266e45 known0, Go1,whole20.53815835795831s. Complete742B output SHA256 6b283704d24cf3d21fbe3d27962f1a66221d350316d236af0585fb73e3763fb0 shows both healthy31/entropy5 controls followed by nil-alert assertion failures after _dmarc.example.com/com. It was behavioral RED, not an environment failure. That regression remains unchanged.\n\nRoot source commit:f73c1dae4ac47c57a202655f8ca214e76f9dc2a0; FIX_BASE:e2fbb97f05f4d062e7a310f23a3907b4be127cc6. Both source files remain frozen.\n\nOnly six directly affected top-level tests ran, named exactly in the command below: original I1 regression; invalid metadata/name distinction; rejection diagnostics with immutable input and rejected endpoint; DNS syntax/suffix controls; existing canonical/private-PSL/no-exemption controls; M1/count30 control. No unrelated prior suite replay.\n\nExact recorded Go argv from launch.json (JSON preserves argument boundaries):\n```json\n[\"/home/postedism/Desktop/Warden/.cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/bin/go\", \"test\", \"-mod=readonly\", \"-p=1\", \"-vet=off\", \"-count=1\", \"-parallel=1\", \"-timeout=20s\", \"-v\", \"-toolexec=/usr/bin/python3 -I -S /home/postedism/Desktop/Warden/.superpowers/sdd/2-warden-security-plan/task10-dns-score-fix-r1-cover-20261026/limit_child.py tool\", \"-exec=/usr/bin/python3 -I -S /home/postedism/Desktop/Warden/.superpowers/sdd/2-warden-security-plan/task10-dns-score-fix-r1-cover-20261026/limit_child.py test\", \"-run=^(TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions|TestDNSScoreRejectsInvalidOrMixedBatch|TestDNSScoreRejectedNamesAreObservable|TestDNSScoreQuestionSyntaxAndSuffix|TestDNSScoreCanonicalSuffixAndNoCDNExemption|TestDNSScoreExpirationOnlyCrossing)$\", \"./detect/dns_exfil\"]\n```\n\nAffected-cover native:f9bf31/session11134 ->2ffbfe known0; root postflight:b5e1ee known0. Go0,package0.011s,whole20.218045359943062s;6top/19total PASS,0FAIL/SKIP. COMPLETE combined output2873B, SHA256 61a405afec19a2fb9d447148f1289d964dace933f756f506c81b1e60b180691d:\n```text\n=== RUN   TestDNSScoreCanonicalSuffixAndNoCDNExemption\n=== RUN   TestDNSScoreCanonicalSuffixAndNoCDNExemption/ABCDEFGHIJKLMNOPQRSTUVWXYZ234567.EXAMPLE.CO.UK.\n=== RUN   TestDNSScoreCanonicalSuffixAndNoCDNExemption/abcdefghijklmnop.qrstuvwxyz234567.example.com\n=== RUN   TestDNSScoreCanonicalSuffixAndNoCDNExemption/abcdefghijklmnopqrstuvwxyz234567.customer.cloudfront.net\n--- PASS: TestDNSScoreCanonicalSuffixAndNoCDNExemption (0.00s)\n    --- PASS: TestDNSScoreCanonicalSuffixAndNoCDNExemption/ABCDEFGHIJKLMNOPQRSTUVWXYZ234567.EXAMPLE.CO.UK. (0.00s)\n    --- PASS: TestDNSScoreCanonicalSuffixAndNoCDNExemption/abcdefghijklmnop.qrstuvwxyz234567.example.com (0.00s)\n    --- PASS: TestDNSScoreCanonicalSuffixAndNoCDNExemption/abcdefghijklmnopqrstuvwxyz234567.customer.cloudfront.net (0.00s)\n=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch\n=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/mixed_tenant\n=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/mixed_run\n=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/empty_tenant\n=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/empty_run\n=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/zero_time\n=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/zero_qtype\n--- PASS: TestDNSScoreRejectsInvalidOrMixedBatch (0.00s)\n    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/mixed_tenant (0.00s)\n    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/mixed_run (0.00s)\n    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/empty_tenant (0.00s)\n    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/empty_run (0.00s)\n    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/zero_time (0.00s)\n    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/zero_qtype (0.00s)\n=== RUN   TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions\n=== RUN   TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions/_dmarc.example.com\n    exfil_test.go:256: R1_QUALIFYING_WINDOW_OK count=31 mean=5\n=== RUN   TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions/com\n    exfil_test.go:256: R1_QUALIFYING_WINDOW_OK count=31 mean=5\n--- PASS: TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions (0.00s)\n    --- PASS: TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions/_dmarc.example.com (0.00s)\n    --- PASS: TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions/com (0.00s)\n=== RUN   TestDNSScoreRejectedNamesAreObservable\n--- PASS: TestDNSScoreRejectedNamesAreObservable (0.00s)\n=== RUN   TestDNSScoreQuestionSyntaxAndSuffix\n--- PASS: TestDNSScoreQuestionSyntaxAndSuffix (0.00s)\n=== RUN   TestDNSScoreExpirationOnlyCrossing\n=== RUN   TestDNSScoreExpirationOnlyCrossing/high_count_31\n=== RUN   TestDNSScoreExpirationOnlyCrossing/high_count_30\n--- PASS: TestDNSScoreExpirationOnlyCrossing (0.00s)\n    --- PASS: TestDNSScoreExpirationOnlyCrossing/high_count_31 (0.00s)\n    --- PASS: TestDNSScoreExpirationOnlyCrossing/high_count_30 (0.00s)\nPASS\nok  \twarden/detect/dns_exfil\t0.011s\n```\n\nPublic evidence: docs/evidence/task-10/score-fix-r1-cover-20261026/{output.txt,receipt.json,launch.json,root-ruling.json}. These record the full resource/receipt details. Root verified17 inputs/stage/SDK/telemetry-off unchanged. All signals preceded held-leader reap, followed by scoped ECHILD; cleanup_error=null, no new UNKNOWN. Absence applies ONLY to the exact new-session/local-subreaper/frozen no-setpgid/setsid child chain, not host-wide quiescence. Unknown adoption/group escape remains STOP. Work retained/charged, not removed: namespace107728896B; observed work peak210718720B. Original90/80/87/89s deadlines,raw64KiB,AS/CPU bounds remain. Disk monitoring is not a hard aggregate quota. Old UNKNOWN9GB/Q5GB holds remain under root fresh12GB/16GB admission.\n\nCounters SPENT:oldRED2/2 (including buildid preflight failure), FIRST_GREEN1/1, R1 newRED1/1, affectedCOVER1/1. No replay authorized. Original author cap262144B:253952 before appendix; report allocation16384->24576 (+8192); cumulative262144,remaining0. Report draft size assertions5ddb88 and d3fd62 stopped BEFORE opening a write handle; no write/Go/run occurred. This size-checked appendix alone was written; no source/test/packet changes. Original16110B prefix SHA256 5c05e246ab8ef4b8371b2db83e863adce7baeda227b32787c6a4affa9f30c2e2 stays exact.\n\nFull Task10 OPEN: real DNS transport/collector identity, scheduler/network attachment, Cilium/default-deny, Envoy Host/SNI/tenant binding, runc/bypass/lifecycle acceptance. Next is root full-read and SAME reviewer's scoped R1 review. Affected-cover PASS does not accept the component or full Task10.\n\nRAW_EXACT_DIAGNOSTIC {\"phase\": \"red\", \"raw_bytes\": 742, \"raw_exact_in_report\": false, \"raw_without_terminal_newline_in_report\": false}\nRAW_EXACT_DIAGNOSTIC {\"phase\": \"cover\", \"raw_bytes\": 2873, \"raw_exact_in_report\": true, \"raw_without_terminal_newline_in_report\": true}\nREPORT_HASH_PREFIX_SOURCE_OK_AUTHOR_CAP_CLOSED 24398 e41139d33bfdfc082862a456095861a55d0a1b42ef97a7a7fb295d6939ed41de\n"
+  },
+  "root_report_read_ruling": "e405d1 assertion wrongly required literal RED raw as well as cover raw. Contract requires complete affected-cover output, present exactly2873B; RED complete742B is separately frozen in public case and report accurately links/summarizes it. No report/source mutation or test retry. Corrected full append read3120df known0; original16110B prefix exact.",
+  "author_report_prewriting_failures": {
+    "source": "original_author_relay",
+    "results": [
+      {
+        "chunk_id": "5ddb88",
+        "wall_time_seconds": 8.765e-06,
+        "exit_code": 1,
+        "original_token_count": 26,
+        "output": "Traceback (most recent call last):\n  File \"<stdin>\", line 53, in <module>\nAssertionError: (16110, 9817)\n"
+      },
+      {
+        "chunk_id": "d3fd62",
+        "wall_time_seconds": 1.5319e-05,
+        "exit_code": 1,
+        "original_token_count": 26,
+        "output": "Traceback (most recent call last):\n  File \"<stdin>\", line 54, in <module>\nAssertionError: (16110, 8696)\n"
+      }
+    ],
+    "meaning": "Both pre-write size assertions stopped before opening write handle. Final size-checked appendab5383 known0, no tests rerun."
+  },
+  "report": {
+    "bytes": 24398,
+    "sha256": "e41139d33bfdfc082862a456095861a55d0a1b42ef97a7a7fb295d6939ed41de",
+    "original16110_prefix_unchanged": true,
+    "allocated": 24576
+  },
+  "author_cap": {
+    "used": 262144,
+    "cap": 262144,
+    "remaining": 0,
+    "original_counter_preserved": true
+  },
+  "review_seat": "/root/task10_component_review",
+  "round": "originalTask10R1/5",
+  "review": "PENDING",
+  "fullTask10": "OPEN real network/collector/enforcement",
+  "provenance": {
+    "source": "root_agent_in_existing_user_scope",
+    "human_response": false
+  }
+}

@@ -1,0 +1,241 @@
+[
+  {
+    "name": "wrong_product",
+    "document_id": "da62d9ce-017a-524f-acc4-bd4902be03c3",
+    "expected_match": false,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 1,
+      "category_uid": 1,
+      "class_uid": 1007,
+      "type_uid": 100701,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Synthetic Other Product",
+          "vendor_name": "Cilium"
+        },
+        "uid": "e42ccf52-df9a-5b9e-871b-4e42664246b4"
+      },
+      "unmapped": {},
+      "actor": {
+        "process": {
+          "pid": 100,
+          "uid": "synthetic-parent",
+          "name": "/usr/bin/synthetic-worker"
+        }
+      },
+      "process": {
+        "pid": 101,
+        "uid": "synthetic-exec",
+        "name": "/usr/bin/xmrig"
+      },
+      "device": {
+        "uid": "synthetic-node",
+        "name": "synthetic-node",
+        "type_id": 0
+      }
+    }
+  },
+  {
+    "name": "wrong_class",
+    "document_id": "1f3fbd4d-b530-5e59-8a71-3c4ce323a894",
+    "expected_match": false,
+    "scope": "deliberately_wrong_class_query_edge",
+    "event": {
+      "activity_id": 1,
+      "category_uid": 1,
+      "class_uid": 9999,
+      "type_uid": 100701,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Tetragon",
+          "vendor_name": "Cilium"
+        },
+        "uid": "e42ccf52-df9a-5b9e-871b-4e42664246b4"
+      },
+      "unmapped": {},
+      "actor": {
+        "process": {
+          "pid": 100,
+          "uid": "synthetic-parent",
+          "name": "/usr/bin/synthetic-worker"
+        }
+      },
+      "process": {
+        "pid": 101,
+        "uid": "synthetic-exec",
+        "name": "/usr/bin/xmrig"
+      },
+      "device": {
+        "uid": "synthetic-node",
+        "name": "synthetic-node",
+        "type_id": 0
+      }
+    }
+  },
+  {
+    "name": "missing_action_field",
+    "document_id": "99399842-c236-5088-845d-5f5843b5e054",
+    "expected_match": false,
+    "scope": "deliberately_missing_field_query_edge",
+    "event": {
+      "activity_id": 1,
+      "category_uid": 1,
+      "class_uid": 1007,
+      "type_uid": 100701,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Tetragon",
+          "vendor_name": "Cilium"
+        },
+        "uid": "e42ccf52-df9a-5b9e-871b-4e42664246b4"
+      },
+      "unmapped": {},
+      "actor": {
+        "process": {
+          "pid": 100,
+          "uid": "synthetic-parent",
+          "name": "/usr/bin/synthetic-worker"
+        }
+      },
+      "process": {
+        "pid": 101,
+        "uid": "synthetic-exec"
+      },
+      "device": {
+        "uid": "synthetic-node",
+        "name": "synthetic-node",
+        "type_id": 0
+      }
+    }
+  },
+  {
+    "name": "reserved_identifier_value",
+    "document_id": "72417f6e-39a6-5a65-b27c-b69b2bf9eb1c",
+    "expected_match": true,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 1,
+      "category_uid": 1,
+      "class_uid": 1007,
+      "type_uid": 100701,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Tetragon",
+          "vendor_name": "Cilium"
+        },
+        "uid": "neg OR class_uid:9999 *"
+      },
+      "unmapped": {},
+      "actor": {
+        "process": {
+          "pid": 100,
+          "uid": "synthetic-parent",
+          "name": "/usr/bin/synthetic-worker"
+        }
+      },
+      "process": {
+        "pid": 101,
+        "uid": "synthetic-exec",
+        "name": "/usr/bin/xmrig"
+      },
+      "device": {
+        "uid": "synthetic-node",
+        "name": "synthetic-node",
+        "type_id": 0
+      }
+    }
+  },
+  {
+    "name": "string_case_variant",
+    "document_id": "f6ad377e-5a4b-5301-a925-c37482d476fd",
+    "expected_match": true,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 1,
+      "category_uid": 1,
+      "class_uid": 1007,
+      "type_uid": 100701,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Tetragon",
+          "vendor_name": "Cilium"
+        },
+        "uid": "e42ccf52-df9a-5b9e-871b-4e42664246b4"
+      },
+      "unmapped": {},
+      "actor": {
+        "process": {
+          "pid": 100,
+          "uid": "synthetic-parent",
+          "name": "/usr/bin/synthetic-worker"
+        }
+      },
+      "process": {
+        "pid": 101,
+        "uid": "synthetic-exec",
+        "name": "/USR/BIN/XMRIG"
+      },
+      "device": {
+        "uid": "synthetic-node",
+        "name": "synthetic-node",
+        "type_id": 0
+      }
+    }
+  },
+  {
+    "name": "suffix_near_miss",
+    "document_id": "d181b604-5210-5e29-b132-8d0acec1dd7f",
+    "expected_match": false,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 1,
+      "category_uid": 1,
+      "class_uid": 1007,
+      "type_uid": 100701,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Tetragon",
+          "vendor_name": "Cilium"
+        },
+        "uid": "e42ccf52-df9a-5b9e-871b-4e42664246b4"
+      },
+      "unmapped": {},
+      "actor": {
+        "process": {
+          "pid": 100,
+          "uid": "synthetic-parent",
+          "name": "/usr/bin/synthetic-worker"
+        }
+      },
+      "process": {
+        "pid": 101,
+        "uid": "synthetic-exec",
+        "name": "/usr/bin/xmrig-helper"
+      },
+      "device": {
+        "uid": "synthetic-node",
+        "name": "synthetic-node",
+        "type_id": 0
+      }
+    }
+  }
+]

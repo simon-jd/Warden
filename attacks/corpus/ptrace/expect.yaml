@@ -1,0 +1,3 @@
+id: ptrace
+technique: T1055
+success_signal: WARDEN_ptrace

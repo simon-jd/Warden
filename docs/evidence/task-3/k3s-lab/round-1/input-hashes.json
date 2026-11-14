@@ -1,0 +1,65 @@
+{
+  "copied_controller_inputs": {
+    "k3s_lab_init.py": {
+      "bytes": 17657,
+      "sha256": "98b4c05601b286e8cccc953fcd5a3d86b0016c1a3d7fc087f51ef313fac863bd"
+    },
+    "runtime_lab_docker_init.py": {
+      "bytes": 5735,
+      "sha256": "276663d6578ff4fd8ebf817e5279c2435de087b2082ee2514bee5ef4901b896c"
+    },
+    "runtime_lab_paths.py": {
+      "bytes": 7395,
+      "sha256": "0ce3287feab8197839cf2e7e1cf297fd5cad0e740069023b188e4c366b643f84"
+    },
+    "runtime_lab_runner.py": {
+      "bytes": 12698,
+      "sha256": "e45e9f9ef18c6e95562d6b4f670ae718c9e10f14b91727fcd46b0a6298cdacbc"
+    }
+  },
+  "dispatch_base": "0be4325b8362114daac107000300ead4220d5734",
+  "fix_base": "a193dabf27de82a01d99a6382fb628d95644ecbc",
+  "image_manifest_generated_this_round": false,
+  "materials": {
+    "gvisor.tar.bz2": {
+      "bytes": 73621897,
+      "sha256": "1298e8ed9c3fee900f00d2ea96ec2d79d80ed93f2175812f29b7e7da718041a3",
+      "url": "https://github.com/google/gvisor/releases/download/release-20261019.0/gvisor-x86_64.tar.bz2",
+      "version": "release-20261019.0"
+    },
+    "k3s": {
+      "bytes": 79077538,
+      "sha256": "d73847bcd3c5fccef0115b372e2f9a91f3032dc84bbf71518a4617565294d313",
+      "url": "https://github.com/k3s-io/k3s/releases/download/v1.36.5%2Bk3s1/k3s",
+      "version": "v1.36.5+k3s1"
+    }
+  },
+  "source_commit": "a3193fbc56e6105f0720c0b8040aa441632b575d",
+  "source_files": {
+    "docs/k3s-runtime-lab.md": {
+      "bytes": 11250,
+      "sha256": "e94336453593450d515af4e93ad4c3366044e1f3bf87d3b80a733060fafb0109"
+    },
+    "scripts/k3s_lab.py": {
+      "bytes": 19740,
+      "sha256": "9f84b147ef3c489559698408daae7b684713b154cda83882951c3d90c96195de"
+    },
+    "scripts/k3s_lab_init.py": {
+      "bytes": 17657,
+      "sha256": "98b4c05601b286e8cccc953fcd5a3d86b0016c1a3d7fc087f51ef313fac863bd"
+    },
+    "scripts/test_k3s_lab.py": {
+      "bytes": 10168,
+      "sha256": "d565bf75b34bead2f811df2ccfc622e39ffa6acc2cbeeaefe9b9d5d7e867a68f"
+    },
+    "scripts/test_k3s_lab_init.py": {
+      "bytes": 12814,
+      "sha256": "e27accc15cb712007be3feac8f0401fb9b1304797ba89175084caed3cb7884b6"
+    },
+    "scripts/test_runtime_lab_docker.py": {
+      "bytes": 14727,
+      "sha256": "12a1f997473976bb81150349a798efcc903909219c9db22e3c079df19e2cd122"
+    }
+  },
+  "source_parent": "feb91ba5b082da278f698e3b8debe195a62d0a9e"
+}

@@ -1,0 +1,384 @@
+{
+  "api_chain": {
+    "api_allow": {
+      "run_id": "LUWPRQ27Z56LM2G7ODXH24MFCM",
+      "state": "succeeded"
+    },
+    "api_block": {
+      "proxy_status": 403,
+      "run_id": "637VASL6OH637G46EIZS4LLFS4",
+      "state": "succeeded"
+    },
+    "host": {
+      "loadavg": "2.90 3.08 2.98 3/7862 762",
+      "nproc": 32
+    },
+    "netns_left_after_all_runs": []
+  },
+  "envoy_image": "envoyproxy/envoy:v1.40.2 [\"envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb\"]",
+  "envoy_version": "envoy  version: b2d89e0ae53916f28770771fbdd49c5c99c5c5a2/1.40.2/Clean/RELEASE/BoringSSL",
+  "host": {
+    "loadavg": "2.90 3.08 2.98 3/7601 272621",
+    "nproc": 32
+  },
+  "left_after_teardown": {
+    "lab_networks": "",
+    "project_containers": "",
+    "project_images": "",
+    "task10_containers": ""
+  },
+  "proxy_access_log": [
+    "http run=2VJSZ734HMKM3XDSOLXNKF4WUM src=10.231.45.64 method=CONNECT authority=allowed.warden.test:443 status=200 upstream=192.168.176.3:443"
+  ],
+  "runc": {
+    "block_a_run": {
+      "exit": {
+        "CgroupEmpty": true,
+        "Code": 0,
+        "DroppedLogBytes": 0,
+        "LogsTruncated": false,
+        "OOMKilled": false,
+        "PeakPids": 6,
+        "PidsMaxEvents": 0,
+        "TimedOut": false
+      },
+      "grant_removed": true,
+      "netns_removed": true,
+      "run_id": "VBPYLWVDJTIRVJCARW7U5455AA",
+      "source": "10.231.45.64"
+    },
+    "block_b_run": {
+      "exit": {
+        "CgroupEmpty": true,
+        "Code": 0,
+        "DroppedLogBytes": 0,
+        "LogsTruncated": false,
+        "OOMKilled": false,
+        "PeakPids": 6,
+        "PidsMaxEvents": 0,
+        "TimedOut": false
+      },
+      "grant_removed": true,
+      "netns_removed": true,
+      "run_id": "F7CYXGHJN6ROVF67OQNJSPFMW4",
+      "source": "10.231.45.64"
+    },
+    "block_connect_other_domain": {
+      "attempts": 0,
+      "body": "warden egress: domain not allowlisted",
+      "connect_error": "",
+      "error": "",
+      "key": "block_connect_other_domain",
+      "ok": false,
+      "polling_since": 0,
+      "proxy_status": 403,
+      "resolve_error": "",
+      "resolved": "",
+      "status": 0,
+      "succeeded_at": 0
+    },
+    "block_connect_suffix_trick": {
+      "attempts": 0,
+      "body": "warden egress: domain not allowlisted",
+      "connect_error": "",
+      "error": "",
+      "key": "block_connect_suffix_trick",
+      "ok": false,
+      "polling_since": 0,
+      "proxy_status": 403,
+      "resolve_error": "",
+      "resolved": "",
+      "status": 0,
+      "succeeded_at": 0
+    },
+    "block_direct_bypass": {
+      "attempts": 0,
+      "body": "",
+      "connect_error": "dial tcp 192.168.176.2:443: connect: network is unreachable",
+      "error": "",
+      "key": "block_direct_bypass",
+      "ok": false,
+      "polling_since": 0,
+      "proxy_status": 0,
+      "resolve_error": "lookup blocked.warden.test on [::1]:53: read udp [::1]:49941-\u003e[::1]:53: read: connection refused",
+      "resolved": "",
+      "status": 0,
+      "succeeded_at": 0
+    },
+    "block_direct_internet": {
+      "attempts": 0,
+      "body": "",
+      "connect_error": "dial tcp 198.18.0.1:443: connect: network is unreachable",
+      "error": "",
+      "key": "block_direct_internet",
+      "ok": false,
+      "polling_since": 0,
+      "proxy_status": 0,
+      "resolve_error": "lookup example.com on [::1]:53: read udp [::1]:59572-\u003e[::1]:53: read: connection refused",
+      "resolved": "",
+      "status": 0,
+      "succeeded_at": 0
+    },
+    "block_http_other_domain": {
+      "attempts": 0,
+      "body": "warden egress: domain not allowlisted",
+      "connect_error": "",
+      "error": "",
+      "key": "block_http_other_domain",
+      "ok": false,
+      "polling_since": 0,
+      "proxy_status": 0,
+      "resolve_error": "",
+      "resolved": "",
+      "status": 403,
+      "succeeded_at": 0
+    },
+    "block_run_b_no_domain": {
+      "attempts": 0,
+      "body": "warden egress: domain not allowlisted",
+      "connect_error": "",
+      "error": "",
+      "key": "block_run_b_no_domain",
+      "ok": false,
+      "polling_since": 0,
+      "proxy_status": 403,
+      "resolve_error": "",
+      "resolved": "",
+      "status": 0,
+      "succeeded_at": 0
+    },
+    "block_run_b_sni": {
+      "attempts": 0,
+      "body": "",
+      "connect_error": "",
+      "error": "read tcp 10.231.45.64:56606-\u003e10.231.45.2:10443: read: connection reset by peer",
+      "key": "block_run_b_sni",
+      "ok": false,
+      "polling_since": 0,
+      "proxy_status": 0,
+      "resolve_error": "",
+      "resolved": "",
+      "status": 0,
+      "succeeded_at": 0
+    },
+    "block_sni_other_domain": {
+      "attempts": 0,
+      "body": "",
+      "connect_error": "",
+      "error": "read tcp 10.231.45.64:56586-\u003e10.231.45.2:10443: read: connection reset by peer",
+      "key": "block_sni_other_domain",
+      "ok": false,
+      "polling_since": 0,
+      "proxy_status": 0,
+      "resolve_error": "",
+      "resolved": "",
+      "status": 0,
+      "succeeded_at": 0
+    },
+    "block_unknown_run": {
+      "exit": {
+        "CgroupEmpty": true,
+        "Code": 0,
+        "DroppedLogBytes": 0,
+        "LogsTruncated": false,
+        "OOMKilled": false,
+        "PeakPids": 6,
+        "PidsMaxEvents": 0,
+        "TimedOut": false
+      },
+      "grant_removed": true,
+      "netns_removed": true,
+      "run_id": "NLPDQHUQKCKDKNLUJJC5ZMEPMM",
+      "source": "10.231.45.200"
+    },
+    "block_unknown_source": {
+      "attempts": 0,
+      "body": "",
+      "connect_error": "",
+      "error": "proxy closed during CONNECT: read tcp 10.231.45.200:40340-\u003e10.231.45.2:3128: read: connection reset by peer",
+      "key": "block_unknown_source",
+      "ok": false,
+      "polling_since": 0,
+      "proxy_status": 0,
+      "resolve_error": "",
+      "resolved": "",
+      "status": 0,
+      "succeeded_at": 0
+    },
+    "front_sni_allowed_host_blocked": {
+      "attempts": 0,
+      "body": "origin-allowed",
+      "connect_error": "",
+      "error": "",
+      "key": "front_sni_allowed_host_blocked",
+      "ok": true,
+      "polling_since": 0,
+      "proxy_status": 0,
+      "resolve_error": "",
+      "resolved": "",
+      "status": 200,
+      "succeeded_at": 0
+    },
+    "host": {
+      "loadavg": "2.89 3.09 2.98 7/7857 600",
+      "nproc": 32
+    },
+    "netns_left_after_all_runs": [],
+    "poll": {
+      "attempts": 12,
+      "body": "",
+      "connect_error": "",
+      "error": "proxy closed during CONNECT: EOF",
+      "key": "poll",
+      "ok": false,
+      "polling_since": 0,
+      "proxy_status": 0,
+      "resolve_error": "",
+      "resolved": "",
+      "status": 0,
+      "succeeded_at": 1793211203.3627615
+    },
+    "reach_connect_allowed": {
+      "attempts": 0,
+      "body": "origin-allowed",
+      "connect_error": "",
+      "error": "",
+      "key": "reach_connect_allowed",
+      "ok": true,
+      "polling_since": 0,
+      "proxy_status": 200,
+      "resolve_error": "",
+      "resolved": "",
+      "status": 200,
+      "succeeded_at": 0
+    },
+    "reach_connect_wildcard": {
+      "attempts": 0,
+      "body": "origin-allowed",
+      "connect_error": "",
+      "error": "",
+      "key": "reach_connect_wildcard",
+      "ok": true,
+      "polling_since": 0,
+      "proxy_status": 200,
+      "resolve_error": "",
+      "resolved": "",
+      "status": 200,
+      "succeeded_at": 0
+    },
+    "reach_http_allowed": {
+      "attempts": 0,
+      "body": "origin-allowed",
+      "connect_error": "",
+      "error": "",
+      "key": "reach_http_allowed",
+      "ok": true,
+      "polling_since": 0,
+      "proxy_status": 0,
+      "resolve_error": "",
+      "resolved": "",
+      "status": 200,
+      "succeeded_at": 0
+    },
+    "reach_run": {
+      "exit": {
+        "CgroupEmpty": true,
+        "Code": 0,
+        "DroppedLogBytes": 0,
+        "LogsTruncated": false,
+        "OOMKilled": false,
+        "PeakPids": 6,
+        "PidsMaxEvents": 0,
+        "TimedOut": false
+      },
+      "grant_removed": true,
+      "netns_removed": true,
+      "run_id": "2VJSZ734HMKM3XDSOLXNKF4WUM",
+      "source": "10.231.45.64"
+    },
+    "reach_sni_allowed": {
+      "attempts": 0,
+      "body": "origin-allowed",
+      "connect_error": "",
+      "error": "",
+      "key": "reach_sni_allowed",
+      "ok": true,
+      "polling_since": 0,
+      "proxy_status": 0,
+      "resolve_error": "",
+      "resolved": "",
+      "status": 200,
+      "succeeded_at": 0
+    },
+    "reload_grant_latency": {
+      "final": {
+        "attempts": 14,
+        "body": "origin-blocked",
+        "connect_error": "",
+        "error": "",
+        "key": "poll",
+        "ok": true,
+        "polling_since": 0,
+        "proxy_status": 200,
+        "resolve_error": "",
+        "resolved": "",
+        "status": 200,
+        "succeeded_at": 1793211202.4064784
+      },
+      "latency_ms": 79,
+      "poll_attempts": 14
+    },
+    "reload_grant_latency_run": {
+      "exit": {
+        "CgroupEmpty": true,
+        "Code": 0,
+        "DroppedLogBytes": 0,
+        "LogsTruncated": false,
+        "OOMKilled": false,
+        "PeakPids": 6,
+        "PidsMaxEvents": 0,
+        "TimedOut": false
+      },
+      "grant_removed": true,
+      "netns_removed": true,
+      "run_id": "XCAVLUBEY5YQ3GR7QZMZRWTZB4",
+      "source": "10.231.45.64"
+    },
+    "reload_revoke_latency": {
+      "final": {
+        "attempts": 12,
+        "body": "",
+        "connect_error": "",
+        "error": "proxy closed during CONNECT: EOF",
+        "key": "poll",
+        "ok": false,
+        "polling_since": 0,
+        "proxy_status": 0,
+        "resolve_error": "",
+        "resolved": "",
+        "status": 0,
+        "succeeded_at": 1793211203.3627615
+      },
+      "latency_ms": 38,
+      "poll_attempts": 12
+    },
+    "reload_revoke_latency_run": {
+      "exit": {
+        "CgroupEmpty": true,
+        "Code": 0,
+        "DroppedLogBytes": 0,
+        "LogsTruncated": false,
+        "OOMKilled": false,
+        "PeakPids": 6,
+        "PidsMaxEvents": 0,
+        "TimedOut": false
+      },
+      "grant_removed": true,
+      "netns_removed": true,
+      "run_id": "B33K4AGG3JBXOUWJHECOYD6ZMA",
+      "source": "10.231.45.64"
+    }
+  },
+  "runc_lab_seconds": 20.775449474,
+  "subnet": "10.231.45.0/24"
+}

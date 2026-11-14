@@ -1,0 +1,11 @@
+2026-10-25T21:49:34.316668Z  INFO vector::app: Log level is enabled. level="info"
+2026-10-25T21:49:34.316973Z  INFO vector::app: Loading configs. paths=["detect/tests/backpressure.toml"]
+2026-10-25T21:49:34.320680Z  INFO vector::sources::file_descriptors: Capturing stdin.
+2026-10-25T21:49:34.363698Z  INFO vector::topology::running: Running healthchecks.
+2026-10-25T21:49:34.363746Z  INFO vector::topology::builder: Healthcheck disabled.
+2026-10-25T21:49:34.363746Z  INFO vector: Vector has started. debug="false" version="0.45.0" arch="x86_64" revision="063cabb 2025-02-24 14:52:02.810034614"
+2026-10-25T21:49:34.363753Z  INFO vector::topology::builder: Healthcheck passed.
+2026-10-25T21:49:34.363755Z  INFO vector::app: API is disabled, enable by setting `api.enabled` to `true` and use commands like `vector top`.
+2026-10-25T21:51:20.427666Z  INFO vector::signal: Signal received. signal="SIGTERM"
+2026-10-25T21:51:20.427807Z  INFO vector: Vector has stopped.
+2026-10-25T21:51:20.429565Z  INFO vector::topology::running: Shutting down... Waiting on running components. remaining_components="metrics_file, bp_http" time_remaining="59 seconds left"

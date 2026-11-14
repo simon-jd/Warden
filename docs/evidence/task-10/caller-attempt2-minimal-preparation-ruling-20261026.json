@@ -1,0 +1,31 @@
+{
+  "decision": "ROOT_ACCEPT_MINIMAL_PREPARATION_FOR_TASK10_CALLER_ATTEMPT2_ONLY",
+  "basis": "Existing user's ordinary local implementation/validation Goal scope, not a new human reply/coordinator quota grant; routine deterministic preflight correction without host/SDK mutation. Explicit failed attempt1 preserved; no actual repeat admitted by this ruling.",
+  "diff_path": ".superpowers/sdd/2-warden-security-plan/task10-buildid-reduction-unapplied.diff",
+  "diff_bytes": 2213,
+  "diff_sha256": "1bc3306ec1fdce4133af99396063de7c136f96d52815cc0e335453157bdd0117",
+  "diff_fullread_native": {
+    "chunk_id": "352266",
+    "wall_time_seconds": 4.1568e-05,
+    "exit_code": 0,
+    "original_token_count": 554,
+    "output": "# UNAPPLIED ONLY: do not patch consumed caller/wrapper/freeze in place.\n# Attempt1 native18b94d: INFRASTRUCTURE_FAILURE, fixed SDK tool unavailable:\n# pkg/tool/linux_amd64/buildid; no_run_directory_created=true. Root postflight\n# 386031 confirmed buildid absent; no Go/descendants/tests ran. Not semantic RED.\n# Capability reduction only: remove buildid from BOTH preflight and allowlist.\n# Targets/line numbers below refer exactly to the immutable attempted packet.\n# Any later candidate needs ROOT permission, a fresh namespace/path binding,\n# exact freeze and fresh admission. No retry, SDK mutation or execution granted.\n--- .superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/caller.py\n+++ .superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/caller.py\n@@ -121,7 +121,7 @@\n         p = ROOT + '/' + item['path']\n         if os.path.islink(p) or os.stat(p).st_size != item['bytes'] or sha(p) != item['sha256']:\n             raise RuntimeError('frozen input changed: ' + item['path'])\n-    for binary in ('bin/go', 'pkg/tool/linux_amd64/compile', 'pkg/tool/linux_amd64/link', 'pkg/tool/linux_amd64/asm', 'pkg/tool/linux_amd64/buildid'):\n+    for binary in ('bin/go', 'pkg/tool/linux_amd64/compile', 'pkg/tool/linux_amd64/link', 'pkg/tool/linux_amd64/asm'):\n         if not os.path.isfile(SDK + '/' + binary) or not os.access(SDK + '/' + binary, os.X_OK):\n             raise RuntimeError('fixed SDK tool unavailable: ' + binary)\n     # Fresh target is a one-shot marker. No retries or reuse of prior work/cache.\n--- .superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/limit_child.py\n+++ .superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/limit_child.py\n@@ -16,7 +16,7 @@\n     raise SystemExit('invalid child wrapper invocation')\n mode, program = sys.argv[1:3]\n if mode == 'tool':\n-    permitted = {SDK + '/pkg/tool/linux_amd64/' + name for name in ('compile', 'asm', 'link', 'buildid')}\n+    permitted = {SDK + '/pkg/tool/linux_amd64/' + name for name in ('compile', 'asm', 'link')}\n     if program not in permitted:\n         raise SystemExit('unexpected Go tool; stop without fallback')\n else:\n\n"
+  },
+  "correction": "Remove absent buildid from both preflight tuple and child tool whitelist; new physical paths/namespace/freeze only; all source/test/resource/timing/telemetry/lifecycle bounds unchanged",
+  "attempt1": "18b94d known1 INFRASTRUCTURE_FAILURE noRun/noGo; original1/1 SPENT immutable, not semanticRED",
+  "attempt2": "One NEW candidate preparation; needs root FULLREAD + fresh current gates before any actual attempt. Total caller2 max; any next failure STOP, no third allowance or implementation before real RED.",
+  "allocation": {
+    "prior_prep159744": 159744,
+    "unapplied_diff": 4096,
+    "current": 163840,
+    "new_candidate_max": 32768,
+    "new_cumulative_ceiling": 196608,
+    "original_cap": 262144,
+    "no_reset_or_deleted_credit": true
+  },
+  "provenance": {
+    "source": "root_agent_in_existing_user_scope",
+    "human_response": false
+  },
+  "at": "2026-10-26T09:40:50.321226+00:00"
+}

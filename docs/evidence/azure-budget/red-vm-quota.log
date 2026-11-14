@@ -1,0 +1,25 @@
+.......................F..
+======================================================================
+FAIL: test_vm_reservation_checks_six_core_region_quota (scripts.test_azure_guard.AzureGuardTests.test_vm_reservation_checks_six_core_region_quota)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 135, in test_vm_reservation_checks_six_core_region_quota
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from scripts import azure_guard as g; from datetime import datetime; g.utc_now=lambda: datetime.fromisoformat("2026-10-24T04:00:00+00:00"); g.main()
+                                                                                                                                                ~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/azure_guard.py", line 474, in main
+    reserve(read_json(args.plan), args.ledger, args.markdown)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/azure_guard.py", line 334, in reserve
+    check_quota(region, Decimal(1 if sku == 'Standard_B1s' else 2))
+    ^^^^^^^^^^^
+NameError: name 'check_quota' is not defined
+
+
+----------------------------------------------------------------------
+Ran 26 tests in 6.418s
+
+FAILED (failures=1)

@@ -1,0 +1,29 @@
+{
+  "scope": "Initial exact semantic RED source, preserved before implementation",
+  "files": [
+    {
+      "path": "detect/sigma/convert.py",
+      "bytes": 503,
+      "sha256": "4d71609c6c564edd986b683b8e7616809e49b763dc63df74430137c6b2f4c3d4",
+      "source": "\"\"\"OCSF-to-OpenSearch adapter boundary; initial semantic TDD stub.\n\nNo local event matcher belongs here. Conversion is not OpenSearch execution.\n\"\"\"\n\nfrom sigma.collection import SigmaCollection\n\n\ndef convert_rule(text: str) -> list[str]:\n    \"\"\"Parse one valid Sigma rule; query generation is intentionally pending.\"\"\"\n    collection = SigmaCollection.from_yaml(text, collect_errors=False)\n    if len(collection.rules) != 1:\n        raise ValueError(\"exactly one Sigma rule is required\")\n    return []\n"
+    },
+    {
+      "path": "detect/sigma/test_contract.py",
+      "bytes": 1582,
+      "sha256": "5faaaeca1efd723fcefdebaca3e58f585927f4c707fc5856b9cd66afc30a10da",
+      "source": "\"\"\"The first RED compares an adapter with the actual released backend.\"\"\"\n\nimport unittest\n\nfrom sigma.backends.opensearch import OpensearchLuceneBackend\nfrom sigma.collection import SigmaCollection\nfrom sigma.processing.pipeline import ProcessingItem, ProcessingPipeline\nfrom sigma.processing.transformations.values import CaseTransformation\n\nfrom detect.sigma.convert import convert_rule\n\n\nREFERENCE_RULE = \"\"\"title: Synthetic Azure Role Assignment Action\nid: 8ce13e27-4f0d-5d85-a22d-c53c1726b629\nstatus: experimental\ndescription: Synthetic conversion contract, not live detection evidence.\nauthor: Warden\ndate: 2026-10-25\nlogsource:\n  product: azure\n  service: activity\ndetection:\n  selection:\n    class_uid: 6003\n    metadata.product.name: Azure Activity Log\n    api.operation: Microsoft.Authorization/roleAssignments/write\n  condition: selection\nlevel: medium\n\"\"\"\n\n\nclass AdapterRedTest(unittest.TestCase):\n    def test_returns_backend_reference(self):\n        reference = OpensearchLuceneBackend(\n            ProcessingPipeline(\n                items=[ProcessingItem(transformation=CaseTransformation(method=\"lower\"))]\n            ),\n            collect_errors=False,\n        ).convert(SigmaCollection.from_yaml(REFERENCE_RULE, collect_errors=False))\n        self.assertEqual(len(reference), 1, \"real backend must emit one query\")\n        self.assertIsInstance(reference[0], str)\n        self.assertTrue(reference[0].strip(), \"reference query cannot be empty\")\n        self.assertEqual(convert_rule(REFERENCE_RULE), reference)\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+    },
+    {
+      "path": "detect/report/coverage.py",
+      "bytes": 540,
+      "sha256": "3f185b58797539e068bb6e95f6cb4b1f39abc01ba3ddf762e60ab6e4f6c90085",
+      "source": "\"\"\"Tag-derived reporting boundary; initial semantic TDD stub.\n\nFixtures, conversion, indexed queries and live detection are separate evidence.\n\"\"\"\n\n\ndef summarize_rules(rules: list[dict]) -> dict:\n    \"\"\"Return a nonempty report structure; actual aggregation is pending.\"\"\"\n    if not rules:\n        raise ValueError(\"coverage input cannot be empty\")\n    return {\n        \"rule_count\": 0,\n        \"tagged_rule_count\": 0,\n        \"unassigned_rule_count\": 0,\n        \"technique_count\": 0,\n        \"rules\": [],\n        \"techniques\": [],\n    }\n"
+    },
+    {
+      "path": "detect/report/test_coverage.py",
+      "bytes": 1247,
+      "sha256": "78d455e57814c298de201da8cce1f7fa3cf0a1e26be88fc8e6e70ed1c643a3b6",
+      "source": "\"\"\"Coverage RED asserts exact identities and distinguishes unassigned rules.\"\"\"\n\nimport unittest\n\nfrom detect.report.coverage import summarize_rules\n\n\nclass CoverageRedTest(unittest.TestCase):\n    def test_reports_tagged_and_unassigned_rules(self):\n        first = \"12345678-1234-5234-9234-123456789abc\"\n        second = \"87654321-4321-5321-8321-cba987654321\"\n        rules = [\n            {\"id\": second, \"title\": \"Key rotation action\", \"tags\": []},\n            {\n                \"id\": first,\n                \"title\": \"Role assignment action\",\n                \"tags\": [\"attack.persistence\", \"attack.t1098.003\"],\n            },\n        ]\n        self.assertEqual(\n            summarize_rules(rules),\n            {\n                \"rule_count\": 2,\n                \"tagged_rule_count\": 1,\n                \"unassigned_rule_count\": 1,\n                \"technique_count\": 1,\n                \"rules\": [\n                    {\"id\": first, \"title\": \"Role assignment action\", \"techniques\": [\"T1098.003\"]},\n                    {\"id\": second, \"title\": \"Key rotation action\", \"techniques\": []},\n                ],\n                \"techniques\": [{\"id\": \"T1098.003\", \"rule_ids\": [first]}],\n            },\n        )\n\n\nif __name__ == \"__main__\":\n    unittest.main()\n"
+    }
+  ]
+}

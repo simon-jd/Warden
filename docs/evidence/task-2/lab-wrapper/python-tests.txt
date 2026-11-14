@@ -1,0 +1,42 @@
+code_sha=ff6c1e2658de22586546089fd522726d0e9bb243
+command=['python3', '-B', '-m', 'unittest', 'discover', '-s', 'scripts', '-p', 'test_runtime_lab*.py']
+..local Docker daemon: postedism-ubuntu-system-selfuse test systemd
+outstanding Docker allocation charge: 0
+guard refused: aggregate resident service memory exceeds 16GB
+...guard refused: Warden project disk would exceed 12GB
+.fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+.owned image: sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+owned container: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+owned image removed: sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+owned image: sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+owned container: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+.owned image removed: sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+.guard refused: Warden project disk would exceed 12GB
+.owned container: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+..owned image removed: sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+.owned container: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+.owned container: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+.owned container: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+.owned container: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+.................
+----------------------------------------------------------------------
+Ran 33 tests in 0.941s
+
+OK
+
+exit_code=0

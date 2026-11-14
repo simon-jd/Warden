@@ -1,0 +1,15 @@
+{
+  "kind": "Task15_CODE_continuous_allocated_ledger_no_reset",
+  "cap": 524288,
+  "author_phase_allocated": 94208,
+  "private_bundle_current": 159744,
+  "canonical_evidence_before_ledger": 53248,
+  "coord_status_positive_growth_reserve": 16384,
+  "ledger_file_and_dir_reserve": 8192,
+  "deletion_credit": 0,
+  "publication_cap_separate": 1048576,
+  "publication_used_at_this_point": 0,
+  "fix_round": "2/5_NEEDS_FIXES",
+  "source_applied": false,
+  "cumulative_CODE_charge_upper_bound": 237568
+}

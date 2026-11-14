@@ -1,0 +1,38 @@
+{
+  "source": "772136927eb6eb9576e473eef5f7b716b80696f6",
+  "scope": "Controller actual prepare and single RO-only smoke; no VM/RW remount/guest",
+  "files": {
+    "controller-run-mode-command.py": {
+      "sha256": "075b990411ab396e6b2bbdd13b6828b220ea9bbd15f5c79c5406e68449784e31",
+      "bytes": 1968
+    },
+    "mount-smoke-first.json": {
+      "sha256": "743a3bfd7c4196d2bf2dd17f6e6841162a9aa7f7421a142bec4857f60c8bcb2b",
+      "bytes": 673
+    },
+    "mount-smoke-first.log": {
+      "sha256": "33b72e7c355b3038771b42a5ff972c6b30f0ee083ddb0418a6cc07be0c406492",
+      "bytes": 5415
+    },
+    "package-verification-command.py": {
+      "sha256": "271c169be22db4f63f321754fcf14400034bbd74358fb37d6631cc43e43acdb9",
+      "bytes": 3531
+    },
+    "package-verification-mount-smoke.json": {
+      "sha256": "d777bf97502e6252d2a2839605dcc5e4ce974c5abdba37ed5036045a635cddd3",
+      "bytes": 5506
+    },
+    "prepare-first.json": {
+      "sha256": "763cc3dee44d14b6dfd1e4961b52d4199d3d392b424ede6b93e9d077491c74a7",
+      "bytes": 635
+    },
+    "prepare-first.log": {
+      "sha256": "4b3850c664524a2f7bf030cbc53251641b224ba6c07f57630d8751d9afbf9e0e",
+      "bytes": 14031
+    },
+    "ro-smoke.md": {
+      "sha256": "65496eb6ad974833ceb9f033a5e4bd4a565f26b650f0ed99d9b6d277d071488d",
+      "bytes": 2644
+    }
+  }
+}

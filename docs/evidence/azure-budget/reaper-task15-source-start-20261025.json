@@ -1,0 +1,21 @@
+{
+  "request": {
+    "cmd": "bash scripts/azure_reaper.sh",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "sandbox_permissions": "require_escalated",
+    "justification": "继续原Goal的新回合开始，按AZURE-BUDGET.md走原正常审批执行固定reaper，仅本项目TTL资源，保护RG不触及。",
+    "yield_time_ms": 1000,
+    "max_output_tokens": 2000
+  },
+  "result": {
+    "chunk_id": "67e876",
+    "wall_time_seconds": 0.718568852,
+    "exit_code": 0,
+    "original_token_count": 37,
+    "output": "{\"at\": \"2026-10-26T02:43:26Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+  },
+  "polls": []
+}

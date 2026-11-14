@@ -1,0 +1,19 @@
+# GREEN, the online detector and its lab hooks, after the implementation (2026-11-14T03:24:02Z)
+# One test was wrong, not the code: '--pid' as a prefix also matched --pids-limit; it now matches the flags exactly.
+$ taskset -c 0-7,16-31 python3 -E -s -B -m unittest detect.falco.test_collector detect.falco.test_recorder detect.falco.test_bindings detect.falco.test_detector detect.falco.test_benign
+Ran 64 tests in 4.057s
+OK
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -s scripts -t scripts -p "test_k3s_gvisor_lab.py"
+Ran 36 tests in 34.054s
+OK
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -s scripts -t scripts -p "test_runtime_lab_docker.py"
+Ran 24 tests in 0.019s
+OK
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -s scripts -t scripts -p "test_makefile.py"
+Ran 9 tests in 0.156s
+OK
+$ taskset -c 0-7,16-31 python3 -E -s -B -m unittest detect.report.test_alert_import detect.report.test_observation
+Ran 12 tests in 0.001s
+OK
+$ shellcheck -S warning scripts/k3s_gvisor_lab.sh scripts/restore-tools.sh
+shellcheck: clean

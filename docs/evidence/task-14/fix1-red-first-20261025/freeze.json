@@ -1,0 +1,65 @@
+{
+  "base": "955ef5da9d0044ab7ec1d8d4db31c8cd38286175",
+  "status": "INERT_RED_PREPARATION_OLD_CREATED_CONDITION_RETAINED",
+  "source": {
+    "respond/actions.go": {
+      "bytes": 6655,
+      "sha256": "7224f114e7b9ef5aa926e43299a54fe01f9e90da329b6cd49d953a28bbbf2b02"
+    },
+    "respond/executor.go": {
+      "bytes": 7915,
+      "sha256": "36a055922fcdb82464f058cac481beecdc8b38b4a89dd3f7cce261127cd06244"
+    },
+    "respond/ledger.go": {
+      "bytes": 7044,
+      "sha256": "a2b470c3d8178b064643b9b5acceba269063b8fc5817e95e247a8b45428e1d59"
+    },
+    "respond/executor_test.go": {
+      "bytes": 19211,
+      "sha256": "aadc94db405e2a970737b19ecfddb0eb790f84be3fd59aaa97fd312d8b3bee0e"
+    },
+    "respond/ledger_test.go": {
+      "bytes": 15193,
+      "sha256": "4720fec3b18c3f4602632084f6a016c7b2ffcb131026d0828e0d72356e70290e"
+    },
+    "respond/README.md": {
+      "bytes": 6179,
+      "sha256": "bd8ed3778a133c78f870d3993339c2427dfcbb176ad3b17b232a1fc36f46e2af"
+    },
+    "respond/playbooks/suspend-tenant.yaml": {
+      "bytes": 179,
+      "sha256": "8cdfbdfdfe5bac22452006f0af89b22e9f50a05a32a454e081db114b6402acfa"
+    }
+  },
+  "module_inputs": {
+    "go.mod": {
+      "bytes": 2483,
+      "sha256": "bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa"
+    },
+    "go.sum": {
+      "bytes": 11340,
+      "sha256": "cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0"
+    }
+  },
+  "changed_source": [
+    "respond/executor.go",
+    "respond/ledger.go",
+    "respond/ledger_test.go"
+  ],
+  "tests": {
+    "TestJournalCreationDurabilityBeforeClient": [
+      "failure",
+      "success"
+    ]
+  },
+  "expected": {
+    "top_level_tests": 1,
+    "named_subtests": 2,
+    "reported_cases": 3,
+    "PASS": 0,
+    "FAIL": 3,
+    "SKIP": 0,
+    "fix1_red_required_markers": 2
+  },
+  "scope": "Original Task14 continuous fix1/5, I1 initialization durability only. Actual create-before-lock barrier; no old81 execution, root-created old reports/raw unchanged. Two private initialization callbacks, no exported Config/global hook. Failure must block intent/client; success must observe real parent Fsync before client. created-only condition intentionally still present for RED. Barrier release and creator reap bounded3s each; setup/cleanup failure rejects semantic RED, blocking kernel I/O remains uninterruptible."
+}

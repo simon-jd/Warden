@@ -1,0 +1,19 @@
+# RED: TestWaitAfterKillReturnsAtOnce, TestWaitAfterReapReturnsAtOnce, TestKillDuringWaitEndsIt, TestWaitEndsWhenTheJobFailsWithoutAPod against gvisor.go at d0f0637
+# 2026-11-10T20:43:16-08:00
+=== RUN   TestKillDuringWaitEndsIt
+    gvisor_test.go:606: wait during kill: {Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:0 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:false} API server: HTTP 404: {"code":404,"kind":"Status","reason":"NotFound"}
+--- FAIL: TestKillDuringWaitEndsIt (0.01s)
+=== RUN   TestWaitEndsWhenTheJobFailsWithoutAPod
+    gvisor_test.go:623: Wait(context.Background()) still running after 2s
+--- FAIL: TestWaitEndsWhenTheJobFailsWithoutAPod (2.01s)
+=== RUN   TestWaitAfterReapReturnsAtOnce
+    gvisor_test.go:571: Wait(context.Background()) still running after 2s
+--- FAIL: TestWaitAfterReapReturnsAtOnce (2.01s)
+=== RUN   TestWaitAfterKillReturnsAtOnce
+    gvisor_test.go:545: Wait(context.Background()) still running after 2s
+--- FAIL: TestWaitAfterKillReturnsAtOnce (2.01s)
+FAIL
+FAIL	warden/runtimes/gvisor	6.045s
+FAIL
+make: *** [Makefile:63: test-go] Error 1
+exit: 2

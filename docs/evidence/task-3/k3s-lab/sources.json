@@ -1,0 +1,133 @@
+{
+  "retrieved_at": "2026-10-24T06:29:49.440818+00:00",
+  "sources": [
+    {
+      "title": "k3s release",
+      "url": "https://api.github.com/repos/k3s-io/k3s/releases/tags/v1.36.5%2Bk3s1",
+      "bytes": 32160,
+      "sha256": "5872ac7be1ed75126d3e948a0c0a8b27fdb17bcc2d847125d41ea482ef3049cd",
+      "tag": "v1.36.5+k3s1",
+      "published_at": "2026-09-30T16:10:03Z",
+      "assets": [
+        {
+          "name": "k3s",
+          "bytes": 79077538,
+          "digest": "sha256:d73847bcd3c5fccef0115b372e2f9a91f3032dc84bbf71518a4617565294d313",
+          "url": "https://github.com/k3s-io/k3s/releases/download/v1.36.5%2Bk3s1/k3s"
+        },
+        {
+          "name": "sha256sum-amd64.txt",
+          "bytes": 359,
+          "digest": "sha256:ee5fa48dfc2f3d3e521170bfb52c5dd44365ac734c23857a664c27109ae2ce9a",
+          "url": "https://github.com/k3s-io/k3s/releases/download/v1.36.5%2Bk3s1/sha256sum-amd64.txt"
+        }
+      ]
+    },
+    {
+      "title": "gvisor release",
+      "url": "https://api.github.com/repos/google/gvisor/releases/tags/release-20261019.0",
+      "bytes": 20463,
+      "sha256": "9aaaea53d26c5f60bc0f9a99ef2e9b6240dee92fa639cbb517ebbde7baadf710",
+      "tag": "release-20261019.0",
+      "published_at": "2026-10-22T18:36:52Z",
+      "assets": [
+        {
+          "name": "gvisor-x86_64.tar.bz2",
+          "bytes": 73621897,
+          "digest": "sha256:1298e8ed9c3fee900f00d2ea96ec2d79d80ed93f2175812f29b7e7da718041a3",
+          "url": "https://github.com/google/gvisor/releases/download/release-20261019.0/gvisor-x86_64.tar.bz2"
+        },
+        {
+          "name": "SHA256SUMS",
+          "bytes": 356,
+          "digest": "sha256:43a82eabc13ccbab6adf99166a5244a7125dca4cc1f39924523571be3acd3efb",
+          "url": "https://github.com/google/gvisor/releases/download/release-20261019.0/SHA256SUMS"
+        }
+      ]
+    },
+    {
+      "title": "k3s dependencies",
+      "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5+k3s1/go.mod",
+      "bytes": 29811,
+      "sha256": "72bb94b9186b0cbc0fca5f892e9c0bcde01d2d856f8c92a043d9259c29d34aa1"
+    },
+    {
+      "title": "k3s inner entrypoint",
+      "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5+k3s1/cmd/server/main.go",
+      "bytes": 2591,
+      "sha256": "294fe5e4156c8645417618c8f1e152cab0c79e8a5a72ba54d8338ac170f666c4"
+    },
+    {
+      "title": "k3s wrapper extraction",
+      "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5+k3s1/cmd/k3s/main.go",
+      "bytes": 13677,
+      "sha256": "b470dd7bde947ad6c33245c3eb39add904afbd91c2dfba93c621eb329293cdff"
+    },
+    {
+      "title": "k3s syssetup",
+      "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5+k3s1/pkg/agent/syssetup/setup.go",
+      "bytes": 4411,
+      "sha256": "bad1b1ce6c77ef869bf9abacaa91b4ef86af663778de78f9af887eed0fb14c97"
+    },
+    {
+      "title": "k3s agent",
+      "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5+k3s1/pkg/agent/run.go",
+      "bytes": 20011,
+      "sha256": "f2ea7a906fbc5ec7ab7b89b8793b72cbc59278e0dedcb8509c497c800a942c81"
+    },
+    {
+      "title": "k3s kubelet configuration",
+      "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5+k3s1/pkg/daemons/agent/agent.go",
+      "bytes": 9374,
+      "sha256": "11da917d4ef2923cf34112d548d4845ae173b98ea273ceeb5486b553185c81d6"
+    },
+    {
+      "title": "k3s CNI selection",
+      "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5+k3s1/pkg/executor/embed/embed.go",
+      "bytes": 14100,
+      "sha256": "2027bc7e7e55aedafcee3b314f4edc5597c3fa51077b6f1da37a6703e7ee7974"
+    },
+    {
+      "title": "k3s containerd template",
+      "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5+k3s1/pkg/agent/templates/templates.go",
+      "bytes": 13973,
+      "sha256": "63e8139adfc8d3f1bc1cb23581769bb7ad1a0e6b14a266f8a000e4ba42eca9f1"
+    },
+    {
+      "title": "kubelet protected kernel defaults",
+      "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/pkg/kubelet/cm/container_manager_linux.go",
+      "bytes": 40926,
+      "sha256": "96041eda883775d2a083fe128903c6718427fb5fa9a3e08bc8fd516d4da14c3a"
+    },
+    {
+      "title": "kubelet sysctl values",
+      "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/staging/src/k8s.io/component-helpers/node/util/sysctl/sysctl.go",
+      "bytes": 4679,
+      "sha256": "dddfe9be89d84eae0e936c0717c6c135f8194a46e4fa896f071ff8918f7fb292"
+    },
+    {
+      "title": "containerd actual runtime config",
+      "url": "https://raw.githubusercontent.com/k3s-io/containerd/v2.3.4-k3s1.36/internal/cri/config/config.go",
+      "bytes": 41050,
+      "sha256": "49f58f3d3b7fb7016f22ac9a88dd7f8a21dbea7a7e418cb3e4988dbe5fb741d9"
+    },
+    {
+      "title": "gvisor flags",
+      "url": "https://raw.githubusercontent.com/google/gvisor/release-20261019.0/runsc/config/flags.go",
+      "bytes": 32103,
+      "sha256": "9ee0c8a1a1d9ccae89601ea247f8aa901610941dbce8b88cf497c39024f603df"
+    },
+    {
+      "title": "gvisor shim version",
+      "url": "https://raw.githubusercontent.com/google/gvisor/release-20261019.0/shim/v1/cli/cli.go",
+      "bytes": 1084,
+      "sha256": "0545e05cf68e1e4baa96de356f2e910834e2a4a4d353acdf89b39331bf88f443"
+    },
+    {
+      "title": "gvisor shim options",
+      "url": "https://raw.githubusercontent.com/google/gvisor/release-20261019.0/pkg/shim/v1/runsc/options.go",
+      "bytes": 2868,
+      "sha256": "15d653393f290302664e9363749071ebf2057fde0d114a48a7fc219eaa2f5c30"
+    }
+  ]
+}

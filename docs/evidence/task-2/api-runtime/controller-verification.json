@@ -1,0 +1,14 @@
+{
+  "checked_utc": "2026-10-24T05:26:03.751275+00:00",
+  "implementation_sha": "09eed7b622bc70081eb751ea42dd0c81bd5c1395",
+  "evidence_commit": "a894232",
+  "hash_binding_checks": {
+    "source_sha256": 17,
+    "evidence_sha256": 36
+  },
+  "report_copies_match": true,
+  "independent_code_review": "in_progress",
+  "capability_bearing_api_live": "not_executed",
+  "azure_committed_estimate_usd": "0.00",
+  "goal_status": "active"
+}

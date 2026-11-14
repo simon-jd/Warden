@@ -1,0 +1,45 @@
+before: 2026-11-14T01:22:40Z (before this round's first Falco start)
+after:  2026-11-14T03:50:25Z (after make detect-purge and the lab purge)
+modules: 214 before, 214 after
+--- module diff (comm -3):
+--- sysctl diff:
+46c46
+< fs.dentry-state = 21141386	20293097	45	0	5426032	0
+---
+> fs.dentry-state = 21235736	20390457	45	0	5576746	0
+54c54
+< fs.file-nr = 25295	0	9223372036854775807
+---
+> fs.file-nr = 24053	0	9223372036854775807
+58,59c58,59
+< fs.inode-nr = 14952407	3824888
+< fs.inode-state = 14952407	3824888	0	0	0	0	0
+---
+> fs.inode-nr = 14946717	3842275
+> fs.inode-state = 14946717	3842275	0	0	0	0	0
+82,83c82,83
+< fs.quota.cache_hits = 2464858
+< fs.quota.drops = 2415686
+---
+> fs.quota.cache_hits = 2489109
+> fs.quota.drops = 2439938
+85c85
+< fs.quota.lookups = 2464866
+---
+> fs.quota.lookups = 2489117
+87c87
+< fs.quota.syncs = 37130
+---
+> fs.quota.syncs = 38124
+164c164
+< kernel.ns_last_pid = 1323541
+---
+> kernel.ns_last_pid = 2160547
+196c196
+< kernel.pty.nr = 7
+---
+> kernel.pty.nr = 5
+869c869
+< net.netfilter.nf_conntrack_count = 1090
+---
+> net.netfilter.nf_conntrack_count = 735

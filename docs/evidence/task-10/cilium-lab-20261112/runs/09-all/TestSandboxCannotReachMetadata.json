@@ -1,0 +1,483 @@
+{
+  "after deleting the policy": {
+    "imds_paths": [
+      "169.254.169.254/i-ff3e2419299a",
+      "metadata.google.internal/h-ff3e2419299a",
+      "metadata.google.internal/p-ff3e2419299a"
+    ],
+    "md-a": {
+      "dns": {
+        "key": "dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "198.18.18.20"
+        ],
+        "ms": 0.259
+      },
+      "imds-ip": {
+        "key": "imds-ip",
+        "ok": true,
+        "status": 200,
+        "body": "warden-lab-imds",
+        "ms": 1.313
+      },
+      "imds-name": {
+        "key": "imds-name",
+        "ok": true,
+        "status": 200,
+        "body": "warden-lab-imds",
+        "resolved": "169.254.169.254",
+        "ms": 1.909
+      },
+      "imds-proxy": {
+        "key": "imds-proxy",
+        "ok": true,
+        "status": 200,
+        "body": "warden-lab-imds",
+        "ms": 1.329
+      },
+      "origin": {
+        "key": "origin",
+        "ok": true,
+        "status": 200,
+        "body": "origin-allowed",
+        "ms": 0.771
+      },
+      "proxy-allowed": {
+        "key": "proxy-allowed",
+        "ok": true,
+        "status": 200,
+        "body": "origin-allowed",
+        "ms": 0.889
+      }
+    },
+    "nonce": "ff3e2419299a",
+    "origin_allowed_paths": [
+      "198.18.18.20/o-ff3e2419299a",
+      "allowed.warden.test/a-ff3e2419299a"
+    ]
+  },
+  "checks": [
+    {
+      "name": "without the policy: origin log",
+      "want": "the /o- and /a- requests",
+      "got": "198.18.18.20/o-c159d580f52f allowed.warden.test/a-c159d580f52f",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-a origin (control)",
+      "want": "reached",
+      "got": "ok status=200 body=origin-allowed",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-a dns (control)",
+      "want": "reached",
+      "got": "ok answers=198.18.18.20 rcode=0",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-a proxy-allowed (control)",
+      "want": "reached",
+      "got": "ok status=200 body=origin-allowed",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-a imds-ip (positive control)",
+      "want": "the metadata answer",
+      "got": "ok status=200 body=warden-lab-imds",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-a imds-name (positive control)",
+      "want": "the metadata answer",
+      "got": "ok status=200 body=warden-lab-imds",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-a imds-proxy (positive control)",
+      "want": "the metadata answer",
+      "got": "ok status=200 body=warden-lab-imds",
+      "pass": true
+    },
+    {
+      "name": "without the policy: metadata log",
+      "want": "the /i-, /h- and /p- requests",
+      "got": "169.254.169.254/i-c159d580f52f metadata.google.internal/h-c159d580f52f metadata.google.internal/p-c159d580f52f",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: origin log",
+      "want": "the /o- and /a- requests",
+      "got": "198.18.18.20/o-bcac4bb70000 allowed.warden.test/a-bcac4bb70000",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-a origin (control)",
+      "want": "reached",
+      "got": "ok status=200 body=origin-allowed",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-a dns (control)",
+      "want": "reached",
+      "got": "ok answers=198.18.18.20 rcode=0",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-a proxy-allowed (control)",
+      "want": "reached",
+      "got": "ok status=200 body=origin-allowed",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: metadata log",
+      "want": "no request",
+      "got": "",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-a imds-ip",
+      "want": "no connection",
+      "got": "connect_error=dial tcp 169.254.169.254:80: i/o timeout",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-a imds-name",
+      "want": "no connection",
+      "got": "connect_error=dial tcp 169.254.169.254:80: i/o timeout",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-a imds-name resolves",
+      "want": "169.254.169.254 (the address is what is denied)",
+      "got": "169.254.169.254 ",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-a imds-proxy",
+      "want": "the proxy cannot connect (no metadata answer)",
+      "got": "error=read tcp 10.42.0.223:35713-\u003e10.43.96.14:3128: i/o timeout",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: origin log",
+      "want": "the /o- and /a- requests",
+      "got": "198.18.18.20/o-ff3e2419299a allowed.warden.test/a-ff3e2419299a",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-a origin (control)",
+      "want": "reached",
+      "got": "ok status=200 body=origin-allowed",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-a dns (control)",
+      "want": "reached",
+      "got": "ok answers=198.18.18.20 rcode=0",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-a proxy-allowed (control)",
+      "want": "reached",
+      "got": "ok status=200 body=origin-allowed",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-a imds-ip (positive control)",
+      "want": "the metadata answer",
+      "got": "ok status=200 body=warden-lab-imds",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-a imds-name (positive control)",
+      "want": "the metadata answer",
+      "got": "ok status=200 body=warden-lab-imds",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-a imds-proxy (positive control)",
+      "want": "the metadata answer",
+      "got": "ok status=200 body=warden-lab-imds",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: metadata log",
+      "want": "the /i-, /h- and /p- requests",
+      "got": "169.254.169.254/i-ff3e2419299a metadata.google.internal/h-ff3e2419299a metadata.google.internal/p-ff3e2419299a",
+      "pass": true
+    },
+    {
+      "name": "with default-deny.yaml, egress-proxy.yaml and deny-metadata.yaml: md-a imds-ip",
+      "want": "no connection",
+      "got": "connect_error=dial tcp 169.254.169.254:80: i/o timeout",
+      "pass": true
+    },
+    {
+      "name": "with default-deny.yaml, egress-proxy.yaml and deny-metadata.yaml: md-a origin",
+      "want": "no connection",
+      "got": "connect_error=dial tcp 198.18.18.20:80: i/o timeout",
+      "pass": true
+    },
+    {
+      "name": "with default-deny.yaml, egress-proxy.yaml and deny-metadata.yaml: md-a imds-name",
+      "want": "name not resolved (only the proxy's name is)",
+      "got": "resolve_error=lookup metadata.google.internal on 10.43.0.10:53: server misbehaving",
+      "pass": true
+    },
+    {
+      "name": "with default-deny.yaml, egress-proxy.yaml and deny-metadata.yaml: md-a dns",
+      "want": "refused",
+      "got": "rcode=5",
+      "pass": true
+    },
+    {
+      "name": "with default-deny.yaml, egress-proxy.yaml and deny-metadata.yaml: md-a imds-proxy",
+      "want": "the proxy cannot connect (no metadata answer)",
+      "got": "error=read tcp 10.42.0.223:29205-\u003e10.43.96.14:3128: i/o timeout",
+      "pass": true
+    },
+    {
+      "name": "with default-deny.yaml, egress-proxy.yaml and deny-metadata.yaml: md-a proxy-allowed (control)",
+      "want": "reached through the proxy",
+      "got": "ok status=200 body=origin-allowed",
+      "pass": true
+    },
+    {
+      "name": "with default-deny.yaml, egress-proxy.yaml and deny-metadata.yaml: metadata log",
+      "want": "no request",
+      "got": "",
+      "pass": true
+    },
+    {
+      "name": "with default-deny.yaml, egress-proxy.yaml and deny-metadata.yaml: origin log",
+      "want": "only the proxied /a- request",
+      "got": "allowed.warden.test/a-0f0e3655cb04",
+      "pass": true
+    }
+  ],
+  "endpoint_md-a": {
+    "id": 1997,
+    "identity": 58129,
+    "policy_enabled": "egress",
+    "policy_revision": 9
+  },
+  "endpoint_warden-egress": {
+    "id": 1873,
+    "identity": 5352,
+    "policy_enabled": "egress",
+    "policy_revision": 9
+  },
+  "loadavg_end": "3.26 4.61 6.29 3/6699 2243530",
+  "loadavg_start": "4.01 4.85 6.41 4/6685 2239643",
+  "nproc": 24,
+  "pods": {
+    "md-a": {
+      "grant": "metadata.google.internal allowed.warden.test",
+      "ip": "10.42.0.223",
+      "runtime_handler": "runsc-netstack",
+      "sandbox": "true"
+    },
+    "warden-egress": {
+      "ip": "10.42.0.159"
+    }
+  },
+  "policies_all": [
+    {
+      "file": "policies/cilium/default-deny.yaml",
+      "names": [
+        "warden-sandbox-default-deny"
+      ],
+      "realized_after_ms": 418.3,
+      "revision": 12
+    },
+    {
+      "file": "policies/cilium/egress-proxy.yaml",
+      "names": [
+        "warden-sandbox-to-egress-proxy",
+        "warden-egress-proxy"
+      ],
+      "realized_after_ms": 408.8,
+      "revision": 14
+    },
+    {
+      "file": "policies/cilium/deny-metadata.yaml",
+      "names": [
+        "warden-sandbox-deny-metadata",
+        "warden-egress-proxy-deny-metadata"
+      ],
+      "realized_after_ms": 389.9,
+      "revision": 16
+    }
+  ],
+  "policy": {
+    "file": "policies/cilium/deny-metadata.yaml",
+    "names": [
+      "warden-sandbox-deny-metadata",
+      "warden-egress-proxy-deny-metadata"
+    ],
+    "realized_after_ms": 416.4,
+    "revision": 9
+  },
+  "proxy_image": "sha256:0ca959846659403e7273526abfef31ec2e910c3a1735fcf73323eaa5cc80ed5e",
+  "started": "2026-11-13T16:33:08Z",
+  "with default-deny.yaml, egress-proxy.yaml and deny-metadata.yaml": {
+    "imds_paths": null,
+    "md-a": {
+      "dns": {
+        "key": "dns",
+        "ok": false,
+        "rcode": 5,
+        "ms": 0.515
+      },
+      "imds-ip": {
+        "key": "imds-ip",
+        "ok": false,
+        "connect_error": "dial tcp 169.254.169.254:80: i/o timeout",
+        "ms": 3000.533
+      },
+      "imds-name": {
+        "key": "imds-name",
+        "ok": false,
+        "resolve_error": "lookup metadata.google.internal on 10.43.0.10:53: server misbehaving",
+        "ms": 2.495
+      },
+      "imds-proxy": {
+        "key": "imds-proxy",
+        "ok": false,
+        "error": "read tcp 10.42.0.223:29205-\u003e10.43.96.14:3128: i/o timeout",
+        "ms": 3001.564
+      },
+      "origin": {
+        "key": "origin",
+        "ok": false,
+        "connect_error": "dial tcp 198.18.18.20:80: i/o timeout",
+        "ms": 3000.812
+      },
+      "proxy-allowed": {
+        "key": "proxy-allowed",
+        "ok": true,
+        "status": 200,
+        "body": "origin-allowed",
+        "ms": 2.144
+      }
+    },
+    "nonce": "0f0e3655cb04",
+    "origin_allowed_paths": [
+      "allowed.warden.test/a-0f0e3655cb04"
+    ]
+  },
+  "with deny-metadata.yaml": {
+    "imds_paths": null,
+    "md-a": {
+      "dns": {
+        "key": "dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "198.18.18.20"
+        ],
+        "ms": 0.336
+      },
+      "imds-ip": {
+        "key": "imds-ip",
+        "ok": false,
+        "connect_error": "dial tcp 169.254.169.254:80: i/o timeout",
+        "ms": 3000.771
+      },
+      "imds-name": {
+        "key": "imds-name",
+        "ok": false,
+        "resolved": "169.254.169.254",
+        "connect_error": "dial tcp 169.254.169.254:80: i/o timeout",
+        "ms": 3003.319
+      },
+      "imds-proxy": {
+        "key": "imds-proxy",
+        "ok": false,
+        "error": "read tcp 10.42.0.223:35713-\u003e10.43.96.14:3128: i/o timeout",
+        "ms": 3001.549
+      },
+      "origin": {
+        "key": "origin",
+        "ok": true,
+        "status": 200,
+        "body": "origin-allowed",
+        "ms": 1.308
+      },
+      "proxy-allowed": {
+        "key": "proxy-allowed",
+        "ok": true,
+        "status": 200,
+        "body": "origin-allowed",
+        "ms": 1.089
+      }
+    },
+    "nonce": "bcac4bb70000",
+    "origin_allowed_paths": [
+      "198.18.18.20/o-bcac4bb70000",
+      "allowed.warden.test/a-bcac4bb70000"
+    ]
+  },
+  "without the policy": {
+    "imds_paths": [
+      "169.254.169.254/i-c159d580f52f",
+      "metadata.google.internal/h-c159d580f52f",
+      "metadata.google.internal/p-c159d580f52f"
+    ],
+    "md-a": {
+      "dns": {
+        "key": "dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "198.18.18.20"
+        ],
+        "ms": 0.252
+      },
+      "imds-ip": {
+        "key": "imds-ip",
+        "ok": true,
+        "status": 200,
+        "body": "warden-lab-imds",
+        "ms": 0.975
+      },
+      "imds-name": {
+        "key": "imds-name",
+        "ok": true,
+        "status": 200,
+        "body": "warden-lab-imds",
+        "resolved": "169.254.169.254",
+        "ms": 1.591
+      },
+      "imds-proxy": {
+        "key": "imds-proxy",
+        "ok": true,
+        "status": 200,
+        "body": "warden-lab-imds",
+        "ms": 1.849
+      },
+      "origin": {
+        "key": "origin",
+        "ok": true,
+        "status": 200,
+        "body": "origin-allowed",
+        "ms": 0.82
+      },
+      "proxy-allowed": {
+        "key": "proxy-allowed",
+        "ok": true,
+        "status": 200,
+        "body": "origin-allowed",
+        "ms": 0.947
+      }
+    },
+    "nonce": "c159d580f52f",
+    "origin_allowed_paths": [
+      "198.18.18.20/o-c159d580f52f",
+      "allowed.warden.test/a-c159d580f52f"
+    ]
+  }
+}

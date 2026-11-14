@@ -1,0 +1,9 @@
+# 原Task14冻结本地覆盖准入
+
+rootaed64e全文读取4068B freeze（SHA2b133c7d8d6ee6c835d396e7978be3e3b93ca553b1d40a865f26d2ced41ae0e6）与8129B caller（SHA4d2ecc69675d7f3cf2707aff3a99a1b7b89638167e4805fab4c583fc0a63e4d8）。七产品58092B与格式化后原件一致，模块两文件未改。覆盖21顶层＋60命名子例＝81报告结果，loop断言不另计case。准一次本次受影响单元覆盖，不是已验Task12/Task11或旧Task16/Task6的重跑。
+
+body7279B（SHA8a9339181d958c2a5e1367491e93cdc924cbf80a9fa418d33f5be17efd3a4043）仅沿用已实际WNOWAIT/绝对deadline结构、更换新namespace与冻结输入和全本组件统计。外层86+4总90、内部setup8/work70/signals82/reap84/status85，CPU60/AS4GiB/FSIZE256MiB逐进程，stdout+stderr64KiB；GOMEMLIMIT512MiB协作目标。旧UNKNOWN9GB+新2GB预留，完整新增磁盘1GiB+Q5GB不变。无法确认状态/组终态、资源/超时/失败即STOP，原件保留不自动重试。
+
+root323aa2为具体外部副作用风险只检查这五个新Go文件的import/init、外部进程/网络/文件系统调用与测试fixture入口：无exec/net/http/自启服务；测试JournalPath来自本次t.TempDir，文件模式/链接/FIFO/截断只对这些自有fixture；生产ledger逐级只读open目录，锁/写入固定配置journal。该准入不是独立代码审查或真实认证/处置证明；独立审查仍待验证后。
+
+root先同native既有guard fresh additional6073741824/service11000000000/download0 known0；body再核对UID1000、MemAvailable≥2GB、全新.cache/task14-cover-20261025-a不存在、9输入hash和freeze不变，才调用既有离线Go1.26.10。成功要求Go0/stderr0，PASS集合精确81且无重复、FAIL/SKIP0，post组不存在及输入未改。root实际读取原件后才可授权SOURCE/EVIDENCE提交；现在没有提交或真实动作/云/服务/网络许可。

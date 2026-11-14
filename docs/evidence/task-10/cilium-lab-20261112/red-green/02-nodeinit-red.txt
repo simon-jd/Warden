@@ -1,0 +1,21 @@
+# RED: runtimes/gvisor/lab/nodeinit tests before the command exists
+# head 91a4429, 2026-11-12T19:39:18-08:00
+# git status --short:
+#   ?? docs/evidence/task-10/cilium-lab-20261112/red-green/02-nodeinit-red.txt
+#   ?? runtimes/gvisor/lab/nodeinit/
+# go test ./runtimes/gvisor/lab/nodeinit
+# warden/runtimes/gvisor/lab/nodeinit [warden/runtimes/gvisor/lab/nodeinit.test]
+runtimes/gvisor/lab/nodeinit/main_test.go:14:13: undefined: step
+runtimes/gvisor/lab/nodeinit/main_test.go:23:30: undefined: step
+runtimes/gvisor/lab/nodeinit/main_test.go:46:12: undefined: setup
+runtimes/gvisor/lab/nodeinit/main_test.go:49:12: undefined: step
+runtimes/gvisor/lab/nodeinit/main_test.go:61:20: undefined: readOnly
+runtimes/gvisor/lab/nodeinit/main_test.go:64:10: undefined: setup
+runtimes/gvisor/lab/nodeinit/main_test.go:73:13: undefined: writable
+runtimes/gvisor/lab/nodeinit/main_test.go:74:12: undefined: setup
+runtimes/gvisor/lab/nodeinit/main_test.go:82:12: undefined: setup
+runtimes/gvisor/lab/nodeinit/main_test.go:91:9: undefined: argv
+runtimes/gvisor/lab/nodeinit/main_test.go:91:9: too many errors
+FAIL	warden/runtimes/gvisor/lab/nodeinit [build failed]
+FAIL
+exit=1

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "scripts/test_identity_cache.py"
+  ],
+  "source_commit": "7be15fa29aafc7cf84dcd488dbf8aadc22ae2655",
+  "exit_code": 0,
+  "duration_seconds": 0.3527073860168457,
+  "source_unchanged": true,
+  "source_files": 139,
+  "classification": "final finite private-filesystem fixture coverage after fixture portability correction",
+  "fixture_only": true
+}

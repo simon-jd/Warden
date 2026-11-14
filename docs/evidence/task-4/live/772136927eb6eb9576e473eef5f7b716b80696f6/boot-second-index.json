@@ -1,0 +1,30 @@
+{
+  "source": "772136927eb6eb9576e473eef5f7b716b80696f6",
+  "scope": "Second controller boot failed actual TUN negative probe before VMM; no weakening or full retirement claim",
+  "files": {
+    "package-verification-boot.json": {
+      "bytes": 5499,
+      "sha256": "39b15705b5c5cc6713690f1879173166595d2990d49f307b0e6debb804ae2c63"
+    },
+    "boot-second.json": {
+      "bytes": 659,
+      "sha256": "d716fff4249e51f0fbc3012ff8469c74ce381c4706896c67c139ffbb6cb9c848"
+    },
+    "boot-second.log": {
+      "bytes": 6502,
+      "sha256": "9b7ad3989a36fc091901035ed128aa177d3e3e0bd0d4b351aabde6f49bbf353a"
+    },
+    "boot-second-postflight.json": {
+      "bytes": 1963,
+      "sha256": "1eefa3a7be824795c0d6a40265f342269432ca01205b3c05037bf64c6f2c1d60"
+    },
+    "boot-second-pre-vmm-release.json": {
+      "bytes": 1756,
+      "sha256": "ab13bbc43d94b0f5c79255759edc0b9467912e0fc3685e820fb5f9a33b3e863c"
+    },
+    "boot-second.md": {
+      "bytes": 3031,
+      "sha256": "a8325f86bbb52cbe73f352c458c3904bb80612eeb82ba4662f9352b225470b6b"
+    }
+  }
+}

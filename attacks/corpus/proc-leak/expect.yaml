@@ -1,0 +1,3 @@
+id: proc-leak
+technique: T1082
+success_signal: WARDEN_proc_leak

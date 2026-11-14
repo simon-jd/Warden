@@ -1,0 +1,31 @@
+{
+  "scope": "fresh preliminary Task11 local budget checkpoint only; not material admission",
+  "events": [
+    {
+      "kind": "exec_command",
+      "request": {
+        "cmd": "ulimit -t 20\nulimit -v 262144\nulimit -f 2048\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 7366195648 --service-memory-bytes 13000000000 --download-bytes 0",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "yield_time_ms": 1000,
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "2d8c11",
+        "wall_time_seconds": 0.428930548,
+        "exit_code": 0,
+        "original_token_count": 56,
+        "output": "{\"additional_bytes\": \"7366195648\", \"at\": \"2026-10-25T20:49:56Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 262943563776, \"project_allocated_bytes\": 4272308224, \"service_memory_bytes\": \"13000000000\"}\n"
+      }
+    }
+  ],
+  "reserved_Q_bytes": 5000000000,
+  "new_peak_bytes": 2366195648,
+  "project_plus_Q_plus_peak_bytes": 11638503872,
+  "project_limit_bytes": 12000000000,
+  "resident_reservation_bytes": 13000000000,
+  "download_bytes_already_in_peak": true,
+  "actual_material_executed": false
+}

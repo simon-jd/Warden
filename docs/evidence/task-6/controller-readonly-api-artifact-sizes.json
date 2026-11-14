@@ -1,0 +1,569 @@
+{
+  "artifact_count": 66,
+  "artifacts": {
+    "docs/evidence/task-6/continuation-controller-operations-execution-plan.md": {
+      "allocated_bytes": 40960,
+      "bytes": 40886,
+      "sha256": "9fc37f2f9803ed5b5492356f527b9abf6ae2e21b52267981c52a799c7fee405c"
+    },
+    "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": {
+      "allocated_bytes": 12288,
+      "bytes": 8352,
+      "sha256": "b53163ed24cd8e31cc76dfb25de6b59efc8da9e39f33eb50a0b780ad27e8f4c8"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-cover-01/baseline.json": {
+      "allocated_bytes": 20480,
+      "bytes": 16787,
+      "sha256": "b7edb85b79d36e7a53eea0b9ee361a1f7a9f5e0a0b41bc9e875f3cd13ae6627a"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-cover-01/changed-source/scripts/identity_cache_control.py": {
+      "allocated_bytes": 8192,
+      "bytes": 4374,
+      "sha256": "8c3af61861d94b489dd39d6679d39d93f9f14636cb8dbae88f965e888a4c6e64"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-cover-01/changed-source/scripts/identity_cache_observe.py": {
+      "allocated_bytes": 73728,
+      "bytes": 70500,
+      "sha256": "244bef82a1672d88054e177bf1bf2d66d2aa982a72d86051ac749fc797a322e3"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-cover-01/changed-source/scripts/test_identity_cache_control.py": {
+      "allocated_bytes": 90112,
+      "bytes": 89284,
+      "sha256": "53da6fda0aa2c195fef3412f97866f4d80ed17c40b08222524fed181868a67d2"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-cover-01/intent.json": {
+      "allocated_bytes": 4096,
+      "bytes": 933,
+      "sha256": "9aa999929d7f02b261cde5d0b42a4dfb69c1c84575bb0de7094385e870912b4d"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-cover-01/outer-tool-result.json": {
+      "allocated_bytes": 4096,
+      "bytes": 1534,
+      "sha256": "9c787e2ce796c7d38bc88594290e2f959b358543c219b531ec627f6f4b30e7dc"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-cover-01/output.txt": {
+      "allocated_bytes": 24576,
+      "bytes": 24505,
+      "sha256": "451cbf6ecc02406224d54e7d5bbbaec57ab83c0fc687cb7ab5e1f77f09c7bb1f"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-cover-01/post-controller.json": {
+      "allocated_bytes": 4096,
+      "bytes": 302,
+      "sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-cover-01/post-source.json": {
+      "allocated_bytes": 16384,
+      "bytes": 15999,
+      "sha256": "36a6e24e177180be1f9ff339d88c3cf59e8abdeaebbb172e3c165577ebbbe265"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-cover-01/pre-controller.json": {
+      "allocated_bytes": 4096,
+      "bytes": 302,
+      "sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-cover-01/pre-source.json": {
+      "allocated_bytes": 16384,
+      "bytes": 15999,
+      "sha256": "36a6e24e177180be1f9ff339d88c3cf59e8abdeaebbb172e3c165577ebbbe265"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-cover-01/receipt.json": {
+      "allocated_bytes": 4096,
+      "bytes": 1243,
+      "sha256": "c51e0d19404abef24fa90d0399bd3839791a934b854587556444b7792ee7c18a"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-cover-01/run.py": {
+      "allocated_bytes": 8192,
+      "bytes": 4438,
+      "sha256": "5a04770435d538328aa8a5533f3de3ba6b89fd81902ada8623cd1aef7af11770"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-01/baseline.json": {
+      "allocated_bytes": 20480,
+      "bytes": 16787,
+      "sha256": "c4f3dbaa84360e1ff8894de7860d13a7ef50cf87cd92a831ab839858fe8f0fbd"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-01/changed-source/scripts/identity_cache_control.py": {
+      "allocated_bytes": 8192,
+      "bytes": 4374,
+      "sha256": "8c3af61861d94b489dd39d6679d39d93f9f14636cb8dbae88f965e888a4c6e64"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-01/changed-source/scripts/identity_cache_observe.py": {
+      "allocated_bytes": 73728,
+      "bytes": 70500,
+      "sha256": "244bef82a1672d88054e177bf1bf2d66d2aa982a72d86051ac749fc797a322e3"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-01/changed-source/scripts/test_identity_cache_control.py": {
+      "allocated_bytes": 90112,
+      "bytes": 88087,
+      "sha256": "c564316d62d651b9732ba151e60ca0549153505ecfb3ea10cc8adae9fa235db7"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-01/intent.json": {
+      "allocated_bytes": 4096,
+      "bytes": 931,
+      "sha256": "046a8ea6b7d68745b92e276f3ada6b321bd7c3092622f9acdc936b6264760db9"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-01/outer-tool-result.json": {
+      "allocated_bytes": 4096,
+      "bytes": 1533,
+      "sha256": "b9f2c43278127db1ed38235290b87f3ae7cd9b944186f9cf458d3b3af43b2c06"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-01/output.txt": {
+      "allocated_bytes": 20480,
+      "bytes": 17046,
+      "sha256": "4da3ba601354043d0fcecb0c44228ae713281aaf97a771fa378729c0cb62232e"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-01/post-controller.json": {
+      "allocated_bytes": 4096,
+      "bytes": 302,
+      "sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-01/post-source.json": {
+      "allocated_bytes": 16384,
+      "bytes": 15999,
+      "sha256": "373fd96b312697fcfb06c7fb7c98b4f2ce26aa71cb8648778f80b95380685851"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-01/pre-controller.json": {
+      "allocated_bytes": 4096,
+      "bytes": 302,
+      "sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-01/pre-source.json": {
+      "allocated_bytes": 16384,
+      "bytes": 15999,
+      "sha256": "373fd96b312697fcfb06c7fb7c98b4f2ce26aa71cb8648778f80b95380685851"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-01/receipt.json": {
+      "allocated_bytes": 4096,
+      "bytes": 1242,
+      "sha256": "3ac5a08dcfe885e7989f49716015b98150ec3ba44716b3e9999f9639a0334bce"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-01/run.py": {
+      "allocated_bytes": 8192,
+      "bytes": 4379,
+      "sha256": "42cb4a67e604cc20d5156aff3c9fd98c4f4ed8ff69c7ab040699d8a9c8396291"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-02/baseline.json": {
+      "allocated_bytes": 20480,
+      "bytes": 16787,
+      "sha256": "c4f3dbaa84360e1ff8894de7860d13a7ef50cf87cd92a831ab839858fe8f0fbd"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-02/changed-source/scripts/identity_cache_control.py": {
+      "allocated_bytes": 8192,
+      "bytes": 4374,
+      "sha256": "8c3af61861d94b489dd39d6679d39d93f9f14636cb8dbae88f965e888a4c6e64"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-02/changed-source/scripts/identity_cache_observe.py": {
+      "allocated_bytes": 73728,
+      "bytes": 70500,
+      "sha256": "244bef82a1672d88054e177bf1bf2d66d2aa982a72d86051ac749fc797a322e3"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-02/changed-source/scripts/test_identity_cache_control.py": {
+      "allocated_bytes": 90112,
+      "bytes": 89284,
+      "sha256": "53da6fda0aa2c195fef3412f97866f4d80ed17c40b08222524fed181868a67d2"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-02/intent.json": {
+      "allocated_bytes": 4096,
+      "bytes": 923,
+      "sha256": "19c9e97bc562ef01c57ff2c2beac464687f00b284f01eb50acfbcccc239d4303"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-02/outer-tool-result.json": {
+      "allocated_bytes": 4096,
+      "bytes": 1367,
+      "sha256": "7fbe0c4b0ebeede503ed5109003cd14b19cd18312bf1ed6f5afd3e542cd2f21f"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-02/output.txt": {
+      "allocated_bytes": 4096,
+      "bytes": 404,
+      "sha256": "38a248d08bea9f682c86feae4ed943541a4fae93cb197214dcbf33f514454a6e"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-02/post-controller.json": {
+      "allocated_bytes": 4096,
+      "bytes": 302,
+      "sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-02/post-source.json": {
+      "allocated_bytes": 16384,
+      "bytes": 15999,
+      "sha256": "36a6e24e177180be1f9ff339d88c3cf59e8abdeaebbb172e3c165577ebbbe265"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-02/pre-controller.json": {
+      "allocated_bytes": 4096,
+      "bytes": 302,
+      "sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-02/pre-source.json": {
+      "allocated_bytes": 16384,
+      "bytes": 15999,
+      "sha256": "36a6e24e177180be1f9ff339d88c3cf59e8abdeaebbb172e3c165577ebbbe265"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-02/receipt.json": {
+      "allocated_bytes": 4096,
+      "bytes": 1232,
+      "sha256": "96d247942f42c180b853059ccf0e353bcb15194f6e343926835a519d6348776d"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-green-02/run.py": {
+      "allocated_bytes": 8192,
+      "bytes": 4530,
+      "sha256": "a2577f9b10e8a0229618806548dc07927872c42eff739723fd788e26d252725d"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-plan-prefix.json": {
+      "allocated_bytes": 4096,
+      "bytes": 265,
+      "sha256": "32b5efdc971e5a0a0e0d31a5faef9acff082089a5e9ecec6fbb70ac83ad58e3b"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-01/baseline.json": {
+      "allocated_bytes": 20480,
+      "bytes": 16787,
+      "sha256": "c4f3dbaa84360e1ff8894de7860d13a7ef50cf87cd92a831ab839858fe8f0fbd"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-01/changed-source/scripts/test_identity_cache_control.py": {
+      "allocated_bytes": 73728,
+      "bytes": 71414,
+      "sha256": "9e3157725536d97d9f6302bb899aa06555698749b14a0c831be5f0fd763224c1"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-01/intent.json": {
+      "allocated_bytes": 4096,
+      "bytes": 823,
+      "sha256": "35af793b0f76495d89401ebc527466f4fe0c36a7cbc848227d86ece186b11093"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-01/outer-tool-result.json": {
+      "allocated_bytes": 8192,
+      "bytes": 6529,
+      "sha256": "5ce90526472ea10dc7dc709c26859b8b345285c457ac250c44f2d356d4e9e840"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-01/output.txt": {
+      "allocated_bytes": 4096,
+      "bytes": 143,
+      "sha256": "4d29a8ede371e63b7d8667502c14b0864b973beb90112e2b3f646c6c0f6b6fc8"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-01/pre-controller.json": {
+      "allocated_bytes": 4096,
+      "bytes": 302,
+      "sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-01/pre-source.json": {
+      "allocated_bytes": 16384,
+      "bytes": 15999,
+      "sha256": "040d4a69ed472efd703a4bc6258259a97c044ad64a057ef46edfcbad99b42f18"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-01/run.py": {
+      "allocated_bytes": 8192,
+      "bytes": 4364,
+      "sha256": "ce2a455e28ea8f1c5048ae17ba44fcbb5e2d0c1f08af4f33944143bf146c5dbb"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-02/baseline.json": {
+      "allocated_bytes": 20480,
+      "bytes": 16787,
+      "sha256": "c4f3dbaa84360e1ff8894de7860d13a7ef50cf87cd92a831ab839858fe8f0fbd"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-02/changed-source/scripts/test_identity_cache_control.py": {
+      "allocated_bytes": 73728,
+      "bytes": 71467,
+      "sha256": "886886654e3b346605a1583ae23e0b0cb4daf12d606fd9bdc9e8e89799ca392a"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-02/intent.json": {
+      "allocated_bytes": 4096,
+      "bytes": 823,
+      "sha256": "2da99c6b38bc8b4011eaa8422a09787b3387cfd7cbb578df0f7e6528c00cd86a"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-02/outer-tool-result.json": {
+      "allocated_bytes": 4096,
+      "bytes": 1274,
+      "sha256": "8e6ad4e38922e52843acab957f51b76f8b6946675c2a15c0bb8d890951db6658"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-02/output.txt": {
+      "allocated_bytes": 8192,
+      "bytes": 5000,
+      "sha256": "603a6af4792bfe01715d07d8ff290255a17b2661f8838d4b5423451af76ca4a5"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-02/post-controller.json": {
+      "allocated_bytes": 4096,
+      "bytes": 302,
+      "sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-02/post-source.json": {
+      "allocated_bytes": 16384,
+      "bytes": 15999,
+      "sha256": "bb2819446b8d16452b6b5bd506958bba22db44c7b7bef526a642f8c0a36224a3"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-02/pre-controller.json": {
+      "allocated_bytes": 4096,
+      "bytes": 302,
+      "sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-02/pre-source.json": {
+      "allocated_bytes": 16384,
+      "bytes": 15999,
+      "sha256": "bb2819446b8d16452b6b5bd506958bba22db44c7b7bef526a642f8c0a36224a3"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-02/receipt.json": {
+      "allocated_bytes": 4096,
+      "bytes": 1134,
+      "sha256": "c71387bea6828b79e9fbc9c01af22d81171439d0c204e247d921ecb10f70b316"
+    },
+    "docs/evidence/task-6/controller-readonly-api-source-red-02/run.py": {
+      "allocated_bytes": 8192,
+      "bytes": 4364,
+      "sha256": "ce2a455e28ea8f1c5048ae17ba44fcbb5e2d0c1f08af4f33944143bf146c5dbb"
+    },
+    "docs/evidence/task-6/controller-readonly-api-substage-report.md": {
+      "allocated_bytes": 16384,
+      "bytes": 13591,
+      "sha256": "1271c7df465f1ddadc90a6defb3de12dcd7b08fef767c00026b1ce118ba5a6c8"
+    },
+    "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+      "allocated_bytes": 28672,
+      "bytes": 25824,
+      "sha256": "e3c14350de6891dbfedae27c9c499ad95a982b13e2bae1d567f25c4b001fd971"
+    },
+    "scripts/identity_cache_control.py": {
+      "allocated_bytes": 8192,
+      "bytes": 4374,
+      "sha256": "8c3af61861d94b489dd39d6679d39d93f9f14636cb8dbae88f965e888a4c6e64"
+    },
+    "scripts/identity_cache_observe.py": {
+      "allocated_bytes": 73728,
+      "bytes": 70500,
+      "sha256": "244bef82a1672d88054e177bf1bf2d66d2aa982a72d86051ac749fc797a322e3"
+    },
+    "scripts/test_identity_cache_control.py": {
+      "allocated_bytes": 90112,
+      "bytes": 89284,
+      "sha256": "53da6fda0aa2c195fef3412f97866f4d80ed17c40b08222524fed181868a67d2"
+    }
+  },
+  "canonical_changed": [
+    "scripts/identity_cache_control.py",
+    "scripts/identity_cache_observe.py",
+    "scripts/test_identity_cache_control.py"
+  ],
+  "canonical_count": 150,
+  "controller2_equal_dispatch": true,
+  "controller_files": {
+    "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": {
+      "allocated_bytes": 12288,
+      "bytes": 8352,
+      "sha256": "b53163ed24cd8e31cc76dfb25de6b59efc8da9e39f33eb50a0b780ad27e8f4c8"
+    },
+    "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+      "allocated_bytes": 28672,
+      "bytes": 25824,
+      "sha256": "e3c14350de6891dbfedae27c9c499ad95a982b13e2bae1d567f25c4b001fd971"
+    }
+  },
+  "current_source_equals_frozen_cover": true,
+  "dispatch_base": "4e197bd899a768449bb5b19dace8b5e88b9b713d",
+  "incremental_logical_bytes_vs_dispatch_excluding_index": 1010094,
+  "index_self_excluded": true,
+  "old_sizes_from_dispatch_git_blobs": {
+    "docs/evidence/task-6/continuation-controller-operations-execution-plan.md": 33536,
+    "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": 8352,
+    "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": 25824,
+    "scripts/identity_cache_control.py": 4374,
+    "scripts/identity_cache_observe.py": 60592,
+    "scripts/test_identity_cache_control.py": 65800
+  },
+  "other147_equal_dispatch": true,
+  "package_allocated_bytes": 1388544,
+  "package_logical_bytes": 1208572,
+  "plan_prefix": {
+    "path": "docs/evidence/task-6/continuation-controller-operations-execution-plan.md",
+    "prefix_bytes": 33536,
+    "prefix_sha256": "d68ca5aa148be8727915598b4559cad4a3a55b7274018cbf1a8321a920e0d2f9",
+    "source_commit": "b2b348205bdb3fbd4573ab04237c1a9e166371e2"
+  },
+  "preserved_prior_seven_run_file_count": 101,
+  "preserved_prior_seven_run_sha256": {
+    "docs/evidence/task-6/controller-invoker-source-cover-01/baseline.json": "34ded18ee4da7916328891b22b06aae366199b803508e56acbeb1f741d2dda02",
+    "docs/evidence/task-6/controller-invoker-source-cover-01/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": "b53163ed24cd8e31cc76dfb25de6b59efc8da9e39f33eb50a0b780ad27e8f4c8",
+    "docs/evidence/task-6/controller-invoker-source-cover-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": "e3c14350de6891dbfedae27c9c499ad95a982b13e2bae1d567f25c4b001fd971",
+    "docs/evidence/task-6/controller-invoker-source-cover-01/changed-source/scripts/identity_cache_control.py": "9715beb32d23cd1da9ae0f27fad96b096d44cbbab84ff7966ed2624358bde177",
+    "docs/evidence/task-6/controller-invoker-source-cover-01/changed-source/scripts/identity_cache_observe.py": "5926ffbb8ac467983ecc8fbaf3f712831a86cb088da62fe4c4e5f9aff83247aa",
+    "docs/evidence/task-6/controller-invoker-source-cover-01/changed-source/scripts/test_identity_cache_control.py": "8d5dd6878c850865c8feef4b5d0cc9e08ab8eb0d39ae538cbf5fc85221b27595",
+    "docs/evidence/task-6/controller-invoker-source-cover-01/intent.json": "e59c40fa2f0646f8bcd121ebd8fb2cfcb8a03e872baad3e52a851d40cdef4a1e",
+    "docs/evidence/task-6/controller-invoker-source-cover-01/outer-tool-result.json": "18842dfd220abf52441401b39b6d3aae9b5f43397ae18b64ab8cbaeceb919e16",
+    "docs/evidence/task-6/controller-invoker-source-cover-01/output.txt": "6c66cca35e475210787ed6570ab9e7d342e77e426d123e94c60217bb795fb1f3",
+    "docs/evidence/task-6/controller-invoker-source-cover-01/post-controller.json": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53",
+    "docs/evidence/task-6/controller-invoker-source-cover-01/post-source.json": "003c3f304faf13b7e80985118ca00211d9eb4e78389a6f6832582c6356f9d980",
+    "docs/evidence/task-6/controller-invoker-source-cover-01/pre-controller.json": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53",
+    "docs/evidence/task-6/controller-invoker-source-cover-01/pre-source.json": "003c3f304faf13b7e80985118ca00211d9eb4e78389a6f6832582c6356f9d980",
+    "docs/evidence/task-6/controller-invoker-source-cover-01/receipt.json": "d72e2ef9bbfb7e2b5a054e0cc34a22248024dae168513ba29f9fee7385230842",
+    "docs/evidence/task-6/controller-invoker-source-cover-01/run.py": "6e64316b32fe1d40846e8d1d4199a861d829c60be73f9f01d08f9dab940201e9",
+    "docs/evidence/task-6/controller-invoker-source-green-01/baseline.json": "158ec910361d146c450c02f9f9ff0b5662cec5aa4034ee522c54ff873d5adbd8",
+    "docs/evidence/task-6/controller-invoker-source-green-01/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": "b53163ed24cd8e31cc76dfb25de6b59efc8da9e39f33eb50a0b780ad27e8f4c8",
+    "docs/evidence/task-6/controller-invoker-source-green-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": "1c99d683616d5408d0232e1a97ff5f6f0b9a3c7f8e84c27cabf9002ad3fb6491",
+    "docs/evidence/task-6/controller-invoker-source-green-01/changed-source/scripts/identity_cache_control.py": "db9e6d203f8073cb24fcac9f7dfa0fb314d5b88340b6f6976eb0a15fc3b6ca07",
+    "docs/evidence/task-6/controller-invoker-source-green-01/changed-source/scripts/identity_cache_observe.py": "d92ed91e276d5b4f08bfb9f2635486b29e93b703060aa48f6b9a71116864989e",
+    "docs/evidence/task-6/controller-invoker-source-green-01/changed-source/scripts/test_identity_cache_control.py": "e967bbb6e9cb14680dcff81cf498082f3c79cc39e40100ddb693d7dbe94fa572",
+    "docs/evidence/task-6/controller-invoker-source-green-01/intent.json": "2c991f8bb6a878b380507011bba32dcae73de086072fedbd1e021d52ff1a7615",
+    "docs/evidence/task-6/controller-invoker-source-green-01/outer-tool-result.json": "290f613e9b530a952f666c5ecd51b7ccc15da0efe78f42d5be7d7b033e0e9303",
+    "docs/evidence/task-6/controller-invoker-source-green-01/output.txt": "adf7d2467a1c49841ab36c9a2d3d1d0f4426d9566a3fcb9b59986d888767070c",
+    "docs/evidence/task-6/controller-invoker-source-green-01/post-controller.json": "6a3f6ba9191d8bc148a341aaa38195eb1783bc3ea6024a077414635117597dd1",
+    "docs/evidence/task-6/controller-invoker-source-green-01/post-source.json": "b4badfce440055f429851098cb62c8d8b8b57382b634b82d024f227e6e46307c",
+    "docs/evidence/task-6/controller-invoker-source-green-01/pre-controller.json": "6a3f6ba9191d8bc148a341aaa38195eb1783bc3ea6024a077414635117597dd1",
+    "docs/evidence/task-6/controller-invoker-source-green-01/pre-source.json": "b4badfce440055f429851098cb62c8d8b8b57382b634b82d024f227e6e46307c",
+    "docs/evidence/task-6/controller-invoker-source-green-01/receipt.json": "648060114fdd26b70fc5de52b28ba6dc2984f0023c705b5a02c74c79f5b732eb",
+    "docs/evidence/task-6/controller-invoker-source-green-01/run.py": "6e64316b32fe1d40846e8d1d4199a861d829c60be73f9f01d08f9dab940201e9",
+    "docs/evidence/task-6/controller-invoker-source-green-02/baseline.json": "158ec910361d146c450c02f9f9ff0b5662cec5aa4034ee522c54ff873d5adbd8",
+    "docs/evidence/task-6/controller-invoker-source-green-02/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": "b53163ed24cd8e31cc76dfb25de6b59efc8da9e39f33eb50a0b780ad27e8f4c8",
+    "docs/evidence/task-6/controller-invoker-source-green-02/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": "788204c9869484ebe82d61a155ca5049fd88f09885057688f2c6db3c7e1d2f42",
+    "docs/evidence/task-6/controller-invoker-source-green-02/changed-source/scripts/identity_cache_control.py": "5e411903ec9a9b5cc31a2e67513b8ef637130362e5fd5770942c0bacf728b395",
+    "docs/evidence/task-6/controller-invoker-source-green-02/changed-source/scripts/identity_cache_observe.py": "18b82fe3519eadf37ce6e2d3eee76abf1b2da2a868849f5ca7c32e75017d2196",
+    "docs/evidence/task-6/controller-invoker-source-green-02/changed-source/scripts/test_identity_cache_control.py": "0fc8c43ebd78db07c81ce949645d7f845bdbd5f0e26f50eb3385c1d9aa260b20",
+    "docs/evidence/task-6/controller-invoker-source-green-02/intent.json": "c083e157243d959858fdc07b36d5c2734eb3765171bb10d0e5a07f38cb60c9a5",
+    "docs/evidence/task-6/controller-invoker-source-green-02/outer-tool-result.json": "2b34433da7df13320f1bf3b1bf601d1a9203587761321db6bc8c928712a2eb5f",
+    "docs/evidence/task-6/controller-invoker-source-green-02/output.txt": "4a513d459416f93956ddbde374159796fb8c2aebcfdbcae56512ef9c1d911c43",
+    "docs/evidence/task-6/controller-invoker-source-green-02/post-controller.json": "bc1eff6a89a4635c9134db4a7dc20f3bf9910d4c1db5d66f45b2217aaed1f940",
+    "docs/evidence/task-6/controller-invoker-source-green-02/post-source.json": "af73098d500023338efbf06903e8d2848c088b4f691aae6d584a1bcb211f814d",
+    "docs/evidence/task-6/controller-invoker-source-green-02/pre-controller.json": "bc1eff6a89a4635c9134db4a7dc20f3bf9910d4c1db5d66f45b2217aaed1f940",
+    "docs/evidence/task-6/controller-invoker-source-green-02/pre-source.json": "af73098d500023338efbf06903e8d2848c088b4f691aae6d584a1bcb211f814d",
+    "docs/evidence/task-6/controller-invoker-source-green-02/receipt.json": "f9a63540bc85b48c41d8e1e9d8b3139b099b0757754c9c5c73143505505172b9",
+    "docs/evidence/task-6/controller-invoker-source-green-02/run.py": "6e64316b32fe1d40846e8d1d4199a861d829c60be73f9f01d08f9dab940201e9",
+    "docs/evidence/task-6/controller-invoker-source-green-03/baseline.json": "158ec910361d146c450c02f9f9ff0b5662cec5aa4034ee522c54ff873d5adbd8",
+    "docs/evidence/task-6/controller-invoker-source-green-03/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": "b53163ed24cd8e31cc76dfb25de6b59efc8da9e39f33eb50a0b780ad27e8f4c8",
+    "docs/evidence/task-6/controller-invoker-source-green-03/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": "788204c9869484ebe82d61a155ca5049fd88f09885057688f2c6db3c7e1d2f42",
+    "docs/evidence/task-6/controller-invoker-source-green-03/changed-source/scripts/identity_cache_control.py": "9715beb32d23cd1da9ae0f27fad96b096d44cbbab84ff7966ed2624358bde177",
+    "docs/evidence/task-6/controller-invoker-source-green-03/changed-source/scripts/identity_cache_observe.py": "5926ffbb8ac467983ecc8fbaf3f712831a86cb088da62fe4c4e5f9aff83247aa",
+    "docs/evidence/task-6/controller-invoker-source-green-03/changed-source/scripts/test_identity_cache_control.py": "8d5dd6878c850865c8feef4b5d0cc9e08ab8eb0d39ae538cbf5fc85221b27595",
+    "docs/evidence/task-6/controller-invoker-source-green-03/intent.json": "b26f0be0c9a1a0b5bb9bb5e06339d1592fc169693487bc646ebcd62cc42b22eb",
+    "docs/evidence/task-6/controller-invoker-source-green-03/outer-tool-result.json": "5a8b0d833d07e0a1ab6b7199e84ab0d743157d98c8249154c0559bf9fe8538ed",
+    "docs/evidence/task-6/controller-invoker-source-green-03/output.txt": "7e2a803ca937dff05245b53b41624ae4f4cc4be2669bc6ca906b5b19caa5876d",
+    "docs/evidence/task-6/controller-invoker-source-green-03/post-controller.json": "bc1eff6a89a4635c9134db4a7dc20f3bf9910d4c1db5d66f45b2217aaed1f940",
+    "docs/evidence/task-6/controller-invoker-source-green-03/post-source.json": "003c3f304faf13b7e80985118ca00211d9eb4e78389a6f6832582c6356f9d980",
+    "docs/evidence/task-6/controller-invoker-source-green-03/pre-controller.json": "bc1eff6a89a4635c9134db4a7dc20f3bf9910d4c1db5d66f45b2217aaed1f940",
+    "docs/evidence/task-6/controller-invoker-source-green-03/pre-source.json": "003c3f304faf13b7e80985118ca00211d9eb4e78389a6f6832582c6356f9d980",
+    "docs/evidence/task-6/controller-invoker-source-green-03/receipt.json": "c3b2637dfdb539e060783b6c19f5f78cf9fc9ecd15612666c068306e6ae45dee",
+    "docs/evidence/task-6/controller-invoker-source-green-03/run.py": "6e64316b32fe1d40846e8d1d4199a861d829c60be73f9f01d08f9dab940201e9",
+    "docs/evidence/task-6/controller-invoker-source-green-04/baseline.json": "158ec910361d146c450c02f9f9ff0b5662cec5aa4034ee522c54ff873d5adbd8",
+    "docs/evidence/task-6/controller-invoker-source-green-04/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": "b53163ed24cd8e31cc76dfb25de6b59efc8da9e39f33eb50a0b780ad27e8f4c8",
+    "docs/evidence/task-6/controller-invoker-source-green-04/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": "e3c14350de6891dbfedae27c9c499ad95a982b13e2bae1d567f25c4b001fd971",
+    "docs/evidence/task-6/controller-invoker-source-green-04/changed-source/scripts/identity_cache_control.py": "9715beb32d23cd1da9ae0f27fad96b096d44cbbab84ff7966ed2624358bde177",
+    "docs/evidence/task-6/controller-invoker-source-green-04/changed-source/scripts/identity_cache_observe.py": "5926ffbb8ac467983ecc8fbaf3f712831a86cb088da62fe4c4e5f9aff83247aa",
+    "docs/evidence/task-6/controller-invoker-source-green-04/changed-source/scripts/test_identity_cache_control.py": "8d5dd6878c850865c8feef4b5d0cc9e08ab8eb0d39ae538cbf5fc85221b27595",
+    "docs/evidence/task-6/controller-invoker-source-green-04/intent.json": "2c83325e0431783c655cb629727825f73abc50f941766ff791f029d31cddd8aa",
+    "docs/evidence/task-6/controller-invoker-source-green-04/outer-tool-result.json": "da7e5447726a6c6af624281218857f70be25ccd3b6e040cd4c9a687d8840a918",
+    "docs/evidence/task-6/controller-invoker-source-green-04/output.txt": "8f9c8a07597b25ccb089f7ce20b688160793ddaf2c18b401df5cf900540a1acf",
+    "docs/evidence/task-6/controller-invoker-source-green-04/post-controller.json": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53",
+    "docs/evidence/task-6/controller-invoker-source-green-04/post-source.json": "003c3f304faf13b7e80985118ca00211d9eb4e78389a6f6832582c6356f9d980",
+    "docs/evidence/task-6/controller-invoker-source-green-04/pre-controller.json": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53",
+    "docs/evidence/task-6/controller-invoker-source-green-04/pre-source.json": "003c3f304faf13b7e80985118ca00211d9eb4e78389a6f6832582c6356f9d980",
+    "docs/evidence/task-6/controller-invoker-source-green-04/receipt.json": "603a7b2a8c9fce3cc2ff8fa82ed05759cff534c4d78d23d04894bf2e5ccc5869",
+    "docs/evidence/task-6/controller-invoker-source-green-04/run.py": "c05d9423126eb7d64f5ca3e771d1ad609b0250a6476d9a4a4eff99de5b1bb3e4",
+    "docs/evidence/task-6/controller-invoker-source-red-01/baseline.json": "158ec910361d146c450c02f9f9ff0b5662cec5aa4034ee522c54ff873d5adbd8",
+    "docs/evidence/task-6/controller-invoker-source-red-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": "b33a4ce28f83aac1177cd74739ea1d750b5e1aa94f70657e0b6fd85a0bf5bff2",
+    "docs/evidence/task-6/controller-invoker-source-red-01/intent.json": "ee0c5873c3534133d58b35d184435443509cdbc059524a44417257b1a23db057",
+    "docs/evidence/task-6/controller-invoker-source-red-01/outer-tool-result.json": "37bb78df58fb7784a3ffe87f05dee5f6b1accb6ee0fa2b1a6aee198e8270d4e5",
+    "docs/evidence/task-6/controller-invoker-source-red-01/output.txt": "08a67cc6e4e8bf514667455a4c8684dfb141b412bd0b03339ae1e53aff1421c6",
+    "docs/evidence/task-6/controller-invoker-source-red-01/post-controller.json": "eda38034b9e208470011294c7e279918b6e4ba472b57b7bb03647041550cffdf",
+    "docs/evidence/task-6/controller-invoker-source-red-01/post-source.json": "b68db0f454f631bd6ec257499ec1f4db41d0a9d30fba0f280b13ecbf29c58924",
+    "docs/evidence/task-6/controller-invoker-source-red-01/pre-controller.json": "eda38034b9e208470011294c7e279918b6e4ba472b57b7bb03647041550cffdf",
+    "docs/evidence/task-6/controller-invoker-source-red-01/pre-source.json": "b68db0f454f631bd6ec257499ec1f4db41d0a9d30fba0f280b13ecbf29c58924",
+    "docs/evidence/task-6/controller-invoker-source-red-01/receipt.json": "691f377ea97c4eef47f82fd5feca2e39c29e2a5f6ab261d7e74a90bd61f5a994",
+    "docs/evidence/task-6/controller-invoker-source-red-01/run.py": "2bae93149bd5f2e348178f49925841fc83d7ff09df3336f9ec5a1155ea4450ba",
+    "docs/evidence/task-6/controller-invoker-source-red-02/baseline.json": "158ec910361d146c450c02f9f9ff0b5662cec5aa4034ee522c54ff873d5adbd8",
+    "docs/evidence/task-6/controller-invoker-source-red-02/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": "b53163ed24cd8e31cc76dfb25de6b59efc8da9e39f33eb50a0b780ad27e8f4c8",
+    "docs/evidence/task-6/controller-invoker-source-red-02/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": "788204c9869484ebe82d61a155ca5049fd88f09885057688f2c6db3c7e1d2f42",
+    "docs/evidence/task-6/controller-invoker-source-red-02/changed-source/scripts/identity_cache_control.py": "db9e6d203f8073cb24fcac9f7dfa0fb314d5b88340b6f6976eb0a15fc3b6ca07",
+    "docs/evidence/task-6/controller-invoker-source-red-02/changed-source/scripts/identity_cache_observe.py": "d92ed91e276d5b4f08bfb9f2635486b29e93b703060aa48f6b9a71116864989e",
+    "docs/evidence/task-6/controller-invoker-source-red-02/changed-source/scripts/test_identity_cache_control.py": "0fc8c43ebd78db07c81ce949645d7f845bdbd5f0e26f50eb3385c1d9aa260b20",
+    "docs/evidence/task-6/controller-invoker-source-red-02/intent.json": "063b28c54014d18926f2aa8e209afac7cebfcbb77b47abb6a7b08d0083a80afd",
+    "docs/evidence/task-6/controller-invoker-source-red-02/outer-tool-result.json": "a8ce1f441b326f0639e81fba480d2dbcb67e2c276ec3d17c3a6fceab3f65920c",
+    "docs/evidence/task-6/controller-invoker-source-red-02/output.txt": "a3ae8983a109662d1ddf8864932d4379dbdb4d2b6a05b48afbc3b7511670d4b8",
+    "docs/evidence/task-6/controller-invoker-source-red-02/post-controller.json": "bc1eff6a89a4635c9134db4a7dc20f3bf9910d4c1db5d66f45b2217aaed1f940",
+    "docs/evidence/task-6/controller-invoker-source-red-02/post-source.json": "074fdb400962d00d7699e68627911f2a4faa5c4aed50c2bccc6b857d675236b1",
+    "docs/evidence/task-6/controller-invoker-source-red-02/pre-controller.json": "bc1eff6a89a4635c9134db4a7dc20f3bf9910d4c1db5d66f45b2217aaed1f940",
+    "docs/evidence/task-6/controller-invoker-source-red-02/pre-source.json": "074fdb400962d00d7699e68627911f2a4faa5c4aed50c2bccc6b857d675236b1",
+    "docs/evidence/task-6/controller-invoker-source-red-02/receipt.json": "340bbb666e5c187c494cd21adf7609e36bde7dec846956a5475b8f5b5e32677a",
+    "docs/evidence/task-6/controller-invoker-source-red-02/run.py": "f000ca9b0a1c3bed7cd4a88a0a3872c6ba2366eb4f00eb0c41dfad7ba32ed638"
+  },
+  "report_mirror_byte_equal": true,
+  "root_docs_excluded": true,
+  "runs": {
+    "cover-01": {
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "pre_post150_equal": true,
+      "pre_post_controller2_equal": true,
+      "recording_complete": true,
+      "snapshots_equal_prospective_pre_maps": true,
+      "tests": 149,
+      "whole_wall_until_receipt_seconds": 2.0759170529199764
+    },
+    "green-01": {
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "pre_post150_equal": true,
+      "pre_post_controller2_equal": true,
+      "recording_complete": true,
+      "snapshots_equal_prospective_pre_maps": true,
+      "tests": 109,
+      "whole_wall_until_receipt_seconds": 1.6035139940213412
+    },
+    "green-02": {
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "pre_post150_equal": true,
+      "pre_post_controller2_equal": true,
+      "recording_complete": true,
+      "snapshots_equal_prospective_pre_maps": true,
+      "tests": 2,
+      "whole_wall_until_receipt_seconds": 0.07921987096779048
+    },
+    "red-01": {
+      "actual_tool_exit_code": 1,
+      "classification": "recording/fixture failure with missing post/receipt",
+      "historical_artifacts_reconstructed": false,
+      "missing_artifacts": [
+        "post-source.json",
+        "post-controller.json",
+        "receipt.json"
+      ],
+      "post_equal": null,
+      "pre_controller_files": 2,
+      "pre_source_files": 150,
+      "recording_complete": false,
+      "snapshots_equal_prospective_pre_maps": true,
+      "tests_completed": null
+    },
+    "red-02": {
+      "errors": 2,
+      "exit_code": 1,
+      "failures": 0,
+      "pre_post150_equal": true,
+      "pre_post_controller2_equal": true,
+      "recording_complete": true,
+      "snapshots_equal_prospective_pre_maps": true,
+      "tests": 3,
+      "whole_wall_until_receipt_seconds": 0.06325271399691701
+    }
+  },
+  "scope": "source/generated fixtures only; no actual or Q release",
+  "source_commit": "b2b348205bdb3fbd4573ab04237c1a9e166371e2",
+  "source_files": {
+    "scripts/identity_cache_control.py": {
+      "allocated_bytes": 8192,
+      "bytes": 4374,
+      "sha256": "8c3af61861d94b489dd39d6679d39d93f9f14636cb8dbae88f965e888a4c6e64"
+    },
+    "scripts/identity_cache_observe.py": {
+      "allocated_bytes": 73728,
+      "bytes": 70500,
+      "sha256": "244bef82a1672d88054e177bf1bf2d66d2aa982a72d86051ac749fc797a322e3"
+    },
+    "scripts/test_identity_cache_control.py": {
+      "allocated_bytes": 90112,
+      "bytes": 89284,
+      "sha256": "53da6fda0aa2c195fef3412f97866f4d80ed17c40b08222524fed181868a67d2"
+    }
+  },
+  "unique_frozen_method_counts": {
+    "controller": 84,
+    "invoker_integration": 38,
+    "new_API": 27,
+    "total": 149
+  },
+  "version": 1
+}

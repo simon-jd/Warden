@@ -1,0 +1,25 @@
+# Each line: what appeared (+) and disappeared (-) between two lists of loaded modules.
+# 2026-11-10 attempt (../cilium-k3s-20261110): after = before + geneve xt_socket nf_socket_ipv4 nf_socket_ipv6 (its README).
+11-10 17:57 (after that attempt) -> 11-12 19:32 baseline       +[btrfs hfs hfsplus ib_core jfs libblake2b minix msdos nls_ucs2_utils qnx4 raid6_pq sch_netem sch_tbf tcp_bbr ufs xfs xor] -[]
+11-12 19:32 baseline -> run 1 up started (~19:45)              +[nft_masq] -[]
+run 1: up started -> node registered                           +[] -[]
+run 1: node registered -> Cilium ready                         +[cls_bpf nf_tproxy_ipv4 nf_tproxy_ipv6 sch_ingress xt_CT xt_TPROXY] -[]
+run 1: Cilium ready -> up done                                 +[] -[]
+run 1: up done -> down (11-12 23:26)                           +[] -[]
+run 1 down -> run 2 attempt 1 (23:34)                          +[] -[]
+run 2 attempt 1: before -> after (failed up, 23:34)            +[] -[]
+run 2 attempt 1 after -> run 2 (23:36)                         +[] -[]
+run 2: up started -> node registered                           +[] -[]
+run 2: node registered -> Cilium ready                         +[] -[]
+run 2: Cilium ready -> up done                                 +[] -[]
+run 2: up done -> down (11-13 08:27)                           +[] -[]
+run 2 down -> run 3 (08:28)                                    +[] -[]
+run 3: up started -> node registered                           +[] -[]
+run 3: node registered -> Cilium ready                         +[] -[]
+run 3: Cilium ready -> up done                                 +[] -[]
+run 3: up done -> down                                         +[] -[]
+run 3 down -> after the run                                    +[] -[]
+last record -> final (final/modules-host-final.txt)            +[] -[]
+
+# All of 11-12 and 11-13 together: 19:32 baseline -> last list
+baseline -> final/modules-host-final.txt                       +[cls_bpf nf_tproxy_ipv4 nf_tproxy_ipv6 nft_masq sch_ingress xt_CT xt_TPROXY] -[]

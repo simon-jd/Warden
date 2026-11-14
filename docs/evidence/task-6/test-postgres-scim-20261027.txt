@@ -1,0 +1,57 @@
+=== RUN   TestIdentityConfig
+=== RUN   TestIdentityConfig/scim-without-oidc
+=== RUN   TestIdentityConfig/missing-audience
+=== RUN   TestIdentityConfig/wrong-jwks
+=== RUN   TestIdentityConfig/not-entra
+=== RUN   TestIdentityConfig/missing-digests
+--- PASS: TestIdentityConfig (0.00s)
+    --- PASS: TestIdentityConfig/scim-without-oidc (0.00s)
+    --- PASS: TestIdentityConfig/missing-audience (0.00s)
+    --- PASS: TestIdentityConfig/wrong-jwks (0.00s)
+    --- PASS: TestIdentityConfig/not-entra (0.00s)
+    --- PASS: TestIdentityConfig/missing-digests (0.00s)
+=== RUN   TestRoutesSendSCIMOnlyToSCIM
+--- PASS: TestRoutesSendSCIMOnlyToSCIM (0.00s)
+PASS
+ok  	warden/controlplane/cmd/warden-api	0.006s
+testing: warning: no tests to run
+PASS
+ok  	warden/controlplane/internal/api	0.004s [no tests to run]
+testing: warning: no tests to run
+PASS
+ok  	warden/controlplane/internal/apilab	0.004s [no tests to run]
+testing: warning: no tests to run
+PASS
+ok  	warden/controlplane/internal/audit	0.003s [no tests to run]
+=== RUN   TestVerify_ObjectIDClaim
+--- PASS: TestVerify_ObjectIDClaim (0.07s)
+=== RUN   TestEndToEndLocalJWKSRunCreateAndRead
+--- PASS: TestEndToEndLocalJWKSRunCreateAndRead (0.11s)
+PASS
+ok  	warden/controlplane/internal/authn	0.184s
+?   	warden/controlplane/internal/canonical	[no test files]
+testing: warning: no tests to run
+PASS
+ok  	warden/controlplane/internal/jit	0.003s [no tests to run]
+testing: warning: no tests to run
+PASS
+ok  	warden/controlplane/internal/runs	0.003s [no tests to run]
+testing: warning: no tests to run
+PASS
+ok  	warden/controlplane/internal/scheduler	0.005s [no tests to run]
+=== RUN   TestParseUserRequiresUserNameAndObjectID
+--- PASS: TestParseUserRequiresUserNameAndObjectID (0.00s)
+=== RUN   TestTenantVerifierRequiresProvisionedIdentity
+--- PASS: TestTenantVerifierRequiresProvisionedIdentity (0.00s)
+=== RUN   TestSCIMConformanceBasic
+--- PASS: TestSCIMConformanceBasic (0.10s)
+=== RUN   TestSCIMDeactivateRevokesSessions
+    scim_test.go:209: deactivation to first 401: 4.593453ms
+--- PASS: TestSCIMDeactivateRevokesSessions (0.13s)
+PASS
+ok  	warden/controlplane/internal/scim	0.236s
+testing: warning: no tests to run
+PASS
+ok  	warden/controlplane/internal/store	0.002s [no tests to run]
+?   	warden/controlplane/internal/tenant	[no test files]
+?   	warden/controlplane/internal/testutil	[no test files]

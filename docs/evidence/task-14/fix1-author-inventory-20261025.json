@@ -1,0 +1,128 @@
+{
+  "base": "955ef5da9d0044ab7ec1d8d4db31c8cd38286175",
+  "source_commit": "d00bb72e9d68b6b5c818c88be9f54432df34fb6a",
+  "round": "Original Task14 continuous fix1/5; initial I1 only",
+  "source": {
+    "respond/executor.go": {
+      "bytes": 7915,
+      "sha256": "36a055922fcdb82464f058cac481beecdc8b38b4a89dd3f7cce261127cd06244"
+    },
+    "respond/ledger.go": {
+      "bytes": 7080,
+      "sha256": "7ecde030467a5f69890fff24b0ec255ede41c5b1b61de9f40f070c2f19d8be1c"
+    },
+    "respond/ledger_test.go": {
+      "bytes": 15193,
+      "sha256": "4720fec3b18c3f4602632084f6a016c7b2ffcb131026d0828e0d72356e70290e"
+    },
+    "respond/README.md": {
+      "bytes": 6386,
+      "sha256": "581a18f7aadf7429c82d8fbcf0c4ad7c0ff55bc3911cb06ae5479a7fa327ce74"
+    }
+  },
+  "source_commit_paths": 4,
+  "source_commit_bytes": 36574,
+  "complete_component_paths": 7,
+  "complete_component_bytes": 62619,
+  "evidence_artifacts": {
+    "docs/evidence/task-14/fix1-author-artifacts-20261025/task-14-fix1-cover-caller.md": {
+      "bytes": 8169,
+      "sha256": "9ad1e6b2550c6f824bd7bfac4d8ac725c94fd1f5fe89455dc5ab0491fadd223f"
+    },
+    "docs/evidence/task-14/fix1-author-artifacts-20261025/task-14-fix1-cover-command.py.txt": {
+      "bytes": 7339,
+      "sha256": "a44c383e2114aa2d515df75025244cb6480fac268ea38d2d99bd7d5435bf59a0"
+    },
+    "docs/evidence/task-14/fix1-author-artifacts-20261025/task-14-fix1-cover-freeze.json": {
+      "bytes": 3553,
+      "sha256": "7c9d9cff7f8a50f1af765ad41386fb43506eab1eaeef271cc659ffe39c9b9791"
+    },
+    "docs/evidence/task-14/fix1-author-artifacts-20261025/task-14-fix1-red-caller.md": {
+      "bytes": 8166,
+      "sha256": "212c67c50c9f72f198e94c8be5151e4f3c1361237ff6c84250ae0c35effbdde4"
+    },
+    "docs/evidence/task-14/fix1-author-artifacts-20261025/task-14-fix1-red-command.py.txt": {
+      "bytes": 7374,
+      "sha256": "9718e674584ba22b6fca3a93adbb8c5e0d151ff0196ceefc4cf705db249ff945"
+    },
+    "docs/evidence/task-14/fix1-author-artifacts-20261025/task-14-fix1-red-freeze.json": {
+      "bytes": 2353,
+      "sha256": "9f79897e8cf1891a8395bcfda2b407691d4ecb4ef0006931c94b733593b596f7"
+    },
+    "docs/evidence/task-14/fix1-cover-first-20261025/request.json": {
+      "bytes": 2655,
+      "sha256": "c6fe16a4ccad54994b7228145b20b7c3dbc37b7c8a7c19fd9baa28a80d6fdf79"
+    },
+    "docs/evidence/task-14/fix1-cover-first-20261025/status.json": {
+      "bytes": 1193,
+      "sha256": "13fafbcb60f4c2f14019d876fc96736e65aefaad8ff3a0ccc2b5224eb31be8aa"
+    },
+    "docs/evidence/task-14/fix1-cover-first-20261025/stderr.raw": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/task-14/fix1-cover-first-20261025/stdout.raw": {
+      "bytes": 4660,
+      "sha256": "789f2390c8ed37b9e04ee569c7392d38cbe6891942826f24966443a13ae0d0bd"
+    },
+    "docs/evidence/task-14/fix1-red-first-20261025/executor.go.txt": {
+      "bytes": 7915,
+      "sha256": "36a055922fcdb82464f058cac481beecdc8b38b4a89dd3f7cce261127cd06244"
+    },
+    "docs/evidence/task-14/fix1-red-first-20261025/freeze.json": {
+      "bytes": 2353,
+      "sha256": "9f79897e8cf1891a8395bcfda2b407691d4ecb4ef0006931c94b733593b596f7"
+    },
+    "docs/evidence/task-14/fix1-red-first-20261025/ledger.go.txt": {
+      "bytes": 7044,
+      "sha256": "a2b470c3d8178b064643b9b5acceba269063b8fc5817e95e247a8b45428e1d59"
+    },
+    "docs/evidence/task-14/fix1-red-first-20261025/ledger_test.go.txt": {
+      "bytes": 15193,
+      "sha256": "4720fec3b18c3f4602632084f6a016c7b2ffcb131026d0828e0d72356e70290e"
+    },
+    "docs/evidence/task-14/fix1-red-first-20261025/request.json": {
+      "bytes": 2385,
+      "sha256": "090f22205bd9493c24831d60d4cb662fe0a520eec28db1359db81ffd226750be"
+    },
+    "docs/evidence/task-14/fix1-red-first-20261025/status.json": {
+      "bytes": 1188,
+      "sha256": "e73ef9759b7b6da2c8d86ea7516d5d319242a83939ae2024999340ef40c4f936"
+    },
+    "docs/evidence/task-14/fix1-red-first-20261025/stderr.raw": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/task-14/fix1-red-first-20261025/stdout.raw": {
+      "bytes": 977,
+      "sha256": "8e91cf74510983d297545fa2444695ae18de0d878a62c2fabfd6164cb089fd3d"
+    }
+  },
+  "evidence_artifact_paths": 18,
+  "evidence_artifact_bytes": 82517,
+  "evidence_commit_paths": [
+    "docs/evidence/task-14/fix1-author-artifacts-20261025/task-14-fix1-cover-caller.md",
+    "docs/evidence/task-14/fix1-author-artifacts-20261025/task-14-fix1-cover-command.py.txt",
+    "docs/evidence/task-14/fix1-author-artifacts-20261025/task-14-fix1-cover-freeze.json",
+    "docs/evidence/task-14/fix1-author-artifacts-20261025/task-14-fix1-red-caller.md",
+    "docs/evidence/task-14/fix1-author-artifacts-20261025/task-14-fix1-red-command.py.txt",
+    "docs/evidence/task-14/fix1-author-artifacts-20261025/task-14-fix1-red-freeze.json",
+    "docs/evidence/task-14/fix1-author-inventory-20261025.json",
+    "docs/evidence/task-14/fix1-cover-first-20261025/request.json",
+    "docs/evidence/task-14/fix1-cover-first-20261025/status.json",
+    "docs/evidence/task-14/fix1-cover-first-20261025/stderr.raw",
+    "docs/evidence/task-14/fix1-cover-first-20261025/stdout.raw",
+    "docs/evidence/task-14/fix1-red-first-20261025/executor.go.txt",
+    "docs/evidence/task-14/fix1-red-first-20261025/freeze.json",
+    "docs/evidence/task-14/fix1-red-first-20261025/ledger.go.txt",
+    "docs/evidence/task-14/fix1-red-first-20261025/ledger_test.go.txt",
+    "docs/evidence/task-14/fix1-red-first-20261025/request.json",
+    "docs/evidence/task-14/fix1-red-first-20261025/status.json",
+    "docs/evidence/task-14/fix1-red-first-20261025/stderr.raw",
+    "docs/evidence/task-14/fix1-red-first-20261025/stdout.raw",
+    "docs/evidence/task-14/fix1-report.md"
+  ],
+  "evidence_commit_path_count": 20,
+  "integrity_note": "No self-reference hashes for inventory/report. EVIDENCE commit and final handoff bind inventory/report and report mirror.",
+  "excluded": "All root rulings/native-events/review/STATUS/root-handoff and all earlier Task14 reports/raw/callers, prior tasks and old dirty scenes."
+}

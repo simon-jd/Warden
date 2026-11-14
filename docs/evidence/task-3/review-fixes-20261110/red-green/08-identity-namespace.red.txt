@@ -1,0 +1,21 @@
+# RED: runtimes/conformance/namespace_test.go against createNamespace at 873fad2 (the refactor, unchanged behaviour), plain make in the worktree
+# 2026-11-10T20:55:20-08:00
+pkgs=$(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /home/postedism/Desktop/Warden-task3/.tools/go/bin/go list -buildvcs=false ./...) && pkgs=$(printf '%s\n' $pkgs | grep -Ev '^$|^warden/docs/') || exit 1; env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_KYVERNO=/home/postedism/Desktop/Warden-task3/.tools/kyverno/kyverno /home/postedism/Desktop/Warden-task3/.tools/go/bin/go test -buildvcs=false -count=1 -shuffle=on -v -run '^TestCreateNamespace' $pkgs
+=== RUN   TestCreateNamespaceCreatesTheNamespaceAndItsAccounts
+--- PASS: TestCreateNamespaceCreatesTheNamespaceAndItsAccounts (1.00s)
+=== RUN   TestCreateNamespaceReplacesOneAnEarlierRunLeft
+=== RUN   TestCreateNamespaceReplacesOneAnEarlierRunLeft/terminating=false
+    namespace_test.go:193: create namespace: HTTP 409: {"kind":"Status","code":409,"reason":"AlreadyExists"}
+=== RUN   TestCreateNamespaceReplacesOneAnEarlierRunLeft/terminating=true
+    namespace_test.go:193: create namespace: HTTP 409: {"kind":"Status","code":409,"reason":"AlreadyExists"}
+--- FAIL: TestCreateNamespaceReplacesOneAnEarlierRunLeft (0.00s)
+    --- FAIL: TestCreateNamespaceReplacesOneAnEarlierRunLeft/terminating=false (0.00s)
+    --- FAIL: TestCreateNamespaceReplacesOneAnEarlierRunLeft/terminating=true (0.00s)
+=== RUN   TestCreateNamespaceIsCleanedUpWhenItsAccountFails
+    namespace_test.go:174: namespace warden-system left behind after the failed setup (0 cleanups registered)
+--- FAIL: TestCreateNamespaceIsCleanedUpWhenItsAccountFails (0.00s)
+FAIL
+FAIL	warden/runtimes/conformance	1.015s
+FAIL
+make: *** [Makefile:63: test-go] Error 1
+exit: 2

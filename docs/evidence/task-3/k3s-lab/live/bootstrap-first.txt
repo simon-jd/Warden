@@ -1,0 +1,33 @@
+{"owned_image_charge": 0, "outstanding_charge": 0}
+{"additional_bytes": "6000000000", "at": "2026-10-24T06:52:24Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 358706925568, "project_allocated_bytes": 3021619200, "service_memory_bytes": "7000000000"}
+{"rootfs_bytes": 496033251, "archive_bytes": 496599040, "manifest_sha256": "f0384a4b045c8d9a2f5ea21356099daa40ac659269dd1713a6eaf8d867d439ff"}
+{"owned_image_charge": 0, "outstanding_charge": 0}
+{"additional_bytes": "6000000000", "at": "2026-10-24T06:52:31Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 358209933312, "project_allocated_bytes": 3518332928, "service_memory_bytes": "7000000000"}
+{"image": "sha256:00ae4976ee488e52ae72d9cf30ac0d6349cfd65438a45b695a875f314a9a0e4e", "image_size_bytes": 685362655, "labels": {"owner": "codex-warden", "project": "warden", "session": "0cfb8703e1819f45ddd582801eaf9ad0", "ttl": "2026-10-24T07:52:24Z"}}
+{"owned_container": "251ea8cc88d93962727b7372a9b70863cf4cefeaa188f1dde28a30b887369f6c", "mode": "bootstrap"}
+Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error mounting "/proc/1962670/fd/6" to rootfs at "/session": mount src=/proc/1962670/fd/6, dst=/session, dstFd=/proc/thread-self/fd/14, flags=MS_BIND|MS_REC: invalid argument
+k3s lab failed: RuntimeError
+Command exited with non-zero status 2
+	Command being timed: "python3 -B scripts/k3s_lab.py bootstrap --other-service-memory-bytes 0 --reviewed-live-profile"
+	User time (seconds): 6.78
+	System time (seconds): 1.17
+	Percent of CPU this job got: 34%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:22.86
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 803544
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2
+	Minor (reclaiming a frame) page faults: 459742
+	Voluntary context switches: 18407
+	Involuntary context switches: 247
+	Swaps: 0
+	File system inputs: 256
+	File system outputs: 970192
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 2

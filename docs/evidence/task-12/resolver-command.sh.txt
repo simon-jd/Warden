@@ -1,0 +1,53 @@
+#!/bin/bash
+# INERT exact caller: root FULLREAD + fresh UID1000 budget/memory admission first.
+# Material resolution, not strict metadata-only; wheel fallback allowed, no install.
+# Success still needs report-to-PyPI exact-byte/hash/3.14-wheel checks before install.
+# tmp64MiB/new128MiB are postflight checks, not hard quotas; FSIZE is per file.
+set -eu
+run=/home/postedism/Desktop/Warden/.cache/task12-resolve-20261025-a
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 PIP_CONFIG_FILE=/dev/null \
+  TMPDIR="$run/tmp" OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 \
+  /usr/bin/timeout --signal=TERM --kill-after=10s 110s \
+  /bin/bash --noprofile --norc -c '
+set -eu
+run=$1
+test "$(/usr/bin/id -u)" = 1000
+test "$PWD" = /home/postedism/Desktop/Warden
+test ! -e "$run" && test ! -L "$run" || exit 1
+umask 077
+ulimit -c 0; ulimit -n 64; ulimit -v 1048576; ulimit -f 2048; ulimit -t 60
+/bin/mkdir -m 700 -- "$run"
+finish() {
+  rc=$?
+  trap - EXIT TERM INT
+  cleanup=0
+  if /bin/rm -rf -- "$run/tmp" && test ! -e "$run/tmp"; then cleanup=1; else rc=1; fi
+  printf "exit=%s\npip_rc=%s\nhead_rc=%s\ntmp_bytes=%s\nnew_bytes=%s\nreport_bytes=%s\ncleanup=%s\n" \
+    "$rc" "${pip_rc:-not_started}" "${head_rc:-not_started}" \
+    "${tmp_bytes:-unknown}" "${new_bytes:-unknown}" "${report_bytes:-unknown}" \
+    "$cleanup" > "$run/status.txt"
+  exit "$rc"
+}
+trap finish EXIT
+trap "exit 124" TERM
+trap "exit 130" INT
+/bin/mkdir -m 700 -- "$run/tmp"
+set +e
+/usr/bin/timeout --foreground --signal=TERM --kill-after=5s 90s \
+  /usr/bin/python3 -I -B -m pip --isolated install --dry-run --ignore-installed \
+  --no-cache-dir --disable-pip-version-check --only-binary=:all: --retries 0 \
+  --timeout 8 --no-input --progress-bar off --index-url https://pypi.org/simple \
+  --report "$run/report.json" pysigma==1.5.1 pysigma-backend-opensearch==2.0.3 \
+  pysigma-backend-elasticsearch==2.1.1 2>&1 | /usr/bin/head -c 1048576 > "$run/pip-output.txt"
+codes=("${PIPESTATUS[@]}")
+set -e
+pip_rc=${codes[0]}; head_rc=${codes[1]}
+tmp_bytes=$(/usr/bin/du -s -B1 -- "$run/tmp"); tmp_bytes=${tmp_bytes%%[[:space:]]*}
+new_bytes=$(/usr/bin/du -s -B1 -- "$run"); new_bytes=${new_bytes%%[[:space:]]*}
+out_bytes=$(/usr/bin/stat -c %s -- "$run/pip-output.txt")
+test -f "$run/report.json" && test ! -L "$run/report.json" || exit 1
+report_bytes=$(/usr/bin/stat -c %s -- "$run/report.json")
+test "$pip_rc" -eq 0 && test "$head_rc" -eq 0 || exit 1
+test "$out_bytes" -lt 1048576 && test "$tmp_bytes" -le 67108864 || exit 1
+test "$new_bytes" -le 134217728 && test "$report_bytes" -gt 0 && test "$report_bytes" -le 2097152 || exit 1
+' task12-resolve "$run"

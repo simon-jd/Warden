@@ -1,0 +1,28 @@
+# 2026-11-12T23:39:47-08:00 head 082cc71; git status --short:
+?? controlplane/internal/ciliumlab/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run1-1945/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2-attempt1/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2/
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/08-ciliumlab-parsers-green.txt
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/08-ciliumlab-parsers-red.txt
+$ taskset -c 0-7,16-31 .tools/go/bin/go test -buildvcs=false -count=1 -v ./controlplane/internal/ciliumlab (Makefile GOENV)
+=== RUN   TestParseNetResultsKeepsEveryCaseOnce
+--- PASS: TestParseNetResultsKeepsEveryCaseOnce (0.00s)
+=== RUN   TestParseLogReadsWorldAndProbeLines
+--- PASS: TestParseLogReadsWorldAndProbeLines (0.00s)
+=== RUN   TestStreamSeparatesTheDirectionsAndTheStreams
+    ciliumlab_test.go:74: up = []
+    ciliumlab_test.go:77: down = []
+    ciliumlab_test.go:80: closed = 0
+--- FAIL: TestStreamSeparatesTheDirectionsAndTheStreams (0.00s)
+=== RUN   TestCountLastAndMaxGap
+--- PASS: TestCountLastAndMaxGap (0.00s)
+=== RUN   TestMeasureFindsWhenAStreamStopped
+    ciliumlab_test.go:119: cut = {LastUpMS:300 LastDownMS:520 Stopped:true CutMS:520}, want stopped at 520 ms (up 280 ms)
+--- FAIL: TestMeasureFindsWhenAStreamStopped (0.00s)
+=== RUN   TestNearestRank
+--- PASS: TestNearestRank (0.00s)
+FAIL
+FAIL	warden/controlplane/internal/ciliumlab	0.001s
+FAIL
+exit 1

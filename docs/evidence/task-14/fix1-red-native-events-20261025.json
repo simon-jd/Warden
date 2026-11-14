@@ -1,0 +1,82 @@
+[
+  {
+    "kind": "fresh_preflight",
+    "request": {
+      "cmd": "ulimit -c 0\nulimit -n 64\nulimit -v 262144\nulimit -f 8192\nulimit -t 20\n/usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -B scripts/azure_guard.py preflight --additional-bytes 6073741824 --service-memory-bytes 11000000000 --download-bytes 0",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "sandbox_permissions": "require_escalated",
+      "justification": "在既定12GB/16GB及Q预留边界内，对Task14原fix1的单次定向RED执行fresh资源门禁。",
+      "yield_time_ms": 1000,
+      "max_output_tokens": 3000
+    },
+    "result": {
+      "chunk_id": "9bf6f0",
+      "wall_time_seconds": 0.24423792,
+      "exit_code": 0,
+      "original_token_count": 56,
+      "output": "{\"additional_bytes\": \"6073741824\", \"at\": \"2026-10-26T01:53:50Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 260997545984, \"project_allocated_bytes\": 4589907968, \"service_memory_bytes\": \"11000000000\"}\n"
+    }
+  },
+  {
+    "kind": "sole_actual",
+    "request": {
+      "cmd": "/usr/bin/timeout --signal=TERM --kill-after=4s 86s /usr/bin/python3 -I -B /home/postedism/Desktop/Warden/.superpowers/sdd/2-warden-security-plan/task-14-fix1-red-command.py.txt",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "sandbox_permissions": "require_escalated",
+      "justification": "按已全文核对的精确caller，在原Task14第1/5轮执行一次新journal目录持久化回归RED；不重跑既有81项。",
+      "yield_time_ms": 1000,
+      "max_output_tokens": 3000
+    },
+    "result": {
+      "chunk_id": "b8ce2a",
+      "wall_time_seconds": 1.001338989,
+      "session_id": 15114,
+      "original_token_count": 0,
+      "output": ""
+    },
+    "polls": [
+      {
+        "request": {
+          "session_id": 15114,
+          "chars": "",
+          "yield_time_ms": 20000,
+          "max_output_tokens": 3000
+        },
+        "result": {
+          "chunk_id": "7150de",
+          "wall_time_seconds": 2.753787645,
+          "exit_code": 1,
+          "original_token_count": 298,
+          "output": "{\"candidate_fix1_semantic_red\": true, \"case_counts\": {\"FAIL\": 3, \"PASS\": 0, \"SKIP\": 0}, \"decision\": \"STOP_FOR_ROOT\", \"elapsed_seconds\": 7.395517730037682, \"expected_cases\": 3, \"go_returncode\": 1, \"namespace_allocated_bytes\": 61186048, \"own_group_absent\": true, \"post_hashes\": {\"go.mod\": \"bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa\", \"go.sum\": \"cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0\", \"respond/README.md\": \"bd8ed3778a133c78f870d3993339c2427dfcbb176ad3b17b232a1fc36f46e2af\", \"respond/actions.go\": \"7224f114e7b9ef5aa926e43299a54fe01f9e90da329b6cd49d953a28bbbf2b02\", \"respond/executor.go\": \"36a055922fcdb82464f058cac481beecdc8b38b4a89dd3f7cce261127cd06244\", \"respond/executor_test.go\": \"aadc94db405e2a970737b19ecfddb0eb790f84be3fd59aaa97fd312d8b3bee0e\", \"respond/ledger.go\": \"a2b470c3d8178b064643b9b5acceba269063b8fc5817e95e247a8b45428e1d59\", \"respond/ledger_test.go\": \"4720fec3b18c3f4602632084f6a016c7b2ffcb131026d0828e0d72356e70290e\", \"respond/playbooks/suspend-tenant.yaml\": \"8cdfbdfdfe5bac22452006f0af89b22e9f50a05a32a454e081db114b6402acfa\"}, \"post_mem_available\": 85835063296, \"raw_stderr_bytes\": 0, \"raw_stdout_bytes\": 977, \"reason\": \"\"}\n"
+        }
+      }
+    ]
+  },
+  {
+    "kind": "root_full_postread_and_archive",
+    "request": {
+      "cmd": "/usr/bin/python3 -I -B - <<'PY'\nimport os,stat,pathlib,hashlib,json\nW=pathlib.Path('/home/postedism/Desktop/Warden')\nN=W/'.cache/task14-fix1-red-20261025-a'\nD=W/'docs/evidence/task-14/fix1-red-first-20261025'\nassert os.getuid()==1000 and not os.path.lexists(D)\nD.mkdir(mode=0o755)\nitems=[(N/n,n,True) for n in ['stdout.raw','stderr.raw','status.json','request.json']]\nitems += [(W/n,pathlib.Path(n).name+'.txt',False) for n in ['respond/executor.go','respond/ledger.go','respond/ledger_test.go']]\nitems += [(W/'.superpowers/sdd/2-warden-security-plan/task-14-fix1-red-freeze.json','freeze.json',False)]\nrecord=[]\nfor p,name,show in items:\n fd=os.open(p,os.O_RDONLY|os.O_NOFOLLOW|os.O_CLOEXEC)\n try:\n  s=os.fstat(fd)\n  assert stat.S_ISREG(s.st_mode) and s.st_uid==1000 and s.st_nlink==1 and s.st_size<=65536\n  raw=os.read(fd,65537)\n  a=os.fstat(fd)\n  assert len(raw)==s.st_size and (s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns,s.st_ctime_ns)==(a.st_dev,a.st_ino,a.st_size,a.st_mtime_ns,a.st_ctime_ns)\n finally:os.close(fd)\n out=os.open(D/name,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o644)\n with os.fdopen(out,'wb') as f:f.write(raw)\n record.append({'path':str(p.relative_to(W)),'copy':str((D/name).relative_to(W)),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()})\n if show:print(name+'\\n'+raw.decode())\nprint(json.dumps(record,sort_keys=True))\nPY",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "sandbox_permissions": "require_escalated",
+      "justification": "正常审批路径只读复核本次Task14 fix1新RED原件并逐字归档到全新公开证据目录，保留旧证据不变。",
+      "yield_time_ms": 1000,
+      "max_output_tokens": 6500
+    },
+    "result": {
+      "chunk_id": "c8055a",
+      "wall_time_seconds": 0.000027062,
+      "exit_code": 0,
+      "original_token_count": 1581,
+      "output": "stdout.raw\n=== RUN   TestJournalCreationDurabilityBeforeClient\n=== RUN   TestJournalCreationDurabilityBeforeClient/failure\n    ledger_test.go:459: FIX1_RED_REQUIRED existing-path directory sync failure must block intent/client: result={Status:Unknown NoOp:false ApprovalNeeded:false Resource:{Type:tenant ID:tenant-a}} err=response outcome unknown; automatic retry suppressed syncs=0 mutations=1\n=== RUN   TestJournalCreationDurabilityBeforeClient/success\n    ledger_test.go:466: FIX1_RED_REQUIRED successful existing-path directory sync must precede intent/client: result={Status:Unknown NoOp:false ApprovalNeeded:false Resource:{Type:tenant ID:tenant-a}} err=response outcome unknown; automatic retry suppressed syncs=0 synced=false mutations=1\n--- FAIL: TestJournalCreationDurabilityBeforeClient (0.04s)\n    --- FAIL: TestJournalCreationDurabilityBeforeClient/failure (0.02s)\n    --- FAIL: TestJournalCreationDurabilityBeforeClient/success (0.02s)\nFAIL\nFAIL\twarden/respond\t0.039s\nFAIL\n\nstderr.raw\n\nstatus.json\n{\"candidate_fix1_semantic_red\": true, \"case_counts\": {\"FAIL\": 3, \"PASS\": 0, \"SKIP\": 0}, \"decision\": \"STOP_FOR_ROOT\", \"elapsed_seconds\": 7.395517730037682, \"expected_cases\": 3, \"go_returncode\": 1, \"namespace_allocated_bytes\": 61186048, \"own_group_absent\": true, \"post_hashes\": {\"go.mod\": \"bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa\", \"go.sum\": \"cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0\", \"respond/README.md\": \"bd8ed3778a133c78f870d3993339c2427dfcbb176ad3b17b232a1fc36f46e2af\", \"respond/actions.go\": \"7224f114e7b9ef5aa926e43299a54fe01f9e90da329b6cd49d953a28bbbf2b02\", \"respond/executor.go\": \"36a055922fcdb82464f058cac481beecdc8b38b4a89dd3f7cce261127cd06244\", \"respond/executor_test.go\": \"aadc94db405e2a970737b19ecfddb0eb790f84be3fd59aaa97fd312d8b3bee0e\", \"respond/ledger.go\": \"a2b470c3d8178b064643b9b5acceba269063b8fc5817e95e247a8b45428e1d59\", \"respond/ledger_test.go\": \"4720fec3b18c3f4602632084f6a016c7b2ffcb131026d0828e0d72356e70290e\", \"respond/playbooks/suspend-tenant.yaml\": \"8cdfbdfdfe5bac22452006f0af89b22e9f50a05a32a454e081db114b6402acfa\"}, \"post_mem_available\": 85835063296, \"raw_stderr_bytes\": 0, \"raw_stdout_bytes\": 977, \"reason\": \"\"}\nrequest.json\n{\"argv\": [\"/home/postedism/Desktop/Warden/.cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/bin/go\", \"test\", \"-mod=readonly\", \"-buildvcs=false\", \"-vet=off\", \"-p=1\", \"-parallel=1\", \"-count=1\", \"-timeout=20s\", \"-run\", \"^(TestJournalCreationDurabilityBeforeClient)$\", \"-v\", \"./respond\"], \"cwd\": \"/home/postedism/Desktop/Warden\", \"env_overrides\": {\"CGO_ENABLED\": \"0\", \"GOARCH\": \"amd64\", \"GOCACHE\": \"/home/postedism/Desktop/Warden/.cache/task14-fix1-red-20261025-a/cache\", \"GOENV\": \"off\", \"GOMAXPROCS\": \"2\", \"GOMEMLIMIT\": \"512MiB\", \"GOMODCACHE\": \"/home/postedism/Desktop/Warden/.cache/task14-fix1-red-20261025-a/modcache\", \"GOOS\": \"linux\", \"GOPATH\": \"/home/postedism/Desktop/Warden/.cache/task14-fix1-red-20261025-a/gopath\", \"GOPROXY\": \"off\", \"GOROOT\": \"/home/postedism/Desktop/Warden/.cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64\", \"GOSUMDB\": \"off\", \"GOTMPDIR\": \"/home/postedism/Desktop/Warden/.cache/task14-fix1-red-20261025-a/tmp\", \"GOTOOLCHAIN\": \"local\", \"GOVCS\": \"*:off\", \"GOWORK\": \"off\", \"PATH\": \"/usr/bin:/bin\", \"TEST_TELEMETRY_DIR\": \"/home/postedism/Desktop/Warden/.cache/task14-fix1-red-20261025-a/telemetry\", \"TMPDIR\": \"/home/postedism/Desktop/Warden/.cache/task14-fix1-red-20261025-a/tmp\", \"XDG_CONFIG_HOME\": \"/home/postedism/Desktop/Warden/.cache/task14-fix1-red-20261025-a/config\"}, \"hashes\": {\"go.mod\": \"bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa\", \"go.sum\": \"cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0\", \"respond/README.md\": \"bd8ed3778a133c78f870d3993339c2427dfcbb176ad3b17b232a1fc36f46e2af\", \"respond/actions.go\": \"7224f114e7b9ef5aa926e43299a54fe01f9e90da329b6cd49d953a28bbbf2b02\", \"respond/executor.go\": \"36a055922fcdb82464f058cac481beecdc8b38b4a89dd3f7cce261127cd06244\", \"respond/executor_test.go\": \"aadc94db405e2a970737b19ecfddb0eb790f84be3fd59aaa97fd312d8b3bee0e\", \"respond/ledger.go\": \"a2b470c3d8178b064643b9b5acceba269063b8fc5817e95e247a8b45428e1d59\", \"respond/ledger_test.go\": \"4720fec3b18c3f4602632084f6a016c7b2ffcb131026d0828e0d72356e70290e\", \"respond/playbooks/suspend-tenant.yaml\": \"8cdfbdfdfe5bac22452006f0af89b22e9f50a05a32a454e081db114b6402acfa\"}, \"limits\": {\"as_perprocess\": 4294967296, \"cpu_perprocess\": 60, \"file_perprocess\": 268435456, \"output_combined\": 65536, \"reap_end\": 84, \"signal_end\": 82, \"status_target\": 85, \"whole\": 90, \"work_end\": 70}, \"pre_mem_available\": 86136463360}\n[{\"bytes\": 977, \"copy\": \"docs/evidence/task-14/fix1-red-first-20261025/stdout.raw\", \"path\": \".cache/task14-fix1-red-20261025-a/stdout.raw\", \"sha256\": \"8e91cf74510983d297545fa2444695ae18de0d878a62c2fabfd6164cb089fd3d\"}, {\"bytes\": 0, \"copy\": \"docs/evidence/task-14/fix1-red-first-20261025/stderr.raw\", \"path\": \".cache/task14-fix1-red-20261025-a/stderr.raw\", \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"}, {\"bytes\": 1188, \"copy\": \"docs/evidence/task-14/fix1-red-first-20261025/status.json\", \"path\": \".cache/task14-fix1-red-20261025-a/status.json\", \"sha256\": \"e73ef9759b7b6da2c8d86ea7516d5d319242a83939ae2024999340ef40c4f936\"}, {\"bytes\": 2385, \"copy\": \"docs/evidence/task-14/fix1-red-first-20261025/request.json\", \"path\": \".cache/task14-fix1-red-20261025-a/request.json\", \"sha256\": \"090f22205bd9493c24831d60d4cb662fe0a520eec28db1359db81ffd226750be\"}, {\"bytes\": 7915, \"copy\": \"docs/evidence/task-14/fix1-red-first-20261025/executor.go.txt\", \"path\": \"respond/executor.go\", \"sha256\": \"36a055922fcdb82464f058cac481beecdc8b38b4a89dd3f7cce261127cd06244\"}, {\"bytes\": 7044, \"copy\": \"docs/evidence/task-14/fix1-red-first-20261025/ledger.go.txt\", \"path\": \"respond/ledger.go\", \"sha256\": \"a2b470c3d8178b064643b9b5acceba269063b8fc5817e95e247a8b45428e1d59\"}, {\"bytes\": 15193, \"copy\": \"docs/evidence/task-14/fix1-red-first-20261025/ledger_test.go.txt\", \"path\": \"respond/ledger_test.go\", \"sha256\": \"4720fec3b18c3f4602632084f6a016c7b2ffcb131026d0828e0d72356e70290e\"}, {\"bytes\": 2353, \"copy\": \"docs/evidence/task-14/fix1-red-first-20261025/freeze.json\", \"path\": \".superpowers/sdd/2-warden-security-plan/task-14-fix1-red-freeze.json\", \"sha256\": \"9f79897e8cf1891a8395bcfda2b407691d4ecb4ef0006931c94b733593b596f7\"}]\n"
+    }
+  }
+]

@@ -1,0 +1,543 @@
+{"owned_image_charge": 0, "outstanding": 0, "additional": 5000000000, "service_memory": 16000000000}
+{"additional_bytes": "5000000000", "at": "2026-11-10T23:39:47Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 119068749824, "project_allocated_bytes": 1424076800, "service_memory_bytes": "16000000000"}
+{"owned_image_charge": 0, "outstanding": 5000000000, "additional": 0, "service_memory": 16000000000}
+{"additional_bytes": "5000000000", "at": "2026-11-10T23:39:48Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 119066644480, "project_allocated_bytes": 1424080896, "service_memory_bytes": "16000000000"}
+{"owned_image_charge": 365705736, "outstanding": 5000000000, "additional": 0, "service_memory": 16000000000}
+{"additional_bytes": "5365705736", "at": "2026-11-10T23:39:52Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 119062437888, "project_allocated_bytes": 1424084992, "service_memory_bytes": "16000000000"}
+{"inspected_host_config": {"Binds": null, "ContainerIDFile": "", "LogConfig": {"Type": "json-file", "Config": {"max-file": "2", "max-size": "10m"}}, "NetworkMode": "none", "PortBindings": {}, "RestartPolicy": {"Name": "no", "MaximumRetryCount": 0}, "AutoRemove": false, "VolumeDriver": "", "VolumesFrom": null, "ConsoleSize": [0, 0], "CapAdd": ["CAP_CHOWN", "CAP_DAC_OVERRIDE", "CAP_KILL", "CAP_MKNOD", "CAP_SETGID", "CAP_SETUID", "CAP_SYS_ADMIN", "CAP_SYS_CHROOT"], "CapDrop": ["ALL"], "CgroupnsMode": "private", "Dns": null, "DnsOptions": [], "DnsSearch": [], "ExtraHosts": null, "GroupAdd": null, "IpcMode": "private", "Cgroup": "", "Links": null, "OomScoreAdj": 0, "PidMode": "", "Privileged": false, "PublishAllPorts": false, "ReadonlyRootfs": true, "SecurityOpt": ["no-new-privileges", "apparmor=unconfined", "seccomp=unconfined"], "Tmpfs": {"/run": "rw,nosuid,nodev,size=64m", "/tmp": "rw,nosuid,nodev,size=64m"}, "UTSMode": "", "UsernsMode": "", "ShmSize": 67108864, "Runtime": "runc", "Isolation": "", "CpuShares": 0, "Memory": 15000000000, "NanoCpus": 2000000000, "CgroupParent": "", "BlkioWeight": 0, "BlkioWeightDevice": [], "BlkioDeviceReadBps": [], "BlkioDeviceWriteBps": [], "BlkioDeviceReadIOps": [], "BlkioDeviceWriteIOps": [], "CpuPeriod": 0, "CpuQuota": 0, "CpuRealtimePeriod": 0, "CpuRealtimeRuntime": 0, "CpusetCpus": "", "CpusetMems": "", "Devices": [{"PathOnHost": "/dev/kvm", "PathInContainer": "/dev/kvm", "CgroupPermissions": "rw"}], "DeviceCgroupRules": null, "DeviceRequests": null, "MemoryReservation": 0, "MemorySwap": 15000000000, "MemorySwappiness": null, "OomKillDisable": false, "PidsLimit": 512, "Ulimits": null, "CpuCount": 0, "CpuPercent": 0, "IOMaximumIOps": 0, "IOMaximumBandwidth": 0, "Mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/fc-wt/.cache/warden-lab/docker-firecracker-ce1f853f9cb7d9a7f4a526617499c3a6/live", "Target": "/opt/warden/session", "ReadOnly": true, "BindOptions": {"Propagation": "rprivate"}}], "MaskedPaths": ["/proc/acpi", "/proc/asound", "/proc/interrupts", "/proc/kcore", "/proc/keys", "/proc/latency_stats", "/proc/sched_debug", "/proc/scsi", "/proc/timer_list", "/proc/timer_stats", "/sys/devices/virtual/powercap", "/sys/firmware", "/sys/devices/system/cpu/cpu0/thermal_throttle", "/sys/devices/system/cpu/cpu1/thermal_throttle", "/sys/devices/system/cpu/cpu2/thermal_throttle", "/sys/devices/system/cpu/cpu3/thermal_throttle", "/sys/devices/system/cpu/cpu4/thermal_throttle", "/sys/devices/system/cpu/cpu5/thermal_throttle", "/sys/devices/system/cpu/cpu6/thermal_throttle", "/sys/devices/system/cpu/cpu7/thermal_throttle", "/sys/devices/system/cpu/cpu8/thermal_throttle", "/sys/devices/system/cpu/cpu9/thermal_throttle", "/sys/devices/system/cpu/cpu10/thermal_throttle", "/sys/devices/system/cpu/cpu11/thermal_throttle", "/sys/devices/system/cpu/cpu12/thermal_throttle", "/sys/devices/system/cpu/cpu13/thermal_throttle", "/sys/devices/system/cpu/cpu14/thermal_throttle", "/sys/devices/system/cpu/cpu15/thermal_throttle", "/sys/devices/system/cpu/cpu16/thermal_throttle", "/sys/devices/system/cpu/cpu17/thermal_throttle", "/sys/devices/system/cpu/cpu18/thermal_throttle", "/sys/devices/system/cpu/cpu19/thermal_throttle", "/sys/devices/system/cpu/cpu20/thermal_throttle", "/sys/devices/system/cpu/cpu21/thermal_throttle", "/sys/devices/system/cpu/cpu22/thermal_throttle", "/sys/devices/system/cpu/cpu23/thermal_throttle", "/sys/devices/system/cpu/cpu24/thermal_throttle", "/sys/devices/system/cpu/cpu25/thermal_throttle", "/sys/devices/system/cpu/cpu26/thermal_throttle", "/sys/devices/system/cpu/cpu27/thermal_throttle", "/sys/devices/system/cpu/cpu28/thermal_throttle", "/sys/devices/system/cpu/cpu29/thermal_throttle", "/sys/devices/system/cpu/cpu30/thermal_throttle", "/sys/devices/system/cpu/cpu31/thermal_throttle"], "ReadonlyPaths": ["/proc/bus", "/proc/fs", "/proc/irq", "/proc/sys", "/proc/sysrq-trigger"]}, "inspected_mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/fc-wt/.cache/warden-lab/docker-firecracker-ce1f853f9cb7d9a7f4a526617499c3a6/live", "Destination": "/opt/warden/session", "Mode": "", "RW": false, "Propagation": "rprivate"}]}
+{"kind":"warden-device-receipt-v1","pid":1,"cgroup_ns":"cgroup:[4026536112]","mount_ns":"mnt:[4026536108]","device":30,"inode":2596260,"mount_id":17110,"policy_version":"warden-tun-deny-v1","policy_sha256":"bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404"}
+{"device_policy_query_effective":false,"flags":2,"ids":[21958]}
+{"device_policy_query_effective":true,"flags":0,"ids":[21958]}
+{"device_policy_query_effective":false,"flags":2,"ids":[21958,21959]}
+{"device_policy_query_effective":true,"flags":0,"ids":[21958,21959]}
+device policy verified: version=warden-tun-deny-v1 sha256=bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404 program_id=21959; TUN rw EPERM, basics and KVM API12; no VM from probe
+=== RUN   TestFirecrackerCapacity
+    capacity_test.go:72: actual active=1 outer_memory_current=183746560
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=2 outer_memory_current=264642560
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=3 outer_memory_current=341008384
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=4 outer_memory_current=415657984
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=5 outer_memory_current=490893312
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=6 outer_memory_current=568594432
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=7 outer_memory_current=645709824
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=8 outer_memory_current=721874944
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=9 outer_memory_current=797671424
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=10 outer_memory_current=874110976
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=11 outer_memory_current=950861824
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=12 outer_memory_current=1026609152
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=13 outer_memory_current=1105289216
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=14 outer_memory_current=1180131328
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=15 outer_memory_current=1257369600
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=16 outer_memory_current=1331281920
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=17 outer_memory_current=1409351680
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=18 outer_memory_current=1482518528
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=19 outer_memory_current=1558589440
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=20 outer_memory_current=1635020800
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=21 outer_memory_current=1709436928
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=22 outer_memory_current=1786384384
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=23 outer_memory_current=1864138752
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=24 outer_memory_current=1938731008
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=25 outer_memory_current=2012237824
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=26 outer_memory_current=2089811968
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=27 outer_memory_current=2167693312
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=28 outer_memory_current=2242355200
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=29 outer_memory_current=2319257600
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=30 outer_memory_current=2396540928
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=31 outer_memory_current=2472001536
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=32 outer_memory_current=2547073024
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:85: simultaneously launched=32 reviewed upper bound=32 right_censored=true outer=15000000000 host_allowance=1000000000
+--- PASS: TestFirecrackerCapacity (28.64s)
+PASS
+known-owner VMM/worker pidfds reaped; cgroup populated=0; owned data and FDs retired; metadata released
+{"kind":"warden-device-receipt-v1","pid":1,"cgroup_ns":"cgroup:[4026536112]","mount_ns":"mnt:[4026536108]","device":30,"inode":2596260,"mount_id":17110,"policy_version":"warden-tun-deny-v1","policy_sha256":"bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404"}
+{"device_policy_query_effective":false,"flags":2,"ids":[21958]}
+{"device_policy_query_effective":true,"flags":0,"ids":[21958]}
+{"device_policy_query_effective":false,"flags":2,"ids":[21958,21959]}
+{"device_policy_query_effective":true,"flags":0,"ids":[21958,21959]}
+device policy verified: version=warden-tun-deny-v1 sha256=bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404 program_id=21959; TUN rw EPERM, basics and KVM API12; no VM from probe
+=== RUN   TestFirecrackerCapacity
+    capacity_test.go:72: actual active=1 outer_memory_current=183746560
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=2 outer_memory_current=264642560
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=3 outer_memory_current=341008384
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=4 outer_memory_current=415657984
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=5 outer_memory_current=490893312
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=6 outer_memory_current=568594432
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=7 outer_memory_current=645709824
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=8 outer_memory_current=721874944
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=9 outer_memory_current=797671424
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=10 outer_memory_current=874110976
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=11 outer_memory_current=950861824
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=12 outer_memory_current=1026609152
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=13 outer_memory_current=1105289216
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=14 outer_memory_current=1180131328
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=15 outer_memory_current=1257369600
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=16 outer_memory_current=1331281920
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=17 outer_memory_current=1409351680
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=18 outer_memory_current=1482518528
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=19 outer_memory_current=1558589440
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=20 outer_memory_current=1635020800
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=21 outer_memory_current=1709436928
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=22 outer_memory_current=1786384384
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=23 outer_memory_current=1864138752
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=24 outer_memory_current=1938731008
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=25 outer_memory_current=2012237824
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=26 outer_memory_current=2089811968
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=27 outer_memory_current=2167693312
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=28 outer_memory_current=2242355200
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=29 outer_memory_current=2319257600
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=30 outer_memory_current=2396540928
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=31 outer_memory_current=2472001536
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=32 outer_memory_current=2547073024
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:85: simultaneously launched=32 reviewed upper bound=32 right_censored=true outer=15000000000 host_allowance=1000000000
+--- PASS: TestFirecrackerCapacity (28.64s)
+PASS
+known-owner VMM/worker pidfds reaped; cgroup populated=0; owned data and FDs retired; metadata released
+{"owned_image_charge": 0, "outstanding": 0, "additional": 0, "service_memory": 0}
+{"additional_bytes": "0", "at": "2026-11-10T23:40:24Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 118933905408, "project_allocated_bytes": 1425313792, "service_memory_bytes": "0"}

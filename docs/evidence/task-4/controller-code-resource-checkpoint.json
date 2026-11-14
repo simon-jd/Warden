@@ -1,0 +1,29 @@
+{
+  "utc": "2026-10-24T19:33:58.293693+00:00",
+  "scope": "Independent controller read-only code-phase resource snapshot, under existing project Docker lock; no create/start/stop/delete/device operation. Limits are configured values, not measured peaks. Includes conservative 1GB host allowance.",
+  "host": "postedism-ubuntu-system-selfuse",
+  "cgroup_version": "2",
+  "owned_containers_all": [],
+  "owned_images_all": [],
+  "outstanding_bytes": 0,
+  "container_allowance_bytes": 0,
+  "configured_running_container_memory_bytes": 0,
+  "host_allowance_bytes": 1000000000,
+  "preflight": {
+    "additional_bytes": "0",
+    "at": "2026-10-24T19:33:58Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 285723328512,
+    "project_allocated_bytes": 3199672320,
+    "service_memory_bytes": "1000000000"
+  },
+  "protected_sysctls": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  }
+}

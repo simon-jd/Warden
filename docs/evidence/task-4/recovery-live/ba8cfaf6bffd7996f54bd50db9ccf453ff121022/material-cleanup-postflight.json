@@ -1,0 +1,25 @@
+{
+  "source": "ba8cfaf6bffd7996f54bd50db9ccf453ff121022",
+  "helper_state": "objects-settled",
+  "helper_settled": true,
+  "helper_success": false,
+  "helper_image": null,
+  "helper_cid": null,
+  "retained_helper_growth_bytes": 0,
+  "all_owned_images_containers": 0,
+  "original_Q_bytes": 5000000000,
+  "original_Q_released": false,
+  "live": {
+    "dev": 66307,
+    "ino": 56377608,
+    "uid": 0,
+    "mode": "0o700"
+  },
+  "original_cgroup_entry_absent_with_parent_identity": true,
+  "original_owner_retirement": "cleanup_pending",
+  "creation_outcome": "unknown",
+  "never_reopen": true,
+  "private_live_entries_read": false,
+  "ordinary_full_guard": "still_blocked_by_unchanged_root_owned_live",
+  "new_operation_or_retry_authorized": false
+}

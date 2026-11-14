@@ -1,0 +1,34 @@
+?   	warden/controlplane/cmd/warden-api	[no test files]
+=== RUN   TestIdempotencyKeyReturnsSameRun
+--- PASS: TestIdempotencyKeyReturnsSameRun (0.04s)
+=== RUN   TestCrossTenantReadDenied
+--- PASS: TestCrossTenantReadDenied (0.05s)
+=== RUN   TestConcurrentIdempotency
+--- PASS: TestConcurrentIdempotency (0.10s)
+=== RUN   TestIdempotencyPayloadAndTenantScope
+--- PASS: TestIdempotencyPayloadAndTenantScope (0.06s)
+=== RUN   TestQueuedRunPersistsSecureDefaults
+--- PASS: TestQueuedRunPersistsSecureDefaults (0.04s)
+=== RUN   TestAuthenticationFailsClosed
+--- PASS: TestAuthenticationFailsClosed (0.04s)
+=== RUN   TestInvalidRequestsRejectedWithoutWrites
+--- PASS: TestInvalidRequestsRejectedWithoutWrites (0.06s)
+=== RUN   TestCreateRollsBackWhenAuditFails
+--- PASS: TestCreateRollsBackWhenAuditFails (0.05s)
+PASS
+ok  	warden/controlplane/internal/api	0.444s
+=== RUN   TestAuditChainDetectsTamper
+--- PASS: TestAuditChainDetectsTamper (0.08s)
+=== RUN   TestAppendOnlyGuards
+--- PASS: TestAppendOnlyGuards (0.07s)
+=== RUN   TestConcurrentAppendAndCanonicalHash
+--- PASS: TestConcurrentAppendAndCanonicalHash (0.23s)
+=== RUN   TestAppendSnapshotsPayloadAndRejectsAmbiguity
+--- PASS: TestAppendSnapshotsPayloadAndRejectsAmbiguity (0.06s)
+PASS
+ok  	warden/controlplane/internal/audit	0.438s
+?   	warden/controlplane/internal/canonical	[no test files]
+?   	warden/controlplane/internal/runs	[no test files]
+?   	warden/controlplane/internal/store	[no test files]
+?   	warden/controlplane/internal/tenant	[no test files]
+?   	warden/controlplane/internal/testutil	[no test files]

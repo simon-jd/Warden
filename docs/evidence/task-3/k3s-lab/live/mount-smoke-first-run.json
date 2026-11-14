@@ -1,0 +1,8 @@
+{
+  "utc": "2026-10-24T16:40:19.388798+00:00",
+  "head": "b0e954dd64f6e874d8bd08d8f493b8c632d0be96",
+  "source_commit": "3d87ef6f58fb8fa92775984b3518efdb8a8d1ad5",
+  "review_fix_range": "cb76a2d..df6e891",
+  "command": "/usr/bin/time -v python3 -B scripts/k3s_lab.py mount-smoke --other-service-memory-bytes 0 --reviewed-mount-profile",
+  "scope": "Capless immutable PID1 verifies only fixed owned RO/private mount identity; no remount, k3s, tenant, Azure or GPU."
+}

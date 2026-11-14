@@ -1,0 +1,4 @@
+exit=1
+test_rc=1
+head_rc=0
+cleanup=1

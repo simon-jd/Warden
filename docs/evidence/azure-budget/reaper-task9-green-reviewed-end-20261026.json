@@ -1,0 +1,53 @@
+{
+  "request": {
+    "cmd": "bash scripts/azure_reaper.sh",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "workdir": "/home/postedism/Desktop/Warden",
+    "sandbox_permissions": "require_escalated",
+    "max_output_tokens": 2000,
+    "yield_time_ms": 1000,
+    "justification": "Required end-of-session Warden reaper, exact original bash scripts/azure_reaper.sh command/actor/entry. Trusted committed scripts unchanged (wrapper SHA8334c343107c59ef2db2f59b508e2caee6dca3647db8d63ebc10fe0ecc5671d6; guard SHA303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48). Fixed subscription <subscription-id> and only rg-warden-lab, scope rejects nested/outside IDs, checks project/owner/TTL and re-reads exact IDs/tags before deleting expired own resources. rg-mlinfra-westus cannot be targeted. Initial start denial scope uncertainty preserved; after trusted-HEAD equality/scope proof, same exact original path approved2ea2b0/session9920→167afc at08:05:38Z RGabsent. No Azure resource created during this turn, empty$0 committed estimate ledger unchanged. This is user-required END reaper, not alternate-route retry of denied action; if any new rejection stop and report original text."
+  },
+  "result": {
+    "chunk_id": "6b01f7",
+    "wall_time_seconds": 0.954411992,
+    "exit_code": 0,
+    "original_token_count": 37,
+    "output": "{\"at\": \"2026-10-26T08:39:11Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+  },
+  "original_start_rejection_preserved": "docs/evidence/azure-budget/reaper-task9-first-green-start-rejection-20261026.json",
+  "start_original_same_path_accepted": {
+    "request": {
+      "cmd": "bash scripts/azure_reaper.sh",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "workdir": "/home/postedism/Desktop/Warden",
+      "sandbox_permissions": "require_escalated",
+      "max_output_tokens": 2000,
+      "yield_time_ms": 1000,
+      "justification": "Re-review of the exact same command through the original approval path, once only, after new read-only trusted evidence. Both scripts equal committed HEAD f83a41b8d5dd7f5a976852785a31aeee01596a19: wrapper SHA256 8334c343107c59ef2db2f59b508e2caee6dca3647db8d63ebc10fe0ecc5671d6, azure_guard.py SHA256 303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48. Fixed Azure for Students subscription <subscription-id> and only rg-warden-lab. resource_id() rejects outside/nested scopes; account_and_group checks exact IDs; reap() only deletes expired project=warden owner=codex-warden resources after per-resource ownership/TTL validation and exact ID/tags re-read. rg-mlinfra-westus cannot be targeted. Latest observed group absent and current empty committed $0 ledger. Original denial and complete read-only proof preserved in docs/evidence/azure-budget/reaper-task9-first-green-start-rejection-20261026.json; no script/actor/tool/entry change, no direct Azure workaround. User AZURE-BUDGET.md explicitly requires start/end reaper. If rejected again this action stops."
+    },
+    "start": {
+      "chunk_id": "2ea2b0",
+      "wall_time_seconds": 1.00135219,
+      "session_id": 9920,
+      "original_token_count": 0,
+      "output": ""
+    },
+    "completion": {
+      "chunk_id": "167afc",
+      "wall_time_seconds": 0.000023358,
+      "exit_code": 0,
+      "original_token_count": 37,
+      "output": "{\"at\": \"2026-10-26T08:05:38Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+    }
+  },
+  "azure_created": false,
+  "committed_estimate_usd": "0.00",
+  "bill_known": false,
+  "protected_group_untouched": true,
+  "old_Task16_UNKNOWN_9GB_and_Q5GB_unreleased": true
+}

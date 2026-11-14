@@ -1,0 +1,15 @@
+[
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{{.Name}}",
+      "warden-task9-red-20261025-a-pg"
+    ],
+    "rc": 1,
+    "out": "\n",
+    "err": "Error response from daemon: No such container: warden-task9-red-20261025-a-pg\n",
+    "failure": ""
+  }
+]

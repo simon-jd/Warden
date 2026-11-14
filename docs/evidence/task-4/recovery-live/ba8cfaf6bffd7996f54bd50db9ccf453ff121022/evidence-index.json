@@ -1,0 +1,42 @@
+{
+  "source": "ba8cfaf6bffd7996f54bd50db9ccf453ff121022",
+  "scope": "One admitted material refusal and validated pre-daemon cleanup; no inventory or recovery success",
+  "files": {
+    "README.md": {
+      "bytes": 2936,
+      "sha256": "2720c94ef5cd6f80d0342156e6a990bdd6c5bc627fe9ebd85b5bd98f8aa09881"
+    },
+    "abi-refusal-postflight.json": {
+      "bytes": 1144,
+      "sha256": "16898eb0b770c5b8eb0a4a6508b901ba2d200327de6d4ae3aded18ceba24f3f3"
+    },
+    "cleanup-inspect-meta.json": {
+      "bytes": 704,
+      "sha256": "02f63d4678d2ea14eb2cb4d90e01020c9bda1148f08af6aa3a822cd8a898d69e"
+    },
+    "cleanup-inspect.log": {
+      "bytes": 138,
+      "sha256": "f7566144e404ed423e0ee3f689fbb905883a149e50097161b29795cd60249d6c"
+    },
+    "controller-material-cleanup-command.py": {
+      "bytes": 2181,
+      "sha256": "6bb26d15c115e0d2f994d305055127aa0b795a66ff432d252c82fb1119b2758c"
+    },
+    "controller-recovery-a-enumeration-command.py": {
+      "bytes": 3453,
+      "sha256": "187cd1666597140db8d4fe6dda458d6451cab809e94b7c887305ecb32e3286bc"
+    },
+    "inspect-meta.json": {
+      "bytes": 984,
+      "sha256": "2a140a07e13953c47ef3476d1e11edb23a4279f9f6b67b1c3aff155746f705e3"
+    },
+    "inspect.log": {
+      "bytes": 125,
+      "sha256": "56ef88039bea526913d6f42f8ff6d55588a3741d82c1373e476daf7fe021caf1"
+    },
+    "material-cleanup-postflight.json": {
+      "bytes": 747,
+      "sha256": "7b4e5435003394aa9d1e0ffc549fbce0d32ac41e689759df122a856ff6e342e4"
+    }
+  }
+}

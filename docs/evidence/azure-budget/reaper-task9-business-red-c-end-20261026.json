@@ -1,0 +1,24 @@
+{
+  "request": {
+    "cmd": "bash scripts/azure_reaper.sh",
+    "sandbox_permissions": "require_escalated",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "workdir": "/home/postedism/Desktop/Warden",
+    "max_output_tokens": 1000,
+    "yield_time_ms": 1000
+  },
+  "result": {
+    "chunk_id": "8f5832",
+    "wall_time_seconds": 0.774855679,
+    "exit_code": 0,
+    "original_token_count": 37,
+    "output": "{\"at\": \"2026-10-26T07:30:27Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+  },
+  "no_Azure_created": true,
+  "estimated_USD": 0.0,
+  "estimate_not_bill": true,
+  "protected_rg_untouched": true,
+  "old_UNKNOWN9GB_Q5GB_retained": true
+}

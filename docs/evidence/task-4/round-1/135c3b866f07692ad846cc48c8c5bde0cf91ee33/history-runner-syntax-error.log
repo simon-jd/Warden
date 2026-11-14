@@ -1,0 +1,9 @@
+profile_source_sha256=56abda58b8a822b7bc1ce7311025763878e7110c2d4cfabd84203dce556db4dd
+Traceback (most recent call last):
+  File "/tmp/warden-fc-round1-tests.py", line 9, in <module>
+    exec(compile(source.replace(old,new),str(path),'exec'),{'__file__':str(path),'__name__':'__main__'})
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_code.py", line 39
+    command='umask 0077; exec '+go+' test -p 1 -count=1 -v ./runtimes/firecracker/...'
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Is this intended to be part of the string?

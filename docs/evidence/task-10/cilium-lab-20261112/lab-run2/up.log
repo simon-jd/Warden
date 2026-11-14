@@ -1,0 +1,4 @@
+lab up (cilium): warden-k3s-gvisor on warden-k3s (192.168.192.10) and warden-k3s-world (198.18.18.10), probe sha256:bf35755959d8856840f6d6a0219d087c938e25b82c52a1d5c2b4d8a5c7488aeb
+up rc=0
+2026-11-12T23:39:19-08:00
+9.58 9.73 7.61 13/6501 3866216

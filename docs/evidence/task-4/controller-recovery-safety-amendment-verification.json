@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-24T23:28:49.164387+00:00",
+  "source": "8c8e9edf4a269effb155ae027b703cd9dc770836",
+  "evidence": "a08e22bd05aa31737825b5588fff39ce06d98676",
+  "source_parent": "ed65c4757a23678a0845d4184c32d1ab0f179d78",
+  "changed_paths": [
+    "docs/firecracker-recovery.md",
+    "scripts/firecracker_recovery.py",
+    "scripts/test_firecracker_recovery.py"
+  ],
+  "unchanged_bindings": 14,
+  "unchanged_host_functions_AST": 35,
+  "other_top_level_AST_unchanged": true,
+  "old_A_indexed_files": 27,
+  "new_indexed_files": 7,
+  "recorded_RED_failures": 10,
+  "recorded_focused_PASS": 4,
+  "recorded_host_covering_PASS": 19,
+  "report_body_matches": true,
+  "all_match": true,
+  "tests_rerun": false,
+  "old_176_file_crawl_repeated": false,
+  "ordinary_guard_run": false,
+  "private_scene_read": false,
+  "Docker_operation": false,
+  "original_Q_released": false,
+  "original_Q_bytes": 5000000000,
+  "actual_recovery": "not_executed"
+}

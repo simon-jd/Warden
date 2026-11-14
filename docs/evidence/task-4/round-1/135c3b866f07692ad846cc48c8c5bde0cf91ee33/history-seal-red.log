@@ -1,0 +1,70 @@
+profile_source_sha256=56abda58b8a822b7bc1ce7311025763878e7110c2d4cfabd84203dce556db4dd
+{"image_id": "sha256:a688600ca24f8a4d3ca77f95b0dd40704a9fc787c826660eb7ba0b641b8b175d", "owned_image_charge": 0, "outstanding": 0}
+{"additional_bytes": "512000000", "at": "2026-10-24T20:35:54Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 285350178816, "project_allocated_bytes": 3733041152, "service_memory_bytes": "2000000000"}
+{"container_id": "8035078faee6dd8ef9d6bab4e00ca01f664342d8ab8c43c77699b3ae86d7a96a", "labels": {"project": "warden", "owner": "codex-warden", "session": "9657ff2c1e8f7cc8bdd38b38f5bfb29e", "task": "firecracker-code", "ttl": "2026-10-24T21:35:54.825114+00:00"}}
+{"inspected_host_config": {"Binds": null, "ContainerIDFile": "", "LogConfig": {"Type": "json-file", "Config": {"max-file": "1", "max-size": "10m"}}, "NetworkMode": "none", "PortBindings": {}, "RestartPolicy": {"Name": "no", "MaximumRetryCount": 0}, "AutoRemove": false, "VolumeDriver": "", "VolumesFrom": null, "ConsoleSize": [0, 0], "CapAdd": null, "CapDrop": ["ALL"], "CgroupnsMode": "private", "Dns": null, "DnsOptions": [], "DnsSearch": [], "ExtraHosts": null, "GroupAdd": null, "IpcMode": "private", "Cgroup": "", "Links": null, "OomScoreAdj": 0, "PidMode": "", "Privileged": false, "PublishAllPorts": false, "ReadonlyRootfs": true, "SecurityOpt": ["no-new-privileges"], "Tmpfs": {"/tmp": "rw,exec,nosuid,nodev,size=268435456"}, "UTSMode": "", "UsernsMode": "", "ShmSize": 67108864, "Runtime": "runc", "Isolation": "", "CpuShares": 0, "Memory": 2000000000, "NanoCpus": 2000000000, "CgroupParent": "", "BlkioWeight": 0, "BlkioWeightDevice": [], "BlkioDeviceReadBps": [], "BlkioDeviceWriteBps": [], "BlkioDeviceReadIOps": [], "BlkioDeviceWriteIOps": [], "CpuPeriod": 0, "CpuQuota": 0, "CpuRealtimePeriod": 0, "CpuRealtimeRuntime": 0, "CpusetCpus": "", "CpusetMems": "", "Devices": [], "DeviceCgroupRules": null, "DeviceRequests": null, "MemoryReservation": 0, "MemorySwap": 2000000000, "MemorySwappiness": null, "OomKillDisable": false, "PidsLimit": 256, "Ulimits": null, "CpuCount": 0, "CpuPercent": 0, "IOMaximumIOps": 0, "IOMaximumBandwidth": 0, "Mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden", "Target": "/workspace", "ReadOnly": true}, {"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/firecracker-code", "Target": "/workspace/.cache/firecracker-code"}], "MaskedPaths": ["/proc/acpi", "/proc/asound", "/proc/interrupts", "/proc/kcore", "/proc/keys", "/proc/latency_stats", "/proc/sched_debug", "/proc/scsi", "/proc/timer_list", "/proc/timer_stats", "/sys/devices/virtual/powercap", "/sys/firmware", "/sys/devices/system/cpu/cpu0/thermal_throttle", "/sys/devices/system/cpu/cpu1/thermal_throttle", "/sys/devices/system/cpu/cpu2/thermal_throttle", "/sys/devices/system/cpu/cpu3/thermal_throttle", "/sys/devices/system/cpu/cpu4/thermal_throttle", "/sys/devices/system/cpu/cpu5/thermal_throttle", "/sys/devices/system/cpu/cpu6/thermal_throttle", "/sys/devices/system/cpu/cpu7/thermal_throttle", "/sys/devices/system/cpu/cpu8/thermal_throttle", "/sys/devices/system/cpu/cpu9/thermal_throttle", "/sys/devices/system/cpu/cpu10/thermal_throttle", "/sys/devices/system/cpu/cpu11/thermal_throttle", "/sys/devices/system/cpu/cpu12/thermal_throttle", "/sys/devices/system/cpu/cpu13/thermal_throttle", "/sys/devices/system/cpu/cpu14/thermal_throttle", "/sys/devices/system/cpu/cpu15/thermal_throttle", "/sys/devices/system/cpu/cpu16/thermal_throttle", "/sys/devices/system/cpu/cpu17/thermal_throttle", "/sys/devices/system/cpu/cpu18/thermal_throttle", "/sys/devices/system/cpu/cpu19/thermal_throttle", "/sys/devices/system/cpu/cpu20/thermal_throttle", "/sys/devices/system/cpu/cpu21/thermal_throttle", "/sys/devices/system/cpu/cpu22/thermal_throttle", "/sys/devices/system/cpu/cpu23/thermal_throttle", "/sys/devices/system/cpu/cpu24/thermal_throttle", "/sys/devices/system/cpu/cpu25/thermal_throttle", "/sys/devices/system/cpu/cpu26/thermal_throttle", "/sys/devices/system/cpu/cpu27/thermal_throttle", "/sys/devices/system/cpu/cpu28/thermal_throttle", "/sys/devices/system/cpu/cpu29/thermal_throttle", "/sys/devices/system/cpu/cpu30/thermal_throttle", "/sys/devices/system/cpu/cpu31/thermal_throttle"], "ReadonlyPaths": ["/proc/bus", "/proc/fs", "/proc/irq", "/proc/sys", "/proc/sysrq-trigger"]}}
+=== RUN   TestLocalRetirementCannotSwallowAmbiguousGate
+--- PASS: TestLocalRetirementCannotSwallowAmbiguousGate (0.00s)
+=== RUN   TestUnknownOriginalOwnerRemainsCleanupPending
+--- PASS: TestUnknownOriginalOwnerRemainsCleanupPending (0.00s)
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle/invalid-profile
+    driver_test.go:157: lost gate ambiguity: <nil>
+    driver_test.go:159: pending node published retirement: <nil>
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle/image-mismatch
+    driver_test.go:157: lost gate ambiguity: <nil>
+    driver_test.go:159: pending node published retirement: <nil>
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle/reservation-full
+    driver_test.go:157: lost gate ambiguity: <nil>
+    driver_test.go:159: pending node published retirement: <nil>
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle/record-collision
+    driver_test.go:157: lost gate ambiguity: <nil>
+    driver_test.go:159: pending node published retirement: <nil>
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle/allocator-state
+    driver_test.go:157: lost gate ambiguity: <nil>
+    driver_test.go:159: pending node published retirement: <nil>
+--- FAIL: TestCloseAccountsForGatedFailureWithoutHandle (0.00s)
+    --- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/invalid-profile (0.00s)
+    --- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/image-mismatch (0.00s)
+    --- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/reservation-full (0.00s)
+    --- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/record-collision (0.00s)
+    --- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/allocator-state (0.00s)
+=== RUN   TestClosePreservesPendingFilesAfterReopen
+=== RUN   TestClosePreservesPendingFilesAfterReopen/launching
+    driver_test.go:183: reopen lost ambiguity: <nil>
+    driver_test.go:188: pending node published retirement: <nil>
+=== RUN   TestClosePreservesPendingFilesAfterReopen/orphan-run
+    driver_test.go:186: orphan run released: <nil>
+    driver_test.go:188: pending node published retirement: <nil>
+--- FAIL: TestClosePreservesPendingFilesAfterReopen (0.00s)
+    --- FAIL: TestClosePreservesPendingFilesAfterReopen/launching (0.00s)
+    --- FAIL: TestClosePreservesPendingFilesAfterReopen/orphan-run (0.00s)
+FAIL
+FAIL	warden/runtimes/firecracker	0.006s
+=== RUN   TestSealAdmissionAcrossInstancesAndReopenWithoutProof
+    admission_test.go:36: durable admission seal unavailable
+--- FAIL: TestSealAdmissionAcrossInstancesAndReopenWithoutProof (0.00s)
+=== RUN   TestSealAdmissionRejectsMalformedOrUnsafeState
+=== RUN   TestSealAdmissionRejectsMalformedOrUnsafeState/empty
+    admission_test.go:108: unsafe seal bypassed
+=== RUN   TestSealAdmissionRejectsMalformedOrUnsafeState/corrupt
+    admission_test.go:108: unsafe seal bypassed
+=== RUN   TestSealAdmissionRejectsMalformedOrUnsafeState/other-authority
+    admission_test.go:108: unsafe seal bypassed
+=== RUN   TestSealAdmissionRejectsMalformedOrUnsafeState/mode
+    admission_test.go:108: unsafe seal bypassed
+=== RUN   TestSealAdmissionRejectsMalformedOrUnsafeState/symlink
+    admission_test.go:108: unsafe seal bypassed
+=== RUN   TestSealAdmissionRejectsMalformedOrUnsafeState/hardlink
+    admission_test.go:108: unsafe seal bypassed
+--- FAIL: TestSealAdmissionRejectsMalformedOrUnsafeState (0.00s)
+    --- FAIL: TestSealAdmissionRejectsMalformedOrUnsafeState/empty (0.00s)
+    --- FAIL: TestSealAdmissionRejectsMalformedOrUnsafeState/corrupt (0.00s)
+    --- FAIL: TestSealAdmissionRejectsMalformedOrUnsafeState/other-authority (0.00s)
+    --- FAIL: TestSealAdmissionRejectsMalformedOrUnsafeState/mode (0.00s)
+    --- FAIL: TestSealAdmissionRejectsMalformedOrUnsafeState/symlink (0.00s)
+    --- FAIL: TestSealAdmissionRejectsMalformedOrUnsafeState/hardlink (0.00s)
+FAIL
+FAIL	warden/runtimes/gate	0.003s
+FAIL
+{"removed_container": "8035078faee6dd8ef9d6bab4e00ca01f664342d8ab8c43c77699b3ae86d7a96a"}

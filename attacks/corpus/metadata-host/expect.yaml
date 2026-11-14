@@ -1,0 +1,3 @@
+id: metadata-host
+technique: T1552.005
+success_signal: WARDEN_metadata_host

@@ -1,0 +1,5 @@
+COMMAND: scripts/build-runtime-lab.sh
+EXIT: 0
+OCI image warden-lab/probe:conformance@sha256:8ad90ab74ebd31bf2ab2a3915b2f8274ff403d595f143b1f9315088cb42c182c
+
+Build was run after the gate changes and before api-code. It rebuilt all fixed test binaries; no live profile was enabled.

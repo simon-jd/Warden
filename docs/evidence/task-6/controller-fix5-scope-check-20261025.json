@@ -1,0 +1,122 @@
+{
+  "actual_admission": false,
+  "all150plus2_unchanged": true,
+  "allocated_excluding_index": 2867200,
+  "approval_python_body_unchanged": true,
+  "artifacts": 310,
+  "dispatch_base": "50a8f7ca76b65348210752d7a7a93108d4237f8a",
+  "elapsed_before_write_seconds": 1.4750494989566505,
+  "evidence": "2c2b869cce28bdfe602e80c5f0415e41492e073c",
+  "index_bytes": 96742,
+  "index_sha256": "7c802eb45741936728fcf73713ddcecaac83578037efd1ad3d794d3bacd26532",
+  "js": [
+    {
+      "cases": 1,
+      "failures": 1,
+      "kind": "material",
+      "metadata_post": "a26bdf",
+      "metadata_pre": "aea3c9",
+      "stage": "red"
+    },
+    {
+      "cases": 22,
+      "failures": 0,
+      "kind": "material",
+      "metadata_post": "4b4487",
+      "metadata_pre": "b73365",
+      "stage": "green"
+    },
+    {
+      "cases": 22,
+      "failures": 0,
+      "kind": "material",
+      "metadata_post": "6d3b00",
+      "metadata_pre": "7fdb0e",
+      "stage": "cover"
+    },
+    {
+      "cases": 3,
+      "failures": 3,
+      "kind": "approval",
+      "metadata_post": "492690",
+      "metadata_pre": "f4b331",
+      "stage": "red"
+    },
+    {
+      "cases": 35,
+      "failures": 0,
+      "kind": "approval",
+      "metadata_post": "3b6942",
+      "metadata_pre": "7daaab",
+      "stage": "green"
+    },
+    {
+      "cases": 35,
+      "failures": 0,
+      "kind": "approval",
+      "metadata_post": "1c42dc",
+      "metadata_pre": "cab2d5",
+      "stage": "cover"
+    }
+  ],
+  "logical_excluding_index": 1988043,
+  "missing_outputs_preserved": 16,
+  "native": [
+    {
+      "cases": 1,
+      "complete": true,
+      "exit_code": 1,
+      "label": "red-01",
+      "terminal_chunk": "c192d1"
+    },
+    {
+      "cases": null,
+      "complete": false,
+      "exit_code": 1,
+      "label": "green-01",
+      "terminal_chunk": "e13bcf"
+    },
+    {
+      "cases": 10,
+      "complete": true,
+      "exit_code": 0,
+      "label": "green-02",
+      "terminal_chunk": "f314ec"
+    },
+    {
+      "cases": 10,
+      "complete": true,
+      "exit_code": 0,
+      "label": "cover-01",
+      "terminal_chunk": "902d59"
+    }
+  ],
+  "net_allocated_excluding_index": 2756608,
+  "net_logical_excluding_index": 1881697,
+  "old138_bodies_and_plan_prefix_preserved": true,
+  "packages": [
+    {
+      "base": "20fdff98c16d51d02cc2d9021bb373b6fb4a2dcf",
+      "bytes": 2362029,
+      "filtering_or_dedup": false,
+      "head": "aaad04b685a9b4e8fbece34a416e468f3d8a4728",
+      "path": ".superpowers/sdd/2-warden-security-plan/review-fix5-material-20fdff9..aaad04b.diff",
+      "scope": "material",
+      "sha256": "a021357d8ab9f3a7b6661222292e8e9a5ea04135e1d61404c97c4d12fc124de8"
+    },
+    {
+      "base": "6bbf995e4a069b596660e00d99d81fd9e93a1815",
+      "bytes": 2228644,
+      "filtering_or_dedup": false,
+      "head": "aaad04b685a9b4e8fbece34a416e468f3d8a4728",
+      "path": ".superpowers/sdd/2-warden-security-plan/review-fix5-approval-6bbf995..aaad04b.diff",
+      "scope": "approval",
+      "sha256": "e957cdddd91e7396c31eb07d02ab9b097aa4777d7da597e7660a084ce8f1a755"
+    }
+  ],
+  "physical_startup_termination_bound_proved": false,
+  "review_head": "aaad04b685a9b4e8fbece34a416e468f3d8a4728",
+  "scope": "new fix5 artifacts/runs/freeze only; no old proof expansion, project imports, tests or actual operation",
+  "source": "8bf623b6b5fc04a1d2c0a979a274cfeb3f643f51",
+  "status": "PASS"
+}

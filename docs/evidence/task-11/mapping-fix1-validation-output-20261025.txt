@@ -1,0 +1,3 @@
+√ Loaded ["detect/vector/aggregator.toml"]
+------------------------------------------
+                                 Validated

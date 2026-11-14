@@ -1,0 +1,4 @@
+# GREEN, sandbox resolution: one lookup per container per tick, pod-sandbox cgroups remembered from the pod watch and from a first lookup (2026-11-14T04:36:14Z)
+$ taskset -c 0-7,16-31 python3 -E -s -B -m unittest detect.falco.test_collector detect.falco.test_recorder detect.falco.test_bindings detect.falco.test_detector detect.falco.test_benign detect.falco.test_review
+Ran 93 tests in 6.460s
+OK

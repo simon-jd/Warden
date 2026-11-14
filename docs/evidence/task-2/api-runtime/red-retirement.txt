@@ -1,0 +1,7 @@
+=== RUN   TestRetirementFenceRejectsNewStartsAcrossInstances
+    retirement_test.go:23: retired authority admitted Start
+    retirement_test.go:25: retired authority reached runtime
+--- FAIL: TestRetirementFenceRejectsNewStartsAcrossInstances (0.00s)
+FAIL
+FAIL	warden/runtimes/gate	0.002s
+FAIL

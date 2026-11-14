@@ -1,0 +1,18 @@
+COMMAND: .cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/bin/go test ./runtimes/gvisor -run TestBindingRejectsInvalidIdentityWithoutState -count=1
+EXIT: 1
+--- FAIL: TestBindingRejectsInvalidIdentityWithoutState (0.00s)
+    --- FAIL: TestBindingRejectsInvalidIdentityWithoutState/invalid_port (0.00s)
+        binding_test.go:201: invalid identity accepted
+    --- FAIL: TestBindingRejectsInvalidIdentityWithoutState/zero_port (0.00s)
+        binding_test.go:201: invalid identity accepted
+    --- FAIL: TestBindingRejectsInvalidIdentityWithoutState/invalid_host (0.00s)
+        binding_test.go:201: invalid identity accepted
+    --- FAIL: TestBindingRejectsInvalidIdentityWithoutState/empty_node_label (0.00s)
+        binding_test.go:201: invalid identity accepted
+    --- FAIL: TestBindingRejectsInvalidIdentityWithoutState/empty_port (0.00s)
+        binding_test.go:201: invalid identity accepted
+    --- FAIL: TestBindingRejectsInvalidIdentityWithoutState/bad_node_label (0.00s)
+        binding_test.go:201: invalid identity accepted
+FAIL
+FAIL	warden/runtimes/gvisor	0.004s
+FAIL

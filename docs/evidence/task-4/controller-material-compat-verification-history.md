@@ -1,0 +1,3 @@
+# Controller evidence-path correction
+
+Controller归档更正：7fe6379中误把新材料兼容核验输出写到已有controller-material-verification.json（旧19:18公开FC材料摘要）。未运行现场操作/改变product；立即从39bc11e原字节恢复旧path，新输出独立存controller-material-compat-verification.json并更正STATUS链接。没有覆盖旧index或改变原材料；此次命名失误与纠正保留Git历史，后续生成目标先exists/O_EXCL核验。

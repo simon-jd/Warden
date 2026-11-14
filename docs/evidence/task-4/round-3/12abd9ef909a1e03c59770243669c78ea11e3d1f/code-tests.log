@@ -1,0 +1,266 @@
+{"image_id": "sha256:a688600ca24f8a4d3ca77f95b0dd40704a9fc787c826660eb7ba0b641b8b175d", "owned_image_charge": 0, "outstanding": 0}
+{"additional_bytes": "512000000", "at": "2026-10-24T21:53:36Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 272260775936, "project_allocated_bytes": 3925430272, "service_memory_bytes": "2000000000"}
+{"container_id": "27e2ce8b15005e1f132f2274c77179454f92ace7855a73217578433550ee5296", "labels": {"project": "warden", "owner": "codex-warden", "session": "936d8018ed61b876459c8e294be1878b", "task": "firecracker-code", "ttl": "2026-10-24T22:53:36.156531+00:00"}}
+{"inspected_host_config": {"Binds": null, "ContainerIDFile": "", "LogConfig": {"Type": "json-file", "Config": {"max-file": "1", "max-size": "10m"}}, "NetworkMode": "none", "PortBindings": {}, "RestartPolicy": {"Name": "no", "MaximumRetryCount": 0}, "AutoRemove": false, "VolumeDriver": "", "VolumesFrom": null, "ConsoleSize": [0, 0], "CapAdd": null, "CapDrop": ["ALL"], "CgroupnsMode": "private", "Dns": null, "DnsOptions": [], "DnsSearch": [], "ExtraHosts": null, "GroupAdd": null, "IpcMode": "private", "Cgroup": "", "Links": null, "OomScoreAdj": 0, "PidMode": "", "Privileged": false, "PublishAllPorts": false, "ReadonlyRootfs": true, "SecurityOpt": ["no-new-privileges"], "Tmpfs": {"/tmp": "rw,exec,nosuid,nodev,size=268435456"}, "UTSMode": "", "UsernsMode": "", "ShmSize": 67108864, "Runtime": "runc", "Isolation": "", "CpuShares": 0, "Memory": 2000000000, "NanoCpus": 2000000000, "CgroupParent": "", "BlkioWeight": 0, "BlkioWeightDevice": [], "BlkioDeviceReadBps": [], "BlkioDeviceWriteBps": [], "BlkioDeviceReadIOps": [], "BlkioDeviceWriteIOps": [], "CpuPeriod": 0, "CpuQuota": 0, "CpuRealtimePeriod": 0, "CpuRealtimeRuntime": 0, "CpusetCpus": "", "CpusetMems": "", "Devices": [], "DeviceCgroupRules": null, "DeviceRequests": null, "MemoryReservation": 0, "MemorySwap": 2000000000, "MemorySwappiness": null, "OomKillDisable": false, "PidsLimit": 256, "Ulimits": null, "CpuCount": 0, "CpuPercent": 0, "IOMaximumIOps": 0, "IOMaximumBandwidth": 0, "Mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden", "Target": "/workspace", "ReadOnly": true}, {"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/firecracker-code", "Target": "/workspace/.cache/firecracker-code"}], "MaskedPaths": ["/proc/acpi", "/proc/asound", "/proc/interrupts", "/proc/kcore", "/proc/keys", "/proc/latency_stats", "/proc/sched_debug", "/proc/scsi", "/proc/timer_list", "/proc/timer_stats", "/sys/devices/virtual/powercap", "/sys/firmware", "/sys/devices/system/cpu/cpu0/thermal_throttle", "/sys/devices/system/cpu/cpu1/thermal_throttle", "/sys/devices/system/cpu/cpu2/thermal_throttle", "/sys/devices/system/cpu/cpu3/thermal_throttle", "/sys/devices/system/cpu/cpu4/thermal_throttle", "/sys/devices/system/cpu/cpu5/thermal_throttle", "/sys/devices/system/cpu/cpu6/thermal_throttle", "/sys/devices/system/cpu/cpu7/thermal_throttle", "/sys/devices/system/cpu/cpu8/thermal_throttle", "/sys/devices/system/cpu/cpu9/thermal_throttle", "/sys/devices/system/cpu/cpu10/thermal_throttle", "/sys/devices/system/cpu/cpu11/thermal_throttle", "/sys/devices/system/cpu/cpu12/thermal_throttle", "/sys/devices/system/cpu/cpu13/thermal_throttle", "/sys/devices/system/cpu/cpu14/thermal_throttle", "/sys/devices/system/cpu/cpu15/thermal_throttle", "/sys/devices/system/cpu/cpu16/thermal_throttle", "/sys/devices/system/cpu/cpu17/thermal_throttle", "/sys/devices/system/cpu/cpu18/thermal_throttle", "/sys/devices/system/cpu/cpu19/thermal_throttle", "/sys/devices/system/cpu/cpu20/thermal_throttle", "/sys/devices/system/cpu/cpu21/thermal_throttle", "/sys/devices/system/cpu/cpu22/thermal_throttle", "/sys/devices/system/cpu/cpu23/thermal_throttle", "/sys/devices/system/cpu/cpu24/thermal_throttle", "/sys/devices/system/cpu/cpu25/thermal_throttle", "/sys/devices/system/cpu/cpu26/thermal_throttle", "/sys/devices/system/cpu/cpu27/thermal_throttle", "/sys/devices/system/cpu/cpu28/thermal_throttle", "/sys/devices/system/cpu/cpu29/thermal_throttle", "/sys/devices/system/cpu/cpu30/thermal_throttle", "/sys/devices/system/cpu/cpu31/thermal_throttle"], "ReadonlyPaths": ["/proc/bus", "/proc/fs", "/proc/irq", "/proc/sys", "/proc/sysrq-trigger"]}}
+=== RUN   TestLostStartResponseIsNeverRetried
+--- PASS: TestLostStartResponseIsNeverRetried (0.00s)
+=== RUN   TestAPIRejectsWrongPeerBeforeMutation
+--- PASS: TestAPIRejectsWrongPeerBeforeMutation (0.00s)
+=== RUN   TestFirecrackerCapacity
+    capacity_test.go:14: NOT EXECUTED: requires separately reviewed post-conformance capacity mode
+--- SKIP: TestFirecrackerCapacity (0.00s)
+=== RUN   TestKernelCountersFailClosed
+--- PASS: TestKernelCountersFailClosed (0.00s)
+=== RUN   TestDevicePolicyDeniesOnlyTUNReadWrite
+--- PASS: TestDevicePolicyDeniesOnlyTUNReadWrite (0.00s)
+=== RUN   TestDevicePolicyRequiresAdditiveComposition
+=== RUN   TestDevicePolicyRequiresAdditiveComposition/query
+=== RUN   TestDevicePolicyRequiresAdditiveComposition/flags
+=== RUN   TestDevicePolicyRequiresAdditiveComposition/duplicate
+=== RUN   TestDevicePolicyRequiresAdditiveComposition/load
+=== RUN   TestDevicePolicyRequiresAdditiveComposition/attach
+=== RUN   TestDevicePolicyRequiresAdditiveComposition/removed
+=== RUN   TestDevicePolicyRequiresAdditiveComposition/extra
+=== RUN   TestDevicePolicyRequiresAdditiveComposition/post-query
+--- PASS: TestDevicePolicyRequiresAdditiveComposition (0.00s)
+    --- PASS: TestDevicePolicyRequiresAdditiveComposition/query (0.00s)
+    --- PASS: TestDevicePolicyRequiresAdditiveComposition/flags (0.00s)
+    --- PASS: TestDevicePolicyRequiresAdditiveComposition/duplicate (0.00s)
+    --- PASS: TestDevicePolicyRequiresAdditiveComposition/load (0.00s)
+    --- PASS: TestDevicePolicyRequiresAdditiveComposition/attach (0.00s)
+    --- PASS: TestDevicePolicyRequiresAdditiveComposition/removed (0.00s)
+    --- PASS: TestDevicePolicyRequiresAdditiveComposition/extra (0.00s)
+    --- PASS: TestDevicePolicyRequiresAdditiveComposition/post-query (0.00s)
+=== RUN   TestDevicePolicyFixedABIAndDigest
+--- PASS: TestDevicePolicyFixedABIAndDigest (0.00s)
+=== RUN   TestDevicePolicySingleACKClosedAndBounded
+--- PASS: TestDevicePolicySingleACKClosedAndBounded (0.01s)
+=== RUN   TestDriverFailsClosedWithoutOwnedReviewedNode
+--- PASS: TestDriverFailsClosedWithoutOwnedReviewedNode (0.00s)
+=== RUN   TestLocalRetirementCannotSwallowAmbiguousGate
+--- PASS: TestLocalRetirementCannotSwallowAmbiguousGate (0.00s)
+=== RUN   TestUnknownOriginalOwnerRemainsCleanupPending
+--- PASS: TestUnknownOriginalOwnerRemainsCleanupPending (0.00s)
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle/invalid-profile
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle/image-mismatch
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle/reservation-full
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle/record-collision
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle/allocator-state
+--- PASS: TestCloseAccountsForGatedFailureWithoutHandle (0.00s)
+    --- PASS: TestCloseAccountsForGatedFailureWithoutHandle/invalid-profile (0.00s)
+    --- PASS: TestCloseAccountsForGatedFailureWithoutHandle/image-mismatch (0.00s)
+    --- PASS: TestCloseAccountsForGatedFailureWithoutHandle/reservation-full (0.00s)
+    --- PASS: TestCloseAccountsForGatedFailureWithoutHandle/record-collision (0.00s)
+    --- PASS: TestCloseAccountsForGatedFailureWithoutHandle/allocator-state (0.00s)
+=== RUN   TestClosePreservesPendingFilesAfterReopen
+=== RUN   TestClosePreservesPendingFilesAfterReopen/launching
+=== RUN   TestClosePreservesPendingFilesAfterReopen/orphan-run
+--- PASS: TestClosePreservesPendingFilesAfterReopen (0.00s)
+    --- PASS: TestClosePreservesPendingFilesAfterReopen/launching (0.00s)
+    --- PASS: TestClosePreservesPendingFilesAfterReopen/orphan-run (0.00s)
+=== RUN   TestCloseSealsLateGateAndDirectStarts
+--- PASS: TestCloseSealsLateGateAndDirectStarts (0.00s)
+=== RUN   TestCloseCoordinatesInflightGateAdmission
+--- PASS: TestCloseCoordinatesInflightGateAdmission (0.03s)
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals/extra-gate
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals/extra-runs
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals/extra-uids
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals/corrupt-allocator
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals/unsafe-run
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals/lost-owner-started
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals/missing-runs
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals/corrupt-gate-node
+--- PASS: TestCloseRejectsUnknownOrUnsafeJournals (0.00s)
+    --- PASS: TestCloseRejectsUnknownOrUnsafeJournals/extra-gate (0.00s)
+    --- PASS: TestCloseRejectsUnknownOrUnsafeJournals/extra-runs (0.00s)
+    --- PASS: TestCloseRejectsUnknownOrUnsafeJournals/extra-uids (0.00s)
+    --- PASS: TestCloseRejectsUnknownOrUnsafeJournals/corrupt-allocator (0.00s)
+    --- PASS: TestCloseRejectsUnknownOrUnsafeJournals/unsafe-run (0.00s)
+    --- PASS: TestCloseRejectsUnknownOrUnsafeJournals/lost-owner-started (0.00s)
+    --- PASS: TestCloseRejectsUnknownOrUnsafeJournals/missing-runs (0.00s)
+    --- PASS: TestCloseRejectsUnknownOrUnsafeJournals/corrupt-gate-node (0.00s)
+=== RUN   TestCloseWaitsForAlreadyAdmittedCallback
+--- PASS: TestCloseWaitsForAlreadyAdmittedCallback (0.03s)
+=== RUN   TestExt4BuilderCreatesBoundedReadOnlyProbeDisk
+--- PASS: TestExt4BuilderCreatesBoundedReadOnlyProbeDisk (0.01s)
+=== RUN   TestDefaultReservesKernelOutsideWorkload
+--- PASS: TestDefaultReservesKernelOutsideWorkload (0.00s)
+=== RUN   TestRejectUnsupportedSpec
+--- PASS: TestRejectUnsupportedSpec (0.00s)
+=== RUN   TestExplicitBenchmarkKeepsMachineShapeWithoutEnlargingPayload
+--- PASS: TestExplicitBenchmarkKeepsMachineShapeWithoutEnlargingPayload (0.00s)
+=== RUN   TestUIDsSurviveProcessReopen
+--- PASS: TestUIDsSurviveProcessReopen (0.00s)
+=== RUN   TestUIDAllocatorRejectsOrphansAndUnsafeFiles
+=== RUN   TestUIDAllocatorRejectsOrphansAndUnsafeFiles/orphan
+=== RUN   TestUIDAllocatorRejectsOrphansAndUnsafeFiles/symlink
+=== RUN   TestUIDAllocatorRejectsOrphansAndUnsafeFiles/hardlink
+=== RUN   TestUIDAllocatorRejectsOrphansAndUnsafeFiles/corrupt
+=== RUN   TestUIDAllocatorRejectsOrphansAndUnsafeFiles/mode
+--- PASS: TestUIDAllocatorRejectsOrphansAndUnsafeFiles (0.00s)
+    --- PASS: TestUIDAllocatorRejectsOrphansAndUnsafeFiles/orphan (0.00s)
+    --- PASS: TestUIDAllocatorRejectsOrphansAndUnsafeFiles/symlink (0.00s)
+    --- PASS: TestUIDAllocatorRejectsOrphansAndUnsafeFiles/hardlink (0.00s)
+    --- PASS: TestUIDAllocatorRejectsOrphansAndUnsafeFiles/corrupt (0.00s)
+    --- PASS: TestUIDAllocatorRejectsOrphansAndUnsafeFiles/mode (0.00s)
+=== RUN   TestConcurrentUIDAllocation
+--- PASS: TestConcurrentUIDAllocation (0.00s)
+=== RUN   TestFirecrackerConformance
+    lab_test.go:44: NOT EXECUTED: independent review and controller-owned actual VM mode required
+--- SKIP: TestFirecrackerConformance (0.00s)
+=== RUN   TestFirecrackerBoot
+    lab_test.go:48: NOT EXECUTED: independent review and controller-owned actual VM mode required
+--- SKIP: TestFirecrackerBoot (0.00s)
+=== RUN   TestSnapshotRestoreFasterThanBoot
+    lab_test.go:73: NOT EXECUTED: independent review and controller-owned actual VM mode required
+--- SKIP: TestSnapshotRestoreFasterThanBoot (0.00s)
+=== RUN   TestJailerLaunchKeepsForegroundOwnerAndUniqueHostID
+--- PASS: TestJailerLaunchKeepsForegroundOwnerAndUniqueHostID (0.00s)
+=== RUN   TestImmutableArtifactHashModeAndAliasValidation
+--- PASS: TestImmutableArtifactHashModeAndAliasValidation (0.00s)
+=== RUN   TestOwnedProcessRetainsOriginalPIDFDThroughReap
+--- PASS: TestOwnedProcessRetainsOriginalPIDFDThroughReap (0.00s)
+=== RUN   TestOwnedProcessStartFailureDoesNotLeakDescriptors
+--- PASS: TestOwnedProcessStartFailureDoesNotLeakDescriptors (0.00s)
+=== RUN   TestProtocolSeparatesTenantLogsAndTrustedExit
+--- PASS: TestProtocolSeparatesTenantLogsAndTrustedExit (0.00s)
+=== RUN   TestProtocolRejectsAmbiguousOrUnboundFrames
+--- PASS: TestProtocolRejectsAmbiguousOrUnboundFrames (0.00s)
+=== RUN   TestProtocolHandlesShortWrites
+--- PASS: TestProtocolHandlesShortWrites (0.00s)
+=== RUN   TestRootFSExportProvenance
+--- PASS: TestRootFSExportProvenance (0.00s)
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/../escape
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites//escape
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/alias
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/alias#01
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/dev
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/fifo
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/suid
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/good
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/a/../escape
+--- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/../escape (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites//escape (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/alias (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/alias#01 (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/dev (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/fifo (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/suid (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/good (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/a/../escape (0.00s)
+=== RUN   TestRootFSRejectsOversizedStream
+--- PASS: TestRootFSRejectsOversizedStream (0.09s)
+=== RUN   TestDockerMtabOmittedWithoutCreatingAlias
+--- PASS: TestDockerMtabOmittedWithoutCreatingAlias (0.00s)
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/regular_after
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/parent_after
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/path
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/uid
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/xattr
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/child
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/dot_alias
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/duplicate
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/alias_after
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/parent_before
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/target
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/mode
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/type
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/traversal
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/gid
+=== RUN   TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/pax
+--- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/regular_after (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/parent_after (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/path (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/uid (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/xattr (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/child (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/dot_alias (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/duplicate (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/alias_after (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/parent_before (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/target (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/mode (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/type (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/traversal (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/gid (0.00s)
+    --- PASS: TestDockerMtabRejectsChangedMetadataAndCollisionsBeforeWrites/pax (0.00s)
+=== RUN   TestDockerMtabRejectsNonzeroSizeBeforeWrites
+--- PASS: TestDockerMtabRejectsNonzeroSizeBeforeWrites (0.00s)
+=== RUN   TestDockerMtabParticipatesInHeaderCount
+--- PASS: TestDockerMtabParticipatesInHeaderCount (0.00s)
+=== RUN   TestOrdinaryMtabFileIsKeptAndNeverOmitted
+--- PASS: TestOrdinaryMtabFileIsKeptAndNeverOmitted (0.00s)
+=== RUN   TestSessionMountMetadataAndOnlyROTransition
+--- PASS: TestSessionMountMetadataAndOnlyROTransition (0.00s)
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/device
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/inode
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/uid
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/mode
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/identity
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/namespace
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/missing
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/duplicate
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/submount
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/shared
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/master
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/unknownflag
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/rw
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/device-field
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/malformed
+=== RUN   TestSessionMountRejectsWrongMetadataAndUnsafeMounts/oversized
+--- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/device (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/inode (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/uid (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/mode (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/identity (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/namespace (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/missing (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/duplicate (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/submount (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/shared (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/master (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/unknownflag (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/rw (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/device-field (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/malformed (0.00s)
+    --- PASS: TestSessionMountRejectsWrongMetadataAndUnsafeMounts/oversized (0.00s)
+=== RUN   TestMountSmokeRefusesOrdinaryProcess
+--- PASS: TestMountSmokeRefusesOrdinaryProcess (0.00s)
+=== RUN   TestSnapshotBindsAllImmutableInputsAndShape
+--- PASS: TestSnapshotBindsAllImmutableInputsAndShape (0.00s)
+=== RUN   TestMeasuredMedianComparison
+--- PASS: TestMeasuredMedianComparison (0.00s)
+=== RUN   TestSnapshotCacheRejectsTamperingAndWritableAliases
+--- PASS: TestSnapshotCacheRejectsTamperingAndWritableAliases (0.00s)
+=== RUN   TestSupervisorRefusesOrdinaryProcessBeforeDeviceOrMount
+--- PASS: TestSupervisorRefusesOrdinaryProcessBeforeDeviceOrMount (0.00s)
+=== RUN   TestOuterLimitsMustMatchFixedMode
+--- PASS: TestOuterLimitsMustMatchFixedMode (0.00s)
+=== RUN   TestOuterLimitsOnlyCanonicalPageFloor
+--- PASS: TestOuterLimitsOnlyCanonicalPageFloor (0.00s)
+PASS
+ok  	warden/runtimes/firecracker	0.195s
+?   	warden/runtimes/firecracker/cmd/agent	[no test files]
+?   	warden/runtimes/firecracker/cmd/lab	[no test files]
+?   	warden/runtimes/firecracker/cmd/rootfs	[no test files]
+=== RUN   TestBootstrapRefusesOrdinaryCodeProcessBeforeAnyMount
+--- PASS: TestBootstrapRefusesOrdinaryCodeProcessBeforeAnyMount (0.00s)
+=== RUN   TestPayloadFilterDeniesControlSocketsAndPrivilegeSyscalls
+--- PASS: TestPayloadFilterDeniesControlSocketsAndPrivilegeSyscalls (0.00s)
+=== RUN   TestGuestSessionConsumesBeforeExecutionAndRejectsReplay
+--- PASS: TestGuestSessionConsumesBeforeExecutionAndRejectsReplay (0.00s)
+=== RUN   TestGuestSnapshotControlCannotCaptureBoundSession
+--- PASS: TestGuestSnapshotControlCannotCaptureBoundSession (0.00s)
+=== RUN   TestGuestACKPrecedesEarlyChildOutput
+--- PASS: TestGuestACKPrecedesEarlyChildOutput (0.00s)
+PASS
+ok  	warden/runtimes/firecracker/guest	0.006s
+{"removed_container": "27e2ce8b15005e1f132f2274c77179454f92ace7855a73217578433550ee5296"}

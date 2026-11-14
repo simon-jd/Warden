@@ -1,0 +1,22 @@
+{
+  "dispatch_base": "ac0bf10feca7825bd81f3d20f896763d6ae003cd",
+  "excluded_unrelated_paths": [
+    "scripts/firecracker_code.py",
+    "vuln/",
+    "docs/STATUS.md",
+    "docs/evidence/task-13/review-metrics-component.md"
+  ],
+  "old_protocol_sha256": "9ce6c1a12a97f953817e0266252e22c22ecd15dd291af4319293d1458b9d5b1c",
+  "plan_prefix": {
+    "bytes": 109113,
+    "sha256": "1c341b2f6bc3420245a6327d64501dd8c8f2f416d6b9f9f3c28b928218d240ea"
+  },
+  "scope": "only changed source/plan prefix; no old runtime or canonical proof campaign",
+  "static_comparisons": [
+    "old common functions unchanged except reconcile metadata guard",
+    "reader bytes unchanged",
+    "raw/reconcile JS blocks unchanged",
+    "reviewed metadata serializer unchanged"
+  ],
+  "unchanged_reader_sha256": "a8ced178b9ca2f6c5e56f1b8425fd7d5b93d5a1cc6efc172450e7fc5cf8cec21"
+}

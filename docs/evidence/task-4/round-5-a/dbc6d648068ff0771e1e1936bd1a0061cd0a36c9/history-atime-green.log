@@ -1,0 +1,6 @@
+test_reads_ignore_atime_but_keep_content_identity_checks (test_firecracker_recovery.PackageTests.test_reads_ignore_atime_but_keep_content_identity_checks) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK

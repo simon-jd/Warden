@@ -1,0 +1,4 @@
+PASS: exactly 3 source files; 3 existing functions changed / 3 fixed functions added.
+PASS: 48 functions / 2 classes and remaining AST unchanged; first validator, I8, materials, ABI, profiles and guards preserved.
+PASS: only affected history/operation/workflow tests; 14 fixed bindings unchanged.
+PASS: immediate prior source index and 7 artifacts only; 3 named public prerequisites unchanged.

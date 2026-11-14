@@ -1,0 +1,9 @@
+{
+  "utc": "2026-10-24T16:43:23.178789+00:00",
+  "head": "a4e6fb0a2ef26c7b7f8d454b76e2c7f99643463f",
+  "source_commit": "3d87ef6f58fb8fa92775984b3518efdb8a8d1ad5",
+  "review_fix_range": "cb76a2d..df6e891",
+  "capless_mount_prerequisite_commit": "a4e6fb0",
+  "command": "/usr/bin/time -v python3 -B scripts/k3s_lab.py bootstrap --other-service-memory-bytes 0 --reviewed-live-profile",
+  "scope": "Dedicated fixed node readiness/public identity/full cleanup only; no tenant Pod or Job, Azure or GPU."
+}

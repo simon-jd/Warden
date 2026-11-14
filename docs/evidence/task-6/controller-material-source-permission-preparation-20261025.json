@@ -1,0 +1,822 @@
+{
+  "changes": [
+    {
+      "dev": 66307,
+      "ino": 53882101,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "Makefile"
+    },
+    {
+      "dev": 66307,
+      "ino": 56395198,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "attacks"
+    },
+    {
+      "dev": 66307,
+      "ino": 56395199,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "attacks/matrix"
+    },
+    {
+      "dev": 66307,
+      "ino": 56395200,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "attacks/matrix/classify.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 56395201,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "attacks/matrix/classify_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309355,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "controlplane"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309364,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "controlplane/cmd"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309365,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "controlplane/cmd/warden-api"
+    },
+    {
+      "dev": 66307,
+      "ino": 54322485,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/cmd/warden-api/main.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309356,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "controlplane/internal"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309357,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "controlplane/internal/api"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309370,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/api/api.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309373,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/api/api_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54804274,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "controlplane/internal/apilab"
+    },
+    {
+      "dev": 66307,
+      "ino": 54804275,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/apilab/api_runtime_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309360,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "controlplane/internal/audit"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309371,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/audit/audit.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309374,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/audit/audit_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54800961,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "controlplane/internal/authn"
+    },
+    {
+      "dev": 66307,
+      "ino": 54801554,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/authn/jwks.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54801553,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/authn/verifier.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54801326,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/authn/verifier_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54419904,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "controlplane/internal/canonical"
+    },
+    {
+      "dev": 66307,
+      "ino": 54419905,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/canonical/json.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309358,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "controlplane/internal/runs"
+    },
+    {
+      "dev": 66307,
+      "ino": 54341854,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/runs/execution.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54330311,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/runs/execution_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54322583,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/runs/policy.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309369,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/runs/runs.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54564259,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "controlplane/internal/scheduler"
+    },
+    {
+      "dev": 66307,
+      "ino": 54567533,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/scheduler/config.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54567532,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/scheduler/config_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54566282,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/scheduler/scheduler.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54566283,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/scheduler/scheduler_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54574409,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/scheduler/snapshot_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309361,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "controlplane/internal/store"
+    },
+    {
+      "dev": 66307,
+      "ino": 54342498,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/store/migration_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309362,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "controlplane/internal/store/migrations"
+    },
+    {
+      "dev": 66307,
+      "ino": 54295364,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/store/migrations/001_init.sql"
+    },
+    {
+      "dev": 66307,
+      "ino": 54330298,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/store/migrations/002_execution.sql"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309368,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/store/store.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309359,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "controlplane/internal/tenant"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309367,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/tenant/tenant.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309363,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "controlplane/internal/testutil"
+    },
+    {
+      "dev": 66307,
+      "ino": 54309372,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "controlplane/internal/testutil/database.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54036704,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "docs"
+    },
+    {
+      "dev": 66307,
+      "ino": 54036705,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "docs/evidence"
+    },
+    {
+      "dev": 66307,
+      "ino": 54046311,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "docs/evidence/task-6"
+    },
+    {
+      "dev": 66307,
+      "ino": 53919355,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "go.mod"
+    },
+    {
+      "dev": 66307,
+      "ino": 55328935,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "policies"
+    },
+    {
+      "dev": 66307,
+      "ino": 55328936,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "policies/seccomp"
+    },
+    {
+      "dev": 66307,
+      "ino": 55326990,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "policies/seccomp/policy.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55328931,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "runtimes"
+    },
+    {
+      "dev": 66307,
+      "ino": 55328933,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "runtimes/conformance"
+    },
+    {
+      "dev": 66307,
+      "ino": 55328934,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "runtimes/conformance/guest"
+    },
+    {
+      "dev": 66307,
+      "ino": 55344180,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/conformance/guest/Dockerfile"
+    },
+    {
+      "dev": 66307,
+      "ino": 55344182,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/conformance/guest/fork_linux_amd64.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55344179,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/conformance/guest/main.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55344177,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/conformance/suite.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55344610,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "runtimes/firecracker"
+    },
+    {
+      "dev": 66307,
+      "ino": 55844242,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "runtimes/firecracker/cmd"
+    },
+    {
+      "dev": 66307,
+      "ino": 55844374,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "runtimes/firecracker/cmd/agent"
+    },
+    {
+      "dev": 66307,
+      "ino": 55844332,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "runtimes/firecracker/cmd/lab"
+    },
+    {
+      "dev": 66307,
+      "ino": 55844369,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "runtimes/firecracker/cmd/rootfs"
+    },
+    {
+      "dev": 66307,
+      "ino": 55842322,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "runtimes/firecracker/guest"
+    },
+    {
+      "dev": 66307,
+      "ino": 55350461,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "runtimes/gate"
+    },
+    {
+      "dev": 66307,
+      "ino": 55350504,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/gate/gate_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55356978,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/gate/retirement.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55356994,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/gate/retirement_kernel_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55354144,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/gate/retirement_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55358315,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "runtimes/gvisor"
+    },
+    {
+      "dev": 66307,
+      "ino": 55358318,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/gvisor/binding.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55358316,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/gvisor/binding_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55328932,
+      "kind": "directory",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "runtimes/runc"
+    },
+    {
+      "dev": 66307,
+      "ino": 55344178,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/runc/conformance_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55341761,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/runc/driver.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55340009,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/runc/handle.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55339949,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/runc/pids.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55344245,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/runc/recovery.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55326747,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/runc/review_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55328939,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/runc/runc.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55327010,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/runc/runc_test.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55339950,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/runc/socket.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 55328937,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "runtimes/runtime.go"
+    },
+    {
+      "dev": 66307,
+      "ino": 54030819,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "scripts/azure_guard.py"
+    },
+    {
+      "dev": 66307,
+      "ino": 54030821,
+      "kind": "file",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "scripts/azure_reaper.sh"
+    },
+    {
+      "dev": 66307,
+      "ino": 54044654,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "scripts/build-probe-oci.py"
+    },
+    {
+      "dev": 66307,
+      "ino": 54044653,
+      "kind": "file",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "scripts/build-runtime-lab.sh"
+    },
+    {
+      "dev": 66307,
+      "ino": 54044543,
+      "kind": "file",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "scripts/check-test-postgres-cleanup.sh"
+    },
+    {
+      "dev": 66307,
+      "ino": 54044246,
+      "kind": "file",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "scripts/go.sh"
+    },
+    {
+      "dev": 66307,
+      "ino": 54046284,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "scripts/identity_cache.py"
+    },
+    {
+      "dev": 66307,
+      "ino": 54046559,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "scripts/identity_cache_continue.py"
+    },
+    {
+      "dev": 66307,
+      "ino": 54044672,
+      "kind": "file",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "scripts/run-runtime-lab.sh"
+    },
+    {
+      "dev": 66307,
+      "ino": 54044247,
+      "kind": "file",
+      "new_mode": 493,
+      "old_mode": 509,
+      "path": "scripts/test-postgres.sh"
+    },
+    {
+      "dev": 66307,
+      "ino": 54030619,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "scripts/test_azure_guard.py"
+    },
+    {
+      "dev": 66307,
+      "ino": 54046322,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "scripts/test_identity_cache.py"
+    },
+    {
+      "dev": 66307,
+      "ino": 54046533,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "scripts/test_identity_cache_continue.py"
+    },
+    {
+      "dev": 66307,
+      "ino": 54031239,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "scripts/test_runtime_lab_api.py"
+    },
+    {
+      "dev": 66307,
+      "ino": 54030786,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "scripts/test_runtime_lab_cleanup.py"
+    },
+    {
+      "dev": 66307,
+      "ino": 54030742,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "scripts/test_runtime_lab_docker.py"
+    },
+    {
+      "dev": 66307,
+      "ino": 54030752,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "scripts/test_runtime_lab_docker_init.py"
+    },
+    {
+      "dev": 66307,
+      "ino": 54030588,
+      "kind": "file",
+      "new_mode": 420,
+      "old_mode": 436,
+      "path": "scripts/test_runtime_lab_paths.py"
+    }
+  ],
+  "ruling": "Tighten owned project permission bits to satisfy existing trusted reader without relaxing it; routine reversible metadata preparation, not source fix6. Cost: group write access to these exact paths removed. Original modes and inode identity retained here.",
+  "scope": "root actual admission preparation, exact source150 plus invoker and project ancestors only; no source bytes/private/cache/scene/Q change"
+}

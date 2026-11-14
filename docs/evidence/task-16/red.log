@@ -1,0 +1,30 @@
+fatal error: failed to reserve page summary memory
+
+runtime stack:
+runtime.throw({0x6277a4366867?, 0x20000000?})
+	/usr/local/go/src/runtime/panic.go:1229 +0x4a fp=0x7fffcb54b330 sp=0x7fffcb54b300 pc=0x6277a36b25ca
+runtime.(*pageAlloc).sysInit(0x6277a564cf88, 0xe0?)
+	/usr/local/go/src/runtime/mpagealloc_64bit.go:81 +0x112 fp=0x7fffcb54b398 sp=0x7fffcb54b330 pc=0x6277a366f4b2
+runtime.(*pageAlloc).init(0x6277a564cf88, 0x6277a564cf80, 0x6277a566d1e0, 0x0)
+	/usr/local/go/src/runtime/mpagealloc.go:327 +0x85 fp=0x7fffcb54b3c8 sp=0x7fffcb54b398 pc=0x6277a366cbc5
+runtime.(*mheap).init(0x6277a564cf80)
+	/usr/local/go/src/runtime/mheap.go:821 +0x225 fp=0x7fffcb54b400 sp=0x7fffcb54b3c8 pc=0x6277a3668d05
+runtime.mallocinit()
+	/usr/local/go/src/runtime/malloc.go:493 +0xfd fp=0x7fffcb54b448 sp=0x7fffcb54b400 pc=0x6277a364bc1d
+runtime.schedinit()
+	/usr/local/go/src/runtime/proc.go:877 +0x112 fp=0x7fffcb54b4e0 sp=0x7fffcb54b448 pc=0x6277a367e0b2
+runtime.rt0_go()
+	/usr/local/go/src/runtime/asm_amd64.s:373 +0x127 fp=0x7fffcb54b4e8 sp=0x7fffcb54b4e0 pc=0x6277a36b8647
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_code.py", line 21, in <module>
+    if scoped_ids('container',{'project':'warden'},docker): raise RuntimeError('other Warden container present')
+       ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/runtime_lab_docker.py", line 68, in scoped_ids
+    return cli(args).split()
+           ~~~^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/runtime_lab_docker.py", line 48, in docker
+    result = subprocess.run(['/usr/bin/docker', '--host=unix:///var/run/docker.sock', *args], check=True, text=True, stdout=subprocess.PIPE, timeout=timeout, env={'PATH': '/usr/bin:/bin', **(secret_env or {})}, **kwargs)
+  File "/usr/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/usr/bin/docker', '--host=unix:///var/run/docker.sock', 'container', 'ls', '--quiet', '--no-trunc', '--all', '--filter', 'label=project=warden']' returned non-zero exit status 2.

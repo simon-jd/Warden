@@ -1,0 +1,21 @@
+{
+  "request": {
+    "cmd": "bash scripts/azure_reaper.sh",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "sandbox_permissions": "require_escalated",
+    "justification": "Task15本次仅材料操作收尾后按原预算规则执行固定结束reaper，确认仅本项目rg-warden-lab的TTL清理状态，保护RG不触及。",
+    "yield_time_ms": 1000,
+    "max_output_tokens": 2000
+  },
+  "result": {
+    "chunk_id": "f09e25",
+    "wall_time_seconds": 0.854991837,
+    "exit_code": 0,
+    "original_token_count": 37,
+    "output": "{\"at\": \"2026-10-26T02:41:07Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+  },
+  "polls": []
+}

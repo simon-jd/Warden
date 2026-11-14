@@ -1,0 +1,26 @@
+{
+  "request": {
+    "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C python3 -I -S -B docs/evidence/task-6/controller-caller-integrity-fix5-native-fixture.py cover-01 8bf623b6b5fc04a1d2c0a979a274cfeb3f643f51",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "yield_time_ms": 1000,
+    "max_output_tokens": 3000
+  },
+  "initial": {
+    "chunk_id": "902d59",
+    "wall_time_seconds": 0.171721138,
+    "exit_code": 0,
+    "original_token_count": 382,
+    "output": "{\"body_unchanged\": true, \"cases\": [{\"assertion_error\": null, \"exit_code\": 0, \"expected_regression_observed\": null, \"name\": \"happy\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"existing\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"symlink\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"wrong-proof\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 0, \"expected_regression_observed\": null, \"name\": \"short-write\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"dir-fsync\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"post-output\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"cap-cpu\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"cap-as\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"cap-fsize\", \"passed\": true}], \"elapsed_seconds\": 0.270400870940648, \"errors\": 0, \"expected_regression_observed\": false, \"failures\": 0, \"physical_production_integration\": false, \"skipped\": 0, \"source_unchanged\": true, \"tests_run\": 10, \"timing_scope\": \"earliest measured parent entry through maps/output; startup and physical termination unproved\"}\n"
+  },
+  "polls": [],
+  "final": {
+    "chunk_id": "902d59",
+    "wall_time_seconds": 0.171721138,
+    "exit_code": 0,
+    "original_token_count": 382,
+    "output": "{\"body_unchanged\": true, \"cases\": [{\"assertion_error\": null, \"exit_code\": 0, \"expected_regression_observed\": null, \"name\": \"happy\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"existing\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"symlink\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"wrong-proof\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 0, \"expected_regression_observed\": null, \"name\": \"short-write\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"dir-fsync\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"post-output\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"cap-cpu\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"cap-as\", \"passed\": true}, {\"assertion_error\": null, \"exit_code\": 1, \"expected_regression_observed\": null, \"name\": \"cap-fsize\", \"passed\": true}], \"elapsed_seconds\": 0.270400870940648, \"errors\": 0, \"expected_regression_observed\": false, \"failures\": 0, \"physical_production_integration\": false, \"skipped\": 0, \"source_unchanged\": true, \"tests_run\": 10, \"timing_scope\": \"earliest measured parent entry through maps/output; startup and physical termination unproved\"}\n"
+  }
+}

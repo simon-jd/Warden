@@ -1,0 +1,40 @@
+{
+  "kind": "actual root metadata tool results; not test or live operation evidence",
+  "package": {
+    "request": {
+      "cmd": "python3 -B - <<'PY'\nimport signal,resource,subprocess\nfrom pathlib import Path\nsignal.alarm(30);resource.setrlimit(resource.RLIMIT_CPU,(10,10));resource.setrlimit(resource.RLIMIT_AS,(268435456,268435456));resource.setrlimit(resource.RLIMIT_FSIZE,(33554432,33554432))\np=Path('.superpowers/sdd/2-warden-security-plan/review-bb7224c..c836a23.diff');assert not p.exists()\nsubprocess.run(['/bin/bash','/home/postedism/.codex/.tmp/plugins/plugins/superpowers/skills/subagent-driven-development/scripts/review-package','2-warden-security-plan.md','bb7224cdc9ce4106b39c3a7ddad514d9e5ac6175','c836a235b0c1760fa1ffebbcac0ae4ab2546bbb8',str(p)],check=True,timeout=25)\nPY",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "login": false,
+      "yield_time_ms": 1000,
+      "max_output_tokens": 1200,
+      "sandbox_permissions": "require_escalated",
+      "justification": "生成本项目完整原审查HEAD到第4轮修复HEAD的本地审查包，只读Git并写独立证据文件。"
+    },
+    "result": {
+      "chunk_id": "b8eae5",
+      "wall_time_seconds": 0.000023666,
+      "exit_code": 0,
+      "original_token_count": 26,
+      "output": "wrote .superpowers/sdd/2-warden-security-plan/review-bb7224c..c836a23.diff: 6 commit(s), 708427 bytes\n"
+    }
+  },
+  "verifier": {
+    "request": {
+      "cmd": "python3 -B docs/evidence/task-6/controller-terminal-fix4-verification-command-20261025.py",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "login": false,
+      "yield_time_ms": 1000,
+      "max_output_tokens": 2500,
+      "sandbox_permissions": "require_escalated",
+      "justification": "核对本项目第4轮public证据、冻结源码与Git并生成完整重复映射，不导入项目或重跑测试。"
+    },
+    "initial": {
+      "chunk_id": "0e0d44",
+      "wall_time_seconds": 0.652159365,
+      "exit_code": 0,
+      "original_token_count": 357,
+      "output": "{\"actual_operation\": false, \"all152_frozen_git_worktree_equal\": true, \"artifacts_verified\": 42, \"at_utc\": \"2026-10-25T16:20:13.425791+00:00\", \"canonical_150_names_and_bodies_unchanged\": true, \"dispatch_base\": \"c2436684c511bf2ae92982fb8141b1b7d0c41ee9\", \"elapsed_before_writes_seconds\": 0.7836638289736584, \"index_bytes\": 19413, \"index_sha256\": \"1a52be45121aecc695f81838053b8585866ae83200774f028832bb584da51edd\", \"net_allocated_vs_prior_index_excluding_index\": 622592, \"net_logical_excluding_index\": 526619, \"old_immutable_rows\": 75, \"old_report_and_plan_prefixes_preserved\": true, \"package_allocated_bytes\": 782336, \"package_logical_bytes\": 676517, \"prior_api_rows\": 60, \"prior_run_rows\": 101, \"raw_package\": {\"bytes\": 708427, \"path\": \".superpowers/sdd/2-warden-security-plan/review-bb7224c..c836a23.diff\", \"sha256\": \"9a9c646e5c09acbab0db45580eb3a8d7f6c3086f5a61210c4b9b008e681f4e21\"}, \"review_fix_base\": \"bb7224cdc9ce4106b39c3a7ddad514d9e5ac6175\", \"review_head\": \"c836a235b0c1760fa1ffebbcac0ae4ab2546bbb8\", \"source\": \"2c911c8ca2b8148f47380bab53c732ed0bc17f62\", \"status\": \"PASS\", \"tests_rerun\": false, \"timing_scope\": \"earliest measured metadata entry; interpreter/essential bootstrap externally unbounded\", \"worker\": \"46adcd26574437d83e8fc0a109ff85db5c780794\"}\n{\"view_bytes\": 447993, \"view_sha256\": \"f0eab06da31702576fdd5e51cfce1388bf2028a291f54181a8660ba51f8fc32f\", \"blocks\": 51, \"verbatim\": 37, \"whole_exact_duplicates\": 14}\n"
+    }
+  },
+  "verifier_command_patch_return": {}
+}

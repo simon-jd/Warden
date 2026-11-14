@@ -1,0 +1,23 @@
+Mutation: ignore nonempty persisted backend digest mismatches.
+COMMAND: .cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/bin/go test ./runtimes/gvisor -run TestBackendReplacementRejectedBeforeRuntimeOperations|TestBackendBindingAcrossProcess -count=1
+EXIT: 1
+--- FAIL: TestBackendReplacementRejectedBeforeRuntimeOperations (0.00s)
+    --- FAIL: TestBackendReplacementRejectedBeforeRuntimeOperations/node_UID (0.00s)
+        binding_test.go:84: replacement acquired existing authority
+    --- FAIL: TestBackendReplacementRejectedBeforeRuntimeOperations/node_config (0.00s)
+        binding_test.go:84: replacement acquired existing authority
+    --- FAIL: TestBackendReplacementRejectedBeforeRuntimeOperations/server (0.00s)
+        binding_test.go:84: replacement acquired existing authority
+    --- FAIL: TestBackendReplacementRejectedBeforeRuntimeOperations/CA (0.00s)
+        binding_test.go:84: replacement acquired existing authority
+    --- FAIL: TestBackendReplacementRejectedBeforeRuntimeOperations/cluster (0.00s)
+        binding_test.go:84: replacement acquired existing authority
+    --- FAIL: TestBackendReplacementRejectedBeforeRuntimeOperations/namespace_UID (0.00s)
+        binding_test.go:84: replacement acquired existing authority
+    --- FAIL: TestBackendReplacementRejectedBeforeRuntimeOperations/node_name (0.00s)
+        binding_test.go:84: replacement acquired existing authority
+--- FAIL: TestBackendBindingAcrossProcess (0.01s)
+    binding_test.go:234: child accepted changed backend
+FAIL
+FAIL	warden/runtimes/gvisor	0.010s
+FAIL

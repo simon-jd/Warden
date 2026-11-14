@@ -1,0 +1,139 @@
+test_casefold_matches_real_backend_without_changing_fields (detect.sigma.test_contract.AdapterEdgeTest.test_casefold_matches_real_backend_without_changing_fields) ... ERROR
+test_path_suffix_and_literal_characters_use_real_backend (detect.sigma.test_contract.AdapterEdgeTest.test_path_suffix_and_literal_characters_use_real_backend) ... ERROR
+test_rejects_reserved_query_fields_and_unsupported_modifiers (detect.sigma.test_contract.AdapterEdgeTest.test_rejects_reserved_query_fields_and_unsupported_modifiers) ... 
+  test_rejects_reserved_query_fields_and_unsupported_modifiers (detect.sigma.test_contract.AdapterEdgeTest.test_rejects_reserved_query_fields_and_unsupported_modifiers) (field='_id') ... ERROR
+  test_rejects_reserved_query_fields_and_unsupported_modifiers (detect.sigma.test_contract.AdapterEdgeTest.test_rejects_reserved_query_fields_and_unsupported_modifiers) (field='api.operation|re') ... ERROR
+  test_rejects_reserved_query_fields_and_unsupported_modifiers (detect.sigma.test_contract.AdapterEdgeTest.test_rejects_reserved_query_fields_and_unsupported_modifiers) (field='api.operation|cased') ... ERROR
+  test_rejects_reserved_query_fields_and_unsupported_modifiers (detect.sigma.test_contract.AdapterEdgeTest.test_rejects_reserved_query_fields_and_unsupported_modifiers) (field='api.operation|expand') ... ERROR
+test_returns_backend_reference (detect.sigma.test_contract.AdapterRedTest.test_returns_backend_reference) ... ok
+test_all_32_real_conversions_and_exact_id_inventory (detect.sigma.test_contract.CatalogueContractTest.test_all_32_real_conversions_and_exact_id_inventory) ... ok
+test_all_64_fixture_contracts_and_distinct_document_ids (detect.sigma.test_contract.CatalogueContractTest.test_all_64_fixture_contracts_and_distinct_document_ids) ... ok
+test_declared_edge_cases_are_not_claimed_query_results (detect.sigma.test_contract.CatalogueContractTest.test_declared_edge_cases_are_not_claimed_query_results) ... ok
+test_deterministic_coverage_counts_and_exact_technique_inventory (detect.sigma.test_contract.CatalogueContractTest.test_deterministic_coverage_counts_and_exact_technique_inventory) ... ok
+test_rule_guards_declared_fields_and_mapping (detect.sigma.test_contract.CatalogueContractTest.test_rule_guards_declared_fields_and_mapping) ... ok
+test_reports_tagged_and_unassigned_rules (detect.report.test_coverage.CoverageRedTest.test_reports_tagged_and_unassigned_rules) ... ok
+
+======================================================================
+ERROR: test_casefold_matches_real_backend_without_changing_fields (detect.sigma.test_contract.AdapterEdgeTest.test_casefold_matches_real_backend_without_changing_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/detect/sigma/test_contract.py", line 113, in test_casefold_matches_real_backend_without_changing_fields
+    self.assertEqual(convert_rule(json.dumps(document)), convert_rule(json.dumps(uppercase)))
+                                  ~~~~~~~~~~^^^^^^^^^^
+  File "/usr/lib/python3.14/json/__init__.py", line 235, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/json/encoder.py", line 202, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.14/json/encoder.py", line 263, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib/python3.14/json/encoder.py", line 182, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type date is not JSON serializable
+when serializing dict item 'date'
+
+======================================================================
+ERROR: test_path_suffix_and_literal_characters_use_real_backend (detect.sigma.test_contract.AdapterEdgeTest.test_path_suffix_and_literal_characters_use_real_backend)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/detect/sigma/test_contract.py", line 126, in test_path_suffix_and_literal_characters_use_real_backend
+    text = json.dumps(document)
+  File "/usr/lib/python3.14/json/__init__.py", line 235, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/json/encoder.py", line 202, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.14/json/encoder.py", line 263, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib/python3.14/json/encoder.py", line 182, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type date is not JSON serializable
+when serializing dict item 'date'
+
+======================================================================
+ERROR: test_rejects_reserved_query_fields_and_unsupported_modifiers (detect.sigma.test_contract.AdapterEdgeTest.test_rejects_reserved_query_fields_and_unsupported_modifiers) (field='_id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/detect/sigma/test_contract.py", line 141, in test_rejects_reserved_query_fields_and_unsupported_modifiers
+    convert_rule(json.dumps(document))
+                 ~~~~~~~~~~^^^^^^^^^^
+  File "/usr/lib/python3.14/json/__init__.py", line 235, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/json/encoder.py", line 202, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.14/json/encoder.py", line 263, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib/python3.14/json/encoder.py", line 182, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type date is not JSON serializable
+when serializing dict item 'date'
+
+======================================================================
+ERROR: test_rejects_reserved_query_fields_and_unsupported_modifiers (detect.sigma.test_contract.AdapterEdgeTest.test_rejects_reserved_query_fields_and_unsupported_modifiers) (field='api.operation|re')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/detect/sigma/test_contract.py", line 141, in test_rejects_reserved_query_fields_and_unsupported_modifiers
+    convert_rule(json.dumps(document))
+                 ~~~~~~~~~~^^^^^^^^^^
+  File "/usr/lib/python3.14/json/__init__.py", line 235, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/json/encoder.py", line 202, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.14/json/encoder.py", line 263, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib/python3.14/json/encoder.py", line 182, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type date is not JSON serializable
+when serializing dict item 'date'
+
+======================================================================
+ERROR: test_rejects_reserved_query_fields_and_unsupported_modifiers (detect.sigma.test_contract.AdapterEdgeTest.test_rejects_reserved_query_fields_and_unsupported_modifiers) (field='api.operation|cased')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/detect/sigma/test_contract.py", line 141, in test_rejects_reserved_query_fields_and_unsupported_modifiers
+    convert_rule(json.dumps(document))
+                 ~~~~~~~~~~^^^^^^^^^^
+  File "/usr/lib/python3.14/json/__init__.py", line 235, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/json/encoder.py", line 202, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.14/json/encoder.py", line 263, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib/python3.14/json/encoder.py", line 182, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type date is not JSON serializable
+when serializing dict item 'date'
+
+======================================================================
+ERROR: test_rejects_reserved_query_fields_and_unsupported_modifiers (detect.sigma.test_contract.AdapterEdgeTest.test_rejects_reserved_query_fields_and_unsupported_modifiers) (field='api.operation|expand')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/detect/sigma/test_contract.py", line 141, in test_rejects_reserved_query_fields_and_unsupported_modifiers
+    convert_rule(json.dumps(document))
+                 ~~~~~~~~~~^^^^^^^^^^
+  File "/usr/lib/python3.14/json/__init__.py", line 235, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/json/encoder.py", line 202, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.14/json/encoder.py", line 263, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib/python3.14/json/encoder.py", line 182, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type date is not JSON serializable
+when serializing dict item 'date'
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.098s
+
+FAILED (errors=6)
+{"assertion_failures": 0, "errors": 6, "skips": 0, "tests_run": 10, "unexpected_successes": 0}

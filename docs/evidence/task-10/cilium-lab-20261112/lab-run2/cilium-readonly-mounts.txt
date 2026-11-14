@@ -1,0 +1,2 @@
+read-only: DaemonSet/cilium mount-cgroup hostproc (/proc)
+read-only: DaemonSet/cilium cilium-agent host-proc-sys-kernel (/proc/sys/kernel)

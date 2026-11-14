@@ -1,0 +1,163 @@
+{
+  "checked_utc": "2026-10-24T05:30:59.813515+00:00",
+  "uid": 1000,
+  "run_head": "3db4a15",
+  "source_implementation_sha": "09eed7b622bc70081eb751ea42dd0c81bd5c1395",
+  "daemon": {
+    "Name": "postedism-ubuntu-system-selfuse",
+    "ServerVersion": "29.9.1",
+    "CgroupVersion": "2",
+    "CgroupDriver": "systemd"
+  },
+  "removed_container_ids": [
+    "32b82567f4821b86cf5916caed893a73724ff81ab8614fb3b3333df6cbdda68c",
+    "b59f7e189ebe95c25893738702b4cbfd8d4e787a3b324fabde9774db0c1f458c"
+  ],
+  "removed_image_id": "sha256:f060281ea06d78fc8a71830c6431d35b5dd444092419e2663d33d3168a8dfcab",
+  "owned_containers_remaining": [],
+  "owned_images_remaining": [],
+  "outstanding_import_charge_bytes": 0,
+  "cached_postgres_image_retained": {
+    "Id": "sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873",
+    "RepoDigests": [
+      "postgres@sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873"
+    ],
+    "Size": 432729433
+  },
+  "retained_session_entries": [
+    "containerd.log",
+    "containerd.toml",
+    "gate"
+  ],
+  "retirement_proof_sha256": "c259ee523728debb30625f4d4a6a1ab0d6c6d7d6d70c600b044817ce80a8daf0",
+  "retained_file_metadata": [
+    {
+      "path": ".cache/warden-lab/docker-736026a8b27d0a7cedb90db3745ab995/identity.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "nlink": 1,
+      "bytes": 247,
+      "sha256": "eb23bd8da6fe7af576f4652f4f808eb8eb1c90bb5891e16d6fcc7d016e1c43c2"
+    },
+    {
+      "path": ".cache/warden-lab/docker-736026a8b27d0a7cedb90db3745ab995/manifest.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o664",
+      "nlink": 1,
+      "bytes": 77704,
+      "sha256": "f779e37304caf704af2c27626f1eb0c818e8e1c62f2bf8bcdfd9096774ba37ee"
+    },
+    {
+      "path": ".cache/warden-lab/docker-736026a8b27d0a7cedb90db3745ab995/charge.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o600",
+      "nlink": 1,
+      "bytes": 63,
+      "sha256": "25fd7efe8d33b031a647c5b8f6e95a1afed520d11292dd9b08b6aff2d41af8e1"
+    },
+    {
+      "path": ".cache/warden-lab/docker-736026a8b27d0a7cedb90db3745ab995/session-44c68a7f0877e687/containerd.log",
+      "uid": 1000,
+      "gid": 0,
+      "mode": "0o600",
+      "nlink": 1,
+      "bytes": 30927,
+      "sha256": "f1b9567464890db8fdc2904fcdbf9d0386363f69d0bfce3ec2dc12a3b25b52ed"
+    },
+    {
+      "path": ".cache/warden-lab/docker-736026a8b27d0a7cedb90db3745ab995/session-44c68a7f0877e687/containerd.toml",
+      "uid": 1000,
+      "gid": 0,
+      "mode": "0o600",
+      "nlink": 1,
+      "bytes": 124,
+      "sha256": "2980cf510421b66d4262bd8363ad51a6f46011c3000fc8541665813354d39f8d"
+    },
+    {
+      "path": ".cache/warden-lab/docker-736026a8b27d0a7cedb90db3745ab995/session-44c68a7f0877e687/gate/FMAWUNLAQQW45TY7GTOGRFGDEM",
+      "uid": 1000,
+      "gid": 0,
+      "mode": "0o600",
+      "nlink": 1,
+      "bytes": 8,
+      "sha256": "3e1d6a9879f7c3449784a674a5270b3592a665acc6a4fea66c4b12ca5f507a29"
+    },
+    {
+      "path": ".cache/warden-lab/docker-736026a8b27d0a7cedb90db3745ab995/session-44c68a7f0877e687/gate/GHELQEWRWGIXBMOPG46AVTVMFI",
+      "uid": 1000,
+      "gid": 0,
+      "mode": "0o600",
+      "nlink": 1,
+      "bytes": 18,
+      "sha256": "938a9a9c00d51f420eb88c838a0270d6f078d4d9aade5ad15563ee87233a2a50"
+    },
+    {
+      "path": ".cache/warden-lab/docker-736026a8b27d0a7cedb90db3745ab995/session-44c68a7f0877e687/gate/K5HAFNJHZXUERZF6GPML5LDJDI",
+      "uid": 1000,
+      "gid": 0,
+      "mode": "0o600",
+      "nlink": 1,
+      "bytes": 8,
+      "sha256": "eff64b343dcb2b1dc113648e7089b9ce9f8a7f6c7808a03a2cffb4ad7302f606"
+    },
+    {
+      "path": ".cache/warden-lab/docker-736026a8b27d0a7cedb90db3745ab995/session-44c68a7f0877e687/gate/P7WROBMVRQ6Q6JEFUWNVS4HRUI",
+      "uid": 1000,
+      "gid": 0,
+      "mode": "0o600",
+      "nlink": 1,
+      "bytes": 8,
+      "sha256": "eff64b343dcb2b1dc113648e7089b9ce9f8a7f6c7808a03a2cffb4ad7302f606"
+    },
+    {
+      "path": ".cache/warden-lab/docker-736026a8b27d0a7cedb90db3745ab995/session-44c68a7f0877e687/gate/X6UFO3GGROOV5QQ4G5KMK2FPII",
+      "uid": 1000,
+      "gid": 0,
+      "mode": "0o600",
+      "nlink": 1,
+      "bytes": 8,
+      "sha256": "eff64b343dcb2b1dc113648e7089b9ce9f8a7f6c7808a03a2cffb4ad7302f606"
+    },
+    {
+      "path": ".cache/warden-lab/docker-736026a8b27d0a7cedb90db3745ab995/session-44c68a7f0877e687/gate/admission",
+      "uid": 1000,
+      "gid": 0,
+      "mode": "0o600",
+      "nlink": 1,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cache/warden-lab/docker-736026a8b27d0a7cedb90db3745ab995/session-44c68a7f0877e687/gate/node",
+      "uid": 1000,
+      "gid": 0,
+      "mode": "0o600",
+      "nlink": 1,
+      "bytes": 40,
+      "sha256": "ebb4bc45ecdb69723af820bd5e95a6befd42e7f63f46b0cf6fccc66ac9e53aa2"
+    },
+    {
+      "path": ".cache/warden-lab/docker-736026a8b27d0a7cedb90db3745ab995/session-44c68a7f0877e687/gate/retirement",
+      "uid": 1000,
+      "gid": 0,
+      "mode": "0o600",
+      "nlink": 1,
+      "bytes": 260,
+      "sha256": "c259ee523728debb30625f4d4a6a1ab0d6c6d7d6d70c600b044817ce80a8daf0"
+    },
+    {
+      "path": ".cache/warden-lab/docker-736026a8b27d0a7cedb90db3745ab995/session-44c68a7f0877e687/gate/retirement-binding",
+      "uid": 1000,
+      "gid": 0,
+      "mode": "0o600",
+      "nlink": 1,
+      "bytes": 258,
+      "sha256": "9362cd2e3631f2e80246580e47e733745ab4ac617986bad442559e413a8371ec"
+    }
+  ],
+  "live_inputs_match_code_phase_manifest": true,
+  "input_file_count": 669
+}

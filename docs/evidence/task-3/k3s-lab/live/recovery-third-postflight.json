@@ -1,0 +1,118 @@
+{
+  "utc": "2026-10-24T18:44:30.218403+00:00",
+  "source_commit": "30ac35088034db0d21fc1fc3ea681a973c9bab95",
+  "run_head": "6975515",
+  "recovery_exit_code": 0,
+  "recovery_seconds": 3.63,
+  "session": "/home/postedism/Desktop/Warden/.cache/warden-lab/docker-b5370b6ce57638aee676a14c3c272592",
+  "session_device": 66307,
+  "session_inode": 56143028,
+  "session_uid": 1000,
+  "session_mode": "0o700",
+  "session_files": [
+    "charge.json",
+    "identity.json",
+    "manifest.json",
+    "recovery-complete.json",
+    "recovery.json"
+  ],
+  "private_child_absent": true,
+  "rootfs_tar_absent": true,
+  "original_scope_absent": true,
+  "exact_objects": [
+    {
+      "kind": "container",
+      "id": "9a22e3c1817441fa2c4f50616e68a333d2a06c98641d430a05a810ea3f7cac50",
+      "inspect_absent": true
+    },
+    {
+      "kind": "container",
+      "id": "377a6ef4608d4c983a76c1e44bb0e8d874eab0a757b32716004e1bc6cf2fa889",
+      "inspect_absent": true
+    },
+    {
+      "kind": "image",
+      "id": "sha256:2504a55c791dba7ca00cadae8b11f937aea70ac9149243eb83e590d343bc44a3",
+      "inspect_absent": true
+    }
+  ],
+  "owned_containers_all": [],
+  "owned_images_all": [],
+  "outstanding_bytes": 0,
+  "charge": {
+    "released": true,
+    "reserved_bytes": 6000000000,
+    "version": 1
+  },
+  "journal": {
+    "archive": {
+      "identity": [
+        66307,
+        56143030,
+        1000
+      ],
+      "size": 496619520
+    },
+    "budget": {
+      "accounted_disk_bytes": 11024070530,
+      "all_owned_image_charges": 1434749826,
+      "helper_reserve_bytes": 64000000,
+      "outstanding_bytes": 6000000000,
+      "project_allocated_bytes": 3525320704,
+      "service_memory_bytes": 320000000
+    },
+    "code_sha256": "45129ce29e6d9f67ad1a807754cad932aac70c0999572b1226189cafbf0d5224",
+    "helper_labels": {
+      "owner": "codex-warden",
+      "project": "warden",
+      "role": "fixed-reconciliation",
+      "session": "172f1f6b3a926087b62793461f57717e",
+      "ttl": "2026-10-24T19:43:32Z"
+    },
+    "helper_reserve_bytes": 64000000,
+    "image": "sha256:2504a55c791dba7ca00cadae8b11f937aea70ac9149243eb83e590d343bc44a3",
+    "original": "9a22e3c1817441fa2c4f50616e68a333d2a06c98641d430a05a810ea3f7cac50"
+  },
+  "complete": {
+    "archive_deleted": true,
+    "helper": "377a6ef4608d4c983a76c1e44bb0e8d874eab0a757b32716004e1bc6cf2fa889",
+    "helper_resource_diagnostic": {
+      "fd_entries": 7,
+      "inotify_errno": 0,
+      "inotify_result": "opened",
+      "nofile_hard": 524288,
+      "nofile_soft": 1024,
+      "uid": 0
+    },
+    "image": "sha256:2504a55c791dba7ca00cadae8b11f937aea70ac9149243eb83e590d343bc44a3",
+    "objects_absent": true,
+    "original": "9a22e3c1817441fa2c4f50616e68a333d2a06c98641d430a05a810ea3f7cac50"
+  },
+  "helper_resource_diagnostic": {
+    "fd_entries": 7,
+    "inotify_errno": 0,
+    "inotify_result": "opened",
+    "nofile_hard": 524288,
+    "nofile_soft": 1024,
+    "uid": 0
+  },
+  "ordinary_full_preflight": {
+    "additional_bytes": "0",
+    "at": "2026-10-24T18:44:30Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 294018174976,
+    "project_allocated_bytes": 3028709376,
+    "service_memory_bytes": "0"
+  },
+  "protected_sysctls": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "original_public_identity_manifest_bytes_unchanged": true,
+  "scope": "Independent fourth-scene recovery postflight. Current helper FD/probe result does not establish original K3s limits/quota, future capacity, Ready or original Popen/GoGate retirement."
+}

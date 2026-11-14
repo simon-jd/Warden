@@ -1,0 +1,144 @@
+{
+  "files": [
+    {
+      "path": "frozen-inputs/detect/dns_exfil/score.go",
+      "bytes": 7163,
+      "sha256": "2e2999999053fbc7b123a49c6ee2f435ad1e2a4a4ff973578eecaf4730f334e6",
+      "original_project_path": "detect/dns_exfil/score.go"
+    },
+    {
+      "path": "frozen-inputs/detect/dns_exfil/exfil_test.go",
+      "bytes": 13978,
+      "sha256": "29d42d904ced0f65a6ee43ddecdaca751739636155db411aa358b9d90e586915",
+      "original_project_path": "detect/dns_exfil/exfil_test.go"
+    },
+    {
+      "path": "frozen-inputs/go.mod",
+      "bytes": 2483,
+      "sha256": "bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa",
+      "original_project_path": "go.mod"
+    },
+    {
+      "path": "frozen-inputs/go.sum",
+      "bytes": 11340,
+      "sha256": "cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0",
+      "original_project_path": "go.sum"
+    },
+    {
+      "path": "frozen-inputs/cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/VERSION",
+      "bytes": 36,
+      "sha256": "3f3fbe1bb9146eb51957d11386aabb1016b0cb389b8cb551e831abefc77ee54f",
+      "original_project_path": ".cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/VERSION"
+    },
+    {
+      "path": "frozen-inputs/cache/go-mod/golang.org/x/net@v0.61.0/go.mod",
+      "bytes": 157,
+      "sha256": "7bbcec6b6af859939ec01bbe5234e556c867bf80e171abc23ad16c2c8e3951fe",
+      "original_project_path": ".cache/go-mod/golang.org/x/net@v0.61.0/go.mod"
+    },
+    {
+      "path": "frozen-inputs/cache/go-mod/golang.org/x/net@v0.61.0/publicsuffix/list.go",
+      "bytes": 6711,
+      "sha256": "f15f57281ee2efc1cde449d489d199547e8bb0d736ff81caf10467784728e05f",
+      "original_project_path": ".cache/go-mod/golang.org/x/net@v0.61.0/publicsuffix/list.go"
+    },
+    {
+      "path": "frozen-inputs/cache/go-mod/golang.org/x/net@v0.61.0/publicsuffix/table.go",
+      "bytes": 1836,
+      "sha256": "00add19ece14eec90b1320a81dc2c680474e88255e08df82f2d942bcf414979a",
+      "original_project_path": ".cache/go-mod/golang.org/x/net@v0.61.0/publicsuffix/table.go"
+    },
+    {
+      "path": "frozen-inputs/cache/go-mod/golang.org/x/net@v0.61.0/publicsuffix/data/text",
+      "bytes": 32334,
+      "sha256": "9b649c8a6aeabdb8971286d07683a20dc00e406a99631f960e0a47bb85df4af8",
+      "original_project_path": ".cache/go-mod/golang.org/x/net@v0.61.0/publicsuffix/data/text"
+    },
+    {
+      "path": "frozen-inputs/cache/go-mod/golang.org/x/net@v0.61.0/publicsuffix/data/nodes",
+      "bytes": 52665,
+      "sha256": "47ed63d4f3763b7e4515345e1f06054d3bff97c6175a6f53466218e633a0b9cb",
+      "original_project_path": ".cache/go-mod/golang.org/x/net@v0.61.0/publicsuffix/data/nodes"
+    },
+    {
+      "path": "frozen-inputs/cache/go-mod/golang.org/x/net@v0.61.0/publicsuffix/data/children",
+      "bytes": 3744,
+      "sha256": "761402a681757153843a161c71955577e76a5ef96abc1a845d20a9a96304bfb7",
+      "original_project_path": ".cache/go-mod/golang.org/x/net@v0.61.0/publicsuffix/data/children"
+    },
+    {
+      "path": "frozen-inputs/preparation/sdd/2-warden-security-plan/task10-dns-score-fix-r1-cover-20261026/caller.py",
+      "bytes": 14625,
+      "sha256": "f57bc6771dfa765daaf43a0a37d82c5c5afb16e44c8c0fcc4403ee84cbb8725b",
+      "original_project_path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-fix-r1-cover-20261026/caller.py"
+    },
+    {
+      "path": "frozen-inputs/preparation/sdd/2-warden-security-plan/task10-dns-score-fix-r1-cover-20261026/limit_child.py",
+      "bytes": 1686,
+      "sha256": "3b42d7200b1bc8b143c46e3a8e23b980d84c75a47de156795644c18b2875b04e",
+      "original_project_path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-fix-r1-cover-20261026/limit_child.py"
+    },
+    {
+      "path": "frozen-inputs/preparation/sdd/2-warden-security-plan/task10-dns-score-fix-r1-cover-20261026/isolated.go.mod",
+      "bytes": 159,
+      "sha256": "ab13da096721305be7e5d83ce9ef53df32c01fd8798224aad6409f48c4955fad",
+      "original_project_path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-fix-r1-cover-20261026/isolated.go.mod"
+    },
+    {
+      "path": "frozen-inputs/preparation/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/exact.diff",
+      "bytes": 3986,
+      "sha256": "c62abb607108b837a49df6b1e9ed4d9d1cfba8825dbd18f49fd1ef7a2a2f78ea",
+      "original_project_path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/exact.diff"
+    },
+    {
+      "path": "frozen-inputs/preparation/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/telemetry-note.md",
+      "bytes": 2863,
+      "sha256": "281065235a8f3a9d4cb4be1e6707f30be5b05130044999944331342609fe9249",
+      "original_project_path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/telemetry-note.md"
+    },
+    {
+      "path": "frozen-inputs/preparation/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/preservation.json",
+      "bytes": 5341,
+      "sha256": "4fbde7e3f78ab4b582a7a55a6f31678b9b026ca3ff60fb32a721f5ba2849b241",
+      "original_project_path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/preservation.json"
+    },
+    {
+      "path": "freeze.json",
+      "bytes": 3606,
+      "sha256": "61112de0c8ab8e1daae5fe31fcd4a52119028736b21a22bb4011b9bb13a0143b",
+      "original_project_path": null
+    },
+    {
+      "path": "output.txt",
+      "bytes": 2873,
+      "sha256": "61a405afec19a2fb9d447148f1289d964dace933f756f506c81b1e60b180691d",
+      "original_project_path": null
+    },
+    {
+      "path": "receipt.json",
+      "bytes": 1048,
+      "sha256": "232decadf7a8cdab6619c7d31fd1e17e198b40156ded699d617244c6252e0a2b",
+      "original_project_path": null
+    },
+    {
+      "path": "launch.json",
+      "bytes": 856,
+      "sha256": "62692e33cf2a56cd5dab65946f082bc46e66ae943be6a309f47ed6963e7069d8",
+      "original_project_path": null
+    },
+    {
+      "path": "native-requests-and-results.json",
+      "bytes": 49493,
+      "sha256": "24142a21de254c3270925bcf84ab566ab26becae6503501bf16199e570fbcf58",
+      "original_project_path": null
+    },
+    {
+      "path": "root-ruling.json",
+      "bytes": 1295,
+      "sha256": "3505eeec6a8f46c32eaa22b0c5dae135f3d0400cb936e63b758d39bcb8653ba5",
+      "original_project_path": null
+    }
+  ],
+  "allocated_before_inventory": 335872,
+  "retained_runtime": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-fix-r1-cover-20261026/cover-run"
+}

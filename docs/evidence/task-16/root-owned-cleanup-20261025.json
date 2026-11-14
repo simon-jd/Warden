@@ -1,0 +1,124 @@
+{
+  "cleanup_cli_as": 4294967296,
+  "complete": true,
+  "conservative_resident_reserve": 9000000000,
+  "container_absent": true,
+  "elapsed_seconds": 0.23088443407323211,
+  "events": [
+    {
+      "argv": [
+        "/usr/bin/docker",
+        "--host=unix:///var/run/docker.sock",
+        "container",
+        "inspect",
+        "0ffb7b2a1b66db5310a0e139236dc6be0e502dc5d1f5ace4ab2e854452167ac4"
+      ],
+      "env": {
+        "DOCKER_CONFIG": "/tmp/warden-task16-own-cleanup-4p4rs506",
+        "GOMAXPROCS": "2",
+        "GOMEMLIMIT": "256MiB",
+        "HOME": "/tmp/warden-task16-own-cleanup-4p4rs506",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "PATH": "/usr/bin:/bin"
+      },
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 11718,
+      "stdout_sha256": "470b76b9063e09fc200184c1849ae560edfc9820e55b9dbc8ce98f66a13c1a48"
+    },
+    {
+      "argv": [
+        "/usr/bin/docker",
+        "--host=unix:///var/run/docker.sock",
+        "container",
+        "rm",
+        "--force",
+        "0ffb7b2a1b66db5310a0e139236dc6be0e502dc5d1f5ace4ab2e854452167ac4"
+      ],
+      "env": {
+        "DOCKER_CONFIG": "/tmp/warden-task16-own-cleanup-4p4rs506",
+        "GOMAXPROCS": "2",
+        "GOMEMLIMIT": "256MiB",
+        "HOME": "/tmp/warden-task16-own-cleanup-4p4rs506",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "PATH": "/usr/bin:/bin"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "0ffb7b2a1b66db5310a0e139236dc6be0e502dc5d1f5ace4ab2e854452167ac4\n",
+      "stdout_bytes": 65,
+      "stdout_sha256": "d6d4408d6e249877217869c7abdd8522f24ea257c916d969278613782ad8c260"
+    },
+    {
+      "argv": [
+        "/usr/bin/docker",
+        "--host=unix:///var/run/docker.sock",
+        "container",
+        "ls",
+        "--quiet",
+        "--no-trunc",
+        "--all",
+        "--filter",
+        "id=0ffb7b2a1b66db5310a0e139236dc6be0e502dc5d1f5ace4ab2e854452167ac4"
+      ],
+      "env": {
+        "DOCKER_CONFIG": "/tmp/warden-task16-own-cleanup-4p4rs506",
+        "GOMAXPROCS": "2",
+        "GOMEMLIMIT": "256MiB",
+        "HOME": "/tmp/warden-task16-own-cleanup-4p4rs506",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "PATH": "/usr/bin:/bin"
+      },
+      "returncode": 0,
+      "stderr": "",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "",
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "id": "0ffb7b2a1b66db5310a0e139236dc6be0e502dc5d1f5ace4ab2e854452167ac4",
+  "labels": {
+    "owner": "codex-warden",
+    "project": "warden",
+    "session": "30baa590373f39cb53d6ad606cc969f3",
+    "task": "vuln-unit",
+    "ttl": "2026-10-25T20:32:42.794182+00:00"
+  },
+  "mem_available": 86826143744,
+  "native_parent_as_soft": 268435456,
+  "old_native_descendants_terminal": "unknown; no numeric PID/PG rediscovery or re-signal",
+  "owned_before": {
+    "id": "0ffb7b2a1b66db5310a0e139236dc6be0e502dc5d1f5ace4ab2e854452167ac4",
+    "image": "sha256:a688600ca24f8a4d3ca77f95b0dd40704a9fc787c826660eb7ba0b641b8b175d",
+    "labels": {
+      "owner": "codex-warden",
+      "project": "warden",
+      "session": "30baa590373f39cb53d6ad606cc969f3",
+      "task": "vuln-unit",
+      "ttl": "2026-10-25T20:32:42.794182+00:00"
+    },
+    "state": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 1,
+      "FinishedAt": "2026-10-25T19:32:43.845080451Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 0,
+      "Restarting": false,
+      "Running": false,
+      "StartedAt": "2026-10-25T19:32:43.002326885Z",
+      "Status": "exited"
+    },
+    "user": "1000:1000"
+  },
+  "scope": "ONLY exact owned Task16 unknown container cleanup; no test/profile continuation or source change"
+}

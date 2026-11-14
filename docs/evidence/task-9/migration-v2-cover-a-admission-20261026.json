@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-26T08:18:11.782807+00:00",
+  "kind": "ROOT_FRESH_MIGRATION_V2_COVER_ADMISSION_ONCE",
+  "base": "f83a41b8d5dd7f5a976852785a31aeee01596a19",
+  "caller_bytes": 16817,
+  "caller_sha256": "b02917ecf2778063363f58abd77f347231e2097de7ba938a84a7f936e7ba0b11",
+  "packet_sha256": "029114c27274539b93edc794e84a90e3e18c9de69ee8772f0ee4ac508b890f46",
+  "source_freeze_sha256": "efdbbf1ea0db70f18269f7dbddb885690f2123cf4b46f23bcaaf9317991d1211",
+  "supplement_sha256": "980c544827e4c459565535bbddc8ebfbfe953be62fe9b364bfae28062abb1944",
+  "source_count": 17,
+  "tests": [
+    "TestJITMigrationPreservesVersionTwoRunsAndAudit"
+  ],
+  "source17_and_firstGreen15_unchanged": true,
+  "all_original_and_supplemental_material_verified": true,
+  "original_F_M_unchanged": true,
+  "namespace_absent": true,
+  "R": 5113339904,
+  "other_holds": 5003801088,
+  "full_new_disk": 1750780416,
+  "total": 11867921408,
+  "headroom": 132078592,
+  "cap": 12000000000,
+  "resident": 15500000000,
+  "resident_cap": 16000000000,
+  "old_UNKNOWN": 9000000000,
+  "bounds": {
+    "whole": 90,
+    "work": 65,
+    "GoCLI": 59,
+    "cleanup": 82,
+    "status": 85,
+    "raw": 131072
+  },
+  "author_original_cumulative_allocation": 229376,
+  "author_original_cap": 262144,
+  "root_ruling": "Only one directly affected original migration-v2 test, no JIT/old store/audit/runs/gate tests. Existing cached xsys three files only, no downloads. Code dependencies compile only, selected test Normalize/Create/Get are the original Task1 data path. No deployment/identity/RBAC/scheduler acceptance. All earlier attempts stay spent.",
+  "provenance": {
+    "source": "coordinator_agent",
+    "human_response": false,
+    "grounded_in_existing_user_scope": true
+  }
+}

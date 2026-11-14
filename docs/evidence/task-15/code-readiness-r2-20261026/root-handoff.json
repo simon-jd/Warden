@@ -1,0 +1,23 @@
+{
+  "utc": "2026-10-26T05:22:46.856474+00:00",
+  "kind": "task15-code-r2-narrow-root-handoff",
+  "base": "f5ebf06100660ae930d33b0bdb5acfc9fde97eb1",
+  "head": "1f54cb9ad02a5beb12e7c95f0975537cd015abd0",
+  "manifest_files_checked": 33,
+  "manifest_source_bytes": 143408,
+  "product_three_paths_equal_f5": true,
+  "index_write": false,
+  "root_before_allocated": 5090652160,
+  "all_extra_reservations": 6258605056,
+  "total_reserved": 11349257216,
+  "disk_cap": 12000000000,
+  "old_code_cap": 524288,
+  "author_bundle_allocated": 94208,
+  "packet_bytes": 52593,
+  "packet_sha256": "22b751ffd7d6fc77cfb9d29bf7d4a0ae224fe27bbac8eaf7ace6952396e12950",
+  "bundle_post_packet_allocated": 147456,
+  "publication_new_cap": 1048576,
+  "publication_used": 0,
+  "source_or_runtime_acceptance": false,
+  "tests_run": false
+}

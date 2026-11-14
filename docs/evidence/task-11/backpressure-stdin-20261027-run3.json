@@ -1,0 +1,203 @@
+{
+  "config": {
+    "base_rate": 20,
+    "buffer_max_size": 268435488,
+    "burst_events": 24000,
+    "burst_rate": 200,
+    "line_bytes": 16384,
+    "when_full": "block"
+  },
+  "load": {
+    "loadavg_end": [
+      9.01611328125,
+      7.205078125,
+      4.79638671875
+    ],
+    "loadavg_start": [
+      7.6357421875,
+      6.248046875,
+      4.14990234375
+    ],
+    "nproc": 32
+  },
+  "metrics": {
+    "buffer_byte_size_max": 134206344.0,
+    "buffer_byte_size_min": 0.0,
+    "buffer_discarded_events_total": 0.0,
+    "buffer_events_max": 8093.0,
+    "component_discarded_events_total": 0.0,
+    "negative_gauge_samples": 0,
+    "samples": 522
+  },
+  "occupancy": {
+    "disk_bytes_max": 201436816,
+    "rss_bytes_max": 376446976,
+    "samples": 264,
+    "series_t_disk_rss": [
+      [
+        0.5,
+        149280,
+        52596736
+      ],
+      [
+        5.5,
+        1807680,
+        58056704
+      ],
+      [
+        10.51,
+        4958600,
+        61267968
+      ],
+      [
+        15.51,
+        21541728,
+        60178432
+      ],
+      [
+        20.51,
+        38141304,
+        59285504
+      ],
+      [
+        25.52,
+        54707664,
+        58241024
+      ],
+      [
+        30.52,
+        71340360,
+        57925632
+      ],
+      [
+        35.52,
+        87923496,
+        57778176
+      ],
+      [
+        40.53,
+        104523120,
+        57344000
+      ],
+      [
+        45.53,
+        121106160,
+        57118720
+      ],
+      [
+        50.53,
+        137440248,
+        57937920
+      ],
+      [
+        55.54,
+        137440248,
+        75075584
+      ],
+      [
+        60.54,
+        137440248,
+        92753920
+      ],
+      [
+        65.54,
+        137440248,
+        110862336
+      ],
+      [
+        70.54,
+        137440248,
+        128368640
+      ],
+      [
+        75.55,
+        137440248,
+        146374656
+      ],
+      [
+        80.55,
+        137440248,
+        164204544
+      ],
+      [
+        85.55,
+        137440248,
+        182169600
+      ],
+      [
+        90.55,
+        137440248,
+        199999488
+      ],
+      [
+        95.56,
+        137440248,
+        217686016
+      ],
+      [
+        100.56,
+        137440248,
+        235651072
+      ],
+      [
+        105.56,
+        137440248,
+        253509632
+      ],
+      [
+        110.57,
+        137440248,
+        271368192
+      ],
+      [
+        115.57,
+        137440248,
+        288985088
+      ],
+      [
+        120.57,
+        137440248,
+        307003392
+      ],
+      [
+        125.58,
+        137440248,
+        325386240
+      ],
+      [
+        130.58,
+        187901712,
+        375582720
+      ]
+    ]
+  },
+  "peer_requests": {
+    "ok": 526,
+    "rejected": 126
+  },
+  "reconcile": {
+    "duplicates": 0,
+    "lost": 0,
+    "received_unique": 24200,
+    "sent": 24200,
+    "unexpected_ids": 0
+  },
+  "released_by_block": false,
+  "scratch_bytes": 133055982,
+  "sender": {
+    "baseline_sent": 200,
+    "blocked_total_s": 0.0,
+    "burst_sent": 24000,
+    "http_errors": null,
+    "longest_block_s": 0.0,
+    "sent": 24200
+  },
+  "source": "stdin",
+  "timeline_s": {
+    "burst_end": 130.01371577498503,
+    "burst_start": 10.006622891989537,
+    "drain_end": 132.51882929191925,
+    "release": 130.01371433597524
+  },
+  "vector_stderr_tail": "fter response.] is being suppressed to avoid flooding.\n2026-10-28T03:12:32.545404Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] has been suppressed 8 times.\n2026-10-28T03:12:32.545424Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Retrying after response. reason=Http Status: 503 Service Unavailable internal_log_rate_limit=true\n2026-10-28T03:12:33.143304Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] is being suppressed to avoid flooding.\n2026-10-28T03:12:43.230213Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] has been suppressed 11 times.\n2026-10-28T03:12:43.230229Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Retrying after response. reason=Http Status: 503 Service Unavailable internal_log_rate_limit=true\n2026-10-28T03:12:43.580283Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] is being suppressed to avoid flooding.\n2026-10-28T03:12:54.236814Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] has been suppressed 9 times.\n2026-10-28T03:12:54.236832Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Retrying after response. reason=Http Status: 503 Service Unavailable internal_log_rate_limit=true\n2026-10-28T03:12:55.505062Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] is being suppressed to avoid flooding.\n"
+}

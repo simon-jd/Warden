@@ -1,0 +1,15 @@
+F
+======================================================================
+FAIL: test_real_archived_storage_quote_selects_base_tier (scripts.test_azure_guard.AzureGuardTests.test_real_archived_storage_quote_selects_base_tier)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 264, in test_real_archived_storage_quote_selects_base_tier
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : guard refused: quote missing or ambiguous
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.042s
+
+FAILED (failures=1)

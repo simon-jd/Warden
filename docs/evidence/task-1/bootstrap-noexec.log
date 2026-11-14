@@ -1,0 +1,9 @@
+fork/exec /tmp/go-build2359421078/b001/api.test: permission denied
+FAIL	warden/controlplane/internal/api	0.000s
+fork/exec /tmp/go-build2359421078/b252/audit.test: permission denied
+FAIL	warden/controlplane/internal/audit	0.000s
+?   	warden/controlplane/internal/runs	[no test files]
+?   	warden/controlplane/internal/store	[no test files]
+?   	warden/controlplane/internal/tenant	[no test files]
+?   	warden/controlplane/internal/testutil	[no test files]
+FAIL

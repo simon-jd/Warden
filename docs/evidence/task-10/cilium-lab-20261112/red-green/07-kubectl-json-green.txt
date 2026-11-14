@@ -1,0 +1,57 @@
+# 2026-11-12T23:36:06-08:00 head 3681bc4; git status --short:
+ M runtimes/gvisor/lab/cilium/readonly_proc_mounts.py
+ M scripts/test_cilium_proc_mounts.py
+ M scripts/test_k3s_gvisor_lab.py
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run1-1945/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2-attempt1/
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/07-kubectl-json-green.txt
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/07-kubectl-json-red.txt
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -v -s scripts -t scripts -p test_cilium_proc_mounts.py
+test_a_chart_without_the_agents_kernel_mount_is_refused (test_cilium_proc_mounts.ReadOnlyProcMountsTest.test_a_chart_without_the_agents_kernel_mount_is_refused) ... ok
+test_any_workload_and_any_path_under_proc (test_cilium_proc_mounts.ReadOnlyProcMountsTest.test_any_workload_and_any_path_under_proc) ... ok
+test_input_that_is_not_objects_is_refused (test_cilium_proc_mounts.ReadOnlyProcMountsTest.test_input_that_is_not_objects_is_refused) ... ok
+test_objects_one_after_another_as_kubectl_prints_them (test_cilium_proc_mounts.ReadOnlyProcMountsTest.test_objects_one_after_another_as_kubectl_prints_them) ... ok
+test_the_agents_proc_mounts_become_read_only_except_net (test_cilium_proc_mounts.ReadOnlyProcMountsTest.test_the_agents_proc_mounts_become_read_only_except_net) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.157s
+
+OK
+exit 0
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -v -s scripts -t scripts -p test_k3s_gvisor_lab.py
+test_a_sysctl_change_fails_in_both_modes (test_k3s_gvisor_lab.GVisorLabScriptTest.test_a_sysctl_change_fails_in_both_modes) ... ok
+test_bridge_run_fails_when_the_modules_change (test_k3s_gvisor_lab.GVisorLabScriptTest.test_bridge_run_fails_when_the_modules_change) ... ok
+test_cilium_agent_gets_the_nodes_proc_read_only (test_k3s_gvisor_lab.GVisorLabScriptTest.test_cilium_agent_gets_the_nodes_proc_read_only) ... ok
+test_cilium_run_reports_the_modules_it_added_and_passes (test_k3s_gvisor_lab.GVisorLabScriptTest.test_cilium_run_reports_the_modules_it_added_and_passes) ... ok
+test_cpuset_pins_every_container_the_lab_creates (test_k3s_gvisor_lab.GVisorLabScriptTest.test_cpuset_pins_every_container_the_lab_creates) ... ok
+test_down_leaves_a_container_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_leaves_a_container_that_is_not_wardens) ... ok
+test_down_leaves_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_leaves_a_network_that_is_not_wardens) ... ok
+test_down_removes_the_warden_lab (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_removes_the_warden_lab) ... ok
+test_module_lists_sort_bytewise_whatever_the_locale (test_k3s_gvisor_lab.GVisorLabScriptTest.test_module_lists_sort_bytewise_whatever_the_locale) ... ok
+test_run_cilium_tears_down_everything_it_created (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_cilium_tears_down_everything_it_created) ... ok
+test_run_fails_when_its_teardown_fails (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_fails_when_its_teardown_fails) ... ok
+test_run_keeps_the_commands_exit_status (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_keeps_the_commands_exit_status) ... ok
+test_run_leaves_a_lab_that_was_already_up (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_leaves_a_lab_that_was_already_up) ... ok
+test_run_leaves_a_node_someone_else_created_first (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_leaves_a_node_someone_else_created_first) ... ok
+test_run_leaves_a_warden_network_it_did_not_create (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_leaves_a_warden_network_it_did_not_create) ... ok
+test_run_tears_down_the_lab_it_created (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_tears_down_the_lab_it_created) ... ok
+test_run_tears_down_what_it_created_when_up_fails (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_tears_down_what_it_created_when_up_fails) ... ok
+test_up_cilium_builds_the_world_and_the_node (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_cilium_builds_the_world_and_the_node) ... ok
+test_up_cilium_does_not_pull_the_world_image (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_cilium_does_not_pull_the_world_image) ... ok
+test_up_cilium_fails_as_soon_as_a_sysctl_changed (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_cilium_fails_as_soon_as_a_sysctl_changed) ... ok
+test_up_cilium_fails_when_the_agent_can_write_kernel_sysctls (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_cilium_fails_when_the_agent_can_write_kernel_sysctls) ... ok
+test_up_cilium_leaves_a_standin_name_that_exists (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_cilium_leaves_a_standin_name_that_exists) ... ok
+test_up_refuses_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_refuses_a_network_that_is_not_wardens) ... ok
+test_up_rejects_an_unknown_option (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_rejects_an_unknown_option) ... ok
+test_world_network_skips_a_subnet_another_network_uses (test_k3s_gvisor_lab.GVisorLabScriptTest.test_world_network_skips_a_subnet_another_network_uses) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 23.169s
+
+OK
+exit 0
+$ the real input: .cache/k3s-gvisor/lab/cilium-rendered.json (kubectl create --dry-run=client -o json, 2026-11-12 23:34)
+read-only: DaemonSet/cilium mount-cgroup hostproc (/proc)
+read-only: DaemonSet/cilium cilium-agent host-proc-sys-kernel (/proc/sys/kernel)
+exit 0
+22 objects

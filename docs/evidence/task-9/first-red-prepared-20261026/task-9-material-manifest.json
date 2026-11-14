@@ -1,0 +1,576 @@
+{
+  "status": "INERT_NOT_ADMITTED",
+  "module_inputs": [
+    {
+      "path": "go.mod",
+      "bytes": 2483,
+      "allocated": 4096,
+      "sha256": "bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa"
+    },
+    {
+      "path": "go.sum",
+      "bytes": 11340,
+      "allocated": 12288,
+      "sha256": "cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": ".cache/go-mod/cache/download/github.com/!ada!logics/go-fuzz-headers/@v/v0.0.0-20240806141605-e8a1dd7889d6.mod",
+      "bytes": 53,
+      "allocated": 4096,
+      "sha256": "92f806956402ddfa00ac879314ef850a41ca9e23f6f8c6dd65b14001bef0d8a4"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/!microsoft/go-winio/@v/v0.6.3-0.20251027160822-ad3df93bed29.mod",
+      "bytes": 260,
+      "allocated": 4096,
+      "sha256": "b270953ae7496b573136d5a2d8bc00cf9ecf15cc27f444e94379fef48532fdd1"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/!microsoft/hcsshim/@v/v0.15.0-rc.4.mod",
+      "bytes": 6078,
+      "allocated": 8192,
+      "sha256": "f8cf854fccf649dbe60571543cc09336f9b2ba1497748a94913bf846e7d1a803"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/cespare/xxhash/v2/@v/v2.3.0.mod",
+      "bytes": 45,
+      "allocated": 4096,
+      "sha256": "a090f8eaaf59cc2adf163299ebefe797e1dca3f6add2c8e88a6a3b90ba538b02"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/containerd/cgroups/v3/@v/v3.1.3.mod",
+      "bytes": 708,
+      "allocated": 4096,
+      "sha256": "d627e2ca22d4e95d20674835e502dbd3847301604d6455d4e3519496a390b396"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/containerd/containerd/api/@v/v1.12.0.mod",
+      "bytes": 615,
+      "allocated": 4096,
+      "sha256": "7e1807ddac2065d42ff79094b4c2384926abdb5bbfffcdcd6729c02e454d423c"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/containerd/containerd/v2/@v/v2.4.2.mod",
+      "bytes": 7027,
+      "allocated": 8192,
+      "sha256": "160493ce61c5b7a0639dcc4dc3cba19958384db3dd51d63c5e7b087d67e687cc"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/containerd/continuity/@v/v0.5.0.mod",
+      "bytes": 321,
+      "allocated": 4096,
+      "sha256": "96ea24b3db25c07d8ff4619341c296fbfdd9c658ff56166ed9ac8cafd336dbbe"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/containerd/errdefs/@v/v1.0.0.mod",
+      "bytes": 46,
+      "allocated": 4096,
+      "sha256": "a353bfe4f6beb16b6df0cd2245735c0ec94a92fc40e4846dd9191f9e166c9ce7"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/containerd/errdefs/pkg/@v/v0.3.0.mod",
+      "bytes": 384,
+      "allocated": 4096,
+      "sha256": "968b121c28414964a5156d18ea4546d92f8ff5674e8b346e7db9f3c350e849a4"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/containerd/fifo/@v/v1.1.0.mod",
+      "bytes": 264,
+      "allocated": 4096,
+      "sha256": "4f8f246b7e3460b25c7dc734af827eba201e97d7f03a9708319a736670b6e2d1"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/containerd/log/@v/v0.2.0.mod",
+      "bytes": 132,
+      "allocated": 4096,
+      "sha256": "18c74be23856a317e32a9e00667508cf9e26cda9b8f566616ee5e9fba747060b"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/containerd/log/otel/@v/v0.1.0.mod",
+      "bytes": 267,
+      "allocated": 4096,
+      "sha256": "696fc4efa9d8808c286d1028a0c73e8648cc940d1f383ad9ac7a58a1e6cfe768"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/containerd/platforms/@v/v1.0.0-rc.5.mod",
+      "bytes": 330,
+      "allocated": 4096,
+      "sha256": "f6503bc7b49bea9a945c022494d2ace4eb1b2af34c3379b05b15e9b3bea80190"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/containerd/plugin/@v/v1.1.0.mod",
+      "bytes": 162,
+      "allocated": 4096,
+      "sha256": "edd1b78210e4b21ff1aa09956f54382a7107e6bc5b0b88d42a679b4e0ad3eb0b"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/containerd/ttrpc/@v/v1.2.9.mod",
+      "bytes": 393,
+      "allocated": 4096,
+      "sha256": "c6780ad9e72e2341987a28892f545b0bacb1aaacbd9c280706253d3f6fff0862"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/containerd/typeurl/v2/@v/v2.3.0.mod",
+      "bytes": 170,
+      "allocated": 4096,
+      "sha256": "9aea8924388c3e59fa7b68cb5717b79d6fbce217b06395f54e2fde970de27f05"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/davecgh/go-spew/@v/v1.1.0.mod",
+      "bytes": 34,
+      "allocated": 4096,
+      "sha256": "bcb29393251237b79a17b6c19bf29134f43e8f438c3198988fcd461a1cdf05cc"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/distribution/reference/@v/v0.6.0.mod",
+      "bytes": 102,
+      "allocated": 4096,
+      "sha256": "f58a3047216ff2a4dd996e6579a8444bc4de2de08b6cdec7429b9e3e649b9a75"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/erofs/go-erofs/@v/v0.3.1.mod",
+      "bytes": 42,
+      "allocated": 4096,
+      "sha256": "fa558029c6868bb3be2718acace696beeebcbc0629f0cee6160c3b6484613594"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/felixge/httpsnoop/@v/v1.1.0.mod",
+      "bytes": 45,
+      "allocated": 4096,
+      "sha256": "e6c8e044418c809ceea7acbc002c297bd433ea635e0ac9e4fc2019c9bf895b6e"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/go-logr/logr/@v/v1.2.2.mod",
+      "bytes": 40,
+      "allocated": 4096,
+      "sha256": "519b1d6da5eeef675b4a1857d628f05f110a2b8cb3c423b715fea80d0975a518"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/go-logr/logr/@v/v1.4.4.mod",
+      "bytes": 40,
+      "allocated": 4096,
+      "sha256": "c496f30d700f02b49a1b50bc2486a27c2f74df3dce75d9db6d2d43975b381727"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/go-logr/stdr/@v/v1.2.2.mod",
+      "bytes": 80,
+      "allocated": 4096,
+      "sha256": "0812160f77474d8dbf692b7caaee7fd5508448c705d9b54b5a3496ac44468c2c"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/golang/protobuf/@v/v1.5.4.mod",
+      "bytes": 193,
+      "allocated": 4096,
+      "sha256": "c5f873c621cfaaf563f8b66a0501a5be14390cb0859e5187ce616d0312a6c8f8"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/google/go-cmp/@v/v0.7.0.mod",
+      "bytes": 41,
+      "allocated": 4096,
+      "sha256": "31c874a1d2a18e62b0550f823ce7a575c8dec7f8fd9d4fa1959bb12d7f7c0f14"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/google/uuid/@v/v1.6.0.mod",
+      "bytes": 30,
+      "allocated": 4096,
+      "sha256": "73da47b6338b00a082fd451aa35a3273d3adc09b8e9bba98dab01091e402af6e"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/pgpassfile/@v/v1.0.0.info",
+      "bytes": 50,
+      "allocated": 4096,
+      "sha256": "7f5536522658ebd12ee9d61ce69ebff420a3f6e45eb54f18654a2224a035bbbf"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/pgpassfile/@v/v1.0.0.mod",
+      "bytes": 88,
+      "allocated": 4096,
+      "sha256": "8ea95fa2499f4c600f7fd1f0afe745ecc0ae25121a3c823408f4a2961a05ee48"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/pgpassfile/@v/v1.0.0.zip",
+      "bytes": 4375,
+      "allocated": 8192,
+      "sha256": "1cc79fb0b80f54b568afd3f4648dd1c349f746ad7c379df8d7f9e0eb1cac938b"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/pgpassfile/@v/v1.0.0.ziphash",
+      "bytes": 47,
+      "allocated": 4096,
+      "sha256": "16420c78e63ca55db8ea76f36f457f3c2835f4a1e5be6eda106b4cf081c694da"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/pgservicefile/@v/v0.0.0-20240606120523-5a60cdf6a761.info",
+      "bytes": 198,
+      "allocated": 4096,
+      "sha256": "b5e138a345fa66472bc5ecaf38e7df56f94ece8d760bd20d0525a317609edfba"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/pgservicefile/@v/v0.0.0-20240606120523-5a60cdf6a761.mod",
+      "bytes": 91,
+      "allocated": 4096,
+      "sha256": "5f70111b892c17eecec6f97e0cd961cc3922b5daece59c099c855e1062ed0277"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/pgservicefile/@v/v0.0.0-20240606120523-5a60cdf6a761.zip",
+      "bytes": 4880,
+      "allocated": 8192,
+      "sha256": "c9e31c91aebf96eb246bd410d1849cc7666d955a1e20ca2eba1c30b4eb89335f"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/pgservicefile/@v/v0.0.0-20240606120523-5a60cdf6a761.ziphash",
+      "bytes": 47,
+      "allocated": 4096,
+      "sha256": "2199051ebd2488426884cce5e601e21023b3b59d5410d744dc80d0120777f6d7"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/pgx/v5/@v/v5.11.0.info",
+      "bytes": 187,
+      "allocated": 4096,
+      "sha256": "4c76a02e712c2801bb83ee49ed15acf432667e2f6365cb591e852adb59dee40f"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/pgx/v5/@v/v5.11.0.mod",
+      "bytes": 538,
+      "allocated": 4096,
+      "sha256": "5bb85082d4aef07908c0ea914a1603ab40454968a95bf569cd89eb0c4df03d74"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/pgx/v5/@v/v5.11.0.zip",
+      "bytes": 762523,
+      "allocated": 765952,
+      "sha256": "ada62e95244336484f86c274e04a6845f0c494c93b69d24f2ac4181b7c58b11d"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/pgx/v5/@v/v5.11.0.ziphash",
+      "bytes": 47,
+      "allocated": 4096,
+      "sha256": "bc2a33339efcfddaeada8242ee9411c30d31d3e1144cf3b0cf7c8e0f92855adc"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/puddle/v2/@v/v2.2.2.info",
+      "bytes": 188,
+      "allocated": 4096,
+      "sha256": "06637095b1ce744cb5fbfad0a78246d209a30f730604b7654cc94439db277e71"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/puddle/v2/@v/v2.2.2.mod",
+      "bytes": 265,
+      "allocated": 4096,
+      "sha256": "b2be8f437fdf5c550522c8bca62194c2c1afb221b29bbf984db0599d33c55224"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/puddle/v2/@v/v2.2.2.zip",
+      "bytes": 24095,
+      "allocated": 24576,
+      "sha256": "f1f0789098a0bcb5ff3c7024f9ee387a6748446e1bc6713b13a63d763a9fb11e"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/jackc/puddle/v2/@v/v2.2.2.ziphash",
+      "bytes": 47,
+      "allocated": 4096,
+      "sha256": "7576f9ff785dadda2385cfbfa471a7090560e4406717eb9cfefe8a166812d1fc"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/klauspost/compress/@v/v1.20.0.mod",
+      "bytes": 201,
+      "allocated": 4096,
+      "sha256": "0d4e90d99acbc19eea5706e7390f8c925b26b1f5861385bb4f1321d454a1d48c"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/moby/locker/@v/v1.0.1.mod",
+      "bytes": 39,
+      "allocated": 4096,
+      "sha256": "2428defeac95423dbcb3378ecc65ba7085db4d50d81848567d27508eba2226e5"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/moby/sys/mountinfo/@v/v0.7.2.mod",
+      "bytes": 79,
+      "allocated": 4096,
+      "sha256": "a2c5ccab447263f7b912af5adf3c1586c300d9169564adcaf2d911dc17d301c4"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/moby/sys/signal/@v/v0.7.1.mod",
+      "bytes": 76,
+      "allocated": 4096,
+      "sha256": "de4dac885170d5960f8da11aaa30261b1034bf06c5641dbd7376b6a71bd3e1cc"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/moby/sys/user/@v/v0.4.1.mod",
+      "bytes": 266,
+      "allocated": 4096,
+      "sha256": "b32137c4588ee86da690b1cbdd5d6d086fb2254625893b6cb590fb2c02672cb6"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/moby/sys/userns/@v/v0.2.1.mod",
+      "bytes": 43,
+      "allocated": 4096,
+      "sha256": "7466f7ad124800c57bcfdc7537542833b74aff879b8d2f6a53a6a1821862f40c"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/opencontainers/go-digest/@v/v1.0.0.mod",
+      "bytes": 52,
+      "allocated": 4096,
+      "sha256": "8de0250a4ba6811f7703fbb499ed889672597699f335b12f47d788d1df087b4a"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/opencontainers/image-spec/@v/v1.1.1.mod",
+      "bytes": 415,
+      "allocated": 4096,
+      "sha256": "1905f5f90061e422d1a23a8b3becf2b8847c4ae00704d44de2bb7f585fa0fed6"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/opencontainers/runtime-spec/@v/v1.3.0.mod",
+      "bytes": 46,
+      "allocated": 4096,
+      "sha256": "09eae41e24a2198d6562f7051bd7267466c37de8342d9aef3eaa27185bb97168"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/pkg/errors/@v/v0.9.1.mod",
+      "bytes": 29,
+      "allocated": 4096,
+      "sha256": "df28c6a823f181d76179697177c0c5943c6ffb38f3c10b2dc53be360ee7d4589"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/pmezard/go-difflib/@v/v1.0.0.mod",
+      "bytes": 37,
+      "allocated": 4096,
+      "sha256": "74b2e766eb215377864d587badf57e95521f692d2a7860b3c7759093f9c9bec2"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/prometheus/procfs/@v/v0.21.1.mod",
+      "bytes": 146,
+      "allocated": 4096,
+      "sha256": "129232c45b86548cedb3cd2ae1aa6cc1fb46826847ce0ab24be7a3cee2191d23"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/sirupsen/logrus/@v/v1.10.2.mod",
+      "bytes": 166,
+      "allocated": 4096,
+      "sha256": "0ae1e8f2e690807fd54e3c2e3cb8326815baa54dbb2b0bf7798c73f3ec061c48"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/stretchr/objx/@v/v0.1.0.mod",
+      "bytes": 32,
+      "allocated": 4096,
+      "sha256": "1350354d52d2287a62336ecc0d56232d4c47699af9bba49c67c2b48254da98f1"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/stretchr/testify/@v/v1.12.1.mod",
+      "bytes": 216,
+      "allocated": 4096,
+      "sha256": "a6aa921ea6dedc1cbb384d3c1b79c58b6e5d6ce26d13b786ec60a99809ae1daa"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/stretchr/testify/@v/v1.3.0.mod",
+      "bytes": 154,
+      "allocated": 4096,
+      "sha256": "ab063d5154a8e8730bced4c52698e5770eb50bfae347bebc35eca488b8e3f6e3"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/github.com/stretchr/testify/@v/v1.7.0.mod",
+      "bytes": 216,
+      "allocated": 4096,
+      "sha256": "fff8168d98e6a07156c454a1b6e925509f3177e96c155516d7f96b4079cca3bf"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/go.opentelemetry.io/auto/sdk/@v/v1.2.1.mod",
+      "bytes": 478,
+      "allocated": 4096,
+      "sha256": "6c4d2df014d59fd6555897fd4e5bbc0316e8df4c737fbfdde5cd119fdefeeea9"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp/@v/v0.71.0.mod",
+      "bytes": 684,
+      "allocated": 4096,
+      "sha256": "24abc25e39e108bc2aafeb0caf4814e2405bbfeab02a23c7e643842bb7e1a809"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/go.opentelemetry.io/otel/@v/v1.46.0.mod",
+      "bytes": 496,
+      "allocated": 4096,
+      "sha256": "fba5554decb2577a8c886fe5732847ffc2d0eb430545ce2ecd77b369fa9bad4d"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/go.opentelemetry.io/otel/metric/@v/v1.46.0.mod",
+      "bytes": 517,
+      "allocated": 4096,
+      "sha256": "710cea0c90af658969bac9372a7f9dd1e23c084aca28b9ffcdcba7264a4e5773"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/go.opentelemetry.io/otel/sdk/@v/v1.46.0.mod",
+      "bytes": 862,
+      "allocated": 4096,
+      "sha256": "ce42be3dd2cb4dc35ad01a2a8c1bda288a4eff58d1ec6c1a7b9e068cd9f5d91b"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/go.opentelemetry.io/otel/sdk/metric/@v/v1.46.0.mod",
+      "bytes": 889,
+      "allocated": 4096,
+      "sha256": "3aca8d8d9f7269331e082379dbfa7ea64828b4075d729cc19296e8856f11cea9"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/go.opentelemetry.io/otel/trace/@v/v1.46.0.mod",
+      "bytes": 362,
+      "allocated": 4096,
+      "sha256": "3e68569992e4513145de69bea79bfe7551ddad7e0d4c174724bbb566e054dec1"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/go.uber.org/goleak/@v/v1.3.0.mod",
+      "bytes": 333,
+      "allocated": 4096,
+      "sha256": "3f15dc6354aae8fe42d3cbd130230731d5c6aae6aa651ca6a73f4c646cda8fec"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/go.yaml.in/yaml/v3/@v/v3.0.5.mod",
+      "bytes": 275,
+      "allocated": 4096,
+      "sha256": "4bf9de8891d4d71507d92568022f8241fb828d8d0a6c9204c130bf030f3e3b2f"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/golang.org/x/net/@v/v0.61.0.mod",
+      "bytes": 157,
+      "allocated": 4096,
+      "sha256": "7bbcec6b6af859939ec01bbe5234e556c867bf80e171abc23ad16c2c8e3951fe"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/golang.org/x/sync/@v/v0.24.0.info",
+      "bytes": 191,
+      "allocated": 4096,
+      "sha256": "d12e1a2d422a79235baceab349c3c55ab3de707214338884cade9af3bb1a5b70"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/golang.org/x/sync/@v/v0.24.0.mod",
+      "bytes": 36,
+      "allocated": 4096,
+      "sha256": "febf4fed5dc12c0de24528f7065bf071cc74a2424070194aaf24617b91066cda"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/golang.org/x/sync/@v/v0.24.0.zip",
+      "bytes": 26232,
+      "allocated": 28672,
+      "sha256": "ca3fcf3ea8259e75891f7947e1a816a5b89402c542d45d8bbbd9e061b0c58019"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/golang.org/x/sync/@v/v0.24.0.ziphash",
+      "bytes": 47,
+      "allocated": 4096,
+      "sha256": "27d65a5b61725fcc691c4155b31cb9be0b8ae14132c3269121a86e2e4ae05a30"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/golang.org/x/sys/@v/v0.49.0.mod",
+      "bytes": 35,
+      "allocated": 4096,
+      "sha256": "9522f4c9806d1c26586ea80fa56292929bd295865e71981927f52996c6b1c831"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/golang.org/x/text/@v/v0.43.0.info",
+      "bytes": 191,
+      "allocated": 4096,
+      "sha256": "9bcbfda1bbd803b06a02932a06d8a1ba56e2bc944ce30674e415e010b48580fb"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/golang.org/x/text/@v/v0.43.0.mod",
+      "bytes": 190,
+      "allocated": 4096,
+      "sha256": "63270b8ca6290a720212e1d6e58b8d12a8aa315a1cb960411d7ec2998c0aab59"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/golang.org/x/text/@v/v0.43.0.zip",
+      "bytes": 7337809,
+      "allocated": 7340032,
+      "sha256": "b75131f628f6e2e4892fd638d33127e952a5027775e0162b94ba069cb4e13863"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/golang.org/x/text/@v/v0.43.0.ziphash",
+      "bytes": 47,
+      "allocated": 4096,
+      "sha256": "ec00e06bb017d164d2fc1bac5b9b35e84bd58f45f96dd07388bc1d2b61e5956f"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/gonum.org/v1/gonum/@v/v0.17.0.mod",
+      "bytes": 1063,
+      "allocated": 4096,
+      "sha256": "8a17681ea0d86cd2de00b2a87745287f5a8d7a0ad55ec0c26c5b52f3552d30e7"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20260825221802-da73d73af1c5.mod",
+      "bytes": 105,
+      "allocated": 4096,
+      "sha256": "0e8d084d06c6b1e680b6c9d86b4c9ac5f7e07cd70e624730daafe406e48de062"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/google.golang.org/grpc/@v/v1.83.2.mod",
+      "bytes": 2099,
+      "allocated": 4096,
+      "sha256": "60f5c004181e7c03fe84131876418d157be7eb4ebea3c598fc5e37b816436780"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/google.golang.org/protobuf/@v/v1.36.12.mod",
+      "bytes": 124,
+      "allocated": 4096,
+      "sha256": "a75c105a852fbd8da8d8cfac09c2eab9a206cfd27ed37c973737e23f632ca96e"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod",
+      "bytes": 25,
+      "allocated": 4096,
+      "sha256": "5c306e0d633cd66a11b40e2e5fbbc6da42110db7d72ea3c1524ceb45ee40c33f"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod",
+      "bytes": 95,
+      "allocated": 4096,
+      "sha256": "21579860a20306fcf43b1bd234d1fba319499c77611b71c05f9bf3ba90dab939"
+    }
+  ],
+  "missing": [],
+  "zip_uncompressed_total": 32373366,
+  "sdk": [
+    {
+      "path": ".cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/VERSION",
+      "bytes": 36,
+      "allocated": 4096,
+      "sha256": "3f3fbe1bb9146eb51957d11386aabb1016b0cb389b8cb551e831abefc77ee54f"
+    },
+    {
+      "path": ".cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/bin/go",
+      "bytes": 15456399,
+      "allocated": 15458304,
+      "sha256": "9c2a37ae5b21ba1d5a004bb9ab4d0c64de6fc5778e9d30487adccea62678b8b5",
+      "elf_machine": 62,
+      "PT_INTERP": false,
+      "PT_DYNAMIC": false
+    },
+    {
+      "path": ".cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/pkg/tool/linux_amd64/compile",
+      "bytes": 25787733,
+      "allocated": 25788416,
+      "sha256": "b426da26640e8069dc35162c9900496d9a03bea90bf771236067fb8cae86d285",
+      "elf_machine": 62,
+      "PT_INTERP": false,
+      "PT_DYNAMIC": false
+    },
+    {
+      "path": ".cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/pkg/tool/linux_amd64/link",
+      "bytes": 6684577,
+      "allocated": 6684672,
+      "sha256": "8dd7e821587beabeb255e36fce17f659ef967e2eb5d3898a599c2df494fb5fd3",
+      "elf_machine": 62,
+      "PT_INTERP": false,
+      "PT_DYNAMIC": false
+    },
+    {
+      "path": ".cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/pkg/tool/linux_amd64/asm",
+      "bytes": 5024828,
+      "allocated": 5025792,
+      "sha256": "8d3cf7bd474c6d8f782e5cf6b2cba84f7216d1dd8529208fc31dcbddcf5ca243",
+      "elf_machine": 62,
+      "PT_INTERP": false,
+      "PT_DYNAMIC": false
+    }
+  ],
+  "source_freeze": "task-9-first-red-source-freeze.json (separately frozen)"
+}

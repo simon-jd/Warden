@@ -1,0 +1,161 @@
+# Task14 first RED caller (INERT)
+Original8183B preserved; inputs unchanged. Root FULLREAD/admission + unchanged fresh azure_guard preflight --additional-bytes 6073741824 --service-memory-bytes 11000000000 --download-bytes 0 known0/raw R required. INERT.
+Native outer: timeout --signal=TERM --kill-after=4s 86s python3 -B -; cwd Warden, total90 INCLUDING kill grace, from before caller entry. Absolute setup8/work70/signals82/reap84/status target85; TERM never extends budget. Blocking I/O/Popen/status may prevent status or descendant death: outer90 bounds observation only; missing status/group uncertainty STOP UNKNOWN, no retry.
+CPU60/AS4GiB/FSIZE256MiB perprocess; output64KiB separate. GOMEMLIMIT512MiB cooperative, not RSS cap; new2GB+old9GB<=16GB. Disk1073741824 includes source/cache/tmp/evidence, not quota. Telemetry unchanged; HOME/umask unchanged. New0700 namespace protects evidence.
+```python
+import hashlib,json,os,pathlib,resource,selectors,signal,stat,subprocess,sys,time
+entry=time.monotonic()
+W=pathlib.Path("/home/postedism/Desktop/Warden")
+G=W/".cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64"
+N=W/".cache/task14-first-red-20261025-a"
+F={
+"respond/actions.go":"8f9b25aa2824017c0ddb8b3a5acbe2f5c6e2a88aafff67e6ddac87b141259006",
+"respond/executor.go":"1fd4224c4e5b6d04cbd9e1c4d16b2d3dcbf7baf5e08bfc6cfd01a9bf75913685",
+"respond/executor_test.go":"d104aff34a26fe593d7955ddf0267590d8b3ecb0d966ae39a22c42ca60aecbe3",
+"go.mod":"bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa",
+"go.sum":"cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0"}
+def hashes():
+ return {k:hashlib.sha256((W/k).read_bytes()).hexdigest() for k in F}
+def mem():
+ for line in pathlib.Path("/proc/meminfo").read_text().splitlines():
+  if line.startswith("MemAvailable:"): return int(line.split()[1])*1024
+ raise RuntimeError("MemAvailable absent")
+def usage():
+ total=0
+ for root,dirs,files in os.walk(N,followlinks=False):
+  for name in dirs+files:
+   try: s=os.lstat(os.path.join(root,name))
+   except FileNotFoundError: continue
+   if stat.S_ISLNK(s.st_mode): raise RuntimeError("namespace symlink")
+   total+=s.st_blocks*512
+ return total
+assert os.getuid()==1000 and os.geteuid()==1000
+assert mem()>=2000000000 and not os.path.lexists(N)
+assert hashes()==F
+assert sorted(p.name for p in (W/"respond").iterdir())==["actions.go","executor.go","executor_test.go"]
+assert (G/"VERSION").read_text()=="go1.26.10\ntime 2026-10-19T22:20:36Z\n"
+for rel in ["bin/go","pkg/tool/linux_amd64/compile"]:
+ s=os.lstat(G/rel)
+ assert stat.S_ISREG(s.st_mode) and s.st_uid==1000 and s.st_mode&0o111
+N.mkdir(mode=0o700)
+for part in ["cache","tmp","gopath","modcache","config/go/telemetry","telemetry"]:
+ (N/part).mkdir(parents=True,exist_ok=True)
+for part in ["config/go/telemetry/mode","telemetry/mode"]:
+ (N/part).write_text("off\n")
+env=os.environ.copy()
+for k in list(env):
+ if k.startswith("GO") or k in ["CGO_ENABLED","TEST_TELEMETRY_DIR"]:
+  del env[k]
+env.update({
+"GOROOT":str(G),"GOENV":"off","GOWORK":"off","GOTOOLCHAIN":"local",
+"GOPROXY":"off","GOSUMDB":"off","GOVCS":"*:off","CGO_ENABLED":"0",
+"GOOS":"linux","GOARCH":"amd64","GOMAXPROCS":"2","GOMEMLIMIT":"512MiB",
+"GOCACHE":str(N/"cache"),"GOTMPDIR":str(N/"tmp"),"TMPDIR":str(N/"tmp"),
+"GOPATH":str(N/"gopath"),"GOMODCACHE":str(N/"modcache"),
+"XDG_CONFIG_HOME":str(N/"config"),"TEST_TELEMETRY_DIR":str(N/"telemetry"),
+"PATH":"/usr/bin:/bin"})
+names=["TestPlaybookIdempotentPerAlert","TestDestructiveRequiresApproval","TestDryRunMakesNoChanges"]
+argv=[str(G/"bin/go"),"test","-mod=readonly","-buildvcs=false","-vet=off","-p=1",
+"-parallel=1","-count=1","-timeout=20s","-run","^("+"|".join(names)+")$","-v","./respond"]
+(N/"request.json").write_text(json.dumps({"argv":argv,"cwd":str(W),"env_overrides":{
+k:env[k] for k in env if k.startswith("GO") or k in ["CGO_ENABLED","TMPDIR","XDG_CONFIG_HOME","TEST_TELEMETRY_DIR","PATH"]},
+"hashes":F,"limits":{"whole":90,"work_end":70,"signal_end":82,"reap_end":84,"status_target":85,"cpu_perprocess":60,
+"as_perprocess":4294967296,"file_perprocess":268435456,"output_combined":65536},
+"pre_mem_available":mem()},sort_keys=True))
+resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+resource.setrlimit(resource.RLIMIT_CPU,(60,60))
+resource.setrlimit(resource.RLIMIT_AS,(4294967296,4294967296))
+resource.setrlimit(resource.RLIMIT_FSIZE,(268435456,268435456))
+p=None
+sel=selectors.DefaultSelector()
+files={}
+reason=""
+seen=0
+interrupted=False
+def term(sig,frame):
+ global interrupted
+ interrupted=True
+signal.signal(signal.SIGTERM,term)
+def peek():
+ return os.waitid(os.P_PID,p.pid,os.WEXITED|os.WNOHANG|os.WNOWAIT)
+def group_signal(sig):
+ peek()
+ os.killpg(p.pid,sig)
+try:
+ if time.monotonic()-entry>8 or interrupted: raise RuntimeError("setup_deadline")
+ for label in ["stdout","stderr"]: files[label]=open(N/(label+".raw"),"xb",buffering=0)
+ p=subprocess.Popen(argv,cwd=W,env=env,stdin=subprocess.DEVNULL,
+  stdout=subprocess.PIPE,stderr=subprocess.PIPE,start_new_session=True)
+ for pipe,label in [(p.stdout,"stdout"),(p.stderr,"stderr")]:
+  os.set_blocking(pipe.fileno(),False)
+  sel.register(pipe,selectors.EVENT_READ,label)
+ while True:
+  observed=peek()
+  if not sel.get_map() and observed is not None: break
+  if interrupted: reason="external_TERM"; break
+  if time.monotonic()>=entry+70: reason="work_timeout"; break
+  if usage()>900000000: reason="namespace_disk_stop"; break
+  if mem()<2000000000: reason="MemAvailable_stop"; break
+  for key,_ in sel.select(0.1):
+   data=os.read(key.fileobj.fileno(),8192)
+   if not data:
+    sel.unregister(key.fileobj); key.fileobj.close(); continue
+   keep=data[:max(0,65536-seen)]
+   files[key.data].write(keep)
+   seen+=len(keep)
+   if len(keep)!=len(data): reason="output_truncated"; break
+  if reason: break
+except BaseException as e:
+ reason="caller_exception:"+type(e).__name__
+finally:
+ sel.close()
+ if p is not None:
+  try:
+   if time.monotonic()>=entry+82: raise RuntimeError("signal_deadline")
+   group_signal(signal.SIGTERM)
+   until=min(entry+80,time.monotonic()+2)
+   while time.monotonic()<until and peek() is None:
+    time.sleep(min(0.05,max(0,until-time.monotonic())))
+   if time.monotonic()>=entry+82: raise RuntimeError("signal_deadline")
+   group_signal(signal.SIGKILL)
+   while time.monotonic()<entry+84 and peek() is None:
+    time.sleep(min(0.05,max(0,entry+84-time.monotonic())))
+   if peek() is None: raise RuntimeError("leader_exit_unknown")
+   p.wait(timeout=max(0,entry+84-time.monotonic()))
+  except BaseException as e:
+   reason="cleanup_unknown:"+type(e).__name__
+ for f in files.values(): f.close()
+def group_absent():
+ if p is None: return True
+ try: os.killpg(p.pid,0); return False
+ except ProcessLookupError: return True
+try:
+ if time.monotonic()>=entry+85: raise RuntimeError("status_deadline")
+ after=hashes()
+ out=(N/"stdout.raw").read_bytes()
+ err=(N/"stderr.raw").read_bytes()
+ gone=group_absent()
+ if interrupted: reason="external_TERM"
+ if after!=F: reason="source_changed"
+ if not gone: reason="process_group_unknown"
+ disk=usage()
+ if disk>1073000000: reason="disk_budget_unknown"
+ candidate=(not reason and p is not None and p.returncode==1 and not err
+  and all(("--- FAIL: "+n+" ").encode() in out for n in names)
+  and out.count(b"RED_REQUIRED")==3
+  and out.count(b"respond executor not implemented")==3
+  and b"[build failed]" not in out and b"--- SKIP:" not in out)
+ status={"decision":"STOP_FOR_ROOT","candidate_semantic_red":candidate,
+  "go_returncode":None if p is None else p.returncode,"reason":reason,
+  "raw_stdout_bytes":len(out),"raw_stderr_bytes":len(err),
+  "post_hashes":after,"post_mem_available":mem(),"namespace_allocated_bytes":disk,
+  "own_group_absent":gone,"elapsed_seconds":time.monotonic()-entry}
+ if time.monotonic()>=entry+85: raise RuntimeError("status_deadline")
+ (N/"status.json").write_text(json.dumps(status,sort_keys=True))
+ print(json.dumps(status,sort_keys=True))
+except BaseException as e:
+ print(json.dumps({"decision":"STOP_UNKNOWN","error":type(e).__name__}))
+ sys.exit(2)
+sys.exit(1 if candidate else 2)
+```
+STOP for root raw review. No Go/guard/Git execution authorized. No automatic GREEN/retry; real adapters/live acceptance OPEN.

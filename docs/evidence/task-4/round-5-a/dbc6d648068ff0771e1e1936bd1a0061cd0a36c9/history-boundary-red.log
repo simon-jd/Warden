@@ -1,0 +1,64 @@
+test_abi_dependency_output_is_closed_and_missing_library_stops (test_firecracker_recovery.BoundaryTests.test_abi_dependency_output_is_closed_and_missing_library_stops) ... FAIL
+test_cleanup_requires_exact_stopped_owned_objects_and_proves_absence (test_firecracker_recovery.BoundaryTests.test_cleanup_requires_exact_stopped_owned_objects_and_proves_absence) ... FAIL
+test_command_output_is_bounded_and_timeout_reaps_only_own_child (test_firecracker_recovery.BoundaryTests.test_command_output_is_bounded_and_timeout_reaps_only_own_child) ... FAIL
+
+======================================================================
+FAIL: test_abi_dependency_output_is_closed_and_missing_library_stops (test_firecracker_recovery.BoundaryTests.test_abi_dependency_output_is_closed_and_missing_library_stops)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 162, in test_abi_dependency_output_is_closed_and_missing_library_stops
+    try: result = recovery.dependencies(raw, b'', 0)
+                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery.py", line 238, in dependencies
+    raise ValueError('Python ABI closure not implemented')
+ValueError: Python ABI closure not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 163, in test_abi_dependency_output_is_closed_and_missing_library_stops
+    except ValueError as error: self.fail('valid ABI fixture refused: ' + str(error))
+                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: valid ABI fixture refused: Python ABI closure not implemented
+
+======================================================================
+FAIL: test_cleanup_requires_exact_stopped_owned_objects_and_proves_absence (test_firecracker_recovery.BoundaryTests.test_cleanup_requires_exact_stopped_owned_objects_and_proves_absence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 186, in test_cleanup_requires_exact_stopped_owned_objects_and_proves_absence
+    try: recovery.cleanup_helper(labels)
+         ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery.py", line 242, in cleanup_helper
+    raise ValueError('exact helper cleanup not implemented')
+ValueError: exact helper cleanup not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 187, in test_cleanup_requires_exact_stopped_owned_objects_and_proves_absence
+    except ValueError as error: self.fail('exact stopped cleanup refused: ' + str(error))
+                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: exact stopped cleanup refused: exact helper cleanup not implemented
+
+======================================================================
+FAIL: test_command_output_is_bounded_and_timeout_reaps_only_own_child (test_firecracker_recovery.BoundaryTests.test_command_output_is_bounded_and_timeout_reaps_only_own_child)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 152, in test_command_output_is_bounded_and_timeout_reaps_only_own_child
+    result = recovery.bounded_command([sys.executable, '-I', '-S', '-B', '-c', 'print("fixture")'], 2, 64)
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery.py", line 234, in bounded_command
+    raise ValueError('bounded command not implemented')
+ValueError: bounded command not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 153, in test_command_output_is_bounded_and_timeout_reaps_only_own_child
+    except ValueError as error: self.fail('bounded harmless child refused: ' + str(error))
+                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: bounded harmless child refused: bounded command not implemented
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)

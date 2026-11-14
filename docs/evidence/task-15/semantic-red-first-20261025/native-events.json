@@ -1,0 +1,42 @@
+[
+  {
+    "kind": "freeze-and-ruling",
+    "result": {
+      "chunk_id": "4605c5",
+      "wall_time_seconds": 3.3426e-05,
+      "exit_code": 0,
+      "original_token_count": 42,
+      "output": "frozen_body_bytes 3514 sha256 26d6280ec0540a712b627198e28a37fadc1e69c0a57dc47dd27591c2a686dca2\nexact_namespace_absent /tmp/warden-task15-first-red-9ffe58a9-b5d6dcbd\n"
+    }
+  },
+  {
+    "kind": "fresh-guard",
+    "result": {
+      "chunk_id": "338ae5",
+      "wall_time_seconds": 0.272390456,
+      "exit_code": 0,
+      "original_token_count": 93,
+      "output": "{\"additional_bytes\": \"5268435456\", \"at\": \"2026-10-26T03:02:24Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 256459673600, \"project_allocated_bytes\": 5030666240, \"service_memory_bytes\": \"10073741824\"}\n{'exact_new_namespace_absent': True, 'MemAvailable_bytes': 85367754752, 'Q_unreleased_bytes': 5000000000, 'old_UNKNOWN_resident_bytes': 9000000000}\n"
+    }
+  },
+  {
+    "kind": "sole-first-red",
+    "result": {
+      "chunk_id": "5f61a3",
+      "wall_time_seconds": 1.3598e-05,
+      "exit_code": 1,
+      "original_token_count": 0,
+      "output": ""
+    }
+  },
+  {
+    "kind": "root-full-postread",
+    "result": {
+      "chunk_id": "fa523d",
+      "wall_time_seconds": 1.7924e-05,
+      "exit_code": 0,
+      "original_token_count": 1052,
+      "output": "FULL status.txt BEGIN\nSTARTED; no acceptance claim\ntests=8 failures=4 errors=0\nSEMANTIC RED; real crypto cases UNRUN\nFULL status.txt END\nFULL unittest.txt BEGIN\ntest_fixable_critical_blocks_unfiltered_scan (task15_supplychain_tests.AssessScanTests.test_fixable_critical_blocks_unfiltered_scan) ... FAIL\ntest_ignored_matches_rejected (task15_supplychain_tests.AssessScanTests.test_ignored_matches_rejected) ... ok\ntest_missing_db_evidence_rejected (task15_supplychain_tests.AssessScanTests.test_missing_db_evidence_rejected) ... ok\ntest_not_fixed_kev_still_blocks (task15_supplychain_tests.AssessScanTests.test_not_fixed_kev_still_blocks) ... FAIL\ntest_related_kev_cve_is_not_lost (task15_supplychain_tests.AssessScanTests.test_related_kev_cve_is_not_lost) ... FAIL\ntest_malformed_digest_rejected_without_policy (task15_supplychain_tests.RenderBindingTests.test_malformed_digest_rejected_without_policy) ... ok\ntest_missing_binding_rejected_without_policy (task15_supplychain_tests.RenderBindingTests.test_missing_binding_rejected_without_policy) ... ok\ntest_valid_binding_covers_every_image_and_exact_identity (task15_supplychain_tests.RenderBindingTests.test_valid_binding_covers_every_image_and_exact_identity) ... FAIL\n\n======================================================================\nFAIL: test_fixable_critical_blocks_unfiltered_scan (task15_supplychain_tests.AssessScanTests.test_fixable_critical_blocks_unfiltered_scan)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/scripts/test_supplychain.py\", line 83, in test_fixable_critical_blocks_unfiltered_scan\n    self.assertEqual(result[\"status\"], \"assessed\")\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'unimplemented' != 'assessed'\n- unimplemented\n+ assessed\n\n\n======================================================================\nFAIL: test_not_fixed_kev_still_blocks (task15_supplychain_tests.AssessScanTests.test_not_fixed_kev_still_blocks)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/scripts/test_supplychain.py\", line 91, in test_not_fixed_kev_still_blocks\n    self.assertEqual(result[\"status\"], \"assessed\")\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'unimplemented' != 'assessed'\n- unimplemented\n+ assessed\n\n\n======================================================================\nFAIL: test_related_kev_cve_is_not_lost (task15_supplychain_tests.AssessScanTests.test_related_kev_cve_is_not_lost)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/scripts/test_supplychain.py\", line 99, in test_related_kev_cve_is_not_lost\n    self.assertEqual(result[\"status\"], \"assessed\")\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'unimplemented' != 'assessed'\n- unimplemented\n+ assessed\n\n\n======================================================================\nFAIL: test_valid_binding_covers_every_image_and_exact_identity (task15_supplychain_tests.RenderBindingTests.test_valid_binding_covers_every_image_and_exact_identity)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/scripts/test_supplychain.py\", line 51, in test_valid_binding_covers_every_image_and_exact_identity\n    self.assertTrue(result[\"accepted\"])\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\nAssertionError: False is not true\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nFAILED (failures=4)\nFULL unittest.txt END\n{\"status.txt\": {\"bytes\": 95, \"sha256\": \"448c1d9cfcf7726c3131359d25ed8983085d4a997acc454176c7c21dd127fd37\", \"uid\": 1000, \"mode\": \"0o600\", \"nlink\": 1}, \"unittest.txt\": {\"bytes\": 3554, \"sha256\": \"ef99a38fb210bea63899fdeb614b222340b3b53e45a236abefaa48cb35fa17af\", \"uid\": 1000, \"mode\": \"0o600\", \"nlink\": 1}, \"source_hashes_unchanged\": true, \"namespace\": \"/tmp/warden-task15-first-red-9ffe58a9-b5d6dcbd\", \"children_created_by_caller\": false, \"real_crypto_admissions\": \"UNRUN\"}\n"
+    }
+  }
+]

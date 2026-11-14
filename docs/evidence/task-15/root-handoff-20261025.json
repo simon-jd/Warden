@@ -1,0 +1,19 @@
+{
+  "base": "6f8af6e6d672feb25d254729aa99c7ffe82bf4e7",
+  "source": "75a141d22f57160e5d6d758ae468152430e82ec0",
+  "evidence": "94da92d2bcc9f125ff22b1f3bd79978c43f6ff5c",
+  "metadata_correction": "890b55c124c27edce7511e749a1ceb9d38a5aa17",
+  "commits": 3,
+  "source_paths": 10,
+  "source_bytes": 42326,
+  "original_evidence_paths": 16,
+  "metadata_correction_paths": 2,
+  "indexed_hash_rows": 24,
+  "all_27_public_paths_match_git": true,
+  "report_mirror_equal": true,
+  "inventory_final_sha256": "0cd7bb2c579ac969a14c967be98adf4489b46ac5ac0163b74f9af29de7b1ab32",
+  "index_empty": true,
+  "tests_rerun": false,
+  "first_failed_handoff": "e22019 plus be8fc7 retained in inventory-handoff-correction-20261025.json; 61hex inventory SHA corrected once, original source/raw and commits preserved",
+  "source_ownership": "returned to root; independent review pending"
+}

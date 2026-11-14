@@ -1,0 +1,15 @@
+test_failed_helper_preserves_only_bounded_typed_refusal_evidence (test_firecracker_recovery.WorkflowTests.test_failed_helper_preserves_only_bounded_typed_refusal_evidence) ... ERROR
+
+======================================================================
+ERROR: test_failed_helper_preserves_only_bounded_typed_refusal_evidence (test_firecracker_recovery.WorkflowTests.test_failed_helper_preserves_only_bounded_typed_refusal_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 235, in test_failed_helper_preserves_only_bounded_typed_refusal_evidence
+    self.assertEqual(save.call_args.args[1]['helper_refusal']['reason'], 'scene_schema')
+                     ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'args'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

@@ -1,0 +1,3 @@
+STARTED; no acceptance claim
+tests=8 failures=4 errors=0
+SEMANTIC RED; real crypto cases UNRUN

@@ -1,0 +1,88 @@
+# Unstarted local deployment template; authorized collectors populate spools.
+data_dir = "/var/lib/warden/vector-agent"
+
+[sources.spool_azure]
+type = "file"
+include = ["/var/lib/warden/spool/azure_activity.ndjson"]
+read_from = "beginning"
+max_line_bytes = 16384
+
+[transforms.label_azure]
+type = "remap"
+inputs = ["spool_azure"]
+source = '.warden_source = "azure"'
+
+[sources.spool_aks]
+type = "file"
+include = ["/var/lib/warden/spool/aks_audit.ndjson"]
+read_from = "beginning"
+max_line_bytes = 16384
+
+[transforms.label_aks]
+type = "remap"
+inputs = ["spool_aks"]
+source = '.warden_source = "aks"'
+
+[sources.spool_k3s]
+type = "file"
+include = ["/var/lib/warden/spool/k3s_audit.ndjson"]
+read_from = "beginning"
+max_line_bytes = 16384
+
+[transforms.label_k3s]
+type = "remap"
+inputs = ["spool_k3s"]
+source = '.warden_source = "k3s"'
+
+[sources.spool_vnet]
+type = "file"
+include = ["/var/lib/warden/spool/vnet_flow.ndjson"]
+read_from = "beginning"
+max_line_bytes = 16384
+
+[transforms.label_vnet]
+type = "remap"
+inputs = ["spool_vnet"]
+source = '.warden_source = "vnet"'
+
+[sources.spool_tetragon]
+type = "file"
+include = ["/var/lib/warden/spool/tetragon.ndjson"]
+read_from = "beginning"
+max_line_bytes = 16384
+
+[transforms.label_tetragon]
+type = "remap"
+inputs = ["spool_tetragon"]
+source = '.warden_source = "tetragon"'
+
+[sources.spool_warden]
+type = "file"
+include = ["/var/lib/warden/spool/warden_audit.ndjson"]
+read_from = "beginning"
+max_line_bytes = 16384
+
+[transforms.label_warden]
+type = "remap"
+inputs = ["spool_warden"]
+source = '.warden_source = "warden"'
+
+[sinks.agent_forward]
+type = "vector"
+inputs = ["label_azure", "label_aks", "label_k3s", "label_vnet", "label_tetragon", "label_warden"]
+address = "127.0.0.1:6000"
+acknowledgements.enabled = true
+buffer.type = "disk"
+buffer.max_size = 268435488
+buffer.when_full = "block"
+
+[sources.agent_metrics]
+type = "internal_metrics"
+namespace = "vector"
+[sinks.agent_metrics_export]
+type = "prometheus_exporter"
+inputs = ["agent_metrics"]
+address = "127.0.0.1:19597"
+buffer.type = "memory"
+buffer.max_events = 500
+buffer.when_full = "block"

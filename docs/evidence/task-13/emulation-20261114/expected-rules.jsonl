@@ -1,0 +1,700 @@
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Run shell untrusted"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "System user interactive"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Terminal shell in container"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Clear Log Activities"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Packet socket created in container"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "PTRACE attached to process"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Find AWS Credentials"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Run shell untrusted"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "System user interactive"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Terminal shell in container"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Clear Log Activities"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Packet socket created in container"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "PTRACE attached to process"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Find AWS Credentials"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "KJYZMDFA2AG72WVKL6Q7ANRQVI", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Run shell untrusted"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "System user interactive"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Terminal shell in container"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Clear Log Activities"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Packet socket created in container"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "PTRACE attached to process"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Find AWS Credentials"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "MTUNCBNPA3VFZLFSEUJYPMCXDA", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Run shell untrusted"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "System user interactive"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Terminal shell in container"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Clear Log Activities"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Packet socket created in container"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "PTRACE attached to process"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Find AWS Credentials"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "M36DAMHLGXTOEYBJX35EP5A7M4", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Run shell untrusted"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "System user interactive"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Terminal shell in container"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Clear Log Activities"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Packet socket created in container"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "PTRACE attached to process"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Find AWS Credentials"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "RK7GXSYJPTC25CX6JCP4BJ57NM", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Run shell untrusted"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "System user interactive"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Terminal shell in container"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Clear Log Activities"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Packet socket created in container"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "PTRACE attached to process"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Find AWS Credentials"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "ZJT2PD4EYJLLICOGQ4IOBJFJFQ", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Run shell untrusted"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "System user interactive"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Terminal shell in container"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Clear Log Activities"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Packet socket created in container"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "PTRACE attached to process"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Find AWS Credentials"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "MKGJOCGGKSGZ5IDHVOOU4Z4FF4", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Run shell untrusted"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "System user interactive"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Terminal shell in container"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Clear Log Activities"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Packet socket created in container"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "PTRACE attached to process"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Find AWS Credentials"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "MHGGVKWDXKRME7WNPSCQKOTF5A", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Run shell untrusted"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "System user interactive"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Terminal shell in container"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Clear Log Activities"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Packet socket created in container"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "PTRACE attached to process"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Find AWS Credentials"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "MBQ5NZYHSQPV6LJSDE7LU3CSZI", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Run shell untrusted"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "System user interactive"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Terminal shell in container"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Clear Log Activities"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Packet socket created in container"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "PTRACE attached to process"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Find AWS Credentials"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "43MDPGXN7AQA5KLCMOIBHY262I", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Run shell untrusted"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "System user interactive"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Terminal shell in container"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Clear Log Activities"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Packet socket created in container"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "PTRACE attached to process"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Find AWS Credentials"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Run shell untrusted"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "System user interactive"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Terminal shell in container"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Clear Log Activities"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Packet socket created in container"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "PTRACE attached to process"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Find AWS Credentials"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Run shell untrusted"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "System user interactive"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Terminal shell in container"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Clear Log Activities"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Packet socket created in container"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "PTRACE attached to process"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Find AWS Credentials"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "6STXIEVMGREFHAD3RD3FTV7UYE", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Run shell untrusted"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "System user interactive"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Terminal shell in container"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Clear Log Activities"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Packet socket created in container"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "PTRACE attached to process"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Find AWS Credentials"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "ELTKG4CNGRSOJVRSCAN4OEM7PY", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Run shell untrusted"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "System user interactive"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Terminal shell in container"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Clear Log Activities"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Packet socket created in container"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "PTRACE attached to process"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Find AWS Credentials"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "U7QPI3XHRKISOB7CW56OVBEMOQ", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Run shell untrusted"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "System user interactive"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Terminal shell in container"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Clear Log Activities"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Packet socket created in container"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "PTRACE attached to process"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Find AWS Credentials"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "642EECGJEQ6SAMOT6THFBOUS3M", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Run shell untrusted"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "System user interactive"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Terminal shell in container"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Clear Log Activities"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Packet socket created in container"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "PTRACE attached to process"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Find AWS Credentials"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "MGMOC6E5WEIHETDXDRQGVXN7LE", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Run shell untrusted"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "System user interactive"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Terminal shell in container"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Clear Log Activities"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Packet socket created in container"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "PTRACE attached to process"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Find AWS Credentials"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "7S7T2YCBXNAH72RFM3OMOWHHIU", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Run shell untrusted"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "System user interactive"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Terminal shell in container"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Clear Log Activities"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Packet socket created in container"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "PTRACE attached to process"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Find AWS Credentials"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "XCVPAA7SW3OOEESCZPDICQBMNA", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Run shell untrusted"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "System user interactive"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Terminal shell in container"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Clear Log Activities"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Packet socket created in container"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "PTRACE attached to process"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Find AWS Credentials"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "7NU4VVDKNMMXOYOYAA63EDRJT4", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Run shell untrusted"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "System user interactive"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Terminal shell in container"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Clear Log Activities"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Packet socket created in container"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "PTRACE attached to process"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Find AWS Credentials"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "4P5X3Y7NCWRJIJP5QCJLJMK5QA", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Run shell untrusted"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "System user interactive"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Terminal shell in container"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Clear Log Activities"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Packet socket created in container"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "PTRACE attached to process"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Find AWS Credentials"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "UCDG4YTO54ZVBFS7K2NXCMTZRM", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Run shell untrusted"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "System user interactive"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Terminal shell in container"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Clear Log Activities"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Packet socket created in container"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "PTRACE attached to process"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Find AWS Credentials"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "LVBVS7LGVAXL53CPECZ24SUDGI", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Run shell untrusted"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "System user interactive"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Terminal shell in container"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Clear Log Activities"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Packet socket created in container"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "PTRACE attached to process"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Find AWS Credentials"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "3ZQCT4F34WAQJZFYSHGBVWRTLQ", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Run shell untrusted"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "System user interactive"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Terminal shell in container"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Clear Log Activities"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Packet socket created in container"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "PTRACE attached to process"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Find AWS Credentials"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "KBDMZMB3OZDIIGQTTGX4QK2BV4", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Run shell untrusted"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "System user interactive"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Terminal shell in container"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Clear Log Activities"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Packet socket created in container"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "PTRACE attached to process"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Find AWS Credentials"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "N6OXCQZ4PFPO7RIVSRVVTGONBM", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Run shell untrusted"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "System user interactive"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Terminal shell in container"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Clear Log Activities"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Packet socket created in container"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "PTRACE attached to process"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Find AWS Credentials"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "BB4ONSI7D36MYN2DI2TKWXS7MI", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Run shell untrusted"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "System user interactive"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Terminal shell in container"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Clear Log Activities"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Packet socket created in container"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "PTRACE attached to process"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Find AWS Credentials"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "PYL4PZ7446CFCTAGUC34WZUEUQ", "rule_id": "Fileless execution via memfd_create"}

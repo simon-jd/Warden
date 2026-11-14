@@ -1,0 +1,196 @@
+{
+  "resources": [
+    {
+      "components": [
+        {
+          "category": "aks_control_plane",
+          "quantity": "5.25",
+          "quote": "~/Desktop/Warden-aks/docs/evidence/azure/prices/aks-drill-20261113-swedencentral/aks.json",
+          "selector": {
+            "armRegionName": "swedencentral",
+            "armSkuName": "FreeTierInfrastructureCost",
+            "meterId": "<id>",
+            "meterName": "FreeTierInfrastructureCost Uptime SLA",
+            "productName": "Azure Kubernetes Service",
+            "serviceName": "Azure Kubernetes Service",
+            "skuName": "FreeTierInfrastructureCost",
+            "unitOfMeasure": "1 Hour"
+          }
+        },
+        {
+          "category": "vm",
+          "quantity": "5.25",
+          "quote": "~/Desktop/Warden-aks/docs/evidence/azure/prices/aks-drill-20261113-swedencentral/vm.json",
+          "selector": {
+            "armRegionName": "swedencentral",
+            "armSkuName": "Standard_B2as_v2",
+            "meterId": "<id>",
+            "meterName": "B2as v2",
+            "productName": "Virtual Machines Basv2 Series",
+            "serviceName": "Virtual Machines",
+            "skuName": "B2as v2",
+            "unitOfMeasure": "1 Hour"
+          }
+        },
+        {
+          "category": "os_disk",
+          "quantity": "0.0072",
+          "quote": "~/Desktop/Warden-aks/docs/evidence/azure/prices/aks-drill-20261113-swedencentral/disk.json",
+          "selector": {
+            "armRegionName": "swedencentral",
+            "armSkuName": "",
+            "meterId": "<id>",
+            "meterName": "P4 LRS Disk",
+            "productName": "Premium SSD Managed Disks",
+            "serviceName": "Storage",
+            "skuName": "P4 LRS",
+            "unitOfMeasure": "1/Month"
+          }
+        },
+        {
+          "category": "load_balancer",
+          "quantity": "5.25",
+          "quote": "~/Desktop/Warden-aks/docs/evidence/azure/prices/aks-drill-20261113-swedencentral/load-balancer.json",
+          "selector": {
+            "armRegionName": "Global",
+            "armSkuName": "",
+            "meterId": "<id>",
+            "meterName": "Standard Included LB Rules and Outbound Rules",
+            "productName": "Load Balancer",
+            "serviceName": "Load Balancer",
+            "skuName": "Standard",
+            "unitOfMeasure": "1 Hour"
+          }
+        },
+        {
+          "category": "load_balancer_data",
+          "quantity": "4",
+          "quote": "~/Desktop/Warden-aks/docs/evidence/azure/prices/aks-drill-20261113-swedencentral/load-balancer.json",
+          "selector": {
+            "armRegionName": "Global",
+            "armSkuName": "",
+            "meterId": "<id>",
+            "meterName": "Standard Data Processed",
+            "productName": "Load Balancer",
+            "serviceName": "Load Balancer",
+            "skuName": "Standard",
+            "unitOfMeasure": "1 GB"
+          }
+        },
+        {
+          "category": "public_ip",
+          "quantity": "5.25",
+          "quote": "~/Desktop/Warden-aks/docs/evidence/azure/prices/aks-drill-20261113-swedencentral/public-ip.json",
+          "selector": {
+            "armRegionName": "swedencentral",
+            "armSkuName": "",
+            "meterId": "<id>",
+            "meterName": "Standard IPv4 Static Public IP",
+            "productName": "IP Addresses",
+            "serviceName": "Virtual Network",
+            "skuName": "Standard",
+            "unitOfMeasure": "1 Hour"
+          }
+        },
+        {
+          "category": "network",
+          "quantity": "1",
+          "quote": "~/Desktop/Warden-aks/docs/evidence/azure/prices/aks-drill-20261113-swedencentral/bandwidth.json",
+          "selector": {
+            "armRegionName": "swedencentral",
+            "armSkuName": "",
+            "meterId": "<id>",
+            "meterName": "Standard Data Transfer Out",
+            "productName": "Rtn Preference: MGN",
+            "serviceName": "Bandwidth",
+            "skuName": "Standard",
+            "unitOfMeasure": "1 GB"
+          },
+          "tier_minimum_units": "100"
+        }
+      ],
+      "configuration": {
+        "acns": false,
+        "addons": [],
+        "auto_upgrade": "none",
+        "csi_drivers": false,
+        "diagnostic_settings": false,
+        "dns_prefix": "warden-lab-aks",
+        "kubernetes_version": "1.36.5",
+        "load_balancer_sku": "standard",
+        "local_accounts": true,
+        "log_analytics": false,
+        "max_pods": 30,
+        "network_dataplane": "cilium",
+        "network_plugin": "azure",
+        "network_plugin_mode": "overlay",
+        "node_count": 1,
+        "node_os_upgrade": "None",
+        "node_resource_group": "rg-warden-lab-aks-nodes",
+        "node_vcpus": 2,
+        "node_vm_size": "Standard_B2as_v2",
+        "oidc_issuer": true,
+        "os_disk_gb": 30,
+        "os_disk_sku": "Premium_LRS",
+        "os_disk_type": "Managed",
+        "outbound_ips": 1,
+        "outbound_type": "loadBalancer",
+        "quota_family": "standardBasv2Family",
+        "ssh": false,
+        "tier": "free",
+        "workload_identity": true
+      },
+      "end": "2026-11-14T05:26:00Z",
+      "id": "/subscriptions/<id>/resourceGroups/rg-warden-lab/providers/Microsoft.ContainerService/managedClusters/warden-lab-aks",
+      "kind": "aks",
+      "product": "Azure Kubernetes Service",
+      "region": "swedencentral",
+      "sku": "free",
+      "start": "2026-11-14T00:11:00Z"
+    },
+    {
+      "components": [],
+      "end": "2026-11-14T05:26:00Z",
+      "id": "/subscriptions/<id>/resourceGroups/rg-warden-lab/providers/Microsoft.ManagedIdentity/userAssignedIdentities/warden-lab-controlplane",
+      "kind": "identity",
+      "no_meter_quote": "~/Desktop/Warden-aks/docs/evidence/azure/prices/aks-drill-20261113-swedencentral/managed-identity.json",
+      "product": "Managed Identity",
+      "region": "swedencentral",
+      "sku": "UserAssigned",
+      "start": "2026-11-14T00:11:00Z"
+    }
+  ],
+  "session": "aks-plan"
+}
+planned run (3 h): $0.6048
+  aks_control_plane    0.05 × 3 = 0.1500
+  vm                   0.0778 × 3 = 0.2334
+  os_disk              5.8072 × 0.0042 = 0.0244
+  load_balancer        0.025 × 3 = 0.0750
+  load_balancer_data   0.005 × 4 = 0.0200
+  public_ip            0.005 × 3 = 0.0150
+  network              0.087 × 1 = 0.0870
+hard stop (4 h): $0.7701
+  aks_control_plane    0.05 × 4 = 0.2000
+  vm                   0.0778 × 4 = 0.3112
+  os_disk              5.8072 × 0.0055 = 0.0319
+  load_balancer        0.025 × 4 = 0.1000
+  load_balancer_data   0.005 × 4 = 0.0200
+  public_ip            0.005 × 4 = 0.0200
+  network              0.087 × 1 = 0.0870
+last retry (4.6667 h): $0.8806
+  aks_control_plane    0.05 × 4.6667 = 0.2333
+  vm                   0.0778 × 4.6667 = 0.3631
+  os_disk              5.8072 × 0.0064 = 0.0372
+  load_balancer        0.025 × 4.6667 = 0.1167
+  load_balancer_data   0.005 × 4 = 0.0200
+  public_ip            0.005 × 4.6667 = 0.0233
+  network              0.087 × 1 = 0.0870
+reserved (5.25 h): $0.9773
+  aks_control_plane    0.05 × 5.25 = 0.2625
+  vm                   0.0778 × 5.25 = 0.4084
+  os_disk              5.8072 × 0.0072 = 0.0418
+  load_balancer        0.025 × 5.25 = 0.1312
+  load_balancer_data   0.005 × 4 = 0.0200
+  public_ip            0.005 × 5.25 = 0.0262
+  network              0.087 × 1 = 0.0870

@@ -1,0 +1,35 @@
+{
+  "title": "Netcat process with shell parent",
+  "id": "e723ccc6-00ea-5cbd-934d-d803f343fea4",
+  "status": "experimental",
+  "description": "Full binary-path indicator only. No args, connection, Pod/sandbox identity, transfer, mining or escape success exists in current Tetragon mapping. Synthetic fixtures; ATT&CK tags describe related investigation scenarios, not observed technique success.",
+  "references": [],
+  "author": "Warden",
+  "date": "2026-10-25",
+  "logsource": {
+    "product": "linux",
+    "category": "process_creation"
+  },
+  "detection": {
+    "source": {
+      "class_uid": 1007,
+      "metadata.product.name": "tetragon"
+    },
+    "action": {
+      "process.name|endswith": [
+        "/nc",
+        "/ncat"
+      ],
+      "actor.process.name|endswith": [
+        "/sh",
+        "/bash",
+        "/dash"
+      ]
+    },
+    "condition": "source and action"
+  },
+  "falsepositives": [
+    "Authorized administration, developer/debug tooling, permitted workloads or unrelated protocol use; tune local IP/principal allowlists."
+  ],
+  "level": "medium"
+}

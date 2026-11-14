@@ -1,0 +1,6 @@
+# copied read-only (cat) from ~/Desktop/Warden/.cache/warden-lab/firecracker-materials on 2026-11-13; pins read from MATERIALS in scripts/firecracker_lab.py at 37bcbe9
+{"file": "firecracker-v1.17.0-x86_64.tgz", "size": 7464385, "sha256": "06094a1108ae9e82aa4c23a775aa92758f53f1175d422270d9d6162cb9ade558", "pin_size": 7464385, "pin_sha256": "06094a1108ae9e82aa4c23a775aa92758f53f1175d422270d9d6162cb9ade558", "provenance": "publisher-release-checksum", "match": true}
+{"file": "firecracker-v1.17.0-x86_64.tgz.sha256.txt", "size": 97, "sha256": "b89dea3edf551929f151b95d31168677ad2b8bb257d1d87a08470f7299749b7c", "pin_size": 97, "pin_sha256": "b89dea3edf551929f151b95d31168677ad2b8bb257d1d87a08470f7299749b7c", "provenance": "computed-pin", "match": true}
+{"file": "vmlinux-6.18.54", "size": 27893008, "sha256": "da5e0041fb31fcc7337026da9e2b64fb7694b4eed760cc9b5e8fe54e52fa8188", "pin_size": 27893008, "pin_sha256": "da5e0041fb31fcc7337026da9e2b64fb7694b4eed760cc9b5e8fe54e52fa8188", "provenance": "computed-pin", "match": true}
+{"file": "vmlinux-6.18.54.config", "size": 101680, "sha256": "7dbdc7445d01d3dd049b1e653534bde71266d59afaf9c1de50a8a6b8a8c138d0", "pin_size": 101680, "pin_sha256": "7dbdc7445d01d3dd049b1e653534bde71266d59afaf9c1de50a8a6b8a8c138d0", "provenance": "computed-pin", "match": true}
+extra files: []

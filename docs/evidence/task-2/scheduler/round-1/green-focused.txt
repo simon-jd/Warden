@@ -1,0 +1,8 @@
+=== RUN   TestLateSnapshotPublicationClosesReaderAndCollectorExits
+--- PASS: TestLateSnapshotPublicationClosesReaderAndCollectorExits (0.00s)
+=== RUN   TestLogSnapshotDeadlineClosesReaderAndMarksLost
+--- PASS: TestLogSnapshotDeadlineClosesReaderAndMarksLost (0.16s)
+=== RUN   TestLateRemoteCreationIsReapedByNewWorkerWithoutClearingAmbiguity
+--- PASS: TestLateRemoteCreationIsReapedByNewWorkerWithoutClearingAmbiguity (0.11s)
+PASS
+ok  	warden/controlplane/internal/scheduler	0.275s

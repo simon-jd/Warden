@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-I",
+    "-S",
+    "-B",
+    "-",
+    "{\"bytes\":255,\"metadata\":[47,2632010,1000,1000,33152,1,255,1792950460685395043,1792950460685395043,8],\"sha256\":\"76ba0971437bf73f0e66db5559bbbf401b046a7fe3500ebb10b2ae4f7850725a\"}"
+  ],
+  "cwd": "/tmp/warden-fix5-43lddb0v/cwd",
+  "env": {
+    "LANG": "C",
+    "LC_ALL": "C",
+    "PATH": "/usr/bin:/bin"
+  },
+  "stdin_bytes": 10225,
+  "stdin_sha256": "f1f56c34319e46b9ccf788534e5c7ef565878150ea9922e67b2f5eee3bebabdd",
+  "timeout_seconds": 30
+}

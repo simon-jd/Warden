@@ -1,0 +1,24 @@
+=== RUN   TestPidfdRequiresActualOriginalProcessExit
+--- PASS: TestPidfdRequiresActualOriginalProcessExit (0.00s)
+=== RUN   TestDiskProofRequiresOriginalDirectoriesRemovedWithoutReplacement
+--- PASS: TestDiskProofRequiresOriginalDirectoriesRemovedWithoutReplacement (0.00s)
+=== RUN   TestReapPermanentlyRevokesDelayedStartAcrossInstances
+--- PASS: TestReapPermanentlyRevokesDelayedStartAcrossInstances (0.00s)
+=== RUN   TestInflightLaunchBlocksReapUntilBoundedTimeout
+--- PASS: TestInflightLaunchBlocksReapUntilBoundedTimeout (0.04s)
+=== RUN   TestDistinctGateDirectoriesHaveDistinctAuthority
+--- PASS: TestDistinctGateDirectoriesHaveDistinctAuthority (0.00s)
+=== RUN   TestGateRefusesReplacedDirectory
+--- PASS: TestGateRefusesReplacedDirectory (0.00s)
+=== RUN   TestAmbiguousCreationCannotBeClearedBySuccessfulReap
+--- PASS: TestAmbiguousCreationCannotBeClearedBySuccessfulReap (0.00s)
+=== RUN   TestGateOperationsReleaseDirectoryDescriptors
+--- PASS: TestGateOperationsReleaseDirectoryDescriptors (0.00s)
+=== RUN   TestRetirementFenceRejectsNewStartsAcrossInstances
+--- PASS: TestRetirementFenceRejectsNewStartsAcrossInstances (0.00s)
+=== RUN   TestRetirementRejectsUnboundTargetsAndForgedProof
+--- PASS: TestRetirementRejectsUnboundTargetsAndForgedProof (0.00s)
+=== RUN   TestUnprovenRetirementKeepsAmbiguity
+--- PASS: TestUnprovenRetirementKeepsAmbiguity (0.00s)
+PASS
+ok  	warden/runtimes/gate	0.046s

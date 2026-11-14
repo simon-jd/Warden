@@ -1,0 +1,10 @@
+$ go test -count=1 -run "TestRegionIsTheGuardsAKSRegion|TestPublicAudience" ./controlplane/internal/aksdrill ./runtimes/conformance   # tests only
+# warden/runtimes/conformance [warden/runtimes/conformance.test]
+runtimes/conformance/identity_test.go:1345:9: undefined: publicAudience
+runtimes/conformance/identity_test.go:1354:25: undefined: publicAudience
+--- FAIL: TestRegionIsTheGuardsAKSRegion (0.00s)
+    aksdrill_test.go:109: Region "westus2" is not AKS_REGION in scripts/azure_guard.py
+FAIL
+FAIL	warden/controlplane/internal/aksdrill	0.001s
+FAIL	warden/runtimes/conformance [build failed]
+FAIL

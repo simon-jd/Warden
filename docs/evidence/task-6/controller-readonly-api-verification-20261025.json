@@ -1,0 +1,481 @@
+{
+  "artifact_bytes_excluding_index": 1208572,
+  "artifact_rows": 66,
+  "at_utc": "2026-10-25T14:55:25.203773+00:00",
+  "canonical_sources": 150,
+  "diagnostic_note": "First verifier attempt included the separate old plan-prefix file in the seven-run prefix count (102 vs101), exited1 before writing view/proof. Corrected path selection only; actual failure retained separately, no tests/evidence regenerated.",
+  "dispatch_base": "4e197bd899a768449bb5b19dace8b5e88b9b713d",
+  "index_bytes": 36307,
+  "net_growth_including_index": 1046401,
+  "package_bytes_including_index": 1244879,
+  "preserved_plan_prefix": {
+    "append_bytes": 7350,
+    "bytes": 33536,
+    "sha256": "d68ca5aa148be8727915598b4559cad4a3a55b7274018cbf1a8321a920e0d2f9"
+  },
+  "preserved_prior_run_provenance": "Exact Git change sets exclude all previous runs;101 declared old hashes match prior index. No old semantic/test crawl.",
+  "raw_whitespace_note": "Interrupted red01/output.txt:1 historical trailing whitespace/no-newline preserved; new-file Git no-newline markers reconstructed exactly for comparison, never changed.",
+  "review_head": "43aee0ea921d0f55d48010e3490e5dc999933b3b",
+  "review_view": {
+    "omitted_exact_duplicate_bodies": [
+      {
+        "block_sha256": "553c979dea19a4c189b0d1cd5e8e59251f8b4d9add13a2b9e59de554030f3a01",
+        "body_bytes": 302,
+        "body_sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/post-controller.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-cover-01/pre-controller.json"
+      },
+      {
+        "block_sha256": "942c4bc8257c37f8bfa33379cdacae1bd5f1525aca7f9d5d2901d1e5f51b1090",
+        "body_bytes": 15999,
+        "body_sha256": "36a6e24e177180be1f9ff339d88c3cf59e8abdeaebbb172e3c165577ebbbe265",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/post-source.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-cover-01/pre-source.json"
+      },
+      {
+        "block_sha256": "998c6bb0f5a46bfcde45a7f67fa7fc21df4d8715fa76873bd9810eb54c7e34a3",
+        "body_bytes": 4374,
+        "body_sha256": "8c3af61861d94b489dd39d6679d39d93f9f14636cb8dbae88f965e888a4c6e64",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/changed-source/scripts/identity_cache_control.py",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-01/changed-source/scripts/identity_cache_control.py"
+      },
+      {
+        "block_sha256": "383161761c4268cac6843bedc4d6685c315167fc04fbf581c14427d842664280",
+        "body_bytes": 70500,
+        "body_sha256": "244bef82a1672d88054e177bf1bf2d66d2aa982a72d86051ac749fc797a322e3",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/changed-source/scripts/identity_cache_observe.py",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-01/changed-source/scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "e902ea371600fdb1ab9ca5967ff87b418894012eaea856725d53db7218877fdd",
+        "body_bytes": 302,
+        "body_sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/post-controller.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-01/post-controller.json"
+      },
+      {
+        "block_sha256": "a46386e1c99559fd36e93d99093c4233366806b568130b3f06977e06190f1525",
+        "body_bytes": 302,
+        "body_sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/post-controller.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-01/pre-controller.json"
+      },
+      {
+        "block_sha256": "36e2ff8b348aa2a18c502ceef9c1645a180c5a0a59eb753582c1c3d63d9d24a7",
+        "body_bytes": 15999,
+        "body_sha256": "373fd96b312697fcfb06c7fb7c98b4f2ce26aa71cb8648778f80b95380685851",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-green-01/post-source.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-01/pre-source.json"
+      },
+      {
+        "block_sha256": "f8a232e6f16ed075d99a9e7c5be399a5d623d43770ad2c7d7e39811c030a0cc2",
+        "body_bytes": 16787,
+        "body_sha256": "c4f3dbaa84360e1ff8894de7860d13a7ef50cf87cd92a831ab839858fe8f0fbd",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-green-01/baseline.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-02/baseline.json"
+      },
+      {
+        "block_sha256": "6462d2bff34b66bc03b96e070a2b7153c1722cbac6e82c7924811c9291574b2b",
+        "body_bytes": 4374,
+        "body_sha256": "8c3af61861d94b489dd39d6679d39d93f9f14636cb8dbae88f965e888a4c6e64",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/changed-source/scripts/identity_cache_control.py",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-02/changed-source/scripts/identity_cache_control.py"
+      },
+      {
+        "block_sha256": "bbef2202860bcea17f484d259f0e1666101d2d04a6312bccb2c750b4bb253576",
+        "body_bytes": 70500,
+        "body_sha256": "244bef82a1672d88054e177bf1bf2d66d2aa982a72d86051ac749fc797a322e3",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/changed-source/scripts/identity_cache_observe.py",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-02/changed-source/scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "4fd68b42e5a4ef3fa43baea586627fb6d474fa39eb53c068ed37db7c58a07523",
+        "body_bytes": 89284,
+        "body_sha256": "53da6fda0aa2c195fef3412f97866f4d80ed17c40b08222524fed181868a67d2",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/changed-source/scripts/test_identity_cache_control.py",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-02/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "80bad4756b8b1ebe002cbf2fd62c14f3670a49596df9f1b8e1b998129664d04a",
+        "body_bytes": 302,
+        "body_sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/post-controller.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-02/post-controller.json"
+      },
+      {
+        "block_sha256": "6383360c5d0483e6da114273ac8d7dc030b648433b8e6655848fede428254279",
+        "body_bytes": 15999,
+        "body_sha256": "36a6e24e177180be1f9ff339d88c3cf59e8abdeaebbb172e3c165577ebbbe265",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/post-source.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-02/post-source.json"
+      },
+      {
+        "block_sha256": "2debf64428460a3793a8094b5a3b1b0b7c3f8639f6af3f710ff33106a31df1e6",
+        "body_bytes": 302,
+        "body_sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/post-controller.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-02/pre-controller.json"
+      },
+      {
+        "block_sha256": "19c4b0618a589d098e031a1f91c2fe9134df67305ba04681f6beff9428181590",
+        "body_bytes": 15999,
+        "body_sha256": "36a6e24e177180be1f9ff339d88c3cf59e8abdeaebbb172e3c165577ebbbe265",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/post-source.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-02/pre-source.json"
+      },
+      {
+        "block_sha256": "ef3307b270b3d6796b813c687a059743f17c568c7fe266bfee2643c09cdee12c",
+        "body_bytes": 16787,
+        "body_sha256": "c4f3dbaa84360e1ff8894de7860d13a7ef50cf87cd92a831ab839858fe8f0fbd",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-green-01/baseline.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-01/baseline.json"
+      },
+      {
+        "block_sha256": "19e45fcbcb15990168c1f54ad4f655fa5b851e0c720c88e60f5fb9b6442d7706",
+        "body_bytes": 302,
+        "body_sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/post-controller.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-01/pre-controller.json"
+      },
+      {
+        "block_sha256": "1d1abbd79805500b2a7695942833a91b3074239c0e3e39758942736cf9753d41",
+        "body_bytes": 16787,
+        "body_sha256": "c4f3dbaa84360e1ff8894de7860d13a7ef50cf87cd92a831ab839858fe8f0fbd",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-green-01/baseline.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-02/baseline.json"
+      },
+      {
+        "block_sha256": "9f084ad032bc0a1b3adcaa141e865b7fc9752449beaccb27776d8ec7f2ab6358",
+        "body_bytes": 302,
+        "body_sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/post-controller.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-02/post-controller.json"
+      },
+      {
+        "block_sha256": "61bf1257086486b1665e2dff7d5d8d43277aad01162dbcdf8dd2e4197bc1a606",
+        "body_bytes": 302,
+        "body_sha256": "a389ed447c1b100ea933e3de35510e7528b1ed2786c10b48dd335cf435c66b53",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-cover-01/post-controller.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-02/pre-controller.json"
+      },
+      {
+        "block_sha256": "7fd9e6846ec6d12095e0cea5529ef3c79f730e86668e542cc6633f5a3ee95795",
+        "body_bytes": 15999,
+        "body_sha256": "bb2819446b8d16452b6b5bd506958bba22db44c7b7bef526a642f8c0a36224a3",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-red-02/post-source.json",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-02/pre-source.json"
+      },
+      {
+        "block_sha256": "a1183c60810477ba83838732536fdb8974c6883a7f16cae8df8822206b909be3",
+        "body_bytes": 4364,
+        "body_sha256": "ce2a455e28ea8f1c5048ae17ba44fcbb5e2d0c1f08af4f33944143bf146c5dbb",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-readonly-api-source-red-01/run.py",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-02/run.py"
+      }
+    ],
+    "raw_blocks": 69,
+    "raw_bytes": 1138517,
+    "raw_path": ".superpowers/sdd/2-warden-security-plan/review-4e197bd..43aee0e.diff",
+    "raw_sha256": "f996a6b2e57487512829b6b6d27741248a1b9e7ccdf16e436dba2a3d1a751f7f",
+    "retained_blocks": [
+      {
+        "block_sha256": "eb06e574b3f45ea141aa437c3f52e68f27c1a56616125172c0b1e5ed2c4b9d78",
+        "path": "docs/STATUS.md"
+      },
+      {
+        "block_sha256": "e0ff5a0dbcfbe3c56a5e4a476c65d67d2546b0e29d9a96311c9e5d092c0a27c6",
+        "path": "docs/evidence/plan-review.md"
+      },
+      {
+        "block_sha256": "41b270ab9c56693d93949378ee33979bee53cb92669b2edeae83b18b269e8f21",
+        "path": "docs/evidence/task-6/continuation-controller-operations-execution-plan.md"
+      },
+      {
+        "block_sha256": "7096ad5c1b9348d371f329b6d95c30f3ebd622ea2a74e10b3bb732fa896be13e",
+        "path": "docs/evidence/task-6/controller-readonly-api-artifact-sizes.json"
+      },
+      {
+        "block_sha256": "41f54a849bb77df4d2794f9552648c9971bf2db5e730c20d13302f9456a2564c",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-cover-01/baseline.json"
+      },
+      {
+        "block_sha256": "62574ae260e74dc3f4ab33ed1b700d5f14ef29a0b7c47d9aacb58fe24db1dacb",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-cover-01/changed-source/scripts/identity_cache_control.py"
+      },
+      {
+        "block_sha256": "efa3cd0be6189d2eff9ead9421e6e75ce0cf8b914443365ff5d9c11adef2c299",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-cover-01/changed-source/scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "c71a64a43dadd6af20bf0eb17deb9dfd64475a3b0a72152080c346a6d0046bab",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-cover-01/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "576093ac565d8084c6d354420a6e7b8a3b4e83df52ee37161056c87ae3ac64ff",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-cover-01/intent.json"
+      },
+      {
+        "block_sha256": "4af5870d93c5106c40dcda716cd1cbc40edae67628b16a33090aa0fcf44b93b1",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-cover-01/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "3926a1abb131e53a874a11622e204cca6077a125657309714dd8dad6452c2139",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-cover-01/output.txt"
+      },
+      {
+        "block_sha256": "af5dad5b8f480241cbe076ee874773add1a9da87c0f6c4d7ad5a1ce5f36db0e3",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-cover-01/post-controller.json"
+      },
+      {
+        "block_sha256": "a0116cc7b1a3e361d87e3d627c66655e432851b20b6202558d9f0ea608a9051e",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-cover-01/post-source.json"
+      },
+      {
+        "block_sha256": "837cc3bf024b128df77a51ed50b7cd6daab481b7ecd7234fc8db0e1f8f1ad65f",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-cover-01/receipt.json"
+      },
+      {
+        "block_sha256": "d0d0233613973bdf9cbf0fd6642a576c8b57c7f0b8269825ee0c9fb9cc357c56",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-cover-01/run.py"
+      },
+      {
+        "block_sha256": "a5930147bdb2b6aa0097a0c0ddd82dd31985649910db2a79b7d92fe7ca1671af",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-01/baseline.json"
+      },
+      {
+        "block_sha256": "21163b6c9ffd9cb7ae5f4e0dc184fde8816ee919b000804132d91b4f8044bc0c",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-01/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "004bd3339441c07d7e3869782b6851454e28046a2888ddd77894193678ec8f26",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-01/intent.json"
+      },
+      {
+        "block_sha256": "a4cff8d077ca061ceaeabef2a4bbeaad7dd71cdb884741c460f3938221996aec",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-01/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "1c5ab56641b4453f1c85fdeba24ec236f01a9e0cf1d44c98524f7583960a6009",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-01/output.txt"
+      },
+      {
+        "block_sha256": "efac0fad15e178e893c70f7f78873627cc76a9b9a742222b2e0e63ac5dd4cee8",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-01/post-source.json"
+      },
+      {
+        "block_sha256": "fcfbc84cc0dca6a41ba0974cc04ddf31656840ade91d10b9fb98c31702dd02d2",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-01/receipt.json"
+      },
+      {
+        "block_sha256": "b5fb376e6249633c03642954c9c029e0ac4acb1fb3098a81b836392b93ff4549",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-01/run.py"
+      },
+      {
+        "block_sha256": "2f679ec6799ad62300603ba6de33989494e141d22e4b885aa42fee147ec2b87b",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-02/intent.json"
+      },
+      {
+        "block_sha256": "4f3e446752332d6f61b820eb0e5cb8e6233755b2e7cb6d6661e716ff9846b334",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-02/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "b619db882cb84572d37a59572404b9ce2686553000ff1830e16fa9f7813a76d4",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-02/output.txt"
+      },
+      {
+        "block_sha256": "5d349693b78308ef9a39864861812ba270e24fd598c689a65ceffd9b157cdea8",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-02/receipt.json"
+      },
+      {
+        "block_sha256": "8fa44cec2a3f6aa2e4c1bffea819ae2ef3a6729af4b55eb553c9e26b73827733",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-green-02/run.py"
+      },
+      {
+        "block_sha256": "32333b7e2626eb68d61f99b67831d55912b5031cf97bc103d845c46570dbfc6d",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-plan-prefix.json"
+      },
+      {
+        "block_sha256": "fe4245a0c3eef379c4837c855858230fa720d0fe16e2ff3e41924a8930918320",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-01/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "757215580a751fdcb70429df1cbb0ebe3fea91965e6fb787e0354b9ffcfb4cc8",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-01/intent.json"
+      },
+      {
+        "block_sha256": "8ab4184da964f9e26ac7c22e8514a064ee1b09cf2a85eab92826c196b0d39781",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-01/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "e3477ff0db3f89cdc88ed7a1beb98fe6faf238b1125287910b1548e9e41ac686",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-01/output.txt"
+      },
+      {
+        "block_sha256": "817f51f267835ec91f8d2d845d005f04a2f336c533e88fb1c731db5ecffb6b3e",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-01/pre-source.json"
+      },
+      {
+        "block_sha256": "aa3c624cfa35e05d712140e748aa07084ec574470110e09aac625a0ac36ce90a",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-01/run.py"
+      },
+      {
+        "block_sha256": "0f9dc24516564ed35d3f8cd222a57f3dba0fdffb7065acfa03cdb1c81d47d542",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-02/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "0b918cddcedcb4ef546310f83cb322785c2946482eb9706cf6bdc26419c586ac",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-02/intent.json"
+      },
+      {
+        "block_sha256": "eb439a079ddae71bc8d2d7396e88a0e03f5f83d7697d295d35abdeb39bd8af97",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-02/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "4e0ea810be8e9f2592ff2071dbdbbf9c06ab3db205102da33459acd6ea8d91ac",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-02/output.txt"
+      },
+      {
+        "block_sha256": "9f6e8110f056dfeb279ef7baf4f3b0f4d2240908beea20e5056f9d5394cbb8be",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-02/post-source.json"
+      },
+      {
+        "block_sha256": "fdc42a5a4d19208de4deffe0f748abf25be8e1cf602089bfbf13ca62ffedee20",
+        "path": "docs/evidence/task-6/controller-readonly-api-source-red-02/receipt.json"
+      },
+      {
+        "block_sha256": "0d8c396df2fbcd9ffde35865622299aa4312c11bd7b5c292ec8402100ebcbde3",
+        "path": "docs/evidence/task-6/controller-readonly-api-substage-report.md"
+      },
+      {
+        "block_sha256": "d4355f46d5035b7134bc178a1d4e4e7f6b75a6e0bfa78b39734cc397497b277d",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-proposal.md"
+      },
+      {
+        "block_sha256": "f8d265049cbc93ce680cbcec44fba01aa1afc09f71b2be750e33c1b35d86b9ef",
+        "path": "docs/evidence/task-6/controller-terminal-reconcile-rulings.md"
+      },
+      {
+        "block_sha256": "6d3aca18468bc940d0ddfc979c63f430845712d2bbdf9eb26f91bb20b276493e",
+        "path": "scripts/identity_cache_control.py"
+      },
+      {
+        "block_sha256": "c7a2db70fbc60c490ea2f9f4d015b613e806512ea129ab2737d55e8ed9116cfe",
+        "path": "scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "da6cabe7e6e78c449cd843fc8d2f5b71c1a5874dc6602f9a23754af39933c4a1",
+        "path": "scripts/test_identity_cache_control.py"
+      }
+    ],
+    "view_bytes": 756005,
+    "view_path": ".superpowers/sdd/2-warden-security-plan/review-4e197bd..43aee0e-deduplicated-view.diff",
+    "view_sha256": "30b51b79b305944533713a5d44c6c8bfd3bfb47594fb521f6c4fade529f5a1a3"
+  },
+  "root_coordinator_paths": [
+    "docs/STATUS.md",
+    "docs/evidence/plan-review.md",
+    "docs/evidence/task-6/controller-terminal-reconcile-proposal.md",
+    "docs/evidence/task-6/controller-terminal-reconcile-rulings.md"
+  ],
+  "runs": [
+    {
+      "canonical_files": 150,
+      "changed_snapshots": [
+        "scripts/test_identity_cache_control.py"
+      ],
+      "classification": "recording/fixture failure",
+      "controller_files": 2,
+      "exit_code": 1,
+      "missing_artifacts": [
+        "post-source.json",
+        "post-controller.json",
+        "receipt.json"
+      ],
+      "outer_format": "actual structured initial terminal",
+      "recording_complete": false,
+      "stage": "red-01",
+      "terminal_chunk": "837d03"
+    },
+    {
+      "canonical_files": 150,
+      "changed_snapshots": [
+        "scripts/test_identity_cache_control.py"
+      ],
+      "controller_files": 2,
+      "entry_to_receipt_seconds": 0.06325271399691701,
+      "errors": 2,
+      "exit_code": 1,
+      "failures": 0,
+      "outer_format": "actual structured initial terminal",
+      "pre_post_equal": true,
+      "recording_complete": true,
+      "stage": "red-02",
+      "terminal_chunk": "d060de",
+      "tests": 3
+    },
+    {
+      "canonical_files": 150,
+      "changed_snapshots": [
+        "scripts/identity_cache_control.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "controller_files": 2,
+      "entry_to_receipt_seconds": 1.6035139940213412,
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "outer_format": "actual structured initial/final",
+      "pre_post_equal": true,
+      "recording_complete": true,
+      "stage": "green-01",
+      "terminal_chunk": "9f052a",
+      "tests": 109
+    },
+    {
+      "canonical_files": 150,
+      "changed_snapshots": [
+        "scripts/identity_cache_control.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "controller_files": 2,
+      "entry_to_receipt_seconds": 0.07921987096779048,
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "outer_format": "actual structured initial terminal",
+      "pre_post_equal": true,
+      "recording_complete": true,
+      "stage": "green-02",
+      "terminal_chunk": "69ce30",
+      "tests": 2
+    },
+    {
+      "canonical_files": 150,
+      "changed_snapshots": [
+        "scripts/identity_cache_control.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "controller_files": 2,
+      "entry_to_receipt_seconds": 2.0759170529199764,
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "outer_format": "actual structured initial/final",
+      "pre_post_equal": true,
+      "recording_complete": true,
+      "stage": "cover-01",
+      "terminal_chunk": "f29419",
+      "tests": 149
+    }
+  ],
+  "scope": "Public/Git provenance only. No project code imported, test rerun, host/runtime/private-body/CLI/cloud operation. Receipt timing not whole invocation.",
+  "separate_controller_sources": 2,
+  "source": "b2b348205bdb3fbd4573ab04237c1a9e166371e2",
+  "source_bytes": 164158,
+  "status": "PASS",
+  "unchanged_canonical": 147,
+  "worker_evidence": "ce107038c36933a295fe043b451fb7be77f136f7"
+}

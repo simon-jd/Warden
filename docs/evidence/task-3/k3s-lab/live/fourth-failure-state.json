@@ -1,0 +1,114 @@
+{
+  "utc": "2026-10-24T18:14:55.747303+00:00",
+  "source_commit": "6f52f54e1a59a8cf7a7b36223f5cd6ab016b270b",
+  "run_head": "3cac95a",
+  "mode": "bootstrap",
+  "exit_code": 2,
+  "seconds": 268.7,
+  "public_failure_stage": "node-startup",
+  "public_failure_code": "timeout",
+  "container": "9a22e3c1817441fa2c4f50616e68a333d2a06c98641d430a05a810ea3f7cac50",
+  "image": "sha256:2504a55c791dba7ca00cadae8b11f937aea70ac9149243eb83e590d343bc44a3",
+  "image_size_bytes": 685374913,
+  "labels": {
+    "owner": "codex-warden",
+    "project": "warden",
+    "session": "b5370b6ce57638aee676a14c3c272592",
+    "ttl": "2026-10-24T19:09:18Z"
+  },
+  "state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 2,
+    "Error": "",
+    "StartedAt": "2026-10-24T18:09:45.433745599Z",
+    "FinishedAt": "2026-10-24T18:13:45.831923592Z"
+  },
+  "restart_count": 0,
+  "session": "/home/postedism/Desktop/Warden/.cache/warden-lab/docker-b5370b6ce57638aee676a14c3c272592",
+  "session_device": 66307,
+  "session_inode": 56143028,
+  "session_uid": 1000,
+  "session_mode": "0o700",
+  "top_level_metadata": [
+    {
+      "name": "charge.json",
+      "device": 66307,
+      "inode": 56143040,
+      "uid": 1000,
+      "mode": "0o600",
+      "regular": true,
+      "directory": false,
+      "bytes": 64
+    },
+    {
+      "name": "rootfs.tar",
+      "device": 66307,
+      "inode": 56143030,
+      "uid": 1000,
+      "mode": "0o600",
+      "regular": true,
+      "directory": false,
+      "bytes": 496619520
+    },
+    {
+      "name": "manifest.json",
+      "device": 66307,
+      "inode": 56143029,
+      "uid": 1000,
+      "mode": "0o600",
+      "regular": true,
+      "directory": false,
+      "bytes": 111147
+    },
+    {
+      "name": "identity.json",
+      "device": 66307,
+      "inode": 56143042,
+      "uid": 1000,
+      "mode": "0o600",
+      "regular": true,
+      "directory": false,
+      "bytes": 252
+    },
+    {
+      "name": "session-7ca9caee772671b1",
+      "device": 66307,
+      "inode": 56143043,
+      "uid": 0,
+      "mode": "0o700",
+      "regular": false,
+      "directory": true,
+      "bytes": 4096
+    }
+  ],
+  "owned_containers_all": [
+    "9a22e3c1817441fa2c4f50616e68a333d2a06c98641d430a05a810ea3f7cac50"
+  ],
+  "owned_images_all": [
+    "sha256:2504a55c791dba7ca00cadae8b11f937aea70ac9149243eb83e590d343bc44a3"
+  ],
+  "outstanding_bytes": 6000000000,
+  "manifest_sha256": "1d1a5fc35fad7db5b0d9c6f3ed27984ab7d80c6a11cf7b744e1a7e50fc434869",
+  "input_count": 674,
+  "copied_controller_source_sha256": {
+    "scripts/k3s_lab_init.py": "98976009dbc9f6ad61df2eb162141513bbd0543653a154cc8c3b689860935ee3",
+    "scripts/runtime_lab_docker_init.py": "276663d6578ff4fd8ebf817e5279c2435de087b2082ee2514bee5ef4901b896c",
+    "scripts/runtime_lab_paths.py": "0ce3287feab8197839cf2e7e1cf297fd5cad0e740069023b188e4c366b643f84",
+    "scripts/runtime_lab_runner.py": "e45e9f9ef18c6e95562d6b4f670ae718c9e10f14b91727fcd46b0a6298cdacbc"
+  },
+  "protected_sysctls": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "scope": "Public stopped state only; running profile/resource observations separate. No Ready, complete ordinary postflight or cleanup claim."
+}

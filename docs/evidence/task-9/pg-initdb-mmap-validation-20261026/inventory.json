@@ -1,0 +1,253 @@
+{
+  "utc": "2026-10-26T07:14:55.502275+00:00",
+  "phase": "PG_ONLY_STARTUP_VALIDATION",
+  "result": "READY_AND_OWNED_CLEANUP_ACCEPTED",
+  "diagnostics_total": 3,
+  "business_RED": "NOT_RUN; preparation only admissible",
+  "all_old_originals_immutable": true,
+  "new_source_F_M_unchanged": true,
+  "files": [
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-001-err.raw",
+      "bytes": 86,
+      "sha256": "d4cff1e6ad7bc4ece134ae0aabb6028e213997fe0226e6b5ff07a802c7b96b20",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-001-out.raw",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-002-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-002-out.raw",
+      "bytes": 65,
+      "sha256": "18fb8886cd052714d2511f80852f2066a85bda0517bbf24eee07aee7672449ce",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-003-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-003-out.raw",
+      "bytes": 166,
+      "sha256": "a03d83d7fdd8b918c865c485aaa9e2103c4bbb0a854b85a806b28ac2c9cd2ad4",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-004-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-004-out.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-005-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-005-out.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-006-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-006-out.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-007-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-007-out.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-008-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-008-out.raw",
+      "bytes": 39,
+      "sha256": "7c926b87e40b26ec6ffb4c78f403571ac977ece539b51f52b4a58a6943d143ea",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-009-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-009-out.raw",
+      "bytes": 49,
+      "sha256": "6e168fc3b5a0662104b5e5da92e87b870e8b7c65fec827d267115b5123d18614",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-010-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-010-out.raw",
+      "bytes": 166,
+      "sha256": "a03d83d7fdd8b918c865c485aaa9e2103c4bbb0a854b85a806b28ac2c9cd2ad4",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-011-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-011-out.raw",
+      "bytes": 220,
+      "sha256": "f72dee13f9b478e039933a83bd0ed00b6b8e8ae1f0e5a37d30110d432e775874",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-012-err.raw",
+      "bytes": 1569,
+      "sha256": "fbd5fb5a2ac8eefcf29b4aa3b17e8d2daa27e5f3564d415a1988872abdfb644c",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-012-out.raw",
+      "bytes": 2358,
+      "sha256": "4f26536883458b1d4b50b14397421082b0eab251484de78a75b7dc97a3249da8",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-013-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-013-out.raw",
+      "bytes": 166,
+      "sha256": "a03d83d7fdd8b918c865c485aaa9e2103c4bbb0a854b85a806b28ac2c9cd2ad4",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-014-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-014-out.raw",
+      "bytes": 65,
+      "sha256": "18fb8886cd052714d2511f80852f2066a85bda0517bbf24eee07aee7672449ce",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-015-err.raw",
+      "bytes": 86,
+      "sha256": "d4cff1e6ad7bc4ece134ae0aabb6028e213997fe0226e6b5ff07a802c7b96b20",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/cli-015-out.raw",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/events.json",
+      "bytes": 11480,
+      "sha256": "d296222297f255933a04bd6b2599aed5f743d82a16d503d1794abba883f787bf",
+      "allocated": 12288
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/status.json",
+      "bytes": 1077,
+      "sha256": "a95a88365bcfc2d201960821f1276387f9bea716aa521c114da2dbc893c1be65",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/warden-task9-pg-initdb-mmap-20261026-a.cid",
+      "bytes": 64,
+      "sha256": "f3f70714810461fc649f4f88a9c728a22430a412ec9b5cb8645cccc722d86245",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/task-9-pg-initdb-mmap-validation-20261026-a.py.txt",
+      "bytes": 12470,
+      "sha256": "a3e5541dfd59c81b53cedca4e0f7b4ae63b19eaed15d84c0cae458d2e90005b7",
+      "allocated": 16384
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/task-9-pg-initdb-mmap-validation-20261026-a.diff",
+      "bytes": 3003,
+      "sha256": "81f3c69809dfb130e823f9034bbb26e7e670eeb0c00dace72646410b8e058986",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/task-9-pg-initdb-mmap-validation-20261026-a.md",
+      "bytes": 4881,
+      "sha256": "4334c863b3929df907794ec779c5fbdaec622590ba93865b23b2a65079f877f4",
+      "allocated": 8192
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/task-9-pg-initdb-mmap-validation-20261026-a-freeze.json",
+      "bytes": 3635,
+      "sha256": "127e1d620f59698279ceec6253e844a5474cf24aa8408d3233a176bca723621a",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/native-events.json",
+      "bytes": 15402,
+      "sha256": "41483e45f7c7306f0b9a967a926af5e2a12c839f8a6b519dc6fdf605bc42722e",
+      "allocated": 16384
+    },
+    {
+      "path": "docs/evidence/azure-budget/reaper-task9-pg-mmap-validation-end-20261026.json",
+      "bytes": 759,
+      "sha256": "00d8a885b480db560f3d65fc6552db2bb6b2455549aad02a742b6837983ce657",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/pg-initdb-mmap-validation-20261026/root-ruling.md",
+      "bytes": 2309,
+      "sha256": "9536e39a925900a9d0e3e20e4c8f8ba141f6ff29bf7a76e2259104f4d7c7eb03",
+      "allocated": 4096
+    }
+  ],
+  "archive_cap_within_original_output_reserve": 41943040,
+  "Task15_exhausted_budgets_not_reused": true
+}

@@ -1,0 +1,14 @@
+=== RUN   TestTenantPolicyDefaultsDenyRelaxation
+--- PASS: TestTenantPolicyDefaultsDenyRelaxation (0.06s)
+=== RUN   TestTenantPolicyAllowsExplicitScopedRelaxation
+--- PASS: TestTenantPolicyAllowsExplicitScopedRelaxation (0.05s)
+=== RUN   TestTenantPolicyLookupFailsClosed
+--- PASS: TestTenantPolicyLookupFailsClosed (0.31s)
+=== RUN   TestTenantPolicyCannotComeFromRequest
+--- PASS: TestTenantPolicyCannotComeFromRequest (0.04s)
+=== RUN   TestTenantPolicyRecheckedOnIdempotentReplay
+--- PASS: TestTenantPolicyRecheckedOnIdempotentReplay (0.04s)
+=== RUN   TestTenantPolicyRuntimeAndPartialLimits
+--- PASS: TestTenantPolicyRuntimeAndPartialLimits (0.08s)
+PASS
+ok  	warden/controlplane/internal/api	0.582s

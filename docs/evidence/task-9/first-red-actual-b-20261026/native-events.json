@@ -1,0 +1,76 @@
+[
+  {
+    "kind": "fresh-second-final-first-red-guard",
+    "request": {
+      "cmd": "set -e\nulimit -c 0\nulimit -v 262144\nulimit -f 2048\nulimit -t 20\ntimeout --signal=TERM --kill-after=5s 40s python3 -I -B - <<'PY'\nfrom pathlib import Path\nimport hashlib,os,runpy,stat,sys\nW=Path('/home/postedism/Desktop/Warden');assert Path.cwd()==W and os.getuid()==1000 and os.geteuid()==1000\nfor p in [W,W/'.cache',W/'.superpowers',W/'.superpowers/sdd',W/'.superpowers/sdd/2-warden-security-plan']:\n s=p.lstat();assert stat.S_ISDIR(s.st_mode) and not stat.S_ISLNK(s.st_mode) and s.st_uid==1000\nassert not os.path.lexists(W/'.cache/task9-first-red-20261025-b')\nD=W/'.superpowers/sdd/2-warden-security-plan'\nfor name,h in [('task-9-first-red-caller-absence-fix1.py.txt','97349ca69ba1311a16d2f7bf3a4f36f5958e65899d11a6e5b020bd1e43f7e5cc'),('task-9-material-manifest.json','1ca3cbfa3cf4a3ba960dc4ced03f8eb24d2e8429e9ae5e7b0e34d3d08b54fbbd'),('task-9-first-red-source-freeze.json','8f498b9220b29dd8b26753950a1896631265df3a6e2a3abf810872eb2e5be6a8')]:\n p=D/name;s=p.lstat();assert stat.S_ISREG(s.st_mode) and s.st_uid==1000 and s.st_nlink==1 and hashlib.sha256(p.read_bytes()).hexdigest()==h\nheld=0\nfor name in ['warden-task15-first-red-9ffe58a9-b5d6dcbd','warden-task15-green-22c7197f-968f62de','warden-task15-fix1-red-18981ab8-22c7197f','warden-task15-fix1-cover-237cac53-18981ab8']:\n for p in [Path('/tmp')/name,Path('/tmp')/name/'status.txt',Path('/tmp')/name/'unittest.txt']:\n  s=p.lstat();assert s.st_uid==1000 and not stat.S_ISLNK(s.st_mode);held+=s.st_blocks*512\nassert held<=131072\nmem=next(int(x.split()[1])*1024 for x in Path('/proc/meminfo').read_text().splitlines() if x.startswith('MemAvailable:'));assert mem>=6500000000\nprint({'new_namespace_absent':True,'retained_tmp_allocated_bytes':held,'retained_reserve_bytes':131072,'MemAvailable_bytes':mem,'body_and_freezes_unchanged':True},flush=True)\nsys.argv=['scripts/azure_guard.py','preflight','--additional-bytes','6748814336','--service-memory-bytes','15500000000','--download-bytes','0']\nrunpy.run_path('scripts/azure_guard.py',run_name='__main__')\nPY",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "sandbox_permissions": "require_escalated",
+      "justification": "root0f45b5全文确认唯一absence换行适配、全新b namespace；仅为第2/最后一次Task9首RED fresh资源/源码门禁，旧a失败保留已计R，无实际容器/测试。",
+      "yield_time_ms": 1000,
+      "max_output_tokens": 1800
+    },
+    "result": {
+      "chunk_id": "dc1619",
+      "wall_time_seconds": 0.259912945,
+      "exit_code": 0,
+      "original_token_count": 100,
+      "output": "{'new_namespace_absent': True, 'retained_tmp_allocated_bytes': 32768, 'retained_reserve_bytes': 131072, 'MemAvailable_bytes': 94212042752, 'body_and_freezes_unchanged': True}\n{\"additional_bytes\": \"6748814336\", \"at\": \"2026-10-26T04:37:13Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 252891508736, \"project_allocated_bytes\": 5041319936, \"service_memory_bytes\": \"15500000000\"}\n"
+    }
+  },
+  {
+    "kind": "second-final-first-red-actual",
+    "request": {
+      "cmd": "timeout --signal=TERM --kill-after=4s 86s python3 -B - < .superpowers/sdd/2-warden-security-plan/task-9-first-red-caller-absence-fix1.py.txt",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "sandbox_permissions": "require_escalated",
+      "justification": "fresh dc1619 known0、root0f45b5全文最小diff后，原Task9首RED第2/最后一次实际：仅全新b自有名，唯一解析修正接受已观测1B换行；所有90秒/资源/无网络/owner清理门禁不变，旧失败不动，不再自动重试。",
+      "yield_time_ms": 1000,
+      "max_output_tokens": 1800
+    },
+    "result": {
+      "chunk_id": "a9ad3e",
+      "wall_time_seconds": 1.000670064,
+      "session_id": 18994,
+      "original_token_count": 0,
+      "output": ""
+    }
+  },
+  {
+    "kind": "actual-poll",
+    "request": {
+      "session_id": 18994,
+      "chars": "",
+      "yield_time_ms": 10000,
+      "max_output_tokens": 1800
+    },
+    "result": {
+      "chunk_id": "e88bf0",
+      "wall_time_seconds": 10.000742248,
+      "session_id": 18994,
+      "original_token_count": 0,
+      "output": ""
+    }
+  },
+  {
+    "kind": "actual-poll",
+    "request": {
+      "session_id": 18994,
+      "chars": "",
+      "yield_time_ms": 10000,
+      "max_output_tokens": 1800
+    },
+    "result": {
+      "chunk_id": "c1c3d2",
+      "wall_time_seconds": 2.61e-05,
+      "exit_code": 2,
+      "original_token_count": 20,
+      "output": "{\"status\": \"UNKNOWN:RuntimeError:pg_not_ready\", \"elapsed\": 30.24316143093165}\n"
+    }
+  }
+]

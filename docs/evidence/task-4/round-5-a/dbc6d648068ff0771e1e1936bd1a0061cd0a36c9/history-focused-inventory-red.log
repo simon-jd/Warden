@@ -1,0 +1,47 @@
+test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors (test_firecracker_recovery_init.InventoryFixture.test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors) ... FAIL
+test_only_initial_ro_private_matching_mount_is_accepted (test_firecracker_recovery_init.MountTests.test_only_initial_ro_private_matching_mount_is_accepted) ... FAIL
+
+======================================================================
+FAIL: test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors (test_firecracker_recovery_init.InventoryFixture.test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 50, in test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors
+    held = self.collect()
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 45, in collect
+    return recovery.collect(self.fd)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery_init.py", line 4, in collect
+    raise ValueError('recovery inventory not implemented')
+ValueError: recovery inventory not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 52, in test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors
+    self.fail('valid closed fixture refused: ' + str(error))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: valid closed fixture refused: recovery inventory not implemented
+
+======================================================================
+FAIL: test_only_initial_ro_private_matching_mount_is_accepted (test_firecracker_recovery_init.MountTests.test_only_initial_ro_private_matching_mount_is_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 136, in test_only_initial_ro_private_matching_mount_is_accepted
+    mount_id, flags = recovery.verify_mount(line, meta, 'mnt:[12]', 'mnt:[13]', True)
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery_init.py", line 10, in verify_mount
+    raise ValueError('recovery mount validation not implemented')
+ValueError: recovery mount validation not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 137, in test_only_initial_ro_private_matching_mount_is_accepted
+    except ValueError as error: self.fail('valid private RO fixture refused: ' + str(error))
+                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: valid private RO fixture refused: recovery mount validation not implemented
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+FAILED (failures=2)

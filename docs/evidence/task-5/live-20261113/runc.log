@@ -1,0 +1,77 @@
+local Docker daemon: postedism-ubuntu-system-selfuse 29.9.3 systemd
+outstanding Docker allocation charge: 0
+{"additional_bytes": "3000000000", "at": "2026-11-14T00:31:45Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 122791047168, "project_allocated_bytes": 5896257536, "service_memory_bytes": "4000000000"}
+owned image: sha256:701ca62d3a56dd7a492a946130e92909890014987b9a1974afba505e70475879
+owned container: 283ebcc5526db58a621fe278741e505cf68613d8ee075f43031a2c5efa7c4f19
+Docker bootstrap failed: Command '['/proc/self/fd/6', '-test.run', '^TestConformance$', '-test.v', '-test.count=1']' returned non-zero exit status 1.
+Docker bootstrap failed: Command '['/proc/self/fd/6', '-test.run', '^TestConformance$', '-test.v', '-test.count=1']' returned non-zero exit status 1.
+containerd containerd v2.4.2 b7a25261e029d68978bbf290df0a62fc819b3c51
+ctr containerd v2.4.2
+containerd-shim-runc-v2:
+  Version:  v2.4.2
+  Revision: b7a25261e029d68978bbf290df0a62fc819b3c51
+  Go version: go1.27.3
+
+runc version 1.5.2
+commit: v1.5.2-0-g29dd3dc2
+spec: 1.3.0
+go: go1.27.3
+libseccomp: 2.6.0
+Python: 3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]
+libseccomp: 7
+verified private outer cgroup limits: {"memory": "3999997952", "pids": "512", "cpu": "200000 100000"}
+warden lab/probe:conformance            	saved	
+application/vnd.oci.image.manifest.v1+json sha256:b8bd5eb7830cb3b0c08518970e7b1a0333170b1f19a756c237d28bc5106f2ebb
+Importing	elapsed: 0.3 s	total:   0.0 B	(0.0 B/s)	
+warden lab/corpus:matrix                	saved	
+application/vnd.oci.image.manifest.v1+json sha256:51a7ba940a1949ea5f9ecd3efcb49afb6bd7fc6f8134d794596c97d8edeec3a7
+Importing	elapsed: 0.5 s	total:   0.0 B	(0.0 B/s)	
+=== RUN   TestConformance
+=== RUN   TestConformance/ForkBombCappedByPids
+    suite.go:61: real guest mode=fork exit={Code:0 LogsTruncated:false PidsMaxEvents:1 PeakPids:32 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS fork
+=== RUN   TestConformance/RootfsReadOnly
+    suite.go:61: real guest mode=readonly exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS readonly
+=== RUN   TestConformance/NoNetworkByDefault
+    suite.go:61: real guest mode=network exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS network
+=== RUN   TestConformance/RunsAsNonRoot
+    suite.go:61: real guest mode=uid exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS uid
+=== RUN   TestConformance/TimeoutKillsProcessGroup
+    suite.go:61: real guest mode=timeout exit={Code:137 LogsTruncated:false PidsMaxEvents:0 PeakPids:8 DroppedLogBytes:0 OOMKilled:false TimedOut:true CgroupEmpty:true} logs=READY timeout
+=== RUN   TestConformance/MemoryLimitOOMKilled
+    suite.go:61: real guest mode=oom exit={Code:137 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:true TimedOut:false CgroupEmpty:true} logs=READY oom
+=== RUN   TestConformance/SeccompBlocksMountAndPtrace
+    suite.go:61: real guest mode=seccomp exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS seccomp
+=== RUN   TestConformance/IsolationMatrix
+    lab.go:67: arp-spoof on runc: blocked (no success signal in the complete output) run 5DC4AK7NZASLEJD35WFIFXMQHY
+    lab.go:67: disk-fill on runc: error (probe objective or denial not recorded) run FSHRL3GPRI6ANXXDBESBK76H2Y
+    lab.go:69: disk-fill on runc: no verdict: probe objective or denial not recorded
+    lab.go:67: dns-exfil on runc: error (probe objective or denial not recorded) run YBSD77QNZFPCSGRMYUXU5DRPJE
+    lab.go:69: dns-exfil on runc: no verdict: probe objective or denial not recorded
+    lab.go:67: fork-bomb on runc: blocked (no success signal in the complete output) run GUYPNDWMX2U4UURQSZE75MONW4
+    lab.go:67: kernel-module on runc: blocked (no success signal in the complete output) run O6STGRF6M5AAAZNWEAG2CE4YMY
+    lab.go:67: memory-exhaustion on runc: blocked (no success signal in the complete output) run 5LPONYW5FQEWRJDIIDYXN4IG3E
+    lab.go:67: metadata-host on runc: blocked (no success signal in the complete output) run NMOSQXMSH6RKTX26CGTF5M43BQ
+    lab.go:67: metadata-ip on runc: blocked (no success signal in the complete output) run F3YOCI67CEDPHT5M6XVFYPJWSM
+    lab.go:67: mount-unshare on runc: blocked (no success signal in the complete output) run 3KQI5GSG6A5RQLFJ2I6VCKTABE
+    lab.go:67: proc-leak on runc: error (probe objective or denial not recorded) run EDYK5KHL5HHNYW5C6VBAEI6A4U
+    lab.go:69: proc-leak on runc: no verdict: probe objective or denial not recorded
+    lab.go:67: ptrace on runc: blocked (no success signal in the complete output) run FSSD77WV4FMAR653MFD72RWMEI
+    lab.go:67: raw-socket on runc: blocked (no success signal in the complete output) run BDDAU25NFKHYAPNRFCZB73GU6Q
+    lab.go:67: reverse-shell on runc: error (probe objective or denial not recorded) run 2Y5HS65VNO5AVWL7K5N4MFK3HA
+    lab.go:69: reverse-shell on runc: no verdict: probe objective or denial not recorded
+    lab.go:67: sys-leak on runc: error (probe objective or denial not recorded) run MCM3PSVAWG73CVIASPBBOIQNEI
+    lab.go:69: sys-leak on runc: no verdict: probe objective or denial not recorded
+--- FAIL: TestConformance (6.46s)
+    --- PASS: TestConformance/ForkBombCappedByPids (0.32s)
+    --- PASS: TestConformance/RootfsReadOnly (0.14s)
+    --- PASS: TestConformance/NoNetworkByDefault (0.12s)
+    --- PASS: TestConformance/RunsAsNonRoot (0.15s)
+    --- PASS: TestConformance/TimeoutKillsProcessGroup (2.18s)
+    --- PASS: TestConformance/MemoryLimitOOMKilled (0.22s)
+    --- PASS: TestConformance/SeccompBlocksMountAndPtrace (0.23s)
+    --- FAIL: TestConformance/IsolationMatrix (3.10s)
+FAIL
+Dedicated session logs/config retained: /opt/warden/.cache/warden-lab/session-2e7de4bdcf707fae
+outer container removed: 283ebcc5526db58a621fe278741e505cf68613d8ee075f43031a2c5efa7c4f19
+owned image removed: sha256:701ca62d3a56dd7a492a946130e92909890014987b9a1974afba505e70475879
+Docker lab failed: Command '['/usr/bin/docker', '--host=unix:///var/run/docker.sock', 'container', 'start', '--attach', '283ebcc5526db58a621fe278741e505cf68613d8ee075f43031a2c5efa7c4f19']' returned non-zero exit status 2.

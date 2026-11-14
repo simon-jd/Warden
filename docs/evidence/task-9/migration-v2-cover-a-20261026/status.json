@@ -1,0 +1,57 @@
+{
+  "phase": "MIGRATION_V2_COVER",
+  "harness_attempt": 1,
+  "first_green": "SPENT_1/1_ACCEPTED",
+  "prior_first_red": "ORIGINAL_2/2_AND_RESTORED_1/1_SPENT_SEMANTIC_RED_ACCEPTED",
+  "diagnostics": "SPENT_3/3_UNCHANGED",
+  "metadata": "SPENT_1/1_ORIGINAL_UNKNOWN_FAILURE_UNCHANGED",
+  "status": "CANDIDATE_MIGRATION_V2_COVER",
+  "semantic_candidate": true,
+  "pg_ready": true,
+  "states": {
+    "warden-task9-migration-v2-20261026-a-pg": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 0,
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 2052394,
+      "Restarting": false,
+      "Running": true,
+      "StartedAt": "2026-10-26T08:18:29.709713765Z",
+      "Status": "running"
+    },
+    "warden-task9-migration-v2-20261026-a-go": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 0,
+      "FinishedAt": "2026-10-26T08:18:51.056148029Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 0,
+      "Restarting": false,
+      "Running": false,
+      "StartedAt": "2026-10-26T08:18:31.823637793Z",
+      "Status": "exited"
+    }
+  },
+  "observed": [
+    "warden-task9-migration-v2-20261026-a-go",
+    "warden-task9-migration-v2-20261026-a-pg"
+  ],
+  "errors": [],
+  "cleaned": [
+    "warden-task9-migration-v2-20261026-a-go",
+    "warden-task9-migration-v2-20261026-a-pg"
+  ],
+  "CIDS": {
+    "warden-task9-migration-v2-20261026-a-pg": "a008d9d94390bf382e5026e0a59f92ebe79cf2ed38f478ee455d30a754a4ef8f",
+    "warden-task9-migration-v2-20261026-a-go": "e348daa741214bc4e2ee853f1a79f6c0fa831edbf50fdc9aa13d7db2e48028ef"
+  },
+  "owner_label": "6378a05d39d47d57abd6d0d574036a3c",
+  "cli_group_cleanup_known": true,
+  "evidence_bytes": 7038,
+  "elapsed": 24.45511974999681,
+  "old_task16": "UNTOUCHED_UNKNOWN"
+}

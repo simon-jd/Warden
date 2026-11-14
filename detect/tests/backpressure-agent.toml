@@ -1,0 +1,59 @@
+# Agent half of the two-hop backpressure experiment (BP_SOURCE=vector): events
+# arrive on an acknowledged http_server source and leave through the same
+# `vector` sink as detect/vector/agent.toml (agent_forward, same disk buffer),
+# to the aggregator in backpressure-aggregator.toml. BP_WHEN_FULL is "block"
+# (production) or "drop_newest" (to check that discards are counted and
+# alerted on). Metrics are exported for Prometheus like the production agent.
+# The remap adds a `warden_source` field; the peer only reads `id`.
+data_dir = "${BP_DATA}"
+
+# Component names match agent.toml (spool_warden -> label_warden ->
+# agent_forward) so detect/vector/buffer-alerts.yml applies unchanged.
+[sources.spool_warden]
+type = "http_server"
+address = "${BP_LISTEN}"
+framing.method = "newline_delimited"
+decoding.codec = "json"
+acknowledgements.enabled = true
+
+[transforms.label_warden]
+type = "remap"
+inputs = ["spool_warden"]
+source = '.warden_source = "warden"'
+
+[sinks.agent_forward]
+type = "vector"
+inputs = ["label_warden"]
+address = "${BP_AGG}"
+acknowledgements.enabled = true
+buffer.type = "disk"
+buffer.max_size = 268435488
+buffer.when_full = "${BP_WHEN_FULL}"
+
+[sources.metrics]
+type = "internal_metrics"
+namespace = "vector"
+scrape_interval_secs = 0.5
+
+[sinks.metrics_export]
+type = "prometheus_exporter"
+inputs = ["metrics"]
+address = "${BP_PROM_EXPORT}"
+buffer.type = "memory"
+buffer.max_events = 500
+buffer.when_full = "block"
+
+[transforms.bp_metrics]
+type = "filter"
+inputs = ["metrics"]
+# Plus every discard/drop counter of any component, so a loss can be traced.
+condition = '(.tags.component_id == "agent_forward" && includes(["buffer_byte_size", "buffer_events", "buffer_discarded_events_total", "component_discarded_events_total"], .name)) || contains(string!(.name), "discard") || contains(string!(.name), "drop")'
+
+[sinks.metrics_file]
+type = "file"
+inputs = ["bp_metrics"]
+path = "${BP_METRICS}"
+encoding.codec = "json"
+buffer.type = "memory"
+buffer.max_events = 64
+buffer.when_full = "block"

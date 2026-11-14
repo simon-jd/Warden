@@ -1,0 +1,10 @@
+# 2026-11-13T08:11:54-08:00 head ec62450; git status --short:
+ M controlplane/internal/ciliumlab/ciliumlab_test.go
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/13-summary-red.txt
+$ go test -count=1 -run '^TestSummaryUsesNearestRank$' ./controlplane/internal/ciliumlab
+# warden/controlplane/internal/ciliumlab [warden/controlplane/internal/ciliumlab.test]
+controlplane/internal/ciliumlab/ciliumlab_test.go:160:7: undefined: Summary
+controlplane/internal/ciliumlab/ciliumlab_test.go:170:10: undefined: Summary
+FAIL	warden/controlplane/internal/ciliumlab [build failed]
+FAIL
+exit 1

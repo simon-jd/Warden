@@ -1,0 +1,21 @@
+{
+  "source": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f",
+  "review": "docs/evidence/task-4/review-code-round-4.md",
+  "command": [
+    "python3",
+    "-B",
+    "scripts/firecracker_lab.py",
+    "device-policy",
+    "--other-service-memory-bytes",
+    "0",
+    "--reviewed-live-profile"
+  ],
+  "uid": 1000,
+  "start_utc": "2026-10-24T22:18:52.133052+00:00",
+  "end_utc": "2026-10-24T22:19:00.262841+00:00",
+  "elapsed_seconds": 8.129777663038112,
+  "exit_code": 0,
+  "log_bytes": 6865,
+  "log_sha256": "0ef5226f65a5a42a14958a433f081264cc7aae8d234b1a1029576f834cccaaa0",
+  "scope": "device-policy controller gate only; result does not imply other unexecuted acceptance gates"
+}

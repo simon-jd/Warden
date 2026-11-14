@@ -1,0 +1,58 @@
+# 2026-11-13T00:09:26-08:00 head 3a4f8a8; git status --short:
+ M runtimes/conformance/identity_test.go
+?? controlplane/internal/ciliumlab/metadata_test.go
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run1-1945/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2-attempt1/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2/
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/12-deny-metadata-default-deny-red.txt
+?? docs/evidence/task-10/cilium-lab-20261112/runs/05-task10/
+?? docs/evidence/task-10/cilium-lab-20261112/runs/06-task7/
+$ taskset -c 0-7,16-31 .tools/go/bin/go test -buildvcs=false -count=1 -v -run TestDenyMetadataPolicyCoversSandboxesAndTheirProxy ./runtimes/conformance (Makefile GOENV)
+=== RUN   TestDenyMetadataPolicyCoversSandboxesAndTheirProxy
+    identity_test.go:283: document does not turn default deny off (enableDefaultDeny: egress: false, ingress: false):
+        # Cloud metadata endpoints, denied to sandboxes and to the egress proxy that
+        # resolves and connects on their behalf (egress-proxy.yaml). Deny rules win
+        # over every allow, so no allowlist entry can reopen them. Hostname forms
+        # (metadata.google.internal, metadata) resolve to these addresses: a sandbox
+        # can resolve only the proxy's name (default-deny.yaml), and whatever the
+        # proxy resolves for it still ends at this list. Neither document allows
+        # anything; default deny comes from default-deny.yaml and egress-proxy.yaml.
+        #
+        #   169.254.169.254  IMDS (Azure, GCP, AWS)
+        #   169.254.169.252  GKE metadata server (workload identity)
+        #   169.254.170.23   EKS Pod Identity agent; fd00:ec2::23 is its IPv6 form
+        #   168.63.129.16    Azure WireServer
+        #   fd00:ec2::254    EC2 IMDS over IPv6
+        #
+        # Not yet applied to a cluster: the k3s lab has no Cilium (docs/STATUS.md,
+        # blocker 11). The offline check is TestDenyMetadataPolicyCoversSandboxesAndTheirProxy
+        # in runtimes/conformance/identity_test.go.
+        apiVersion: cilium.io/v2
+        kind: CiliumClusterwideNetworkPolicy
+        metadata:
+          name: warden-sandbox-deny-metadata
+        spec:
+          description: Sandboxes never reach cloud metadata endpoints.
+          endpointSelector:
+            matchLabels:
+              warden.dev/sandbox: "true"
+          egressDeny:
+            - toCIDR: [169.254.169.254/32, 169.254.169.252/32, 169.254.170.23/32, 168.63.129.16/32, fd00:ec2::254/128, fd00:ec2::23/128]
+    identity_test.go:283: document does not turn default deny off (enableDefaultDeny: egress: false, ingress: false):
+        apiVersion: cilium.io/v2
+        kind: CiliumClusterwideNetworkPolicy
+        metadata:
+          name: warden-egress-proxy-deny-metadata
+        spec:
+          description: The egress proxy never reaches cloud metadata endpoints for a sandbox.
+          endpointSelector:
+            matchLabels:
+              k8s:io.kubernetes.pod.namespace: warden-system
+              app.kubernetes.io/name: warden-egress
+          egressDeny:
+            - toCIDR: [169.254.169.254/32, 169.254.169.252/32, 169.254.170.23/32, 168.63.129.16/32, fd00:ec2::254/128, fd00:ec2::23/128]
+--- FAIL: TestDenyMetadataPolicyCoversSandboxesAndTheirProxy (0.00s)
+FAIL
+FAIL	warden/runtimes/conformance	0.002s
+FAIL
+exit 1

@@ -1,0 +1,8 @@
+$ /usr/bin/python3 -B -m unittest discover -s scripts -p test_k3s_lab.py -k main_tar_finally -v
+test_main_tar_finally_preserves_replaced_directory_and_original_archive (test_k3s_lab.LabTest.test_main_tar_finally_preserves_replaced_directory_and_original_archive) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+OK
+exit=0

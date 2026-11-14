@@ -1,0 +1,42 @@
+{
+  "scope": "本轮固定结束reaper；仅本项目资源组TTL清理/确认，不创建资源。",
+  "events": [
+    {
+      "kind": "exec_command",
+      "request": {
+        "cmd": "bash scripts/azure_reaper.sh",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "按AZURE-BUDGET.md执行本回合结束的固定reaper，仅本项目rg-warden-lab TTL过期资源；不创建资源，禁止修改或删除rg-mlinfra-westus。",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "5af173",
+        "wall_time_seconds": 1.000525595,
+        "session_id": 23240,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "kind": "write_stdin",
+      "request": {
+        "session_id": 23240,
+        "chars": "",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "aaec7d",
+        "wall_time_seconds": 0.000027523,
+        "exit_code": 0,
+        "original_token_count": 37,
+        "output": "{\"at\": \"2026-10-25T22:18:41Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+      }
+    }
+  ]
+}

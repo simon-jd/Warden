@@ -1,0 +1,16 @@
+final check 2026-11-11 07:34:33 PST, before the last make test / make check
+loadavg 3.74 3.51 3.15 6/7663 3294469
+head 87e1623; git status --short:
+?? docs/evidence/task-3/review-fixes-20261110/final-check.txt
+(end)
+--- containers label project=warden or name warden*:
+(end)
+--- networks label project=warden or name warden*:
+(end)
+--- images label project=warden or repository warden*:
+(end)
+--- the two leftovers named in the review (ls):
+ls: cannot access '/tmp/warden-cilium-render.yaml': No such file or directory
+ls: cannot access '/tmp/warden-scan': No such file or directory
+--- /tmp entries named warden*, w3-*, wfc*, wl* (test and agent temp prefixes):
+(end)

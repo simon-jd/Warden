@@ -1,0 +1,22 @@
+# Target of respond.IsolatePod: any pod labelled warden.dev/quarantine=true
+# loses all ingress and egress. Cilium deny rules take precedence over the
+# allow rules in default-deny.yaml/egress-proxy.yaml, so the label works even
+# for pods that those policies still select. Tested on the Cilium lab by
+# TestQuarantineCutsEstablishedConnections (Task 14, evidence in
+# docs/evidence/task-10/cilium-lab-20261112): it cuts established
+# connections, but within 1 s only with identity-max-jitter=0s and
+# identity-change-grace-period=0s. With Cilium's defaults the cut took
+# 10.1-32.5 s, because the policy applies only once the endpoint has a new
+# identity that carries the label.
+apiVersion: cilium.io/v2
+kind: CiliumClusterwideNetworkPolicy
+metadata:
+  name: warden-quarantine
+spec:
+  endpointSelector:
+    matchLabels:
+      warden.dev/quarantine: "true"
+  ingressDeny:
+    - fromEntities: ["all"]
+  egressDeny:
+    - toEntities: ["all"]

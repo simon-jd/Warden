@@ -1,0 +1,20 @@
+{
+  "red": {
+    "exit_code": 1,
+    "top_level_passes": 0,
+    "subtest_passes": 0,
+    "top_level_failures": 1
+  },
+  "green": {
+    "exit_code": 0,
+    "top_level_passes": 6,
+    "subtest_passes": 52,
+    "top_level_failures": 0
+  },
+  "cover": {
+    "exit_code": 0,
+    "top_level_passes": 6,
+    "subtest_passes": 53,
+    "top_level_failures": 0
+  }
+}

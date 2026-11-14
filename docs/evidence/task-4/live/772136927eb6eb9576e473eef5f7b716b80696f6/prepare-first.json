@@ -1,0 +1,20 @@
+{
+  "source": "772136927eb6eb9576e473eef5f7b716b80696f6",
+  "review": "docs/evidence/task-4/review-code-round-2.md",
+  "command": [
+    "python3",
+    "-B",
+    "scripts/firecracker_lab.py",
+    "prepare",
+    "--other-service-memory-bytes",
+    "0"
+  ],
+  "uid": 1000,
+  "start_utc": "2026-10-24T21:18:28.063575+00:00",
+  "end_utc": "2026-10-24T21:18:42.520013+00:00",
+  "elapsed_seconds": 14.45642827206757,
+  "exit_code": 0,
+  "log_bytes": 14031,
+  "log_sha256": "4b3850c664524a2f7bf030cbc53251641b224ba6c07f57630d8751d9afbf9e0e",
+  "scope": "prepare controller gate only; result does not imply other unexecuted acceptance gates"
+}

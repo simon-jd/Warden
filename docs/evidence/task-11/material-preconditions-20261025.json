@@ -1,0 +1,66 @@
+{
+  "scope": "Task11 pre-material gates only; no Vector/archive/test executed",
+  "sandbox_gate": [
+    {
+      "kind": "exec_command",
+      "request": {
+        "cmd": "python3 -I -S -B - <<'PY'\nimport json,os,pathlib,resource,stat\nr=pathlib.Path('/home/postedism/Desktop/Warden');assert pathlib.Path.cwd()==r\nassert (os.getuid(),os.geteuid(),os.getgid(),os.getegid())==(1000,1000,1000,1000)\na=[]\nfor p in [pathlib.Path('/'),pathlib.Path('/home'),pathlib.Path('/home/postedism'),pathlib.Path('/home/postedism/Desktop'),r,r/'.cache']:\n s=p.lstat();assert stat.S_ISDIR(s.st_mode) and s.st_uid in (0,1000);a.append({'path':str(p),'uid':s.st_uid,'gid':s.st_gid,'mode':oct(stat.S_IMODE(s.st_mode))})\nd=r/'.cache/task11-material-once-0.45.0';assert not os.path.lexists(d)\nlimits={}\nfor name,k,want in [('AS',resource.RLIMIT_AS,3000000000),('CPU',resource.RLIMIT_CPU,55),('FSIZE',resource.RLIMIT_FSIZE,200000000),('NOFILE',resource.RLIMIT_NOFILE,128)]:\n soft,hard=resource.getrlimit(k);assert hard==resource.RLIM_INFINITY or hard>=want;limits[name]=[soft,hard]\nm={}\nfor line in pathlib.Path('/proc/meminfo').read_text().splitlines():\n key,rest=line.split(':',1)\n if key=='MemAvailable':m[key]=int(rest.split()[0])*1024\nassert m['MemAvailable']>=5000000000\nprint(json.dumps({'state':'PASS','scope':'Task11 unique tool destination and local limits only; not Task6 source/quiescence admission','uid_gid':[1000]*4,'ancestors':a,'new_destination':str(d),'new_destination_absent':True,'inherited_limits':limits,'MemAvailable':m['MemAvailable'],'resident_reservation_bytes':13000000000,'no_service_started':True},sort_keys=True))\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "yield_time_ms": 1000,
+        "max_output_tokens": 3000
+      },
+      "response": {
+        "chunk_id": "36e544",
+        "wall_time_seconds": 0.000016893,
+        "exit_code": 1,
+        "original_token_count": 22,
+        "output": "Traceback (most recent call last):\n  File \"<stdin>\", line 6, in <module>\nAssertionError\n"
+      }
+    }
+  ],
+  "sandbox_diagnostic": {
+    "request": {
+      "cmd": "stat -c '%u:%g %a %F %n' / /home /home/postedism /home/postedism/Desktop /home/postedism/Desktop/Warden /home/postedism/Desktop/Warden/.cache",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "yield_time_ms": 1000,
+      "max_output_tokens": 2000
+    },
+    "response": {
+      "chunk_id": "1002aa",
+      "wall_time_seconds": 0.00001126,
+      "exit_code": 0,
+      "original_token_count": 67,
+      "output": "65534:65534 755 directory /\n65534:65534 755 directory /home\n1000:1000 750 directory /home/postedism\n1000:1000 755 directory /home/postedism/Desktop\n1000:1000 755 directory /home/postedism/Desktop/Warden\n1000:1000 755 directory /home/postedism/Desktop/Warden/.cache\n"
+    }
+  },
+  "native_gate": [
+    {
+      "kind": "exec_command",
+      "request": {
+        "cmd": "python3 -I -S -B - <<'PY'\nimport json,os,pathlib,resource,stat\nr=pathlib.Path('/home/postedism/Desktop/Warden');assert pathlib.Path.cwd()==r\nassert (os.getuid(),os.geteuid(),os.getgid(),os.getegid())==(1000,1000,1000,1000)\na=[]\nfor p in [pathlib.Path('/'),pathlib.Path('/home'),pathlib.Path('/home/postedism'),pathlib.Path('/home/postedism/Desktop'),r,r/'.cache']:\n s=p.lstat();assert stat.S_ISDIR(s.st_mode) and s.st_uid in (0,1000);a.append({'path':str(p),'uid':s.st_uid,'gid':s.st_gid,'mode':oct(stat.S_IMODE(s.st_mode))})\nd=r/'.cache/task11-material-once-0.45.0';assert not os.path.lexists(d)\nlimits={}\nfor name,k,want in [('AS',resource.RLIMIT_AS,3000000000),('CPU',resource.RLIMIT_CPU,55),('FSIZE',resource.RLIMIT_FSIZE,200000000),('NOFILE',resource.RLIMIT_NOFILE,128)]:\n soft,hard=resource.getrlimit(k);assert hard==resource.RLIM_INFINITY or hard>=want;limits[name]=[soft,hard]\nm={}\nfor line in pathlib.Path('/proc/meminfo').read_text().splitlines():\n key,rest=line.split(':',1)\n if key=='MemAvailable':m[key]=int(rest.split()[0])*1024\nassert m['MemAvailable']>=5000000000\nprint(json.dumps({'state':'PASS','scope':'Task11 unique tool destination and local limits only; not Task6 source/quiescence admission','uid_gid':[1000]*4,'ancestors':a,'new_destination':str(d),'new_destination_absent':True,'inherited_limits':limits,'MemAvailable':m['MemAvailable'],'resident_reservation_bytes':13000000000,'no_service_started':True},sort_keys=True))\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "yield_time_ms": 1000,
+        "max_output_tokens": 3000,
+        "sandbox_permissions": "require_escalated",
+        "justification": "仅只读核对Task11一次材料调用所需的原生UID、六个固定祖先路径、新cache目标不存在、继承限额与MemAvailable；默认沙箱将/与/home映射为65534导致门禁拒绝，现不放宽条件，核对与将来native材料调用相同的实际环境。不下载/运行Vector、不创建资源或扫描PID。"
+      },
+      "response": {
+        "chunk_id": "46f1af",
+        "wall_time_seconds": 0.000008197,
+        "exit_code": 0,
+        "original_token_count": 234,
+        "output": "{\"MemAvailable\": 85070327808, \"ancestors\": [{\"gid\": 0, \"mode\": \"0o755\", \"path\": \"/\", \"uid\": 0}, {\"gid\": 0, \"mode\": \"0o755\", \"path\": \"/home\", \"uid\": 0}, {\"gid\": 1000, \"mode\": \"0o750\", \"path\": \"/home/postedism\", \"uid\": 1000}, {\"gid\": 1000, \"mode\": \"0o755\", \"path\": \"/home/postedism/Desktop\", \"uid\": 1000}, {\"gid\": 1000, \"mode\": \"0o755\", \"path\": \"/home/postedism/Desktop/Warden\", \"uid\": 1000}, {\"gid\": 1000, \"mode\": \"0o755\", \"path\": \"/home/postedism/Desktop/Warden/.cache\", \"uid\": 1000}], \"inherited_limits\": {\"AS\": [-1, -1], \"CPU\": [-1, -1], \"FSIZE\": [-1, -1], \"NOFILE\": [1024, 524288]}, \"new_destination\": \"/home/postedism/Desktop/Warden/.cache/task11-material-once-0.45.0\", \"new_destination_absent\": true, \"no_service_started\": true, \"resident_reservation_bytes\": 13000000000, \"scope\": \"Task11 unique tool destination and local limits only; not Task6 source/quiescence admission\", \"state\": \"PASS\", \"uid_gid\": [1000, 1000, 1000, 1000]}\n"
+      }
+    }
+  ],
+  "automatic_approval_rejection_observed": false
+}

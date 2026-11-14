@@ -1,0 +1,44 @@
+{
+  "phase": "FIX_ROUND1_RED_PREPARATION_ONLY",
+  "execution_authorized": false,
+  "compressed_full_packet": {
+    "path": ".superpowers/sdd/2-warden-security-plan/task-9-r1-red-20261026-a-packet.json.gz",
+    "bytes": 14133,
+    "sha256": "7bf336b5a7c9f5cb7c6c70f8ae236b8a716662eff1148624e5be81821760c9d0"
+  },
+  "uncompressed_packet_bytes": 52702,
+  "uncompressed_packet_sha256": "e4a4b1cec3c14b2cadd30053b368bd7c18a4738b48b25629322a86c143e2189c",
+  "caller_bytes": 15856,
+  "caller_sha256": "7fb69f64992273468521138c22244c63c5e60ed09b9c23e3e6d12d3b86b01911",
+  "physical_source_freeze": {
+    "path": ".superpowers/sdd/2-warden-security-plan/task-9-r1-red-20261026-a-source-freeze.json",
+    "bytes": 2491,
+    "sha256": "9361774dbe5d0c58cc37c83ad1c4016e35ae5daf0052ea11b8a29ea302a26aec"
+  },
+  "updated_test": {
+    "path": "controlplane/internal/jit/bindings_test.go",
+    "bytes": 11319,
+    "sha256": "913b52dc71bd89fc82ee2d2674608a237c49e9578dcafd4f8b22504db3441a9b"
+  },
+  "test_names": [
+    "TestKubernetesEmptyReservationCleanup",
+    "TestKubernetesRemovalRetryAfterClearAndDeleteFailure"
+  ],
+  "business_assertions": [
+    "empty reservation cleanup must reach DELETE:",
+    "cleanup retry after cleared binding must reach DELETE:"
+  ],
+  "initial_phase_closed_net_bytes": 237568,
+  "initial_phase_closed_conservative_bytes": 253952,
+  "round1_cap_bytes": 65536,
+  "round1_net_allocated_bytes": 24576,
+  "round1_conservative_including_modified_test_bytes": 36864,
+  "source_allocation_growth_bytes": 0,
+  "directory_baseline_allocated_bytes": 28672,
+  "directory_growth_bytes": 0,
+  "remaining_round1_bytes": 40960,
+  "runtime_namespace_absent_at_preparation": true,
+  "runtime_full_new_disk_bytes": 1750780416,
+  "resident_including_old_UNKNOWN_bytes": 15500000000,
+  "handoff": "SAFE; root FULLREAD/fresh original normal admission required; only RED prepared, production fix not applied"
+}

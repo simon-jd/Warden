@@ -1,0 +1,14 @@
+# RED, after the first smoke: pod-sandbox cgroups nested in a Warden container, and the gVisor engine's counter names (449f64b, 2026-11-14T03:35:23Z)
+$ taskset -c 0-7,16-31 python3 -E -s -B -m unittest detect.falco.test_collector detect.falco.test_recorder -k nested -k gvisor_engine_counters
+ERROR: test_a_cgroup_nested_in_a_warden_container_is_wardens (detect.falco.test_collector.ResolverTest.test_a_cgroup_nested_in_a_warden_container_is_wardens)
+TypeError: Resolver.__init__() got an unexpected keyword argument 'cgroup_root'
+FAIL: test_gvisor_engine_counters_have_falco_names (detect.falco.test_recorder.IntervalTest.test_gvisor_engine_counters_have_falco_names)
+AssertionError: Tuples differ: (False, 0) != (True, 900)
+Ran 2 tests in 0.003s
+FAILED (failures=1, errors=1)
+# RED, dropped containers counted by kind (2026-11-14T03:39:21Z)
+$ taskset -c 0-7,16-31 python3 -E -s -B -m unittest detect.falco.test_collector -k by_kind
+ERROR: test_dropped_containers_are_counted_by_kind_only (detect.falco.test_collector.CollectorTest.test_dropped_containers_are_counted_by_kind_only)
+KeyError: 'dropped_other_lab_owned'
+Ran 1 test in 0.001s
+FAILED (errors=1)

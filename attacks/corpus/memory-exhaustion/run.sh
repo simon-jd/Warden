@@ -1,0 +1,1 @@
+exec /warden-attack memory-exhaustion

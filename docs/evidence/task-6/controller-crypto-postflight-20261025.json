@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-25T10:41:29.776418+00:00",
+  "crypto_source": "6d02de4062c0ee1e5d62825df0ea670d54672b5e",
+  "crypto_evidence": "f4dd9dc75fbabce7b6d7d79eba5d8428f483a1ae",
+  "ordinary_original_state_postflight": {
+    "ordinary_full_guard": {
+      "additional_bytes": "5000000000",
+      "at": "2026-10-25T10:41:29Z",
+      "download_bytes": "0",
+      "event": "local-preflight",
+      "free_bytes": 265701556224,
+      "project_allocated_bytes": 4212948992,
+      "service_memory_bytes": "1000000000"
+    },
+    "protected_sysctls": {
+      "vm/overcommit_memory": "1",
+      "vm/panic_on_oom": "0",
+      "kernel/panic": "10",
+      "kernel/panic_on_oops": "1",
+      "kernel/keys/root_maxkeys": "1000000",
+      "kernel/keys/root_maxbytes": "25000000"
+    },
+    "protected_baseline_match": true,
+    "original_owner_retirement": "cleanup_pending",
+    "creation_outcome": "unknown",
+    "never_reopen": true,
+    "reserved_bytes": 5000000000,
+    "released": false
+  },
+  "owned_images_and_containers": 0,
+  "original_22_scene_metadata_match": true,
+  "old_cache_root_identity_mode_and_intent_hash_unchanged": true,
+  "old_cache_completion_receipt_absent": true,
+  "old_cache_all_file_metadata_not_rescanned_here": true,
+  "cache_maintenance_not_retried": true,
+  "native_formatter_not_executed": true,
+  "no_tests_rerun_by_controller": true,
+  "new3GB_not_admitted": true,
+  "PG_material_or_identity_actual_started": false,
+  "old_recovery_operation_reexecuted": false,
+  "Q_released": false,
+  "source_security_review": "pending independent reviewer",
+  "task6_complete": false,
+  "goal_complete": false
+}

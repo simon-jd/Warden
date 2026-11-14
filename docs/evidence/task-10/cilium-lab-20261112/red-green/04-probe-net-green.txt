@@ -1,0 +1,43 @@
+# GREEN: guest net/stream probes
+# head 55fe50c, 2026-11-12T19:52:45-08:00
+# git status --short:
+#    M runtimes/conformance/guest/main.go
+#    M runtimes/gvisor/lab/node/Dockerfile
+#    M scripts/k3s_gvisor_lab.sh
+#    M scripts/restore-tools.sh
+#   ?? docs/evidence/task-10/cilium-lab-20261112/red-green/04-probe-net-green.txt
+#   ?? docs/evidence/task-10/cilium-lab-20261112/red-green/04-probe-net-red.txt
+#   ?? runtimes/conformance/guest/net.go
+#   ?? runtimes/conformance/guest/net_test.go
+#   ?? runtimes/gvisor/lab/cilium/config-v3.toml.tmpl
+#   ?? runtimes/gvisor/lab/cilium/coredns.yaml
+#   ?? runtimes/gvisor/lab/cilium/runsc-netstack.toml
+#   ?? runtimes/gvisor/lab/cilium/values.yaml
+# go test -v ./runtimes/conformance/guest/
+=== RUN   TestConnectProbeThroughProxy
+--- PASS: TestConnectProbeThroughProxy (0.00s)
+=== RUN   TestDirectProbeReportsUnreachable
+--- PASS: TestDirectProbeReportsUnreachable (0.00s)
+=== RUN   TestNetGetReadsStatusAndBody
+--- PASS: TestNetGetReadsStatusAndBody (0.00s)
+=== RUN   TestNetGetSeparatesResolveAndConnectErrors
+--- PASS: TestNetGetSeparatesResolveAndConnectErrors (0.00s)
+=== RUN   TestNetProxyAndTunnelGoThroughTheProxy
+--- PASS: TestNetProxyAndTunnelGoThroughTheProxy (0.00s)
+=== RUN   TestNetTCPConnects
+--- PASS: TestNetTCPConnects (0.00s)
+=== RUN   TestNetDNSQueriesTheServerAndReadsTheAnswer
+--- PASS: TestNetDNSQueriesTheServerAndReadsTheAnswer (0.00s)
+=== RUN   TestNetDNSTimesOutWithoutAnAnswer
+--- PASS: TestNetDNSTimesOutWithoutAnAnswer (3.00s)
+=== RUN   TestDNSServerDefaultsToPort53
+--- PASS: TestDNSServerDefaultsToPort53 (0.00s)
+=== RUN   TestResolvConfNameserver
+--- PASS: TestResolvConfNameserver (0.00s)
+=== RUN   TestStreamSendsNumberedLinesAndLogsWhatItReceives
+--- PASS: TestStreamSendsNumberedLinesAndLogsWhatItReceives (0.60s)
+=== RUN   TestStreamGivesUpWhenTheProxyRefuses
+--- PASS: TestStreamGivesUpWhenTheProxyRefuses (1.50s)
+PASS
+ok  	warden/runtimes/conformance/guest	5.109s
+exit=0

@@ -1,0 +1,22 @@
+test_anchor_replacement_refuses_both_renamed_and_replacement_tree (__main__.IdentityCacheTests.test_anchor_replacement_refuses_both_renamed_and_replacement_tree) ... ok
+test_change_after_scan_refuses_before_deletion (__main__.IdentityCacheTests.test_change_after_scan_refuses_before_deletion) ... ok
+test_cli_rejects_all_path_and_mode_arguments_before_open (__main__.IdentityCacheTests.test_cli_rejects_all_path_and_mode_arguments_before_open) ... ok
+test_deletes_only_derived_entries_keeps_buckets_and_metadata_without_reads (__main__.IdentityCacheTests.test_deletes_only_derived_entries_keeps_buckets_and_metadata_without_reads) ... ok
+test_executable_directory_must_contain_exactly_one_plain_executable (__main__.IdentityCacheTests.test_executable_directory_must_contain_exactly_one_plain_executable) ... ok
+test_fifo_rejected_without_blocking_open (__main__.IdentityCacheTests.test_fifo_rejected_without_blocking_open) ... ok
+test_file_replacement_after_scan_is_not_removed (__main__.IdentityCacheTests.test_file_replacement_after_scan_is_not_removed) ... ok
+test_group_writable_root_bucket_file_rejected (__main__.IdentityCacheTests.test_group_writable_root_bucket_file_rejected) ... ok
+test_hardlink_file_rejected (__main__.IdentityCacheTests.test_hardlink_file_rejected) ... ok
+test_lock_busy_and_wrong_lock_layout_fail_without_cache_access (__main__.IdentityCacheTests.test_lock_busy_and_wrong_lock_layout_fail_without_cache_access) ... ok
+test_malformed_action_length_rejected (__main__.IdentityCacheTests.test_malformed_action_length_rejected) ... ok
+test_missing_bucket_rejected (__main__.IdentityCacheTests.test_missing_bucket_rejected) ... ok
+test_symlink_root_bucket_file_rejected (__main__.IdentityCacheTests.test_symlink_root_bucket_file_rejected) ... ok
+test_unknown_bucket_entry_and_wrong_hash_prefix_fail (__main__.IdentityCacheTests.test_unknown_bucket_entry_and_wrong_hash_prefix_fail) ... ok
+test_unknown_entry_added_after_scan_refuses_before_deletion (__main__.IdentityCacheTests.test_unknown_entry_added_after_scan_refuses_before_deletion) ... ok
+test_unknown_top_entry_fails_before_any_deletion (__main__.IdentityCacheTests.test_unknown_top_entry_fails_before_any_deletion) ... ok
+test_wrong_owner_rejected (__main__.IdentityCacheTests.test_wrong_owner_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.078s
+
+OK

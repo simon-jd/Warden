@@ -1,0 +1,12 @@
+test_accounting_excludes_only_exact_reserved_child_and_counts_all_images (test_k3s_lab_recovery.RecoveryHostTest.test_accounting_excludes_only_exact_reserved_child_and_counts_all_images) ... ok
+test_budget_preserves_six_gb_plus_images_and_helper_charge (test_k3s_lab_recovery.RecoveryHostTest.test_budget_preserves_six_gb_plus_images_and_helper_charge) ... ok
+test_profile_uses_retained_image_and_only_two_capabilities (test_k3s_lab_recovery.RecoveryHostTest.test_profile_uses_retained_image_and_only_two_capabilities) ... ok
+test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) ... ok
+test_exact_private_files_removed_without_reading_contents_or_public_files (test_k3s_lab_recovery.RecoveryTest.test_exact_private_files_removed_without_reading_contents_or_public_files) ... ok
+test_replacement_during_remount_preserves_both_directories (test_k3s_lab_recovery.RecoveryTest.test_replacement_during_remount_preserves_both_directories) ... ok
+test_wrong_private_shape_never_remounts_or_deletes (test_k3s_lab_recovery.RecoveryTest.test_wrong_private_shape_never_remounts_or_deletes) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.011s
+
+OK

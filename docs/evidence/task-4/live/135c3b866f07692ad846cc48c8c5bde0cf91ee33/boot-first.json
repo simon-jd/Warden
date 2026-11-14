@@ -1,0 +1,21 @@
+{
+  "source": "135c3b866f07692ad846cc48c8c5bde0cf91ee33",
+  "review": "docs/evidence/task-4/review-code-round-1.md",
+  "command": [
+    "python3",
+    "-B",
+    "scripts/firecracker_lab.py",
+    "boot",
+    "--other-service-memory-bytes",
+    "0",
+    "--reviewed-live-profile"
+  ],
+  "uid": 1000,
+  "start_utc": "2026-10-24T20:49:17.637151+00:00",
+  "end_utc": "2026-10-24T20:49:24.955012+00:00",
+  "elapsed_seconds": 7.317874334054068,
+  "exit_code": 1,
+  "log_bytes": 2539,
+  "log_sha256": "ffbe5264aecdc4314f4737a305cc1bc529b9699e3125516eb6e010721885bb8f",
+  "scope": "First controller actual local boot attempt under independently reviewed fixed KVM profile; result is not conformance/snapshot/capacity acceptance."
+}

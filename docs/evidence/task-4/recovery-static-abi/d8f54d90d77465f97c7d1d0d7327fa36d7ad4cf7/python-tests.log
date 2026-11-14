@@ -1,0 +1,10 @@
+test_abi_dependency_output_is_closed_and_missing_library_stops (test_firecracker_recovery.DependencyParserTests.test_abi_dependency_output_is_closed_and_missing_library_stops) ... ok
+test_existing_nonzero_cases_remain_unchanged (test_firecracker_recovery.DependencyParserTests.test_existing_nonzero_cases_remain_unchanged) ... ok
+test_normalized_literal_keeps_the_existing_output_bound (test_firecracker_recovery.DependencyParserTests.test_normalized_literal_keeps_the_existing_output_bound) ... ok
+test_observed_zero_exit_static_output_has_no_dependencies (test_firecracker_recovery.DependencyParserTests.test_observed_zero_exit_static_output_has_no_dependencies) ... ok
+test_zero_exit_rejects_any_static_stderr_and_nonliteral_output (test_firecracker_recovery.DependencyParserTests.test_zero_exit_rejects_any_static_stderr_and_nonliteral_output) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK

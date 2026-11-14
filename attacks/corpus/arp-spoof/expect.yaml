@@ -1,0 +1,3 @@
+id: arp-spoof
+technique: T1557.002
+success_signal: WARDEN_arp_spoof

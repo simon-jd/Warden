@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-26T09:38:16.561737+00:00",
+  "decision": "STOP_INFRASTRUCTURE_PREFLIGHT_FAILURE_NOT_BEHAVIORAL_RED",
+  "task10_actual_attempt": 1,
+  "attempt1_allowance": "SPENT_1/1; never replay consumed caller or relabel PASS",
+  "native": "18b94d known1",
+  "exact_error": "RuntimeError: fixed SDK tool unavailable: pkg/tool/linux_amd64/buildid",
+  "namespace_absent": true,
+  "no_Go_tool_or_test_spawned": true,
+  "no_new_descendants_containers_services": true,
+  "native_caller_ended_known": true,
+  "source_and_all17_frozen_inputs_unchanged": true,
+  "actual_buildid_lexists": false,
+  "other_four_named_SDK_tools": "regular owner1000/0555 executable; no chmod/download/probe",
+  "resource": "No runtime work allocated; original forecast not consumed, no new UNKNOWN memory. OldTask16UNKNOWN9GB/Q5GB/allhold remain. Actual partial failure and all preparation stay charged in R.",
+  "root_error": "Exact availability check should have been done before admission; preserved failure, do not call it business RED.",
+  "next": "Only minimal unapplied two-line diff removing absent unused buildid requirement and whitelist entry; no new retry/implementation implied. Any future candidate needs original root authorization/fresh gates/new namespace, preserving attempt1.",
+  "full_Task10": "OPEN; Score remains nil stub, no tests passed or full network acceptance",
+  "provenance": {
+    "source": "root_agent_in_existing_user_scope",
+    "human_response": false
+  }
+}

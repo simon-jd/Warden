@@ -1,0 +1,11 @@
+label cmd took 115 ms; release at + 10.23
+server -3.176 open 6 198.18.18.10
+server -2.054 open 7 198.18.18.10
+st-t up n 982 down n 970
+  up last in [t0,t3): 10.224 count [t0+1,t3): 462 first after release: 0.013 n after 312 maxgap 0.022
+  down last in [t0,t3): 10.216 count [t0+1,t3): 459 first after release: 0.005 n after 304 maxgap 0.021
+  other ['-3.176 connected 198.18.18.22:443 via -']
+st-c up n 925 down n 919
+  up last in [t0,t3): 10.229 count [t0+1,t3): 462 first after release: 0.016 n after 311 maxgap 0.022
+  down last in [t0,t3): 10.216 count [t0+1,t3): 459 first after release: 0.005 n after 309 maxgap 0.021
+  other ['-2.054 connected 198.18.18.22:443 via -']

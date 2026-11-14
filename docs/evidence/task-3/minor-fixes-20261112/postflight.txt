@@ -1,0 +1,9 @@
+# postflight after the conformance rerun, 2026-11-12T09:29:25-08:00, head 48090e3
+# Warden images left after the lab was down, before purge (whether they existed before this run's up was not recorded):
+#   warden-k3s-gvisor:lab e7185a764e87 created 2026-11-10 21:04:15 -0800 PST
+#   warden-lab/pause:1 29f90ebe01fd created 2026-11-10 17:01:00 -0800 PST
+$ scripts/k3s_gvisor_lab.sh purge
+exit: 0
+# project=warden containers: 0, networks: 0, images: 0
+# names starting with warden: containers: 0, networks: 0, images: 0
+# scratch clones under /tmp: 0

@@ -1,0 +1,12 @@
+=== RUN   TestKubernetesBindingLifecycleAndFencing
+--- PASS: TestKubernetesBindingLifecycleAndFencing (0.00s)
+=== RUN   TestKubernetesRemovalRejectsForeignUIDAndUnconfirmedDeletion
+=== RUN   TestKubernetesRemovalRejectsForeignUIDAndUnconfirmedDeletion/missing-persisted-fence
+--- PASS: TestKubernetesRemovalRejectsForeignUIDAndUnconfirmedDeletion (0.00s)
+    --- PASS: TestKubernetesRemovalRejectsForeignUIDAndUnconfirmedDeletion/missing-persisted-fence (0.00s)
+=== RUN   TestKubernetesEmptyReservationCleanup
+--- PASS: TestKubernetesEmptyReservationCleanup (0.00s)
+=== RUN   TestKubernetesRemovalRetryAfterClearAndDeleteFailure
+--- PASS: TestKubernetesRemovalRetryAfterClearAndDeleteFailure (0.00s)
+PASS
+ok  	warden/controlplane/internal/jit	0.004s

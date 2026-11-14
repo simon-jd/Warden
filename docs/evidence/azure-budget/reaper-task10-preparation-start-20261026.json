@@ -1,0 +1,17 @@
+{
+  "request": {
+    "cmd": "bash scripts/azure_reaper.sh",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "sandbox_permissions": "require_escalated",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false
+  },
+  "result": {
+    "chunk_id": "cf493e",
+    "wall_time_seconds": 0.697965241,
+    "exit_code": 0,
+    "original_token_count": 37,
+    "output": "{\"at\": \"2026-10-26T04:43:31Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+  }
+}

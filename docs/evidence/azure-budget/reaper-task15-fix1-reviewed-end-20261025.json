@@ -1,0 +1,37 @@
+{
+  "request": {
+    "cmd": "bash scripts/azure_reaper.sh",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "max_output_tokens": 2200,
+    "yield_time_ms": 1000,
+    "sandbox_permissions": "require_escalated",
+    "justification": "Run Warden's fixed end-of-session reaper after Task15 fix1 review, checking only owned rg-warden-lab TTL state and preserving protected rg-mlinfra-westus."
+  },
+  "result": {
+    "chunk_id": "a05696",
+    "wall_time_seconds": 1.001250887,
+    "session_id": 60651,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "polls": [
+    {
+      "request": {
+        "session_id": 60651,
+        "chars": "",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 2200
+      },
+      "result": {
+        "chunk_id": "e32703",
+        "wall_time_seconds": 3.0939e-05,
+        "exit_code": 0,
+        "original_token_count": 37,
+        "output": "{\"at\": \"2026-10-26T03:52:11Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+      }
+    }
+  ]
+}

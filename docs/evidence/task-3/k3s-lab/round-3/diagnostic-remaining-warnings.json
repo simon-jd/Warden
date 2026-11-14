@@ -1,0 +1,27 @@
+{
+  "matches": [
+    {
+      "line_number": 32,
+      "fixed_matches": [
+        "no cached certificate",
+        "dynamiclistener"
+      ]
+    },
+    {
+      "line_number": 81,
+      "fixed_matches": [
+        "Configuration migrated from version 3",
+        "use `containerd config migrate` to avoid migration"
+      ]
+    },
+    {
+      "line_number": 84,
+      "fixed_matches": [
+        "check",
+        "not supported",
+        "path"
+      ]
+    }
+  ],
+  "raw_persisted": false
+}

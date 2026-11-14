@@ -1,0 +1,27 @@
+# 2026-11-12T23:58:42-08:00 head b76d6a4; git status --short:
+ M scripts/test_k3s_gvisor_lab.py
+?? controlplane/internal/ciliumlab/egress_test.go
+?? controlplane/internal/ciliumlab/lab_test.go
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run1-1945/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2-attempt1/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2/
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/10-src-valid-mark-red.txt
+?? docs/evidence/task-10/cilium-lab-20261112/runs/
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -v -s scripts -t scripts -p test_k3s_gvisor_lab.py -k src_valid_mark
+test_cilium_node_turns_src_valid_mark_off_in_its_own_netns (test_k3s_gvisor_lab.GVisorLabScriptTest.test_cilium_node_turns_src_valid_mark_off_in_its_own_netns) ... 
+  test_cilium_node_turns_src_valid_mark_off_in_its_own_netns (test_k3s_gvisor_lab.GVisorLabScriptTest.test_cilium_node_turns_src_valid_mark_off_in_its_own_netns) (cni=['--cilium']) ... FAIL
+
+======================================================================
+FAIL: test_cilium_node_turns_src_valid_mark_off_in_its_own_netns (test_k3s_gvisor_lab.GVisorLabScriptTest.test_cilium_node_turns_src_valid_mark_off_in_its_own_netns) (cni=['--cilium'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_k3s_gvisor_lab.py", line 473, in test_cilium_node_turns_src_valid_mark_off_in_its_own_netns
+    self.assertEqual(any(node[i:i + 2] == flag for i in range(len(node))), want, node)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : ['create', '--name', 'warden-k3s-gvisor', '--label', 'project=warden', '--hostname', 'warden-gvisor', '--privileged', '--cgroupns=private', '--memory', '4g', '--memory-swap', '4g', '--cpus', '4', '--pids-limit', '4096', '--tmpfs', '/run', '--tmpfs', '/var/run', '--tmpfs', '/tmp', '--network', 'warden-k3s', '--ip', '172.30.0.10', '--entrypoint', '/warden-node-init', 'warden-k3s-gvisor:cilium', 'server', '--node-ip', '172.30.0.10']
+
+----------------------------------------------------------------------
+Ran 1 test in 1.972s
+
+FAILED (failures=1)
+exit 1

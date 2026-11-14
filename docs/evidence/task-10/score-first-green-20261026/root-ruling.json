@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-26T10:01:53.758938+00:00",
+  "decision": "ACCEPT_FIRST_GREEN_EVIDENCE_PENDING_INDEPENDENT_REVIEW",
+  "native": "e9ecf9/session13047 ->693170/79e9ca running ->c0f8a7 known0",
+  "Go_rc": 0,
+  "top_level_PASS": 9,
+  "PASS_including_subcases": 34,
+  "FAIL_SKIP": 0,
+  "whole_seconds": 20.411656372016296,
+  "package_seconds": 0.011,
+  "raw_bytes": 4740,
+  "raw_sha256": "00c8db98dc44986dcd0f72f98c094c681629048e8089904a31538f6a168df8f4",
+  "all17_frozen_inputs_source_staging_SDK_unchanged": true,
+  "work_owned_telemetry_modes_off": true,
+  "process_cleanup": "WNOWAIT held leader through all signals, then explicit known reap and same-group ECHILD under frozen new-session/subreaper chain; native0 finalized after fsync, no host/Task16 authority claim",
+  "namespace_final_allocated": 107708416,
+  "namespace_files": 1481,
+  "namespace_dirs": 269,
+  "largest_file": 13366088,
+  "observed_peak_work": 210771968,
+  "namespace_retained": true,
+  "new_UNKNOWN_memory": false,
+  "old_UNKNOWN9GB_Q5GB_all_holds": "unchanged",
+  "counters": {
+    "RED_callers": "2/2 SPENT: old preflightfailure and genuineRED preserved",
+    "FIRST_GREEN": "1/1 SPENT accepted",
+    "independent_review": "not yet performed",
+    "author_preparation": 241664,
+    "author_original_cap": 262144,
+    "remaining": 20480
+  },
+  "next": "Report append only, root two-pathSOURCE commit, original SDD initial independent Spec+Quality reviewer, no suite replay",
+  "full_Task10": "OPEN original network/collector/SNI/Host/Cilium/Envoy/runc actual acceptance; not replaced by scoring",
+  "provenance": {
+    "source": "root_agent_in_existing_user_scope",
+    "human_response": false
+  }
+}

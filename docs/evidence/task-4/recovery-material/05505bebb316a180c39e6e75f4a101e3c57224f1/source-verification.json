@@ -1,0 +1,194 @@
+{
+  "source": "05505bebb316a180c39e6e75f4a101e3c57224f1",
+  "source_parent": "0af30b0fae2f844651d37b996c455782b11bdaa2",
+  "fix_base": "96b20165e1bf1ba24e71e11b5487a9cc637692c0",
+  "predecessor_source": "8c8e9edf4a269effb155ae027b703cd9dc770836",
+  "changed_paths_exactly_allowed": true,
+  "changed_files": {
+    "docs/firecracker-recovery.md": {
+      "sha256": "4a21c39fe3ecec94f39054f1acda95ea156f6a816e2078f2ffd55742adb0e39c",
+      "bytes": 20073,
+      "mode": "0644"
+    },
+    "scripts/firecracker_recovery.py": {
+      "sha256": "492b256ed8c7477dec4be97ab4cc5f1383c0e8d7d2639b6e24b91f71eeb9cd68",
+      "bytes": 67711,
+      "mode": "0644"
+    },
+    "scripts/test_firecracker_recovery.py": {
+      "sha256": "dee8d2e79b343fcca34d93282925ebc0005423520232a78f1aa1959cf8019ecf",
+      "bytes": 54469,
+      "mode": "0644"
+    }
+  },
+  "changed_existing_host_functions": [
+    "build_archive",
+    "execute_phase",
+    "main",
+    "new_phase",
+    "runtime_inputs"
+  ],
+  "added_host_functions": [
+    "bound_account",
+    "directory_shape",
+    "held_hash",
+    "host_abi",
+    "open_public",
+    "operation_document",
+    "operation_read",
+    "phase_binding",
+    "predecessor",
+    "private_snapshot",
+    "public_directory",
+    "select_stdlib",
+    "validate_admission"
+  ],
+  "added_class": "RuntimeMaterial",
+  "unchanged_host_functions_AST": [
+    "account",
+    "admitted",
+    "bounded_command",
+    "check_anchor",
+    "check_archive",
+    "check_image",
+    "cleanup_helper",
+    "cleanup_phase",
+    "create_args",
+    "current_charges",
+    "dependencies",
+    "docker",
+    "exact_absence",
+    "file_sha",
+    "full_postflight",
+    "helper_absent",
+    "image_charge",
+    "inspect_profile",
+    "load",
+    "private_directory",
+    "project_lock",
+    "project_rest",
+    "read_private",
+    "restored_metadata",
+    "run_helper",
+    "save",
+    "sha",
+    "source_sha",
+    "state_read",
+    "validate_labels",
+    "validate_phase_state",
+    "validate_result",
+    "verify_records"
+  ],
+  "changed_or_added_constants": [
+    "DEVELOPMENT_OBJECT",
+    "HOST_ABI_CHECK",
+    "INPUT_GID",
+    "LINKS",
+    "MATERIAL_POLICY",
+    "OBJECT_HEADER",
+    "OBJECT_HEADER_SHA",
+    "OMITTED",
+    "PREDECESSOR_HELPER",
+    "PREDECESSOR_SOURCE",
+    "PREDECESSOR_WORK",
+    "PYTHON",
+    "STDLIB",
+    "STDLIB_NAME",
+    "SYSCONFIG_ALIAS",
+    "SYSCONFIG_TARGET",
+    "WORK"
+  ],
+  "other_top_level_AST_unchanged": true,
+  "unchanged_bindings": {
+    "scripts/firecracker_recovery_init.py": {
+      "sha256": "72675e91ac22ab3f1607fc5f21b90db18fc8c115e9a50bd8a48761cf70c8c9b2",
+      "bytes": 14633
+    },
+    "scripts/test_firecracker_recovery_init.py": {
+      "sha256": "78cc1d28223ceaa8c5b9f433dce41c08f328f13a9f9e2af950cddc7f5d893776",
+      "bytes": 12811
+    },
+    "scripts/firecracker_lab.py": {
+      "sha256": "551ba57ba4081155a612d0282a9a9299910390c67322b2042041642d45cafb0b",
+      "bytes": 32100
+    },
+    "scripts/firecracker_device_receipt.py": {
+      "sha256": "c9d10f1cea6f60a15a7d70b818121538b93b76e5d42a94eb3fbe62594855da4b",
+      "bytes": 9016
+    },
+    "scripts/firecracker_code.py": {
+      "sha256": "56abda58b8a822b7bc1ce7311025763878e7110c2d4cfabd84203dce556db4dd",
+      "bytes": 5257
+    },
+    "scripts/runtime_lab_docker.py": {
+      "sha256": "affadf0269b18f4352902801c2992e7a5cf14b57639d62be173a8619185f5773",
+      "bytes": 17520
+    },
+    "scripts/runtime_lab_paths.py": {
+      "sha256": "0ce3287feab8197839cf2e7e1cf297fd5cad0e740069023b188e4c366b643f84",
+      "bytes": 7395
+    },
+    "scripts/azure_guard.py": {
+      "sha256": "303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48",
+      "bytes": 27828
+    },
+    "scripts/k3s_lab.py": {
+      "sha256": "65b746e1bc715203b56b98f85517a9bc109f0d19984a36455d308da03489167e",
+      "bytes": 23176
+    },
+    "runtimes/firecracker/driver.go": {
+      "sha256": "4132c95539e1eca6f95d0b288b5b24c1263cb89a39b2d12656b7d9b1ca648dd7",
+      "bytes": 9027
+    },
+    "runtimes/firecracker/identity.go": {
+      "sha256": "b96416588f72a2a26023e268ff26f74329005773811bcc78f7b232b6e2e932fd",
+      "bytes": 5278
+    },
+    "runtimes/firecracker/vm.go": {
+      "sha256": "b6d892dd1ef51d2a7c06a7eb5d4b545c79a503fb52f08a2e95d073bc7bc72bee",
+      "bytes": 11123
+    },
+    "runtimes/firecracker/process.go": {
+      "sha256": "c5bd0e2dc5cb78475659410689118931e75d848fd53c386b0a9beda94eb38861",
+      "bytes": 1766
+    },
+    "runtimes/gate/gate.go": {
+      "sha256": "0b5a5b140a7124c9d2a65567694e5b662d13bb99b7fdcd1cedadc434273f8284",
+      "bytes": 8507
+    }
+  },
+  "old_current_indexes": {
+    "docs/evidence/task-4/recovery-live/8c8e9edf4a269effb155ae027b703cd9dc770836/evidence-index.json": {
+      "sha256": "4c45a2792d1f8ce900c087e957318c4eec87598d987a2948bdeda2a412f86067",
+      "entries_verified": 8,
+      "observed_modes_not_normalized": {
+        "README.md": "0664",
+        "controller-recovery-a-command.py": "0600",
+        "inspect-meta.json": "0600",
+        "inspect.log": "0600",
+        "material-cleanup-postflight.json": "0600",
+        "material-only-cleanup-meta.json": "0600",
+        "material-only-cleanup.log": "0600",
+        "material-refusal-postflight.json": "0644"
+      },
+      "all_match": true
+    },
+    "docs/evidence/task-4/recovery-safety-amendment/8c8e9edf4a269effb155ae027b703cd9dc770836/evidence-index.json": {
+      "sha256": "9cb17766581181e53131e005b4db22e5bc26eeaa50218fee9624a261c389ea00",
+      "entries_verified": 7,
+      "observed_modes_not_normalized": {
+        "README.md": "0644",
+        "history-pending-red.log": "0644",
+        "history-state-green.log": "0644",
+        "python-tests.log": "0644",
+        "source-verification.json": "0644",
+        "source-verification.log": "0644",
+        "verify-command.py": "0644"
+      },
+      "all_match": true
+    }
+  },
+  "historical_176_file_crawl_repeated": false,
+  "helper_suite_repeated": false,
+  "actual_material_ABI_Docker_live_recovery_or_Go_executed": false
+}

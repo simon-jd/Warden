@@ -1,0 +1,85 @@
+test_prepared_replaced_during_parent_fsync_refuses_before_mutation (test_identity_cache_continue.ContinuationTests.test_prepared_replaced_during_parent_fsync_refuses_before_mutation) ... FAIL
+test_prepared_altered_during_parent_fsync_refuses_before_mutation (test_identity_cache_continue.ContinuationTests.test_prepared_altered_during_parent_fsync_refuses_before_mutation) ... FAIL
+test_ready_replaced_during_parent_fsync_refuses_before_unlink (test_identity_cache_continue.ContinuationTests.test_ready_replaced_during_parent_fsync_refuses_before_unlink) ... FAIL
+test_ready_altered_during_parent_fsync_refuses_before_unlink (test_identity_cache_continue.ContinuationTests.test_ready_altered_during_parent_fsync_refuses_before_unlink) ... FAIL
+
+======================================================================
+FAIL: test_prepared_replaced_during_parent_fsync_refuses_before_mutation (test_identity_cache_continue.ContinuationTests.test_prepared_replaced_during_parent_fsync_refuses_before_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_continue.py", line 208, in test_prepared_replaced_during_parent_fsync_refuses_before_mutation
+    self.journal_parent_fsync_change(continuation.PREPARED, True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_continue.py", line 188, in journal_parent_fsync_change
+    self.assertEqual(mutations, [], 'journal substitution must not authorize target mutation')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['fchmod', 'fchmod', 'fchmod', 'unlink', 'unlink', 'unlink', 'rmdir'] != []
+
+First list contains 7 additional elements.
+First extra element 0:
+'fchmod'
+
+- ['fchmod', 'fchmod', 'fchmod', 'unlink', 'unlink', 'unlink', 'rmdir']
++ [] : journal substitution must not authorize target mutation
+
+======================================================================
+FAIL: test_prepared_altered_during_parent_fsync_refuses_before_mutation (test_identity_cache_continue.ContinuationTests.test_prepared_altered_during_parent_fsync_refuses_before_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_continue.py", line 211, in test_prepared_altered_during_parent_fsync_refuses_before_mutation
+    self.journal_parent_fsync_change(continuation.PREPARED, False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_continue.py", line 188, in journal_parent_fsync_change
+    self.assertEqual(mutations, [], 'journal substitution must not authorize target mutation')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['fchmod', 'fchmod', 'fchmod', 'unlink', 'unlink', 'unlink', 'rmdir'] != []
+
+First list contains 7 additional elements.
+First extra element 0:
+'fchmod'
+
+- ['fchmod', 'fchmod', 'fchmod', 'unlink', 'unlink', 'unlink', 'rmdir']
++ [] : journal substitution must not authorize target mutation
+
+======================================================================
+FAIL: test_ready_replaced_during_parent_fsync_refuses_before_unlink (test_identity_cache_continue.ContinuationTests.test_ready_replaced_during_parent_fsync_refuses_before_unlink)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_continue.py", line 214, in test_ready_replaced_during_parent_fsync_refuses_before_unlink
+    self.journal_parent_fsync_change(continuation.READY, True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_continue.py", line 188, in journal_parent_fsync_change
+    self.assertEqual(mutations, [], 'journal substitution must not authorize target mutation')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['unlink', 'unlink', 'unlink', 'rmdir'] != []
+
+First list contains 4 additional elements.
+First extra element 0:
+'unlink'
+
+- ['unlink', 'unlink', 'unlink', 'rmdir']
++ [] : journal substitution must not authorize target mutation
+
+======================================================================
+FAIL: test_ready_altered_during_parent_fsync_refuses_before_unlink (test_identity_cache_continue.ContinuationTests.test_ready_altered_during_parent_fsync_refuses_before_unlink)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_continue.py", line 217, in test_ready_altered_during_parent_fsync_refuses_before_unlink
+    self.journal_parent_fsync_change(continuation.READY, False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_continue.py", line 188, in journal_parent_fsync_change
+    self.assertEqual(mutations, [], 'journal substitution must not authorize target mutation')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['unlink', 'unlink', 'unlink', 'rmdir'] != []
+
+First list contains 4 additional elements.
+First extra element 0:
+'unlink'
+
+- ['unlink', 'unlink', 'unlink', 'rmdir']
++ [] : journal substitution must not authorize target mutation
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.258s
+
+FAILED (failures=4)

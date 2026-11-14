@@ -1,0 +1,34 @@
+# GREEN: the same tests after outerPidsMax (supervisor.go) and outer_pids (firecracker_lab.py), then the whole runtimes/firecracker package and test_firecracker_lab.py
+# 2026-11-13T18:17:00Z head 3a8c8ad  M runtimes/firecracker/supervisor.go  M runtimes/firecracker/supervisor_test.go  M scripts/firecracker_lab.py  M scripts/test_firecracker_lab.py ?? docs/evidence/task-4/pids-limit-20261113/ 
+$ go test -count=1 -v -run '^(TestOuterPidsRaisedForCapacityPressureOnly|TestOuterLimitsOnlyCanonicalPageFloor|TestOuterLimitsMustMatchFixedMode)$' ./runtimes/firecracker
+=== RUN   TestOuterLimitsMustMatchFixedMode
+--- PASS: TestOuterLimitsMustMatchFixedMode (0.00s)
+=== RUN   TestOuterLimitsOnlyCanonicalPageFloor
+--- PASS: TestOuterLimitsOnlyCanonicalPageFloor (0.00s)
+=== RUN   TestOuterPidsRaisedForCapacityPressureOnly
+--- PASS: TestOuterPidsRaisedForCapacityPressureOnly (0.00s)
+PASS
+ok  	warden/runtimes/firecracker	0.003s
+exit 0
+
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_firecracker_lab.py -k OuterPidsTests -k DevicePolicyModeTests -v
+test_all_six_privileged_modes_require_interactive_fixed_entrypoint (test_firecracker_lab.DevicePolicyModeTests.test_all_six_privileged_modes_require_interactive_fixed_entrypoint) ... ok
+test_only_capacity_pressure_gets_the_raised_pid_limit (test_firecracker_lab.OuterPidsTests.test_only_capacity_pressure_gets_the_raised_pid_limit) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.007s
+
+OK
+exit 0
+
+$ go test -count=1 -shuffle=on ./runtimes/firecracker
+ok  	warden/runtimes/firecracker	1.537s
+exit 0
+
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_firecracker_lab.py
+...................
+----------------------------------------------------------------------
+Ran 19 tests in 0.038s
+
+OK
+exit 0

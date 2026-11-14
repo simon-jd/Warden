@@ -1,0 +1,6 @@
+test_completed_outer_cannot_release_without_cgroup_absence (test_firecracker_lab.DeviceReleaseTests.test_completed_outer_cannot_release_without_cgroup_absence) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.008s
+
+OK

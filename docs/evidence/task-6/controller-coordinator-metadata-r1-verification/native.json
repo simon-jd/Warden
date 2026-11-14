@@ -1,0 +1,850 @@
+{
+  "cases": [
+    {
+      "after": {
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json": {
+          "metadata": [
+            47,
+            2648069,
+            1000,
+            1000,
+            33152,
+            1,
+            497,
+            1792954915379258492,
+            1792954915379258492,
+            8
+          ],
+          "sha256": "dabd831e9578cf06a0184a861cb22e3ebed2696b4bca8935d2353c492fdb9cbc"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json": {
+          "metadata": [
+            47,
+            2648068,
+            1000,
+            1000,
+            33152,
+            1,
+            33,
+            1792954915379226944,
+            1792954915393767871,
+            8
+          ],
+          "sha256": "0c4ef02d96d71d126225be9cd4aa99b3d006d51a04edadd8046abd5ece4fdba4"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json": {
+          "metadata": [
+            47,
+            2648067,
+            1000,
+            1000,
+            33152,
+            1,
+            40,
+            1792954915379213248,
+            1792954915393767871,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "before": {
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json": {
+          "metadata": [
+            47,
+            2648069,
+            1000,
+            1000,
+            33152,
+            1,
+            497,
+            1792954915379258492,
+            1792954915379258492,
+            8
+          ],
+          "sha256": "dabd831e9578cf06a0184a861cb22e3ebed2696b4bca8935d2353c492fdb9cbc"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json": {
+          "metadata": [
+            47,
+            2648068,
+            1000,
+            1000,
+            33204,
+            1,
+            33,
+            1792954915379226944,
+            1792954915379226944,
+            8
+          ],
+          "sha256": "0c4ef02d96d71d126225be9cd4aa99b3d006d51a04edadd8046abd5ece4fdba4"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json": {
+          "metadata": [
+            47,
+            2648067,
+            1000,
+            1000,
+            33204,
+            1,
+            40,
+            1792954915379213248,
+            1792954915379226944,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "case": "happy",
+      "exit_code": 0,
+      "owned_pid": 3,
+      "passed": true,
+      "receipt_proof": {
+        "bytes": 497,
+        "metadata": [
+          47,
+          2648069,
+          1000,
+          1000,
+          33152,
+          1,
+          497,
+          1792954915379258492,
+          1792954915379258492,
+          8
+        ],
+        "sha256": "dabd831e9578cf06a0184a861cb22e3ebed2696b4bca8935d2353c492fdb9cbc"
+      },
+      "request": {
+        "argv": [
+          "/usr/bin/python3",
+          "-I",
+          "-S",
+          "-B",
+          "-",
+          "{\"collector\":\"{\\\"receipt\\\":{\\\"bytes\\\":497,\\\"metadata\\\":[47,2648069,1000,1000,33152,1,497,1792954915379258492,1792954915379258492,8],\\\"sha256\\\":\\\"dabd831e9578cf06a0184a861cb22e3ebed2696b4bca8935d2353c492fdb9cbc\\\"},\\\"clock_identity\\\":{\\\"machine_id\\\":\\\"fixture-only\\\",\\\"boot_id\\\":\\\"fixture-only\\\"}}\",\"raw\":\"{\\\"fixture\\\":\\\"raw apostrophe ' retained\\\"}\\n\",\"reader\":\"{\\\"fixture\\\":\\\"reader exact bytes\\\"}\\n\"}"
+        ],
+        "cwd": "/tmp/warden-coord-r1-nsh3vlh5/happy",
+        "env": {
+          "LANG": "C",
+          "LC_ALL": "C",
+          "PATH": "/usr/bin:/bin"
+        },
+        "stdin": "import os,sys,time,signal,resource,json,hashlib,stat\n_root='/tmp/warden-coord-r1-nsh3vlh5/happy'\n_mode='happy'\n_P='controller-cache-continuation-v1-20261025-coord-metadata-r1-material-'\n_parts=('home','postedism','Desktop','Warden','docs','evidence','task-6')\n_names=(_P+'receipt.json',_P+'root-tool.json',_P+'root-proof-reader-tool.json')\n_df=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\n_ff=os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC\n_open,_stat,_fstat,_pread,_close,_chmod,_sync=os.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync\n_rename=os.rename\n_held={};_root_used=False;_chmods=[];_syncs=[];_opens=[];_replaced=False\ndef _need(v):\n if not v:raise RuntimeError('fixture path/FD firewall')\ndef _o(path,flags,mode=0o777,*,dir_fd=None):\n global _root_used,_replaced\n if dir_fd is None:\n  _need(not _root_used and path=='/' and flags==_df);_root_used=True\n  fd=_open(_root,flags);_held[fd]=('dir',0);_opens.append('ROUTED_ROOT');return fd\n _need(dir_fd in _held and _held[dir_fd][0]=='dir')\n depth=_held[dir_fd][1]\n if depth<len(_parts):\n  _need(path==_parts[depth] and flags==_df);fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('dir',depth+1)\n else:\n  _need(path in _names and flags==_ff)\n  if _mode=='replacement' and path==_names[2]:\n   _need(not _replaced);_replaced=True\n   _rename(_names[1],'displaced.raw',src_dir_fd=dir_fd,dst_dir_fd=dir_fd)\n   _rename('prepared.raw',_names[1],src_dir_fd=dir_fd,dst_dir_fd=dir_fd)\n  fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('file',path)\n _opens.append(path);return fd\ndef _s(path,*,dir_fd=None,follow_symlinks=True):\n _need(dir_fd in _held and _held[dir_fd][0]=='dir' and follow_symlinks is False)\n depth=_held[dir_fd][1];_need(path==_parts[depth] if depth<len(_parts) else path in _names)\n return _stat(path,dir_fd=dir_fd,follow_symlinks=False)\ndef _f(fd):_need(fd in _held);return _fstat(fd)\ndef _p(fd,n,offset):\n _need(fd in _held and _held[fd][0]=='file' and 0<n<=65537 and offset==0);return _pread(fd,n,offset)\ndef _c(fd):_need(fd in _held);_close(fd);del _held[fd]\ndef _m(fd,mode):\n _need(fd in _held and _held[fd][0]=='file' and _held[fd][1] in _names[1:] and mode==0o600)\n _chmods.append(_held[fd][1]);return _chmod(fd,mode)\ndef _y(fd):\n _need(fd in _held and _held[fd][0]=='file' and _held[fd][1] in _names[1:]);_syncs.append(_held[fd][1]);return _sync(fd)\nos.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync=_o,_s,_f,_p,_c,_m,_y\ntry:\n exec(compile('import time\\nM0=time.monotonic_ns();B0=time.clock_gettime_ns(time.CLOCK_BOOTTIME);A0=time.monotonic_ns()\\nimport os,sys,signal,resource\\ndef need(ok):\\n if not ok:raise ValueError(\\'material metadata refusal\\')\\nneed(0<=A0-M0<=100000000)\\nme=M0+5000000000;be=B0+5000000000;lo=B0-A0;hi=B0-M0;fm=A0;fb=B0\\ndef check():\\n global lo,hi,fm,fb\\n u=time.monotonic_ns();b=time.clock_gettime_ns(time.CLOCK_BOOTTIME);a=time.monotonic_ns()\\n need(0<=a-u<=100000000 and fm<=u<=a<me and fb<=b<be)\\n lo=max(lo,b-a);hi=min(hi,b-u);need(lo<=hi);fm=a;fb=b\\n return a,b\\ndef arm():\\n a,b=check();signal.setitimer(signal.ITIMER_REAL,min(me-a,be-b)/1000000000)\\nsignal.signal(signal.SIGALRM,lambda *_:os._exit(124));arm()\\nfor k,n in ((resource.RLIMIT_CPU,2),(resource.RLIMIT_AS,134217728),(resource.RLIMIT_FSIZE,1048576)):\\n soft,hard=resource.getrlimit(k);need(hard==resource.RLIM_INFINITY or hard>=n);resource.setrlimit(k,(n,n))\\nimport json,hashlib,stat\\ndef pairs(items):\\n value={}\\n for k,v in items:need(k not in value);value[k]=v\\n return value\\ndef bad(_):raise ValueError(\\'noninteger JSON\\')\\ndef parse(s):return json.loads(s,object_pairs_hook=pairs,parse_float=bad,parse_constant=bad)\\ndef meta(s):return [getattr(s,\\'st_\\'+k) for k in (\\'dev\\',\\'ino\\',\\'uid\\',\\'gid\\',\\'mode\\',\\'nlink\\',\\'size\\',\\'mtime_ns\\',\\'ctime_ns\\',\\'blocks\\')]\\nfds=[];dirs=[];records=[]\\ndef keep(fd):fds.append(fd);return fd\\ndef parents():\\n check()\\n for parent,name,fd,before in dirs:\\n  now=meta(os.fstat(fd));need(now==before)\\n  if parent is not None:need(meta(os.stat(name,dir_fd=parent,follow_symlinks=False))==now)\\n check()\\ndef same(record):\\n check();parents();fd,name,data,m=record\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)))\\n need(os.pread(fd,65537,0)==data)\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)));check()\\ndef all_same():\\n for record in records:same(record)\\ndef read(name,cap,modes,want=None):\\n check();parents()\\n fd=keep(os.open(name,os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC,dir_fd=public));s=os.fstat(fd)\\n need(stat.S_ISREG(s.st_mode) and s.st_uid==s.st_gid==1000 and s.st_nlink==1 and s.st_dev==os.fstat(public).st_dev and stat.S_IMODE(s.st_mode) in modes and 0<s.st_size<=cap)\\n data=os.pread(fd,cap+1,0);need(len(data)==s.st_size and (want is None or data==want))\\n record=[fd,name,data,meta(s)];same(record);records.append(record);return record\\ntry:\\n need(os.getuid()==os.geteuid()==os.getgid()==os.getegid()==1000 and len(sys.argv)==2)\\n value=parse(sys.argv[1]);need(type(value) is dict and set(value)=={\\'collector\\',\\'raw\\',\\'reader\\'} and all(type(v) is str for v in value.values()))\\n intended=[value[\\'raw\\'].encode(),value[\\'reader\\'].encode()];need(all(0<len(v)<=65536 and v.endswith(b\\'\\\\n\\') for v in intended))\\n collected=parse(value[\\'collector\\']);expected=collected[\\'receipt\\']\\n need(type(expected) is dict and set(expected)=={\\'bytes\\',\\'metadata\\',\\'sha256\\'} and type(expected[\\'bytes\\']) is int and type(expected[\\'metadata\\']) is list and len(expected[\\'metadata\\'])==10 and all(type(x) is int for x in expected[\\'metadata\\']))\\n flags=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\\n public=keep(os.open(\\'/\\',flags));s=os.fstat(public);need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((None,None,public,meta(s)))\\n for part in (\\'home\\',\\'postedism\\',\\'Desktop\\',\\'Warden\\',\\'docs\\',\\'evidence\\',\\'task-6\\'):\\n  parent=public;public=keep(os.open(part,flags,dir_fd=parent));s=os.fstat(public)\\n  need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((parent,part,public,meta(s)))\\n P=\\'controller-cache-continuation-v1-20261025-coord-metadata-r1-material-\\'\\n receipt=read(P+\\'receipt.json\\',16384,(0o600,0o644))\\n need(expected=={\\'bytes\\':len(receipt[2]),\\'metadata\\':receipt[3],\\'sha256\\':hashlib.sha256(receipt[2]).hexdigest()})\\n received=parse(receipt[2]);need(received[\\'clock_identity\\']==collected[\\'clock_identity\\'])\\n timing=received[\\'timing\\'];origin=timing[\\'origin\\'];first=origin[\\'sample\\'];last=timing[\\'final_sample\\']\\n names=(\\'monotonic_before_ns\\',\\'boottime_ns\\',\\'monotonic_after_ns\\')\\n values=[origin[\\'budget_start_monotonic_lower_ns\\'],first[\\'birth_boot_lower_ns\\'],timing[\\'ended_monotonic_ns\\']]+[s[n] for s in (first,last) for n in names]\\n need(all(type(x) is int and x>=0 for x in values))\\n need(origin[\\'budget_start_monotonic_lower_ns\\']<=first[\\'monotonic_before_ns\\']<=first[\\'monotonic_after_ns\\']<=last[\\'monotonic_before_ns\\']<=last[\\'monotonic_after_ns\\']<=timing[\\'ended_monotonic_ns\\'])\\n need(first[\\'birth_boot_lower_ns\\']<=first[\\'boottime_ns\\']<=last[\\'boottime_ns\\']<=B0 and last[\\'monotonic_after_ns\\']<=M0)\\n for sample in (first,last):\\n  need(sample[\\'monotonic_after_ns\\']-sample[\\'monotonic_before_ns\\']<=100000000)\\n  lo=max(lo,sample[\\'boottime_ns\\']-sample[\\'monotonic_after_ns\\']);hi=min(hi,sample[\\'boottime_ns\\']-sample[\\'monotonic_before_ns\\'])\\n need(lo<=hi)\\n me=min(me,origin[\\'budget_start_monotonic_lower_ns\\']+30000000000);be=min(be,first[\\'birth_boot_lower_ns\\']+30000000000);arm()\\n targets=[read(P+name,65536,(0o600,0o644,0o664),want) for name,want in zip((\\'root-tool.json\\',\\'root-proof-reader-tool.json\\'),intended)]\\n need(targets[0][3][:2]!=targets[1][3][:2]);all_same()\\n for record in targets:\\n  all_same();check();before=record[3];os.fchmod(record[0],0o600);check();after=meta(os.fstat(record[0]))\\n  need(after[4]==stat.S_IFREG|0o600 and all(after[i]==before[i] for i in (0,1,2,3,5,6,7,9)))\\n  record[3]=after;os.fsync(record[0]);check();all_same()\\n all_same();sys.stdout.write(\\'{\"state\":\"material-metadata-finalized\",\"authority\":false}\\\\n\\');sys.stdout.flush();all_same()\\nfinally:\\n for fd in reversed(fds):check();os.close(fd);check()\\ncheck()\\n','<unchanged-metadata-body>','exec'),{})\nfinally:\n sys.stderr.write('WARDEN_COORD_R1_FD_TELEMETRY '+json.dumps({'root_routed':_root_used,'opens':_opens,'fchmod':_chmods,'fsync':_syncs,'held_count':len(_held),'replacement_injected':_replaced},separators=(',',':'))+'\\n');sys.stderr.flush()\n"
+      },
+      "stderr": "WARDEN_COORD_R1_FD_TELEMETRY {\"root_routed\":true,\"opens\":[\"ROUTED_ROOT\",\"home\",\"postedism\",\"Desktop\",\"Warden\",\"docs\",\"evidence\",\"task-6\",\"controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json\",\"controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json\",\"controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json\"],\"fchmod\":[\"controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json\",\"controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json\"],\"fsync\":[\"controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json\",\"controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json\"],\"held_count\":0,\"replacement_injected\":false}\n",
+      "stdout": "{\"state\":\"material-metadata-finalized\",\"authority\":false}\n",
+      "telemetry": {
+        "fchmod": [
+          "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json",
+          "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json"
+        ],
+        "fsync": [
+          "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json",
+          "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json"
+        ],
+        "held_count": 0,
+        "opens": [
+          "ROUTED_ROOT",
+          "home",
+          "postedism",
+          "Desktop",
+          "Warden",
+          "docs",
+          "evidence",
+          "task-6",
+          "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json",
+          "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json",
+          "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json"
+        ],
+        "replacement_injected": false,
+        "root_routed": true
+      },
+      "temporary_allocated_after": 12288,
+      "temporary_allocated_before": 12288,
+      "timed_out": false
+    },
+    {
+      "after": {
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json": {
+          "metadata": [
+            47,
+            2648080,
+            1000,
+            1000,
+            33152,
+            1,
+            497,
+            1792954915398187324,
+            1792954915398187324,
+            8
+          ],
+          "sha256": "e10ca5a1bec36ae03071bc2520877ea19de2d4efdd29ced983588e2562cafe2f"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json": {
+          "metadata": [
+            47,
+            2648079,
+            1000,
+            1000,
+            33204,
+            1,
+            33,
+            1792954915398155176,
+            1792954915398155176,
+            8
+          ],
+          "sha256": "0c4ef02d96d71d126225be9cd4aa99b3d006d51a04edadd8046abd5ece4fdba4"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json": {
+          "metadata": [
+            47,
+            2648078,
+            1000,
+            1000,
+            33204,
+            1,
+            40,
+            1792954915398139373,
+            1792954915398155176,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "before": {
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json": {
+          "metadata": [
+            47,
+            2648080,
+            1000,
+            1000,
+            33152,
+            1,
+            497,
+            1792954915398187324,
+            1792954915398187324,
+            8
+          ],
+          "sha256": "e10ca5a1bec36ae03071bc2520877ea19de2d4efdd29ced983588e2562cafe2f"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json": {
+          "metadata": [
+            47,
+            2648079,
+            1000,
+            1000,
+            33204,
+            1,
+            33,
+            1792954915398155176,
+            1792954915398155176,
+            8
+          ],
+          "sha256": "0c4ef02d96d71d126225be9cd4aa99b3d006d51a04edadd8046abd5ece4fdba4"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json": {
+          "metadata": [
+            47,
+            2648078,
+            1000,
+            1000,
+            33204,
+            1,
+            40,
+            1792954915398139373,
+            1792954915398155176,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "case": "wrong-intended",
+      "exit_code": 1,
+      "owned_pid": 4,
+      "passed": true,
+      "receipt_proof": {
+        "bytes": 497,
+        "metadata": [
+          47,
+          2648080,
+          1000,
+          1000,
+          33152,
+          1,
+          497,
+          1792954915398187324,
+          1792954915398187324,
+          8
+        ],
+        "sha256": "e10ca5a1bec36ae03071bc2520877ea19de2d4efdd29ced983588e2562cafe2f"
+      },
+      "request": {
+        "argv": [
+          "/usr/bin/python3",
+          "-I",
+          "-S",
+          "-B",
+          "-",
+          "{\"collector\":\"{\\\"receipt\\\":{\\\"bytes\\\":497,\\\"metadata\\\":[47,2648080,1000,1000,33152,1,497,1792954915398187324,1792954915398187324,8],\\\"sha256\\\":\\\"e10ca5a1bec36ae03071bc2520877ea19de2d4efdd29ced983588e2562cafe2f\\\"},\\\"clock_identity\\\":{\\\"machine_id\\\":\\\"fixture-only\\\",\\\"boot_id\\\":\\\"fixture-only\\\"}}\",\"raw\":\"{\\\"fixture\\\":\\\"different intended bytes\\\"}\\n\",\"reader\":\"{\\\"fixture\\\":\\\"reader exact bytes\\\"}\\n\"}"
+        ],
+        "cwd": "/tmp/warden-coord-r1-nsh3vlh5/wrong-intended",
+        "env": {
+          "LANG": "C",
+          "LC_ALL": "C",
+          "PATH": "/usr/bin:/bin"
+        },
+        "stdin": "import os,sys,time,signal,resource,json,hashlib,stat\n_root='/tmp/warden-coord-r1-nsh3vlh5/wrong-intended'\n_mode='wrong-intended'\n_P='controller-cache-continuation-v1-20261025-coord-metadata-r1-material-'\n_parts=('home','postedism','Desktop','Warden','docs','evidence','task-6')\n_names=(_P+'receipt.json',_P+'root-tool.json',_P+'root-proof-reader-tool.json')\n_df=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\n_ff=os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC\n_open,_stat,_fstat,_pread,_close,_chmod,_sync=os.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync\n_rename=os.rename\n_held={};_root_used=False;_chmods=[];_syncs=[];_opens=[];_replaced=False\ndef _need(v):\n if not v:raise RuntimeError('fixture path/FD firewall')\ndef _o(path,flags,mode=0o777,*,dir_fd=None):\n global _root_used,_replaced\n if dir_fd is None:\n  _need(not _root_used and path=='/' and flags==_df);_root_used=True\n  fd=_open(_root,flags);_held[fd]=('dir',0);_opens.append('ROUTED_ROOT');return fd\n _need(dir_fd in _held and _held[dir_fd][0]=='dir')\n depth=_held[dir_fd][1]\n if depth<len(_parts):\n  _need(path==_parts[depth] and flags==_df);fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('dir',depth+1)\n else:\n  _need(path in _names and flags==_ff)\n  if _mode=='replacement' and path==_names[2]:\n   _need(not _replaced);_replaced=True\n   _rename(_names[1],'displaced.raw',src_dir_fd=dir_fd,dst_dir_fd=dir_fd)\n   _rename('prepared.raw',_names[1],src_dir_fd=dir_fd,dst_dir_fd=dir_fd)\n  fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('file',path)\n _opens.append(path);return fd\ndef _s(path,*,dir_fd=None,follow_symlinks=True):\n _need(dir_fd in _held and _held[dir_fd][0]=='dir' and follow_symlinks is False)\n depth=_held[dir_fd][1];_need(path==_parts[depth] if depth<len(_parts) else path in _names)\n return _stat(path,dir_fd=dir_fd,follow_symlinks=False)\ndef _f(fd):_need(fd in _held);return _fstat(fd)\ndef _p(fd,n,offset):\n _need(fd in _held and _held[fd][0]=='file' and 0<n<=65537 and offset==0);return _pread(fd,n,offset)\ndef _c(fd):_need(fd in _held);_close(fd);del _held[fd]\ndef _m(fd,mode):\n _need(fd in _held and _held[fd][0]=='file' and _held[fd][1] in _names[1:] and mode==0o600)\n _chmods.append(_held[fd][1]);return _chmod(fd,mode)\ndef _y(fd):\n _need(fd in _held and _held[fd][0]=='file' and _held[fd][1] in _names[1:]);_syncs.append(_held[fd][1]);return _sync(fd)\nos.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync=_o,_s,_f,_p,_c,_m,_y\ntry:\n exec(compile('import time\\nM0=time.monotonic_ns();B0=time.clock_gettime_ns(time.CLOCK_BOOTTIME);A0=time.monotonic_ns()\\nimport os,sys,signal,resource\\ndef need(ok):\\n if not ok:raise ValueError(\\'material metadata refusal\\')\\nneed(0<=A0-M0<=100000000)\\nme=M0+5000000000;be=B0+5000000000;lo=B0-A0;hi=B0-M0;fm=A0;fb=B0\\ndef check():\\n global lo,hi,fm,fb\\n u=time.monotonic_ns();b=time.clock_gettime_ns(time.CLOCK_BOOTTIME);a=time.monotonic_ns()\\n need(0<=a-u<=100000000 and fm<=u<=a<me and fb<=b<be)\\n lo=max(lo,b-a);hi=min(hi,b-u);need(lo<=hi);fm=a;fb=b\\n return a,b\\ndef arm():\\n a,b=check();signal.setitimer(signal.ITIMER_REAL,min(me-a,be-b)/1000000000)\\nsignal.signal(signal.SIGALRM,lambda *_:os._exit(124));arm()\\nfor k,n in ((resource.RLIMIT_CPU,2),(resource.RLIMIT_AS,134217728),(resource.RLIMIT_FSIZE,1048576)):\\n soft,hard=resource.getrlimit(k);need(hard==resource.RLIM_INFINITY or hard>=n);resource.setrlimit(k,(n,n))\\nimport json,hashlib,stat\\ndef pairs(items):\\n value={}\\n for k,v in items:need(k not in value);value[k]=v\\n return value\\ndef bad(_):raise ValueError(\\'noninteger JSON\\')\\ndef parse(s):return json.loads(s,object_pairs_hook=pairs,parse_float=bad,parse_constant=bad)\\ndef meta(s):return [getattr(s,\\'st_\\'+k) for k in (\\'dev\\',\\'ino\\',\\'uid\\',\\'gid\\',\\'mode\\',\\'nlink\\',\\'size\\',\\'mtime_ns\\',\\'ctime_ns\\',\\'blocks\\')]\\nfds=[];dirs=[];records=[]\\ndef keep(fd):fds.append(fd);return fd\\ndef parents():\\n check()\\n for parent,name,fd,before in dirs:\\n  now=meta(os.fstat(fd));need(now==before)\\n  if parent is not None:need(meta(os.stat(name,dir_fd=parent,follow_symlinks=False))==now)\\n check()\\ndef same(record):\\n check();parents();fd,name,data,m=record\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)))\\n need(os.pread(fd,65537,0)==data)\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)));check()\\ndef all_same():\\n for record in records:same(record)\\ndef read(name,cap,modes,want=None):\\n check();parents()\\n fd=keep(os.open(name,os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC,dir_fd=public));s=os.fstat(fd)\\n need(stat.S_ISREG(s.st_mode) and s.st_uid==s.st_gid==1000 and s.st_nlink==1 and s.st_dev==os.fstat(public).st_dev and stat.S_IMODE(s.st_mode) in modes and 0<s.st_size<=cap)\\n data=os.pread(fd,cap+1,0);need(len(data)==s.st_size and (want is None or data==want))\\n record=[fd,name,data,meta(s)];same(record);records.append(record);return record\\ntry:\\n need(os.getuid()==os.geteuid()==os.getgid()==os.getegid()==1000 and len(sys.argv)==2)\\n value=parse(sys.argv[1]);need(type(value) is dict and set(value)=={\\'collector\\',\\'raw\\',\\'reader\\'} and all(type(v) is str for v in value.values()))\\n intended=[value[\\'raw\\'].encode(),value[\\'reader\\'].encode()];need(all(0<len(v)<=65536 and v.endswith(b\\'\\\\n\\') for v in intended))\\n collected=parse(value[\\'collector\\']);expected=collected[\\'receipt\\']\\n need(type(expected) is dict and set(expected)=={\\'bytes\\',\\'metadata\\',\\'sha256\\'} and type(expected[\\'bytes\\']) is int and type(expected[\\'metadata\\']) is list and len(expected[\\'metadata\\'])==10 and all(type(x) is int for x in expected[\\'metadata\\']))\\n flags=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\\n public=keep(os.open(\\'/\\',flags));s=os.fstat(public);need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((None,None,public,meta(s)))\\n for part in (\\'home\\',\\'postedism\\',\\'Desktop\\',\\'Warden\\',\\'docs\\',\\'evidence\\',\\'task-6\\'):\\n  parent=public;public=keep(os.open(part,flags,dir_fd=parent));s=os.fstat(public)\\n  need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((parent,part,public,meta(s)))\\n P=\\'controller-cache-continuation-v1-20261025-coord-metadata-r1-material-\\'\\n receipt=read(P+\\'receipt.json\\',16384,(0o600,0o644))\\n need(expected=={\\'bytes\\':len(receipt[2]),\\'metadata\\':receipt[3],\\'sha256\\':hashlib.sha256(receipt[2]).hexdigest()})\\n received=parse(receipt[2]);need(received[\\'clock_identity\\']==collected[\\'clock_identity\\'])\\n timing=received[\\'timing\\'];origin=timing[\\'origin\\'];first=origin[\\'sample\\'];last=timing[\\'final_sample\\']\\n names=(\\'monotonic_before_ns\\',\\'boottime_ns\\',\\'monotonic_after_ns\\')\\n values=[origin[\\'budget_start_monotonic_lower_ns\\'],first[\\'birth_boot_lower_ns\\'],timing[\\'ended_monotonic_ns\\']]+[s[n] for s in (first,last) for n in names]\\n need(all(type(x) is int and x>=0 for x in values))\\n need(origin[\\'budget_start_monotonic_lower_ns\\']<=first[\\'monotonic_before_ns\\']<=first[\\'monotonic_after_ns\\']<=last[\\'monotonic_before_ns\\']<=last[\\'monotonic_after_ns\\']<=timing[\\'ended_monotonic_ns\\'])\\n need(first[\\'birth_boot_lower_ns\\']<=first[\\'boottime_ns\\']<=last[\\'boottime_ns\\']<=B0 and last[\\'monotonic_after_ns\\']<=M0)\\n for sample in (first,last):\\n  need(sample[\\'monotonic_after_ns\\']-sample[\\'monotonic_before_ns\\']<=100000000)\\n  lo=max(lo,sample[\\'boottime_ns\\']-sample[\\'monotonic_after_ns\\']);hi=min(hi,sample[\\'boottime_ns\\']-sample[\\'monotonic_before_ns\\'])\\n need(lo<=hi)\\n me=min(me,origin[\\'budget_start_monotonic_lower_ns\\']+30000000000);be=min(be,first[\\'birth_boot_lower_ns\\']+30000000000);arm()\\n targets=[read(P+name,65536,(0o600,0o644,0o664),want) for name,want in zip((\\'root-tool.json\\',\\'root-proof-reader-tool.json\\'),intended)]\\n need(targets[0][3][:2]!=targets[1][3][:2]);all_same()\\n for record in targets:\\n  all_same();check();before=record[3];os.fchmod(record[0],0o600);check();after=meta(os.fstat(record[0]))\\n  need(after[4]==stat.S_IFREG|0o600 and all(after[i]==before[i] for i in (0,1,2,3,5,6,7,9)))\\n  record[3]=after;os.fsync(record[0]);check();all_same()\\n all_same();sys.stdout.write(\\'{\"state\":\"material-metadata-finalized\",\"authority\":false}\\\\n\\');sys.stdout.flush();all_same()\\nfinally:\\n for fd in reversed(fds):check();os.close(fd);check()\\ncheck()\\n','<unchanged-metadata-body>','exec'),{})\nfinally:\n sys.stderr.write('WARDEN_COORD_R1_FD_TELEMETRY '+json.dumps({'root_routed':_root_used,'opens':_opens,'fchmod':_chmods,'fsync':_syncs,'held_count':len(_held),'replacement_injected':_replaced},separators=(',',':'))+'\\n');sys.stderr.flush()\n"
+      },
+      "stderr": "WARDEN_COORD_R1_FD_TELEMETRY {\"root_routed\":true,\"opens\":[\"ROUTED_ROOT\",\"home\",\"postedism\",\"Desktop\",\"Warden\",\"docs\",\"evidence\",\"task-6\",\"controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json\",\"controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json\"],\"fchmod\":[],\"fsync\":[],\"held_count\":0,\"replacement_injected\":false}\nTraceback (most recent call last):\n  File \"<stdin>\", line 46, in <module>\n  File \"<unchanged-metadata-body>\", line 74, in <module>\n  File \"<unchanged-metadata-body>\", line 46, in read\n  File \"<unchanged-metadata-body>\", line 5, in need\nValueError: material metadata refusal\n",
+      "stderr_classification": "expected refusal traceback retained in full; only exact telemetry separately parsed",
+      "stdout": "",
+      "telemetry": {
+        "fchmod": [],
+        "fsync": [],
+        "held_count": 0,
+        "opens": [
+          "ROUTED_ROOT",
+          "home",
+          "postedism",
+          "Desktop",
+          "Warden",
+          "docs",
+          "evidence",
+          "task-6",
+          "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json",
+          "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json"
+        ],
+        "replacement_injected": false,
+        "root_routed": true
+      },
+      "temporary_allocated_after": 24576,
+      "temporary_allocated_before": 24576,
+      "timed_out": false
+    },
+    {
+      "after": {
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json": {
+          "metadata": [
+            47,
+            2648091,
+            1000,
+            1000,
+            33152,
+            1,
+            497,
+            1792954915422769437,
+            1792954915422769437,
+            8
+          ],
+          "sha256": "4c2ff58016b79633d022b67bd7f46a80aa35e5e663cc12bc981c2de2afca81ac"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json": {
+          "metadata": [
+            47,
+            2648090,
+            1000,
+            1000,
+            33204,
+            1,
+            33,
+            1792954915422734458,
+            1792954915422734458,
+            8
+          ],
+          "sha256": "0c4ef02d96d71d126225be9cd4aa99b3d006d51a04edadd8046abd5ece4fdba4"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json": {
+          "metadata": [
+            47,
+            2648092,
+            1000,
+            1000,
+            33204,
+            1,
+            40,
+            1792954915422791995,
+            1792954915437767584,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        },
+        "displaced.raw": {
+          "metadata": [
+            47,
+            2648089,
+            1000,
+            1000,
+            33204,
+            1,
+            40,
+            1792954915422719569,
+            1792954915437767584,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "before": {
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json": {
+          "metadata": [
+            47,
+            2648091,
+            1000,
+            1000,
+            33152,
+            1,
+            497,
+            1792954915422769437,
+            1792954915422769437,
+            8
+          ],
+          "sha256": "4c2ff58016b79633d022b67bd7f46a80aa35e5e663cc12bc981c2de2afca81ac"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json": {
+          "metadata": [
+            47,
+            2648090,
+            1000,
+            1000,
+            33204,
+            1,
+            33,
+            1792954915422734458,
+            1792954915422734458,
+            8
+          ],
+          "sha256": "0c4ef02d96d71d126225be9cd4aa99b3d006d51a04edadd8046abd5ece4fdba4"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json": {
+          "metadata": [
+            47,
+            2648089,
+            1000,
+            1000,
+            33204,
+            1,
+            40,
+            1792954915422719569,
+            1792954915422734458,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        },
+        "prepared.raw": {
+          "metadata": [
+            47,
+            2648092,
+            1000,
+            1000,
+            33204,
+            1,
+            40,
+            1792954915422791995,
+            1792954915422791995,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "case": "replacement",
+      "exit_code": 1,
+      "owned_pid": 5,
+      "passed": true,
+      "receipt_proof": {
+        "bytes": 497,
+        "metadata": [
+          47,
+          2648091,
+          1000,
+          1000,
+          33152,
+          1,
+          497,
+          1792954915422769437,
+          1792954915422769437,
+          8
+        ],
+        "sha256": "4c2ff58016b79633d022b67bd7f46a80aa35e5e663cc12bc981c2de2afca81ac"
+      },
+      "request": {
+        "argv": [
+          "/usr/bin/python3",
+          "-I",
+          "-S",
+          "-B",
+          "-",
+          "{\"collector\":\"{\\\"receipt\\\":{\\\"bytes\\\":497,\\\"metadata\\\":[47,2648091,1000,1000,33152,1,497,1792954915422769437,1792954915422769437,8],\\\"sha256\\\":\\\"4c2ff58016b79633d022b67bd7f46a80aa35e5e663cc12bc981c2de2afca81ac\\\"},\\\"clock_identity\\\":{\\\"machine_id\\\":\\\"fixture-only\\\",\\\"boot_id\\\":\\\"fixture-only\\\"}}\",\"raw\":\"{\\\"fixture\\\":\\\"raw apostrophe ' retained\\\"}\\n\",\"reader\":\"{\\\"fixture\\\":\\\"reader exact bytes\\\"}\\n\"}"
+        ],
+        "cwd": "/tmp/warden-coord-r1-nsh3vlh5/replacement",
+        "env": {
+          "LANG": "C",
+          "LC_ALL": "C",
+          "PATH": "/usr/bin:/bin"
+        },
+        "stdin": "import os,sys,time,signal,resource,json,hashlib,stat\n_root='/tmp/warden-coord-r1-nsh3vlh5/replacement'\n_mode='replacement'\n_P='controller-cache-continuation-v1-20261025-coord-metadata-r1-material-'\n_parts=('home','postedism','Desktop','Warden','docs','evidence','task-6')\n_names=(_P+'receipt.json',_P+'root-tool.json',_P+'root-proof-reader-tool.json')\n_df=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\n_ff=os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC\n_open,_stat,_fstat,_pread,_close,_chmod,_sync=os.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync\n_rename=os.rename\n_held={};_root_used=False;_chmods=[];_syncs=[];_opens=[];_replaced=False\ndef _need(v):\n if not v:raise RuntimeError('fixture path/FD firewall')\ndef _o(path,flags,mode=0o777,*,dir_fd=None):\n global _root_used,_replaced\n if dir_fd is None:\n  _need(not _root_used and path=='/' and flags==_df);_root_used=True\n  fd=_open(_root,flags);_held[fd]=('dir',0);_opens.append('ROUTED_ROOT');return fd\n _need(dir_fd in _held and _held[dir_fd][0]=='dir')\n depth=_held[dir_fd][1]\n if depth<len(_parts):\n  _need(path==_parts[depth] and flags==_df);fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('dir',depth+1)\n else:\n  _need(path in _names and flags==_ff)\n  if _mode=='replacement' and path==_names[2]:\n   _need(not _replaced);_replaced=True\n   _rename(_names[1],'displaced.raw',src_dir_fd=dir_fd,dst_dir_fd=dir_fd)\n   _rename('prepared.raw',_names[1],src_dir_fd=dir_fd,dst_dir_fd=dir_fd)\n  fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('file',path)\n _opens.append(path);return fd\ndef _s(path,*,dir_fd=None,follow_symlinks=True):\n _need(dir_fd in _held and _held[dir_fd][0]=='dir' and follow_symlinks is False)\n depth=_held[dir_fd][1];_need(path==_parts[depth] if depth<len(_parts) else path in _names)\n return _stat(path,dir_fd=dir_fd,follow_symlinks=False)\ndef _f(fd):_need(fd in _held);return _fstat(fd)\ndef _p(fd,n,offset):\n _need(fd in _held and _held[fd][0]=='file' and 0<n<=65537 and offset==0);return _pread(fd,n,offset)\ndef _c(fd):_need(fd in _held);_close(fd);del _held[fd]\ndef _m(fd,mode):\n _need(fd in _held and _held[fd][0]=='file' and _held[fd][1] in _names[1:] and mode==0o600)\n _chmods.append(_held[fd][1]);return _chmod(fd,mode)\ndef _y(fd):\n _need(fd in _held and _held[fd][0]=='file' and _held[fd][1] in _names[1:]);_syncs.append(_held[fd][1]);return _sync(fd)\nos.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync=_o,_s,_f,_p,_c,_m,_y\ntry:\n exec(compile('import time\\nM0=time.monotonic_ns();B0=time.clock_gettime_ns(time.CLOCK_BOOTTIME);A0=time.monotonic_ns()\\nimport os,sys,signal,resource\\ndef need(ok):\\n if not ok:raise ValueError(\\'material metadata refusal\\')\\nneed(0<=A0-M0<=100000000)\\nme=M0+5000000000;be=B0+5000000000;lo=B0-A0;hi=B0-M0;fm=A0;fb=B0\\ndef check():\\n global lo,hi,fm,fb\\n u=time.monotonic_ns();b=time.clock_gettime_ns(time.CLOCK_BOOTTIME);a=time.monotonic_ns()\\n need(0<=a-u<=100000000 and fm<=u<=a<me and fb<=b<be)\\n lo=max(lo,b-a);hi=min(hi,b-u);need(lo<=hi);fm=a;fb=b\\n return a,b\\ndef arm():\\n a,b=check();signal.setitimer(signal.ITIMER_REAL,min(me-a,be-b)/1000000000)\\nsignal.signal(signal.SIGALRM,lambda *_:os._exit(124));arm()\\nfor k,n in ((resource.RLIMIT_CPU,2),(resource.RLIMIT_AS,134217728),(resource.RLIMIT_FSIZE,1048576)):\\n soft,hard=resource.getrlimit(k);need(hard==resource.RLIM_INFINITY or hard>=n);resource.setrlimit(k,(n,n))\\nimport json,hashlib,stat\\ndef pairs(items):\\n value={}\\n for k,v in items:need(k not in value);value[k]=v\\n return value\\ndef bad(_):raise ValueError(\\'noninteger JSON\\')\\ndef parse(s):return json.loads(s,object_pairs_hook=pairs,parse_float=bad,parse_constant=bad)\\ndef meta(s):return [getattr(s,\\'st_\\'+k) for k in (\\'dev\\',\\'ino\\',\\'uid\\',\\'gid\\',\\'mode\\',\\'nlink\\',\\'size\\',\\'mtime_ns\\',\\'ctime_ns\\',\\'blocks\\')]\\nfds=[];dirs=[];records=[]\\ndef keep(fd):fds.append(fd);return fd\\ndef parents():\\n check()\\n for parent,name,fd,before in dirs:\\n  now=meta(os.fstat(fd));need(now==before)\\n  if parent is not None:need(meta(os.stat(name,dir_fd=parent,follow_symlinks=False))==now)\\n check()\\ndef same(record):\\n check();parents();fd,name,data,m=record\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)))\\n need(os.pread(fd,65537,0)==data)\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)));check()\\ndef all_same():\\n for record in records:same(record)\\ndef read(name,cap,modes,want=None):\\n check();parents()\\n fd=keep(os.open(name,os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC,dir_fd=public));s=os.fstat(fd)\\n need(stat.S_ISREG(s.st_mode) and s.st_uid==s.st_gid==1000 and s.st_nlink==1 and s.st_dev==os.fstat(public).st_dev and stat.S_IMODE(s.st_mode) in modes and 0<s.st_size<=cap)\\n data=os.pread(fd,cap+1,0);need(len(data)==s.st_size and (want is None or data==want))\\n record=[fd,name,data,meta(s)];same(record);records.append(record);return record\\ntry:\\n need(os.getuid()==os.geteuid()==os.getgid()==os.getegid()==1000 and len(sys.argv)==2)\\n value=parse(sys.argv[1]);need(type(value) is dict and set(value)=={\\'collector\\',\\'raw\\',\\'reader\\'} and all(type(v) is str for v in value.values()))\\n intended=[value[\\'raw\\'].encode(),value[\\'reader\\'].encode()];need(all(0<len(v)<=65536 and v.endswith(b\\'\\\\n\\') for v in intended))\\n collected=parse(value[\\'collector\\']);expected=collected[\\'receipt\\']\\n need(type(expected) is dict and set(expected)=={\\'bytes\\',\\'metadata\\',\\'sha256\\'} and type(expected[\\'bytes\\']) is int and type(expected[\\'metadata\\']) is list and len(expected[\\'metadata\\'])==10 and all(type(x) is int for x in expected[\\'metadata\\']))\\n flags=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\\n public=keep(os.open(\\'/\\',flags));s=os.fstat(public);need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((None,None,public,meta(s)))\\n for part in (\\'home\\',\\'postedism\\',\\'Desktop\\',\\'Warden\\',\\'docs\\',\\'evidence\\',\\'task-6\\'):\\n  parent=public;public=keep(os.open(part,flags,dir_fd=parent));s=os.fstat(public)\\n  need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((parent,part,public,meta(s)))\\n P=\\'controller-cache-continuation-v1-20261025-coord-metadata-r1-material-\\'\\n receipt=read(P+\\'receipt.json\\',16384,(0o600,0o644))\\n need(expected=={\\'bytes\\':len(receipt[2]),\\'metadata\\':receipt[3],\\'sha256\\':hashlib.sha256(receipt[2]).hexdigest()})\\n received=parse(receipt[2]);need(received[\\'clock_identity\\']==collected[\\'clock_identity\\'])\\n timing=received[\\'timing\\'];origin=timing[\\'origin\\'];first=origin[\\'sample\\'];last=timing[\\'final_sample\\']\\n names=(\\'monotonic_before_ns\\',\\'boottime_ns\\',\\'monotonic_after_ns\\')\\n values=[origin[\\'budget_start_monotonic_lower_ns\\'],first[\\'birth_boot_lower_ns\\'],timing[\\'ended_monotonic_ns\\']]+[s[n] for s in (first,last) for n in names]\\n need(all(type(x) is int and x>=0 for x in values))\\n need(origin[\\'budget_start_monotonic_lower_ns\\']<=first[\\'monotonic_before_ns\\']<=first[\\'monotonic_after_ns\\']<=last[\\'monotonic_before_ns\\']<=last[\\'monotonic_after_ns\\']<=timing[\\'ended_monotonic_ns\\'])\\n need(first[\\'birth_boot_lower_ns\\']<=first[\\'boottime_ns\\']<=last[\\'boottime_ns\\']<=B0 and last[\\'monotonic_after_ns\\']<=M0)\\n for sample in (first,last):\\n  need(sample[\\'monotonic_after_ns\\']-sample[\\'monotonic_before_ns\\']<=100000000)\\n  lo=max(lo,sample[\\'boottime_ns\\']-sample[\\'monotonic_after_ns\\']);hi=min(hi,sample[\\'boottime_ns\\']-sample[\\'monotonic_before_ns\\'])\\n need(lo<=hi)\\n me=min(me,origin[\\'budget_start_monotonic_lower_ns\\']+30000000000);be=min(be,first[\\'birth_boot_lower_ns\\']+30000000000);arm()\\n targets=[read(P+name,65536,(0o600,0o644,0o664),want) for name,want in zip((\\'root-tool.json\\',\\'root-proof-reader-tool.json\\'),intended)]\\n need(targets[0][3][:2]!=targets[1][3][:2]);all_same()\\n for record in targets:\\n  all_same();check();before=record[3];os.fchmod(record[0],0o600);check();after=meta(os.fstat(record[0]))\\n  need(after[4]==stat.S_IFREG|0o600 and all(after[i]==before[i] for i in (0,1,2,3,5,6,7,9)))\\n  record[3]=after;os.fsync(record[0]);check();all_same()\\n all_same();sys.stdout.write(\\'{\"state\":\"material-metadata-finalized\",\"authority\":false}\\\\n\\');sys.stdout.flush();all_same()\\nfinally:\\n for fd in reversed(fds):check();os.close(fd);check()\\ncheck()\\n','<unchanged-metadata-body>','exec'),{})\nfinally:\n sys.stderr.write('WARDEN_COORD_R1_FD_TELEMETRY '+json.dumps({'root_routed':_root_used,'opens':_opens,'fchmod':_chmods,'fsync':_syncs,'held_count':len(_held),'replacement_injected':_replaced},separators=(',',':'))+'\\n');sys.stderr.flush()\n"
+      },
+      "stderr": "WARDEN_COORD_R1_FD_TELEMETRY {\"root_routed\":true,\"opens\":[\"ROUTED_ROOT\",\"home\",\"postedism\",\"Desktop\",\"Warden\",\"docs\",\"evidence\",\"task-6\",\"controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json\",\"controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json\",\"controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json\"],\"fchmod\":[],\"fsync\":[],\"held_count\":0,\"replacement_injected\":true}\nTraceback (most recent call last):\n  File \"<stdin>\", line 46, in <module>\n  File \"<unchanged-metadata-body>\", line 74, in <module>\n  File \"<unchanged-metadata-body>\", line 47, in read\n  File \"<unchanged-metadata-body>\", line 36, in same\n  File \"<unchanged-metadata-body>\", line 32, in parents\n  File \"<unchanged-metadata-body>\", line 5, in need\nValueError: material metadata refusal\n",
+      "stderr_classification": "expected refusal traceback retained in full; only exact telemetry separately parsed",
+      "stdout": "",
+      "telemetry": {
+        "fchmod": [],
+        "fsync": [],
+        "held_count": 0,
+        "opens": [
+          "ROUTED_ROOT",
+          "home",
+          "postedism",
+          "Desktop",
+          "Warden",
+          "docs",
+          "evidence",
+          "task-6",
+          "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json",
+          "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json",
+          "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json"
+        ],
+        "replacement_injected": true,
+        "root_routed": true
+      },
+      "temporary_allocated_after": 40960,
+      "temporary_allocated_before": 40960,
+      "timed_out": false
+    },
+    {
+      "after": {
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json": {
+          "metadata": [
+            47,
+            2648103,
+            1000,
+            1000,
+            33152,
+            1,
+            497,
+            1792954915450360327,
+            1792954915450360327,
+            8
+          ],
+          "sha256": "d32afa8b7a894733b1d00b759d714326c265ce63992a4cad6bebd75a9d7cc1b3"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json": {
+          "metadata": [
+            47,
+            2648102,
+            1000,
+            1000,
+            33204,
+            1,
+            33,
+            1792954915450324640,
+            1792954915450324640,
+            8
+          ],
+          "sha256": "0c4ef02d96d71d126225be9cd4aa99b3d006d51a04edadd8046abd5ece4fdba4"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json": {
+          "link": "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json",
+          "metadata": [
+            47,
+            2648104,
+            1000,
+            1000,
+            41471,
+            1,
+            96,
+            1792954915450360327,
+            1792954915450360327,
+            0
+          ]
+        }
+      },
+      "before": {
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json": {
+          "metadata": [
+            47,
+            2648103,
+            1000,
+            1000,
+            33152,
+            1,
+            497,
+            1792954915450360327,
+            1792954915450360327,
+            8
+          ],
+          "sha256": "d32afa8b7a894733b1d00b759d714326c265ce63992a4cad6bebd75a9d7cc1b3"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json": {
+          "metadata": [
+            47,
+            2648102,
+            1000,
+            1000,
+            33204,
+            1,
+            33,
+            1792954915450324640,
+            1792954915450324640,
+            8
+          ],
+          "sha256": "0c4ef02d96d71d126225be9cd4aa99b3d006d51a04edadd8046abd5ece4fdba4"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json": {
+          "link": "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json",
+          "metadata": [
+            47,
+            2648104,
+            1000,
+            1000,
+            41471,
+            1,
+            96,
+            1792954915450360327,
+            1792954915450360327,
+            0
+          ]
+        }
+      },
+      "case": "symlink",
+      "exit_code": 1,
+      "owned_pid": 6,
+      "passed": true,
+      "receipt_proof": {
+        "bytes": 497,
+        "metadata": [
+          47,
+          2648103,
+          1000,
+          1000,
+          33152,
+          1,
+          497,
+          1792954915450360327,
+          1792954915450360327,
+          8
+        ],
+        "sha256": "d32afa8b7a894733b1d00b759d714326c265ce63992a4cad6bebd75a9d7cc1b3"
+      },
+      "request": {
+        "argv": [
+          "/usr/bin/python3",
+          "-I",
+          "-S",
+          "-B",
+          "-",
+          "{\"collector\":\"{\\\"receipt\\\":{\\\"bytes\\\":497,\\\"metadata\\\":[47,2648103,1000,1000,33152,1,497,1792954915450360327,1792954915450360327,8],\\\"sha256\\\":\\\"d32afa8b7a894733b1d00b759d714326c265ce63992a4cad6bebd75a9d7cc1b3\\\"},\\\"clock_identity\\\":{\\\"machine_id\\\":\\\"fixture-only\\\",\\\"boot_id\\\":\\\"fixture-only\\\"}}\",\"raw\":\"{\\\"fixture\\\":\\\"raw apostrophe ' retained\\\"}\\n\",\"reader\":\"{\\\"fixture\\\":\\\"reader exact bytes\\\"}\\n\"}"
+        ],
+        "cwd": "/tmp/warden-coord-r1-nsh3vlh5/symlink",
+        "env": {
+          "LANG": "C",
+          "LC_ALL": "C",
+          "PATH": "/usr/bin:/bin"
+        },
+        "stdin": "import os,sys,time,signal,resource,json,hashlib,stat\n_root='/tmp/warden-coord-r1-nsh3vlh5/symlink'\n_mode='symlink'\n_P='controller-cache-continuation-v1-20261025-coord-metadata-r1-material-'\n_parts=('home','postedism','Desktop','Warden','docs','evidence','task-6')\n_names=(_P+'receipt.json',_P+'root-tool.json',_P+'root-proof-reader-tool.json')\n_df=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\n_ff=os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC\n_open,_stat,_fstat,_pread,_close,_chmod,_sync=os.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync\n_rename=os.rename\n_held={};_root_used=False;_chmods=[];_syncs=[];_opens=[];_replaced=False\ndef _need(v):\n if not v:raise RuntimeError('fixture path/FD firewall')\ndef _o(path,flags,mode=0o777,*,dir_fd=None):\n global _root_used,_replaced\n if dir_fd is None:\n  _need(not _root_used and path=='/' and flags==_df);_root_used=True\n  fd=_open(_root,flags);_held[fd]=('dir',0);_opens.append('ROUTED_ROOT');return fd\n _need(dir_fd in _held and _held[dir_fd][0]=='dir')\n depth=_held[dir_fd][1]\n if depth<len(_parts):\n  _need(path==_parts[depth] and flags==_df);fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('dir',depth+1)\n else:\n  _need(path in _names and flags==_ff)\n  if _mode=='replacement' and path==_names[2]:\n   _need(not _replaced);_replaced=True\n   _rename(_names[1],'displaced.raw',src_dir_fd=dir_fd,dst_dir_fd=dir_fd)\n   _rename('prepared.raw',_names[1],src_dir_fd=dir_fd,dst_dir_fd=dir_fd)\n  fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('file',path)\n _opens.append(path);return fd\ndef _s(path,*,dir_fd=None,follow_symlinks=True):\n _need(dir_fd in _held and _held[dir_fd][0]=='dir' and follow_symlinks is False)\n depth=_held[dir_fd][1];_need(path==_parts[depth] if depth<len(_parts) else path in _names)\n return _stat(path,dir_fd=dir_fd,follow_symlinks=False)\ndef _f(fd):_need(fd in _held);return _fstat(fd)\ndef _p(fd,n,offset):\n _need(fd in _held and _held[fd][0]=='file' and 0<n<=65537 and offset==0);return _pread(fd,n,offset)\ndef _c(fd):_need(fd in _held);_close(fd);del _held[fd]\ndef _m(fd,mode):\n _need(fd in _held and _held[fd][0]=='file' and _held[fd][1] in _names[1:] and mode==0o600)\n _chmods.append(_held[fd][1]);return _chmod(fd,mode)\ndef _y(fd):\n _need(fd in _held and _held[fd][0]=='file' and _held[fd][1] in _names[1:]);_syncs.append(_held[fd][1]);return _sync(fd)\nos.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync=_o,_s,_f,_p,_c,_m,_y\ntry:\n exec(compile('import time\\nM0=time.monotonic_ns();B0=time.clock_gettime_ns(time.CLOCK_BOOTTIME);A0=time.monotonic_ns()\\nimport os,sys,signal,resource\\ndef need(ok):\\n if not ok:raise ValueError(\\'material metadata refusal\\')\\nneed(0<=A0-M0<=100000000)\\nme=M0+5000000000;be=B0+5000000000;lo=B0-A0;hi=B0-M0;fm=A0;fb=B0\\ndef check():\\n global lo,hi,fm,fb\\n u=time.monotonic_ns();b=time.clock_gettime_ns(time.CLOCK_BOOTTIME);a=time.monotonic_ns()\\n need(0<=a-u<=100000000 and fm<=u<=a<me and fb<=b<be)\\n lo=max(lo,b-a);hi=min(hi,b-u);need(lo<=hi);fm=a;fb=b\\n return a,b\\ndef arm():\\n a,b=check();signal.setitimer(signal.ITIMER_REAL,min(me-a,be-b)/1000000000)\\nsignal.signal(signal.SIGALRM,lambda *_:os._exit(124));arm()\\nfor k,n in ((resource.RLIMIT_CPU,2),(resource.RLIMIT_AS,134217728),(resource.RLIMIT_FSIZE,1048576)):\\n soft,hard=resource.getrlimit(k);need(hard==resource.RLIM_INFINITY or hard>=n);resource.setrlimit(k,(n,n))\\nimport json,hashlib,stat\\ndef pairs(items):\\n value={}\\n for k,v in items:need(k not in value);value[k]=v\\n return value\\ndef bad(_):raise ValueError(\\'noninteger JSON\\')\\ndef parse(s):return json.loads(s,object_pairs_hook=pairs,parse_float=bad,parse_constant=bad)\\ndef meta(s):return [getattr(s,\\'st_\\'+k) for k in (\\'dev\\',\\'ino\\',\\'uid\\',\\'gid\\',\\'mode\\',\\'nlink\\',\\'size\\',\\'mtime_ns\\',\\'ctime_ns\\',\\'blocks\\')]\\nfds=[];dirs=[];records=[]\\ndef keep(fd):fds.append(fd);return fd\\ndef parents():\\n check()\\n for parent,name,fd,before in dirs:\\n  now=meta(os.fstat(fd));need(now==before)\\n  if parent is not None:need(meta(os.stat(name,dir_fd=parent,follow_symlinks=False))==now)\\n check()\\ndef same(record):\\n check();parents();fd,name,data,m=record\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)))\\n need(os.pread(fd,65537,0)==data)\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)));check()\\ndef all_same():\\n for record in records:same(record)\\ndef read(name,cap,modes,want=None):\\n check();parents()\\n fd=keep(os.open(name,os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC,dir_fd=public));s=os.fstat(fd)\\n need(stat.S_ISREG(s.st_mode) and s.st_uid==s.st_gid==1000 and s.st_nlink==1 and s.st_dev==os.fstat(public).st_dev and stat.S_IMODE(s.st_mode) in modes and 0<s.st_size<=cap)\\n data=os.pread(fd,cap+1,0);need(len(data)==s.st_size and (want is None or data==want))\\n record=[fd,name,data,meta(s)];same(record);records.append(record);return record\\ntry:\\n need(os.getuid()==os.geteuid()==os.getgid()==os.getegid()==1000 and len(sys.argv)==2)\\n value=parse(sys.argv[1]);need(type(value) is dict and set(value)=={\\'collector\\',\\'raw\\',\\'reader\\'} and all(type(v) is str for v in value.values()))\\n intended=[value[\\'raw\\'].encode(),value[\\'reader\\'].encode()];need(all(0<len(v)<=65536 and v.endswith(b\\'\\\\n\\') for v in intended))\\n collected=parse(value[\\'collector\\']);expected=collected[\\'receipt\\']\\n need(type(expected) is dict and set(expected)=={\\'bytes\\',\\'metadata\\',\\'sha256\\'} and type(expected[\\'bytes\\']) is int and type(expected[\\'metadata\\']) is list and len(expected[\\'metadata\\'])==10 and all(type(x) is int for x in expected[\\'metadata\\']))\\n flags=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\\n public=keep(os.open(\\'/\\',flags));s=os.fstat(public);need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((None,None,public,meta(s)))\\n for part in (\\'home\\',\\'postedism\\',\\'Desktop\\',\\'Warden\\',\\'docs\\',\\'evidence\\',\\'task-6\\'):\\n  parent=public;public=keep(os.open(part,flags,dir_fd=parent));s=os.fstat(public)\\n  need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((parent,part,public,meta(s)))\\n P=\\'controller-cache-continuation-v1-20261025-coord-metadata-r1-material-\\'\\n receipt=read(P+\\'receipt.json\\',16384,(0o600,0o644))\\n need(expected=={\\'bytes\\':len(receipt[2]),\\'metadata\\':receipt[3],\\'sha256\\':hashlib.sha256(receipt[2]).hexdigest()})\\n received=parse(receipt[2]);need(received[\\'clock_identity\\']==collected[\\'clock_identity\\'])\\n timing=received[\\'timing\\'];origin=timing[\\'origin\\'];first=origin[\\'sample\\'];last=timing[\\'final_sample\\']\\n names=(\\'monotonic_before_ns\\',\\'boottime_ns\\',\\'monotonic_after_ns\\')\\n values=[origin[\\'budget_start_monotonic_lower_ns\\'],first[\\'birth_boot_lower_ns\\'],timing[\\'ended_monotonic_ns\\']]+[s[n] for s in (first,last) for n in names]\\n need(all(type(x) is int and x>=0 for x in values))\\n need(origin[\\'budget_start_monotonic_lower_ns\\']<=first[\\'monotonic_before_ns\\']<=first[\\'monotonic_after_ns\\']<=last[\\'monotonic_before_ns\\']<=last[\\'monotonic_after_ns\\']<=timing[\\'ended_monotonic_ns\\'])\\n need(first[\\'birth_boot_lower_ns\\']<=first[\\'boottime_ns\\']<=last[\\'boottime_ns\\']<=B0 and last[\\'monotonic_after_ns\\']<=M0)\\n for sample in (first,last):\\n  need(sample[\\'monotonic_after_ns\\']-sample[\\'monotonic_before_ns\\']<=100000000)\\n  lo=max(lo,sample[\\'boottime_ns\\']-sample[\\'monotonic_after_ns\\']);hi=min(hi,sample[\\'boottime_ns\\']-sample[\\'monotonic_before_ns\\'])\\n need(lo<=hi)\\n me=min(me,origin[\\'budget_start_monotonic_lower_ns\\']+30000000000);be=min(be,first[\\'birth_boot_lower_ns\\']+30000000000);arm()\\n targets=[read(P+name,65536,(0o600,0o644,0o664),want) for name,want in zip((\\'root-tool.json\\',\\'root-proof-reader-tool.json\\'),intended)]\\n need(targets[0][3][:2]!=targets[1][3][:2]);all_same()\\n for record in targets:\\n  all_same();check();before=record[3];os.fchmod(record[0],0o600);check();after=meta(os.fstat(record[0]))\\n  need(after[4]==stat.S_IFREG|0o600 and all(after[i]==before[i] for i in (0,1,2,3,5,6,7,9)))\\n  record[3]=after;os.fsync(record[0]);check();all_same()\\n all_same();sys.stdout.write(\\'{\"state\":\"material-metadata-finalized\",\"authority\":false}\\\\n\\');sys.stdout.flush();all_same()\\nfinally:\\n for fd in reversed(fds):check();os.close(fd);check()\\ncheck()\\n','<unchanged-metadata-body>','exec'),{})\nfinally:\n sys.stderr.write('WARDEN_COORD_R1_FD_TELEMETRY '+json.dumps({'root_routed':_root_used,'opens':_opens,'fchmod':_chmods,'fsync':_syncs,'held_count':len(_held),'replacement_injected':_replaced},separators=(',',':'))+'\\n');sys.stderr.flush()\n"
+      },
+      "stderr": "WARDEN_COORD_R1_FD_TELEMETRY {\"root_routed\":true,\"opens\":[\"ROUTED_ROOT\",\"home\",\"postedism\",\"Desktop\",\"Warden\",\"docs\",\"evidence\",\"task-6\",\"controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json\"],\"fchmod\":[],\"fsync\":[],\"held_count\":0,\"replacement_injected\":false}\nTraceback (most recent call last):\n  File \"<stdin>\", line 46, in <module>\n  File \"<unchanged-metadata-body>\", line 74, in <module>\n  File \"<unchanged-metadata-body>\", line 44, in read\n  File \"<stdin>\", line 29, in _o\nOSError: [Errno 40] Too many levels of symbolic links: 'controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json'\n",
+      "stderr_classification": "expected refusal traceback retained in full; only exact telemetry separately parsed",
+      "stdout": "",
+      "telemetry": {
+        "fchmod": [],
+        "fsync": [],
+        "held_count": 0,
+        "opens": [
+          "ROUTED_ROOT",
+          "home",
+          "postedism",
+          "Desktop",
+          "Warden",
+          "docs",
+          "evidence",
+          "task-6",
+          "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json"
+        ],
+        "replacement_injected": false,
+        "root_routed": true
+      },
+      "temporary_allocated_after": 49152,
+      "temporary_allocated_before": 49152,
+      "timed_out": false
+    },
+    {
+      "after": {
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json": {
+          "metadata": [
+            47,
+            2648115,
+            1000,
+            1000,
+            33152,
+            1,
+            497,
+            1792954915475797529,
+            1792954915475797529,
+            8
+          ],
+          "sha256": "c39374a203f6e7276e1045ed9ce913907acc3e6390582bc40f7ec16512939437"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json": {
+          "metadata": [
+            47,
+            2648113,
+            1000,
+            1000,
+            33204,
+            2,
+            40,
+            1792954915475747274,
+            1792954915475797529,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json": {
+          "metadata": [
+            47,
+            2648113,
+            1000,
+            1000,
+            33204,
+            2,
+            40,
+            1792954915475747274,
+            1792954915475797529,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "before": {
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json": {
+          "metadata": [
+            47,
+            2648115,
+            1000,
+            1000,
+            33152,
+            1,
+            497,
+            1792954915475797529,
+            1792954915475797529,
+            8
+          ],
+          "sha256": "c39374a203f6e7276e1045ed9ce913907acc3e6390582bc40f7ec16512939437"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-proof-reader-tool.json": {
+          "metadata": [
+            47,
+            2648113,
+            1000,
+            1000,
+            33204,
+            2,
+            40,
+            1792954915475747274,
+            1792954915475797529,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        },
+        "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json": {
+          "metadata": [
+            47,
+            2648113,
+            1000,
+            1000,
+            33204,
+            2,
+            40,
+            1792954915475747274,
+            1792954915475797529,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "case": "hardlink",
+      "exit_code": 1,
+      "owned_pid": 7,
+      "passed": true,
+      "receipt_proof": {
+        "bytes": 497,
+        "metadata": [
+          47,
+          2648115,
+          1000,
+          1000,
+          33152,
+          1,
+          497,
+          1792954915475797529,
+          1792954915475797529,
+          8
+        ],
+        "sha256": "c39374a203f6e7276e1045ed9ce913907acc3e6390582bc40f7ec16512939437"
+      },
+      "request": {
+        "argv": [
+          "/usr/bin/python3",
+          "-I",
+          "-S",
+          "-B",
+          "-",
+          "{\"collector\":\"{\\\"receipt\\\":{\\\"bytes\\\":497,\\\"metadata\\\":[47,2648115,1000,1000,33152,1,497,1792954915475797529,1792954915475797529,8],\\\"sha256\\\":\\\"c39374a203f6e7276e1045ed9ce913907acc3e6390582bc40f7ec16512939437\\\"},\\\"clock_identity\\\":{\\\"machine_id\\\":\\\"fixture-only\\\",\\\"boot_id\\\":\\\"fixture-only\\\"}}\",\"raw\":\"{\\\"fixture\\\":\\\"raw apostrophe ' retained\\\"}\\n\",\"reader\":\"{\\\"fixture\\\":\\\"reader exact bytes\\\"}\\n\"}"
+        ],
+        "cwd": "/tmp/warden-coord-r1-nsh3vlh5/hardlink",
+        "env": {
+          "LANG": "C",
+          "LC_ALL": "C",
+          "PATH": "/usr/bin:/bin"
+        },
+        "stdin": "import os,sys,time,signal,resource,json,hashlib,stat\n_root='/tmp/warden-coord-r1-nsh3vlh5/hardlink'\n_mode='hardlink'\n_P='controller-cache-continuation-v1-20261025-coord-metadata-r1-material-'\n_parts=('home','postedism','Desktop','Warden','docs','evidence','task-6')\n_names=(_P+'receipt.json',_P+'root-tool.json',_P+'root-proof-reader-tool.json')\n_df=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\n_ff=os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC\n_open,_stat,_fstat,_pread,_close,_chmod,_sync=os.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync\n_rename=os.rename\n_held={};_root_used=False;_chmods=[];_syncs=[];_opens=[];_replaced=False\ndef _need(v):\n if not v:raise RuntimeError('fixture path/FD firewall')\ndef _o(path,flags,mode=0o777,*,dir_fd=None):\n global _root_used,_replaced\n if dir_fd is None:\n  _need(not _root_used and path=='/' and flags==_df);_root_used=True\n  fd=_open(_root,flags);_held[fd]=('dir',0);_opens.append('ROUTED_ROOT');return fd\n _need(dir_fd in _held and _held[dir_fd][0]=='dir')\n depth=_held[dir_fd][1]\n if depth<len(_parts):\n  _need(path==_parts[depth] and flags==_df);fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('dir',depth+1)\n else:\n  _need(path in _names and flags==_ff)\n  if _mode=='replacement' and path==_names[2]:\n   _need(not _replaced);_replaced=True\n   _rename(_names[1],'displaced.raw',src_dir_fd=dir_fd,dst_dir_fd=dir_fd)\n   _rename('prepared.raw',_names[1],src_dir_fd=dir_fd,dst_dir_fd=dir_fd)\n  fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('file',path)\n _opens.append(path);return fd\ndef _s(path,*,dir_fd=None,follow_symlinks=True):\n _need(dir_fd in _held and _held[dir_fd][0]=='dir' and follow_symlinks is False)\n depth=_held[dir_fd][1];_need(path==_parts[depth] if depth<len(_parts) else path in _names)\n return _stat(path,dir_fd=dir_fd,follow_symlinks=False)\ndef _f(fd):_need(fd in _held);return _fstat(fd)\ndef _p(fd,n,offset):\n _need(fd in _held and _held[fd][0]=='file' and 0<n<=65537 and offset==0);return _pread(fd,n,offset)\ndef _c(fd):_need(fd in _held);_close(fd);del _held[fd]\ndef _m(fd,mode):\n _need(fd in _held and _held[fd][0]=='file' and _held[fd][1] in _names[1:] and mode==0o600)\n _chmods.append(_held[fd][1]);return _chmod(fd,mode)\ndef _y(fd):\n _need(fd in _held and _held[fd][0]=='file' and _held[fd][1] in _names[1:]);_syncs.append(_held[fd][1]);return _sync(fd)\nos.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync=_o,_s,_f,_p,_c,_m,_y\ntry:\n exec(compile('import time\\nM0=time.monotonic_ns();B0=time.clock_gettime_ns(time.CLOCK_BOOTTIME);A0=time.monotonic_ns()\\nimport os,sys,signal,resource\\ndef need(ok):\\n if not ok:raise ValueError(\\'material metadata refusal\\')\\nneed(0<=A0-M0<=100000000)\\nme=M0+5000000000;be=B0+5000000000;lo=B0-A0;hi=B0-M0;fm=A0;fb=B0\\ndef check():\\n global lo,hi,fm,fb\\n u=time.monotonic_ns();b=time.clock_gettime_ns(time.CLOCK_BOOTTIME);a=time.monotonic_ns()\\n need(0<=a-u<=100000000 and fm<=u<=a<me and fb<=b<be)\\n lo=max(lo,b-a);hi=min(hi,b-u);need(lo<=hi);fm=a;fb=b\\n return a,b\\ndef arm():\\n a,b=check();signal.setitimer(signal.ITIMER_REAL,min(me-a,be-b)/1000000000)\\nsignal.signal(signal.SIGALRM,lambda *_:os._exit(124));arm()\\nfor k,n in ((resource.RLIMIT_CPU,2),(resource.RLIMIT_AS,134217728),(resource.RLIMIT_FSIZE,1048576)):\\n soft,hard=resource.getrlimit(k);need(hard==resource.RLIM_INFINITY or hard>=n);resource.setrlimit(k,(n,n))\\nimport json,hashlib,stat\\ndef pairs(items):\\n value={}\\n for k,v in items:need(k not in value);value[k]=v\\n return value\\ndef bad(_):raise ValueError(\\'noninteger JSON\\')\\ndef parse(s):return json.loads(s,object_pairs_hook=pairs,parse_float=bad,parse_constant=bad)\\ndef meta(s):return [getattr(s,\\'st_\\'+k) for k in (\\'dev\\',\\'ino\\',\\'uid\\',\\'gid\\',\\'mode\\',\\'nlink\\',\\'size\\',\\'mtime_ns\\',\\'ctime_ns\\',\\'blocks\\')]\\nfds=[];dirs=[];records=[]\\ndef keep(fd):fds.append(fd);return fd\\ndef parents():\\n check()\\n for parent,name,fd,before in dirs:\\n  now=meta(os.fstat(fd));need(now==before)\\n  if parent is not None:need(meta(os.stat(name,dir_fd=parent,follow_symlinks=False))==now)\\n check()\\ndef same(record):\\n check();parents();fd,name,data,m=record\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)))\\n need(os.pread(fd,65537,0)==data)\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)));check()\\ndef all_same():\\n for record in records:same(record)\\ndef read(name,cap,modes,want=None):\\n check();parents()\\n fd=keep(os.open(name,os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC,dir_fd=public));s=os.fstat(fd)\\n need(stat.S_ISREG(s.st_mode) and s.st_uid==s.st_gid==1000 and s.st_nlink==1 and s.st_dev==os.fstat(public).st_dev and stat.S_IMODE(s.st_mode) in modes and 0<s.st_size<=cap)\\n data=os.pread(fd,cap+1,0);need(len(data)==s.st_size and (want is None or data==want))\\n record=[fd,name,data,meta(s)];same(record);records.append(record);return record\\ntry:\\n need(os.getuid()==os.geteuid()==os.getgid()==os.getegid()==1000 and len(sys.argv)==2)\\n value=parse(sys.argv[1]);need(type(value) is dict and set(value)=={\\'collector\\',\\'raw\\',\\'reader\\'} and all(type(v) is str for v in value.values()))\\n intended=[value[\\'raw\\'].encode(),value[\\'reader\\'].encode()];need(all(0<len(v)<=65536 and v.endswith(b\\'\\\\n\\') for v in intended))\\n collected=parse(value[\\'collector\\']);expected=collected[\\'receipt\\']\\n need(type(expected) is dict and set(expected)=={\\'bytes\\',\\'metadata\\',\\'sha256\\'} and type(expected[\\'bytes\\']) is int and type(expected[\\'metadata\\']) is list and len(expected[\\'metadata\\'])==10 and all(type(x) is int for x in expected[\\'metadata\\']))\\n flags=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\\n public=keep(os.open(\\'/\\',flags));s=os.fstat(public);need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((None,None,public,meta(s)))\\n for part in (\\'home\\',\\'postedism\\',\\'Desktop\\',\\'Warden\\',\\'docs\\',\\'evidence\\',\\'task-6\\'):\\n  parent=public;public=keep(os.open(part,flags,dir_fd=parent));s=os.fstat(public)\\n  need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((parent,part,public,meta(s)))\\n P=\\'controller-cache-continuation-v1-20261025-coord-metadata-r1-material-\\'\\n receipt=read(P+\\'receipt.json\\',16384,(0o600,0o644))\\n need(expected=={\\'bytes\\':len(receipt[2]),\\'metadata\\':receipt[3],\\'sha256\\':hashlib.sha256(receipt[2]).hexdigest()})\\n received=parse(receipt[2]);need(received[\\'clock_identity\\']==collected[\\'clock_identity\\'])\\n timing=received[\\'timing\\'];origin=timing[\\'origin\\'];first=origin[\\'sample\\'];last=timing[\\'final_sample\\']\\n names=(\\'monotonic_before_ns\\',\\'boottime_ns\\',\\'monotonic_after_ns\\')\\n values=[origin[\\'budget_start_monotonic_lower_ns\\'],first[\\'birth_boot_lower_ns\\'],timing[\\'ended_monotonic_ns\\']]+[s[n] for s in (first,last) for n in names]\\n need(all(type(x) is int and x>=0 for x in values))\\n need(origin[\\'budget_start_monotonic_lower_ns\\']<=first[\\'monotonic_before_ns\\']<=first[\\'monotonic_after_ns\\']<=last[\\'monotonic_before_ns\\']<=last[\\'monotonic_after_ns\\']<=timing[\\'ended_monotonic_ns\\'])\\n need(first[\\'birth_boot_lower_ns\\']<=first[\\'boottime_ns\\']<=last[\\'boottime_ns\\']<=B0 and last[\\'monotonic_after_ns\\']<=M0)\\n for sample in (first,last):\\n  need(sample[\\'monotonic_after_ns\\']-sample[\\'monotonic_before_ns\\']<=100000000)\\n  lo=max(lo,sample[\\'boottime_ns\\']-sample[\\'monotonic_after_ns\\']);hi=min(hi,sample[\\'boottime_ns\\']-sample[\\'monotonic_before_ns\\'])\\n need(lo<=hi)\\n me=min(me,origin[\\'budget_start_monotonic_lower_ns\\']+30000000000);be=min(be,first[\\'birth_boot_lower_ns\\']+30000000000);arm()\\n targets=[read(P+name,65536,(0o600,0o644,0o664),want) for name,want in zip((\\'root-tool.json\\',\\'root-proof-reader-tool.json\\'),intended)]\\n need(targets[0][3][:2]!=targets[1][3][:2]);all_same()\\n for record in targets:\\n  all_same();check();before=record[3];os.fchmod(record[0],0o600);check();after=meta(os.fstat(record[0]))\\n  need(after[4]==stat.S_IFREG|0o600 and all(after[i]==before[i] for i in (0,1,2,3,5,6,7,9)))\\n  record[3]=after;os.fsync(record[0]);check();all_same()\\n all_same();sys.stdout.write(\\'{\"state\":\"material-metadata-finalized\",\"authority\":false}\\\\n\\');sys.stdout.flush();all_same()\\nfinally:\\n for fd in reversed(fds):check();os.close(fd);check()\\ncheck()\\n','<unchanged-metadata-body>','exec'),{})\nfinally:\n sys.stderr.write('WARDEN_COORD_R1_FD_TELEMETRY '+json.dumps({'root_routed':_root_used,'opens':_opens,'fchmod':_chmods,'fsync':_syncs,'held_count':len(_held),'replacement_injected':_replaced},separators=(',',':'))+'\\n');sys.stderr.flush()\n"
+      },
+      "stderr": "WARDEN_COORD_R1_FD_TELEMETRY {\"root_routed\":true,\"opens\":[\"ROUTED_ROOT\",\"home\",\"postedism\",\"Desktop\",\"Warden\",\"docs\",\"evidence\",\"task-6\",\"controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json\",\"controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json\"],\"fchmod\":[],\"fsync\":[],\"held_count\":0,\"replacement_injected\":false}\nTraceback (most recent call last):\n  File \"<stdin>\", line 46, in <module>\n  File \"<unchanged-metadata-body>\", line 74, in <module>\n  File \"<unchanged-metadata-body>\", line 45, in read\n  File \"<unchanged-metadata-body>\", line 5, in need\nValueError: material metadata refusal\n",
+      "stderr_classification": "expected refusal traceback retained in full; only exact telemetry separately parsed",
+      "stdout": "",
+      "telemetry": {
+        "fchmod": [],
+        "fsync": [],
+        "held_count": 0,
+        "opens": [
+          "ROUTED_ROOT",
+          "home",
+          "postedism",
+          "Desktop",
+          "Warden",
+          "docs",
+          "evidence",
+          "task-6",
+          "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-receipt.json",
+          "controller-cache-continuation-v1-20261025-coord-metadata-r1-material-root-tool.json"
+        ],
+        "replacement_injected": false,
+        "root_routed": true
+      },
+      "temporary_allocated_after": 57344,
+      "temporary_allocated_before": 57344,
+      "timed_out": false
+    }
+  ],
+  "children_passed": 5,
+  "elapsed_monotonic_ns": 142470433,
+  "errors": 0,
+  "failures": 0,
+  "frozen_changed_sources_verified": 7,
+  "groups_passed": 4,
+  "helper_sha256": "14e93ae4e1e1ffbecd0f181e9f1da71001a1bd816223b87c9d76aaafa2cf9c95",
+  "limits": {
+    "address_bytes": 268435456,
+    "cpu_seconds": 20,
+    "file_bytes": 2097152,
+    "temporary_bytes": 5242880,
+    "wall_seconds": 45
+  },
+  "missing": [],
+  "owned_temp": "/tmp/warden-coord-r1-nsh3vlh5",
+  "owned_temp_removed_after_known_terminal": true,
+  "real_runtime_paths_accessed": false,
+  "scope": "four FD groups / five finite children only",
+  "temporary_peak_final": 57344
+}

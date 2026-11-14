@@ -1,0 +1,63 @@
+{
+  "source": "0da497136069bf045912f257f7c6d26c962f9d34",
+  "tested_source": "0da497136069bf045912f257f7c6d26c962f9d34",
+  "scope": "Original final round5 B bounded diagnostics; focused real-process tests and one affected-FC covering; no VM/Q release",
+  "files": {
+    "README.md": {
+      "bytes": 12060,
+      "sha256": "21ab180da3bcf2d1a27f5217f2843d812a17d6267ccbd900f24c57516066d7c3"
+    },
+    "cover.json": {
+      "bytes": 1176,
+      "sha256": "1410da84e23fd290813b8c2faf485cfaac9f96186b17108458ca3b8713114953"
+    },
+    "cover.log": {
+      "bytes": 22912,
+      "sha256": "d1cade0d9071c6229ffa6d8f8e142b6d41f13aeb31053a3fdceb0dc1540aa856"
+    },
+    "green.json": {
+      "bytes": 1183,
+      "sha256": "002903e2a29dbc215e530cb4eaa9308e85dea016c70501a5226ad9fe18eae68f"
+    },
+    "green.log": {
+      "bytes": 5612,
+      "sha256": "4ae101c5ce433ab22c22ff620ef338425b85f061547482b65c9e5c4c41fd2bcd"
+    },
+    "pre-execution-note.md": {
+      "bytes": 548,
+      "sha256": "23ba9528237f925742031feb9745940b1787ac3c40b4142ba4100a9bdf2159d6"
+    },
+    "red-behavior.json": {
+      "bytes": 1183,
+      "sha256": "24148cdb2b3f01daf01814477d1cc9aa32e984f19fe50d1b8c6d82dfc52e8778"
+    },
+    "red-behavior.log": {
+      "bytes": 5071,
+      "sha256": "ed5760a8bdbffc55061bfc144c563a00b82b5482fdbeb3159f2d8e67c07ca179"
+    },
+    "red.json": {
+      "bytes": 1183,
+      "sha256": "826e0a217a4ebcf81413cd60615c954f56a01ba7a9f45ba107dc4667402c0253"
+    },
+    "red.log": {
+      "bytes": 4395,
+      "sha256": "a7fec6db7b246f9773e6143e11f22db6d8f75b22c6bee21b368aca09ae794e6d"
+    },
+    "run-fixed.py": {
+      "bytes": 2680,
+      "sha256": "98b86a1f1b5ac5fad9d12cecdee96328fc15f2f764f6a02e4b8b01a1fc49769e"
+    },
+    "source-verification.json": {
+      "bytes": 6956,
+      "sha256": "6d39ffbccdc630b88c1e87fad3c4f7f56c1512f4a7f8353a5ce312d8ebd91d5b"
+    },
+    "source-verification.log": {
+      "bytes": 448,
+      "sha256": "ca1c56aa2b8e321bfe8f4baab1a16917bde3445e8cf2bec93a3802584b7af0f8"
+    },
+    "verify-command.py": {
+      "bytes": 8414,
+      "sha256": "3601b0df00dd56d673c044d71bc38c4b47f08c6d5d721d34fc6cf347415fe7ce"
+    }
+  }
+}

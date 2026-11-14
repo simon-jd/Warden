@@ -1,0 +1,26 @@
+test_existing_operation_read_refuses_a_first_only_historical_document (test_firecracker_recovery.HistoryBindingTests.test_existing_operation_read_refuses_a_first_only_historical_document) ... 
+  test_existing_operation_read_refuses_a_first_only_historical_document (test_firecracker_recovery.HistoryBindingTests.test_existing_operation_read_refuses_a_first_only_historical_document) (second=False) ... FAIL
+  test_existing_operation_read_refuses_a_first_only_historical_document (test_firecracker_recovery.HistoryBindingTests.test_existing_operation_read_refuses_a_first_only_historical_document) (second=True) ... FAIL
+
+======================================================================
+FAIL: test_existing_operation_read_refuses_a_first_only_historical_document (test_firecracker_recovery.HistoryBindingTests.test_existing_operation_read_refuses_a_first_only_historical_document) (second=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 744, in test_existing_operation_read_refuses_a_first_only_historical_document
+    with self.assertRaises((recovery.Refusal, OSError)): recovery.operation_read(self.source)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'firecracker_recovery_init.Refusal'>, <class 'OSError'>) not raised
+
+======================================================================
+FAIL: test_existing_operation_read_refuses_a_first_only_historical_document (test_firecracker_recovery.HistoryBindingTests.test_existing_operation_read_refuses_a_first_only_historical_document) (second=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 744, in test_existing_operation_read_refuses_a_first_only_historical_document
+    with self.assertRaises((recovery.Refusal, OSError)): recovery.operation_read(self.source)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'firecracker_recovery_init.Refusal'>, <class 'OSError'>) not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+FAILED (failures=2)

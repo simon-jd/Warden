@@ -1,0 +1,37 @@
+{
+  "source": "135c3b866f07692ad846cc48c8c5bde0cf91ee33",
+  "fix_base": "84a132b6fc9802ec9b3300b38dbd6f79fa554d51",
+  "source_parent": "d8d02603ea5c28a0b5d64debef32fc5712c04481",
+  "files": {
+    "runtimes/firecracker/driver.go": {
+      "sha256": "ff95c7a8cf08d638ebb43b4ce411a27da017131e13ae4b9a4291f24e96e212aa",
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/driver_test.go": {
+      "sha256": "e051bb8406d855984636e1f5a82adafa58bfffa2231facfd27958f0fc5a629e4",
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/shutdown.go": {
+      "sha256": "61ec1b2f167aeea83815a3b51ba0cd19e140b6a1dbdd9f8454c1046f4bcf1350",
+      "mode": "0o644"
+    },
+    "runtimes/gate/admission.go": {
+      "sha256": "3aabb68f81513df1a571da54f371a114aa552a8b79c693e45ad807318f70d1fc",
+      "mode": "0o644"
+    },
+    "runtimes/gate/admission_test.go": {
+      "sha256": "b6c94934ac1244c52c3de431e6044a9f3a0c4e8269d4f1fa10ef3d7073874ca4",
+      "mode": "0o644"
+    },
+    "runtimes/gate/gate.go": {
+      "sha256": "0b5a5b140a7124c9d2a65567694e5b662d13bb99b7fdcd1cedadc434273f8284",
+      "mode": "0o644"
+    }
+  },
+  "unchanged_interfaces_and_profile": {
+    "scripts/firecracker_code.py": "56abda58b8a822b7bc1ce7311025763878e7110c2d4cfabd84203dce556db4dd",
+    "scripts/go.sh": "8682e3c696de6ee3a597554edda7f30ddfd2afbdcac8c90b2216b1a2523ad463",
+    "runtimes/gate/retirement.go": "962cfa63ac1f252e95375c63d076f079abc6ddf0a851b6b61f5b76f55b9c428f",
+    "runtimes/conformance/suite.go": "0f840d48bd15b53ef59a24db34424ebeb5b330a413bd85edda9737bf3b0621ed"
+  }
+}

@@ -1,0 +1,448 @@
+# Task 6 review fix round 1: RED and GREEN logs (C4 7067f3b, C5 fb33cc1/ab96af3/0dc2eba, D7 b64ff73)
+# Review fix round 1 (2026-11-12, worktree cloud-identity, home-ubuntu). Each RED was run on the commit named in its
+# header with only the new or changed tests applied, before the fix; GREEN after the fix. Logs copied verbatim from the
+# run (kept outside the repo until now); test IDs are made up; the real subscription ID never appears (D11 uses <SUB>).
+
+################ C4: test-terraform runs without network and never falls back (live check: test-terraform-offline-20261112.txt) (7067f3b)
+
+======== c4-red.log
+# C4 RED at f52b5a2 + new test only, 2026-11-12T17:24:41Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_terraform_offline.py -v
+test_every_call_runs_without_network_and_init_uses_only_the_plugin_dir (test_terraform_offline.TerraformOfflineTest.test_every_call_runs_without_network_and_init_uses_only_the_plugin_dir) ... FAIL
+test_failed_offline_init_is_not_retried_with_the_registry (test_terraform_offline.TerraformOfflineTest.test_failed_offline_init_is_not_retried_with_the_registry) ... FAIL
+test_missing_provider_fails_before_terraform_runs (test_terraform_offline.TerraformOfflineTest.test_missing_provider_fails_before_terraform_runs) ... FAIL
+
+======================================================================
+FAIL: test_every_call_runs_without_network_and_init_uses_only_the_plugin_dir (test_terraform_offline.TerraformOfflineTest.test_every_call_runs_without_network_and_init_uses_only_the_plugin_dir)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_terraform_offline.py", line 66, in test_every_call_runs_without_network_and_init_uses_only_the_plugin_dir
+    self.assertTrue(nets == ["lo"], f"`terraform {args}` saw {len(nets)} network interfaces")
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : `terraform -chdir=identity/terraform fmt -check -diff` saw 52 network interfaces
+
+======================================================================
+FAIL: test_failed_offline_init_is_not_retried_with_the_registry (test_terraform_offline.TerraformOfflineTest.test_failed_offline_init_is_not_retried_with_the_registry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_terraform_offline.py", line 75, in test_failed_offline_init_is_not_retried_with_the_registry
+    self.assertEqual(len(inits), 1, inits)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 1 : ['-chdir=identity/terraform init -backend=false -input=false -lockfile=readonly -no-color -plugin-dir=/home/postedism/Desktop/Warden-cloud/.cache/terraform/plugins', '-chdir=identity/terraform init -backend=false -input=false -lockfile=readonly -no-color']
+
+======================================================================
+FAIL: test_missing_provider_fails_before_terraform_runs (test_terraform_offline.TerraformOfflineTest.test_missing_provider_fails_before_terraform_runs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_terraform_offline.py", line 80, in test_missing_provider_fails_before_terraform_runs
+    self.assertNotEqual(proc.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.063s
+
+FAILED (failures=3)
+
+======== c4-green.log
+# C4 GREEN, 2026-11-12T17:24:53Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_terraform_offline.py -v
+test_every_call_runs_without_network_and_init_uses_only_the_plugin_dir (test_terraform_offline.TerraformOfflineTest.test_every_call_runs_without_network_and_init_uses_only_the_plugin_dir) ... ok
+test_failed_offline_init_is_not_retried_with_the_registry (test_terraform_offline.TerraformOfflineTest.test_failed_offline_init_is_not_retried_with_the_registry) ... ok
+test_missing_provider_fails_before_terraform_runs (test_terraform_offline.TerraformOfflineTest.test_missing_provider_fails_before_terraform_runs) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.077s
+
+OK
+
+################ C5: entra_oidc_live counts only Entra's refusal as a refusal; inconclusive probes (fb33cc1)
+
+======== c5a-red.log
+# C5 (inconclusive probes) RED at c634630 + new tests only, 2026-11-12T23:16:23Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_entra_oidc_live.py -v
+test_unassign_counts_only_entra_refusals (test_entra_oidc_live.OfflineModeTest.test_unassign_counts_only_entra_refusals) ... FAIL
+test_unassign_with_only_failed_probes_is_not_a_refusal (test_entra_oidc_live.OfflineModeTest.test_unassign_with_only_failed_probes_is_not_a_refusal) ... FAIL
+test_summary_never_carries_tokens (test_entra_oidc_live.ProbeSummaryTest.test_summary_never_carries_tokens) ... ok
+test_summary_of_error_keeps_codes_only (test_entra_oidc_live.ProbeSummaryTest.test_summary_of_error_keeps_codes_only) ... ok
+test_assert_clean_catches_leftovers (test_entra_oidc_live.RedactTest.test_assert_clean_catches_leftovers) ... ok
+test_extra_secrets (test_entra_oidc_live.RedactTest.test_extra_secrets) ... ok
+test_redact_tokens_segments_and_ids (test_entra_oidc_live.RedactTest.test_redact_tokens_segments_and_ids) ... ok
+test_user_body_maps_oid_without_profile_data (test_entra_oidc_live.ScimBodyTest.test_user_body_maps_oid_without_profile_data) ... ok
+test_seconds_until_expiry (test_entra_oidc_live.SummaryTest.test_seconds_until_expiry) ... ok
+test_summary_keeps_shape_not_identity (test_entra_oidc_live.SummaryTest.test_summary_keeps_shape_not_identity) ... ok
+test_payload_tamper_keeps_header_and_signature (test_entra_oidc_live.TamperTest.test_payload_tamper_keeps_header_and_signature) ... ok
+test_signature_tamper_changes_only_the_signature (test_entra_oidc_live.TamperTest.test_signature_tamper_changes_only_the_signature) ... ok
+test_unsigned_variant_has_alg_none (test_entra_oidc_live.TamperTest.test_unsigned_variant_has_alg_none) ... ok
+test_aadsts_codes (test_entra_oidc_live.UnassignHelpersTest.test_aadsts_codes) ... ok
+test_first_stable_refusal (test_entra_oidc_live.UnassignHelpersTest.test_first_stable_refusal) ... ERROR
+test_inconclusive_samples_neither_count_nor_restart (test_entra_oidc_live.UnassignHelpersTest.test_inconclusive_samples_neither_count_nor_restart) ... ERROR
+test_only_the_assignment_refusal_counts_as_refused (test_entra_oidc_live.UnassignHelpersTest.test_only_the_assignment_refusal_counts_as_refused) ... ERROR
+test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) ... 
+  test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) [crash] ... ERROR
+  test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) [timeout] ... ERROR
+  test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) [accounts] ... ERROR
+  test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) [garbage] ... ERROR
+  test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) [crash-mentioning-50105] ... ERROR
+  test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) [ok] ... ERROR
+  test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) [refused] ... ERROR
+
+======================================================================
+ERROR: test_first_stable_refusal (test_entra_oidc_live.UnassignHelpersTest.test_first_stable_refusal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 143, in test_first_stable_refusal
+    self.assertEqual(live.first_stable_refusal(samples, run=3), 10)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden-cloud/scripts/entra_oidc_live.py", line 184, in first_stable_refusal
+    if not any(sample["fresh_ok"] for sample in samples[i:i + run]):
+           ^^^
+  File "/home/postedism/Desktop/Warden-cloud/scripts/entra_oidc_live.py", line 184, in <genexpr>
+    if not any(sample["fresh_ok"] for sample in samples[i:i + run]):
+               ~~~~~~^^^^^^^^^^^^
+KeyError: 'fresh_ok'
+
+======================================================================
+ERROR: test_inconclusive_samples_neither_count_nor_restart (test_entra_oidc_live.UnassignHelpersTest.test_inconclusive_samples_neither_count_nor_restart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 150, in test_inconclusive_samples_neither_count_nor_restart
+    self.assertIsNone(live.first_stable_refusal(samples("inconclusive", "inconclusive", "inconclusive")))
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden-cloud/scripts/entra_oidc_live.py", line 184, in first_stable_refusal
+    if not any(sample["fresh_ok"] for sample in samples[i:i + run]):
+           ^^^
+  File "/home/postedism/Desktop/Warden-cloud/scripts/entra_oidc_live.py", line 184, in <genexpr>
+    if not any(sample["fresh_ok"] for sample in samples[i:i + run]):
+               ~~~~~~^^^^^^^^^^^^
+KeyError: 'fresh_ok'
+
+======================================================================
+ERROR: test_only_the_assignment_refusal_counts_as_refused (test_entra_oidc_live.UnassignHelpersTest.test_only_the_assignment_refusal_counts_as_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 157, in test_only_the_assignment_refusal_counts_as_refused
+    self.assertEqual(live.probe_outcome({"ok": True, "ms": 1, "aadsts": [], "error": None}), "ok")
+                     ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'entra_oidc_live' has no attribute 'probe_outcome'
+
+======================================================================
+ERROR: test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) [crash]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 171, in test_probe_crash_or_timeout_is_inconclusive
+    self.assertEqual(result["outcome"], "inconclusive")
+                     ~~~~~~^^^^^^^^^^^
+KeyError: 'outcome'
+
+======================================================================
+ERROR: test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) [timeout]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 169, in test_probe_crash_or_timeout_is_inconclusive
+    result = live.fresh_probe(TENANT, "person@school.example", "api://x/warden.access")
+  File "/home/postedism/Desktop/Warden-cloud/scripts/entra_oidc_live.py", line 211, in fresh_probe
+    out = subprocess.run(["/opt/az/bin/python3", "-I", "-B", str(ROOT / "scripts" / "entra_token_probe.py"),
+                          "--tenant", tenant, "--username", username, "--scope", scope],
+                         capture_output=True, text=True, timeout=60)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1245, in _execute_mock_call
+    raise result
+subprocess.TimeoutExpired: Command '['entra_token_probe.py']' timed out after 60 seconds
+
+======================================================================
+ERROR: test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) [accounts]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 171, in test_probe_crash_or_timeout_is_inconclusive
+    self.assertEqual(result["outcome"], "inconclusive")
+                     ~~~~~~^^^^^^^^^^^
+KeyError: 'outcome'
+
+======================================================================
+ERROR: test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) [garbage]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 171, in test_probe_crash_or_timeout_is_inconclusive
+    self.assertEqual(result["outcome"], "inconclusive")
+                     ~~~~~~^^^^^^^^^^^
+KeyError: 'outcome'
+
+======================================================================
+ERROR: test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) [crash-mentioning-50105]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 171, in test_probe_crash_or_timeout_is_inconclusive
+    self.assertEqual(result["outcome"], "inconclusive")
+                     ~~~~~~^^^^^^^^^^^
+KeyError: 'outcome'
+
+======================================================================
+ERROR: test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) [ok]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 174, in test_probe_crash_or_timeout_is_inconclusive
+    self.assertEqual(live.fresh_probe(TENANT, "person@school.example", "s")["outcome"], outcome)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'outcome'
+
+======================================================================
+ERROR: test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) [refused]
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 174, in test_probe_crash_or_timeout_is_inconclusive
+    self.assertEqual(live.fresh_probe(TENANT, "person@school.example", "s")["outcome"], outcome)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'outcome'
+
+======================================================================
+FAIL: test_unassign_counts_only_entra_refusals (test_entra_oidc_live.OfflineModeTest.test_unassign_counts_only_entra_refusals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 312, in test_unassign_counts_only_entra_refusals
+    self.assertNotIn("error", log)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: 'error' unexpectedly found in {'assignments_of_user_before': 1, 'checks': [{'got': 201, 'ms': 1.0, 'name': 'SCIM POST /scim/v2/Users externalId=oid (static Warden SCIM token)', 'pass': True, 'want': 201}, {'got': 201, 'ms': 1.0, 'name': 'token issued while assigned: POST /v1/runs', 'pass': True, 'want': 201}, {'got': True, 'ms': 120.0, 'name': 'fresh token from Entra while assigned', 'pass': True, 'want': True}], 'control_plane': {'binary': 'controlplane/cmd/warden-api', 'sha256': '0000000000000000000000000000000000000000000000000000000000000000'}, 'error': "TimeoutExpired: Command '['entra_token_probe.py']' timed out after 60 seconds", 'finished_at': '2026-11-12T23:16:23Z', 'fresh_token_before_unassign': {'aadsts': [], 'error': None, 'ms': 120.0, 'ok': True}, 'host': 'postedism-ubuntu-system-selfuse', 'mode': 'unassign', 'oidc': {'audience': 'eeeeeeee-3333-4333-8333-ffffffffffff', 'issuer': 'https://login.microsoftonline.com/<tenant-id>/v2.0', 'jwks_url': 'https://login.microsoftonline.com/<tenant-id>/discovery/v2.0/keys', 'scope': 'api://eeeeeeee-3333-4333-8333-ffffffffffff/warden.access'}, 'postgres': {'container': 'fake', 'removed': True}, 'result': 'FAIL', 'schema': 'warden.task6.entra-live/v1', 'source': {'commit': '0000000000000000000000000000000000000000', 'tracked_changes': [], 'untracked': []}, 'started_at': '2026-11-12T23:16:23Z', 'token': {'claim_names': ['aud', 'azp', 'exp', 'iat', 'idtyp', 'ipaddr', 'iss', 'name', 'nbf', 'oid', 'preferred_username', 'rh', 'scp', 'sub', 'tid', 'upn', 'uti', 'ver'], 'claims': {'aud': 'eeeeeeee-3333-4333-8333-ffffffffffff', 'azp': '04b07795-8ddb-461a-bbee-02f9e1bf7b46', 'exp': '2025-11-10T19:55:00Z', 'iat': '2025-11-10T18:40:00Z', 'idtyp': 'user', 'iss': 'https://login.microsoftonline.com/<tenant-id>/v2.0', 'nbf': '2025-11-10T18:40:00Z', 'oid': '<user-oid>', 'scp': 'warden.access', 'tid': '<tenant-id>', 'ver': '2.0'}, 'header': {'alg': 'RS256', 'kid': 'kid-1', 'typ': 'JWT'}, 'header_names': ['alg', 'kid', 'typ'], 'lifetime_s': 4500, 'signature_bytes': 256}, 'unassign_call_ms': 0.0, 'unassigned_at': '2026-11-12T23:16:23.508799Z'}
+
+======================================================================
+FAIL: test_unassign_with_only_failed_probes_is_not_a_refusal (test_entra_oidc_live.OfflineModeTest.test_unassign_with_only_failed_probes_is_not_a_refusal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 324, in test_unassign_with_only_failed_probes_is_not_a_refusal
+    self.assertFalse(checks["Entra refuses new tokens after unassignment (3 in a row)"]["pass"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.020s
+
+FAILED (failures=2, errors=10)
+FAIL: 3/3 checks -> /tmp/tmppwlh10vm/out.json
+FAIL: 7/8 checks -> /tmp/tmpo2wafrbg/out.json
+
+======== c5a-green.log
+# C5 (inconclusive probes) GREEN, 2026-11-12T23:16:51Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_entra_oidc_live.py -v
+test_unassign_counts_only_entra_refusals (test_entra_oidc_live.OfflineModeTest.test_unassign_counts_only_entra_refusals) ... ok
+test_unassign_with_only_failed_probes_is_not_a_refusal (test_entra_oidc_live.OfflineModeTest.test_unassign_with_only_failed_probes_is_not_a_refusal) ... ok
+test_summary_never_carries_tokens (test_entra_oidc_live.ProbeSummaryTest.test_summary_never_carries_tokens) ... ok
+test_summary_of_error_keeps_codes_only (test_entra_oidc_live.ProbeSummaryTest.test_summary_of_error_keeps_codes_only) ... ok
+test_assert_clean_catches_leftovers (test_entra_oidc_live.RedactTest.test_assert_clean_catches_leftovers) ... ok
+test_extra_secrets (test_entra_oidc_live.RedactTest.test_extra_secrets) ... ok
+test_redact_tokens_segments_and_ids (test_entra_oidc_live.RedactTest.test_redact_tokens_segments_and_ids) ... ok
+test_user_body_maps_oid_without_profile_data (test_entra_oidc_live.ScimBodyTest.test_user_body_maps_oid_without_profile_data) ... ok
+test_seconds_until_expiry (test_entra_oidc_live.SummaryTest.test_seconds_until_expiry) ... ok
+test_summary_keeps_shape_not_identity (test_entra_oidc_live.SummaryTest.test_summary_keeps_shape_not_identity) ... ok
+test_payload_tamper_keeps_header_and_signature (test_entra_oidc_live.TamperTest.test_payload_tamper_keeps_header_and_signature) ... ok
+test_signature_tamper_changes_only_the_signature (test_entra_oidc_live.TamperTest.test_signature_tamper_changes_only_the_signature) ... ok
+test_unsigned_variant_has_alg_none (test_entra_oidc_live.TamperTest.test_unsigned_variant_has_alg_none) ... ok
+test_aadsts_codes (test_entra_oidc_live.UnassignHelpersTest.test_aadsts_codes) ... ok
+test_first_stable_refusal (test_entra_oidc_live.UnassignHelpersTest.test_first_stable_refusal) ... ok
+test_inconclusive_samples_neither_count_nor_restart (test_entra_oidc_live.UnassignHelpersTest.test_inconclusive_samples_neither_count_nor_restart) ... ok
+test_only_the_assignment_refusal_counts_as_refused (test_entra_oidc_live.UnassignHelpersTest.test_only_the_assignment_refusal_counts_as_refused) ... ok
+test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.013s
+
+OK
+
+################ C5: check times are milliseconds (ab96af3)
+
+======== c5b-red.log
+# C5 (seconds in ms fields) RED at fb33cc1 + new test only, 2026-11-12T23:17:07Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_entra_oidc_live.py -v -k test_check_times_are_milliseconds
+test_check_times_are_milliseconds (test_entra_oidc_live.OfflineModeTest.test_check_times_are_milliseconds) ... FAIL
+
+======================================================================
+FAIL: test_check_times_are_milliseconds (test_entra_oidc_live.OfflineModeTest.test_check_times_are_milliseconds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 330, in test_check_times_are_milliseconds
+    self.assertEqual(checks["Entra refuses new tokens after unassignment (3 in a row)"]["ms"], 3000.0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 3.0 != 3000.0
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)
+
+======== c5b-green.log
+# C5 (seconds in ms fields) GREEN, 2026-11-12T23:17:16Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_entra_oidc_live.py -v
+test_check_times_are_milliseconds (test_entra_oidc_live.OfflineModeTest.test_check_times_are_milliseconds) ... ok
+test_unassign_counts_only_entra_refusals (test_entra_oidc_live.OfflineModeTest.test_unassign_counts_only_entra_refusals) ... ok
+test_unassign_with_only_failed_probes_is_not_a_refusal (test_entra_oidc_live.OfflineModeTest.test_unassign_with_only_failed_probes_is_not_a_refusal) ... ok
+test_summary_never_carries_tokens (test_entra_oidc_live.ProbeSummaryTest.test_summary_never_carries_tokens) ... ok
+test_summary_of_error_keeps_codes_only (test_entra_oidc_live.ProbeSummaryTest.test_summary_of_error_keeps_codes_only) ... ok
+test_assert_clean_catches_leftovers (test_entra_oidc_live.RedactTest.test_assert_clean_catches_leftovers) ... ok
+test_extra_secrets (test_entra_oidc_live.RedactTest.test_extra_secrets) ... ok
+test_redact_tokens_segments_and_ids (test_entra_oidc_live.RedactTest.test_redact_tokens_segments_and_ids) ... ok
+test_user_body_maps_oid_without_profile_data (test_entra_oidc_live.ScimBodyTest.test_user_body_maps_oid_without_profile_data) ... ok
+test_seconds_until_expiry (test_entra_oidc_live.SummaryTest.test_seconds_until_expiry) ... ok
+test_summary_keeps_shape_not_identity (test_entra_oidc_live.SummaryTest.test_summary_keeps_shape_not_identity) ... ok
+test_payload_tamper_keeps_header_and_signature (test_entra_oidc_live.TamperTest.test_payload_tamper_keeps_header_and_signature) ... ok
+test_signature_tamper_changes_only_the_signature (test_entra_oidc_live.TamperTest.test_signature_tamper_changes_only_the_signature) ... ok
+test_unsigned_variant_has_alg_none (test_entra_oidc_live.TamperTest.test_unsigned_variant_has_alg_none) ... ok
+test_aadsts_codes (test_entra_oidc_live.UnassignHelpersTest.test_aadsts_codes) ... ok
+test_first_stable_refusal (test_entra_oidc_live.UnassignHelpersTest.test_first_stable_refusal) ... ok
+test_inconclusive_samples_neither_count_nor_restart (test_entra_oidc_live.UnassignHelpersTest.test_inconclusive_samples_neither_count_nor_restart) ... ok
+test_only_the_assignment_refusal_counts_as_refused (test_entra_oidc_live.UnassignHelpersTest.test_only_the_assignment_refusal_counts_as_refused) ... ok
+test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.016s
+
+OK
+
+################ C5: expired mode requires the same user (0dc2eba)
+
+======== c5c-red.log
+# C5 (expired check asserts same_user) RED at ab96af3 + new tests only, 2026-11-12T23:17:30Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_entra_oidc_live.py -v -k expired
+test_expired_token_of_another_user_is_not_a_pass (test_entra_oidc_live.OfflineModeTest.test_expired_token_of_another_user_is_not_a_pass) ... FAIL
+test_expired_token_of_the_same_user_passes (test_entra_oidc_live.OfflineModeTest.test_expired_token_of_the_same_user_passes) ... ok
+
+======================================================================
+FAIL: test_expired_token_of_another_user_is_not_a_pass (test_entra_oidc_live.OfflineModeTest.test_expired_token_of_another_user_is_not_a_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 351, in test_expired_token_of_another_user_is_not_a_pass
+    self.assertEqual((code, log["result"]), (1, "FAIL"))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (0, 'PASS') != (1, 'FAIL')
+
+First differing element 0:
+0
+1
+
+- (0, 'PASS')
++ (1, 'FAIL')
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+FAILED (failures=1)
+
+======== c5c-green.log
+# C5 (expired check asserts same_user) GREEN, 2026-11-12T23:17:39Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_entra_oidc_live.py -v
+test_check_times_are_milliseconds (test_entra_oidc_live.OfflineModeTest.test_check_times_are_milliseconds) ... ok
+test_expired_token_of_another_user_is_not_a_pass (test_entra_oidc_live.OfflineModeTest.test_expired_token_of_another_user_is_not_a_pass) ... ok
+test_expired_token_of_the_same_user_passes (test_entra_oidc_live.OfflineModeTest.test_expired_token_of_the_same_user_passes) ... ok
+test_unassign_counts_only_entra_refusals (test_entra_oidc_live.OfflineModeTest.test_unassign_counts_only_entra_refusals) ... ok
+test_unassign_with_only_failed_probes_is_not_a_refusal (test_entra_oidc_live.OfflineModeTest.test_unassign_with_only_failed_probes_is_not_a_refusal) ... ok
+test_summary_never_carries_tokens (test_entra_oidc_live.ProbeSummaryTest.test_summary_never_carries_tokens) ... ok
+test_summary_of_error_keeps_codes_only (test_entra_oidc_live.ProbeSummaryTest.test_summary_of_error_keeps_codes_only) ... ok
+test_assert_clean_catches_leftovers (test_entra_oidc_live.RedactTest.test_assert_clean_catches_leftovers) ... ok
+test_extra_secrets (test_entra_oidc_live.RedactTest.test_extra_secrets) ... ok
+test_redact_tokens_segments_and_ids (test_entra_oidc_live.RedactTest.test_redact_tokens_segments_and_ids) ... ok
+test_user_body_maps_oid_without_profile_data (test_entra_oidc_live.ScimBodyTest.test_user_body_maps_oid_without_profile_data) ... ok
+test_seconds_until_expiry (test_entra_oidc_live.SummaryTest.test_seconds_until_expiry) ... ok
+test_summary_keeps_shape_not_identity (test_entra_oidc_live.SummaryTest.test_summary_keeps_shape_not_identity) ... ok
+test_payload_tamper_keeps_header_and_signature (test_entra_oidc_live.TamperTest.test_payload_tamper_keeps_header_and_signature) ... ok
+test_signature_tamper_changes_only_the_signature (test_entra_oidc_live.TamperTest.test_signature_tamper_changes_only_the_signature) ... ok
+test_unsigned_variant_has_alg_none (test_entra_oidc_live.TamperTest.test_unsigned_variant_has_alg_none) ... ok
+test_aadsts_codes (test_entra_oidc_live.UnassignHelpersTest.test_aadsts_codes) ... ok
+test_first_stable_refusal (test_entra_oidc_live.UnassignHelpersTest.test_first_stable_refusal) ... ok
+test_inconclusive_samples_neither_count_nor_restart (test_entra_oidc_live.UnassignHelpersTest.test_inconclusive_samples_neither_count_nor_restart) ... ok
+test_only_the_assignment_refusal_counts_as_refused (test_entra_oidc_live.UnassignHelpersTest.test_only_the_assignment_refusal_counts_as_refused) ... ok
+test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.018s
+
+OK
+
+################ D7: source state includes untracked files (b64ff73)
+
+======== d7-red.log
+# D7 (source_state includes untracked files) RED at 0dc2eba + new tests only, 2026-11-12T23:18:13Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_entra_oidc_live.py -v -k source -k Source
+test_unreadable_source_state_stops_before_any_entra_call (test_entra_oidc_live.OfflineModeTest.test_unreadable_source_state_stops_before_any_entra_call) ... ERROR
+test_outside_a_checkout_is_an_error (test_entra_oidc_live.SourceStateTest.test_outside_a_checkout_is_an_error) ... ERROR
+test_records_commit_tracked_changes_and_untracked_files (test_entra_oidc_live.SourceStateTest.test_records_commit_tracked_changes_and_untracked_files) ... ERROR
+
+======================================================================
+ERROR: test_unreadable_source_state_stops_before_any_entra_call (test_entra_oidc_live.OfflineModeTest.test_unreadable_source_state_stops_before_any_entra_call)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 358, in test_unreadable_source_state_stops_before_any_entra_call
+    code = live.main(["run", "--audience", AUD, "--out", str(self.dir / "out.json")])
+  File "/home/postedism/Desktop/Warden-cloud/scripts/entra_oidc_live.py", line 647, in main
+    "source": source_state(), "host": os.uname().nodename, "checks": []}
+              ~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+RuntimeError: git rev-parse: not a git repository
+
+======================================================================
+ERROR: test_outside_a_checkout_is_an_error (test_entra_oidc_live.SourceStateTest.test_outside_a_checkout_is_an_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 403, in test_outside_a_checkout_is_an_error
+    live.source_state(Path(tmp) / "missing")
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: source_state() takes 0 positional arguments but 1 was given
+
+======================================================================
+ERROR: test_records_commit_tracked_changes_and_untracked_files (test_entra_oidc_live.SourceStateTest.test_records_commit_tracked_changes_and_untracked_files)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 388, in test_records_commit_tracked_changes_and_untracked_files
+    clean = live.source_state(repo)
+TypeError: source_state() takes 0 positional arguments but 1 was given
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.009s
+
+FAILED (errors=3)
+
+# The same situation through the old signature (ROOT pointed at a fresh repo with one untracked script):
+$ python3 -I -B -c "...live.ROOT = <repo>; print(live.source_state())"
+{'commit': '8ff6b22...', 'tracked_changes': False} <- driver.py is untracked
+
+======== d7-green.log
+# D7 (source_state includes untracked files) GREEN, 2026-11-12T23:18:33Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_entra_oidc_live.py -v
+test_check_times_are_milliseconds (test_entra_oidc_live.OfflineModeTest.test_check_times_are_milliseconds) ... ok
+test_expired_token_of_another_user_is_not_a_pass (test_entra_oidc_live.OfflineModeTest.test_expired_token_of_another_user_is_not_a_pass) ... ok
+test_expired_token_of_the_same_user_passes (test_entra_oidc_live.OfflineModeTest.test_expired_token_of_the_same_user_passes) ... ok
+test_unassign_counts_only_entra_refusals (test_entra_oidc_live.OfflineModeTest.test_unassign_counts_only_entra_refusals) ... ok
+test_unassign_with_only_failed_probes_is_not_a_refusal (test_entra_oidc_live.OfflineModeTest.test_unassign_with_only_failed_probes_is_not_a_refusal) ... ok
+test_unreadable_source_state_stops_before_any_entra_call (test_entra_oidc_live.OfflineModeTest.test_unreadable_source_state_stops_before_any_entra_call) ... ok
+test_summary_never_carries_tokens (test_entra_oidc_live.ProbeSummaryTest.test_summary_never_carries_tokens) ... ok
+test_summary_of_error_keeps_codes_only (test_entra_oidc_live.ProbeSummaryTest.test_summary_of_error_keeps_codes_only) ... ok
+test_assert_clean_catches_leftovers (test_entra_oidc_live.RedactTest.test_assert_clean_catches_leftovers) ... ok
+test_extra_secrets (test_entra_oidc_live.RedactTest.test_extra_secrets) ... ok
+test_redact_tokens_segments_and_ids (test_entra_oidc_live.RedactTest.test_redact_tokens_segments_and_ids) ... ok
+test_user_body_maps_oid_without_profile_data (test_entra_oidc_live.ScimBodyTest.test_user_body_maps_oid_without_profile_data) ... ok
+test_outside_a_checkout_is_an_error (test_entra_oidc_live.SourceStateTest.test_outside_a_checkout_is_an_error) ... ok
+test_records_commit_tracked_changes_and_untracked_files (test_entra_oidc_live.SourceStateTest.test_records_commit_tracked_changes_and_untracked_files) ... ok
+test_seconds_until_expiry (test_entra_oidc_live.SummaryTest.test_seconds_until_expiry) ... ok
+test_summary_keeps_shape_not_identity (test_entra_oidc_live.SummaryTest.test_summary_keeps_shape_not_identity) ... ok
+test_payload_tamper_keeps_header_and_signature (test_entra_oidc_live.TamperTest.test_payload_tamper_keeps_header_and_signature) ... ok
+test_signature_tamper_changes_only_the_signature (test_entra_oidc_live.TamperTest.test_signature_tamper_changes_only_the_signature) ... ok
+test_unsigned_variant_has_alg_none (test_entra_oidc_live.TamperTest.test_unsigned_variant_has_alg_none) ... ok
+test_aadsts_codes (test_entra_oidc_live.UnassignHelpersTest.test_aadsts_codes) ... ok
+test_first_stable_refusal (test_entra_oidc_live.UnassignHelpersTest.test_first_stable_refusal) ... ok
+test_inconclusive_samples_neither_count_nor_restart (test_entra_oidc_live.UnassignHelpersTest.test_inconclusive_samples_neither_count_nor_restart) ... ok
+test_only_the_assignment_refusal_counts_as_refused (test_entra_oidc_live.UnassignHelpersTest.test_only_the_assignment_refusal_counts_as_refused) ... ok
+test_probe_crash_or_timeout_is_inconclusive (test_entra_oidc_live.UnassignHelpersTest.test_probe_crash_or_timeout_is_inconclusive) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.032s
+
+OK

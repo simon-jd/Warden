@@ -1,0 +1,54 @@
+{
+  "dispatch_base": "ba87a3cb2a73a30309914792c14765fc7a622b20",
+  "files": {
+    "docs/evidence/task-6/continuation-controller-operations-execution-plan.md": {
+      "allocated_bytes": 110592,
+      "bytes": 109113,
+      "sha256": "1c341b2f6bc3420245a6327d64501dd8c8f2f416d6b9f9f3c28b928218d240ea"
+    },
+    "docs/evidence/task-6/controller-coordinator-metadata-r1-baseline.json": {
+      "allocated_bytes": 4096,
+      "bytes": 3410,
+      "sha256": "fbaa4eaa5b16027833ec5c8d99b0a262977add5598d38a3aaf603c55f0934902"
+    },
+    "docs/evidence/task-6/controller-coordinator-metadata-r1-events-fixture.js": {
+      "allocated_bytes": 8192,
+      "bytes": 6171,
+      "sha256": "b01f56b760e93706bc7462790a7b5c28760b8687bf7fc7e4a16ab84411efd5cd"
+    },
+    "docs/evidence/task-6/controller-coordinator-metadata-r1-execute.js": {
+      "allocated_bytes": 4096,
+      "bytes": 2043,
+      "sha256": "4e7887688a9156ccb2718a897060f3da3357a75929a47aa8ee06db12e927c46f"
+    },
+    "docs/evidence/task-6/controller-coordinator-metadata-r1-material-candidate.js": {
+      "allocated_bytes": 20480,
+      "bytes": 18336,
+      "sha256": "dff4ae160f80cdf37b642b9809e1384034d011d4e9fe68a1fead87b45190c7c2"
+    },
+    "docs/evidence/task-6/controller-coordinator-metadata-r1-verification.py": {
+      "allocated_bytes": 16384,
+      "bytes": 12369,
+      "sha256": "f863923c0e12fc9b3c142a012df415283927b00c5117cf57dceeb992936c3e83"
+    },
+    "scripts/identity_cache_control.py": {
+      "allocated_bytes": 8192,
+      "bytes": 5771,
+      "sha256": "05d6e2c23b24a3182756116abff4b6c141bbc4168f5d8813da2a079b8811806c"
+    }
+  },
+  "old_material_candidate": {
+    "bytes": 11526,
+    "sha256": "dd9553eec47723a1159bc421478cad1b9ad21a97d639f8783a2abdf700f66e13"
+  },
+  "plan_preserved_prefix": {
+    "bytes": 90095,
+    "sha256": "e3996d2be4ffb4b3bd684ca46316766b306d54a7b7a514ab9bfc170990019892"
+  },
+  "scope": "only this revision changed files; not a renewed original source campaign",
+  "static_textual_checks": [
+    "one bootstrap assignment only",
+    "exactJSON unchanged",
+    "new candidate excludes consumed material prefix"
+  ]
+}

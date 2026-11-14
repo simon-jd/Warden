@@ -1,0 +1,71 @@
+{
+  "utc": "2026-10-24T18:10:38.089349+00:00",
+  "container": "9a22e3c1817441fa2c4f50616e68a333d2a06c98641d430a05a810ea3f7cac50",
+  "image": "sha256:2504a55c791dba7ca00cadae8b11f937aea70ac9149243eb83e590d343bc44a3",
+  "state": {
+    "Status": "running",
+    "Running": true,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 257626,
+    "ExitCode": 0,
+    "Error": "",
+    "StartedAt": "2026-10-24T18:09:45.433745599Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "restart_count": 0,
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "/home/postedism/Desktop/Warden/.cache/warden-lab/docker-b5370b6ce57638aee676a14c3c272592",
+      "Destination": "/session",
+      "Mode": "",
+      "RW": false,
+      "Propagation": "rprivate"
+    }
+  ],
+  "host_config": {
+    "CapAdd": [
+      "CAP_CHOWN",
+      "CAP_DAC_OVERRIDE",
+      "CAP_FOWNER",
+      "CAP_KILL",
+      "CAP_MKNOD",
+      "CAP_NET_ADMIN",
+      "CAP_SETGID",
+      "CAP_SETPCAP",
+      "CAP_SETUID",
+      "CAP_SYS_ADMIN",
+      "CAP_SYS_CHROOT"
+    ],
+    "CapDrop": [
+      "ALL"
+    ],
+    "SecurityOpt": [
+      "no-new-privileges",
+      "apparmor=unconfined",
+      "seccomp=unconfined"
+    ],
+    "Memory": 4000000000,
+    "MemorySwap": 4000000000,
+    "PidsLimit": 512,
+    "NanoCpus": 2000000000,
+    "ReadonlyRootfs": true,
+    "Privileged": false,
+    "PidMode": "",
+    "IpcMode": "private",
+    "CgroupnsMode": "private",
+    "NetworkMode": "none",
+    "PortBindings": {},
+    "Devices": [],
+    "LogConfig": {
+      "Type": "json-file",
+      "Config": {
+        "max-file": "2",
+        "max-size": "10m"
+      }
+    }
+  }
+}

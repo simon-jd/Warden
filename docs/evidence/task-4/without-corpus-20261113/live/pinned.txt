@@ -1,0 +1,4 @@
+2026-11-13T18:35:44.133526024Z pinned 2e337c47ba842e0c53e060e5e7dadc8386a217775aa53e721bd13c049fa4a781 state_before=running task=firecracker-code
+2026-11-13T18:36:33.459523913Z pinned 1dac94ba87fc8cec51a4055e00e9e79028ffb82b6a6d2cdbaf3e6ab76e9b23d9 state_before=running task=firecracker-code
+2026-11-13T18:36:46.840661539Z pinned 688c0bbfd319685a1adede18f9aeaae4fa504a5ff79c6a62f1a71cbcb7321e14 state_before=running task=firecracker
+2026-11-13T18:38:51.407565010Z pinned 07d4c8bda13823b44722dbf87c8c121b4749821ef00aa798db3bf7e70a3af6e7 state_before=running task=firecracker

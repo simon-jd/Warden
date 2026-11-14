@@ -1,0 +1,36 @@
+{
+  "decision": "ACCEPT_ORIGINAL_R1_I1_M1_ADDRESSED_AND_NEW_PARSER_IMPORTANT_REQUIRE_ORIGINAL_R2_5",
+  "previous_source": "f73c1dae4ac47c57a202655f8ca214e76f9dc2a0",
+  "fix_base": "f73c1dae4ac47c57a202655f8ca214e76f9dc2a0",
+  "reviewer": "/root/task10_component_review",
+  "old_rounds_preserved": true,
+  "open_finding": "I2 parser grows all decoded labels before decoded wire length check; malformed QNAME allocation amplification",
+  "original_author_cap": 262144,
+  "used": 262144,
+  "additional_allocated_budget": 0,
+  "physical_file_limits": {
+    "score_go": 8192,
+    "test_go": 16384,
+    "report_md": 24576
+  },
+  "current_logical_bytes": {
+    "score_go": 7163,
+    "test_go": 13978,
+    "report_md": 24398
+  },
+  "remaining_logical_without_any_alloc_growth": {
+    "score_go": 1029,
+    "test_go": 2406,
+    "report_md": 178
+  },
+  "rule": "Only zero-allocated-growth edits to original source/test and <=178B report appendix, preserve full24398B existing report. No new author file, overwrite old prefix or reset. If cannot fit, SAFE STOP exact minimum diff, no self-expansion.",
+  "sequence": "Original author TEST ONLY bounded many-short-label allocation regression on unchangedproduction; root FULLREAD/fresh one exact new genuine security RED. Then original author minimal incremental decoded-wire bound, root one directly affected cover, original reviewer R2 scoped re-review. Old successful6/19 not replayed.",
+  "report_contract": "Original report may append concise R2 link within178B to existing root per-run evidence path containing named covering tests/exact command/full output and original author handoff, reader must read linked command/output. Full raw remains public, never hidden/omitted or oldreport shortened. Root public actual evidence is already in original per-run1MiB/fullR, no new authorCODE allowance.",
+  "native_bounds": "Same original90/80/87/89s/raw64KiB/work768MiB+source/evidence1MiB/12GB/16GBincloldUNKNOWN9GB/Q5GB; no real stress OOM/host scan/daemon/new mock loops.",
+  "full_Task10": "OPEN network/collector/enforcement",
+  "provenance": {
+    "source": "root_agent_in_existing_user_scope",
+    "human_response": false
+  },
+  "at": "2026-10-26T10:41:45.048853+00:00"
+}

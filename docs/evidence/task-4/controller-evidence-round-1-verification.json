@@ -1,0 +1,55 @@
+{
+  "source": "135c3b866f07692ad846cc48c8c5bde0cf91ee33",
+  "evidence": "2ef9dbbecbf1faec51d45aa0a45bb1451f762c7e",
+  "fix_base": "84a132b6fc9802ec9b3300b38dbd6f79fa554d51",
+  "changed_source_files_verified": 6,
+  "unchanged_interfaces_verified": 4,
+  "new_evidence_files_verified": 13,
+  "old_evidence_files_unchanged": 36,
+  "committed_bytes_modes_and_sha_match": true,
+  "private_report_contains_public_fix_report": true,
+  "go_pass": 58,
+  "go_fail": 0,
+  "go_skips": [
+    "TestFirecrackerCapacity",
+    "TestFirecrackerConformance",
+    "TestFirecrackerBoot",
+    "TestSnapshotRestoreFasterThanBoot"
+  ],
+  "tests_repeated_by_controller": false,
+  "vm_executed": false,
+  "history-behavior-red.log": {
+    "failing_test_lines": [
+      "--- FAIL: TestCloseAccountsForGatedFailureWithoutHandle (0.00s)",
+      "--- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/invalid-profile (0.00s)",
+      "--- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/image-mismatch (0.00s)",
+      "--- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/reservation-full (0.00s)",
+      "--- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/record-collision (0.00s)",
+      "--- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/allocator-state (0.00s)",
+      "--- FAIL: TestClosePreservesPendingFilesAfterReopen (0.00s)",
+      "--- FAIL: TestClosePreservesPendingFilesAfterReopen/launching (0.00s)",
+      "--- FAIL: TestClosePreservesPendingFilesAfterReopen/orphan-run (0.00s)"
+    ]
+  },
+  "history-seal-red.log": {
+    "failing_test_lines": [
+      "--- FAIL: TestCloseAccountsForGatedFailureWithoutHandle (0.00s)",
+      "--- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/invalid-profile (0.00s)",
+      "--- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/image-mismatch (0.00s)",
+      "--- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/reservation-full (0.00s)",
+      "--- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/record-collision (0.00s)",
+      "--- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/allocator-state (0.00s)",
+      "--- FAIL: TestClosePreservesPendingFilesAfterReopen (0.00s)",
+      "--- FAIL: TestClosePreservesPendingFilesAfterReopen/launching (0.00s)",
+      "--- FAIL: TestClosePreservesPendingFilesAfterReopen/orphan-run (0.00s)",
+      "--- FAIL: TestSealAdmissionAcrossInstancesAndReopenWithoutProof (0.00s)",
+      "--- FAIL: TestSealAdmissionRejectsMalformedOrUnsafeState (0.00s)",
+      "--- FAIL: TestSealAdmissionRejectsMalformedOrUnsafeState/empty (0.00s)",
+      "--- FAIL: TestSealAdmissionRejectsMalformedOrUnsafeState/corrupt (0.00s)",
+      "--- FAIL: TestSealAdmissionRejectsMalformedOrUnsafeState/other-authority (0.00s)",
+      "--- FAIL: TestSealAdmissionRejectsMalformedOrUnsafeState/mode (0.00s)",
+      "--- FAIL: TestSealAdmissionRejectsMalformedOrUnsafeState/symlink (0.00s)",
+      "--- FAIL: TestSealAdmissionRejectsMalformedOrUnsafeState/hardlink (0.00s)"
+    ]
+  }
+}

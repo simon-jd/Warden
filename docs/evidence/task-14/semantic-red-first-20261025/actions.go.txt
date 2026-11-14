@@ -1,0 +1,91 @@
+// Package respond defines the local response-executor boundary.
+// Real identity, cloud and Kubernetes adapters are not implemented.
+package respond
+
+import (
+	"context"
+	"time"
+)
+
+type ActionName string
+
+const (
+	RevokeVaultLease ActionName = "RevokeVaultLease"
+	DisableAzureServicePrincipalCredential ActionName = "DisableAzureServicePrincipalCredential"
+	IsolatePod ActionName = "IsolatePod"
+	CordonNode ActionName = "CordonNode"
+	SuspendTenant ActionName = "SuspendTenant"
+)
+
+type Resource struct {
+	Type string
+	ID string
+}
+
+type Action struct {
+	Name ActionName
+	Resource Resource
+}
+
+type Playbook struct {
+	ID string
+	Trigger string
+	Steps []Action
+	RequiresApproval bool
+}
+
+// Alert is a local DTO; no live detection integration is implied.
+type Alert struct {
+	ID string
+	RuleID string
+	TenantID string
+	Resource Resource
+	RequesterCredential string
+	ApprovalProof string
+}
+
+type Binding struct {
+	TenantID string
+	AlertID string
+	RuleID string
+	PlaybookID string
+	StepsHash string
+	Action ActionName
+	Resource Resource
+}
+
+// CanonicalID is the authority-resolved principal identifier, including aliases.
+// Roles are current tenant-specific authorizations verified by the authority.
+type Principal struct {
+	Issuer string
+	Subject string
+	CanonicalID string
+	Roles []string
+}
+
+type ApprovalRequest struct {
+	RequesterCredential string
+	ApprovalProof string
+	Binding Binding
+}
+
+type Approval struct {
+	Requester Principal
+	Approver Principal
+	Binding Binding
+	IssuedAt time.Time
+	ExpiresAt time.Time
+}
+
+// ApprovalAuthority must authenticate both credentials, resolve aliases, check
+// revocation/current tenant roles and authenticate every returned binding.
+// Recording authorities in tests are not real identity/approval proof.
+type ApprovalAuthority interface {
+	Verify(context.Context, ApprovalRequest) (Approval, error)
+}
+
+// TenantClient must honor context; Go cannot forcibly interrupt an arbitrary
+// implementation or undo an ambiguous mutation after an error.
+type TenantClient interface {
+	SuspendTenant(context.Context, string) error
+}

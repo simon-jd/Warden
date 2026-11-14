@@ -1,0 +1,3 @@
+{"additional_bytes": "0", "at": "2026-10-24T03:57:38Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 383786909696, "project_allocated_bytes": 2185854976, "service_memory_bytes": "0"}
+
+exit_code=0

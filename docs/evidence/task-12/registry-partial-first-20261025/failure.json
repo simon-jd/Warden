@@ -1,0 +1,9 @@
+{
+  "status": "FAILED",
+  "phase": "config",
+  "type": "RuntimeError",
+  "detail": "redirect refused",
+  "request_count": 5,
+  "metadata_bytes": 8062,
+  "no_layer_get": true
+}

@@ -1,0 +1,3 @@
+Task10 single public metadata operation: FAILED
+Failure: RuntimeError: redirect rejected; no alternate endpoint permitted
+Only official registry index, selected Linux amd64 manifest and config requested; public bearer was memory-only and never retained. No layer transfer, pull, image inspection/execution, source/index edits or next admission. Digest/length checks and declared metadata are in receipt.json. Unpacked expansion, daemon overhead, actual filter availability and runtime UID remain unverified. Trusted Cilium/runc network attachment, tenant/run identity enforcement and real bypass/cleanup acceptance remain OPEN. Prior Task10 proposal is unchanged.

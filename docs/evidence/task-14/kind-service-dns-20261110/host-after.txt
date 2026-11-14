@@ -1,0 +1,11 @@
+vm.overcommit_memory=1
+vm.panic_on_oom=0
+kernel.panic=10
+kernel.panic_on_oops=1
+kernel.keys.root_maxkeys=1000000
+kernel.keys.root_maxbytes=25000000
+fs.inotify.max_user_instances=512
+fs.inotify.max_user_watches=524288
+net.ipv4.ip_forward=1
+net.bridge.bridge-nf-call-iptables=absent
+modules_sha256=9e93ec2d4a03e3645eb14d4ecae80b91b53ea53c2a7fbc09a259e0987b89afdf

@@ -1,0 +1,96 @@
+diff --git a/scripts/restore-tools.sh b/scripts/restore-tools.sh
+index 7b61158..d4da349 100755
+--- a/scripts/restore-tools.sh
++++ b/scripts/restore-tools.sh
+@@ -4,7 +4,7 @@
+ # there, otherwise downloaded from its official release URL and checked
+ # against a pinned SHA-256. Nothing is installed outside the project.
+ #
+-#   scripts/restore-tools.sh go|vector|python|kyverno|kind|k3s|gvisor
++#   scripts/restore-tools.sh go|vector|python|kyverno|kind|k3s|gvisor|helm|cilium
+ set -euo pipefail
+ root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
+ tools=$root/.tools
+@@ -27,6 +27,24 @@ K3S_SHA256=d73847bcd3c5fccef0115b372e2f9a91f3032dc84bbf71518a4617565294d313
+ GVISOR_RELEASE=release-20261019.0
+ # From the release's SHA256SUMS (the "gvisor-x86_64.tar.bz2" line).
+ GVISOR_SHA256=1298e8ed9c3fee900f00d2ea96ec2d79d80ed93f2175812f29b7e7da718041a3
++HELM_VERSION=v3.22.1
++# From get.helm.sh/helm-v3.22.1-linux-amd64.tar.gz.sha256sum.
++HELM_SHA256=896cf63684a42a723d61c980369d6e588330927deb13676ca0d85006dd6da0ea
++# Cilium for the k3s lab's --cilium mode, all from quay.io / Docker Hub by
++# digest (no GitHub): the chart is the OCI artifact quay.io/cilium/charts/cilium
++# (manifest digest below; its one layer is the chart .tgz), and the images are
++# the digests the chart's values.yaml pins, plus the lab's own pod images.
++CILIUM_VERSION=1.20.4
++CILIUM_CHART_MANIFEST=sha256:712e1f65bf30533d117d1996ac3ace3efdb2521302d31ee887b1e45806bd6b64
++CILIUM_CHART_SHA256=505abff8385811df1a949776fc42e9f10697989a332acc86d6e8933efcb855ed
++CILIUM_IMAGES=(
++  cilium=quay.io/cilium/cilium:v1.20.4@sha256:20fe92e4c86641233a450098c158d2d29085f3419931ab6bf681d2485dedf16e
++  operator-generic=quay.io/cilium/operator-generic:v1.20.4@sha256:7a7a3489dc66ad67e420d285c8a8d2e169b0957ad15e120f593d27081bf38d82
++  coredns=docker.io/coredns/coredns:1.14.7@sha256:7efd3c635b03efd68c4e8398fc45f0d993d0e9ab016f72c1cefb0fd6d01aa286
++  # The same Envoy and python images as the Docker egress lab and the kind lab.
++  envoy=docker.io/envoyproxy/envoy:v1.40.2@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb
++  python=docker.io/library/python:3.14.4-alpine@sha256:dd4d2bd5b53d9b25a51da13addf2be586beebd5387e289e798e4083d94ca837a
++)
+ 
+ check_sha() { # file expected
+   local got
+@@ -139,6 +157,48 @@ restore_gvisor() {
+   mv "$dest.tmp" "$dest"
+ }
+ 
++restore_helm() {
++  local dest=$tools/helm name=helm-$HELM_VERSION-linux-amd64.tar.gz
++  [[ -x $dest/helm ]] && return 0
++  local tgz=$cache/cilium-download/$name
++  if [[ ! -f $tgz ]]; then
++    mkdir -p "$cache/cilium-download"
++    curl -fsSL "https://get.helm.sh/$name" -o "$tgz"
++  fi
++  check_sha "$tgz" "$HELM_SHA256"
++  rm -rf "$dest.tmp" && mkdir -p "$dest.tmp"
++  tar -xzf "$tgz" -C "$dest.tmp" --strip-components=1 linux-amd64/helm
++  mv "$dest.tmp" "$dest"
++}
++
++restore_cilium() {
++  local dest=$tools/cilium dl=$cache/cilium-download
++  [[ -f $dest/.complete ]] && return 0
++  rm -rf "$dest.tmp" && mkdir -p "$dest.tmp/images" "$dl"
++  local chart=$dl/cilium-$CILIUM_VERSION.tgz
++  if [[ ! -f $chart ]]; then
++    local token manifest
++    token=$(curl -fsS "https://quay.io/v2/auth?service=quay.io&scope=repository:cilium/charts/cilium:pull" |
++      python3 -I -c 'import json,sys; print(json.load(sys.stdin)["token"])')
++    manifest=$dl/chart-manifest.json
++    curl -fsS -H "Authorization: Bearer $token" -H 'Accept: application/vnd.oci.image.manifest.v1+json' \
++      "https://quay.io/v2/cilium/charts/cilium/manifests/$CILIUM_CHART_MANIFEST" -o "$manifest"
++    check_sha "$manifest" "${CILIUM_CHART_MANIFEST#sha256:}"
++    grep -q "sha256:$CILIUM_CHART_SHA256" "$manifest" || { echo "chart manifest does not name the pinned chart" >&2; return 1; }
++    curl -fsSL -H "Authorization: Bearer $token" \
++      "https://quay.io/v2/cilium/charts/cilium/blobs/sha256:$CILIUM_CHART_SHA256" -o "$chart"
++  fi
++  check_sha "$chart" "$CILIUM_CHART_SHA256"
++  cp "$chart" "$dest.tmp/"
++  local entry
++  for entry in "${CILIUM_IMAGES[@]}"; do
++    python3 -I -B "$root/scripts/oci_fetch.py" "${entry#*=}" "$dest.tmp/images/${entry%%=*}.oci.tar" \
++      >"$dest.tmp/images/${entry%%=*}.receipt.json"
++  done
++  touch "$dest.tmp/.complete"
++  rm -rf "$dest" && mv "$dest.tmp" "$dest"
++}
++
+ restore_python() {
+   # Virtualenv for the pySigma suite; hashes are pinned in requirements.lock.
+   local dest=$tools/py lock=$root/detect/sigma/requirements.lock
+@@ -165,5 +225,7 @@ case "${1:-}" in
+   kind) restore_kind ;;
+   k3s) restore_k3s ;;
+   gvisor) restore_gvisor ;;
+-  *) echo "usage: $0 go|vector|python|kyverno|kind|k3s|gvisor" >&2; exit 2 ;;
++  helm) restore_helm ;;
++  cilium) restore_cilium ;;
++  *) echo "usage: $0 go|vector|python|kyverno|kind|k3s|gvisor|helm|cilium" >&2; exit 2 ;;
+ esac

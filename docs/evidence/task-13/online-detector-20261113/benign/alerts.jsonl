@@ -1,0 +1,1 @@
+{"alert_id": "falco-f0cca5e0c636ec04dab73426d881da2593a82bc4827850622f962d0afe1bfcda", "alerted_at": "2026-11-14T05:03:03.531633465Z", "execution_id": "benign-runc-lab-session", "rule_id": "PTRACE anti-debug attempt"}

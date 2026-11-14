@@ -1,0 +1,19 @@
+# 2026-11-12T23:45:29-08:00 head b76d6a4; git status --short:
+?? controlplane/internal/ciliumlab/egress_test.go
+?? controlplane/internal/ciliumlab/lab_test.go
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run1-1945/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2-attempt1/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2/
+?? docs/evidence/task-10/cilium-lab-20261112/runs/
+8.09 8.05 7.50 10/6508 3918493
+$ taskset -c 0-7,16-31 make test-cilium CILIUM_REUSE=1 CILIUM_RUN=TestSandboxReachesOnlyTheEgressProxy CILIUM_OUT=/home/postedism/Desktop/Warden-next/docs/evidence/task-10/cilium-lab-20261112/runs/01-task10
+scripts/k3s_gvisor_lab.sh env \
+	env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-next/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-next/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-next/.cache/go HOME=/home/postedism/Desktop/Warden-next/.cache/home TMPDIR=/home/postedism/Desktop/Warden-next/.cache/test-tmp WARDEN_LIVE_CILIUM=1 CILIUM_OUT=/home/postedism/Desktop/Warden-next/docs/evidence/task-10/cilium-lab-20261112/runs/01-task10 WARDEN_CILIUM_REPS= /home/postedism/Desktop/Warden-next/.tools/go/bin/go test -buildvcs=false -count=1 -v -timeout 60m -run '^TestSandboxReachesOnlyTheEgressProxy$' ./controlplane/internal/ciliumlab
+=== RUN   TestSandboxReachesOnlyTheEgressProxy
+    egress_test.go:175: policies [warden-sandbox-default-deny] present=true not realized after 60 s (last: <nil>)
+--- FAIL: TestSandboxReachesOnlyTheEgressProxy (126.10s)
+FAIL
+FAIL	warden/controlplane/internal/ciliumlab	134.090s
+FAIL
+make: *** [Makefile:203: test-cilium] Error 1
+exit 2

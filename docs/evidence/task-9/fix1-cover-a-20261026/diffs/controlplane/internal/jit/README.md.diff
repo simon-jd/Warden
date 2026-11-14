@@ -1,0 +1,16 @@
+--- consumed-red/controlplane/internal/jit/README.md
++++ r1-cover/controlplane/internal/jit/README.md
+@@ -63,8 +63,11 @@
+ key checks and exact target/owner/role/subject checks. Reservation is POST with
+ no subjects. Activation is a single UID/resourceVersion-conditional PUT;
+ ambiguous results are never retried as activation. Removal GETs and validates
+-ownership, PUTs empty subjects with the current version, DELETEs with current
+-UID/version preconditions, then confirms 404. At most three conflicts are
++ownership, PUTs empty subjects and a fresh `warden.io/revocation-fence` annotation
++with the current version, then verifies the returned fence, unchanged UID, advanced
++version and empty subjects before conditional DELETE and confirmed 404. The fence
++must differ from its stored value, including on retries: an empty-to-empty PUT
++alone can be a no-op that preserves the version. At most three conflicts are
+ reconciled within a two-second operation context. A foreign UID is never deleted.
+ 
+ This adapter's deployment still requires real-cluster verification of RBAC,

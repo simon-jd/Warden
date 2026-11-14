@@ -1,0 +1,25 @@
+# While coldstart-run1 was running: the same find the conformance test uses
+# (lab_test.go podCgroupGone), without -name pod<uid>, sampled 10 times 1 s apart.
+# It shows that a running pod's cgroup is found at that path, so gone=true is not vacuous.
+# command: docker exec warden-k3s-gvisor find /sys/fs/cgroup/kubepods -maxdepth 2 -name 'pod*'
+== 2026-11-10T17:14:09-08:00
+/sys/fs/cgroup/kubepods/pod295117a8-3dc7-4c46-8d8d-e98e02f8933c
+== 2026-11-10T17:14:10-08:00
+/sys/fs/cgroup/kubepods/podfc0b5720-c8c4-4230-88a8-593607c23c71
+== 2026-11-10T17:14:11-08:00
+/sys/fs/cgroup/kubepods/podfc0b5720-c8c4-4230-88a8-593607c23c71
+== 2026-11-10T17:14:12-08:00
+/sys/fs/cgroup/kubepods/podfc0b5720-c8c4-4230-88a8-593607c23c71
+== 2026-11-10T17:14:13-08:00
+/sys/fs/cgroup/kubepods/pod0fa97818-5ba2-4fdd-b82e-2d8579c3d87d
+== 2026-11-10T17:14:14-08:00
+/sys/fs/cgroup/kubepods/pod0fa97818-5ba2-4fdd-b82e-2d8579c3d87d
+== 2026-11-10T17:14:15-08:00
+/sys/fs/cgroup/kubepods/pod0fa97818-5ba2-4fdd-b82e-2d8579c3d87d
+== 2026-11-10T17:14:16-08:00
+/sys/fs/cgroup/kubepods/pod0a300646-b4ae-4344-9fe8-95496b36dc81
+== 2026-11-10T17:14:18-08:00
+/sys/fs/cgroup/kubepods/pod0a300646-b4ae-4344-9fe8-95496b36dc81
+== 2026-11-10T17:14:19-08:00
+== qos of one running pod:
+65ef0acc-0ea8-4820-b5c4-cb6146e23eb9 Guaranteed Running

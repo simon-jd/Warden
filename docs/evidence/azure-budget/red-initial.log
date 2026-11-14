@@ -1,0 +1,127 @@
+.F.FFFF.FFF.FF.
+======================================================================
+FAIL: test_concurrent_reservations_cannot_overbook (scripts.test_azure_guard.AzureGuardTests.test_concurrent_reservations_cannot_overbook)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 221, in test_concurrent_reservations_cannot_overbook
+    self.assertEqual(sorted(results), [0, 1])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [2, 2] != [0, 1]
+
+First differing element 0:
+2
+0
+
+- [2, 2]
++ [0, 1]
+
+======================================================================
+FAIL: test_down_dry_run_and_real_fake_boundary (scripts.test_azure_guard.AzureGuardTests.test_down_dry_run_and_real_fake_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 162, in test_down_dry_run_and_real_fake_boundary
+    self.assertEqual(self.run_guard('down', '--dry-run').returncode, 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_dry_run_never_mutates (scripts.test_azure_guard.AzureGuardTests.test_dry_run_never_mutates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 112, in test_dry_run_never_mutates
+    self.assertEqual(self.reaper('--dry-run').returncode, 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_exact_expiry_deletes_only_full_scoped_id (scripts.test_azure_guard.AzureGuardTests.test_exact_expiry_deletes_only_full_scoped_id)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 102, in test_exact_expiry_deletes_only_full_scoped_id
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from scripts import azure_guard as g; from datetime import datetime; g.utc_now=lambda: datetime.fromisoformat("2026-10-24T04:00:00+00:00"); g.main()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ImportError: cannot import name 'azure_guard' from 'scripts' (unknown location)
+
+
+======================================================================
+FAIL: test_future_ttl_is_retained (scripts.test_azure_guard.AzureGuardTests.test_future_ttl_is_retained)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 108, in test_future_ttl_is_retained
+    self.assertEqual(self.reaper().returncode, 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_local_preflight_rejects_resource_excess (scripts.test_azure_guard.AzureGuardTests.test_local_preflight_rejects_resource_excess)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 245, in test_local_preflight_rejects_resource_excess
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from scripts import azure_guard as g; from datetime import datetime; g.utc_now=lambda: datetime.fromisoformat("2026-10-24T04:00:00+00:00"); g.main()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ImportError: cannot import name 'azure_guard' from 'scripts' (unknown location)
+
+
+======================================================================
+FAIL: test_missing_group_is_safe_noop (scripts.test_azure_guard.AzureGuardTests.test_missing_group_is_safe_noop)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 143, in test_missing_group_is_safe_noop
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from scripts import azure_guard as g; from datetime import datetime; g.utc_now=lambda: datetime.fromisoformat("2026-10-24T04:00:00+00:00"); g.main()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ImportError: cannot import name 'azure_guard' from 'scripts' (unknown location)
+
+
+======================================================================
+FAIL: test_over_budget_or_duplicate_does_not_write (scripts.test_azure_guard.AzureGuardTests.test_over_budget_or_duplicate_does_not_write)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 179, in test_over_budget_or_duplicate_does_not_write
+    self.assertEqual(self.reserve(plan).returncode, 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_reservation_exact_540_boundary_and_document (scripts.test_azure_guard.AzureGuardTests.test_reservation_exact_540_boundary_and_document)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 171, in test_reservation_exact_540_boundary_and_document
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from scripts import azure_guard as g; from datetime import datetime; g.utc_now=lambda: datetime.fromisoformat("2026-10-24T04:00:00+00:00"); g.main()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ImportError: cannot import name 'azure_guard' from 'scripts' (unknown location)
+
+
+======================================================================
+FAIL: test_session_end_uses_reservation_binding_and_keeps_cost (scripts.test_azure_guard.AzureGuardTests.test_session_end_uses_reservation_binding_and_keeps_cost)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 228, in test_session_end_uses_reservation_binding_and_keeps_cost
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from scripts import azure_guard as g; from datetime import datetime; g.utc_now=lambda: datetime.fromisoformat("2026-10-24T04:00:00+00:00"); g.main()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ImportError: cannot import name 'azure_guard' from 'scripts' (unknown location)
+
+
+----------------------------------------------------------------------
+Ran 15 tests in 2.723s
+
+FAILED (failures=10)

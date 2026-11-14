@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-24T23:15:30.550355+00:00",
+  "source": "dbc6d648068ff0771e1e1936bd1a0061cd0a36c9",
+  "evidence": "3b1c3f466ec13bc671acba7656362568d1d81550",
+  "runtime_source_unchanged": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f",
+  "source_files": 5,
+  "unchanged_interface_profile_files": 59,
+  "old_evidence_files": 176,
+  "old_indexes": 11,
+  "old_evidence_mode_check": "Git executable-bit mode; full historical Unix permissions not reconstructed from Git",
+  "observed_old_evidence_permissions": {
+    "0o644": 135,
+    "0o664": 29,
+    "0o600": 12
+  },
+  "old_index_references": 143,
+  "new_indexed_files": 27,
+  "recorded_native_tests_pass": 25,
+  "tests_rerun": false,
+  "readme_body_matches_report_except_two_explicit_provenance_paragraphs": true,
+  "all_match": true,
+  "ordinary_guard_run": false,
+  "private_scene_read": false,
+  "docker_operation": false,
+  "original_q_bytes": 5000000000,
+  "original_q_released": false,
+  "actual_recovery": "not_executed",
+  "task4_acceptance": "open"
+}

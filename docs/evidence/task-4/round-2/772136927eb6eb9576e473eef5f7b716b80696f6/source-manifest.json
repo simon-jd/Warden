@@ -1,0 +1,66 @@
+{
+  "source": "772136927eb6eb9576e473eef5f7b716b80696f6",
+  "fix_base": "d62854e8ea0d616ce502b6790515d7037470a00e",
+  "source_parent": "01bccef0a6a7eab10f25660fbc7f6cf6e9d92041",
+  "round2_source_parent": "b02ae39fadc9af09e483192009da53caffe176f4",
+  "original_dispatch_base": "ad1ede992409dbea92be531f83ecb4e988ddd19f",
+  "files": {
+    "docs/firecracker-lab.md": {
+      "sha256": "4f8ef9bc7a1c4d17a65bfb36da80db318a007d3e790827fc989ff8f4e6dd4889",
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/cmd/lab/main.go": {
+      "sha256": "93d2436a2b3fceb2e063404b4764a14ee45e9111950a9e991445ba388d838157",
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/session_mount.go": {
+      "sha256": "5db6f7f42598139a1a816d77b84312edbd96cd420274182aba874e74a2815f10",
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/session_mount_test.go": {
+      "sha256": "65c316905c90975e30448be08e931ef82fd23ff3451a06586bca092236ab0973",
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/supervisor.go": {
+      "sha256": "0e2c0637ed945882a1baa2cf54efa1d7049fcb50628793414e8cf3df5fa9a245",
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/supervisor_test.go": {
+      "sha256": "f1bb697ca5878a3cf4c1c14c424fac9ff54f7d5b9a89bc474756d59a034efa49",
+      "mode": "0o644"
+    },
+    "scripts/firecracker_lab.py": {
+      "sha256": "2fb7a4ea9e4553fb5cc87002dc8a25c6f4e7445bbc40490d72b1f09937b49377",
+      "mode": "0o644"
+    },
+    "scripts/test_firecracker_lab.py": {
+      "sha256": "975719ccd2149e66f53d143ab7ee69fb6877cf453c4df9f37a0f815376948799",
+      "mode": "0o644"
+    }
+  },
+  "i4_delta_only": [
+    "docs/firecracker-lab.md",
+    "runtimes/firecracker/supervisor.go",
+    "runtimes/firecracker/supervisor_test.go"
+  ],
+  "unchanged_from_full_suite_checkpoint": {
+    "runtimes/firecracker/cmd/lab/main.go": "93d2436a2b3fceb2e063404b4764a14ee45e9111950a9e991445ba388d838157",
+    "runtimes/firecracker/session_mount.go": "5db6f7f42598139a1a816d77b84312edbd96cd420274182aba874e74a2815f10",
+    "runtimes/firecracker/session_mount_test.go": "65c316905c90975e30448be08e931ef82fd23ff3451a06586bca092236ab0973",
+    "scripts/firecracker_lab.py": "2fb7a4ea9e4553fb5cc87002dc8a25c6f4e7445bbc40490d72b1f09937b49377",
+    "scripts/test_firecracker_lab.py": "975719ccd2149e66f53d143ab7ee69fb6877cf453c4df9f37a0f815376948799"
+  },
+  "unchanged_interfaces_and_profiles": {
+    "scripts/firecracker_code.py": "56abda58b8a822b7bc1ce7311025763878e7110c2d4cfabd84203dce556db4dd",
+    "scripts/go.sh": "8682e3c696de6ee3a597554edda7f30ddfd2afbdcac8c90b2216b1a2523ad463",
+    "scripts/k3s_lab.py": "65b746e1bc715203b56b98f85517a9bc109f0d19984a36455d308da03489167e",
+    "scripts/k3s_lab_init.py": "df9d551de26c306b4e45439138173c169c6e6fe6f39eac012b7805bf3f48944a",
+    "scripts/runtime_lab_paths.py": "0ce3287feab8197839cf2e7e1cf297fd5cad0e740069023b188e4c366b643f84",
+    "runtimes/gate/gate.go": "0b5a5b140a7124c9d2a65567694e5b662d13bb99b7fdcd1cedadc434273f8284",
+    "runtimes/gate/admission.go": "3aabb68f81513df1a571da54f371a114aa552a8b79c693e45ad807318f70d1fc",
+    "runtimes/gate/retirement.go": "962cfa63ac1f252e95375c63d076f079abc6ddf0a851b6b61f5b76f55b9c428f",
+    "runtimes/firecracker/driver.go": "ff95c7a8cf08d638ebb43b4ce411a27da017131e13ae4b9a4291f24e96e212aa",
+    "runtimes/firecracker/shutdown.go": "61ec1b2f167aeea83815a3b51ba0cd19e140b6a1dbdd9f8454c1046f4bcf1350",
+    "runtimes/conformance/suite.go": "0f840d48bd15b53ef59a24db34424ebeb5b330a413bd85edda9737bf3b0621ed"
+  }
+}

@@ -1,0 +1,36 @@
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_makefile.py   # Makefile unchanged
+F.FF....
+======================================================================
+FAIL: test_aks_target_runs_each_task7_test_through_the_drill (test_makefile.MakefileGoTargetsTest.test_aks_target_runs_each_task7_test_through_the_drill)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_makefile.py", line 160, in test_aks_target_runs_each_task7_test_through_the_drill
+    self.assertEqual(proc.returncode, 0, proc.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : make: *** No rule to make target 'test-aks'.  Stop.
+
+
+======================================================================
+FAIL: test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='aks-probe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_makefile.py", line 127, in test_every_go_command_disables_vcs_stamping
+    self.assertEqual(proc.returncode, 0, proc.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : make: *** No rule to make target 'aks-probe'.  Stop.
+
+
+======================================================================
+FAIL: test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-aks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_makefile.py", line 127, in test_every_go_command_disables_vcs_stamping
+    self.assertEqual(proc.returncode, 0, proc.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : make: *** No rule to make target 'test-aks'.  Stop.
+
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.153s
+
+FAILED (failures=3)

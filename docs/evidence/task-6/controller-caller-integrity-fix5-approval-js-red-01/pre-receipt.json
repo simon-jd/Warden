@@ -1,0 +1,26 @@
+{
+  "code": {
+    "candidate": {
+      "bytes": 11852,
+      "path": "docs/evidence/task-6/controller-approval-writer-caller-candidate.js",
+      "sha256": "9d1be21f84edd0fdf21a64def1b03626a79035fb65bb561cd7a36acc28218052"
+    },
+    "fixture": {
+      "bytes": 10877,
+      "path": "docs/evidence/task-6/controller-caller-integrity-fix5-approval-fixture.js",
+      "sha256": "8a0cc3ffa15a99eb5b0541512c0dae74e5bc58b6f8d670ed170876a9007ee89b"
+    }
+  },
+  "controller_files": 2,
+  "elapsed_seconds": 0.009962324984371662,
+  "equal": null,
+  "limits": {
+    "address_bytes": 536870912,
+    "cpu_seconds": 30,
+    "file_bytes": 33554432,
+    "wall_seconds": 45
+  },
+  "phase": "pre",
+  "source_files": 150,
+  "timing_scope": "metadata recorder only; JS isolate and interpreter startup not measured"
+}

@@ -1,0 +1,3 @@
+{"at": "2026-11-14T00:30:09Z", "event": "group-absent", "id": "/subscriptions/<id>/resourceGroups/rg-warden-lab"}
+{"at": "2026-11-14T00:30:10Z", "event": "node-group-absent", "id": "/subscriptions/<id>/resourceGroups/rg-warden-lab-aks-nodes"}
+reaper exit 0

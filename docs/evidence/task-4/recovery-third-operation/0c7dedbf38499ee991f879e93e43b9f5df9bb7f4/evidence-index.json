@@ -1,0 +1,35 @@
+{
+  "source": "0c7dedbf38499ee991f879e93e43b9f5df9bb7f4",
+  "tested_source": "0c7dedbf38499ee991f879e93e43b9f5df9bb7f4",
+  "scope": "Fixed dual-history third operation host binding; native history/operation/workflow fixtures only; no actual operation",
+  "files": {
+    "README.md": {
+      "bytes": 9939,
+      "sha256": "0d1449079bc131699c226a0209492b4276d2ed74dac393ed3e52874754f064a7"
+    },
+    "history-binding-red.log": {
+      "bytes": 2313,
+      "sha256": "8cc3b819195b1415170f53e152c6aae090ce3041ffc9f083657f8af750bb7d70"
+    },
+    "history-binding-green.log": {
+      "bytes": 3684,
+      "sha256": "be60bc0b4df4c34c5e408026f8de541f07cf99f1aef24cb10a278b4f37aa6abf"
+    },
+    "python-tests.log": {
+      "bytes": 3684,
+      "sha256": "3ed1873b824f0ca5521706c87bf0c7330379c7498fe24f0b413e35f65dd39e89"
+    },
+    "source-verification.json": {
+      "bytes": 5268,
+      "sha256": "89ba5015512ccd94b9f99c98f0d62be3c9977fc5056f23c81d3b499ee4e63cba"
+    },
+    "source-verification.log": {
+      "bytes": 394,
+      "sha256": "f3a6665a3b68b278c89954e8e41dcf4dc62561307c38b029d79f195e62a01881"
+    },
+    "verify-command.py": {
+      "bytes": 7522,
+      "sha256": "c72497238e4234924b75081a56fed38d777ec2a9006aa174038f55bfdf0daa5e"
+    }
+  }
+}

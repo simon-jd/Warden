@@ -1,0 +1,20 @@
+{
+  "source": "135c3b866f07692ad846cc48c8c5bde0cf91ee33",
+  "review": "docs/evidence/task-4/review-code-round-1.md",
+  "command": [
+    "python3",
+    "-B",
+    "scripts/firecracker_lab.py",
+    "prepare",
+    "--other-service-memory-bytes",
+    "0"
+  ],
+  "uid": 1000,
+  "start_utc": "2026-10-24T20:47:50.242198+00:00",
+  "end_utc": "2026-10-24T20:48:06.894984+00:00",
+  "elapsed_seconds": 16.65278396906797,
+  "exit_code": 0,
+  "log_bytes": 14031,
+  "log_sha256": "e2fee85d52dbf71698190a6424001d0115cdbff8a074602d9aea2b8e659b3d28",
+  "scope": "Controller source/package provenance regeneration after code review; no KVM or VM."
+}

@@ -1,0 +1,5 @@
+# warden/runtimes/gate [warden/runtimes/gate.test]
+runtimes/gate/retirement_kernel_test.go:36:17: undefined: pidReaped
+runtimes/gate/retirement_kernel_test.go:40:17: undefined: pidReaped
+FAIL	warden/runtimes/gate [build failed]
+FAIL

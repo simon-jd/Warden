@@ -1,0 +1,21 @@
+{
+  "body_unchanged": true,
+  "cases": [
+    {
+      "assertion_error": null,
+      "exit_code": 73,
+      "expected_regression_observed": true,
+      "name": "old-cwd-sentinel",
+      "passed": false
+    }
+  ],
+  "elapsed_seconds": 0.03936118201818317,
+  "errors": 0,
+  "expected_regression_observed": true,
+  "failures": 1,
+  "physical_production_integration": false,
+  "skipped": 0,
+  "source_unchanged": true,
+  "tests_run": 1,
+  "timing_scope": "earliest measured parent entry through maps/output; startup and physical termination unproved"
+}

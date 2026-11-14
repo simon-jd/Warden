@@ -1,0 +1,12 @@
+{
+  "source": "8c8e9edf4a269effb155ae027b703cd9dc770836",
+  "changed_paths": [
+    "docs/firecracker-recovery.md",
+    "scripts/firecracker_recovery.py",
+    "scripts/test_firecracker_recovery.py"
+  ],
+  "unchanged_host_functions": 35,
+  "unchanged_bindings": 14,
+  "all_match": true,
+  "historical_integrity_crawl_repeated": false
+}

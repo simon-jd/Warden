@@ -1,0 +1,370 @@
+{
+  "after": {
+    "exact_stopped_identity": true,
+    "outer_identity": true,
+    "private_child_identity": true,
+    "scope_absent": true
+  },
+  "before": {
+    "exact_stopped_identity": true,
+    "outer_identity": true,
+    "private_child_identity": true,
+    "scope_absent": true
+  },
+  "head": {
+    "containerd.log": {
+      "bytes": 0,
+      "mode": 384,
+      "status": 200
+    },
+    "containerd.toml": {
+      "bytes": 124,
+      "mode": 384,
+      "status": 200
+    },
+    "io": {
+      "status": 404
+    },
+    "root": {
+      "status": 404
+    },
+    "startup-private.log": {
+      "bytes": 55203,
+      "mode": 384,
+      "status": 200
+    },
+    "state": {
+      "status": 404
+    }
+  },
+  "logs": {
+    "containerd": {
+      "status": 404
+    },
+    "k3s": {
+      "status": 404
+    },
+    "snapshot": {
+      "bytes": 55203,
+      "context": "synthetic-classification-only",
+      "lines": 386,
+      "ready_proven": false,
+      "records": [
+        {
+          "sha256": "8aaf5d2440ffd82c4b159f0f8435e0da754013462086455b16c499cd2570ae46",
+          "source": "k3s",
+          "template_enum": "certificate-cache"
+        },
+        {
+          "sha256": "2985e2c20ce99426bbd1542038d06c657dcba080aa969d6354a22a3904f7bb45",
+          "source": "k3s",
+          "template_enum": "core-initializing"
+        },
+        {
+          "sha256": "47192af0e1881dfaeb3c8543613b4dce0517f599ec34de0e9b4a2ee829c6d140",
+          "source": "k3s",
+          "template_enum": "safe-kernel-denial"
+        },
+        {
+          "sha256": "5fdec2128179d8ab957ab9eada36479357982147e8a03895fb67360ee638ac8b",
+          "source": "k3s",
+          "template_enum": "safe-kernel-denial"
+        },
+        {
+          "sha256": "6a406edf9e52de7e2db44b542da7fb1b1416d0b9acf6780353dcce06ead47336",
+          "source": "k3s",
+          "template_enum": "safe-kernel-denial"
+        },
+        {
+          "sha256": "83ef3743fc2fcc91c46dc58cd6068ec963edb4682eafa752940511e402cc1a15",
+          "source": "k3s",
+          "template_enum": "safe-kernel-denial"
+        },
+        {
+          "sha256": "6f5f0b1935f9f26facdbbbaa5808e72c9d9f6380dd74d50308619b7e25e23bdb",
+          "source": "k3s",
+          "template_enum": "safe-kernel-denial"
+        },
+        {
+          "sha256": "f62503d226f0f8d19086630120de405cf10af32a06d682146fdf98c9dd937afa",
+          "source": "k3s",
+          "template_enum": "safe-kernel-denial"
+        },
+        {
+          "sha256": "00ed5a04d053d3f12889c34abdf4de198fdd5d9186cf525cdf6e3f48d879d3e3",
+          "source": "k3s",
+          "template_enum": "core-initializing"
+        },
+        {
+          "sha256": "7cbd22e867d3c8cb096c24c50a91f792a601d9d12766da1c1dcf8bc1efcc3979",
+          "source": "k3s",
+          "template_enum": "empty-metrics-manifest"
+        },
+        {
+          "sha256": "ff2a1462f434768d70e320ba4200294906d94dbb1abdace1d86a1fa616812fc7",
+          "source": "k3s",
+          "template_enum": "empty-api:apiextensions.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "73aa8f776a4f78b135f3e8e946e3cc0532f7be3fd519cae6f8fb0b5eb827607b",
+          "source": "k3s",
+          "template_enum": "empty-api:authentication.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "88c29cdbafd96d54388a4df1720d23be1c5d292767e0232a018f3dc2239ced87",
+          "source": "k3s",
+          "template_enum": "empty-api:authentication.k8s.io/v1alpha1"
+        },
+        {
+          "sha256": "3fac946d3b8d58c0e4533ae3df34a5a63e0fb5cafc4cdb4d6b8b723c15f43f10",
+          "source": "k3s",
+          "template_enum": "empty-api:authorization.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "42957bedc422ce4d1ee550a8af287a6a646ac9192f361d59a0f8b56a2b59e039",
+          "source": "k3s",
+          "template_enum": "empty-api:batch/v1beta1"
+        },
+        {
+          "sha256": "fe511b2905901f88fa4add54e653923dfc47a609709a7bafb127fa012ad3f0a8",
+          "source": "k3s",
+          "template_enum": "empty-api:certificates.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "d9d91e7ee96d0c7dce5ebb6fd259dc27ab4540dbaac997feb12a239c67f18ef4",
+          "source": "k3s",
+          "template_enum": "empty-api:certificates.k8s.io/v1alpha1"
+        },
+        {
+          "sha256": "e6ec34350056ddcd137e1e8a75869cafb83f73c21986c73b172fd20893115b76",
+          "source": "k3s",
+          "template_enum": "empty-api:coordination.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "aff88b88101ef0139c0c69d5616b0e2cd6946409df27f9fea2a721cc73feb530",
+          "source": "k3s",
+          "template_enum": "empty-api:coordination.k8s.io/v1alpha2"
+        },
+        {
+          "sha256": "e741af66e494d70b7faeab2e61046e1b197d15e6cb65a368ce45ace08aabaff5",
+          "source": "k3s",
+          "template_enum": "empty-api:discovery.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "759c1fefd83f7b1fb1cfd3896860e034cfb9afdd1ca4f3c55e20bf71aec4dbeb",
+          "source": "k3s",
+          "template_enum": "empty-api:networking.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "4937551dcd16110f6c4d1b1374a08b360d5b1d36bda72835737164be28a41050",
+          "source": "k3s",
+          "template_enum": "empty-api:node.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "6543cc8e92e75ab53b0f472ed568aafd592535888aded378e77822d797aef953",
+          "source": "k3s",
+          "template_enum": "empty-api:node.k8s.io/v1alpha1"
+        },
+        {
+          "sha256": "a7880ce1dabca569b6de20293ca1b5c7cd54b0e3f1de7f4d36b13bf6a2654c3d",
+          "source": "k3s",
+          "template_enum": "empty-api:policy/v1beta1"
+        },
+        {
+          "sha256": "4a78611e2bd5476918efd08120cbc7f85c53d8b67d56468a2b34c4ae1c7a0615",
+          "source": "k3s",
+          "template_enum": "empty-api:rbac.authorization.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "cacea684fb747cd07f0b2cc8628d6f499034308aa5bbff547d868d6045663263",
+          "source": "k3s",
+          "template_enum": "empty-api:rbac.authorization.k8s.io/v1alpha1"
+        },
+        {
+          "sha256": "939af09bdea1819ea8bba58595e15643c8a108378363793992453e316098f0f5",
+          "source": "k3s",
+          "template_enum": "empty-api:scheduling.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "4b041d003222fd6878bb348820397e0d72517a15e6f0e0ec72d177b922c88e40",
+          "source": "k3s",
+          "template_enum": "empty-api:scheduling.k8s.io/v1alpha2"
+        },
+        {
+          "sha256": "5730c691c63c44e3fece39b4ba779d35486d3958722d58b2af97d56bcd5e15af",
+          "source": "k3s",
+          "template_enum": "empty-api:storage.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "4bd4c749a46c3e17911d7e3e968fa70ecaa79c4ed25ea977885ff1cfdec1e591",
+          "source": "k3s",
+          "template_enum": "empty-api:storage.k8s.io/v1alpha1"
+        },
+        {
+          "sha256": "e6c87b1f8170546c9761f60608616c8fcb46b51162527d56d034453c41a8357b",
+          "source": "k3s",
+          "template_enum": "empty-api:flowcontrol.apiserver.k8s.io/v1beta3"
+        },
+        {
+          "sha256": "a12defe0f4ca2884301dad08a42f07df7bf8fac1e1f5299e787d9ac08e7d1d87",
+          "source": "k3s",
+          "template_enum": "empty-api:flowcontrol.apiserver.k8s.io/v1beta2"
+        },
+        {
+          "sha256": "d0604e39cc44dc11fdec1d3a3f13b54402abe95d9c8ff84ba61c5d3db18ab6bf",
+          "source": "k3s",
+          "template_enum": "empty-api:flowcontrol.apiserver.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "d58024df3c4cf86a94fae972916c7478571d8525d7eb0c247b94625a70986cf8",
+          "source": "k3s",
+          "template_enum": "empty-api:apps/v1beta2"
+        },
+        {
+          "sha256": "b12ed4347fb1cac16a3804656ae114d61ceb4940b6d9bc1ed613730152afd8f3",
+          "source": "k3s",
+          "template_enum": "empty-api:apps/v1beta1"
+        },
+        {
+          "sha256": "fb604ade45616809959c79d373d902c498a6959f917cdc6ae887c844e5f6de4f",
+          "source": "k3s",
+          "template_enum": "empty-api:admissionregistration.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "72e5904839f5964f3eadda87e98f1933af57ba55daeaac339d7e0c76a76dd58e",
+          "source": "k3s",
+          "template_enum": "empty-api:admissionregistration.k8s.io/v1alpha1"
+        },
+        {
+          "sha256": "b3a78fc10683395b67510f8116a095c68b3e222550ff8d983cf236a26607740e",
+          "source": "k3s",
+          "template_enum": "empty-api:events.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "7bfed1e81623cc936b51057cb688a9165a8b5882b1f2272e69a14f39460f3ab3",
+          "source": "k3s",
+          "template_enum": "empty-api:resource.k8s.io/v1beta2"
+        },
+        {
+          "sha256": "8b82c4fb343043acb460b9e0960ff235e2edf46918925fc9074cb4c497ba4214",
+          "source": "k3s",
+          "template_enum": "empty-api:resource.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "6e2ccf0c3960442bb14c5405dcc47840667e8e23980b8f56204d60389cc470f2",
+          "source": "k3s",
+          "template_enum": "empty-api:resource.k8s.io/v1alpha3"
+        },
+        {
+          "sha256": "a853f9e25ca49043429a2e4f04be849bd55d0f78d681d407c1cdd53e57257148",
+          "source": "k3s",
+          "template_enum": "empty-api:apiregistration.k8s.io/v1beta1"
+        },
+        {
+          "sha256": "b045dd010ad7252fb1a121fc63171e522d65289f379832851065c614f006ca31",
+          "source": "k3s",
+          "template_enum": "lease-namespace"
+        },
+        {
+          "sha256": "9c0326ec8cd0d559f043b88a90d6ad80ed96c0857c3d42a45adf8974dc79c4f1",
+          "source": "k3s",
+          "template_enum": "service-namespace"
+        },
+        {
+          "sha256": "dcd21c00f99c2a8b41aa90f747a93bfc7d59d1eabdc3b40377d622e81ad4b257",
+          "source": "k3s",
+          "template_enum": "legacy-configmap-namespace"
+        },
+        {
+          "sha256": "b9e059abd1ab1373e9854f22aa824abc1c84eb60fe141a937074fa93b4202cf0",
+          "source": "k3s",
+          "template_enum": "reset-endpoints"
+        },
+        {
+          "sha256": "b5ccc2f69047fcdf882cfde03ced62868069883a96fedbe847d3e4c97dca28f9",
+          "source": "k3s",
+          "template_enum": "empty-metrics-manifest"
+        },
+        {
+          "sha256": "6ba1d4d7b39f8f65a5dfeb49fedf1403ee937e0d64a4b1eaac61e2e9a6db958d",
+          "source": "k3s",
+          "template_enum": "empty-metrics-manifest"
+        },
+        {
+          "sha256": "203a98627c346cab54223f3a58b0063012dbc58a8bf7a6244822c86385b3a461",
+          "source": "k3s",
+          "template_enum": "missing-machine-id"
+        },
+        {
+          "sha256": "0fd5dca94ac7b95390e02d02618cffe431b2b5a309f51b8d83dc6bdc275fa3da",
+          "source": "k3s",
+          "template_enum": "rejected-swap-shutdown"
+        },
+        {
+          "sha256": "e988bf2d1b076164b0b5fbd5290455d84944d94a400ceb251011d4ab303d09ac",
+          "source": "k3s",
+          "template_enum": "rejected-shutdown-cancellation"
+        },
+        {
+          "sha256": "9ff6d5eea7d3e1277505920fd450776efa8d464290ce536e9bfe040ca9960113",
+          "source": "containerd",
+          "template_enum": "v3-migration"
+        },
+        {
+          "sha256": "78c5793bf5d13d0868c41d2d013e850007cbf7edc3a33241f9e3327b8464d6c9",
+          "source": "containerd",
+          "template_enum": "fsverity-unsupported"
+        }
+      ],
+      "sha256": "c0245d4a0c441f9f84b2c39b4b1e81bd88127adb4611c9c1f3cb0fc96839c64b",
+      "template_counts": {
+        "certificate-cache": 1,
+        "core-initializing": 2,
+        "empty-api:admissionregistration.k8s.io/v1alpha1": 1,
+        "empty-api:admissionregistration.k8s.io/v1beta1": 1,
+        "empty-api:apiextensions.k8s.io/v1beta1": 1,
+        "empty-api:apiregistration.k8s.io/v1beta1": 1,
+        "empty-api:apps/v1beta1": 1,
+        "empty-api:apps/v1beta2": 1,
+        "empty-api:authentication.k8s.io/v1alpha1": 1,
+        "empty-api:authentication.k8s.io/v1beta1": 1,
+        "empty-api:authorization.k8s.io/v1beta1": 1,
+        "empty-api:batch/v1beta1": 1,
+        "empty-api:certificates.k8s.io/v1alpha1": 1,
+        "empty-api:certificates.k8s.io/v1beta1": 1,
+        "empty-api:coordination.k8s.io/v1alpha2": 1,
+        "empty-api:coordination.k8s.io/v1beta1": 1,
+        "empty-api:discovery.k8s.io/v1beta1": 1,
+        "empty-api:events.k8s.io/v1beta1": 1,
+        "empty-api:flowcontrol.apiserver.k8s.io/v1beta1": 1,
+        "empty-api:flowcontrol.apiserver.k8s.io/v1beta2": 1,
+        "empty-api:flowcontrol.apiserver.k8s.io/v1beta3": 1,
+        "empty-api:networking.k8s.io/v1beta1": 1,
+        "empty-api:node.k8s.io/v1alpha1": 1,
+        "empty-api:node.k8s.io/v1beta1": 1,
+        "empty-api:policy/v1beta1": 1,
+        "empty-api:rbac.authorization.k8s.io/v1alpha1": 1,
+        "empty-api:rbac.authorization.k8s.io/v1beta1": 1,
+        "empty-api:resource.k8s.io/v1alpha3": 1,
+        "empty-api:resource.k8s.io/v1beta1": 1,
+        "empty-api:resource.k8s.io/v1beta2": 1,
+        "empty-api:scheduling.k8s.io/v1alpha2": 1,
+        "empty-api:scheduling.k8s.io/v1beta1": 1,
+        "empty-api:storage.k8s.io/v1alpha1": 1,
+        "empty-api:storage.k8s.io/v1beta1": 1,
+        "empty-metrics-manifest": 3,
+        "fsverity-unsupported": 1,
+        "lease-namespace": 1,
+        "legacy-configmap-namespace": 1,
+        "missing-machine-id": 1,
+        "rejected-shutdown-cancellation": 1,
+        "rejected-swap-shutdown": 1,
+        "reset-endpoints": 1,
+        "safe-kernel-denial": 6,
+        "service-namespace": 1,
+        "v3-migration": 1
+      }
+    }
+  },
+  "remaining_content_budget": 31944797
+}

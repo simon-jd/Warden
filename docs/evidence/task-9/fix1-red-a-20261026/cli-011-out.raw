@@ -1,0 +1,9 @@
+=== RUN   TestKubernetesEmptyReservationCleanup
+    bindings_test.go:172: empty reservation cleanup must reach DELETE: error=JIT binding ownership or version conflict retained=true
+--- FAIL: TestKubernetesEmptyReservationCleanup (0.00s)
+=== RUN   TestKubernetesRemovalRetryAfterClearAndDeleteFailure
+    bindings_test.go:189: cleanup retry after cleared binding must reach DELETE: error=JIT binding ownership or version conflict retained=true
+--- FAIL: TestKubernetesRemovalRetryAfterClearAndDeleteFailure (0.00s)
+FAIL
+FAIL	warden/controlplane/internal/jit	0.003s
+FAIL

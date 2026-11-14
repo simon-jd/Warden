@@ -1,0 +1,462 @@
+{
+  "artifact_bytes_excluding_index": 1041287,
+  "artifact_count_excluding_index": 85,
+  "artifacts": [
+    {
+      "bytes": 16915,
+      "path": "docs/evidence/task-6/continuation-controller-operations-execution-plan.md",
+      "sha256": "897445b1f09923df9795e8863c230448d0c10ece0bda1ce684c930a6f28d2162"
+    },
+    {
+      "bytes": 12868,
+      "path": "docs/evidence/task-6/continuation-controller-operations-substage-report.md",
+      "sha256": "4b78e604f4f6ed09c5860f32caeb4b12db69d083290a8063370c6c64fea1f4e1"
+    },
+    {
+      "bytes": 15900,
+      "path": "docs/evidence/task-6/controller-operations-cover-07/baseline.json",
+      "sha256": "b9c4ffa1789aa538c3f7653a719b156b8d281e386863a5687d8a213e7003a9e2"
+    },
+    {
+      "bytes": 4631,
+      "path": "docs/evidence/task-6/controller-operations-cover-07/changed-source/scripts/identity_cache_capture.py",
+      "sha256": "229d8bf0a0da59ec33e69c63c31809169015b51e8585207ff5fb73d192ed1f85"
+    },
+    {
+      "bytes": 7072,
+      "path": "docs/evidence/task-6/controller-operations-cover-07/changed-source/scripts/identity_cache_maintenance.py",
+      "sha256": "155607da15266715699c323a5a822ffbb9bc18756e76b5341833be110e7de76a"
+    },
+    {
+      "bytes": 41285,
+      "path": "docs/evidence/task-6/controller-operations-cover-07/changed-source/scripts/identity_cache_observe.py",
+      "sha256": "4039c311d36a770a5eda41dd1b3128364d8b3931deaedffd92e01328ade6ac36"
+    },
+    {
+      "bytes": 45697,
+      "path": "docs/evidence/task-6/controller-operations-cover-07/changed-source/scripts/test_identity_cache_control.py",
+      "sha256": "63641c485f35faf0a7def839a969a5420cc38b14a0c5a084363d29faf05d0bcb"
+    },
+    {
+      "bytes": 2633,
+      "path": "docs/evidence/task-6/controller-operations-cover-07/commit-comparison.json",
+      "sha256": "1c636c62b05fa5e3f077b404d522f4f718d797b129448988c9cd4a36e794861f"
+    },
+    {
+      "bytes": 740,
+      "path": "docs/evidence/task-6/controller-operations-cover-07/intent.json",
+      "sha256": "3438d49dd0f24905fca6d462f7826cc58c40fb9d95bf2be910e1a81018a0ee14"
+    },
+    {
+      "bytes": 1313,
+      "path": "docs/evidence/task-6/controller-operations-cover-07/outer-tool-result.json",
+      "sha256": "5167c58a392b4def645921fded540f667d3744118857036e25ce433486d46df3"
+    },
+    {
+      "bytes": 10429,
+      "path": "docs/evidence/task-6/controller-operations-cover-07/output.txt",
+      "sha256": "1ad9ea8ffcdafa4f236aa792cae395258228a1d8045f9109a562143c0306a93e"
+    },
+    {
+      "bytes": 15892,
+      "path": "docs/evidence/task-6/controller-operations-cover-07/post-source.json",
+      "sha256": "b2854560a57a8c157cbe2d5f2e0d07bb89704ea7509d1ba7110e132f0fd3beca"
+    },
+    {
+      "bytes": 15892,
+      "path": "docs/evidence/task-6/controller-operations-cover-07/pre-source.json",
+      "sha256": "b2854560a57a8c157cbe2d5f2e0d07bb89704ea7509d1ba7110e132f0fd3beca"
+    },
+    {
+      "bytes": 1023,
+      "path": "docs/evidence/task-6/controller-operations-cover-07/receipt.json",
+      "sha256": "8932511deb87884b206040fd767268a0083f9eb4d13c6e5c381135e04248dcb7"
+    },
+    {
+      "bytes": 3498,
+      "path": "docs/evidence/task-6/controller-operations-cover-07/run.py",
+      "sha256": "ec3585f5e2ba40062126b6177a022f729a58043d6aa70b5ff6f10d358a9fb973"
+    },
+    {
+      "bytes": 15900,
+      "path": "docs/evidence/task-6/controller-operations-fixture-02/baseline.json",
+      "sha256": "1b880cdd85205e87460c1477fbac260366f700014378de7af7e2e6386eb4939f"
+    },
+    {
+      "bytes": 4255,
+      "path": "docs/evidence/task-6/controller-operations-fixture-02/changed-source/scripts/identity_cache_capture.py",
+      "sha256": "3842121393df9f6a0b40a10c2cd947e070ad4a1bfb8844c9d95e9c0a40427009"
+    },
+    {
+      "bytes": 7016,
+      "path": "docs/evidence/task-6/controller-operations-fixture-02/changed-source/scripts/identity_cache_maintenance.py",
+      "sha256": "f6c916b8e5fbd6d4e75e5263dff0a469068621eaec0ad6d6ed7b4c432e1c212d"
+    },
+    {
+      "bytes": 38048,
+      "path": "docs/evidence/task-6/controller-operations-fixture-02/changed-source/scripts/identity_cache_observe.py",
+      "sha256": "76728d1ecdfdaafc48bdb4a4d5c39e9428c068452ccd8c47494e5bcddf860da2"
+    },
+    {
+      "bytes": 24861,
+      "path": "docs/evidence/task-6/controller-operations-fixture-02/changed-source/scripts/test_identity_cache_control.py",
+      "sha256": "44b1a6c03f2c021447f5baa4c15eade79e11bb51916283f64b95ef82a757e22e"
+    },
+    {
+      "bytes": 742,
+      "path": "docs/evidence/task-6/controller-operations-fixture-02/intent.json",
+      "sha256": "48a78f3fe388b7e540af846bee0e750b3bb6ae043c02d048573453c0b0df10f8"
+    },
+    {
+      "bytes": 1131,
+      "path": "docs/evidence/task-6/controller-operations-fixture-02/outer-tool-result.json",
+      "sha256": "8543409f759710f9f2359fcc1f32d5d7b34281c010d765dddf4faa3a757df768"
+    },
+    {
+      "bytes": 45559,
+      "path": "docs/evidence/task-6/controller-operations-fixture-02/output.txt",
+      "sha256": "407a9772c5573cbc1a63e7c437b847a4f9f6acadd47bd5d7ac14d8f335c26341"
+    },
+    {
+      "bytes": 15892,
+      "path": "docs/evidence/task-6/controller-operations-fixture-02/post-source.json",
+      "sha256": "c3ffd3b556d1e4436cf29df2c88d88e57710e8685e846ad23502a678ddb89d6b"
+    },
+    {
+      "bytes": 15892,
+      "path": "docs/evidence/task-6/controller-operations-fixture-02/pre-source.json",
+      "sha256": "c3ffd3b556d1e4436cf29df2c88d88e57710e8685e846ad23502a678ddb89d6b"
+    },
+    {
+      "bytes": 1030,
+      "path": "docs/evidence/task-6/controller-operations-fixture-02/receipt.json",
+      "sha256": "2ec85359b1ae0acf621534e763874e97be88e373ff62a3255eccbf08a4d14c9f"
+    },
+    {
+      "bytes": 3498,
+      "path": "docs/evidence/task-6/controller-operations-fixture-02/run.py",
+      "sha256": "ec3585f5e2ba40062126b6177a022f729a58043d6aa70b5ff6f10d358a9fb973"
+    },
+    {
+      "bytes": 15900,
+      "path": "docs/evidence/task-6/controller-operations-fixture-04/baseline.json",
+      "sha256": "1b880cdd85205e87460c1477fbac260366f700014378de7af7e2e6386eb4939f"
+    },
+    {
+      "bytes": 4575,
+      "path": "docs/evidence/task-6/controller-operations-fixture-04/changed-source/scripts/identity_cache_capture.py",
+      "sha256": "5a9dfcf160b0e46a58ec23b7910e4af47126c79007c41addedb7782fb201c15b"
+    },
+    {
+      "bytes": 7016,
+      "path": "docs/evidence/task-6/controller-operations-fixture-04/changed-source/scripts/identity_cache_maintenance.py",
+      "sha256": "f6c916b8e5fbd6d4e75e5263dff0a469068621eaec0ad6d6ed7b4c432e1c212d"
+    },
+    {
+      "bytes": 38923,
+      "path": "docs/evidence/task-6/controller-operations-fixture-04/changed-source/scripts/identity_cache_observe.py",
+      "sha256": "9e5c51611040642aef507037031a4a826350f84553538555ad10938744d8d998"
+    },
+    {
+      "bytes": 36237,
+      "path": "docs/evidence/task-6/controller-operations-fixture-04/changed-source/scripts/test_identity_cache_control.py",
+      "sha256": "7cab7e66920f812cf7f2f89e1fb7cb2da339f94d9675f0e2670ebf43a673b97e"
+    },
+    {
+      "bytes": 742,
+      "path": "docs/evidence/task-6/controller-operations-fixture-04/intent.json",
+      "sha256": "368247323a6e8193e540a9210e4e50ee1db56b7602d89178a03f64c4dc80ba70"
+    },
+    {
+      "bytes": 1127,
+      "path": "docs/evidence/task-6/controller-operations-fixture-04/outer-tool-result.json",
+      "sha256": "8e47ff7b9c5e912a7c19473e921273dc9602701aad1e636862687c8510c92715"
+    },
+    {
+      "bytes": 8786,
+      "path": "docs/evidence/task-6/controller-operations-fixture-04/output.txt",
+      "sha256": "5d7f06436ed7379a9cb488fdbca478fff95ab5a4e06d2548b753f4c389548b36"
+    },
+    {
+      "bytes": 15892,
+      "path": "docs/evidence/task-6/controller-operations-fixture-04/post-source.json",
+      "sha256": "ef69fdfc9285d0706985af39d95572800c9bba8ee03bccd6b1a12a9182887198"
+    },
+    {
+      "bytes": 15892,
+      "path": "docs/evidence/task-6/controller-operations-fixture-04/pre-source.json",
+      "sha256": "ef69fdfc9285d0706985af39d95572800c9bba8ee03bccd6b1a12a9182887198"
+    },
+    {
+      "bytes": 1026,
+      "path": "docs/evidence/task-6/controller-operations-fixture-04/receipt.json",
+      "sha256": "1903b45d8de695ef72157ecd8ca59008159fca076beeff93b026e1659aab7745"
+    },
+    {
+      "bytes": 3498,
+      "path": "docs/evidence/task-6/controller-operations-fixture-04/run.py",
+      "sha256": "ec3585f5e2ba40062126b6177a022f729a58043d6aa70b5ff6f10d358a9fb973"
+    },
+    {
+      "bytes": 15900,
+      "path": "docs/evidence/task-6/controller-operations-green-06/baseline.json",
+      "sha256": "1b880cdd85205e87460c1477fbac260366f700014378de7af7e2e6386eb4939f"
+    },
+    {
+      "bytes": 4631,
+      "path": "docs/evidence/task-6/controller-operations-green-06/changed-source/scripts/identity_cache_capture.py",
+      "sha256": "229d8bf0a0da59ec33e69c63c31809169015b51e8585207ff5fb73d192ed1f85"
+    },
+    {
+      "bytes": 7072,
+      "path": "docs/evidence/task-6/controller-operations-green-06/changed-source/scripts/identity_cache_maintenance.py",
+      "sha256": "155607da15266715699c323a5a822ffbb9bc18756e76b5341833be110e7de76a"
+    },
+    {
+      "bytes": 41285,
+      "path": "docs/evidence/task-6/controller-operations-green-06/changed-source/scripts/identity_cache_observe.py",
+      "sha256": "4039c311d36a770a5eda41dd1b3128364d8b3931deaedffd92e01328ade6ac36"
+    },
+    {
+      "bytes": 45697,
+      "path": "docs/evidence/task-6/controller-operations-green-06/changed-source/scripts/test_identity_cache_control.py",
+      "sha256": "63641c485f35faf0a7def839a969a5420cc38b14a0c5a084363d29faf05d0bcb"
+    },
+    {
+      "bytes": 740,
+      "path": "docs/evidence/task-6/controller-operations-green-06/intent.json",
+      "sha256": "9373f4737eac43e3cbddd52ea5e6248a5d97fd264da4d8bd8a0cfb4c82e8ca16"
+    },
+    {
+      "bytes": 1124,
+      "path": "docs/evidence/task-6/controller-operations-green-06/outer-tool-result.json",
+      "sha256": "36ddded549b0ebb0c17a1fde327447110254620e7e3bad5e4f1f37dc1a7c2d63"
+    },
+    {
+      "bytes": 10429,
+      "path": "docs/evidence/task-6/controller-operations-green-06/output.txt",
+      "sha256": "0816f36b7a0131e7907f8bc6baef4325972a7082047164cbf5fea9fa213a1ac0"
+    },
+    {
+      "bytes": 15892,
+      "path": "docs/evidence/task-6/controller-operations-green-06/post-source.json",
+      "sha256": "b2854560a57a8c157cbe2d5f2e0d07bb89704ea7509d1ba7110e132f0fd3beca"
+    },
+    {
+      "bytes": 15892,
+      "path": "docs/evidence/task-6/controller-operations-green-06/pre-source.json",
+      "sha256": "b2854560a57a8c157cbe2d5f2e0d07bb89704ea7509d1ba7110e132f0fd3beca"
+    },
+    {
+      "bytes": 1023,
+      "path": "docs/evidence/task-6/controller-operations-green-06/receipt.json",
+      "sha256": "e8798047c4a8d9a5c18a71eeadd23f9719c5ce82624fff4e55c066df12d4b1f3"
+    },
+    {
+      "bytes": 3498,
+      "path": "docs/evidence/task-6/controller-operations-green-06/run.py",
+      "sha256": "ec3585f5e2ba40062126b6177a022f729a58043d6aa70b5ff6f10d358a9fb973"
+    },
+    {
+      "bytes": 15900,
+      "path": "docs/evidence/task-6/controller-operations-red-01/baseline.json",
+      "sha256": "1b880cdd85205e87460c1477fbac260366f700014378de7af7e2e6386eb4939f"
+    },
+    {
+      "bytes": 821,
+      "path": "docs/evidence/task-6/controller-operations-red-01/changed-source/scripts/test_identity_cache_control.py",
+      "sha256": "56bbc701ad04ea7d6198130c90e2f873d67e3c7a5038aa7b8ec7b3a039c1c4bb"
+    },
+    {
+      "bytes": 611,
+      "path": "docs/evidence/task-6/controller-operations-red-01/intent.json",
+      "sha256": "7c4a5df876aded488aafdf54b93e363f117150e42ff4c1a1184143a5b5c99c74"
+    },
+    {
+      "bytes": 1006,
+      "path": "docs/evidence/task-6/controller-operations-red-01/outer-tool-result.json",
+      "sha256": "364ea4d8cc54b394f36348d077fb5d5b73a6b5cf050d1ffbf2f1ca3c8232f3f8"
+    },
+    {
+      "bytes": 875,
+      "path": "docs/evidence/task-6/controller-operations-red-01/output.txt",
+      "sha256": "ef8ac97f28833c2e8b51765c2181ed520e6b48a3dd5d39d882ebd3f84e6313bc"
+    },
+    {
+      "bytes": 15567,
+      "path": "docs/evidence/task-6/controller-operations-red-01/post-source.json",
+      "sha256": "e29968ded0baa3d3fbbe6f8226a2bd42eab72088d4e3d1c43c558913968d27db"
+    },
+    {
+      "bytes": 15567,
+      "path": "docs/evidence/task-6/controller-operations-red-01/pre-source.json",
+      "sha256": "e29968ded0baa3d3fbbe6f8226a2bd42eab72088d4e3d1c43c558913968d27db"
+    },
+    {
+      "bytes": 899,
+      "path": "docs/evidence/task-6/controller-operations-red-01/receipt.json",
+      "sha256": "38ce5b210251e34522eef7e26cf720ed0ea744cac4d1d8c5d6fd346833d87e14"
+    },
+    {
+      "bytes": 3498,
+      "path": "docs/evidence/task-6/controller-operations-red-01/run.py",
+      "sha256": "ec3585f5e2ba40062126b6177a022f729a58043d6aa70b5ff6f10d358a9fb973"
+    },
+    {
+      "bytes": 15900,
+      "path": "docs/evidence/task-6/controller-operations-red-03/baseline.json",
+      "sha256": "1b880cdd85205e87460c1477fbac260366f700014378de7af7e2e6386eb4939f"
+    },
+    {
+      "bytes": 4255,
+      "path": "docs/evidence/task-6/controller-operations-red-03/changed-source/scripts/identity_cache_capture.py",
+      "sha256": "3842121393df9f6a0b40a10c2cd947e070ad4a1bfb8844c9d95e9c0a40427009"
+    },
+    {
+      "bytes": 7016,
+      "path": "docs/evidence/task-6/controller-operations-red-03/changed-source/scripts/identity_cache_maintenance.py",
+      "sha256": "f6c916b8e5fbd6d4e75e5263dff0a469068621eaec0ad6d6ed7b4c432e1c212d"
+    },
+    {
+      "bytes": 38048,
+      "path": "docs/evidence/task-6/controller-operations-red-03/changed-source/scripts/identity_cache_observe.py",
+      "sha256": "76728d1ecdfdaafc48bdb4a4d5c39e9428c068452ccd8c47494e5bcddf860da2"
+    },
+    {
+      "bytes": 27035,
+      "path": "docs/evidence/task-6/controller-operations-red-03/changed-source/scripts/test_identity_cache_control.py",
+      "sha256": "364370324d8402aede7c1d4cee9817573ff59f0140fa568b9d8643dc6f4a2cea"
+    },
+    {
+      "bytes": 738,
+      "path": "docs/evidence/task-6/controller-operations-red-03/intent.json",
+      "sha256": "3e0677329979b1a423a967cdb383e914091a3359555a2099911b7cedcaf43e19"
+    },
+    {
+      "bytes": 1124,
+      "path": "docs/evidence/task-6/controller-operations-red-03/outer-tool-result.json",
+      "sha256": "65357ef67ecc63a4a5b47f22af56e022161f3140cdddb0f82cb07f227a8f5508"
+    },
+    {
+      "bytes": 8831,
+      "path": "docs/evidence/task-6/controller-operations-red-03/output.txt",
+      "sha256": "372dcf43efd28f18e0e7d40287c60508f029b35f9453292f16cfe19795728d4b"
+    },
+    {
+      "bytes": 15892,
+      "path": "docs/evidence/task-6/controller-operations-red-03/post-source.json",
+      "sha256": "a8719d45c3a4fe2403c1a9d64a4e2a9f4888f14227ffb597f4d557d9ffe1dabf"
+    },
+    {
+      "bytes": 15892,
+      "path": "docs/evidence/task-6/controller-operations-red-03/pre-source.json",
+      "sha256": "a8719d45c3a4fe2403c1a9d64a4e2a9f4888f14227ffb597f4d557d9ffe1dabf"
+    },
+    {
+      "bytes": 1023,
+      "path": "docs/evidence/task-6/controller-operations-red-03/receipt.json",
+      "sha256": "cf03719f3b9a64baa104f5f1637a0a7a58852f0551033e670b9bbc91b0910ca2"
+    },
+    {
+      "bytes": 3498,
+      "path": "docs/evidence/task-6/controller-operations-red-03/run.py",
+      "sha256": "ec3585f5e2ba40062126b6177a022f729a58043d6aa70b5ff6f10d358a9fb973"
+    },
+    {
+      "bytes": 15900,
+      "path": "docs/evidence/task-6/controller-operations-red-05/baseline.json",
+      "sha256": "1b880cdd85205e87460c1477fbac260366f700014378de7af7e2e6386eb4939f"
+    },
+    {
+      "bytes": 4575,
+      "path": "docs/evidence/task-6/controller-operations-red-05/changed-source/scripts/identity_cache_capture.py",
+      "sha256": "5a9dfcf160b0e46a58ec23b7910e4af47126c79007c41addedb7782fb201c15b"
+    },
+    {
+      "bytes": 7016,
+      "path": "docs/evidence/task-6/controller-operations-red-05/changed-source/scripts/identity_cache_maintenance.py",
+      "sha256": "f6c916b8e5fbd6d4e75e5263dff0a469068621eaec0ad6d6ed7b4c432e1c212d"
+    },
+    {
+      "bytes": 40850,
+      "path": "docs/evidence/task-6/controller-operations-red-05/changed-source/scripts/identity_cache_observe.py",
+      "sha256": "86825e6c1d0ec05381005c14a230729a78cafffaf2a8af7c60a4b46a5101913b"
+    },
+    {
+      "bytes": 45379,
+      "path": "docs/evidence/task-6/controller-operations-red-05/changed-source/scripts/test_identity_cache_control.py",
+      "sha256": "c931433b80cc64c75d2a51d0115d441ead1300931cfd1118e6318792a1c9a45b"
+    },
+    {
+      "bytes": 738,
+      "path": "docs/evidence/task-6/controller-operations-red-05/intent.json",
+      "sha256": "af22413beb3f371f81b0085395534e10ff4286337ebdf31ed5eaf17e3c9e49a0"
+    },
+    {
+      "bytes": 1124,
+      "path": "docs/evidence/task-6/controller-operations-red-05/outer-tool-result.json",
+      "sha256": "b7180c2820fbf7201c1e268d9472f6cfd4f25762fa22347e62d999b00f146c27"
+    },
+    {
+      "bytes": 10913,
+      "path": "docs/evidence/task-6/controller-operations-red-05/output.txt",
+      "sha256": "987f6dba8e6994bef47e4d2237b529a05766ced3f9348a2bc1a7203889ee5c81"
+    },
+    {
+      "bytes": 15892,
+      "path": "docs/evidence/task-6/controller-operations-red-05/post-source.json",
+      "sha256": "5465235e43e74bd297e292ab1e2da817078e0081e485b6e0441a01a0d6e6638b"
+    },
+    {
+      "bytes": 15892,
+      "path": "docs/evidence/task-6/controller-operations-red-05/pre-source.json",
+      "sha256": "5465235e43e74bd297e292ab1e2da817078e0081e485b6e0441a01a0d6e6638b"
+    },
+    {
+      "bytes": 1023,
+      "path": "docs/evidence/task-6/controller-operations-red-05/receipt.json",
+      "sha256": "882fd061739082ceea33d7ae3588f64d0919a2ec25b90a38e235159ce9591c35"
+    },
+    {
+      "bytes": 3498,
+      "path": "docs/evidence/task-6/controller-operations-red-05/run.py",
+      "sha256": "ec3585f5e2ba40062126b6177a022f729a58043d6aa70b5ff6f10d358a9fb973"
+    },
+    {
+      "bytes": 2082,
+      "path": "docs/evidence/task-6/controller-operations-source-permissions.json",
+      "sha256": "71ef58907f7de9496ccfd0a8c2da57c58ded567b273b0d3fc9a22f744621a28f"
+    }
+  ],
+  "dispatch_base": "86d8d1424f77113722a826b1e9cecda7da26d67b",
+  "index_bytes": 19321,
+  "index_path": "docs/evidence/task-6/controller-operations-artifact-sizes.json",
+  "own_hash_policy": "No recursive self hash; index size included in aggregate.",
+  "scope": "Only this recorder substage; prior evidence and controller-owned documents excluded. No actual operation.",
+  "source_bytes": 98685,
+  "source_commit": "835600b611b631502b158b5037b8078921277f10",
+  "source_files": [
+    {
+      "bytes": 4631,
+      "path": "scripts/identity_cache_capture.py",
+      "sha256": "229d8bf0a0da59ec33e69c63c31809169015b51e8585207ff5fb73d192ed1f85"
+    },
+    {
+      "bytes": 7072,
+      "path": "scripts/identity_cache_maintenance.py",
+      "sha256": "155607da15266715699c323a5a822ffbb9bc18756e76b5341833be110e7de76a"
+    },
+    {
+      "bytes": 41285,
+      "path": "scripts/identity_cache_observe.py",
+      "sha256": "4039c311d36a770a5eda41dd1b3128364d8b3931deaedffd92e01328ade6ac36"
+    },
+    {
+      "bytes": 45697,
+      "path": "scripts/test_identity_cache_control.py",
+      "sha256": "63641c485f35faf0a7def839a969a5420cc38b14a0c5a084363d29faf05d0bcb"
+    }
+  ],
+  "total_evidence_bytes_including_index": 1060608,
+  "version": 1
+}

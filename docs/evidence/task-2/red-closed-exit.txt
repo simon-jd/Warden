@@ -1,0 +1,6 @@
+=== RUN   TestClosedExitChannelNeverReportsSuccess
+    runc_test.go:265: closed task status channel falsely reported success
+--- FAIL: TestClosedExitChannelNeverReportsSuccess (0.00s)
+FAIL
+FAIL	warden/runtimes/runc	0.005s
+FAIL

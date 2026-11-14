@@ -1,0 +1,54 @@
+?   	warden/controlplane/cmd/warden-api	[no test files]
+=== RUN   TestIdempotencyKeyReturnsSameRun
+--- PASS: TestIdempotencyKeyReturnsSameRun (0.06s)
+=== RUN   TestCrossTenantReadDenied
+--- PASS: TestCrossTenantReadDenied (0.05s)
+=== RUN   TestConcurrentIdempotency
+--- PASS: TestConcurrentIdempotency (0.07s)
+=== RUN   TestIdempotencyPayloadAndTenantScope
+--- PASS: TestIdempotencyPayloadAndTenantScope (0.06s)
+=== RUN   TestQueuedRunPersistsSecureDefaults
+--- PASS: TestQueuedRunPersistsSecureDefaults (0.05s)
+=== RUN   TestAuthenticationFailsClosed
+--- PASS: TestAuthenticationFailsClosed (0.05s)
+=== RUN   TestInvalidRequestsRejectedWithoutWrites
+--- PASS: TestInvalidRequestsRejectedWithoutWrites (0.06s)
+=== RUN   TestCreateRollsBackWhenAuditFails
+--- PASS: TestCreateRollsBackWhenAuditFails (0.05s)
+=== RUN   TestRejectsCaseAliasedFields
+--- PASS: TestRejectsCaseAliasedFields (0.04s)
+=== RUN   TestRejectsNullCommandArguments
+--- PASS: TestRejectsNullCommandArguments (0.04s)
+=== RUN   TestRejectsIPAllowlistEntries
+--- PASS: TestRejectsIPAllowlistEntries (0.04s)
+=== RUN   TestTenantPolicyDefaultsDenyRelaxation
+--- PASS: TestTenantPolicyDefaultsDenyRelaxation (0.10s)
+=== RUN   TestTenantPolicyAllowsExplicitScopedRelaxation
+--- PASS: TestTenantPolicyAllowsExplicitScopedRelaxation (0.05s)
+=== RUN   TestTenantPolicyLookupFailsClosed
+--- PASS: TestTenantPolicyLookupFailsClosed (0.33s)
+=== RUN   TestTenantPolicyCannotComeFromRequest
+--- PASS: TestTenantPolicyCannotComeFromRequest (0.05s)
+=== RUN   TestTenantPolicyRecheckedOnIdempotentReplay
+--- PASS: TestTenantPolicyRecheckedOnIdempotentReplay (0.05s)
+=== RUN   TestTenantPolicyRuntimeAndPartialLimits
+--- PASS: TestTenantPolicyRuntimeAndPartialLimits (0.10s)
+PASS
+ok  	warden/controlplane/internal/api	2.257s
+=== RUN   TestAuditChainDetectsTamper
+--- PASS: TestAuditChainDetectsTamper (0.09s)
+=== RUN   TestAppendOnlyGuards
+--- PASS: TestAppendOnlyGuards (0.05s)
+=== RUN   TestConcurrentAppendAndCanonicalHash
+--- PASS: TestConcurrentAppendAndCanonicalHash (0.18s)
+=== RUN   TestAppendSnapshotsPayloadAndRejectsAmbiguity
+--- PASS: TestAppendSnapshotsPayloadAndRejectsAmbiguity (0.06s)
+=== RUN   TestVerifyDetectsHeadSequenceRollback
+--- PASS: TestVerifyDetectsHeadSequenceRollback (0.06s)
+PASS
+ok  	warden/controlplane/internal/audit	1.454s
+?   	warden/controlplane/internal/canonical	[no test files]
+?   	warden/controlplane/internal/runs	[no test files]
+?   	warden/controlplane/internal/store	[no test files]
+?   	warden/controlplane/internal/tenant	[no test files]
+?   	warden/controlplane/internal/testutil	[no test files]

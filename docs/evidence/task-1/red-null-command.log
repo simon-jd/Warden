@@ -1,0 +1,6 @@
+=== RUN   TestRejectsNullCommandArguments
+    api_test.go:280: null command argument accepted status=201
+--- FAIL: TestRejectsNullCommandArguments (0.06s)
+FAIL
+FAIL	warden/controlplane/internal/api	0.059s
+FAIL

@@ -1,0 +1,89 @@
+{
+  "scope": "Bounded installed Vector validate --help metadata only; no configuration execution.",
+  "trace": [
+    {
+      "stage": "validate-help-budget",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "ulimit -t 20\nulimit -v 262144\nulimit -f 1024\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 7137167168 --service-memory-bytes 13000000000 --download-bytes 0",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 fixed native fresh budget guard before the authorized bounded Vector validation-help metadata read.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "e4e6b5",
+        "wall_time_seconds": 0.237322534,
+        "exit_code": 0,
+        "original_token_count": 56,
+        "output": "{\"additional_bytes\": \"7137167168\", \"at\": \"2026-10-25T21:42:09Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 261761351680, \"project_allocated_bytes\": 4446539776, \"service_memory_bytes\": \"13000000000\"}\n"
+      }
+    },
+    {
+      "stage": "validate-help-memory",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport os,pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\nassert os.geteuid()==1000\nm={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}\na=int(m['MemAvailable'].split()[0])*1024\nassert a>=5000000000\nassert not os.path.lexists('.cache/task11-validate-help')\nprint('MemAvailable',a,'resident_reserve',13000000000,'new_run_absent',True)\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 fresh native memory and fixed new metadata-output absence check.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "e36d4d",
+        "wall_time_seconds": 0.000043113,
+        "exit_code": 0,
+        "original_token_count": 19,
+        "output": "MemAvailable 87131275264 resident_reserve 13000000000 new_run_absent True\n"
+      }
+    },
+    {
+      "stage": "validate-help",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "set -eu\nulimit -t 45\nulimit -v 2929687\nulimit -f 1024\nulimit -n 128\nulimit -c 0\nmkdir -m 700 .cache/task11-validate-help\nmkdir -m 700 .cache/task11-validate-help/tmp\nset -C\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 VECTOR_THREADS=2 TMPDIR=/home/postedism/Desktop/Warden/.cache/task11-validate-help/tmp /usr/bin/timeout --signal=TERM --kill-after=10s 50s /home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector validate --help > .cache/task11-validate-help/output 2>&1",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 authorized bounded read of installed pinned Vector validate flags only; no production configuration execution.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "4dfc31",
+        "wall_time_seconds": 0.000010725,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "stage": "validate-help-postread",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\np=pathlib.Path('.cache/task11-validate-help/output'); b=p.read_bytes(); assert len(b)<=1048576; print('bytes',len(b)); print(b.decode())\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Read retained bounded Vector validate-help output after known normal exit.",
+        "max_output_tokens": 4000
+      },
+      "response": {
+        "chunk_id": "6155a3",
+        "wall_time_seconds": 0.000010034,
+        "exit_code": 0,
+        "original_token_count": 369,
+        "output": "bytes 1462\nValidate the target config, then exit\n\nUsage: vector validate [OPTIONS] [PATHS]...\n\nArguments:\n  [PATHS]...\n          Any number of Vector config files to validate. Format is detected from the file name. If\n          none are specified, the default config path `/etc/vector/vector.yaml` is targeted\n          \n          [env: VECTOR_CONFIG=]\n\nOptions:\n      --no-environment\n          Disables environment checks. That includes component checks and health checks\n\n      --skip-healthchecks\n          Disables health checks during validation\n\n  -d, --deny-warnings\n          Fail validation on warnings that are probably a mistake in the configuration or are\n          recommended to be fixed\n\n      --config-toml <config-toml>\n          Vector config files in TOML format to validate\n          \n          [env: VECTOR_CONFIG_TOML=]\n\n      --config-json <config-json>\n          Vector config files in JSON format to validate\n          \n          [env: VECTOR_CONFIG_JSON=]\n\n      --config-yaml <config-yaml>\n          Vector config files in YAML format to validate\n          \n          [env: VECTOR_CONFIG_YAML=]\n\n  -C, --config-dir <config-dir>\n          Read configuration from files in one or more directories. File format is detected from the\n          file name.\n          \n          Files not ending in .toml, .json, .yaml, or .yml will be ignored.\n          \n          [env: VECTOR_CONFIG_DIR=]\n\n  -h, --help\n          Print help (see a summary with '-h')\n\n"
+      }
+    }
+  ]
+}

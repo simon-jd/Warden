@@ -1,0 +1,54 @@
+{
+  "scope": "Root public/Git metadata corroboration; no tests, project imports or actual operation",
+  "package": {
+    "request": {
+      "cmd": "python3 -B - <<'PY'\nimport time\ns=time.monotonic()\nimport os,resource,signal,subprocess,json,hashlib\nfrom pathlib import Path\nsignal.signal(signal.SIGALRM,lambda *_:os._exit(124));signal.setitimer(signal.ITIMER_REAL,max(.001,30-(time.monotonic()-s)))\nresource.setrlimit(resource.RLIMIT_CPU,(10,10));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));resource.setrlimit(resource.RLIMIT_FSIZE,(33554432,33554432))\nassert os.getuid()==1000\np=Path('.superpowers/sdd/2-warden-security-plan/review-b5780a0..20fdff9.diff')\nb=subprocess.check_output(['git','diff','--binary','b5780a09cb3c0a81b37207dca31ad5c2103c4395','20fdff98c16d51d02cc2d9021bb373b6fb4a2dcf','--'],timeout=10)\nwith p.open('xb') as f:f.write(b)\nprint(json.dumps({'path':str(p),'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'elapsed_measured_seconds':time.monotonic()-s}))\nPY",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "sandbox_permissions": "require_escalated",
+      "justification": "仅生成本项目已冻结提交范围的本地独立审查diff，不运行项目源码、测试、Docker或云操作。",
+      "yield_time_ms": 1000,
+      "max_output_tokens": 1000
+    },
+    "result": {
+      "chunk_id": "1b7a81",
+      "wall_time_seconds": 0.000008075,
+      "exit_code": 0,
+      "original_token_count": 57,
+      "output": "{\"path\": \".superpowers/sdd/2-warden-security-plan/review-b5780a0..20fdff9.diff\", \"bytes\": 3252377, \"sha256\": \"2b12461837b3970ac31cfabfda9a7b8ab6e4f5d74708c525362a0b87931233bf\", \"elapsed_measured_seconds\": 0.036416767979972064}\n"
+    }
+  },
+  "verification": {
+    "request": {
+      "cmd": "python3 -B docs/evidence/task-6/controller-material-verification-command-20261025.py",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "sandbox_permissions": "require_escalated",
+      "justification": "仅核对材料阶段139项公开证据、完整历史、Git/工作区与展示映射；不导入项目、不重跑测试或调用实际接口。",
+      "yield_time_ms": 1000,
+      "max_output_tokens": 3000
+    },
+    "result": {
+      "chunk_id": "18622c",
+      "wall_time_seconds": 1.000958739,
+      "session_id": 28902,
+      "original_token_count": 0,
+      "output": ""
+    },
+    "polls": [
+      {
+        "request": {
+          "session_id": 28902,
+          "chars": "",
+          "yield_time_ms": 1000,
+          "max_output_tokens": 3000
+        },
+        "result": {
+          "chunk_id": "67e5d6",
+          "wall_time_seconds": 0.000034647,
+          "exit_code": 0,
+          "original_token_count": 418,
+          "output": "{\"actual_operation\": false, \"all152_frozen_git_worktree_equal\": true, \"artifacts_verified\": 139, \"at_utc\": \"2026-10-25T17:10:02.784597+00:00\", \"canonical_150_names_unchanged\": true, \"dispatch_base\": \"b5780a09cb3c0a81b37207dca31ad5c2103c4395\", \"elapsed_before_writes_seconds\": 1.5927764830412343, \"index_bytes\": 62385, \"index_sha256\": \"d061fa481af490b84fe74fb8938ff134e1c65b3028e322d16ab14c6fb85fd0ca\", \"net_allocated_vs_prior_index_excluding_index\": 3403776, \"net_allocated_vs_prior_index_including_index\": 3469312, \"net_logical_excluding_index\": 3043599, \"net_logical_including_index\": 3105984, \"old_report_and_plan_prefixes_preserved\": true, \"other147_equal_dispatch\": true, \"package_allocated_bytes\": 3727360, \"package_logical_bytes\": 3354634, \"preserved_old_rows\": {\"controller-terminal-reconcile-artifact-sizes.json\": 72, \"controller-terminal-reconcile-fix4-artifact-sizes.json\": 39}, \"prior_api_rows\": 60, \"prior_run_rows\": 101, \"project_imports\": false, \"raw_package\": {\"bytes\": 3252377, \"path\": \".superpowers/sdd/2-warden-security-plan/review-b5780a0..20fdff9.diff\", \"sha256\": \"2b12461837b3970ac31cfabfda9a7b8ab6e4f5d74708c525362a0b87931233bf\"}, \"review_head\": \"20fdff98c16d51d02cc2d9021bb373b6fb4a2dcf\", \"source\": \"2f0bb21f7cad5eaf0d5f1a7d05cc058138eb8460\", \"status\": \"PASS\", \"tests_rerun\": false, \"timing_scope\": \"earliest measured metadata entry; interpreter/essential bootstrap externally unbounded; no JS physical containment claim\", \"worker\": \"e25f400a20fe04b6476e8ef4b79c61a759bcf402\"}\n{\"view_bytes\": 1246875, \"view_sha256\": \"2f31d942c1b542bdaacb063f0206975333505672e28aa70ec2e2889257312d6f\", \"blocks\": 145, \"verbatim\": 70, \"whole_exact_duplicates\": 75}\n"
+        }
+      }
+    ]
+  }
+}

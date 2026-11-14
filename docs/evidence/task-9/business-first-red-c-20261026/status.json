@@ -1,0 +1,56 @@
+{
+  "phase": "BUSINESS_FIRST_RED",
+  "harness_attempt": 3,
+  "prior_first_red": "SPENT_2/2_UNCHANGED",
+  "diagnostics": "SPENT_3/3_UNCHANGED",
+  "metadata": "SPENT_1/1_ORIGINAL_UNKNOWN_FAILURE_UNCHANGED",
+  "status": "CANDIDATE_FIRST_RED",
+  "semantic_candidate": true,
+  "pg_ready": true,
+  "states": {
+    "warden-task9-business-red-20261026-c-pg": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 0,
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 1845325,
+      "Restarting": false,
+      "Running": true,
+      "StartedAt": "2026-10-26T07:26:50.990421821Z",
+      "Status": "running"
+    },
+    "warden-task9-business-red-20261026-c-go": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 1,
+      "FinishedAt": "2026-10-26T07:27:08.679503607Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 0,
+      "Restarting": false,
+      "Running": false,
+      "StartedAt": "2026-10-26T07:26:52.24404463Z",
+      "Status": "exited"
+    }
+  },
+  "observed": [
+    "warden-task9-business-red-20261026-c-go",
+    "warden-task9-business-red-20261026-c-pg"
+  ],
+  "errors": [],
+  "cleaned": [
+    "warden-task9-business-red-20261026-c-go",
+    "warden-task9-business-red-20261026-c-pg"
+  ],
+  "CIDS": {
+    "warden-task9-business-red-20261026-c-pg": "e54844f2e83836c8d2345f06c4bbc9e60f31fc3fd370e98218ec61a969a79e77",
+    "warden-task9-business-red-20261026-c-go": "02e1641d9635db1c4ca4746f6289c6f7921ef7d4ecf781aa210b94349666a8c0"
+  },
+  "owner_label": "bad10173f33a31e2307f54c5f24fbb26",
+  "cli_group_cleanup_known": true,
+  "evidence_bytes": 7863,
+  "elapsed": 18.764523049001582,
+  "old_task16": "UNTOUCHED_UNKNOWN"
+}

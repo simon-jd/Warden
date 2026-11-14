@@ -1,0 +1,65 @@
+# Task 8: the long-lived key audit after the scope fix (8c7b8c2), live and read-only, 2026-11-12 UTC
+# Host home-ubuntu; azure-cli 2.92.0; source 8c7b8c2 (clean tree). Calls: az account show, az ad app list --show-mine --all, az storage account list --subscription <checked subscription>.
+# Redacted: the other project's storage account name -> <other-project-storage>. The report itself holds no subscription, tenant or user ID.
+# The signed-in user owned 0 apps at this time (az ad app list --show-mine --all | length = 0); the two other-project apps listed on 2026-11-12T06:49Z are no longer owned by the user.
+
+### 2026-11-12T17:30:56.135Z scripts/longlived_keys_audit.sh -> exit 1
+{
+  "now": "2026-11-12T17:30:57.662177+00:00",
+  "scope": {
+    "subscription_matches_expected": true,
+    "subscription_name": "Azure for Students",
+    "subscription_state": "Enabled",
+    "tenant": "the expected subscription's tenant (az account show)",
+    "apps": "Entra apps the signed-in user owns (az ad app list --show-mine --all); apps of the project owned by anyone else are not seen",
+    "storage": "storage accounts of the expected subscription (az storage account list --subscription)",
+    "objects_in_scope": 1,
+    "empty": false,
+    "empty_allowed": false
+  },
+  "apps_scanned": 0,
+  "storage_accounts_scanned": 1,
+  "long_lived_count": 1,
+  "expired_ignored": 0,
+  "findings": [
+    {
+      "kind": "storage_shared_key",
+      "account": "<other-project-storage>",
+      "resource_group": "rg-mlinfra-westus",
+      "owner_project": null,
+      "counted": true
+    }
+  ]
+}
+
+### 2026-11-12T17:30:57.673Z scripts/longlived_keys_audit.sh --project warden -> exit 3
+{
+  "now": "2026-11-12T17:30:58.974354+00:00",
+  "scope": {
+    "subscription_matches_expected": true,
+    "subscription_name": "Azure for Students",
+    "subscription_state": "Enabled",
+    "tenant": "the expected subscription's tenant (az account show)",
+    "apps": "Entra apps the signed-in user owns (az ad app list --show-mine --all); apps of the project owned by anyone else are not seen",
+    "storage": "storage accounts of the expected subscription (az storage account list --subscription)",
+    "objects_in_scope": 0,
+    "empty": true,
+    "empty_allowed": false
+  },
+  "apps_scanned": 0,
+  "storage_accounts_scanned": 1,
+  "long_lived_count": 1,
+  "expired_ignored": 0,
+  "findings": [
+    {
+      "kind": "storage_shared_key",
+      "account": "<other-project-storage>",
+      "resource_group": "rg-mlinfra-westus",
+      "owner_project": null,
+      "counted": false
+    }
+  ],
+  "project": "warden",
+  "project_long_lived_count": 0
+}
+stderr: longlived_keys_audit: nothing in scope, so nothing was audited; pass --allow-empty if that is expected

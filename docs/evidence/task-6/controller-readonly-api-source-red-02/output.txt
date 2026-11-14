@@ -1,0 +1,76 @@
+test_project_image_list_uses_exact_get_and_no_cli (test_identity_cache_control.APITests.test_project_image_list_uses_exact_get_and_no_cli) ... ERROR
+test_socket_tuple_mismatch_refuses_before_connect_or_cli (test_identity_cache_control.APITests.test_socket_tuple_mismatch_refuses_before_connect_or_cli) ... ERROR
+test_unlisted_inspect_never_connects_or_spawns (test_identity_cache_control.APITests.test_unlisted_inspect_never_connects_or_spawns) ... ok
+
+======================================================================
+ERROR: test_project_image_list_uses_exact_get_and_no_cli (test_identity_cache_control.APITests.test_project_image_list_uses_exact_get_and_no_cli)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 300, in run
+    self.proc = subprocess.Popen(command, cwd=ROOT, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                 stderr=subprocess.STDOUT, close_fds=True, start_new_session=True,
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                 env=ENV, preexec_fn=preexec)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+AssertionError: CLI forbidden
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 1304, in test_project_image_list_uses_exact_get_and_no_cli
+    self.assertEqual(self.adapter(self.args()), identity + '\n')
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 395, in __call__
+    result = self.owner.run(['/usr/bin/docker', '--host=unix:///var/run/docker.sock', *args],
+                            [end - 10, end - 5, end], chunks.append)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 304, in run
+    raise UnknownChild('spawn_outcome_unknown') from exc
+identity_cache_observe.UnknownChild: spawn_outcome_unknown
+
+======================================================================
+ERROR: test_socket_tuple_mismatch_refuses_before_connect_or_cli (test_identity_cache_control.APITests.test_socket_tuple_mismatch_refuses_before_connect_or_cli)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 300, in run
+    self.proc = subprocess.Popen(command, cwd=ROOT, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                 stderr=subprocess.STDOUT, close_fds=True, start_new_session=True,
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                 env=ENV, preexec_fn=preexec)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+AssertionError: CLI forbidden
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 1313, in test_socket_tuple_mismatch_refuses_before_connect_or_cli
+    self.adapter(self.args())
+    ~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 395, in __call__
+    result = self.owner.run(['/usr/bin/docker', '--host=unix:///var/run/docker.sock', *args],
+                            [end - 10, end - 5, end], chunks.append)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 304, in run
+    raise UnknownChild('spawn_outcome_unknown') from exc
+identity_cache_observe.UnknownChild: spawn_outcome_unknown
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.004s
+
+FAILED (errors=2)

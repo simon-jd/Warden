@@ -1,0 +1,3 @@
+id: fork-bomb
+technique: T1499.003
+success_signal: WARDEN_fork_bomb

@@ -1,0 +1,22 @@
+local Docker daemon: postedism-ubuntu-system-selfuse 29.9.1 systemd
+outstanding Docker allocation charge: 0
+{"additional_bytes": "5000000000", "at": "2026-10-24T05:02:13Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 378168672256, "project_allocated_bytes": 2417545216, "service_memory_bytes": "4536870912"}
+owned image: sha256:f6092512bcc3980ad6133eb4e13264856c40717c46d7bb76fd353000d8bac4a9
+owned private PostgreSQL: c692a73978975a30dbaa477427cd95926612f35bb28b9a4742c3fe915ebfd950
+owned container: 57451a76394c1faf1dc22c6fd0e5d683f677e2bc8f942cb22d110a18a68c280c
+Docker bootstrap failed: Command '['/opt/warden/input/runs.test', '-test.v', '-test.count=1']' returned non-zero exit status 1.
+Docker bootstrap failed: Command '['/opt/warden/input/runs.test', '-test.v', '-test.count=1']' returned non-zero exit status 1.
+=== RUN   TestDurableClaimAndFencedTransitions
+--- PASS: TestDurableClaimAndFencedTransitions (0.05s)
+=== RUN   TestRecoveryClaimCannotOverwriteTerminalResult
+--- PASS: TestRecoveryClaimCannotOverwriteTerminalResult (0.03s)
+=== RUN   TestSuccessRequiresRunningAndCleanExit
+--- PASS: TestSuccessRequiresRunningAndCleanExit (0.04s)
+=== RUN   TestForgedReconciliationCannotClearPending
+    execution_test.go:150: forged proof accepted
+--- FAIL: TestForgedReconciliationCannotClearPending (0.04s)
+FAIL
+outer container removed: 57451a76394c1faf1dc22c6fd0e5d683f677e2bc8f942cb22d110a18a68c280c
+owned PostgreSQL removed: c692a73978975a30dbaa477427cd95926612f35bb28b9a4742c3fe915ebfd950
+owned image removed: sha256:f6092512bcc3980ad6133eb4e13264856c40717c46d7bb76fd353000d8bac4a9
+Docker lab failed: Command '['/usr/bin/docker', '--host=unix:///var/run/docker.sock', 'container', 'start', '--attach', '57451a76394c1faf1dc22c6fd0e5d683f677e2bc8f942cb22d110a18a68c280c']' returned non-zero exit status 2.

@@ -1,0 +1,15 @@
+# RED: new tests on the unchanged driver (gvisor.go at 8ea53cb, only gvisor_test.go changed)
+# 2026-11-13T18:12:45Z  M runtimes/gvisor/gvisor_test.go ?? docs/evidence/task-3/m4b-wait-kill-20261113/ 
+$ go test -count=1 -v -run '^(TestWaitDuringKillHonoursItsContext|TestLogsAndTimingsDuringKillAnswer|TestWaitDuringKillReturnsAfterTheTeardown)$' ./runtimes/gvisor
+=== RUN   TestWaitDuringKillHonoursItsContext
+    gvisor_test.go:942: Wait with a 50 ms context during Kill's teardown: context deadline exceeded after 1.998741757s
+--- FAIL: TestWaitDuringKillHonoursItsContext (2.00s)
+=== RUN   TestLogsAndTimingsDuringKillAnswer
+    gvisor_test.go:964: Logs and Timings during Kill's teardown took 1.99864627s
+--- FAIL: TestLogsAndTimingsDuringKillAnswer (2.00s)
+=== RUN   TestWaitDuringKillReturnsAfterTheTeardown
+--- PASS: TestWaitDuringKillReturnsAfterTheTeardown (0.21s)
+FAIL
+FAIL	warden/runtimes/gvisor	4.224s
+FAIL
+exit 1

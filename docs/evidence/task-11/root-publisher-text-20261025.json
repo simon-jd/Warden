@@ -1,0 +1,30 @@
+{
+  "scope": "focused public-document facts only; complete exposed return retained in ignored task-11-root-public-text-retention.json; no binary admission",
+  "native_chunk": "f2a424",
+  "normal_exit": 0,
+  "documents": [
+    {
+      "name": "vector_sums",
+      "url": "https://github.com/vectordotdev/vector/releases/download/v0.45.0/vector-0.45.0-SHA256SUMS",
+      "status": 200,
+      "bytes": 1971,
+      "selected_publisher_line": "0588f529200befa3237481255b9b7715316de73d626e1d01042e054f92205c71  vector-0.45.0-x86_64-unknown-linux-musl.tar.gz"
+    },
+    {
+      "name": "ocsf_system",
+      "url": "https://raw.githubusercontent.com/ocsf/ocsf-schema/v1.3.0/events/system/system.json",
+      "status": 200,
+      "bytes": 771,
+      "extends": "base_event",
+      "profiles": [
+        "host",
+        "security_control"
+      ],
+      "required_attributes": [
+        "actor",
+        "device"
+      ],
+      "full_recursive_closure_verified": false
+    }
+  ]
+}

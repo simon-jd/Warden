@@ -1,0 +1,69 @@
+{
+  "phase": "ECC_EXISTING_UNSPENT_ONE_PG_ONLY_PREPARATION",
+  "execution": "NOT_ADMITTED_NOT_RUN",
+  "diagnostics_total_after_actual": 3,
+  "prior_first_red": "SPENT_2/2_UNCHANGED",
+  "prior_diagnostics": "SPENT_2/2_UNCHANGED",
+  "prior_metadata": "SPENT_1/1_UNKNOWN_FAILURE_IMMUTABLE",
+  "semantic_prerequisite": "SATISFIED_BY_DIRECT_USER_RULING_FROM_EXISTING_BYTES",
+  "candidate_single_env_argv": "POSTGRES_INITDB_ARGS=-c dynamic_shared_memory_type=mmap",
+  "consumed_never_execute": {
+    "path": ".superpowers/sdd/2-warden-security-plan/task-9-pg-startup-diagnostic-logger-corrected-20261026-b.py.txt",
+    "bytes": 12312,
+    "sha256": "68c82e12362296db7193bfbafe8613378d8dbcecf9b561c0921efd4152ac0f31"
+  },
+  "authorities": [
+    {
+      "path": "docs/evidence/task-9/pg-initdb-candidate-user-ruling-20261026.json",
+      "bytes": 1521,
+      "sha256": "519dc44f917b8942fdd4b21675e645a58f514e771f3665e42bae6ef73c7a56bb"
+    },
+    {
+      "path": "docs/COORDINATOR-TASK9-INITDB-CAUSE-TDD-20261026.json",
+      "bytes": 4016,
+      "sha256": "ecc874eadea4890733fa044a3f79a0efdd8a34630f9692051189e9aa29981841"
+    }
+  ],
+  "historical_F_sha256": "8f498b9220b29dd8b26753950a1896631265df3a6e2a3abf810872eb2e5be6a8",
+  "historical_M_sha256": "1ca3cbfa3cf4a3ba960dc4ced03f8eb24d2e8429e9ae5e7b0e34d3d08b54fbbd",
+  "source_binding": {
+    "go.mod": "bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa",
+    "go.sum": "cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0",
+    "controlplane/internal/jit/jit.go": "4c6c95298e88b40088dde6cf99b26ea5760afff4a16f7d81ead14d69076fc1ae",
+    "controlplane/internal/jit/jit_test.go": "0dfe5636c602a6c06fd53f16ecf1ba722c343257dd022da1a799f25acf7a39a2",
+    "controlplane/internal/audit/audit.go": "0cb775bb602fcdcdefe405a8587d11aa4dac79e018d457c1328c7f00eb932439",
+    "controlplane/internal/canonical/json.go": "06b2298c869c69fa0877e120f4a14fd3942f5e5c60a0c79032bcb7ffcd8261a0",
+    "controlplane/internal/store/store.go": "d50bab2c3f628855f2b21b3c94ec8a5a2a8526907509916ef0b9ca4eabce5a62",
+    "controlplane/internal/store/migration_test.go": "6dc0d9b0f6d9a2b9d9c62a5b38353dbae2bb46a31abb0bf8400cc7642db11f6a",
+    "controlplane/internal/store/migrations/001_init.sql": "f0630b47de866d358a9290b746a2017be1275e83780ede92b22e61617e6c76d8",
+    "controlplane/internal/store/migrations/002_execution.sql": "6d0bd9ff177a820520a77ef2c9b8392a89567a8663497342aeb0ce8d128a350d",
+    "controlplane/internal/store/migrations/003_jit.sql": "d4abaaa0118dc79de8142ecdc6ce81f2baa4a9825f3342d7e8edc17605d3aa1b",
+    "controlplane/internal/testutil/database.go": "f6574dfe1f4b6eba56bcf9726756f2102c4ceebca3bd5d56e10b6fa9f03545e8"
+  },
+  "files": [
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-pg-initdb-mmap-validation-20261026-a.py.txt",
+      "bytes": 12470,
+      "allocated_bytes": 16384,
+      "sha256": "a3e5541dfd59c81b53cedca4e0f7b4ae63b19eaed15d84c0cae458d2e90005b7"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-pg-initdb-mmap-validation-20261026-a.diff",
+      "bytes": 3003,
+      "allocated_bytes": 4096,
+      "sha256": "81f3c69809dfb130e823f9034bbb26e7e670eeb0c00dace72646410b8e058986"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-pg-initdb-mmap-validation-20261026-a.md",
+      "bytes": 4881,
+      "allocated_bytes": 8192,
+      "sha256": "4334c863b3929df907794ec779c5fbdaec622590ba93865b23b2a65079f877f4"
+    }
+  ],
+  "allocation": {
+    "new_files_allocated_bytes": 32768,
+    "directory_growth_bytes": 0,
+    "total_additional_allocated_bytes": 32768,
+    "cap_bytes": 65536
+  }
+}

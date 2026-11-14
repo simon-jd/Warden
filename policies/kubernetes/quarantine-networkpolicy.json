@@ -1,0 +1,18 @@
+{
+  "apiVersion": "networking.k8s.io/v1",
+  "kind": "NetworkPolicy",
+  "metadata": {
+    "name": "warden-quarantine",
+    "annotations": {
+      "warden.dev/purpose": "Target of respond.IsolatePod on clusters without Cilium: pods labelled warden.dev/quarantine=true get no ingress and no egress. Namespaced, so it is applied to every sandbox namespace. Same selector as policies/cilium/quarantine.yaml."
+    }
+  },
+  "spec": {
+    "podSelector": {
+      "matchLabels": {
+        "warden.dev/quarantine": "true"
+      }
+    },
+    "policyTypes": ["Ingress", "Egress"]
+  }
+}

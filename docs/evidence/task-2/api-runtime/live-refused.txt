@@ -1,0 +1,5 @@
+usage: runtime_lab_docker.py [-h]
+                             --other-service-memory-bytes OTHER_SERVICE_MEMORY_BYTES
+                             [--reviewed-live-profile]
+                             {smoke,run,api-smoke,api,api-code}
+runtime_lab_docker.py: error: live profile requires independent review then --reviewed-live-profile

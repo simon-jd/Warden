@@ -1,0 +1,4 @@
+{"executed_at": "2026-11-14T03:41:36.570168000Z", "execution_id": "smoke-runc-shell", "outcome": "succeeded", "run_id": "smoke-runc-shell-bfa69104", "technique_id": "T1059"}
+{"executed_at": "2026-11-14T03:41:36.768756000Z", "execution_id": "smoke-runc-read", "outcome": "succeeded", "run_id": "smoke-runc-read-bfa69104", "technique_id": "T1555"}
+{"executed_at": "2026-11-14T03:41:55.161080000Z", "execution_id": "smoke-gvisor-shell", "outcome": "succeeded", "run_id": "smoke-gvisor-shell-bfa69104", "technique_id": "T1059"}
+{"executed_at": "2026-11-14T03:41:55.989804000Z", "execution_id": "smoke-gvisor-read", "outcome": "succeeded", "run_id": "smoke-gvisor-read-bfa69104", "technique_id": "T1555"}

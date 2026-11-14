@@ -1,0 +1,63 @@
+# make test-gvisor (lab up, TestGVisorConformance, lab down through scripts/k3s_gvisor_lab.sh run); make under taskset -c 0-7,16-31
+# head 48090e3d2ded30a66455b9328190b9092b7b4b0a
+# git status --short:
+#   ?? docs/evidence/task-3/minor-fixes-20261112/conformance-rerun.log
+#   (end)
+# start 2026-11-12T09:28:01-08:00, load 8.00 4.90 4.01
+# project=warden containers: 0, networks: 0 before
+scripts/k3s_gvisor_lab.sh run scripts/k3s_gvisor_lab.sh env \
+	env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_LIVE_GVISOR=1 WARDEN_GVISOR_COLD_STARTS= GVISOR_OUT= /home/postedism/Desktop/Warden-task3/.tools/go/bin/go test -buildvcs=false -count=1 -v -timeout 40m -run '^(TestGVisorConformance|TestGVisorColdStarts)$' ./runtimes/gvisor
+# pinned warden-k3s-gvisor (state running) to CpusetCpus=0-7,16-31
+lab up: warden-k3s-gvisor on warden-k3s (192.168.192.10), probe sha256:2f4ec662b7b52207452e3097bdf56563dc3d1879599eafbd6dfe6de71b3355cf
+=== RUN   TestGVisorConformance
+=== RUN   TestGVisorConformance/ForkBombCappedByPids
+    suite.go:61: real guest mode=fork exit={Code:0 LogsTruncated:false PidsMaxEvents:1 PeakPids:32 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS fork
+=== RUN   TestGVisorConformance/RootfsReadOnly
+    suite.go:61: real guest mode=readonly exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS readonly
+=== RUN   TestGVisorConformance/NoNetworkByDefault
+    suite.go:61: real guest mode=network exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:5 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS network
+=== RUN   TestGVisorConformance/RunsAsNonRoot
+    suite.go:61: real guest mode=uid exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:5 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS uid
+=== RUN   TestGVisorConformance/TimeoutKillsProcessGroup
+    suite.go:61: real guest mode=timeout exit={Code:137 LogsTruncated:false PidsMaxEvents:0 PeakPids:7 DroppedLogBytes:0 OOMKilled:false TimedOut:true CgroupEmpty:true} logs=READY timeout
+=== RUN   TestGVisorConformance/MemoryLimitOOMKilled
+    suite.go:61: real guest mode=oom exit={Code:137 LogsTruncated:false PidsMaxEvents:0 PeakPids:0 DroppedLogBytes:0 OOMKilled:true TimedOut:false CgroupEmpty:true} logs=READY oom
+=== RUN   TestGVisorConformance/SeccompBlocksMountAndPtrace
+    suite.go:61: real guest mode=seccomp exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS seccomp
+=== NAME  TestGVisorConformance
+    lab_test.go:169: run fork pod e46712d1-1ad1-46fd-9afc-7a3e33decf20: pod cgroup on the node gone=true start->exec=2795.48 ms
+    lab_test.go:169: run readonly pod 90d40f16-50b0-4757-9c66-f21bc7ac4768: pod cgroup on the node gone=true start->exec=593.37 ms
+    lab_test.go:169: run network pod d18b2953-ae31-4726-9e2a-23b3efd9a08c: pod cgroup on the node gone=true start->exec=464.16 ms
+    lab_test.go:169: run uid pod c1c5abc2-78c2-4d11-b2f2-5173a3411456: pod cgroup on the node gone=true start->exec=495.74 ms
+    lab_test.go:169: run timeout pod 18cf7f9f-b961-452a-9795-5fda638f5cab: pod cgroup on the node gone=true start->exec=552.71 ms
+    lab_test.go:169: run oom pod 166a981e-c7f7-4490-a87b-de751827bb73: pod cgroup on the node gone=true start->exec=n/a (no supervisor report)
+    lab_test.go:169: run seccomp pod cd6d492c-f2dd-40a8-8bed-f312079d5f8f: pod cgroup on the node gone=true start->exec=473.25 ms
+--- PASS: TestGVisorConformance (26.14s)
+    --- PASS: TestGVisorConformance/ForkBombCappedByPids (5.79s)
+    --- PASS: TestGVisorConformance/RootfsReadOnly (2.97s)
+    --- PASS: TestGVisorConformance/NoNetworkByDefault (2.99s)
+    --- PASS: TestGVisorConformance/RunsAsNonRoot (3.04s)
+    --- PASS: TestGVisorConformance/TimeoutKillsProcessGroup (5.01s)
+    --- PASS: TestGVisorConformance/MemoryLimitOOMKilled (2.99s)
+    --- PASS: TestGVisorConformance/SeccompBlocksMountAndPtrace (3.03s)
+=== RUN   TestGVisorColdStarts
+    lab_test.go:210: cold-start series: set WARDEN_GVISOR_COLD_STARTS=<n> (make test-gvisor GVISOR_COLD_STARTS=100)
+--- SKIP: TestGVisorColdStarts (0.00s)
+PASS
+ok  	warden/runtimes/gvisor	26.147s
+# make exit: 0
+# end 2026-11-12T09:28:38-08:00, load 9.60 5.62 4.28
+# project=warden containers: 0, networks: 0 after
+# host snapshot before/after the lab:
+#   vm.overcommit_memory=1 vm.overcommit_memory=1
+#   vm.panic_on_oom=0 vm.panic_on_oom=0
+#   kernel.panic=10 kernel.panic=10
+#   kernel.panic_on_oops=1 kernel.panic_on_oops=1
+#   kernel.keys.root_maxkeys=1000000 kernel.keys.root_maxkeys=1000000
+#   kernel.keys.root_maxbytes=25000000 kernel.keys.root_maxbytes=25000000
+#   fs.inotify.max_user_instances=512 fs.inotify.max_user_instances=512
+#   fs.inotify.max_user_watches=524288 fs.inotify.max_user_watches=524288
+#   net.ipv4.ip_forward=1 net.ipv4.ip_forward=1
+#   modules_sha256=ac85847ded2c965dcb3a82cb8b8386a92e188c86fa95b6a251620f124f4990d6 modules_sha256=ac85847ded2c965dcb3a82cb8b8386a92e188c86fa95b6a251620f124f4990d6
+# host snapshot unchanged
+# node inputs (node-manifest.txt) sha256: 8ced932ae9ebe851db241678a3ac0b6a11a4edaa7dc8b1d16362d16861d70e18

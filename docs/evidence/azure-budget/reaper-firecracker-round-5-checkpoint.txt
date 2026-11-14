@@ -1,0 +1,2 @@
+{"start_utc": "2026-10-24T22:32:25.028571+00:00", "end_utc": "2026-10-24T22:32:26.107997+00:00", "elapsed_seconds": 1.079414278967306, "exit_code": 0, "log_sha256": "125fbdd9cc75dd3865c84559dbcffde9668629d732a7e90da26a9c7271f25bcf", "scope": "Fixed Warden reaper only; no Azure resource creation, estimates are not an actual bill."}
+{"at": "2026-10-24T22:32:26Z", "event": "group-absent", "id": "/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab"}

@@ -1,0 +1,7 @@
+exit=0
+pip_rc=0
+head_rc=0
+tmp_bytes=4096
+new_bytes=200704
+report_bytes=182088
+cleanup=1

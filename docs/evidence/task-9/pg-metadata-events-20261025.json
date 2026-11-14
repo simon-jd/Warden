@@ -1,0 +1,43 @@
+[
+  {
+    "kind": "fresh-metadata-guard",
+    "request": {
+      "cmd": "set -e\nulimit -c 0\nulimit -n 64\nulimit -v 262144\nulimit -f 8192\nulimit -t 20\n/usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -B - <<'PY'\nfrom pathlib import Path\nimport os,runpy,stat,sys\nassert os.getuid()==1000\nheld=0\nfor basename in ('warden-task15-first-red-9ffe58a9-b5d6dcbd','warden-task15-green-22c7197f-968f62de','warden-task15-fix1-red-18981ab8-22c7197f','warden-task15-fix1-cover-237cac53-18981ab8'):\n    n=Path('/tmp')/basename\n    for p in (n,n/'status.txt',n/'unittest.txt'):\n        st=p.lstat()\n        assert st.st_uid==1000 and not stat.S_ISLNK(st.st_mode)\n        held+=st.st_blocks*512\nassert held<=131072\nassert not os.path.lexists('.superpowers/sdd/2-warden-security-plan/.task9-pg-metadata-20261025')\nmem=next(int(x.split()[1])*1024 for x in Path('/proc/meminfo').read_text().splitlines() if x.startswith('MemAvailable:'))\nassert mem>=5000000000\nprint({'retained_four_tmp_allocated_bytes':held,'retained_reserve_bytes':131072,'MemAvailable_bytes':mem,'new_metadata_namespace_absent':True},flush=True)\nsys.argv=['scripts/azure_guard.py','preflight','--additional-bytes','5067239936','--service-memory-bytes','14000000000','--download-bytes','0']\nrunpy.run_path('scripts/azure_guard.py',run_name='__main__')\nPY",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "max_output_tokens": 1800,
+      "sandbox_permissions": "require_escalated",
+      "justification": "Freshly guard one exact Task9 Postgres image metadata read, with no container creation/download, preserving Q/four tmp trees and reserving old UNKNOWN9GB plus new5GB for the known 4GiB Docker CLI bound."
+    },
+    "result": {
+      "chunk_id": "ffabfb",
+      "wall_time_seconds": 0.266903337,
+      "exit_code": 0,
+      "original_token_count": 94,
+      "output": "{'retained_four_tmp_allocated_bytes': 32768, 'retained_reserve_bytes': 131072, 'MemAvailable_bytes': 94306185216, 'new_metadata_namespace_absent': True}\n{\"additional_bytes\": \"5067239936\", \"at\": \"2026-10-26T04:07:13Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 252947103744, \"project_allocated_bytes\": 5032108032, \"service_memory_bytes\": \"14000000000\"}\n"
+    }
+  },
+  {
+    "kind": "sole-exact-image-inspect",
+    "request": {
+      "cmd": "set -e\nulimit -c 0\nulimit -n 64\nulimit -v 4194304\nulimit -f 8192\nulimit -t 15\ntask9_meta_dir=/home/postedism/Desktop/Warden/.superpowers/sdd/2-warden-security-plan/.task9-pg-metadata-20261025\n/usr/bin/python3 -I -B - <<'PY'\nfrom pathlib import Path\nimport os,stat\nr=Path('/home/postedism/Desktop/Warden')\nassert Path.cwd()==r and os.getuid()==1000\nn=r/'.superpowers/sdd/2-warden-security-plan/.task9-pg-metadata-20261025'\nos.mkdir(n,0o700)\nos.chmod(n,0o700)\nst=n.lstat()\nassert stat.S_ISDIR(st.st_mode) and st.st_uid==1000 and stat.S_IMODE(st.st_mode)==0o700\nfd=os.open(n/'config.json',os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)\nwith os.fdopen(fd,'w') as f:f.write('{}\\n')\nPY\n/usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C DOCKER_CONFIG=\"$task9_meta_dir\" GOMAXPROCS=2 GOMEMLIMIT=256MiB /usr/bin/timeout --signal=TERM --kill-after=1s 24s /usr/bin/docker --config \"$task9_meta_dir\" --host unix:///var/run/docker.sock image inspect postgres:18-alpine --format '{{json .Id}} {{json .Size}} {{json .RepoDigests}}'",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "max_output_tokens": 1800,
+      "yield_time_ms": 1000,
+      "sandbox_permissions": "require_escalated",
+      "justification": "After guard ffabfb, inspect exactly the already-referenced postgres:18-alpine image ID/size/digests once through the local daemon, using fresh private Docker config and known 4GiB CLI limit; no pulls, containers, global lists, old IDs, or host changes."
+    },
+    "result": {
+      "chunk_id": "9a9022",
+      "wall_time_seconds": 0.017611485,
+      "exit_code": 0,
+      "original_token_count": 43,
+      "output": "\"sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873\" 432729433 [\"postgres@sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873\"]\n"
+    }
+  }
+]

@@ -1,0 +1,42 @@
+test_deadline_checks_both_clocks_before_phase_work (test_controller_cache_continuation_invoker_20261025.InvokerTests.test_deadline_checks_both_clocks_before_phase_work) ... FAIL
+test_fixed_passive_invoker_exists (test_controller_cache_continuation_invoker_20261025.InvokerTests.test_fixed_passive_invoker_exists) ... FAIL
+test_supervisor_filesize_inheritance_does_not_cap_capture (test_controller_cache_continuation_invoker_20261025.InvokerTests.test_supervisor_filesize_inheritance_does_not_cap_capture) ... FAIL
+
+======================================================================
+FAIL: test_deadline_checks_both_clocks_before_phase_work (test_controller_cache_continuation_invoker_20261025.InvokerTests.test_deadline_checks_both_clocks_before_phase_work)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 30, in test_deadline_checks_both_clocks_before_phase_work
+    with self.assertRaisesRegex(ValueError, 'BOOTTIME'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_fixed_passive_invoker_exists (test_controller_cache_continuation_invoker_20261025.InvokerTests.test_fixed_passive_invoker_exists)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 35, in test_fixed_passive_invoker_exists
+    self.assertTrue((ROOT / 'docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py').is_file())
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_supervisor_filesize_inheritance_does_not_cap_capture (test_controller_cache_continuation_invoker_20261025.InvokerTests.test_supervisor_filesize_inheritance_does_not_cap_capture)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 23, in test_supervisor_filesize_inheritance_does_not_cap_capture
+    self.assertEqual(state[resource.RLIMIT_FSIZE], (1048576, 33554432))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (1048576, 1048576) != (1048576, 33554432)
+
+First differing element 1:
+1048576
+33554432
+
+- (1048576, 1048576)
++ (1048576, 33554432)
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)

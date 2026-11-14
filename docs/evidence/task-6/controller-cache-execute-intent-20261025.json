@@ -1,0 +1,45 @@
+{
+  "started": "2026-10-25T10:02:24.874869+00:00",
+  "command": [
+    "python3",
+    "-B",
+    "scripts/identity_cache.py"
+  ],
+  "source_hashes": {
+    "scripts/identity_cache.py": "f608dc714b79dcc4f3c4c2071ba6dd561c88eec10c45fc905820ec447d8a1ede",
+    "scripts/test_identity_cache.py": "807fc390ea6b807f895b39acfd9ffc48d143ccd5a3b3dc4f1f3d05cfdeb93bc2",
+    "scripts/runtime_lab_paths.py": "0ce3287feab8197839cf2e7e1cf297fd5cad0e740069023b188e4c366b643f84",
+    "scripts/firecracker_recovery.py": "cccb3378b92816dc5242fd79e72df5fc79fcda338b8f20d34c5a9ca655a8453b",
+    "scripts/firecracker_recovery_init.py": "72675e91ac22ab3f1607fc5f21b90db18fc8c115e9a50bd8a48761cf70c8c9b2",
+    "scripts/azure_guard.py": "303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48"
+  },
+  "fresh_original_postflight": {
+    "ordinary_full_guard": {
+      "additional_bytes": "5000000000",
+      "at": "2026-10-25T10:02:23Z",
+      "download_bytes": "0",
+      "event": "local-preflight",
+      "free_bytes": 265428733952,
+      "project_allocated_bytes": 4195295232,
+      "service_memory_bytes": "1000000000"
+    },
+    "protected_sysctls": {
+      "vm/overcommit_memory": "1",
+      "vm/panic_on_oom": "0",
+      "kernel/panic": "10",
+      "kernel/panic_on_oops": "1",
+      "kernel/keys/root_maxkeys": "1000000",
+      "kernel/keys/root_maxbytes": "25000000"
+    },
+    "protected_baseline_match": true,
+    "original_owner_retirement": "cleanup_pending",
+    "creation_outcome": "unknown",
+    "never_reopen": true,
+    "reserved_bytes": 5000000000,
+    "released": false
+  },
+  "wall_deadline_seconds": 180,
+  "writer_window": "controller exclusive maintenance window; all earlier project Go/Docker command receipts terminal, identity implementer idle after doc-only handoff, reviewer read-only, no legacy entrypoint or service started; flock alone is insufficient",
+  "state": "command-intended-not-known-complete",
+  "Q_released": false
+}

@@ -1,0 +1,10 @@
+UID=1000
+CapEff:	0000000000000000
+NoNewPrivs:	1
+container fd8a8e875292a3c707359bbe318d24d6bef1b2e9e1dd59d7be5bbabbd1349051: absent
+container b9997944cacb05069017dfbae9605f50df384ffdab88bc020208a53f8e4a4de9: absent
+image sha256:f72da292c9913ed37123d9cd5ac31a72a94d5593e860b219522085d59f48f1a3: absent
+container ls --all --quiet --filter label=project=warden: empty
+image ls --quiet --filter label=project=warden: empty
+outstanding charge bytes=0
+{"additional_bytes": "200000000", "at": "2026-10-24T05:47:31Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 374288769024, "project_allocated_bytes": 2865963008, "service_memory_bytes": "0"}

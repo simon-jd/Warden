@@ -1,0 +1,25 @@
+{"additional_bytes": "6064000000", "at": "2026-10-24T17:33:56Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 349467660288, "project_allocated_bytes": 3025080320, "service_memory_bytes": "64000000"}
+{"recovery": "complete", "original": "37b95dd4bbd84a5aa9b33a1f5d8d40402d26f0e1b765c4779ea47294eaa2f2b5", "helper": "cc53c48d66de68b06baff8039d245e99192f6de6659f99cdea7c2d9cd4bbc82f", "image": "sha256:a2bd74a7126bbb0c858d2e904a0eb4feef8849b83527193a89ebde08bf96f7fc", "budget": {"project_allocated_bytes": 3025076224, "outstanding_bytes": 6000000000, "all_owned_image_charges": 1434733588, "helper_reserve_bytes": 64000000, "accounted_disk_bytes": 10523809812, "service_memory_bytes": 320000000}}
+	Command being timed: "python3 -B scripts/k3s_lab_recover.py --other-service-memory-bytes 0 --reviewed-recovery-profile"
+	User time (seconds): 1.10
+	System time (seconds): 0.45
+	Percent of CPU this job got: 41%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.75
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 42396
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 3
+	Minor (reclaiming a frame) page faults: 102352
+	Voluntary context switches: 10890
+	Involuntary context switches: 133
+	Swaps: 0
+	File system inputs: 608
+	File system outputs: 32
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

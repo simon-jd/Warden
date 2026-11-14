@@ -1,0 +1,18 @@
+# GREEN: readOuter in capacity_test.go, used by TestFirecrackerCapacity for every reading and at a stop
+# 2026-11-13T18:18:33Z head d8f553b  M runtimes/firecracker/capacity_test.go ?? docs/evidence/task-4/pids-limit-20261113/green-reading.log ?? docs/evidence/task-4/pids-limit-20261113/red-reading.log 
+$ go test -count=1 -v -run '^(TestOuterReadingIncludesPids|TestFirecrackerCapacity)$' ./runtimes/firecracker
+=== RUN   TestFirecrackerCapacity
+    capacity_test.go:21: live KVM test: needs WARDEN_FC_MODE=capacity-default|capacity-benchmark|capacity-pressure inside the Firecracker lab node
+--- SKIP: TestFirecrackerCapacity (0.00s)
+=== RUN   TestOuterReadingIncludesPids
+--- PASS: TestOuterReadingIncludesPids (0.01s)
+PASS
+ok  	warden/runtimes/firecracker	0.012s
+exit 0
+
+$ go test -count=1 -shuffle=on ./runtimes/firecracker
+ok  	warden/runtimes/firecracker	1.466s
+exit 0
+
+$ go vet ./runtimes/firecracker
+exit 0

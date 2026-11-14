@@ -1,0 +1,143 @@
+test_ancestor_symlink_is_rejected (__main__.LabPathsTests.test_ancestor_symlink_is_rejected) ... FAIL
+test_cleanup_never_follows_replaced_session_path (__main__.LabPathsTests.test_cleanup_never_follows_replaced_session_path) ... FAIL
+test_lab_directory_symlink_is_rejected_before_write (__main__.LabPathsTests.test_lab_directory_symlink_is_rejected_before_write) ... FAIL
+test_preexisting_targets_and_dangling_aliases_are_rejected (__main__.LabPathsTests.test_preexisting_targets_and_dangling_aliases_are_rejected) ... 
+  test_preexisting_targets_and_dangling_aliases_are_rejected (__main__.LabPathsTests.test_preexisting_targets_and_dangling_aliases_are_rejected) (name='containerd.toml') ... FAIL
+  test_preexisting_targets_and_dangling_aliases_are_rejected (__main__.LabPathsTests.test_preexisting_targets_and_dangling_aliases_are_rejected) (name='containerd.log') ... FAIL
+  test_preexisting_targets_and_dangling_aliases_are_rejected (__main__.LabPathsTests.test_preexisting_targets_and_dangling_aliases_are_rejected) (name='root') ... FAIL
+  test_preexisting_targets_and_dangling_aliases_are_rejected (__main__.LabPathsTests.test_preexisting_targets_and_dangling_aliases_are_rejected) (name='state') ... FAIL
+  test_preexisting_targets_and_dangling_aliases_are_rejected (__main__.LabPathsTests.test_preexisting_targets_and_dangling_aliases_are_rejected) (name='io') ... FAIL
+  test_preexisting_targets_and_dangling_aliases_are_rejected (__main__.LabPathsTests.test_preexisting_targets_and_dangling_aliases_are_rejected) (name='containerd.sock') ... FAIL
+test_session_is_exclusive_and_files_do_not_overwrite_prior_session (__main__.LabPathsTests.test_session_is_exclusive_and_files_do_not_overwrite_prior_session) ... FAIL
+test_untrusted_owner_and_writable_ancestor_fail_closed (__main__.LabPathsTests.test_untrusted_owner_and_writable_ancestor_fail_closed) ... FAIL
+
+======================================================================
+FAIL: test_ancestor_symlink_is_rejected (__main__.LabPathsTests.test_ancestor_symlink_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 32, in test_ancestor_symlink_is_rejected
+    self.reject(alias / 'warden-lab')
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 20, in reject
+    with self.assertRaises((OSError, ValueError)):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'OSError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_cleanup_never_follows_replaced_session_path (__main__.LabPathsTests.test_cleanup_never_follows_replaced_session_path)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 70, in test_cleanup_never_follows_replaced_session_path
+    self.assertFalse((renamed / 'root').exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_lab_directory_symlink_is_rejected_before_write (__main__.LabPathsTests.test_lab_directory_symlink_is_rejected_before_write)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 27, in test_lab_directory_symlink_is_rejected_before_write
+    self.reject()
+    ~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 20, in reject
+    with self.assertRaises((OSError, ValueError)):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'OSError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_preexisting_targets_and_dangling_aliases_are_rejected (__main__.LabPathsTests.test_preexisting_targets_and_dangling_aliases_are_rejected) (name='containerd.toml')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 40, in test_preexisting_targets_and_dangling_aliases_are_rejected
+    self.reject(base=casebase)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 20, in reject
+    with self.assertRaises((OSError, ValueError)):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'OSError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_preexisting_targets_and_dangling_aliases_are_rejected (__main__.LabPathsTests.test_preexisting_targets_and_dangling_aliases_are_rejected) (name='containerd.log')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 40, in test_preexisting_targets_and_dangling_aliases_are_rejected
+    self.reject(base=casebase)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 20, in reject
+    with self.assertRaises((OSError, ValueError)):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'OSError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_preexisting_targets_and_dangling_aliases_are_rejected (__main__.LabPathsTests.test_preexisting_targets_and_dangling_aliases_are_rejected) (name='root')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 40, in test_preexisting_targets_and_dangling_aliases_are_rejected
+    self.reject(base=casebase)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 20, in reject
+    with self.assertRaises((OSError, ValueError)):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'OSError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_preexisting_targets_and_dangling_aliases_are_rejected (__main__.LabPathsTests.test_preexisting_targets_and_dangling_aliases_are_rejected) (name='state')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 40, in test_preexisting_targets_and_dangling_aliases_are_rejected
+    self.reject(base=casebase)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 20, in reject
+    with self.assertRaises((OSError, ValueError)):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'OSError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_preexisting_targets_and_dangling_aliases_are_rejected (__main__.LabPathsTests.test_preexisting_targets_and_dangling_aliases_are_rejected) (name='io')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 40, in test_preexisting_targets_and_dangling_aliases_are_rejected
+    self.reject(base=casebase)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 20, in reject
+    with self.assertRaises((OSError, ValueError)):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'OSError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_preexisting_targets_and_dangling_aliases_are_rejected (__main__.LabPathsTests.test_preexisting_targets_and_dangling_aliases_are_rejected) (name='containerd.sock')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 40, in test_preexisting_targets_and_dangling_aliases_are_rejected
+    self.reject(base=casebase)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 20, in reject
+    with self.assertRaises((OSError, ValueError)):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'OSError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_session_is_exclusive_and_files_do_not_overwrite_prior_session (__main__.LabPathsTests.test_session_is_exclusive_and_files_do_not_overwrite_prior_session)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 56, in test_session_is_exclusive_and_files_do_not_overwrite_prior_session
+    self.assertNotEqual(first.run, second.run)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: PosixPath('/tmp/tmpxpbnhraf/warden-lab') == PosixPath('/tmp/tmpxpbnhraf/warden-lab')
+
+======================================================================
+FAIL: test_untrusted_owner_and_writable_ancestor_fail_closed (__main__.LabPathsTests.test_untrusted_owner_and_writable_ancestor_fail_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 48, in test_untrusted_owner_and_writable_ancestor_fail_closed
+    self.reject(owner=os.getuid() + 12345)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_paths.py", line 20, in reject
+    with self.assertRaises((OSError, ValueError)):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'OSError'>, <class 'ValueError'>) not raised
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+FAILED (failures=11)

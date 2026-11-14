@@ -1,0 +1,6 @@
+materialflow-edge-gateway-1 0140bebe933c Up 2 days
+materialflow-stream-projection-1 cae8a2f7c03d Restarting (1) 26 seconds ago
+materialflow-erp-core-1 d76b014959f2 Restarting (1) 56 seconds ago
+materialflow-integration-adapter-1 598e8bff6d40 Up 2 days
+materialflow-event-relay-1 2ff407c8b2f7 Up 2 days
+materialflow-control-plane cea47dfd32fb Up 2 days

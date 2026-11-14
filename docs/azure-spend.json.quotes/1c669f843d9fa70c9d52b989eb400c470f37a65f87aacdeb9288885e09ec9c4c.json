@@ -1,0 +1,12 @@
+{
+  "url": "https://prices.azure.com/api/retail/prices?%24filter=serviceName+eq+%27Managed+Identity%27&currencyCode=USD",
+  "retrieved_at": "2026-11-13T23:58:52.244721+00:00",
+  "response": {
+    "BillingCurrency": "USD",
+    "CustomerEntityId": "Default",
+    "CustomerEntityType": "Retail",
+    "Items": [],
+    "NextPageLink": null,
+    "Count": 0
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "source": "ba8cfaf6bffd7996f54bd50db9ccf453ff121022",
+  "started_at": "2026-10-25T00:20:52.632781+00:00",
+  "scope": "read-only public inputs, no scene phase/archive/image/container/guest",
+  "dependency_calls": 3,
+  "original_Q_released": false,
+  "admission_before": {
+    "kind": "exact-scene-recovery-admission-v1",
+    "rest_allocated_bytes": 4018376704,
+    "original_opaque_charge": 5000000000,
+    "all_outstanding_bytes": 5000000000,
+    "all_owned_image_charge": 0,
+    "prospective_helper_growth": 736000000,
+    "disk_bytes": 9754376704,
+    "resident_bytes": 1256000000,
+    "ordinary_guard_pass": false,
+    "free_bytes": 269340168192,
+    "utc": "2026-10-25T00:20:54.529116+00:00"
+  },
+  "validated_host_abi": {
+    "kind": "public-python314-host-abi-v1",
+    "version": [
+      3,
+      14,
+      4
+    ],
+    "isolated": true,
+    "no_site": true,
+    "dont_write_bytecode": true,
+    "sitecustomize_absent": true,
+    "imports": true,
+    "mount_symbol": true
+  },
+  "first_dependency_refusal": {
+    "public_input": "/usr/lib/python3.14/lib-dynload/_testsinglephase.cpython-314-x86_64-linux-gnu.so",
+    "reason": "unknown_python_abi",
+    "exit_code": 0,
+    "stdout_bytes": 19,
+    "stderr_bytes": 0,
+    "stdout_sha256": "9b120d249221f666321ccea012e26ab31e6c44763c4ad8795a7a664adefbc858",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_addresses_redacted": "\tstatically linked\n",
+    "stderr_addresses_redacted": ""
+  },
+  "result": {
+    "type": "Refusal",
+    "reason": "unknown_python_abi"
+  },
+  "admission_after": {
+    "kind": "exact-scene-recovery-admission-v1",
+    "rest_allocated_bytes": 4018376704,
+    "original_opaque_charge": 5000000000,
+    "all_outstanding_bytes": 5000000000,
+    "all_owned_image_charge": 0,
+    "prospective_helper_growth": 736000000,
+    "disk_bytes": 9754376704,
+    "resident_bytes": 1256000000,
+    "ordinary_guard_pass": false,
+    "free_bytes": 269343543296,
+    "utc": "2026-10-25T00:20:56.015017+00:00"
+  },
+  "live_uid_after": 0,
+  "ended_at": "2026-10-25T00:20:56.015052+00:00"
+}

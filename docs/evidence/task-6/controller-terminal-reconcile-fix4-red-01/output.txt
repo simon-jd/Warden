@@ -1,0 +1,128 @@
+test_failed_operation_success_postflight_writer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_failed_operation_success_postflight_writer_refuses) ... 
+  test_failed_operation_success_postflight_writer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_failed_operation_success_postflight_writer_refuses) (stage='capture') ... FAIL
+  test_failed_operation_success_postflight_writer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_failed_operation_success_postflight_writer_refuses) (stage='continue') ... FAIL
+test_failed_operation_success_postflight_consumer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_failed_operation_success_postflight_consumer_refuses) ... 
+  test_failed_operation_success_postflight_consumer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_failed_operation_success_postflight_consumer_refuses) (stage='capture') ... FAIL
+  test_failed_operation_success_postflight_consumer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_failed_operation_success_postflight_consumer_refuses) (stage='continue') ... FAIL
+test_success_operation_incomplete_postflight_writer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_success_operation_incomplete_postflight_writer_refuses) ... 
+  test_success_operation_incomplete_postflight_writer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_success_operation_incomplete_postflight_writer_refuses) (stage='capture') ... FAIL
+  test_success_operation_incomplete_postflight_writer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_success_operation_incomplete_postflight_writer_refuses) (stage='continue') ... FAIL
+test_success_operation_incomplete_postflight_consumer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_success_operation_incomplete_postflight_consumer_refuses) ... 
+  test_success_operation_incomplete_postflight_consumer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_success_operation_incomplete_postflight_consumer_refuses) (stage='capture') ... FAIL
+  test_success_operation_incomplete_postflight_consumer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_success_operation_incomplete_postflight_consumer_refuses) (stage='continue') ... FAIL
+test_root_same_byte_replacement_during_flush_refuses_normal_return (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_root_same_byte_replacement_during_flush_refuses_normal_return) ... FAIL
+test_marker_body_change_during_flush_refuses_normal_return (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_marker_body_change_during_flush_refuses_normal_return) ... FAIL
+test_source_body_change_during_flush_refuses_normal_return (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_source_body_change_during_flush_refuses_normal_return) ... FAIL
+
+======================================================================
+FAIL: test_failed_operation_success_postflight_writer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_failed_operation_success_postflight_writer_refuses) (stage='capture')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 703, in postflight_disagreement
+    with self.assertRaisesRegex(ValueError, 'postflight_operation_outcome'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_failed_operation_success_postflight_writer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_failed_operation_success_postflight_writer_refuses) (stage='continue')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 703, in postflight_disagreement
+    with self.assertRaisesRegex(ValueError, 'postflight_operation_outcome'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_failed_operation_success_postflight_consumer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_failed_operation_success_postflight_consumer_refuses) (stage='capture')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 700, in postflight_disagreement
+    with self.assertRaisesRegex(ValueError, 'postflight_operation_outcome'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_failed_operation_success_postflight_consumer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_failed_operation_success_postflight_consumer_refuses) (stage='continue')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 700, in postflight_disagreement
+    with self.assertRaisesRegex(ValueError, 'postflight_operation_outcome'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_success_operation_incomplete_postflight_writer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_success_operation_incomplete_postflight_writer_refuses) (stage='capture')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 703, in postflight_disagreement
+    with self.assertRaisesRegex(ValueError, 'postflight_operation_outcome'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_success_operation_incomplete_postflight_writer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_success_operation_incomplete_postflight_writer_refuses) (stage='continue')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 703, in postflight_disagreement
+    with self.assertRaisesRegex(ValueError, 'postflight_operation_outcome'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_success_operation_incomplete_postflight_consumer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_success_operation_incomplete_postflight_consumer_refuses) (stage='capture')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 700, in postflight_disagreement
+    with self.assertRaisesRegex(ValueError, 'postflight_operation_outcome'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_success_operation_incomplete_postflight_consumer_refuses (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_success_operation_incomplete_postflight_consumer_refuses) (stage='continue')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 700, in postflight_disagreement
+    with self.assertRaisesRegex(ValueError, 'postflight_operation_outcome'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_root_same_byte_replacement_during_flush_refuses_normal_return (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_root_same_byte_replacement_during_flush_refuses_normal_return)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1067, in test_root_same_byte_replacement_during_flush_refuses_normal_return
+    self.changed_record_during_flush('root-tool', replace=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1055, in changed_record_during_flush
+    contextlib.redirect_stdout(Changed()), self.assertRaisesRegex(ValueError, 'record_changed')):
+                                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_marker_body_change_during_flush_refuses_normal_return (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_marker_body_change_during_flush_refuses_normal_return)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1070, in test_marker_body_change_during_flush_refuses_normal_return
+    self.changed_record_during_flush('terminal', replace=False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1055, in changed_record_during_flush
+    contextlib.redirect_stdout(Changed()), self.assertRaisesRegex(ValueError, 'record_changed')):
+                                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_source_body_change_during_flush_refuses_normal_return (test_controller_cache_continuation_invoker_20261025.ReconcileTests.test_source_body_change_during_flush_refuses_normal_return)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1073, in test_source_body_change_during_flush_refuses_normal_return
+    self.changed_record_during_flush('source', replace=False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1055, in changed_record_during_flush
+    contextlib.redirect_stdout(Changed()), self.assertRaisesRegex(ValueError, 'record_changed')):
+                                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 7 tests in 4.849s
+
+FAILED (failures=11)

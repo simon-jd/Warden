@@ -1,0 +1,12 @@
+# GREEN: scripts/test_k3s_gvisor_lab.py (network checks) against the fixed scripts/k3s_gvisor_lab.sh
+# 2026-11-10T20:51:13-08:00
+test_down_leaves_a_container_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_leaves_a_container_that_is_not_wardens) ... ok
+test_down_leaves_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_leaves_a_network_that_is_not_wardens) ... ok
+test_down_removes_the_warden_lab (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_removes_the_warden_lab) ... ok
+test_up_refuses_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_refuses_a_network_that_is_not_wardens) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.343s
+
+OK
+exit: 0

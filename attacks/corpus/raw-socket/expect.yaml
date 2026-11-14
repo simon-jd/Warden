@@ -1,0 +1,3 @@
+id: raw-socket
+technique: T1016
+success_signal: WARDEN_raw_socket

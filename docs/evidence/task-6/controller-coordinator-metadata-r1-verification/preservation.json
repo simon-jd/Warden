@@ -1,0 +1,147 @@
+{
+  "all_changed_sources_frozen": true,
+  "all_old_unchanged": true,
+  "changed_sources": {
+    "docs/evidence/task-6/continuation-controller-operations-execution-plan.md": {
+      "bytes": 109113,
+      "frozen": true,
+      "sha256": "1c341b2f6bc3420245a6327d64501dd8c8f2f416d6b9f9f3c28b928218d240ea"
+    },
+    "docs/evidence/task-6/controller-coordinator-metadata-r1-baseline.json": {
+      "bytes": 3410,
+      "frozen": true,
+      "sha256": "fbaa4eaa5b16027833ec5c8d99b0a262977add5598d38a3aaf603c55f0934902"
+    },
+    "docs/evidence/task-6/controller-coordinator-metadata-r1-events-fixture.js": {
+      "bytes": 6171,
+      "frozen": true,
+      "sha256": "b01f56b760e93706bc7462790a7b5c28760b8687bf7fc7e4a16ab84411efd5cd"
+    },
+    "docs/evidence/task-6/controller-coordinator-metadata-r1-execute.js": {
+      "bytes": 2043,
+      "frozen": true,
+      "sha256": "4e7887688a9156ccb2718a897060f3da3357a75929a47aa8ee06db12e927c46f"
+    },
+    "docs/evidence/task-6/controller-coordinator-metadata-r1-material-candidate.js": {
+      "bytes": 18336,
+      "frozen": true,
+      "sha256": "dff4ae160f80cdf37b642b9809e1384034d011d4e9fe68a1fead87b45190c7c2"
+    },
+    "docs/evidence/task-6/controller-coordinator-metadata-r1-verification.py": {
+      "bytes": 12369,
+      "frozen": true,
+      "sha256": "f863923c0e12fc9b3c142a012df415283927b00c5117cf57dceeb992936c3e83"
+    },
+    "scripts/identity_cache_control.py": {
+      "bytes": 5771,
+      "frozen": true,
+      "sha256": "05d6e2c23b24a3182756116abff4b6c141bbc4168f5d8813da2a079b8811806c"
+    }
+  },
+  "old_plan_prefix_unchanged": true,
+  "old_runtime": {
+    "docs/evidence/task-6/controller-cache-continuation-v1-20261025-material-admission.json": {
+      "current": {
+        "metadata": {
+          "st_atime_ns": 1792952072678141200,
+          "st_ctime_ns": 1792952072652141367,
+          "st_dev": 66307,
+          "st_gid": 1000,
+          "st_ino": 54047573,
+          "st_mode": 33152,
+          "st_mtime_ns": 1792952072652141367,
+          "st_nlink": 1,
+          "st_size": 16337,
+          "st_uid": 1000
+        },
+        "sha256": "096e07d726946d983dad6bb79e05279cd076e0bb28eb174cf866cbcff3922899"
+      },
+      "unchanged": true
+    },
+    "docs/evidence/task-6/controller-cache-continuation-v1-20261025-material-diagnostic-tool.json": {
+      "current": {
+        "metadata": {
+          "st_atime_ns": 1792952334924457878,
+          "st_ctime_ns": 1792952121290829163,
+          "st_dev": 66307,
+          "st_gid": 1000,
+          "st_ino": 54047581,
+          "st_mode": 33204,
+          "st_mtime_ns": 1792952121290829163,
+          "st_nlink": 1,
+          "st_size": 11794,
+          "st_uid": 1000
+        },
+        "sha256": "615166aa30025d8ecff2cbc2e7c2df111314c9a4c3f2002b6a42028357d7d77f"
+      },
+      "unchanged": true
+    },
+    "docs/evidence/task-6/controller-cache-continuation-v1-20261025-material-receipt.json": {
+      "current": {
+        "metadata": {
+          "st_atime_ns": 1792952116610859203,
+          "st_ctime_ns": 1792952116603513932,
+          "st_dev": 66307,
+          "st_gid": 1000,
+          "st_ino": 54047578,
+          "st_mode": 33152,
+          "st_mtime_ns": 1792952116603513932,
+          "st_nlink": 1,
+          "st_size": 2126,
+          "st_uid": 1000
+        },
+        "sha256": "f468f3046f4ec904cfd9107fd063952269f2d778a375d98f5188ab3b7353ab0a"
+      },
+      "unchanged": true
+    },
+    "docs/evidence/task-6/controller-cache-continuation-v1-20261025-material-root-proof-reader-tool.json": {
+      "current": {
+        "metadata": {
+          "st_atime_ns": 1792952334925457871,
+          "st_ctime_ns": 1792952119123843072,
+          "st_dev": 66307,
+          "st_gid": 1000,
+          "st_ino": 54047579,
+          "st_mode": 33204,
+          "st_mtime_ns": 1792952119123843072,
+          "st_nlink": 1,
+          "st_size": 3582,
+          "st_uid": 1000
+        },
+        "sha256": "2f7c0c8120e884781a78b5da943a928a59a93821f27c27b186b2492a88d7d36d"
+      },
+      "unchanged": true
+    },
+    "docs/evidence/task-6/controller-cache-continuation-v1-20261025-material-root-reconcile-tool.json": {
+      "current": {
+        "absent": true
+      },
+      "unchanged": true
+    },
+    "docs/evidence/task-6/controller-cache-continuation-v1-20261025-material-root-tool.json": {
+      "current": {
+        "metadata": {
+          "st_atime_ns": 1792952334925457871,
+          "st_ctime_ns": 1792952119219842456,
+          "st_dev": 66307,
+          "st_gid": 1000,
+          "st_ino": 54047580,
+          "st_mode": 33204,
+          "st_mtime_ns": 1792952119219842456,
+          "st_nlink": 1,
+          "st_size": 2119,
+          "st_uid": 1000
+        },
+        "sha256": "606a02ca1085c4c7c07883c1f218490c049960f0e6c44b5a74fb57c8d7cd25a3"
+      },
+      "unchanged": true
+    },
+    "docs/evidence/task-6/controller-cache-continuation-v1-20261025-material-terminal.json": {
+      "current": {
+        "absent": true
+      },
+      "unchanged": true
+    }
+  },
+  "source_freeze": "e202ef2c3464e0c8b0d86781fe93de4e82cd21a5"
+}

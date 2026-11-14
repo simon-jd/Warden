@@ -1,0 +1,12 @@
+=== RUN   TestPlaybookIdempotentPerAlert
+    executor_test.go:81: RED_REQUIRED authorized first execution must complete: respond executor not implemented
+--- FAIL: TestPlaybookIdempotentPerAlert (0.00s)
+=== RUN   TestDestructiveRequiresApproval
+    executor_test.go:110: RED_REQUIRED distinct authenticated approval must execute: respond executor not implemented
+--- FAIL: TestDestructiveRequiresApproval (0.00s)
+=== RUN   TestDryRunMakesNoChanges
+    executor_test.go:122: RED_REQUIRED dry-run must return a preview: respond executor not implemented
+--- FAIL: TestDryRunMakesNoChanges (0.00s)
+FAIL
+FAIL	warden/respond	0.002s
+FAIL

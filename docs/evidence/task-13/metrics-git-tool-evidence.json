@@ -1,0 +1,37 @@
+{
+  "description": "Exact exposed requests/returns for scoped source Git writes; no other paths were staged.",
+  "calls": [
+    {
+      "name": "task13_source_stage",
+      "request": {
+        "cmd": "git add -- detect/report/detection_metrics.py detect/report/test_detection_metrics.py detect/report/fixtures/metrics/README.md detect/report/fixtures/metrics/executions.jsonl detect/report/fixtures/metrics/alerts.jsonl",
+        "sandbox_permissions": "require_escalated",
+        "justification": "Stage only the five authorized Task13 metrics source/test/fixture files, preserving unrelated dirty files.",
+        "max_output_tokens": 6000
+      },
+      "return": {
+        "chunk_id": "51591a",
+        "wall_time_seconds": 0.00002147,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "name": "task13_source_commit",
+      "request": {
+        "cmd": "git commit -m \"detect: correlate emulation events and detection latency\"",
+        "sandbox_permissions": "require_escalated",
+        "justification": "Commit only the reviewed staged Task13 metrics component with the brief's required source subject.",
+        "max_output_tokens": 6000
+      },
+      "return": {
+        "chunk_id": "1ddc90",
+        "wall_time_seconds": 0.000007783,
+        "exit_code": 0,
+        "original_token_count": 109,
+        "output": "[implementation/warden 8b6555c] detect: correlate emulation events and detection latency\n 5 files changed, 544 insertions(+)\n create mode 100644 detect/report/detection_metrics.py\n create mode 100644 detect/report/fixtures/metrics/README.md\n create mode 100644 detect/report/fixtures/metrics/alerts.jsonl\n create mode 100644 detect/report/fixtures/metrics/executions.jsonl\n create mode 100644 detect/report/test_detection_metrics.py\n"
+      }
+    }
+  ]
+}

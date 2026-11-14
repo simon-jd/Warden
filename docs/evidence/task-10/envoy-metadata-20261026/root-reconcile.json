@@ -1,0 +1,26 @@
+{
+  "kind": "Task10_bounded_public_metadata_partial_failure_root_reconcile",
+  "root_fullread_native": "8989e4",
+  "author_reported_tool_ids": [
+    "a14fb6",
+    "76170",
+    "c2df8a"
+  ],
+  "original_native_events_availability": "author response pending; do not mislabel as root tool proof",
+  "operation_status": "FAILED_REDIRECT_STOP_NO_RETRY",
+  "index_digest": "sha256:713bb146f1a7c97ebc70e13d259f77ff36f2c5d00f3145677816af5af9bd1530",
+  "amd64_manifest_digest": "sha256:7b088327f38b3d5d2dac1855b2722ab398dbfe32d38929b4a9599d740d746d8b",
+  "config_digest_declared": "sha256:a9f8fb10115fec6a854f63c9c39344ecdc82564208e67d0b546946bf66a3672a",
+  "config_size_declared": 4133,
+  "config_fetched": false,
+  "layer_count": 9,
+  "compressed_layer_bytes_declared": 72633524,
+  "unpacked_bytes": "UNKNOWN",
+  "image_UID_ports_labels": "UNKNOWN",
+  "daemon_overhead": "UNKNOWN",
+  "no_layers_fetched": true,
+  "runtime_admitted": false,
+  "source_index_changed": false,
+  "old_proposal_R_correction": "proposal R5041319936 preceded business-b namespace; it did not include both a/b; fresh guards include all retained namespaces",
+  "next": "No retry from this one-shot authority; retain real Cilium/runc tenant/run/lease/TLS/DNS proof requirements."
+}

@@ -1,0 +1,41 @@
+26c26
+< fs.dentry-state=16132185 15270587 45 0 4896393 0
+---
+> fs.dentry-state=16143269 15281701 45 0 4906369 0
+34c34
+< fs.file-nr=24149 0 9223372036854775807
+---
+> fs.file-nr=24348 0 9223372036854775807
+38,39c38,39
+< fs.inode-nr=14063211 3683604
+< fs.inode-state=14063211 3683604 0 0 0 0 0
+---
+> fs.inode-nr=14064203 3683604
+> fs.inode-state=14064203 3683604 0 0 0 0 0
+62,63c62,63
+< fs.quota.cache_hits=2016243
+< fs.quota.drops=1962852
+---
+> fs.quota.cache_hits=2017516
+> fs.quota.drops=1964125
+65c65
+< fs.quota.lookups=2016251
+---
+> fs.quota.lookups=2017524
+67c67
+< fs.quota.syncs=33718
+---
+> fs.quota.syncs=33832
+144c144
+< kernel.ns_last_pid=2200820
+---
+> kernel.ns_last_pid=2288286
+182c182
+< kernel.random.uuid=22c98a99-68f9-4f6d-9185-82f6e5c998d1
+---
+> kernel.random.uuid=57e27904-1dd2-4caa-9990-9b66c941aa38
+499c499
+< net.netfilter.nf_conntrack_count=1154
+---
+> net.netfilter.nf_conntrack_count=925
+diff rc=1

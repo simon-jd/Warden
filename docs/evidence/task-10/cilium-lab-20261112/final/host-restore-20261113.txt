@@ -1,0 +1,9 @@
+# 2026-11-13T09:59:33-08:00: after the user ran, as root,
+#   sudo sysctl -w kernel.timer_migration=1
+#   sudo modprobe -r xt_TPROXY xt_socket xt_CT cls_bpf sch_ingress geneve
+kernel.timer_migration=1
+kernel.unprivileged_bpf_disabled=1   # 1 cannot go back to 2 without a reboot
+modules loaded: 214
+removed since modules-host-final.txt: cls_bpf geneve nf_socket_ipv4 nf_socket_ipv6 nf_tproxy_ipv4 nf_tproxy_ipv6 sch_ingress xt_CT xt_TPROXY xt_socket 
+added since modules-host-final.txt: 
+still loaded, not Warden's: nft_masq 12288 0

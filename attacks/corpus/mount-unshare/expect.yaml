@@ -1,0 +1,3 @@
+id: mount-unshare
+technique: T1611
+success_signal: WARDEN_mount_unshare

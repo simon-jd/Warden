@@ -1,0 +1,26 @@
+{
+  "request": {
+    "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C python3 -I -S -B docs/evidence/task-6/controller-caller-integrity-fix5-native-fixture.py red-01 50a8f7ca76b65348210752d7a7a93108d4237f8a",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "yield_time_ms": 1000,
+    "max_output_tokens": 3000
+  },
+  "initial": {
+    "chunk_id": "c192d1",
+    "wall_time_seconds": 0.000014932,
+    "exit_code": 1,
+    "original_token_count": 120,
+    "output": "{\"body_unchanged\": true, \"cases\": [{\"assertion_error\": null, \"exit_code\": 73, \"expected_regression_observed\": true, \"name\": \"old-cwd-sentinel\", \"passed\": false}], \"elapsed_seconds\": 0.03936118201818317, \"errors\": 0, \"expected_regression_observed\": true, \"failures\": 1, \"physical_production_integration\": false, \"skipped\": 0, \"source_unchanged\": true, \"tests_run\": 1, \"timing_scope\": \"earliest measured parent entry through maps/output; startup and physical termination unproved\"}\n"
+  },
+  "polls": [],
+  "final": {
+    "chunk_id": "c192d1",
+    "wall_time_seconds": 0.000014932,
+    "exit_code": 1,
+    "original_token_count": 120,
+    "output": "{\"body_unchanged\": true, \"cases\": [{\"assertion_error\": null, \"exit_code\": 73, \"expected_regression_observed\": true, \"name\": \"old-cwd-sentinel\", \"passed\": false}], \"elapsed_seconds\": 0.03936118201818317, \"errors\": 0, \"expected_regression_observed\": true, \"failures\": 1, \"physical_production_integration\": false, \"skipped\": 0, \"source_unchanged\": true, \"tests_run\": 1, \"timing_scope\": \"earliest measured parent entry through maps/output; startup and physical termination unproved\"}\n"
+  }
+}

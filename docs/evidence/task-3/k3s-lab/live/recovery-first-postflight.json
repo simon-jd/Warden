@@ -1,0 +1,92 @@
+{
+  "utc": "2026-10-24T17:34:48.676202+00:00",
+  "source_commit": "e91e9addbf85c4314630d32dd8f62bb607fe84e3",
+  "run_head": "322f7a4",
+  "recovery_exit_code": 0,
+  "recovery_seconds": 3.75,
+  "session": "/home/postedism/Desktop/Warden/.cache/warden-lab/docker-5c8b4330bd7a1a3a6d0e237a604370d0",
+  "session_device": 66307,
+  "session_inode": 55586536,
+  "session_uid": 1000,
+  "session_mode": "0o700",
+  "session_files": [
+    "charge.json",
+    "identity.json",
+    "manifest.json",
+    "recovery-complete.json",
+    "recovery.json"
+  ],
+  "private_child_absent": true,
+  "original_scope_absent": true,
+  "exact_objects": [
+    {
+      "kind": "container",
+      "id": "37b95dd4bbd84a5aa9b33a1f5d8d40402d26f0e1b765c4779ea47294eaa2f2b5",
+      "inspect_absent": true
+    },
+    {
+      "kind": "container",
+      "id": "cc53c48d66de68b06baff8039d245e99192f6de6659f99cdea7c2d9cd4bbc82f",
+      "inspect_absent": true
+    },
+    {
+      "kind": "image",
+      "id": "sha256:a2bd74a7126bbb0c858d2e904a0eb4feef8849b83527193a89ebde08bf96f7fc",
+      "inspect_absent": true
+    }
+  ],
+  "owned_containers_all": [],
+  "owned_images_all": [],
+  "outstanding_bytes": 0,
+  "charge": {
+    "released": true,
+    "reserved_bytes": 6000000000,
+    "version": 1
+  },
+  "journal": {
+    "budget": {
+      "accounted_disk_bytes": 10523809812,
+      "all_owned_image_charges": 1434733588,
+      "helper_reserve_bytes": 64000000,
+      "outstanding_bytes": 6000000000,
+      "project_allocated_bytes": 3025076224,
+      "service_memory_bytes": 320000000
+    },
+    "code_sha256": "c38294b263719ab7b113c407743605ae24eec8e471f0473a611c351f0bd2f47c",
+    "helper_labels": {
+      "owner": "codex-warden",
+      "project": "warden",
+      "role": "fixed-reconciliation",
+      "session": "a3445c4ac2f9caadeecf33715163379d",
+      "ttl": "2026-10-24T18:33:54Z"
+    },
+    "helper_reserve_bytes": 64000000,
+    "image": "sha256:a2bd74a7126bbb0c858d2e904a0eb4feef8849b83527193a89ebde08bf96f7fc",
+    "original": "37b95dd4bbd84a5aa9b33a1f5d8d40402d26f0e1b765c4779ea47294eaa2f2b5"
+  },
+  "complete": {
+    "helper": "cc53c48d66de68b06baff8039d245e99192f6de6659f99cdea7c2d9cd4bbc82f",
+    "image": "sha256:a2bd74a7126bbb0c858d2e904a0eb4feef8849b83527193a89ebde08bf96f7fc",
+    "objects_absent": true,
+    "original": "37b95dd4bbd84a5aa9b33a1f5d8d40402d26f0e1b765c4779ea47294eaa2f2b5"
+  },
+  "ordinary_full_preflight": {
+    "additional_bytes": "0",
+    "at": "2026-10-24T17:34:48Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 349466943488,
+    "project_allocated_bytes": 3025088512,
+    "service_memory_bytes": "0"
+  },
+  "protected_sysctls": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "original_public_identity_manifest_bytes_unchanged": true,
+  "scope": "Independent stopped-scene recovery postflight; does not establish original Popen/GoGate retirement, node readiness or guest conformance."
+}

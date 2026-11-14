@@ -1,0 +1,4 @@
+# Test fixture: a fake probe that never reaches its goal.
+id: fake-always-fails
+technique: T1059.004
+success_signal: FAKE_NEVER_PRINTED

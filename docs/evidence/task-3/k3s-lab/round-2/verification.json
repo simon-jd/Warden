@@ -1,0 +1,37 @@
+{
+  "evidence_sha256": {
+    "commands.txt": "cdde2ddd729bd863c99d6a4ffca874df06ed4af6387657aa08e0f82450052ac1",
+    "covering-tests.txt": "0148f5cc8d793ba70c839c6fef7050e6c2a721264252fcafb3a31e892610ae21",
+    "daemon-readonly.txt": "b08b4cefd39804c73f9a302f38bb72ec20c772b189e4d3f1be6bf9bed86e537e",
+    "final-focused.txt": "1261b761eb201d4158db6802773aec7e68f60a8d41db897c2d71879b233216ba",
+    "final-mount-lifecycle.txt": "e478716c8b6ee73a7823a973bd717848c8a9c61269eb402312a8a7c253e1cf7f",
+    "green-handshake-initial.txt": "601154129ffef00b806fb8e778dd2bce477ec85a582e1306fde42bf8006da6bf",
+    "green-images.txt": "66541ee25e51790e0449023f64e336435cb0c2d0fcc4837f731b0ea5642b669e",
+    "input-hashes.json": "991ffdb0fc7b8983ec57a899fb0b007b771f2db796710ae239cb5ccbc07fdd63",
+    "red-handshake.txt": "6f4cbf232342811d0e69c606210a90f7d987c4d06a3d37dc0545ae8fd3094f27",
+    "red-images.txt": "d85aefc61988cf63a2ad861000c673946bfe57aaa56177f1f2d4b2dc35066fbc",
+    "red-mount-content.txt": "6d39aeb2a256655264794ad4c69d9cb38c837a986c0c75abbf7f3f7afba7e140",
+    "red-remount-flags.txt": "98a062cff3bbe6663d035bedfb14a6d6b3187bc5dfb68b6593a2cd4ab8efce0d",
+    "report.md": "958c41fbad627ed435a9de38a6ddbcef370feaff36e6c7158abc82ad69b2879d",
+    "sources.json": "3b29cd8a5f2ab7e4eb7b1b8202a9da3a71e63feea3d63d66b637319700a581bb"
+  },
+  "final_verification": {
+    "covering_groups": [
+      37,
+      19,
+      5,
+      5
+    ],
+    "distinct_tests": 67,
+    "exit": 0,
+    "failed": 0,
+    "final_focused": 18,
+    "final_mount_lifecycle": 1,
+    "skipped": 0
+  },
+  "new_image_manifest": false,
+  "real_docker_mutations": 0,
+  "real_mount_syscalls": 0,
+  "source_commit": "3d87ef6f58fb8fa92775984b3518efdb8a8d1ad5",
+  "status": "DONE_WITH_CONCERNS"
+}

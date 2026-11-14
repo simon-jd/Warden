@@ -1,0 +1,35 @@
+test_adopted_children_are_waited_until_reapable_with_a_deadline (test_k3s_lab_init.InitTest.test_adopted_children_are_waited_until_reapable_with_a_deadline) ... FAIL
+test_fixed_client_directory_is_exclusive_private_and_preexisting_state_refused (test_k3s_lab_init.InitTest.test_fixed_client_directory_is_exclusive_private_and_preexisting_state_refused) ... FAIL
+test_packaged_selection_drops_wrapper_module_applets_and_unsafe_tools (test_k3s_lab.LabTest.test_packaged_selection_drops_wrapper_module_applets_and_unsafe_tools) ... FAIL
+
+======================================================================
+FAIL: test_adopted_children_are_waited_until_reapable_with_a_deadline (test_k3s_lab_init.InitTest.test_adopted_children_are_waited_until_reapable_with_a_deadline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 140, in test_adopted_children_are_waited_until_reapable_with_a_deadline
+    self.assertTrue(callable(getattr(init, 'reap_adopted', None)), 'bounded adopted-child reap missing')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : bounded adopted-child reap missing
+
+======================================================================
+FAIL: test_fixed_client_directory_is_exclusive_private_and_preexisting_state_refused (test_k3s_lab_init.InitTest.test_fixed_client_directory_is_exclusive_private_and_preexisting_state_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 148, in test_fixed_client_directory_is_exclusive_private_and_preexisting_state_refused
+    self.assertTrue(callable(getattr(init, 'prepare_client_directory', None)), 'bounded client directory missing')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : bounded client directory missing
+
+======================================================================
+FAIL: test_packaged_selection_drops_wrapper_module_applets_and_unsafe_tools (test_k3s_lab.LabTest.test_packaged_selection_drops_wrapper_module_applets_and_unsafe_tools)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab.py", line 103, in test_packaged_selection_drops_wrapper_module_applets_and_unsafe_tools
+    self.assertEqual(aliases.get('etc/rancher/k3s'), '/run/k3s-client')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != '/run/k3s-client'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)

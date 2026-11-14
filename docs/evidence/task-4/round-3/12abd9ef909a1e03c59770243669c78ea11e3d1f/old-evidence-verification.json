@@ -1,0 +1,29 @@
+{
+  "indexed_artifacts": [
+    {
+      "index": "docs/evidence/task-4/55bd96828669c8e1536da321bcb87bae13afa6ea/evidence-index.json",
+      "sha256": "eb6fc3327e7b408d3ac2b514128de4055106347dedfcda34a00999b4f4b36e58",
+      "entries_verified": 36,
+      "all_match": true
+    },
+    {
+      "index": "docs/evidence/task-4/round-1/135c3b866f07692ad846cc48c8c5bde0cf91ee33/evidence-index.json",
+      "sha256": "f883f1733730435c581615e17f4aabfd8220182dce124bc5f7fab0aa16b462c0",
+      "entries_verified": 13,
+      "all_match": true
+    },
+    {
+      "index": "docs/evidence/task-4/round-2/01bccef0a6a7eab10f25660fbc7f6cf6e9d92041/evidence-index.json",
+      "sha256": "a760df81e489f7df5899433137b34dbd01b4c827356e9ff1c4568dd270a65bfe",
+      "entries_verified": 16,
+      "all_match": true
+    },
+    {
+      "index": "docs/evidence/task-4/round-2/772136927eb6eb9576e473eef5f7b716b80696f6/evidence-index.json",
+      "sha256": "51fbc8297454d251f3f401a7c502d5d31777b4cc445f7709fa5debe338508261",
+      "entries_verified": 9,
+      "all_match": true
+    }
+  ],
+  "all_preexisting_tracked_task4_evidence_unchanged_from_parent": true
+}

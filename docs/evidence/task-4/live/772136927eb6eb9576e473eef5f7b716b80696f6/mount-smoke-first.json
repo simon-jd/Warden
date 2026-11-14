@@ -1,0 +1,21 @@
+{
+  "source": "772136927eb6eb9576e473eef5f7b716b80696f6",
+  "review": "docs/evidence/task-4/review-code-round-2.md",
+  "command": [
+    "python3",
+    "-B",
+    "scripts/firecracker_lab.py",
+    "mount-smoke",
+    "--other-service-memory-bytes",
+    "0",
+    "--reviewed-mount-profile"
+  ],
+  "uid": 1000,
+  "start_utc": "2026-10-24T21:19:31.947253+00:00",
+  "end_utc": "2026-10-24T21:19:39.782770+00:00",
+  "elapsed_seconds": 7.83550834399648,
+  "exit_code": 0,
+  "log_bytes": 5415,
+  "log_sha256": "33b72e7c355b3038771b42a5ff972c6b30f0ee083ddb0418a6cc07be0c406492",
+  "scope": "mount-smoke controller gate only; result does not imply other unexecuted acceptance gates"
+}

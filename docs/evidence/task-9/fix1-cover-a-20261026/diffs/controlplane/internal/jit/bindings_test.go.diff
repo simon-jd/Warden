@@ -1,0 +1,64 @@
+--- consumed-red/controlplane/internal/jit/bindings_test.go
++++ r1-cover/controlplane/internal/jit/bindings_test.go
+@@ -38,6 +38,7 @@
+ 	keepDeleted bool
+ 	conflictClear bool
+ 	deleteFailures int
++	clearedFences []string
+ }
+ func (a *apiFixture) RoundTrip(req *http.Request) (*http.Response, error) {
+ 	a.calls = append(a.calls, req.Method)
+@@ -74,6 +75,11 @@
+ 		a.version++
+ 		o.Metadata["resourceVersion"] = raw(strconv.Itoa(a.version))
+ 		a.object = &o
++		if len(o.Subjects) == 0 {
++			var annotations map[string]string
++			if err := json.Unmarshal(o.Metadata["annotations"], &annotations); err != nil { a.t.Fatal(err) }
++			a.clearedFences = append(a.clearedFences, annotations[revocationFence])
++		}
+ 		return encode(), nil
+ 	case http.MethodDelete:
+ 		var opts struct { Preconditions struct { UID string `json:"uid"`; ResourceVersion string `json:"resourceVersion"` } `json:"preconditions"` }
+@@ -143,6 +149,26 @@
+ 	api.keepDeleted = true
+ 	if err = k.Remove(context.Background(), target, r); err == nil { t.Fatal("accepted deletion without confirmed absence") }
+ 	if api.object == nil || len(api.object.Subjects) != 0 { t.Fatal("pending deletion did not retain a fenced empty binding") }
++	// A version advance alone is insufficient if admission strips the fence.
++	t.Run("missing-persisted-fence", func(t *testing.T) {
++		api := &apiFixture{t: t}
++		k := adapter(t, roundTripFunc(func(req *http.Request) (*http.Response, error) {
++			resp, err := api.RoundTrip(req)
++			if err != nil || req.Method != http.MethodPut || resp.StatusCode != http.StatusOK { return resp, err }
++			resp.Body.Close()
++			var annotations map[string]string
++			if err := json.Unmarshal(api.object.Metadata["annotations"], &annotations); err != nil { t.Fatal(err) }
++			delete(annotations, revocationFence)
++			api.object.Metadata["annotations"] = raw(annotations)
++			body, err := json.Marshal(api.object)
++			if err != nil { t.Fatal(err) }
++			return response(http.StatusOK, string(body)), nil
++		}))
++		r, err := k.Reserve(context.Background(), target)
++		if err != nil { t.Fatal(err) }
++		if err = k.Remove(context.Background(), target, r); !errors.Is(err, ErrBindingConflict) { t.Fatalf("unconfirmed revocation fence accepted: %v", err) }
++		if api.object == nil || strings.Join(api.calls, ",") != "POST,GET,PUT" { t.Fatal("unconfirmed fence reached DELETE") }
++	})
+ }
+ 
+ func TestKubernetesTransportErrorsDoNotRetryActivation(t *testing.T) {
+@@ -171,6 +197,7 @@
+ 	if err = k.Remove(context.Background(), target, r); err != nil || api.object != nil {
+ 		t.Errorf("empty reservation cleanup must reach DELETE: error=%v retained=%t", err, api.object != nil)
+ 	}
++	if len(api.clearedFences) != 1 || api.clearedFences[0] == "" { t.Fatal("empty reservation did not persist a revocation fence") }
+ }
+ 
+ func TestKubernetesRemovalRetryAfterClearAndDeleteFailure(t *testing.T) {
+@@ -188,4 +215,5 @@
+ 	if err = k.Remove(context.Background(), target, r); err != nil || api.object != nil {
+ 		t.Errorf("cleanup retry after cleared binding must reach DELETE: error=%v retained=%t", err, api.object != nil)
+ 	}
+-}
++	if len(api.clearedFences) != 2 || api.clearedFences[0] == "" || api.clearedFences[1] == "" || api.clearedFences[0] == api.clearedFences[1] { t.Fatal("cleanup retry did not persist a distinct revocation fence") }
++}

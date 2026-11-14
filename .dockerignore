@@ -1,0 +1,16 @@
+**
+!go.mod
+!go.sum
+!controlplane/
+!controlplane/**
+!runtimes/
+!runtimes/runtime.go
+!runtimes/gate/
+!runtimes/gate/*.go
+!runtimes/runc/
+!runtimes/runc/*.go
+!policies/
+!policies/seccomp/
+!policies/seccomp/policy.go
+!policies/seccomp/default.json
+**/*_test.go

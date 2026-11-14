@@ -1,0 +1,11 @@
+# Task12 首个语义RED静态准入
+
+root全文读取固定2605B caller987be5，并对两个测试及两个stub作限定读取38e26b。AdapterRedTest先实际调用已发布OpensearchLuceneBackend、ProcessingPipeline/CaseTransformation(method="lower")与SigmaCollection，要求一个非空reference query，再与当前返回空列表的适配器比较；CoverageRedTest要求精确排序的两个ID、一个tagged/一个unassigned及技术表，而当前stub返回零计数空表。测试不自行评估事件命中。
+
+仅授权原唯一作者在同native UID1000 profile、fresh R+Q5GB+134217728≤12GB/常驻预留10GB/MemAvailable≥2GB/新namespace不存在后，执行这一固定caller一次。已有材料计入R，再保守预留完整原新增上限。whole60秒含清理、CPU45/AS1GB/output1MiB/tmp16MiB保持；不得执行其他测试、CLI或OpenSearch。
+
+caller要求恰好tests_run2/assertion_failures2/errors0/skips0，并以known exit1留证。导入/配置错误、资源失败、unknown或timeout均不算语义RED且停止。作者须先全文读取原output，将完整结果交root；stubs在root确认前不变，不自动转实现/GREEN。此时只是静态准入，尚无RED结果或Task12完成。
+
+实际交回：root9e2607全文读取2260B原output与状态，7d1920全文读取四个完整native事件。fresh9d249c normal0 R4467036160+Q5GB+134217728=9601253888B≤12GB；35a76d normal0 UID1000/MemAvailable86663315456/newnamespace absent。sole dff954 known exit1，无session；c5bf17全文postread。两项预期断言FAIL、0error/0skip/0unexpected，work/test1、head0、cleanup1、tmp删除；是真实语义RED，没有重跑。
+
+root已确认RED并准许原范围实施，两个初始stub先原样保留为inert文本。作者完成后提交精确冻结名单和单次定向GREEN caller，root全文核对及fresh门禁后才执行。当前未授GREEN/CLI/提交/OpenSearch权限；SOURCE/index仍由原唯一作者持有，完整Task12/Goal仍OPEN。

@@ -1,0 +1,5 @@
+--- FAIL: TestDistinctGateDirectoriesHaveDistinctAuthority (0.00s)
+    gate_test.go:107: different durable state directories share recovery authority
+FAIL
+FAIL	warden/runtimes/gate	0.002s
+FAIL

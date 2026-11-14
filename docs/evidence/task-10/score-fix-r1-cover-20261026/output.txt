@@ -1,0 +1,42 @@
+=== RUN   TestDNSScoreCanonicalSuffixAndNoCDNExemption
+=== RUN   TestDNSScoreCanonicalSuffixAndNoCDNExemption/ABCDEFGHIJKLMNOPQRSTUVWXYZ234567.EXAMPLE.CO.UK.
+=== RUN   TestDNSScoreCanonicalSuffixAndNoCDNExemption/abcdefghijklmnop.qrstuvwxyz234567.example.com
+=== RUN   TestDNSScoreCanonicalSuffixAndNoCDNExemption/abcdefghijklmnopqrstuvwxyz234567.customer.cloudfront.net
+--- PASS: TestDNSScoreCanonicalSuffixAndNoCDNExemption (0.00s)
+    --- PASS: TestDNSScoreCanonicalSuffixAndNoCDNExemption/ABCDEFGHIJKLMNOPQRSTUVWXYZ234567.EXAMPLE.CO.UK. (0.00s)
+    --- PASS: TestDNSScoreCanonicalSuffixAndNoCDNExemption/abcdefghijklmnop.qrstuvwxyz234567.example.com (0.00s)
+    --- PASS: TestDNSScoreCanonicalSuffixAndNoCDNExemption/abcdefghijklmnopqrstuvwxyz234567.customer.cloudfront.net (0.00s)
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/mixed_tenant
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/mixed_run
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/empty_tenant
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/empty_run
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/zero_time
+=== RUN   TestDNSScoreRejectsInvalidOrMixedBatch/zero_qtype
+--- PASS: TestDNSScoreRejectsInvalidOrMixedBatch (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/mixed_tenant (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/mixed_run (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/empty_tenant (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/empty_run (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/zero_time (0.00s)
+    --- PASS: TestDNSScoreRejectsInvalidOrMixedBatch/zero_qtype (0.00s)
+=== RUN   TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions
+=== RUN   TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions/_dmarc.example.com
+    exfil_test.go:256: R1_QUALIFYING_WINDOW_OK count=31 mean=5
+=== RUN   TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions/com
+    exfil_test.go:256: R1_QUALIFYING_WINDOW_OK count=31 mean=5
+--- PASS: TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions (0.00s)
+    --- PASS: TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions/_dmarc.example.com (0.00s)
+    --- PASS: TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions/com (0.00s)
+=== RUN   TestDNSScoreRejectedNamesAreObservable
+--- PASS: TestDNSScoreRejectedNamesAreObservable (0.00s)
+=== RUN   TestDNSScoreQuestionSyntaxAndSuffix
+--- PASS: TestDNSScoreQuestionSyntaxAndSuffix (0.00s)
+=== RUN   TestDNSScoreExpirationOnlyCrossing
+=== RUN   TestDNSScoreExpirationOnlyCrossing/high_count_31
+=== RUN   TestDNSScoreExpirationOnlyCrossing/high_count_30
+--- PASS: TestDNSScoreExpirationOnlyCrossing (0.00s)
+    --- PASS: TestDNSScoreExpirationOnlyCrossing/high_count_31 (0.00s)
+    --- PASS: TestDNSScoreExpirationOnlyCrossing/high_count_30 (0.00s)
+PASS
+ok  	warden/detect/dns_exfil	0.011s

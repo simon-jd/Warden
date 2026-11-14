@@ -1,0 +1,46 @@
+test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence (test_k3s_lab_round4.StartupTemplateTest.test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence) ... 
+  test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence (test_k3s_lab_round4.StartupTemplateTest.test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence) (enum='lease-namespace') ... ERROR
+  test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence (test_k3s_lab_round4.StartupTemplateTest.test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence) (enum='service-namespace') ... ERROR
+  test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence (test_k3s_lab_round4.StartupTemplateTest.test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence) (enum='legacy-configmap-namespace') ... ERROR
+test_namespace_recheck_only_returns_fixed_names_after_exact_active_identity (test_k3s_lab_round4.StartupTemplateTest.test_namespace_recheck_only_returns_fixed_names_after_exact_active_identity) ... FAIL
+
+======================================================================
+ERROR: test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence (test_k3s_lab_round4.StartupTemplateTest.test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence) (enum='lease-namespace')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 159, in test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence
+    self.assertEqual(init.warning_lines(line, **kwargs)[0]['template'], enum)
+                     ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+TypeError: warning_lines() got an unexpected keyword argument 'verified_namespaces'
+
+======================================================================
+ERROR: test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence (test_k3s_lab_round4.StartupTemplateTest.test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence) (enum='service-namespace')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 159, in test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence
+    self.assertEqual(init.warning_lines(line, **kwargs)[0]['template'], enum)
+                     ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+TypeError: warning_lines() got an unexpected keyword argument 'verified_namespaces'
+
+======================================================================
+ERROR: test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence (test_k3s_lab_round4.StartupTemplateTest.test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence) (enum='legacy-configmap-namespace')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 159, in test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence
+    self.assertEqual(init.warning_lines(line, **kwargs)[0]['template'], enum)
+                     ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+TypeError: warning_lines() got an unexpected keyword argument 'verified_namespaces'
+
+======================================================================
+FAIL: test_namespace_recheck_only_returns_fixed_names_after_exact_active_identity (test_k3s_lab_round4.StartupTemplateTest.test_namespace_recheck_only_returns_fixed_names_after_exact_active_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 169, in test_namespace_recheck_only_returns_fixed_names_after_exact_active_identity
+    self.assertTrue(callable(getattr(init, 'confirm_bootstrap_namespaces', None)))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=1, errors=3)

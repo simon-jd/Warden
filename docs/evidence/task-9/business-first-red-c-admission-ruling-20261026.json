@@ -1,0 +1,44 @@
+{
+  "utc": "2026-10-26T07:25:25.353829+00:00",
+  "kind": "root ordinary execution admission assessment, still subject to fresh actual gate",
+  "source": "coordinator_agent",
+  "human_response": false,
+  "grounded_in_existing_user_scope": true,
+  "human_authorization_card": false,
+  "authority_ecc_sha256": "ecc874eadea4890733fa044a3f79a0efdd8a34630f9692051189e9aa29981841",
+  "provenance_correction": "docs/evidence/task-9/pg-initdb-candidate-provenance-correction-20261026.json",
+  "original_wrong_source_label_quote_and_actuals_immutable": true,
+  "verified_prerequisite": "real PG ready+State+logs+known owned cleanup+original12source unchanged, 3bfa84/d6950a; no diagnostic or metadata replay",
+  "fullread_native_chunks": {
+    "body_report": "052875",
+    "diff_freeze_tests": "45c3c0"
+  },
+  "new_caller_sha256": "e3c9ef9667900a630c364ae8a901065ef1f4891b237539e54ef9b389ae265ac1",
+  "three_original_business_tests": [
+    "TestSelfApprovalRejected",
+    "TestGrantExpiresAndBindingRemoved",
+    "TestAuditRecordedForGrantAndExpiry"
+  ],
+  "expected_RED": "exact3businessFAIL including real PostgreSQL Task1 audit Verify, no skips/build/connection/timeout/missing-material errors; exactownedcleanup and unchangedsources",
+  "forecast_adjudication": {
+    "exact_new_peak": 1750780416,
+    "tentative_earlier_peak": 1750000000,
+    "explicit_difference": 780416,
+    "difference_reason": "precise full originalGo breakdown plus required2MiB retained localPGlogger; no rounding down",
+    "root_accepts_precise_forecast_subject_to_total_12GB": true,
+    "no_runtime_cap_increase": true,
+    "whole_seconds": 90,
+    "aggregate_raw_cap": 131072,
+    "memory_total_oldUNKNOWN_plus_new": 15500000000,
+    "memory_cap": 16000000000,
+    "disk_cap": 12000000000
+  },
+  "prior_consumed": {
+    "business_harness": 2,
+    "diagnostics": 3,
+    "metadata": 1
+  },
+  "one_existing_restored_business_harness_attempt": 3,
+  "actual_status": "NOT_EXECUTED_YET",
+  "no_GPU_host_terms_cloud_CI_publish_authority": true
+}

@@ -1,0 +1,5 @@
+--- FAIL: TestAmbiguousCreationCannotBeClearedBySuccessfulReap (0.00s)
+    gate_test.go:154: ambiguous operation reported clean: <nil>
+FAIL
+FAIL	warden/runtimes/gate	0.002s
+FAIL

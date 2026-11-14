@@ -1,0 +1,20 @@
+# GREEN: runtimes/gvisor/lab/nodeinit with main.go
+# head 91a4429, 2026-11-12T19:39:34-08:00
+# git status --short:
+#   ?? docs/evidence/task-10/cilium-lab-20261112/red-green/02-nodeinit-green.txt
+#   ?? docs/evidence/task-10/cilium-lab-20261112/red-green/02-nodeinit-red.txt
+#   ?? runtimes/gvisor/lab/nodeinit/
+# go test -v ./runtimes/gvisor/lab/nodeinit
+=== RUN   TestSetupMakesRootSharedAndProcSysReadOnlyExceptNet
+--- PASS: TestSetupMakesRootSharedAndProcSysReadOnlyExceptNet (0.00s)
+=== RUN   TestSetupRefusesWhenAKernelSysctlStaysWritable
+--- PASS: TestSetupRefusesWhenAKernelSysctlStaysWritable (0.00s)
+=== RUN   TestSetupRefusesWhenNetIsNotWritable
+--- PASS: TestSetupRefusesWhenNetIsNotWritable (0.00s)
+=== RUN   TestSetupStopsAtTheFirstFailedMount
+--- PASS: TestSetupStopsAtTheFirstFailedMount (0.00s)
+=== RUN   TestArgvExecsK3sWithTheNodesArguments
+--- PASS: TestArgvExecsK3sWithTheNodesArguments (0.00s)
+PASS
+ok  	warden/runtimes/gvisor/lab/nodeinit	0.002s
+exit=0

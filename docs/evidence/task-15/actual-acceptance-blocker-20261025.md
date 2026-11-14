@@ -1,0 +1,9 @@
+# Task15 实际验收的精确剩余前置
+
+root0a2524全文读取本次唯一5696B固定CLI隔离核对并原样归档。现没有可信可执行caller；没有CLI/测试/下载/权限/产品/Git操作。原本地source和13项scan组件接受不变，不重新扩mock/哈希/元控制器。
+
+准确缺口是尚未准入一个真实本仓库OCI验证fixture：必须由真实受保护GitHub workflow身份产生同digest镜像和SBOM/scan/SLSA证明，并在经审文件系统边界中运行固定Kyverno而不能读写宿主credential/cache。当前无remote/推送发布授权，真实制品不存在；固定CLI/SDK keychain与TUF transitive宿主读写也未闭包。单靠变量或缺HOME不能证明其他passwd/home fallback不存在；官方test引用没有足够显式注入选项。固定源URL cache miss只表示材料不可得，不是审批拒绝；不据文档推定真实验签成功。
+
+没有能本地伪造GitHub issuer证书或绕过既有发布/宿主限制的合法补丁。最小后续是先得到上述真实fixture及经审隔离边界，再由本会话root读精确caller、核完整峰值/四/tmp保守128KiB/Q5GB/UNKNOWN9GB和fresh门禁，逐个实际准入；不得先执行unsigned/mock/version再声称完成原三密码学用例。现不重试该链，也不改原SLSA URI/已过组件。Task15和Goal仍OPEN，不markcomplete。
+
+按原Goal外部依赖未就绪继续独立任务：原Task9待实现且明确允许先本地验证，已抽取22行原brief，唯一Task9作者仅准备完整实现/真实Task1审计链与资源方案，SOURCE/index在root。Task16公开停止报告743b86已全文核对：其未知native停止规则同时禁止实施/第三profile/sizing；保留四stubs和literalprofile扩展原样，不以hostGo/新命名绕过。旧Task6/BP/Task3等所有额度和失败保持。

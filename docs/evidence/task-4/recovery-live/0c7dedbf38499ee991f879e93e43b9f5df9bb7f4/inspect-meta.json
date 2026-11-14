@@ -1,0 +1,28 @@
+{
+  "source": "0c7dedbf38499ee991f879e93e43b9f5df9bb7f4",
+  "mode": "inspect",
+  "command": [
+    "python3",
+    "-B",
+    "scripts/firecracker_recovery.py",
+    "inspect",
+    "--reviewed-exact-scene",
+    "--other-service-memory-bytes",
+    "0"
+  ],
+  "started_at": "2026-10-25T00:50:21.155119+00:00",
+  "ended_at": "2026-10-25T00:50:46.754642+00:00",
+  "duration_seconds": 25.599683,
+  "exit_code": 0,
+  "original_charge_released": false,
+  "original_charge_bytes": 5000000000,
+  "review_file": "docs/evidence/task-4/review-recovery-third-operation.md",
+  "review_sha256": "e43ce6f7cdcbca964e4bec1a5d1e9394bf0f25c30e31bb9c2e65ddc6c86e4164",
+  "controller_command_sha256": "0fb889dc1a1a9b45e2a6fef02a35c1c07cf68ad160609c4110eee5eabcb56d90",
+  "log_bytes": 132,
+  "log_sha256": "a6355bd58157e7f428f1d535b96aeb338110fee11afcb8e830de4526fb762343",
+  "original_owner_retirement": "cleanup_pending",
+  "creation_outcome": "unknown",
+  "never_reopen": true,
+  "guest_boot_acceptance": false
+}

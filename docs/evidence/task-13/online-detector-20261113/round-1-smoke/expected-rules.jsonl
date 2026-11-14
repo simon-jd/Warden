@@ -1,0 +1,4 @@
+{"execution_id": "smoke-runc-shell", "rule_id": "Terminal shell in container"}
+{"execution_id": "smoke-runc-read", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "smoke-gvisor-shell", "rule_id": "Terminal shell in container"}
+{"execution_id": "smoke-gvisor-read", "rule_id": "Read sensitive file untrusted"}

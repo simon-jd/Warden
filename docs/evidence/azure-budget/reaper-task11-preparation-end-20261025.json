@@ -1,0 +1,29 @@
+{
+  "scope": "final fixed reaper after Task11 documentation-only preparation; no resources created",
+  "events": [
+    {
+      "kind": "exec_command",
+      "request": {
+        "cmd": "bash scripts/azure_reaper.sh",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "按预算规则在本轮Task11只读准备交接结束时执行固定自有RG reaper；仅rg-warden-lab TTL过期资源，禁止修改或删除rg-mlinfra-westus，不创建资源。",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "0fb355",
+        "wall_time_seconds": 0.835808484,
+        "exit_code": 0,
+        "original_token_count": 37,
+        "output": "{\"at\": \"2026-10-25T20:37:12Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+      }
+    }
+  ],
+  "estimated_committed_usd": 0,
+  "actual_bill_known": false,
+  "protected_resource_group_modified": false
+}

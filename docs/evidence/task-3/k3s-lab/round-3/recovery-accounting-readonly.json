@@ -1,0 +1,12 @@
+{
+  "project_allocated_bytes": 3024191488,
+  "outstanding_bytes": 6000000000,
+  "all_owned_image_charges": 1434733588,
+  "helper_reserve_bytes": 64000000,
+  "accounted_disk_bytes": 10522925076,
+  "service_memory_bytes": 320000000,
+  "read_only_estimate": true,
+  "recovery_executed": false,
+  "helper_reserved_durably": false,
+  "original_private_scene_retained": true
+}

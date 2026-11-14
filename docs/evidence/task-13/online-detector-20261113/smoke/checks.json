@@ -1,0 +1,46 @@
+{
+ "binding_errors": {},
+ "checks": {
+  "alert_import_exit_0": true,
+  "bindings_for_every_execution": true,
+  "control_ids_known": true,
+  "control_never_kept": true,
+  "detection_metrics_exit_0": true,
+  "gvisor_control_pod_only_counted": true,
+  "gvisor_guest_read_not_seen_as_expected": true,
+  "gvisor_sandbox_start_not_scored": true,
+  "gvisor_sandbox_start_seen_as_platform": true,
+  "no_platform_alert_imported": true,
+  "observation_exit_0": true,
+  "runc_control_only_counted": true,
+  "runc_read_detected": true,
+  "runc_shell_detected": true,
+  "smoke_window_contiguous": true
+ },
+ "collector_counts": {
+  "collector_errors": 0,
+  "collector_restarts": 0,
+  "dropped_error": 0,
+  "dropped_host": 0,
+  "dropped_malformed": 0,
+  "dropped_other_container": 104,
+  "dropped_other_lab_owned": 2,
+  "dropped_other_lab_pod": 102,
+  "dropped_overflow": 0,
+  "dropped_unresolved": 0,
+  "duplicates": 0,
+  "health_events": 1,
+  "pending": 0,
+  "platform_alerts": 162,
+  "received": 377,
+  "warden_alerts": 110
+ },
+ "execution_status": {
+  "smoke-gvisor-guest-read": "not_detected_by_cutoff",
+  "smoke-runc-read": "detected",
+  "smoke-runc-shell": "detected"
+ },
+ "observed_until": "2026-11-14T05:02:29.955437000Z",
+ "review_groups": 18,
+ "session": "20261114T050135Z"
+}

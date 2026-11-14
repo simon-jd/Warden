@@ -1,0 +1,631 @@
+{
+  "alert": {
+    "errors": 0,
+    "firing": [],
+    "first_discard_epoch": null,
+    "first_seen": null,
+    "polls": 232,
+    "prometheus": {
+      "container": "warden-bp-prom-f74097e5",
+      "final_series": {
+        "vector_component_discarded_events_total{component_id=bp_metrics,component_kind=transform,component_type=filter,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:36619,intentional=true,job=warden-vector}": "45290",
+        "vector_component_discarded_events_total{component_id=bp_metrics,component_kind=transform,component_type=filter,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:46387,intentional=true,job=warden-vector}": "40954"
+      },
+      "image": "prom/prometheus:v3.14.0",
+      "removed": true,
+      "rules_loaded": [
+        "WardenVectorBufferDiscarded",
+        "WardenVectorNormalizationError"
+      ],
+      "targets": [
+        "127.0.0.1:46387",
+        "127.0.0.1:36619"
+      ],
+      "targets_up": [
+        "http://127.0.0.1:46387/metrics",
+        "http://127.0.0.1:36619/metrics"
+      ]
+    }
+  },
+  "config": {
+    "base_rate": 20,
+    "buffer_max_size": 268435488,
+    "burst_events": 24000,
+    "burst_rate": 200,
+    "hops": 2,
+    "line_bytes": 16384,
+    "when_full": "drop_newest"
+  },
+  "counter_series": {
+    "agent": {
+      "component_discarded_events_total{component_id=bp_metrics,component_kind=transform,component_type=filter,host=postedism-ubuntu-system-selfuse,intentional=true}": 41037.0
+    },
+    "aggregator": {
+      "component_discarded_events_total{component_id=bp_metrics,component_kind=transform,component_type=filter,host=postedism-ubuntu-system-selfuse,intentional=true}": 45382.0
+    }
+  },
+  "failures": [
+    "nothing was discarded: the buffer never overflowed",
+    "7600 lost but only 0 counted as discarded",
+    "WardenVectorBufferDiscarded did not fire"
+  ],
+  "load": {
+    "loadavg_end": [
+      7.36865234375,
+      7.51123046875,
+      6.9580078125
+    ],
+    "loadavg_start": [
+      7.97705078125,
+      7.5458984375,
+      6.81494140625
+    ],
+    "nproc": 32
+  },
+  "metrics": {
+    "buffer_byte_size_max": 134214848.0,
+    "buffer_byte_size_min": 0.0,
+    "buffer_discarded_events_total": 0.0,
+    "buffer_events_max": 8108.0,
+    "component_discarded_events_total": 0.0,
+    "negative_gauge_samples": 0,
+    "samples": 966
+  },
+  "metrics_aggregator": {
+    "buffer_byte_size_max": 133847168.0,
+    "buffer_byte_size_min": 0.0,
+    "buffer_discarded_events_total": 0.0,
+    "buffer_events_max": 8107.0,
+    "component_discarded_events_total": 0.0,
+    "negative_gauge_samples": 0,
+    "samples": 966
+  },
+  "occupancy": {
+    "disk_bytes_max": 140571176,
+    "rss_bytes_max": 170217472,
+    "samples": 498,
+    "series_t_disk_rss": [
+      [
+        0.5,
+        24,
+        53555200
+      ],
+      [
+        5.51,
+        24,
+        55119872
+      ],
+      [
+        10.51,
+        1424184,
+        65040384
+      ],
+      [
+        15.51,
+        3080184,
+        69480448
+      ],
+      [
+        20.52,
+        17682368,
+        92909568
+      ],
+      [
+        25.52,
+        34254008,
+        94539776
+      ],
+      [
+        30.52,
+        50809088,
+        94826496
+      ],
+      [
+        35.53,
+        67380728,
+        104628224
+      ],
+      [
+        40.53,
+        83952368,
+        97611776
+      ],
+      [
+        45.53,
+        100507504,
+        95207424
+      ],
+      [
+        50.53,
+        117079144,
+        105537536
+      ],
+      [
+        55.54,
+        133633880,
+        96038912
+      ],
+      [
+        60.54,
+        15990128,
+        114335744
+      ],
+      [
+        65.54,
+        32559776,
+        100671488
+      ],
+      [
+        70.54,
+        49113168,
+        93650944
+      ],
+      [
+        75.55,
+        65666136,
+        96530432
+      ],
+      [
+        80.55,
+        82219856,
+        93241344
+      ],
+      [
+        85.55,
+        98806224,
+        95932416
+      ],
+      [
+        90.56,
+        115359992,
+        96600064
+      ],
+      [
+        95.56,
+        131930152,
+        97669120
+      ],
+      [
+        100.56,
+        140571176,
+        96161792
+      ],
+      [
+        105.57,
+        140571176,
+        98549760
+      ],
+      [
+        110.57,
+        140571176,
+        96616448
+      ],
+      [
+        115.57,
+        140571176,
+        92463104
+      ],
+      [
+        120.58,
+        140571176,
+        104017920
+      ],
+      [
+        125.58,
+        140571176,
+        98488320
+      ],
+      [
+        130.58,
+        140571176,
+        96555008
+      ],
+      [
+        135.59,
+        140571176,
+        93048832
+      ],
+      [
+        140.59,
+        6356288,
+        159776768
+      ],
+      [
+        145.59,
+        6356288,
+        92127232
+      ],
+      [
+        150.59,
+        6356288,
+        88465408
+      ],
+      [
+        155.6,
+        6356288,
+        89120768
+      ],
+      [
+        160.6,
+        6356288,
+        88215552
+      ],
+      [
+        165.6,
+        6356288,
+        87580672
+      ],
+      [
+        170.61,
+        6356288,
+        87236608
+      ],
+      [
+        175.61,
+        6356288,
+        88023040
+      ],
+      [
+        180.61,
+        6356288,
+        87433216
+      ],
+      [
+        185.62,
+        6356288,
+        87359488
+      ],
+      [
+        190.62,
+        6356288,
+        86859776
+      ],
+      [
+        195.63,
+        6356288,
+        86233088
+      ],
+      [
+        200.63,
+        6356288,
+        85344256
+      ],
+      [
+        205.63,
+        6356288,
+        84865024
+      ],
+      [
+        210.64,
+        6356288,
+        84922368
+      ],
+      [
+        215.64,
+        6356288,
+        85684224
+      ],
+      [
+        220.65,
+        6356288,
+        84865024
+      ],
+      [
+        225.65,
+        6356288,
+        84733952
+      ],
+      [
+        230.65,
+        6356288,
+        84910080
+      ],
+      [
+        235.65,
+        6356288,
+        84439040
+      ],
+      [
+        240.66,
+        6356288,
+        84844544
+      ],
+      [
+        245.66,
+        6356288,
+        84164608
+      ]
+    ]
+  },
+  "occupancy_aggregator": {
+    "disk_bytes_max": 136902104,
+    "rss_bytes_max": 470077440,
+    "samples": 498,
+    "series_t_disk_rss": [
+      [
+        0.7,
+        24,
+        54497280
+      ],
+      [
+        5.71,
+        24,
+        56942592
+      ],
+      [
+        10.71,
+        1354112,
+        72110080
+      ],
+      [
+        15.71,
+        3054936,
+        76931072
+      ],
+      [
+        20.72,
+        14249416,
+        108765184
+      ],
+      [
+        25.72,
+        30825560,
+        122896384
+      ],
+      [
+        30.73,
+        47401568,
+        96382976
+      ],
+      [
+        35.73,
+        63961056,
+        114913280
+      ],
+      [
+        40.73,
+        80537056,
+        121835520
+      ],
+      [
+        45.73,
+        97129560,
+        121851904
+      ],
+      [
+        50.74,
+        113722080,
+        111030272
+      ],
+      [
+        55.74,
+        130281592,
+        127868928
+      ],
+      [
+        60.74,
+        136902104,
+        117022720
+      ],
+      [
+        65.74,
+        136902104,
+        103862272
+      ],
+      [
+        70.75,
+        136902104,
+        102096896
+      ],
+      [
+        75.75,
+        136902104,
+        104443904
+      ],
+      [
+        80.75,
+        136902104,
+        101908480
+      ],
+      [
+        85.75,
+        136902104,
+        103268352
+      ],
+      [
+        90.76,
+        136902104,
+        103596032
+      ],
+      [
+        95.76,
+        136902104,
+        103247872
+      ],
+      [
+        100.76,
+        136902104,
+        99282944
+      ],
+      [
+        105.77,
+        136902104,
+        101117952
+      ],
+      [
+        110.77,
+        136902104,
+        101175296
+      ],
+      [
+        115.77,
+        136902104,
+        100438016
+      ],
+      [
+        120.78,
+        136902104,
+        113844224
+      ],
+      [
+        125.78,
+        136902104,
+        110993408
+      ],
+      [
+        130.78,
+        136902104,
+        110632960
+      ],
+      [
+        135.79,
+        136902104,
+        109522944
+      ],
+      [
+        140.79,
+        24829448,
+        459026432
+      ],
+      [
+        145.79,
+        24829448,
+        413638656
+      ],
+      [
+        150.8,
+        24829448,
+        378929152
+      ],
+      [
+        155.8,
+        24829448,
+        368017408
+      ],
+      [
+        160.8,
+        24829448,
+        368185344
+      ],
+      [
+        165.8,
+        24829448,
+        368447488
+      ],
+      [
+        170.81,
+        24829448,
+        367423488
+      ],
+      [
+        175.81,
+        24829448,
+        367476736
+      ],
+      [
+        180.81,
+        24829448,
+        366919680
+      ],
+      [
+        185.82,
+        24829448,
+        367353856
+      ],
+      [
+        190.82,
+        24829448,
+        367190016
+      ],
+      [
+        195.83,
+        24829448,
+        365371392
+      ],
+      [
+        200.83,
+        24829448,
+        365613056
+      ],
+      [
+        205.83,
+        24829448,
+        365867008
+      ],
+      [
+        210.84,
+        24829448,
+        365699072
+      ],
+      [
+        215.84,
+        24829448,
+        365940736
+      ],
+      [
+        220.85,
+        24829448,
+        365277184
+      ],
+      [
+        225.85,
+        24829448,
+        365948928
+      ],
+      [
+        230.85,
+        24829448,
+        365232128
+      ],
+      [
+        235.85,
+        24829448,
+        365395968
+      ],
+      [
+        240.86,
+        24829448,
+        366100480
+      ],
+      [
+        245.86,
+        24829448,
+        364367872
+      ]
+    ]
+  },
+  "peer_requests": {
+    "ok": 347,
+    "rejected": 125
+  },
+  "reconcile": {
+    "duplicates": 403,
+    "lost": 7600,
+    "received_unique": 16599,
+    "sent": 24199,
+    "unexpected_ids": 0
+  },
+  "released_by_block": false,
+  "scratch_bytes": 32073225,
+  "sender": {
+    "baseline_sent": 199,
+    "blocked_total_s": 0.0,
+    "burst_sent": 24000,
+    "http_errors": 0,
+    "longest_block_s": 0.042,
+    "sent": 24199
+  },
+  "source": "vector",
+  "timeline_s": {
+    "burst_end": 130.01238309196196,
+    "burst_start": 10.002062852028757,
+    "drain_end": 153.0640861899592,
+    "drain_idle_stop": true,
+    "extra_alert_wait": 90.07,
+    "release": 130.01238130405545
+  },
+  "vector_stderr_tail": {
+    "vector-agent.stderr": "2026-10-28T03:43:49.508504Z  WARN source{component_kind=\"source\" component_id=fixture component_type=http_server}: vector::config::source: Enabling `acknowledgements` on sources themselves is deprecated in favor of enabling them in the sink configuration, and will be removed in a future version. component_id=\"fixture\"\n2026-10-28T03:45:48.141863Z  WARN sink{component_kind=\"sink\" component_id=agent_forward component_type=vector}: vector::sinks::util::retries: Request timed out. If this happens often while the events are actually reaching their destination, try decreasing `batch.max_bytes` and/or using `compression` if applicable. Alternatively `request.timeout_secs` can be increased. internal_log_rate_limit=true\n2026-10-28T03:45:49.149451Z  WARN sink{component_kind=\"sink\" component_id=agent_forward component_type=vector}: vector::sinks::util::retries: Internal log [Request timed out. If this happens often while the events are actually reaching their destination, try decreasing `batch.max_bytes` and/or using `compression` if applicable. Alternatively `request.timeout_secs` can be increased.] is being suppressed to avoid flooding.\n",
+    "vector-aggregator.stderr": "etrying after response.] is being suppressed to avoid flooding.\n2026-10-28T03:45:39.941827Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] has been suppressed 9 times.\n2026-10-28T03:45:39.941850Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Retrying after response. reason=Http Status: 503 Service Unavailable internal_log_rate_limit=true\n2026-10-28T03:45:40.797124Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] is being suppressed to avoid flooding.\n2026-10-28T03:45:51.175918Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] has been suppressed 9 times.\n2026-10-28T03:45:51.175939Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Retrying after response. reason=Http Status: 503 Service Unavailable internal_log_rate_limit=true\n2026-10-28T03:45:51.417747Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] is being suppressed to avoid flooding.\n2026-10-28T03:46:01.237182Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] has been suppressed 11 times.\n2026-10-28T03:46:01.237198Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Retrying after response. reason=Http Status: 503 Service Unavailable internal_log_rate_limit=true\n2026-10-28T03:46:03.217808Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] is being suppressed to avoid flooding.\n"
+  }
+}

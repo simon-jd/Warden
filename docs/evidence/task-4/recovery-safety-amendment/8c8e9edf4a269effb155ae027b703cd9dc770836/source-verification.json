@@ -1,0 +1,128 @@
+{
+  "source": "8c8e9edf4a269effb155ae027b703cd9dc770836",
+  "source_parent": "ed65c4757a23678a0845d4184c32d1ab0f179d78",
+  "fix_base": "078329de70abb59bfdce20840d52dac30482a374",
+  "original_A_source": "dbc6d648068ff0771e1e1936bd1a0061cd0a36c9",
+  "changed_paths_exactly_allowed": true,
+  "changed_files": {
+    "docs/firecracker-recovery.md": {
+      "sha256": "d74877dde187e1a79e8b74d7ca66fcd9e28072b8403bb4adbb95e28ceace97c0",
+      "bytes": 14609,
+      "mode": "0644"
+    },
+    "scripts/firecracker_recovery.py": {
+      "sha256": "018cba8ea96b108abc4af04ac44f0bc1a40dabfdf296216ee30b1b4c41f05672",
+      "bytes": 47645,
+      "mode": "0644"
+    },
+    "scripts/test_firecracker_recovery.py": {
+      "sha256": "f4a4a8e1418007f0682b8b9d9697ed927b8ec59f8ce10c0cf865469baea63a6e",
+      "bytes": 28809,
+      "mode": "0644"
+    }
+  },
+  "host_functions_changed_or_added": [
+    "cleanup_phase",
+    "state_read",
+    "validate_phase_state"
+  ],
+  "other_host_functions_AST_identical": [
+    "sha",
+    "admitted",
+    "project_rest",
+    "verify_records",
+    "create_args",
+    "validate_labels",
+    "inspect_profile",
+    "build_archive",
+    "bounded_command",
+    "docker",
+    "dependencies",
+    "cleanup_helper",
+    "read_private",
+    "check_anchor",
+    "exact_absence",
+    "project_lock",
+    "private_directory",
+    "save",
+    "load",
+    "current_charges",
+    "image_charge",
+    "account",
+    "source_sha",
+    "runtime_inputs",
+    "validate_result",
+    "file_sha",
+    "new_phase",
+    "check_image",
+    "check_archive",
+    "helper_absent",
+    "restored_metadata",
+    "full_postflight",
+    "execute_phase",
+    "run_helper",
+    "main"
+  ],
+  "all_other_host_top_level_AST_identical": true,
+  "unchanged_source_bindings": {
+    "scripts/firecracker_recovery_init.py": {
+      "sha256": "72675e91ac22ab3f1607fc5f21b90db18fc8c115e9a50bd8a48761cf70c8c9b2",
+      "bytes": 14633
+    },
+    "scripts/test_firecracker_recovery_init.py": {
+      "sha256": "78cc1d28223ceaa8c5b9f433dce41c08f328f13a9f9e2af950cddc7f5d893776",
+      "bytes": 12811
+    },
+    "scripts/firecracker_lab.py": {
+      "sha256": "551ba57ba4081155a612d0282a9a9299910390c67322b2042041642d45cafb0b",
+      "bytes": 32100
+    },
+    "scripts/firecracker_device_receipt.py": {
+      "sha256": "c9d10f1cea6f60a15a7d70b818121538b93b76e5d42a94eb3fbe62594855da4b",
+      "bytes": 9016
+    },
+    "scripts/firecracker_code.py": {
+      "sha256": "56abda58b8a822b7bc1ce7311025763878e7110c2d4cfabd84203dce556db4dd",
+      "bytes": 5257
+    },
+    "scripts/runtime_lab_docker.py": {
+      "sha256": "affadf0269b18f4352902801c2992e7a5cf14b57639d62be173a8619185f5773",
+      "bytes": 17520
+    },
+    "scripts/runtime_lab_paths.py": {
+      "sha256": "0ce3287feab8197839cf2e7e1cf297fd5cad0e740069023b188e4c366b643f84",
+      "bytes": 7395
+    },
+    "scripts/azure_guard.py": {
+      "sha256": "303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48",
+      "bytes": 27828
+    },
+    "scripts/k3s_lab.py": {
+      "sha256": "65b746e1bc715203b56b98f85517a9bc109f0d19984a36455d308da03489167e",
+      "bytes": 23176
+    },
+    "runtimes/firecracker/driver.go": {
+      "sha256": "4132c95539e1eca6f95d0b288b5b24c1263cb89a39b2d12656b7d9b1ca648dd7",
+      "bytes": 9027
+    },
+    "runtimes/firecracker/identity.go": {
+      "sha256": "b96416588f72a2a26023e268ff26f74329005773811bcc78f7b232b6e2e932fd",
+      "bytes": 5278
+    },
+    "runtimes/firecracker/vm.go": {
+      "sha256": "b6d892dd1ef51d2a7c06a7eb5d4b545c79a503fb52f08a2e95d073bc7bc72bee",
+      "bytes": 11123
+    },
+    "runtimes/firecracker/process.go": {
+      "sha256": "c5bd0e2dc5cb78475659410689118931e75d848fd53c386b0a9beda94eb38861",
+      "bytes": 1766
+    },
+    "runtimes/gate/gate.go": {
+      "sha256": "0b5a5b140a7124c9d2a65567694e5b662d13bb99b7fdcd1cedadc434273f8284",
+      "bytes": 8507
+    }
+  },
+  "old_176_file_integrity_crawl_repeated": false,
+  "helper_suite_repeated": false,
+  "actual_recovery_or_Docker_operations": false
+}

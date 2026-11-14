@@ -1,0 +1,33 @@
+{
+  "activity_id": 1,
+  "category_uid": 6,
+  "class_uid": 6003,
+  "type_uid": 600301,
+  "severity_id": 0,
+  "time": 1767225600000,
+  "metadata": {
+    "version": "1.3.0",
+    "product": {
+      "name": "Kubernetes Audit",
+      "vendor_name": "Kubernetes"
+    },
+    "uid": "2a3db2c9-122a-5e8f-a2dd-fc34e3d3f52c"
+  },
+  "unmapped": {
+    "objectRef": {
+      "resource": "certificatesigningrequests"
+    }
+  },
+  "api": {
+    "operation": "create"
+  },
+  "actor": {
+    "user": {
+      "uid": "system:serviceaccount:warden-lab:synthetic-worker"
+    }
+  },
+  "src_endpoint": {
+    "ip": "192.0.2.10"
+  },
+  "status_id": 1
+}

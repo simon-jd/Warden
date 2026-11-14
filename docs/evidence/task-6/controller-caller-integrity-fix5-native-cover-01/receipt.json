@@ -1,0 +1,84 @@
+{
+  "body_unchanged": true,
+  "cases": [
+    {
+      "assertion_error": null,
+      "exit_code": 0,
+      "expected_regression_observed": null,
+      "name": "happy",
+      "passed": true
+    },
+    {
+      "assertion_error": null,
+      "exit_code": 1,
+      "expected_regression_observed": null,
+      "name": "existing",
+      "passed": true
+    },
+    {
+      "assertion_error": null,
+      "exit_code": 1,
+      "expected_regression_observed": null,
+      "name": "symlink",
+      "passed": true
+    },
+    {
+      "assertion_error": null,
+      "exit_code": 1,
+      "expected_regression_observed": null,
+      "name": "wrong-proof",
+      "passed": true
+    },
+    {
+      "assertion_error": null,
+      "exit_code": 0,
+      "expected_regression_observed": null,
+      "name": "short-write",
+      "passed": true
+    },
+    {
+      "assertion_error": null,
+      "exit_code": 1,
+      "expected_regression_observed": null,
+      "name": "dir-fsync",
+      "passed": true
+    },
+    {
+      "assertion_error": null,
+      "exit_code": 1,
+      "expected_regression_observed": null,
+      "name": "post-output",
+      "passed": true
+    },
+    {
+      "assertion_error": null,
+      "exit_code": 1,
+      "expected_regression_observed": null,
+      "name": "cap-cpu",
+      "passed": true
+    },
+    {
+      "assertion_error": null,
+      "exit_code": 1,
+      "expected_regression_observed": null,
+      "name": "cap-as",
+      "passed": true
+    },
+    {
+      "assertion_error": null,
+      "exit_code": 1,
+      "expected_regression_observed": null,
+      "name": "cap-fsize",
+      "passed": true
+    }
+  ],
+  "elapsed_seconds": 0.270400870940648,
+  "errors": 0,
+  "expected_regression_observed": false,
+  "failures": 0,
+  "physical_production_integration": false,
+  "skipped": 0,
+  "source_unchanged": true,
+  "tests_run": 10,
+  "timing_scope": "earliest measured parent entry through maps/output; startup and physical termination unproved"
+}

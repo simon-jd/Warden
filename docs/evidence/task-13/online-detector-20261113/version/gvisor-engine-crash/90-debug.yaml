@@ -1,0 +1,20 @@
+# Diagnosis only: every alert goes to /dev/null, Falco's own log at debug level.
+watch_config_files: false
+json_output: true
+stdout_output:
+  enabled: false
+syslog_output:
+  enabled: false
+log_syslog: false
+webserver:
+  enabled: false
+file_output:
+  enabled: true
+  keep_alive: false
+  filename: /dev/null
+log_level: debug
+libs_logger:
+  enabled: true
+  severity: debug
+metrics:
+  enabled: false

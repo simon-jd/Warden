@@ -1,0 +1,7 @@
+test_held_parent_path_substitution_refuses_before_socket (test_identity_cache_control.APITests.test_held_parent_path_substitution_refuses_before_socket) ... ok
+test_select_timeout_and_bad_peer_shape_are_sticky (test_identity_cache_control.APITests.test_select_timeout_and_bad_peer_shape_are_sticky) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+OK

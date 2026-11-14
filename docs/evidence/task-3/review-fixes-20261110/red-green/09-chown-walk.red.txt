@@ -1,0 +1,26 @@
+# RED (mutation): releaseFailedSession with its Lchown walk removed (return nil instead).
+# 1) the old test (HEAD a229a70) against the mutant: passes, so it could not detect the missing walk
+# 2026-11-10T20:36:01-08:00
+=== RUN   TestReleaseFailedSessionDropsVMDataAndReturnsOwnership
+--- PASS: TestReleaseFailedSessionDropsVMDataAndReturnsOwnership (0.00s)
+ok  	warden/runtimes/firecracker	0.006s
+exit: 0
+
+# 2) the new test against the same mutant: fails
+=== RUN   TestReleaseFailedSessionDropsVMDataAndReturnsOwnership
+    supervisor_test.go:131: . is 1000:1000, not handed to 1000:4
+    supervisor_test.go:131: node is 1000:1000, not handed to 1000:4
+    supervisor_test.go:131: node/gate is 1000:1000, not handed to 1000:4
+    supervisor_test.go:131: node/gate/node is 1000:1000, not handed to 1000:4
+    supervisor_test.go:131: node/runs is 1000:1000, not handed to 1000:4
+    supervisor_test.go:131: node/runs/R is 1000:1000, not handed to 1000:4
+    supervisor_test.go:131: node/runs/link is 1000:1000, not handed to 1000:4
+    supervisor_test.go:131: node/console is 1000:1000, not handed to 1000:4
+    supervisor_test.go:131: node/console/R.log is 1000:1000, not handed to 1000:4
+    supervisor_test.go:131: node/owner is 1000:1000, not handed to 1000:4
+--- FAIL: TestReleaseFailedSessionDropsVMDataAndReturnsOwnership (0.00s)
+FAIL
+FAIL	warden/runtimes/firecracker	0.003s
+FAIL
+make: *** [Makefile:63: test-go] Error 1
+exit: 2

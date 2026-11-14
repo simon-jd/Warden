@@ -1,0 +1,13 @@
+[[tests]]
+name = "tetragon_exec_full_golden"
+[[tests.inputs]]
+insert_at = "norm_tetragon"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "tetragon"
+message = '''{"time":"2026-01-01T00:00:00Z","node_name":"fixture-node","process_exec":{"process":{"pid":123,"exec_id":"exec-1","binary":"/bin/true"},"parent":{"pid":1,"exec_id":"parent-1","binary":"/sbin/init"}},"fixture_extra":"kept"}'''
+[[tests.outputs]]
+extract_from = "norm_tetragon"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"activity_id":1,"category_uid":1,"class_uid":1007,"type_uid":100701,"severity_id":0,"time":1767225600000,"metadata":{"version":"1.3.0","product":{"name":"Tetragon","vendor_name":"Cilium"},"uid":"exec-1"},"actor":{"process":{"pid":1,"uid":"parent-1","name":"/sbin/init"}},"device":{"uid":"fixture-node","name":"fixture-node","type_id":0},"process":{"pid":123,"uid":"exec-1","name":"/bin/true"},"unmapped":{"fixture_extra":"kept"}})'''

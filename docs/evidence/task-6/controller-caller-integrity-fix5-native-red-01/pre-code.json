@@ -1,0 +1,22 @@
+{
+  "controller-caller-integrity-fix5-approval-candidate.js": {
+    "bytes": 12373,
+    "sha256": "7441ed1a8acf65caed11aa3621c4ec9768ab9d2e2f8424c7ada9bc8ec51710d0"
+  },
+  "controller-caller-integrity-fix5-approval-fixture.js": {
+    "bytes": 10877,
+    "sha256": "8a0cc3ffa15a99eb5b0541512c0dae74e5bc58b6f8d670ed170876a9007ee89b"
+  },
+  "controller-caller-integrity-fix5-material-candidate.js": {
+    "bytes": 11526,
+    "sha256": "dd9553eec47723a1159bc421478cad1b9ad21a97d639f8783a2abdf700f66e13"
+  },
+  "controller-caller-integrity-fix5-material-fixture.js": {
+    "bytes": 12699,
+    "sha256": "6783d92bae44aaedf1b21540aa368bd2d5ea2724715c4c9b309dfd85079baebb"
+  },
+  "controller-caller-integrity-fix5-native-fixture.py": {
+    "bytes": 14033,
+    "sha256": "35913d683a20bf8f0cb40ed24b8b286f7c9a6db77fc1f478e4b0a09054d7de0c"
+  }
+}

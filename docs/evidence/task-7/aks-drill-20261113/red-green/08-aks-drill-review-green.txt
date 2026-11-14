@@ -1,0 +1,18 @@
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_aks_drill.py -v   # after the review fixes
+test_cluster_mismatches_name_every_difference_from_the_profile (test_aks_drill.AKSDrillTests.test_cluster_mismatches_name_every_difference_from_the_profile) ... ok
+test_committed_snapshots_price_a_plan_the_guard_accepts (test_aks_drill.AKSDrillTests.test_committed_snapshots_price_a_plan_the_guard_accepts) ... ok
+test_create_command_switches_on_only_the_profile (test_aks_drill.AKSDrillTests.test_create_command_switches_on_only_the_profile) ... ok
+test_down_after_up_leaves_nothing_and_disarms_the_timers (test_aks_drill.AKSDrillTests.test_down_after_up_leaves_nothing_and_disarms_the_timers) ... ok
+test_redact_removes_every_id (test_aks_drill.AKSDrillTests.test_redact_removes_every_id) ... ok
+test_up_arms_the_hard_stop_before_anything_is_reserved_or_created (test_aks_drill.AKSDrillTests.test_up_arms_the_hard_stop_before_anything_is_reserved_or_created) ... ok
+test_up_creates_nothing_when_the_hard_stop_cannot_be_armed (test_aks_drill.AKSDrillTests.test_up_creates_nothing_when_the_hard_stop_cannot_be_armed) ... ok
+test_up_refuses_a_login_that_cannot_be_refreshed_before_anything (test_aks_drill.AKSDrillTests.test_up_refuses_a_login_that_cannot_be_refreshed_before_anything) ... ok
+test_up_refuses_an_overnight_run_or_a_pending_approval_before_any_call (test_aks_drill.AKSDrillTests.test_up_refuses_an_overnight_run_or_a_pending_approval_before_any_call) ... ok
+test_up_tags_the_node_group_when_aks_did_not (test_aks_drill.AKSDrillTests.test_up_tags_the_node_group_when_aks_did_not) ... ok
+test_up_tears_down_when_the_node_group_is_not_the_clusters (test_aks_drill.AKSDrillTests.test_up_tears_down_when_the_node_group_is_not_the_clusters) ... ok
+test_up_tears_everything_down_when_a_step_fails (test_aks_drill.AKSDrillTests.test_up_tears_everything_down_when_a_step_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 7.520s
+
+OK

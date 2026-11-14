@@ -1,0 +1,36 @@
+All test and Docker read-only diagnostic processes: ordinary UID1000, umask0077, PYTHONPATH=scripts as indicated. No live mutation command was invoked.
+
+RED:
+PYTHONPATH=scripts python3 -B -m unittest -v test_k3s_lab_round4
+# red-swap-recovery.txt, failures=4/errors=2; before source changes.
+
+git show 93d7c0d:scripts/k3s_lab_recover.py > /tmp/warden-round4-red/k3s_lab_recover.py
+PYTHONPATH=/tmp/warden-round4-red:scripts python3 -B -m unittest -v test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+# red-archive-lifecycle.txt: first fixture setup errors.
+# red-archive-lifecycle-behavior.txt: corrected fixture, 11 behavioral subtest failures against BASE.
+
+PYTHONPATH=scripts python3 -B -m unittest -v test_k3s_lab_round4.StartupTemplateTest
+# red-startup-templates.txt: failures=4/errors=5.
+
+PYTHONPATH=scripts python3 -B -m unittest -v test_k3s_lab_round4.StartupTemplateTest.test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence test_k3s_lab_round4.StartupTemplateTest.test_namespace_recheck_only_returns_fixed_names_after_exact_active_identity
+# red-namespace-templates.txt: failures=1/errors=3.
+
+Intermediate:
+PYTHONPATH=scripts python3 -B -m unittest -v test_k3s_lab_round4 test_k3s_lab_recovery
+# green-swap-recovery.txt: 12 PASS before new warning tests were added.
+PYTHONPATH=scripts python3 -B -m unittest -v test_k3s_lab_round4
+# intermediate-round4-fixture-failure.txt: 11 tests, one fixture error, not PASS evidence.
+
+Final GREEN:
+PYTHONPATH=scripts python3 -B -m unittest -v test_k3s_lab_init test_k3s_lab_recovery test_k3s_lab_round4
+# verification-tests.txt: 44 PASS, zero skips.
+
+Final bounded read-only diagnosis:
+python3 -B docs/evidence/task-3/k3s-lab/round-4/diagnose-third.py
+# diagnostic-final.json: fixed metadata/enums/counts/hashes only, no Ready proof.
+
+Source commit:
+git add docs/k3s-runtime-lab.md scripts/k3s_lab_init.py scripts/k3s_lab_recover.py scripts/k3s_lab_recovery_init.py scripts/test_k3s_lab_recovery.py scripts/test_k3s_lab_round4.py
+git diff --cached --check
+git commit -m 'fix(lab): reject swap drift and reconcile third bootstrap scene'
+# 6f52f54e1a59a8cf7a7b36223f5cd6ab016b270b; parent43579657d42f835daf8d22c2a8d3f2f6fa4ff35c.

@@ -1,0 +1,177 @@
+{
+  "before_equals_after": true,
+  "old_caller_sha256": "d9c9897806b42e0c7f6c1a708d56bb7dba7b76a55614af20aa4eb2b1635bb9ce",
+  "old_wrapper_sha256": "c81067d994a9b44fa412ef55c8b92432ac519ff3c6956ac0a7835e2e2c37fbb1",
+  "preserved": [
+    {
+      "atime_ns": 1792998386192918652,
+      "ctime_ns": 1792998386192326484,
+      "gid": 1000,
+      "mode": 448,
+      "mtime_ns": 1792998386192326484,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-prep-20261026",
+      "size": 4096,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1793006612409251370,
+      "ctime_ns": 1793006612408569355,
+      "gid": 1000,
+      "mode": 448,
+      "mtime_ns": 1793006612408569355,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-caller-repair-20261026",
+      "size": 4096,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1792998071163420347,
+      "ctime_ns": 1792997943618268572,
+      "gid": 1000,
+      "mode": 493,
+      "mtime_ns": 1792997943618268572,
+      "path": "detect/dns_exfil",
+      "size": 4096,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1792998386190326497,
+      "ctime_ns": 1792997943616268586,
+      "gid": 1000,
+      "mode": 436,
+      "mtime_ns": 1792997943616268586,
+      "path": "detect/dns_exfil/score.go",
+      "size": 1294,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1792998386190326497,
+      "ctime_ns": 1792998182406680760,
+      "gid": 1000,
+      "mode": 436,
+      "mtime_ns": 1792998182406680760,
+      "path": "detect/dns_exfil/exfil_test.go",
+      "size": 9433,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1792998386190326497,
+      "ctime_ns": 1792998386155864497,
+      "gid": 1000,
+      "mode": 384,
+      "mtime_ns": 1792998386155864497,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-prep-20261026/caller.py",
+      "size": 9566,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1792998386191326490,
+      "ctime_ns": 1792998182413680713,
+      "gid": 1000,
+      "mode": 384,
+      "mtime_ns": 1792998182408680747,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-prep-20261026/limit_child.py",
+      "size": 1685,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1792998386191326490,
+      "ctime_ns": 1792998182413680713,
+      "gid": 1000,
+      "mode": 384,
+      "mtime_ns": 1792998182410680733,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-prep-20261026/isolated.go.mod",
+      "size": 159,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1792998386191326490,
+      "ctime_ns": 1792998386164326670,
+      "gid": 1000,
+      "mode": 384,
+      "mtime_ns": 1792998386161326690,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-prep-20261026/preparation-report.md",
+      "size": 6906,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1792998386193035738,
+      "ctime_ns": 1792998386192918652,
+      "gid": 1000,
+      "mode": 384,
+      "mtime_ns": 1792998386192918652,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-prep-20261026/freeze.json",
+      "size": 2993,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1793006680669351047,
+      "ctime_ns": 1793006612406144591,
+      "gid": 1000,
+      "mode": 384,
+      "mtime_ns": 1793006612406144591,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-caller-repair-20261026/caller.py",
+      "size": 12919,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1793006680669351047,
+      "ctime_ns": 1793006484097455649,
+      "gid": 1000,
+      "mode": 384,
+      "mtime_ns": 1793006484097455649,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-caller-repair-20261026/limit_child.py",
+      "size": 1694,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1793006725673048261,
+      "ctime_ns": 1793006484097470519,
+      "gid": 1000,
+      "mode": 384,
+      "mtime_ns": 1793006484097470519,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-caller-repair-20261026/isolated.go.mod",
+      "size": 159,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1793006725673048261,
+      "ctime_ns": 1793006612406857133,
+      "gid": 1000,
+      "mode": 384,
+      "mtime_ns": 1793006612406857133,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-caller-repair-20261026/exact.diff",
+      "size": 11069,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1793006725673048261,
+      "ctime_ns": 1793006484097822633,
+      "gid": 1000,
+      "mode": 384,
+      "mtime_ns": 1793006484097822633,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-caller-repair-20261026/preservation.json",
+      "size": 3224,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1793006680669351047,
+      "ctime_ns": 1793006612408569355,
+      "gid": 1000,
+      "mode": 384,
+      "mtime_ns": 1793006612408569355,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-caller-repair-20261026/repair-note.md",
+      "size": 3919,
+      "uid": 1000
+    },
+    {
+      "atime_ns": 1793006725673048261,
+      "ctime_ns": 1793006612409251370,
+      "gid": 1000,
+      "mode": 384,
+      "mtime_ns": 1793006612409251370,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-caller-repair-20261026/freeze.json",
+      "size": 3585,
+      "uid": 1000
+    }
+  ]
+}

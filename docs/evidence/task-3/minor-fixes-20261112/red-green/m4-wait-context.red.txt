@@ -1,0 +1,19 @@
+# RED: the Wait context tests in runtimes/gvisor/gvisor_test.go (TestWaitTearsDownWhenItsContextEnds replaced by TestWaitWhoseContextEndsLeavesTheRunFollowed; two new tests) against gvisor.go at e8d6e13 (unchanged), plain make in the worktree
+# 2026-11-12T09:23:53-08:00; lines of packages without matching tests (shuffle seed, 'no tests to run', PASS, ok) are left out
+pkgs=$(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /home/postedism/Desktop/Warden-task3/.tools/go/bin/go list -buildvcs=false ./...) && pkgs=$(printf '%s\n' $pkgs | grep -Ev '^$|^warden/docs/') || exit 1; env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_KYVERNO=/home/postedism/Desktop/Warden-task3/.tools/kyverno/kyverno /home/postedism/Desktop/Warden-task3/.tools/go/bin/go test -buildvcs=false -count=1 -shuffle=on -v -run '^(TestWaitWhoseContextEndsLeavesTheRunFollowed|TestWaitWithAnEndedContextReturnsAtOnce|TestConcurrentWaitsHonourTheirOwnContexts)$' $pkgs
+=== RUN   TestConcurrentWaitsHonourTheirOwnContexts
+    gvisor_test.go:636: a Wait with a 50 ms context still blocked after 1 s
+--- FAIL: TestConcurrentWaitsHonourTheirOwnContexts (1.01s)
+=== RUN   TestWaitWhoseContextEndsLeavesTheRunFollowed
+    gvisor_test.go:540: the Wait that gave up deleted the run: 1 DELETE requests, job deleted=true
+    gvisor_test.go:558: a later Wait: {Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:0 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:false} Get "https://127.0.0.1:40221/api/v1/namespaces/warden-lab/pods/warden-run-abcdefghijklmnopqrstuvwxyz-x7k2p": context deadline exceeded
+--- FAIL: TestWaitWhoseContextEndsLeavesTheRunFollowed (0.04s)
+=== RUN   TestWaitWithAnEndedContextReturnsAtOnce
+    gvisor_test.go:585: wait with an ended context: Get "https://127.0.0.1:44273/api/v1/namespaces/warden-lab/pods?labelSelector=batch.kubernetes.io%2Fcontroller-uid%3Djob-uid": context canceled
+        gvisor: teardown of warden-run-abcdefghijklmnopqrstuvwxyz not confirmed: context deadline exceeded after 2.000591901s
+--- FAIL: TestWaitWithAnEndedContextReturnsAtOnce (2.00s)
+FAIL
+FAIL	warden/runtimes/gvisor	3.057s
+FAIL
+make: *** [Makefile:72: test-go] Error 1
+exit: 2

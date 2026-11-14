@@ -1,0 +1,12 @@
+# RED: the capacity reading with pids.max/pids.events/pids.peak; the new test added to capacity_test.go before readOuter exists
+# 2026-11-13T18:18:24Z head d8f553b  M runtimes/firecracker/capacity_test.go ?? docs/evidence/task-4/pids-limit-20261113/red-reading.log 
+# diff against HEAD: 54	0	runtimes/firecracker/capacity_test.go 
+$ go test -count=1 -v -run '^TestOuterReadingIncludesPids$' ./runtimes/firecracker
+# warden/runtimes/firecracker [warden/runtimes/firecracker.test]
+runtimes/firecracker/capacity_test.go:147:10: undefined: readOuter
+runtimes/firecracker/capacity_test.go:162:12: undefined: readOuter
+runtimes/firecracker/capacity_test.go:170:14: undefined: readOuter
+runtimes/firecracker/capacity_test.go:178:13: undefined: readOuter
+FAIL	warden/runtimes/firecracker [build failed]
+FAIL
+exit 1

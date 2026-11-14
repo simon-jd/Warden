@@ -1,0 +1,293 @@
+{
+  "scope": "Original Task11 mapping/static fixR1of5 only; real two-collision semantic RED then one focused17-case PASS and aggregator-only static validate PASS. No agent/five unchanged source goldens/BP rerun.",
+  "base": "0beb321125600fda112bb8c08355457d481938cb",
+  "frozen_source": {
+    "request": {
+      "cmd": "/usr/bin/python3 -I -S -B - <<'PY'\nimport pathlib,hashlib,json\npaths=[\"detect/README.md\",\"detect/ocsf/tests/00-topology.toml\",\"detect/ocsf/tests/production_routes.toml\",\"detect/ocsf/tests/warden_collisions.toml\",\"detect/ocsf/warden_audit.vrl\"]\nrows=[{'path':p,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()} for p in paths for b in [pathlib.Path(p).read_bytes()]]\nprint(json.dumps({'base':'0beb321125600fda112bb8c08355457d481938cb','fix1_frozen_source_files':rows},sort_keys=True))\nPY",
+      "login": false,
+      "max_output_tokens": 2000
+    },
+    "response": {
+      "chunk_id": "fff666",
+      "wall_time_seconds": 0.000037317,
+      "exit_code": 0,
+      "original_token_count": 194,
+      "output": "{\"base\": \"0beb321125600fda112bb8c08355457d481938cb\", \"fix1_frozen_source_files\": [{\"bytes\": 9653, \"path\": \"detect/README.md\", \"sha256\": \"06fbb5aaeb5bc7460c02f7a95a9e5ffeca48e8e61bf102db5467a6c1d1047dd9\"}, {\"bytes\": 314, \"path\": \"detect/ocsf/tests/00-topology.toml\", \"sha256\": \"bbdb805d06b74e53ca7a4d896fe57286ddeca11208c4b66e9ca20c883e4cca9d\"}, {\"bytes\": 4935, \"path\": \"detect/ocsf/tests/production_routes.toml\", \"sha256\": \"605b25bb9a16ba44be09520bf89f7c6307eaab919ff7b954642ce4fd572bdc6d\"}, {\"bytes\": 1383, \"path\": \"detect/ocsf/tests/warden_collisions.toml\", \"sha256\": \"0cb0d138aad996bef498171ad5e6742da9531d70b287cfca63f25c58777c86f3\"}, {\"bytes\": 1725, \"path\": \"detect/ocsf/warden_audit.vrl\", \"sha256\": \"316bce0bb9fc30390bf2a36e4c21df21c01f5e3097ae17ca193af539fade191c\"}]}\n"
+    }
+  },
+  "trace": [
+    {
+      "stage": "red-budget",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "ulimit -t 20\nulimit -v 262144\nulimit -f 1024\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 7137167168 --service-memory-bytes 13000000000 --download-bytes 0",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 mapping fix R1 admitted collision-only RED fresh native budget; no production startup or old-suite rerun.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "96d906",
+        "wall_time_seconds": 0.217454347,
+        "exit_code": 0,
+        "original_token_count": 56,
+        "output": "{\"additional_bytes\": \"7137167168\", \"at\": \"2026-10-25T22:09:28Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 261718843392, \"project_allocated_bytes\": 4449550336, \"service_memory_bytes\": \"13000000000\"}\n"
+      }
+    },
+    {
+      "stage": "red-memory",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport os,pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\nassert os.geteuid()==1000\nm={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}\na=int(m['MemAvailable'].split()[0])*1024\nassert a>=5000000000\nassert not os.path.lexists('.cache/task11-fix1-red')\nprint('MemAvailable',a,'resident_reserve',13000000000,'new_run_absent',True)\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 fix R1 collision RED fresh native memory and new .cache/task11-fix1-red absence check.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "37c0f4",
+        "wall_time_seconds": 0.00000911,
+        "exit_code": 0,
+        "original_token_count": 19,
+        "output": "MemAvailable 86366093312 resident_reserve 13000000000 new_run_absent True\n"
+      }
+    },
+    {
+      "stage": "red-two-collisions",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "set -eu\nulimit -t 45\nulimit -v 2929687\nulimit -f 1024\nulimit -n 128\nulimit -c 0\nmkdir -m 700 .cache/task11-fix1-red\nmkdir -m 700 .cache/task11-fix1-red/tmp\nset -- detect/vector/aggregator.toml detect/ocsf/tests/warden_collisions.toml\nfor f do test -f \"$f\"; done\ntest \"$#\" -eq 2\nset -C\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 VECTOR_THREADS=2 TMPDIR=/home/postedism/Desktop/Warden/.cache/task11-fix1-red/tmp /usr/bin/timeout --signal=TERM --kill-after=10s 50s /home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector test \"$@\" > .cache/task11-fix1-red/output 2>&1",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Run admitted exact production-aggregator unit test with only the two new collision regressions against the unfixed Warden mapper. Pinned unit runner clears real sources/sinks; no deployment or network test.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "d75cb9",
+        "wall_time_seconds": 0.179598706,
+        "exit_code": 78,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "stage": "red-postread",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\np=pathlib.Path('.cache/task11-fix1-red/output'); b=p.read_bytes(); assert len(b)<=1048576; print('bytes',len(b)); print(b.decode())\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Read all bounded retained fix R1 collision RED output after known exit78, distinguish semantic failures from configuration failures.",
+        "max_output_tokens": 4000
+      },
+      "response": {
+        "chunk_id": "4cc679",
+        "wall_time_seconds": 0.00000794,
+        "exit_code": 0,
+        "original_token_count": 164,
+        "output": "bytes 643\nRunning tests\ntest warden_rejects_reserved_tenant_collision ... failed\ntest warden_rejects_reserved_run_collision_nonstring ... failed\n\nfailures:\n\ntest warden_rejects_reserved_tenant_collision:\n\nchecks for transforms [\"reject_redact\"] failed: no events received. Topology may be disconnected or transform is missing inputs.\n\ncheck for transforms [\"norm_warden\"] failed: expected no outputs\n\n\ntest warden_rejects_reserved_run_collision_nonstring:\n\nchecks for transforms [\"reject_redact\"] failed: no events received. Topology may be disconnected or transform is missing inputs.\n\ncheck for transforms [\"norm_warden\"] failed: expected no outputs\n\n\n"
+      }
+    },
+    {
+      "stage": "green-budget",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "ulimit -t 20\nulimit -v 262144\nulimit -f 1024\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 7137167168 --service-memory-bytes 13000000000 --download-bytes 0",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Admitted Task11 R1 focused 17-case production topology cover fresh native budget guard.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "1635c5",
+        "wall_time_seconds": 0.237280803,
+        "exit_code": 0,
+        "original_token_count": 56,
+        "output": "{\"additional_bytes\": \"7137167168\", \"at\": \"2026-10-25T22:12:56Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 261714227200, \"project_allocated_bytes\": 4449591296, \"service_memory_bytes\": \"13000000000\"}\n"
+      }
+    },
+    {
+      "stage": "green-memory",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport os,pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\nassert os.geteuid()==1000\nm={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}\na=int(m['MemAvailable'].split()[0])*1024\nassert a>=5000000000\nassert not os.path.lexists('.cache/task11-fix1-green')\nprint('MemAvailable',a,'resident_reserve',13000000000,'new_run_absent',True)\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 R1 focused cover fresh native memory and fixed new GREEN namespace absence.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "843bac",
+        "wall_time_seconds": 0.000026198,
+        "exit_code": 0,
+        "original_token_count": 19,
+        "output": "MemAvailable 86715527168 resident_reserve 13000000000 new_run_absent True\n"
+      }
+    },
+    {
+      "stage": "green-focused",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "set -eu\nulimit -t 45\nulimit -v 2929687\nulimit -f 1024\nulimit -n 128\nulimit -c 0\nmkdir -m 700 .cache/task11-fix1-green\nmkdir -m 700 .cache/task11-fix1-green/tmp\nset -- detect/vector/aggregator.toml detect/ocsf/tests/warden_audit.toml detect/ocsf/tests/routing.toml detect/ocsf/tests/warden_collisions.toml detect/ocsf/tests/production_routes.toml\nfor f do test -f \"$f\"; done\ntest \"$#\" -eq 5\nset -C\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 VECTOR_THREADS=2 TMPDIR=/home/postedism/Desktop/Warden/.cache/task11-fix1-green/tmp /usr/bin/timeout --signal=TERM --kill-after=10s 50s /home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector test \"$@\" > .cache/task11-fix1-green/output 2>&1",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Execute admitted frozen Task11 fix R1 focused 17 cases through production aggregator transforms; unit runner clears all real sources/sinks. No old full batch/agent/BP.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "f777b5",
+        "wall_time_seconds": 1.160113214,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "stage": "green-postread",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\np=pathlib.Path('.cache/task11-fix1-green/output'); b=p.read_bytes(); assert len(b)<=1048576; print('bytes',len(b)); print(b.decode())\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Read all retained bounded fix R1 focused positive output after known normal exit.",
+        "max_output_tokens": 4000
+      },
+      "response": {
+        "chunk_id": "334c25",
+        "wall_time_seconds": 0.000030865,
+        "exit_code": 0,
+        "original_token_count": 212,
+        "output": "bytes 836\nRunning tests\ntest production_source_label_azure ... passed\ntest production_source_label_aks ... passed\ntest production_source_label_k3s ... passed\ntest production_source_label_vnet ... passed\ntest production_source_label_tetragon ... passed\ntest production_source_label_warden ... passed\ntest production_unknown_source_redacted ... passed\ntest production_raw_warden_rejected ... passed\ntest production_warden_observation_not_occurrence ... passed\ntest route_api_literal_class ... passed\ntest route_process_literal_class ... passed\ntest route_network_literal_class ... passed\ntest reject_route_wrong_version ... passed\ntest reject_route_unknown_class ... passed\ntest warden_synthetic_context_full_golden ... passed\ntest warden_rejects_reserved_tenant_collision ... passed\ntest warden_rejects_reserved_run_collision_nonstring ... passed\n\n"
+      }
+    },
+    {
+      "stage": "validate-budget",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "ulimit -t 20\nulimit -v 262144\nulimit -f 1024\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 7137167168 --service-memory-bytes 13000000000 --download-bytes 0",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 fix R1 admitted changed-shared-VRL aggregator static validation fresh native budget guard.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "f316b4",
+        "wall_time_seconds": 0.214884283,
+        "exit_code": 0,
+        "original_token_count": 56,
+        "output": "{\"additional_bytes\": \"7137167168\", \"at\": \"2026-10-25T22:13:20Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 261713723392, \"project_allocated_bytes\": 4449595392, \"service_memory_bytes\": \"13000000000\"}\n"
+      }
+    },
+    {
+      "stage": "validate-memory",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport os,pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\nassert os.geteuid()==1000\nm={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}\na=int(m['MemAvailable'].split()[0])*1024\nassert a>=5000000000\nassert not os.path.lexists('.cache/task11-fix1-validate')\nprint('MemAvailable',a,'resident_reserve',13000000000,'new_run_absent',True)\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task11 fix R1 aggregator static validation fresh native memory and new namespace absence.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "da13ed",
+        "wall_time_seconds": 0.000009066,
+        "exit_code": 0,
+        "original_token_count": 19,
+        "output": "MemAvailable 86765006848 resident_reserve 13000000000 new_run_absent True\n"
+      }
+    },
+    {
+      "stage": "validate-aggregator-only",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "set -eu\nulimit -t 45\nulimit -v 2929687\nulimit -f 1024\nulimit -n 128\nulimit -c 0\nmkdir -m 700 .cache/task11-fix1-validate\nmkdir -m 700 .cache/task11-fix1-validate/tmp\nset -C\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 VECTOR_THREADS=2 TMPDIR=/home/postedism/Desktop/Warden/.cache/task11-fix1-validate/tmp /usr/bin/timeout --signal=TERM --kill-after=10s 50s /home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector validate --no-environment --skip-healthchecks detect/vector/aggregator.toml > .cache/task11-fix1-validate/output 2>&1",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Run the one admitted aggregator-only no-environment/no-healthcheck validation after changed Warden VRL; no production startup, agent validation or BP.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "8e63af",
+        "wall_time_seconds": 0.000031226,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "stage": "validate-postread",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport pathlib,resource,signal\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)\np=pathlib.Path('.cache/task11-fix1-validate/output'); b=p.read_bytes(); assert len(b)<=1048576; print('bytes',len(b)); print(b.decode())\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Read complete bounded aggregator-only fix R1 validation output after known normal exit.",
+        "max_output_tokens": 4000
+      },
+      "response": {
+        "chunk_id": "47dc3b",
+        "wall_time_seconds": 0.000018536,
+        "exit_code": 0,
+        "original_token_count": 36,
+        "output": "bytes 131\n√ Loaded [\"detect/vector/aggregator.toml\"]\n------------------------------------------\n                                 Validated\n\n"
+      }
+    },
+    {
+      "stage": "outputs-readonly-archive",
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport pathlib,resource,signal,stat,json,hashlib\nresource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));resource.setrlimit(resource.RLIMIT_FSIZE,(1048576,1048576));signal.alarm(10)\nr=pathlib.Path('/home/postedism/Desktop/Warden');rows=[]\nfor name,dst in [('red','mapping-fix1-red-output-20261025.txt'),('green','mapping-fix1-green-output-20261025.txt'),('validate','mapping-fix1-validation-output-20261025.txt')]:\n p=r/('.cache/task11-fix1-'+name)/'output';s=p.lstat();assert stat.S_ISREG(s.st_mode) and s.st_uid==1000 and s.st_nlink==1 and s.st_size<=1048576\n b=p.read_bytes();assert len(b)==s.st_size\n d=r/'docs/evidence/task-11'/dst\n with d.open('xb') as f:assert f.write(b)==len(b)\n rows.append({'original':str(p.relative_to(r)),'archive':str(d.relative_to(r)),'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'tmp_entries':len(list((p.parent/'tmp').iterdir()))})\nprint(json.dumps({'scope':'Only new fixR1 owned known-terminal outputs; original failures/archives untouched','outputs':rows},sort_keys=True))\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Archive exactly the three new Task11 fix R1 bounded original outputs after known terminals; no execution/retry or prior BP/artifact changes.",
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "0a2f3f",
+        "wall_time_seconds": 0.000010987,
+        "exit_code": 0,
+        "original_token_count": 204,
+        "output": "{\"outputs\": [{\"archive\": \"docs/evidence/task-11/mapping-fix1-red-output-20261025.txt\", \"bytes\": 643, \"original\": \".cache/task11-fix1-red/output\", \"sha256\": \"614bcbf56148fe40d268418a29ebc93a110c0775e0b1c18b34e631cca5593ef7\", \"tmp_entries\": 0}, {\"archive\": \"docs/evidence/task-11/mapping-fix1-green-output-20261025.txt\", \"bytes\": 836, \"original\": \".cache/task11-fix1-green/output\", \"sha256\": \"9409e0aaf6bcf8f1d67841563e2dde0b6d2398d70fac73caf80a8c7f96e3b1ac\", \"tmp_entries\": 0}, {\"archive\": \"docs/evidence/task-11/mapping-fix1-validation-output-20261025.txt\", \"bytes\": 131, \"original\": \".cache/task11-fix1-validate/output\", \"sha256\": \"0091ac7a09bb4b5b2770737c615c7861c1b2453a753391315f2d2e0540f3cb99\", \"tmp_entries\": 0}], \"scope\": \"Only new fixR1 owned known-terminal outputs; original failures/archives untouched\"}\n"
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+Command: bash scripts/azure_reaper.sh
+Exit code: 0
+Scope: fixed Warden reaper; continuation checkpoint during Task4 code phase.
+{"at": "2026-10-24T19:22:07Z", "event": "group-absent", "id": "/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab"}

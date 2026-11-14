@@ -1,0 +1,14 @@
+.....................F....
+======================================================================
+FAIL: test_vm_batch_aggregates_quota_before_reservation (scripts.test_azure_guard.AzureGuardTests.test_vm_batch_aggregates_quota_before_reservation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 156, in test_vm_batch_aggregates_quota_before_reservation
+    self.assertNotEqual(self.reserve(plan).returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 26 tests in 5.903s
+
+FAILED (failures=1)

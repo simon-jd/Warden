@@ -1,0 +1,13 @@
+{
+  "scope": "Proposal preparation only; no implementation/test/runtime acceptance",
+  "files": {
+    "controller-proposal-draft.md": {
+      "bytes": 20650,
+      "sha256": "f010a816521008ac31423519f3532510a81dec48ffadba2d6e6da2d2dae3a08c"
+    },
+    "controller-rulings.md": {
+      "bytes": 2753,
+      "sha256": "a7f5f99890507977ca83fef1c0126f0969d55656da6e7b04604f0af1ba5e1178"
+    }
+  }
+}

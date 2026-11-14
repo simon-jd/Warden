@@ -1,0 +1,12 @@
+# GREEN: scripts/test_makefile.py against the fixed Makefile
+# 2026-11-10T20:34:20-08:00
+test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) ... ok
+test_failed_go_list_stops_test_and_vet (test_makefile.MakefileGoTargetsTest.test_failed_go_list_stops_test_and_vet) ... ok
+test_go_test_gets_listed_packages_without_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_go_test_gets_listed_packages_without_vcs_stamping) ... ok
+test_no_packages_left_is_a_failure (test_makefile.MakefileGoTargetsTest.test_no_packages_left_is_a_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.045s
+
+OK
+exit: 0

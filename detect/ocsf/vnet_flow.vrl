@@ -1,0 +1,60 @@
+# Azure VNet flowLogVersion4; up to128 tuples per input, atomic reject on error.
+message = string!(.message)
+assert!(length(message) <= 16384, "record_size")
+r = object!(parse_json!(message))
+records = [r]
+if exists(r.records) { records = array!(r.records) }
+assert!(length(records) > 0 && length(records) <= 32, "record_count")
+events = []
+for_each(records) -> |_record_index, record| {
+  record = object!(record)
+  assert!(record.flowLogVersion == 4, "flow_version")
+  uid = string!(record.flowLogGUID)
+  assert!(uid != "", "flow_uid")
+  extra = {}
+  for_each(record) -> |key, value| {
+    if !includes(["flowLogVersion", "flowLogGUID", "flowRecords"], key) {
+      extra = set!(extra, [key], value)
+    }
+  }
+  assert!(length(encode_json(extra)) <= 1024, "record_unmapped_size")
+  flows = array!(record.flowRecords.flows)
+  assert!(length(flows) > 0 && length(flows) <= 32, "flow_count")
+  for_each(flows) -> |_flow_index, flow| {
+    flow = object!(flow)
+    acl = string!(flow.aclID)
+    groups = array!(flow.flowGroups)
+    assert!(length(groups) > 0 && length(groups) <= 32, "group_count")
+    for_each(groups) -> |_group_index, group| {
+      group = object!(group)
+      rule = string!(group.rule)
+      tuples = array!(group.flowTuples)
+      assert!(length(tuples) > 0 && length(tuples) <= 128, "tuple_count")
+      for_each(tuples) -> |_tuple_index, tuple| {
+        fields = split(string!(tuple), ",")
+        assert!(length(fields) == 13 && length(events) < 128, "tuple_shape")
+        epoch = string!(fields[0])
+        assert!(match(epoch, r'^\d{10}$|^\d{13}$'), "epoch_unit")
+        time = to_int!(epoch)
+        if length(epoch) == 10 { time = time * 1000 }
+        src = string!(fields[1]); dst = string!(fields[2])
+        assert!((is_ipv4(src) || is_ipv6(src)) && (is_ipv4(dst) || is_ipv6(dst)), "endpoint_ip")
+        sp = to_int!(fields[3]); dp = to_int!(fields[4]); protocol = to_int!(fields[5])
+        assert!(sp >= 0 && sp <= 65535 && dp >= 0 && dp <= 65535 && protocol >= 0 && protocol <= 255, "port_protocol")
+        direction = string!(fields[6]); state = string!(fields[7]); encryption = string!(fields[8])
+        assert!(includes(["I", "O"], direction) && includes(["B", "C", "E", "D"], state), "direction_state")
+        assert!(includes(["X", "NX", "NX_HW_NOT_SUPPORTED", "NX_SW_NOT_READY", "NX_NOT_ACCEPTED", "NX_NOT_SUPPORTED", "NX_LOCAL_DST", "NX_FALLBACK"], encryption), "encryption")
+        for_each([9,10,11,12]) -> |_i, position| {
+          count = string!(get!(fields, [position]))
+          if count != "" { assert!(to_int!(count) >= 0, "traffic_count") }
+        }
+        e = {"activity_id": 6, "category_uid": 4, "class_uid": 4001, "type_uid": 400106, "severity_id": 0, "time": time, "metadata": {"version": "1.3.0", "product": {"name": "Azure VNet Flow Logs", "vendor_name": "Microsoft"}}, "src_endpoint": {"ip": src, "port": sp}, "dst_endpoint": {"ip": dst, "port": dp}, "unmapped": {"acl_id": acl, "rule": rule, "protocol": protocol, "direction": direction, "flow_state": state, "encryption_state": encryption, "source": "vnet", "log_guid": uid, "tuple_index": length(events)}}
+        e.unmapped.record_fields = extra
+        e.unmapped.traffic_counts = slice!(fields, 9, 13)
+        assert!(length(encode_json(e.unmapped)) <= 2048, "unmapped_size")
+        events = push(events, e)
+      }
+    }
+  }
+}
+. = events

@@ -1,0 +1,8 @@
+# Transcribed from the terminal output of
+#   docker exec warden-k3s-gvisor kubectl -n kube-system logs ds/cilium -c cilium-agent --tail=400 | grep level=error
+# run at about 17:57 PST on 2026-11-10, during attempt 2. The node was torn
+# down afterwards, so the full agent log was not kept. Lines are cut at 400
+# characters, as the command printed them.
+time=2026-11-11T01:55:26.819223783Z level=error msg="Start hook failed" function="cmd.daemonConfigInitialization.func1 (cmd/daemon_main.go:1235) (agent.controlplane.daemonconfig)" error="failed to init and validate daemon config: kube-proxy replacement (--kube-proxy-replacement) or BPF masquerade (--enable-bpf-masquerade) requires iptables rules (--install-iptables-rules=\"true\")"
+time=2026-11-11T01:55:26.819311216Z level=error msg="Failed to start hive" error="failed to init and validate daemon config: kube-proxy replacement (--kube-proxy-replacement) or BPF masquerade (--enable-bpf-masquerade) requires iptables rules (--install-iptables-rules=\"true\")" duration=235.384841ms
+# At that point the pod showed "cilium-r7l5s 0/1 Running 4 (58s ago)" (four restarts).

@@ -1,0 +1,81 @@
+test_recovery_archive_requires_original_held_inode_and_exact_shape (test_k3s_lab_round4.FixedThirdSceneTest.test_recovery_archive_requires_original_held_inode_and_exact_shape) ... FAIL
+test_recovery_targets_only_third_scene_and_exact_new_snapshot (test_k3s_lab_round4.FixedThirdSceneTest.test_recovery_targets_only_third_scene_and_exact_new_snapshot) ... FAIL
+test_kubelet_tolerates_visible_host_swap_but_disallows_workload_swap (test_k3s_lab_round4.NoSwapTest.test_kubelet_tolerates_visible_host_swap_but_disallows_workload_swap) ... FAIL
+test_private_outer_swap_check_rejects_missing_nonzero_alias_and_oversize (test_k3s_lab_round4.NoSwapTest.test_private_outer_swap_check_rejects_missing_nonzero_alias_and_oversize) ... FAIL
+test_swap_refusal_happens_before_session_creation_or_k3s_exec (test_k3s_lab_round4.NoSwapTest.test_swap_refusal_happens_before_session_creation_or_k3s_exec) ... 
+  test_swap_refusal_happens_before_session_creation_or_k3s_exec (test_k3s_lab_round4.NoSwapTest.test_swap_refusal_happens_before_session_creation_or_k3s_exec) (value='1\n') ... ERROR
+  test_swap_refusal_happens_before_session_creation_or_k3s_exec (test_k3s_lab_round4.NoSwapTest.test_swap_refusal_happens_before_session_creation_or_k3s_exec) (value='max\n') ... ERROR
+
+======================================================================
+ERROR: test_swap_refusal_happens_before_session_creation_or_k3s_exec (test_k3s_lab_round4.NoSwapTest.test_swap_refusal_happens_before_session_creation_or_k3s_exec) (value='1\n')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 46, in test_swap_refusal_happens_before_session_creation_or_k3s_exec
+    with self.assertRaises(ValueError): init.run_node()
+                                        ~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/k3s_lab_init.py", line 377, in run_node
+    session = prepare_session('/session', Path('/session').stat().st_uid)
+                                          ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 655, in stat
+    return os.stat(self, follow_symlinks=follow_symlinks)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/session'
+
+======================================================================
+ERROR: test_swap_refusal_happens_before_session_creation_or_k3s_exec (test_k3s_lab_round4.NoSwapTest.test_swap_refusal_happens_before_session_creation_or_k3s_exec) (value='max\n')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 46, in test_swap_refusal_happens_before_session_creation_or_k3s_exec
+    with self.assertRaises(ValueError): init.run_node()
+                                        ~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/k3s_lab_init.py", line 377, in run_node
+    session = prepare_session('/session', Path('/session').stat().st_uid)
+                                          ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 655, in stat
+    return os.stat(self, follow_symlinks=follow_symlinks)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/session'
+
+======================================================================
+FAIL: test_recovery_archive_requires_original_held_inode_and_exact_shape (test_k3s_lab_round4.FixedThirdSceneTest.test_recovery_archive_requires_original_held_inode_and_exact_shape)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 62, in test_recovery_archive_requires_original_held_inode_and_exact_shape
+    self.assertTrue(callable(getattr(host, 'verify_archive', None)))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_recovery_targets_only_third_scene_and_exact_new_snapshot (test_k3s_lab_round4.FixedThirdSceneTest.test_recovery_targets_only_third_scene_and_exact_new_snapshot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 52, in test_recovery_targets_only_third_scene_and_exact_new_snapshot
+    self.assertEqual(host.ORIGINAL, '57a48b46ee5477bf65fdb6ae60bf5b7766c652630c7f2549b3e1e013a696c360')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '37b95dd4bbd84a5aa9b33a1f5d8d40402d26f0e1b765c4779ea47294eaa2f2b5' != '57a48b46ee5477bf65fdb6ae60bf5b7766c652630c7f2549b3e1e013a696c360'
+- 37b95dd4bbd84a5aa9b33a1f5d8d40402d26f0e1b765c4779ea47294eaa2f2b5
++ 57a48b46ee5477bf65fdb6ae60bf5b7766c652630c7f2549b3e1e013a696c360
+
+
+======================================================================
+FAIL: test_kubelet_tolerates_visible_host_swap_but_disallows_workload_swap (test_k3s_lab_round4.NoSwapTest.test_kubelet_tolerates_visible_host_swap_but_disallows_workload_swap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 16, in test_kubelet_tolerates_visible_host_swap_but_disallows_workload_swap
+    self.assertIs(config['failSwapOn'], False)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not False
+
+======================================================================
+FAIL: test_private_outer_swap_check_rejects_missing_nonzero_alias_and_oversize (test_k3s_lab_round4.NoSwapTest.test_private_outer_swap_check_rejects_missing_nonzero_alias_and_oversize)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 22, in test_private_outer_swap_check_rejects_missing_nonzero_alias_and_oversize
+    self.assertTrue(callable(getattr(init, 'verify_outer_noswap', None)))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.003s
+
+FAILED (failures=4, errors=2)

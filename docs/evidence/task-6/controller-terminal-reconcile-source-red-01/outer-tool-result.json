@@ -1,0 +1,17 @@
+{
+  "request": {
+    "cmd": "python3 -B docs/evidence/task-6/controller-terminal-reconcile-source-red-01/run.py",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "sandbox_permissions": "require_escalated",
+    "justification": "以普通UID1000运行已授权的受界纯生成fixture RED；不运行实际控制器、子进程或外部操作。",
+    "yield_time_ms": 1000,
+    "max_output_tokens": 3000
+  },
+  "initial": {
+    "chunk_id": "b2e771",
+    "wall_time_seconds": 0.000018285,
+    "exit_code": 1,
+    "original_token_count": 270,
+    "output": "{\"changed_source_snapshots\": [\"docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py\"], \"command\": [\"python3\", \"-B\", \"docs/evidence/task-6/controller-terminal-reconcile-source-red-01/run.py\"], \"completion_requires_process_exit_zero\": true, \"controller_files\": 2, \"dispatch_base\": \"0766662fd4dd88b9e77812554909898a71b96e13\", \"duration_seconds\": 0.09180773899424821, \"errors\": 0, \"exit_code\": 1, \"failures\": 2, \"limits\": {\"address_bytes\": 536870912, \"cpu_seconds\": 30, \"file_bytes\": 33554432, \"wall_seconds\": 45}, \"live_cache_access\": false, \"skipped\": 0, \"source_commit_at_launch\": null, \"source_files\": 150, \"source_unchanged\": true, \"started_utc\": \"2026-10-25T15:12:21.461980+00:00\", \"test_target\": \"genuine missing independent terminal preparation and outer gate negatives\", \"tested_prefix_sha256\": \"7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa\", \"tests_run\": 2, \"timing_scope\": \"earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded\", \"whole_wall_until_receipt_seconds\": 0.11113697802647948}\n"
+  }
+}

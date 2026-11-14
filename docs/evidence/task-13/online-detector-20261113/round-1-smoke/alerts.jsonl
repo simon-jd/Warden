@@ -1,0 +1,2 @@
+{"alert_id": "falco-3deec3d9c41a25abbe632e4d2621671abeef10dc715833c7c50f93dfeeb40d57", "alerted_at": "2026-11-14T03:41:38.921601185Z", "execution_id": "smoke-runc-shell", "rule_id": "Terminal shell in container"}
+{"alert_id": "falco-bc54befe31c6af8d02dbd39fb2d2275ca57efb010d87ccc693e70b029ffc9991", "alerted_at": "2026-11-14T03:41:37.872981762Z", "execution_id": "smoke-runc-read", "rule_id": "Read sensitive file untrusted"}

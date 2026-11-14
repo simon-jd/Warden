@@ -1,0 +1,51 @@
+{
+  "source": "05505bebb316a180c39e6e75f4a101e3c57224f1",
+  "tested_source": "05505bebb316a180c39e6e75f4a101e3c57224f1",
+  "scope": "Exact necessary Python3.14 materials and fresh operation binding; native host fixtures only, no actual recovery/ABI/boot authorization",
+  "files": {
+    "README.md": {
+      "bytes": 8873,
+      "sha256": "be982730425980f93930284baab49888eb2d7fbbf9026c8ed6620482a24ced31"
+    },
+    "history-boundary-red.log": {
+      "bytes": 2863,
+      "sha256": "23b8144172212abb893bd00e6e7bea5ffbfe292a0f0a14779a77f756e47618a4"
+    },
+    "history-final-focused-green.log": {
+      "bytes": 2898,
+      "sha256": "4e529e0b20b53cd685f72a72a2a48c9d926f810bf07e2f7bce28762bc716d645"
+    },
+    "history-focused-first.log": {
+      "bytes": 4686,
+      "sha256": "d483a0a18431cff1bdceebe2058452e153c575f0ae6e649b49560e72ca623003"
+    },
+    "history-focused-green.log": {
+      "bytes": 2512,
+      "sha256": "07e3a71185b87519de80cd4057dce536b75d8db1d79975034e99f1b52e35d0d5"
+    },
+    "history-snapshot-green.log": {
+      "bytes": 1234,
+      "sha256": "f3af8094d9b6e6a62071a33d753519a5f3eb2b08f7bc5049ba04a1e77f9986af"
+    },
+    "history-verification-initial.log": {
+      "bytes": 344,
+      "sha256": "70f0bb5d080b15e8fbd6d3be7371b3b6a419e2c8c82f309ad6e36aee71d9445c"
+    },
+    "python-tests.log": {
+      "bytes": 6267,
+      "sha256": "c560eba88d8bf75cb67b722fe964f2b529b43e3a773b493dc250550c84798ba9"
+    },
+    "source-verification.json": {
+      "bytes": 5986,
+      "sha256": "3c9f3551ae34a3e79b9ca693b5ab34c75cd2add3a96ecf5d4703a4fdfcd4111a"
+    },
+    "source-verification.log": {
+      "bytes": 540,
+      "sha256": "c00a484d44de6bbce2d4c645a4f1157e50cc43a51df1f0856d085343bc4f7f55"
+    },
+    "verify-command.py": {
+      "bytes": 6055,
+      "sha256": "ed38ff139b765ecc493ff75b68312b363a467f9ea12d32f93f9e5c8fbc3ddac7"
+    }
+  }
+}

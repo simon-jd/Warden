@@ -1,0 +1,28 @@
+{
+  "recorded_utc": "2026-10-24T17:29:04.804704+00:00",
+  "source_commit": "e91e9addbf85c4314630d32dd8f62bb607fe84e3",
+  "source_parent": "6d610e80ff81930eb341039c1151156d7ad40521",
+  "review_fix_base": "df6e891",
+  "dispatch_base": "0be4325",
+  "selected_tests": {
+    "output": "verification-tests.txt",
+    "passed": 53,
+    "skipped": 0
+  },
+  "final_recovery_tests": {
+    "output": "final-recovery-focused.txt",
+    "passed": 7,
+    "skipped": 0
+  },
+  "source_staged_diff_check_passed": true,
+  "source_bytes_match_committed": true,
+  "real_import_create_start_recovery_performed": false,
+  "original_scene_and_6000000000_charge_retained": true,
+  "task3_complete": false,
+  "readiness_claimed": false,
+  "accounting": "recovery-accounting-readonly.json",
+  "historical_red_not_final_green": [
+    "green-recovery-host.txt",
+    "recovery-focused.txt"
+  ]
+}

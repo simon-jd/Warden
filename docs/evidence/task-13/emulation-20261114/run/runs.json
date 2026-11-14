@@ -1,0 +1,18 @@
+{
+ "firecracker": {
+  "command": null,
+  "note": "not run: the host detector cannot see guest system calls (not covered)"
+ },
+ "gvisor": {
+  "command": "WARDEN_LAB_CPUSET=0-7,16-31 taskset -c 0-7,16-31 make test-gvisor",
+  "ended": "2026-11-14T15:30:02.216880646Z",
+  "exit": 2,
+  "started": "2026-11-14T15:28:41.166933827Z"
+ },
+ "runc": {
+  "command": "WARDEN_LAB_CPUSET=0-7,16-31 taskset -c 0-7,16-31 python3 -B scripts/runtime_lab_docker.py matrix --other-service-memory-bytes 1073741824",
+  "ended": "2026-11-14T15:28:21.805380664Z",
+  "exit": 2,
+  "started": "2026-11-14T15:28:03.393257468Z"
+ }
+}

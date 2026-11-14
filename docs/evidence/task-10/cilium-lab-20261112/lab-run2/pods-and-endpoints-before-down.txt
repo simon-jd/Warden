@@ -1,0 +1,18 @@
+NAMESPACE     NAME                               READY   STATUS    RESTARTS   AGE     IP               NODE            NOMINATED NODE   READINESS GATES
+kube-system   cilium-d9zwb                       1/1     Running   0          2m33s   192.168.192.10   warden-gvisor   <none>           <none>
+kube-system   cilium-envoy-xmmvw                 1/1     Running   0          8h      192.168.192.10   warden-gvisor   <none>           <none>
+kube-system   cilium-operator-74f886c9cb-2kfxd   1/1     Running   0          8h      192.168.192.10   warden-gvisor   <none>           <none>
+kube-system   coredns-7754b5dfb8-gggcr           1/1     Running   0          8h      10.42.0.254      warden-gvisor   <none>           <none>
+No resources found
+0s 0s
+ENDPOINT   POLICY (ingress)   POLICY (egress)   IDENTITY   LABELS (source:key[=value])                                                  IPv6   IPv4          STATUS   
+           ENFORCEMENT        ENFORCEMENT                                                                                                                    
+20         Disabled           Disabled          1          k8s:node-role.kubernetes.io/control-plane=true                                                    ready   
+                                                           reserved:host                                                                                             
+1090       Disabled           Disabled          10966      gen:io.cilium.k8s.named-ports=dns.UDP.53_dns-tcp.TCP.53                             10.42.0.254   ready   
+                                                           k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system                                
+                                                           k8s:io.cilium.k8s.policy.cluster=default                                                                  
+                                                           k8s:io.cilium.k8s.policy.serviceaccount=coredns                                                           
+                                                           k8s:io.kubernetes.pod.namespace=kube-system                                                               
+                                                           k8s:k8s-app=kube-dns                                                                                      
+1279       Disabled           Disabled          4          reserved:health                                                                     10.42.0.162   ready   

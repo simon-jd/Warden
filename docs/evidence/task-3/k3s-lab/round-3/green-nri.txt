@@ -1,0 +1,7 @@
+test_template_disables_unused_nri_and_verification_refuses_socket_side_effect (test_k3s_lab_init.InitTest.test_template_disables_unused_nri_and_verification_refuses_socket_side_effect) ... ok
+test_handler_verification_rejects_flag_or_runtime_drift (test_k3s_lab_init.InitTest.test_handler_verification_rejects_flag_or_runtime_drift) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK

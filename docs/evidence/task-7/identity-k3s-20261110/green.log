@@ -1,0 +1,11 @@
+scripts/k3s_gvisor_lab.sh env \
+	env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS='-mod=readonly -buildvcs=false' GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/t WARDEN_LIVE_IDENTITY=1 IDENTITY_OUT=/tmp/warden-t7/green.jsonl /home/postedism/Desktop/Warden-task3/.tools/go/bin/go test -count=1 -v -timeout 10m -run '^(TestControlPlaneTokenIsShortLived|TestSandboxSAHasNoBindings)$' ./runtimes/conformance
+=== RUN   TestControlPlaneTokenIsShortLived
+    identity_test.go:600: result: {"aud":["https://kubernetes.default.svc.cluster.local","k3s"],"bound_to_pod":true,"iss":"https://kubernetes.default.svc.cluster.local","lifetime_s":3600,"path":"token","requested_audience":"","requested_expiration_s":3600,"sub":"system:serviceaccount:warden-system:warden-controlplane","test":"TestControlPlaneTokenIsShortLived","token_review_authenticated":true,"token_review_user":"system:serviceaccount:warden-system:warden-controlplane","volume":"kube-api-token"}
+    identity_test.go:600: result: {"aud":["api://AzureADTokenExchange"],"bound_to_pod":true,"iss":"https://kubernetes.default.svc.cluster.local","lifetime_s":3600,"path":"azure-identity-token","requested_audience":"api://AzureADTokenExchange","requested_expiration_s":3600,"sub":"system:serviceaccount:warden-system:warden-controlplane","test":"TestControlPlaneTokenIsShortLived","token_review_authenticated":true,"token_review_user":"system:serviceaccount:warden-system:warden-controlplane","volume":"azure-identity-token"}
+--- PASS: TestControlPlaneTokenIsShortLived (11.63s)
+=== RUN   TestSandboxSAHasNoBindings
+    identity_test.go:804: result: {"bindings_accepted":["system:service-account-issuer-discovery -\u003e ClusterRole system:service-account-issuer-discovery (Group /system:serviceaccounts)"],"bindings_scanned":60,"bindings_unexpected":null,"control_binding_cleared_ms":99,"control_binding_seen_ms":89,"namespace":"warden-lab","sensitive_allowed":0,"sensitive_checks":13,"service_accounts":["default"],"test":"TestSandboxSAHasNoBindings","token_secrets":0}
+--- PASS: TestSandboxSAHasNoBindings (0.21s)
+PASS
+ok  	warden/runtimes/conformance	11.839s

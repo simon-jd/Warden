@@ -1,0 +1,70 @@
+=== RUN   TestConcurrentDuplicateAndCloseRetainsLock
+--- PASS: TestConcurrentDuplicateAndCloseRetainsLock (0.04s)
+=== RUN   TestDurableIncompleteIntentSuppressesRestart
+--- PASS: TestDurableIncompleteIntentSuppressesRestart (0.03s)
+=== RUN   TestDurableBindingConflictAndTenantKeys
+--- PASS: TestDurableBindingConflictAndTenantKeys (0.06s)
+=== RUN   TestCorruptJournalFailsClosedWithoutRepair
+=== RUN   TestCorruptJournalFailsClosedWithoutRepair/short-payload
+=== RUN   TestCorruptJournalFailsClosedWithoutRepair/checksum
+=== RUN   TestCorruptJournalFailsClosedWithoutRepair/duplicate-intent
+=== RUN   TestCorruptJournalFailsClosedWithoutRepair/duplicate-complete
+=== RUN   TestCorruptJournalFailsClosedWithoutRepair/wrong-fingerprint
+=== RUN   TestCorruptJournalFailsClosedWithoutRepair/bad-digest
+=== RUN   TestCorruptJournalFailsClosedWithoutRepair/unknown-key
+=== RUN   TestCorruptJournalFailsClosedWithoutRepair/duplicate-key
+=== RUN   TestCorruptJournalFailsClosedWithoutRepair/short-prefix
+=== RUN   TestCorruptJournalFailsClosedWithoutRepair/oversized-record
+=== RUN   TestCorruptJournalFailsClosedWithoutRepair/complete-without-intent
+=== RUN   TestCorruptJournalFailsClosedWithoutRepair/version
+=== RUN   TestCorruptJournalFailsClosedWithoutRepair/bad-status
+=== RUN   TestCorruptJournalFailsClosedWithoutRepair/case-alias
+--- PASS: TestCorruptJournalFailsClosedWithoutRepair (0.26s)
+    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/short-payload (0.02s)
+    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/checksum (0.02s)
+    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/duplicate-intent (0.02s)
+    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/duplicate-complete (0.03s)
+    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/wrong-fingerprint (0.02s)
+    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/bad-digest (0.02s)
+    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/unknown-key (0.02s)
+    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/duplicate-key (0.02s)
+    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/short-prefix (0.02s)
+    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/oversized-record (0.02s)
+    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/complete-without-intent (0.02s)
+    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/version (0.02s)
+    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/bad-status (0.02s)
+    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/case-alias (0.02s)
+=== RUN   TestPrivateJournalPathAndPermissions
+=== RUN   TestPrivateJournalPathAndPermissions/directory-mode
+=== RUN   TestPrivateJournalPathAndPermissions/file-mode
+=== RUN   TestPrivateJournalPathAndPermissions/symlink-file
+=== RUN   TestPrivateJournalPathAndPermissions/symlink-parent
+=== RUN   TestPrivateJournalPathAndPermissions/hardlink
+=== RUN   TestPrivateJournalPathAndPermissions/fifo
+=== RUN   TestPrivateJournalPathAndPermissions/oversized
+--- PASS: TestPrivateJournalPathAndPermissions (0.04s)
+    --- PASS: TestPrivateJournalPathAndPermissions/directory-mode (0.00s)
+    --- PASS: TestPrivateJournalPathAndPermissions/file-mode (0.01s)
+    --- PASS: TestPrivateJournalPathAndPermissions/symlink-file (0.01s)
+    --- PASS: TestPrivateJournalPathAndPermissions/symlink-parent (0.00s)
+    --- PASS: TestPrivateJournalPathAndPermissions/hardlink (0.01s)
+    --- PASS: TestPrivateJournalPathAndPermissions/fifo (0.00s)
+    --- PASS: TestPrivateJournalPathAndPermissions/oversized (0.01s)
+=== RUN   TestPartialWriteAndSyncFailuresSuppressAttempts
+=== RUN   TestPartialWriteAndSyncFailuresSuppressAttempts/intent-write
+=== RUN   TestPartialWriteAndSyncFailuresSuppressAttempts/intent-sync
+=== RUN   TestPartialWriteAndSyncFailuresSuppressAttempts/completion-write
+=== RUN   TestPartialWriteAndSyncFailuresSuppressAttempts/completion-sync
+--- PASS: TestPartialWriteAndSyncFailuresSuppressAttempts (0.12s)
+    --- PASS: TestPartialWriteAndSyncFailuresSuppressAttempts/intent-write (0.03s)
+    --- PASS: TestPartialWriteAndSyncFailuresSuppressAttempts/intent-sync (0.03s)
+    --- PASS: TestPartialWriteAndSyncFailuresSuppressAttempts/completion-write (0.04s)
+    --- PASS: TestPartialWriteAndSyncFailuresSuppressAttempts/completion-sync (0.03s)
+=== RUN   TestJournalCreationDurabilityBeforeClient
+=== RUN   TestJournalCreationDurabilityBeforeClient/failure
+=== RUN   TestJournalCreationDurabilityBeforeClient/success
+--- PASS: TestJournalCreationDurabilityBeforeClient (0.04s)
+    --- PASS: TestJournalCreationDurabilityBeforeClient/failure (0.01s)
+    --- PASS: TestJournalCreationDurabilityBeforeClient/success (0.03s)
+PASS
+ok  	warden/respond	0.579s

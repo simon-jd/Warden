@@ -1,0 +1,176 @@
+#!/bin/bash
+# INERT; root FULLREAD/fresh gates. Q retained. Totals postflight,FSIZE16MiB/file.
+set -eu
+run=/home/postedism/Desktop/Warden/.cache/task12-material-20261025-a
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 PIP_CONFIG_FILE=/dev/null \
+ TMPDIR="$run/tmp" OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 \
+ /usr/bin/timeout --signal=TERM --kill-after=10s 110s /bin/bash -s "$run" <<'OUTER'
+set -eu
+run=$1
+test "$(/usr/bin/id -u)" = 1000
+test "$PWD" = /home/postedism/Desktop/Warden
+test ! -e "$run" && test ! -L "$run" || exit 1
+umask 077
+ulimit -c 0; ulimit -n 128; ulimit -v 1048576; ulimit -f 16384; ulimit -t 60
+/bin/mkdir -m 700 -- "$run"
+finish() {
+ rc=$?; trap - EXIT TERM INT
+ cleanup=0
+ if /bin/rm -rf -- "$run/tmp" && test ! -e "$run/tmp"; then cleanup=1; else rc=1; fi
+ printf 'exit=%s\nwork_rc=%s\nhead_rc=%s\ncleanup=%s\n' "$rc" "${work_rc:-unknown}" "${head_rc:-unknown}" "$cleanup" > "$run/status.txt"
+ exit "$rc"
+}
+trap finish EXIT
+trap 'exit 124' TERM
+trap 'exit 130' INT
+/bin/mkdir -m 700 -- "$run/tmp" "$run/wheels" "$run/metadata"
+set +e
+/usr/bin/timeout --foreground --signal=TERM --kill-after=5s 90s /bin/bash -s "$run" 2>&1 <<'WORK' | /usr/bin/head -c 1048576 > "$run/output.txt"
+set -eu
+run=$1
+/usr/bin/python3 -I -B - "$run" <<'PY'
+import email, hashlib, json, os, platform, stat, sys, time, urllib.parse, urllib.request, zipfile
+from pathlib import Path, PurePosixPath
+from pip._vendor.packaging.requirements import Requirement
+from pip._vendor.packaging.specifiers import SpecifierSet
+from pip._vendor.packaging.tags import sys_tags
+from pip._vendor.packaging.utils import canonicalize_name, parse_wheel_filename
+from pip._vendor.packaging.version import Version
+MiB=1048576
+run=Path(sys.argv[1])
+deadline=time.monotonic()+70
+assert (platform.python_version(),sys.implementation.name,os.getuid(),platform.machine(),sys.platform)==("3.14.4","cpython",1000,"x86_64","linux")
+report=Path("docs/evidence/task-12/resolver-first-20261025/report.json").read_bytes()
+assert len(report)<=2*MiB
+assert hashlib.sha256(report).hexdigest()=="3354cabf92878600843183de31fcb7fec3f989d570864bf4783e1a4cdb519739"
+items=json.loads(report)["install"]
+assert len(items)==18
+lock=Path("detect/sigma/requirements.lock").read_bytes()
+assert hashlib.sha256(lock).hexdigest()=="af3de7ebdd63284a206235aaf1cc2a9cf0076d0ea3d395874cc5f5a070c8b752"
+(run/"offline.lock").write_bytes(lock)
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+ def redirect_request(self, req, fp, code, msg, headers, newurl):
+  raise ValueError("redirect")
+opener=urllib.request.build_opener(NoRedirect)
+def fetch(url,path,limit):
+ assert time.monotonic()<deadline
+ req=urllib.request.Request(url,headers={"Accept-Encoding":"identity"})
+ count=0
+ with opener.open(req,timeout=min(8,deadline-time.monotonic())) as response, path.open("xb") as output:
+  assert response.status==200
+  while count<limit:
+   assert time.monotonic()<deadline
+   block=response.read(min(65536,limit-count))
+   if not block:
+    break
+   output.write(block); count+=len(block)
+  assert not response.read(1), "oversize; prefix retained"
+ return count
+supported=set(sys_tags())
+selected=[]
+metadata_total=0
+wheel_total=0
+versions={}
+for item in items:
+ m=item["metadata"]; name=canonicalize_name(m["name"]); version=Version(m["version"])
+ assert name not in versions and item["is_yanked"] is False
+ versions[name]=version
+ url=item["download_info"]["url"]; parsed=urllib.parse.urlsplit(url)
+ assert parsed.scheme=="https" and parsed.netloc=="files.pythonhosted.org" and not parsed.query and not parsed.fragment
+ filename=parsed.path.rsplit("/",1)[-1]
+ wn,wv,_,tags=parse_wheel_filename(filename)
+ assert canonicalize_name(wn)==name and wv==version and supported.intersection(tags)
+ digest=item["download_info"]["archive_info"]["hashes"]["sha256"]
+ api="https://pypi.org/pypi/"+urllib.parse.quote(name,safe="")+"/"+urllib.parse.quote(str(version),safe="")+"/json"
+ path=run/"metadata"/(name+".json")
+ size=fetch(api,path,min(2*MiB,16*MiB-metadata_total))
+ metadata_total+=size
+ data=json.loads(path.read_bytes())
+ assert canonicalize_name(data["info"]["name"])==name and Version(data["info"]["version"])==version
+ matches=[u for u in data["urls"] if u["filename"]==filename and u["url"]==url]
+ assert len(matches)==1
+ u=matches[0]
+ assert u["packagetype"]=="bdist_wheel" and u["yanked"] is False and u["digests"]["sha256"]==digest
+ exact=u["size"]
+ assert type(exact) is int and 0<exact<=16*MiB
+ for requirement in (data["info"].get("requires_python"),u.get("requires_python"),m.get("requires_python")):
+  if requirement: assert SpecifierSet(requirement).contains(Version("3.14.4"),prereleases=True)
+ wheel_total+=exact
+ assert metadata_total<=16*MiB and wheel_total<=16*MiB
+ selected.append({"name":name,"version":str(version),"filename":filename,"url":url,"sha256":digest,"bytes":exact,"requires_dist":m.get("requires_dist",[])})
+for entry in selected:
+ for text in entry["requires_dist"]:
+  req=Requirement(text)
+  if req.marker is None or req.marker.evaluate({"extra":""}):
+   name=canonicalize_name(req.name)
+   assert name in versions and req.specifier.contains(versions[name],prereleases=True)
+unzipped=0
+expanded_allocated=0
+member_count=0
+for entry in selected:
+ path=run/"wheels"/entry["filename"]
+ size=fetch(entry["url"],path,entry["bytes"])
+ assert size==entry["bytes"] and hashlib.sha256(path.read_bytes()).hexdigest()==entry["sha256"]
+ metadata=[]
+ entry_allocated=0
+ entry_dirs=set()
+ with zipfile.ZipFile(path) as archive:
+  seen=set()
+  for info in archive.infolist():
+   member_count+=1
+   assert member_count<=8192
+   value=info.filename; parts=PurePosixPath(value).parts
+   assert value and len(value.encode())<=1024 and not value.startswith("/") and "\\" not in value
+   assert parts and all(p not in ("",".","..") and ":" not in p for p in parts)
+   assert parts not in seen; seen.add(parts)
+   mode=stat.S_IFMT(info.external_attr>>16)
+   assert mode in (0,stat.S_IFREG,stat.S_IFDIR) and not (info.flag_bits&1)
+   assert 0<=info.file_size<=16*MiB
+   if info.is_dir(): entry_dirs.add(parts)
+   else: entry_allocated+=((info.file_size+4095)//4096)*4096
+   entry_dirs.update(parts[:depth] for depth in range(1,len(parts)))
+   unzipped+=info.file_size
+   assert unzipped<=64*MiB
+   actual=0
+   with archive.open(info) as source:
+    while True:
+     block=source.read(65536)
+     if not block: break
+     actual+=len(block)
+     assert actual<=info.file_size
+   assert actual==info.file_size
+   if len(parts)==2 and parts[0].endswith(".dist-info") and parts[1]=="METADATA":
+    metadata.append(email.message_from_bytes(archive.read(info)))
+ expanded_allocated+=entry_allocated+4096*(len(entry_dirs)+1)
+ assert len(metadata)==1
+ m=metadata[0]
+ assert canonicalize_name(m["Name"])==entry["name"] and Version(m["Version"])==Version(entry["version"])
+ if m.get("Requires-Python"):
+  assert SpecifierSet(m["Requires-Python"]).contains(Version("3.14.4"),prereleases=True)
+ assert sorted(str(Requirement(x)) for x in m.get_all("Requires-Dist",[]))==sorted(str(Requirement(x)) for x in entry["requires_dist"])
+# Each wheel parent set is counted separately, conservatively retaining overlaps.
+# Peak: wheels+metadata+two 4KiB-rounded trees+tmp16/source8MiB.
+peak=wheel_total+metadata_total+2*expanded_allocated+24*MiB
+assert peak<=134217728
+record={"packages":selected,"metadata_bytes":metadata_total,"wheel_bytes":wheel_total,"expanded_bytes":unzipped,"expanded_allocated_bytes":expanded_allocated,"peak_bytes":peak}
+raw=(json.dumps(record,indent=2)+"\n").encode()
+assert len(raw)<=2*MiB
+(run/"selected.json").write_bytes(raw)
+print(metadata_total,wheel_total,unzipped,expanded_allocated,peak)
+PY
+/usr/bin/python3 -I -B -m pip --isolated install --no-index --find-links "$run/wheels" \
+ --require-hashes --no-deps --no-compile --only-binary=:all: --no-cache-dir \
+ --disable-pip-version-check --no-input --progress-bar off --target "$run/site" \
+ --report "$run/install-report.json" -r "$run/offline.lock"
+test "$(/usr/bin/stat -c %s -- "$run/install-report.json")" -le 2097152
+WORK
+codes=("${PIPESTATUS[@]}")
+set -e
+work_rc=${codes[0]}; head_rc=${codes[1]}
+tmp_bytes=$(/usr/bin/du -s -B1 -- "$run/tmp"); tmp_bytes=${tmp_bytes%%[[:space:]]*}
+new_bytes=$(/usr/bin/du -s -B1 -- "$run"); new_bytes=${new_bytes%%[[:space:]]*}
+printf 'tmp_bytes=%s\nnew_bytes=%s\n' "$tmp_bytes" "$new_bytes" > "$run/postflight.txt"
+test "$work_rc" -eq 0 && test "$head_rc" -eq 0 || exit 1
+test "$(/usr/bin/stat -c %s -- "$run/output.txt")" -lt 1048576 || exit 1
+test "$tmp_bytes" -le 16777216 && test "$new_bytes" -le 134217728 || exit 1
+OUTER

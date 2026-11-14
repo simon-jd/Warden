@@ -1,0 +1,20 @@
+{
+  "status.txt": {
+    "bytes": 95,
+    "sha256": "448c1d9cfcf7726c3131359d25ed8983085d4a997acc454176c7c21dd127fd37",
+    "uid": 1000,
+    "mode": "0o600",
+    "nlink": 1
+  },
+  "unittest.txt": {
+    "bytes": 3554,
+    "sha256": "ef99a38fb210bea63899fdeb614b222340b3b53e45a236abefaa48cb35fa17af",
+    "uid": 1000,
+    "mode": "0o600",
+    "nlink": 1
+  },
+  "source_hashes_unchanged": true,
+  "namespace": "/tmp/warden-task15-first-red-9ffe58a9-b5d6dcbd",
+  "children_created_by_caller": false,
+  "real_crypto_admissions": "UNRUN"
+}

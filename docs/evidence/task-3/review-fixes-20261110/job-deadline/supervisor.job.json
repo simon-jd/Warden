@@ -1,0 +1,113 @@
+{
+ "apiVersion": "batch/v1",
+ "kind": "Job",
+ "metadata": {
+  "name": "warden-deadline-supervisor",
+  "namespace": "warden-lab",
+  "labels": {
+   "app.kubernetes.io/managed-by": "warden",
+   "warden.dev/run": "warden-deadline-supervisor"
+  }
+ },
+ "spec": {
+  "backoffLimit": 0,
+  "completions": 1,
+  "parallelism": 1,
+  "activeDeadlineSeconds": 6,
+  "ttlSecondsAfterFinished": 600,
+  "template": {
+   "metadata": {
+    "labels": {
+     "app.kubernetes.io/managed-by": "warden",
+     "warden.dev/run": "warden-deadline-supervisor",
+     "warden.dev/sandbox": "true"
+    }
+   },
+   "spec": {
+    "runtimeClassName": "gvisor",
+    "restartPolicy": "Never",
+    "automountServiceAccountToken": false,
+    "enableServiceLinks": false,
+    "terminationGracePeriodSeconds": 1,
+    "dnsPolicy": "Default",
+    "nodeSelector": {
+     "kubernetes.io/hostname": "warden-gvisor"
+    },
+    "containers": [
+     {
+      "name": "run",
+      "image": "docker.io/warden-lab/probe@sha256:2f4ec662b7b52207452e3097bdf56563dc3d1879599eafbd6dfe6de71b3355cf",
+      "imagePullPolicy": "Never",
+      "resources": {
+       "limits": {
+        "cpu": "1000m",
+        "memory": "640Mi"
+       },
+       "requests": {
+        "cpu": "1000m",
+        "memory": "640Mi"
+       }
+      },
+      "terminationMessagePath": "/dev/termination-log",
+      "terminationMessagePolicy": "File",
+      "command": [
+       "/.warden/init"
+      ],
+      "args": [
+       "-pids",
+       "32",
+       "-timeout-s",
+       "300",
+       "--",
+       "/warden-probe",
+       "hold"
+      ],
+      "env": [
+       {
+        "name": "WARDEN_GVISOR_INIT",
+        "value": "1"
+       }
+      ],
+      "volumeMounts": [
+       {
+        "name": "warden-init",
+        "mountPath": "/.warden/init",
+        "readOnly": true
+       }
+      ],
+      "securityContext": {
+       "runAsUser": 0,
+       "runAsGroup": 0,
+       "runAsNonRoot": false,
+       "privileged": false,
+       "readOnlyRootFilesystem": true,
+       "capabilities": {
+        "drop": [
+         "ALL"
+        ],
+        "add": [
+         "SETGID",
+         "SETPCAP",
+         "SETUID",
+         "SYS_ADMIN"
+        ]
+       },
+       "seccompProfile": {
+        "type": "RuntimeDefault"
+       }
+      }
+     }
+    ],
+    "volumes": [
+     {
+      "name": "warden-init",
+      "hostPath": {
+       "path": "/opt/warden/gvisor-init",
+       "type": "File"
+      }
+     }
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,157 @@
+{
+  "utc": "2026-10-26T06:53:45.503562+00:00",
+  "actual_status": "UNKNOWN_FAILURE",
+  "allowance": "COMPATIBILITY1/1_SPENT",
+  "original_files_and_terminal_preserved": true,
+  "files": [
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/cli-001-err.raw",
+      "bytes": 98,
+      "sha256": "8c966b4158f7cb09b5c46593a19f42c5e044984673cd3fda1a33b4ea5f684d29",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/cli-001-out.raw",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/cli-002-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/cli-002-out.raw",
+      "bytes": 17677,
+      "sha256": "7d6b0076aad8cae7efb7c4077242b587925ce2dd55e428da2255bdbfc9e9ea3f",
+      "allocated": 20480
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/cli-003-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/cli-003-out.raw",
+      "bytes": 409,
+      "sha256": "bc1ce81c20f9f6c4f59252c05eb86cfd9e2a85978fdc00075b90135252fc64c5",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/cli-004-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/cli-004-out.raw",
+      "bytes": 409,
+      "sha256": "bc1ce81c20f9f6c4f59252c05eb86cfd9e2a85978fdc00075b90135252fc64c5",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/cli-005-err.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "allocated": 0
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/cli-005-out.raw",
+      "bytes": 65,
+      "sha256": "4eb77bb3ad9b8eddbecb7abe00689695696ff5fab85cfe2ecebe07b6dcb48937",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/cli-006-err.raw",
+      "bytes": 98,
+      "sha256": "8c966b4158f7cb09b5c46593a19f42c5e044984673cd3fda1a33b4ea5f684d29",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/cli-006-out.raw",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/docker-entrypoint.sh.txt",
+      "bytes": 14577,
+      "sha256": "9c440299ae04a0a79d55b8bf03307036d890a40979d2fb698073c9050d4b20a5",
+      "allocated": 16384
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/events.json",
+      "bytes": 23135,
+      "sha256": "3c47bccd0798c4d3e7cc237166e636ba2763c4bc736e3a379846e9da7f00c313",
+      "allocated": 24576
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/initdb-help.txt",
+      "bytes": 2911,
+      "sha256": "350fb75dc6d650cc5965837470f78275637da7c9dbe827067eaa5f6d5655c46e",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/initdb-version.txt",
+      "bytes": 25,
+      "sha256": "70bab6da5f758348390f6440f51a98a06ade9ddebc50560151856827f05b37ed",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/status.json",
+      "bytes": 1743,
+      "sha256": "bca92808b1d4e485957d208540f393157ec4877ad4c91c9ff322fbe34170794d",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/warden-task9-initdb-image-compatibility-20261026-a.cid",
+      "bytes": 64,
+      "sha256": "9e96b10f222c47b714e231832b69e4dda1e9642cb29d8a7a96974e4b976e2260",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/task-9-initdb-image-compatibility-20261026-a.py.txt",
+      "bytes": 9912,
+      "sha256": "176d9f914e2e4bf136d34fd0b8fce84e5ebd74fd9472bb02e770db0c83103bc7",
+      "allocated": 12288
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/task-9-initdb-image-compatibility-20261026-a.md",
+      "bytes": 4720,
+      "sha256": "254a83eacb481ff374054830246ffd83b8ad7ab5a8e79f0e7b14ccf54bd8b8e6",
+      "allocated": 8192
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/task-9-initdb-image-compatibility-20261026-a-freeze.json",
+      "bytes": 1187,
+      "sha256": "02b9d18cf44b86826bbc2057275afd9845e2be4799bbc3141c3b0dc7471892ee",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/native-events.json",
+      "bytes": 13108,
+      "sha256": "8ff3b876fb60c6bc4122f2ce103e2e47fab90664046151e3b9ce325dca6dd897",
+      "allocated": 16384
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/root-ruling.md",
+      "bytes": 2066,
+      "sha256": "0413935fb6976cdf503b9ffb74448fa98c6dcd3a755cb51d8c34a2ecc20df963",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-9/initdb-image-compatibility-20261026/HELP-MARKER-UNAPPLIED.diff.txt",
+      "bytes": 1211,
+      "sha256": "291b59e791c141a3efaf3aa5afa53746c14c07a7325c98af40fca2a552663133",
+      "allocated": 4096
+    }
+  ],
+  "new_phase_full_disk_reservation": 1046137344,
+  "host_output_copy_Git_subreserve": 41943040,
+  "Task15_budget_closed_and_not_reused": true,
+  "old_Q_5GB_UNKNOWN_9GB_logger_2MiB_retained": true,
+  "minimal_diff_note": "Exact one-expression unified difference generated from immutable consumed body; never applied or a retry grant."
+}

@@ -1,0 +1,5 @@
+python3 -B scripts/azure_guard.py preflight
+{"additional_bytes": "0", "at": "2026-11-14T00:10:16Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 122162216960, "project_allocated_bytes": 2490916864, "service_memory_bytes": "0"}
+{"at": "2026-11-14T00:10:17Z", "event": "group-absent", "id": "/subscriptions/<id>/resourceGroups/rg-warden-lab"}
+{"at": "2026-11-14T00:10:18Z", "event": "node-group-absent", "id": "/subscriptions/<id>/resourceGroups/rg-warden-lab-aks-nodes"}
+reaper exit 0

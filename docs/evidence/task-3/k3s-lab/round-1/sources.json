@@ -1,0 +1,12 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/pkg/agent/config/config.go",
+    "bytes": 32730,
+    "sha256": "cfd972752f88b74a0eac6febdb01160c6429deee4d8ab42df8e3dae1be4b1dc7"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/pkg/agent/containerd/containerd.go",
+    "bytes": 18264,
+    "sha256": "7f4058e7bc39e42194ad5f4eca6ab232855425eb48c47073bcb80ac60b7f91db"
+  }
+]

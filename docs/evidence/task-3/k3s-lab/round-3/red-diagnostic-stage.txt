@@ -1,0 +1,15 @@
+test_diagnostic_stage_emits_only_fixed_code_and_numeric_errno (test_k3s_lab_init.InitTest.test_diagnostic_stage_emits_only_fixed_code_and_numeric_errno) ... FAIL
+
+======================================================================
+FAIL: test_diagnostic_stage_emits_only_fixed_code_and_numeric_errno (test_k3s_lab_init.InitTest.test_diagnostic_stage_emits_only_fixed_code_and_numeric_errno)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 150, in test_diagnostic_stage_emits_only_fixed_code_and_numeric_errno
+    self.assertTrue(callable(getattr(init, 'diagnostic_stage', None)), 'safe failure stage missing')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : safe failure stage missing
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)

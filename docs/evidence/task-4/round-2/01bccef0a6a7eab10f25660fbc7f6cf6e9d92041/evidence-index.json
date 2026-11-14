@@ -1,0 +1,70 @@
+{
+  "source": "01bccef0a6a7eab10f25660fbc7f6cf6e9d92041",
+  "scope": "I2/I3 checkpoint; complete suite preceded later I4 correction; no live modes",
+  "files": {
+    "README.md": {
+      "sha256": "2e132487d384461777f65e7a718144b14078fe5fb78d949794ffe01e4b8f5a2f",
+      "bytes": 2401
+    },
+    "code-tests.log": {
+      "sha256": "a68ad9323d4ea6b6f09cfd6a8d779db079a7d6b8d86c54fb7dd8e9079154662d",
+      "bytes": 20066
+    },
+    "focused-command.py": {
+      "sha256": "41fdd728f8759d32dd284e8d84c2ef16332f1ec3cd54a76ee3a3e313dcc7efe1",
+      "bytes": 561
+    },
+    "history-i2-bounded-green.log": {
+      "sha256": "d793b63056ce1625818a49aec907c6a8edb8f2263c3df28c006779aaa7d2d2b9",
+      "bytes": 1599
+    },
+    "history-i2-green.log": {
+      "sha256": "f31411c48a7c7c81cfeeb6a43eee806d046e6acbef9f3fb950ae27ed3d44b39b",
+      "bytes": 1433
+    },
+    "history-i2-red.log": {
+      "sha256": "538c4fe772a375dbf90156603d5ad511661583562b40ecf6b291b8230f992dcb",
+      "bytes": 9907
+    },
+    "history-i3-go-green.log": {
+      "sha256": "5cb97c7b729468e50763d11c00b9f2eb5e3ae4985fd4d1b037943d992c794c12",
+      "bytes": 7251
+    },
+    "history-i3-go-red.log": {
+      "sha256": "62d5c4e0f928180914d3ed473f77cbac9888843b49eb7781345eb0cf6630ef20",
+      "bytes": 7219
+    },
+    "history-i3-python-green.log": {
+      "sha256": "9db82996afea484e9d23c70a6228824357ca4b1d321c1a653b0e4e0e3538b359",
+      "bytes": 2515
+    },
+    "history-i3-python-red.log": {
+      "sha256": "f144e4a5e0a25fdd1bfcf62039bfe6fadd7db5d890a8f97dd083b2543aa9c95f",
+      "bytes": 2942
+    },
+    "observed-guard-maxima.json": {
+      "sha256": "c44810c228d1bfadc200eb6516c966253a9104cd934aa57d2d42d030dfe57431",
+      "bytes": 686
+    },
+    "old-evidence-verification.json": {
+      "sha256": "2c3392386c0c807dbf3bd480b0c3459bd08450cafa6162b5c1c46d9e5dea52fe",
+      "bytes": 471
+    },
+    "postflight-command.py": {
+      "sha256": "c97dd43701f410474c839acd8d3a9eaa8300cf2d9113938545cd3feba88227c8",
+      "bytes": 1523
+    },
+    "postflight.json": {
+      "sha256": "fa880304afde5170241a4e7c96a88caca7e63989d6b1c3a8748bb463ecd5cc18",
+      "bytes": 969
+    },
+    "python-tests.log": {
+      "sha256": "8a5739fe242be89b4aaa1ce5b7c4805343cb62956d45dbf4342f46358244e3d3",
+      "bytes": 2395
+    },
+    "source-manifest.json": {
+      "sha256": "d6555791910f464e6d79d3305e5906132f7db94b28fb9d313fb937be31ed0947",
+      "bytes": 2514
+    }
+  }
+}

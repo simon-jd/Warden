@@ -1,0 +1,160 @@
+{
+  "checks": [
+    {
+      "got": 201,
+      "ms": 4.01,
+      "name": "SCIM POST /scim/v2/Users externalId=oid (static Warden SCIM token)",
+      "pass": true,
+      "want": 201
+    },
+    {
+      "got": 201,
+      "ms": 363.87,
+      "name": "fresh token POST /v1/runs (control)",
+      "pass": true,
+      "want": 201
+    },
+    {
+      "got": 200,
+      "ms": 4.58,
+      "name": "fresh token GET /v1/runs/{id} (control)",
+      "pass": true,
+      "want": 200
+    },
+    {
+      "got": 401,
+      "ms": 1.77,
+      "name": "expired real token GET /v1/runs/{id}",
+      "pass": true,
+      "want": 401
+    }
+  ],
+  "control_plane": {
+    "binary": "controlplane/cmd/warden-api",
+    "sha256": "9d455c707b346208fb3be6ad9d247a84fd48f9a8f4fafd7c151527995a72e9d9"
+  },
+  "expired_token": {
+    "claim_names": [
+      "aio",
+      "aud",
+      "azp",
+      "azpacr",
+      "exp",
+      "iat",
+      "iss",
+      "name",
+      "nbf",
+      "oid",
+      "preferred_username",
+      "rh",
+      "scp",
+      "sid",
+      "sub",
+      "tid",
+      "uti",
+      "ver",
+      "xms_ftd"
+    ],
+    "claims": {
+      "aud": "00000000-0000-0000-0000-000000000001",
+      "azp": "04b07795-8ddb-461a-bbee-02f9e1bf7b46",
+      "exp": "2026-11-11T02:37:11Z",
+      "iat": "2026-11-11T01:12:56Z",
+      "iss": "https://login.microsoftonline.com/<tenant-id>/v2.0",
+      "nbf": "2026-11-11T01:12:56Z",
+      "oid": "<user-oid>",
+      "scp": "warden.access",
+      "tid": "<tenant-id>",
+      "ver": "2.0"
+    },
+    "header": {
+      "alg": "RS256",
+      "kid": "xH9DJH3N086Ags8JL6IQzeQh1p8",
+      "typ": "JWT"
+    },
+    "header_names": [
+      "alg",
+      "kid",
+      "typ"
+    ],
+    "lifetime_s": 5055,
+    "signature_bytes": 256
+  },
+  "finished_at": "2026-11-11T02:38:12Z",
+  "host": "postedism-ubuntu-system-selfuse",
+  "kept_token_deleted": true,
+  "mode": "expired",
+  "oidc": {
+    "audience": "00000000-0000-0000-0000-000000000001",
+    "issuer": "https://login.microsoftonline.com/<tenant-id>/v2.0",
+    "jwks_url": "https://login.microsoftonline.com/<tenant-id>/discovery/v2.0/keys",
+    "scope": "api://00000000-0000-0000-0000-000000000001/warden.access"
+  },
+  "postgres": {
+    "container": "warden-task6-entra-pg-1000-525896",
+    "image": "postgres:18-alpine",
+    "image_id": "sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873",
+    "removed": true
+  },
+  "result": "PASS",
+  "same_user": true,
+  "schema": "warden.task6.entra-live/v1",
+  "seconds_past_expiry": 57,
+  "server_logs": {
+    "server-a.log": [
+      "2026/11/10 18:38:11 control plane listening on 127.0.0.1:39777; OIDC and SCIM on"
+    ]
+  },
+  "source": {
+    "commit": "6283e49b0160ff5a1bdc50c210ae07101bbc92fa",
+    "tracked_changes": false
+  },
+  "started_at": "2026-11-11T02:38:08Z",
+  "token": {
+    "claim_names": [
+      "aio",
+      "aud",
+      "azp",
+      "azpacr",
+      "exp",
+      "iat",
+      "iss",
+      "name",
+      "nbf",
+      "oid",
+      "preferred_username",
+      "rh",
+      "scp",
+      "sid",
+      "sub",
+      "tid",
+      "uti",
+      "ver",
+      "xms_ftd"
+    ],
+    "claims": {
+      "aud": "00000000-0000-0000-0000-000000000001",
+      "azp": "04b07795-8ddb-461a-bbee-02f9e1bf7b46",
+      "exp": "2026-11-11T03:41:09Z",
+      "iat": "2026-11-11T02:33:09Z",
+      "iss": "https://login.microsoftonline.com/<tenant-id>/v2.0",
+      "nbf": "2026-11-11T02:33:09Z",
+      "oid": "<user-oid>",
+      "scp": "warden.access",
+      "tid": "<tenant-id>",
+      "ver": "2.0"
+    },
+    "header": {
+      "alg": "RS256",
+      "kid": "xH9DJH3N086Ags8JL6IQzeQh1p8",
+      "typ": "JWT"
+    },
+    "header_names": [
+      "alg",
+      "kid",
+      "typ"
+    ],
+    "lifetime_s": 4080,
+    "signature_bytes": 256
+  }
+}

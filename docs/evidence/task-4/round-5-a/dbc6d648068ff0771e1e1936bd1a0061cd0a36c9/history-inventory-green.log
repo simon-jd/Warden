@@ -1,0 +1,7 @@
+test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors (test_firecracker_recovery_init.InventoryFixture.test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors) ... ok
+test_only_initial_ro_private_matching_mount_is_accepted (test_firecracker_recovery_init.MountTests.test_only_initial_ro_private_matching_mount_is_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+OK

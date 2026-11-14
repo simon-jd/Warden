@@ -1,0 +1,6 @@
+=== RUN   TestDiskProofRequiresOriginalDirectoriesRemovedWithoutReplacement
+    retirement_kernel_test.go:54: existing original state accepted
+--- FAIL: TestDiskProofRequiresOriginalDirectoriesRemovedWithoutReplacement (0.00s)
+FAIL
+FAIL	warden/runtimes/gate	0.001s
+FAIL

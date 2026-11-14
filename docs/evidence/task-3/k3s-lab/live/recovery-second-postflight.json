@@ -1,0 +1,102 @@
+{
+  "utc": "2026-10-24T18:08:48.756759+00:00",
+  "source_commit": "6f52f54e1a59a8cf7a7b36223f5cd6ab016b270b",
+  "run_head": "ae6ac6f",
+  "recovery_exit_code": 0,
+  "recovery_seconds": 4.62,
+  "session": "/home/postedism/Desktop/Warden/.cache/warden-lab/docker-454fc203bfa3b1bb6296520028e6a1cd",
+  "session_device": 66307,
+  "session_inode": 56011098,
+  "session_uid": 1000,
+  "session_mode": "0o700",
+  "session_files": [
+    "charge.json",
+    "identity.json",
+    "manifest.json",
+    "recovery-complete.json",
+    "recovery.json"
+  ],
+  "private_child_absent": true,
+  "rootfs_tar_absent": true,
+  "original_scope_absent": true,
+  "exact_objects": [
+    {
+      "kind": "container",
+      "id": "57a48b46ee5477bf65fdb6ae60bf5b7766c652630c7f2549b3e1e013a696c360",
+      "inspect_absent": true
+    },
+    {
+      "kind": "container",
+      "id": "d59ceba0f2a63fd172925586d12cea7baaa9ea3b3b52e9be4d29e0c78a7d4668",
+      "inspect_absent": true
+    },
+    {
+      "kind": "image",
+      "id": "sha256:53914c90accfbe8f1e11b530a7ae42edc9d1a79e098a01d50d14f244b5991514",
+      "inspect_absent": true
+    }
+  ],
+  "owned_containers_all": [],
+  "owned_images_all": [],
+  "outstanding_bytes": 0,
+  "charge": {
+    "released": true,
+    "reserved_bytes": 6000000000,
+    "version": 1
+  },
+  "journal": {
+    "archive": {
+      "identity": [
+        66307,
+        56011120,
+        1000
+      ],
+      "size": 496609280
+    },
+    "budget": {
+      "accounted_disk_bytes": 11022315212,
+      "all_owned_image_charges": 1434739404,
+      "helper_reserve_bytes": 64000000,
+      "outstanding_bytes": 6000000000,
+      "project_allocated_bytes": 3523575808,
+      "service_memory_bytes": 320000000
+    },
+    "code_sha256": "f6b8f7aa6c29fadd7569962b34268810283d904a811cddbf4f7eb0f739668e3c",
+    "helper_labels": {
+      "owner": "codex-warden",
+      "project": "warden",
+      "role": "fixed-reconciliation",
+      "session": "d43e72123b99320c549d1c00a1604e1e",
+      "ttl": "2026-10-24T19:08:18Z"
+    },
+    "helper_reserve_bytes": 64000000,
+    "image": "sha256:53914c90accfbe8f1e11b530a7ae42edc9d1a79e098a01d50d14f244b5991514",
+    "original": "57a48b46ee5477bf65fdb6ae60bf5b7766c652630c7f2549b3e1e013a696c360"
+  },
+  "complete": {
+    "archive_deleted": true,
+    "helper": "d59ceba0f2a63fd172925586d12cea7baaa9ea3b3b52e9be4d29e0c78a7d4668",
+    "image": "sha256:53914c90accfbe8f1e11b530a7ae42edc9d1a79e098a01d50d14f244b5991514",
+    "objects_absent": true,
+    "original": "57a48b46ee5477bf65fdb6ae60bf5b7766c652630c7f2549b3e1e013a696c360"
+  },
+  "ordinary_full_preflight": {
+    "additional_bytes": "0",
+    "at": "2026-10-24T18:08:48Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 306979598336,
+    "project_allocated_bytes": 3026972672,
+    "service_memory_bytes": "0"
+  },
+  "protected_sysctls": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "original_public_identity_manifest_bytes_unchanged": true,
+  "scope": "Independent fixed third-scene recovery postflight; not original Popen/GoGate proof, node readiness or guest conformance."
+}

@@ -1,0 +1,1045 @@
+{
+  "version": "1",
+  "pip_version": "25.1.1",
+  "install": [
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/certifi-2026.10.23-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1",
+          "hashes": {
+            "sha256": "e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "certifi",
+        "version": "2026.10.23",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "home-page",
+          "license",
+          "license-file",
+          "project-url",
+          "requires-python",
+          "summary"
+        ],
+        "summary": "Python package for providing Mozilla's CA Bundle.",
+        "description": "Certifi: Python SSL Certificates\n================================\n\nCertifi provides Mozilla's carefully curated collection of Root Certificates for\nvalidating the trustworthiness of SSL certificates while verifying the identity\nof TLS hosts. It has been extracted from the `Requests`_ project.\n\nInstallation\n------------\n\n``certifi`` is available on PyPI. Simply install it with ``pip``::\n\n    $ pip install certifi\n\nUsage\n-----\n\nTo reference the installed certificate authority (CA) bundle, you can use the\nbuilt-in function::\n\n    >>> import certifi\n\n    >>> certifi.where()\n    '/usr/local/lib/python3.7/site-packages/certifi/cacert.pem'\n\nOr from the command line::\n\n    $ python -m certifi\n    /usr/local/lib/python3.7/site-packages/certifi/cacert.pem\n\nEnjoy!\n\n.. _`Requests`: https://requests.readthedocs.io/en/latest/\n\nAddition/Removal of Certificates\n--------------------------------\n\nCertifi does not support any addition/removal or other modification of the\nCA trust store content. This project is intended to provide a reliable and\nhighly portable root of trust to python deployments. Look to upstream projects\nfor methods to use alternate trust.\n",
+        "home_page": "https://github.com/certifi/python-certifi",
+        "author": "Kenneth Reitz",
+        "author_email": "me@kennethreitz.com",
+        "license": "MPL-2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+          "Natural Language :: English",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15"
+        ],
+        "requires_python": ">=3.7",
+        "project_url": [
+          "Source, https://github.com/certifi/python-certifi"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/charset_normalizer-3.5.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "archive_info": {
+          "hash": "sha256=34276fd796040bf0993ab33a369aa572e6979c7aab225a88893667ad8eac8f7a",
+          "hashes": {
+            "sha256": "34276fd796040bf0993ab33a369aa572e6979c7aab225a88893667ad8eac8f7a"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "charset-normalizer",
+        "version": "3.5.2",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.",
+        "description": "<h1 align=\"center\">Charset Detection, for Everyone 👋</h1>\n\n<p align=\"center\">\n  <sup>The Real First Universal Charset Detector</sup><br>\n  <a href=\"https://pypi.org/project/charset-normalizer\">\n    <img src=\"https://img.shields.io/pypi/pyversions/charset_normalizer.svg?orange=blue\" />\n  </a>\n  <a href=\"https://pepy.tech/project/charset-normalizer/\">\n    <img alt=\"Download Count Total\" src=\"https://static.pepy.tech/badge/charset-normalizer/month\" />\n  </a>\n  <a href=\"https://bestpractices.coreinfrastructure.org/projects/7297\">\n    <img src=\"https://bestpractices.coreinfrastructure.org/projects/7297/badge\">\n  </a>\n</p>\n<p align=\"center\">\n  <sup><i>Featured Packages</i></sup><br>\n  <a href=\"https://github.com/jawah/niquests\">\n   <img alt=\"Static Badge\" src=\"https://img.shields.io/badge/Niquests-Most_Advanced_HTTP_Client-cyan\">\n  </a>\n  <a href=\"https://github.com/jawah/wassima\">\n   <img alt=\"Static Badge\" src=\"https://img.shields.io/badge/Wassima-Certifi_Replacement-cyan\">\n  </a>\n</p>\n<p align=\"center\">\n  <sup><i>In other language (unofficial port - by the community)</i></sup><br>\n  <a href=\"https://github.com/nickspring/charset-normalizer-rs\">\n   <img alt=\"Static Badge\" src=\"https://img.shields.io/badge/Rust-red\">\n  </a>\n</p>\n\n> A library that helps you read text from an unknown charset encoding.<br /> Motivated by `chardet`,\n> I'm trying to resolve the issue by taking a new approach.\n> All IANA character set names for which the Python core library provides codecs are supported.\n> You can also register your own set of codecs, and yes, it would work as-is.\n\nThis project offers you an alternative to **Universal Charset Encoding Detector**, also known as **Chardet**.\n\n| Feature                                          | [Chardet](https://github.com/chardet/chardet) |                                       Charset Normalizer                                        | [cChardet](https://github.com/PyYoshi/cChardet) |\n|--------------------------------------------------|:---------------------------------------------:|:-----------------------------------------------------------------------------------------------:|:-----------------------------------------------:|\n| `Fast`                                           |                       ✅                       |                                                ✅                                                |                        ✅                        |\n| `Fast on large content (uncapped)`               |                       ❌                       |                                                ✅                                                |                        ❌                        |\n| `Universal`[^1]                                  |                       ❌                       |                                                ✅                                                |                        ❌                        |\n| `Reliable` **without** distinguishable standards |                       ✅                       |                                                ✅                                                |                        ✅                        |\n| `Reliable` **with** distinguishable standards    |                       ✅                       |                                                ✅                                                |                        ✅                        |\n| `License`                                        |           _0BSD_[^2]<br>_disputed_            |                                               MIT                                               |            MPL-1.1<br>_restrictive_             |\n| `Native Python`                                  |                       ✅                       |                                                ✅                                                |                        ❌                        |\n| `Detect spoken language`                         |                       ✅                       |                                                ✅                                                |                       N/A                       |\n| `UnicodeDecodeError Safety`                      |                       ❌                       |                                                ✅                                                |                        ❌                        |\n| `Whl Size`                                       |                   ~1200 kB                    |                                             ~250 kB                                             |                     ~200 kB                     |\n| `Supported Encoding`                             |                      99                       | [99](https://charset-normalizer.readthedocs.io/en/latest/user/support.html#supported-encodings) |                       40                        |\n| `Can register custom encoding`                   |                       ❌                       |                                                ✅                                                |                        ❌                        |\n\n<p align=\"center\">\n<img src=\"https://i.imgflip.com/373iay.gif\" alt=\"Reading Normalized Text\" width=\"226\"/><img src=\"https://media.tenor.com/images/c0180f70732a18b4965448d33adba3d0/tenor.gif\" alt=\"Cat Reading Text\" width=\"200\"/>\n</p>\n\n[^1]: They are clearly using specific code for a specific encoding even if covering most of them.\n[^2]: Chardet 7 replaced the historical LGPL-licensed implementation with an AI-assisted rewrite, initially distributed under MIT and later under 0BSD. The original author [contests](https://github.com/chardet/chardet/issues/327) that the rewrite was sufficiently independent to permit relicensing, while Chardet's maintainer maintains that it is a new, non-derivative implementation. A separate [discussion](https://github.com/chardet/chardet/issues/334) raises questions about copyright ownership and licensing of substantially AI-generated code. Neither unresolved question is presented here as settled law. The concern is broader than whether ideas, APIs, or observable behavior are copyrightable. Independent implementations are essential to open-source competition. The ethical question is whether a maintainer with extensive access to a reciprocal project's source, architecture, tests, behavior, community, and reputation can use an LLM to recreate the same product under the same package identity, then treat the generated implementation as a provenance reset that extinguishes the project's reciprocal licensing obligations and contributor expectations. Responsible AI use in open source requires more than producing text that differs from the historical source: it requires transparent provenance, respect for project lineage, meaningful attribution, accountable human review, and consideration for the social agreement under which earlier contributors participated. If automated rewriting becomes an accepted way to retain a project's name, users, and accumulated reputation while discarding its reciprocal license, it risks weakening the trust and incentives on which FOSS depends. Early Chardet 7.x development and evaluation also incorporated files originating from charset-normalizer's test corpus. Results measured on data that influenced implementation or model development are not independent validation. Charset-normalizer has been MIT-licensed since inception and originates from a continuous human-designed, encoding-agnostic project history. AI assistance may be used, but every proposed change remains subject to maintainer review, adjustment, testing, and accountability; AI is an engineering aid, not a mechanism for erasing provenance or project lineage. An attentive eye will see that some aspects lead by us are magically found in Chardet.\n\n## ⚡ Performance\n\nThis package offer similar performances in general against Chardet. Expect 10X faster with large contents when you uncap Chardet max_bytes default assumption.\n\n| Package            | Accuracy |  Mean per file (ms)   |\n|--------------------|:--------:|:---------------------:|\n| Chardet            |   99 %   | 0.4 ms[^4] 0.6 ms[^5] |\n| charset-normalizer |   98 %   |        0.4 ms         |\n| cchardet[^3]       |   94 %   |        0.6 ms         |\n\n_Well, sub-ms detectors made them extremely discrete in the overall runtime.\nCompetitors can still win individual measurements, especially capped Chardet on\nsmall-file median latency. But when performance, accuracy, binary handling, validation\nstrength, portability, and maintainability are considered together, charset-normalizer\nis the stronger package._\n\n| Package            |   99th percentile    | 95th percentile | 50th percentile |\n|--------------------|:--------------------:|:---------------:|:---------------:|\n| Chardet            | 2.5 ms[^4] 4.2ms[^5] |      1 ms       |     0.2 ms      |\n| charset-normalizer |        2.7 ms        |     1.5 ms      |     0.2 ms      |\n| cchardet           |        2.7 ms        |      2 ms       |     0.3 ms      |\n\n_updated as of August 2026 using CPython 3.12, Charset-Normalizer 3.5.1, and Chardet 7.5 inside a (libc Debian) container. The host CPU is a 13th gen Intel mobile CPU. We'll no longer update regularly those since the sub-ms changes aren't meaningful to anyone anymore._\n\n> Stats are generated using 477 files using default parameters. More details on used files, see GHA workflows.\n> And yes, these results might change at any time. The dataset can be updated to include more files.\n> The actual delays heavily depends on your CPU capabilities. The factors should remain the same.\n> Chardet claims on his documentation to have a greater accuracy than us based on the dataset they trained Chardet on(...)\n> Whereas charset-normalizer don't train on anything, our solution is based on a completely different algorithm, still heuristic\n> through, it does not need weights across every encoding tables.\n\n[^3]: cchardet main repository/package was discontinued. we're relying on a known fork namely faust-cchardet. the idea remained the same: uchardet bindings.\n[^4]: Chardet does not feed the complete body but rather a limited part of it, because the algorithm doesn't scale properly with larger samples. Feeding the whole content slow things to 0.8 ms (from the 0.5ms avg). While we do not skip content in order for us to guarantee a usable result each and every time. We attempted to feed a 272 MiB UTF-8 (Reddit archive on comments/posts) file in Chardet uncapped and waited 3.4s while Charset-Normalizer took 0.3s, this is a 10-fold speedup.\n[^5]: Uncapped max_bytes (no truncating of content)\n\n## ✨ Installation\n\nUsing pip:\n\n```sh\npip install charset-normalizer -U\n```\n\n## 🚀 Basic Usage\n\n### CLI\nThis package comes with a CLI.\n\n```\nusage: normalizer [-h] [-v] [-a] [-n] [-m] [-r] [-f] [-t THRESHOLD]\n                  file [file ...]\n\nThe Real First Universal Charset Detector. Discover originating encoding used\non text file. Normalize text to unicode.\n\npositional arguments:\n  files                 File(s) to be analysed\n\noptional arguments:\n  -h, --help            show this help message and exit\n  -v, --verbose         Display complementary information about file if any.\n                        Stdout will contain logs about the detection process.\n  -a, --with-alternative\n                        Output complementary possibilities if any. Top-level\n                        JSON WILL be a list.\n  -n, --normalize       Permit to normalize input file. If not set, program\n                        does not write anything.\n  -m, --minimal         Only output the charset detected to STDOUT. Disabling\n                        JSON output.\n  -r, --replace         Replace file when trying to normalize it instead of\n                        creating a new one.\n  -f, --force           Replace file without asking if you are sure, use this\n                        flag with caution.\n  -t THRESHOLD, --threshold THRESHOLD\n                        Define a custom maximum amount of chaos allowed in\n                        decoded content. 0. <= chaos <= 1.\n  --version             Show version information and exit.\n```\n\n```bash\nnormalizer ./data/sample.1.fr.srt\n```\n\nor\n\n```bash\npython -m charset_normalizer ./data/sample.1.fr.srt\n```\n\n🎉 Since version 1.4.0 the CLI produce easily usable stdout result in JSON format.\n\n```json\n{\n    \"path\": \"/home/default/projects/charset_normalizer/data/sample.1.fr.srt\",\n    \"encoding\": \"cp1252\",\n    \"encoding_aliases\": [\n        \"1252\",\n        \"windows_1252\"\n    ],\n    \"alternative_encodings\": [\n        \"cp1254\",\n        \"cp1256\",\n        \"cp1258\",\n        \"iso8859_14\",\n        \"iso8859_15\",\n        \"iso8859_16\",\n        \"iso8859_3\",\n        \"iso8859_9\",\n        \"latin_1\",\n        \"mbcs\"\n    ],\n    \"language\": \"French\",\n    \"alphabets\": [\n        \"Basic Latin\",\n        \"Latin-1 Supplement\"\n    ],\n    \"has_sig_or_bom\": false,\n    \"chaos\": 0.149,\n    \"coherence\": 97.152,\n    \"unicode_path\": null,\n    \"is_preferred\": true\n}\n```\n\n### Python\n*Just print out normalized text*\n```python\nfrom charset_normalizer import from_path\n\nresults = from_path('./my_subtitle.srt')\n\nprint(str(results.best()))\n```\n\n*Upgrade your code without effort*\n```python\nfrom charset_normalizer import detect\n```\n\nThe above code will behave the same as **chardet**. We ensure that we offer the best (reasonable) BC result possible.\n\nSee the docs for advanced usage : [readthedocs.io](https://charset-normalizer.readthedocs.io/en/latest/)\n\n## 😇 Why\n\nWhen I started using Chardet, I noticed that it was not suited to my expectations, and I wanted to propose a\nreliable alternative using a completely different method. Also! I never back down on a good challenge!\n\nI **don't care** about the **originating charset** encoding, because **two different tables** can\nproduce **two identical rendered string.**\nWhat I want is to get readable text, the best I can.\n\nIn a way, **I'm brute forcing text decoding.** How cool is that ? 😎\n\nDon't confuse package **ftfy** with charset-normalizer or chardet. ftfy goal is to repair Unicode string whereas charset-normalizer to convert raw file in unknown encoding to unicode.\n\n## 🍰 How\n\n  - Discard all charset encoding table that could not fit the binary content.\n  - Measure noise, or the mess once opened (by chunks) with a corresponding charset encoding.\n  - Extract matches with the lowest mess detected.\n  - Additionally, we measure coherence / probe for a language.\n\n**Wait a minute**, what is noise/mess and coherence according to **YOU ?**\n\n*Noise :* I opened hundred of text files, **written by humans**, with the wrong encoding table. **I observed**, then\n**I established** some ground rules about **what is obvious** when **it seems like** a mess (aka. defining noise in rendered text).\n I know that my interpretation of what is noise is probably incomplete, feel free to contribute in order to\n improve or rewrite it.\n\n*Coherence :* For each language there is on earth, we have computed ranked letter appearance occurrences (the best we can). So I thought\nthat intel is worth something here. So I use those records against decoded text to check if I can detect intelligent design.\n\n## ⚡ Known limitations\n\n  - Language detection is unreliable when text contains two or more languages sharing identical letters. (eg. HTML (english tags) + Turkish content (Sharing Latin characters))\n  - Every charset detector heavily depends on sufficient content. In common cases, do not bother run detection on very tiny content.\n\n## ⚠️ About Python EOLs\n\n**If you are running:**\n\n- Python >=2.7,<3.5: Unsupported\n- Python 3.5: charset-normalizer < 2.1\n- Python 3.6: charset-normalizer < 3.1\n\nUpgrade your Python interpreter as soon as possible.\n\n## 👤 Contributing\n\nContributions, issues and feature requests are very much welcome.<br />\nFeel free to check [issues page](https://github.com/ousret/charset_normalizer/issues) if you want to contribute.\n\n## 📝 License\n\nCopyright © [Ahmed TAHRI @Ousret](https://github.com/Ousret).<br />\nThis project is [MIT](https://github.com/Ousret/charset_normalizer/blob/master/LICENSE) licensed.\n\nCharacters frequencies used in this project © 2012 [Denny Vrandečić](http://simia.net/letters/)\n\n## 💼 For Enterprise\n\nProfessional support for charset-normalizer is available as part of the [Tidelift\nSubscription][1]. Tidelift gives software development teams a single source for\npurchasing and maintaining their software, with professional grade assurances\nfrom the experts who know it best, while seamlessly integrating with existing\ntools.\n\n[1]: https://tidelift.com/subscription/pkg/pypi-charset-normalizer?utm_source=pypi-charset-normalizer&utm_medium=readme\n\n[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/7297/badge)](https://www.bestpractices.dev/projects/7297)\n\n# Changelog\nAll notable changes to charset-normalizer will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).\n\n## [3.5.2](https://github.com/Ousret/charset_normalizer/compare/3.5.1...3.5.2) (2026-09-29)\n\n### Changed\n\n- Raised the Cython upper bound to `<3.4` for native builds. The bound remains `<3.3` for\n  `abi3` builds to preserve compatibility with the Python 3.7 Limited API.\n\n### Fixed\n\n- Valid UTF-8 Chinese JSON incorrectly detected as PTCP154 due to excessive noise penalties\n  for uncommon CJK characters. (#796)\n- Supported encodings without aliases failing name resolution or being ignored in charset\n  declarations. (#800)\n\n## [3.5.1](https://github.com/Ousret/charset_normalizer/compare/3.5.0...3.5.1) (2026-08-15)\n\n### Changed\n- Raised upper bound of setuptools to v84 (#794)\n- Cache performance access optimization for our CharInfo struct (prebuilt only).\n\n### Fixed\n- No longer decoding large content when the noise detector output give a high entropy.\n  Only impacted large content input >1M bytes.\n\n## [3.5.0](https://github.com/Ousret/charset_normalizer/compare/3.4.9...3.5.0) (2026-08-12)\n\n### Added\n- Explicit support for Python 3.15\n\n### Fixed\n- Comparing a CharsetMatch to a non-alias encoding strings (#773)\n- Return 0.0 CharsetMatch.multi_byte_usage for empty payloads instead of crashing (#774)\n- A file with both a charset declaration and BOM/SIG did not verify first the BOM/SIG charset.\n- iso2022* cases misdetected due to a flaw in our multibyte chunking logic.\n\n### Changed\n- Replaced the optional mypyc build with Cython extensions while retaining the\n  pure Python fallback. The previous engine (mypyc) started to hit rough limit around\n  the optimization of our noise/coherence detector while Cython allows us to\n  steer the engine toward the right generated optimized sources.\n  This change SHOULD not impact bundler (e.g. Pyinstaller) as the module are\n  immediately discoverable (i.e. not hidden import like mypyc did).\n  Moreover, a long wished distribution is the abi3 wheels, this will allow us\n  to no longer rush each year when a new Python interpreter is released.\n  We still distribute the interpreter specific wheels for faster performance.\n- Applied micro-optimization on several utils.\n- CharsetMatches no longer sort on each match insertion.\n\n### Misc\n- Removed an old performance optimization attempt in apy.py (success_fast_tracked+payload_result_cache).\n\n## [3.4.9](https://github.com/Ousret/charset_normalizer/compare/3.4.8...3.4.9) (2026-07-07)\n\n### Fixed\n- Regression in our fallback path leading to a decode error. (#771)\n  We've yanked 3.4.8 as a result of that bug.\n\n## [3.4.8](https://github.com/Ousret/charset_normalizer/compare/3.4.7...3.4.8) (2026-07-06)\n\n### Fixed\n- Wall import time due to cascade codec imports for our multibyte first sort of iana supported codecs (#742)\n- Unnecessary json import at runtime (#753)\n- Inverse capitalization not seen by noise detector (#731)\n\n### Changed\n- No longer holding a global cache for our noise / coherence measurements. Relax RSS memory usage.\n- Micro-optimizations in our noise / coherence measurements.\n- No longer using regex search by default for our preemptive charset mark algorithm.\n- Raised upperbound of setuptools to v83.\n- Raised upperbound of mypy(c) to v2.1.\n\n### Removed\n- Redundant UTF7 BOM marker (#730)\n\n## [3.4.7](https://github.com/Ousret/charset_normalizer/compare/3.4.6...3.4.7) (2026-04-02)\n\n### Changed\n- Pre-built optimized version using mypy[c] v1.20.\n- Relax `setuptools` constraint to `setuptools>=68,<82.1`.\n\n### Fixed\n- Correctly remove SIG remnant in utf-7 decoded string. (#718) (#716)\n\n## [3.4.6](https://github.com/Ousret/charset_normalizer/compare/3.4.5...3.4.6) (2026-03-15)\n\n### Changed\n- Flattened the logic in `charset_normalizer.md` for higher performance. Removed `eligible(..)` and `feed(...)`\n  in favor of `feed_info(...)`.\n- Raised upper bound for mypy[c] to 1.20, for our optimized version.\n- Updated `UNICODE_RANGES_COMBINED` using Unicode blocks v17.\n\n### Fixed\n- Edge case where noise difference between two candidates can be almost insignificant. (#672)\n- CLI `--normalize` writing to wrong path when passing multiple files in. (#702)\n\n### Misc\n- Freethreaded pre-built wheels now shipped in PyPI starting with 3.14t. (#616)\n\n## [3.4.5](https://github.com/Ousret/charset_normalizer/compare/3.4.4...3.4.5) (2026-03-06)\n\n### Changed\n- Update `setuptools` constraint to `setuptools>=68,<=82`.\n- Raised upper bound of mypyc for the optional pre-built extension to v1.19.1\n\n### Fixed\n- Add explicit link to lib math in our optimized build. (#692)\n- Logger level not restored correctly for empty byte sequences. (#701)\n- TypeError when passing bytearray to from_bytes. (#703)\n\n### Misc\n- Applied safe micro-optimizations in both our noise detector and language detector.\n- Rewrote the `query_yes_no` function (inside CLI) to avoid using ambiguous licensed code.\n- Added `cd.py` submodule into mypyc optional compilation to reduce further the performance impact.\n\n## [3.4.4](https://github.com/Ousret/charset_normalizer/compare/3.4.2...3.4.4) (2025-10-13)\n\n### Changed\n- Bound `setuptools` to a specific constraint `setuptools>=68,<=81`.\n- Raised upper bound of mypyc for the optional pre-built extension to v1.18.2\n\n### Removed\n- `setuptools-scm` as a build dependency.\n\n### Misc\n- Enforced hashes in `dev-requirements.txt` and created `ci-requirements.txt` for security purposes.\n- Additional pre-built wheels for riscv64, s390x, and armv7l architectures.\n- Restore ` multiple.intoto.jsonl` in GitHub releases in addition to individual attestation file per wheel.\n\n## [3.4.3](https://github.com/Ousret/charset_normalizer/compare/3.4.2...3.4.3) (2025-08-09)\n\n### Changed\n- mypy(c) is no longer a required dependency at build time if `CHARSET_NORMALIZER_USE_MYPYC` isn't set to `1`. (#595) (#583)\n- automatically lower confidence on small bytes samples that are not Unicode in `detect` output legacy function. (#391)\n\n### Added\n- Custom build backend to overcome inability to mark mypy as an optional dependency in the build phase.\n- Support for Python 3.14\n\n### Fixed\n- sdist archive contained useless directories.\n- automatically fallback on valid UTF-16 or UTF-32 even if the md says it's noisy. (#633)\n\n### Misc\n- SBOM are automatically published to the relevant GitHub release to comply with regulatory changes.\n  Each published wheel comes with its SBOM. We choose CycloneDX as the format.\n- Prebuilt optimized wheel are no longer distributed by default for CPython 3.7 due to a change in cibuildwheel.\n\n## [3.4.2](https://github.com/Ousret/charset_normalizer/compare/3.4.1...3.4.2) (2025-05-02)\n\n### Fixed\n- Addressed the DeprecationWarning in our CLI regarding `argparse.FileType` by backporting the target class into the package. (#591)\n- Improved the overall reliability of the detector with CJK Ideographs. (#605) (#587)\n\n### Changed\n- Optional mypyc compilation upgraded to version 1.15 for Python >= 3.8\n\n## [3.4.1](https://github.com/Ousret/charset_normalizer/compare/3.4.0...3.4.1) (2024-12-24)\n\n### Changed\n- Project metadata are now stored using `pyproject.toml` instead of `setup.cfg` using setuptools as the build backend.\n- Enforce annotation delayed loading for a simpler and consistent types in the project.\n- Optional mypyc compilation upgraded to version 1.14 for Python >= 3.8\n\n### Added\n- pre-commit configuration.\n- noxfile.\n\n### Removed\n- `build-requirements.txt` as per using `pyproject.toml` native build configuration.\n- `bin/integration.py` and `bin/serve.py` in favor of downstream integration test (see noxfile).\n- `setup.cfg` in favor of `pyproject.toml` metadata configuration.\n- Unused `utils.range_scan` function.\n\n### Fixed\n- Converting content to Unicode bytes may insert `utf_8` instead of preferred `utf-8`. (#572)\n- Deprecation warning \"'count' is passed as positional argument\" when converting to Unicode bytes on Python 3.13+\n\n## [3.4.0](https://github.com/Ousret/charset_normalizer/compare/3.3.2...3.4.0) (2024-10-08)\n\n### Added\n- Argument `--no-preemptive` in the CLI to prevent the detector to search for hints.\n- Support for Python 3.13 (#512)\n\n### Fixed\n- Relax the TypeError exception thrown when trying to compare a CharsetMatch with anything else than a CharsetMatch.\n- Improved the general reliability of the detector based on user feedbacks. (#520) (#509) (#498) (#407) (#537)\n- Declared charset in content (preemptive detection) not changed when converting to utf-8 bytes. (#381)\n\n## [3.3.2](https://github.com/Ousret/charset_normalizer/compare/3.3.1...3.3.2) (2023-10-31)\n\n### Fixed\n- Unintentional memory usage regression when using large payload that match several encoding (#376)\n- Regression on some detection case showcased in the documentation (#371)\n\n### Added\n- Noise (md) probe that identify malformed arabic representation due to the presence of letters in isolated form (credit to my wife)\n\n## [3.3.1](https://github.com/Ousret/charset_normalizer/compare/3.3.0...3.3.1) (2023-10-22)\n\n### Changed\n- Optional mypyc compilation upgraded to version 1.6.1 for Python >= 3.8\n- Improved the general detection reliability based on reports from the community\n\n## [3.3.0](https://github.com/Ousret/charset_normalizer/compare/3.2.0...3.3.0) (2023-09-30)\n\n### Added\n- Allow to execute the CLI (e.g. normalizer) through `python -m charset_normalizer.cli` or `python -m charset_normalizer`\n- Support for 9 forgotten encoding that are supported by Python but unlisted in `encoding.aliases` as they have no alias (#323)\n\n### Removed\n- (internal) Redundant utils.is_ascii function and unused function is_private_use_only\n- (internal) charset_normalizer.assets is moved inside charset_normalizer.constant\n\n### Changed\n- (internal) Unicode code blocks in constants are updated using the latest v15.0.0 definition to improve detection\n- Optional mypyc compilation upgraded to version 1.5.1 for Python >= 3.8\n\n### Fixed\n- Unable to properly sort CharsetMatch when both chaos/noise and coherence were close due to an unreachable condition in \\_\\_lt\\_\\_ (#350)\n\n## [3.2.0](https://github.com/Ousret/charset_normalizer/compare/3.1.0...3.2.0) (2023-06-07)\n\n### Changed\n- Typehint for function `from_path` no longer enforce `PathLike` as its first argument\n- Minor improvement over the global detection reliability\n\n### Added\n- Introduce function `is_binary` that relies on main capabilities, and optimized to detect binaries\n- Propagate `enable_fallback` argument throughout `from_bytes`, `from_path`, and `from_fp` that allow a deeper control over the detection (default True)\n- Explicit support for Python 3.12\n\n### Fixed\n- Edge case detection failure where a file would contain 'very-long' camel cased word (Issue #289)\n\n## [3.1.0](https://github.com/Ousret/charset_normalizer/compare/3.0.1...3.1.0) (2023-03-06)\n\n### Added\n- Argument `should_rename_legacy` for legacy function `detect` and disregard any new arguments without errors (PR #262)\n\n### Removed\n- Support for Python 3.6 (PR #260)\n\n### Changed\n- Optional speedup provided by mypy/c 1.0.1\n\n## [3.0.1](https://github.com/Ousret/charset_normalizer/compare/3.0.0...3.0.1) (2022-11-18)\n\n### Fixed\n- Multi-bytes cutter/chunk generator did not always cut correctly (PR #233)\n\n### Changed\n- Speedup provided by mypy/c 0.990 on Python >= 3.7\n\n## [3.0.0](https://github.com/Ousret/charset_normalizer/compare/2.1.1...3.0.0) (2022-10-20)\n\n### Added\n- Extend the capability of explain=True when cp_isolation contains at most two entries (min one), will log in details of the Mess-detector results\n- Support for alternative language frequency set in charset_normalizer.assets.FREQUENCIES\n- Add parameter `language_threshold` in `from_bytes`, `from_path` and `from_fp` to adjust the minimum expected coherence ratio\n- `normalizer --version` now specify if current version provide extra speedup (meaning mypyc compilation whl)\n\n### Changed\n- Build with static metadata using 'build' frontend\n- Make the language detection stricter\n- Optional: Module `md.py` can be compiled using Mypyc to provide an extra speedup up to 4x faster than v2.1\n\n### Fixed\n- CLI with opt --normalize fail when using full path for files\n- TooManyAccentuatedPlugin induce false positive on the mess detection when too few alpha character have been fed to it\n- Sphinx warnings when generating the documentation\n\n### Removed\n- Coherence detector no longer return 'Simple English' instead return 'English'\n- Coherence detector no longer return 'Classical Chinese' instead return 'Chinese'\n- Breaking: Method `first()` and `best()` from CharsetMatch\n- UTF-7 will no longer appear as \"detected\" without a recognized SIG/mark (is unreliable/conflict with ASCII)\n- Breaking: Class aliases CharsetDetector, CharsetDoctor, CharsetNormalizerMatch and CharsetNormalizerMatches\n- Breaking: Top-level function `normalize`\n- Breaking: Properties `chaos_secondary_pass`, `coherence_non_latin` and `w_counter` from CharsetMatch\n- Support for the backport `unicodedata2`\n\n## [3.0.0rc1](https://github.com/Ousret/charset_normalizer/compare/3.0.0b2...3.0.0rc1) (2022-10-18)\n\n### Added\n- Extend the capability of explain=True when cp_isolation contains at most two entries (min one), will log in details of the Mess-detector results\n- Support for alternative language frequency set in charset_normalizer.assets.FREQUENCIES\n- Add parameter `language_threshold` in `from_bytes`, `from_path` and `from_fp` to adjust the minimum expected coherence ratio\n\n### Changed\n- Build with static metadata using 'build' frontend\n- Make the language detection stricter\n\n### Fixed\n- CLI with opt --normalize fail when using full path for files\n- TooManyAccentuatedPlugin induce false positive on the mess detection when too few alpha character have been fed to it\n\n### Removed\n- Coherence detector no longer return 'Simple English' instead return 'English'\n- Coherence detector no longer return 'Classical Chinese' instead return 'Chinese'\n\n## [3.0.0b2](https://github.com/Ousret/charset_normalizer/compare/3.0.0b1...3.0.0b2) (2022-08-21)\n\n### Added\n- `normalizer --version` now specify if current version provide extra speedup (meaning mypyc compilation whl)\n\n### Removed\n- Breaking: Method `first()` and `best()` from CharsetMatch\n- UTF-7 will no longer appear as \"detected\" without a recognized SIG/mark (is unreliable/conflict with ASCII)\n\n### Fixed\n- Sphinx warnings when generating the documentation\n\n## [3.0.0b1](https://github.com/Ousret/charset_normalizer/compare/2.1.0...3.0.0b1) (2022-08-15)\n\n### Changed\n- Optional: Module `md.py` can be compiled using Mypyc to provide an extra speedup up to 4x faster than v2.1\n\n### Removed\n- Breaking: Class aliases CharsetDetector, CharsetDoctor, CharsetNormalizerMatch and CharsetNormalizerMatches\n- Breaking: Top-level function `normalize`\n- Breaking: Properties `chaos_secondary_pass`, `coherence_non_latin` and `w_counter` from CharsetMatch\n- Support for the backport `unicodedata2`\n\n## [2.1.1](https://github.com/Ousret/charset_normalizer/compare/2.1.0...2.1.1) (2022-08-19)\n\n### Deprecated\n- Function `normalize` scheduled for removal in 3.0\n\n### Changed\n- Removed useless call to decode in fn is_unprintable (#206)\n\n### Fixed\n- Third-party library (i18n xgettext) crashing not recognizing utf_8 (PEP 263) with underscore from [@aleksandernovikov](https://github.com/aleksandernovikov) (#204)\n\n## [2.1.0](https://github.com/Ousret/charset_normalizer/compare/2.0.12...2.1.0) (2022-06-19)\n\n### Added\n- Output the Unicode table version when running the CLI with `--version` (PR #194)\n\n### Changed\n- Reuse decoded buffer for single byte character sets from [@nijel](https://github.com/nijel) (PR #175)\n- Fixing some performance bottlenecks from [@deedy5](https://github.com/deedy5) (PR #183)\n\n### Fixed\n- Workaround potential bug in cpython with Zero Width No-Break Space located in Arabic Presentation Forms-B, Unicode 1.1 not acknowledged as space (PR #175)\n- CLI default threshold aligned with the API threshold from [@oleksandr-kuzmenko](https://github.com/oleksandr-kuzmenko) (PR #181)\n\n### Removed\n- Support for Python 3.5 (PR #192)\n\n### Deprecated\n- Use of backport unicodedata from `unicodedata2` as Python is quickly catching up, scheduled for removal in 3.0 (PR #194)\n\n## [2.0.12](https://github.com/Ousret/charset_normalizer/compare/2.0.11...2.0.12) (2022-02-12)\n\n### Fixed\n- ASCII miss-detection on rare cases (PR #170)\n\n## [2.0.11](https://github.com/Ousret/charset_normalizer/compare/2.0.10...2.0.11) (2022-01-30)\n\n### Added\n- Explicit support for Python 3.11 (PR #164)\n\n### Changed\n- The logging behavior have been completely reviewed, now using only TRACE and DEBUG levels (PR #163 #165)\n\n## [2.0.10](https://github.com/Ousret/charset_normalizer/compare/2.0.9...2.0.10) (2022-01-04)\n\n### Fixed\n- Fallback match entries might lead to UnicodeDecodeError for large bytes sequence (PR #154)\n\n### Changed\n- Skipping the language-detection (CD) on ASCII (PR #155)\n\n## [2.0.9](https://github.com/Ousret/charset_normalizer/compare/2.0.8...2.0.9) (2021-12-03)\n\n### Changed\n- Moderating the logging impact (since 2.0.8) for specific environments (PR #147)\n\n### Fixed\n- Wrong logging level applied when setting kwarg `explain` to True (PR #146)\n\n## [2.0.8](https://github.com/Ousret/charset_normalizer/compare/2.0.7...2.0.8) (2021-11-24)\n### Changed\n- Improvement over Vietnamese detection (PR #126)\n- MD improvement on trailing data and long foreign (non-pure latin) data (PR #124)\n- Efficiency improvements in cd/alphabet_languages from [@adbar](https://github.com/adbar) (PR #122)\n- call sum() without an intermediary list following PEP 289 recommendations from [@adbar](https://github.com/adbar) (PR #129)\n- Code style as refactored by Sourcery-AI (PR #131)\n- Minor adjustment on the MD around european words (PR #133)\n- Remove and replace SRTs from assets / tests (PR #139)\n- Initialize the library logger with a `NullHandler` by default from [@nmaynes](https://github.com/nmaynes) (PR #135)\n- Setting kwarg `explain` to True will add provisionally (bounded to function lifespan) a specific stream handler (PR #135)\n\n### Fixed\n- Fix large (misleading) sequence giving UnicodeDecodeError (PR #137)\n- Avoid using too insignificant chunk (PR #137)\n\n### Added\n- Add and expose function `set_logging_handler` to configure a specific StreamHandler from [@nmaynes](https://github.com/nmaynes) (PR #135)\n- Add `CHANGELOG.md` entries, format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) (PR #141)\n\n## [2.0.7](https://github.com/Ousret/charset_normalizer/compare/2.0.6...2.0.7) (2021-10-11)\n### Added\n- Add support for Kazakh (Cyrillic) language detection (PR #109)\n\n### Changed\n- Further, improve inferring the language from a given single-byte code page (PR #112)\n- Vainly trying to leverage PEP263 when PEP3120 is not supported (PR #116)\n- Refactoring for potential performance improvements in loops from [@adbar](https://github.com/adbar) (PR #113)\n- Various detection improvement (MD+CD) (PR #117)\n\n### Removed\n- Remove redundant logging entry about detected language(s) (PR #115)\n\n### Fixed\n- Fix a minor inconsistency between Python 3.5 and other versions regarding language detection (PR #117 #102)\n\n## [2.0.6](https://github.com/Ousret/charset_normalizer/compare/2.0.5...2.0.6) (2021-09-18)\n### Fixed\n- Unforeseen regression with the loss of the backward-compatibility with some older minor of Python 3.5.x (PR #100)\n- Fix CLI crash when using --minimal output in certain cases (PR #103)\n\n### Changed\n- Minor improvement to the detection efficiency (less than 1%) (PR #106 #101)\n\n## [2.0.5](https://github.com/Ousret/charset_normalizer/compare/2.0.4...2.0.5) (2021-09-14)\n### Changed\n- The project now comply with: flake8, mypy, isort and black to ensure a better overall quality (PR #81)\n- The BC-support with v1.x was improved, the old staticmethods are restored (PR #82)\n- The Unicode detection is slightly improved (PR #93)\n- Add syntax sugar \\_\\_bool\\_\\_ for results CharsetMatches list-container (PR #91)\n\n### Removed\n- The project no longer raise warning on tiny content given for detection, will be simply logged as warning instead (PR #92)\n\n### Fixed\n- In some rare case, the chunks extractor could cut in the middle of a multi-byte character and could mislead the mess detection (PR #95)\n- Some rare 'space' characters could trip up the UnprintablePlugin/Mess detection (PR #96)\n- The MANIFEST.in was not exhaustive (PR #78)\n\n## [2.0.4](https://github.com/Ousret/charset_normalizer/compare/2.0.3...2.0.4) (2021-07-30)\n### Fixed\n- The CLI no longer raise an unexpected exception when no encoding has been found (PR #70)\n- Fix accessing the 'alphabets' property when the payload contains surrogate characters (PR #68)\n- The logger could mislead (explain=True) on detected languages and the impact of one MBCS match (PR #72)\n- Submatch factoring could be wrong in rare edge cases (PR #72)\n- Multiple files given to the CLI were ignored when publishing results to STDOUT. (After the first path) (PR #72)\n- Fix line endings from CRLF to LF for certain project files (PR #67)\n\n### Changed\n- Adjust the MD to lower the sensitivity, thus improving the global detection reliability (PR #69 #76)\n- Allow fallback on specified encoding if any (PR #71)\n\n## [2.0.3](https://github.com/Ousret/charset_normalizer/compare/2.0.2...2.0.3) (2021-07-16)\n### Changed\n- Part of the detection mechanism has been improved to be less sensitive, resulting in more accurate detection results. Especially ASCII. (PR #63)\n- According to the community wishes, the detection will fall back on ASCII or UTF-8 in a last-resort case. (PR #64)\n\n## [2.0.2](https://github.com/Ousret/charset_normalizer/compare/2.0.1...2.0.2) (2021-07-15)\n### Fixed\n- Empty/Too small JSON payload miss-detection fixed. Report from [@tseaver](https://github.com/tseaver) (PR #59)\n\n### Changed\n- Don't inject unicodedata2 into sys.modules from [@akx](https://github.com/akx) (PR #57)\n\n## [2.0.1](https://github.com/Ousret/charset_normalizer/compare/2.0.0...2.0.1) (2021-07-13)\n### Fixed\n- Make it work where there isn't a filesystem available, dropping assets frequencies.json. Report from [@sethmlarson](https://github.com/sethmlarson). (PR #55)\n- Using explain=False permanently disable the verbose output in the current runtime (PR #47)\n- One log entry (language target preemptive) was not show in logs when using explain=True (PR #47)\n- Fix undesired exception (ValueError) on getitem of instance CharsetMatches (PR #52)\n\n### Changed\n- Public function normalize default args values were not aligned with from_bytes (PR #53)\n\n### Added\n- You may now use charset aliases in cp_isolation and cp_exclusion arguments (PR #47)\n\n## [2.0.0](https://github.com/Ousret/charset_normalizer/compare/1.4.1...2.0.0) (2021-07-02)\n### Changed\n- 4x to 5 times faster than the previous 1.4.0 release. At least 2x faster than Chardet.\n- Accent has been made on UTF-8 detection, should perform rather instantaneous.\n- The backward compatibility with Chardet has been greatly improved. The legacy detect function returns an identical charset name whenever possible.\n- The detection mechanism has been slightly improved, now Turkish content is detected correctly (most of the time)\n- The program has been rewritten to ease the readability and maintainability. (+Using static typing)+\n- utf_7 detection has been reinstated.\n\n### Removed\n- This package no longer require anything when used with Python 3.5 (Dropped cached_property)\n- Removed support for these languages: Catalan, Esperanto, Kazakh, Baque, Volapük, Azeri, Galician, Nynorsk, Macedonian, and Serbocroatian.\n- The exception hook on UnicodeDecodeError has been removed.\n\n### Deprecated\n- Methods coherence_non_latin, w_counter, chaos_secondary_pass of the class CharsetMatch are now deprecated and scheduled for removal in v3.0\n\n### Fixed\n- The CLI output used the relative path of the file(s). Should be absolute.\n\n## [1.4.1](https://github.com/Ousret/charset_normalizer/compare/1.4.0...1.4.1) (2021-05-28)\n### Fixed\n- Logger configuration/usage no longer conflict with others (PR #44)\n\n## [1.4.0](https://github.com/Ousret/charset_normalizer/compare/1.3.9...1.4.0) (2021-05-21)\n### Removed\n- Using standard logging instead of using the package loguru.\n- Dropping nose test framework in favor of the maintained pytest.\n- Choose to not use dragonmapper package to help with gibberish Chinese/CJK text.\n- Require cached_property only for Python 3.5 due to constraint. Dropping for every other interpreter version.\n- Stop support for UTF-7 that does not contain a SIG.\n- Dropping PrettyTable, replaced with pure JSON output in CLI.\n\n### Fixed\n- BOM marker in a CharsetNormalizerMatch instance could be False in rare cases even if obviously present. Due to the sub-match factoring process.\n- Not searching properly for the BOM when trying utf32/16 parent codec.\n\n### Changed\n- Improving the package final size by compressing frequencies.json.\n- Huge improvement over the larges payload.\n\n### Added\n- CLI now produces JSON consumable output.\n- Return ASCII if given sequences fit. Given reasonable confidence.\n\n## [1.3.9](https://github.com/Ousret/charset_normalizer/compare/1.3.8...1.3.9) (2021-05-13)\n\n### Fixed\n- In some very rare cases, you may end up getting encode/decode errors due to a bad bytes payload (PR #40)\n\n## [1.3.8](https://github.com/Ousret/charset_normalizer/compare/1.3.7...1.3.8) (2021-05-12)\n\n### Fixed\n- Empty given payload for detection may cause an exception if trying to access the `alphabets` property. (PR #39)\n\n## [1.3.7](https://github.com/Ousret/charset_normalizer/compare/1.3.6...1.3.7) (2021-05-12)\n\n### Fixed\n- The legacy detect function should return UTF-8-SIG if sig is present in the payload. (PR #38)\n\n## [1.3.6](https://github.com/Ousret/charset_normalizer/compare/1.3.5...1.3.6) (2021-02-09)\n\n### Changed\n- Amend the previous release to allow prettytable 2.0 (PR #35)\n\n## [1.3.5](https://github.com/Ousret/charset_normalizer/compare/1.3.4...1.3.5) (2021-02-08)\n\n### Fixed\n- Fix error while using the package with a python pre-release interpreter (PR #33)\n\n### Changed\n- Dependencies refactoring, constraints revised.\n\n### Added\n- Add python 3.9 and 3.10 to the supported interpreters\n\nMIT License\n\nCopyright (c) 2025 TAHRI Ahmed R.\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+        "description_content_type": "text/markdown",
+        "keywords": [
+          "encoding",
+          "charset",
+          "charset-detector",
+          "detector",
+          "normalization",
+          "unicode",
+          "chardet",
+          "detect"
+        ],
+        "author_email": "\"Ahmed R. TAHRI\" <tahri.ahmed@proton.me>",
+        "maintainer_email": "\"Ahmed R. TAHRI\" <tahri.ahmed@proton.me>",
+        "license": "MIT",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Programming Language :: Python :: Free Threading :: 4 - Resilient",
+          "Environment :: WebAssembly",
+          "Environment :: WebAssembly :: Emscripten",
+          "Topic :: Text Processing :: Linguistic",
+          "Topic :: Utilities",
+          "Typing :: Typed"
+        ],
+        "requires_python": ">=3.7",
+        "project_url": [
+          "Changelog, https://github.com/jawah/charset_normalizer/blob/master/CHANGELOG.md",
+          "Documentation, https://charset-normalizer.readthedocs.io/",
+          "Code, https://github.com/jawah/charset_normalizer",
+          "Issue tracker, https://github.com/jawah/charset_normalizer/issues"
+        ],
+        "provides_extra": [
+          "unicode-backport"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/diskcache-5.6.3-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=5e31b2d5fbad117cc363ebaf6b689474db18a1f6438bc82358b024abd4c2ca19",
+          "hashes": {
+            "sha256": "5e31b2d5fbad117cc363ebaf6b689474db18a1f6438bc82358b024abd4c2ca19"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "diskcache",
+        "version": "5.6.3",
+        "summary": "Disk Cache -- Disk and file backed persistent cache.",
+        "description": "DiskCache: Disk Backed Cache\n============================\n\n`DiskCache`_ is an Apache2 licensed disk and file backed cache library, written\nin pure-Python, and compatible with Django.\n\nThe cloud-based computing of 2023 puts a premium on memory. Gigabytes of empty\nspace is left on disks as processes vie for memory. Among these processes is\nMemcached (and sometimes Redis) which is used as a cache. Wouldn't it be nice\nto leverage empty disk space for caching?\n\nDjango is Python's most popular web framework and ships with several caching\nbackends. Unfortunately the file-based cache in Django is essentially\nbroken. The culling method is random and large caches repeatedly scan a cache\ndirectory which slows linearly with growth. Can you really allow it to take\nsixty milliseconds to store a key in a cache with a thousand items?\n\nIn Python, we can do better. And we can do it in pure-Python!\n\n::\n\n   In [1]: import pylibmc\n   In [2]: client = pylibmc.Client(['127.0.0.1'], binary=True)\n   In [3]: client[b'key'] = b'value'\n   In [4]: %timeit client[b'key']\n\n   10000 loops, best of 3: 25.4 µs per loop\n\n   In [5]: import diskcache as dc\n   In [6]: cache = dc.Cache('tmp')\n   In [7]: cache[b'key'] = b'value'\n   In [8]: %timeit cache[b'key']\n\n   100000 loops, best of 3: 11.8 µs per loop\n\n**Note:** Micro-benchmarks have their place but are not a substitute for real\nmeasurements. DiskCache offers cache benchmarks to defend its performance\nclaims. Micro-optimizations are avoided but your mileage may vary.\n\nDiskCache efficiently makes gigabytes of storage space available for\ncaching. By leveraging rock-solid database libraries and memory-mapped files,\ncache performance can match and exceed industry-standard solutions. There's no\nneed for a C compiler or running another process. Performance is a feature and\ntesting has 100% coverage with unit tests and hours of stress.\n\nTestimonials\n------------\n\n`Daren Hasenkamp`_, Founder --\n\n    \"It's a useful, simple API, just like I love about Redis. It has reduced\n    the amount of queries hitting my Elasticsearch cluster by over 25% for a\n    website that gets over a million users/day (100+ hits/second).\"\n\n`Mathias Petermann`_, Senior Linux System Engineer --\n\n    \"I implemented it into a wrapper for our Ansible lookup modules and we were\n    able to speed up some Ansible runs by almost 3 times. DiskCache is saving\n    us a ton of time.\"\n\nDoes your company or website use `DiskCache`_? Send us a `message\n<contact@grantjenks.com>`_ and let us know.\n\n.. _`Daren Hasenkamp`: https://www.linkedin.com/in/daren-hasenkamp-93006438/\n.. _`Mathias Petermann`: https://www.linkedin.com/in/mathias-petermann-a8aa273b/\n\nFeatures\n--------\n\n- Pure-Python\n- Fully Documented\n- Benchmark comparisons (alternatives, Django cache backends)\n- 100% test coverage\n- Hours of stress testing\n- Performance matters\n- Django compatible API\n- Thread-safe and process-safe\n- Supports multiple eviction policies (LRU and LFU included)\n- Keys support \"tag\" metadata and eviction\n- Developed on Python 3.10\n- Tested on CPython 3.6, 3.7, 3.8, 3.9, 3.10\n- Tested on Linux, Mac OS X, and Windows\n- Tested using GitHub Actions\n\n.. image:: https://github.com/grantjenks/python-diskcache/workflows/integration/badge.svg\n   :target: https://github.com/grantjenks/python-diskcache/actions?query=workflow%3Aintegration\n\n.. image:: https://github.com/grantjenks/python-diskcache/workflows/release/badge.svg\n   :target: https://github.com/grantjenks/python-diskcache/actions?query=workflow%3Arelease\n\nQuickstart\n----------\n\nInstalling `DiskCache`_ is simple with `pip <http://www.pip-installer.org/>`_::\n\n  $ pip install diskcache\n\nYou can access documentation in the interpreter with Python's built-in help\nfunction::\n\n  >>> import diskcache\n  >>> help(diskcache)                             # doctest: +SKIP\n\nThe core of `DiskCache`_ is three data types intended for caching. `Cache`_\nobjects manage a SQLite database and filesystem directory to store key and\nvalue pairs. `FanoutCache`_ provides a sharding layer to utilize multiple\ncaches and `DjangoCache`_ integrates that with `Django`_::\n\n  >>> from diskcache import Cache, FanoutCache, DjangoCache\n  >>> help(Cache)                                 # doctest: +SKIP\n  >>> help(FanoutCache)                           # doctest: +SKIP\n  >>> help(DjangoCache)                           # doctest: +SKIP\n\nBuilt atop the caching data types, are `Deque`_ and `Index`_ which work as a\ncross-process, persistent replacements for Python's ``collections.deque`` and\n``dict``. These implement the sequence and mapping container base classes::\n\n  >>> from diskcache import Deque, Index\n  >>> help(Deque)                                 # doctest: +SKIP\n  >>> help(Index)                                 # doctest: +SKIP\n\nFinally, a number of `recipes`_ for cross-process synchronization are provided\nusing an underlying cache. Features like memoization with cache stampede\nprevention, cross-process locking, and cross-process throttling are available::\n\n  >>> from diskcache import memoize_stampede, Lock, throttle\n  >>> help(memoize_stampede)                      # doctest: +SKIP\n  >>> help(Lock)                                  # doctest: +SKIP\n  >>> help(throttle)                              # doctest: +SKIP\n\nPython's docstrings are a quick way to get started but not intended as a\nreplacement for the `DiskCache Tutorial`_ and `DiskCache API Reference`_.\n\n.. _`Cache`: http://www.grantjenks.com/docs/diskcache/tutorial.html#cache\n.. _`FanoutCache`: http://www.grantjenks.com/docs/diskcache/tutorial.html#fanoutcache\n.. _`DjangoCache`: http://www.grantjenks.com/docs/diskcache/tutorial.html#djangocache\n.. _`Django`: https://www.djangoproject.com/\n.. _`Deque`: http://www.grantjenks.com/docs/diskcache/tutorial.html#deque\n.. _`Index`: http://www.grantjenks.com/docs/diskcache/tutorial.html#index\n.. _`recipes`: http://www.grantjenks.com/docs/diskcache/tutorial.html#recipes\n\nUser Guide\n----------\n\nFor those wanting more details, this part of the documentation describes\ntutorial, benchmarks, API, and development.\n\n* `DiskCache Tutorial`_\n* `DiskCache Cache Benchmarks`_\n* `DiskCache DjangoCache Benchmarks`_\n* `Case Study: Web Crawler`_\n* `Case Study: Landing Page Caching`_\n* `Talk: All Things Cached - SF Python 2017 Meetup`_\n* `DiskCache API Reference`_\n* `DiskCache Development`_\n\n.. _`DiskCache Tutorial`: http://www.grantjenks.com/docs/diskcache/tutorial.html\n.. _`DiskCache Cache Benchmarks`: http://www.grantjenks.com/docs/diskcache/cache-benchmarks.html\n.. _`DiskCache DjangoCache Benchmarks`: http://www.grantjenks.com/docs/diskcache/djangocache-benchmarks.html\n.. _`Talk: All Things Cached - SF Python 2017 Meetup`: http://www.grantjenks.com/docs/diskcache/sf-python-2017-meetup-talk.html\n.. _`Case Study: Web Crawler`: http://www.grantjenks.com/docs/diskcache/case-study-web-crawler.html\n.. _`Case Study: Landing Page Caching`: http://www.grantjenks.com/docs/diskcache/case-study-landing-page-caching.html\n.. _`DiskCache API Reference`: http://www.grantjenks.com/docs/diskcache/api.html\n.. _`DiskCache Development`: http://www.grantjenks.com/docs/diskcache/development.html\n\nComparisons\n-----------\n\nComparisons to popular projects related to `DiskCache`_.\n\nKey-Value Stores\n................\n\n`DiskCache`_ is mostly a simple key-value store. Feature comparisons with four\nother projects are shown in the tables below.\n\n* `dbm`_ is part of Python's standard library and implements a generic\n  interface to variants of the DBM database — dbm.gnu or dbm.ndbm. If none of\n  these modules is installed, the slow-but-simple dbm.dumb is used.\n* `shelve`_ is part of Python's standard library and implements a “shelf” as a\n  persistent, dictionary-like object. The difference with “dbm” databases is\n  that the values can be anything that the pickle module can handle.\n* `sqlitedict`_ is a lightweight wrapper around Python's sqlite3 database with\n  a simple, Pythonic dict-like interface and support for multi-thread\n  access. Keys are arbitrary strings, values arbitrary pickle-able objects.\n* `pickleDB`_ is a lightweight and simple key-value store. It is built upon\n  Python's simplejson module and was inspired by Redis. It is licensed with the\n  BSD three-clause license.\n\n.. _`dbm`: https://docs.python.org/3/library/dbm.html\n.. _`shelve`: https://docs.python.org/3/library/shelve.html\n.. _`sqlitedict`: https://github.com/RaRe-Technologies/sqlitedict\n.. _`pickleDB`: https://pythonhosted.org/pickleDB/\n\n**Features**\n\n================ ============= ========= ========= ============ ============\nFeature          diskcache     dbm       shelve    sqlitedict   pickleDB\n================ ============= ========= ========= ============ ============\nAtomic?          Always        Maybe     Maybe     Maybe        No\nPersistent?      Yes           Yes       Yes       Yes          Yes\nThread-safe?     Yes           No        No        Yes          No\nProcess-safe?    Yes           No        No        Maybe        No\nBackend?         SQLite        DBM       DBM       SQLite       File\nSerialization?   Customizable  None      Pickle    Customizable JSON\nData Types?      Mapping/Deque Mapping   Mapping   Mapping      Mapping\nOrdering?        Insert/Sorted None      None      None         None\nEviction?        LRU/LFU/more  None      None      None         None\nVacuum?          Automatic     Maybe     Maybe     Manual       Automatic\nTransactions?    Yes           No        No        Maybe        No\nMultiprocessing? Yes           No        No        No           No\nForkable?        Yes           No        No        No           No\nMetadata?        Yes           No        No        No           No\n================ ============= ========= ========= ============ ============\n\n**Quality**\n\n================ ============= ========= ========= ============ ============\nProject          diskcache     dbm       shelve    sqlitedict   pickleDB\n================ ============= ========= ========= ============ ============\nTests?           Yes           Yes       Yes       Yes          Yes\nCoverage?        Yes           Yes       Yes       Yes          No\nStress?          Yes           No        No        No           No\nCI Tests?        Linux/Windows Yes       Yes       Linux        No\nPython?          2/3/PyPy      All       All       2/3          2/3\nLicense?         Apache2       Python    Python    Apache2      3-Clause BSD\nDocs?            Extensive     Summary   Summary   Readme       Summary\nBenchmarks?      Yes           No        No        No           No\nSources?         GitHub        GitHub    GitHub    GitHub       GitHub\nPure-Python?     Yes           Yes       Yes       Yes          Yes\nServer?          No            No        No        No           No\nIntegrations?    Django        None      None      None         None\n================ ============= ========= ========= ============ ============\n\n**Timings**\n\nThese are rough measurements. See `DiskCache Cache Benchmarks`_ for more\nrigorous data.\n\n================ ============= ========= ========= ============ ============\nProject          diskcache     dbm       shelve    sqlitedict   pickleDB\n================ ============= ========= ========= ============ ============\nget                      25 µs     36 µs     41 µs       513 µs        92 µs\nset                     198 µs    900 µs    928 µs       697 µs     1,020 µs\ndelete                  248 µs    740 µs    702 µs     1,717 µs     1,020 µs\n================ ============= ========= ========= ============ ============\n\nCaching Libraries\n.................\n\n* `joblib.Memory`_ provides caching functions and works by explicitly saving\n  the inputs and outputs to files. It is designed to work with non-hashable and\n  potentially large input and output data types such as numpy arrays.\n* `klepto`_ extends Python’s `lru_cache` to utilize different keymaps and\n  alternate caching algorithms, such as `lfu_cache` and `mru_cache`. Klepto\n  uses a simple dictionary-sytle interface for all caches and archives.\n\n.. _`klepto`: https://pypi.org/project/klepto/\n.. _`joblib.Memory`: https://joblib.readthedocs.io/en/latest/memory.html\n\nData Structures\n...............\n\n* `dict`_ is a mapping object that maps hashable keys to arbitrary\n  values. Mappings are mutable objects. There is currently only one standard\n  Python mapping type, the dictionary.\n* `pandas`_ is a Python package providing fast, flexible, and expressive data\n  structures designed to make working with “relational” or “labeled” data both\n  easy and intuitive.\n* `Sorted Containers`_ is an Apache2 licensed sorted collections library,\n  written in pure-Python, and fast as C-extensions. Sorted Containers\n  implements sorted list, sorted dictionary, and sorted set data types.\n\n.. _`dict`: https://docs.python.org/3/library/stdtypes.html#typesmapping\n.. _`pandas`: https://pandas.pydata.org/\n.. _`Sorted Containers`: http://www.grantjenks.com/docs/sortedcontainers/\n\nPure-Python Databases\n.....................\n\n* `ZODB`_ supports an isomorphic interface for database operations which means\n  there's little impact on your code to make objects persistent and there's no\n  database mapper that partially hides the datbase.\n* `CodernityDB`_ is an open source, pure-Python, multi-platform, schema-less,\n  NoSQL database and includes an HTTP server version, and a Python client\n  library that aims to be 100% compatible with the embedded version.\n* `TinyDB`_ is a tiny, document oriented database optimized for your\n  happiness. If you need a simple database with a clean API that just works\n  without lots of configuration, TinyDB might be the right choice for you.\n\n.. _`ZODB`: http://www.zodb.org/\n.. _`CodernityDB`: https://pypi.org/project/CodernityDB/\n.. _`TinyDB`: https://tinydb.readthedocs.io/\n\nObject Relational Mappings (ORM)\n................................\n\n* `Django ORM`_ provides models that are the single, definitive source of\n  information about data and contains the essential fields and behaviors of the\n  stored data. Generally, each model maps to a single SQL database table.\n* `SQLAlchemy`_ is the Python SQL toolkit and Object Relational Mapper that\n  gives application developers the full power and flexibility of SQL. It\n  provides a full suite of well known enterprise-level persistence patterns.\n* `Peewee`_ is a simple and small ORM. It has few (but expressive) concepts,\n  making it easy to learn and intuitive to use. Peewee supports Sqlite, MySQL,\n  and PostgreSQL with tons of extensions.\n* `SQLObject`_ is a popular Object Relational Manager for providing an object\n  interface to your database, with tables as classes, rows as instances, and\n  columns as attributes.\n* `Pony ORM`_ is a Python ORM with beautiful query syntax. Use Python syntax\n  for interacting with the database. Pony translates such queries into SQL and\n  executes them in the database in the most efficient way.\n\n.. _`Django ORM`: https://docs.djangoproject.com/en/dev/topics/db/\n.. _`SQLAlchemy`: https://www.sqlalchemy.org/\n.. _`Peewee`: http://docs.peewee-orm.com/\n.. _`SQLObject`: http://sqlobject.org/\n.. _`Pony ORM`: https://ponyorm.com/\n\nSQL Databases\n.............\n\n* `SQLite`_ is part of Python's standard library and provides a lightweight\n  disk-based database that doesn’t require a separate server process and allows\n  accessing the database using a nonstandard variant of the SQL query language.\n* `MySQL`_ is one of the world’s most popular open source databases and has\n  become a leading database choice for web-based applications. MySQL includes a\n  standardized database driver for Python platforms and development.\n* `PostgreSQL`_ is a powerful, open source object-relational database system\n  with over 30 years of active development. Psycopg is the most popular\n  PostgreSQL adapter for the Python programming language.\n* `Oracle DB`_ is a relational database management system (RDBMS) from the\n  Oracle Corporation. Originally developed in 1977, Oracle DB is one of the\n  most trusted and widely used enterprise relational database engines.\n* `Microsoft SQL Server`_ is a relational database management system developed\n  by Microsoft. As a database server, it stores and retrieves data as requested\n  by other software applications.\n\n.. _`SQLite`: https://docs.python.org/3/library/sqlite3.html\n.. _`MySQL`: https://dev.mysql.com/downloads/connector/python/\n.. _`PostgreSQL`: http://initd.org/psycopg/\n.. _`Oracle DB`: https://pypi.org/project/cx_Oracle/\n.. _`Microsoft SQL Server`: https://pypi.org/project/pyodbc/\n\nOther Databases\n...............\n\n* `Memcached`_ is free and open source, high-performance, distributed memory\n  object caching system, generic in nature, but intended for use in speeding up\n  dynamic web applications by alleviating database load.\n* `Redis`_ is an open source, in-memory data structure store, used as a\n  database, cache and message broker. It supports data structures such as\n  strings, hashes, lists, sets, sorted sets with range queries, and more.\n* `MongoDB`_ is a cross-platform document-oriented database program. Classified\n  as a NoSQL database program, MongoDB uses JSON-like documents with\n  schema. PyMongo is the recommended way to work with MongoDB from Python.\n* `LMDB`_ is a lightning-fast, memory-mapped database. With memory-mapped\n  files, it has the read performance of a pure in-memory database while\n  retaining the persistence of standard disk-based databases.\n* `BerkeleyDB`_ is a software library intended to provide a high-performance\n  embedded database for key/value data. Berkeley DB is a programmatic toolkit\n  that provides built-in database support for desktop and server applications.\n* `LevelDB`_ is a fast key-value storage library written at Google that\n  provides an ordered mapping from string keys to string values. Data is stored\n  sorted by key and users can provide a custom comparison function.\n\n.. _`Memcached`: https://pypi.org/project/python-memcached/\n.. _`MongoDB`: https://api.mongodb.com/python/current/\n.. _`Redis`: https://redis.io/clients#python\n.. _`LMDB`: https://lmdb.readthedocs.io/\n.. _`BerkeleyDB`: https://pypi.org/project/bsddb3/\n.. _`LevelDB`: https://plyvel.readthedocs.io/\n\nReference\n---------\n\n* `DiskCache Documentation`_\n* `DiskCache at PyPI`_\n* `DiskCache at GitHub`_\n* `DiskCache Issue Tracker`_\n\n.. _`DiskCache Documentation`: http://www.grantjenks.com/docs/diskcache/\n.. _`DiskCache at PyPI`: https://pypi.python.org/pypi/diskcache/\n.. _`DiskCache at GitHub`: https://github.com/grantjenks/python-diskcache/\n.. _`DiskCache Issue Tracker`: https://github.com/grantjenks/python-diskcache/issues/\n\nLicense\n-------\n\nCopyright 2016-2023 Grant Jenks\n\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use\nthis file except in compliance with the License.  You may obtain a copy of the\nLicense at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software distributed\nunder the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR\nCONDITIONS OF ANY KIND, either express or implied. See the License for the\nspecific language governing permissions and limitations under the License.\n\n.. _`DiskCache`: http://www.grantjenks.com/docs/diskcache/\n",
+        "home_page": "http://www.grantjenks.com/docs/diskcache/",
+        "author": "Grant Jenks",
+        "author_email": "contact@grantjenks.com",
+        "license": "Apache 2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Apache Software License",
+          "Natural Language :: English",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.5",
+          "Programming Language :: Python :: 3.6",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: Implementation :: CPython"
+        ],
+        "requires_python": ">=3",
+        "project_url": [
+          "Documentation, http://www.grantjenks.com/docs/diskcache/",
+          "Funding, https://gum.co/diskcache",
+          "Source, https://github.com/grantjenks/python-diskcache",
+          "Tracker, https://github.com/grantjenks/python-diskcache/issues"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/diskcache_stubs-5.6.3.6.20240818-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=e1db90940b344140730976abe79f57f5b43ca296cbb43fa95da0c69b12d5de4f",
+          "hashes": {
+            "sha256": "e1db90940b344140730976abe79f57f5b43ca296cbb43fa95da0c69b12d5de4f"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.3",
+        "name": "diskcache-stubs",
+        "version": "5.6.3.6.20240818",
+        "summary": "diskcache stubs",
+        "description": "# diskcache-stubs\n\n[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)\n[![PyPI version](https://badge.fury.io/py/diskcache-stubs.svg)](https://badge.fury.io/py/diskcache-stubs)\n[![python version](https://img.shields.io/pypi/pyversions/diskcache-stubs.svg)](#)\n\nWarning: This library provides type hints only.\nIf you need the runtime package,\nyou can find it [`python-diskcache`](https://github.com/grantjenks/python-diskcache).\n\n## how to install\n```shell\n$ pip install diskcache-stubs\n```\n\n## TODO\n* [ ] `diskcache.core.Cache`\n> `Cache.pull`, `Cache.peek`, `Cache.peekitem`\n* [ ] `.typeshed.BaseCache`\n> `BaseCache.get`, `BaseCache.pop`\n* [ ] `diskcache.djangocache.DjangoCache`\n> Lack of interest in `Django`, so I haven't modified most of it since it was auto-generated.\n* [ ] tests?\n\n## License\n\nApache 2.0, see [LICENSE](https://github.com/phi-friday/diskcache-stubs/blob/main/LICENSE).\n",
+        "description_content_type": "text/markdown",
+        "author_email": "phi <phi.friday@gmail.com>",
+        "license": "Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright 2024 Choi Min-yeong\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 4 - Beta",
+          "License :: OSI Approved :: Apache Software License",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Typing :: Stubs Only"
+        ],
+        "requires_dist": [
+          "typing-extensions>=4.4.0"
+        ],
+        "requires_python": ">=3",
+        "project_url": [
+          "Repository, https://github.com/phi-friday/diskcache-stubs"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/idna-3.20-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c",
+          "hashes": {
+            "sha256": "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.5",
+        "name": "idna",
+        "version": "3.20",
+        "summary": "Internationalized Domain Names in Applications (IDNA)",
+        "description": "# Internationalized Domain Names in Applications (IDNA)\n\nSupport for [Internationalized Domain Names in Applications\n(IDNA)](https://tools.ietf.org/html/rfc5891) and [Unicode IDNA\nCompatibility Processing](https://unicode.org/reports/tr46/). It\nsupersedes the standard library's `encodings.idna`, which only\nimplements the 2003 specification, offering broader script coverage and\nlimiting domains with known security vulnerabilities.\n\n## Usage\n\nPackage may be installed from [PyPI](https://pypi.org/project/idna/) via\nthe typical methods (e.g. `python3 -m pip install idna`)\n\nFor typical usage, the `encode` and `decode` functions will take a\ndomain name argument and perform a conversion to ASCII-compatible encoding\n(known as A-labels), or to Unicode strings (known as U-labels)\nrespectively.\n\n```pycon\n>>> import idna\n>>> idna.encode('ドメイン.テスト')\nb'xn--eckwd4c7c.xn--zckzah'\n>>> print(idna.decode('xn--eckwd4c7c.xn--zckzah'))\nドメイン.テスト\n```\n\nConversions can be applied at a per-label basis using the `ulabel` or\n`alabel` functions for specialized use cases.\n\n\n### Compatibility Mapping (UTS #46)\n\nThis library provides support for [Unicode IDNA Compatibility\nProcessing](https://unicode.org/reports/tr46/) which normalizes input from\ndifferent potential ways a user may input a domain prior to performing the IDNA\nconversion operations. This functionality, known as a\n[mapping](https://tools.ietf.org/html/rfc5895), is considered by the\nspecification to be a local user-interface issue distinct from IDNA\nconversion functionality.\n\nFor example, \"Königsgäßchen\" is not a permissible label as capital letters\nare not allowed. UTS #46 will convert this into lower case prior to applying\nthe IDNA conversion.\n\n```pycon\n>>> import idna\n>>> idna.encode('Königsgäßchen')\n...\nidna.core.InvalidCodepoint: Codepoint U+004B at position 1 of 'Königsgäßchen' not allowed\n>>> idna.encode('Königsgäßchen', uts46=True)\nb'xn--knigsgchen-b4a3dun'\n>>> idna.decode('xn--knigsgchen-b4a3dun')\n'königsgäßchen'\n```\n\nWhen performing a decode operation for display purposes, `decode()`\naccepts a `display=True` argument that leaves any `xn--` label that\nfails to decode unchanged. This is useful for user interface display\nwhere a domain is in use, the A-label form can be presented when it\nis not a valid IDN.\n\n\n## Exceptions\n\nAll errors raised during conversion derive from the `idna.IDNAError`\nbase class. The more specific exceptions are:\n\n* `idna.IDNABidiError` — raised when a label contains an illegal\n  combination of left-to-right and right-to-left characters.\n* `idna.InvalidCodepoint` — raised when a label contains a codepoint\n  that is INVALID for IDNA.\n* `idna.InvalidCodepointContext` — raised when a CONTEXTO or CONTEXTJ\n  codepoint appears in a position whose contextual requirements are\n  not satisfied.\n\nExceptions carry machine-readable attributes so that applications do\nnot need to parse the message: `code` is a short, stable identifier\nfor the rule that failed (such as `disallowed_codepoint` or\n`label_too_long`); and, when the failure can be attributed to a\nparticular character, `text` (the label or domain being validated),\n`codepoint` (the offending codepoint as an integer) and `position`\nare set. \n\n\n## Command-line tool\n\nThe package supports command-line usage to convert domain names\nbetween their Unicode and ASCII-compatible forms. It can be run either\nas a module (`python3 -m idna`) or, once installed (such as with `uv\ntool` or `pipx`), via the `idna` script:\n\n```bash\n$ uv tool install idna\n$ idna xn--e1afmkfd.xn--p1ai\nпример.рф\n$ idna пример.рф\nxn--e1afmkfd.xn--p1ai\n```\n\nMode can be specified with `-e`/`--encode` or `-d`/`--decode`, otherwise\nit will be chosen automatically based on the first input. Multiple\ndomains can be supplied either as arguments or through standard input.\nUTS #46 mapping is applied by default, which lets the tool accept\ninputs that aren't strictly valid IDNA 2008 by normalising them first,\npass `--strict` to disable UTS #46.\n\nConversion failures are reported on stderr together with the\noffending input; processing continues with the remaining domains and\nthe tool exits with a non-zero status if any conversion failed.\n\n\n## Additional Notes\n\n* **Python version support**. This library supports Python 3.9 and higher.\n  As this library serves as a low-level toolkit for a variety of\n  applications, we strive to support all versions of Python that are\n  not beyond end-of-life. Free-threaded Python is also supported,\n  as the library holds no mutable global state the functions can be\n  called concurrently from multiple threads.\n\n* **Unicode version**. The IDNA and UTS #46 lookup tables are generated\n  from a specific Unicode release. Some Unicode data depends on the\n  running Python's `unicodedata` module, so on an older Python a\n  character new to Unicode may be rejected as unknown even if this\n  library knows about it.\n\n* **Emoji**. It is an occasional request to support emoji domains in\n  this library. Encoding of symbols like emoji is expressly prohibited by\n  the IDNA technical standard, and emoji domains are broadly phased\n  out across the domain industry due to associated security risks.\n\n* **Regenerating lookup tables**. The IDNA and UTS #46 functionality\n  relies upon pre-calculated lookup tables, generated using the\n  `idna-data` script in [`tools/`](tools/README.md).\n\n",
+        "description_content_type": "text/markdown",
+        "author_email": "Kim Davies <kim+pypi@gumleaf.org>",
+        "license_expression": "BSD-3-Clause",
+        "license_file": [
+          "LICENSE.md"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Intended Audience :: System Administrators",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Internet :: Name Service (DNS)",
+          "Topic :: Software Development :: Libraries :: Python Modules",
+          "Topic :: Utilities"
+        ],
+        "requires_dist": [
+          "ruff >= 0.16.0 ; extra == \"all\"",
+          "mypy >= 1.11.2 ; extra == \"all\"",
+          "ty >= 0.0.37 ; extra == \"all\"",
+          "pytest >= 8.3.2 ; extra == \"all\"",
+          "hypothesis >= 6.141.1 ; extra == \"all\"",
+          "coverage >= 7.10.0 ; extra == \"all\""
+        ],
+        "requires_python": ">=3.9",
+        "project_url": [
+          "Changelog, https://github.com/kjd/idna/blob/master/HISTORY.md",
+          "Issue tracker, https://github.com/kjd/idna/issues",
+          "Source, https://github.com/kjd/idna"
+        ],
+        "provides_extra": [
+          "all"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/jinja2-3.1.6-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67",
+          "hashes": {
+            "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "Jinja2",
+        "version": "3.1.6",
+        "summary": "A very fast and expressive template engine.",
+        "description": "# Jinja\n\nJinja is a fast, expressive, extensible templating engine. Special\nplaceholders in the template allow writing code similar to Python\nsyntax. Then the template is passed data to render the final document.\n\nIt includes:\n\n-   Template inheritance and inclusion.\n-   Define and import macros within templates.\n-   HTML templates can use autoescaping to prevent XSS from untrusted\n    user input.\n-   A sandboxed environment can safely render untrusted templates.\n-   AsyncIO support for generating templates and calling async\n    functions.\n-   I18N support with Babel.\n-   Templates are compiled to optimized Python code just-in-time and\n    cached, or can be compiled ahead-of-time.\n-   Exceptions point to the correct line in templates to make debugging\n    easier.\n-   Extensible filters, tests, functions, and even syntax.\n\nJinja's philosophy is that while application logic belongs in Python if\npossible, it shouldn't make the template designer's job difficult by\nrestricting functionality too much.\n\n\n## In A Nutshell\n\n```jinja\n{% extends \"base.html\" %}\n{% block title %}Members{% endblock %}\n{% block content %}\n  <ul>\n  {% for user in users %}\n    <li><a href=\"{{ user.url }}\">{{ user.username }}</a></li>\n  {% endfor %}\n  </ul>\n{% endblock %}\n```\n\n## Donate\n\nThe Pallets organization develops and supports Jinja and other popular\npackages. In order to grow the community of contributors and users, and\nallow the maintainers to devote more time to the projects, [please\ndonate today][].\n\n[please donate today]: https://palletsprojects.com/donate\n\n## Contributing\n\nSee our [detailed contributing documentation][contrib] for many ways to\ncontribute, including reporting issues, requesting features, asking or answering\nquestions, and making PRs.\n\n[contrib]: https://palletsprojects.com/contributing/\n\n",
+        "description_content_type": "text/markdown",
+        "maintainer_email": "Pallets <contact@palletsprojects.com>",
+        "license_file": [
+          "LICENSE.txt"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Environment :: Web Environment",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: BSD License",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+          "Topic :: Text Processing :: Markup :: HTML",
+          "Typing :: Typed"
+        ],
+        "requires_dist": [
+          "MarkupSafe>=2.0",
+          "Babel>=2.7 ; extra == \"i18n\""
+        ],
+        "requires_python": ">=3.7",
+        "project_url": [
+          "Changes, https://jinja.palletsprojects.com/changes/",
+          "Chat, https://discord.gg/pallets",
+          "Documentation, https://jinja.palletsprojects.com/",
+          "Donate, https://palletsprojects.com/donate",
+          "Source, https://github.com/pallets/jinja/"
+        ],
+        "provides_extra": [
+          "i18n"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/jq-1.13.0-cp314-cp314-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl",
+        "archive_info": {
+          "hash": "sha256=7e295fc95f1003d8395ade8975de9b948d9b25cae57dd123698a7c9131331caf",
+          "hashes": {
+            "sha256": "7e295fc95f1003d8395ade8975de9b948d9b25cae57dd123698a7c9131331caf"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "jq",
+        "version": "1.13.0",
+        "dynamic": [
+          "author",
+          "classifier",
+          "description",
+          "home-page",
+          "license",
+          "license-file",
+          "requires-python",
+          "summary"
+        ],
+        "summary": "jq is a lightweight and flexible JSON processor.",
+        "description": "jq.py: a lightweight and flexible JSON processor\n================================================\n\nThis project contains Python bindings for\n`jq <https://jqlang.github.io/jq/>`_ 1.8.2.\n\nInstallation\n------------\n\nWheels are built for various Python versions and architectures on Linux, Mac OS X and Windows.\nOn these platforms, you should be able to install jq with a normal pip install:\n\n.. code-block:: sh\n\n    pip install jq\n\nIf a wheel is not available,\nthe source for jq 1.8.2 is built.\nThis requires:\n\n* Autoreconf\n\n* The normal C compiler toolchain, such as gcc and make.\n\n* libtool\n\n* Python headers.\n\nAlternatively, set the environment variable ``JQPY_USE_SYSTEM_LIBS`` to ``1`` when installing the package\nto use the libjq and libonig versions available on the system rather than building them.\n\nDebian, Ubuntu or relatives\n~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\nIf on Debian, Ubuntu or relatives, running the following command should be sufficient:\n\n.. code-block:: sh\n\n    apt-get install autoconf automake build-essential libtool python-dev\n\nRed Hat, Fedora, CentOS or relatives\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\nIf on Red Hat, Fedora, CentOS, or relatives, running the following command should be sufficient:\n\n.. code-block:: sh\n\n    yum groupinstall \"Development Tools\"\n    yum install autoconf automake libtool python python-devel\n\nMac OS X\n~~~~~~~~\n\nIf on Mac OS X, you probably want to install\n`Xcode <https://developer.apple.com/xcode/>`_ and `Homebrew <http://brew.sh/>`_.\nOnce Homebrew is installed, you can install the remaining dependencies with:\n\n.. code-block:: sh\n\n    brew install autoconf automake libtool\n\nUsage\n-----\n\nUsing jq requires three steps:\n\n#. Call ``jq.compile()`` to compile a jq program.\n#. Call an input method on the compiled program to supply the input.\n#. Call an output method on the result to retrieve the output.\n\nFor instance:\n\n.. code-block:: python\n\n    import jq\n\n    assert jq.compile(\".+5\").input_value(42).first() == 47\n\nInput methods\n~~~~~~~~~~~~~\n\nCall ``.input_value()`` to supply a valid JSON value, such as the values returned from ``json.load``:\n\n.. code-block:: python\n\n    import jq\n\n    assert jq.compile(\".\").input_value(None).first() == None\n    assert jq.compile(\".\").input_value(42).first() == 42\n    assert jq.compile(\".\").input_value(0.42).first() == 0.42\n    assert jq.compile(\".\").input_value(True).first() == True\n    assert jq.compile(\".\").input_value(\"hello\").first() == \"hello\"\n\nCall ``.input_values()`` to supply multiple valid JSON values, such as the values returned from ``json.load``:\n\n.. code-block:: python\n\n    import jq\n\n    assert jq.compile(\".+5\").input_values([1, 2, 3]).all() == [6, 7, 8]\n\nCall ``.input_text()`` to supply unparsed JSON text:\n\n.. code-block:: python\n\n    import jq\n\n    assert jq.compile(\".\").input_text(\"null\").first() == None\n    assert jq.compile(\".\").input_text(\"42\").first() == 42\n    assert jq.compile(\".\").input_text(\"0.42\").first() == 0.42\n    assert jq.compile(\".\").input_text(\"true\").first() == True\n    assert jq.compile(\".\").input_text('\"hello\"').first() == \"hello\"\n    assert jq.compile(\".\").input_text(\"1\\n2\\n3\").all() == [1, 2, 3]\n\nPass ``slurp=True`` to ``.input_text()`` to read the entire input into an array:\n\n.. code-block:: python\n\n    import jq\n\n    assert jq.compile(\".\").input_text(\"1\\n2\\n3\", slurp=True).first() == [1, 2, 3]\n\nYou can also call the older ``input()`` method by passing:\n\n* a valid JSON value, such as the values returned from ``json.load``, as a positional argument\n* unparsed JSON text as the keyword argument ``text``\n\nFor instance:\n\n.. code-block:: python\n\n    import jq\n\n    assert jq.compile(\".\").input(\"hello\").first() == \"hello\"\n    assert jq.compile(\".\").input(text='\"hello\"').first() == \"hello\"\n\nOutput methods\n~~~~~~~~~~~~~~\n\nCalling ``first()`` on the result will run the program with the given input,\nand return the first output element.\n\n.. code-block:: python\n\n    import jq\n\n    assert jq.compile(\".\").input_value(\"hello\").first() == \"hello\"\n    assert jq.compile(\"[.[]+1]\").input_value([1, 2, 3]).first() == [2, 3, 4]\n    assert jq.compile(\".[]+1\").input_value([1, 2, 3]).first() == 2\n\nCall ``text()`` instead of ``first()`` to serialise the output into JSON text:\n\n.. code-block:: python\n\n    assert jq.compile(\".\").input_value(\"42\").text() == '\"42\"'\n\nWhen calling ``text()``, if there are multiple output elements, each element is represented by a separate line:\n\n.. code-block:: python\n\n    assert jq.compile(\".[]\").input_value([1, 2, 3]).text() == \"1\\n2\\n3\"\n\nCall ``all()`` to get all of the output elements in a list:\n\n.. code-block:: python\n\n    assert jq.compile(\".[]+1\").input_value([1, 2, 3]).all() == [2, 3, 4]\n\nCall ``iter()`` to get all of the output elements as an iterator:\n\n.. code-block:: python\n\n    iterator = iter(jq.compile(\".[]+1\").input_value([1, 2, 3]))\n    assert next(iterator, None) == 2\n    assert next(iterator, None) == 3\n    assert next(iterator, None) == 4\n    assert next(iterator, None) == None\n\nArguments\n~~~~~~~~~\n\nCalling ``compile()`` with the ``args`` argument allows predefined variables to be used within the program:\n\n.. code-block:: python\n\n    program = jq.compile(\"$a + $b + .\", args={\"a\": 100, \"b\": 20})\n    assert program.input_value(3).first() == 123\n\nConvenience functions\n~~~~~~~~~~~~~~~~~~~~~\n\nConvenience functions are available to get the output for a program and input in one call:\n\n.. code-block:: python\n\n    assert jq.first(\".[] + 1\", [1, 2, 3]) == 2\n    assert jq.first(\".[] + 1\", text=\"[1, 2, 3]\") == 2\n    assert jq.text(\".[] + 1\", [1, 2, 3]) == \"2\\n3\\n4\"\n    assert jq.all(\".[] + 1\", [1, 2, 3]) == [2, 3, 4]\n    assert list(jq.iter(\".[] + 1\", [1, 2, 3])) == [2, 3, 4]\n\nOriginal program string\n~~~~~~~~~~~~~~~~~~~~~~~\n\nThe original program string is available on a compiled program as the ``program_string`` attribute:\n\n.. code-block:: python\n\n    program = jq.compile(\".\")\n    assert program.program_string == \".\"\n",
+        "home_page": "https://github.com/mwilliamson/jq.py",
+        "author": "Michael Williamson",
+        "license": "BSD-2-Clause",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Programming Language :: Python :: Implementation :: CPython"
+        ],
+        "requires_python": ">=3.9"
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/markupsafe-3.0.4-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "archive_info": {
+          "hash": "sha256=a8e9f292fcda89b324f2f5c91d13f1424a153e40fc2756f38ee23b15835ff300",
+          "hashes": {
+            "sha256": "a8e9f292fcda89b324f2f5c91d13f1424a153e40fc2756f38ee23b15835ff300"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "MarkupSafe",
+        "version": "3.0.4",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "Safely add untrusted strings to HTML/XML markup.",
+        "description": "<div align=\"center\"><img src=\"https://raw.githubusercontent.com/pallets/markupsafe/refs/heads/stable/docs/_static/markupsafe-name.svg\" alt=\"\" height=\"150\"></div>\n\n# MarkupSafe\n\nMarkupSafe implements a text object that escapes characters so it is\nsafe to use in HTML and XML. Characters that have special meanings are\nreplaced so that they display as the actual characters. This mitigates\ninjection attacks, meaning untrusted user input can safely be displayed\non a page.\n\n\n## Examples\n\n```pycon\n>>> from markupsafe import Markup, escape\n\n>>> # escape replaces special characters and wraps in Markup\n>>> escape(\"<script>alert(document.cookie);</script>\")\nMarkup('&lt;script&gt;alert(document.cookie);&lt;/script&gt;')\n\n>>> # wrap in Markup to mark text \"safe\" and prevent escaping\n>>> Markup(\"<strong>Hello</strong>\")\nMarkup('<strong>hello</strong>')\n\n>>> escape(Markup(\"<strong>Hello</strong>\"))\nMarkup('<strong>hello</strong>')\n\n>>> # Markup is a str subclass\n>>> # methods and operators escape their arguments\n>>> template = Markup(\"Hello <em>{name}</em>\")\n>>> template.format(name='\"World\"')\nMarkup('Hello <em>&#34;World&#34;</em>')\n```\n\n## Donate\n\nThe Pallets organization develops and supports MarkupSafe and other\npopular packages. In order to grow the community of contributors and\nusers, and allow the maintainers to devote more time to the projects,\n[please donate today][].\n\n[please donate today]: https://palletsprojects.com/donate\n\n## Contributing\n\nSee our [detailed contributing documentation][contrib] for many ways to\ncontribute, including reporting issues, requesting features, asking or answering\nquestions, and making PRs.\n\n[contrib]: https://palletsprojects.com/contributing/\n",
+        "description_content_type": "text/markdown",
+        "maintainer_email": "Pallets <contact@palletsprojects.com>",
+        "license_expression": "BSD-3-Clause",
+        "license_file": [
+          "LICENSE.txt"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Environment :: Web Environment",
+          "Intended Audience :: Developers",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+          "Topic :: Text Processing :: Markup :: HTML",
+          "Typing :: Typed"
+        ],
+        "requires_python": ">=3.9",
+        "project_url": [
+          "Donate, https://palletsprojects.com/donate",
+          "Documentation, https://markupsafe.palletsprojects.com/",
+          "Changes, https://markupsafe.palletsprojects.com/page/changes/",
+          "Source, https://github.com/pallets/markupsafe/",
+          "Chat, https://discord.gg/pallets"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/packaging-26.3-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+          "hashes": {
+            "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "packaging",
+        "version": "26.3",
+        "summary": "Core utilities for Python packages",
+        "description": "packaging\n=========\n\n.. start-intro\n\nReusable core utilities for various Python Packaging\n`interoperability specifications <https://packaging.python.org/specifications/>`_.\n\nThis library provides utilities that implement the interoperability\nspecifications which have clearly one correct behaviour (eg: :pep:`440`)\nor benefit greatly from having a single shared implementation (eg: :pep:`425`).\n\n.. end-intro\n\nThe ``packaging`` project includes the following: version handling, specifiers,\nmarkers, requirements, tags, metadata, lockfiles, utilities.\n\nDocumentation\n-------------\n\nThe `documentation`_ provides information and the API for the following:\n\n- Version Handling\n- Specifiers\n- Markers\n- Licenses\n- Requirements\n- Metadata\n- Tags\n- Lockfiles (pylock)\n- Direct URL helpers\n- Dependency groups\n- Errors\n- Utilities\n\nInstallation\n------------\n\nUse ``pip`` to install these utilities::\n\n    pip install packaging\n\nThe ``packaging`` library uses calendar-based versioning (``YY.N``).\n\nDiscussion\n----------\n\nIf you run into bugs, you can file them in our `issue tracker`_.\n\nYou can also join discussions on `GitHub Discussions`_ to ask questions or get involved.\n\n.. _`documentation`: https://packaging.pypa.io/\n.. _`issue tracker`: https://github.com/pypa/packaging/issues\n.. _`GitHub Discussions`: https://github.com/pypa/packaging/discussions\n\n\nCode of Conduct\n---------------\n\nEveryone interacting in the packaging project's codebases, issue trackers, chat\nrooms, and mailing lists is expected to follow the `PSF Code of Conduct`_.\n\n.. _PSF Code of Conduct: https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md\n\nContributing\n------------\n\nThe ``CONTRIBUTING.rst`` file outlines how to contribute to this project as\nwell as how to report a potential security issue. The documentation for this\nproject also covers information about `project development`_ and `security`_.\n\n.. _`project development`: https://packaging.pypa.io/en/latest/development/\n.. _`security`: https://packaging.pypa.io/en/latest/security/\n\nProject History\n---------------\n\nPlease review the ``CHANGELOG.rst`` file or the `Changelog documentation`_ for\nrecent changes and project history.\n\n.. _`Changelog documentation`: https://packaging.pypa.io/en/latest/changelog/\n\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "Donald Stufft <donald@stufft.io>",
+        "license_expression": "Apache-2.0 OR BSD-2-Clause",
+        "license_file": [
+          "LICENSE",
+          "LICENSE.APACHE",
+          "LICENSE.BSD"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Programming Language :: Python :: Free Threading :: 4 - Resilient",
+          "Typing :: Typed"
+        ],
+        "requires_python": ">=3.9",
+        "project_url": [
+          "Documentation, https://packaging.pypa.io/",
+          "Source, https://github.com/pypa/packaging"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/pyparsing-3.3.3-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=ece8c00a69cf01b45d0b1dedabb469c90d8caf996d4fda40f147627a122849a4",
+          "hashes": {
+            "sha256": "ece8c00a69cf01b45d0b1dedabb469c90d8caf996d4fda40f147627a122849a4"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.5",
+        "name": "pyparsing",
+        "version": "3.3.3",
+        "summary": "pyparsing - Classes and methods to define and execute parsing grammars",
+        "description": "PyParsing -- A Python Parsing Module\n====================================\n\n|Version| |Build Status| |Coverage| |License| |Python Versions| |Snyk Score|\n\nIntroduction\n============\n\nThe pyparsing module is an alternative approach to creating and\nexecuting simple grammars, vs. the traditional lex/yacc approach, or the\nuse of regular expressions. The pyparsing module provides a library of\nclasses that client code uses to construct the grammar directly in\nPython code.\n\n*[Since first writing this description of pyparsing in late 2003, this\ntechnique for developing parsers has become more widespread, under the\nname Parsing Expression Grammars - PEGs. See more information on PEGs*\n`here <https://en.wikipedia.org/wiki/Parsing_expression_grammar>`__\n*.]*\n\nHere is a program to parse ``\"Hello, World!\"`` (or any greeting of the form\n``\"salutation, addressee!\"``):\n\n.. code:: python\n\n    from pyparsing import Word, alphas\n    greet = Word(alphas) + \",\" + Word(alphas) + \"!\"\n    hello = \"Hello, World!\"\n    print(hello, \"->\", greet.parse_string(hello))\n\nThe program outputs the following::\n\n    Hello, World! -> ['Hello', ',', 'World', '!']\n\nThe Python representation of the grammar is quite readable, owing to the\nself-explanatory class names, and the use of '+', '|' and '^' operator\ndefinitions.\n\nThe parsed results returned from ``parse_string()`` is a collection of type\n``ParseResults``, which can be accessed as a\nnested list, a dictionary, or an object with named attributes.\n\nThe pyparsing module handles some of the problems that are typically\nvexing when writing text parsers:\n\n- extra or missing whitespace (the above program will also handle ``\"Hello,World!\"``, ``\"Hello , World !\"``, etc.)\n- quoted strings\n- embedded comments\n\nThe examples directory includes a simple SQL parser, simple CORBA IDL\nparser, a config file parser, a chemical formula parser, and a four-\nfunction algebraic notation parser, among many others.\n\nDocumentation\n=============\n\nThere are many examples in the online docstrings of the classes\nand methods in pyparsing. You can find them compiled into `online docs <https://pyparsing-docs.readthedocs.io/en/latest/>`__. Additional\ndocumentation resources and project info are listed in the online\n`GitHub wiki <https://github.com/pyparsing/pyparsing/wiki>`__. An\nentire directory of examples can be found `here <https://github.com/pyparsing/pyparsing/tree/master/examples>`__.\n\nAI Instructions\n===============\n\nThere are also instructions for AI agents to use when helping you to create your parser. They can\nbe pulled from the GitHub project repository, at pyparsing/ai/best_practices.md. You can also tell\nthe AI to access them programmatically after installing pyparsing, either from the CLI with\n``python -m pyparsing.ai.show_best_practices`` or within python with\n``import pyparsing; pyparsing.show_best_practices()``.\n\n\nLicense\n=======\n\nMIT License. See header of the `pyparsing __init__.py <https://github.com/pyparsing/pyparsing/blob/master/pyparsing/__init__.py#L1-L23>`__ file.\n\nHistory\n=======\n\nSee `CHANGES <https://github.com/pyparsing/pyparsing/blob/master/CHANGES>`__ file.\n\n\nPerformance benchmarks\n======================\n\nFor usage instructions and details on the performance benchmark suite, see\n``tests/README.md`` in this repository.\n\n.. |Build Status| image:: https://github.com/pyparsing/pyparsing/actions/workflows/ci.yml/badge.svg\n   :target: https://github.com/pyparsing/pyparsing/actions/workflows/ci.yml\n\n.. |Coverage| image:: https://codecov.io/gh/pyparsing/pyparsing/branch/master/graph/badge.svg\n  :target: https://codecov.io/gh/pyparsing/pyparsing\n\n.. |Version| image:: https://img.shields.io/pypi/v/pyparsing?style=flat-square\n    :target: https://pypi.org/project/pyparsing/\n    :alt: Version\n\n.. |License| image:: https://img.shields.io/pypi/l/pyparsing.svg?style=flat-square\n    :target: https://pypi.org/project/pyparsing/\n    :alt: License\n\n.. |Python Versions| image:: https://img.shields.io/pypi/pyversions/pyparsing.svg?style=flat-square\n    :target: https://pypi.org/project/python-liquid/\n    :alt: Python versions\n\n.. |Snyk Score| image:: https://snyk.io//advisor/python/pyparsing/badge.svg\n   :target: https://snyk.io//advisor/python/pyparsing\n   :alt: pyparsing\n\n",
+        "description_content_type": "text/x-rst",
+        "author_email": "Paul McGuire <ptmcg.gm+pyparsing@gmail.com>",
+        "license_expression": "MIT",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Intended Audience :: Information Technology",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Software Development :: Compilers",
+          "Topic :: Text Processing",
+          "Typing :: Typed"
+        ],
+        "requires_dist": [
+          "railroad-diagrams ; extra == \"diagrams\"",
+          "jinja2 ; extra == \"diagrams\""
+        ],
+        "requires_python": ">=3.9",
+        "project_url": [
+          "Documentation, https://pyparsing-docs.readthedocs.io/en/latest/",
+          "Homepage, https://github.com/pyparsing/pyparsing/",
+          "Source, https://github.com/pyparsing/pyparsing.git"
+        ],
+        "provides_extra": [
+          "diagrams"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/pysigma-1.5.1-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=1e6e080bde31db6039eb5d87d43322bf416534f30048091c65038e88225b8200",
+          "hashes": {
+            "sha256": "1e6e080bde31db6039eb5d87d43322bf416534f30048091c65038e88225b8200"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "pySigma",
+        "version": "1.5.1",
+        "summary": "Sigma rule processing and conversion tools",
+        "description": "# pySigma\n\n![Tests](https://github.com/SigmaHQ/pySigma/actions/workflows/test.yml/badge.svg)\n![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/thomaspatzke/11b31b4f709b6dc54a30d5203e8fe0ee/raw/SigmaHQ-pySigma-coverage.json)\n![Status](https://img.shields.io/badge/Status-pre--release-orange)\n\n`pySigma` is a python library that parses and converts Sigma rules into queries. It is a replacement\nfor the legacy Sigma toolchain (sigmac) with a much cleaner design and is almost fully tested.\nBackends for support of conversion into query languages and processing pipelines for transforming\nrule for log data models are separated into dedicated projects to keep pySigma itself slim and\nvendor-agnostic. See the *Related Projects* section below to get an overview.\n\n## Getting Started\n\nTo start using `pySigma`, you need Python 3.10 or later. Install it using your python package manager of choice. Examples:\n\n```\npip install pysigma\npipenv install pysigma\npoetry add pysigma\n```\n\nDocumentation with some usage examples can be found [here](https://sigmahq-pysigma.readthedocs.io/).\n\n## Create Your Own Backend for pySigma\n\nThe creation of a backend has become much easier with pySigma. We recommend using the \"Cookie Cutter Template\" and reviewing the existing backends listed in the \"Related Projects\" section of this README.\n\n[pySigma Cookie Cutter Template](https://github.com/SigmaHQ/cookiecutter-pySigma-backend)\n\n## Features\n\n`pySigma` brings a number of additional features compared to the all in one `sigmac`, as well as some changes.\n\n[sigma-cli](https://github.com/SigmaHQ/sigma-cli) is the equivalent of sigmac for command-line conversion\n\n### Modifier \n\nuse `sigma list modifiers`\n\n### Backends\n\nuse `sigma plugin list --plugin-type backend`\n\n## Overview\n\nConversion Overview\n\n![Conversion Graph](/docs/images/conversion.png)\n\nPipelines\n\n![Conversion Graph](/docs/images/pipelines.png)\n\nMore details are described in [the documentation](https://sigmahq-pysigma.readthedocs.io/).\n\n## Testing\n\npySigma uses pytest as testing framework. Simply run `pytest` to run all tests. Run `pytest\n--cov=sigma` to get a coverage report.\n\n## Building\n\nTo build your own package run `poetry build`.\n\n## Linting\n\nTo lint the code run `poetry run black`. To check for linting errors run `poetry run black --check`.\n\nThis project also uses [pre-commit](https://pre-commit.com/), which is installed by poetry as part of dev dependencies. To install the git hooks run `poetry run pre-commit install` after cloning the repository and installing the dependencies.\n\n## Contributing\n\nPull requests are welcome. Please feel free to lodge any issues/PRs as discussion points.\n\nThis [blog post](https://medium.com/@micahbabinski/creating-a-sigma-backend-for-fun-and-no-profit-ed16d20da142) by Micah Babinski explains the process from a developer's perspective.\n\n## Maintainers\n\nThe project is currently maintained by:\n\n- Thomas Patzke <thomas@patzke.org>\n- [François Hubaut](https://github.com/frack113)\n\n## Related Projects\n\npySigma isn't a monolithic library attempting to support everything but the core. Support for target\nquery languages and log data models is provided by additional packages that extend pySigma:\n\n* [sigma-cli](https://github.com/SigmaHQ/sigma-cli): a command line interface for conversion of\n  Sigma rules based on pySigma.\n* [pySigma-backend-splunk](https://github.com/SigmaHQ/pySigma-backend-splunk)\n* [pySigma-pipeline-sysmon](https://github.com/SigmaHQ/pySigma-pipeline-sysmon)\n* [pySigma-pipeline-crowdstrike](https://github.com/SigmaHQ/pySigma-pipeline-crowdstrike)\n* [pySigma-backend-netwitness](https://github.com/marcelkwaschny/pySigma-backend-netwitness)\n* [pySigma-backend-panther](https://github.com/panther-labs/pySigma-backend-panther)\n\nAll packages can also be installed from PyPI if not mentioned otherwise by the Python package\nmanager of your choice.\n\n## License\n\nGNU Lesser General Public License v2.1. For details, please see the full license file [located here](https://github.com/SigmaHQ/pySigma/blob/main/LICENSE).\n\n",
+        "description_content_type": "text/markdown",
+        "author": "Thomas Patzke",
+        "author_email": "thomas@patzke.org",
+        "license_expression": "LGPL-2.1-only",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 4 - Beta",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Topic :: Security"
+        ],
+        "requires_dist": [
+          "diskcache (>=5.6.3,<6.0.0)",
+          "diskcache-stubs (>=5.6.3)",
+          "jinja2 (>=3.1.6,<4.0.0)",
+          "jq (>=1.12,<2.0)",
+          "packaging (>=26.3,<27.0)",
+          "pyparsing (>=3.2.5,<4.0.0)",
+          "pyyaml (>=6.0.3,<7.0.0)",
+          "requests (>=2.32.5,<3.0.0)",
+          "types-pyyaml (>=6.0.12.20260815,<7.0.0.0)",
+          "typing-extensions (>=4.16.0,<5.0.0)"
+        ],
+        "requires_python": ">=3.10,<4.0",
+        "project_url": [
+          "Repository, https://github.com/SigmaHQ/pySigma"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/pysigma_backend_elasticsearch-2.1.1-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=0bb514ae02445d2053d530bd732c8747ffac9184246d45f3fa2669d0862a5af4",
+          "hashes": {
+            "sha256": "0bb514ae02445d2053d530bd732c8747ffac9184246d45f3fa2669d0862a5af4"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "pySigma-backend-elasticsearch",
+        "version": "2.1.1",
+        "summary": "pySigma Elasticsearch backend supporting Lucene, ES|QL (with correlations) and EQL queries",
+        "description": "![Tests](https://github.com/SigmaHQ/pySigma-backend-elasticsearch/actions/workflows/test.yml/badge.svg)\n![Coverage\nBadge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/thomaspatzke/3c445ef26310e9f2d2ca09c697db1c71/raw/SigmaHQ-pySigma-backend-elasticsearch.json)\n![Status](https://img.shields.io/badge/Status-release-green)\n\n# pySigma Elasticsearch Backend\n\nThis is the Elasticsearch backend for pySigma. It provides the package `sigma.backends.elasticsearch` with the `LuceneBackend` class.\n\nIt supports the following output formats:\n\n* default: Lucene queries.\n* dsl_lucene: DSL with embedded Lucene queries.\n* eql: Elastic Event Query Language queries.\n* kibana_ndjson: Kibana NDJSON with Lucene queries.\n\nFurther, it contains the following processing pipelines in `sigma.pipelines.elasticsearch`:\n\n* ecs_windows in windows submodule: ECS mapping for Windows event logs ingested with Winlogbeat.\n* ecs_windows_old in windows submodule: ECS mapping for Windows event logs ingested with Winlogbeat <= 6.x.\n* ecs_zeek_beats in zeek submodule: Zeek ECS mapping from Elastic.\n* ecs_zeek_corelight in zeek submodule: Zeek ECS mapping from Corelight.\n* zeek_raw in zeek submodule: Zeek raw JSON log field naming.\n* ecs_kubernetes in kubernetes submodule: ECS mapping for Kubernetes audit logs ingested with Kubernetes integration.\n* ecs_macos_esf in macos submodule: ECS mapping for macOS Endpoint Security Framework (ESF) events.\n\nThis backend is currently maintained by:\n\n* [Thomas Patzke](https://github.com/SigmaHQ/)\n* [Hendrik Bäcker](https://github.com/andurin)\n\nFurther maintainers required! Send a message to [Thomas](mailto:thomas@patzke.org) if you want to co-maintain this\nbackend.\n\n## Formats vs. Query Post Processing\n\nWhile trying to support the minimum compatible output the built-in formats can't fits everyones needs. This gap is filled by a feature called \"query post processing\" available since pysigma v0.10.\n\nFor further information please read [\"Introducing Query Post-Processing and Output Finalization to Processing Pipelines\"](https://medium.com/sigma-hq/introducing-query-post-processing-and-output-finalization-to-processing-pipelines-4bfe74087ac1).\n\n### Lucene Kibana NDJSON\n\nInstead of using the format `-t lucene -f kibana_ndjson` you can also use the following query postprocessing pipeline\nto get the same output or use this as a starting point for your own customizations.\n\n```yaml\n# lucene-kibana-ndjson.yml\npostprocessing:\n- type: template\n  template: |+\n    {\"id\": \"{{ rule.id }}\", \"type\": \"search\", \"attributes\": {\"title\": \"SIGMA - {{ rule.title }}\", \"description\": \"{{ rule.description }}\", \"hits\": 0, \"columns\": [], \"sort\": [\"@timestamp\", \"desc\"], \"version\": 1, \"kibanaSavedObjectMeta\": {\"searchSourceJSON\": \"{\\\"index\\\": \\\"beats-*\\\", \\\"filter\\\": [], \\\"highlight\\\": {\\\"pre_tags\\\": [\\\"@kibana-highlighted-field@\\\"], \\\"post_tags\\\": [\\\"@/kibana-highlighted-field@\\\"], \\\"fields\\\": {\\\"*\\\": {}}, \\\"require_field_match\\\": false, \\\"fragment_size\\\": 2147483647}, \\\"query\\\": {\\\"query_string\\\": {\\\"query\\\": \\\"{{ query }}\\\", \\\"analyze_wildcard\\\": true}}}\"}}, \"references\": [{\"id\": \"beats-*\", \"name\": \"kibanaSavedObjectMeta.searchSourceJSON.index\", \"type\": \"index-pattern\"}]}\n```\n\nUse this pipeline with: `-t lucene -p lucene-kibana-ndjson.yml` but now without `-f kibana_ndjson`.\n\n### Lucene Kibana SIEM Rule\n\nInstead of using the format `-t lucene -f siem_rule` you can also use the following query postprocessing pipeline\nto get the same output or use this as a starting point for your own customizations.\n\n```yaml\n# lucene-kibana-siemrule.yml\nvars:\n  index_names: \n    - \"apm-*-transaction*\"\n    - \"auditbeat-*\"\n    - \"endgame-*\"\n    - \"filebeat-*\"\n    - \"logs-*\"\n    - \"packetbeat-*\"\n    - \"traces-apm*\"\n    - \"winlogbeat-*\"\n    - \"-*elastic-cloud-logs-*\"\n  schedule_interval: 5\n  schedule_interval_unit: m\npostprocessing:\n- type: template\n  template: |+\n    {\n      \"name\": \"SIGMA - {{ rule.title }}\",\n      \"consumer\": \"siem\",\n      \"enabled\": true,\n      \"throttle\": null,\n      \"schedule\": {\n        \"interval\": \"{{ pipeline.vars.schedule_interval }}{{ pipeline.vars.schedule_interval_unit }}\"\n      },\n      \"params\": {\n        \"author\": [\n        {% if rule.author is string -%}\n          \"{{rule.author}}\"\n        {% else %}\n        {% for a in rule.author -%}\n          \"{{ a }}\"{% if not loop.last %},{%endif%}\n        {% endfor -%}\n        {% endif -%} \n        ],\n        \"description\": \"{{ rule.description }}\",\n        \"ruleId\": \"{{ rule.id }}\",\n        \"falsePositives\": {{ rule.falsepositives }},\n        \"from\": \"now-{{ pipeline.vars.schedule_interval }}{{ pipeline.vars.schedule_interval_unit }}\",\n        \"immutable\": false,\n        \"license\": \"DRL\",\n        \"outputIndex\": \"\",\n        \"meta\": {\n          \"from\": \"1m\"\n        },\n        \"maxSignals\": 100,\n        \"riskScore\": (\n            self.severity_risk_mapping[rule.level.name]\n            if rule.level is not None\n            else 21\n        ),\n        \"riskScoreMapping\": [],\n        \"severity\": (\n            str(rule.level.name).lower() if rule.level is not None else \"low\"\n        ),\n        \"severityMapping\": [],\n        \"threat\": list(self.finalize_output_threat_model(rule.tags)),\n        \"to\": \"now\",\n        \"references\": {{ rule.references |tojson(indent=6)}},\n        \"version\": 1,\n        \"exceptionsList\": [],\n        \"relatedIntegrations\": [],\n        \"requiredFields\": [],\n        \"setup\": \"\",\n        \"type\": \"query\",\n        \"language\": \"lucene\",\n        \"index\": {{ pipeline.vars.index_names | tojson(indent=6)}},\n        \"query\": \"{{ query }}\",\n        \"filters\": []\n      },\n      \"rule_type_id\": \"siem.queryRule\",\n      \"tags\": [\n        {% for n in rule.tags -%}\n        \"{{ n.namespace }}-{{ n.name }}\"{% if not loop.last %},{%endif%}\n      {% endfor -%}\n      ],\n      \"notify_when\": \"onActiveAlert\",\n      \"actions\": []\n    }\n```\n\nUse this pipeline with: `-t lucene -p lucene-kibana-siemrule.yml` but now without `-f kibana_ndjson`.\n\n### EQL siem_rule_ndjson\n```yaml\nvars:\n  schedule_interval: 5\n  schedule_interval_unit: m\npostprocessing:\n  - type: template\n    template: |+\n      {%- set tags = [] -%}\n      {% for n in rule.tags %}\n        {%- set tag_string = n.namespace ~ '-' ~ n.name -%}\n        {%- set tags=tags.append(tag_string) -%}\n      {% endfor %}\n\n      {%- set rule_data = {\n        \"name\": rule.title,\n        \"id\": rule.id | lower,\n        \"author\": [rule.author] if rule.author is string else rule.author or \"\",\n        \"description\": rule.description if rule.description else \"empty description\",\n        \"references\": rule.references,\n        \"enabled\": true,\n        \"interval\": pipeline.vars.schedule_interval|string ~ pipeline.vars.schedule_interval_unit,\n        \"from\": \"now-\" ~ pipeline.vars.schedule_interval|string ~ pipeline.vars.schedule_interval_unit,\n        \"rule_id\": rule.id | lower,\n        \"false_positives\": rule.falsepositives,\n        \"immutable\": false,\n        \"output_index\": \"\",\n        \"meta\": {\n          \"from\": \"1m\"\n        },\n        \"risk_score\": rule.custom_attributes.risk_score | default(21),\n        \"severity\": rule.level.name | string | lower if rule.level is not none else 'low',\n        \"threat\": rule.custom_attributes.threat | default([]),\n        \"severity_mapping\": [],\n        \"to\": \"now\",\n        \"version\": 1,\n        \"max_signals\": 100,\n        \"exceptions_list\": [],\n        \"setup\": \"\",\n        \"type\": \"eql\",\n        \"note\": \"\",\n        \"license\": \"DRL\",\n        \"language\": \"eql\",\n        \"query\": query,\n        \"tags\": tags,\n        \"index\": pipeline.state.index,\n        \"actions\": [],\n        \"related_integrations\": [],\n        \"required_fields\": [],\n        \"risk_score_mapping\": []\n      }\n      -%}\n      \n      {{ rule_data | tojson }}\n```\nUse this pipeline with: `-t eql -p eql-siemrule-ndjson.yml` but now without `-f siem_rule_ndjson`.\nThe output can be imported directly into Kibana as a Detection Rule.\n\n\n### ESQL siem_rule_ndjson\n```yaml\nvars:\n  schedule_interval: 5\n  schedule_interval_unit: m\npostprocessing:\n  - type: template\n    template: |+\n      {%- set tags = [] -%}\n      {% for n in rule.tags %}\n        {%- set tag_string = n.namespace ~ '-' ~ n.name -%}\n        {%- set tags=tags.append(tag_string) -%}\n      {% endfor %}\n      {%- set rule_data = {\n        \"name\": rule.title,\n        \"id\": rule.id | lower,\n        \"author\": [rule.author] if rule.author is string else rule.author,\n        \"description\": rule.description,\n        \"references\": rule.references,\n        \"enabled\": true,\n        \"interval\": pipeline.vars.schedule_interval|string ~ pipeline.vars.schedule_interval_unit,\n        \"from\": \"now-\" ~ pipeline.vars.schedule_interval|string ~ pipeline.vars.schedule_interval_unit,\n        \"rule_id\": rule.id | lower,\n        \"false_positives\": rule.falsepositives,\n        \"immutable\": false,\n        \"output_index\": \"\",\n        \"meta\": {\n          \"from\": \"1m\"\n        },\n        \"risk_score\": backend.severity_risk_mapping[rule.level.name] if rule.level is not none else 21, \n        \"severity\": rule.level.name | string | lower if rule.level is not none else \"low\",\n        \"severity_mapping\": [],\n        \"threat\": backend.finalize_output_threat_model(rule.tags) | list,\n        \"to\": \"now\",\n        \"version\": 1,\n        \"max_signals\": 100,\n        \"exceptions_list\": [],\n        \"setup\": \"\",\n        \"type\": \"esql\",\n        \"note\": \"\",\n        \"license\": \"DRL\",\n        \"language\": \"esql\",\n        \"index\": pipeline.vars.index_names | list,\n      \"query\": query,\n      \"tags\": tags,\n      \"actions\": [],\n      \"related_integrations\": [],\n      \"required_fields\": [],\n      \"risk_score_mapping\": []\n      }\n      -%}\n      \n      {{ rule_data | tojson }}\n```\nUse this pipeline with: `-t esql -p esql-siemrule-ndjson.yml` but now without `-f siem_rule_ndjson`.\nThe output can be imported directly into Kibana as a Detection Rule.\n\n### Lucene siem_rule_ndjson\n\n> To be continued...\n\n## Known Limitations\n\n### ES|QL Correlation Rules: Static Time Boundaries\n\nES|QL correlation rules (event count, value count, and temporal correlation types) use `DATE_TRUNC()` to assign events to fixed, epoch-aligned time buckets. This means that the `timespan` window in a correlation rule is aligned to clock boundaries rather than being a true sliding window.\n\n**Consequence:** A correlation rule with a `timespan` of `5m` only matches if all relevant events appear within the same clock-aligned 5-minute interval (e.g. 17:15:00–17:20:00 or 17:20:00–17:25:00, where the end is exclusive). If events straddle a boundary — some falling in one bucket and some in the next — neither bucket may independently meet the detection threshold, resulting in a false negative.\n\n**Example:** Five SSH authentication failures spanning the 17:19–17:20 boundary would be split into two buckets (4 events + 1 event). A rule requiring 5 distinct usernames would not fire, even though all 5 events occurred within a 5-minute window.\n\nThis behavior is [described in the Sigma correlation rules specification](https://github.com/SigmaHQ/sigma-specification/blob/main/specification/sigma-correlation-rules-specification.md#compatibility) and is an intentional trade-off, as ES|QL does not natively support true sliding-window aggregations. Users authoring correlation rules should be aware that detections may be missed when attack activity straddles a clock-aligned bucket boundary.\n\n",
+        "description_content_type": "text/markdown",
+        "author": "Thomas Patzke",
+        "author_email": "thomas@patzke.org",
+        "license_expression": "LGPL-3.0-only",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14"
+        ],
+        "requires_dist": [
+          "pysigma (>=1.4.0,<2.0.0)"
+        ],
+        "requires_python": ">=3.10,<4.0"
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/pysigma_backend_opensearch-2.0.3-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=bcb90e21207385fadb56ac5358242c86d32736a897289f2e0cb5d6949670e927",
+          "hashes": {
+            "sha256": "bcb90e21207385fadb56ac5358242c86d32736a897289f2e0cb5d6949670e927"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "pySigma-backend-opensearch",
+        "version": "2.0.3",
+        "summary": "pySigma OpenSearch backend",
+        "description": "![Tests](https://github.com/SigmaHQ/pySigma-backend-opensearch/actions/workflows/test.yml/badge.svg)\n![Coverage\nBadge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/andurin/e95ff0904786bd5883f19105b6a3a1ee/raw/SigmaHQ-pySigma-backend-opensearch.json)\n![Status](https://img.shields.io/badge/Status-pre--release-orange)\n\n# pySigma OpenSearch Backend\n\nThis is the OpenSearch backend for pySigma. It provides the package `sigma.backends.opensearch` with two backend classes:\n\n* **`OpensearchLuceneBackend`** - Converts Sigma rules to Lucene query syntax\n* **`OpenSearchPPLBackend`** - Converts Sigma rules to PPL (Piped Processing Language) queries\n\n## Lucene Backend\n\nThe Lucene backend supports the following output formats:\n\n* default: plain Opensearch queries in Lucene Syntax \n  * **Hint:** In Dashboard you have to switch from DQL to Lucene\n* monitor_rule: JSON Structure to import Opensearch Alerting Rules\n\nThis backend is currently maintained by:\n\n* [Hendrik Bäcker](https://github.com/andurin/)\n\n# Background\n\n## Lucene Backend\n\nSince Lucene based queries are very identical to Elasticsearch Lucene queries, most \nof the code for this Backend comes from [pySigma-backend-elasticsearch](https://github.com/SigmaHQ/pySigma-backend-elasticsearch). \n\nOpensearch specific changes and output formats are done in this \nbackend (eg. Monitor Rules).\n\n## PPL Backend\n\nThe PPL (Piped Processing Language) backend is implemented from scratch to support OpenSearch's native query language. PPL provides:\n* **Correlation support** - Built-in support for Sigma correlation rules\n\n### Correlation Rules Support\n\nThe PPL backend fully supports Sigma correlation rules, enabling detection of complex multi-event scenarios:\n\n* **event_count** - Count occurrences of events (e.g., brute force detection)\n* **value_count** - Count distinct values of a field (e.g., password spraying)\n* **temporal** - Multiple different events within a time window (e.g., multi-stage attacks)\n\n# Howto\n\n## Create Output - sigma-cli\n\n### Lucene Backend\n\n```\nsigma convert \\\n  -t opensearch \\\n  -p ecs_windows \\\n  -f monitor_rule \\\n  /data/sigma/rules/windows/process_creation/proc_creation_win_whoami_priv.yml\n```\n\n### PPL Backend\n\n```\nsigma convert \\\n  -t opensearch-ppl \\\n  -p ecs_windows \\\n  /data/sigma/rules/windows/process_creation/proc_creation_win_whoami_priv.yml\n```\n\n## Create Alerting Rules - Python\n\n### Lucene Backend\n\n```\nfrom sigma.backends.opensearch import OpensearchLuceneBackend\n\nfrom sigma.pipelines.sysmon import sysmon_pipeline\nfrom sigma.pipelines.elasticsearch.windows import ecs_windows\n\nfrom sigma.collection import SigmaCollection\nfrom sigma.processing.resolver import ProcessingPipelineResolver\n\n# Create our pipeline resolver\npiperesolver = ProcessingPipelineResolver()\n\n# Add wanted pipelines\npiperesolver.add_pipeline_class(ecs_windows())\npiperesolver.add_pipeline_class(sysmon_pipeline())\n\n# Create a single sorted and prioritzed pipeline\nresolved_pipeline = piperesolver.resolve(piperesolver.pipelines)\n\n# Instantiate backend, using our resolved pipeline\n# and some backend parameter\nbackend = OpensearchLuceneBackend(resolved_pipeline, index_names=['logs-*-*', 'beats-*'], monitor_interval=10, monitor_interval_unit=\"MINUTES\")\n\nrules = SigmaCollection.from_yaml(\"\"\"\ntitle: Run Whoami Showing Privileges\nid: 97a80ec7-0e2f-4d05-9ef4-65760e634f6b\nstatus: experimental\ndescription: Detects a whoami.exe executed with the /priv command line flag instructing the tool to show all current user privieleges. This is often used after a privilege escalation attempt. \nreferences:\n    - https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/whoami\nauthor: Florian Roth\ndate: 2021/05/05\nmodified: 2022/05/13\ntags:\n    - attack.privilege_escalation\n    - attack.discovery\n    - attack.t1033\nlogsource:\n    category: process_creation\n    product: windows\ndetection:\n    selection_img:\n        - Image|endswith: '\\whoami.exe'\n        - OriginalFileName: 'whoami.exe'\n    selection_cli:\n        CommandLine|contains: '/priv'\n    condition: all of selection*\nfalsepositives:\n    - Administrative activity (rare lookups on current privileges)\nlevel: high\n\"\"\")\n\n# Print converted rule in Lucene syntax\nprint(\"Lucene Result: \\n\" + \"\\n\".join(backend.convert(rules)))\n\n# Print converted rule ready for dsl syntax\nprint(\"DSL Result: \\n\" + json.dumps(backend.convert(rules, output_format=\"dsl_lucene\")[0], indent=2))\n\n# Generate a JSON structure to be imported as monitor rule\nprint(\"Monitor Rule Result: \\n\" + backend.convert(rules, output_format=\"monitor_rule\"))\n\n```\n\nLucene Result: \n```\nwinlog.channel:Microsoft\\-Windows\\-Sysmon\\/Operational AND (event.code:1 AND ((process.executable:*\\\\whoami.exe OR process.pe.original_file_name:whoami.exe) AND process.command_line:*\\/priv*))\n```\n\nDSL Result: \n```\n{\n  \"query\": {\n    \"bool\": {\n      \"must\": [\n        {\n          \"query_string\": {\n            \"query\": \"winlog.channel:Microsoft\\\\-Windows\\\\-Sysmon\\\\/Operational AND (event.code:1 AND (winlog.channel:Microsoft\\\\-Windows\\\\-Sysmon\\\\/Operational AND (event.code:1 AND ((process.executable:*\\\\\\\\whoami.exe OR process.pe.original_file_name:whoami.exe) AND process.command_line:*\\\\/priv*))))\",\n            \"analyze_wildcard\": true\n          }\n        }\n      ]\n    }\n  }\n}\n```\n\nMonitor Rule Result: \n\n```\n{\n  \"type\": \"monitor\",\n  \"name\": \"SIGMA - Run Whoami Showing Privileges\",\n  \"description\": \"Detects a whoami.exe executed with the /priv command line flag instructing the tool to show all current user privieleges. This is often used after a privilege escalation attempt.\",\n  \"enabled\": true,\n  \"schedule\": {\n    \"period\": {\n      \"interval\": 10,\n      \"unit\": \"MINUTES\"\n    }\n  },\n  \"inputs\": [\n    {\n      \"search\": {\n        \"indices\": [\n          \"logs-*-*\",\n          \"beats-*\"\n        ],\n        \"query\": {\n          \"size\": 1,\n          \"query\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"query_string\": {\n                    \"query\": \"winlog.channel:Microsoft\\\\-Windows\\\\-Sysmon\\\\/Operational AND (event.code:1 AND (winlog.channel:Microsoft\\\\-Windows\\\\-Sysmon\\\\/Operational AND (event.code:1 AND (winlog.channel:Microsoft\\\\-Windows\\\\-Sysmon\\\\/Operational AND (event.code:1 AND ((process.executable:*\\\\\\\\whoami.exe OR process.pe.original_file_name:whoami.exe) AND process.command_line:*\\\\/priv*))))))\",\n                    \"analyze_wildcard\": true\n                  }\n                }\n              ]\n            }\n          }\n        }\n      }\n    }\n  ],\n  \"tags\": [\n    \"attack-privilege_escalation\",\n    \"attack-discovery\",\n    \"attack-t1033\"\n  ],\n  \"triggers\": [\n    {\n      \"name\": \"generated-trigger\",\n      \"severity\": 2,\n      \"condition\": {\n        \"script\": {\n          \"source\": \"ctx.results[0].hits.total.value > 0\",\n          \"lang\": \"painless\"\n        }\n      },\n      \"actions\": []\n    }\n  ],\n  \"sigma_meta_data\": {\n    \"rule_id\": \"97a80ec7-0e2f-4d05-9ef4-65760e634f6b\",\n    \"threat\": []\n  },\n  \"references\": [\n    \"https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/whoami\"\n  ]\n}\n```\n\n### PPL Backend\n\n```python\nfrom sigma.backends.opensearch.opensearch_ppl import OpenSearchPPLBackend\nfrom sigma.collection import SigmaCollection\n\n# Instantiate PPL backend\nbackend = OpenSearchPPLBackend()\n\n# Use the same rule as above\nrules = SigmaCollection.from_yaml(\"\"\"\ntitle: Run Whoami Showing Privileges\nid: 97a80ec7-0e2f-4d05-9ef4-65760e634f6b\nstatus: experimental\ndescription: Detects a whoami.exe executed with the /priv command line flag instructing the tool to show all current user privieleges. This is often used after a privilege escalation attempt. \nreferences:\n    - https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/whoami\nauthor: Florian Roth\ndate: 2021/05/05\nmodified: 2022/05/13\ntags:\n    - attack.privilege_escalation\n    - attack.discovery\n    - attack.t1033\nlogsource:\n    category: process_creation\n    product: windows\ndetection:\n    selection_img:\n        - Image|endswith: '\\whoami.exe'\n        - OriginalFileName: 'whoami.exe'\n    selection_cli:\n        CommandLine|contains: '/priv'\n    condition: all of selection*\nfalsepositives:\n    - Administrative activity (rare lookups on current privileges)\nlevel: high\n\"\"\")\n\n# Print converted rule in PPL syntax\nprint(\"PPL Result: \\n\" + \"\\n\".join(backend.convert(rules)))\n```\n\nPPL Result:\n```\nsource=windows-process_creation-* | where (LIKE(Image, \"%\\whoami.exe\") OR OriginalFileName=\"whoami.exe\") AND LIKE(CommandLine, \"%/priv%\")\n```\n\n## PPL Correlation Rules Example\n\n```python\nfrom sigma.backends.opensearch.opensearch_ppl import OpenSearchPPLBackend\nfrom sigma.collection import SigmaCollection\n\nbackend = OpenSearchPPLBackend()\n\n# Brute force detection using event_count correlation\nrules = SigmaCollection.from_yaml(\"\"\"\ntitle: Windows Failed Logon Event\nname: failed_logon\nlogsource:\n  product: windows\n  service: security\ndetection:\n  selection:\n    EventID: 4625\n  filter:\n    SubjectUserName|endswith: $\n  condition: selection and not filter\n---\ntitle: Brute Force Attack Detection\ncorrelation:\n  type: event_count\n  rules:\n    - failed_logon\n  group-by:\n    - TargetUserName\n    - TargetDomainName\n  timespan: 5m\n  condition:\n    gte: 10\n\"\"\")\n\nprint(\"Correlation PPL Result: \\n\" + \"\\n\".join(backend.convert(rules)))\n```\n\nCorrelation PPL Result:\n```\n| search source=windows-security-* | where EventID=4625 AND NOT LIKE(SubjectUserName, \"%$\") | stats count() as event_count by TargetUserName, TargetDomainName | where event_count >= 10\n```\n\n# Configuration\n\nYou can configure PPL backend behavior with custom attributes in Sigma rules or backend initialization options.\n\n## PPL Backend Custom Attributes\n\nThe PPL backend supports the following custom attributes that can be specified in the `custom` section of a Sigma rule:\n\n```yaml\ncustom:\n  opensearch_ppl_index: \"custom-logs-*\"        # Override default index pattern\n  opensearch_ppl_min_time: \"-30d\"              # Set query time window start\n  opensearch_ppl_max_time: \"now\"               # Set query time window end\n```\n\n### Example with Custom Attributes\n\nThis example shows how custom attributes work with correlation rules, where individual detection rules can have their own time windows or inherit from the correlation rule:\n\n```yaml\ntitle: Detection Rule 1 - With Own Time Filter\nid: 10000400-0000-0000-0000-000000000004\nlogsource:\n  product: windows\n  category: process_creation\ndetection:\n  selection:\n    CommandLine|contains: 'malware'\n  condition: selection\ncustom:\n  opensearch_ppl_min_time: \"-7d\"    # This rule uses 7 days\n  opensearch_ppl_max_time: \"now\"\n---\ntitle: Detection Rule 2 - No Time Filter\nid: 10000401-0000-0000-0000-000000000004\nlogsource:\n  product: windows\n  category: network_connection\ndetection:\n  selection:\n    DestinationPort: 443\n  condition: selection\n# No custom attributes - will inherit from correlation\n---\ntitle: Correlation - Mixed Time Filters\nid: 10000402-0000-0000-0000-000000000004\ncorrelation:\n  type: temporal\n  rules:\n    - 10000400-0000-0000-0000-000000000004\n    - 10000401-0000-0000-0000-000000000004\n  group-by:\n    - Computer\n  timespan: 5m\ncustom:\n  opensearch_ppl_min_time: \"-30d\"   # Rule 2 inherits this (30 days)\n  opensearch_ppl_max_time: \"now\"\n```\n\n**Result**: \n- Detection Rule 1 will search the last **7 days** (its own custom attribute)\n- Detection Rule 2 will search the last **30 days** (inherited from correlation rule)\n\n### Backend Options\n\nYou can also set default values when instantiating the backend:\n\n```python\nbackend = OpenSearchPPLBackend(\n    custom_logsource=\"default-logs-*\",  # Default index pattern for all rules\n    min_time=\"-24h\",                    # Default time window start\n    max_time=\"now\"                      # Default time window end\n)\n```\n\nCustom attributes in individual rules will override these backend-level defaults.\n\n",
+        "description_content_type": "text/markdown",
+        "author": "Hendrik Baecker",
+        "author_email": "hb@process-zero.de",
+        "license_expression": "LGPL-3.0-only",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14"
+        ],
+        "requires_dist": [
+          "pysigma (>=1.0.0,<2.0.0)",
+          "pysigma-backend-elasticsearch (>=2.0.0)"
+        ],
+        "requires_python": ">=3.10,<4.0"
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "archive_info": {
+          "hash": "sha256=c458b6d084f9b935061bc36216e8a69a7e293a2f1e68bf956dcd9e6cbcd143f5",
+          "hashes": {
+            "sha256": "c458b6d084f9b935061bc36216e8a69a7e293a2f1e68bf956dcd9e6cbcd143f5"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "PyYAML",
+        "version": "6.0.3",
+        "dynamic": [
+          "author",
+          "author-email",
+          "classifier",
+          "description",
+          "download-url",
+          "home-page",
+          "license",
+          "license-file",
+          "platform",
+          "project-url",
+          "requires-python",
+          "summary"
+        ],
+        "platform": [
+          "Any"
+        ],
+        "summary": "YAML parser and emitter for Python",
+        "description": "YAML is a data serialization format designed for human readability\nand interaction with scripting languages.  PyYAML is a YAML parser\nand emitter for Python.\n\nPyYAML features a complete YAML 1.1 parser, Unicode support, pickle\nsupport, capable extension API, and sensible error messages.  PyYAML\nsupports standard YAML tags and provides Python-specific tags that\nallow to represent an arbitrary Python object.\n\nPyYAML is applicable for a broad range of tasks from complex\nconfiguration files to object serialization and persistence.\n",
+        "home_page": "https://pyyaml.org/",
+        "download_url": "https://pypi.org/project/PyYAML/",
+        "author": "Kirill Simonov",
+        "author_email": "xi@resolvent.net",
+        "license": "MIT",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: MIT License",
+          "Operating System :: OS Independent",
+          "Programming Language :: Cython",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Software Development :: Libraries :: Python Modules",
+          "Topic :: Text Processing :: Markup"
+        ],
+        "requires_python": ">=3.8",
+        "project_url": [
+          "Bug Tracker, https://github.com/yaml/pyyaml/issues",
+          "CI, https://github.com/yaml/pyyaml/actions",
+          "Documentation, https://pyyaml.org/wiki/PyYAMLDocumentation",
+          "Mailing lists, http://lists.sourceforge.net/lists/listinfo/yaml-core",
+          "Source Code, https://github.com/yaml/pyyaml"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/requests-2.34.2-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0",
+          "hashes": {
+            "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "requests",
+        "version": "2.34.2",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "Python HTTP for Humans.",
+        "description": "# Requests\n\n[![Version](https://img.shields.io/pypi/v/requests.svg?maxAge=86400)](https://pypi.org/project/requests/)\n[![Supported Versions](https://img.shields.io/pypi/pyversions/requests.svg)](https://pypi.org/project/requests)\n[![Downloads](https://static.pepy.tech/badge/requests/month)](https://pepy.tech/project/requests)\n[![Contributors](https://img.shields.io/github/contributors/psf/requests.svg)](https://github.com/psf/requests/graphs/contributors)\n[![Documentation](https://readthedocs.org/projects/requests/badge/?version=latest)](https://requests.readthedocs.io)\n\n**Requests** is a simple, yet elegant, HTTP library.\n\n```python\n>>> import requests\n>>> r = requests.get('https://httpbin.org/basic-auth/user/pass', auth=('user', 'pass'))\n>>> r.status_code\n200\n>>> r.headers['content-type']\n'application/json; charset=utf8'\n>>> r.encoding\n'utf-8'\n>>> r.text\n'{\"authenticated\": true, ...'\n>>> r.json()\n{'authenticated': True, ...}\n```\n\nRequests allows you to send HTTP/1.1 requests extremely easily. There’s no need to manually add query strings to your URLs, or to form-encode your `PUT` & `POST` data — but nowadays, just use the `json` method!\n\nRequests is one of the most downloaded Python packages today, pulling in around `300M downloads / week` — according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `4,000,000+` repositories.\n\n## Installing Requests and Supported Versions\n\nRequests is available on PyPI:\n\n```console\n$ python -m pip install requests\n```\n\nRequests officially supports Python 3.10+.\n\n## Supported Features & Best–Practices\n\nRequests is ready for the demands of building robust and reliable HTTP–speaking applications, for the needs of today.\n\n- Keep-Alive & Connection Pooling\n- International Domains and URLs\n- Sessions with Cookie Persistence\n- Browser-style TLS/SSL Verification\n- Basic & Digest Authentication\n- Familiar `dict`–like Cookies\n- Automatic Content Decompression and Decoding\n- Multi-part File Uploads\n- SOCKS Proxy Support\n- Connection Timeouts\n- Streaming Downloads\n- Automatic honoring of `.netrc`\n- Chunked HTTP Requests\n\n## Cloning the repository\n\nWhen cloning the Requests repository, you may need to add the `-c\nfetch.fsck.badTimezone=ignore` flag to avoid an error about a bad commit timestamp (see\n[this issue](https://github.com/psf/requests/issues/2690) for more background):\n\n```shell\ngit clone -c fetch.fsck.badTimezone=ignore https://github.com/psf/requests.git\n```\n\nYou can also apply this setting to your global Git config:\n\n```shell\ngit config --global fetch.fsck.badTimezone ignore\n```\n\n---\n\n[![Kenneth Reitz](https://raw.githubusercontent.com/psf/requests/main/ext/kr.png)](https://kennethreitz.org) [![Python Software Foundation](https://raw.githubusercontent.com/psf/requests/main/ext/psf.png)](https://www.python.org/psf)\n",
+        "description_content_type": "text/markdown",
+        "author_email": "Kenneth Reitz <me@kennethreitz.org>",
+        "maintainer_email": "Ian Stapleton Cordasco <graffatcolmingov@gmail.com>, Nate Prewitt <nate.prewitt@gmail.com>",
+        "license": "Apache-2.0",
+        "license_file": [
+          "LICENSE",
+          "NOTICE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Environment :: Web Environment",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Apache Software License",
+          "Natural Language :: English",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Programming Language :: Python :: Free Threading :: 2 - Beta",
+          "Topic :: Internet :: WWW/HTTP",
+          "Topic :: Software Development :: Libraries"
+        ],
+        "requires_dist": [
+          "charset_normalizer<4,>=2",
+          "idna<4,>=2.5",
+          "urllib3<3,>=1.26",
+          "certifi>=2023.5.7",
+          "PySocks!=1.5.7,>=1.5.6; extra == \"socks\"",
+          "chardet<8,>=3.0.2; extra == \"use-chardet-on-py3\""
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Documentation, https://requests.readthedocs.io",
+          "Source, https://github.com/psf/requests"
+        ],
+        "provides_extra": [
+          "security",
+          "socks",
+          "use-chardet-on-py3"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/types_pyyaml-6.0.12.20260906-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=bca893ff0d51df5c9053137d5d0e6ccd36e939a196356f1d5c16372422f5137b",
+          "hashes": {
+            "sha256": "bca893ff0d51df5c9053137d5d0e6ccd36e939a196356f1d5c16372422f5137b"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "types-PyYAML",
+        "version": "6.0.12.20260906",
+        "dynamic": [
+          "license-file"
+        ],
+        "summary": "Typing stubs for PyYAML",
+        "description": "## Typing stubs for PyYAML\n\nThis is a [type stub package](https://typing.python.org/en/latest/tutorials/external_libraries.html)\nfor the [`PyYAML`](https://github.com/yaml/pyyaml) package. It can be used by type checkers\nto check code that uses `PyYAML`. This version of\n`types-PyYAML` aims to provide accurate annotations for\n`PyYAML==6.0.*`.\n\nThis package is part of the [typeshed project](https://github.com/python/typeshed).\nAll fixes for types and metadata should be contributed there.\nSee [the README](https://github.com/python/typeshed/blob/main/README.md)\nfor more details. The source for this package can be found in the\n[`stubs/PyYAML`](https://github.com/python/typeshed/tree/main/stubs/PyYAML)\ndirectory.\n\nThis package was tested with the following type checkers:\n* [mypy](https://www.mypy-lang.org/) 2.3.0\n* [pyrefly](https://pyrefly.org/) 1.3.0.dev1\n* [pyright](https://microsoft.github.io/pyright/) 1.1.411\n* [ty](https://docs.astral.sh/ty/) 0.0.59\n\nIt was generated from typeshed commit\n[`dfb509fb0e8a5178b457c40e3ab68d685ee269e2`](https://github.com/python/typeshed/commit/dfb509fb0e8a5178b457c40e3ab68d685ee269e2).\n",
+        "description_content_type": "text/markdown",
+        "license_expression": "Apache-2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Programming Language :: Python :: 3",
+          "Typing :: Stubs Only"
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Homepage, https://github.com/python/typeshed",
+          "GitHub, https://github.com/python/typeshed",
+          "Changes, https://github.com/typeshed-internal/stub_uploader/blob/main/data/changelogs/PyYAML.md",
+          "Issue tracker, https://github.com/python/typeshed/issues",
+          "Chat, https://gitter.im/python/typing"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/typing_extensions-4.16.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+          "hashes": {
+            "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.4",
+        "name": "typing_extensions",
+        "version": "4.16.0",
+        "summary": "Backported and Experimental Type Hints for Python 3.9+",
+        "description": "# Typing Extensions\n\n[![Chat at https://gitter.im/python/typing](https://badges.gitter.im/python/typing.svg)](https://gitter.im/python/typing)\n\n[Documentation](https://typing-extensions.readthedocs.io/en/latest/#) –\n[PyPI](https://pypi.org/project/typing-extensions/)\n\n## Overview\n\nThe `typing_extensions` module serves two related purposes:\n\n- Enable use of new type system features on older Python versions. For example,\n  `typing.TypeGuard` is new in Python 3.10, but `typing_extensions` allows\n  users on previous Python versions to use it too.\n- Enable experimentation with new type system PEPs before they are accepted and\n  added to the `typing` module.\n\n`typing_extensions` is treated specially by static type checkers such as\nmypy and pyright. Objects defined in `typing_extensions` are treated the same\nway as equivalent forms in `typing`.\n\n`typing_extensions` uses\n[Semantic Versioning](https://semver.org/). The\nmajor version will be incremented only for backwards-incompatible changes.\nTherefore, it's safe to depend\non `typing_extensions` like this: `typing_extensions ~=x.y`,\nwhere `x.y` is the first version that includes all features you need.\n[This](https://packaging.python.org/en/latest/specifications/version-specifiers/#compatible-release)\nis equivalent to `typing_extensions >=x.y, <(x+1)`. Do not depend on `~= x.y.z`\nunless you really know what you're doing; that defeats the purpose of\nsemantic versioning.\n\n## Included items\n\nSee [the documentation](https://typing-extensions.readthedocs.io/en/latest/#) for a\ncomplete listing of module contents.\n\n## Contributing\n\nSee [CONTRIBUTING.md](https://github.com/python/typing_extensions/blob/main/CONTRIBUTING.md)\nfor how to contribute to `typing_extensions`.\n\n",
+        "description_content_type": "text/markdown",
+        "keywords": [
+          "annotations",
+          "backport",
+          "checker",
+          "checking",
+          "function",
+          "hinting",
+          "hints",
+          "type",
+          "typechecking",
+          "typehinting",
+          "typehints",
+          "typing"
+        ],
+        "author_email": "\"Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Michael Lee\" <levkivskyi@gmail.com>",
+        "license_expression": "PSF-2.0",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 5 - Production/Stable",
+          "Environment :: Console",
+          "Intended Audience :: Developers",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Topic :: Software Development"
+        ],
+        "requires_python": ">=3.9",
+        "project_url": [
+          "Bug Tracker, https://github.com/python/typing_extensions/issues",
+          "Changes, https://github.com/python/typing_extensions/blob/main/CHANGELOG.md",
+          "Documentation, https://typing-extensions.readthedocs.io/",
+          "Home, https://github.com/python/typing_extensions",
+          "Q & A, https://github.com/python/typing/discussions",
+          "Repository, https://github.com/python/typing_extensions"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "file:///home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels/urllib3-2.8.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3",
+          "hashes": {
+            "sha256": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.5",
+        "name": "urllib3",
+        "version": "2.8.0",
+        "summary": "HTTP library with thread-safe connection pooling, file post, and more.",
+        "description": "<h1 align=\"center\">\n\n![urllib3](https://github.com/urllib3/urllib3/raw/main/docs/_static/banner_github.svg)\n\n</h1>\n\n<p align=\"center\">\n  <a href=\"https://pypi.org/project/urllib3\"><img alt=\"PyPI Version\" src=\"https://img.shields.io/pypi/v/urllib3.svg?maxAge=86400\" /></a>\n  <a href=\"https://pypi.org/project/urllib3\"><img alt=\"Python Versions\" src=\"https://img.shields.io/pypi/pyversions/urllib3.svg?maxAge=86400\" /></a>\n  <a href=\"https://discord.gg/urllib3\"><img alt=\"Join our Discord\" src=\"https://img.shields.io/discord/756342717725933608?color=%237289da&label=discord\" /></a>\n  <a href=\"https://github.com/urllib3/urllib3/actions?query=workflow%3ACI\"><img alt=\"Coverage Status\" src=\"https://img.shields.io/badge/coverage-100%25-success\" /></a>\n  <a href=\"https://github.com/urllib3/urllib3/actions/workflows/ci.yml?query=branch%3Amain\"><img alt=\"Build Status on GitHub\" src=\"https://github.com/urllib3/urllib3/actions/workflows/ci.yml/badge.svg?branch:main&workflow:CI\" /></a>\n  <a href=\"https://urllib3.readthedocs.io\"><img alt=\"Documentation Status\" src=\"https://readthedocs.org/projects/urllib3/badge/?version=latest\" /></a><br>\n  <a href=\"https://deps.dev/pypi/urllib3\"><img alt=\"OpenSSF Scorecard\" src=\"https://api.securityscorecards.dev/projects/github.com/urllib3/urllib3/badge\" /></a>\n  <a href=\"https://slsa.dev\"><img alt=\"SLSA 3\" src=\"https://slsa.dev/images/gh-badge-level3.svg\" /></a>\n  <a href=\"https://bestpractices.coreinfrastructure.org/projects/6227\"><img alt=\"CII Best Practices\" src=\"https://bestpractices.coreinfrastructure.org/projects/6227/badge\" /></a>\n</p>\n\nurllib3 is a powerful, *user-friendly* HTTP client for Python.\nurllib3 brings many critical features that are missing from the Python\nstandard libraries:\n\n- Thread safety.\n- Connection pooling.\n- Client-side SSL/TLS verification.\n- File uploads with multipart encoding.\n- Helpers for retrying requests and dealing with HTTP redirects.\n- Support for gzip, deflate, brotli, and zstd encoding.\n- Proxy support for HTTP and SOCKS.\n- 100% test coverage.\n\n... and many more features, but most importantly: Our maintainers have a 15+\nyear track record of maintaining urllib3 with the highest code standards and\nattention to security and safety.\n\n[Much of the Python ecosystem already uses urllib3](https://urllib3.readthedocs.io/en/stable/#who-uses)\nand you should too.\n\n\n## Installing\n\nurllib3 can be installed with [pip](https://pip.pypa.io):\n\n```bash\n$ python -m pip install urllib3\n```\n\nAlternatively, you can grab the latest source code from [GitHub](https://github.com/urllib3/urllib3):\n\n```bash\n$ git clone https://github.com/urllib3/urllib3.git\n$ cd urllib3\n$ pip install .\n```\n\n## Getting Started\n\nurllib3 is easy to use:\n\n```python3\n>>> import urllib3\n>>> resp = urllib3.request(\"GET\", \"http://httpbin.org/robots.txt\")\n>>> resp.status\n200\n>>> resp.data\nb\"User-agent: *\\nDisallow: /deny\\n\"\n```\n\nurllib3 has usage and reference documentation at [urllib3.readthedocs.io](https://urllib3.readthedocs.io).\n\n\n## Community\n\nurllib3 has a [community Discord channel](https://discord.gg/urllib3) for asking questions and\ncollaborating with other contributors. Drop by and say hello 👋\n\n\n## Contributing\n\nurllib3 welcomes contributions. Please read our\n[contributing documentation](https://urllib3.readthedocs.io/en/latest/contributing.html)\nbefore starting work.\n\nCheck for existing pull requests addressing the same issue, and share feedback\nand suggestions in the existing pull request and issue. Duplicate pull\nrequests, including alternative solutions, will be rejected without review\nunless a maintainer has approved opening an alternative pull request in\nadvance.\n\n\n## Security Disclosures\n\nTo report a security vulnerability, please use the\n[Tidelift security contact](https://tidelift.com/security).\nTidelift will coordinate the fix and disclosure with maintainers.\n\nSee the repository\n[Security Policy](https://urllib3.readthedocs.io/en/latest/security.html)\nfor more details.\n\n\n## Maintainers\n\nMeet our maintainers since 2008:\n\n- Current Lead: [@illia-v](https://github.com/illia-v) (Illia Volochii)\n- [@sethmlarson](https://github.com/sethmlarson) (Seth M. Larson)\n- [@pquentin](https://github.com/pquentin) (Quentin Pradet)\n- [@theacodes](https://github.com/theacodes) (Thea Flowers)\n- [@haikuginger](https://github.com/haikuginger) (Jess Shapiro)\n- [@lukasa](https://github.com/lukasa) (Cory Benfield)\n- [@sigmavirus24](https://github.com/sigmavirus24) (Ian Stapleton Cordasco)\n- [@shazow](https://github.com/shazow) (Andrey Petrov)\n\n👋\n\n\n## Sponsorship\n\nIf your company benefits from this library, please consider [sponsoring its\ndevelopment](https://urllib3.readthedocs.io/en/latest/sponsors.html).\n\n\n## For Enterprise\n\nProfessional support for urllib3 is available as part of the [Tidelift\nSubscription][1]. Tidelift gives software development teams a single source for\npurchasing and maintaining their software, with professional grade assurances\nfrom the experts who know it best, while seamlessly integrating with existing\ntools.\n\n[1]: https://tidelift.com/subscription/pkg/pypi-urllib3?utm_source=pypi-urllib3&utm_medium=referral&utm_campaign=readme\n",
+        "description_content_type": "text/markdown",
+        "keywords": [
+          "filepost",
+          "http",
+          "httplib",
+          "https",
+          "pooling",
+          "ssl",
+          "threadsafe",
+          "urllib"
+        ],
+        "author_email": "Andrey Petrov <andrey.petrov@shazow.net>",
+        "maintainer_email": "Seth Michael Larson <sethmichaellarson@gmail.com>, Quentin Pradet <quentin@pradet.me>, Illia Volochii <illia.volochii@gmail.com>",
+        "license_expression": "MIT",
+        "license_file": [
+          "LICENSE.txt"
+        ],
+        "classifier": [
+          "Environment :: Web Environment",
+          "Intended Audience :: Developers",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Programming Language :: Python :: Free Threading :: 2 - Beta",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Internet :: WWW/HTTP",
+          "Topic :: Software Development :: Libraries"
+        ],
+        "requires_dist": [
+          "brotli>=1.2.0; (platform_python_implementation == 'CPython') and extra == 'brotli'",
+          "brotlicffi>=1.2.0.0; (platform_python_implementation != 'CPython') and extra == 'brotli'",
+          "h2<5,>=4; extra == 'h2'",
+          "pysocks!=1.5.7,<2.0,>=1.5.6; extra == 'socks'",
+          "backports-zstd>=1.0.0; (python_version < '3.14') and extra == 'zstd'"
+        ],
+        "requires_python": ">=3.10",
+        "project_url": [
+          "Changelog, https://github.com/urllib3/urllib3/blob/main/CHANGES.rst",
+          "Documentation, https://urllib3.readthedocs.io",
+          "Code, https://github.com/urllib3/urllib3",
+          "Issue tracker, https://github.com/urllib3/urllib3/issues",
+          "Security policy, https://urllib3.readthedocs.io/en/latest/security.html"
+        ],
+        "provides_extra": [
+          "brotli",
+          "h2",
+          "socks",
+          "zstd"
+        ]
+      }
+    }
+  ],
+  "environment": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.14.4",
+    "os_name": "posix",
+    "platform_machine": "x86_64",
+    "platform_release": "7.0.0-38-generic",
+    "platform_system": "Linux",
+    "platform_version": "#38-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep  4 09:10:14 UTC 2026",
+    "python_full_version": "3.14.4",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.14",
+    "sys_platform": "linux"
+  }
+}

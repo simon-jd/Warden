@@ -1,0 +1,17 @@
+--- a/docs/evidence/task-6/controller-caller-integrity-fix5-material-candidate.js
++++ b/docs/evidence/task-6/controller-caller-integrity-fix5-material-candidate.js
+@@ -177,6 +177,14 @@
+   reason='recording-failure';
+   await checkedPatch('root-proof-reader-tool.json',exactJSON(readerTranscript(rs))+'\n',65536);
+   await checkedPatch('root-tool.json',raw,65536);
++  // PROPOSED ONLY: record this one metadata transition; no retry or new budget.
++  const modeBody="import os,stat,signal,resource,time\nsignal.signal(signal.SIGALRM,lambda *_:os._exit(124));signal.alarm(5)\nfor k,n in ((resource.RLIMIT_CPU,2),(resource.RLIMIT_AS,134217728),(resource.RLIMIT_FSIZE,1048576)):resource.setrlimit(k,(n,n))\nD='/home/postedism/Desktop/Warden/docs/evidence/task-6';P='controller-cache-continuation-v1-20261025-material-'\nf=os.open('/',os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW)\nfor part in D.strip('/').split('/'):\n g=os.open(part,os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW,dir_fd=f);os.close(f);f=g\n s=os.fstat(f);assert s.st_uid in (0,1000) and not s.st_mode&0o022\nfor suffix in ('root-proof-reader-tool.json','root-tool.json'):\n name=P+suffix;h=os.open(name,os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK,dir_fd=f)\n try:\n  before=os.fstat(h);assert stat.S_ISREG(before.st_mode) and before.st_uid==before.st_gid==1000 and before.st_nlink==1 and stat.S_IMODE(before.st_mode) in (0o644,0o664) and 0<before.st_size<=65536\n  data=os.read(h,65537);assert len(data)==before.st_size and os.stat(name,dir_fd=f,follow_symlinks=False)==os.fstat(h)==before\n  os.fchmod(h,0o600);os.fsync(h);os.lseek(h,0,0);assert os.read(h,65537)==data\n  after=os.fstat(h);assert(after.st_dev,after.st_ino,after.st_uid,after.st_gid,after.st_nlink,after.st_size,after.st_mtime_ns)==(before.st_dev,before.st_ino,before.st_uid,before.st_gid,before.st_nlink,before.st_size,before.st_mtime_ns) and stat.S_IMODE(after.st_mode)==0o600\n  assert os.stat(name,dir_fd=f,follow_symlinks=False)==after\n finally:os.close(h)\nos.close(f)\nprint('fixed-record-modes0600',flush=True)";
++  const modeRequest=req("exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C python3 -I -S -B - <<'PY'\n"+modeBody+"\nPY");
++  S.mode_finalization={tool:'exec_command',request:modeRequest};persist();
++  const modeReturn=await tools.exec_command(modeRequest);
++  S.mode_finalization.response=modeReturn;persist();
++  if(response(modeReturn,2000)!=='terminal'||modeReturn.exit_code!==0||modeReturn.output!=='fixed-record-modes0600\n')
++    throw Error('metadata finalization unknown');
+   const re=await run('reconcile',reconcileRequest);
+   reason='invalid-marker';
+   const out=re.map(e=>e.response.output).join('');

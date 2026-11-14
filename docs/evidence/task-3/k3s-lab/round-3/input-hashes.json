@@ -1,0 +1,86 @@
+{
+  "source_commit": "e91e9addbf85c4314630d32dd8f62bb607fe84e3",
+  "recorded_utc": "2026-10-24T17:29:04.804704+00:00",
+  "source_inputs": [
+    {
+      "path": "docs/k3s-runtime-lab.md",
+      "bytes": 18134,
+      "sha256": "23dc09c7c452701cb8a9addc69c5d673cca2985763eeb471688521acc76c7e19",
+      "matches_source_commit": true
+    },
+    {
+      "path": "scripts/k3s_lab.py",
+      "bytes": 22775,
+      "sha256": "4e3b1817803e69af6edc52cb2da860efc1f4bfb98ea535e56508422fab842c82",
+      "matches_source_commit": true
+    },
+    {
+      "path": "scripts/k3s_lab_init.py",
+      "bytes": 26170,
+      "sha256": "f905cda0f4b07dd974b0f54a4775a8ad9fc6122ca26a2dbcdf1e1345a6978f30",
+      "matches_source_commit": true
+    },
+    {
+      "path": "scripts/k3s_lab_recover.py",
+      "bytes": 11906,
+      "sha256": "b5a64b9d5263f6ac0c1d19f69a010bd54a6cf02184aa311c900d3e2e5bc917a0",
+      "matches_source_commit": true
+    },
+    {
+      "path": "scripts/k3s_lab_recovery_init.py",
+      "bytes": 3958,
+      "sha256": "c38294b263719ab7b113c407743605ae24eec8e471f0473a611c351f0bd2f47c",
+      "matches_source_commit": true
+    },
+    {
+      "path": "scripts/runtime_lab_docker_init.py",
+      "bytes": 5735,
+      "sha256": "276663d6578ff4fd8ebf817e5279c2435de087b2082ee2514bee5ef4901b896c",
+      "matches_source_commit": true
+    },
+    {
+      "path": "scripts/runtime_lab_paths.py",
+      "bytes": 7395,
+      "sha256": "0ce3287feab8197839cf2e7e1cf297fd5cad0e740069023b188e4c366b643f84",
+      "matches_source_commit": true
+    },
+    {
+      "path": "scripts/runtime_lab_runner.py",
+      "bytes": 12698,
+      "sha256": "e45e9f9ef18c6e95562d6b4f670ae718c9e10f14b91727fcd46b0a6298cdacbc",
+      "matches_source_commit": true
+    },
+    {
+      "path": "scripts/test_k3s_lab.py",
+      "bytes": 17108,
+      "sha256": "0020687e888e2d70605dc2fd869af54ddfbcc1d852f80bc342eb34704495dd67",
+      "matches_source_commit": true
+    },
+    {
+      "path": "scripts/test_k3s_lab_init.py",
+      "bytes": 24461,
+      "sha256": "c7d4f42c3e97fd57520c5489bdba9ecf393d208ffbda727ae823bc51f51f87c5",
+      "matches_source_commit": true
+    },
+    {
+      "path": "scripts/test_k3s_lab_recovery.py",
+      "bytes": 14267,
+      "sha256": "a47c1eb441e4f26a48cac34acbd4ac0dea6864804e7ec2aa2f3ce9a88eaf4dae",
+      "matches_source_commit": true
+    }
+  ],
+  "retained_materials": [
+    {
+      "path": ".cache/warden-k3s-materials/k3s",
+      "bytes": 79077538,
+      "sha256": "d73847bcd3c5fccef0115b372e2f9a91f3032dc84bbf71518a4617565294d313"
+    },
+    {
+      "path": ".cache/warden-k3s-materials/gvisor.tar.bz2",
+      "bytes": 73621897,
+      "sha256": "1298e8ed9c3fee900f00d2ea96ec2d79d80ed93f2175812f29b7e7da718041a3"
+    }
+  ],
+  "recovery_config_code_sha256": "c38294b263719ab7b113c407743605ae24eec8e471f0473a611c351f0bd2f47c",
+  "new_image_or_manifest_created": false
+}

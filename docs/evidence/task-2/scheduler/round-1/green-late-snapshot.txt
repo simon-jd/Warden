@@ -1,0 +1,4 @@
+=== RUN   TestLateSnapshotPublicationClosesReaderAndCollectorExits
+--- PASS: TestLateSnapshotPublicationClosesReaderAndCollectorExits (0.00s)
+PASS
+ok  	warden/controlplane/internal/scheduler	0.005s

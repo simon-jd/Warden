@@ -1,0 +1,33 @@
+{
+  "activity_id": 1,
+  "category_uid": 6,
+  "class_uid": 6003,
+  "type_uid": 600301,
+  "severity_id": 0,
+  "time": 1767225600000,
+  "metadata": {
+    "version": "1.3.0",
+    "product": {
+      "name": "Kubernetes Audit",
+      "vendor_name": "Kubernetes"
+    },
+    "uid": "69b9428f-176e-5d2f-a39a-d95276b1fd06"
+  },
+  "unmapped": {
+    "objectRef": {
+      "resource": "clusterrolebindings"
+    }
+  },
+  "api": {
+    "operation": "create"
+  },
+  "actor": {
+    "user": {
+      "uid": "synthetic-operator"
+    }
+  },
+  "src_endpoint": {
+    "ip": "192.0.2.10"
+  },
+  "status_id": 1
+}

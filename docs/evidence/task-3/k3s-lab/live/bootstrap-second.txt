@@ -1,0 +1,33 @@
+{"owned_image_charge": 0, "outstanding_charge": 0}
+{"additional_bytes": "6000000000", "at": "2026-10-24T16:43:26Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 353753432064, "project_allocated_bytes": 3023622144, "service_memory_bytes": "7000000000"}
+{"rootfs_bytes": 496036546, "archive_bytes": 496599040, "manifest_sha256": "585eabd7b4d7d77088468b5981fcf26eb4c64cd02d169f082990e6a794d517c0"}
+{"owned_image_charge": 0, "outstanding_charge": 0}
+{"additional_bytes": "6000000000", "at": "2026-10-24T16:43:34Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 353163390976, "project_allocated_bytes": 3520335872, "service_memory_bytes": "7000000000"}
+{"image": "sha256:a2bd74a7126bbb0c858d2e904a0eb4feef8849b83527193a89ebde08bf96f7fc", "image_size_bytes": 685366794, "labels": {"owner": "codex-warden", "project": "warden", "session": "5c8b4330bd7a1a3a6d0e237a604370d0", "ttl": "2026-10-24T17:43:26Z"}}
+{"owned_container": "37b95dd4bbd84a5aa9b33a1f5d8d40402d26f0e1b765c4779ea47294eaa2f2b5", "mode": "bootstrap"}
+k3s lab failed: RuntimeError
+k3s lab failed: PermissionError
+Command exited with non-zero status 2
+	Command being timed: "python3 -B scripts/k3s_lab.py bootstrap --other-service-memory-bytes 0 --reviewed-live-profile"
+	User time (seconds): 7.40
+	System time (seconds): 1.23
+	Percent of CPU this job got: 31%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:27.60
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 802876
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 11
+	Minor (reclaiming a frame) page faults: 456304
+	Voluntary context switches: 17967
+	Involuntary context switches: 299
+	Swaps: 0
+	File system inputs: 2264
+	File system outputs: 970184
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 2

@@ -1,0 +1,5 @@
+--- FAIL: TestGateOperationsReleaseDirectoryDescriptors (0.00s)
+    gate_test.go:168: gate leaked descriptors: before=8 after=40
+FAIL
+FAIL	warden/runtimes/gate	0.003s
+FAIL

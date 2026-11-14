@@ -1,0 +1,232 @@
+# Task 14: per-rep table and per-minute token outcomes for the live Entra drill (run1, run2)
+# Generated 2026-11-12T06:44:20Z from the committed result JSONs by the script below.
+# Percentiles are nearest-rank (same as respond/azurelab Stats): with n=5, p50 is the 3rd smallest value and p95 is the largest; with n=10, p50 is the 5th smallest.
+# 'refused' counts only invalid_client answers; other failed probes are inconclusive and listed at the end of each section.
+# Token probes: one client-credentials request per second per rep with the secret named in the alert; minute buckets start at the alert.
+
+## script (python3 -I analyze.py <json>...)
+    """Summarise respond/azurelab result JSONs (per rep and pooled, nearest rank)."""
+    import json, math, sys, collections
+    
+    def rank(v, p):
+        s = sorted(v)
+        return s[max(0, min(len(s) - 1, math.ceil(p / 100 * len(s)) - 1))]
+    
+    def st(v):
+        return 'n=%d p50 %.1f p95 %.1f min %.1f max %.1f' % (len(v), rank(v, 50), rank(v, 95), min(v), max(v)) if v else 'n=0'
+    
+    pool = collections.defaultdict(list)
+    buckets = collections.defaultdict(lambda: [0, 0])
+    for path in sys.argv[1:]:
+        d = json.load(open(path))
+        print('##', path.rsplit('/', 1)[-1], d['started'], '->', d['finished'], 'pass', d['pass'], 'load', d['host_load_start'], '/', d['host_load_end'])
+        print('rep | handle ms | graph absent ms | first refusal s | last success s | stable refusal s | OK after first refusal / probes | activation first OK s / stable OK s | replay noop | 2nd alert | old token ARM after s')
+        for r in d['reps']:
+            t, a = r['token_after_alert'], r['activation']
+            row = dict(handle=r['handle']['ms'], graph=r['graph']['absent_ms'], first=t['first_reject_ms'], last=t['last_success_ms'],
+                       stable=t['stable_reject_ms'] if r['token_after_alert_stable'] else None, act_first=a['first_ok_ms'], act_stable=a['stable_ok_ms'])
+            for k, v in row.items():
+                if v is not None:
+                    pool[k].append(v)
+            ok_after = t['successes_after_first_reject']
+            pool['ok_frac'].append(ok_after / t['probes'])
+            old = r['arm_with_token_issued_before_alert']
+            da = r['distinct_alert_same_deleted_credential']
+            print('%d | %.1f | %.1f | %.1f | %.1f | %s | %d / %d | %.1f / %.1f | %s | %s %.1f ms | %s after %.0f' % (
+                r['rep'], row['handle'], row['graph'], row['first'] / 1e3, (row['last'] or 0) / 1e3,
+                '%.1f' % (row['stable'] / 1e3) if row['stable'] is not None else 'not confirmed', ok_after, t['probes'],
+                row['act_first'] / 1e3, row['act_stable'] / 1e3, r['replay']['noop'], da['status'], da['ms'], old['result']['status'], old['token_age_s']))
+            for p in r['token_probes']:
+                if p['ok'] or (p.get('error') == 'invalid_client'):
+                    buckets[int(p['at_ms'] // 60000)][0 if p['ok'] else 1] += 1
+            for p in r['token_probes'] + r['activation_probes']:
+                if not p['ok'] and p.get('error') != 'invalid_client':
+                    pool['inconclusive_kinds'].append((p.get('status'), p.get('error')))
+    print('## pooled over all reps')
+    for k in ('handle', 'graph', 'first', 'last', 'stable', 'act_first', 'act_stable'):
+        print(k, '(ms)', st(pool[k]))
+    print('ok fraction after first refusal per rep', ['%.2f' % x for x in pool['ok_frac']])
+    print('minute after alert: tokens issued / refused (all reps)')
+    for m in sorted(buckets):
+        print('  %2d-%2d min: %4d / %4d' % (m, m + 1, *buckets[m]))
+    print('inconclusive probes', collections.Counter(pool['inconclusive_kinds']))
+
+## output: analyze.py azure-contain-20261110-run1.json 
+## azure-contain-20261110-run1.json 2026-11-11T04:48:36.277273316Z -> 2026-11-11T05:10:37.986455598Z pass True load 2.02 2.73 3.01 7/6690 1025582 / 7.14 4.48 3.77 4/7838 1194230
+rep | handle ms | graph absent ms | first refusal s | last success s | stable refusal s | OK after first refusal / probes | activation first OK s / stable OK s | replay noop | 2nd alert | old token ARM after s
+1 | 975.9 | 975.9 | 12.0 | 601.3 | 602.3 | 377 / 663 | 1.0 / 1.0 | True | Completed 834.5 ms | 200 after 664
+2 | 1172.8 | 1172.8 | 1.0 | 549.3 | 550.3 | 412 / 611 | 5.0 / 152.1 | True | Completed 1328.1 ms | 200 after 613
+3 | 1210.8 | 1210.8 | 12.0 | 589.9 | 590.9 | 197 / 636 | 8.0 / 594.9 | True | Completed 892.7 ms | 200 after 653
+4 | 1109.8 | 1109.8 | 0.0 | 462.3 | 463.3 | 344 / 524 | 5.0 / 228.1 | True | Completed 1092.1 ms | 200 after 526
+5 | 1398.1 | 1398.1 | 12.0 | 586.3 | 587.3 | 348 / 648 | 1.0 / 1.0 | True | Completed 830.0 ms | 200 after 649
+## pooled over all reps
+handle (ms) n=5 p50 1172.8 p95 1398.1 min 975.9 max 1398.1
+graph (ms) n=5 p50 1172.8 p95 1398.1 min 975.9 max 1398.1
+first (ms) n=5 p50 12005.5 p95 12007.5 min 0.0 max 12007.5
+last (ms) n=5 p50 586345.8 p95 601346.0 min 462279.5 max 601346.0
+stable (ms) n=5 p50 587346.0 p95 602346.5 min 463280.5 max 602346.5
+act_first (ms) n=5 p50 5003.0 p95 8004.2 min 1000.3 max 8004.2
+act_stable (ms) n=5 p50 152095.8 p95 594904.4 min 1000.3 max 594904.4
+ok fraction after first refusal per rep ['0.57', '0.67', '0.31', '0.66', '0.54']
+minute after alert: tokens issued / refused (all reps)
+   0- 1 min:  235 /   65
+   1- 2 min:  215 /   85
+   2- 3 min:  209 /   91
+   3- 4 min:  219 /   81
+   4- 5 min:  213 /   87
+   5- 6 min:  190 /  110
+   6- 7 min:  171 /  129
+   7- 8 min:  127 /  172
+   8- 9 min:   98 /  172
+   9-10 min:   37 /  202
+  10-11 min:    1 /  169
+  11-12 min:    0 /    3
+inconclusive probes Counter({(0, 'transport: Post: context deadline exceeded (Client.Timeout exceeded while awaiting headers)'): 1})
+
+## output: analyze.py azure-contain-20261111-run2.json 
+## azure-contain-20261111-run2.json 2026-11-11T15:28:10.085101349Z -> 2026-11-11T15:50:15.41804065Z pass True load 5.17 3.72 2.98 3/7834 3218383 / 3.74 4.37 4.09 3/6762 3519355
+rep | handle ms | graph absent ms | first refusal s | last success s | stable refusal s | OK after first refusal / probes | activation first OK s / stable OK s | replay noop | 2nd alert | old token ARM after s
+1 | 1361.2 | 1361.2 | 17.0 | 273.2 | 274.2 | 113 / 335 | 7.0 / 473.3 | True | Completed 945.6 ms | 200 after 336
+2 | 1483.5 | 1483.5 | 8.0 | 570.3 | 571.3 | 433 / 632 | 4.0 / 89.1 | True | Completed 1083.7 ms | 200 after 634
+3 | 1711.5 | 1711.5 | 5.0 | 591.4 | 592.4 | 189 / 653 | 5.0 / 595.4 | True | Completed 979.3 ms | 200 after 654
+4 | 1110.0 | 1110.0 | 7.0 | 594.4 | 595.4 | 114 / 656 | 12.0 / 577.3 | True | Completed 989.9 ms | 200 after 658
+5 | 1055.7 | 1055.7 | 9.0 | 589.0 | 590.0 | 182 / 647 | 9.0 / 593.3 | True | Completed 892.4 ms | 200 after 652
+## pooled over all reps
+handle (ms) n=5 p50 1361.2 p95 1711.5 min 1055.7 max 1711.5
+graph (ms) n=5 p50 1361.2 p95 1711.5 min 1055.7 max 1711.5
+first (ms) n=5 p50 8003.1 p95 17010.0 min 5002.4 max 17010.0
+last (ms) n=5 p50 589010.0 p95 594405.1 min 273153.7 max 594405.1
+stable (ms) n=5 p50 590010.7 p95 595405.3 min 274154.6 max 595405.3
+act_first (ms) n=5 p50 7004.6 p95 12007.7 min 4003.0 max 12007.7
+act_stable (ms) n=5 p50 577332.7 p95 595352.8 min 89051.7 max 595352.8
+ok fraction after first refusal per rep ['0.34', '0.69', '0.29', '0.17', '0.28']
+minute after alert: tokens issued / refused (all reps)
+   0- 1 min:  219 /   81
+   1- 2 min:  157 /  140
+   2- 3 min:  117 /  183
+   3- 4 min:  114 /  186
+   4- 5 min:   99 /  201
+   5- 6 min:   96 /  179
+   6- 7 min:   95 /  145
+   7- 8 min:   99 /  141
+   8- 9 min:   53 /  187
+   9-10 min:   28 /  211
+  10-11 min:    0 /  192
+inconclusive probes Counter()
+
+## output: analyze.py azure-contain-20261110-run1.json azure-contain-20261111-run2.json 
+## azure-contain-20261110-run1.json 2026-11-11T04:48:36.277273316Z -> 2026-11-11T05:10:37.986455598Z pass True load 2.02 2.73 3.01 7/6690 1025582 / 7.14 4.48 3.77 4/7838 1194230
+rep | handle ms | graph absent ms | first refusal s | last success s | stable refusal s | OK after first refusal / probes | activation first OK s / stable OK s | replay noop | 2nd alert | old token ARM after s
+1 | 975.9 | 975.9 | 12.0 | 601.3 | 602.3 | 377 / 663 | 1.0 / 1.0 | True | Completed 834.5 ms | 200 after 664
+2 | 1172.8 | 1172.8 | 1.0 | 549.3 | 550.3 | 412 / 611 | 5.0 / 152.1 | True | Completed 1328.1 ms | 200 after 613
+3 | 1210.8 | 1210.8 | 12.0 | 589.9 | 590.9 | 197 / 636 | 8.0 / 594.9 | True | Completed 892.7 ms | 200 after 653
+4 | 1109.8 | 1109.8 | 0.0 | 462.3 | 463.3 | 344 / 524 | 5.0 / 228.1 | True | Completed 1092.1 ms | 200 after 526
+5 | 1398.1 | 1398.1 | 12.0 | 586.3 | 587.3 | 348 / 648 | 1.0 / 1.0 | True | Completed 830.0 ms | 200 after 649
+## azure-contain-20261111-run2.json 2026-11-11T15:28:10.085101349Z -> 2026-11-11T15:50:15.41804065Z pass True load 5.17 3.72 2.98 3/7834 3218383 / 3.74 4.37 4.09 3/6762 3519355
+rep | handle ms | graph absent ms | first refusal s | last success s | stable refusal s | OK after first refusal / probes | activation first OK s / stable OK s | replay noop | 2nd alert | old token ARM after s
+1 | 1361.2 | 1361.2 | 17.0 | 273.2 | 274.2 | 113 / 335 | 7.0 / 473.3 | True | Completed 945.6 ms | 200 after 336
+2 | 1483.5 | 1483.5 | 8.0 | 570.3 | 571.3 | 433 / 632 | 4.0 / 89.1 | True | Completed 1083.7 ms | 200 after 634
+3 | 1711.5 | 1711.5 | 5.0 | 591.4 | 592.4 | 189 / 653 | 5.0 / 595.4 | True | Completed 979.3 ms | 200 after 654
+4 | 1110.0 | 1110.0 | 7.0 | 594.4 | 595.4 | 114 / 656 | 12.0 / 577.3 | True | Completed 989.9 ms | 200 after 658
+5 | 1055.7 | 1055.7 | 9.0 | 589.0 | 590.0 | 182 / 647 | 9.0 / 593.3 | True | Completed 892.4 ms | 200 after 652
+## pooled over all reps
+handle (ms) n=10 p50 1172.8 p95 1711.5 min 975.9 max 1711.5
+graph (ms) n=10 p50 1172.8 p95 1711.5 min 975.9 max 1711.5
+first (ms) n=10 p50 8003.1 p95 17010.0 min 0.0 max 17010.0
+last (ms) n=10 p50 586345.8 p95 601346.0 min 273153.7 max 601346.0
+stable (ms) n=10 p50 587346.0 p95 602346.5 min 274154.6 max 602346.5
+act_first (ms) n=10 p50 5003.2 p95 12007.7 min 1000.3 max 12007.7
+act_stable (ms) n=10 p50 228132.7 p95 595352.8 min 1000.3 max 595352.8
+ok fraction after first refusal per rep ['0.57', '0.67', '0.31', '0.66', '0.54', '0.34', '0.69', '0.29', '0.17', '0.28']
+minute after alert: tokens issued / refused (all reps)
+   0- 1 min:  454 /  146
+   1- 2 min:  372 /  225
+   2- 3 min:  326 /  274
+   3- 4 min:  333 /  267
+   4- 5 min:  312 /  288
+   5- 6 min:  286 /  289
+   6- 7 min:  266 /  274
+   7- 8 min:  226 /  313
+   8- 9 min:  151 /  359
+   9-10 min:   65 /  413
+  10-11 min:    1 /  361
+  11-12 min:    0 /    3
+inconclusive probes Counter({(0, 'transport: Post: context deadline exceeded (Client.Timeout exceeded while awaiting headers)'): 1})
+
+## added 2026-11-12 (review fix round 1): the PASS criterion was relaxed between run0 and run1
+# 0e32aa7 (committed 2026-11-11T04:48:31Z, after run0 FAILed at 04:44Z and 5 s before run1 started at 04:48:36Z) changed
+# respond/azurelab/live_test.go: rejectCap 10 min -> 30 min, stableWindow 30 s -> 60 s, token probes every 500 ms -> 1 s,
+# and each rep now first waits for one minute of successful tokens (cap 20 min). run1 and run2 PASS only under these
+# new values. Replayed on their committed probes, the criterion before 0e32aa7 (30 s of refusals within 10 min) is not met
+# by 3 of 5 reps in each run, so under the original criterion run1 and run2 both FAIL. PASS now means only: within 30 min
+# the token endpoint refused the deleted secret for 60 s in a row. The test asserts nothing about how fast that happens
+# and nothing about the token issued before the alert (its ARM call is recorded, not checked).
+# The pre-0e32aa7 code itself would not have reported these reps: after the 10-min cap it only required the probes it had
+# collected to end in a refusal (Analyze's stable_reject_ms not null). The same gap is why run0's failures list names only
+# the dry run, although run0's deleted secret also got a token at 597.7 s. That was a gap in the old test, not a pass.
+
+## script (python3 -I -B orig_criterion.py <json>...)
+    """Replay the committed token probes under the criterion before 0e32aa7: a stable refusal is 30 s in which
+    every conclusive probe after the first refusal (that follows the last success) was refused, and it must
+    come within the 10-minute cap (pollRejection in 0e32aa7^:respond/azurelab/live_test.go). Conclusive means
+    a token (ok) or an invalid_client refusal; other failures neither count nor restart, as in the code.
+    The committed runs probed every 1 s; the old test probed every 500 ms, so this is the same rule on
+    coarser data. For comparison: the current rule (60 s window, 30-min cap) as recorded in the JSON."""
+    import json, sys
+    WINDOW_MS, CAP_MS = 30_000, 600_000
+    def refused(p):
+        return p.get("status") in (400, 401) and p.get("error") == "invalid_client"
+    for path in sys.argv[1:]:
+        d = json.load(open(path))
+        print("##", path.rsplit("/", 1)[-1], "poll", d["poll"])
+        fails = 0
+        for rep in d["reps"]:
+            since, verdict = None, None
+            for p in rep["token_probes"]:
+                done = p["at_ms"] + p["ms"]
+                if p["ok"]:
+                    since = None
+                elif refused(p) and since is None:
+                    since = p["at_ms"]
+                if since is not None and done - since >= WINDOW_MS:
+                    verdict = "meets it: 30 s of refusals from %.1f s, confirmed at %.1f s" % (since / 1e3, done / 1e3)
+                    break
+                if done > CAP_MS:
+                    verdict = "FAILS it: no 30 s of refusals within 600 s (cap reached at %.1f s)" % (done / 1e3)
+                    fails += 1
+                    break
+            later = [p["at_ms"] for p in rep["token_probes"] if p["ok"] and since is not None and p["at_ms"] > since]
+            t = rep["token_after_alert"]
+            print("rep %d: %s; last success %.1f s; current rule: stable from %.1f s%s" % (
+                rep["rep"], verdict, t["last_success_ms"] / 1e3, t["stable_reject_ms"] / 1e3,
+                "; a success came after the 30 s window, at %.1f s" % (later[0] / 1e3) if later and verdict.startswith("meets") else ""))
+        print("=> %d of %d reps fail the original criterion; the run %s it" % (fails, len(d["reps"]), "FAILS" if fails else "meets"))
+
+## output: orig_criterion.py azure-contain-20261110-run1.json azure-contain-20261111-run2.json
+## azure-contain-20261110-run1.json poll {'activation_cap_s': 1200, 'graph_interval_ms': 200, 'reject_cap_s': 1800, 'stable_window_s': 60, 'token_interval_ms': 1000}
+rep 1: FAILS it: no 30 s of refusals within 600 s (cap reached at 600.5 s); last success 601.3 s; current rule: stable from 602.3 s
+rep 2: meets it: 30 s of refusals from 550.3 s, confirmed at 580.5 s; last success 549.3 s; current rule: stable from 550.3 s
+rep 3: FAILS it: no 30 s of refusals within 600 s (cap reached at 600.0 s); last success 589.9 s; current rule: stable from 590.9 s
+rep 4: meets it: 30 s of refusals from 463.3 s, confirmed at 493.4 s; last success 462.3 s; current rule: stable from 463.3 s
+rep 5: FAILS it: no 30 s of refusals within 600 s (cap reached at 600.5 s); last success 586.3 s; current rule: stable from 587.3 s
+=> 3 of 5 reps fail the original criterion; the run FAILS it
+## azure-contain-20261111-run2.json poll {'activation_cap_s': 1200, 'graph_interval_ms': 200, 'reject_cap_s': 1800, 'stable_window_s': 60, 'token_interval_ms': 1000}
+rep 1: meets it: 30 s of refusals from 274.2 s, confirmed at 304.3 s; last success 273.2 s; current rule: stable from 274.2 s
+rep 2: FAILS it: no 30 s of refusals within 600 s (cap reached at 600.4 s); last success 570.3 s; current rule: stable from 571.3 s
+rep 3: FAILS it: no 30 s of refusals within 600 s (cap reached at 600.5 s); last success 591.4 s; current rule: stable from 592.4 s
+rep 4: meets it: 30 s of refusals from 563.4 s, confirmed at 593.5 s; last success 594.4 s; current rule: stable from 595.4 s; a success came after the 30 s window, at 594.4 s
+rep 5: FAILS it: no 30 s of refusals within 600 s (cap reached at 600.2 s); last success 589.0 s; current rule: stable from 590.0 s
+=> 3 of 5 reps fail the original criterion; the run FAILS it
+
+## added 2026-11-12: provenance of the run JSONs (what is recorded and what is inferred)
+# None of run0/run1/run2's JSONs or logs records a source commit or a dirty state; respond/azurelab only does since
+# 89c0afd (2026-11-12). The commits named in time-to-contain.md and azure-entra-objects-20261111.txt are inferred
+# from commit and start times: run0 3484809 (committed 04:34:03Z, run started 04:34:07Z); run1 0e32aa7 (04:48:31Z,
+# run 04:48:36Z); run2 7d84ef9 (HEAD from 2026-11-11T04:50:48Z until 71a8bb6/c39796a at 15:30:38Z/15:30:57Z, which
+# were committed while run2 was running, 15:28:10Z-15:50:15Z, and changed only evidence). Untracked files at the time
+# are not known for any of them.
+# c39796a's message gives run1 as 04:48-05:13Z; the JSON has started 04:48:36Z and finished 05:10:37Z. Both come from
+# the same run: "finished" is stamped when the result is assembled, before it is redacted, leak-checked and written,
+# and `go test` reports 1505.55 s for the test (run1.log), i.e. it returned at about 05:13:42Z. For run2 the same gap
+# is 15:50:15Z (finished) vs 1606.41 s (about 15:54:56Z). What took the ~3-5 minutes after "finished" was not timed;
+# redacting and leak-checking against every kept token (2919 / 3538 tokens) is the likely part (inference).

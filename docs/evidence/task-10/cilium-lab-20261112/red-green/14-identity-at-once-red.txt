@@ -1,0 +1,11 @@
+# 2026-11-13T08:26:18-08:00 head 5bca9b6; git status --short:
+ M controlplane/internal/ciliumlab/policy_test.go
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/14-identity-at-once-red.txt
+$ go test -count=1 -run '^TestLabCiliumTakesLabelChangesInAtOnce$' ./controlplane/internal/ciliumlab
+--- FAIL: TestLabCiliumTakesLabelChangesInAtOnce (0.00s)
+    policy_test.go:134: identityChangeGracePeriod = "", want "0s"
+    policy_test.go:137: extraConfig identity-max-jitter = "", want "0s"
+FAIL
+FAIL	warden/controlplane/internal/ciliumlab	0.003s
+FAIL
+exit 1

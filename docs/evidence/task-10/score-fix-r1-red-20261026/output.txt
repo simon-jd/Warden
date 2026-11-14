@@ -1,0 +1,13 @@
+=== RUN   TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions
+=== RUN   TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions/_dmarc.example.com
+    exfil_test.go:263: R1_QUALIFYING_WINDOW_OK count=31 mean=5
+    exfil_test.go:269: expected DNS score alert, got nil
+=== RUN   TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions/com
+    exfil_test.go:263: R1_QUALIFYING_WINDOW_OK count=31 mean=5
+    exfil_test.go:269: expected DNS score alert, got nil
+--- FAIL: TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions (0.00s)
+    --- FAIL: TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions/_dmarc.example.com (0.00s)
+    --- FAIL: TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions/com (0.00s)
+FAIL
+FAIL	warden/detect/dns_exfil	0.007s
+FAIL

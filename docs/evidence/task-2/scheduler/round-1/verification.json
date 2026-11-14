@@ -1,0 +1,48 @@
+{
+  "implementation_sha": "ea41312035b38207f6e2aa3215a5e8d104178a7e",
+  "reviewed_base": "08b0383",
+  "review_archive": "21abfc2",
+  "recorded_utc": "2026-10-24T04:47:10.610288+00:00",
+  "source_binding": "Final checks ran on the identical source tree before commit; post-commit code-only git diff against implementation_sha returned 0.",
+  "commands": [
+    {
+      "command": "scripts/test-postgres.sh test -p 1 ./controlplane/... ./runtimes/gate -count=1 -v",
+      "exit_code": 0,
+      "log": "test-final.txt"
+    },
+    {
+      "command": "scripts/test-postgres.sh test -p 1 -race ./controlplane/... ./runtimes/gate -count=1 -v",
+      "exit_code": 0,
+      "log": "race-final.txt"
+    },
+    {
+      "command": "scripts/go.sh vet ./controlplane/... ./runtimes/gate",
+      "exit_code": 0,
+      "log": "vet-final.txt"
+    },
+    {
+      "command": "scripts/check-test-postgres-cleanup.sh",
+      "exit_code": 0,
+      "log": "postgres-cleanup.txt"
+    }
+  ],
+  "results": {
+    "top_level_pass": 55,
+    "pass_including_subcases": 68,
+    "includes_child_worker_entrypoint": true,
+    "skip": 0,
+    "race_reports": 0
+  },
+  "external_boundary": "Stateful controlled runtime with delayed remote materialization; real PostgreSQL, file gates, OS process contention and HTTP handlers.",
+  "deferred": "128-candidate-window Minor; actual API-to-runc integration; original-daemon quiescence/reconciliation.",
+  "azure_estimate_usd": 0,
+  "log_sha256": {
+    "green-focused.txt": "81fa523b2e99edb7c8ef211b215bcfdf4519d1299621fc265c2114761ae2937c",
+    "green-late-snapshot.txt": "254df10e19f443c72d498d2bf9a6e4ab4f56a951e7983aaa551bc521bb1e6947",
+    "postgres-cleanup.txt": "e33ca500b02d57277ba75cad78726928e3da26225d10e6ec10dbcd0d54af34e3",
+    "race-final.txt": "d15a6c3154ce1a74f66b7bf46b7abf013df7d6f348613c59737bc6caf219f7ed",
+    "red-late-snapshot.txt": "b85474306719d671f748bc8426d104353dccf8aee4ee581396b017869a800700",
+    "test-final.txt": "8af2b0baff16355bd9195eac8d00a54875db133ae28e71cd20c8d3c378a8e8b1",
+    "vet-final.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

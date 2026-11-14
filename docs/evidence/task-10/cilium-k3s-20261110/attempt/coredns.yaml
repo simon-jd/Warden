@@ -1,0 +1,100 @@
+# kube-dns for the k3s Cilium lab (scripts/k3s_gvisor_lab.sh up --cilium).
+# k3s's own CoreDNS stays disabled (runtimes/gvisor/lab/node/config.yaml);
+# this one carries the labels the Cilium policies select (kube-system,
+# k8s-app=kube-dns) and serves fixed names for the lab's "world" network
+# (@WORLD@ is the /24 prefix the lab picked):
+#   .20 allowed.warden.test, img.cdn.warden.test   origin the allowlist lets through
+#   .21 blocked.warden.test                         origin it must not
+#   169.254.169.254 metadata.google.internal        metadata stand-in (warden-k3s-imds)
+# Anything else is NXDOMAIN: the lab has no upstream resolver.
+apiVersion: v1
+kind: ServiceAccount
+metadata: {name: coredns, namespace: kube-system}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata: {name: warden-lab-coredns}
+rules:
+  - apiGroups: [""]
+    resources: [services, namespaces]
+    verbs: [list, watch]
+  - apiGroups: [discovery.k8s.io]
+    resources: [endpointslices]
+    verbs: [list, watch]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata: {name: warden-lab-coredns}
+roleRef: {apiGroup: rbac.authorization.k8s.io, kind: ClusterRole, name: warden-lab-coredns}
+subjects: [{kind: ServiceAccount, name: coredns, namespace: kube-system}]
+---
+apiVersion: v1
+kind: ConfigMap
+metadata: {name: coredns, namespace: kube-system}
+data:
+  Corefile: |
+    .:53 {
+        errors
+        health :8080
+        ready :8181
+        kubernetes cluster.local in-addr.arpa {
+            fallthrough in-addr.arpa
+        }
+        hosts {
+            @WORLD@.20 allowed.warden.test img.cdn.warden.test
+            @WORLD@.21 blocked.warden.test
+            169.254.169.254 metadata.google.internal
+            fallthrough
+        }
+        template ANY ANY {
+            rcode NXDOMAIN
+        }
+        cache 5
+        loop
+    }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: coredns, namespace: kube-system, labels: {k8s-app: kube-dns}}
+spec:
+  replicas: 1
+  selector: {matchLabels: {k8s-app: kube-dns}}
+  template:
+    metadata: {labels: {k8s-app: kube-dns}}
+    spec:
+      serviceAccountName: coredns
+      dnsPolicy: Default
+      containers:
+        - name: coredns
+          image: docker.io/coredns/coredns:1.14.7
+          imagePullPolicy: Never
+          args: [-conf, /etc/coredns/Corefile]
+          ports:
+            - {name: dns, containerPort: 53, protocol: UDP}
+            - {name: dns-tcp, containerPort: 53, protocol: TCP}
+          resources:
+            limits: {cpu: 200m, memory: 64Mi}
+          securityContext:
+            runAsUser: 65532
+            runAsNonRoot: true
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL], add: [NET_BIND_SERVICE]}
+          readinessProbe:
+            httpGet: {path: /ready, port: 8181}
+            periodSeconds: 2
+          volumeMounts:
+            - {name: config, mountPath: /etc/coredns, readOnly: true}
+      volumes:
+        - name: config
+          configMap: {name: coredns}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: kube-dns, namespace: kube-system, labels: {k8s-app: kube-dns}}
+spec:
+  clusterIP: 10.43.0.10
+  selector: {k8s-app: kube-dns}
+  ports:
+    - {name: dns, port: 53, protocol: UDP}
+    - {name: dns-tcp, port: 53, protocol: TCP}

@@ -1,0 +1,7 @@
+$ go test -count=1 -v ./controlplane/internal/aksdrill   # after aksdrill.go
+=== RUN   TestProbePodRunsAsNobodyWithNothingToSpare
+--- PASS: TestProbePodRunsAsNobodyWithNothingToSpare (0.00s)
+=== RUN   TestDefaultDenyOffReadsTheStoredPolicy
+--- PASS: TestDefaultDenyOffReadsTheStoredPolicy (0.00s)
+PASS
+ok  	warden/controlplane/internal/aksdrill	0.002s

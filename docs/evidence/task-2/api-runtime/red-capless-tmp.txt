@@ -1,0 +1,18 @@
+owned container: eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+outer container removed: eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+F.owned private PostgreSQL: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+owned PostgreSQL removed: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+..
+======================================================================
+FAIL: test_code_mode_is_capless_and_joins_only_verified_pg (test_runtime_lab_api.ApiOuterTests.test_code_mode_is_capless_and_joins_only_verified_pg)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_api.py", line 77, in test_code_mode_is_capless_and_joins_only_verified_pg
+    self.assertIn('--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777',create)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '--tmpfs=/tmp:rw,nosuid,nodev,size=64m,mode=1777' not found in ['container', 'create', '--pull=never', '--network=container:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd', '--ipc=private', '--cgroupns=private', '--read-only', '--cap-drop=ALL', '--security-opt=no-new-privileges', '--memory=4000000000', '--memory-swap=4000000000', '--pids-limit=512', '--cpus=2', '--log-driver=json-file', '--log-opt=max-size=10m', '--log-opt=max-file=2', '--stop-timeout=20', '--tmpfs=/tmp:rw,nosuid,nodev,size=64m', '--tmpfs=/run:rw,nosuid,nodev,size=64m', '--label', 'project=warden', '--label', 'owner=codex-warden', '--label', 'session=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '--label', 'ttl=test', '--label', 'role=outer', '--user=65534:65534', '--env', 'WARDEN_API_PASSWORD', 'sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'api-code']
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=1)

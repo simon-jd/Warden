@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# .cache/task-3/evidence-run.sh <name> [make args...]: one make test-gvisor
+# run with its provenance, load samples and lab host snapshots.
+set -u
+cd "$HOME/Desktop/Warden-task3" || exit 1
+name=$1; shift
+out=docs/evidence/task-3/live-20261110
+mkdir -p "$out"
+h=$out/$name.host.txt
+{ echo "run: $name"; echo "command: make test-gvisor $*  (worktree wrapper .cache/mk.sh: GOFLAGS adds -buildvcs=false)"
+  echo "start: $(date -Is)"; echo "head: $(git rev-parse HEAD)"; echo "git status --short:"; git status --short
+  echo "uname: $(uname -r)"; echo "nproc: $(nproc)"; echo "loadavg start: $(cat /proc/loadavg)"
+  echo "warden docker objects before:"; docker ps -a --filter label=project=warden --format '  {{.Names}} {{.Status}}'; docker network ls --filter label=project=warden --format '  net {{.Name}}'
+} >"$h"
+( while sleep 15; do echo "$(date +%T) $(cat /proc/loadavg)"; done ) >"$out/$name.load.txt" &
+sampler=$!
+.cache/mk.sh test-gvisor "$@" >"$out/$name.log" 2>&1
+rc=$?
+kill $sampler
+{ echo "end: $(date -Is)"; echo "loadavg end: $(cat /proc/loadavg)"; echo "make exit: $rc"
+  echo "warden docker objects after:"; docker ps -a --filter label=project=warden --format '  {{.Names}} {{.Status}}'; docker network ls --filter label=project=warden --format '  net {{.Name}}'
+  echo "lab host snapshot before (protected sysctls, module list hash):"; sed 's/^/  /' .cache/k3s-gvisor/lab/host-before.txt
+  echo "lab host snapshot after:"; sed 's/^/  /' .cache/k3s-gvisor/lab/host-after.txt
+} >>"$h"
+cp .cache/k3s-gvisor/lab/node-manifest.txt "$out/$name.node-manifest.txt"
+echo "rc=$rc"

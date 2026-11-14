@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-25T10:07:50.999468+00:00",
+  "known_original_process_exit": -15,
+  "timeout_seconds": 180,
+  "cache_metadata_counts": {
+    "present_files": 22422,
+    "missing_derived_files": 0,
+    "present_dirs": 260,
+    "missing_executable_dirs": 0,
+    "narrowed_files": 18900,
+    "original_mode_files": 3522,
+    "narrowed_dirs": 260,
+    "original_mode_dirs": 0
+  },
+  "private_intent_bytes": 4573737,
+  "private_intent_sha256": "cbc9e3aad72189cf1a048ee1a30270ea43dce2925823563c283fecd3dcf65e5e",
+  "completion_receipt_present": false,
+  "present_cache_file_identity_size_mtime_unchanged": true,
+  "unknown_entries_or_aliases_found": false,
+  "sibling_cache_metadata_match": true,
+  "original_scene_and_Q_postflight": {
+    "ordinary_full_guard": {
+      "additional_bytes": "5000000000",
+      "at": "2026-10-25T10:07:50Z",
+      "download_bytes": "0",
+      "event": "local-preflight",
+      "free_bytes": 265415077888,
+      "project_allocated_bytes": 4199899136,
+      "service_memory_bytes": "1000000000"
+    },
+    "protected_sysctls": {
+      "vm/overcommit_memory": "1",
+      "vm/panic_on_oom": "0",
+      "kernel/panic": "10",
+      "kernel/panic_on_oops": "1",
+      "kernel/keys/root_maxkeys": "1000000",
+      "kernel/keys/root_maxbytes": "25000000"
+    },
+    "protected_baseline_match": true,
+    "original_owner_retirement": "cleanup_pending",
+    "creation_outcome": "unknown",
+    "never_reopen": true,
+    "reserved_bytes": 5000000000,
+    "released": false
+  },
+  "all_fixed_source_hashes_match": true,
+  "cache_bodies_read": false,
+  "permissions_rolled_back": false,
+  "maintenance_retried": false,
+  "maintenance_complete": false,
+  "new3GB_admitted": false,
+  "PG_material_or_new_cache_actual_authorized": false,
+  "Q_released": false,
+  "task6_complete": false,
+  "goal_complete": false
+}

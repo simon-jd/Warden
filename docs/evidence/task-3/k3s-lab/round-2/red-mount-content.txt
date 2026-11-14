@@ -1,0 +1,17 @@
+$ /usr/bin/python3 -B -m unittest discover -s scripts -p test_k3s_lab.py -k content_drift -v
+test_mount_smoke_content_drift_preserves_objects_and_charge (test_k3s_lab.LabTest.test_mount_smoke_content_drift_preserves_objects_and_charge) ... FAIL
+
+======================================================================
+FAIL: test_mount_smoke_content_drift_preserves_objects_and_charge (test_k3s_lab.LabTest.test_mount_smoke_content_drift_preserves_objects_and_charge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab.py", line 203, in test_mount_smoke_content_drift_preserves_objects_and_charge
+    with patch('k3s_lab.BASE',Path(temporary)),patch('k3s_lab.docker',docker),self.assertRaises(RuntimeError):
+                                                                              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)
+exit=1

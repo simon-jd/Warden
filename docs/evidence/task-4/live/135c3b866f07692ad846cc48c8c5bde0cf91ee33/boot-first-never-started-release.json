@@ -1,0 +1,49 @@
+{
+  "utc": "2026-10-24T20:51:37.961997+00:00",
+  "session": ".cache/warden-lab/docker-firecracker-f9b2d15672401a1c43b47412ec73a118",
+  "identity": {
+    "image": "sha256:576951e884611773d64605528b7a4a02bf4363c590957c5d7ab49f9bfe9d377f",
+    "image_bytes": 147434287,
+    "labels": {
+      "owner": "codex-warden",
+      "project": "warden",
+      "session": "f9b2d15672401a1c43b47412ec73a118",
+      "task": "firecracker",
+      "ttl": "2026-10-24T21:49:18.992104+00:00"
+    },
+    "mode": "boot",
+    "source": "135c3b866f07692ad846cc48c8c5bde0cf91ee33"
+  },
+  "before_charge": {
+    "version": 1,
+    "reserved_bytes": 5000000000,
+    "released": false
+  },
+  "after_charge": {
+    "version": 1,
+    "reserved_bytes": 5000000000,
+    "released": true
+  },
+  "all_project_images_and_containers_absent": true,
+  "live_directory_empty_and_original_identity_verified": true,
+  "charged_preflight": {
+    "additional_bytes": "5000000000",
+    "at": "2026-10-24T20:51:37Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 267923533824,
+    "project_allocated_bytes": 3826462720,
+    "service_memory_bytes": "1000000000"
+  },
+  "ordinary_preflight": {
+    "additional_bytes": "0",
+    "at": "2026-10-24T20:51:37Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 267923513344,
+    "project_allocated_bytes": 3826462720,
+    "service_memory_bytes": "1000000000"
+  },
+  "basis": "Source-bound traceback stops in inspect_live before Docker start; every owned object is gone and the original UID1000 private live directory is empty. This is never-started object accounting release, not VMM, Gate or scheduler retirement proof.",
+  "vm_started": false
+}

@@ -1,0 +1,21 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "/home/postedism/Desktop/Warden/scripts/azure_guard.py",
+    "preflight",
+    "--additional-bytes",
+    "5512000000",
+    "--service-memory-bytes",
+    "3000000000",
+    "--download-bytes",
+    "0"
+  ],
+  "exit_code": 0,
+  "outstanding_bytes": 5000000000,
+  "owned_containers": [],
+  "owned_image_charge": 0,
+  "owned_images": [],
+  "stderr": "",
+  "stdout": "{\"additional_bytes\": \"5512000000\", \"at\": \"2026-10-25T10:30:29Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 265729204224, \"project_allocated_bytes\": 4207628288, \"service_memory_bytes\": \"3000000000\"}\n"
+}

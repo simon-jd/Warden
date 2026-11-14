@@ -1,0 +1,17 @@
+$ /usr/bin/python3 -B -m unittest discover -s scripts -p test_k3s_lab.py -k main_tar_finally -v
+test_main_tar_finally_preserves_replaced_directory_and_original_archive (test_k3s_lab.LabTest.test_main_tar_finally_preserves_replaced_directory_and_original_archive) ... FAIL
+
+======================================================================
+FAIL: test_main_tar_finally_preserves_replaced_directory_and_original_archive (test_k3s_lab.LabTest.test_main_tar_finally_preserves_replaced_directory_and_original_archive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab.py", line 248, in test_main_tar_finally_preserves_replaced_directory_and_original_archive
+    self.assertTrue((output/'rootfs.tar').exists(),'main finally deleted a replacement directory file')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : main finally deleted a replacement directory file
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)
+exit=1

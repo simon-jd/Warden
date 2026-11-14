@@ -1,0 +1,61 @@
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/mutable-image
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/traversal-id
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/allowlist-unimplemented
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/none-with-domains
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/zero-memory
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/empty-cmd
+--- PASS: TestRejectsUnsafeLaunchBeforeConnecting (0.00s)
+    --- PASS: TestRejectsUnsafeLaunchBeforeConnecting/mutable-image (0.00s)
+    --- PASS: TestRejectsUnsafeLaunchBeforeConnecting/traversal-id (0.00s)
+    --- PASS: TestRejectsUnsafeLaunchBeforeConnecting/allowlist-unimplemented (0.00s)
+    --- PASS: TestRejectsUnsafeLaunchBeforeConnecting/none-with-domains (0.00s)
+    --- PASS: TestRejectsUnsafeLaunchBeforeConnecting/zero-memory (0.00s)
+    --- PASS: TestRejectsUnsafeLaunchBeforeConnecting/empty-cmd (0.00s)
+=== RUN   TestOCISecurityAndResourceEnforcement
+--- PASS: TestOCISecurityAndResourceEnforcement (0.00s)
+=== RUN   TestBoundedLogsDiscardOverflowWithoutBlocking
+--- PASS: TestBoundedLogsDiscardOverflowWithoutBlocking (0.00s)
+=== RUN   TestCgroupRejectsSymlinkEscape
+--- PASS: TestCgroupRejectsSymlinkEscape (0.00s)
+=== RUN   TestKillWaitsForEntireSubtree
+--- PASS: TestKillWaitsForEntireSubtree (0.03s)
+=== RUN   TestWaitCancellationDoesNotCancelLifecycle
+--- PASS: TestWaitCancellationDoesNotCancelLifecycle (0.00s)
+=== RUN   TestTimeoutKillsAndReportsCleanupFailure
+--- PASS: TestTimeoutKillsAndReportsCleanupFailure (0.00s)
+=== RUN   TestNaturalExitKillsResidualProcesses
+--- PASS: TestNaturalExitKillsResidualProcesses (0.00s)
+=== RUN   TestRejectsSharedDaemonConfiguration
+--- PASS: TestRejectsSharedDaemonConfiguration (0.00s)
+=== RUN   TestStartHonorsCanceledSetupWithoutConnecting
+--- PASS: TestStartHonorsCanceledSetupWithoutConnecting (0.00s)
+=== RUN   TestCgroupMalformedEventsFailClosed
+--- PASS: TestCgroupMalformedEventsFailClosed (0.00s)
+=== RUN   TestOCIDevicePolicyDeniesHostDevices
+--- PASS: TestOCIDevicePolicyDeniesHostDevices (0.00s)
+=== RUN   TestConformance
+=== RUN   TestConformance/ForkBombCappedByPids
+    suite.go:29: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden
+=== RUN   TestConformance/RootfsReadOnly
+    suite.go:29: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden
+=== RUN   TestConformance/NoNetworkByDefault
+    suite.go:29: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden
+=== RUN   TestConformance/RunsAsNonRoot
+    suite.go:29: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden
+=== RUN   TestConformance/TimeoutKillsProcessGroup
+    suite.go:29: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden
+=== RUN   TestConformance/MemoryLimitOOMKilled
+    suite.go:29: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden
+=== RUN   TestConformance/SeccompBlocksMountAndPtrace
+    suite.go:29: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden
+--- PASS: TestConformance (0.00s)
+    --- SKIP: TestConformance/ForkBombCappedByPids (0.00s)
+    --- SKIP: TestConformance/RootfsReadOnly (0.00s)
+    --- SKIP: TestConformance/NoNetworkByDefault (0.00s)
+    --- SKIP: TestConformance/RunsAsNonRoot (0.00s)
+    --- SKIP: TestConformance/TimeoutKillsProcessGroup (0.00s)
+    --- SKIP: TestConformance/MemoryLimitOOMKilled (0.00s)
+    --- SKIP: TestConformance/SeccompBlocksMountAndPtrace (0.00s)
+PASS
+ok  	warden/runtimes/runc	0.038s

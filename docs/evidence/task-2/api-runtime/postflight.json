@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-10-24T05:19:43.724023+00:00",
+  "uid": 1000,
+  "daemon": {
+    "Name": "postedism-ubuntu-system-selfuse",
+    "ServerVersion": "29.9.1",
+    "CgroupVersion": "2",
+    "CgroupDriver": "systemd"
+  },
+  "containers": {
+    "05480ea793456263502bfc71daeac94d442eb6c9cbd78b120eed3d003beb8b50": {
+      "remaining": []
+    },
+    "a00b3a0c4d9a771092a128bcf1fc9b60ed72d089bec673a479de944fd8e37fb8": {
+      "remaining": []
+    },
+    "492d8ab5c6d9488ca01456aa1439238ddfc22af4a311c9e52b0445f35c3c076c": {
+      "remaining": []
+    }
+  },
+  "owned_containers_remaining": [],
+  "owned_images_remaining": [],
+  "outstanding_import_charge_bytes": 0,
+  "preexisting_postgres_image_retained": {
+    "Id": "sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873",
+    "RepoDigests": [
+      "postgres@sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873"
+    ],
+    "Size": 432729433
+  }
+}

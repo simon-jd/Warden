@@ -1,0 +1,27 @@
+test_recovery_archive_requires_original_held_inode_and_exact_shape (test_k3s_lab_round4.FixedThirdSceneTest.test_recovery_archive_requires_original_held_inode_and_exact_shape) ... ok
+test_recovery_targets_only_third_scene_and_exact_new_snapshot (test_k3s_lab_round4.FixedThirdSceneTest.test_recovery_targets_only_third_scene_and_exact_new_snapshot) ... ok
+test_kubelet_tolerates_visible_host_swap_but_disallows_workload_swap (test_k3s_lab_round4.NoSwapTest.test_kubelet_tolerates_visible_host_swap_but_disallows_workload_swap) ... ok
+test_private_outer_swap_check_rejects_missing_nonzero_alias_and_oversize (test_k3s_lab_round4.NoSwapTest.test_private_outer_swap_check_rejects_missing_nonzero_alias_and_oversize) ... ok
+test_swap_drift_during_cleanup_fails_postflight_and_utc_is_fixed (test_k3s_lab_round4.NoSwapTest.test_swap_drift_during_cleanup_fails_postflight_and_utc_is_fixed) ... ERROR
+test_swap_refusal_happens_before_session_creation_or_k3s_exec (test_k3s_lab_round4.NoSwapTest.test_swap_refusal_happens_before_session_creation_or_k3s_exec) ... {"code": "validation", "stage": "node-startup"}
+{"code": "validation", "stage": "node-startup"}
+ok
+test_four_exact_source_templates_pass_only_with_bounded_verified_startup (test_k3s_lab_round4.StartupTemplateTest.test_four_exact_source_templates_pass_only_with_bounded_verified_startup) ... ok
+test_klog_utc_window_handles_year_boundary_and_rejects_ambiguous_windows (test_k3s_lab_round4.StartupTemplateTest.test_klog_utc_window_handles_year_boundary_and_rejects_ambiguous_windows) ... ok
+test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence (test_k3s_lab_round4.StartupTemplateTest.test_namespace_races_require_exact_final_namespace_evidence_and_single_occurrence) ... ok
+test_namespace_recheck_only_returns_fixed_names_after_exact_active_identity (test_k3s_lab_round4.StartupTemplateTest.test_namespace_recheck_only_returns_fixed_names_after_exact_active_identity) ... ok
+test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets (test_k3s_lab_round4.StartupTemplateTest.test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets) ... ok
+
+======================================================================
+ERROR: test_swap_drift_during_cleanup_fails_postflight_and_utc_is_fixed (test_k3s_lab_round4.NoSwapTest.test_swap_drift_during_cleanup_fails_postflight_and_utc_is_fixed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 73, in test_swap_drift_during_cleanup_fails_postflight_and_utc_is_fixed
+    self.assertEqual(launch.call_args.kwargs['env']['TZ'], 'UTC')
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'kwargs'
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.008s
+
+FAILED (errors=1)

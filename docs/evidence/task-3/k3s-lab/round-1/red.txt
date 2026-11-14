@@ -1,0 +1,167 @@
+$ /usr/bin/python3 -B -m unittest discover -s scripts -p test_k3s_lab*.py -v
+test_capless_smoke_does_not_bind_host_paths_or_grant_capabilities (test_k3s_lab.LabTest.test_capless_smoke_does_not_bind_host_paths_or_grant_capabilities) ... ok
+test_failed_capless_smoke_releases_charge_only_after_verified_image_removal (test_k3s_lab.LabTest.test_failed_capless_smoke_releases_charge_only_after_verified_image_removal) ... ok
+test_failed_live_cleanup_preserves_container_and_raises (test_k3s_lab.LabTest.test_failed_live_cleanup_preserves_container_and_raises) ... ok
+test_image_session_drift_before_delete_preserves_objects_and_charge (test_k3s_lab.LabTest.test_image_session_drift_before_delete_preserves_objects_and_charge) ... 
+  test_image_session_drift_before_delete_preserves_objects_and_charge (test_k3s_lab.LabTest.test_image_session_drift_before_delete_preserves_objects_and_charge) (drift_at='start', mode='smoke') ... FAIL
+  test_image_session_drift_before_delete_preserves_objects_and_charge (test_k3s_lab.LabTest.test_image_session_drift_before_delete_preserves_objects_and_charge) (drift_at='start', mode='bootstrap') ... FAIL
+  test_image_session_drift_before_delete_preserves_objects_and_charge (test_k3s_lab.LabTest.test_image_session_drift_before_delete_preserves_objects_and_charge) (drift_at='stop', mode='smoke') ... FAIL
+  test_image_session_drift_before_delete_preserves_objects_and_charge (test_k3s_lab.LabTest.test_image_session_drift_before_delete_preserves_objects_and_charge) (drift_at='stop', mode='bootstrap') ... FAIL
+  test_image_session_drift_before_delete_preserves_objects_and_charge (test_k3s_lab.LabTest.test_image_session_drift_before_delete_preserves_objects_and_charge) (drift_at='container-rm', mode='smoke') ... FAIL
+  test_image_session_drift_before_delete_preserves_objects_and_charge (test_k3s_lab.LabTest.test_image_session_drift_before_delete_preserves_objects_and_charge) (drift_at='container-rm', mode='bootstrap') ... FAIL
+test_live_requires_review_and_fixed_fd_bind (test_k3s_lab.LabTest.test_live_requires_review_and_fixed_fd_bind) ... ok
+test_packaged_selection_drops_wrapper_module_applets_and_unsafe_tools (test_k3s_lab.LabTest.test_packaged_selection_drops_wrapper_module_applets_and_unsafe_tools) ... ok
+test_python_object_file_is_not_a_missing_dynamic_dependency (test_k3s_lab.LabTest.test_python_object_file_is_not_a_missing_dynamic_dependency) ... ok
+test_removal_failure_is_not_cleanup_success (test_k3s_lab.LabTest.test_removal_failure_is_not_cleanup_success) ... ok
+test_renamed_session_anchor_fails_postflight (test_k3s_lab.LabTest.test_renamed_session_anchor_fails_postflight) ... ok
+test_shared_accounting_counts_k3s_charge_before_other_lab_can_run (test_k3s_lab.LabTest.test_shared_accounting_counts_k3s_charge_before_other_lab_can_run) ... ok
+test_success_removes_only_the_exact_owned_container (test_k3s_lab.LabTest.test_success_removes_only_the_exact_owned_container) ... ok
+test_unrecognized_modes_labels_and_nonexact_image_ids_fail (test_k3s_lab.LabTest.test_unrecognized_modes_labels_and_nonexact_image_ids_fail) ... ok
+test_failed_bootstrap_retains_bounded_private_snapshot_and_reaps (test_k3s_lab_init.InitTest.test_failed_bootstrap_retains_bounded_private_snapshot_and_reaps) ... FAIL
+test_fixed_kubelet_config_protects_host_and_limits_owned_subtree (test_k3s_lab_init.InitTest.test_fixed_kubelet_config_protects_host_and_limits_owned_subtree) ... ok
+test_handler_verification_rejects_flag_or_runtime_drift (test_k3s_lab_init.InitTest.test_handler_verification_rejects_flag_or_runtime_drift) ... ok
+test_host_cannot_call_smoke_or_forward_arbitrary_commands (test_k3s_lab_init.InitTest.test_host_cannot_call_smoke_or_forward_arbitrary_commands) ... ok
+test_only_public_identity_fields_leave_the_controller (test_k3s_lab_init.InitTest.test_only_public_identity_fields_leave_the_controller) ... ok
+test_safe_observed_denial_lines_preserve_order_and_duplicates (test_k3s_lab_init.InitTest.test_safe_observed_denial_lines_preserve_order_and_duplicates) ... FAIL
+test_separate_containerd_warnings_cannot_bypass_clean_main_log (test_k3s_lab_init.InitTest.test_separate_containerd_warnings_cannot_bypass_clean_main_log) ... FAIL
+test_startup_diagnostics_total_bound_and_symlinks_fail_closed (test_k3s_lab_init.InitTest.test_startup_diagnostics_total_bound_and_symlinks_fail_closed) ... FAIL
+test_sysctl_mismatch_or_writable_proc_sys_refuses_start (test_k3s_lab_init.InitTest.test_sysctl_mismatch_or_writable_proc_sys_refuses_start) ... ok
+test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected (test_k3s_lab_init.InitTest.test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected) ... 
+  test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected (test_k3s_lab_init.InitTest.test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected) (log='secret=TOKEN time="2026-10-24T06:00:00Z" level=warning msg="Failed to load kernel module overlay with modprobe"') ... FAIL
+  test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected (test_k3s_lab_init.InitTest.test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected) (log='time="2026-10-24TTOKEN" level=warning msg="Failed to load kernel module overlay with modprobe"') ... FAIL
+test_wrong_node_version_or_namespace_identity_fails (test_k3s_lab_init.InitTest.test_wrong_node_version_or_namespace_identity_fails) ... ok
+test_embedded_zstd_requires_digest_named_frame_and_safe_tar (test_k3s_lab_materials.MaterialsTest.test_embedded_zstd_requires_digest_named_frame_and_safe_tar) ... ok
+test_internal_parent_alias_is_checked_but_never_installed (test_k3s_lab_materials.MaterialsTest.test_internal_parent_alias_is_checked_but_never_installed) ... ok
+test_tar_returns_regular_bytes_without_extracting_links (test_k3s_lab_materials.MaterialsTest.test_tar_returns_regular_bytes_without_extracting_links) ... ok
+test_unsafe_paths_aliases_devices_duplicates_and_oversize_fail (test_k3s_lab_materials.MaterialsTest.test_unsafe_paths_aliases_devices_duplicates_and_oversize_fail) ... ok
+test_wrong_length_or_digest_cannot_be_used (test_k3s_lab_materials.MaterialsTest.test_wrong_length_or_digest_cannot_be_used) ... ok
+
+======================================================================
+FAIL: test_image_session_drift_before_delete_preserves_objects_and_charge (test_k3s_lab.LabTest.test_image_session_drift_before_delete_preserves_objects_and_charge) (drift_at='start', mode='smoke')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab.py", line 178, in test_image_session_drift_before_delete_preserves_objects_and_charge
+    self.assertTrue(image_present, 'path drift must block image deletion')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : path drift must block image deletion
+
+======================================================================
+FAIL: test_image_session_drift_before_delete_preserves_objects_and_charge (test_k3s_lab.LabTest.test_image_session_drift_before_delete_preserves_objects_and_charge) (drift_at='start', mode='bootstrap')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab.py", line 178, in test_image_session_drift_before_delete_preserves_objects_and_charge
+    self.assertTrue(image_present, 'path drift must block image deletion')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : path drift must block image deletion
+
+======================================================================
+FAIL: test_image_session_drift_before_delete_preserves_objects_and_charge (test_k3s_lab.LabTest.test_image_session_drift_before_delete_preserves_objects_and_charge) (drift_at='stop', mode='smoke')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab.py", line 178, in test_image_session_drift_before_delete_preserves_objects_and_charge
+    self.assertTrue(image_present, 'path drift must block image deletion')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : path drift must block image deletion
+
+======================================================================
+FAIL: test_image_session_drift_before_delete_preserves_objects_and_charge (test_k3s_lab.LabTest.test_image_session_drift_before_delete_preserves_objects_and_charge) (drift_at='stop', mode='bootstrap')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab.py", line 178, in test_image_session_drift_before_delete_preserves_objects_and_charge
+    self.assertTrue(image_present, 'path drift must block image deletion')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : path drift must block image deletion
+
+======================================================================
+FAIL: test_image_session_drift_before_delete_preserves_objects_and_charge (test_k3s_lab.LabTest.test_image_session_drift_before_delete_preserves_objects_and_charge) (drift_at='container-rm', mode='smoke')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab.py", line 178, in test_image_session_drift_before_delete_preserves_objects_and_charge
+    self.assertTrue(image_present, 'path drift must block image deletion')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : path drift must block image deletion
+
+======================================================================
+FAIL: test_image_session_drift_before_delete_preserves_objects_and_charge (test_k3s_lab.LabTest.test_image_session_drift_before_delete_preserves_objects_and_charge) (drift_at='container-rm', mode='bootstrap')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab.py", line 178, in test_image_session_drift_before_delete_preserves_objects_and_charge
+    self.assertTrue(image_present, 'path drift must block image deletion')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : path drift must block image deletion
+
+======================================================================
+FAIL: test_failed_bootstrap_retains_bounded_private_snapshot_and_reaps (test_k3s_lab_init.InitTest.test_failed_bootstrap_retains_bounded_private_snapshot_and_reaps)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 131, in test_failed_bootstrap_retains_bounded_private_snapshot_and_reaps
+    self.assertTrue(callable(getattr(init, 'finish_node', None)), 'failure snapshot cleanup missing')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : failure snapshot cleanup missing
+
+======================================================================
+FAIL: test_safe_observed_denial_lines_preserve_order_and_duplicates (test_k3s_lab_init.InitTest.test_safe_observed_denial_lines_preserve_order_and_duplicates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 83, in test_safe_observed_denial_lines_preserve_order_and_duplicates
+    self.assertEqual(init.warning_codes(log), [module, module, sysctl])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['module-denied:nft-expr-counter', 'sysctl-readonly:all'] != ['time="2026-10-24T06:00:00Z" level=warning[317 chars]em"']
+
+First differing element 0:
+'module-denied:nft-expr-counter'
+'time="2026-10-24T06:00:00Z" level=warning[62 chars]obe"'
+
+Second list contains 1 additional elements.
+First extra element 2:
+'time="2026-10-24T06:00:01+00:00" level=error msg="Failed to set sysctl: open /proc/sys/net/ipv4/conf/all/forwarding: read-only file system"'
+
+- ['module-denied:nft-expr-counter', 'sysctl-readonly:all']
++ ['time="2026-10-24T06:00:00Z" level=warning msg="Failed to load kernel module '
++  'nft-expr-counter with modprobe"',
++  'time="2026-10-24T06:00:00Z" level=warning msg="Failed to load kernel module '
++  'nft-expr-counter with modprobe"',
++  'time="2026-10-24T06:00:01+00:00" level=error msg="Failed to set sysctl: open '
++  '/proc/sys/net/ipv4/conf/all/forwarding: read-only file system"']
+
+======================================================================
+FAIL: test_separate_containerd_warnings_cannot_bypass_clean_main_log (test_k3s_lab_init.InitTest.test_separate_containerd_warnings_cannot_bypass_clean_main_log)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 98, in test_separate_containerd_warnings_cannot_bypass_clean_main_log
+    self.assertTrue(callable(getattr(init, 'startup_denials', None)), 'bounded two-log gate missing')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : bounded two-log gate missing
+
+======================================================================
+FAIL: test_startup_diagnostics_total_bound_and_symlinks_fail_closed (test_k3s_lab_init.InitTest.test_startup_diagnostics_total_bound_and_symlinks_fail_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 115, in test_startup_diagnostics_total_bound_and_symlinks_fail_closed
+    self.assertTrue(callable(getattr(init, 'startup_denials', None)), 'bounded two-log gate missing')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : bounded two-log gate missing
+
+======================================================================
+FAIL: test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected (test_k3s_lab_init.InitTest.test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected) (log='secret=TOKEN time="2026-10-24T06:00:00Z" level=warning msg="Failed to load kernel module overlay with modprobe"')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 93, in test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected
+    with self.assertRaises(ValueError) as caught:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected (test_k3s_lab_init.InitTest.test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected) (log='time="2026-10-24TTOKEN" level=warning msg="Failed to load kernel module overlay with modprobe"')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 93, in test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected
+    with self.assertRaises(ValueError) as caught:
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.108s
+
+FAILED (failures=12)
+exit=1

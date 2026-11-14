@@ -1,0 +1,15 @@
+# GREEN: runtimes/conformance/namespace_test.go against the fixed createNamespace, plain make in the worktree
+# 2026-11-10T20:55:36-08:00
+pkgs=$(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /home/postedism/Desktop/Warden-task3/.tools/go/bin/go list -buildvcs=false ./...) && pkgs=$(printf '%s\n' $pkgs | grep -Ev '^$|^warden/docs/') || exit 1; env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_KYVERNO=/home/postedism/Desktop/Warden-task3/.tools/kyverno/kyverno /home/postedism/Desktop/Warden-task3/.tools/go/bin/go test -buildvcs=false -count=1 -shuffle=on -v -run '^TestCreateNamespace' $pkgs
+=== RUN   TestCreateNamespaceIsCleanedUpWhenItsAccountFails
+--- PASS: TestCreateNamespaceIsCleanedUpWhenItsAccountFails (1.00s)
+=== RUN   TestCreateNamespaceCreatesTheNamespaceAndItsAccounts
+--- PASS: TestCreateNamespaceCreatesTheNamespaceAndItsAccounts (1.00s)
+=== RUN   TestCreateNamespaceReplacesOneAnEarlierRunLeft
+=== RUN   TestCreateNamespaceReplacesOneAnEarlierRunLeft/terminating=false
+=== RUN   TestCreateNamespaceReplacesOneAnEarlierRunLeft/terminating=true
+--- PASS: TestCreateNamespaceReplacesOneAnEarlierRunLeft (4.02s)
+    --- PASS: TestCreateNamespaceReplacesOneAnEarlierRunLeft/terminating=false (2.01s)
+    --- PASS: TestCreateNamespaceReplacesOneAnEarlierRunLeft/terminating=true (2.01s)
+ok  	warden/runtimes/conformance	6.026s
+exit: 0

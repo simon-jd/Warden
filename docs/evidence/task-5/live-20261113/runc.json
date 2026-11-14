@@ -1,0 +1,307 @@
+{
+  "runtime": "runc",
+  "image_digest": "sha256:51a7ba940a1949ea5f9ecd3efcb49afb6bd7fc6f8134d794596c97d8edeec3a7",
+  "corpus_digest": "sha256:541438cdbd805a8b4558cae8a9eaea5fe9d72b0d8a68d1258b93b832cfb9c091",
+  "limits": {
+    "CPU": 1,
+    "MemoryMiB": 512,
+    "Pids": 128,
+    "TimeoutS": 60
+  },
+  "cells": [
+    {
+      "attack": "arp-spoof",
+      "technique": "T1557.002",
+      "runtime": "runc",
+      "run_id": "5DC4AK7NZASLEJD35WFIFXMQHY",
+      "started_at": "2026-11-14T00:32:00.368512634Z",
+      "finished_at": "2026-11-14T00:32:00.575722752Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED arp-spoof operation not permitted\n"
+    },
+    {
+      "attack": "disk-fill",
+      "technique": "T1499.003",
+      "runtime": "runc",
+      "run_id": "FSHRL3GPRI6ANXXDBESBK76H2Y",
+      "started_at": "2026-11-14T00:32:00.575738497Z",
+      "finished_at": "2026-11-14T00:32:00.797617724Z",
+      "verdict": "error",
+      "reason": "probe objective or denial not recorded",
+      "exit": {
+        "Code": 3,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_INCONCLUSIVE disk-fill tmpfs quota at 64 MiB: write /dev/shm/warden-attack-fill: no space left on device\n"
+    },
+    {
+      "attack": "dns-exfil",
+      "technique": "T1048.003",
+      "runtime": "runc",
+      "run_id": "YBSD77QNZFPCSGRMYUXU5DRPJE",
+      "started_at": "2026-11-14T00:32:00.797645607Z",
+      "finished_at": "2026-11-14T00:32:01.013313141Z",
+      "verdict": "error",
+      "reason": "probe objective or denial not recorded",
+      "exit": {
+        "Code": 3,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_INCONCLUSIVE dns-exfil lookup aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.invalid on [::1]:53: read udp [::1]:53166-\u003e[::1]:53: read: connection refused\n"
+    },
+    {
+      "attack": "fork-bomb",
+      "technique": "T1499.003",
+      "runtime": "runc",
+      "run_id": "GUYPNDWMX2U4UURQSZE75MONW4",
+      "started_at": "2026-11-14T00:32:01.01332472Z",
+      "finished_at": "2026-11-14T00:32:01.399233905Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 71,
+        "PeakPids": 128,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED fork-bomb fork stopped at 28: fork/exec /warden-attack: resource temporarily unavailable\n"
+    },
+    {
+      "attack": "kernel-module",
+      "technique": "T1547.006",
+      "runtime": "runc",
+      "run_id": "O6STGRF6M5AAAZNWEAG2CE4YMY",
+      "started_at": "2026-11-14T00:32:01.399257514Z",
+      "finished_at": "2026-11-14T00:32:01.569950927Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED kernel-module init_module denied EPERM\n"
+    },
+    {
+      "attack": "memory-exhaustion",
+      "technique": "T1499.003",
+      "runtime": "runc",
+      "run_id": "5LPONYW5FQEWRJDIIDYXN4IG3E",
+      "started_at": "2026-11-14T00:32:01.569964557Z",
+      "finished_at": "2026-11-14T00:32:01.836891543Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 137,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": true,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": ""
+    },
+    {
+      "attack": "metadata-host",
+      "technique": "T1552.005",
+      "runtime": "runc",
+      "run_id": "NMOSQXMSH6RKTX26CGTF5M43BQ",
+      "started_at": "2026-11-14T00:32:01.836901722Z",
+      "finished_at": "2026-11-14T00:32:02.06325817Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED metadata-host dial tcp: lookup metadata.google.internal on [::1]:53: read udp [::1]:37299-\u003e[::1]:53: read: connection refused\n"
+    },
+    {
+      "attack": "metadata-ip",
+      "technique": "T1552.005",
+      "runtime": "runc",
+      "run_id": "F3YOCI67CEDPHT5M6XVFYPJWSM",
+      "started_at": "2026-11-14T00:32:02.063277345Z",
+      "finished_at": "2026-11-14T00:32:02.20025943Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED metadata-ip dial tcp 169.254.169.254:80: connect: network is unreachable\n"
+    },
+    {
+      "attack": "mount-unshare",
+      "technique": "T1611",
+      "runtime": "runc",
+      "run_id": "3KQI5GSG6A5RQLFJ2I6VCKTABE",
+      "started_at": "2026-11-14T00:32:02.200273708Z",
+      "finished_at": "2026-11-14T00:32:02.414902457Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED mount-unshare unshare=operation not permitted mount=operation not permitted\n"
+    },
+    {
+      "attack": "proc-leak",
+      "technique": "T1082",
+      "runtime": "runc",
+      "run_id": "EDYK5KHL5HHNYW5C6VBAEI6A4U",
+      "started_at": "2026-11-14T00:32:02.41492577Z",
+      "finished_at": "2026-11-14T00:32:02.646940105Z",
+      "verdict": "error",
+      "reason": "probe objective or denial not recorded",
+      "exit": {
+        "Code": 3,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_INCONCLUSIVE proc-leak PID1 environment readable (79 bytes, contents withheld)\n"
+    },
+    {
+      "attack": "ptrace",
+      "technique": "T1055",
+      "runtime": "runc",
+      "run_id": "FSSD77WV4FMAR653MFD72RWMEI",
+      "started_at": "2026-11-14T00:32:02.646963907Z",
+      "finished_at": "2026-11-14T00:32:02.829817753Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED ptrace operation not permitted\n"
+    },
+    {
+      "attack": "raw-socket",
+      "technique": "T1016",
+      "runtime": "runc",
+      "run_id": "BDDAU25NFKHYAPNRFCZB73GU6Q",
+      "started_at": "2026-11-14T00:32:02.829835105Z",
+      "finished_at": "2026-11-14T00:32:03.055066321Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED raw-socket operation not permitted\n"
+    },
+    {
+      "attack": "reverse-shell",
+      "technique": "T1059.004",
+      "runtime": "runc",
+      "run_id": "2Y5HS65VNO5AVWL7K5N4MFK3HA",
+      "started_at": "2026-11-14T00:32:03.055088501Z",
+      "finished_at": "2026-11-14T00:32:03.286055186Z",
+      "verdict": "error",
+      "reason": "probe objective or denial not recorded",
+      "exit": {
+        "Code": 3,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_INCONCLUSIVE reverse-shell dial tcp 192.0.2.1:4444: connect: network is unreachable\n"
+    },
+    {
+      "attack": "sys-leak",
+      "technique": "T1082",
+      "runtime": "runc",
+      "run_id": "MCM3PSVAWG73CVIASPBBOIQNEI",
+      "started_at": "2026-11-14T00:32:03.286065679Z",
+      "finished_at": "2026-11-14T00:32:03.468195939Z",
+      "verdict": "error",
+      "reason": "probe objective or denial not recorded",
+      "exit": {
+        "Code": 3,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 6,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_INCONCLUSIVE sys-leak CPU topology readable (5 bytes, contents withheld)\n"
+    }
+  ]
+}

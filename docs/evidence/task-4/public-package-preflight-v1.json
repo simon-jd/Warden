@@ -1,0 +1,27 @@
+{
+  "source": "d8f54d90d77465f97c7d1d0d7327fa36d7ad4cf7",
+  "started_at": "2026-10-25T00:32:46.287909+00:00",
+  "original_Q_released": false,
+  "scene_phase_created": false,
+  "image_container_helper_created": false,
+  "live_descendants_read": false,
+  "admission_before": {
+    "kind": "exact-scene-recovery-admission-v1",
+    "rest_allocated_bytes": 4019200000,
+    "original_opaque_charge": 5000000000,
+    "all_outstanding_bytes": 5000000000,
+    "all_owned_image_charge": 0,
+    "prospective_helper_growth": 736000000,
+    "disk_bytes": 9755200000,
+    "resident_bytes": 1256000000,
+    "ordinary_guard_pass": false,
+    "free_bytes": 269174648832,
+    "utc": "2026-10-25T00:32:48.192158+00:00"
+  },
+  "success": false,
+  "error": {
+    "type": "Refusal",
+    "reason": "private_output_directory"
+  },
+  "ended_at": "2026-10-25T00:32:48.192377+00:00"
+}

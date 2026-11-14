@@ -1,0 +1,15 @@
+# GREEN, gVisor lab --without-corpus and GVISOR_LAB_FLAGS, after the change (2026-11-14T01:36:29Z); the whole lab and Makefile suites
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -s scripts -t scripts -p "test_k3s_gvisor_lab.py"
+...............................
+----------------------------------------------------------------------
+Ran 31 tests in 30.214s
+
+OK
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -s scripts -t scripts -p "test_makefile.py"
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.111s
+
+OK
+$ shellcheck -S warning scripts/k3s_gvisor_lab.sh
+shellcheck: clean

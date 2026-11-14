@@ -1,0 +1,13 @@
+{
+  "scope": "Read-only existing-shell candidate only; no execution or matrix acceptance",
+  "files": {
+    "README.md": {
+      "bytes": 1031,
+      "sha256": "335a242d4580e937fb8e73a410969bd105813f99df19dd294688e210934e254d"
+    },
+    "metadata.json": {
+      "bytes": 1126,
+      "sha256": "03f89cfbd9540bb39f33c0c2b731129dae1a48372e7e1de57c148eb2d4c69e14"
+    }
+  }
+}

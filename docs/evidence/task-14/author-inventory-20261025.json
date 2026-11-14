@@ -1,0 +1,152 @@
+{
+  "base": "798bf98da93cd17d557d43efae0c60b44791fadf",
+  "source_commit": "2ff0602893bbe39ebc472da79fbd8f518bedc3f9",
+  "source": {
+    "respond/actions.go": {
+      "bytes": 6655,
+      "sha256": "7224f114e7b9ef5aa926e43299a54fe01f9e90da329b6cd49d953a28bbbf2b02"
+    },
+    "respond/executor.go": {
+      "bytes": 7875,
+      "sha256": "6d15826ba07181d05d3b4a1b7791726d37011d983ae538f4228c1c0fa89e4698"
+    },
+    "respond/ledger.go": {
+      "bytes": 6462,
+      "sha256": "2ace72087ba4e421db40dd6398f86585808563c51ce9eeb505fe35985c330f68"
+    },
+    "respond/executor_test.go": {
+      "bytes": 19211,
+      "sha256": "aadc94db405e2a970737b19ecfddb0eb790f84be3fd59aaa97fd312d8b3bee0e"
+    },
+    "respond/ledger_test.go": {
+      "bytes": 11531,
+      "sha256": "42e7431cb64c459caf3057691d6a2a169998fa675dc9db3f0f6f42d3d569cb94"
+    },
+    "respond/README.md": {
+      "bytes": 6179,
+      "sha256": "bd8ed3778a133c78f870d3993339c2427dfcbb176ad3b17b232a1fc36f46e2af"
+    },
+    "respond/playbooks/suspend-tenant.yaml": {
+      "bytes": 179,
+      "sha256": "8cdfbdfdfe5bac22452006f0af89b22e9f50a05a32a454e081db114b6402acfa"
+    }
+  },
+  "source_count": 7,
+  "source_bytes": 58092,
+  "evidence_artifacts": {
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-cover-caller.md": {
+      "bytes": 8129,
+      "sha256": "4d2ecc69675d7f3cf2707aff3a99a1b7b89638167e4805fab4c583fc0a63e4d8"
+    },
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-cover-command.py.txt": {
+      "bytes": 7279,
+      "sha256": "8a9339181d958c2a5e1367491e93cdc924cbf80a9fa418d33f5be17efd3a4043"
+    },
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-cover-freeze.json": {
+      "bytes": 4068,
+      "sha256": "2b133c7d8d6ee6c835d396e7978be3e3b93ca553b1d40a865f26d2ced41ae0e6"
+    },
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-first-red-caller-original-8183b.md": {
+      "bytes": 8183,
+      "sha256": "072976b55394f921bb5e1ac2e63bbfec46d86b3ba8ce06ac1d53bca2e248a895"
+    },
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-first-red-caller.md": {
+      "bytes": 8189,
+      "sha256": "f22fc510a458b0a7d1078bed821220f011af5b5b8670a478eaebc9b1b6064320"
+    },
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-first-red-command.py.txt": {
+      "bytes": 7151,
+      "sha256": "1426e6d7449673b451ba3bc1e109383d76d5a24afbe184c9d6fa985a917c9738"
+    },
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-gofmt-caller.md": {
+      "bytes": 3365,
+      "sha256": "06febcc970e77d620e2a9896ea0d24b3295eae9b6800e9dc6f58d99f8cff8a13"
+    },
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-gofmt-command.py.txt": {
+      "bytes": 1827,
+      "sha256": "b3664930415469af54a72f04af21e7801389169d9d18c39ccb7081ad2c1b3196"
+    },
+    "docs/evidence/task-14/format-first-20261025/stderr.raw": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/task-14/format-first-20261025/stdout.raw": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/task-14/local-cover-first-20261025/request.json": {
+      "bytes": 3205,
+      "sha256": "d029132e716bda29260431260c302d3362a22bf5ec3aae0e831cb14fc4c0f44e"
+    },
+    "docs/evidence/task-14/local-cover-first-20261025/status.json": {
+      "bytes": 1190,
+      "sha256": "14f505280b88c23f0d931324c6e15842d8a30088af4c56579a56770854added7"
+    },
+    "docs/evidence/task-14/local-cover-first-20261025/stderr.raw": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/task-14/local-cover-first-20261025/stdout.raw": {
+      "bytes": 11130,
+      "sha256": "315e207616265cc7fda8cd0c98d90ee0b821e847f2c4f6acde280c4ddb1c9b05"
+    },
+    "docs/evidence/task-14/semantic-red-first-20261025/actions.go.txt": {
+      "bytes": 2059,
+      "sha256": "8f9b25aa2824017c0ddb8b3a5acbe2f5c6e2a88aafff67e6ddac87b141259006"
+    },
+    "docs/evidence/task-14/semantic-red-first-20261025/executor.go.txt": {
+      "bytes": 1688,
+      "sha256": "1fd4224c4e5b6d04cbd9e1c4d16b2d3dcbf7baf5e08bfc6cfd01a9bf75913685"
+    },
+    "docs/evidence/task-14/semantic-red-first-20261025/executor_test.go.txt": {
+      "bytes": 4900,
+      "sha256": "d104aff34a26fe593d7955ddf0267590d8b3ecb0d966ae39a22c42ca60aecbe3"
+    },
+    "docs/evidence/task-14/semantic-red-first-20261025/request.json": {
+      "bytes": 2057,
+      "sha256": "06dda3f39790dc2d069200fa93f90562ae4061a0abe5bd620b6de5d7ec1b1f83"
+    },
+    "docs/evidence/task-14/semantic-red-first-20261025/status.json": {
+      "bytes": 732,
+      "sha256": "0fcf760f0d6d3daf3a65f75c3feb292c0403b8bbfec980cb5977c323cfd8ee59"
+    },
+    "docs/evidence/task-14/semantic-red-first-20261025/stderr.raw": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/task-14/semantic-red-first-20261025/stdout.raw": {
+      "bytes": 631,
+      "sha256": "6e6ca04e7c21f860bb270dd58d8b513958386dfc44beb1e131219aabf2ba532a"
+    }
+  },
+  "evidence_artifact_count": 21,
+  "evidence_artifact_bytes": 75783,
+  "evidence_commit_paths": [
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-cover-caller.md",
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-cover-command.py.txt",
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-cover-freeze.json",
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-first-red-caller-original-8183b.md",
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-first-red-caller.md",
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-first-red-command.py.txt",
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-gofmt-caller.md",
+    "docs/evidence/task-14/author-artifacts-20261025/task-14-gofmt-command.py.txt",
+    "docs/evidence/task-14/author-inventory-20261025.json",
+    "docs/evidence/task-14/format-first-20261025/stderr.raw",
+    "docs/evidence/task-14/format-first-20261025/stdout.raw",
+    "docs/evidence/task-14/local-cover-first-20261025/request.json",
+    "docs/evidence/task-14/local-cover-first-20261025/status.json",
+    "docs/evidence/task-14/local-cover-first-20261025/stderr.raw",
+    "docs/evidence/task-14/local-cover-first-20261025/stdout.raw",
+    "docs/evidence/task-14/report.md",
+    "docs/evidence/task-14/semantic-red-first-20261025/actions.go.txt",
+    "docs/evidence/task-14/semantic-red-first-20261025/executor.go.txt",
+    "docs/evidence/task-14/semantic-red-first-20261025/executor_test.go.txt",
+    "docs/evidence/task-14/semantic-red-first-20261025/request.json",
+    "docs/evidence/task-14/semantic-red-first-20261025/status.json",
+    "docs/evidence/task-14/semantic-red-first-20261025/stderr.raw",
+    "docs/evidence/task-14/semantic-red-first-20261025/stdout.raw"
+  ],
+  "evidence_commit_path_count": 23,
+  "integrity_note": "Inventory/report have no self-hash. The EVIDENCE commit binds both; report mirror hash and final EVIDENCE hash are supplied in handoff to avoid self-reference.",
+  "excluded": "Root native-events, rulings, STATUS, fixed-go inventory, implementation-proposal and all previous-task source/evidence are excluded from these commits."
+}

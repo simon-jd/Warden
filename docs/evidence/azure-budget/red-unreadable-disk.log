@@ -1,0 +1,14 @@
+F
+======================================================================
+FAIL: test_unreadable_project_tree_is_not_zero_disk_usage (scripts.test_azure_guard.AzureGuardTests.test_unreadable_project_tree_is_not_zero_disk_usage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 398, in test_unreadable_project_tree_is_not_zero_disk_usage
+    self.assertNotEqual(self.run_guard('preflight').returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 1 test in 0.055s
+
+FAILED (failures=1)

@@ -1,0 +1,94 @@
+{
+  "phase": "SOURCE_AND_INERT_FIRST_GREEN_ONLY",
+  "execution_authorized": false,
+  "base": "f83a41b8d5dd7f5a976852785a31aeee01596a19",
+  "body_and_review_files": [
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-first-green-20261026-a.py.txt",
+      "bytes": 17098,
+      "allocated_bytes": 20480,
+      "sha256": "0ba998acf79d599c259dad09e53083769a99a027d3c652f63d42ae2f9d8d99e9"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-first-green-20261026-a-caller.diff",
+      "bytes": 10750,
+      "allocated_bytes": 12288,
+      "sha256": "5f14b844a242a6028d51180aadddeb2db46785c56a132c2ac6816d1e953bb918"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-first-green-20261026-a-source.diff",
+      "bytes": 57418,
+      "allocated_bytes": 61440,
+      "sha256": "4064547cee211fa02678d9cfbc85d108b077e3deb29284b8f65548a8a14031ad"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-first-green-20261026-a-source-freeze.json",
+      "bytes": 3086,
+      "allocated_bytes": 4096,
+      "sha256": "1136c050db7e2a33d2e1ad19a9553ccb8c8cdb99f2c60366357436fac59bb0c0"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-report.md",
+      "bytes": 11850,
+      "allocated_bytes": 12288,
+      "sha256": "36889d7491e586a7d3cae6e85b411a7756ebe0ebdd8ee2537d0c630c661548dd"
+    }
+  ],
+  "product_files": [
+    {
+      "path": "controlplane/internal/jit/jit.go",
+      "bytes": 14740,
+      "allocated_bytes": 16384,
+      "sha256": "99f1be2efb41a692a78d1a6ee0e0c9d074b1ef0126b0168205f60cf01de5e872"
+    },
+    {
+      "path": "controlplane/internal/jit/jit_test.go",
+      "bytes": 19706,
+      "allocated_bytes": 20480,
+      "sha256": "53f1e1719ee65c82cb7195bf5449c92ce93a8019cb7fede85fff5e1b4d450c77"
+    },
+    {
+      "path": "controlplane/internal/jit/bindings.go",
+      "bytes": 10469,
+      "allocated_bytes": 12288,
+      "sha256": "b2bbbc8b322496a84b9c1fe3d982728f9f56ac851ad9a06b552d0750af500441"
+    },
+    {
+      "path": "controlplane/internal/jit/bindings_test.go",
+      "bytes": 8758,
+      "allocated_bytes": 12288,
+      "sha256": "ac5317965c8dc818253822162678f3524e21e3727746a4058385194886dd7e07"
+    },
+    {
+      "path": "controlplane/internal/jit/README.md",
+      "bytes": 5283,
+      "allocated_bytes": 8192,
+      "sha256": "ce0cd44d5d22ecdda38742ec1b66ba1660468f66f2a981302c89a5e7e47714c8"
+    },
+    {
+      "path": "controlplane/internal/store/migrations/003_jit.sql",
+      "bytes": 1728,
+      "allocated_bytes": 4096,
+      "sha256": "b3699d3184e250e416735ce19ac12626d4ebfba70c58eb75c1f142d62f28a98a"
+    }
+  ],
+  "directory_baseline_allocated_bytes": {
+    "controlplane/internal/jit": 4096,
+    "controlplane/internal/store": 4096,
+    "controlplane/internal/store/migrations": 4096,
+    ".superpowers/sdd/2-warden-security-plan": 28672
+  },
+  "directory_growth_bytes": 0,
+  "preexisting_product_allocated_bytes": 16384,
+  "allocation_cap_bytes": 262144,
+  "net_new_allocation_bytes": 172032,
+  "conservative_full_current_source_and_prep_allocation_bytes": 188416,
+  "fresh_namespace_absent_at_preparation": true,
+  "runtime_full_new_disk_bytes": 1750780416,
+  "global_other_holds_bytes": 5003801088,
+  "resident_including_old_UNKNOWN_bytes": 15500000000,
+  "green_tests_count": 17,
+  "source_count": 15,
+  "status": "SAFE_HANDBACK_PENDING_ROOT_FULLREAD_FRESH_ADMISSION",
+  "provenance": "coordinator_agent; human_response=false; existing user scope; correction1e57affb96a066db11de8373919ab85b2d36d0d1f4b8940e3bde70e91d231373"
+}

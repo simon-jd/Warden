@@ -1,0 +1,30 @@
+{
+  "container": "37b95dd4bbd84a5aa9b33a1f5d8d40402d26f0e1b765c4779ea47294eaa2f2b5",
+  "private_log_bytes": 30471,
+  "private_log_sha256": "515adf74e4f403ac96a5432ed2b3c962164bf3d8287f9bd94523f64d3eb935e0",
+  "archive_sha256": "bd9669402d531aaa32ecdfd41394aed931ad600d75823c16b62f20cb6ca431d6",
+  "line_count": 173,
+  "class_counts": {
+    "fatal": 1,
+    "error": 4,
+    "warning": 9,
+    "missing_diagnostic": 0,
+    "unknown_flag": 0,
+    "permission_denied": 0,
+    "read_only": 2,
+    "missing_file": 1,
+    "privilege_check": 0,
+    "executor_init": 0,
+    "cgroup": 6,
+    "address": 5,
+    "certificate": 27,
+    "sqlite": 3,
+    "datastore": 2,
+    "not_executable": 1,
+    "disk_limit": 0,
+    "kubelet": 8,
+    "containerd": 175
+  },
+  "raw_persisted": false,
+  "scope": "bounded memory-only exact stopped-owned startup diagnostics"
+}

@@ -1,0 +1,105 @@
+{
+  "addonProfiles": null,
+  "agentPoolProfiles": [
+    {
+      "count": 1,
+      "enableAutoScaling": false,
+      "maxPods": 30,
+      "mode": "System",
+      "name": "system",
+      "nodeImageVersion": "AKSUbuntu-2404gen2containerd-202610.30.1",
+      "orchestratorVersion": "1.36.5",
+      "osDiskSizeGb": 30,
+      "osDiskType": "Managed",
+      "osSku": "Ubuntu",
+      "scaleSetPriority": null,
+      "tags": {
+        "est_usd_per_hour": "0.186145112381",
+        "owner": "warden-lab",
+        "project": "warden",
+        "ttl": "2026-11-14T05:26:00Z",
+        "warden_reservation": "<id>",
+        "warden_session": "aks-20261114T0011Z"
+      },
+      "vmSize": "Standard_B2as_v2"
+    }
+  ],
+  "autoUpgradeProfile": {
+    "nodeOsUpgradeChannel": "None",
+    "upgradeChannel": "none"
+  },
+  "azureMonitorProfile": null,
+  "currentKubernetesVersion": "1.36.5",
+  "disableLocalAccounts": false,
+  "dnsPrefix": "warden-lab-aks",
+  "kubernetesVersion": "1.36.5",
+  "location": "swedencentral",
+  "networkProfile": {
+    "advancedNetworking": null,
+    "dnsServiceIp": "10.0.0.10",
+    "ipFamilies": [
+      "IPv4"
+    ],
+    "loadBalancerProfile": {
+      "allocatedOutboundPorts": null,
+      "backendPoolType": "nodeIPConfiguration",
+      "effectiveOutboundIPs": [
+        {
+          "id": "/subscriptions/<id>/resourceGroups/rg-warden-lab-aks-nodes/providers/Microsoft.Network/publicIPAddresses/<id>",
+          "resourceGroup": "rg-warden-lab-aks-nodes"
+        }
+      ],
+      "enableMultipleStandardLoadBalancers": null,
+      "idleTimeoutInMinutes": null,
+      "managedOutboundIPs": {
+        "count": 1,
+        "countIpv6": null
+      },
+      "outboundIPs": null,
+      "outboundIpPrefixes": null
+    },
+    "loadBalancerSku": "standard",
+    "natGatewayProfile": null,
+    "networkDataplane": "cilium",
+    "networkMode": null,
+    "networkPlugin": "azure",
+    "networkPluginMode": "overlay",
+    "networkPolicy": "cilium",
+    "outboundType": "loadBalancer",
+    "podCidr": "10.244.0.0/16",
+    "podCidrs": [
+      "10.244.0.0/16"
+    ],
+    "serviceCidr": "10.0.0.0/16",
+    "serviceCidrs": [
+      "10.0.0.0/16"
+    ],
+    "staticEgressGatewayProfile": null
+  },
+  "nodeResourceGroup": "rg-warden-lab-aks-nodes",
+  "oidcIssuerProfile": {
+    "enabled": true
+  },
+  "securityProfile": {
+    "azureKeyVaultKms": null,
+    "customCaTrustCertificates": null,
+    "defender": null,
+    "imageCleaner": null,
+    "kubernetesResourceObjectEncryptionProfile": null,
+    "workloadIdentity": {
+      "enabled": true
+    }
+  },
+  "sku": {
+    "name": "Base",
+    "tier": "Free"
+  },
+  "tags": {
+    "est_usd_per_hour": "0.186145112381",
+    "owner": "warden-lab",
+    "project": "warden",
+    "ttl": "2026-11-14T05:26:00Z",
+    "warden_reservation": "<id>",
+    "warden_session": "aks-20261114T0011Z"
+  }
+}

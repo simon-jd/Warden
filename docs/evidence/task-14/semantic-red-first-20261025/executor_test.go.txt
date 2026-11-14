@@ -1,0 +1,142 @@
+package respond
+
+import (
+	"context"
+	"errors"
+	"os"
+	"path/filepath"
+	"testing"
+	"time"
+)
+
+type recordingTenantClient struct {
+	tenants []string
+}
+
+func (c *recordingTenantClient) SuspendTenant(ctx context.Context, tenantID string) error {
+	if err := ctx.Err(); err != nil {
+		return err
+	}
+	c.tenants = append(c.tenants, tenantID)
+	return nil
+}
+
+type recordingAuthority struct {
+	calls int
+	now time.Time
+}
+
+func (a *recordingAuthority) Verify(ctx context.Context, req ApprovalRequest) (Approval, error) {
+	a.calls++
+	if err := ctx.Err(); err != nil {
+		return Approval{}, err
+	}
+	if req.RequesterCredential != "test-requester-credential" || req.ApprovalProof != "test-approval-proof" {
+		return Approval{}, errors.New("test authority denied")
+	}
+	return Approval{
+		Requester: Principal{Issuer: "test-issuer", Subject: "operator", CanonicalID: "test-operator", Roles: []string{"respond:execute"}},
+		Approver: Principal{Issuer: "test-issuer", Subject: "approver", CanonicalID: "test-approver", Roles: []string{"respond:approve"}},
+		Binding: req.Binding,
+		IssuedAt: a.now.Add(-time.Second),
+		ExpiresAt: a.now.Add(time.Minute),
+	}, nil
+}
+
+func executorFixture(t *testing.T) (*Executor, Alert, *recordingTenantClient, *recordingAuthority, string) {
+	t.Helper()
+	dir := t.TempDir()
+	// The future ledger requires a private, owned directory.
+	if err := os.Chmod(dir, 0700); err != nil {
+		t.Fatal(err)
+	}
+	now := time.Date(2026, 10, 25, 12, 0, 0, 0, time.UTC)
+	client := &recordingTenantClient{}
+	authority := &recordingAuthority{now: now}
+	resource := Resource{Type: "tenant", ID: "tenant-a"}
+	executor, err := New(Config{
+		Playbook: Playbook{ID: "suspend-tenant", Trigger: "rule-a", Steps: []Action{{Name: SuspendTenant, Resource: resource}}, RequiresApproval: true},
+		AllowedTenantIDs: []string{"tenant-a"},
+		JournalPath: filepath.Join(dir, "attempts.journal"),
+		Authority: authority,
+		Client: client,
+		Now: func() time.Time { return now },
+	})
+	if err != nil {
+		t.Fatalf("fixture configuration failed: %v", err)
+	}
+	t.Cleanup(func() {
+		if err := executor.Close(); err != nil {
+			t.Errorf("close executor: %v", err)
+		}
+	})
+	alert := Alert{ID: "alert-a", RuleID: "rule-a", TenantID: "tenant-a", Resource: resource, RequesterCredential: "test-requester-credential", ApprovalProof: "test-approval-proof"}
+	return executor, alert, client, authority, dir
+}
+
+func TestPlaybookIdempotentPerAlert(t *testing.T) {
+	executor, alert, client, _, _ := executorFixture(t)
+	first, err := executor.Handle(alert, false)
+	if err != nil {
+		t.Fatalf("RED_REQUIRED authorized first execution must complete: %v", err)
+	}
+	if first.Status != Completed || first.NoOp {
+		t.Fatalf("first result = %+v; want Completed mutation", first)
+	}
+	second, err := executor.Handle(alert, false)
+	if err != nil {
+		t.Fatalf("duplicate execution: %v", err)
+	}
+	if !second.NoOp || second.Status != Completed {
+		t.Fatalf("duplicate result = %+v; want Completed no-op", second)
+	}
+	if len(client.tenants) != 1 || client.tenants[0] != alert.TenantID {
+		t.Fatalf("client targets = %v; want exactly [%s]", client.tenants, alert.TenantID)
+	}
+}
+
+func TestDestructiveRequiresApproval(t *testing.T) {
+	executor, alert, client, _, _ := executorFixture(t)
+	withoutProof := alert
+	withoutProof.ApprovalProof = ""
+	if _, err := executor.Handle(withoutProof, false); err == nil {
+		t.Fatal("missing authenticated approval must fail")
+	}
+	if len(client.tenants) != 0 {
+		t.Fatalf("unapproved mutation targets = %v; want none", client.tenants)
+	}
+	result, err := executor.Handle(alert, false)
+	if err != nil {
+		t.Fatalf("RED_REQUIRED distinct authenticated approval must execute: %v", err)
+	}
+	if result.Status != Completed || result.NoOp || len(client.tenants) != 1 || client.tenants[0] != alert.TenantID {
+		t.Fatalf("approved result = %+v, targets = %v; want one Completed mutation", result, client.tenants)
+	}
+}
+
+func TestDryRunMakesNoChanges(t *testing.T) {
+	executor, alert, client, authority, dir := executorFixture(t)
+	for i := 0; i < 2; i++ {
+		result, err := executor.Handle(alert, true)
+		if err != nil {
+			t.Fatalf("RED_REQUIRED dry-run must return a preview: %v", err)
+		}
+		if result.Status != Preview || !result.ApprovalNeeded || result.Resource != alert.Resource {
+			t.Fatalf("dry-run result = %+v; want concrete approval-needed Preview", result)
+		}
+	}
+	entries, err := os.ReadDir(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(entries) != 0 || len(client.tenants) != 0 || authority.calls != 0 {
+		t.Fatalf("preview changed state: files=%d mutations=%d authority=%d", len(entries), len(client.tenants), authority.calls)
+	}
+	result, err := executor.Handle(alert, false)
+	if err != nil {
+		t.Fatalf("actual execution after preview: %v", err)
+	}
+	if result.Status != Completed || result.NoOp || len(client.tenants) != 1 {
+		t.Fatalf("preview consumed real execution: result=%+v targets=%v", result, client.tenants)
+	}
+}

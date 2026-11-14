@@ -1,0 +1,57 @@
+{
+  "body_hashes_unchanged": true,
+  "kind": "new-source-only-permission-tightening",
+  "prior_read_only_check": "The initial0644 assertion raised; subsequent nofollow metadata showed these four newly created ordinary files0664. No test or product body was changed by this check.",
+  "records": [
+    {
+      "bytes": 4631,
+      "gid": 1000,
+      "inode": 54046638,
+      "mode_after": "0o644",
+      "mode_before": "0o664",
+      "nlink": 1,
+      "path": "scripts/identity_cache_capture.py",
+      "sha256_after": "229d8bf0a0da59ec33e69c63c31809169015b51e8585207ff5fb73d192ed1f85",
+      "sha256_before": "229d8bf0a0da59ec33e69c63c31809169015b51e8585207ff5fb73d192ed1f85",
+      "uid": 1000
+    },
+    {
+      "bytes": 7072,
+      "gid": 1000,
+      "inode": 54046639,
+      "mode_after": "0o644",
+      "mode_before": "0o664",
+      "nlink": 1,
+      "path": "scripts/identity_cache_maintenance.py",
+      "sha256_after": "155607da15266715699c323a5a822ffbb9bc18756e76b5341833be110e7de76a",
+      "sha256_before": "155607da15266715699c323a5a822ffbb9bc18756e76b5341833be110e7de76a",
+      "uid": 1000
+    },
+    {
+      "bytes": 41285,
+      "gid": 1000,
+      "inode": 54046570,
+      "mode_after": "0o644",
+      "mode_before": "0o664",
+      "nlink": 1,
+      "path": "scripts/identity_cache_observe.py",
+      "sha256_after": "4039c311d36a770a5eda41dd1b3128364d8b3931deaedffd92e01328ade6ac36",
+      "sha256_before": "4039c311d36a770a5eda41dd1b3128364d8b3931deaedffd92e01328ade6ac36",
+      "uid": 1000
+    },
+    {
+      "bytes": 45697,
+      "gid": 1000,
+      "inode": 54046704,
+      "mode_after": "0o644",
+      "mode_before": "0o664",
+      "nlink": 1,
+      "path": "scripts/test_identity_cache_control.py",
+      "sha256_after": "63641c485f35faf0a7def839a969a5420cc38b14a0c5a084363d29faf05d0bcb",
+      "sha256_before": "63641c485f35faf0a7def839a969a5420cc38b14a0c5a084363d29faf05d0bcb",
+      "uid": 1000
+    }
+  ],
+  "scope": "Only the four new controller source/fixture files; no parent or old-source permission changes",
+  "test_rerun_for_metadata_only": false
+}

@@ -1,0 +1,261 @@
+test_material_literals_dispatch_without_operation_controller (test_controller_cache_continuation_invoker_20261025.MaterialEntryTests.test_material_literals_dispatch_without_operation_controller) ... ok
+test_admission_strict_scope_types_names_hashes_and_policy (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_admission_strict_scope_types_names_hashes_and_policy) ... ok
+test_context_rechecks_source_and_same_byte_invoker_replacement (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_context_rechecks_source_and_same_byte_invoker_replacement) ... ok
+test_empty_lists_leave_both_inspects_not_exercised (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_empty_lists_leave_both_inspects_not_exercised) ... ERROR
+test_failure_or_uncertain_close_never_receipts_or_requests_again (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_failure_or_uncertain_close_never_receipts_or_requests_again) ... ok
+test_full_four_get_order_safe_summary_and_first_sorted_binding (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_full_four_get_order_safe_summary_and_first_sorted_binding) ... ERROR
+test_material_independent_30_bound_and_one_nanosecond_late (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_independent_30_bound_and_one_nanosecond_late) ... ERROR
+test_material_late_boot_offset_and_namespace_refuse (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_late_boot_offset_and_namespace_refuse) ... ERROR
+test_material_partial_exclusive_receipt_and_marker_bounds (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_partial_exclusive_receipt_and_marker_bounds) ... ok
+test_material_producer_flush_time_exhaustion_leaves_no_usable_terminal (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_producer_flush_time_exhaustion_leaves_no_usable_terminal) ... ERROR
+test_material_reconcile_flush_replacement_refuses_normal_return (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_reconcile_flush_replacement_refuses_normal_return) ... ERROR
+test_mixed_lists_inspect_only_current_nonempty_kind (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_mixed_lists_inspect_only_current_nonempty_kind) ... ERROR
+test_project_only_rejects_oldlabels_arbitrary_routes_and_foreign_scope (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_project_only_rejects_oldlabels_arbitrary_routes_and_foreign_scope) ... ok
+test_real_reconcile_and_independent_validator_with_session_chain (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_real_reconcile_and_independent_validator_with_session_chain) ... ERROR
+test_receipt_schema_slot_hash_types_empty_and_timing_reject (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_receipt_schema_slot_hash_types_empty_and_timing_reject) ... ERROR
+test_root_pending_nonzero_unsafe_wrong_poll_and_extra_fields_refuse (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_root_pending_nonzero_unsafe_wrong_poll_and_extra_fields_refuse) ... ERROR
+test_shared_io_phase_is_not_reset_for_later_get (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_shared_io_phase_is_not_reset_for_later_get) ... ok
+test_source_context_has_no_operation_capabilities_and_old_policies_match (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_source_context_has_no_operation_capabilities_and_old_policies_match) ... ok
+
+======================================================================
+ERROR: test_empty_lists_leave_both_inspects_not_exercised (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_empty_lists_leave_both_inspects_not_exercised)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1270, in test_empty_lists_leave_both_inspects_not_exercised
+    record, _, http = self.produce([[], []])
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1181, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-57sjh56e/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 485, in material_run
+    record = api.durable('material-receipt.json', value)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 179, in durable
+    fd = os.open(path.name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW | os.O_CLOEXEC,
+                 0o600, dir_fd=parent)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1247, in _execute_mock_call
+    result = effect(*args, **kwargs)
+TypeError: MaterialTests.transport.<locals>.<lambda>() takes 2 positional arguments but 3 were given
+
+======================================================================
+ERROR: test_full_four_get_order_safe_summary_and_first_sorted_binding (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_full_four_get_order_safe_summary_and_first_sorted_binding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1250, in test_full_four_get_order_safe_summary_and_first_sorted_binding
+    record, output, http = self.produce()
+                           ~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1181, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-1zfsuozb/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 485, in material_run
+    record = api.durable('material-receipt.json', value)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 179, in durable
+    fd = os.open(path.name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW | os.O_CLOEXEC,
+                 0o600, dir_fd=parent)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1247, in _execute_mock_call
+    result = effect(*args, **kwargs)
+TypeError: MaterialTests.transport.<locals>.<lambda>() takes 2 positional arguments but 3 were given
+
+======================================================================
+ERROR: test_material_independent_30_bound_and_one_nanosecond_late (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_independent_30_bound_and_one_nanosecond_late)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1372, in test_material_independent_30_bound_and_one_nanosecond_late
+    self.produce([[], []])
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1181, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-z3vh_9js/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 485, in material_run
+    record = api.durable('material-receipt.json', value)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 179, in durable
+    fd = os.open(path.name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW | os.O_CLOEXEC,
+                 0o600, dir_fd=parent)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1247, in _execute_mock_call
+    result = effect(*args, **kwargs)
+TypeError: MaterialTests.transport.<locals>.<lambda>() takes 2 positional arguments but 3 were given
+
+======================================================================
+ERROR: test_material_late_boot_offset_and_namespace_refuse (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_late_boot_offset_and_namespace_refuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1385, in test_material_late_boot_offset_and_namespace_refuse
+    self.produce([[], []])
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1181, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-umkrj_iu/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 485, in material_run
+    record = api.durable('material-receipt.json', value)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 179, in durable
+    fd = os.open(path.name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW | os.O_CLOEXEC,
+                 0o600, dir_fd=parent)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1247, in _execute_mock_call
+    result = effect(*args, **kwargs)
+TypeError: MaterialTests.transport.<locals>.<lambda>() takes 2 positional arguments but 3 were given
+
+======================================================================
+ERROR: test_material_producer_flush_time_exhaustion_leaves_no_usable_terminal (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_producer_flush_time_exhaustion_leaves_no_usable_terminal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1437, in test_material_producer_flush_time_exhaustion_leaves_no_usable_terminal
+    c.load_invoker().material_run(c,(100*api.NS,100*api.NS,100*api.NS))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/warden-controller-fixture-812nsydo/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 485, in material_run
+    record = api.durable('material-receipt.json', value)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 179, in durable
+    fd = os.open(path.name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW | os.O_CLOEXEC,
+                 0o600, dir_fd=parent)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1247, in _execute_mock_call
+    result = effect(*args, **kwargs)
+TypeError: MaterialTests.transport.<locals>.<lambda>() takes 2 positional arguments but 3 were given
+
+======================================================================
+ERROR: test_material_reconcile_flush_replacement_refuses_normal_return (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_reconcile_flush_replacement_refuses_normal_return)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1413, in test_material_reconcile_flush_replacement_refuses_normal_return
+    self.produce([[], []])
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1181, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-_bb912fd/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 485, in material_run
+    record = api.durable('material-receipt.json', value)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 179, in durable
+    fd = os.open(path.name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW | os.O_CLOEXEC,
+                 0o600, dir_fd=parent)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1247, in _execute_mock_call
+    result = effect(*args, **kwargs)
+TypeError: MaterialTests.transport.<locals>.<lambda>() takes 2 positional arguments but 3 were given
+
+======================================================================
+ERROR: test_mixed_lists_inspect_only_current_nonempty_kind (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_mixed_lists_inspect_only_current_nonempty_kind)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1278, in test_mixed_lists_inspect_only_current_nonempty_kind
+    record, _, http = self.produce(self.objects(image=False))
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1181, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-nsgnwrwv/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 485, in material_run
+    record = api.durable('material-receipt.json', value)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 179, in durable
+    fd = os.open(path.name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW | os.O_CLOEXEC,
+                 0o600, dir_fd=parent)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1247, in _execute_mock_call
+    result = effect(*args, **kwargs)
+TypeError: MaterialTests.transport.<locals>.<lambda>() takes 2 positional arguments but 3 were given
+
+======================================================================
+ERROR: test_real_reconcile_and_independent_validator_with_session_chain (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_real_reconcile_and_independent_validator_with_session_chain)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1334, in test_real_reconcile_and_independent_validator_with_session_chain
+    self.produce()
+    ~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1181, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-4uarlnnl/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 485, in material_run
+    record = api.durable('material-receipt.json', value)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 179, in durable
+    fd = os.open(path.name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW | os.O_CLOEXEC,
+                 0o600, dir_fd=parent)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1247, in _execute_mock_call
+    result = effect(*args, **kwargs)
+TypeError: MaterialTests.transport.<locals>.<lambda>() takes 2 positional arguments but 3 were given
+
+======================================================================
+ERROR: test_receipt_schema_slot_hash_types_empty_and_timing_reject (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_receipt_schema_slot_hash_types_empty_and_timing_reject)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1314, in test_receipt_schema_slot_hash_types_empty_and_timing_reject
+    record, _, _ = self.produce()
+                   ~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1181, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-i0torwp3/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 485, in material_run
+    record = api.durable('material-receipt.json', value)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 179, in durable
+    fd = os.open(path.name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW | os.O_CLOEXEC,
+                 0o600, dir_fd=parent)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1247, in _execute_mock_call
+    result = effect(*args, **kwargs)
+TypeError: MaterialTests.transport.<locals>.<lambda>() takes 2 positional arguments but 3 were given
+
+======================================================================
+ERROR: test_root_pending_nonzero_unsafe_wrong_poll_and_extra_fields_refuse (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_root_pending_nonzero_unsafe_wrong_poll_and_extra_fields_refuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1349, in test_root_pending_nonzero_unsafe_wrong_poll_and_extra_fields_refuse
+    self.produce([[], []])
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1181, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-p7i4qthm/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 485, in material_run
+    record = api.durable('material-receipt.json', value)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 179, in durable
+    fd = os.open(path.name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW | os.O_CLOEXEC,
+                 0o600, dir_fd=parent)
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1247, in _execute_mock_call
+    result = effect(*args, **kwargs)
+TypeError: MaterialTests.transport.<locals>.<lambda>() takes 2 positional arguments but 3 were given
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.420s
+
+FAILED (errors=10)

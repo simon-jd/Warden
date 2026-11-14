@@ -1,0 +1,42 @@
+{
+  "source": "772136927eb6eb9576e473eef5f7b716b80696f6",
+  "scope": "round2 final I4 focused result; I2/I3 full suite remains bound to earlier checkpoint01bccef; no live modes",
+  "files": {
+    "README.md": {
+      "sha256": "d5f67feb60d097fb2dd4042e73d3e2e7cff8d1c54516f4415e122a29467cb7e5",
+      "bytes": 8840
+    },
+    "history-i4-red.log": {
+      "sha256": "91d8cf924ac491f14095dbbb677a0a6317c5deffc39389a69d9da8672f034c9f",
+      "bytes": 5456
+    },
+    "i4-command.py": {
+      "sha256": "f162a2187843e87f676a4d2022389037542a85408cade0a1e149d63e4e244d02",
+      "bytes": 567
+    },
+    "i4-tests.log": {
+      "sha256": "8c24a54333dde0cb49073ffdcae5dac4abc610e4acf30b466df48ad6719dea1b",
+      "bytes": 4805
+    },
+    "observed-guard-maxima.json": {
+      "sha256": "affca26c48eb76cf3e665a8b98d5ddda4e8dd9f29b87f6cc1c1fa09aef2df8d1",
+      "bytes": 1090
+    },
+    "old-evidence-verification.json": {
+      "sha256": "4f4f4f541cc2490d96609b0cb3234832ebe7ff2b6e0d66ccae86011ca7ca51d8",
+      "bytes": 709
+    },
+    "postflight-command.py": {
+      "sha256": "c97dd43701f410474c839acd8d3a9eaa8300cf2d9113938545cd3feba88227c8",
+      "bytes": 1523
+    },
+    "postflight.json": {
+      "sha256": "ddd5d58a23a2ff5d656e39a109d05b405b2b3d9ebb7abf78ae092a7e034e2a1b",
+      "bytes": 969
+    },
+    "source-manifest.json": {
+      "sha256": "3716e994a28e61238e07560fc4b170ff160d08cd361000f2384d18235b53a86c",
+      "bytes": 3491
+    }
+  }
+}

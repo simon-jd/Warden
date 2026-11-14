@@ -1,0 +1,48 @@
+{
+  "kind": "Task9 applicability ruling during initial independent review",
+  "scope": "Global term disposition actions",
+  "source_base": "f83a41b8d5dd7f5a976852785a31aeee01596a19",
+  "reviewed_source": "1eb3ccb257d5faffa35a6438c550639b4fe76859",
+  "citations": [
+    {
+      "path": "2-warden-security-plan.md",
+      "line": 10,
+      "meaning": "responder executes disposition playbooks"
+    },
+    {
+      "path": "2-warden-security-plan.md",
+      "line": 92,
+      "meaning": "global disposition dry-run and second-identity rule"
+    },
+    {
+      "path": "2-warden-security-plan.md",
+      "line": 102,
+      "meaning": "disposition idempotency explicitly points to Task14"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/progress.md",
+      "line": 17,
+      "meaning": "original Task9 preflight: two identities, <=2h, Expire/audit"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/progress.md",
+      "line": 22,
+      "meaning": "original Task14 preflight: alert_id/dry-run/second identity"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-14-brief.md",
+      "meaning": "Executor.Handle(alert,dryRun), TestDryRunMakesNoChanges, destructive approval"
+    }
+  ],
+  "ruling": "Global disposition actions refer to incident-response/playbook executor paths. This does not impose a CLI flag on every mutating identity/database library method. Original Task9 has distinct authenticated approver and automatic periodic expiry semantics. Future response adapters using JIT still must honor the Task14 preview/dry-run and approval contract. This is root's applicability ruling from original plan/preflight context, not exemption based on author rationale; independent reviewer may flag a concrete residual conflict.",
+  "cost_if_wrong": "A later response integration could need an explicit JIT preview API; current source must not be exposed as a response executor or accepted as full deployment based on this ruling.",
+  "separate_technical_review": {
+    "status": "pending final reviewer report; no-op resourceVersion cleanup concern is unrelated and not dismissed",
+    "primary_source": "https://github.com/kubernetes/kubernetes/blob/v1.34.0/staging/src/k8s.io/apiserver/pkg/storage/etcd3/store.go",
+    "root_primary_read": "GuaranteedUpdate byte-equal current encoding short-circuits write and decodes existing revision. Inference: no-op update cannot be relied upon to produce a different resourceVersion. This tagged source check is not actual cluster/version acceptance."
+  },
+  "provenance": {
+    "source": "root_agent_ruling_in_existing_user_scope",
+    "human_response": false
+  }
+}

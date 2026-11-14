@@ -1,0 +1,5 @@
+--- FAIL: TestDurableClaimAndFencedTransitions (0.05s)
+    execution_test.go:18: durable claim not implemented
+FAIL
+FAIL	warden/controlplane/internal/runs	0.056s
+FAIL

@@ -1,0 +1,28 @@
+test_inspected_stdin_lifetime_allows_ack_eof_and_rejects_daemon_hold (test_firecracker_device_receipt.ReceiptTests.test_inspected_stdin_lifetime_allows_ack_eof_and_rejects_daemon_hold) ... FAIL
+test_fixed_transcript_ack_only_after_correlated_receipt (test_firecracker_device_receipt.ReceiptTests.test_fixed_transcript_ack_only_after_correlated_receipt) ... ok
+test_fixed_transcript_refuses_wrong_extra_and_empty_ack (test_firecracker_device_receipt.ReceiptTests.test_fixed_transcript_refuses_wrong_extra_and_empty_ack) ... ok
+
+======================================================================
+FAIL: test_inspected_stdin_lifetime_allows_ack_eof_and_rejects_daemon_hold (test_firecracker_device_receipt.ReceiptTests.test_inspected_stdin_lifetime_allows_ack_eof_and_rejects_daemon_hold)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_device_receipt.py", line 154, in test_inspected_stdin_lifetime_allows_ack_eof_and_rejects_daemon_hold
+    try:lab.inspect_live(data,'boot',binding())
+        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 313, in inspect_live
+    if c.get('OpenStdin') is not True or c.get('StdinOnce') is not False or c.get('Tty') is not False or c.get('Entrypoint')!=['/opt/warden/input/lab'] or c.get('Cmd')!=[mode] or c.get('User')!='':raise ValueError('fixed interactive trusted entrypoint required')
+                                                                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: fixed interactive trusted entrypoint required
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_device_receipt.py", line 155, in test_inspected_stdin_lifetime_allows_ack_eof_and_rejects_daemon_hold
+    except ValueError as error:self.fail('ACK+EOF configuration rejected: '+str(error))
+                               ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ACK+EOF configuration rejected: fixed interactive trusted entrypoint required
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.221s
+
+FAILED (failures=1)

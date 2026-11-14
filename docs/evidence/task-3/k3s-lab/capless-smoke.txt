@@ -1,0 +1,43 @@
+{"owned_image_charge": 0, "outstanding_charge": 0}
+{"additional_bytes": "6000000000", "at": "2026-10-24T06:29:46Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 359330480128, "project_allocated_bytes": 3020267520, "service_memory_bytes": "7000000000"}
+{"rootfs_bytes": 496030290, "archive_bytes": 496599040, "manifest_sha256": "f39c3429f36125e3a3d9ee0e7d8a33da046bc1cc82335b4cafab3e71fa83bbfd"}
+{"owned_image_charge": 0, "outstanding_charge": 0}
+{"additional_bytes": "6000000000", "at": "2026-10-24T06:29:53Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 358736707584, "project_allocated_bytes": 3516993536, "service_memory_bytes": "7000000000"}
+{"image": "sha256:d68551904c6d64de3d7fcf24815956c599e0059c1edc1488d6acde5ad90aeeed", "image_size_bytes": 685357010, "labels": {"owner": "codex-warden", "project": "warden", "session": "591a1ca1289f8529efea47978cfbc350", "ttl": "2026-10-24T07:29:46Z"}}
+{"owned_container": "aefa553df38ac6f0fe4f97b51abc2ea779cf45381b7f16f404f236fa6c8dd11c", "mode": "smoke"}
+k3s version v1.36.5+k3s1 (3dd98cc5)
+go version go1.26.8
+containerd github.com/k3s-io/containerd/v2 v2.3.4-k3s1.36
+runsc version release-20261019.0
+spec: 1.2.1
+containerd-shim-runsc-v1:
+  Version:  2.1.5+unknown
+  Revision: 
+  Go version: go1.27.2
+Capless k3s/runsc ABI smoke complete; node/tenant/conformance NOT EXECUTED
+{"removed_container": "aefa553df38ac6f0fe4f97b51abc2ea779cf45381b7f16f404f236fa6c8dd11c"}
+{"removed_image": "sha256:d68551904c6d64de3d7fcf24815956c599e0059c1edc1488d6acde5ad90aeeed"}
+public evidence directory: /home/postedism/Desktop/Warden/.cache/warden-lab/docker-591a1ca1289f8529efea47978cfbc350
+	Command being timed: "python3 -B scripts/k3s_lab.py smoke --other-service-memory-bytes 0"
+	User time (seconds): 7.21
+	System time (seconds): 1.25
+	Percent of CPU this job got: 33%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:25.03
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 802316
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 480183
+	Voluntary context switches: 20673
+	Involuntary context switches: 372
+	Swaps: 0
+	File system inputs: 136
+	File system outputs: 970192
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

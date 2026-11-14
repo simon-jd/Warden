@@ -1,0 +1,37 @@
+Events detected: 0
+Rule counts by severity:
+Triggered rules by rule name:
+Sat Nov 14 03:41:29 2026: Using deprecated engine 'gvisor'. Please consider switching to another engine.
+2026-11-14T03:41:29+0000: Falco version: 0.43.1 (x86_64)
+2026-11-14T03:41:29+0000: Falco initialized with configuration files:
+2026-11-14T03:41:29+0000:    /etc/falco/config.d/90-warden.yaml | schema validation: failed for <root>[program_output]: Missing required property 'program'.
+2026-11-14T03:41:29+0000:    /etc/falco/config.d/91-warden-engine.yaml | schema validation: ok
+2026-11-14T03:41:29+0000:    /etc/falco/config.d/falco.container_plugin.yaml | schema validation: ok
+2026-11-14T03:41:29+0000:    /etc/falco/config.d/falco.iso8601_timeformat.yaml | schema validation: ok
+2026-11-14T03:41:29+0000:    /etc/falco/falco.yaml | schema validation: ok
+2026-11-14T03:41:29+0000: [libs]: Cannot read host init process proc root: 2
+2026-11-14T03:41:29+0000: Loaded plugin 'container@0.6.4' from file /usr/share/falco/plugins/libcontainer.so
+2026-11-14T03:41:29+0000: [libs]: Cannot read host init process proc root: 2
+2026-11-14T03:41:29+0000: [libs]: container: Enabled 'podman' container engine.
+2026-11-14T03:41:29+0000: [libs]: container: * enabled container runtime socket at '/host/run/podman/podman.sock'
+2026-11-14T03:41:29+0000: [libs]: container: Enabled 'docker' container engine.
+2026-11-14T03:41:29+0000: [libs]: container: * enabled container runtime socket at '/host/var/run/docker.sock'
+2026-11-14T03:41:29+0000: [libs]: container: Enabled 'cri' container engine.
+2026-11-14T03:41:29+0000: [libs]: container: * enabled container runtime socket at '/host/run/containerd/containerd.sock'
+2026-11-14T03:41:29+0000: [libs]: container: * enabled container runtime socket at '/host/run/crio/crio.sock'
+2026-11-14T03:41:29+0000: [libs]: container: * enabled container runtime socket at '/host/run/k3s/containerd/containerd.sock'
+2026-11-14T03:41:29+0000: [libs]: container: * enabled container runtime socket at '/host/run/host-containerd/containerd.sock'
+2026-11-14T03:41:29+0000: [libs]: container: Enabled 'containerd' container engine.
+2026-11-14T03:41:29+0000: [libs]: container: * enabled container runtime socket at '/host/run/host-containerd/containerd.sock'
+2026-11-14T03:41:29+0000: [libs]: container: Enabled 'lxc' container engine.
+2026-11-14T03:41:29+0000: [libs]: container: Enabled 'libvirt_lxc' container engine.
+2026-11-14T03:41:29+0000: [libs]: container: Enabled 'bpm' container engine.
+2026-11-14T03:41:29+0000: Loading rules from:
+2026-11-14T03:41:29+0000:    /etc/falco/falco_rules.yaml | schema validation: ok
+2026-11-14T03:41:29+0000:    /etc/falco/falco_rules.local.yaml | schema validation: none
+2026-11-14T03:41:29+0000: Setting metrics interval to 60s, equivalent to 60000 (ms)
+2026-11-14T03:41:29+0000: Loaded event sources: syscall
+2026-11-14T03:41:29+0000: Enabled event sources: syscall
+2026-11-14T03:41:29+0000: Opening 'syscall' source with gVisor. Configuration path: /etc/warden-detect/gvisor-pod-init.json
+2026-11-14T03:41:29+0000: [libs]: Trying to open the right engine!
+Error: vector

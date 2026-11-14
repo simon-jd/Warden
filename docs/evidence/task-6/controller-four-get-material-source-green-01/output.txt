@@ -1,0 +1,359 @@
+test_material_literals_dispatch_without_operation_controller (test_controller_cache_continuation_invoker_20261025.MaterialEntryTests.test_material_literals_dispatch_without_operation_controller) ... ok
+test_admission_strict_scope_types_names_hashes_and_policy (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_admission_strict_scope_types_names_hashes_and_policy) ... ok
+test_context_rechecks_source_and_same_byte_invoker_replacement (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_context_rechecks_source_and_same_byte_invoker_replacement) ... ok
+test_empty_lists_leave_both_inspects_not_exercised (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_empty_lists_leave_both_inspects_not_exercised) ... FAIL
+test_failure_or_uncertain_close_never_receipts_or_requests_again (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_failure_or_uncertain_close_never_receipts_or_requests_again) ... FAIL
+test_full_four_get_order_safe_summary_and_first_sorted_binding (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_full_four_get_order_safe_summary_and_first_sorted_binding) ... FAIL
+test_material_independent_30_bound_and_one_nanosecond_late (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_independent_30_bound_and_one_nanosecond_late) ... FAIL
+test_material_late_boot_offset_and_namespace_refuse (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_late_boot_offset_and_namespace_refuse) ... FAIL
+test_material_partial_exclusive_receipt_and_marker_bounds (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_partial_exclusive_receipt_and_marker_bounds) ... FAIL
+test_material_producer_flush_time_exhaustion_leaves_no_usable_terminal (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_producer_flush_time_exhaustion_leaves_no_usable_terminal) ... FAIL
+test_material_reconcile_flush_replacement_refuses_normal_return (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_reconcile_flush_replacement_refuses_normal_return) ... FAIL
+test_mixed_lists_inspect_only_current_nonempty_kind (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_mixed_lists_inspect_only_current_nonempty_kind) ... FAIL
+test_project_only_rejects_oldlabels_arbitrary_routes_and_foreign_scope (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_project_only_rejects_oldlabels_arbitrary_routes_and_foreign_scope) ... ok
+test_real_reconcile_and_independent_validator_with_session_chain (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_real_reconcile_and_independent_validator_with_session_chain) ... FAIL
+test_receipt_schema_slot_hash_types_empty_and_timing_reject (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_receipt_schema_slot_hash_types_empty_and_timing_reject) ... FAIL
+test_root_pending_nonzero_unsafe_wrong_poll_and_extra_fields_refuse (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_root_pending_nonzero_unsafe_wrong_poll_and_extra_fields_refuse) ... FAIL
+test_shared_io_phase_is_not_reset_for_later_get (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_shared_io_phase_is_not_reset_for_later_get) ... FAIL
+test_source_context_has_no_operation_capabilities_and_old_policies_match (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_source_context_has_no_operation_capabilities_and_old_policies_match) ... ok
+
+======================================================================
+FAIL: test_empty_lists_leave_both_inspects_not_exercised (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_empty_lists_leave_both_inspects_not_exercised)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1269, in test_empty_lists_leave_both_inspects_not_exercised
+    record, _, http = self.produce([[], []])
+                      ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1180, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-al_qdmwm/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 458, in material_run
+    origin = material_begin(control, entry)
+  File "/tmp/warden-controller-fixture-al_qdmwm/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 383, in material_begin
+    control.clock()
+    ~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 928, in clock
+    identity = clock_identity()
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+AssertionError: real host/native access forbidden
+
+======================================================================
+FAIL: test_failure_or_uncertain_close_never_receipts_or_requests_again (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_failure_or_uncertain_close_never_receipts_or_requests_again)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1300, in test_failure_or_uncertain_close_never_receipts_or_requests_again
+    self.produce(change=change)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1180, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-yzgtz_mg/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 458, in material_run
+    origin = material_begin(control, entry)
+  File "/tmp/warden-controller-fixture-yzgtz_mg/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 383, in material_begin
+    control.clock()
+    ~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 928, in clock
+    identity = clock_identity()
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+AssertionError: real host/native access forbidden
+
+======================================================================
+FAIL: test_full_four_get_order_safe_summary_and_first_sorted_binding (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_full_four_get_order_safe_summary_and_first_sorted_binding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1249, in test_full_four_get_order_safe_summary_and_first_sorted_binding
+    record, output, http = self.produce()
+                           ~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1180, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-r877g1o7/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 458, in material_run
+    origin = material_begin(control, entry)
+  File "/tmp/warden-controller-fixture-r877g1o7/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 383, in material_begin
+    control.clock()
+    ~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 928, in clock
+    identity = clock_identity()
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+AssertionError: real host/native access forbidden
+
+======================================================================
+FAIL: test_material_independent_30_bound_and_one_nanosecond_late (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_independent_30_bound_and_one_nanosecond_late)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1371, in test_material_independent_30_bound_and_one_nanosecond_late
+    self.produce([[], []])
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1180, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-_y11bdif/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 458, in material_run
+    origin = material_begin(control, entry)
+  File "/tmp/warden-controller-fixture-_y11bdif/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 383, in material_begin
+    control.clock()
+    ~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 928, in clock
+    identity = clock_identity()
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+AssertionError: real host/native access forbidden
+
+======================================================================
+FAIL: test_material_late_boot_offset_and_namespace_refuse (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_late_boot_offset_and_namespace_refuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1384, in test_material_late_boot_offset_and_namespace_refuse
+    self.produce([[], []])
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1180, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-p_pvsat6/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 458, in material_run
+    origin = material_begin(control, entry)
+  File "/tmp/warden-controller-fixture-p_pvsat6/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 383, in material_begin
+    control.clock()
+    ~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 928, in clock
+    identity = clock_identity()
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+AssertionError: real host/native access forbidden
+
+======================================================================
+FAIL: test_material_partial_exclusive_receipt_and_marker_bounds (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_partial_exclusive_receipt_and_marker_bounds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1405, in test_material_partial_exclusive_receipt_and_marker_bounds
+    self.produce([[], []])
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1180, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-czasgxur/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 458, in material_run
+    origin = material_begin(control, entry)
+  File "/tmp/warden-controller-fixture-czasgxur/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 383, in material_begin
+    control.clock()
+    ~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 928, in clock
+    identity = clock_identity()
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+AssertionError: real host/native access forbidden
+
+======================================================================
+FAIL: test_material_producer_flush_time_exhaustion_leaves_no_usable_terminal (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_producer_flush_time_exhaustion_leaves_no_usable_terminal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1436, in test_material_producer_flush_time_exhaustion_leaves_no_usable_terminal
+    c.load_invoker().material_run(c,(100*api.NS,100*api.NS,100*api.NS))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/warden-controller-fixture-slwm2xf2/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 458, in material_run
+    origin = material_begin(control, entry)
+  File "/tmp/warden-controller-fixture-slwm2xf2/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 383, in material_begin
+    control.clock()
+    ~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 928, in clock
+    identity = clock_identity()
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+AssertionError: real host/native access forbidden
+
+======================================================================
+FAIL: test_material_reconcile_flush_replacement_refuses_normal_return (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_material_reconcile_flush_replacement_refuses_normal_return)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1412, in test_material_reconcile_flush_replacement_refuses_normal_return
+    self.produce([[], []])
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1180, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-jur1u6_7/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 458, in material_run
+    origin = material_begin(control, entry)
+  File "/tmp/warden-controller-fixture-jur1u6_7/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 383, in material_begin
+    control.clock()
+    ~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 928, in clock
+    identity = clock_identity()
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+AssertionError: real host/native access forbidden
+
+======================================================================
+FAIL: test_mixed_lists_inspect_only_current_nonempty_kind (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_mixed_lists_inspect_only_current_nonempty_kind)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1277, in test_mixed_lists_inspect_only_current_nonempty_kind
+    record, _, http = self.produce(self.objects(image=False))
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1180, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-j0a1p__h/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 458, in material_run
+    origin = material_begin(control, entry)
+  File "/tmp/warden-controller-fixture-j0a1p__h/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 383, in material_begin
+    control.clock()
+    ~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 928, in clock
+    identity = clock_identity()
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+AssertionError: real host/native access forbidden
+
+======================================================================
+FAIL: test_real_reconcile_and_independent_validator_with_session_chain (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_real_reconcile_and_independent_validator_with_session_chain)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1333, in test_real_reconcile_and_independent_validator_with_session_chain
+    self.produce()
+    ~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1180, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-venc63wx/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 458, in material_run
+    origin = material_begin(control, entry)
+  File "/tmp/warden-controller-fixture-venc63wx/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 383, in material_begin
+    control.clock()
+    ~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 928, in clock
+    identity = clock_identity()
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+AssertionError: real host/native access forbidden
+
+======================================================================
+FAIL: test_receipt_schema_slot_hash_types_empty_and_timing_reject (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_receipt_schema_slot_hash_types_empty_and_timing_reject)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1313, in test_receipt_schema_slot_hash_types_empty_and_timing_reject
+    record, _, _ = self.produce()
+                   ~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1180, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-2lgr3t26/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 458, in material_run
+    origin = material_begin(control, entry)
+  File "/tmp/warden-controller-fixture-2lgr3t26/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 383, in material_begin
+    control.clock()
+    ~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 928, in clock
+    identity = clock_identity()
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+AssertionError: real host/native access forbidden
+
+======================================================================
+FAIL: test_root_pending_nonzero_unsafe_wrong_poll_and_extra_fields_refuse (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_root_pending_nonzero_unsafe_wrong_poll_and_extra_fields_refuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1348, in test_root_pending_nonzero_unsafe_wrong_poll_and_extra_fields_refuse
+    self.produce([[], []])
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1180, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-zz2_8ap1/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 458, in material_run
+    origin = material_begin(control, entry)
+  File "/tmp/warden-controller-fixture-zz2_8ap1/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 383, in material_begin
+    control.clock()
+    ~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 928, in clock
+    identity = clock_identity()
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+AssertionError: real host/native access forbidden
+
+======================================================================
+FAIL: test_shared_io_phase_is_not_reset_for_later_get (test_controller_cache_continuation_invoker_20261025.MaterialTests.test_shared_io_phase_is_not_reset_for_later_get)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1309, in test_shared_io_phase_is_not_reset_for_later_get
+    self.produce([[], []], change)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 1180, in produce
+    result = inv.material_run(c, (100*api.NS, 100*api.NS, 100*api.NS))
+  File "/tmp/warden-controller-fixture-12fznfj9/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 458, in material_run
+    origin = material_begin(control, entry)
+  File "/tmp/warden-controller-fixture-12fznfj9/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py", line 383, in material_begin
+    control.clock()
+    ~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 928, in clock
+    identity = clock_identity()
+  File "/usr/lib/python3.14/unittest/mock.py", line 1176, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1180, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/unittest/mock.py", line 1241, in _execute_mock_call
+    raise effect
+AssertionError: real host/native access forbidden
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.237s
+
+FAILED (failures=13)

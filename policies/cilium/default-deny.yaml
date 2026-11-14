@@ -1,0 +1,35 @@
+# Default deny for sandbox namespaces. Tested on the Cilium mode of the k3s +
+# gVisor lab (make test-cilium) by TestSandboxReachesOnlyTheEgressProxy in
+# controlplane/internal/ciliumlab; evidence in
+# docs/evidence/task-10/cilium-lab-20261112. The Docker lab in
+# controlplane/internal/scheduler/egress_live_test.go tests the same rule
+# without Cilium, with an --internal network whose only exit is the egress
+# proxy.
+apiVersion: cilium.io/v2
+kind: CiliumClusterwideNetworkPolicy
+metadata:
+  name: warden-sandbox-default-deny
+spec:
+  description: Sandboxes get no ingress and no egress except DNS and the egress proxy.
+  endpointSelector:
+    matchLabels:
+      warden.dev/sandbox: "true"
+  # An empty rule turns on default deny for ingress without allowing anything.
+  ingress:
+    - {}
+  egress:
+    - toEndpoints:
+        - matchLabels:
+            k8s:io.kubernetes.pod.namespace: kube-system
+            k8s-app: kube-dns
+      toPorts:
+        - ports:
+            - port: "53"
+              protocol: UDP
+          rules:
+            dns:
+              # Names are resolved only so clients can address the proxy.
+              - matchName: warden-egress.warden-system.svc.cluster.local
+  egressDeny:
+    # IMDS by IP; the hostname form is covered by the DNS rule above.
+    - toCIDR: [169.254.169.254/32, 168.63.129.16/32]

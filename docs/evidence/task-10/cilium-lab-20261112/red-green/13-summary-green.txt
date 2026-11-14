@@ -1,0 +1,8 @@
+# 2026-11-13T08:12:00-08:00 head ec62450; git status --short:
+ M controlplane/internal/ciliumlab/ciliumlab.go
+ M controlplane/internal/ciliumlab/ciliumlab_test.go
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/13-summary-green.txt
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/13-summary-red.txt
+$ go test -count=1 -run '.' ./controlplane/internal/ciliumlab
+ok  	warden/controlplane/internal/ciliumlab	0.004s
+exit 0

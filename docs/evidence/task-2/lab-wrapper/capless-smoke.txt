@@ -1,0 +1,27 @@
+code_sha=ff6c1e2658de22586546089fd522726d0e9bb243
+command=['python3', '-B', 'scripts/runtime_lab_docker.py', 'smoke', '--other-service-memory-bytes', '0']
+local Docker daemon: postedism-ubuntu-system-selfuse 29.9.1 systemd
+outstanding Docker allocation charge: 0
+{"additional_bytes": "3000000000", "at": "2026-10-24T03:57:03Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 383788703744, "project_allocated_bytes": 2185678848, "service_memory_bytes": "4000000000"}
+owned image: sha256:f6de3b379aec775eb4c4b9844fef767fdc1215fe3b951388b5a50341c1791c73
+owned container: 6307a58064c3e408ebd8beda7c3ea14bd31803af5ea529847542bffbb604f956
+containerd containerd v2.4.2 b7a25261e029d68978bbf290df0a62fc819b3c51
+ctr containerd v2.4.2
+containerd-shim-runc-v2:
+  Version:  v2.4.2
+  Revision: b7a25261e029d68978bbf290df0a62fc819b3c51
+  Go version: go1.27.2
+
+runc version 1.5.2
+commit: v1.5.2-0-g29dd3dc2
+spec: 1.3.0
+go: go1.27.2
+libseccomp: 2.6.0
+Python: 3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]
+libseccomp: 7
+ABI smoke complete; guest conformance NOT EXECUTED
+outer container removed: 6307a58064c3e408ebd8beda7c3ea14bd31803af5ea529847542bffbb604f956
+owned image removed: sha256:f6de3b379aec775eb4c4b9844fef767fdc1215fe3b951388b5a50341c1791c73
+evidence directory: /home/postedism/Desktop/Warden/.cache/warden-lab/docker-5670ce1f8fcdc5affc687baa57dd0c74
+
+exit_code=0

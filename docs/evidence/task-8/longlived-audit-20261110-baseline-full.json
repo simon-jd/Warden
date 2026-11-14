@@ -1,0 +1,26 @@
+{
+  "now": "2026-11-11T04:27:33.492864+00:00",
+  "apps_scanned": 1,
+  "storage_accounts_scanned": 1,
+  "long_lived_count": 2,
+  "expired_ignored": 0,
+  "findings": [
+    {
+      "kind": "app_client_secret",
+      "app": "<other-project-app>",
+      "app_id": "<other-project-app-id>",
+      "key_id": "<other-project-key>",
+      "expires": "2026-12-31T00:00:00Z",
+      "lifetime_days": 51,
+      "owner_project": "<other-project>",
+      "counted": true
+    },
+    {
+      "kind": "storage_shared_key",
+      "account": "<other-project-storage>",
+      "resource_group": "rg-mlinfra-westus",
+      "owner_project": null,
+      "counted": true
+    }
+  ]
+}

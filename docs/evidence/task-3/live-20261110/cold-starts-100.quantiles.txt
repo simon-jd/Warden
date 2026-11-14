@@ -1,0 +1,12 @@
+# output of: python3 -I quantiles.py.txt cold-starts-100.jsonl  (2026-11-10T17:18:39-08:00)
+runs: 100 exit codes: [0] all CgroupEmpty: True distinct pods: 100
+ms                       p50       p95       min       max
+start_to_init_ms      523.85    695.17    465.82    837.37
+start_to_exec_ms      547.77    741.11    485.23    934.23
+start_to_wait_ms     2976.54   3079.62   2761.99   3956.18
+init_to_exec_ms        21.18     29.47     15.91    152.97
+exec_to_wait_ms      2433.17   2512.26   2134.12   3101.54
+matches the test's summary line: start_to_init_ms True
+matches the test's summary line: start_to_exec_ms True
+matches the test's summary line: start_to_wait_ms True
+start_to_exec over 700 ms: 7 over 900 ms: 1

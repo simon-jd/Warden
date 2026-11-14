@@ -1,0 +1,69 @@
+{
+  "source": "dbc6d648068ff0771e1e1936bd1a0061cd0a36c9",
+  "source_parent": "ef7fd7b83bd9d7989c4246f6be1137868b2f9984",
+  "original_runtime_source": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f",
+  "source_files_verified": 5,
+  "unchanged_runtime_interface_profile_files_verified": 59,
+  "old_tracked_task4_files_byte_and_mode_identical": 176,
+  "old_indexes_verified": [
+    {
+      "path": "docs/evidence/task-4/55bd96828669c8e1536da321bcb87bae13afa6ea/evidence-index.json",
+      "sha256": "eb6fc3327e7b408d3ac2b514128de4055106347dedfcda34a00999b4f4b36e58",
+      "entries_verified": 36
+    },
+    {
+      "path": "docs/evidence/task-4/live/135c3b866f07692ad846cc48c8c5bde0cf91ee33/controller-index.json",
+      "sha256": "632758f330f3f3b1e8ad082f06d4d64f55f6c03fe4d8a2a43ea7126849d7c13e",
+      "entries_verified": 11
+    },
+    {
+      "path": "docs/evidence/task-4/live/772136927eb6eb9576e473eef5f7b716b80696f6/boot-second-index.json",
+      "sha256": "8643ca6a70b32e2960d734afbbf7980e9168ba0b9cdd9b3b785de9df9ca96cd3",
+      "entries_verified": 6
+    },
+    {
+      "path": "docs/evidence/task-4/live/772136927eb6eb9576e473eef5f7b716b80696f6/ro-smoke-index.json",
+      "sha256": "7857424fa7fc81f3175488632e576cc28e2431fb3f5b4ac27af492c573373f95",
+      "entries_verified": 8
+    },
+    {
+      "path": "docs/evidence/task-4/live/95fa55dc0ce97d3e1b99a255a84f80e96972c71f/boot-third-index.json",
+      "sha256": "78385abbb0fd7207e32d2772ffd30a8f20e5c6bc10f211da753f21f906d3a422",
+      "entries_verified": 5
+    },
+    {
+      "path": "docs/evidence/task-4/live/95fa55dc0ce97d3e1b99a255a84f80e96972c71f/device-policy-index.json",
+      "sha256": "14467b886866f319165edd312d8fc20fc71efe6d16de533a6795609b1ea1a208",
+      "entries_verified": 8
+    },
+    {
+      "path": "docs/evidence/task-4/round-1/135c3b866f07692ad846cc48c8c5bde0cf91ee33/evidence-index.json",
+      "sha256": "f883f1733730435c581615e17f4aabfd8220182dce124bc5f7fab0aa16b462c0",
+      "entries_verified": 13
+    },
+    {
+      "path": "docs/evidence/task-4/round-2/01bccef0a6a7eab10f25660fbc7f6cf6e9d92041/evidence-index.json",
+      "sha256": "a760df81e489f7df5899433137b34dbd01b4c827356e9ff1c4568dd270a65bfe",
+      "entries_verified": 16
+    },
+    {
+      "path": "docs/evidence/task-4/round-2/772136927eb6eb9576e473eef5f7b716b80696f6/evidence-index.json",
+      "sha256": "51fbc8297454d251f3f401a7c502d5d31777b4cc445f7709fa5debe338508261",
+      "entries_verified": 9
+    },
+    {
+      "path": "docs/evidence/task-4/round-3/12abd9ef909a1e03c59770243669c78ea11e3d1f/evidence-index.json",
+      "sha256": "d6d3fb6f5ee660979338c7d84e9e806ac44375423d30763597cfa14aca56e3ac",
+      "entries_verified": 17
+    },
+    {
+      "path": "docs/evidence/task-4/round-4/95fa55dc0ce97d3e1b99a255a84f80e96972c71f/evidence-index.json",
+      "sha256": "b87681f1e7bcc48157b804ac9dcaf79012e34fa02d5c2564a833948b18855733",
+      "entries_verified": 14
+    }
+  ],
+  "all_match": true,
+  "ordinary_guard_run": false,
+  "private_scene_read": false,
+  "docker_run": false
+}

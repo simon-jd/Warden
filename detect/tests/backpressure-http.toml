@@ -1,0 +1,51 @@
+# Same experiment as backpressure.toml, but events arrive on an http_server
+# source (what an upstream Vector agent or log shipper would use) instead of
+# stdin. With acknowledgements on, a request is answered only after its events
+# are accepted by the disk buffer, so a full buffer shows up as a request that
+# does not return.
+data_dir = "${BP_DATA}"
+
+[sources.fixture]
+type = "http_server"
+address = "${BP_LISTEN}"
+framing.method = "newline_delimited"
+decoding.codec = "json"
+acknowledgements.enabled = true
+
+[sinks.bp_http]
+type = "http"
+inputs = ["fixture"]
+uri = "${BP_URI}"
+method = "post"
+compression = "none"
+encoding.codec = "json"
+framing.method = "newline_delimited"
+batch.max_events = 50
+batch.timeout_secs = 0.2
+request.concurrency = 1
+request.retry_initial_backoff_secs = 1
+request.retry_max_duration_secs = 2
+healthcheck.enabled = false
+acknowledgements.enabled = true
+buffer.type = "disk"
+buffer.max_size = 268435488
+buffer.when_full = "block"
+
+[sources.metrics]
+type = "internal_metrics"
+namespace = "vector"
+scrape_interval_secs = 0.5
+
+[transforms.bp_metrics]
+type = "filter"
+inputs = ["metrics"]
+condition = '.tags.component_id == "bp_http" && includes(["buffer_byte_size", "buffer_events", "buffer_discarded_events_total", "component_discarded_events_total"], .name)'
+
+[sinks.metrics_file]
+type = "file"
+inputs = ["bp_metrics"]
+path = "${BP_METRICS}"
+encoding.codec = "json"
+buffer.type = "memory"
+buffer.max_events = 64
+buffer.when_full = "block"

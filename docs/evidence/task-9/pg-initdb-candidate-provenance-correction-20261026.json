@@ -1,0 +1,22 @@
+{
+  "kind": "append-only root provenance correction",
+  "utc": "2026-10-26T07:23:07.631401+00:00",
+  "source": "coordinator_agent",
+  "human_response": false,
+  "grounded_in_existing_user_scope": true,
+  "human_authorization_card": false,
+  "corrects": {
+    "path": "docs/evidence/task-9/pg-initdb-candidate-user-ruling-20261026.json",
+    "sha256": "519dc44f917b8942fdd4b21675e645a58f514e771f3665e42bae6ef73c7a56bb",
+    "committed_in": "35c63f3a5dc7d777d422dbea1431f735ff10b169",
+    "incorrect_labels": [
+      "latest direct user instruction",
+      "not an invented coordinator approval"
+    ]
+  },
+  "corrected_meaning": "The quoted decision came from the coordinating parent agent exercising existing ordinary user execution scope. It was not a new human reply or human authorization card. Later Task9 preparation references inherit this correction.",
+  "original_quote_bytes_commits_actual_tests_and_old_failures_preserved": true,
+  "accepted_PG_validation_unchanged_no_revoke_or_replay": true,
+  "no_new_GPU_host_permissions_terms_CI_publication_fees_authority": true,
+  "next_scope": "original ecc-chain three-business FIRST_RED preparation/admission only; original bounds retained"
+}

@@ -1,0 +1,57 @@
+// Command warden-node-init is PID 1 of the k3s lab node in Cilium mode
+// (scripts/k3s_gvisor_lab.sh up --cilium). The node container is privileged,
+// so its /proc/sys is writable and reaches the host's global sysctls, and
+// Cilium's agent writes some of them at start (kernel.timer_migration=0 and
+// kernel.unprivileged_bpf_disabled=1; the second cannot be undone without a
+// reboot). Before starting k3s, warden-node-init makes /proc/sys read-only,
+// except /proc/sys/net, which belongs to the node's own network namespace.
+// Pods that mount /proc/sys/kernel or /proc/sys/net from the node (Cilium's
+// agent does) get the same view. It refuses to start k3s if the check fails.
+package main
+
+import (
+	"fmt"
+	"os"
+
+	"golang.org/x/sys/unix"
+)
+
+func fail(format string, args ...any) {
+	fmt.Fprintf(os.Stderr, "warden-node-init: "+format+"\n", args...)
+	os.Exit(1)
+}
+
+func main() {
+	// First, as kind's node entrypoint does, make every mount shared:
+	// Cilium mounts bpffs with Bidirectional propagation, which kubelet
+	// refuses on a private /sys. Docker created the node's mounts private,
+	// so this makes new peer groups inside the node; nothing propagates to
+	// or from the host.
+	// Then keep /proc/sys/net a separate (writable) mount, copy the tree onto
+	// itself, and make the top of the copy read-only. MS_REMOUNT|MS_BIND
+	// changes only that one mount, so the net submount stays writable.
+	steps := []struct {
+		src, dst string
+		flags    uintptr
+	}{
+		{"", "/", unix.MS_REC | unix.MS_SHARED},
+		{"/proc/sys/net", "/proc/sys/net", unix.MS_BIND},
+		{"/proc/sys", "/proc/sys", unix.MS_BIND | unix.MS_REC},
+		{"", "/proc/sys", unix.MS_BIND | unix.MS_REMOUNT | unix.MS_RDONLY | unix.MS_NOSUID | unix.MS_NODEV | unix.MS_NOEXEC},
+	}
+	for _, s := range steps {
+		if err := unix.Mount(s.src, s.dst, "", s.flags, ""); err != nil {
+			fail("mount %s: %v", s.dst, err)
+		}
+	}
+	for _, p := range []string{"/proc/sys/kernel/timer_migration", "/proc/sys/kernel/unprivileged_bpf_disabled", "/proc/sys/vm/overcommit_memory"} {
+		if err := unix.Access(p, unix.W_OK); err != unix.EROFS {
+			fail("%s is not read-only (access: %v)", p, err)
+		}
+	}
+	if err := unix.Access("/proc/sys/net/ipv4/conf/all/forwarding", unix.W_OK); err != nil {
+		fail("/proc/sys/net is not writable: %v", err)
+	}
+	argv := append([]string{"/bin/k3s"}, os.Args[1:]...)
+	fail("exec k3s: %v", unix.Exec(argv[0], argv, os.Environ()))
+}

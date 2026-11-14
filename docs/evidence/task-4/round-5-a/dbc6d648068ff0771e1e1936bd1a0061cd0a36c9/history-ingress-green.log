@@ -1,0 +1,6 @@
+test_restore_package_embeds_exact_inventory_as_fixed_immutable_file (test_firecracker_recovery_init.InventoryFixture.test_restore_package_embeds_exact_inventory_as_fixed_immutable_file) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.012s
+
+OK

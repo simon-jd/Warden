@@ -1,0 +1,14 @@
+scripts/k3s_gvisor_lab.sh env \
+	env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS='-mod=readonly -buildvcs=false' GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/t WARDEN_LIVE_IDENTITY=1 IDENTITY_OUT=/tmp/warden-t7/red.jsonl /home/postedism/Desktop/Warden-task3/.tools/go/bin/go test -count=1 -v -timeout 10m -run '^(TestControlPlaneTokenIsShortLived|TestSandboxSAHasNoBindings)$' ./runtimes/conformance
+=== RUN   TestControlPlaneTokenIsShortLived
+    identity_test.go:518: result: {"aud":["https://kubernetes.default.svc.cluster.local","k3s"],"bound_to_pod":true,"iss":"https://kubernetes.default.svc.cluster.local","lifetime_s":31536000,"path":"token","requested_audience":"","requested_expiration_s":3607,"sub":"system:serviceaccount:warden-system:warden-controlplane","test":"TestControlPlaneTokenIsShortLived","token_review_authenticated":true,"token_review_user":"system:serviceaccount:warden-system:warden-controlplane","volume":"kube-api-access-qr8ht"}
+    identity_test.go:524: kube-api-access-qr8ht: token lives 31536000 s (exp - iat), want <= 3600
+--- FAIL: TestControlPlaneTokenIsShortLived (11.67s)
+=== RUN   TestSandboxSAHasNoBindings
+    identity_test.go:640: bindings reach the sandbox accounts: ["system:service-account-issuer-discovery -> ClusterRole system:service-account-issuer-discovery (Group /system:serviceaccounts)"]
+    identity_test.go:690: planted binding not reported by both checks: context deadline exceeded
+--- FAIL: TestSandboxSAHasNoBindings (180.00s)
+FAIL
+FAIL	warden/runtimes/conformance	191.681s
+FAIL
+make: *** [Makefile:167: test-identity] Error 1

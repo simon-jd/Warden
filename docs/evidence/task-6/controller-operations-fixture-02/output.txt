@@ -1,0 +1,645 @@
+test_absent_admission_refuses_without_source_import (test_identity_cache_control.ControllerTests.test_absent_admission_refuses_without_source_import) ... ERROR
+test_capture_has_fixed_callable (test_identity_cache_control.ControllerTests.test_capture_has_fixed_callable) ... ok
+test_capture_parent_fsync_fault_never_calls_function (test_identity_cache_control.ControllerTests.test_capture_parent_fsync_fault_never_calls_function) ... ERROR
+test_capture_phase_budget_counts_preparation_time (test_identity_cache_control.ControllerTests.test_capture_phase_budget_counts_preparation_time) ... ERROR
+test_delayed_popen_does_not_restart_budget (test_identity_cache_control.ControllerTests.test_delayed_popen_does_not_restart_budget) ... ok
+test_distinct_probe_lock_holds_and_no_automatic_operation (test_identity_cache_control.ControllerTests.test_distinct_probe_lock_holds_and_no_automatic_operation) ... ERROR
+test_docker_adapter_restores_only_cli (test_identity_cache_control.ControllerTests.test_docker_adapter_restores_only_cli) ... ok
+test_docker_inspect_requires_id_from_its_scoped_listing (test_identity_cache_control.ControllerTests.test_docker_inspect_requires_id_from_its_scoped_listing) ... ok
+test_docker_only_project_scoped_readonly_commands (test_identity_cache_control.ControllerTests.test_docker_only_project_scoped_readonly_commands) ... ok
+test_duplicate_json_refused (test_identity_cache_control.ControllerTests.test_duplicate_json_refused) ... ok
+test_exact_source_set_and_hash_required (test_identity_cache_control.ControllerTests.test_exact_source_set_and_hash_required) ... FAIL
+test_existing_launch_prevents_retry (test_identity_cache_control.ControllerTests.test_existing_launch_prevents_retry) ... ERROR
+test_fixed_operation_budgets (test_identity_cache_control.ControllerTests.test_fixed_operation_budgets) ... ok
+test_inprocess_capture_durable_launch_before_function_and_no_approval (test_identity_cache_control.ControllerTests.test_inprocess_capture_durable_launch_before_function_and_no_approval) ... ERROR
+test_invoker_source_is_required_and_pinned (test_identity_cache_control.ControllerTests.test_invoker_source_is_required_and_pinned) ... FAIL
+test_launch_altered_during_file_fsync_refuses (test_identity_cache_control.ControllerTests.test_launch_altered_during_file_fsync_refuses) ... FAIL
+test_launch_altered_during_parent_fsync_refuses (test_identity_cache_control.ControllerTests.test_launch_altered_during_parent_fsync_refuses) ... FAIL
+test_launch_replaced_during_file_fsync_refuses (test_identity_cache_control.ControllerTests.test_launch_replaced_during_file_fsync_refuses) ... FAIL
+test_launch_replaced_during_parent_fsync_refuses (test_identity_cache_control.ControllerTests.test_launch_replaced_during_parent_fsync_refuses) ... FAIL
+test_log_at_limit_is_not_overflow (test_identity_cache_control.ControllerTests.test_log_at_limit_is_not_overflow) ... ok
+test_log_over_limit_is_bounded_and_not_success (test_identity_cache_control.ControllerTests.test_log_over_limit_is_bounded_and_not_success) ... ok
+test_maintenance_production_approval_pins_are_absent (test_identity_cache_control.ControllerTests.test_maintenance_production_approval_pins_are_absent) ... ok
+test_no_launch_after_run_cutoff (test_identity_cache_control.ControllerTests.test_no_launch_after_run_cutoff) ... ok
+test_no_signal_after_observed_terminal (test_identity_cache_control.ControllerTests.test_no_signal_after_observed_terminal) ... ok
+test_nonzero_known_terminal_is_not_success (test_identity_cache_control.ControllerTests.test_nonzero_known_terminal_is_not_success) ... ERROR
+test_observer_rejects_unknown_mode_before_controller (test_identity_cache_control.ControllerTests.test_observer_rejects_unknown_mode_before_controller) ... ok
+test_outer_deadline_includes_interpreter_startup (test_identity_cache_control.ControllerTests.test_outer_deadline_includes_interpreter_startup) ... ERROR
+test_outer_receipt_hash_mismatch_refused (test_identity_cache_control.ControllerTests.test_outer_receipt_hash_mismatch_refused) ... ERROR
+test_outer_result_required_before_private_or_guard (test_identity_cache_control.ControllerTests.test_outer_result_required_before_private_or_guard) ... ERROR
+test_outer_unknown_child_refused (test_identity_cache_control.ControllerTests.test_outer_unknown_child_refused) ... ERROR
+test_owned_child_absolute_term_kill_and_unknown (test_identity_cache_control.ControllerTests.test_owned_child_absolute_term_kill_and_unknown) ... ok
+test_owned_child_normal_stream_and_exact_spawn_options (test_identity_cache_control.ControllerTests.test_owned_child_normal_stream_and_exact_spawn_options) ... ok
+test_policy_and_numeric_types_are_exact (test_identity_cache_control.ControllerTests.test_policy_and_numeric_types_are_exact) ... FAIL
+test_postflight_sibling_change_refused_without_completion_record (test_identity_cache_control.ControllerTests.test_postflight_sibling_change_refused_without_completion_record) ... ERROR
+test_preprobe_boolean_clock_refused (test_identity_cache_control.ControllerTests.test_preprobe_boolean_clock_refused) ... ERROR
+test_preprobe_future_age_refused (test_identity_cache_control.ControllerTests.test_preprobe_future_age_refused) ... ERROR
+test_preprobe_other_boot_refused (test_identity_cache_control.ControllerTests.test_preprobe_other_boot_refused) ... ERROR
+test_preprobe_stale_refused (test_identity_cache_control.ControllerTests.test_preprobe_stale_refused) ... ERROR
+test_public_write_fsync_failure_retains_partial (test_identity_cache_control.ControllerTests.test_public_write_fsync_failure_retains_partial) ... ERROR
+test_receipt_cannot_be_written_after_whole_deadline (test_identity_cache_control.ControllerTests.test_receipt_cannot_be_written_after_whole_deadline) ... ERROR
+test_record_symlink_or_multilink_is_refused (test_identity_cache_control.ControllerTests.test_record_symlink_or_multilink_is_refused) ... ok
+test_source_changed_is_refused (test_identity_cache_control.ControllerTests.test_source_changed_is_refused) ... FAIL
+test_source_replacement_after_prepare_blocks_launch (test_identity_cache_control.ControllerTests.test_source_replacement_after_prepare_blocks_launch) ... ERROR
+test_spawn_exception_is_unknown_and_not_retried (test_identity_cache_control.ControllerTests.test_spawn_exception_is_unknown_and_not_retried) ... ok
+
+======================================================================
+ERROR: test_absent_admission_refuses_without_source_import (test_identity_cache_control.ControllerTests.test_absent_admission_refuses_without_source_import)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 162, in test_absent_admission_refuses_without_source_import
+    control.Controller('capture', self.deadline)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_capture_parent_fsync_fault_never_calls_function (test_identity_cache_control.ControllerTests.test_capture_parent_fsync_fault_never_calls_function)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 468, in test_capture_parent_fsync_fault_never_calls_function
+    c, events = self.fake_capture_controller()
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 436, in fake_capture_controller
+    c = self.controller()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_capture_phase_budget_counts_preparation_time (test_identity_cache_control.ControllerTests.test_capture_phase_budget_counts_preparation_time)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 460, in test_capture_phase_budget_counts_preparation_time
+    c, events = self.fake_capture_controller()
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 436, in fake_capture_controller
+    c = self.controller()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_distinct_probe_lock_holds_and_no_automatic_operation (test_identity_cache_control.ControllerTests.test_distinct_probe_lock_holds_and_no_automatic_operation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 481, in test_distinct_probe_lock_holds_and_no_automatic_operation
+    c = self.controller()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_existing_launch_prevents_retry (test_identity_cache_control.ControllerTests.test_existing_launch_prevents_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 228, in test_existing_launch_prevents_retry
+    c = self.controller()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_inprocess_capture_durable_launch_before_function_and_no_approval (test_identity_cache_control.ControllerTests.test_inprocess_capture_durable_launch_before_function_and_no_approval)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 449, in test_inprocess_capture_durable_launch_before_function_and_no_approval
+    c, events = self.fake_capture_controller()
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 436, in fake_capture_controller
+    c = self.controller()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_nonzero_known_terminal_is_not_success (test_identity_cache_control.ControllerTests.test_nonzero_known_terminal_is_not_success)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 323, in test_nonzero_known_terminal_is_not_success
+    c = self.controller('continue')
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_outer_deadline_includes_interpreter_startup (test_identity_cache_control.ControllerTests.test_outer_deadline_includes_interpreter_startup)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 315, in test_outer_deadline_includes_interpreter_startup
+    c = self.controller()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_outer_receipt_hash_mismatch_refused (test_identity_cache_control.ControllerTests.test_outer_receipt_hash_mismatch_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 299, in test_outer_receipt_hash_mismatch_refused
+    c = self.controller()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_outer_result_required_before_private_or_guard (test_identity_cache_control.ControllerTests.test_outer_result_required_before_private_or_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 289, in test_outer_result_required_before_private_or_guard
+    c = self.controller()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_outer_unknown_child_refused (test_identity_cache_control.ControllerTests.test_outer_unknown_child_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 307, in test_outer_unknown_child_refused
+    c = self.controller('continue')
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_postflight_sibling_change_refused_without_completion_record (test_identity_cache_control.ControllerTests.test_postflight_sibling_change_refused_without_completion_record)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 505, in test_postflight_sibling_change_refused_without_completion_record
+    c = self.controller()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_preprobe_boolean_clock_refused (test_identity_cache_control.ControllerTests.test_preprobe_boolean_clock_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 222, in test_preprobe_boolean_clock_refused
+    c = self.controller()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_preprobe_future_age_refused (test_identity_cache_control.ControllerTests.test_preprobe_future_age_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 203, in test_preprobe_future_age_refused
+    c = self.controller()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_preprobe_other_boot_refused (test_identity_cache_control.ControllerTests.test_preprobe_other_boot_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 215, in test_preprobe_other_boot_refused
+    c = self.controller()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_preprobe_stale_refused (test_identity_cache_control.ControllerTests.test_preprobe_stale_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 209, in test_preprobe_stale_refused
+    c = self.controller()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_public_write_fsync_failure_retains_partial (test_identity_cache_control.ControllerTests.test_public_write_fsync_failure_retains_partial)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 274, in test_public_write_fsync_failure_retains_partial
+    control.durable('capture-launch.json', {'fixture': 'value'})
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 162, in durable
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_receipt_cannot_be_written_after_whole_deadline (test_identity_cache_control.ControllerTests.test_receipt_cannot_be_written_after_whole_deadline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 395, in test_receipt_cannot_be_written_after_whole_deadline
+    c = self.controller()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+ERROR: test_source_replacement_after_prepare_blocks_launch (test_identity_cache_control.ControllerTests.test_source_replacement_after_prepare_blocks_launch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 280, in test_source_replacement_after_prepare_blocks_launch
+    c = self.controller()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 95, in controller
+    c = control.Controller(stage, self.deadline)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 425, in __init__
+    self.admission_record = self.public(stage + '-admission.json')
+                            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 451, in public
+    record = read(ROOT / PUBLIC / (PREFIX + suffix))
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 124, in read
+    parent = directory(path.parent)
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 102, in directory
+    require(info.st_uid in (0, 1000) and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            (not info.st_mode & 0o022 or info.st_uid == 0 and info.st_mode & stat.S_ISVTX),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            'untrusted_ancestor')
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 51, in require
+    raise ValueError(reason)
+ValueError: untrusted_ancestor
+
+======================================================================
+FAIL: test_exact_source_set_and_hash_required (test_identity_cache_control.ControllerTests.test_exact_source_set_and_hash_required)
+----------------------------------------------------------------------
+ValueError: untrusted_ancestor
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 166, in test_exact_source_set_and_hash_required
+    with self.assertRaisesRegex(ValueError, 'canonical_source_names'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "canonical_source_names" does not match "untrusted_ancestor"
+
+======================================================================
+FAIL: test_invoker_source_is_required_and_pinned (test_identity_cache_control.ControllerTests.test_invoker_source_is_required_and_pinned)
+----------------------------------------------------------------------
+ValueError: untrusted_ancestor
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 178, in test_invoker_source_is_required_and_pinned
+    with self.assertRaisesRegex(ValueError, 'outer_invoker_hash'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "outer_invoker_hash" does not match "untrusted_ancestor"
+
+======================================================================
+FAIL: test_launch_altered_during_file_fsync_refuses (test_identity_cache_control.ControllerTests.test_launch_altered_during_file_fsync_refuses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 263, in test_launch_altered_during_file_fsync_refuses
+    self.journal_change('file', False)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 255, in journal_change
+    self.assertTrue(injected)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^
+AssertionError: {} is not true
+
+======================================================================
+FAIL: test_launch_altered_during_parent_fsync_refuses (test_identity_cache_control.ControllerTests.test_launch_altered_during_parent_fsync_refuses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 269, in test_launch_altered_during_parent_fsync_refuses
+    self.journal_change('parent', False)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 255, in journal_change
+    self.assertTrue(injected)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^
+AssertionError: {} is not true
+
+======================================================================
+FAIL: test_launch_replaced_during_file_fsync_refuses (test_identity_cache_control.ControllerTests.test_launch_replaced_during_file_fsync_refuses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 260, in test_launch_replaced_during_file_fsync_refuses
+    self.journal_change('file', True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 255, in journal_change
+    self.assertTrue(injected)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^
+AssertionError: {} is not true
+
+======================================================================
+FAIL: test_launch_replaced_during_parent_fsync_refuses (test_identity_cache_control.ControllerTests.test_launch_replaced_during_parent_fsync_refuses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 266, in test_launch_replaced_during_parent_fsync_refuses
+    self.journal_change('parent', True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 255, in journal_change
+    self.assertTrue(injected)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^
+AssertionError: {} is not true
+
+======================================================================
+FAIL: test_policy_and_numeric_types_are_exact (test_identity_cache_control.ControllerTests.test_policy_and_numeric_types_are_exact)
+----------------------------------------------------------------------
+ValueError: untrusted_ancestor
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 183, in test_policy_and_numeric_types_are_exact
+    with self.assertRaisesRegex(ValueError, 'admission_identity'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "admission_identity" does not match "untrusted_ancestor"
+
+======================================================================
+FAIL: test_source_changed_is_refused (test_identity_cache_control.ControllerTests.test_source_changed_is_refused)
+----------------------------------------------------------------------
+ValueError: untrusted_ancestor
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache_control.py", line 172, in test_source_changed_is_refused
+    with self.assertRaisesRegex(ValueError, 'source_hash_mismatch'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "source_hash_mismatch" does not match "untrusted_ancestor"
+
+----------------------------------------------------------------------
+Ran 44 tests in 0.148s
+
+FAILED (failures=8, errors=19)

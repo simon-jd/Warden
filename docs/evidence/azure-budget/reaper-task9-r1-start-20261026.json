@@ -1,0 +1,21 @@
+{
+  "request": {
+    "cmd": "bash scripts/azure_reaper.sh",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "workdir": "/home/postedism/Desktop/Warden",
+    "sandbox_permissions": "require_escalated",
+    "max_output_tokens": 2000,
+    "yield_time_ms": 1000,
+    "justification": "Required Warden start reaper for originalTask9 affected FIX1 tests, exact original command/actor/normalapproval path. Trusted unchanged scripts match committed source (wrapper SHA8334c343107c59ef2db2f59b508e2caee6dca3647db8d63ebc10fe0ecc5671d6; guard SHA303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48). Fixed subscription <subscription-id>, only rg-warden-lab; validates exact resource IDs, project/owner/TTL and re-reads exact tags before deleting expired own resources. rg-mlinfra-westus cannot be targeted. Prior initial scope denial and same-original-path trusted-scope reconsideration are preserved in docs/evidence/azure-budget/reaper-task9-first-green-start-rejection-20261026.json; last endreaper6b01f7 at08:39:11Z known0 RGabsent, no Azure creation since. Not an alternate entry/retry of any newly rejected action. If any new explicit rejection stop this action/report original text, no bypass."
+  },
+  "native": {
+    "chunk_id": "851e76",
+    "wall_time_seconds": 0.983099059,
+    "exit_code": 0,
+    "original_token_count": 37,
+    "output": "{\"at\": \"2026-10-26T08:48:24Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+  },
+  "note": "Original normal route, fixed only rg-warden-lab/TTL; no Azure created, UNKNOWN/Q preserved; prior rejection kept in original record."
+}

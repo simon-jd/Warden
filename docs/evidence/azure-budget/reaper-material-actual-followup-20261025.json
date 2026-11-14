@@ -1,0 +1,30 @@
+{
+  "scope": "checkpoint only; not final session-end check",
+  "request": {
+    "cmd": "bash scripts/azure_reaper.sh",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "sandbox_permissions": "require_escalated",
+    "justification": "按既有预算规则运行固定Warden reaper，只检查/清理本项目rg-warden-lab到期资源，禁止触碰rg-mlinfra-westus。",
+    "yield_time_ms": 1000,
+    "max_output_tokens": 2000
+  },
+  "initial": {
+    "chunk_id": "43fb5f",
+    "wall_time_seconds": 0.900382335,
+    "exit_code": 0,
+    "original_token_count": 37,
+    "output": "{\"at\": \"2026-10-25T18:20:30Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+  },
+  "final": {
+    "chunk_id": "43fb5f",
+    "wall_time_seconds": 0.900382335,
+    "exit_code": 0,
+    "original_token_count": 37,
+    "output": "{\"at\": \"2026-10-25T18:20:30Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+  },
+  "commitments_usd": "0.00",
+  "bill_measured": false
+}

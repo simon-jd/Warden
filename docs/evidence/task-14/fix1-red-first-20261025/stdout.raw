@@ -1,0 +1,11 @@
+=== RUN   TestJournalCreationDurabilityBeforeClient
+=== RUN   TestJournalCreationDurabilityBeforeClient/failure
+    ledger_test.go:459: FIX1_RED_REQUIRED existing-path directory sync failure must block intent/client: result={Status:Unknown NoOp:false ApprovalNeeded:false Resource:{Type:tenant ID:tenant-a}} err=response outcome unknown; automatic retry suppressed syncs=0 mutations=1
+=== RUN   TestJournalCreationDurabilityBeforeClient/success
+    ledger_test.go:466: FIX1_RED_REQUIRED successful existing-path directory sync must precede intent/client: result={Status:Unknown NoOp:false ApprovalNeeded:false Resource:{Type:tenant ID:tenant-a}} err=response outcome unknown; automatic retry suppressed syncs=0 synced=false mutations=1
+--- FAIL: TestJournalCreationDurabilityBeforeClient (0.04s)
+    --- FAIL: TestJournalCreationDurabilityBeforeClient/failure (0.02s)
+    --- FAIL: TestJournalCreationDurabilityBeforeClient/success (0.02s)
+FAIL
+FAIL	warden/respond	0.039s
+FAIL

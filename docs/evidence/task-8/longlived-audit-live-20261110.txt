@@ -1,0 +1,72 @@
+# Task 8 TestNoLongLivedKeys, live and read-only, plus the warden-lab-keyprobe check (2026-11-10 PST = 2026-11-11 UTC)
+# Host home-ubuntu; azure-cli 2.91.0; subscription Azure for Students (<subscription-id>), tenant <tenant-id>.
+# Scope: az ad app list --show-mine --all (Graph /me/ownedObjects, nextLink followed) + az storage account list (subscription).
+# The secret value was never printed: addPassword output went through --query keyId/startDateTime/endDateTime.
+# Redacted 2026-11-12: another project's identifiers -> placeholders (<other-project-app>, <other-project-app-2>, <other-project-app-id>, <other-project-app-object-id>, <other-project-key>, <other-project>, <other-project-owner>, <other-project-storage>); counts and structure unchanged.
+
+### 2026-11-10 20:27:33 local: scripts/longlived_keys_audit.sh (no --project; whole scope) -> exit 1
+{"now": "2026-11-11T04:27:33.492864+00:00", "apps_scanned": 1, "storage_accounts_scanned": 1, "long_lived_count": 2, "expired_ignored": 0}
+   {"kind": "app_client_secret", "app": "<other-project-app>", "app_id": "<other-project-app-id>", "key_id": "<other-project-key>", "expires": "2026-12-31T00:00:00Z", "lifetime_days": 51, "owner_project": "<other-project>", "counted": true}
+   {"kind": "storage_shared_key", "account": "<other-project-storage>", "resource_group": "rg-mlinfra-westus", "owner_project": null, "counted": true}
+
+# Task 8 keyprobe, 2026-11-11T04:27:42.494Z, az 
+### 2026-11-11T04:27:43.793Z scripts/longlived_keys_audit.sh --project warden  (1-baseline) -> exit 0
+{"apps_scanned": 1, "storage_accounts_scanned": 1, "long_lived_count": 2, "project_long_lived_count": 0, "expired_ignored": 0}
+   {"kind": "app_client_secret", "app": "<other-project-app>", "app_id": "<other-project-app-id>", "key_id": "<other-project-key>", "expires": "2026-12-31T00:00:00Z", "lifetime_days": 51, "owner_project": "<other-project>", "counted": false}
+   {"kind": "storage_shared_key", "account": "<other-project-storage>", "resource_group": "rg-mlinfra-westus", "owner_project": null, "counted": false}
+### 2026-11-11T04:27:43.813Z az rest POST /v1.0/applications {"displayName":"warden-lab-keyprobe","signInAudience":"AzureADMyOrg","tags":["project=warden","owner=codex-warden","ttl=2026-11-11T07:27:42Z","est_usd_per_hour=0"]}
+{
+  "appId": "00000000-0000-0000-0000-000000000004",
+  "createdDateTime": "2026-11-11T04:27:44.1378366Z",
+  "displayName": "warden-lab-keyprobe",
+  "id": "00000000-0000-0000-0000-000000000005",
+  "passwordCredentials": [],
+  "tags": [
+    "project=warden",
+    "owner=codex-warden",
+    "ttl=2026-11-11T07:27:42Z",
+    "est_usd_per_hour=0"
+  ]
+}
+### 2026-11-11T04:27:45.217Z visible in az ad app list --show-mine (try 1, 2 s apart)
+### 2026-11-11T04:27:45.219Z az rest POST /v1.0/applications/00000000-0000-0000-0000-000000000005/addPassword (no endDateTime: Graph default lifetime) --query keyId,startDateTime,endDateTime
+{
+  "displayName": "warden-lab-keyprobe long-lived secret",
+  "endDateTime": "2028-11-11T04:27:45.5257102Z",
+  "keyId": "00000000-0000-0000-0000-000000000006",
+  "startDateTime": "2026-11-11T04:27:45.5257102Z"
+}
+### 2026-11-11T04:27:46.282Z secret visible through --show-mine (try 1)
+### 2026-11-11T04:27:47.599Z scripts/longlived_keys_audit.sh --project warden  (2-with-secret) -> exit 1
+{"apps_scanned": 2, "storage_accounts_scanned": 1, "long_lived_count": 3, "project_long_lived_count": 1, "expired_ignored": 0}
+   {"kind": "app_client_secret", "app": "<other-project-app>", "app_id": "<other-project-app-id>", "key_id": "<other-project-key>", "expires": "2026-12-31T00:00:00Z", "lifetime_days": 51, "owner_project": "<other-project>", "counted": false}
+   {"kind": "app_client_secret", "app": "warden-lab-keyprobe", "app_id": "00000000-0000-0000-0000-000000000004", "key_id": "00000000-0000-0000-0000-000000000006", "expires": "2028-11-11T04:27:45.5257102Z", "lifetime_days": 731, "owner_project": "warden", "counted": true}
+   {"kind": "storage_shared_key", "account": "<other-project-storage>", "resource_group": "rg-mlinfra-westus", "owner_project": null, "counted": false}
+### 2026-11-11T04:27:47.611Z az ad app delete --id 00000000-0000-0000-0000-000000000005
+### 2026-11-11T04:27:48.274Z delete returned 0
+### 2026-11-11T04:27:48.688Z gone from --show-mine (try 1)
+### 2026-11-11T04:27:48.690Z az ad app show --id 00000000-0000-0000-0000-000000000005
+ERROR: Resource '00000000-0000-0000-0000-000000000005' does not exist or one of its queried reference-property objects are not present.
+### 2026-11-11T04:27:49.281Z GET /v1.0/directory/deletedItems/00000000-0000-0000-0000-000000000005
+{
+  "deletedDateTime": "2026-11-11T04:27:48Z",
+  "displayName": "warden-lab-keyprobe",
+  "id": "00000000-0000-0000-0000-000000000005",
+  "type": "#microsoft.graph.application"
+}
+### 2026-11-11T04:27:51.320Z scripts/longlived_keys_audit.sh --project warden  (3-after-delete) -> exit 0
+{"apps_scanned": 1, "storage_accounts_scanned": 1, "long_lived_count": 2, "project_long_lived_count": 0, "expired_ignored": 0}
+   {"kind": "app_client_secret", "app": "<other-project-app>", "app_id": "<other-project-app-id>", "key_id": "<other-project-key>", "expires": "2026-12-31T00:00:00Z", "lifetime_days": 51, "owner_project": "<other-project>", "counted": false}
+   {"kind": "storage_shared_key", "account": "<other-project-storage>", "resource_group": "rg-mlinfra-westus", "owner_project": null, "counted": false}
+### 2026-11-11T04:27:51.463Z az ad app list --show-mine (names and tags only)
+[
+  {
+    "displayName": "<other-project-app>",
+    "id": "<other-project-app-object-id>",
+    "tags": [
+      "ttl=project-end",
+      "owner=<other-project-owner>",
+      "project=<other-project>"
+    ]
+  }
+]

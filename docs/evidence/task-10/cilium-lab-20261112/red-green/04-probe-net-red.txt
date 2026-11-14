@@ -1,0 +1,29 @@
+# RED: guest net/stream probes, test file only, guest code at HEAD
+# head 55fe50c, 2026-11-12T19:52:45-08:00
+# git status --short:
+#    M runtimes/gvisor/lab/node/Dockerfile
+#    M scripts/k3s_gvisor_lab.sh
+#    M scripts/restore-tools.sh
+#   ?? docs/evidence/task-10/cilium-lab-20261112/red-green/04-probe-net-green.txt
+#   ?? docs/evidence/task-10/cilium-lab-20261112/red-green/04-probe-net-red.txt
+#   ?? runtimes/conformance/guest/net_test.go
+#   ?? runtimes/gvisor/lab/cilium/config-v3.toml.tmpl
+#   ?? runtimes/gvisor/lab/cilium/coredns.yaml
+#   ?? runtimes/gvisor/lab/cilium/runsc-netstack.toml
+#   ?? runtimes/gvisor/lab/cilium/values.yaml
+# go test ./runtimes/conformance/guest/
+# warden/runtimes/conformance/guest [warden/runtimes/conformance/guest.test]
+runtimes/conformance/guest/net_test.go:18:46: undefined: netResult
+runtimes/conformance/guest/net_test.go:21:2: undefined: netMain
+runtimes/conformance/guest/net_test.go:22:12: undefined: netResult
+runtimes/conformance/guest/net_test.go:24:9: undefined: netResult
+runtimes/conformance/guest/net_test.go:216:94: undefined: netTimeout
+runtimes/conformance/guest/net_test.go:223:13: undefined: dnsServer
+runtimes/conformance/guest/net_test.go:230:9: undefined: nameserver
+runtimes/conformance/guest/net_test.go:234:12: undefined: nameserver
+runtimes/conformance/guest/net_test.go:301:23: undefined: stream
+runtimes/conformance/guest/net_test.go:330:9: undefined: stream
+runtimes/conformance/guest/net_test.go:330:9: too many errors
+FAIL	warden/runtimes/conformance/guest [build failed]
+FAIL
+exit=1

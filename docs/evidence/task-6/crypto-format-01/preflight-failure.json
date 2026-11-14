@@ -1,0 +1,1 @@
+{"stage":"additional ancestor trust check before material read","outcome":"rejected by unchanged shared trusted_directory: directory writable by untrusted group or other","gofmt_executed":false,"source_modified":false,"record_kind":"factual note from tool result, not a reconstructed command log"}

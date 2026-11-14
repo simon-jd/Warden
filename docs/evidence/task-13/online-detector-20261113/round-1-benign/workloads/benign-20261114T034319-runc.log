@@ -1,0 +1,55 @@
+$ /usr/bin/taskset -c 0-7,16-31 /usr/bin/python3 -B scripts/runtime_lab_docker.py run --other-service-memory-bytes 1610612736
+local Docker daemon: postedism-ubuntu-system-selfuse 29.9.3 systemd
+outstanding Docker allocation charge: 0
+{"additional_bytes": "3929348698", "at": "2026-11-14T03:43:20Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 118871715840, "project_allocated_bytes": 2882826240, "service_memory_bytes": "5610612736"}
+owned image: sha256:8ae1a0aeda5350a09a39356957e9afa3e48234a1eaf3b70835fdaee35c1ca07d
+owned container: 33f2b22f6c5592582f56ef788eba9a937afc20f1b4158e9f8a70aecdd5dbec48
+containerd containerd v2.4.2 b7a25261e029d68978bbf290df0a62fc819b3c51
+ctr containerd v2.4.2
+containerd-shim-runc-v2:
+  Version:  v2.4.2
+  Revision: b7a25261e029d68978bbf290df0a62fc819b3c51
+  Go version: go1.27.3
+
+runc version 1.5.2
+commit: v1.5.2-0-g29dd3dc2
+spec: 1.3.0
+go: go1.27.3
+libseccomp: 2.6.0
+Python: 3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]
+libseccomp: 7
+verified private outer cgroup limits: {"memory": "3999997952", "pids": "512", "cpu": "200000 100000"}
+warden lab/probe:conformance            	saved	
+application/vnd.oci.image.manifest.v1+json sha256:86f0ec5d0007557095db14cf120b055a2f12836139c9b415de7777cdcd03dbf9
+Importing	elapsed: 0.3 s	total:   0.0 B	(0.0 B/s)	
+=== RUN   TestConformance
+=== RUN   TestConformance/ForkBombCappedByPids
+    suite.go:61: real guest mode=fork exit={Code:0 LogsTruncated:false PidsMaxEvents:1 PeakPids:32 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS fork
+=== RUN   TestConformance/RootfsReadOnly
+    suite.go:61: real guest mode=readonly exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS readonly
+=== RUN   TestConformance/NoNetworkByDefault
+    suite.go:61: real guest mode=network exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS network
+=== RUN   TestConformance/RunsAsNonRoot
+    suite.go:61: real guest mode=uid exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS uid
+=== RUN   TestConformance/TimeoutKillsProcessGroup
+    suite.go:61: real guest mode=timeout exit={Code:137 LogsTruncated:false PidsMaxEvents:0 PeakPids:8 DroppedLogBytes:0 OOMKilled:false TimedOut:true CgroupEmpty:true} logs=READY timeout
+=== RUN   TestConformance/MemoryLimitOOMKilled
+    suite.go:61: real guest mode=oom exit={Code:137 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:true TimedOut:false CgroupEmpty:true} logs=READY oom
+=== RUN   TestConformance/SeccompBlocksMountAndPtrace
+    suite.go:61: real guest mode=seccomp exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS seccomp
+=== RUN   TestConformance/IsolationMatrix
+    lab.go:31: isolation matrix: set WARDEN_MATRIX_CORPUS and WARDEN_MATRIX_OUT to run it
+--- PASS: TestConformance (2.94s)
+    --- PASS: TestConformance/ForkBombCappedByPids (0.22s)
+    --- PASS: TestConformance/RootfsReadOnly (0.11s)
+    --- PASS: TestConformance/NoNetworkByDefault (0.11s)
+    --- PASS: TestConformance/RunsAsNonRoot (0.12s)
+    --- PASS: TestConformance/TimeoutKillsProcessGroup (2.12s)
+    --- PASS: TestConformance/MemoryLimitOOMKilled (0.14s)
+    --- PASS: TestConformance/SeccompBlocksMountAndPtrace (0.11s)
+    --- SKIP: TestConformance/IsolationMatrix (0.00s)
+PASS
+Dedicated session logs/config retained: /opt/warden/.cache/warden-lab/session-da6aa7a800284f39
+outer container removed: 33f2b22f6c5592582f56ef788eba9a937afc20f1b4158e9f8a70aecdd5dbec48
+owned image removed: sha256:8ae1a0aeda5350a09a39356957e9afa3e48234a1eaf3b70835fdaee35c1ca07d
+evidence directory: /home/postedism/Desktop/Warden-detect/.cache/warden-lab/docker-d773adee9440d661ba7d9826bb34f0f6

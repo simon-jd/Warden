@@ -1,0 +1,1 @@
+{"at": "2026-10-24T16:35:10Z", "event": "group-absent", "id": "/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab"}

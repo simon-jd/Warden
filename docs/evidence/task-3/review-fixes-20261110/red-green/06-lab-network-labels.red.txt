@@ -1,0 +1,51 @@
+# RED: scripts/test_k3s_gvisor_lab.py (network checks) against scripts/k3s_gvisor_lab.sh at c73cb7c (unchanged)
+# 2026-11-10T20:50:53-08:00
+test_down_leaves_a_container_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_leaves_a_container_that_is_not_wardens) ... ok
+test_down_leaves_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_leaves_a_network_that_is_not_wardens) ... FAIL
+test_down_removes_the_warden_lab (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_removes_the_warden_lab) ... ok
+test_up_refuses_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_refuses_a_network_that_is_not_wardens) ... 
+  test_up_refuses_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_refuses_a_network_that_is_not_wardens) (labels={}, internal=True) ... FAIL
+  test_up_refuses_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_refuses_a_network_that_is_not_wardens) (labels={'project': 'other'}, internal=True) ... FAIL
+  test_up_refuses_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_refuses_a_network_that_is_not_wardens) (labels={'project': 'warden'}, internal=False) ... FAIL
+
+======================================================================
+FAIL: test_down_leaves_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_leaves_a_network_that_is_not_wardens)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_k3s_gvisor_lab.py", line 251, in test_down_leaves_a_network_that_is_not_wardens
+    self.assertNotEqual(r.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_up_refuses_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_refuses_a_network_that_is_not_wardens) (labels={}, internal=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_k3s_gvisor_lab.py", line 241, in test_up_refuses_a_network_that_is_not_wardens
+    self.assertNotEqual(r.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_up_refuses_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_refuses_a_network_that_is_not_wardens) (labels={'project': 'other'}, internal=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_k3s_gvisor_lab.py", line 241, in test_up_refuses_a_network_that_is_not_wardens
+    self.assertNotEqual(r.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_up_refuses_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_refuses_a_network_that_is_not_wardens) (labels={'project': 'warden'}, internal=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_k3s_gvisor_lab.py", line 241, in test_up_refuses_a_network_that_is_not_wardens
+    self.assertNotEqual(r.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.920s
+
+FAILED (failures=4)
+exit: 1

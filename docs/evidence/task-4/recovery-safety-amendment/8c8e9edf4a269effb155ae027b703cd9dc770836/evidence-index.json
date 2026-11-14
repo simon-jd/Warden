@@ -1,0 +1,35 @@
+{
+  "source": "8c8e9edf4a269effb155ae027b703cd9dc770836",
+  "tested_source": "8c8e9edf4a269effb155ae027b703cd9dc770836",
+  "scope": "One conservative necessary-recovery cleanup/state safety amendment; native host fixtures only; no actual operations or additional boot authority",
+  "files": {
+    "README.md": {
+      "bytes": 6535,
+      "sha256": "82e35298053d50b7c88c10b710ab78bfef52ae20cdc0abd25d0417ff4a9b5670"
+    },
+    "history-pending-red.log": {
+      "bytes": 10004,
+      "sha256": "83dad69a7e235b7eb4790151c6843b06d9102f06c49a542f2d0315b5ce03f594"
+    },
+    "history-state-green.log": {
+      "bytes": 804,
+      "sha256": "e87fa719b01bcfdffacaa1532cf175ac8cd9c0e079dc28761330eb42dbe39576"
+    },
+    "python-tests.log": {
+      "bytes": 3474,
+      "sha256": "605b6db0adb04e9c4f1f557a908435403243033764ac7fc45bbff758e17771d4"
+    },
+    "source-verification.json": {
+      "bytes": 3999,
+      "sha256": "4e14e9f4f8814e31c0c81f83c4d01fb7464d3b7da136f52e67fa910636209800"
+    },
+    "source-verification.log": {
+      "bytes": 334,
+      "sha256": "0751ca91aee9c1782ff817dadccc3696d481d0fc3b169ab0c0aaf475566cfbd6"
+    },
+    "verify-command.py": {
+      "bytes": 3497,
+      "sha256": "fd1384f9d61abf313039ddb9f237022951205d9e8d6a93165e30b960cedb81b4"
+    }
+  }
+}

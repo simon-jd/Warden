@@ -1,0 +1,128 @@
+{
+  "utc": "2026-10-24T21:19:23.819042+00:00",
+  "source": "772136927eb6eb9576e473eef5f7b716b80696f6",
+  "phase": "mount-smoke",
+  "package": {
+    "build": {
+      "Export": {
+        "Bytes": 2909895,
+        "Files": 7,
+        "NormalizationPolicySHA": "c00b058f2d197febbd3063a4a14da0a43d9ceffae51add996aec7bb6bd1c575d",
+        "NormalizationVersion": "warden-fc-docker-export-v1",
+        "NormalizedSHA256": "e3eb7a2af46da0de90be326e35e4c5971a63eb8215e88b8db98c59b6c9b02e5a",
+        "Omitted": {
+          "GID": 0,
+          "Mode": 511,
+          "Name": "etc/mtab",
+          "PAXRecords": 0,
+          "Size": 0,
+          "Target": "/proc/mounts",
+          "Type": "symlink",
+          "UID": 0,
+          "Xattrs": 0
+        },
+        "SHA256": "bd6eba0afa315daf2a6a62e85ee548f2347cfd924eb4b5fa7f86960e8a26f5cf"
+      },
+      "Hashes": {
+        "agent.ext4": "47adf8345d7acc8c73e909c44f3c7a0f38350c36c0feffdd3ab5f2ce501222f2",
+        "debugfs": "be6904c094fb1ebd18c8282b3f872a4b9914e20e445a18b076282104d93cb3c6",
+        "mke2fs": "86706a8f295ffc70ff52d2510decc49c15e91144622b17d02916e50d37187c7c",
+        "payload.ext4": "44c7d73c2389de906eba52b120833027d8acb23ebf9d65242a8e8f090a0233a0"
+      }
+    },
+    "file_bytes": 118888505,
+    "manifest": {
+      "AgentSHA": "222565eccd02228349129a6c075477bc72ab185d341bc163fb875408468d02a4",
+      "Artifacts": {
+        "agent.ext4": "47adf8345d7acc8c73e909c44f3c7a0f38350c36c0feffdd3ab5f2ce501222f2",
+        "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+        "jailer": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+        "kernel": "da5e0041fb31fcc7337026da9e2b64fb7694b4eed760cc9b5e8fe54e52fa8188",
+        "payload.ext4": "44c7d73c2389de906eba52b120833027d8acb23ebf9d65242a8e8f090a0233a0"
+      },
+      "ExportSHA": "bd6eba0afa315daf2a6a62e85ee548f2347cfd924eb4b5fa7f86960e8a26f5cf",
+      "ImageDigest": "sha256:59dbe4a63aef784f9e6ebe07f8947307e44e1730499f170c1e6889c28f38c0d0",
+      "NormalizationPolicySHA": "c00b058f2d197febbd3063a4a14da0a43d9ceffae51add996aec7bb6bd1c575d",
+      "NormalizationVersion": "warden-fc-docker-export-v1",
+      "NormalizedExportSHA": "e3eb7a2af46da0de90be326e35e4c5971a63eb8215e88b8db98c59b6c9b02e5a",
+      "PolicySHA": "9fd201e13a02672c4000ed06b2188107486558a1ba6b61a2cb4924030091f5b7",
+      "SourceSHA": "772136927eb6eb9576e473eef5f7b716b80696f6",
+      "Version": 1
+    },
+    "provenance": {
+      "DiffID": "sha256:e912ab0b66e46058123eaa78d3310fbeb3dd4cdaeed3c593b0fab0a635a2df2c",
+      "DockerDescriptor": {
+        "annotations": {
+          "io.containerd.image.name": "docker.io/library/warden-fc-probe:313f30bcaf9668c39a8ce3279c20e3f1",
+          "org.opencontainers.image.ref.name": "313f30bcaf9668c39a8ce3279c20e3f1"
+        },
+        "digest": "sha256:c596c9ba6687fe39a570e9b8798c66e25a8ba4ff497b188b77e5e4285699d0df",
+        "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+        "size": 422
+      },
+      "DockerImageID": "sha256:c596c9ba6687fe39a570e9b8798c66e25a8ba4ff497b188b77e5e4285699d0df",
+      "ExportSHA": "bd6eba0afa315daf2a6a62e85ee548f2347cfd924eb4b5fa7f86960e8a26f5cf",
+      "ImageConfigID": "sha256:62b3a457037ff42bb84f0d73a4386d408dd137921bf4fdebcb6575e017831f9d",
+      "ImageDigest": "sha256:59dbe4a63aef784f9e6ebe07f8947307e44e1730499f170c1e6889c28f38c0d0",
+      "ProbeSHA": "2bfa38957a29777916f478fcd7950d070a669888c0e19302f0bf097f780b707c",
+      "never_started": true
+    },
+    "rootfs_cache_key": "9042e13d96de94260c105dc2dde392649abf73b5c4ac3608b8c47122925c1ded",
+    "source": "772136927eb6eb9576e473eef5f7b716b80696f6",
+    "tar_bytes": 118906880,
+    "tar_sha256": "a6f34a2f1d13698af3787cfd6cd3d48cc4997c659316c68c2bbea28e49f710bc"
+  },
+  "independently_verified_files": {
+    "agent.ext4": {
+      "bytes": 33554432,
+      "sha256": "47adf8345d7acc8c73e909c44f3c7a0f38350c36c0feffdd3ab5f2ce501222f2"
+    },
+    "firecracker": {
+      "bytes": 3676680,
+      "sha256": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5"
+    },
+    "firecracker.test": {
+      "bytes": 11872968,
+      "sha256": "cccd8903bc86d4ec660add9b8a47ff4adf109a3bb884dc0a796ca52f1e90529c"
+    },
+    "jailer": {
+      "bytes": 2243000,
+      "sha256": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f"
+    },
+    "kernel": {
+      "bytes": 27893008,
+      "sha256": "da5e0041fb31fcc7337026da9e2b64fb7694b4eed760cc9b5e8fe54e52fa8188"
+    },
+    "lab": {
+      "bytes": 6090086,
+      "sha256": "a1944cd69fdfdfd052f854bd7322c886f8e4059890e29eca530042cfaf4c121e"
+    },
+    "manifest.json": {
+      "bytes": 1034,
+      "sha256": "b61f7de96b878d592768578e4cc43ff648a87c21491e00fdf65004484ec43895"
+    },
+    "payload.ext4": {
+      "bytes": 33554432,
+      "sha256": "44c7d73c2389de906eba52b120833027d8acb23ebf9d65242a8e8f090a0233a0"
+    },
+    "provenance.json": {
+      "bytes": 2865,
+      "sha256": "9286db27d220f3804e6e90499af408ae13785aeb804f538a6221da3db1ea56b5"
+    }
+  },
+  "owned_images_all": [],
+  "owned_containers_all": [],
+  "outstanding_bytes": 0,
+  "max_import_allowance_bytes": 1088000000,
+  "prospective_outer_plus_host_allowance_bytes": 1256000000,
+  "preflight": {
+    "additional_bytes": "6088000000",
+    "at": "2026-10-24T21:19:23Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 271961792512,
+    "project_allocated_bytes": 3919912960,
+    "service_memory_bytes": "1256000000"
+  },
+  "vm_executed": false
+}

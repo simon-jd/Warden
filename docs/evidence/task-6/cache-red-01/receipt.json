@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "scripts/test_identity_cache.py"
+  ],
+  "exit_code": 1,
+  "duration_seconds": 0.07074594497680664,
+  "source_unchanged": true,
+  "source_files": 139,
+  "classification": "setup/import RED; implementation absent",
+  "fixture_only": true
+}

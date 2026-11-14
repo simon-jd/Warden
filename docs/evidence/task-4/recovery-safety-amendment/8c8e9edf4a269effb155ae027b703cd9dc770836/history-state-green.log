@@ -1,0 +1,9 @@
+test_malformed_or_inconsistent_state_refuses_read_and_cleanup (test_firecracker_recovery.CleanupStateTests.test_malformed_or_inconsistent_state_refuses_read_and_cleanup) ... ok
+test_pending_operations_never_settle_from_empty_or_known_lists (test_firecracker_recovery.CleanupStateTests.test_pending_operations_never_settle_from_empty_or_known_lists) ... ok
+test_pre_daemon_and_validated_terminal_cleanup_keep_original_charge (test_firecracker_recovery.CleanupStateTests.test_pre_daemon_and_validated_terminal_cleanup_keep_original_charge) ... ok
+test_pre_daemon_state_cannot_adopt_unexpected_objects (test_firecracker_recovery.CleanupStateTests.test_pre_daemon_state_cannot_adopt_unexpected_objects) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.022s
+
+OK

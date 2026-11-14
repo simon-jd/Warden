@@ -1,0 +1,68 @@
+$ /usr/bin/python3 -B -m unittest discover -s scripts -p test_runtime_lab_docker.py -v
+test_aggregate_memory_guard_stops_main_before_create_or_import (test_runtime_lab_docker.DockerLabTests.test_aggregate_memory_guard_stops_main_before_create_or_import) ... ok
+test_arbitrary_command_and_mount_syntax_injection_rejected (test_runtime_lab_docker.DockerLabTests.test_arbitrary_command_and_mount_syntax_injection_rejected) ... ok
+test_artifact_symlink_and_writable_owner_rejected (test_runtime_lab_docker.DockerLabTests.test_artifact_symlink_and_writable_owner_rejected) ... ok
+test_budget_guard_refusal_precedes_docker_mutation (test_runtime_lab_docker.DockerLabTests.test_budget_guard_refusal_precedes_docker_mutation) ... ok
+test_committed_create_with_lost_response_recovers_exact_owned_id (test_runtime_lab_docker.DockerLabTests.test_committed_create_with_lost_response_recovers_exact_owned_id) ... ok
+test_confirmed_image_cleanup_releases_charge_but_failed_removal_keeps_it (test_runtime_lab_docker.DockerLabTests.test_confirmed_image_cleanup_releases_charge_but_failed_removal_keeps_it) ... ok
+test_failed_image_import_cleans_committed_owned_image (test_runtime_lab_docker.DockerLabTests.test_failed_image_import_cleans_committed_owned_image) ... ok
+test_failed_import_charges_accumulate_and_block_retries_at_guard (test_runtime_lab_docker.DockerLabTests.test_failed_import_charges_accumulate_and_block_retries_at_guard) ... ok
+test_interrupt_cleans_exact_owned_id (test_runtime_lab_docker.DockerLabTests.test_interrupt_cleans_exact_owned_id) ... ok
+test_local_cli_ignores_remote_docker_environment (test_runtime_lab_docker.DockerLabTests.test_local_cli_ignores_remote_docker_environment) ... ok
+test_malformed_import_response_recovers_id_instead_of_using_it_as_selector (test_runtime_lab_docker.DockerLabTests.test_malformed_import_response_recovers_id_instead_of_using_it_as_selector) ... ok
+test_nonzero_exit_cleans_exact_owned_id (test_runtime_lab_docker.DockerLabTests.test_nonzero_exit_cleans_exact_owned_id) ... ok
+test_only_session_bind_and_fixed_command_with_private_namespaces_and_limits (test_runtime_lab_docker.DockerLabTests.test_only_session_bind_and_fixed_command_with_private_namespaces_and_limits) ... ok
+test_real_sigterm_reaches_owned_cleanup (test_runtime_lab_docker.DockerLabTests.test_real_sigterm_reaches_owned_cleanup) ... ok
+test_runc_and_api_account_untagged_owned_images_before_packaging (test_runtime_lab_docker.DockerLabTests.test_runc_and_api_account_untagged_owned_images_before_packaging) ... ok
+test_smoke_never_adds_capabilities_or_disables_security_profiles (test_runtime_lab_docker.DockerLabTests.test_smoke_never_adds_capabilities_or_disables_security_profiles) ... ok
+test_unknown_inspection_error_is_not_absence_or_cleanup_success (test_runtime_lab_docker.DockerLabTests.test_unknown_inspection_error_is_not_absence_or_cleanup_success) ... ok
+test_unowned_object_is_never_removed_or_started (test_runtime_lab_docker.DockerLabTests.test_unowned_object_is_never_removed_or_started) ... ok
+test_untagged_image_remaining_after_remove_keeps_charge (test_runtime_lab_docker.DockerLabTests.test_untagged_image_remaining_after_remove_keeps_charge) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 1.007s
+
+OK
+exit=0
+$ /usr/bin/python3 -B -m unittest discover -s scripts -p test_k3s_lab.py -v
+test_capless_smoke_does_not_bind_host_paths_or_grant_capabilities (test_k3s_lab.LabTest.test_capless_smoke_does_not_bind_host_paths_or_grant_capabilities) ... ok
+test_failed_capless_smoke_releases_charge_only_after_verified_image_removal (test_k3s_lab.LabTest.test_failed_capless_smoke_releases_charge_only_after_verified_image_removal) ... ok
+test_failed_live_cleanup_preserves_container_and_raises (test_k3s_lab.LabTest.test_failed_live_cleanup_preserves_container_and_raises) ... ok
+test_image_session_drift_before_delete_preserves_objects_and_charge (test_k3s_lab.LabTest.test_image_session_drift_before_delete_preserves_objects_and_charge) ... ok
+test_k3s_accounting_includes_untagged_owned_images (test_k3s_lab.LabTest.test_k3s_accounting_includes_untagged_owned_images) ... ok
+test_k3s_lost_import_response_recovers_untagged_image (test_k3s_lab.LabTest.test_k3s_lost_import_response_recovers_untagged_image) ... ok
+test_live_requires_review_and_fixed_fd_bind (test_k3s_lab.LabTest.test_live_requires_review_and_fixed_fd_bind) ... ok
+test_packaged_selection_drops_wrapper_module_applets_and_unsafe_tools (test_k3s_lab.LabTest.test_packaged_selection_drops_wrapper_module_applets_and_unsafe_tools) ... ok
+test_python_object_file_is_not_a_missing_dynamic_dependency (test_k3s_lab.LabTest.test_python_object_file_is_not_a_missing_dynamic_dependency) ... ok
+test_removal_failure_is_not_cleanup_success (test_k3s_lab.LabTest.test_removal_failure_is_not_cleanup_success) ... ok
+test_renamed_session_anchor_fails_postflight (test_k3s_lab.LabTest.test_renamed_session_anchor_fails_postflight) ... ok
+test_shared_accounting_counts_k3s_charge_before_other_lab_can_run (test_k3s_lab.LabTest.test_shared_accounting_counts_k3s_charge_before_other_lab_can_run) ... ok
+test_success_removes_only_the_exact_owned_container (test_k3s_lab.LabTest.test_success_removes_only_the_exact_owned_container) ... ok
+test_unrecognized_modes_labels_and_nonexact_image_ids_fail (test_k3s_lab.LabTest.test_unrecognized_modes_labels_and_nonexact_image_ids_fail) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.004s
+
+OK
+exit=0
+$ /usr/bin/python3 -B -m unittest discover -s scripts -p test_runtime_lab_api.py -v
+test_pg_cleanup_failure_keeps_charge_and_still_removes_owned_image (test_runtime_lab_api.ApiChargeTests.test_pg_cleanup_failure_keeps_charge_and_still_removes_owned_image) ... owned image: sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+owned private PostgreSQL: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+owned container: eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+outer container removed: eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+owned image removed: sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+ok
+test_code_mode_is_capless_and_joins_only_verified_pg (test_runtime_lab_api.ApiOuterTests.test_code_mode_is_capless_and_joins_only_verified_pg) ... owned container: eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+outer container removed: eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+ok
+test_host_unknown_and_stopped_targets_refused (test_runtime_lab_api.ApiTopologyTests.test_host_unknown_and_stopped_targets_refused) ... ok
+test_owned_private_pg_is_removed_after_outer_failure (test_runtime_lab_api.ApiTopologyTests.test_owned_private_pg_is_removed_after_outer_failure) ... owned private PostgreSQL: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+owned PostgreSQL removed: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+ok
+test_wrong_cached_digest_never_creates (test_runtime_lab_api.ApiTopologyTests.test_wrong_cached_digest_never_creates) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
+exit=0

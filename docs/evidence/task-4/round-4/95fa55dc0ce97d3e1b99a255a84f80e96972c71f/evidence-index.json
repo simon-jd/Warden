@@ -1,0 +1,63 @@
+{
+  "source": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f",
+  "tested_source": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f",
+  "scope": "Round4 Python/config code only; native pipe/mocked regression evidence, no actual container/device/VM execution; history-prefixed logs are working-tree observations",
+  "files": {
+    "README.md": {
+      "sha256": "de7d96aa0759f124b9d34246dd92970fba39cbe5eb7a7c6b816eaf048a86490c",
+      "bytes": 7974
+    },
+    "evidence-verification.log": {
+      "sha256": "46fbd6f7ef6f04bb1128f335f995945a07307581a60f14cc3c34ec7f7638d17f",
+      "bytes": 1627
+    },
+    "history-release-green.log": {
+      "sha256": "3725c6e2c958ee004827b129133b6ba9ddc51bc8033964a5ebc976639be1d70d",
+      "bytes": 264
+    },
+    "history-release-sandbox-error.log": {
+      "sha256": "5a6ba8f94a9fceaf19d797e6f5959417be6d8192686ca39ef4d7a3fac01bd731",
+      "bytes": 9911
+    },
+    "history-transport-green.log": {
+      "sha256": "4ffba0090a2a3fc7d197d40796efcbacdeaeb086fcd38e48bbb945afac5c31a2",
+      "bytes": 808
+    },
+    "history-transport-red.log": {
+      "sha256": "ada635071a249fa57300c09d44e030bb5265f1f88376c43be30ff2a56dc22120",
+      "bytes": 2491
+    },
+    "old-evidence-verification.json": {
+      "sha256": "46fbd6f7ef6f04bb1128f335f995945a07307581a60f14cc3c34ec7f7638d17f",
+      "bytes": 1627
+    },
+    "postflight-command.py": {
+      "sha256": "300c16ba3d3b988a4e8b725a4b57fa3bc0379abfb04a22abca9dfba494a33c9f",
+      "bytes": 1630
+    },
+    "postflight.json": {
+      "sha256": "5d2b6f168b7a07b14fbbb3d88b3013193eb74ee45a01d6ec4b13544ca54ee088",
+      "bytes": 1011
+    },
+    "primary-source-lifecycle.md": {
+      "sha256": "fe24fd5663eced5928a90ecc41b901cdcc03d613e703cb3bc83a978f8207bd58",
+      "bytes": 3368
+    },
+    "python-tests.log": {
+      "sha256": "0b81284c555ab2f6ee818e3f50fa12a026534a2f0ab433dd2df9251e20514567",
+      "bytes": 3844
+    },
+    "report-prefix-verification.json": {
+      "sha256": "3f7a8b5e79aa8824203e2807c979177f7b74886bdfd1f22823f0206cc6b3fd3c",
+      "bytes": 398
+    },
+    "source-manifest.json": {
+      "sha256": "72e9b35b063db7b2026479ef4f3aff1cca1e1c4846a5444fef72717ad260b4a6",
+      "bytes": 5806
+    },
+    "verify-command.py": {
+      "sha256": "25129c05872060d37f60ce9ac33d5e4263d2a84b2a8cff0418ed76ce884890fe",
+      "bytes": 2525
+    }
+  }
+}

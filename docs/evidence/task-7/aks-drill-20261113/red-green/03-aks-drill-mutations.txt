@@ -1,0 +1,16 @@
+scripts/test_aks_drill.py was written together with scripts/aks_drill.py, not
+before it. To check that the tests can fail, two mutations of aks_drill.py
+were run against them (2026-11-13, home-ubuntu), then reverted:
+
+1. tag_audit() no longer tags a resource that lacks the four tags:
+   FAIL: test_down_after_up_leaves_nothing_and_disarms_the_timers
+   FAIL: test_up_arms_the_hard_stop_before_anything_is_reserved_or_created
+   Ran 9 tests, FAILED (failures=2)
+   (up stops at "resources without the four tags", so nothing is up to tear down)
+
+2. up() reserves before it arms the hard stop, and does not disarm or clean
+   up when arming fails:
+   FAIL: test_up_creates_nothing_when_the_hard_stop_cannot_be_armed
+   Ran 9 tests, FAILED (failures=1)
+
+Unmutated: Ran 9 tests, OK.

@@ -1,0 +1,1 @@
+{"Status":"created","Running":false,"Paused":false,"Restarting":false,"OOMKilled":false,"Dead":false,"Pid":0,"ExitCode":128,"Error":"failed to create task for container: failed to initialize logging driver: compression cannot be enabled when max file count is 1","StartedAt":"0001-01-01T00:00:00Z","FinishedAt":"0001-01-01T00:00:00Z"}

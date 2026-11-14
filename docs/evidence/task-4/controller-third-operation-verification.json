@@ -1,0 +1,25 @@
+{
+  "source": "0c7dedbf38499ee991f879e93e43b9f5df9bb7f4",
+  "changed_existing": [
+    "execute_phase",
+    "operation_document",
+    "operation_read"
+  ],
+  "added_functions": [
+    "histories",
+    "second_operation_document",
+    "second_predecessor"
+  ],
+  "unchanged_functions": 48,
+  "unchanged_classes": 2,
+  "unchanged_bindings": 14,
+  "affected_class_tests": {
+    "HistoryBindingTests": 8,
+    "OperationBindingTests": 6,
+    "WorkflowTests": 5
+  },
+  "prior_artifacts_verified": 7,
+  "new_artifacts_verified": 7,
+  "tests_or_actual_operations_rerun": false,
+  "all_match": true
+}

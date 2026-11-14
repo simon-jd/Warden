@@ -1,0 +1,35 @@
+{
+  "title": "Pod port-forward request",
+  "id": "5dcab9b5-554a-5da0-bab2-f29b80cd543a",
+  "status": "experimental",
+  "description": "Conditional objectRef passthrough only (all unmapped <=2048B). No current collector, authorization, privilege delta, command or token theft proof. Synthetic fixtures; ATT&CK tags describe related investigation scenarios, not observed technique success.",
+  "references": [
+    "https://attack.mitre.org/techniques/T1572/"
+  ],
+  "author": "Warden",
+  "date": "2026-10-25",
+  "logsource": {
+    "product": "kubernetes",
+    "service": "audit"
+  },
+  "detection": {
+    "source": {
+      "class_uid": 6003,
+      "metadata.product.name": "kubernetes audit"
+    },
+    "action": {
+      "api.operation": "create",
+      "unmapped.objectRef.resource": "pods",
+      "unmapped.objectRef.subresource": "portforward"
+    },
+    "condition": "source and action"
+  },
+  "falsepositives": [
+    "Authorized administration, developer/debug tooling, permitted workloads or unrelated protocol use; tune local IP/principal allowlists."
+  ],
+  "level": "medium",
+  "tags": [
+    "attack.command_and_control",
+    "attack.t1572"
+  ]
+}

@@ -1,0 +1,27 @@
+All unittest wrappers except the single rotation RED set os.umask(0o077) before spawning the command. -B prevents bytecode artifacts.
+
+red.txt (before production fixes; exit1):
+/usr/bin/python3 -B -m unittest discover -s scripts -p 'test_k3s_lab*.py' -v
+
+green-initial.txt (exit0):
+/usr/bin/python3 -B -m unittest discover -s scripts -p 'test_k3s_lab*.py' -v
+
+red-rotation.txt (before rotation guard; exit1):
+python3 -B -m unittest discover -s scripts -p test_k3s_lab_init.py -k rotated -v
+
+covering-tests.txt (each exit0):
+/usr/bin/python3 -B -m unittest discover -s scripts -p 'test_k3s_lab*.py' -v
+/usr/bin/python3 -B -m unittest discover -s scripts -p test_runtime_lab_docker.py -v
+/usr/bin/python3 -B -m unittest discover -s scripts -p test_runtime_lab_cleanup.py -v
+
+final-focused.txt (additional FIFO/directory/symlink-ancestor coverage; exit0):
+/usr/bin/python3 -B -m unittest discover -s scripts -p test_k3s_lab_init.py -v
+
+Source commit check (exit0):
+git diff --cached --check
+Postcommit byte hashes and git diff verified all six changed paths against a3193fbc56e6105f0720c0b8040aa441632b575d. Both cached official materials passed the existing length/SHA verifier. All18 old evidence files matched git show a193dab:path. New input-hashes.json records exact source/controller/material identities.
+
+No new image assembly, capless smoke, real Docker mutation, capability bootstrap or tenant/conformance command was run in this round.
+
+Evidence commit check (raw unittest whitespace preserved):
+git -c core.whitespace=-blank-at-eol diff --cached --check

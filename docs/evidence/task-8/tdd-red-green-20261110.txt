@@ -1,0 +1,43 @@
+# Task 8 audit scope change: RED then GREEN (python3 -I -B -m unittest discover -s scripts -t scripts -p test_longlived_keys_audit.py -v)
+## RED (tests changed first, script unchanged; source commit before cf7253b)
+test_bad_input_is_an_error_not_a_pass (test_longlived_keys_audit.LongLivedKeysAuditTest.test_bad_input_is_an_error_not_a_pass) ... ok
+test_counts_secret_certificate_and_shared_key (test_longlived_keys_audit.LongLivedKeysAuditTest.test_counts_secret_certificate_and_shared_key) ... ok
+test_live_mode_reads_through_az (test_longlived_keys_audit.LongLivedKeysAuditTest.test_live_mode_reads_through_az) ... FAIL
+test_no_long_lived_keys_passes (test_longlived_keys_audit.LongLivedKeysAuditTest.test_no_long_lived_keys_passes) ... ok
+test_project_scope_lists_other_projects_but_counts_only_its_own (test_longlived_keys_audit.LongLivedKeysAuditTest.test_project_scope_lists_other_projects_but_counts_only_its_own) ... FAIL
+
+======================================================================
+FAIL: test_live_mode_reads_through_az (test_longlived_keys_audit.LongLivedKeysAuditTest.test_live_mode_reads_through_az)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_longlived_keys_audit.py", line 85, in test_live_mode_reads_through_az
+    self.assertIn("ad app list --show-mine --all -o json", calls)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ad app list --show-mine --all -o json' not found in ['ad app list --all -o json', 'storage account list -o json']
+
+======================================================================
+FAIL: test_project_scope_lists_other_projects_but_counts_only_its_own (test_longlived_keys_audit.LongLivedKeysAuditTest.test_project_scope_lists_other_projects_but_counts_only_its_own)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_longlived_keys_audit.py", line 102, in test_project_scope_lists_other_projects_but_counts_only_its_own
+    self.assertEqual(code, 0, err)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : unknown argument: --project
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.147s
+
+FAILED (failures=2)
+
+## GREEN (cf7253b)
+test_bad_input_is_an_error_not_a_pass (test_longlived_keys_audit.LongLivedKeysAuditTest.test_bad_input_is_an_error_not_a_pass) ... ok
+test_counts_secret_certificate_and_shared_key (test_longlived_keys_audit.LongLivedKeysAuditTest.test_counts_secret_certificate_and_shared_key) ... ok
+test_live_mode_reads_through_az (test_longlived_keys_audit.LongLivedKeysAuditTest.test_live_mode_reads_through_az) ... ok
+test_no_long_lived_keys_passes (test_longlived_keys_audit.LongLivedKeysAuditTest.test_no_long_lived_keys_passes) ... ok
+test_project_scope_lists_other_projects_but_counts_only_its_own (test_longlived_keys_audit.LongLivedKeysAuditTest.test_project_scope_lists_other_projects_but_counts_only_its_own) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.225s
+
+OK

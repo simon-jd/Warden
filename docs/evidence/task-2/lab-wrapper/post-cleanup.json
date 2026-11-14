@@ -1,0 +1,11 @@
+{
+  "containers": [],
+  "images": [],
+  "tar_removed": true,
+  "charge": {
+    "version": 1,
+    "reserved_bytes": 3000000000,
+    "released": true
+  },
+  "checked_at_utc": "2026-10-24T03:57:38.497201+00:00"
+}

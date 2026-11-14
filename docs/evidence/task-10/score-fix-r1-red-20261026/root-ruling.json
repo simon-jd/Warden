@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-26T10:22:44.492570+00:00",
+  "decision": "ACCEPT_TASK10_ORIGINAL_R1_NEW_TRUE_BEHAVIORAL_RED",
+  "native": "c5beff/session1080 ->266e45 known0",
+  "postflight": "d45cbe known0 fullread742B",
+  "Go_rc": 1,
+  "healthy_controls": 2,
+  "new_test_top_FAIL": 1,
+  "new_subcases_FAIL": 2,
+  "result": "original31-count entropy5 alert erased by appending legitimate _dmarc.example.com/com; not build/environment failure",
+  "whole_seconds": 20.53815835795831,
+  "raw_sha256": "6b283704d24cf3d21fbe3d27962f1a66221d350316d236af0585fb73e3763fb0",
+  "source17_stage_SDK_telemetry_unchanged": true,
+  "cleanup_known_scoped_to_owned_chain": true,
+  "new_UNKNOWN": false,
+  "namespace_allocated": 107712512,
+  "files": 1481,
+  "dirs": 269,
+  "largest_file": 13366088,
+  "retained": true,
+  "counter": "R1新RED1/1 SPENT; oldRED2/2/FIRSTGREEN1/1 unchanged SPENT",
+  "next": "Original author source/test/report only I1+affectedM1 under remaining12288B, then root exact affected cover and same reviewer R1 scoped review",
+  "author_cap": 262144,
+  "author_used": 249856,
+  "root_materials": "original per-run1MiB forecast, within fullR",
+  "full_Task10": "OPEN network and collector acceptance",
+  "provenance": {
+    "source": "root_agent_in_existing_user_scope",
+    "human_response": false
+  }
+}

@@ -1,0 +1,7 @@
+=== RUN   TestLateSnapshotPublicationClosesReaderAndCollectorExits
+    snapshot_test.go:34: late snapshot reader has no cleanup owner
+    snapshot_test.go:37: late snapshot read goroutine is still blocked
+--- FAIL: TestLateSnapshotPublicationClosesReaderAndCollectorExits (0.00s)
+FAIL
+FAIL	warden/controlplane/internal/scheduler	0.005s
+FAIL

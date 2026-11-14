@@ -1,0 +1,116 @@
+{"image_id": "sha256:a688600ca24f8a4d3ca77f95b0dd40704a9fc787c826660eb7ba0b641b8b175d", "owned_image_charge": 0, "outstanding": 0}
+{"additional_bytes": "512000000", "at": "2026-10-24T20:03:01Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 286755790848, "project_allocated_bytes": 3386142720, "service_memory_bytes": "2000000000"}
+{"container_id": "1fffb257dae6d1972e195f3d36c12e9572533716c71690603f10b2621bea83d2", "labels": {"project": "warden", "owner": "codex-warden", "session": "1dac9440e5d1aae5686d58c22bbc0aff", "task": "firecracker-code", "ttl": "2026-10-24T21:03:01.780623+00:00"}}
+{"inspected_host_config": {"Binds": null, "ContainerIDFile": "", "LogConfig": {"Type": "json-file", "Config": {"max-file": "1", "max-size": "10m"}}, "NetworkMode": "none", "PortBindings": {}, "RestartPolicy": {"Name": "no", "MaximumRetryCount": 0}, "AutoRemove": false, "VolumeDriver": "", "VolumesFrom": null, "ConsoleSize": [0, 0], "CapAdd": null, "CapDrop": ["ALL"], "CgroupnsMode": "private", "Dns": null, "DnsOptions": [], "DnsSearch": [], "ExtraHosts": null, "GroupAdd": null, "IpcMode": "private", "Cgroup": "", "Links": null, "OomScoreAdj": 0, "PidMode": "", "Privileged": false, "PublishAllPorts": false, "ReadonlyRootfs": true, "SecurityOpt": ["no-new-privileges"], "Tmpfs": {"/tmp": "rw,exec,nosuid,nodev,size=268435456"}, "UTSMode": "", "UsernsMode": "", "ShmSize": 67108864, "Runtime": "runc", "Isolation": "", "CpuShares": 0, "Memory": 2000000000, "NanoCpus": 2000000000, "CgroupParent": "", "BlkioWeight": 0, "BlkioWeightDevice": [], "BlkioDeviceReadBps": [], "BlkioDeviceWriteBps": [], "BlkioDeviceReadIOps": [], "BlkioDeviceWriteIOps": [], "CpuPeriod": 0, "CpuQuota": 0, "CpuRealtimePeriod": 0, "CpuRealtimeRuntime": 0, "CpusetCpus": "", "CpusetMems": "", "Devices": [], "DeviceCgroupRules": null, "DeviceRequests": null, "MemoryReservation": 0, "MemorySwap": 2000000000, "MemorySwappiness": null, "OomKillDisable": false, "PidsLimit": 256, "Ulimits": null, "CpuCount": 0, "CpuPercent": 0, "IOMaximumIOps": 0, "IOMaximumBandwidth": 0, "Mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden", "Target": "/workspace", "ReadOnly": true}, {"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/firecracker-code", "Target": "/workspace/.cache/firecracker-code"}], "MaskedPaths": ["/proc/acpi", "/proc/asound", "/proc/interrupts", "/proc/kcore", "/proc/keys", "/proc/latency_stats", "/proc/sched_debug", "/proc/scsi", "/proc/timer_list", "/proc/timer_stats", "/sys/devices/virtual/powercap", "/sys/firmware", "/sys/devices/system/cpu/cpu0/thermal_throttle", "/sys/devices/system/cpu/cpu1/thermal_throttle", "/sys/devices/system/cpu/cpu2/thermal_throttle", "/sys/devices/system/cpu/cpu3/thermal_throttle", "/sys/devices/system/cpu/cpu4/thermal_throttle", "/sys/devices/system/cpu/cpu5/thermal_throttle", "/sys/devices/system/cpu/cpu6/thermal_throttle", "/sys/devices/system/cpu/cpu7/thermal_throttle", "/sys/devices/system/cpu/cpu8/thermal_throttle", "/sys/devices/system/cpu/cpu9/thermal_throttle", "/sys/devices/system/cpu/cpu10/thermal_throttle", "/sys/devices/system/cpu/cpu11/thermal_throttle", "/sys/devices/system/cpu/cpu12/thermal_throttle", "/sys/devices/system/cpu/cpu13/thermal_throttle", "/sys/devices/system/cpu/cpu14/thermal_throttle", "/sys/devices/system/cpu/cpu15/thermal_throttle", "/sys/devices/system/cpu/cpu16/thermal_throttle", "/sys/devices/system/cpu/cpu17/thermal_throttle", "/sys/devices/system/cpu/cpu18/thermal_throttle", "/sys/devices/system/cpu/cpu19/thermal_throttle", "/sys/devices/system/cpu/cpu20/thermal_throttle", "/sys/devices/system/cpu/cpu21/thermal_throttle", "/sys/devices/system/cpu/cpu22/thermal_throttle", "/sys/devices/system/cpu/cpu23/thermal_throttle", "/sys/devices/system/cpu/cpu24/thermal_throttle", "/sys/devices/system/cpu/cpu25/thermal_throttle", "/sys/devices/system/cpu/cpu26/thermal_throttle", "/sys/devices/system/cpu/cpu27/thermal_throttle", "/sys/devices/system/cpu/cpu28/thermal_throttle", "/sys/devices/system/cpu/cpu29/thermal_throttle", "/sys/devices/system/cpu/cpu30/thermal_throttle", "/sys/devices/system/cpu/cpu31/thermal_throttle"], "ReadonlyPaths": ["/proc/bus", "/proc/fs", "/proc/irq", "/proc/sys", "/proc/sysrq-trigger"]}}
+=== RUN   TestLostStartResponseIsNeverRetried
+--- PASS: TestLostStartResponseIsNeverRetried (0.00s)
+=== RUN   TestAPIRejectsWrongPeerBeforeMutation
+--- PASS: TestAPIRejectsWrongPeerBeforeMutation (0.00s)
+=== RUN   TestFirecrackerCapacity
+    capacity_test.go:14: NOT EXECUTED: requires separately reviewed post-conformance capacity mode
+--- SKIP: TestFirecrackerCapacity (0.00s)
+=== RUN   TestKernelCountersFailClosed
+--- PASS: TestKernelCountersFailClosed (0.00s)
+=== RUN   TestDriverFailsClosedWithoutOwnedReviewedNode
+--- PASS: TestDriverFailsClosedWithoutOwnedReviewedNode (0.00s)
+=== RUN   TestLocalRetirementCannotSwallowAmbiguousGate
+--- PASS: TestLocalRetirementCannotSwallowAmbiguousGate (0.00s)
+=== RUN   TestUnknownOriginalOwnerRemainsCleanupPending
+--- PASS: TestUnknownOriginalOwnerRemainsCleanupPending (0.00s)
+=== RUN   TestExt4BuilderCreatesBoundedReadOnlyProbeDisk
+--- PASS: TestExt4BuilderCreatesBoundedReadOnlyProbeDisk (0.00s)
+=== RUN   TestDefaultReservesKernelOutsideWorkload
+--- PASS: TestDefaultReservesKernelOutsideWorkload (0.00s)
+=== RUN   TestRejectUnsupportedSpec
+--- PASS: TestRejectUnsupportedSpec (0.00s)
+=== RUN   TestUIDsSurviveProcessReopen
+--- PASS: TestUIDsSurviveProcessReopen (0.00s)
+=== RUN   TestUIDAllocatorRejectsOrphansAndUnsafeFiles
+=== RUN   TestUIDAllocatorRejectsOrphansAndUnsafeFiles/orphan
+=== RUN   TestUIDAllocatorRejectsOrphansAndUnsafeFiles/symlink
+=== RUN   TestUIDAllocatorRejectsOrphansAndUnsafeFiles/hardlink
+=== RUN   TestUIDAllocatorRejectsOrphansAndUnsafeFiles/corrupt
+=== RUN   TestUIDAllocatorRejectsOrphansAndUnsafeFiles/mode
+--- PASS: TestUIDAllocatorRejectsOrphansAndUnsafeFiles (0.00s)
+    --- PASS: TestUIDAllocatorRejectsOrphansAndUnsafeFiles/orphan (0.00s)
+    --- PASS: TestUIDAllocatorRejectsOrphansAndUnsafeFiles/symlink (0.00s)
+    --- PASS: TestUIDAllocatorRejectsOrphansAndUnsafeFiles/hardlink (0.00s)
+    --- PASS: TestUIDAllocatorRejectsOrphansAndUnsafeFiles/corrupt (0.00s)
+    --- PASS: TestUIDAllocatorRejectsOrphansAndUnsafeFiles/mode (0.00s)
+=== RUN   TestConcurrentUIDAllocation
+--- PASS: TestConcurrentUIDAllocation (0.00s)
+=== RUN   TestFirecrackerConformance
+    lab_test.go:44: NOT EXECUTED: independent review and controller-owned actual VM mode required
+--- SKIP: TestFirecrackerConformance (0.00s)
+=== RUN   TestFirecrackerBoot
+    lab_test.go:48: NOT EXECUTED: independent review and controller-owned actual VM mode required
+--- SKIP: TestFirecrackerBoot (0.00s)
+=== RUN   TestSnapshotRestoreFasterThanBoot
+    lab_test.go:73: NOT EXECUTED: independent review and controller-owned actual VM mode required
+--- SKIP: TestSnapshotRestoreFasterThanBoot (0.00s)
+=== RUN   TestJailerLaunchKeepsForegroundOwnerAndUniqueHostID
+--- PASS: TestJailerLaunchKeepsForegroundOwnerAndUniqueHostID (0.00s)
+=== RUN   TestImmutableArtifactHashModeAndAliasValidation
+--- PASS: TestImmutableArtifactHashModeAndAliasValidation (0.00s)
+=== RUN   TestOwnedProcessRetainsOriginalPIDFDThroughReap
+--- PASS: TestOwnedProcessRetainsOriginalPIDFDThroughReap (0.00s)
+=== RUN   TestOwnedProcessStartFailureDoesNotLeakDescriptors
+--- PASS: TestOwnedProcessStartFailureDoesNotLeakDescriptors (0.00s)
+=== RUN   TestProtocolSeparatesTenantLogsAndTrustedExit
+--- PASS: TestProtocolSeparatesTenantLogsAndTrustedExit (0.00s)
+=== RUN   TestProtocolRejectsAmbiguousOrUnboundFrames
+--- PASS: TestProtocolRejectsAmbiguousOrUnboundFrames (0.00s)
+=== RUN   TestProtocolHandlesShortWrites
+--- PASS: TestProtocolHandlesShortWrites (0.00s)
+=== RUN   TestRootFSExportProvenance
+--- PASS: TestRootFSExportProvenance (0.00s)
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/../escape
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites//escape
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/alias
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/alias#01
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/dev
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/fifo
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/suid
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/good
+=== RUN   TestRootFSRejectsUnsafeExportWithoutPartialWrites/a/../escape
+--- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/../escape (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites//escape (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/alias (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/alias#01 (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/dev (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/fifo (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/suid (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/good (0.00s)
+    --- PASS: TestRootFSRejectsUnsafeExportWithoutPartialWrites/a/../escape (0.00s)
+=== RUN   TestRootFSRejectsOversizedStream
+--- PASS: TestRootFSRejectsOversizedStream (0.10s)
+=== RUN   TestSnapshotBindsAllImmutableInputsAndShape
+--- PASS: TestSnapshotBindsAllImmutableInputsAndShape (0.00s)
+=== RUN   TestMeasuredMedianComparison
+--- PASS: TestMeasuredMedianComparison (0.00s)
+=== RUN   TestSnapshotCacheRejectsTamperingAndWritableAliases
+--- PASS: TestSnapshotCacheRejectsTamperingAndWritableAliases (0.00s)
+=== RUN   TestSupervisorRefusesOrdinaryProcessBeforeDeviceOrMount
+--- PASS: TestSupervisorRefusesOrdinaryProcessBeforeDeviceOrMount (0.00s)
+=== RUN   TestOuterLimitsMustMatchFixedMode
+--- PASS: TestOuterLimitsMustMatchFixedMode (0.00s)
+PASS
+ok  	warden/runtimes/firecracker	0.129s
+?   	warden/runtimes/firecracker/cmd/agent	[no test files]
+?   	warden/runtimes/firecracker/cmd/lab	[no test files]
+?   	warden/runtimes/firecracker/cmd/rootfs	[no test files]
+=== RUN   TestBootstrapRefusesOrdinaryCodeProcessBeforeAnyMount
+--- PASS: TestBootstrapRefusesOrdinaryCodeProcessBeforeAnyMount (0.00s)
+=== RUN   TestPayloadFilterDeniesControlSocketsAndPrivilegeSyscalls
+--- PASS: TestPayloadFilterDeniesControlSocketsAndPrivilegeSyscalls (0.00s)
+=== RUN   TestGuestSessionConsumesBeforeExecutionAndRejectsReplay
+--- PASS: TestGuestSessionConsumesBeforeExecutionAndRejectsReplay (0.00s)
+=== RUN   TestGuestSnapshotControlCannotCaptureBoundSession
+--- PASS: TestGuestSnapshotControlCannotCaptureBoundSession (0.00s)
+=== RUN   TestGuestACKPrecedesEarlyChildOutput
+--- PASS: TestGuestACKPrecedesEarlyChildOutput (0.00s)
+PASS
+ok  	warden/runtimes/firecracker/guest	0.006s
+{"removed_container": "1fffb257dae6d1972e195f3d36c12e9572533716c71690603f10b2621bea83d2"}

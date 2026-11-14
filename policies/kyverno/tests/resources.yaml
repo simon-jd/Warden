@@ -1,0 +1,31 @@
+# Synthetic unbound fixtures. These are not signed OCI artifacts or the three
+# requested cryptographic acceptance cases; see ../README.md.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: unsigned-unbound
+  namespace: synthetic-warden
+spec:
+  containers:
+    - name: app
+      image: ghcr.io/synthetic-owner/synthetic-repo/warden-api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: would-be-signed-unbound
+  namespace: synthetic-warden
+spec:
+  containers:
+    - name: app
+      image: ghcr.io/synthetic-owner/synthetic-repo/warden-api@sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: would-be-kev-unbound
+  namespace: synthetic-warden
+spec:
+  containers:
+    - name: app
+      image: ghcr.io/synthetic-owner/synthetic-repo/warden-api@sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc

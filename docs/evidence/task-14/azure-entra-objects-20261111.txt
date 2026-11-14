@@ -1,0 +1,104 @@
+# Task 14 (and the Task 8 keyprobe): Entra objects created and deleted, all owned by the signed-in user
+# Redacted: tenant ID -> <tenant-id>, subscription ID -> <subscription-id>, user object ID -> <user-oid>. Object IDs and appIds
+# of the deleted lab apps are kept, as in task-6/entra-objects-20261110.txt. Secret values and tokens were never written.
+# Objects come from the committed result JSONs (respond/azurelab writes them while it runs); end checks were run for this file.
+# Redacted 2026-11-12: another project's identifiers -> placeholders (<other-project-app>, <other-project-app-2>, <other-project-app-id>, <other-project-app-object-id>, <other-project-key>, <other-project>, <other-project-owner>, <other-project-storage>); counts and structure unchanged.
+
+## objects
+run | display name | application object ID | appId | service principal object ID | app created (Graph createdDateTime) | sp created (test clock) | secret keyId | sp delete returned | app delete returned | deletedItems deletedDateTime sp / app | az show after (sp / app)
+task8-keyprobe | warden-lab-keyprobe | 00000000-0000-0000-0000-000000000005 | 00000000-0000-0000-0000-000000000004 | (none) | 2026-11-11T04:27:44.1378366Z | - | see task-8 record | - | 2026-11-11T04:27:48.274Z | - / 2026-11-11T04:27:48Z | - / does not exist (task-8/longlived-audit-live-20261110.txt)
+run0-smoke | warden-lab-respond | 00000000-0000-0000-0000-000000000018 | 00000000-0000-0000-0000-000000000013 | 00000000-0000-0000-0000-000000000039 | 2026-11-11T04:34:09.6019459Z | 2026-11-11T04:34:10.766763003Z | 00000000-0000-0000-0000-000000000041 | 2026-11-11T04:44:27.655309732Z | 2026-11-11T04:44:28.43085071Z | 2026-11-11T04:44:27Z / 2026-11-11T04:44:28Z | does not exist / does not exist
+   run0-smoke: source 3484809; started 2026-11-11T04:34:07.770705415Z, finished 2026-11-11T04:44:31.15336582Z, pass False; app tags ['project=warden', 'owner=codex-warden', 'ttl=2026-11-11T07:34:07Z', 'est_usd_per_hour=0']; az ad app list --show-mine warden-lab-* when the run ended: []
+run1 | warden-lab-respond-1 | 00000000-0000-0000-0000-000000000027 | 00000000-0000-0000-0000-000000000017 | 00000000-0000-0000-0000-000000000036 | 2026-11-11T04:48:37.911427Z | 2026-11-11T04:48:39.17160135Z | 00000000-0000-0000-0000-000000000049 | 2026-11-11T05:00:46.723366644Z | 2026-11-11T05:00:47.65941984Z | 2026-11-11T05:00:46Z / 2026-11-11T05:00:47Z | does not exist / does not exist
+run1 | warden-lab-respond-2 | 00000000-0000-0000-0000-000000000023 | 00000000-0000-0000-0000-000000000012 | 00000000-0000-0000-0000-000000000033 | 2026-11-11T04:48:40.9010964Z | 2026-11-11T04:48:42.052293469Z | 00000000-0000-0000-0000-000000000040 | 2026-11-11T05:02:28.708721694Z | 2026-11-11T05:02:29.44555799Z | 2026-11-11T05:02:28Z / 2026-11-11T05:02:29Z | does not exist / does not exist
+run1 | warden-lab-respond-3 | 00000000-0000-0000-0000-000000000020 | 00000000-0000-0000-0000-000000000014 | 00000000-0000-0000-0000-000000000031 | 2026-11-11T04:48:43.8945189Z | 2026-11-11T04:48:45.149474869Z | 00000000-0000-0000-0000-000000000042 | 2026-11-11T05:10:35.004677891Z | 2026-11-11T05:10:35.689550606Z | 2026-11-11T05:10:34Z / 2026-11-11T05:10:35Z | does not exist / does not exist
+run1 | warden-lab-respond-4 | 00000000-0000-0000-0000-000000000030 | 00000000-0000-0000-0000-000000000010 | 00000000-0000-0000-0000-000000000032 | 2026-11-11T04:48:46.9100751Z | 2026-11-11T04:48:48.082020847Z | 00000000-0000-0000-0000-000000000048 | 2026-11-11T05:02:24.246930498Z | 2026-11-11T05:02:25.262194254Z | 2026-11-11T05:02:24Z / 2026-11-11T05:02:25Z | does not exist / does not exist
+run1 | warden-lab-respond-5 | 00000000-0000-0000-0000-000000000026 | 00000000-0000-0000-0000-000000000009 | 00000000-0000-0000-0000-000000000019 | 2026-11-11T04:48:49.874728Z | 2026-11-11T04:48:51.213620521Z | 00000000-0000-0000-0000-000000000043 | 2026-11-11T05:00:43.196434448Z | 2026-11-11T05:00:43.852174274Z | 2026-11-11T05:00:43Z / 2026-11-11T05:00:43Z | does not exist / does not exist
+   run1: source 0e32aa7; started 2026-11-11T04:48:36.277273316Z, finished 2026-11-11T05:10:37.986455598Z, pass True; app tags ['project=warden', 'owner=codex-warden', 'ttl=2026-11-11T07:48:36Z', 'est_usd_per_hour=0']; az ad app list --show-mine warden-lab-* when the run ended: []
+run2 | warden-lab-respond-1 | 00000000-0000-0000-0000-000000000024 | 00000000-0000-0000-0000-000000000011 | 00000000-0000-0000-0000-000000000035 | 2026-11-11T15:28:11.6403217Z | 2026-11-11T15:28:12.86226161Z | 00000000-0000-0000-0000-000000000050 | 2026-11-11T15:42:44.255636996Z | 2026-11-11T15:42:44.962889638Z | 2026-11-11T15:42:44Z / 2026-11-11T15:42:44Z | does not exist / does not exist
+run2 | warden-lab-respond-2 | 00000000-0000-0000-0000-000000000034 | 00000000-0000-0000-0000-000000000016 | 00000000-0000-0000-0000-000000000038 | 2026-11-11T15:28:14.6814718Z | 2026-11-11T15:28:16.041751234Z | 00000000-0000-0000-0000-000000000045 | 2026-11-11T15:41:20.634894395Z | 2026-11-11T15:41:21.363483039Z | 2026-11-11T15:41:20Z / 2026-11-11T15:41:21Z | does not exist / does not exist
+run2 | warden-lab-respond-3 | 00000000-0000-0000-0000-000000000021 | 00000000-0000-0000-0000-000000000015 | 00000000-0000-0000-0000-000000000022 | 2026-11-11T15:28:17.637754Z | 2026-11-11T15:28:18.990510444Z | 00000000-0000-0000-0000-000000000044 | 2026-11-11T15:50:10.979488946Z | 2026-11-11T15:50:11.7375283Z | 2026-11-11T15:50:10Z / 2026-11-11T15:50:11Z | does not exist / does not exist
+run2 | warden-lab-respond-4 | 00000000-0000-0000-0000-000000000025 | 00000000-0000-0000-0000-000000000008 | 00000000-0000-0000-0000-000000000037 | 2026-11-11T15:28:20.6386785Z | 2026-11-11T15:28:21.926747917Z | 00000000-0000-0000-0000-000000000047 | 2026-11-11T15:49:59.059332662Z | 2026-11-11T15:49:59.766295931Z | 2026-11-11T15:49:58Z / 2026-11-11T15:49:59Z | does not exist / does not exist
+run2 | warden-lab-respond-5 | 00000000-0000-0000-0000-000000000029 | 00000000-0000-0000-0000-000000000007 | 00000000-0000-0000-0000-000000000028 | 2026-11-11T15:28:23.6255292Z | 2026-11-11T15:28:24.869771612Z | 00000000-0000-0000-0000-000000000046 | 2026-11-11T15:50:11.903749827Z | 2026-11-11T15:50:12.826497874Z | 2026-11-11T15:50:11Z / 2026-11-11T15:50:12Z | does not exist / does not exist
+   run2: source 7d84ef9 (respond/ and Makefile identical to 0e32aa7); started 2026-11-11T15:28:10.085101349Z, finished 2026-11-11T15:50:15.41804065Z, pass True; app tags ['project=warden', 'owner=codex-warden', 'ttl=2026-11-11T18:28:10Z', 'est_usd_per_hour=0']; az ad app list --show-mine warden-lab-* when the run ended: []
+   Totals: 12 applications (1 keyprobe + 11 drill apps), 11 service principals. The keyprobe had no service principal.
+
+## client-credentials token requests made with the lab secrets (activation + dry run + after the alert)
+run0-smoke: 1212 requests, 175 tokens issued
+run1: 4362 requests, 2919 tokens issued
+run2: 5560 requests, 3538 tokens issued
+all runs: 6632 tokens issued
+
+## end checks, 2026-11-12T06:48:47Z
+az ad app show --id 00000000-0000-0000-0000-000000000005 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000005' does not exist or one of its queried reference-property objects are not present.
+az ad app show --id 00000000-0000-0000-0000-000000000018 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000018' does not exist or one of its queried reference-property objects are not present.
+az ad app show --id 00000000-0000-0000-0000-000000000027 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000027' does not exist or one of its queried reference-property objects are not present.
+az ad app show --id 00000000-0000-0000-0000-000000000023 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000023' does not exist or one of its queried reference-property objects are not present.
+az ad app show --id 00000000-0000-0000-0000-000000000020 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000020' does not exist or one of its queried reference-property objects are not present.
+az ad app show --id 00000000-0000-0000-0000-000000000030 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000030' does not exist or one of its queried reference-property objects are not present.
+az ad app show --id 00000000-0000-0000-0000-000000000026 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000026' does not exist or one of its queried reference-property objects are not present.
+az ad app show --id 00000000-0000-0000-0000-000000000024 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000024' does not exist or one of its queried reference-property objects are not present.
+az ad app show --id 00000000-0000-0000-0000-000000000034 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000034' does not exist or one of its queried reference-property objects are not present.
+az ad app show --id 00000000-0000-0000-0000-000000000021 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000021' does not exist or one of its queried reference-property objects are not present.
+az ad app show --id 00000000-0000-0000-0000-000000000025 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000025' does not exist or one of its queried reference-property objects are not present.
+az ad app show --id 00000000-0000-0000-0000-000000000029 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000029' does not exist or one of its queried reference-property objects are not present.
+az ad sp show --id 00000000-0000-0000-0000-000000000039 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000039' does not exist or one of its queried reference-property objects are not present.
+az ad sp show --id 00000000-0000-0000-0000-000000000036 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000036' does not exist or one of its queried reference-property objects are not present.
+az ad sp show --id 00000000-0000-0000-0000-000000000033 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000033' does not exist or one of its queried reference-property objects are not present.
+az ad sp show --id 00000000-0000-0000-0000-000000000031 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000031' does not exist or one of its queried reference-property objects are not present.
+az ad sp show --id 00000000-0000-0000-0000-000000000032 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000032' does not exist or one of its queried reference-property objects are not present.
+az ad sp show --id 00000000-0000-0000-0000-000000000019 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000019' does not exist or one of its queried reference-property objects are not present.
+az ad sp show --id 00000000-0000-0000-0000-000000000035 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000035' does not exist or one of its queried reference-property objects are not present.
+az ad sp show --id 00000000-0000-0000-0000-000000000038 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000038' does not exist or one of its queried reference-property objects are not present.
+az ad sp show --id 00000000-0000-0000-0000-000000000022 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000022' does not exist or one of its queried reference-property objects are not present.
+az ad sp show --id 00000000-0000-0000-0000-000000000037 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000037' does not exist or one of its queried reference-property objects are not present.
+az ad sp show --id 00000000-0000-0000-0000-000000000028 -> exit 3: ERROR: Resource '00000000-0000-0000-0000-000000000028' does not exist or one of its queried reference-property objects are not present.
+2026-11-12T06:49:03Z az ad app list --show-mine --all, warden-lab-* only -> exit 0: []
+2026-11-12T06:49:03Z az ad app list --show-mine --all (names and tags only; other projects' apps, untouched) -> exit 0: [{"displayName": "<other-project-app>", "tags": ["ttl=project-end", "owner=<other-project-owner>", "project=<other-project>"]}, {"displayName": "<other-project-app-2>", "tags": []}]
+2026-11-12T06:49:04Z az group list, rg-warden* -> exit 0: []
+2026-11-12T06:49:05Z az resource list --tag project=warden -> exit 0: []
+
+## does any Entra meter bill these objects or tokens to this subscription? (2026-11-12T06:49:05Z)
+ARM GET /tenants (only this tenant, only these fields): exit 0 [{'tenantType': 'AAD', 'tenantCategory': 'Home'}]
+az resource list --resource-type Microsoft.AzureActiveDirectory/guestUsages (External ID / B2C billing links in this subscription) -> exit 0: 0
+az resource list --resource-type Microsoft.AzureActiveDirectory/ciamDirectories (External ID / B2C billing links in this subscription) -> exit 0: 0
+az resource list --resource-type Microsoft.AzureActiveDirectory/b2cDirectories (External ID / B2C billing links in this subscription) -> exit 0: 0
+Retail Prices API, retrieved 2026-11-12T06:42:01Z:
+  https://prices.azure.com/api/retail/prices?%24filter=contains%28serviceName%2C%20%27Entra%27%29 -> 1 pages, 246 items
+      13  serviceName='Microsoft Entra' productName='Microsoft Entra External ID'
+       2  serviceName='Microsoft Entra' productName='SCIM provisioning API'
+     230  serviceName='Microsoft Entra Domain Services' productName='Microsoft Entra Domain Services'
+       1  serviceName='Microsoft Entra Verified ID' productName='Microsoft Entra Verified ID Premium'
+  https://prices.azure.com/api/retail/prices?%24filter=contains%28serviceName%2C%20%27Active%20Directory%27%29 -> 1 pages, 372 items
+     139  serviceName='Azure Active Directory B2C' productName='Azure Active Directory B2C'
+     232  serviceName='Azure Active Directory for External Identities' productName='Azure Active Directory B2X'
+       1  serviceName='Azure Active Directory for External Identities' productName='Azure Active Directory for External Identities'
+  meters whose service/product/sku/meter name mentions application, registration, service principal, workload, client credentials, M2M, token or SCIM:
+    Microsoft Entra | SCIM provisioning API | Standard | Standard Transaction | 0.002 USD per 1 | Global | Consumption | effective 2026-04-01T00:00:00Z
+    Microsoft Entra | SCIM provisioning API | Standard | Standard Transaction | 0.002 USD per 1 | US Gov | Consumption | effective 2026-04-01T00:00:00Z
+    Microsoft Entra | Microsoft Entra External ID | M2M Authentication | M2M Authentication Token | 0.001 USD per 1 | Global | Consumption | effective 2025-11-01T00:00:00Z
+2026-11-12T06:49:07Z https://learn.microsoft.com/en-us/entra/external-id/external-identities-pricing, add-on table row (text extract):
+  "Add-on Tenant configuration Billing model Description M2M Authentication External Transaction-based Authentication using OAuth 2.0 client credentials flows for machine-to-machine (M2M) authentication scenarios without user interaction. Charges are based on the number of authentication transactions. SMS Phone Authentication Workforc"
+If the M2M meter applied, the 6632 issued tokens would be 6632 x 0.001 = 6.63 USD.
+
+## scripts/azure_reaper.sh, every recorded run in the Task 8/14 sessions (session start, or end where noted)
+session 1 start: {"at": "2026-11-11T04:24:22Z", "event": "group-absent", "id": "/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab"}
+session 2 start: {"at": "2026-11-11T15:27:27Z", "event": "group-absent", "id": "/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab"}
+session 3 end checks: {"at": "2026-11-12T03:59:30Z", "event": "group-absent", "id": "/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab"}
+session 4 start: {"at": "2026-11-12T06:41:53Z", "event": "group-absent", "id": "/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab"}
+session 4 end: {"at": "2026-11-12T06:48:47Z", "event": "group-absent", "id": "/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab"}
+
+## added 2026-11-12 (review fix round 1)
+# Reaper records: sessions 1 (keyprobe, run0, run1; 2026-11-11 04:24Z-) and 2 (run2; 2026-11-11 15:27Z-) have only the
+# start record above. Their end records are missing: no output of an end-of-session reaper run was kept, so it cannot be
+# shown that one ran. ACCEPTANCE asks for the reaper at start and end; for these two sessions the end half is not met.
+# Session 3 was a read-only check session with the one record above; session 4 has both. The 2026-11-12 recycle-bin
+# purge session has both (dry runs, task-14/entra-recycle-bin-purge-20261112.txt).
+# Sources: "source <commit>" on the run lines above is inferred from commit and start times; the run JSONs record no
+# source (see azure-contain-20261111-analysis.txt, provenance).
+# M2M figure: the line "If the M2M meter applied, the 6632 issued tokens would be ... 6.63 USD" counts tokens issued, but
+# the meter bills authentication transactions. The drills made 1212 + 4362 + 5560 = 11134 client-credentials requests
+# (counts above), which would be about 11.13 USD at 0.001 USD each. The meter does not apply here: tenantType AAD,
+# tenantCategory Home, and 0 guestUsages / ciamDirectories / b2cDirectories resources (checks above).
+# Recycle bin: all 12 applications and 11 service principals above (and Task 6's two objects) were purged by exact ID on
+# 2026-11-12 23:23-23:24Z (task-14/entra-recycle-bin-purge-20261112.txt).

@@ -1,0 +1,25 @@
+$ /usr/bin/python3 -B -m unittest discover -s scripts -p test_k3s_lab_init.py -v
+test_failed_bootstrap_retains_bounded_private_snapshot_and_reaps (test_k3s_lab_init.InitTest.test_failed_bootstrap_retains_bounded_private_snapshot_and_reaps) ... ok
+test_fixed_kubelet_config_protects_host_and_limits_owned_subtree (test_k3s_lab_init.InitTest.test_fixed_kubelet_config_protects_host_and_limits_owned_subtree) ... ok
+test_handler_verification_rejects_flag_or_runtime_drift (test_k3s_lab_init.InitTest.test_handler_verification_rejects_flag_or_runtime_drift) ... ok
+test_handshake_rechecks_retained_flags_after_remount (test_k3s_lab_init.InitTest.test_handshake_rechecks_retained_flags_after_remount) ... ok
+test_host_cannot_call_smoke_or_forward_arbitrary_commands (test_k3s_lab_init.InitTest.test_host_cannot_call_smoke_or_forward_arbitrary_commands) ... ok
+test_log_growth_after_metadata_check_still_obeys_combined_read_bound (test_k3s_lab_init.InitTest.test_log_growth_after_metadata_check_still_obeys_combined_read_bound) ... ok
+test_mount_smoke_only_checks_readonly_identity_and_live_remount_is_pinned (test_k3s_lab_init.InitTest.test_mount_smoke_only_checks_readonly_identity_and_live_remount_is_pinned) ... ok
+test_only_public_identity_fields_leave_the_controller (test_k3s_lab_init.InitTest.test_only_public_identity_fields_leave_the_controller) ... ok
+test_private_log_reader_rejects_fifo_directory_and_symlink_ancestor (test_k3s_lab_init.InitTest.test_private_log_reader_rejects_fifo_directory_and_symlink_ancestor) ... ok
+test_rotated_containerd_history_cannot_bypass_startup_gate (test_k3s_lab_init.InitTest.test_rotated_containerd_history_cannot_bypass_startup_gate) ... ok
+test_safe_observed_denial_lines_preserve_order_and_duplicates (test_k3s_lab_init.InitTest.test_safe_observed_denial_lines_preserve_order_and_duplicates) ... ok
+test_separate_containerd_warnings_cannot_bypass_clean_main_log (test_k3s_lab_init.InitTest.test_separate_containerd_warnings_cannot_bypass_clean_main_log) ... ok
+test_session_handshake_rejects_wrong_identity_before_any_target_write (test_k3s_lab_init.InitTest.test_session_handshake_rejects_wrong_identity_before_any_target_write) ... ok
+test_startup_diagnostics_total_bound_and_symlinks_fail_closed (test_k3s_lab_init.InitTest.test_startup_diagnostics_total_bound_and_symlinks_fail_closed) ... ok
+test_successful_cleanup_exports_actual_denials_and_removes_private_data (test_k3s_lab_init.InitTest.test_successful_cleanup_exports_actual_denials_and_removes_private_data) ... ok
+test_sysctl_mismatch_or_writable_proc_sys_refuses_start (test_k3s_lab_init.InitTest.test_sysctl_mismatch_or_writable_proc_sys_refuses_start) ... ok
+test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected (test_k3s_lab_init.InitTest.test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected) ... ok
+test_wrong_node_version_or_namespace_identity_fails (test_k3s_lab_init.InitTest.test_wrong_node_version_or_namespace_identity_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.482s
+
+OK
+exit=0

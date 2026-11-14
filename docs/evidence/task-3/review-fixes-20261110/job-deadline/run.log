@@ -1,0 +1,50 @@
+2026-11-10T20:58:32-08:00 create warden-deadline-supervisor
+job.batch/warden-deadline-supervisor created
+2026-11-10T20:58:39-08:00 warden-deadline-supervisor: Failed=True, pods left: none
+job.batch "warden-deadline-supervisor" deleted from warden-lab namespace
+2026-11-10T20:58:43-08:00 create warden-deadline-bare
+job.batch/warden-deadline-bare created
+2026-11-10T20:58:51-08:00 warden-deadline-bare: Failed=True, pods left: none
+job.batch "warden-deadline-bare" deleted from warden-lab namespace
+== supervisor
+-- job events (supervisor.job-events.json)
+ 1  ADDED    rv=362 active=0 failed=0 terminating=- conditions=[]
+ 2  MODIFIED rv=365 active=1 failed=0 terminating=0 conditions=[]
+ 3  MODIFIED rv=374 active=1 failed=0 terminating=0 conditions=[]
+ 4  MODIFIED rv=380 active=0 failed=0 terminating=1 conditions=[FailureTarget=True(DeadlineExceeded, 2026-11-11T04:58:38Z)]
+ 5  MODIFIED rv=383 active=0 failed=1 terminating=1 conditions=[FailureTarget=True(DeadlineExceeded, 2026-11-11T04:58:38Z)]
+ 6  MODIFIED rv=386 active=0 failed=1 terminating=0 conditions=[FailureTarget=True(DeadlineExceeded, 2026-11-11T04:58:38Z)]
+ 7  MODIFIED rv=387 active=0 failed=1 terminating=0 conditions=[FailureTarget=True(DeadlineExceeded, 2026-11-11T04:58:38Z); Failed=True(DeadlineExceeded, 2026-11-11T04:58:39Z)]
+-- pod events (supervisor.pod-events.json)
+ 1  ADDED    rv=363 phase=Pending reason= deletionTimestamp=-
+ 2  MODIFIED rv=366 phase=Pending reason= deletionTimestamp=-
+ 3  MODIFIED rv=368 phase=Pending reason= deletionTimestamp=- run: waiting ContainerCreating
+ 4  MODIFIED rv=370 phase=Pending reason= deletionTimestamp=- run: waiting ContainerCreating
+ 5  MODIFIED rv=373 phase=Running reason= deletionTimestamp=- run: running 
+ 6  MODIFIED rv=378 phase=Running reason= deletionTimestamp=2026-11-11T04:58:39Z run: running 
+ 7  MODIFIED rv=382 phase=Running reason= deletionTimestamp=2026-11-11T04:58:39Z run: running 
+ 8  MODIFIED rv=384 phase=Running reason= deletionTimestamp=2026-11-11T04:58:39Z run: running 
+ 9  MODIFIED rv=385 phase=Failed reason= deletionTimestamp=2026-11-11T04:58:39Z run: terminated exitCode=137 reason=Error finishedAt=2026-11-11T04:58:38Z message="{\"v\":1,\"code\":137,\"timed_out\":false,\"pids_max_events\":0,\"peak_pids\":5,\"cgroup_empty\":true,\"init_ns\":1794373113292708685,\"exec_ns\":1794373113317768691,\"error\":\"supervisor got terminated\"}"
+10  MODIFIED rv=389 phase=Failed reason= deletionTimestamp=2026-11-11T04:58:39Z run: terminated exitCode=137 reason=Error finishedAt=2026-11-11T04:58:38Z message="{\"v\":1,\"code\":137,\"timed_out\":false,\"pids_max_events\":0,\"peak_pids\":5,\"cgroup_empty\":true,\"init_ns\":1794373113292708685,\"exec_ns\":1794373113317768691,\"error\":\"supervisor got terminated\"}"
+11  DELETED  rv=390 phase=Failed reason= deletionTimestamp=2026-11-11T04:58:39Z run: terminated exitCode=137 reason=Error finishedAt=2026-11-11T04:58:38Z message="{\"v\":1,\"code\":137,\"timed_out\":false,\"pids_max_events\":0,\"peak_pids\":5,\"cgroup_empty\":true,\"init_ns\":1794373113292708685,\"exec_ns\":1794373113317768691,\"error\":\"supervisor got terminated\"}"
+== bare
+-- job events (bare.job-events.json)
+ 1  ADDED    rv=394 active=0 failed=0 terminating=- conditions=[]
+ 2  MODIFIED rv=397 active=1 failed=0 terminating=0 conditions=[]
+ 3  MODIFIED rv=406 active=1 failed=0 terminating=0 conditions=[]
+ 4  MODIFIED rv=413 active=0 failed=0 terminating=1 conditions=[FailureTarget=True(DeadlineExceeded, 2026-11-11T04:58:50Z)]
+ 5  MODIFIED rv=417 active=0 failed=1 terminating=1 conditions=[FailureTarget=True(DeadlineExceeded, 2026-11-11T04:58:50Z)]
+ 6  MODIFIED rv=419 active=0 failed=1 terminating=0 conditions=[FailureTarget=True(DeadlineExceeded, 2026-11-11T04:58:50Z)]
+ 7  MODIFIED rv=420 active=0 failed=1 terminating=0 conditions=[FailureTarget=True(DeadlineExceeded, 2026-11-11T04:58:50Z); Failed=True(DeadlineExceeded, 2026-11-11T04:58:51Z)]
+-- pod events (bare.pod-events.json)
+ 1  ADDED    rv=395 phase=Pending reason= deletionTimestamp=-
+ 2  MODIFIED rv=396 phase=Pending reason= deletionTimestamp=-
+ 3  MODIFIED rv=400 phase=Pending reason= deletionTimestamp=- run: waiting ContainerCreating
+ 4  MODIFIED rv=402 phase=Pending reason= deletionTimestamp=- run: waiting ContainerCreating
+ 5  MODIFIED rv=405 phase=Running reason= deletionTimestamp=- run: running 
+ 6  MODIFIED rv=411 phase=Running reason= deletionTimestamp=2026-11-11T04:58:51Z run: running 
+ 7  MODIFIED rv=415 phase=Running reason= deletionTimestamp=2026-11-11T04:58:51Z run: running 
+ 8  MODIFIED rv=416 phase=Running reason= deletionTimestamp=2026-11-11T04:58:51Z run: running 
+ 9  MODIFIED rv=418 phase=Failed reason= deletionTimestamp=2026-11-11T04:58:51Z run: terminated exitCode=143 reason=Error finishedAt=2026-11-11T04:58:50Z message=(empty)
+10  MODIFIED rv=422 phase=Failed reason= deletionTimestamp=2026-11-11T04:58:51Z run: terminated exitCode=143 reason=Error finishedAt=2026-11-11T04:58:50Z message=(empty)
+11  DELETED  rv=423 phase=Failed reason= deletionTimestamp=2026-11-11T04:58:51Z run: terminated exitCode=143 reason=Error finishedAt=2026-11-11T04:58:50Z message=(empty)

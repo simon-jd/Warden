@@ -1,0 +1,19 @@
+{
+ "state": {
+  "Status": "exited",
+  "Running": false,
+  "ExitCode": 1,
+  "StartedAt": "2026-11-14T03:41:29.632049255Z",
+  "FinishedAt": "2026-11-14T03:41:55.742495052Z"
+ },
+ "log_tail": [
+  "Events detected: 0",
+  "Rule counts by severity:",
+  "Triggered rules by rule name:",
+  "2026-11-14T03:41:29+0000: Loaded event sources: syscall",
+  "2026-11-14T03:41:29+0000: Enabled event sources: syscall",
+  "2026-11-14T03:41:29+0000: Opening 'syscall' source with gVisor. Configuration path: /etc/warden-detect/gvisor-pod-init.json",
+  "2026-11-14T03:41:29+0000: [libs]: Trying to open the right engine!",
+  "Error: vector"
+ ]
+}

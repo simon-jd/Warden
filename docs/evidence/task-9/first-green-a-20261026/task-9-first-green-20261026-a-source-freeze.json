@@ -1,0 +1,46 @@
+{
+  "phase": "FIRST_GREEN",
+  "base": "f83a41b8d5dd7f5a976852785a31aeee01596a19",
+  "tests": [
+    "TestSelfApprovalRejected",
+    "TestGrantExpiresAndBindingRemoved",
+    "TestAuditRecordedForGrantAndExpiry",
+    "TestRequestBoundariesAndTenantIsolation",
+    "TestApprovalClockRetryAndExpiryFence",
+    "TestAuditFailuresRollbackAndRemoveAccess",
+    "TestRestartRevokesAmbiguousOperations",
+    "TestExpiryAuditRetryAfterExternalDeletion",
+    "TestDeadlineDuringReservationPreventsActivation",
+    "TestConcurrentReconciliationCannotActivateTwice",
+    "TestMaintenanceRequiresTrustedAuthorization",
+    "TestRequesterMembershipRecheckedBeforeActivation",
+    "TestExpiryBatchFailureDoesNotStarveLaterGrants",
+    "TestKubernetesBindingLifecycleAndFencing",
+    "TestKubernetesStrictResponseValidation",
+    "TestKubernetesRemovalRejectsForeignUIDAndUnconfirmedDeletion",
+    "TestKubernetesTransportErrorsDoNotRetryActivation"
+  ],
+  "material_sha256": "1ca3cbfa3cf4a3ba960dc4ced03f8eb24d2e8429e9ae5e7b0e34d3d08b54fbbd",
+  "source": {
+    "go.mod": "bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa",
+    "go.sum": "cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0",
+    "controlplane/internal/jit/jit.go": "99f1be2efb41a692a78d1a6ee0e0c9d074b1ef0126b0168205f60cf01de5e872",
+    "controlplane/internal/jit/jit_test.go": "53f1e1719ee65c82cb7195bf5449c92ce93a8019cb7fede85fff5e1b4d450c77",
+    "controlplane/internal/audit/audit.go": "0cb775bb602fcdcdefe405a8587d11aa4dac79e018d457c1328c7f00eb932439",
+    "controlplane/internal/canonical/json.go": "06b2298c869c69fa0877e120f4a14fd3942f5e5c60a0c79032bcb7ffcd8261a0",
+    "controlplane/internal/store/store.go": "d50bab2c3f628855f2b21b3c94ec8a5a2a8526907509916ef0b9ca4eabce5a62",
+    "controlplane/internal/store/migration_test.go": "6dc0d9b0f6d9a2b9d9c62a5b38353dbae2bb46a31abb0bf8400cc7642db11f6a",
+    "controlplane/internal/store/migrations/001_init.sql": "f0630b47de866d358a9290b746a2017be1275e83780ede92b22e61617e6c76d8",
+    "controlplane/internal/store/migrations/002_execution.sql": "6d0bd9ff177a820520a77ef2c9b8392a89567a8663497342aeb0ce8d128a350d",
+    "controlplane/internal/store/migrations/003_jit.sql": "b3699d3184e250e416735ce19ac12626d4ebfba70c58eb75c1f142d62f28a98a",
+    "controlplane/internal/testutil/database.go": "f6574dfe1f4b6eba56bcf9726756f2102c4ceebca3bd5d56e10b6fa9f03545e8",
+    "controlplane/internal/jit/bindings.go": "b2bbbc8b322496a84b9c1fe3d982728f9f56ac851ad9a06b552d0750af500441",
+    "controlplane/internal/jit/bindings_test.go": "ac5317965c8dc818253822162678f3524e21e3727746a4058385194886dd7e07",
+    "controlplane/internal/jit/README.md": "ce0cd44d5d22ecdda38742ec1b66ba1660468f66f2a981302c89a5e7e47714c8"
+  },
+  "historical_first_red_freeze": {
+    "path": ".superpowers/sdd/2-warden-security-plan/task-9-first-red-source-freeze.json",
+    "sha256": "8f498b9220b29dd8b26753950a1896631265df3a6e2a3abf810872eb2e5be6a8"
+  },
+  "scope": "jit package only, original three mandatory plus directly affected regression/adapter cases; execution pending root admission"
+}

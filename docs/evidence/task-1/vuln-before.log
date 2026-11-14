@@ -1,0 +1,415 @@
+=== Symbol Results ===
+
+Vulnerability #1: GO-2026-6809
+    Distrust compromised intermediate certificates in crypto/x509
+  More info: https://pkg.go.dev/vuln/GO-2026-6809
+  Standard library
+    Found in: crypto/x509@go1.26.8
+    Fixed in: crypto/x509@go1.26.10
+    Example traces found:
+      #1: controlplane/cmd/warden-api/main.go:41:32: warden.main calls http.Server.ListenAndServe, which eventually calls x509.Certificate.Verify
+
+Vulnerability #2: GO-2026-6629
+    Panic parsing crafted input in x/text/secure/precis in golang.org/x/text
+  More info: https://pkg.go.dev/vuln/GO-2026-6629
+  Module: golang.org/x/text
+    Found in: golang.org/x/text@v0.24.0
+    Fixed in: golang.org/x/text@v0.41.0
+    Example traces found:
+      #1: controlplane/internal/testutil/database.go:41:36: testutil.Database calls pgxpool.NewWithConfig, which eventually calls precis.Profile.Bytes
+
+Vulnerability #3: GO-2026-6617
+    HTTP/2 server crash due to HPACK encoder race in net/http
+  More info: https://pkg.go.dev/vuln/GO-2026-6617
+  Standard library
+    Found in: net/http@go1.26.8
+    Fixed in: net/http@go1.26.9
+    Example traces found:
+      #1: controlplane/internal/api/api.go:34:37: api.handler.ServeHTTP calls http.Header.Get
+      #2: controlplane/internal/api/api.go:34:37: api.handler.ServeHTTP calls http.Header.Get
+      #3: controlplane/internal/api/api.go:22:16: api.write calls http.Header.Set
+      #4: controlplane/internal/api/api.go:22:16: api.write calls http.Header.Set
+      #5: controlplane/cmd/warden-api/main.go:41:32: warden.main calls http.Server.ListenAndServe
+      #6: controlplane/cmd/warden-api/main.go:41:32: warden.main calls http.Server.ListenAndServe
+      #7: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.body.Read
+      #8: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.body.Read
+      #9: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyEOFSignal.Read
+      #10: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyEOFSignal.Read
+      #11: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyLocked.Read
+      #12: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyLocked.Read
+      #13: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.checkConnErrorWriter.Write
+      #14: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.checkConnErrorWriter.Write
+      #15: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.chunkWriter.Write
+      #16: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.chunkWriter.Write
+      #17: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.connReader.Read
+      #18: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.connReader.Read
+      #19: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.expectContinueReader.Read
+      #20: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.expectContinueReader.Read
+      #21: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ConnectionError.Error
+      #22: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ConnectionError.Error
+      #23: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ErrCode.String
+      #24: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ErrCode.String
+      #25: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameHeader.String
+      #26: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameHeader.String
+      #27: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameType.String
+      #28: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameType.String
+      #29: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameWriteRequest.String
+      #30: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameWriteRequest.String
+      #31: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2Setting.String
+      #32: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2Setting.String
+      #33: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2SettingID.String
+      #34: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2SettingID.String
+      #35: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which calls http.http2StreamError.Error
+      #36: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which calls http.http2StreamError.Error
+      #37: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2bufferedWriterTimeoutWriter.Write
+      #38: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2bufferedWriterTimeoutWriter.Write
+      #39: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2chunkWriter.Write
+      #40: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2chunkWriter.Write
+      #41: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2connError.Error
+      #42: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2connError.Error
+      #43: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2duplicatePseudoHeaderError.Error
+      #44: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2duplicatePseudoHeaderError.Error
+      #45: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldNameError.Error
+      #46: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldNameError.Error
+      #47: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldValueError.Error
+      #48: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldValueError.Error
+      #49: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2pseudoHeaderError.Error
+      #50: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2pseudoHeaderError.Error
+      #51: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2requestBody.Read
+      #52: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2requestBody.Read
+      #53: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.http2responseWriter.Write
+      #54: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.http2responseWriter.Write
+      #55: controlplane/internal/api/api.go:24:15: api.write calls http.http2responseWriter.WriteHeader
+      #56: controlplane/internal/api/api.go:24:15: api.write calls http.http2responseWriter.WriteHeader
+      #57: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2responseWriter.WriteString
+      #58: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2responseWriter.WriteString
+      #59: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2writeData.String
+      #60: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2writeData.String
+      #61: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.loggingConn.Read
+      #62: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.loggingConn.Read
+      #63: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.loggingConn.Write
+      #64: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.loggingConn.Write
+      #65: controlplane/internal/api/api.go:83:24: api.handler.create calls io.ReadAll, which calls http.maxBytesReader.Read
+      #66: controlplane/internal/api/api.go:83:24: api.handler.create calls io.ReadAll, which calls http.maxBytesReader.Read
+      #67: controlplane/internal/testutil/database.go:33:14: testutil.Database calls pgxpool.Pool.Close, which eventually calls http.onceCloseListener.Close
+      #68: controlplane/internal/testutil/database.go:33:14: testutil.Database calls pgxpool.Pool.Close, which eventually calls http.onceCloseListener.Close
+      #69: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.response.Write
+      #70: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.response.Write
+      #71: controlplane/internal/api/api.go:24:15: api.write calls http.response.WriteHeader
+      #72: controlplane/internal/api/api.go:24:15: api.write calls http.response.WriteHeader
+
+Vulnerability #4: GO-2026-6613
+    HTTP/1 server connection desynchronization after 2xx CONNECT response in
+    net/http
+  More info: https://pkg.go.dev/vuln/GO-2026-6613
+  Standard library
+    Found in: net/http@go1.26.8
+    Fixed in: net/http@go1.26.9
+    Example traces found:
+      #1: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which eventually calls http.CanonicalHeaderKey
+      #2: controlplane/internal/api/api.go:24:15: api.write calls http.http2responseWriter.WriteHeader, which eventually calls http.Header.Del
+      #3: controlplane/internal/api/api.go:34:37: api.handler.ServeHTTP calls http.Header.Get
+      #4: controlplane/internal/api/api.go:22:16: api.write calls http.Header.Set
+      #5: controlplane/cmd/warden-api/main.go:41:32: warden.main calls http.Server.ListenAndServe
+      #6: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.body.Read
+      #7: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyEOFSignal.Read
+      #8: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyLocked.Read
+      #9: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which eventually calls http.checkConnErrorWriter.Write
+      #10: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which eventually calls http.chunkWriter.Write
+      #11: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.connReader.Read
+      #12: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.expectContinueReader.Read
+      #13: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.loggingConn.Read
+      #14: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.loggingConn.Write
+      #15: controlplane/internal/api/api.go:83:24: api.handler.create calls io.ReadAll, which calls http.maxBytesReader.Read
+      #16: controlplane/internal/testutil/database.go:33:14: testutil.Database calls pgxpool.Pool.Close, which eventually calls http.onceCloseListener.Close
+      #17: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.response.Write
+      #18: controlplane/internal/api/api.go:24:15: api.write calls http.response.WriteHeader
+
+Vulnerability #5: GO-2026-6612
+    Double flow control refund on HTTP/2 server streams in net/http
+  More info: https://pkg.go.dev/vuln/GO-2026-6612
+  Standard library
+    Found in: net/http@go1.26.8
+    Fixed in: net/http@go1.26.9
+    Example traces found:
+      #1: controlplane/internal/api/api.go:34:37: api.handler.ServeHTTP calls http.Header.Get
+      #2: controlplane/internal/api/api.go:34:37: api.handler.ServeHTTP calls http.Header.Get
+      #3: controlplane/internal/api/api.go:22:16: api.write calls http.Header.Set
+      #4: controlplane/internal/api/api.go:22:16: api.write calls http.Header.Set
+      #5: controlplane/cmd/warden-api/main.go:41:32: warden.main calls http.Server.ListenAndServe
+      #6: controlplane/cmd/warden-api/main.go:41:32: warden.main calls http.Server.ListenAndServe
+      #7: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.body.Read
+      #8: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.body.Read
+      #9: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyEOFSignal.Read
+      #10: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyEOFSignal.Read
+      #11: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyLocked.Read
+      #12: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyLocked.Read
+      #13: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.checkConnErrorWriter.Write
+      #14: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.checkConnErrorWriter.Write
+      #15: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.chunkWriter.Write
+      #16: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.chunkWriter.Write
+      #17: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.connReader.Read
+      #18: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.connReader.Read
+      #19: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.expectContinueReader.Read
+      #20: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.expectContinueReader.Read
+      #21: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ConnectionError.Error
+      #22: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ConnectionError.Error
+      #23: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ErrCode.String
+      #24: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ErrCode.String
+      #25: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameHeader.String
+      #26: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameHeader.String
+      #27: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameType.String
+      #28: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameType.String
+      #29: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameWriteRequest.String
+      #30: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameWriteRequest.String
+      #31: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2Setting.String
+      #32: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2Setting.String
+      #33: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2SettingID.String
+      #34: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2SettingID.String
+      #35: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which calls http.http2StreamError.Error
+      #36: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which calls http.http2StreamError.Error
+      #37: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2bufferedWriterTimeoutWriter.Write
+      #38: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2bufferedWriterTimeoutWriter.Write
+      #39: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2chunkWriter.Write
+      #40: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2chunkWriter.Write
+      #41: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2connError.Error
+      #42: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2connError.Error
+      #43: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2duplicatePseudoHeaderError.Error
+      #44: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2duplicatePseudoHeaderError.Error
+      #45: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldNameError.Error
+      #46: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldNameError.Error
+      #47: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldValueError.Error
+      #48: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldValueError.Error
+      #49: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2pseudoHeaderError.Error
+      #50: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2pseudoHeaderError.Error
+      #51: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2requestBody.Read
+      #52: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2requestBody.Read
+      #53: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.http2responseWriter.Write
+      #54: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.http2responseWriter.Write
+      #55: controlplane/internal/api/api.go:24:15: api.write calls http.http2responseWriter.WriteHeader
+      #56: controlplane/internal/api/api.go:24:15: api.write calls http.http2responseWriter.WriteHeader
+      #57: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2responseWriter.WriteString
+      #58: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2responseWriter.WriteString
+      #59: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2writeData.String
+      #60: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2writeData.String
+      #61: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.loggingConn.Read
+      #62: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.loggingConn.Read
+      #63: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.loggingConn.Write
+      #64: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.loggingConn.Write
+      #65: controlplane/internal/api/api.go:83:24: api.handler.create calls io.ReadAll, which calls http.maxBytesReader.Read
+      #66: controlplane/internal/api/api.go:83:24: api.handler.create calls io.ReadAll, which calls http.maxBytesReader.Read
+      #67: controlplane/internal/testutil/database.go:33:14: testutil.Database calls pgxpool.Pool.Close, which eventually calls http.onceCloseListener.Close
+      #68: controlplane/internal/testutil/database.go:33:14: testutil.Database calls pgxpool.Pool.Close, which eventually calls http.onceCloseListener.Close
+      #69: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.response.Write
+      #70: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.response.Write
+      #71: controlplane/internal/api/api.go:24:15: api.write calls http.response.WriteHeader
+      #72: controlplane/internal/api/api.go:24:15: api.write calls http.response.WriteHeader
+
+Vulnerability #6: GO-2026-6611
+    Excessive CPU consumption from repeated initial window changes in net/http
+  More info: https://pkg.go.dev/vuln/GO-2026-6611
+  Standard library
+    Found in: net/http@go1.26.8
+    Fixed in: net/http@go1.26.9
+    Example traces found:
+      #1: controlplane/internal/api/api.go:34:37: api.handler.ServeHTTP calls http.Header.Get
+      #2: controlplane/internal/api/api.go:34:37: api.handler.ServeHTTP calls http.Header.Get
+      #3: controlplane/internal/api/api.go:22:16: api.write calls http.Header.Set
+      #4: controlplane/internal/api/api.go:22:16: api.write calls http.Header.Set
+      #5: controlplane/cmd/warden-api/main.go:41:32: warden.main calls http.Server.ListenAndServe
+      #6: controlplane/cmd/warden-api/main.go:41:32: warden.main calls http.Server.ListenAndServe
+      #7: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.body.Read
+      #8: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.body.Read
+      #9: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyEOFSignal.Read
+      #10: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyEOFSignal.Read
+      #11: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyLocked.Read
+      #12: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyLocked.Read
+      #13: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.checkConnErrorWriter.Write
+      #14: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.checkConnErrorWriter.Write
+      #15: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.chunkWriter.Write
+      #16: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.chunkWriter.Write
+      #17: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.connReader.Read
+      #18: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.connReader.Read
+      #19: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.expectContinueReader.Read
+      #20: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.expectContinueReader.Read
+      #21: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ConnectionError.Error
+      #22: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ConnectionError.Error
+      #23: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ErrCode.String
+      #24: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ErrCode.String
+      #25: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameHeader.String
+      #26: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameHeader.String
+      #27: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameType.String
+      #28: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameType.String
+      #29: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameWriteRequest.String
+      #30: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameWriteRequest.String
+      #31: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2Setting.String
+      #32: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2Setting.String
+      #33: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2SettingID.String
+      #34: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2SettingID.String
+      #35: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which calls http.http2StreamError.Error
+      #36: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which calls http.http2StreamError.Error
+      #37: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2bufferedWriterTimeoutWriter.Write
+      #38: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2bufferedWriterTimeoutWriter.Write
+      #39: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2chunkWriter.Write
+      #40: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2chunkWriter.Write
+      #41: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2connError.Error
+      #42: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2connError.Error
+      #43: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2duplicatePseudoHeaderError.Error
+      #44: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2duplicatePseudoHeaderError.Error
+      #45: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldNameError.Error
+      #46: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldNameError.Error
+      #47: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldValueError.Error
+      #48: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldValueError.Error
+      #49: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2pseudoHeaderError.Error
+      #50: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2pseudoHeaderError.Error
+      #51: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2requestBody.Read
+      #52: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2requestBody.Read
+      #53: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.http2responseWriter.Write
+      #54: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.http2responseWriter.Write
+      #55: controlplane/internal/api/api.go:24:15: api.write calls http.http2responseWriter.WriteHeader
+      #56: controlplane/internal/api/api.go:24:15: api.write calls http.http2responseWriter.WriteHeader
+      #57: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2responseWriter.WriteString
+      #58: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2responseWriter.WriteString
+      #59: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2writeData.String
+      #60: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2writeData.String
+      #61: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.loggingConn.Read
+      #62: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.loggingConn.Read
+      #63: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.loggingConn.Write
+      #64: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.loggingConn.Write
+      #65: controlplane/internal/api/api.go:83:24: api.handler.create calls io.ReadAll, which calls http.maxBytesReader.Read
+      #66: controlplane/internal/api/api.go:83:24: api.handler.create calls io.ReadAll, which calls http.maxBytesReader.Read
+      #67: controlplane/internal/testutil/database.go:33:14: testutil.Database calls pgxpool.Pool.Close, which eventually calls http.onceCloseListener.Close
+      #68: controlplane/internal/testutil/database.go:33:14: testutil.Database calls pgxpool.Pool.Close, which eventually calls http.onceCloseListener.Close
+      #69: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.response.Write
+      #70: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.response.Write
+      #71: controlplane/internal/api/api.go:24:15: api.write calls http.response.WriteHeader
+      #72: controlplane/internal/api/api.go:24:15: api.write calls http.response.WriteHeader
+
+Vulnerability #7: GO-2026-6608
+    Memory limit bypass when parsing MIME headers in net/textproto,
+    mime/multipart
+  More info: https://pkg.go.dev/vuln/GO-2026-6608
+  Standard library
+    Found in: net/textproto@go1.26.8
+    Fixed in: net/textproto@go1.26.9
+    Example traces found:
+      #1: controlplane/cmd/warden-api/main.go:41:32: warden.main calls http.Server.ListenAndServe, which eventually calls textproto.Reader.ReadMIMEHeader
+
+Vulnerability #8: GO-2026-6607
+    Reject malformed ECH outer extension references in crypto/tls
+  More info: https://pkg.go.dev/vuln/GO-2026-6607
+  Standard library
+    Found in: crypto/tls@go1.26.8
+    Fixed in: crypto/tls@go1.26.9
+    Example traces found:
+      #1: controlplane/cmd/warden-api/main.go:41:32: warden.main calls http.Server.ListenAndServe, which eventually calls tls.Conn.HandshakeContext
+      #2: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls tls.Conn.Read
+      #3: controlplane/cmd/warden-api/main.go:41:32: warden.main calls http.Server.ListenAndServe, which eventually calls tls.Conn.Write
+
+Vulnerability #9: GO-2026-6603
+    HTTP/2 server memory exhaustion due to Trailer headers in net/http
+  More info: https://pkg.go.dev/vuln/GO-2026-6603
+  Standard library
+    Found in: net/http@go1.26.8
+    Fixed in: net/http@go1.26.9
+    Example traces found:
+      #1: controlplane/internal/api/api.go:34:37: api.handler.ServeHTTP calls http.Header.Get
+      #2: controlplane/internal/api/api.go:34:37: api.handler.ServeHTTP calls http.Header.Get
+      #3: controlplane/internal/api/api.go:22:16: api.write calls http.Header.Set
+      #4: controlplane/internal/api/api.go:22:16: api.write calls http.Header.Set
+      #5: controlplane/cmd/warden-api/main.go:41:32: warden.main calls http.Server.ListenAndServe
+      #6: controlplane/cmd/warden-api/main.go:41:32: warden.main calls http.Server.ListenAndServe
+      #7: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.body.Read
+      #8: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.body.Read
+      #9: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyEOFSignal.Read
+      #10: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyEOFSignal.Read
+      #11: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyLocked.Read
+      #12: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.bodyLocked.Read
+      #13: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.checkConnErrorWriter.Write
+      #14: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.checkConnErrorWriter.Write
+      #15: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.chunkWriter.Write
+      #16: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.chunkWriter.Write
+      #17: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.connReader.Read
+      #18: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.connReader.Read
+      #19: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.expectContinueReader.Read
+      #20: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.expectContinueReader.Read
+      #21: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ConnectionError.Error
+      #22: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ConnectionError.Error
+      #23: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ErrCode.String
+      #24: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2ErrCode.String
+      #25: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameHeader.String
+      #26: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameHeader.String
+      #27: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameType.String
+      #28: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameType.String
+      #29: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameWriteRequest.String
+      #30: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2FrameWriteRequest.String
+      #31: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2Setting.String
+      #32: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2Setting.String
+      #33: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2SettingID.String
+      #34: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2SettingID.String
+      #35: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which calls http.http2StreamError.Error
+      #36: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which calls http.http2StreamError.Error
+      #37: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2bufferedWriterTimeoutWriter.Write
+      #38: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2bufferedWriterTimeoutWriter.Write
+      #39: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2chunkWriter.Write
+      #40: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.http2chunkWriter.Write
+      #41: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2connError.Error
+      #42: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2connError.Error
+      #43: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2duplicatePseudoHeaderError.Error
+      #44: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2duplicatePseudoHeaderError.Error
+      #45: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldNameError.Error
+      #46: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldNameError.Error
+      #47: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldValueError.Error
+      #48: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2headerFieldValueError.Error
+      #49: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2pseudoHeaderError.Error
+      #50: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2pseudoHeaderError.Error
+      #51: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2requestBody.Read
+      #52: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2requestBody.Read
+      #53: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.http2responseWriter.Write
+      #54: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.http2responseWriter.Write
+      #55: controlplane/internal/api/api.go:24:15: api.write calls http.http2responseWriter.WriteHeader
+      #56: controlplane/internal/api/api.go:24:15: api.write calls http.http2responseWriter.WriteHeader
+      #57: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2responseWriter.WriteString
+      #58: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.http2responseWriter.WriteString
+      #59: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2writeData.String
+      #60: controlplane/internal/audit/audit.go:27:61: audit.IntegrityError.Error calls fmt.Sprintf, which eventually calls http.http2writeData.String
+      #61: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.loggingConn.Read
+      #62: controlplane/internal/runs/runs.go:157:24: runs.Store.Create calls rand.Read, which eventually calls http.loggingConn.Read
+      #63: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.loggingConn.Write
+      #64: controlplane/internal/testutil/database.go:19:10: testutil.Database calls testing.common.Fatal, which eventually calls http.loggingConn.Write
+      #65: controlplane/internal/api/api.go:83:24: api.handler.create calls io.ReadAll, which calls http.maxBytesReader.Read
+      #66: controlplane/internal/api/api.go:83:24: api.handler.create calls io.ReadAll, which calls http.maxBytesReader.Read
+      #67: controlplane/internal/testutil/database.go:33:14: testutil.Database calls pgxpool.Pool.Close, which eventually calls http.onceCloseListener.Close
+      #68: controlplane/internal/testutil/database.go:33:14: testutil.Database calls pgxpool.Pool.Close, which eventually calls http.onceCloseListener.Close
+      #69: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.response.Write
+      #70: controlplane/internal/api/api.go:25:31: api.write calls json.Encoder.Encode, which calls http.response.Write
+      #71: controlplane/internal/api/api.go:24:15: api.write calls http.response.WriteHeader
+      #72: controlplane/internal/api/api.go:24:15: api.write calls http.response.WriteHeader
+
+Vulnerability #10: GO-2026-5970
+    Infinite loop on invalid input in golang.org/x/text
+  More info: https://pkg.go.dev/vuln/GO-2026-5970
+  Module: golang.org/x/text
+    Found in: golang.org/x/text@v0.24.0
+    Fixed in: golang.org/x/text@v0.39.0
+    Example traces found:
+      #1: controlplane/internal/testutil/database.go:41:36: testutil.Database calls pgxpool.NewWithConfig, which eventually calls norm.Form.Properties
+      #2: controlplane/internal/testutil/database.go:41:36: testutil.Database calls pgxpool.NewWithConfig, which eventually calls norm.Form.Span
+      #3: controlplane/internal/testutil/database.go:41:36: testutil.Database calls pgxpool.NewWithConfig, which eventually calls norm.Form.Transform
+
+Vulnerability #11: GO-2026-5004
+    SQL Injection via placeholder confusion with dollar quoted string literals
+    in github.com/jackc/pgx
+  More info: https://pkg.go.dev/vuln/GO-2026-5004
+  Module: github.com/jackc/pgx/v5
+    Found in: github.com/jackc/pgx/v5@v5.7.6
+    Fixed in: github.com/jackc/pgx/v5@v5.9.2
+    Example traces found:
+      #1: controlplane/internal/audit/audit.go:98:23: audit.Log.Verify calls pgxpool.Tx.Query, which eventually calls sanitize.SanitizeSQL
+
+Your code is affected by 11 vulnerabilities from 2 modules and the Go standard library.
+This scan also found 6 vulnerabilities in packages you import and 22
+vulnerabilities in modules you require, but your code doesn't appear to call
+these vulnerabilities.
+Use '-show verbose' for more details.
+exit status 3

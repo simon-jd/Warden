@@ -1,0 +1,13 @@
+# GREEN: the same tests against the Makefile with the test-tmp-private preflight (scripts/check-test-tmp.sh)
+# 2026-11-12T09:16:33-08:00, umask 0002
+test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) ... ok
+test_failed_go_list_stops_test_and_vet (test_makefile.MakefileGoTargetsTest.test_failed_go_list_stops_test_and_vet) ... ok
+test_go_test_gets_listed_packages_without_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_go_test_gets_listed_packages_without_vcs_stamping) ... ok
+test_no_packages_left_is_a_failure (test_makefile.MakefileGoTargetsTest.test_no_packages_left_is_a_failure) ... ok
+test_writable_ancestor_of_the_test_temp_dir_stops_test_go (test_makefile.MakefileGoTargetsTest.test_writable_ancestor_of_the_test_temp_dir_stops_test_go) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.382s
+
+OK
+exit: 0

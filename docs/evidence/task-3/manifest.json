@@ -1,0 +1,33 @@
+{
+  "base_commit": "2dc90459cb924c6ee78040460de72ec2950a8b8a",
+  "evidence_sha256": {
+    "README.md": "3039d88abf8a6bf72d0d49c485c8864dbef621b3257b86b07a3f3b665ef597e9",
+    "api-code-charge.json": "25fd7efe8d33b031a647c5b8f6e95a1afed520d11292dd9b08b6aff2d41af8e1",
+    "api-code-identity.json": "4943cb28e0e4f6cc4d81dfd5b81a948d7313a65fe796b492f8881a38fc1736f6",
+    "api-code-manifest.json": "a38e95c116bbc8a928fd405e5abe38be46adbfdfa4c46ff7db787da41efc6a52",
+    "api-code.txt": "89fbabb91d9013b49fedf4c574ac1784f64494ed81853668269a12f61c4e16b3",
+    "build-runtime-lab.txt": "2dd938f5f1b96eba1d9ddb433804e8b010471f6f0422d19181f1877161084806",
+    "build.txt": "4a522e4d3f1ee05116a065dff395a5a79deea73ae02698512adf2b0befe4ccb9",
+    "full-tests.jsonl": "20f5968bb79b0d23c847386bb0c7e247bee1cdfccb9fa49c6b76e60844f462b5",
+    "full-tests.txt": "58e90d0011c2b6affb3694615643ab71534da0383a2c8f36467166a86ec20846",
+    "green-binding.txt": "365cf58cd0d505d2995e22ecf3ac40e84823f8e5cdbcc4ce93182668dd97d52b",
+    "mutation-binding.txt": "7374c52bfe62afd5c70044c86e3f718ea72c8c31d1df41a62a4c8bcf0c3a1c71",
+    "postflight.txt": "7df0bf0ca8932a28c878004fcc18f512b9489ed67d3a568769ee3cba9aa309d7",
+    "race.txt": "98a109fb757a7bd3e1beb58b17a8de08503aebe5732644fb4c78008560f8a924",
+    "red-binding.txt": "5e5e314264824a0edbbcc1c2168384158fc549af681eedb31beda4f5501a1894",
+    "red-validation.txt": "63b74dc33c708064cd3e8f6681b16cd1cd734449c94d92c2a1792a1c4c56a84d",
+    "runc-socket-regression.txt": "08c9cd75137447f2aaac4c600d13091b4b16591afe5f79d3729ddae7fe566c3a",
+    "socket-environment.txt": "fd67d7d4a720f2fd18f44e076320e61101c47207a0bfcc51d8be967a77571eae",
+    "vet.txt": "8122a1af6f01739e47e500eac3bbeadbd80271acafdc246983538f080db5686c"
+  },
+  "report_sha256": {
+    ".superpowers/sdd/2-warden-security-plan/task-3-report.md": "1a09acb32f4119c7c808b24485b9a84081801a11f29e777ed14b7017fc5bf7d5"
+  },
+  "source_commit": "f232b0d5e833e1060afa5df2533b2421ee714e2c",
+  "source_sha256": {
+    "docs/gvisor-backend-binding.md": "e69d32f83e9b2e719c6fa4dd4dffde03707e77e6b63ea34280b195e0914f186d",
+    "runtimes/gate/gate.go": "470d75bedb1cd2c1eca0974f9b792cd459b18fe2e0be048583578d476c8eb01c",
+    "runtimes/gvisor/binding.go": "3be46dfcfde7addd5e8bd613b5bcab36a9660063292daadb80bd292f5aaba049",
+    "runtimes/gvisor/binding_test.go": "1bc2e7721139d4889b04be04160468310374fc4100b9e3a9d9538a7ed432f8e7"
+  }
+}

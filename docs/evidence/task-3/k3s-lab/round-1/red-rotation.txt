@@ -1,0 +1,15 @@
+test_rotated_containerd_history_cannot_bypass_startup_gate (test_k3s_lab_init.InitTest.test_rotated_containerd_history_cannot_bypass_startup_gate) ... FAIL
+
+======================================================================
+FAIL: test_rotated_containerd_history_cannot_bypass_startup_gate (test_k3s_lab_init.InitTest.test_rotated_containerd_history_cannot_bypass_startup_gate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 139, in test_rotated_containerd_history_cannot_bypass_startup_gate
+    with self.assertRaises(ValueError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

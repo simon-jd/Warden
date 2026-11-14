@@ -1,0 +1,22 @@
+diff --git a/runtimes/gvisor/lab/node/Dockerfile b/runtimes/gvisor/lab/node/Dockerfile
+index f91f1ef..8dac688 100644
+--- a/runtimes/gvisor/lab/node/Dockerfile
++++ b/runtimes/gvisor/lab/node/Dockerfile
+@@ -11,11 +11,16 @@ COPY config.yaml /etc/rancher/k3s/config.yaml
+ COPY config-v3.toml.tmpl /var/lib/rancher/k3s/agent/etc/containerd/config-v3.toml.tmpl
+ # With flannel off, containerd uses the default CNI paths. The plugins are
+ # symlinks to k3s's own multicall "cni" binary, resolved at run time.
+-COPY 10-warden.conflist /etc/cni/net.d/10-warden.conflist
++# cni-conf/ holds 10-warden.conflist, or nothing in Cilium mode (Cilium
++# writes its own config once its agent runs).
++COPY cni-conf/ /etc/cni/net.d/
+ COPY cni-bin/ /opt/cni/bin/
+ # The supervisor every gVisor run starts with (runtimes/gvisor/supervisor);
+ # pods mount it read-only from here.
+ COPY --chmod=0555 gvisor-init /opt/warden/gvisor-init
++# PID 1 in Cilium mode only (runtimes/gvisor/lab/nodeinit): /proc/sys
++# read-only except net, then exec k3s. The bridge mode keeps /bin/k3s.
++COPY --chmod=0555 node-init /warden-node-init
+ ENV PATH=/var/lib/rancher/k3s/data/current/bin:/var/lib/rancher/k3s/data/current/bin/aux:/usr/local/bin:/bin
+ ENTRYPOINT ["/bin/k3s"]
+ CMD ["server"]

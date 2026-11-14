@@ -1,0 +1,200 @@
+{
+  "Stop_original_signal_error_reap_poll_close_checks_preserved": true,
+  "Wait_Kill_Timings_unchanged": true,
+  "actual_VM_device_guest_modes_run": false,
+  "base": "f40934a5a3e6bc5f2d741120bcc5448ba996cd12",
+  "boot_failure_assertion_only_one_line_changed": true,
+  "code_profile_only_selector_and_host_allowance_changed": true,
+  "files": {
+    "runtimes/firecracker/diagnostic.go": {
+      "bytes": 6540,
+      "sha256": "394fb94460492aacf45296fc9be27e062e844cdefdcfbc860d8819beac94bd99"
+    },
+    "runtimes/firecracker/diagnostic_test.go": {
+      "bytes": 9850,
+      "sha256": "a09ad0515304dce0dcb0718cce67e7e682b75e431139dca1c2bd56aec210f4c6"
+    },
+    "runtimes/firecracker/lab_test.go": {
+      "bytes": 3606,
+      "sha256": "bbcfc9a963246b4d951ab0d72e322ebb856d69bb763338ea9e1b85a9bdd832d1"
+    },
+    "runtimes/firecracker/process.go": {
+      "bytes": 4137,
+      "sha256": "cb64bd238c6b9b757b2820caad45b60c380f4ebd78f7b271070d22d623a6ec7a"
+    },
+    "runtimes/firecracker/vm.go": {
+      "bytes": 11592,
+      "sha256": "264ff8182ebda75a699612aa9bcf129a60bff19213054079366736056d5905aa"
+    },
+    "scripts/firecracker_code.py": {
+      "bytes": 5399,
+      "sha256": "6995d05e1dbf665bcf67263b95d6089fdaa918a40808bb29dac9a0b3adb509eb"
+    }
+  },
+  "old_recovery_or_evidence_indices_read": false,
+  "original_Q_released": false,
+  "retire_original_checks_preserved_only_diagnostic_defer_and_cleanup_note_added": true,
+  "source": "0da497136069bf045912f257f7c6d26c962f9d34",
+  "startOwned_exact_unchanged": true,
+  "tenant_prefix_exact_unchanged": true,
+  "test_passes": {
+    "cover": {
+      "container": "20375e8ff8a0b9df20237f788cef4598bcaa632c2b31401f5944ef755c5224c8",
+      "exit_code": 0,
+      "postflight": {
+        "additional_bytes": "5000000000",
+        "at": "2026-10-25T08:47:58Z",
+        "download_bytes": "0",
+        "event": "local-preflight",
+        "free_bytes": 266129715200,
+        "project_allocated_bytes": 4191244288,
+        "service_memory_bytes": "1000000000"
+      },
+      "preflight": {
+        "additional_bytes": "5512000000",
+        "at": "2026-10-25T08:47:53Z",
+        "download_bytes": "0",
+        "event": "local-preflight",
+        "free_bytes": 266132779008,
+        "project_allocated_bytes": 4188356608,
+        "service_memory_bytes": "3000000000"
+      },
+      "sysctls_unchanged": true,
+      "top_fail": 0,
+      "top_pass": 59,
+      "top_skip": 4
+    },
+    "green": {
+      "container": "2c11bb3c311baa5df16c9897d3535c3d579cdb6ea498e102633a478067d08d4c",
+      "exit_code": 0,
+      "postflight": {
+        "additional_bytes": "5000000000",
+        "at": "2026-10-25T08:44:17Z",
+        "download_bytes": "0",
+        "event": "local-preflight",
+        "free_bytes": 266137329664,
+        "project_allocated_bytes": 4188286976,
+        "service_memory_bytes": "1000000000"
+      },
+      "preflight": {
+        "additional_bytes": "5512000000",
+        "at": "2026-10-25T08:44:14Z",
+        "download_bytes": "0",
+        "event": "local-preflight",
+        "free_bytes": 266140233728,
+        "project_allocated_bytes": 4185419776,
+        "service_memory_bytes": "3000000000"
+      },
+      "sysctls_unchanged": true,
+      "top_fail": 0,
+      "top_pass": 7,
+      "top_skip": 0
+    },
+    "red": {
+      "container": "d0a5f99ed08c115a0dc509aad00c33e1163a5679556f963381f72dc3691c845a",
+      "exit_code": 1,
+      "postflight": {
+        "additional_bytes": "5000000000",
+        "at": "2026-10-25T08:36:53Z",
+        "download_bytes": "0",
+        "event": "local-preflight",
+        "free_bytes": 266440966144,
+        "project_allocated_bytes": 4182740992,
+        "service_memory_bytes": "1000000000"
+      },
+      "preflight": {
+        "additional_bytes": "5512000000",
+        "at": "2026-10-25T08:36:51Z",
+        "download_bytes": "0",
+        "event": "local-preflight",
+        "free_bytes": 266440986624,
+        "project_allocated_bytes": 4182736896,
+        "service_memory_bytes": "3000000000"
+      },
+      "sysctls_unchanged": true,
+      "top_fail": 0,
+      "top_pass": 0,
+      "top_skip": 0
+    },
+    "red-behavior": {
+      "container": "994bfe5720db56b0e3436df82cfbb98ac9ee8653fd732e290a306a4ee99adfe9",
+      "exit_code": 1,
+      "postflight": {
+        "additional_bytes": "5000000000",
+        "at": "2026-10-25T08:38:27Z",
+        "download_bytes": "0",
+        "event": "local-preflight",
+        "free_bytes": 266376466432,
+        "project_allocated_bytes": 4185387008,
+        "service_memory_bytes": "1000000000"
+      },
+      "preflight": {
+        "additional_bytes": "5512000000",
+        "at": "2026-10-25T08:38:24Z",
+        "download_bytes": "0",
+        "event": "local-preflight",
+        "free_bytes": 266379677696,
+        "project_allocated_bytes": 4182757376,
+        "service_memory_bytes": "3000000000"
+      },
+      "sysctls_unchanged": true,
+      "top_fail": 2,
+      "top_pass": 1,
+      "top_skip": 0
+    }
+  },
+  "unchanged_bindings": {
+    "runtimes/firecracker/api.go": {
+      "bytes": 2801,
+      "sha256": "8e133deb4f75b019453014d4a41939e08342cf55e02daf93a14efc1917882431"
+    },
+    "runtimes/firecracker/device_gate.go": {
+      "bytes": 6343,
+      "sha256": "62db9b4066b31e88bbab23d450ed59f3ffa2124b4f2447fc862aeb87a4d5c5d0"
+    },
+    "runtimes/firecracker/device_policy.go": {
+      "bytes": 7774,
+      "sha256": "7d9161b75588f642b11a448831fc54d98b03c2874d0180d98a4f67f14139419d"
+    },
+    "runtimes/firecracker/driver.go": {
+      "bytes": 9027,
+      "sha256": "4132c95539e1eca6f95d0b288b5b24c1263cb89a39b2d12656b7d9b1ca648dd7"
+    },
+    "runtimes/firecracker/firecracker.go": {
+      "bytes": 1727,
+      "sha256": "a3a37976aed06329ade7dd00009c7919eb5296904543e2da2a028136fa614160"
+    },
+    "runtimes/firecracker/protocol.go": {
+      "bytes": 2864,
+      "sha256": "a00379b864434992dbdb9f8cd86a4365f843ca5a60234f0f260452218beb9269"
+    },
+    "runtimes/firecracker/scope.go": {
+      "bytes": 2206,
+      "sha256": "203f94a84990405f1f9e63869e844be03da65cea958c0070a0df9f5249a69684"
+    },
+    "runtimes/firecracker/session_mount.go": {
+      "bytes": 6503,
+      "sha256": "5db6f7f42598139a1a816d77b84312edbd96cd420274182aba874e74a2815f10"
+    },
+    "runtimes/firecracker/supervisor.go": {
+      "bytes": 9909,
+      "sha256": "8a6f0a7a9c94df87388c6ee601597fcbe0047c043e3eb51ceae071a939761d0f"
+    },
+    "runtimes/gate/gate.go": {
+      "bytes": 8507,
+      "sha256": "0b5a5b140a7124c9d2a65567694e5b662d13bb99b7fdcd1cedadc434273f8284"
+    },
+    "scripts/azure_guard.py": {
+      "bytes": 27828,
+      "sha256": "303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48"
+    },
+    "scripts/firecracker_device_receipt.py": {
+      "bytes": 9016,
+      "sha256": "c9d10f1cea6f60a15a7d70b818121538b93b76e5d42a94eb3fbe62594855da4b"
+    },
+    "scripts/firecracker_lab.py": {
+      "bytes": 32100,
+      "sha256": "551ba57ba4081155a612d0282a9a9299910390c67322b2042041642d45cafb0b"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+# RED: plain make test and make check with the Makefile of 52f10a2 (HEAD before the port), in the worktree ~/Desktop/Warden-cloud; make under taskset -c 0-7,16-31
+# head 52f10a2a05e2302f507ce0ac5b9e52b8238f70a7; staged: Makefile (the port, not used here: make -f <the HEAD Makefile>)
+# start 2026-11-12T18:30:46-08:00
+$ make test
+env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-cloud/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-cloud/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-cloud/.cache/go HOME=/home/postedism/Desktop/Warden-cloud/.cache/home TMPDIR=/home/postedism/Desktop/Warden-cloud/.cache/test-tmp WARDEN_KYVERNO=/home/postedism/Desktop/Warden-cloud/.tools/kyverno/kyverno /home/postedism/Desktop/Warden-cloud/.tools/go/bin/go test -count=1 -shuffle=on  $(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-cloud/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-cloud/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-cloud/.cache/go HOME=/home/postedism/Desktop/Warden-cloud/.cache/home TMPDIR=/home/postedism/Desktop/Warden-cloud/.cache/test-tmp /home/postedism/Desktop/Warden-cloud/.tools/go/bin/go list ./... | grep -Ev '^warden/docs/')
+error obtaining VCS status: exit status 128
+	Use -buildvcs=false to disable VCS stamping.
+error obtaining VCS status: exit status 128
+	Use -buildvcs=false to disable VCS stamping.
+error obtaining VCS status: exit status 128
+	Use -buildvcs=false to disable VCS stamping.
+error obtaining VCS status: exit status 128
+	Use -buildvcs=false to disable VCS stamping.
+error obtaining VCS status: exit status 128
+	Use -buildvcs=false to disable VCS stamping.
+error obtaining VCS status: exit status 128
+	Use -buildvcs=false to disable VCS stamping.
+# .
+no Go files in /home/postedism/Desktop/Warden-cloud
+FAIL	. [setup failed]
+make: *** [Makefile:57: test-go] Error 1
+# make test exit: 2
+$ make check
+env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-cloud/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-cloud/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-cloud/.cache/go HOME=/home/postedism/Desktop/Warden-cloud/.cache/home TMPDIR=/home/postedism/Desktop/Warden-cloud/.cache/test-tmp /home/postedism/Desktop/Warden-cloud/.tools/go/bin/go vet $(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-cloud/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-cloud/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-cloud/.cache/go HOME=/home/postedism/Desktop/Warden-cloud/.cache/home TMPDIR=/home/postedism/Desktop/Warden-cloud/.cache/test-tmp /home/postedism/Desktop/Warden-cloud/.tools/go/bin/go list ./... | grep -Ev '^warden/docs/')
+error obtaining VCS status: exit status 128
+	Use -buildvcs=false to disable VCS stamping.
+error obtaining VCS status: exit status 128
+	Use -buildvcs=false to disable VCS stamping.
+error obtaining VCS status: exit status 128
+	Use -buildvcs=false to disable VCS stamping.
+error obtaining VCS status: exit status 128
+	Use -buildvcs=false to disable VCS stamping.
+error obtaining VCS status: exit status 128
+	Use -buildvcs=false to disable VCS stamping.
+error obtaining VCS status: exit status 128
+	Use -buildvcs=false to disable VCS stamping.
+no Go files in /home/postedism/Desktop/Warden-cloud
+make: *** [Makefile:198: check] Error 1
+# make check exit: 2
+# ~/.git: directory, 2 links, entries: 0

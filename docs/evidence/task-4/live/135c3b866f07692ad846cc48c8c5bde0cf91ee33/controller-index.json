@@ -1,0 +1,50 @@
+{
+  "source": "135c3b866f07692ad846cc48c8c5bde0cf91ee33",
+  "scope": "Controller reviewed-source prepare, pre-start refused boot, never-started cleanup and one create/inspect-only diagnostic; no VM execution",
+  "files": {
+    "README.md": {
+      "sha256": "c4cc7587d0016b59786cd5b7f96fdb545df7dd0663e9cde9b4ac08a951583ae6",
+      "bytes": 3997
+    },
+    "boot-first-never-started-release.json": {
+      "sha256": "de65c2008ea6a7cd0d4fa6010df2edd6774e5b99faf5bbd1e3359c5408f2b865",
+      "bytes": 1702
+    },
+    "boot-first-postflight.json": {
+      "sha256": "6761e0474c1a9738e0a7aa14180b1977b3f27c8ed7e5a5d1d133ce3b5d7b09d3",
+      "bytes": 1974
+    },
+    "boot-first.json": {
+      "sha256": "9bfdd32f2219856fa213e5b47bdb157f5282d4bbc4e4e48df62ea4d8dc7013a5",
+      "bytes": 723
+    },
+    "boot-first.log": {
+      "sha256": "ffbe5264aecdc4314f4737a305cc1bc529b9699e3125516eb6e010721885bb8f",
+      "bytes": 2539
+    },
+    "controller-findings.json": {
+      "sha256": "4d6eb05a72b782e68b6a2af96e2e01c898ca9431054c3df16b8a8b5e77c0cd5b",
+      "bytes": 2339
+    },
+    "create-inspect-only-command.py": {
+      "sha256": "32f848c897d46a1688c76b21d8a0b2d4069a7919fc2dc2bb759a74a8a864c63a",
+      "bytes": 2672
+    },
+    "create-inspect-only.json": {
+      "sha256": "5329e991ff2b2a2ce820a340be794ee7ef4289e9ec209b9892bd01b61558f9b3",
+      "bytes": 5764
+    },
+    "prepare-first.json": {
+      "sha256": "ca8f47d31cb03b6d7ff4c0dac92c13ef1f11d15c9c4abbebce255b6f72e043b5",
+      "bytes": 632
+    },
+    "prepare-first.log": {
+      "sha256": "e2fee85d52dbf71698190a6424001d0115cdbff8a074602d9aea2b8e659b3d28",
+      "bytes": 14031
+    },
+    "prepare-verification.json": {
+      "sha256": "5f4b3452e35ef4519d34eabc3accb8d82e5d597ab8bb2facebc121c177fb738c",
+      "bytes": 5485
+    }
+  }
+}

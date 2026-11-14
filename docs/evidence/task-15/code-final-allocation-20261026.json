@@ -1,0 +1,73 @@
+{
+  "schema": "warden.task15.final5.closure-budget.v1",
+  "utc": "2026-10-26T06:48:21.649783+00:00",
+  "CODE_cap": 524288,
+  "CODE_before_final_upper": 495616,
+  "R5_author_upper": 16384,
+  "R5_pure_upper": 8192,
+  "R5_review_upper": 4096,
+  "CODE_final_charged_upper": 524288,
+  "CODE_counter_reset": false,
+  "all_previous_artifacts_retained": true,
+  "source_applied": false,
+  "round": "5/5 exhausted",
+  "publication_initial_head": "1f54cb9ad02a5beb12e7c95f0975537cd015abd0",
+  "publication_cap": 1048576,
+  "prior_highwater": 991232,
+  "prospective_temp_index_cap": 557056,
+  "objects_positive_before": 266240,
+  "metadata_positive_upper_before": 4096,
+  "all_publication_receipts_and_copies_cap": 98304,
+  "further_objects_and_metadata_upper": 122880,
+  "publication_projected_upper": 1048576,
+  "private_prior_ledger_allocated": 8192,
+  "public_created": [
+    {
+      "path": "docs/evidence/task-15/code-r3-review-20261026.md",
+      "bytes": 6168,
+      "sha256": "982b5a902373c96830b39e62925fbda09bcd2bd2ff3fc8990c6aa67ea5ba7955",
+      "allocated": 8192
+    },
+    {
+      "path": "docs/evidence/task-15/code-r4-review-20261026.md",
+      "bytes": 6606,
+      "sha256": "f83b07dc400be574a40cdb4b42817ac3da749a45354e9c3d4d3bb24711d1182a",
+      "allocated": 8192
+    },
+    {
+      "path": "docs/evidence/task-15/code-r5-review-20261026.md",
+      "bytes": 3782,
+      "sha256": "6e9c2512d8e560c8b0b13f71616b565b7cafe5359d584199cefe174ed92d55ee",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/task-15/code-r5-pure-native-20261026.json",
+      "bytes": 11151,
+      "sha256": "d1396fcdae6818d2d848e1daa28d8b1883b016255a15dfc940f242cadb33ed45",
+      "allocated": 12288
+    },
+    {
+      "path": "docs/evidence/task-15/code-final-ruling-20261026.md",
+      "bytes": 2247,
+      "sha256": "574ed8e4891f836c19181f6cf42f75e1a8871924cf1580bc78b962ecd3286831",
+      "allocated": 4096
+    },
+    {
+      "path": "docs/evidence/azure-budget/reaper-task15-final5-end-20261026.json",
+      "bytes": 951,
+      "sha256": "953c2fe35a142d63faaf49078fcf6dbf12ebf916585bf5c8eee9c9781ceed217",
+      "allocated": 4096
+    }
+  ],
+  "CODE_review_created": [
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task15-r5-review-20261026.md",
+      "bytes": 3782,
+      "sha256": "6e9c2512d8e560c8b0b13f71616b565b7cafe5359d584199cefe174ed92d55ee",
+      "allocated": 4096
+    }
+  ],
+  "STATUS_positive_growth": 0,
+  "state": "PRECOMMIT: no claim of a new commit yet",
+  "draft_metadata_correction": "Native fullread descriptive placeholders corrected to actual stored chunk IDs; original creation0de01b retained, no source/terminal or native tool result changed."
+}

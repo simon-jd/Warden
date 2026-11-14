@@ -1,0 +1,59 @@
+{
+  "source": "d8f54d90d77465f97c7d1d0d7327fa36d7ad4cf7",
+  "started_at": "2026-10-25T00:33:31.257419+00:00",
+  "original_Q_released": false,
+  "scene_phase_created": false,
+  "image_container_helper_created": false,
+  "live_descendants_read": false,
+  "admission_before": {
+    "kind": "exact-scene-recovery-admission-v1",
+    "rest_allocated_bytes": 4019232768,
+    "original_opaque_charge": 5000000000,
+    "all_outstanding_bytes": 5000000000,
+    "all_owned_image_charge": 0,
+    "prospective_helper_growth": 736000000,
+    "disk_bytes": 9755232768,
+    "resident_bytes": 1256000000,
+    "ordinary_guard_pass": false,
+    "free_bytes": 269105213440,
+    "utc": "2026-10-25T00:33:33.082820+00:00"
+  },
+  "sealed_archive": {
+    "file_bytes": 66120203,
+    "archive_bytes": 66662400,
+    "archive_sha256": "56f3570940a3119e7e9fe818fbe8e85c6e6d846f65d911e82445e58d40c09b61",
+    "helper_sha256": "72675e91ac22ab3f1607fc5f21b90db18fc8c115e9a50bd8a48761cf70c8c9b2",
+    "expected_inventory_sha256": null
+  },
+  "selected_files_including_helper": 649,
+  "host_abi": {
+    "kind": "public-python314-host-abi-v1",
+    "version": [
+      3,
+      14,
+      4
+    ],
+    "isolated": true,
+    "no_site": true,
+    "dont_write_bytecode": true,
+    "sitecustomize_absent": true,
+    "imports": true,
+    "mount_symbol": true
+  },
+  "admission_after": {
+    "kind": "exact-scene-recovery-admission-v1",
+    "rest_allocated_bytes": 4085985280,
+    "original_opaque_charge": 5000000000,
+    "all_outstanding_bytes": 5000000000,
+    "all_owned_image_charge": 0,
+    "prospective_helper_growth": 736000000,
+    "disk_bytes": 9821985280,
+    "resident_bytes": 1256000000,
+    "ordinary_guard_pass": false,
+    "free_bytes": 269038477312,
+    "utc": "2026-10-25T00:33:34.803165+00:00"
+  },
+  "live_uid_after": 0,
+  "success": true,
+  "ended_at": "2026-10-25T00:33:34.803199+00:00"
+}

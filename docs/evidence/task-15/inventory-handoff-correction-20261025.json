@@ -1,0 +1,32 @@
+{
+  "kind": "single inventory metadata correction; original source and raw evidence unchanged",
+  "prior_source": "75a141d22f57160e5d6d758ae468152430e82ec0",
+  "prior_evidence": "94da92d2bcc9f125ff22b1f3bd79978c43f6ff5c",
+  "root_first_report_read": {
+    "chunk_id": "2e042c",
+    "error": "cat: docs/evidence/task-15/inventory.json: No such file or directory",
+    "correction": "read actual linked inventory.md in 6aab0e"
+  },
+  "narrow_first_failure": {
+    "chunk_id": "e22019",
+    "exit_code": 1,
+    "output": "Traceback (most recent call last):\n  File \"<stdin>\", line 25, in <module>\nAssertionError\n",
+    "assertion": "len(rows)==24 after parsing exactly 64hex SHA rows"
+  },
+  "targeted_diagnosis": {
+    "chunk_id": "be8fc7",
+    "exit_code": 0,
+    "table_rows": 24,
+    "valid_sha_rows": 23,
+    "path": "policies/kyverno/tests/kyverno-test.yaml",
+    "old_sha": "b2f91bc96247c0920591e81d9d09afe063ec68f9354353b03f50093845095",
+    "old_length": 61
+  },
+  "corrected_sha": "b2f91bc96247c0920591e81d9d09d09afe063ec68f9354353b03f50093845095",
+  "authority": "root regained SOURCE/index after author handoff; ordinary public inventory correction, one cell only",
+  "tests_rerun": false,
+  "source_changes": false,
+  "old_commits_preserved": true,
+  "review_rounds_consumed": 0,
+  "automatic_approval_rejection": false
+}

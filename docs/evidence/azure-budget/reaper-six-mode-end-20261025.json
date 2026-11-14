@@ -1,0 +1,29 @@
+{
+  "scope": "fixed session-end reaper; only own project RG; no creation",
+  "events": [
+    {
+      "kind": "exec_command",
+      "request": {
+        "cmd": "bash scripts/azure_reaper.sh",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "按AZURE-BUDGET.md执行本轮结束的固定reaper，仅检查/清理本项目rg-warden-lab的过期资源；禁止修改或删除rg-mlinfra-westus，不创建任何资源。",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 2000
+      },
+      "response": {
+        "chunk_id": "a31361",
+        "wall_time_seconds": 0.868434342,
+        "exit_code": 0,
+        "original_token_count": 37,
+        "output": "{\"at\": \"2026-10-25T20:18:49Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+      }
+    }
+  ],
+  "estimated_committed_usd": 0,
+  "actual_bill_known": false,
+  "protected_resource_group_modified": false
+}

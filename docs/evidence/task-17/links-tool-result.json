@@ -1,0 +1,12 @@
+{
+  "command": "python3 -I -B scripts/check_threat_model_links.py",
+  "source_commit": "dc0db033fb4e546849269a1b0f8ea921bbeacaaf",
+  "status": "fulfilled",
+  "value": {
+    "chunk_id": "18d037",
+    "wall_time_seconds": 0.000013638,
+    "exit_code": 0,
+    "original_token_count": 10,
+    "output": "Checked 208 local links; 0 error(s).\n"
+  }
+}

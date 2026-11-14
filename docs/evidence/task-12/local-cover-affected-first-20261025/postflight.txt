@@ -1,0 +1,2 @@
+tmp_bytes=4096
+run_bytes_postflight=32768

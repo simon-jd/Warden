@@ -1,0 +1,51 @@
+{
+  "source": "0c7dedbf38499ee991f879e93e43b9f5df9bb7f4",
+  "scope": "User-resumed physical directory restoration and independent postflight; Q retained; no guest boot acceptance",
+  "paused_index_and_5_files_unchanged": true,
+  "files": {
+    "docs/COORDINATOR-RESUME-20261025.txt": {
+      "bytes": 2209,
+      "sha256": "6f4bf5af45cf10543aad6e55712030150539e79b772aca6105bee821ab194ce1"
+    },
+    "docs/evidence/azure-budget/reaper-user-resume-20261025-start.txt": {
+      "bytes": 476,
+      "sha256": "683cbc6948ebb826ba1e0273db6980273a378057a562fcaf8e7313f6b34a09c3"
+    },
+    "docs/evidence/task-4/recovery-live/0c7dedbf38499ee991f879e93e43b9f5df9bb7f4/postflight-meta.json": {
+      "bytes": 994,
+      "sha256": "31bb02dbecee62a6d1f0fe974dda738c182976c755fb810c12d29b99dc4e4e15"
+    },
+    "docs/evidence/task-4/recovery-live/0c7dedbf38499ee991f879e93e43b9f5df9bb7f4/postflight.log": {
+      "bytes": 135,
+      "sha256": "4c2dd638f01fcf843afd158578ee97eafc71daefce4c4cee836ed139be32e8b7"
+    },
+    "docs/evidence/task-4/recovery-live/0c7dedbf38499ee991f879e93e43b9f5df9bb7f4/restore-traversal-meta.json": {
+      "bytes": 1009,
+      "sha256": "f2a28f0daecad45c7d272b11c3c474b57dcbb8e72ababa8a51edc4b6e4276db3"
+    },
+    "docs/evidence/task-4/recovery-live/0c7dedbf38499ee991f879e93e43b9f5df9bb7f4/restore-traversal.log": {
+      "bytes": 148,
+      "sha256": "07479bbbe9294ba47d44e27fbc8b4179d5ff35ab3b28aa845acf7723a86e3842"
+    },
+    "docs/evidence/task-4/recovery-resume-20261025/README.md": {
+      "bytes": 1998,
+      "sha256": "d2396ed380d47ba8f0f6349750e1b414d43e43ab9093b345d7fac12cbe720ee5"
+    },
+    "docs/evidence/task-4/recovery-resume-20261025/controller-ruling.md": {
+      "bytes": 1869,
+      "sha256": "790c89b891ce4090f30a89b5a4177f3b5b52907eb9ae10e79580d6a89d5947d0"
+    },
+    "docs/evidence/task-4/recovery-resume-20261025/preflight.json": {
+      "bytes": 1308,
+      "sha256": "b860b54f3fe609713fe58a22327666483ebbf09cf1488f506193be8935aba070"
+    },
+    "docs/evidence/task-4/recovery-resume-20261025/restored-audit-command.py": {
+      "bytes": 3884,
+      "sha256": "432065c43c645340eb155594b63d7e53b4a2b46dbbfdc0a1b5328791e3d248c0"
+    },
+    "docs/evidence/task-4/recovery-resume-20261025/restored-audit.json": {
+      "bytes": 4109,
+      "sha256": "ab98074661cdc59a223bf3d4cb42bbe5e23c182d09706524d8c45814494a8536"
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "observed_at": "2026-10-24T02:52:41.720233+00:00",
+  "scope": "read-only; no Azure mutation; actual home-ubuntu host outside sandbox",
+  "checks": {
+    "hostname": {
+      "command": [
+        "hostname"
+      ],
+      "exit_code": 0,
+      "stdout": "postedism-ubuntu-system-selfuse\n",
+      "stderr": ""
+    },
+    "identity": {
+      "command": [
+        "id",
+        "-un"
+      ],
+      "exit_code": 0,
+      "stdout": "postedism\n",
+      "stderr": ""
+    },
+    "containerd": {
+      "command": [
+        "/usr/bin/containerd",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "containerd containerd v2.4.2 b7a25261e029d68978bbf290df0a62fc819b3c51\n",
+      "stderr": ""
+    },
+    "runc": {
+      "command": [
+        "/usr/bin/runc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "runc version 1.5.2\ncommit: v1.5.2-0-g29dd3dc2\nspec: 1.3.0\ngo: go1.27.2\nlibseccomp: 2.6.0\n",
+      "stderr": ""
+    },
+    "kvm_writable": {
+      "command": [
+        "test",
+        "-w",
+        "/dev/kvm"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    "filesystem": {
+      "command": [
+        "df",
+        "-B1",
+        "/"
+      ],
+      "exit_code": 0,
+      "stdout": "Filesystem         1B-blocks          Used    Available Use% Mounted on\n/dev/nvme1n1p3 1838302588928 1477811843072 267034574848  85% /\n",
+      "stderr": ""
+    },
+    "memory": {
+      "command": [
+        "free",
+        "-b"
+      ],
+      "exit_code": 0,
+      "stdout": "               total        used        free      shared  buff/cache   available\nMem:     132310061056 40779550720 11372609536   837783552 82156466176 91530510336\nSwap:     8589930496  4740464640  3849465856\n",
+      "stderr": ""
+    },
+    "project_cache_bytes": {
+      "command": [
+        "du",
+        "-sb",
+        ".cache",
+        ".tools"
+      ],
+      "exit_code": 0,
+      "stdout": "2036858732\t.cache\n4213\t.tools\n",
+      "stderr": ""
+    },
+    "azure_account": {
+      "command": [
+        "az",
+        "account",
+        "show",
+        "--query",
+        "{name:name,state:state,isDefault:isDefault}",
+        "-o",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"isDefault\": true,\n  \"name\": \"Azure for Students\",\n  \"state\": \"Enabled\"\n}\n",
+      "stderr": ""
+    },
+    "warden_group": {
+      "command": [
+        "az",
+        "group",
+        "show",
+        "--name",
+        "rg-warden-lab",
+        "--query",
+        "{name:name,location:location,tags:tags}",
+        "-o",
+        "json"
+      ],
+      "exit_code": 3,
+      "stdout": "",
+      "stderr": "ERROR: (ResourceGroupNotFound) Resource group 'rg-warden-lab' could not be found.\nCode: ResourceGroupNotFound\nMessage: Resource group 'rg-warden-lab' could not be found.\n"
+    }
+  },
+  "kvm_probe_followup": {
+    "observed_at": "2026-10-24T02:53:29.276723+00:00",
+    "method": "os.open(/dev/kvm,O_RDWR); ioctl KVM_GET_API_VERSION (0xAE00); close",
+    "api_version": 12,
+    "interpretation": "Actual device open/ioctl succeeded; external /usr/bin/test -w returned 1 although bash test and os.access return true. Keep initial result; actual open is authoritative."
+  }
+}

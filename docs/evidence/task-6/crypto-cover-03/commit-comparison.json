@@ -1,0 +1,8 @@
+{
+  "kind": "post-run read-only comparison to frozen committed source; not a replacement for prospective pre/post manifests",
+  "manifest_files": 143,
+  "mismatches": [],
+  "post_manifest_sha256": "cd0be3863efabaaad4e80f2a65db0640d9836d702a80a6809c699b1dfbf06716",
+  "pre_manifest_sha256": "cd0be3863efabaaad4e80f2a65db0640d9836d702a80a6809c699b1dfbf06716",
+  "source_commit": "6d02de4062c0ee1e5d62825df0ea670d54672b5e"
+}

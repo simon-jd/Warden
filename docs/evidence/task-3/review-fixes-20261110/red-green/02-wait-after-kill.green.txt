@@ -1,0 +1,12 @@
+# GREEN: the same four tests against the fixed driver. The test file differs from the RED run only in the fake's helper jobCondition being renamed jobCond (the driver now has a type of that name).
+# 2026-11-10T20:44:48-08:00
+=== RUN   TestWaitAfterKillReturnsAtOnce
+--- PASS: TestWaitAfterKillReturnsAtOnce (0.01s)
+=== RUN   TestWaitAfterReapReturnsAtOnce
+--- PASS: TestWaitAfterReapReturnsAtOnce (0.01s)
+=== RUN   TestKillDuringWaitEndsIt
+--- PASS: TestKillDuringWaitEndsIt (0.03s)
+=== RUN   TestWaitEndsWhenTheJobFailsWithoutAPod
+--- PASS: TestWaitEndsWhenTheJobFailsWithoutAPod (0.03s)
+ok  	warden/runtimes/gvisor	1.098s
+exit: 0

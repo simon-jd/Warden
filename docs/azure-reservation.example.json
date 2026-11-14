@@ -1,0 +1,106 @@
+{
+  "session": "OFFLINE-EXAMPLE",
+  "resources": [
+    {
+      "id": "/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab/providers/Microsoft.Storage/storageAccounts/wardenexample",
+      "kind": "storage",
+      "sku": "Hot LRS",
+      "product": "General Block Blob v2",
+      "region": "westus2",
+      "start": "2026-10-25T00:00:00Z",
+      "end": "2026-10-25T01:00:00Z",
+      "components": [
+        {
+          "category": "storage_capacity",
+          "quote": "docs/evidence/azure/prices/blob-westus2.json",
+          "quantity": "1",
+          "selector": {
+            "meterId": "e490b7ca-7d10-4b35-8b4d-81336dd54bfe",
+            "meterName": "Hot LRS Data Stored",
+            "serviceName": "Storage",
+            "productName": "General Block Blob v2",
+            "skuName": "Hot LRS",
+            "armSkuName": "",
+            "armRegionName": "westus2",
+            "unitOfMeasure": "1 GB/Month"
+          }
+        },
+        {
+          "category": "logs",
+          "quote": "docs/evidence/azure/prices/blob-westus2.json",
+          "quantity": "1",
+          "selector": {
+            "meterId": "e490b7ca-7d10-4b35-8b4d-81336dd54bfe",
+            "meterName": "Hot LRS Data Stored",
+            "serviceName": "Storage",
+            "productName": "General Block Blob v2",
+            "skuName": "Hot LRS",
+            "armSkuName": "",
+            "armRegionName": "westus2",
+            "unitOfMeasure": "1 GB/Month"
+          }
+        },
+        {
+          "category": "storage_operations",
+          "quote": "docs/evidence/azure/prices/blob-westus2.json",
+          "quantity": "1",
+          "selector": {
+            "meterId": "0c622ef2-cd52-4909-b2b2-3f6e8f940cc2",
+            "meterName": "Hot Read Operations",
+            "serviceName": "Storage",
+            "productName": "General Block Blob v2",
+            "skuName": "Hot LRS",
+            "armSkuName": "",
+            "armRegionName": "westus2",
+            "unitOfMeasure": "10K"
+          }
+        },
+        {
+          "category": "storage_operations",
+          "quote": "docs/evidence/azure/prices/blob-westus2.json",
+          "quantity": "1",
+          "selector": {
+            "meterId": "d3103db5-2146-405b-9e46-342ba37f3c30",
+            "meterName": "Hot LRS Write Operations",
+            "serviceName": "Storage",
+            "productName": "General Block Blob v2",
+            "skuName": "Hot LRS",
+            "armSkuName": "",
+            "armRegionName": "westus2",
+            "unitOfMeasure": "10K"
+          }
+        },
+        {
+          "category": "storage_operations",
+          "quote": "docs/evidence/azure/prices/blob-westus2.json",
+          "quantity": "1",
+          "selector": {
+            "meterId": "8639aab0-4871-46b7-a0b2-d96dd73cd780",
+            "meterName": "LRS List and Create Container Operations",
+            "serviceName": "Storage",
+            "productName": "General Block Blob v2",
+            "skuName": "Hot LRS",
+            "armSkuName": "",
+            "armRegionName": "westus2",
+            "unitOfMeasure": "10K"
+          }
+        },
+        {
+          "category": "storage_operations",
+          "quote": "docs/evidence/azure/prices/blob-westus2.json",
+          "quantity": "1",
+          "selector": {
+            "meterId": "0a1a7e62-b5e2-4eee-8aad-cf7735c9a428",
+            "meterName": "All Other Operations",
+            "serviceName": "Storage",
+            "productName": "General Block Blob v2",
+            "skuName": "Hot LRS",
+            "armSkuName": "",
+            "armRegionName": "westus2",
+            "unitOfMeasure": "10K"
+          }
+        }
+      ]
+    }
+  ]
+}

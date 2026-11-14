@@ -1,0 +1,37 @@
+python3 -B -m unittest scripts.test_azure_guard -v
+test_api_failure_is_not_absence (scripts.test_azure_guard.AzureGuardTests.test_api_failure_is_not_absence) ... ok
+test_changed_resource_or_show_failure_aborts_before_delete (scripts.test_azure_guard.AzureGuardTests.test_changed_resource_or_show_failure_aborts_before_delete) ... ok
+test_concurrent_reservations_cannot_overbook (scripts.test_azure_guard.AzureGuardTests.test_concurrent_reservations_cannot_overbook) ... ok
+test_down_checks_ownership_and_rejects_protected_target (scripts.test_azure_guard.AzureGuardTests.test_down_checks_ownership_and_rejects_protected_target) ... ok
+test_down_dry_run_and_real_fake_boundary (scripts.test_azure_guard.AzureGuardTests.test_down_dry_run_and_real_fake_boundary) ... ok
+test_down_records_deletion_without_refund (scripts.test_azure_guard.AzureGuardTests.test_down_records_deletion_without_refund) ... ok
+test_download_requires_fifty_gb_plus_size_only_above_five_gb (scripts.test_azure_guard.AzureGuardTests.test_download_requires_fifty_gb_plus_size_only_above_five_gb) ... ok
+test_dry_run_never_mutates (scripts.test_azure_guard.AzureGuardTests.test_dry_run_never_mutates) ... ok
+test_duplicate_api_id_is_rejected_before_delete (scripts.test_azure_guard.AzureGuardTests.test_duplicate_api_id_is_rejected_before_delete) ... ok
+test_exact_expiry_deletes_only_full_scoped_id (scripts.test_azure_guard.AzureGuardTests.test_exact_expiry_deletes_only_full_scoped_id) ... ok
+test_fractional_hour_rate_rounding_can_be_read_back (scripts.test_azure_guard.AzureGuardTests.test_fractional_hour_rate_rounding_can_be_read_back) ... ok
+test_future_ttl_is_retained (scripts.test_azure_guard.AzureGuardTests.test_future_ttl_is_retained) ... ok
+test_invalid_quote_or_plan_fails_closed (scripts.test_azure_guard.AzureGuardTests.test_invalid_quote_or_plan_fails_closed) ... ok
+test_local_preflight_rejects_resource_excess (scripts.test_azure_guard.AzureGuardTests.test_local_preflight_rejects_resource_excess) ... ok
+test_missing_group_is_safe_noop (scripts.test_azure_guard.AzureGuardTests.test_missing_group_is_safe_noop) ... ok
+test_multiple_operation_meters_can_cover_reads_and_writes (scripts.test_azure_guard.AzureGuardTests.test_multiple_operation_meters_can_cover_reads_and_writes) ... ok
+test_nonpositive_quantities_and_invalid_ledger_never_reserve (scripts.test_azure_guard.AzureGuardTests.test_nonpositive_quantities_and_invalid_ledger_never_reserve) ... ok
+test_operation_coverage_cannot_use_capacity_meter (scripts.test_azure_guard.AzureGuardTests.test_operation_coverage_cannot_use_capacity_meter) ... ok
+test_over_budget_or_duplicate_does_not_write (scripts.test_azure_guard.AzureGuardTests.test_over_budget_or_duplicate_does_not_write) ... ok
+test_ownership_or_scope_corruption_never_deletes (scripts.test_azure_guard.AzureGuardTests.test_ownership_or_scope_corruption_never_deletes) ... ok
+test_real_archived_storage_quote_selects_base_tier (scripts.test_azure_guard.AzureGuardTests.test_real_archived_storage_quote_selects_base_tier) ... ok
+test_reservation_exact_540_boundary_and_document (scripts.test_azure_guard.AzureGuardTests.test_reservation_exact_540_boundary_and_document) ... ok
+test_session_end_uses_reservation_binding_and_keeps_cost (scripts.test_azure_guard.AzureGuardTests.test_session_end_uses_reservation_binding_and_keeps_cost) ... ok
+test_target_environment_cannot_redirect_pinned_scope (scripts.test_azure_guard.AzureGuardTests.test_target_environment_cannot_redirect_pinned_scope) ... ok
+test_unbound_high_price_future_resource_is_retained (scripts.test_azure_guard.AzureGuardTests.test_unbound_high_price_future_resource_is_retained) ... ok
+test_unreadable_project_tree_is_not_zero_disk_usage (scripts.test_azure_guard.AzureGuardTests.test_unreadable_project_tree_is_not_zero_disk_usage) ... ok
+test_vm_batch_aggregates_quota_before_reservation (scripts.test_azure_guard.AzureGuardTests.test_vm_batch_aggregates_quota_before_reservation) ... ok
+test_vm_quota_missing_exhausted_or_not_six_is_refused (scripts.test_azure_guard.AzureGuardTests.test_vm_quota_missing_exhausted_or_not_six_is_refused) ... ok
+test_vm_reservation_checks_six_core_region_quota (scripts.test_azure_guard.AzureGuardTests.test_vm_reservation_checks_six_core_region_quota) ... ok
+test_wrong_account_fails_closed (scripts.test_azure_guard.AzureGuardTests.test_wrong_account_fails_closed) ... ok
+test_wrong_service_cannot_be_labeled_storage_cost (scripts.test_azure_guard.AzureGuardTests.test_wrong_service_cannot_be_labeled_storage_cost) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 7.409s
+
+OK

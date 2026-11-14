@@ -1,0 +1,18 @@
+# 2026-11-12T23:40:43-08:00 why warden-node-init's read-only /proc/sys did not stop the agent (no sysctl is written here: access(2) only)
+## the node's own mounts of /proc/sys (PID 1's mount namespace)
+12230 13033 0:312 /sys/net /proc/sys/net rw,nosuid,nodev,noexec,relatime shared:3112 - proc proc rw
+12231 13033 0:312 /sys /proc/sys ro,nosuid,nodev,noexec,relatime shared:3112 - proc proc rw
+12232 12231 0:312 /sys/net /proc/sys/net rw,nosuid,nodev,noexec,relatime shared:3112 - proc proc rw
+## a runc pod with hostPath /proc/sys/kernel, once without and once with readOnly
+pod/warden-diag-hostpath created
+phase Succeeded
+7382 1093 0:312 /sys/kernel /k-rw rw,relatime - proc proc rw
+/k-rw: access(W_OK) ok, writable
+7383 1093 0:312 /sys/kernel /k-ro ro,relatime - proc proc rw
+/k-ro: access(W_OK) fails, not writable
+pod "warden-diag-hostpath" deleted from default namespace
+containerd-shim-runc-v2
+runc
+runcon
+runc version 1.4.2
+commit: v1.4.2-0-gc241c0b

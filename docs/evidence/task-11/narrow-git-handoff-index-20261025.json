@@ -1,0 +1,230 @@
+{
+  "scope": "Narrow Task11 handoff;18 mapping/static SOURCE files only; one FAILED BP retained as inert evidence and untracked drafts. This index excludes itself to avoid self-reference. No tests rerun.",
+  "base": "fc94ce5a2a27da3ca36b48081db1cec22119bcc3",
+  "source_commit": "337faf67ad689ef6aaf4d644c613666f18bf73e7",
+  "evidence_commit": "Separate commit containing this index; full identity in root handback, not self-referential.",
+  "outcomes": {
+    "golden": "27 named PASS",
+    "agent_static": "PASS",
+    "aggregator_static": "PASS",
+    "backpressure": "FAIL invalid negative occupancy gauge; no high-occupancy/full-ID proof; no retry",
+    "task11": "OPEN",
+    "goal": "OPEN"
+  },
+  "source_files": [
+    {
+      "path": "detect/README.md",
+      "bytes": 8841,
+      "sha256": "ba6f6311ab1c340a991cac9005e603e4735707d8d949d19fa58c904cd0fb1b00"
+    },
+    {
+      "path": "detect/ocsf/azure_activity.vrl",
+      "bytes": 1641,
+      "sha256": "3d2a58ffb798d414680fa47008d600bd12506c2f6bdd7c81303baeb855b3734f"
+    },
+    {
+      "path": "detect/ocsf/k8s_audit.vrl",
+      "bytes": 2501,
+      "sha256": "b986c927c7bda0f774325f88108661312d3ffee1b5976753ce5b1b67aa28545b"
+    },
+    {
+      "path": "detect/ocsf/tests/00-topology.toml",
+      "bytes": 1820,
+      "sha256": "553072fc6c10401eb2f04f07a728529d46df1e103f6cfc42a061c24ce7b2a3fc"
+    },
+    {
+      "path": "detect/ocsf/tests/aks_audit.toml",
+      "bytes": 1027,
+      "sha256": "4b8aea304f18fbea7575575a9ab07a2833a84a6d11db97f3a79bf849a34f5249"
+    },
+    {
+      "path": "detect/ocsf/tests/azure_activity.toml",
+      "bytes": 2883,
+      "sha256": "b5f4da63db07eb86efc553231199f5f07ac9a4d854e6d3b30b0009313992cfa6"
+    },
+    {
+      "path": "detect/ocsf/tests/k3s_audit.toml",
+      "bytes": 940,
+      "sha256": "c1f391746fbaacc33f1dead8283f332a455803071220c51d64d73f67424694c7"
+    },
+    {
+      "path": "detect/ocsf/tests/negative.toml",
+      "bytes": 10009,
+      "sha256": "4c3e8a6cb8660d3fe17a9b20d243085ba4bd679cb618b778a9ac4506bf7480fa"
+    },
+    {
+      "path": "detect/ocsf/tests/routing.toml",
+      "bytes": 2002,
+      "sha256": "5ade9d73cef7a31de875d903fffdcf26f05a7de226bd2d4f01905c5a0381415f"
+    },
+    {
+      "path": "detect/ocsf/tests/tetragon.toml",
+      "bytes": 947,
+      "sha256": "a8ea9002e19ff6e4850fb50f3522a057576b85904e8bac0e2d17679a9ac24fce"
+    },
+    {
+      "path": "detect/ocsf/tests/vnet_flow.toml",
+      "bytes": 1021,
+      "sha256": "9ec1010672ab4d78c3580eeedc2fa5c3dd91e05a4aa812f581051cec1415ee1d"
+    },
+    {
+      "path": "detect/ocsf/tests/warden_audit.toml",
+      "bytes": 1011,
+      "sha256": "4d55a91418e925f653cd7f089b6c1b60c5d046ff6c5894a6b1b0b57e13c9dc61"
+    },
+    {
+      "path": "detect/ocsf/tetragon.vrl",
+      "bytes": 1341,
+      "sha256": "1a947fe294d423e1e437f3a4134c4757cc109cb797430c98e985f3819ed1b9f0"
+    },
+    {
+      "path": "detect/ocsf/vnet_flow.vrl",
+      "bytes": 3369,
+      "sha256": "0b701f6557551dfceda4ae0ef0e63823b63d514ad0c1e66f82040e98c7dfc7af"
+    },
+    {
+      "path": "detect/ocsf/warden_audit.vrl",
+      "bytes": 1644,
+      "sha256": "96257a8ea2c42613432a2a1d0ae5662a88cb5c4e9ec75891b8af6693579ad4ab"
+    },
+    {
+      "path": "detect/vector/agent.toml",
+      "bytes": 2089,
+      "sha256": "1558f086300191e2db3c7425a2472c87dc9718afffecada7e5eaa66d9aed8af4"
+    },
+    {
+      "path": "detect/vector/aggregator.toml",
+      "bytes": 4231,
+      "sha256": "1b77c42e198212017e25a8c81f6bd9e1da1c004a89dd9e29038b95252ff1b33e"
+    },
+    {
+      "path": "detect/vector/buffer-alerts.yml",
+      "bytes": 846,
+      "sha256": "1678fa8a8614502931a10f85b974c94745c4fd4c03f67f389dc964a2b83a3baf"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "docs/evidence/task-11/affected-cover-command.txt",
+      "bytes": 7761,
+      "sha256": "1ec154fa448be4ce71beefdec6dedd069756dd78e0a449c5211895445a3fef26"
+    },
+    {
+      "path": "docs/evidence/task-11/affected-cover-native-20261025.json",
+      "bytes": 41779,
+      "sha256": "9e135d5ddb62384df23cbe341751ebd0cca23972fd782ac6e338e2bab70df88b"
+    },
+    {
+      "path": "docs/evidence/task-11/agent-validation-output-20261025.txt",
+      "bytes": 116,
+      "sha256": "da625f0b56c75e8e63f578539b5820f32178715cec2bd74c304b4fecc1f69153"
+    },
+    {
+      "path": "docs/evidence/task-11/aggregator-validation-output-20261025.txt",
+      "bytes": 131,
+      "sha256": "0091ac7a09bb4b5b2770737c615c7861c1b2453a753391315f2d2e0540f3cb99"
+    },
+    {
+      "path": "docs/evidence/task-11/backpressure-driver-output-20261025.txt",
+      "bytes": 2067,
+      "sha256": "0dec095b03dc4ef4ec5456d138569f098c746bc49a4dd9e439ad38bc498d7ebe"
+    },
+    {
+      "path": "docs/evidence/task-11/backpressure-metrics-20261025.ndjson",
+      "bytes": 122479,
+      "sha256": "bc029f2068c738e340c76f6d14bd60e3797517bbf59c35b860798661c3704870"
+    },
+    {
+      "path": "docs/evidence/task-11/backpressure-vector-stderr-20261025.txt",
+      "bytes": 1151,
+      "sha256": "4a6a3629f79eeac4fe5d6a30899184f095ca1d4d4dd46ea2eca37972be0fdb19"
+    },
+    {
+      "path": "docs/evidence/task-11/backpressure-vector-stdout-20261025.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/task-11/failed-backpressure-source/backpressure.toml.txt",
+      "bytes": 1274,
+      "sha256": "0161e16fd9f2b6da7710e9d17ad300eebb4815caf6fecbcfcd776eb61582c008"
+    },
+    {
+      "path": "docs/evidence/task-11/failed-backpressure-source/backpressure_test.py.txt",
+      "bytes": 23085,
+      "sha256": "1828e0d8fd488c86dd93b023d5c6975166e3010b4cddbf23bf54eadcfa8db025"
+    },
+    {
+      "path": "docs/evidence/task-11/failed-backpressure-source/backpressure_test.sh.txt",
+      "bytes": 271,
+      "sha256": "11662c5ef0cc769b6212bb3d4def36be57a8d0279dac00b0c137024b258cb81b"
+    },
+    {
+      "path": "docs/evidence/task-11/golden-output-20261025.txt",
+      "bytes": 1206,
+      "sha256": "94b71e8f40f96037f3cd81f2f1ad5a5ebcf98f126da13d7b9cac90a00826926f"
+    },
+    {
+      "path": "docs/evidence/task-11/local-pipeline-substage-report.md",
+      "bytes": 19033,
+      "sha256": "2809466ef4a854ee1f30dba4bbb9f3d66bf7e356dbb1f513c06b59968083d48f"
+    },
+    {
+      "path": "docs/evidence/task-11/new-artifact-index-20261025.json",
+      "bytes": 7096,
+      "sha256": "e3167b64554f2e19ec3049fa56fc31486fdf60daf2f2823a9a8758a66ea602a2"
+    },
+    {
+      "path": "docs/evidence/task-11/tdd-first-red-20261025.json",
+      "bytes": 52514,
+      "sha256": "ab60e08e1f313d4f7185f2dbd36ee2fe55905aabf32e197d614f385a785a1690"
+    },
+    {
+      "path": "docs/evidence/task-11/validate-help-native-20261025.json",
+      "bytes": 6515,
+      "sha256": "5289a7402d6962539292e1ee50e36c37c0b772f7de45c86702532ac8ee091029"
+    }
+  ],
+  "failed_draft_archives": [
+    {
+      "untracked_draft": "detect/tests/backpressure_test.py",
+      "inert_archive": "docs/evidence/task-11/failed-backpressure-source/backpressure_test.py.txt",
+      "draft_mode": "0664",
+      "bytes": 23085,
+      "sha256": "1828e0d8fd488c86dd93b023d5c6975166e3010b4cddbf23bf54eadcfa8db025",
+      "draft_is_committed_source": false
+    },
+    {
+      "untracked_draft": "detect/tests/backpressure.toml",
+      "inert_archive": "docs/evidence/task-11/failed-backpressure-source/backpressure.toml.txt",
+      "draft_mode": "0664",
+      "bytes": 1274,
+      "sha256": "0161e16fd9f2b6da7710e9d17ad300eebb4815caf6fecbcfcd776eb61582c008",
+      "draft_is_committed_source": false
+    },
+    {
+      "untracked_draft": "detect/tests/backpressure_test.sh",
+      "inert_archive": "docs/evidence/task-11/failed-backpressure-source/backpressure_test.sh.txt",
+      "draft_mode": "0664",
+      "bytes": 271,
+      "sha256": "11662c5ef0cc769b6212bb3d4def36be57a8d0279dac00b0c137024b258cb81b",
+      "draft_is_committed_source": false
+    }
+  ],
+  "historical_index": {
+    "path": "docs/evidence/task-11/new-artifact-index-20261025.json",
+    "bytes": 7096,
+    "sha256": "e3167b64554f2e19ec3049fa56fc31486fdf60daf2f2823a9a8758a66ea602a2"
+  },
+  "excluded": [
+    "docs/STATUS.md",
+    "docs/evidence/task-11/first-golden-static-ruling.md",
+    "docs/evidence/task-11/affected-cover-static-ruling.md",
+    "previously tracked Task11 proposal/material evidence",
+    "scripts/firecracker_code.py",
+    "vuln/",
+    "detect/tests/backpressure_test.py",
+    "detect/tests/backpressure.toml",
+    "detect/tests/backpressure_test.sh"
+  ]
+}

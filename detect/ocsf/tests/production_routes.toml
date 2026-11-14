@@ -1,0 +1,120 @@
+[[tests]]
+name = "production_source_label_azure"
+no_outputs_from = ["source_route.aks", "source_route.k3s", "source_route.vnet", "source_route.tetragon", "source_route.warden"]
+[[tests.inputs]]
+insert_at = "source_route"
+type = "vrl"
+source = '''. = {"warden_source":"azure","message":"route-only fixture","marker":"route-azure"}'''
+[[tests.outputs]]
+extract_from = "source_route.azure"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"warden_source":"azure","message":"route-only fixture","marker":"route-azure"})'''
+
+[[tests]]
+name = "production_source_label_aks"
+no_outputs_from = ["source_route.azure", "source_route.k3s", "source_route.vnet", "source_route.tetragon", "source_route.warden"]
+[[tests.inputs]]
+insert_at = "source_route"
+type = "vrl"
+source = '''. = {"warden_source":"aks","message":"route-only fixture","marker":"route-aks"}'''
+[[tests.outputs]]
+extract_from = "source_route.aks"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"warden_source":"aks","message":"route-only fixture","marker":"route-aks"})'''
+
+[[tests]]
+name = "production_source_label_k3s"
+no_outputs_from = ["source_route.azure", "source_route.aks", "source_route.vnet", "source_route.tetragon", "source_route.warden"]
+[[tests.inputs]]
+insert_at = "source_route"
+type = "vrl"
+source = '''. = {"warden_source":"k3s","message":"route-only fixture","marker":"route-k3s"}'''
+[[tests.outputs]]
+extract_from = "source_route.k3s"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"warden_source":"k3s","message":"route-only fixture","marker":"route-k3s"})'''
+
+[[tests]]
+name = "production_source_label_vnet"
+no_outputs_from = ["source_route.azure", "source_route.aks", "source_route.k3s", "source_route.tetragon", "source_route.warden"]
+[[tests.inputs]]
+insert_at = "source_route"
+type = "vrl"
+source = '''. = {"warden_source":"vnet","message":"route-only fixture","marker":"route-vnet"}'''
+[[tests.outputs]]
+extract_from = "source_route.vnet"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"warden_source":"vnet","message":"route-only fixture","marker":"route-vnet"})'''
+
+[[tests]]
+name = "production_source_label_tetragon"
+no_outputs_from = ["source_route.azure", "source_route.aks", "source_route.k3s", "source_route.vnet", "source_route.warden"]
+[[tests.inputs]]
+insert_at = "source_route"
+type = "vrl"
+source = '''. = {"warden_source":"tetragon","message":"route-only fixture","marker":"route-tetragon"}'''
+[[tests.outputs]]
+extract_from = "source_route.tetragon"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"warden_source":"tetragon","message":"route-only fixture","marker":"route-tetragon"})'''
+
+[[tests]]
+name = "production_source_label_warden"
+no_outputs_from = ["source_route.azure", "source_route.aks", "source_route.k3s", "source_route.vnet", "source_route.tetragon"]
+[[tests.inputs]]
+insert_at = "source_route"
+type = "vrl"
+source = '''. = {"warden_source":"warden","message":"route-only fixture","marker":"route-warden"}'''
+[[tests.outputs]]
+extract_from = "source_route.warden"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"warden_source":"warden","message":"route-only fixture","marker":"route-warden"})'''
+
+[[tests]]
+name = "production_unknown_source_redacted"
+no_outputs_from = ["source_route.azure", "source_route.aks", "source_route.k3s", "source_route.vnet", "source_route.tetragon", "source_route.warden"]
+[[tests.inputs]]
+insert_at = "source_route"
+type = "vrl"
+source = '''. = {"warden_source":"not_registered","message":"fixture-body","secret":"never-diagnostic"}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"unrecognized"})'''
+
+[[tests]]
+name = "production_raw_warden_rejected"
+no_outputs_from = ["norm_warden"]
+[[tests.inputs]]
+insert_at = "source_route"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "warden"
+message = '''{"tenant_id":"fixture-tenant","run_id":"fixture-run","type":"run.created","payload":{}}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"warden"})'''
+
+[[tests]]
+name = "production_warden_observation_not_occurrence"
+no_outputs_from = ["norm_warden"]
+[[tests.inputs]]
+insert_at = "source_route"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "warden"
+message = '''{"synthetic_context":true,"event_uid":"fixture-seq-time","actor_uid":"fixture-actor","source_ip":"192.0.2.30","collector_observed_at":"2026-01-01T00:00:00Z","event":{"tenant_id":"fixture-tenant","run_id":"fixture-run","type":"run.created","payload":{}}}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"warden"})'''

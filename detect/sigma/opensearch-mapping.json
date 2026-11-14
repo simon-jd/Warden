@@ -1,0 +1,231 @@
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 1,
+      "number_of_replicas": 0
+    },
+    "analysis": {
+      "normalizer": {
+        "warden_ascii_lower": {
+          "type": "custom",
+          "char_filter": [],
+          "filter": [
+            "lowercase"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "activity_id": {
+        "type": "integer"
+      },
+      "category_uid": {
+        "type": "integer"
+      },
+      "class_uid": {
+        "type": "integer"
+      },
+      "type_uid": {
+        "type": "integer"
+      },
+      "severity_id": {
+        "type": "integer"
+      },
+      "status_id": {
+        "type": "integer"
+      },
+      "time": {
+        "type": "long"
+      },
+      "activity_name": {
+        "type": "keyword",
+        "normalizer": "warden_ascii_lower"
+      },
+      "metadata": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "keyword"
+          },
+          "uid": {
+            "type": "keyword"
+          },
+          "product": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "keyword",
+                "normalizer": "warden_ascii_lower"
+              },
+              "vendor_name": {
+                "type": "keyword"
+              }
+            }
+          }
+        }
+      },
+      "api": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "type": "keyword",
+            "normalizer": "warden_ascii_lower"
+          }
+        }
+      },
+      "actor": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "object",
+            "properties": {
+              "uid": {
+                "type": "keyword",
+                "normalizer": "warden_ascii_lower"
+              }
+            }
+          },
+          "process": {
+            "type": "object",
+            "properties": {
+              "pid": {
+                "type": "integer"
+              },
+              "uid": {
+                "type": "keyword"
+              },
+              "name": {
+                "type": "keyword",
+                "normalizer": "warden_ascii_lower"
+              }
+            }
+          }
+        }
+      },
+      "process": {
+        "type": "object",
+        "properties": {
+          "pid": {
+            "type": "integer"
+          },
+          "uid": {
+            "type": "keyword"
+          },
+          "name": {
+            "type": "keyword",
+            "normalizer": "warden_ascii_lower"
+          }
+        }
+      },
+      "device": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "keyword"
+          },
+          "name": {
+            "type": "keyword"
+          },
+          "type_id": {
+            "type": "integer"
+          }
+        }
+      },
+      "src_endpoint": {
+        "type": "object",
+        "properties": {
+          "ip": {
+            "type": "ip"
+          },
+          "port": {
+            "type": "integer"
+          }
+        }
+      },
+      "dst_endpoint": {
+        "type": "object",
+        "properties": {
+          "ip": {
+            "type": "ip"
+          },
+          "port": {
+            "type": "integer"
+          }
+        }
+      },
+      "unmapped": {
+        "type": "object",
+        "properties": {
+          "objectRef": {
+            "type": "object",
+            "properties": {
+              "resource": {
+                "type": "keyword",
+                "normalizer": "warden_ascii_lower"
+              },
+              "subresource": {
+                "type": "keyword",
+                "normalizer": "warden_ascii_lower"
+              },
+              "name": {
+                "type": "keyword"
+              },
+              "namespace": {
+                "type": "keyword"
+              },
+              "uid": {
+                "type": "keyword"
+              },
+              "apiGroup": {
+                "type": "keyword"
+              },
+              "apiVersion": {
+                "type": "keyword"
+              }
+            },
+            "dynamic": false
+          },
+          "acl_id": {
+            "type": "keyword"
+          },
+          "rule": {
+            "type": "keyword"
+          },
+          "protocol": {
+            "type": "integer"
+          },
+          "direction": {
+            "type": "keyword",
+            "normalizer": "warden_ascii_lower"
+          },
+          "flow_state": {
+            "type": "keyword"
+          },
+          "encryption_state": {
+            "type": "keyword"
+          },
+          "source": {
+            "type": "keyword"
+          },
+          "log_guid": {
+            "type": "keyword"
+          },
+          "tuple_index": {
+            "type": "integer"
+          },
+          "record_fields": {
+            "type": "object",
+            "enabled": false
+          },
+          "traffic_counts": {
+            "type": "keyword"
+          }
+        },
+        "dynamic": false
+      }
+    }
+  }
+}

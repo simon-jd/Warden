@@ -1,0 +1,21 @@
+{
+  "request": {
+    "cmd": "bash scripts/azure_reaper.sh",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "max_output_tokens": 2000,
+    "yield_time_ms": 1000,
+    "sandbox_permissions": "require_escalated",
+    "justification": "Run Warden's required fixed start reaper before continuing Task15's CLI-isolation gate, touching only owned rg-warden-lab TTL resources and never protected rg-mlinfra-westus."
+  },
+  "result": {
+    "chunk_id": "a4038c",
+    "wall_time_seconds": 0.722275265,
+    "exit_code": 0,
+    "original_token_count": 37,
+    "output": "{\"at\": \"2026-10-26T03:54:07Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+  },
+  "polls": []
+}

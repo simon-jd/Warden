@@ -1,0 +1,9 @@
+$ go test -count=1 -v -run "TestRegionIsTheGuardsAKSRegion|TestPublicAudience" ./controlplane/internal/aksdrill ./runtimes/conformance   # after the change
+=== RUN   TestRegionIsTheGuardsAKSRegion
+--- PASS: TestRegionIsTheGuardsAKSRegion (0.00s)
+PASS
+ok  	warden/controlplane/internal/aksdrill	0.002s
+=== RUN   TestPublicAudienceKeepsOnlyTheWellKnownAudiences
+--- PASS: TestPublicAudienceKeepsOnlyTheWellKnownAudiences (0.00s)
+PASS
+ok  	warden/runtimes/conformance	0.002s

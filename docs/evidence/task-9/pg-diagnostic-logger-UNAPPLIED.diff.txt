@@ -1,0 +1,11 @@
+--- a/CONSUMED-task-9-pg-startup-diagnostic-20261026.py.txt
++++ b/CONSUMED-task-9-pg-startup-diagnostic-20261026.py.txt
+@@ -87,7 +87,7 @@
+  if e['rc']!=1 or e['out'] not in ['', '\n'] or e['err'] not in expected:raise RuntimeError('container_not_proven_absent')
+ 
+ def common(name,memory,pids):
+- return ['run','--pull=never','--name',name,'--cidfile',str(N/(name+'.cid')),'--label','warden.test=task9','--label','warden.owner='+OWN,'--network','none','--read-only','--cap-drop','ALL','--security-opt','no-new-privileges','--user','postgres','--memory',memory,'--memory-swap',memory,'--pids-limit',pids,'--cpus','2','--shm-size','1m','--log-driver','local','--log-opt','max-size=1m','--log-opt','max-file=1']
++ return ['run','--pull=never','--name',name,'--cidfile',str(N/(name+'.cid')),'--label','warden.test=task9','--label','warden.owner='+OWN,'--network','none','--read-only','--cap-drop','ALL','--security-opt','no-new-privileges','--user','postgres','--memory',memory,'--memory-swap',memory,'--pids-limit',pids,'--cpus','2','--shm-size','1m','--log-driver','local','--log-opt','max-size=1m','--log-opt','max-file=1','--log-opt','compress=false']
+ 
+ def bind(src,dst,readonly=True):
+  return ['--mount','type=bind,src='+str(src)+',dst='+dst+(',readonly' if readonly else '')]

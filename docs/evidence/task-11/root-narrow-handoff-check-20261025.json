@@ -1,0 +1,15 @@
+{
+  "request": {
+    "cmd": "/usr/bin/python3 -I -S -B - <<'PY'\nimport hashlib,json,pathlib,stat,subprocess\nroot=pathlib.Path('.')\np='docs/evidence/task-11/narrow-git-handoff-index-20261025.json'\nd=json.loads(pathlib.Path(p).read_text())\nbase='fc94ce5a2a27da3ca36b48081db1cec22119bcc3';head='0beb321125600fda112bb8c08355457d481938cb';src='337faf67ad689ef6aaf4d644c613666f18bf73e7'\ndef git(*args):return subprocess.check_output(['git',*args])\nassert git('rev-parse','HEAD').decode().strip()==head\nassert not git('diff','--cached','--name-only')\nassert d['base']==base and d['source_commit']==src\nrows=d['source_files']+d['evidence_files'];assert len(d['source_files'])==18 and len(d['evidence_files'])==16\nfor row in rows:\n q=pathlib.Path(row['path']);b=q.read_bytes();s=q.lstat()\n assert stat.S_ISREG(s.st_mode) and len(b)==row['bytes'] and hashlib.sha256(b).hexdigest()==row['sha256'],row['path']\n assert git('show',head+':'+row['path'])==b,row['path']\nexpected={x['path'] for x in rows}|{p}\nassert set(git('diff','--name-only',base+'..'+head).decode().splitlines())==expected\nassert set(git('show','--pretty=','--name-only',src).decode().splitlines())=={x['path'] for x in d['source_files']}\nassert len(git('rev-list',base+'..'+head).splitlines())==2\nfor row in d['failed_draft_archives']:\n q=pathlib.Path(row['untracked_draft']);b=q.read_bytes();s=q.lstat()\n assert stat.S_ISREG(s.st_mode) and stat.S_IMODE(s.st_mode)==int(row['draft_mode'],8)\n assert len(b)==row['bytes'] and hashlib.sha256(b).hexdigest()==row['sha256']\n assert b==pathlib.Path(row['inert_archive']).read_bytes()\n assert not git('ls-files','--',row['untracked_draft'])\na=pathlib.Path('docs/evidence/task-11/local-pipeline-substage-report.md').read_bytes()\nassert a==pathlib.Path('.superpowers/sdd/2-warden-security-plan/task-11-report.md').read_bytes()\nprint(json.dumps({'base':base,'head':head,'source':src,'commits':2,'paths':len(expected),'indexed_rows_git_bytes_match':len(rows),'mirror_bytes':len(a),'drafts_untracked_unchanged_vs_archive':3,'index_empty':True,'tests_rerun':False,'limits':'Only current narrow artifacts; cannot prove unobserved historical dirty bytes or old native quiescence.'},sort_keys=True))\nPY",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "login": false,
+    "max_output_tokens": 2000
+  },
+  "response": {
+    "chunk_id": "84324a",
+    "wall_time_seconds": 0.019223263,
+    "exit_code": 0,
+    "original_token_count": 113,
+    "output": "{\"base\": \"fc94ce5a2a27da3ca36b48081db1cec22119bcc3\", \"commits\": 2, \"drafts_untracked_unchanged_vs_archive\": 3, \"head\": \"0beb321125600fda112bb8c08355457d481938cb\", \"index_empty\": true, \"indexed_rows_git_bytes_match\": 34, \"limits\": \"Only current narrow artifacts; cannot prove unobserved historical dirty bytes or old native quiescence.\", \"mirror_bytes\": 19033, \"paths\": 35, \"source\": \"337faf67ad689ef6aaf4d644c613666f18bf73e7\", \"tests_rerun\": false}\n"
+  }
+}

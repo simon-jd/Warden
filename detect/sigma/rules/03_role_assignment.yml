@@ -1,0 +1,35 @@
+{
+  "title": "Cloud role assignment change action",
+  "id": "01e2eafe-0802-518d-bbac-d17c0c6b50e4",
+  "status": "experimental",
+  "description": "Action or binary indicator only; no adversary intent or technique success is established. Synthetic fixtures; ATT&CK tags describe related investigation scenarios, not observed technique success.",
+  "references": [
+    "https://attack.mitre.org/techniques/T1098/003/"
+  ],
+  "author": "Warden",
+  "date": "2026-10-25",
+  "logsource": {
+    "product": "azure",
+    "service": "activity"
+  },
+  "detection": {
+    "source": {
+      "class_uid": 6003,
+      "metadata.product.name": "azure activity log",
+      "status_id": 1
+    },
+    "action": {
+      "api.operation": "microsoft.authorization/roleassignments/write"
+    },
+    "condition": "source and action"
+  },
+  "falsepositives": [
+    "Authorized administration, developer/debug tooling, permitted workloads or unrelated protocol use; tune local IP/principal allowlists."
+  ],
+  "level": "medium",
+  "tags": [
+    "attack.persistence",
+    "attack.privilege_escalation",
+    "attack.t1098.003"
+  ]
+}

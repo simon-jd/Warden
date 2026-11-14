@@ -1,0 +1,166 @@
+#!/bin/sh
+# INERT second/final Task11 material operation; root fresh admission first.
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 T11_R_BYTES="${T11_R_BYTES:?root fresh ordinary R required}" /usr/bin/timeout --signal=TERM --kill-after=10s 80s /usr/bin/python3 -I -S -B - <<'PY'
+import time
+T0=time.monotonic()
+import hashlib,json,os,pathlib,resource,signal,stat,subprocess,tarfile
+WORK=T0+60; VERSION=T0+65; END=T0+74
+resource.setrlimit(resource.RLIMIT_CPU,(55,55))
+resource.setrlimit(resource.RLIMIT_AS,(1000000000,3000000000))
+resource.setrlimit(resource.RLIMIT_FSIZE,(200000000,200000000))
+resource.setrlimit(resource.RLIMIT_NOFILE,(128,128))
+resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+p=None; pfd=None; out=None; err=None; phase='setup'; failed=None; paths=[]; source=None
+def emit(**x):
+  print(json.dumps(x),flush=True)
+def alarm(signum,frame):
+  raise TimeoutError('fixed deadline/signal; retain originals')
+signal.signal(signal.SIGALRM,alarm)
+signal.signal(signal.SIGTERM,alarm)
+def arm(t):
+  r=t-time.monotonic()
+  if r<=0: raise TimeoutError('no positive deadline remaining')
+  signal.setitimer(signal.ITIMER_REAL,r)
+def check(t=WORK):
+  if time.monotonic()>=t: raise TimeoutError('absolute work deadline')
+def child_limits():
+  resource.setrlimit(resource.RLIMIT_CPU,(3,3))
+  resource.setrlimit(resource.RLIMIT_AS,(3000000000,3000000000))
+  resource.setrlimit(resource.RLIMIT_FSIZE,(524288,524288))
+def owned_signal(sig):
+  check(END)
+  if p is not None and p.poll() is None:
+    if pfd is not None and hasattr(signal,'pidfd_send_signal'):
+      signal.pidfd_send_signal(pfd,sig)
+    else:
+      p.send_signal(sig)
+def bounded_wait(until):
+  while p.poll() is None:
+    rem=until-time.monotonic()
+    if rem<=0: return False
+    try: p.wait(timeout=min(rem,0.1))
+    except subprocess.TimeoutExpired: pass
+  return True
+try:
+  arm(WORK)
+  raw=os.environ['T11_R_BYTES']
+  if not raw.isascii() or not raw.isdecimal(): raise ValueError('invalid R input')
+  R=int(raw)
+  if R+5000000000+2337167168>12000000000:
+    raise ValueError('R+reservedQ+new peak exceeds12GB')
+  repo=pathlib.Path('/home/postedism/Desktop/Warden')
+  if pathlib.Path.cwd()!=repo: raise ValueError('wrong cwd')
+  base=repo/'.cache'
+  if not base.is_dir() or base.is_symlink(): raise ValueError('unsafe cache ancestor')
+  work=base/'task11-offline-tool-0.45.0'
+  work.mkdir(mode=0o700)
+  archive=base/'task11-material-once-0.45.0/vector-0.45.0-x86_64-unknown-linux-musl.tar.gz'
+  unpack=work/'unpack'; tmp=work/'tmp'
+  unpack.mkdir(mode=0o700); tmp.mkdir(mode=0o700)
+  expected='0588f529200befa3237481255b9b7715316de73d626e1d01042e054f92205c71'
+  phase='archive-readonly-check'
+  source=os.fdopen(os.open(archive,os.O_RDONLY|os.O_NOFOLLOW|os.O_CLOEXEC),'rb')
+  st=os.fstat(source.fileno())
+  if not stat.S_ISREG(st.st_mode) or st.st_uid!=1000 or st.st_nlink!=1 or st.st_size!=46464472:
+    raise ValueError('archive owner/type/link/known-size mismatch')
+  def signature():
+    z=os.fstat(source.fileno())
+    return (z.st_dev,z.st_ino,z.st_uid,z.st_nlink,z.st_size,z.st_mtime_ns,z.st_ctime_ns)
+  original=signature(); n=0; h=hashlib.sha256()
+  while True:
+    check(); block=source.read(65536)
+    if not block: break
+    n+=len(block)
+    if n>50000000: raise ValueError('archive byte cap')
+    h.update(block)
+  if n!=46464472 or h.hexdigest()!=expected or signature()!=original:
+    raise ValueError('saved publisher archive mismatch/change')
+  source.seek(0) # same nofollow descriptor, no pathname reopen
+  phase='unpack'; seen=set(); dirs=set(); sizes=0; files=0; vectors=[]
+  with tarfile.open(fileobj=source,mode='r:gz') as tf:
+    for m in tf:
+      check(); raw=m.name[2:] if m.name.startswith('./') else m.name
+      parts=raw.split('/')
+      if parts[0]!='vector-x86_64-unknown-linux-musl': raise ValueError('wrong top root')
+      if not raw or raw.startswith('/') or '\\' in raw or any(x in {'','..','.'} for x in parts):
+        raise ValueError('unsafe member path')
+      if len(raw.encode())>4096 or len(parts)>8 or raw in seen:
+        raise ValueError('member path/duplicate cap')
+      seen.add(raw)
+      if len(seen)>4352: raise ValueError('member count cap')
+      dp=parts if m.isdir() else parts[:-1]
+      dirs.update(tuple(dp[:i]) for i in range(1,len(dp)+1))
+      if len(dirs)>256: raise ValueError('all-directory cap')
+      target=unpack.joinpath(*parts)
+      if m.isdir(): target.mkdir(parents=True,exist_ok=True,mode=0o700)
+      elif m.isfile():
+        files+=1; sizes+=m.size
+        if files>4096 or m.size<0 or sizes>200000000: raise ValueError('unpack cap')
+        target.parent.mkdir(parents=True,exist_ok=True,mode=0o700)
+        src=tf.extractfile(m)
+        if src is None: raise ValueError('missing member')
+        left=m.size
+        with src, target.open('xb') as saved:
+          while left:
+            check(); block=src.read(min(65536,left))
+            if not block: raise ValueError('truncated member')
+            saved.write(block); left-=len(block)
+        if parts[-2:]==['bin','vector']: vectors.append(target)
+      else: raise ValueError('link/device/unsupported member')
+  check()
+  if signature()!=original: raise ValueError('archive changed during parse')
+  if len(vectors)!=1: raise ValueError('expected sole bin/vector')
+  V=vectors[0]
+  with V.open('rb') as saved: header=saved.read(20)
+  if header[:6]!=b'\x7fELF\x02\x01' or header[18:20]!=b'\x3e\x00':
+    raise ValueError('not x86_64 ELF')
+  V.chmod(0o700)
+  phase='version'; arm(VERSION)
+  paths=[work/'version.stdout',work/'version.stderr']
+  out=(work/'version.stdout').open('xb',buffering=0)
+  err=(work/'version.stderr').open('xb',buffering=0)
+  env=dict(os.environ); env.update(TMPDIR=str(tmp),VECTOR_THREADS='2')
+  p=subprocess.Popen([str(V),'--version'],stdin=subprocess.DEVNULL,stdout=out,stderr=err,
+    cwd=repo,env=env,close_fds=True,preexec_fn=child_limits)
+  if hasattr(os,'pidfd_open'):
+    try: pfd=os.pidfd_open(p.pid,0)
+    except ProcessLookupError:
+      if p.poll() is None: raise RuntimeError('pidfd lookup with unknown child')
+  if not bounded_wait(VERSION): raise subprocess.TimeoutExpired(p.args,VERSION-T0)
+  arm(END)
+  out.close(); out=None; err.close(); err=None
+  text=(work/'version.stdout').read_bytes()
+  if p.returncode!=0 or b'0.45.0' not in text:
+    raise ValueError('version mismatch')
+  emit(result='material-and-version-only',returncode=p.returncode,archive_bytes=n,
+    unpack_bytes=sizes,vector=str(V),stdout=str(work/'version.stdout'),stderr=str(work/'version.stderr'))
+except BaseException as e:
+  failed=e
+  emit(result='failed-before-cleanup',phase=phase,error=type(e).__name__,detail=str(e)[:512],
+    child_return=(p.returncode if p else None),historical_pid=(p.pid if p else None),
+    partial=[{'path':str(f),'bytes':f.stat().st_size if f.exists() else None} for f in paths])
+finally:
+  signal.setitimer(signal.ITIMER_REAL,0)
+  try:
+    if p is not None and p.poll() is None:
+      arm(END)
+      owned_signal(signal.SIGTERM)
+      if not bounded_wait(min(END-3,time.monotonic()+2)):
+        owned_signal(signal.SIGKILL)
+        bounded_wait(END-1)
+    known=p is None or p.poll() is not None
+    emit(cleanup='known-terminal' if known else 'UNKNOWN',
+      returncode=(p.returncode if p else None),historical_pid=(p.pid if p else None))
+    if not known: failed=failed or RuntimeError('UNKNOWN child terminal')
+  except BaseException as e:
+    failed=failed or e
+    emit(cleanup='UNKNOWN',error=type(e).__name__,historical_pid=(p.pid if p else None))
+  finally:
+    signal.setitimer(signal.ITIMER_REAL,0)
+    if out is not None: out.close()
+    if err is not None: err.close()
+    if pfd is not None: os.close(pfd)
+    if source is not None: source.close()
+# Retain originals; after exit PID is history, no live FD claim.
+raise SystemExit(1 if failed is not None else 0)
+PY

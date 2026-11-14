@@ -1,0 +1,11 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "/home/postedism/Desktop/Warden/scripts/firecracker_code.py",
+    "identity-unit"
+  ],
+  "layer": "local cryptographic/JWKS unit only; no Entra/SQL/SCIM",
+  "source_commit": "6d02de4062c0ee1e5d62825df0ea670d54672b5e",
+  "started_utc": "2026-10-25T10:30:18.900983+00:00"
+}

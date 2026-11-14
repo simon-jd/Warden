@@ -1,0 +1,23 @@
+--- task-9-pg-startup-diagnostic-20261026.py.txt
++++ task-9-pg-startup-diagnostic-logger-corrected-20261026-b.py.txt
+@@ -7,9 +7,9 @@
+ D=W/'.superpowers/sdd/2-warden-security-plan'
+ M=D/'task-9-material-manifest.json'
+ F=D/'task-9-first-red-source-freeze.json' # Exact hashes below; future execution still needs fresh admission
+-N=W/'.cache/task9-pg-startup-diagnostic-20261026-a'
++N=W/'.cache/task9-pg-startup-diagnostic-20261026-b'
+ IMAGE='sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873'
+-PG='warden-task9-pg-diag-20261026-a'
++PG='warden-task9-pg-diag-20261026-b'
+ MAXOUT=131072; seen=0; events=[]; attempted=[]; status='UNKNOWN'; interrupted=False; callno=0; cli_safe=True; OWN=None; created=False
+ resource.setrlimit(resource.RLIMIT_AS,(268435456,4294967296)) # parent soft cap; child may raise only its own soft limit
+ resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+@@ -87,7 +87,7 @@
+  if e['rc']!=1 or e['out'] not in ['', '\n'] or e['err'] not in expected:raise RuntimeError('container_not_proven_absent')
+ 
+ def common(name,memory,pids):
+- return ['run','--pull=never','--name',name,'--cidfile',str(N/(name+'.cid')),'--label','warden.test=task9','--label','warden.owner='+OWN,'--network','none','--read-only','--cap-drop','ALL','--security-opt','no-new-privileges','--user','postgres','--memory',memory,'--memory-swap',memory,'--pids-limit',pids,'--cpus','2','--shm-size','1m','--log-driver','local','--log-opt','max-size=1m','--log-opt','max-file=1']
++ return ['run','--pull=never','--name',name,'--cidfile',str(N/(name+'.cid')),'--label','warden.test=task9','--label','warden.owner='+OWN,'--network','none','--read-only','--cap-drop','ALL','--security-opt','no-new-privileges','--user','postgres','--memory',memory,'--memory-swap',memory,'--pids-limit',pids,'--cpus','2','--shm-size','1m','--log-driver','local','--log-opt','max-size=1m','--log-opt','max-file=1','--log-opt','compress=false']
+ 
+ def bind(src,dst,readonly=True):
+  return ['--mount','type=bind,src='+str(src)+',dst='+dst+(',readonly' if readonly else '')]

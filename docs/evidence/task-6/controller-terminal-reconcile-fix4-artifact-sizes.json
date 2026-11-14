@@ -1,0 +1,428 @@
+{
+  "all152_frozen_equal_source_git": true,
+  "artifact_count": 42,
+  "artifacts": {
+    "docs/evidence/task-6/continuation-controller-operations-execution-plan.md": {
+      "allocated_bytes": 61440,
+      "bytes": 60832,
+      "sha256": "8aa73aeb2bb2a5156cb4b0f53c726985322fb653ec5ce4e6336a2816ac26df99"
+    },
+    "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": {
+      "allocated_bytes": 28672,
+      "bytes": 26016,
+      "sha256": "bd10c55befc5b29e28bed7844a01a28ab843a22d79cc5e25c9761402ac379563"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/baseline.json": {
+      "allocated_bytes": 20480,
+      "bytes": 16852,
+      "sha256": "1eac1898b79c3b6dcb3591012ec90a08f501e42f6a0c900ab81079cb04711831"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": {
+      "allocated_bytes": 28672,
+      "bytes": 26016,
+      "sha256": "bd10c55befc5b29e28bed7844a01a28ab843a22d79cc5e25c9761402ac379563"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+      "allocated_bytes": 61440,
+      "bytes": 57668,
+      "sha256": "fee4ef5b707539994cbd0ab2191c0ec57fbe19d8e4f71bf5ed66b847bf97efa0"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/intent.json": {
+      "allocated_bytes": 4096,
+      "bytes": 993,
+      "sha256": "8abbaac7048ff26148b541e4be819e799d2aba8cf329843e70c2ece1f9c67779"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/outer-tool-result.json": {
+      "allocated_bytes": 4096,
+      "bytes": 3721,
+      "sha256": "c0b7a5130e0e6d09f81f7700be79eaca331f7f04f6246bccdfaa52e62f08bfa4"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/output.txt": {
+      "allocated_bytes": 16384,
+      "bytes": 14249,
+      "sha256": "a3fc6d06c34cfcff798d658f65588e2ff4dc638d2262f9c9f9801448fe8b9180"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/post-controller.json": {
+      "allocated_bytes": 4096,
+      "bytes": 302,
+      "sha256": "32fcb9888136a176a9a8d10f21d962202537e47aa77fd3ba8b54ea8293141a7a"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/post-source.json": {
+      "allocated_bytes": 16384,
+      "bytes": 15999,
+      "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/pre-controller.json": {
+      "allocated_bytes": 4096,
+      "bytes": 302,
+      "sha256": "32fcb9888136a176a9a8d10f21d962202537e47aa77fd3ba8b54ea8293141a7a"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/pre-source.json": {
+      "allocated_bytes": 16384,
+      "bytes": 15999,
+      "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/receipt.json": {
+      "allocated_bytes": 4096,
+      "bytes": 1303,
+      "sha256": "5c3f7f23e808295aa2d670b7301e6d728e83b6ada2ea2d95d68784e31209823b"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/run.py": {
+      "allocated_bytes": 8192,
+      "bytes": 4425,
+      "sha256": "d5f6872eded06762db863a66e637c1a8cccaa694645e43fae1a83f356cd650bb"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-dispatch-baseline.json": {
+      "allocated_bytes": 20480,
+      "bytes": 16852,
+      "sha256": "5fab684c289b3015d40e9975da40a5f173f58d2d1ce6f17f2b1ff4c9336fd742"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/baseline.json": {
+      "allocated_bytes": 20480,
+      "bytes": 16852,
+      "sha256": "5fab684c289b3015d40e9975da40a5f173f58d2d1ce6f17f2b1ff4c9336fd742"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": {
+      "allocated_bytes": 28672,
+      "bytes": 26016,
+      "sha256": "bd10c55befc5b29e28bed7844a01a28ab843a22d79cc5e25c9761402ac379563"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+      "allocated_bytes": 61440,
+      "bytes": 57668,
+      "sha256": "fee4ef5b707539994cbd0ab2191c0ec57fbe19d8e4f71bf5ed66b847bf97efa0"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/intent.json": {
+      "allocated_bytes": 4096,
+      "bytes": 964,
+      "sha256": "b976aa1460a861a3603835ed087407933d62164ad38065f8ff5ac8c68b9ddbf5"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/outer-tool-result.json": {
+      "allocated_bytes": 4096,
+      "bytes": 3639,
+      "sha256": "1c0b62e0d02e0ec40c5061260dfd28cdbe8904ac4913e32e2d5f1d2b7bbe0e43"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/output.txt": {
+      "allocated_bytes": 4096,
+      "bytes": 2483,
+      "sha256": "40f02bc2476db614a519370ee34b0ca5ebe0b125c7d7305882c12d9511f9602c"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/post-controller.json": {
+      "allocated_bytes": 4096,
+      "bytes": 302,
+      "sha256": "32fcb9888136a176a9a8d10f21d962202537e47aa77fd3ba8b54ea8293141a7a"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/post-source.json": {
+      "allocated_bytes": 16384,
+      "bytes": 15999,
+      "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/pre-controller.json": {
+      "allocated_bytes": 4096,
+      "bytes": 302,
+      "sha256": "32fcb9888136a176a9a8d10f21d962202537e47aa77fd3ba8b54ea8293141a7a"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/pre-source.json": {
+      "allocated_bytes": 16384,
+      "bytes": 15999,
+      "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/receipt.json": {
+      "allocated_bytes": 4096,
+      "bytes": 1273,
+      "sha256": "993ff675013a04136607414a27a74547565694b9228230668b6615a38e2f61e5"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/run.py": {
+      "allocated_bytes": 8192,
+      "bytes": 5917,
+      "sha256": "3428e6b8d66f58cbc398193096b1dcd38bc61b9f8c0f852d2e01ba562d078002"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-preserved-prefixes.json": {
+      "allocated_bytes": 4096,
+      "bytes": 433,
+      "sha256": "e391ece56387478a1bc8e94d395b1ba6d2a1d585269cdc83bed99165dd030b9c"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/baseline.json": {
+      "allocated_bytes": 20480,
+      "bytes": 16852,
+      "sha256": "5fab684c289b3015d40e9975da40a5f173f58d2d1ce6f17f2b1ff4c9336fd742"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+      "allocated_bytes": 61440,
+      "bytes": 57668,
+      "sha256": "fee4ef5b707539994cbd0ab2191c0ec57fbe19d8e4f71bf5ed66b847bf97efa0"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/intent.json": {
+      "allocated_bytes": 4096,
+      "bytes": 860,
+      "sha256": "cc09ca63fc74a60235153339dac8e2a4cb866b885ff1745b43bb3e5d56e3f7bc"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/outer-tool-result.json": {
+      "allocated_bytes": 4096,
+      "bytes": 3423,
+      "sha256": "f7d1f46fd235d449698a9e364c4536369d8ea40d4189cbba48643b8fe16461a4"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/output.txt": {
+      "allocated_bytes": 16384,
+      "bytes": 12356,
+      "sha256": "eb1168419157c8a40fb1361ee46cbaf23fd479617c92cea7ccd8a8cc96d7cdc3"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/post-controller.json": {
+      "allocated_bytes": 4096,
+      "bytes": 302,
+      "sha256": "df219f22c2868f7c46573dfaa1d1b46b9e4017268138f648e7eebad748b4f177"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/post-source.json": {
+      "allocated_bytes": 16384,
+      "bytes": 15999,
+      "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/pre-controller.json": {
+      "allocated_bytes": 4096,
+      "bytes": 302,
+      "sha256": "df219f22c2868f7c46573dfaa1d1b46b9e4017268138f648e7eebad748b4f177"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/pre-source.json": {
+      "allocated_bytes": 16384,
+      "bytes": 15999,
+      "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/receipt.json": {
+      "allocated_bytes": 4096,
+      "bytes": 1168,
+      "sha256": "f2e5b40912ff6969c1fd5e2bb92500f3b48ef35e51a21a943cfbfb615b72f323"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/run.py": {
+      "allocated_bytes": 8192,
+      "bytes": 5234,
+      "sha256": "5d2e7659ebd26853bd9b0eaf8695f6db8b7f38933b6f05f6804810828be9d0fa"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-fix4-verification.json": {
+      "allocated_bytes": 53248,
+      "bytes": 52141,
+      "sha256": "746d875e8b75a57e9d71070bf05648a4612d022200025eaa332702a93f7561cb"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-substage-report.md": {
+      "allocated_bytes": 28672,
+      "bytes": 27169,
+      "sha256": "ec5588a4f3a9d0530889bc2e91b5f8161da2cb311b0c299588fed4c3c0eef5d2"
+    },
+    "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+      "allocated_bytes": 61440,
+      "bytes": 57668,
+      "sha256": "fee4ef5b707539994cbd0ab2191c0ec57fbe19d8e4f71bf5ed66b847bf97efa0"
+    }
+  },
+  "canonical150_names_and_bodies_equal_dispatch": true,
+  "dispatch_base": "c2436684c511bf2ae92982fb8141b1b7d0c41ee9",
+  "evidence_net_allocated_bytes_vs_prior_index_excluding_index": 614400,
+  "evidence_net_logical_bytes_excluding_index": 520672,
+  "incremental_allocated_bytes_vs_prior_indexed_baseline_excluding_index": 622592,
+  "incremental_logical_bytes_vs_dispatch_excluding_index": 526619,
+  "index_self_excluded": true,
+  "old_sizes_and_allocations_for_net": {
+    "docs/evidence/task-6/continuation-controller-operations-execution-plan.md": {
+      "allocated_bytes": 61440,
+      "bytes": 58113,
+      "sha256": "917294228a266353c105294ee13c68ada4c9952a7f3fe56ad4f91dab1efeb745"
+    },
+    "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": {
+      "allocated_bytes": 28672,
+      "bytes": 25874,
+      "sha256": "a59651fe438f1f035d73b4d319e9ee5a47217c82e56a8016402df3ece7fa256d"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-substage-report.md": {
+      "allocated_bytes": 16384,
+      "bytes": 14048,
+      "sha256": "2b2d7e6aeda351169888e6ac07cee1f2bcfbe3372d476cbce87fcbec5cdbaf9e"
+    },
+    "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+      "allocated_bytes": 53248,
+      "bytes": 51863,
+      "sha256": "695973e5761113ac22d59eca83f8a0d1fec3f51d1909a7beafdbab81817eb3c2"
+    }
+  },
+  "package_allocated_bytes": 782336,
+  "package_logical_bytes": 676517,
+  "partial_old_api_missing_unchanged": [
+    "docs/evidence/task-6/controller-readonly-api-source-red-01/post-source.json",
+    "docs/evidence/task-6/controller-readonly-api-source-red-01/post-controller.json",
+    "docs/evidence/task-6/controller-readonly-api-source-red-01/receipt.json"
+  ],
+  "preserved_old_rows_count": 75,
+  "preserved_older_run_hash_count": 101,
+  "preserved_original79_index": {
+    "allocated_bytes": 57344,
+    "bytes": 53984,
+    "sha256": "d22cd13338670bea2323ccbbd5873a47a8bafbd827e2a6b334f5920f34ba65bc"
+  },
+  "preserved_prefixes": {
+    "docs/evidence/task-6/continuation-controller-operations-execution-plan.md": {
+      "allocated_bytes": 61440,
+      "bytes": 58113,
+      "sha256": "917294228a266353c105294ee13c68ada4c9952a7f3fe56ad4f91dab1efeb745"
+    },
+    "docs/evidence/task-6/controller-terminal-reconcile-substage-report.md": {
+      "allocated_bytes": 16384,
+      "bytes": 14048,
+      "sha256": "2b2d7e6aeda351169888e6ac07cee1f2bcfbe3372d476cbce87fcbec5cdbaf9e"
+    }
+  },
+  "preserved_prior_api_rows_count": 60,
+  "remaining_limits": "All actual causal/host/clock/socket/private/resource/approval gates remain open; Task6/Goal open; Q5GB retained.",
+  "report_mirror_byte_equal": true,
+  "review_fix_base": "bb7224cdc9ce4106b39c3a7ddad514d9e5ac6175",
+  "root_docs_and_ignored_mirror_excluded": true,
+  "runs": {
+    "cover-01": {
+      "actual_exit_code": 0,
+      "actual_initial": "fdbaf3",
+      "actual_session": 30333,
+      "actual_terminal": "794417",
+      "changed_only_snapshots": [
+        "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      ],
+      "complete": true,
+      "pre_controller_map_sha256": "32fcb9888136a176a9a8d10f21d962202537e47aa77fd3ba8b54ea8293141a7a",
+      "pre_post_equal": true,
+      "pre_source_map_sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b",
+      "receipt": {
+        "changed_source_snapshots": [
+          "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+          "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+        ],
+        "command": [
+          "python3",
+          "-B",
+          "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/run.py"
+        ],
+        "completion_requires_process_exit_zero": true,
+        "controller_files": 2,
+        "dispatch_base": "c2436684c511bf2ae92982fb8141b1b7d0c41ee9",
+        "duration_seconds": 10.243456525029615,
+        "errors": 0,
+        "exit_code": 0,
+        "failures": 0,
+        "limits": {
+          "address_bytes": 536870912,
+          "cpu_seconds": 30,
+          "file_bytes": 33554432,
+          "wall_seconds": 45
+        },
+        "live_cache_access": false,
+        "skipped": 0,
+        "source_commit_at_launch": "2c911c8ca2b8148f47380bab53c732ed0bc17f62",
+        "source_files": 150,
+        "source_unchanged": true,
+        "started_utc": "2026-10-25T16:09:02.995622+00:00",
+        "test_target": "round4 unique frozen dedicated invoker fixture cover; excludes imported controller suite",
+        "tested_prefix_sha256": "7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa",
+        "tests_run": 74,
+        "timing_scope": "earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded",
+        "whole_wall_until_receipt_seconds": 10.263776763924398
+      }
+    },
+    "green-01": {
+      "actual_exit_code": 0,
+      "actual_initial": "156bdb",
+      "actual_session": 24992,
+      "actual_terminal": "29ca3b",
+      "changed_only_snapshots": [
+        "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      ],
+      "complete": true,
+      "pre_controller_map_sha256": "32fcb9888136a176a9a8d10f21d962202537e47aa77fd3ba8b54ea8293141a7a",
+      "pre_post_equal": true,
+      "pre_source_map_sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b",
+      "receipt": {
+        "changed_source_snapshots": [
+          "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+          "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+        ],
+        "command": [
+          "python3",
+          "-B",
+          "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/run.py"
+        ],
+        "completion_requires_process_exit_zero": true,
+        "controller_files": 2,
+        "dispatch_base": "c2436684c511bf2ae92982fb8141b1b7d0c41ee9",
+        "duration_seconds": 7.718056246987544,
+        "errors": 0,
+        "exit_code": 0,
+        "failures": 0,
+        "limits": {
+          "address_bytes": 536870912,
+          "cpu_seconds": 30,
+          "file_bytes": 33554432,
+          "wall_seconds": 45
+        },
+        "live_cache_access": false,
+        "skipped": 0,
+        "source_commit_at_launch": "c2436684c511bf2ae92982fb8141b1b7d0c41ee9",
+        "source_files": 150,
+        "source_unchanged": true,
+        "started_utc": "2026-10-25T16:07:47.317837+00:00",
+        "test_target": "round4 focused I1/I2 GREEN and retained adjacent boundaries",
+        "tested_prefix_sha256": "7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa",
+        "tests_run": 12,
+        "timing_scope": "earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded",
+        "whole_wall_until_receipt_seconds": 7.7393069710815325
+      }
+    },
+    "red-01": {
+      "actual_exit_code": 1,
+      "actual_initial": "a6bd45",
+      "actual_session": 32579,
+      "actual_terminal": "5bc580",
+      "changed_only_snapshots": [
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      ],
+      "complete": true,
+      "pre_controller_map_sha256": "df219f22c2868f7c46573dfaa1d1b46b9e4017268138f648e7eebad748b4f177",
+      "pre_post_equal": true,
+      "pre_source_map_sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b",
+      "receipt": {
+        "changed_source_snapshots": [
+          "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+        ],
+        "command": [
+          "python3",
+          "-B",
+          "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/run.py"
+        ],
+        "completion_requires_process_exit_zero": true,
+        "controller_files": 2,
+        "dispatch_base": "c2436684c511bf2ae92982fb8141b1b7d0c41ee9",
+        "duration_seconds": 4.921275250031613,
+        "errors": 0,
+        "exit_code": 1,
+        "failures": 11,
+        "limits": {
+          "address_bytes": 536870912,
+          "cpu_seconds": 30,
+          "file_bytes": 33554432,
+          "wall_seconds": 45
+        },
+        "live_cache_access": false,
+        "skipped": 0,
+        "source_commit_at_launch": "c2436684c511bf2ae92982fb8141b1b7d0c41ee9",
+        "source_files": 150,
+        "source_unchanged": true,
+        "started_utc": "2026-10-25T16:06:43.069264+00:00",
+        "test_target": "round4 focused genuine I1/I2 behavior RED",
+        "tested_prefix_sha256": "7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa",
+        "tests_run": 7,
+        "timing_scope": "earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded",
+        "whole_wall_until_receipt_seconds": 4.958364675054327
+      }
+    }
+  },
+  "scope": "original Task6 round4 source/generated fixtures only",
+  "source_commit": "2c911c8ca2b8148f47380bab53c732ed0bc17f62",
+  "source_net_allocated_bytes_vs_prior_index": 8192,
+  "source_net_logical_bytes": 5947,
+  "version": 1
+}

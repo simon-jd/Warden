@@ -1,0 +1,6 @@
+test_diagnostic_stage_emits_only_fixed_code_and_numeric_errno (test_k3s_lab_init.InitTest.test_diagnostic_stage_emits_only_fixed_code_and_numeric_errno) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK

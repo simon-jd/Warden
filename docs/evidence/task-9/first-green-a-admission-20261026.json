@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-26T08:06:34.542681+00:00",
+  "kind": "ROOT_FRESH_FIRST_GREEN_ADMISSION_ONCE",
+  "base": "f83a41b8d5dd7f5a976852785a31aeee01596a19",
+  "caller_bytes": 17098,
+  "caller_sha256": "0ba998acf79d599c259dad09e53083769a99a027d3c652f63d42ae2f9d8d99e9",
+  "packet_sha256": "ea415bc36589cd5c3c45b19a407f2f2499e535f5405b410b4d71159571960fb0",
+  "source_freeze_sha256": "1136c050db7e2a33d2e1ad19a9553ccb8c8cdb99f2c60366357436fac59bb0c0",
+  "source_count": 15,
+  "tests": [
+    "TestSelfApprovalRejected",
+    "TestGrantExpiresAndBindingRemoved",
+    "TestAuditRecordedForGrantAndExpiry",
+    "TestRequestBoundariesAndTenantIsolation",
+    "TestApprovalClockRetryAndExpiryFence",
+    "TestAuditFailuresRollbackAndRemoveAccess",
+    "TestRestartRevokesAmbiguousOperations",
+    "TestExpiryAuditRetryAfterExternalDeletion",
+    "TestDeadlineDuringReservationPreventsActivation",
+    "TestConcurrentReconciliationCannotActivateTwice",
+    "TestMaintenanceRequiresTrustedAuthorization",
+    "TestRequesterMembershipRecheckedBeforeActivation",
+    "TestExpiryBatchFailureDoesNotStarveLaterGrants",
+    "TestKubernetesBindingLifecycleAndFencing",
+    "TestKubernetesStrictResponseValidation",
+    "TestKubernetesRemovalRejectsForeignUIDAndUnconfirmedDeletion",
+    "TestKubernetesTransportErrorsDoNotRetryActivation"
+  ],
+  "material_verified": true,
+  "original_F_unchanged": true,
+  "new_namespace_absent": true,
+  "R": 5103255552,
+  "other_holds": {
+    "Q": 5000000000,
+    "retained_tmp": 131072,
+    "old_logger": 2097152,
+    "Task15_CODE_exhausted": 524288,
+    "Task15_publication_closed": 1048576
+  },
+  "full_new_disk": 1750780416,
+  "total": 11857837056,
+  "headroom": 142162944,
+  "cap": 12000000000,
+  "resident": 15500000000,
+  "resident_cap": 16000000000,
+  "old_UNKNOWN": 9000000000,
+  "bounds": {
+    "whole": 90,
+    "work": 65,
+    "GoCLI": 59,
+    "cleanup": 82,
+    "status": 85,
+    "raw": 131072
+  },
+  "start_reaper": "original same command approved after trusted scope evidence; 2ea2b0/session9920 ->167afc known0;08:05:38Z RGabsent; denial retained",
+  "provenance": {
+    "source": "coordinator_agent",
+    "human_response": false,
+    "grounded_in_existing_user_scope": true
+  },
+  "ruling": "Only one new FIRST_GREEN attempt. No diagnostics/RED replay; preserve failures. No deployment/identity/RBAC/scheduler acceptance or Task15 new round."
+}

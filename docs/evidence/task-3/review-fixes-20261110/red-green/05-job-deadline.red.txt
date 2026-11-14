@@ -1,0 +1,40 @@
+# RED: the Job deadline tests in runtimes/gvisor/gvisor_test.go against gvisor.go at 30f72c2 (unchanged), plain make in the worktree
+# 2026-11-10T21:01:26-08:00
+pkgs=$(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /home/postedism/Desktop/Warden-task3/.tools/go/bin/go list -buildvcs=false ./...) && pkgs=$(printf '%s\n' $pkgs | grep -Ev '^$|^warden/docs/') || exit 1; env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_KYVERNO=/home/postedism/Desktop/Warden-task3/.tools/kyverno/kyverno /home/postedism/Desktop/Warden-task3/.tools/go/bin/go test -buildvcs=false -count=1 -shuffle=on -v -run '^(TestJobDeadline|TestDeletedPodWithoutDeadline|TestWaitFailsClosed|TestWaitWithoutReport)' $pkgs
+=== RUN   TestJobDeadlineMakesTheRunTimedOut
+=== RUN   TestJobDeadlineMakesTheRunTimedOut/no_report
+    gvisor_test.go:702: exit {Code:143 LogsTruncated:false PidsMaxEvents:0 PeakPids:0 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true}
+=== RUN   TestJobDeadlineMakesTheRunTimedOut/condition_recorded_late
+    gvisor_test.go:702: exit {Code:143 LogsTruncated:false PidsMaxEvents:0 PeakPids:0 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true}
+=== RUN   TestJobDeadlineMakesTheRunTimedOut/supervisor_reported_the_SIGTERM
+    gvisor_test.go:699: gvisor: supervisor: supervisor got terminated
+--- FAIL: TestJobDeadlineMakesTheRunTimedOut (0.03s)
+    --- FAIL: TestJobDeadlineMakesTheRunTimedOut/no_report (0.01s)
+    --- FAIL: TestJobDeadlineMakesTheRunTimedOut/condition_recorded_late (0.01s)
+    --- FAIL: TestJobDeadlineMakesTheRunTimedOut/supervisor_reported_the_SIGTERM (0.01s)
+=== RUN   TestJobDeadlineBeforeTheContainerEndWasSeen
+    gvisor_test.go:720: wait: {Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:0 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:false} gvisor: pod was deleted before its container terminated
+--- FAIL: TestJobDeadlineBeforeTheContainerEndWasSeen (0.01s)
+=== RUN   TestWaitFailsClosed
+=== RUN   TestWaitFailsClosed/forged_report
+=== RUN   TestWaitFailsClosed/code_mismatch
+=== RUN   TestWaitFailsClosed/image_never_pulled
+=== RUN   TestWaitFailsClosed/kubelet_rejected
+=== RUN   TestWaitFailsClosed/teardown_never_ends
+=== RUN   TestWaitFailsClosed/API_keeps_failing
+--- PASS: TestWaitFailsClosed (0.23s)
+    --- PASS: TestWaitFailsClosed/forged_report (0.01s)
+    --- PASS: TestWaitFailsClosed/code_mismatch (0.01s)
+    --- PASS: TestWaitFailsClosed/image_never_pulled (0.00s)
+    --- PASS: TestWaitFailsClosed/kubelet_rejected (0.01s)
+    --- PASS: TestWaitFailsClosed/teardown_never_ends (0.05s)
+    --- PASS: TestWaitFailsClosed/API_keeps_failing (0.15s)
+=== RUN   TestDeletedPodWithoutDeadlineIsNoTimeout
+--- PASS: TestDeletedPodWithoutDeadlineIsNoTimeout (0.02s)
+=== RUN   TestWaitWithoutReportUsesPodStatus
+--- PASS: TestWaitWithoutReportUsesPodStatus (0.01s)
+FAIL
+FAIL	warden/runtimes/gvisor	0.290s
+FAIL
+make: *** [Makefile:63: test-go] Error 1
+exit: 2

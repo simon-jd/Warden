@@ -1,0 +1,30 @@
+{
+  "origin": "root-controller public/Git metadata verification, not product test",
+  "failure": "verifier expected initial/final only but these worker artifacts also preserve actual request",
+  "correction": "accept and validate request plus initial/final shape; no worker artifact or fixture regenerated",
+  "first_verifier_source_sha256": "8c156c130e8cafcf92a23929b6cd7fa3d85a39643e78573c91828fc833ff283c",
+  "proof_or_view_written_before_failure": false,
+  "actual_structured_tool_return": {
+    "chunk_id": "27499f",
+    "wall_time_seconds": 0.367917539,
+    "exit_code": 1,
+    "original_token_count": 79,
+    "output": "Traceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/docs/evidence/task-6/controller-terminal-reconcile-verification-command-20261025.py\", line 100, in <module>\n    assert set(tool) in ({'initial'},{'initial','final'})\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  "corrected_actual_tool_chain": {
+    "initial": {
+      "chunk_id": "01c11f",
+      "wall_time_seconds": 1.000954844,
+      "session_id": 69503,
+      "original_token_count": 0,
+      "output": ""
+    },
+    "final": {
+      "chunk_id": "f11387",
+      "wall_time_seconds": 0.000033112,
+      "exit_code": 0,
+      "original_token_count": 61,
+      "output": "{\"status\": \"PASS\", \"artifacts\": 79, \"complete_runs\": 5, \"frozen_tests\": 177, \"raw_bytes\": 1647755, \"view_bytes\": 940252, \"blocks\": 85, \"duplicates\": 27, \"result\": \"docs/evidence/task-6/controller-terminal-reconcile-verification-20261025.json\"}\n"
+    }
+  }
+}

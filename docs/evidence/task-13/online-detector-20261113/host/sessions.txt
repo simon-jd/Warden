@@ -1,0 +1,18 @@
+# Every detector session of this round: modules and global sysctls at up vs at down (detector.py down)
+20261114T032529Z  2026-11-14T03:25:29Z..2026-11-14T03:26:24Z  modules +none -none  sysctls changed none  counters changed 10
+20261114T033412Z  2026-11-14T03:34:12Z..2026-11-14T03:34:56Z  modules +none -none  sysctls changed none  counters changed 10
+20261114T033638Z  2026-11-14T03:36:38Z..2026-11-14T03:37:18Z  modules +none -none  sysctls changed none  counters changed 10
+20261114T033747Z  2026-11-14T03:37:47Z..2026-11-14T03:38:38Z  modules +none -none  sysctls changed none  counters changed 10
+20261114T033938Z  2026-11-14T03:39:38Z..2026-11-14T03:41:29Z  modules +none -none  sysctls changed none  counters changed 10
+20261114T034129Z  2026-11-14T03:41:29Z..2026-11-14T03:42:19Z  modules +none -none  sysctls changed none  counters changed 10
+20261114T034312Z  2026-11-14T03:43:12Z..2026-11-14T03:50:14Z  modules +none -none  sysctls changed none  counters changed 11
+# Detector sessions after the review (2026-11-14 UTC)
+20261114T042835Z  2026-11-14T04:28:35Z..2026-11-14T04:29:28Z  modules +none -none  sysctls changed none  counters changed 10
+20261114T042953Z  2026-11-14T04:29:53Z..2026-11-14T04:31:49Z  modules +none -none  sysctls changed none  counters changed 10
+20261114T043211Z  2026-11-14T04:32:11Z..2026-11-14T04:34:18Z  modules +none -none  sysctls changed none  counters changed 11
+20261114T043632Z  2026-11-14T04:36:32Z..2026-11-14T04:38:38Z  modules +none -none  sysctls changed none  counters changed 11
+20261114T043910Z  2026-11-14T04:39:10Z..2026-11-14T04:40:03Z  modules +none -none  sysctls changed none  counters changed 10
+20261114T044047Z  2026-11-14T04:40:47Z..2026-11-14T04:41:01Z  modules +none -none  sysctls changed none  counters changed 10
+# Detector sessions after the second re-review (2026-11-14 UTC)
+20261114T050135Z  2026-11-14T05:01:35Z..2026-11-14T05:02:29Z  modules +none -none  sysctls changed none  counters changed 10
+20261114T050242Z  2026-11-14T05:02:42Z..2026-11-14T05:04:49Z  modules +none -none  sysctls changed none  counters changed 11

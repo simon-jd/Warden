@@ -1,0 +1,22 @@
+# GREEN: the same tests against the fixed Wait. The test file differs from the RED run only in newFake setting APIRetry: 100 ms (the field did not exist before).
+# 2026-11-10T20:41:39-08:00
+=== RUN   TestWaitFailsClosed
+=== RUN   TestWaitFailsClosed/image_never_pulled
+=== RUN   TestWaitFailsClosed/pod_failed_early
+=== RUN   TestWaitFailsClosed/teardown_never_ends
+=== RUN   TestWaitFailsClosed/API_keeps_failing
+=== RUN   TestWaitFailsClosed/forged_report
+=== RUN   TestWaitFailsClosed/code_mismatch
+--- PASS: TestWaitFailsClosed (0.27s)
+    --- PASS: TestWaitFailsClosed/image_never_pulled (0.01s)
+    --- PASS: TestWaitFailsClosed/pod_failed_early (0.01s)
+    --- PASS: TestWaitFailsClosed/teardown_never_ends (0.06s)
+    --- PASS: TestWaitFailsClosed/API_keeps_failing (0.16s)
+    --- PASS: TestWaitFailsClosed/forged_report (0.01s)
+    --- PASS: TestWaitFailsClosed/code_mismatch (0.01s)
+=== RUN   TestWaitTearsDownWhenItsContextEnds
+--- PASS: TestWaitTearsDownWhenItsContextEnds (0.05s)
+=== RUN   TestWaitRetriesTransientAPIErrors
+--- PASS: TestWaitRetriesTransientAPIErrors (0.02s)
+ok  	warden/runtimes/gvisor	0.340s
+exit: 0

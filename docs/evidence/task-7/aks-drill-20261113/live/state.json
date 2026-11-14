@@ -1,0 +1,23 @@
+{
+  "session": "aks-20261114T0011Z",
+  "start": "2026-11-14T00:11:00Z",
+  "hard_stop": "2026-11-14T04:11:00Z",
+  "last_retry": "2026-11-14T04:51:00Z",
+  "ttl": "2026-11-14T05:26:00Z",
+  "phase": "up",
+  "login": {
+    "arm_token_minutes_left": 60,
+    "graph_token_minutes_left": 65,
+    "not_checked": "how long the refresh token lives; Conditional Access sign-in frequency",
+    "user_type": "user",
+    "window_ends": "2026-11-14T05:26:00Z"
+  },
+  "timers": [
+    "warden-aks-hardstop-aks-20261114T0011Z-0m",
+    "warden-aks-hardstop-aks-20261114T0011Z-20m",
+    "warden-aks-hardstop-aks-20261114T0011Z-40m"
+  ],
+  "tags": {
+    "tagged_by_drill": []
+  }
+}

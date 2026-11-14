@@ -1,0 +1,127 @@
+{
+  "expire": {
+    "failed_login_error": "failed to connect to `user=v-root-warden-t-SwnVHsXNWxxB1R5CEPPc-1793157686 database=warden`: 127.0.0.1:32776 (127.0.0.1): failed SASL auth: FATAL: password authentication failed for user \"v-root-warden-t-SwnVHsXNWxxB1R5CEPPc-1793157686\" (SQLSTATE 28P01)",
+    "first_failed_login_s": 60.327511761,
+    "last_successful_login_s": 59.323257726,
+    "open_session_after_expiry_error": "FATAL: terminating connection due to administrator command (SQLSTATE 57P01)",
+    "role_dropped_by_s": 60.331312798,
+    "ttl": "1m0s"
+  },
+  "host": {
+    "loadavg": "4.77 6.01 5.42 8/9363 46564",
+    "nproc": 32
+  },
+  "mount_cap_raw_24h_role_lease": "4h0m0s",
+  "postgres_image": "postgres:18-alpine",
+  "raft_configuration": {
+    "config": {
+      "index": 0,
+      "servers": [
+        {
+          "address": "127.0.0.1:8201",
+          "leader": true,
+          "node_id": "warden-1",
+          "protocol_version": "3",
+          "voter": true
+        }
+      ]
+    }
+  },
+  "revoke": {
+    "login_after_revoke_ms": 9,
+    "login_error": "failed to connect to `user=v-root-warden-a-H32pOHfs5lZd36L1rtXR-1793157747 database=warden`: 127.0.0.1:32776 (127.0.0.1): failed SASL auth: FATAL: password authentication failed for user \"v-root-warden-a-H32pOHfs5lZd36L1rtXR-1793157747\" (SQLSTATE 28P01)",
+    "open_session_error": "FATAL: terminating connection due to administrator command (SQLSTATE 57P01)",
+    "revoke_call_ms": 7,
+    "role_exists_after": false
+  },
+  "role_ttl_warden-app": {
+    "default_ttl": "1h0m0s",
+    "max_ttl": "4h0m0s"
+  },
+  "role_ttl_warden-test-1m": {
+    "default_ttl": "1m0s",
+    "max_ttl": "1h0m0s"
+  },
+  "rotate_root": "vault_admin's bootstrap password rejected after rotate-root; only Vault holds the new one",
+  "time_to_contain": {
+    "alert_to_contained_ms": {
+      "max": 41.233,
+      "min": 27.271,
+      "p50": 28.408,
+      "p95": 35.85
+    },
+    "duplicate_alerts_noop": 20,
+    "handle_ms": {
+      "max": 38.632,
+      "min": 25.237,
+      "p50": 25.793,
+      "p95": 32.791
+    },
+    "open_sessions_killed": 20,
+    "raw": {
+      "alert_to_contained_ms": [
+        41.233,
+        28.322,
+        28.346,
+        28.41,
+        28.536,
+        28.254,
+        28.546,
+        28.542,
+        28.532,
+        30.846,
+        28.553,
+        28.187,
+        28.239,
+        28.814,
+        28.341,
+        28.408,
+        27.546,
+        28.127,
+        27.271,
+        35.85
+      ],
+      "handle_ms": [
+        38.632,
+        25.803,
+        25.774,
+        25.783,
+        25.911,
+        25.667,
+        26.09,
+        26.029,
+        25.793,
+        28.213,
+        25.97,
+        25.759,
+        25.585,
+        26.264,
+        25.578,
+        25.821,
+        25.237,
+        25.529,
+        25.383,
+        32.791
+      ]
+    },
+    "runs": 20
+  },
+  "vault_health": {
+    "clock_skew_ms": 0,
+    "cluster_id": "d34aa549-bbbe-b18f-96fc-746f46da4cd3",
+    "cluster_name": "vault-cluster-244e6d10",
+    "echo_duration_ms": 0,
+    "enterprise": false,
+    "initialized": true,
+    "performance_standby": false,
+    "removed_from_cluster": false,
+    "replication_dr_mode": "disabled",
+    "replication_performance_mode": "disabled",
+    "replication_primary_canary_age_ms": 0,
+    "sealed": false,
+    "server_time_utc": 1793157685,
+    "standby": false,
+    "version": "2.2.1"
+  },
+  "vault_image": "hashicorp/vault:2.2.1 [\"hashicorp/vault@sha256:962a92876e168d68eaaa24b0b8b49bbce1cb63024060a67bba95cd158a366fc2\"]"
+}

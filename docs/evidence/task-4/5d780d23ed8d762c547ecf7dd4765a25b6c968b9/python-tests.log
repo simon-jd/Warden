@@ -1,0 +1,9 @@
+test_capacity_leaves_exact_host_allowance (test_firecracker_lab.FirecrackerLabTests.test_capacity_leaves_exact_host_allowance) ... ok
+test_live_profile_has_only_exact_kvm_and_eight_caps (test_firecracker_lab.FirecrackerLabTests.test_live_profile_has_only_exact_kvm_and_eight_caps) ... ok
+test_material_pin_distinguishes_computed_and_published (test_firecracker_lab.FirecrackerLabTests.test_material_pin_distinguishes_computed_and_published) ... ok
+test_package_limit_fails_before_archive_write (test_firecracker_lab.FirecrackerLabTests.test_package_limit_fails_before_archive_write) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK

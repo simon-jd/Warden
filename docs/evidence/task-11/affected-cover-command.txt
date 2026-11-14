@@ -1,0 +1,107 @@
+INERT exact final affected cover commands; no positive test has run. Root FULLREAD+explicit admission required, frozen source after all static corrections. Same native require_escalated UID1000 /bin/bash login=false tty=false cwd=/home/postedism/Desktop/Warden for EVERY request. No HOME/umask override. Sequential stages: golden, agent, aggregator, backpressure. Never combine configs. Stop batch on unknown/timeout/resource; ordinary source/config errors retain history, correct and declare changed freeze. No duplicate GREEN + same source cover.
+
+Before EACH stage, separately fresh guard (known normal0 required):
+ulimit -t 20
+ulimit -v 262144
+ulimit -f 1024
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 7137167168 --service-memory-bytes 13000000000 --download-bytes 0
+
+Then separately run the matching exact memory/absence command (known normal0 required):
+
+--- golden memory ---
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'
+import os,pathlib,resource,signal
+resource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)
+assert os.geteuid()==1000
+m={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}
+a=int(m['MemAvailable'].split()[0])*1024
+assert a>=5000000000
+assert not os.path.lexists('.cache/task11-cover-golden')
+print('MemAvailable',a,'resident_reserve',13000000000,'new_run_absent',True)
+PY
+
+--- agent memory ---
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'
+import os,pathlib,resource,signal
+resource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)
+assert os.geteuid()==1000
+m={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}
+a=int(m['MemAvailable'].split()[0])*1024
+assert a>=5000000000
+assert not os.path.lexists('.cache/task11-cover-agent')
+print('MemAvailable',a,'resident_reserve',13000000000,'new_run_absent',True)
+PY
+
+--- aggregator memory ---
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'
+import os,pathlib,resource,signal
+resource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)
+assert os.geteuid()==1000
+m={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}
+a=int(m['MemAvailable'].split()[0])*1024
+assert a>=5000000000
+assert not os.path.lexists('.cache/task11-cover-aggregator')
+print('MemAvailable',a,'resident_reserve',13000000000,'new_run_absent',True)
+PY
+
+--- backpressure memory ---
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'
+import os,pathlib,resource,signal
+resource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)
+assert os.geteuid()==1000
+m={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}
+a=int(m['MemAvailable'].split()[0])*1024
+assert a>=5000000000
+assert not os.path.lexists('.cache/task11-backpressure-call')
+assert not os.path.lexists('.cache/task11-backpressure')
+print('MemAvailable',a,'resident_reserve',13000000000,'new_run_absent',True)
+PY
+
+=== golden exact cmd ===
+set -eu
+ulimit -t 45
+ulimit -v 2929687
+ulimit -f 1024
+ulimit -n 128
+ulimit -c 0
+mkdir -m 700 .cache/task11-cover-golden
+mkdir -m 700 .cache/task11-cover-golden/tmp
+set -- detect/ocsf/tests/00-topology.toml detect/ocsf/tests/aks_audit.toml detect/ocsf/tests/azure_activity.toml detect/ocsf/tests/k3s_audit.toml detect/ocsf/tests/negative.toml detect/ocsf/tests/routing.toml detect/ocsf/tests/tetragon.toml detect/ocsf/tests/vnet_flow.toml detect/ocsf/tests/warden_audit.toml
+for f do test -f "$f"; done
+test "$#" -eq 9
+set -C
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 VECTOR_THREADS=2 TMPDIR=/home/postedism/Desktop/Warden/.cache/task11-cover-golden/tmp /usr/bin/timeout --signal=TERM --kill-after=10s 50s /home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector test "$@" > .cache/task11-cover-golden/output 2>&1
+
+=== agent exact cmd ===
+set -eu
+ulimit -t 45
+ulimit -v 2929687
+ulimit -f 1024
+ulimit -n 128
+ulimit -c 0
+mkdir -m 700 .cache/task11-cover-agent
+mkdir -m 700 .cache/task11-cover-agent/tmp
+set -C
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 VECTOR_THREADS=2 TMPDIR=/home/postedism/Desktop/Warden/.cache/task11-cover-agent/tmp /usr/bin/timeout --signal=TERM --kill-after=10s 50s /home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector validate --no-environment --skip-healthchecks detect/vector/agent.toml > .cache/task11-cover-agent/output 2>&1
+
+=== aggregator exact cmd ===
+set -eu
+ulimit -t 45
+ulimit -v 2929687
+ulimit -f 1024
+ulimit -n 128
+ulimit -c 0
+mkdir -m 700 .cache/task11-cover-aggregator
+mkdir -m 700 .cache/task11-cover-aggregator/tmp
+set -C
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 VECTOR_THREADS=2 TMPDIR=/home/postedism/Desktop/Warden/.cache/task11-cover-aggregator/tmp /usr/bin/timeout --signal=TERM --kill-after=10s 50s /home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector validate --no-environment --skip-healthchecks detect/vector/aggregator.toml > .cache/task11-cover-aggregator/output 2>&1
+
+=== backpressure exact cmd ===
+set -eu
+mkdir -m 700 .cache/task11-backpressure-call
+set -C
+exec /bin/sh detect/tests/backpressure_test.sh > .cache/task11-backpressure-call/output 2>&1
+
+All tool exec yield/poll responses retained exactly, yield is not a deadline. Golden and each validate: TERM50/kill10 whole60, CPU45/AS2999999488B/FSIZE1MiB combined/NOFILE128/core0/threads2/ownedTMP64MiB reservation. Confirmed validate flags from actual pinned --help normal0 output1462B. Validation no-environment includes component+health checks; no production startup/network. BP's shell starts GNU160+kill20, driver START monotonic then WORK150/END170, solePopen and owned loopback peer, parent CPU15soft/20hard after fork, child120, AS1GB+3GB, childFSIZE320MiB for buffer files separate from 512KiB-per-pipe captured output, metrics2MiB; no payload spool. Driver stdout emits only bounded summaries (<1MiB by fixed count/stall-duration limits). Parent inherited hardCPU140 only until solePopen returns; finally also reduces20. Thread non-daemon and exact active socket shutdown+positive remaining join. Cleanup partial paths/bytes before signal, known terminal required, unknown retains failure/tree and stops. No Task6/16/host/cloud/material change.
+
+After each known terminal, bounded native Python-I-S-B read <=1MiB output (and BP vector stdout/stderr prefixes and metrics<=2MiB), bytes reported, raw output copied exactly into evidence; fresh guards are not reused. BP actual fill is independently judged by real occupancy>=260000000 overlapping >=1s continuous producer EAGAIN in fixed60s ACK stall, actual phase write/reception counts, ACK before/after-window checks and32320 unique IDs/missing0; target alone is not success. Absence discard series is null, not0. No threshold search or extra burst during drain.

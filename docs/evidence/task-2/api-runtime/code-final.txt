@@ -1,0 +1,91 @@
+local Docker daemon: postedism-ubuntu-system-selfuse 29.9.1 systemd
+outstanding Docker allocation charge: 0
+{"additional_bytes": "5000000000", "at": "2026-10-24T05:17:11Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 377565847552, "project_allocated_bytes": 2476961792, "service_memory_bytes": "4536870912"}
+owned image: sha256:67f53d986d4754e69fb94b40f1d91f2e7866b3afcd7061124456cc63fbbd2a6d
+owned private PostgreSQL: 05480ea793456263502bfc71daeac94d442eb6c9cbd78b120eed3d003beb8b50
+owned container: a00b3a0c4d9a771092a128bcf1fc9b60ed72d089bec673a479de944fd8e37fb8
+=== RUN   TestDurableClaimAndFencedTransitions
+--- PASS: TestDurableClaimAndFencedTransitions (0.06s)
+=== RUN   TestRecoveryClaimCannotOverwriteTerminalResult
+--- PASS: TestRecoveryClaimCannotOverwriteTerminalResult (0.05s)
+=== RUN   TestSuccessRequiresRunningAndCleanExit
+--- PASS: TestSuccessRequiresRunningAndCleanExit (0.04s)
+=== RUN   TestForgedReconciliationCannotClearPending
+--- PASS: TestForgedReconciliationCannotClearPending (0.04s)
+PASS
+=== RUN   TestLateSnapshotPublicationClosesReaderAndCollectorExits
+--- PASS: TestLateSnapshotPublicationClosesReaderAndCollectorExits (0.00s)
+=== RUN   TestSchedulerConfigurationFailsClosed
+--- PASS: TestSchedulerConfigurationFailsClosed (0.00s)
+=== RUN   TestSchedulerConfigurationPreservesExplicitRuntimeBinding
+--- PASS: TestSchedulerConfigurationPreservesExplicitRuntimeBinding (0.00s)
+=== RUN   TestConcurrentWorkersExecuteOnce
+--- PASS: TestConcurrentWorkersExecuteOnce (0.05s)
+=== RUN   TestPolicyAndMissingDriverFailClosed
+=== RUN   TestPolicyAndMissingDriverFailClosed/revoked
+=== RUN   TestPolicyAndMissingDriverFailClosed/unavailable
+=== RUN   TestPolicyAndMissingDriverFailClosed/missing
+--- PASS: TestPolicyAndMissingDriverFailClosed (0.16s)
+    --- PASS: TestPolicyAndMissingDriverFailClosed/revoked (0.08s)
+    --- PASS: TestPolicyAndMissingDriverFailClosed/unavailable (0.03s)
+    --- PASS: TestPolicyAndMissingDriverFailClosed/missing (0.06s)
+=== RUN   TestOutcomesAndLogMetadata
+=== RUN   TestOutcomesAndLogMetadata/nonzero
+=== RUN   TestOutcomesAndLogMetadata/oom
+=== RUN   TestOutcomesAndLogMetadata/timeout
+=== RUN   TestOutcomesAndLogMetadata/cleanup
+=== RUN   TestOutcomesAndLogMetadata/start
+=== RUN   TestOutcomesAndLogMetadata/logs
+=== RUN   TestOutcomesAndLogMetadata/empty
+=== RUN   TestOutcomesAndLogMetadata/truncated
+--- PASS: TestOutcomesAndLogMetadata (0.39s)
+    --- PASS: TestOutcomesAndLogMetadata/nonzero (0.04s)
+    --- PASS: TestOutcomesAndLogMetadata/oom (0.06s)
+    --- PASS: TestOutcomesAndLogMetadata/timeout (0.04s)
+    --- PASS: TestOutcomesAndLogMetadata/cleanup (0.04s)
+    --- PASS: TestOutcomesAndLogMetadata/start (0.05s)
+    --- PASS: TestOutcomesAndLogMetadata/logs (0.04s)
+    --- PASS: TestOutcomesAndLogMetadata/empty (0.06s)
+    --- PASS: TestOutcomesAndLogMetadata/truncated (0.06s)
+=== RUN   TestRecoveryReapsOnlyAndPreservesLiveOwner
+=== RUN   TestRecoveryReapsOnlyAndPreservesLiveOwner/starting
+=== RUN   TestRecoveryReapsOnlyAndPreservesLiveOwner/running
+--- PASS: TestRecoveryReapsOnlyAndPreservesLiveOwner (0.11s)
+    --- PASS: TestRecoveryReapsOnlyAndPreservesLiveOwner/starting (0.04s)
+    --- PASS: TestRecoveryReapsOnlyAndPreservesLiveOwner/running (0.07s)
+=== RUN   TestCleanupFailureRemainsRetryable
+--- PASS: TestCleanupFailureRemainsRetryable (0.06s)
+=== RUN   TestWorkerLifecycleBoundedConcurrencyAndShutdown
+--- PASS: TestWorkerLifecycleBoundedConcurrencyAndShutdown (0.11s)
+=== RUN   TestRecoveryCannotMoveRuntimeNodes
+--- PASS: TestRecoveryCannotMoveRuntimeNodes (0.04s)
+=== RUN   TestTerminalAuditFailureRollsBackLogsAndResult
+--- PASS: TestTerminalAuditFailureRollsBackLogsAndResult (0.04s)
+=== RUN   TestClaimCommitTimeoutNeverStarts
+--- PASS: TestClaimCommitTimeoutNeverStarts (0.08s)
+=== RUN   TestLostSessionBeforeLaunchCannotCreateAfterRecovery
+--- PASS: TestLostSessionBeforeLaunchCannotCreateAfterRecovery (0.04s)
+=== RUN   TestLostSessionInsideLaunchLeavesPendingCleanup
+--- PASS: TestLostSessionInsideLaunchLeavesPendingCleanup (0.25s)
+=== RUN   TestIndependentProcessesExecuteOnce
+--- PASS: TestIndependentProcessesExecuteOnce (0.05s)
+=== RUN   TestSchedulerProcessHelper
+--- PASS: TestSchedulerProcessHelper (0.00s)
+=== RUN   TestLogSnapshotDeadlineClosesReaderAndMarksLost
+--- PASS: TestLogSnapshotDeadlineClosesReaderAndMarksLost (0.09s)
+=== RUN   TestBinaryLogsPersistWithoutLoss
+--- PASS: TestBinaryLogsPersistWithoutLoss (0.04s)
+=== RUN   TestActiveGuestDoesNotHoldAuditLockAndUsesStoredSpec
+--- PASS: TestActiveGuestDoesNotHoldAuditLockAndUsesStoredSpec (0.03s)
+=== RUN   TestAmbiguousStartRemainsPendingAcrossRecovery
+--- PASS: TestAmbiguousStartRemainsPendingAcrossRecovery (0.05s)
+=== RUN   TestStartErrorStillKillsReturnedHandle
+--- PASS: TestStartErrorStillKillsReturnedHandle (0.04s)
+=== RUN   TestLateRemoteCreationIsReapedByNewWorkerWithoutClearingAmbiguity
+--- PASS: TestLateRemoteCreationIsReapedByNewWorkerWithoutClearingAmbiguity (0.05s)
+PASS
+Capless real PostgreSQL code tests complete; API/runc live NOT EXECUTED
+outer container removed: a00b3a0c4d9a771092a128bcf1fc9b60ed72d089bec673a479de944fd8e37fb8
+owned PostgreSQL removed: 05480ea793456263502bfc71daeac94d442eb6c9cbd78b120eed3d003beb8b50
+owned image removed: sha256:67f53d986d4754e69fb94b40f1d91f2e7866b3afcd7061124456cc63fbbd2a6d
+evidence directory: /home/postedism/Desktop/Warden/.cache/warden-lab/docker-271081e8d31f7fb5b1812cab2f4d5c26

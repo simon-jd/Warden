@@ -1,0 +1,17 @@
+down started 2026-11-12T23:26:43-08:00
+comm: file 1 is not in sorted order
+comm: input is not in sorted order
+comm: file 1 is not in sorted order
+comm: input is not in sorted order
+host sysctls changed while the lab ran:
+10,11c10,11
+< kernel.timer_migration=1
+< kernel.unprivileged_bpf_disabled=2
+---
+> kernel.timer_migration=0
+> kernel.unprivileged_bpf_disabled=1
+16c16
+< modules_sha256=d1e4faee9fb3e6c07b56f9ef68f87a4eac067917458f7311844149106176e42a
+---
+> modules_sha256=745768d5e3f172c762664a6cfcb1a70b4123be54343e670325f220b3ee6bc3c7
+down rc=1 2026-11-12T23:26:46-08:00

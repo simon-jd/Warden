@@ -1,0 +1,51 @@
+{
+  "utc": "2026-10-24T21:25:34.270244+00:00",
+  "session": ".cache/warden-lab/docker-firecracker-e8e9f5b14136e9e2163f876cbf6291ee",
+  "identity": {
+    "image": "sha256:68fb0344fd631ef15ade02c96b36956d581b0d8f9be0f1b3d5b5751fd7806e9b",
+    "image_bytes": 147518128,
+    "labels": {
+      "owner": "codex-warden",
+      "project": "warden",
+      "session": "e8e9f5b14136e9e2163f876cbf6291ee",
+      "task": "firecracker",
+      "ttl": "2026-10-24T22:21:44.528333+00:00"
+    },
+    "mode": "boot",
+    "source": "772136927eb6eb9576e473eef5f7b716b80696f6"
+  },
+  "before_charge": {
+    "version": 1,
+    "reserved_bytes": 5000000000,
+    "released": false
+  },
+  "after_charge": {
+    "version": 1,
+    "reserved_bytes": 5000000000,
+    "released": true
+  },
+  "all_project_objects_absent": true,
+  "original_live_empty_identity_verified": true,
+  "charged_preflight": {
+    "additional_bytes": "5000000000",
+    "at": "2026-10-24T21:25:33Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 272078639104,
+    "project_allocated_bytes": 3920138240,
+    "service_memory_bytes": "1000000000"
+  },
+  "ordinary_preflight": {
+    "additional_bytes": "0",
+    "at": "2026-10-24T21:25:34Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 272077524992,
+    "project_allocated_bytes": 3920138240,
+    "service_memory_bytes": "1000000000"
+  },
+  "basis": "Actual trusted outer exited at the source-bound TUN probe after mount handshake and before worker/Gate/VMM creation; all exact objects are absent and original private live directory is empty. Accounting release only, not VMM/Gate/scheduler retirement proof.",
+  "outer_started": true,
+  "vmm_started": false,
+  "tun_open_denial": "FAILED; not waived"
+}

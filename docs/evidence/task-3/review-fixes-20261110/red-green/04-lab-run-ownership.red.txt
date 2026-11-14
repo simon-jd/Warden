@@ -1,0 +1,46 @@
+# RED: scripts/test_k3s_gvisor_lab.py (with the run checks) against scripts/k3s_gvisor_lab.sh at 55d8f71 (unchanged)
+# 2026-11-10T20:51:47-08:00
+test_down_leaves_a_container_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_leaves_a_container_that_is_not_wardens) ... ok
+test_down_leaves_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_leaves_a_network_that_is_not_wardens) ... ok
+test_down_removes_the_warden_lab (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_removes_the_warden_lab) ... ok
+test_run_fails_when_its_teardown_fails (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_fails_when_its_teardown_fails) ... ok
+test_run_keeps_the_commands_exit_status (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_keeps_the_commands_exit_status) ... ok
+test_run_leaves_a_lab_that_was_already_up (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_leaves_a_lab_that_was_already_up) ... FAIL
+test_run_leaves_a_node_someone_else_created_first (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_leaves_a_node_someone_else_created_first) ... FAIL
+test_run_leaves_a_warden_network_it_did_not_create (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_leaves_a_warden_network_it_did_not_create) ... FAIL
+test_run_tears_down_the_lab_it_created (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_tears_down_the_lab_it_created) ... ok
+test_run_tears_down_what_it_created_when_up_fails (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_tears_down_what_it_created_when_up_fails) ... ok
+test_up_refuses_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_refuses_a_network_that_is_not_wardens) ... ok
+
+======================================================================
+FAIL: test_run_leaves_a_lab_that_was_already_up (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_leaves_a_lab_that_was_already_up)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_k3s_gvisor_lab.py", line 264, in test_run_leaves_a_lab_that_was_already_up
+    self.assertIn(NAME, self.world()['containers'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'warden-k3s-gvisor' not found in {}
+
+======================================================================
+FAIL: test_run_leaves_a_node_someone_else_created_first (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_leaves_a_node_someone_else_created_first)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_k3s_gvisor_lab.py", line 274, in test_run_leaves_a_node_someone_else_created_first
+    self.assertEqual(self.world()['containers'].get(NAME, {}).get('by'), 'other')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 'other'
+
+======================================================================
+FAIL: test_run_leaves_a_warden_network_it_did_not_create (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_leaves_a_warden_network_it_did_not_create)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_k3s_gvisor_lab.py", line 283, in test_run_leaves_a_warden_network_it_did_not_create
+    self.assertIn(NET, self.world()['networks'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'warden-k3s' not found in {}
+
+----------------------------------------------------------------------
+Ran 11 tests in 4.741s
+
+FAILED (failures=3)
+exit: 1

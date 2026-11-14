@@ -1,0 +1,84 @@
+test_charged_scene_is_counted_once_and_all_helper_growth_is_added (test_firecracker_recovery.AdmissionTests.test_charged_scene_is_counted_once_and_all_helper_growth_is_added) ... FAIL
+test_rest_walk_omits_only_exact_identity_and_counts_hardlink_names (test_firecracker_recovery.AdmissionTests.test_rest_walk_omits_only_exact_identity_and_counts_hardlink_names) ... FAIL
+test_only_public_original_records_and_unreleased_charge_authorize_scene (test_firecracker_recovery.OriginalIdentityTests.test_only_public_original_records_and_unreleased_charge_authorize_scene) ... FAIL
+test_streamed_archive_has_only_regular_verified_inputs_and_fixed_entrypoints (test_firecracker_recovery.PackageTests.test_streamed_archive_has_only_regular_verified_inputs_and_fixed_entrypoints) ... FAIL
+
+======================================================================
+FAIL: test_charged_scene_is_counted_once_and_all_helper_growth_is_added (test_firecracker_recovery.AdmissionTests.test_charged_scene_is_counted_once_and_all_helper_growth_is_added)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 19, in test_charged_scene_is_counted_once_and_all_helper_growth_is_added
+    try: value = recovery.admitted(4000000000, 5000000000, 100000000, 0)
+                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery.py", line 4, in admitted
+    raise ValueError('exact recovery admission not implemented')
+ValueError: exact recovery admission not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 20, in test_charged_scene_is_counted_once_and_all_helper_growth_is_added
+    except ValueError as error: self.fail('valid recovery envelope refused: ' + str(error))
+                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: valid recovery envelope refused: exact recovery admission not implemented
+
+======================================================================
+FAIL: test_rest_walk_omits_only_exact_identity_and_counts_hardlink_names (test_firecracker_recovery.AdmissionTests.test_rest_walk_omits_only_exact_identity_and_counts_hardlink_names)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 38, in test_rest_walk_omits_only_exact_identity_and_counts_hardlink_names
+    try: actual = recovery.project_rest(root, live, anchor)
+                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery.py", line 7, in project_rest
+    raise ValueError('exact charged subtree counting not implemented')
+ValueError: exact charged subtree counting not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 39, in test_rest_walk_omits_only_exact_identity_and_counts_hardlink_names
+    except ValueError as error: self.fail('exact rest measurement refused: ' + str(error))
+                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: exact rest measurement refused: exact charged subtree counting not implemented
+
+======================================================================
+FAIL: test_only_public_original_records_and_unreleased_charge_authorize_scene (test_firecracker_recovery.OriginalIdentityTests.test_only_public_original_records_and_unreleased_charge_authorize_scene)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 64, in test_only_public_original_records_and_unreleased_charge_authorize_scene
+    try: recovery.verify_records(records)
+         ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery.py", line 10, in verify_records
+    raise ValueError('original scene authentication not implemented')
+ValueError: original scene authentication not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 65, in test_only_public_original_records_and_unreleased_charge_authorize_scene
+    except ValueError as error: self.fail('authentic public scene refused: ' + str(error))
+                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: authentic public scene refused: original scene authentication not implemented
+
+======================================================================
+FAIL: test_streamed_archive_has_only_regular_verified_inputs_and_fixed_entrypoints (test_firecracker_recovery.PackageTests.test_streamed_archive_has_only_regular_verified_inputs_and_fixed_entrypoints)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 82, in test_streamed_archive_has_only_regular_verified_inputs_and_fixed_entrypoints
+    result = recovery.build_archive(root / 'image.tar', {'usr/bin/python3': source}, module)
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery.py", line 19, in build_archive
+    raise ValueError('bounded immutable package not implemented')
+ValueError: bounded immutable package not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 83, in test_streamed_archive_has_only_regular_verified_inputs_and_fixed_entrypoints
+    except ValueError as error: self.fail('bounded package refused: ' + str(error))
+                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: bounded package refused: bounded immutable package not implemented
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+FAILED (failures=4)

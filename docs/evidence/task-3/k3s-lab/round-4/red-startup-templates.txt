@@ -1,0 +1,103 @@
+test_four_exact_source_templates_pass_only_with_bounded_verified_startup (test_k3s_lab_round4.StartupTemplateTest.test_four_exact_source_templates_pass_only_with_bounded_verified_startup) ... 
+  test_four_exact_source_templates_pass_only_with_bounded_verified_startup (test_k3s_lab_round4.StartupTemplateTest.test_four_exact_source_templates_pass_only_with_bounded_verified_startup) (enum='empty-api:apps/v1beta1') ... ERROR
+  test_four_exact_source_templates_pass_only_with_bounded_verified_startup (test_k3s_lab_round4.StartupTemplateTest.test_four_exact_source_templates_pass_only_with_bounded_verified_startup) (enum='empty-metrics-manifest') ... ERROR
+  test_four_exact_source_templates_pass_only_with_bounded_verified_startup (test_k3s_lab_round4.StartupTemplateTest.test_four_exact_source_templates_pass_only_with_bounded_verified_startup) (enum='missing-machine-id') ... ERROR
+  test_four_exact_source_templates_pass_only_with_bounded_verified_startup (test_k3s_lab_round4.StartupTemplateTest.test_four_exact_source_templates_pass_only_with_bounded_verified_startup) (enum='reset-endpoints') ... ERROR
+test_klog_utc_window_handles_year_boundary_and_rejects_ambiguous_windows (test_k3s_lab_round4.StartupTemplateTest.test_klog_utc_window_handles_year_boundary_and_rejects_ambiguous_windows) ... ERROR
+test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets (test_k3s_lab_round4.StartupTemplateTest.test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets) ... 
+  test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets (test_k3s_lab_round4.StartupTemplateTest.test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets) (enum='empty-api:apps/v1beta1', changed='SECRET W1024 06:00:01.123456      12 genericapiserver.go:798] Skipping API apps/v1beta1 because it has no resources.') ... FAIL
+  test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets (test_k3s_lab_round4.StartupTemplateTest.test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets) (enum='empty-metrics-manifest', changed='SECRET E1024 06:00:01.123456      12 options.go:205] The manifest file is empty, ignoring.') ... FAIL
+  test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets (test_k3s_lab_round4.StartupTemplateTest.test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets) (enum='missing-machine-id', changed='SECRET W1024 06:00:01.123456      12 info.go:54] Couldn\'t collect info from any of the files in "/etc/machine-id,/var/lib/dbus/machine-id"') ... FAIL
+  test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets (test_k3s_lab_round4.StartupTemplateTest.test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets) (enum='reset-endpoints', changed='SECRET W1024 06:00:01.123456      12 lease.go:265] Resetting endpoints for master service "kubernetes" to [198.18.0.1]') ... FAIL
+
+======================================================================
+ERROR: test_four_exact_source_templates_pass_only_with_bounded_verified_startup (test_k3s_lab_round4.StartupTemplateTest.test_four_exact_source_templates_pass_only_with_bounded_verified_startup) (enum='empty-api:apps/v1beta1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 94, in test_four_exact_source_templates_pass_only_with_bounded_verified_startup
+    entries = init.warning_lines('\n'.join([line] * limit), source='k3s', ready_window=(self.START, self.START + 10))
+  File "/home/postedism/Desktop/Warden/scripts/k3s_lab_init.py", line 162, in warning_lines
+    raise ValueError('unexpected startup warning/error; raw private log not exported')
+ValueError: unexpected startup warning/error; raw private log not exported
+
+======================================================================
+ERROR: test_four_exact_source_templates_pass_only_with_bounded_verified_startup (test_k3s_lab_round4.StartupTemplateTest.test_four_exact_source_templates_pass_only_with_bounded_verified_startup) (enum='empty-metrics-manifest')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 94, in test_four_exact_source_templates_pass_only_with_bounded_verified_startup
+    entries = init.warning_lines('\n'.join([line] * limit), source='k3s', ready_window=(self.START, self.START + 10))
+  File "/home/postedism/Desktop/Warden/scripts/k3s_lab_init.py", line 162, in warning_lines
+    raise ValueError('unexpected startup warning/error; raw private log not exported')
+ValueError: unexpected startup warning/error; raw private log not exported
+
+======================================================================
+ERROR: test_four_exact_source_templates_pass_only_with_bounded_verified_startup (test_k3s_lab_round4.StartupTemplateTest.test_four_exact_source_templates_pass_only_with_bounded_verified_startup) (enum='missing-machine-id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 94, in test_four_exact_source_templates_pass_only_with_bounded_verified_startup
+    entries = init.warning_lines('\n'.join([line] * limit), source='k3s', ready_window=(self.START, self.START + 10))
+  File "/home/postedism/Desktop/Warden/scripts/k3s_lab_init.py", line 162, in warning_lines
+    raise ValueError('unexpected startup warning/error; raw private log not exported')
+ValueError: unexpected startup warning/error; raw private log not exported
+
+======================================================================
+ERROR: test_four_exact_source_templates_pass_only_with_bounded_verified_startup (test_k3s_lab_round4.StartupTemplateTest.test_four_exact_source_templates_pass_only_with_bounded_verified_startup) (enum='reset-endpoints')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 94, in test_four_exact_source_templates_pass_only_with_bounded_verified_startup
+    entries = init.warning_lines('\n'.join([line] * limit), source='k3s', ready_window=(self.START, self.START + 10))
+  File "/home/postedism/Desktop/Warden/scripts/k3s_lab_init.py", line 162, in warning_lines
+    raise ValueError('unexpected startup warning/error; raw private log not exported')
+ValueError: unexpected startup warning/error; raw private log not exported
+
+======================================================================
+ERROR: test_klog_utc_window_handles_year_boundary_and_rejects_ambiguous_windows (test_k3s_lab_round4.StartupTemplateTest.test_klog_utc_window_handles_year_boundary_and_rejects_ambiguous_windows)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 119, in test_klog_utc_window_handles_year_boundary_and_rejects_ambiguous_windows
+    self.assertEqual(len(init.warning_lines(line, source='k3s', ready_window=(start, start + 5))), 1)
+                         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/k3s_lab_init.py", line 162, in warning_lines
+    raise ValueError('unexpected startup warning/error; raw private log not exported')
+ValueError: unexpected startup warning/error; raw private log not exported
+
+======================================================================
+FAIL: test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets (test_k3s_lab_round4.StartupTemplateTest.test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets) (enum='empty-api:apps/v1beta1', changed='SECRET W1024 06:00:01.123456      12 genericapiserver.go:798] Skipping API apps/v1beta1 because it has no resources.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 113, in test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets
+    with self.subTest(enum=enum, changed=changed), self.assertRaises(ValueError):
+                                                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets (test_k3s_lab_round4.StartupTemplateTest.test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets) (enum='empty-metrics-manifest', changed='SECRET E1024 06:00:01.123456      12 options.go:205] The manifest file is empty, ignoring.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 113, in test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets
+    with self.subTest(enum=enum, changed=changed), self.assertRaises(ValueError):
+                                                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets (test_k3s_lab_round4.StartupTemplateTest.test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets) (enum='missing-machine-id', changed='SECRET W1024 06:00:01.123456      12 info.go:54] Couldn\'t collect info from any of the files in "/etc/machine-id,/var/lib/dbus/machine-id"')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 113, in test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets
+    with self.subTest(enum=enum, changed=changed), self.assertRaises(ValueError):
+                                                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets (test_k3s_lab_round4.StartupTemplateTest.test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets) (enum='reset-endpoints', changed='SECRET W1024 06:00:01.123456      12 lease.go:265] Resetting endpoints for master service "kubernetes" to [198.18.0.1]')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round4.py", line 113, in test_new_templates_reject_wrong_caller_severity_paths_addresses_and_secrets
+    with self.subTest(enum=enum, changed=changed), self.assertRaises(ValueError):
+                                                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+FAILED (failures=4, errors=5)

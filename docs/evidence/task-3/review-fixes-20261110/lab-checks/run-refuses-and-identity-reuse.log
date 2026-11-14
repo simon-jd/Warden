@@ -1,0 +1,56 @@
+# head 30f72c2; git status --short:
+#    M runtimes/gvisor/gvisor.go
+#    M runtimes/gvisor/gvisor_test.go
+#    M runtimes/gvisor/supervisor/supervisor.go
+#    M runtimes/gvisor/supervisor/supervisor_linux.go
+#   ?? docs/evidence/task-3/review-fixes-20261110/job-deadline/
+#   ?? docs/evidence/task-3/review-fixes-20261110/lab-checks/
+#   ?? docs/evidence/task-3/review-fixes-20261110/red-green/05-job-deadline.green.txt
+#   ?? docs/evidence/task-3/review-fixes-20261110/red-green/05-job-deadline.red.txt
+# 2026-11-10T21:02:56-08:00 lab up since 20:57 (scripts/k3s_gvisor_lab.sh up at head 30f72c2)
+
+$ scripts/k3s_gvisor_lab.sh status
+warden-k3s-gvisor Up 5 minutes
+WARDEN_GVISOR_KUBECONFIG=/home/postedism/Desktop/Warden-task3/.cache/k3s-gvisor/lab/kubeconfig
+WARDEN_GVISOR_API_HOST=192.168.208.10
+WARDEN_GVISOR_NODE=warden-gvisor
+WARDEN_GVISOR_NODE_CONTAINER=warden-k3s-gvisor
+WARDEN_GVISOR_NODE_CONFIG_SHA256=47c09bdc5694a3a15e6e84273bcb5a22f63ee4dc43d732968893229efc728f0f
+WARDEN_LAB_IMAGE_DIGEST=sha256:2f4ec662b7b52207452e3097bdf56563dc3d1879599eafbd6dfe6de71b3355cf
+
+$ scripts/k3s_gvisor_lab.sh run true      # a lab is up: run must refuse and leave it
+warden-k3s-gvisor already exists; run 'scripts/k3s_gvisor_lab.sh down' first
+exit: 1
+$ docker ps -a --filter label=project=warden; docker network ls --filter label=project=warden
+warden-k3s-gvisor Up 5 minutes
+warden-k3s
+
+# a namespace an earlier run left behind, with an account the manifest does not have
+$ kubectl create namespace warden-system; kubectl -n warden-system create serviceaccount left-by-an-earlier-run
+namespace/warden-system created
+serviceaccount/left-by-an-earlier-run created
+warden-system uid before: ba303865-f7fc-40ea-bc5c-2266911d5cf4
+
+$ make test-identity IDENTITY_REUSE=1 IDENTITY_OUT=docs/evidence/task-3/review-fixes-20261110/lab-checks/identity-reuse.jsonl   (2026-11-10T21:02:56-08:00)
+	env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_LIVE_IDENTITY=1 IDENTITY_OUT=/home/postedism/Desktop/Warden-task3/docs/evidence/task-3/review-fixes-20261110/lab-checks/identity-reuse.jsonl /home/postedism/Desktop/Warden-task3/.tools/go/bin/go test -buildvcs=false -count=1 -v -timeout 10m -run '^(TestControlPlaneTokenIsShortLived|TestSandboxSAHasNoBindings)$' ./runtimes/conformance
+=== RUN   TestControlPlaneTokenIsShortLived
+    identity_test.go:596: result: {"aud":["https://kubernetes.default.svc.cluster.local","k3s"],"bound_to_pod":true,"iss":"https://kubernetes.default.svc.cluster.local","lifetime_s":3600,"path":"token","requested_audience":"","requested_expiration_s":3600,"sub":"system:serviceaccount:warden-system:warden-controlplane","test":"TestControlPlaneTokenIsShortLived","token_review_authenticated":true,"token_review_user":"system:serviceaccount:warden-system:warden-controlplane","volume":"kube-api-token"}
+    identity_test.go:596: result: {"aud":["api://AzureADTokenExchange"],"bound_to_pod":true,"iss":"https://kubernetes.default.svc.cluster.local","lifetime_s":3600,"path":"azure-identity-token","requested_audience":"api://AzureADTokenExchange","requested_expiration_s":3600,"sub":"system:serviceaccount:warden-system:warden-controlplane","test":"TestControlPlaneTokenIsShortLived","token_review_authenticated":true,"token_review_user":"system:serviceaccount:warden-system:warden-controlplane","volume":"azure-identity-token"}
+--- PASS: TestControlPlaneTokenIsShortLived (15.85s)
+=== RUN   TestSandboxSAHasNoBindings
+    identity_test.go:847: result: {"bindings_accepted":["system:service-account-issuer-discovery -\u003e ClusterRole system:service-account-issuer-discovery (Group /system:serviceaccounts)"],"bindings_scanned":60,"bindings_unexpected":null,"control_binding_cleared_ms":90,"control_binding_seen_ms":62,"namespace":"warden-lab","sensitive_allowed":0,"sensitive_checks":13,"service_accounts":["default"],"test":"TestSandboxSAHasNoBindings","token_secrets":0}
+--- PASS: TestSandboxSAHasNoBindings (0.23s)
+PASS
+ok  	warden/runtimes/conformance	16.078s
+exit: 0  (2026-11-10T21:03:13-08:00)
+
+$ kubectl get namespace warden-system   # the test deletes it at the end
+Error from server (NotFound): namespaces "warden-system" not found
+exit: 1
+
+$ scripts/k3s_gvisor_lab.sh down   (2026-11-10T21:03:20-08:00)
+exit: 0
+$ diff .cache/k3s-gvisor/lab/host-before.txt .cache/k3s-gvisor/lab/host-after.txt
+exit: 0
+$ docker ps -a --filter label=project=warden; docker network ls --filter label=project=warden
+(end)

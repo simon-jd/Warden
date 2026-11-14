@@ -1,0 +1,9 @@
+# make check, plain, in the worktree ~/Desktop/Warden-task3 (branch task3-gvisor)
+# head 1dd3d8e881736b7e8ba6ff78ccbbec1cff4cee58
+# git status --short:
+#   (end)
+# start 2026-11-11T07:36:47-08:00, load 3.19 3.56 3.23
+pkgs=$(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /home/postedism/Desktop/Warden-task3/.tools/go/bin/go list -buildvcs=false ./...) && pkgs=$(printf '%s\n' $pkgs | grep -Ev '^$|^warden/docs/') || exit 1; env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /home/postedism/Desktop/Warden-task3/.tools/go/bin/go vet -buildvcs=false $pkgs
+shellcheck -S warning scripts/*.sh
+# make check exit: 0
+# end 2026-11-11T07:36:48-08:00

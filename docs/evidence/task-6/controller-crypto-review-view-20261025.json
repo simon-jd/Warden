@@ -1,0 +1,12 @@
+{
+  "full_package_sha256": "cfca635d8e5acb5747f90694a54c76c8f2891f2d526601db8b2f1cc5d6ee3857",
+  "scope_view": ".superpowers/sdd/2-warden-security-plan/review-c43c74f..f4dd9dc-scope-view.diff",
+  "scope_view_bytes": 332658,
+  "scope_view_sha256": "560d8a61bf20ff04d4eccd41dd2b0e2956acfc142c9c8e6bcb6685c3cc0ead2e",
+  "omitted_blocks": 417,
+  "omitted_block_proof_index_sha256": "6a1b3506394be26f90fe93fe91f01c6bb2e95c3ea563a0cc845ac04636717ffe",
+  "canonical_product_changes_omitted": 0,
+  "evidence_deleted": false,
+  "tests_rerun": false,
+  "method": "split full diff at exact diff --git boundaries; omit only preverified unchanged baseline source-copy blocks with matching full-block SHA; preserve all other bytes"
+}

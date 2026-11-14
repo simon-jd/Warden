@@ -1,0 +1,7 @@
+# make check at c2caee0 (c2caee00687da425478752a758f1709e5615aa07), 2026-11-13T18:23:16Z, under taskset -c 0-7,16-31
+# git status --short before: []
+pkgs=$(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-next/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-next/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-next/.cache/go HOME=/home/postedism/Desktop/Warden-next/.cache/home TMPDIR=/home/postedism/Desktop/Warden-next/.cache/test-tmp /home/postedism/Desktop/Warden-next/.tools/go/bin/go list -buildvcs=false ./...) && pkgs=$(printf '%s\n' $pkgs | grep -Ev '^$|^warden/docs/') || exit 1; env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-next/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-next/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-next/.cache/go HOME=/home/postedism/Desktop/Warden-next/.cache/home TMPDIR=/home/postedism/Desktop/Warden-next/.cache/test-tmp /home/postedism/Desktop/Warden-next/.tools/go/bin/go vet -buildvcs=false $pkgs
+shellcheck -S warning scripts/*.sh
+exit 0
+# git status --short after: []
+# 2026-11-13T18:23:17Z

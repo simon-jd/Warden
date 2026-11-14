@@ -1,0 +1,36 @@
+{
+  "title": "Nonresolver destination port 53",
+  "id": "a44b26f2-1d12-5c80-87a6-ba82dc24db6d",
+  "status": "experimental",
+  "description": "Static illustrative IP policy, not Internet/protocol/login/C2 classification. Ports and VNet tuples provide no Pod/application identity. Synthetic fixtures; ATT&CK tags describe related investigation scenarios, not observed technique success.",
+  "references": [],
+  "author": "Warden",
+  "date": "2026-10-25",
+  "logsource": {
+    "product": "azure",
+    "service": "vnet"
+  },
+  "detection": {
+    "source": {
+      "class_uid": 4001,
+      "metadata.product.name": "azure vnet flow logs"
+    },
+    "action": {
+      "dst_endpoint.port": 53,
+      "unmapped.direction": "o"
+    },
+    "required": {
+      "dst_endpoint.ip|exists": true
+    },
+    "allowed": {
+      "dst_endpoint.ip": [
+        "192.0.2.53"
+      ]
+    },
+    "condition": "source and action and required and not allowed"
+  },
+  "falsepositives": [
+    "Authorized administration, developer/debug tooling, permitted workloads or unrelated protocol use; tune local IP/principal allowlists."
+  ],
+  "level": "medium"
+}

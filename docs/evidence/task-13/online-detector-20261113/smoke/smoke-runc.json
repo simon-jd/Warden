@@ -1,0 +1,26 @@
+{
+ "containers": {
+  "warden-detect-control-runc": "3e30abfdc1d173e5ffcc11b3b31799e2fcc132870b5637047f1d9bf49f346acd",
+  "warden-detect-smoke-runc-read": "ba74804b91be3c1ea58deee52c4440d5a5f5af943f0e0bf53b8a23f70bf6f821",
+  "warden-detect-smoke-runc-shell": "dc1b848ac8a1870a04292429a2d06fb25999f80eb633c8a68f32cece864fef50"
+ },
+ "control_shell_exit": 0,
+ "executions": [
+  {
+   "executed_at": "2026-11-14T05:01:45.125494000Z",
+   "execution_id": "smoke-runc-shell",
+   "outcome": "succeeded",
+   "run_id": "smoke-runc-shell-04944add",
+   "technique_id": "T1059"
+  },
+  {
+   "executed_at": "2026-11-14T05:01:45.303325000Z",
+   "execution_id": "smoke-runc-read",
+   "outcome": "succeeded",
+   "run_id": "smoke-runc-read-04944add",
+   "technique_id": "T1555"
+  }
+ ],
+ "runtime": "runc",
+ "token": "04944add"
+}

@@ -1,0 +1,18 @@
+chmod: /var/run/postgresql: Operation not permitted
+********************************************************************************
+WARNING: POSTGRES_HOST_AUTH_METHOD has been set to "trust". This will allow
+         anyone with access to the Postgres port to access your database without
+         a password, even if POSTGRES_PASSWORD is set. See PostgreSQL
+         documentation about "trust":
+         https://www.postgresql.org/docs/current/auth-trust.html
+         In Docker's default configuration, this is effectively any other
+         container on the same system.
+
+         It is not recommended to use POSTGRES_HOST_AUTH_METHOD=trust. Replace
+         it with "-e POSTGRES_PASSWORD=password" instead to set a password in
+         "docker run".
+********************************************************************************
+2026-10-26 05:24:14.506 UTC [29] FATAL:  could not resize shared memory segment "/PostgreSQL.3862904388" to 1048576 bytes: No space left on device
+2026-10-26 05:24:14.506 UTC [29] PANIC:  cannot abort transaction 1, it was already committed
+child process was terminated by signal 6: Aborted
+initdb: removing contents of data directory "/var/lib/postgresql/task9"

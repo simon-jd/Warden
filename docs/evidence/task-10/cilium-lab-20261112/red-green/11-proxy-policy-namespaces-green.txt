@@ -1,0 +1,39 @@
+# 2026-11-13T00:04:47-08:00 head e50da44; git status --short:
+ M policies/cilium/egress-proxy.yaml
+?? controlplane/internal/ciliumlab/egress_test.go
+?? controlplane/internal/ciliumlab/lab_test.go
+?? controlplane/internal/ciliumlab/policy_test.go
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run1-1945/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2-attempt1/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2/
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/11-proxy-policy-namespaces-green.txt
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/11-proxy-policy-namespaces-red-attempt1-test-bug.txt
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/11-proxy-policy-namespaces-red.txt
+?? docs/evidence/task-10/cilium-lab-20261112/runs/01-task10/
+?? docs/evidence/task-10/cilium-lab-20261112/runs/02-task10/TestSandboxReachesOnlyTheEgressProxy.json
+?? docs/evidence/task-10/cilium-lab-20261112/runs/02-task10/run.log
+?? docs/evidence/task-10/cilium-lab-20261112/runs/03-task10/
+?? docs/evidence/task-10/cilium-lab-20261112/runs/04-task10/
+$ taskset -c 0-7,16-31 .tools/go/bin/go test -buildvcs=false -count=1 -v ./controlplane/internal/ciliumlab (Makefile GOENV)
+=== RUN   TestParseNetResultsKeepsEveryCaseOnce
+--- PASS: TestParseNetResultsKeepsEveryCaseOnce (0.00s)
+=== RUN   TestParseLogReadsWorldAndProbeLines
+--- PASS: TestParseLogReadsWorldAndProbeLines (0.00s)
+=== RUN   TestStreamSeparatesTheDirectionsAndTheStreams
+--- PASS: TestStreamSeparatesTheDirectionsAndTheStreams (0.00s)
+=== RUN   TestCountLastAndMaxGap
+--- PASS: TestCountLastAndMaxGap (0.00s)
+=== RUN   TestMeasureFindsWhenAStreamStopped
+--- PASS: TestMeasureFindsWhenAStreamStopped (0.00s)
+=== RUN   TestNearestRank
+--- PASS: TestNearestRank (0.00s)
+=== RUN   TestSandboxReachesOnlyTheEgressProxy
+    egress_test.go:106: live Cilium test: needs WARDEN_LIVE_CILIUM=1 and scripts/k3s_gvisor_lab.sh up --cilium (make test-cilium)
+--- SKIP: TestSandboxReachesOnlyTheEgressProxy (0.00s)
+=== RUN   TestPeerSelectorsSplitsTheListItems
+--- PASS: TestPeerSelectorsSplitsTheListItems (0.00s)
+=== RUN   TestNamespacedPoliciesSelectSandboxesOutsideTheirNamespace
+--- PASS: TestNamespacedPoliciesSelectSandboxesOutsideTheirNamespace (0.00s)
+PASS
+ok  	warden/controlplane/internal/ciliumlab	0.005s
+exit 0

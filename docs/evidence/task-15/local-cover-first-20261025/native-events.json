@@ -1,0 +1,63 @@
+[
+  {
+    "kind": "fresh-guard",
+    "request": {
+      "cmd": "set -e\nulimit -c 0\nulimit -n 64\nulimit -v 262144\nulimit -f 8192\nulimit -t 20\n/usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -B - <<'PY'\nfrom pathlib import Path\nimport os,runpy,stat,sys\nassert os.getuid()==1000\nn=Path('/tmp/warden-task15-first-red-9ffe58a9-b5d6dcbd')\nheld=0\nfor p in (n,n/'status.txt',n/'unittest.txt'):\n    st=p.lstat()\n    assert st.st_uid==1000 and not stat.S_ISLNK(st.st_mode)\n    held+=st.st_blocks*512\nassert held<=65536\nassert not os.path.lexists('/tmp/warden-task15-green-22c7197f-968f62de')\nmem=next(int(x.split()[1])*1024 for x in Path('/proc/meminfo').read_text().splitlines() if x.startswith('MemAvailable:'))\nassert mem>=1073741824\nprint({'retained_first_RED_allocated_bytes':held,'retained_first_RED_reserve_bytes':65536,'MemAvailable_bytes':mem,'new_namespace_absent':True},flush=True)\nsys.argv=['scripts/azure_guard.py','preflight','--additional-bytes','5268500992','--service-memory-bytes','10073741824','--download-bytes','0']\nrunpy.run_path('scripts/azure_guard.py',run_name='__main__')\nPY",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "max_output_tokens": 2000,
+      "sandbox_permissions": "require_escalated",
+      "justification": "Run the existing fresh local guard for the exact Task15 cover, explicitly adding retained first-RED /tmp allocation, Q 5GB, new 256MiB and old UNKNOWN 9GB memory reserve."
+    },
+    "result": {
+      "chunk_id": "2800b6",
+      "wall_time_seconds": 0.261081869,
+      "exit_code": 0,
+      "original_token_count": 94,
+      "output": "{'retained_first_RED_allocated_bytes': 8192, 'retained_first_RED_reserve_bytes': 65536, 'MemAvailable_bytes': 85220106240, 'new_namespace_absent': True}\n{\"additional_bytes\": \"5268500992\", \"at\": \"2026-10-26T03:20:28Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 254578397184, \"project_allocated_bytes\": 5030924288, \"service_memory_bytes\": \"10073741824\"}\n"
+    }
+  },
+  {
+    "kind": "sole-local-cover",
+    "request": {
+      "cmd": "/usr/bin/timeout --signal=TERM --kill-after=1s 89s /usr/bin/python3 -I -B .superpowers/sdd/2-warden-security-plan/task-15-cover-admitted.py.txt",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "max_output_tokens": 1800,
+      "yield_time_ms": 1000,
+      "sandbox_permissions": "require_escalated",
+      "justification": "Execute the exact frozen Task15 15-test local semantic cover once after fresh guard 2800b6 passed; no CLI, network, child process, build, services, cloud or publication."
+    },
+    "result": {
+      "chunk_id": "1899ae",
+      "wall_time_seconds": 1.7201e-05,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    }
+  },
+  {
+    "kind": "root-full-postread",
+    "request": {
+      "cmd": "/usr/bin/python3 -I -B - <<'PY'\nfrom pathlib import Path\nimport ast,hashlib,json,os,stat\nroot=Path('/home/postedism/Desktop/Warden')\nn=Path('/tmp/warden-task15-green-22c7197f-968f62de')\nst=n.lstat()\nassert stat.S_ISDIR(st.st_mode) and st.st_uid==1000 and stat.S_IMODE(st.st_mode)==0o700\nfd=os.open(n,os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW)\nmeta={}\nfor name in ('status.txt','unittest.txt'):\n    f=os.open(name,os.O_RDONLY|os.O_NOFOLLOW,dir_fd=fd)\n    st=os.fstat(f)\n    assert stat.S_ISREG(st.st_mode) and st.st_uid==1000 and st.st_nlink==1 and 0<st.st_size<65536 and stat.S_IMODE(st.st_mode)==0o600\n    with os.fdopen(f,'rb') as stream:b=stream.read(65536)\n    assert len(b)==st.st_size\n    with (root/'docs/evidence/task-15/local-cover-first-20261025'/name).open('xb') as out:out.write(b)\n    meta[name]={'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'uid':st.st_uid,'mode':oct(stat.S_IMODE(st.st_mode)),'nlink':st.st_nlink}\n    print('FULL '+name+' BEGIN\\n'+b.decode()+'FULL '+name+' END')\nos.close(fd)\ntree=ast.parse((root/'.superpowers/sdd/2-warden-security-plan/task-15-cover-admitted.py.txt').read_bytes())\nnode=next(n for n in tree.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='frozen' for t in n.targets))\nfrozen=ast.literal_eval(node.value)\nfor name,(size,h) in frozen.items():\n    b=(root/name).read_bytes()\n    assert len(b)==size and hashlib.sha256(b).hexdigest()==h\nmeta.update({'namespace':str(n),'frozen_inputs_unchanged':len(frozen),'source_bytes':sum(v[0] for v in frozen.values()),'children_created_by_caller':False,'cryptographic_acceptance':'UNRUN'})\nwith (root/'docs/evidence/task-15/local-cover-first-20261025/postread.json').open('x') as f:json.dump(meta,f,indent=2);f.write('\\n')\nprint(json.dumps(meta))\nPY",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "max_output_tokens": 5000,
+      "sandbox_permissions": "require_escalated",
+      "justification": "Read the complete actual Task15 cover logs, preserve owner/single-link/no-follow checked originals, and confirm all ten frozen source inputs remained unchanged."
+    },
+    "result": {
+      "chunk_id": "873625",
+      "wall_time_seconds": 8.327e-06,
+      "exit_code": 0,
+      "original_token_count": 709,
+      "output": "FULL status.txt BEGIN\nSTARTED; real crypto cases UNRUN\ntests=15 failures=0 errors=0 skips=0\nLOCAL SEMANTIC GREEN; crypto UNRUN\nFULL status.txt END\nFULL unittest.txt BEGIN\ntest_clean_complete_scan_allows_local_semantics_only (task15_supplychain_tests.AssessScanTests.test_clean_complete_scan_allows_local_semantics_only) ... ok\ntest_fixable_critical_blocks_unfiltered_scan (task15_supplychain_tests.AssessScanTests.test_fixable_critical_blocks_unfiltered_scan) ... ok\ntest_grype_omitted_zero_ignored_matches_is_complete (task15_supplychain_tests.AssessScanTests.test_grype_omitted_zero_ignored_matches_is_complete) ... ok\ntest_grype_self_report_without_catalog_rejected (task15_supplychain_tests.AssessScanTests.test_grype_self_report_without_catalog_rejected) ... ok\ntest_ignored_matches_rejected (task15_supplychain_tests.AssessScanTests.test_ignored_matches_rejected) ... ok\ntest_incomplete_provider_or_scan_configuration_rejected (task15_supplychain_tests.AssessScanTests.test_incomplete_provider_or_scan_configuration_rejected) ... ok\ntest_missing_db_evidence_rejected (task15_supplychain_tests.AssessScanTests.test_missing_db_evidence_rejected) ... ok\ntest_not_fixed_kev_still_blocks (task15_supplychain_tests.AssessScanTests.test_not_fixed_kev_still_blocks) ... ok\ntest_related_kev_cve_is_not_lost (task15_supplychain_tests.AssessScanTests.test_related_kev_cve_is_not_lost) ... ok\ntest_stale_db_or_catalog_rejected (task15_supplychain_tests.AssessScanTests.test_stale_db_or_catalog_rejected) ... ok\ntest_wrong_image_digest_rejected (task15_supplychain_tests.AssessScanTests.test_wrong_image_digest_rejected) ... ok\ntest_checked_in_unbound_templates_always_deny (task15_supplychain_tests.RenderBindingTests.test_checked_in_unbound_templates_always_deny) ... ok\ntest_malformed_digest_rejected_without_policy (task15_supplychain_tests.RenderBindingTests.test_malformed_digest_rejected_without_policy) ... ok\ntest_missing_binding_rejected_without_policy (task15_supplychain_tests.RenderBindingTests.test_missing_binding_rejected_without_policy) ... ok\ntest_valid_binding_covers_every_image_and_exact_identity (task15_supplychain_tests.RenderBindingTests.test_valid_binding_covers_every_image_and_exact_identity) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.001s\n\nOK\nFULL unittest.txt END\n{\"status.txt\": {\"bytes\": 105, \"sha256\": \"e46a66672f03757499cd35a2c88022b54374de917be170a462d8ae11f2a63a9b\", \"uid\": 1000, \"mode\": \"0o600\", \"nlink\": 1}, \"unittest.txt\": {\"bytes\": 2149, \"sha256\": \"fd470a777bf7fd1fcae835b443724db77972fcb0256f9c7b7d84d07443f33ff8\", \"uid\": 1000, \"mode\": \"0o600\", \"nlink\": 1}, \"namespace\": \"/tmp/warden-task15-green-22c7197f-968f62de\", \"frozen_inputs_unchanged\": 10, \"source_bytes\": 42326, \"children_created_by_caller\": false, \"cryptographic_acceptance\": \"UNRUN\"}\n"
+    }
+  }
+]

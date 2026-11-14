@@ -1,0 +1,24 @@
+{
+  "source": "55bd96828669c8e1536da321bcb87bae13afa6ea",
+  "config_sha256": "7dbdc7445d01d3dd049b1e653534bde71266d59afaf9c1de50a8a6b8a8c138d0",
+  "hash_provenance": "computed pin; no publisher signature or independent expected digest",
+  "selected_config": [
+    "CONFIG_CGROUPS=y",
+    "CONFIG_MEMCG=y",
+    "CONFIG_CGROUP_PIDS=y",
+    "CONFIG_NAMESPACES=y",
+    "CONFIG_USER_NS=y",
+    "CONFIG_PID_NS=y",
+    "CONFIG_NET_NS=y",
+    "CONFIG_SECCOMP=y",
+    "CONFIG_NF_TABLES=y",
+    "CONFIG_BRIDGE=y",
+    "CONFIG_VSOCKETS=y",
+    "CONFIG_VIRTIO_VSOCKETS=y",
+    "CONFIG_VETH=y",
+    "CONFIG_EXT4_FS=y",
+    "CONFIG_INOTIFY_USER=y",
+    "CONFIG_OVERLAY_FS=y"
+  ],
+  "future_k3s_runsc": "structural feasibility only; no guest boot, deployment or Ready result"
+}

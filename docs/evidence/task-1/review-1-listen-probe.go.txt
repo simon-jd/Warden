@@ -1,0 +1,3 @@
+package main
+import("fmt";"os")
+func main(){got:=os.Getenv("WARDEN_LISTEN_ADDR");fmt.Printf("WARDEN_LISTEN_ADDR=%q\n",got);if got!="127.0.0.1:19382" {os.Exit(1)}}

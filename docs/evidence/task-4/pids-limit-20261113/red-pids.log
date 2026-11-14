@@ -1,0 +1,58 @@
+# RED: capacity-pressure-only pid limit, new tests on the unchanged supervisor.go and firecracker_lab.py
+# 2026-11-13T18:16:33Z head 3a8c8ad  M runtimes/firecracker/supervisor_test.go  M scripts/test_firecracker_lab.py ?? docs/evidence/task-4/pids-limit-20261113/ 
+$ go test -count=1 -v -run '^(TestOuterPidsRaisedForCapacityPressureOnly|TestOuterLimitsOnlyCanonicalPageFloor|TestOuterLimitsMustMatchFixedMode)$' ./runtimes/firecracker
+=== RUN   TestOuterLimitsMustMatchFixedMode
+--- PASS: TestOuterLimitsMustMatchFixedMode (0.00s)
+=== RUN   TestOuterLimitsOnlyCanonicalPageFloor
+    supervisor_test.go:48: canonical capacity-pressure: outer memory/swap/pids/CPU differs from sealed profile
+--- FAIL: TestOuterLimitsOnlyCanonicalPageFloor (0.00s)
+=== RUN   TestOuterPidsRaisedForCapacityPressureOnly
+    supervisor_test.go:82: capacity-pressure with pids.max 1024: outer memory/swap/pids/CPU differs from sealed profile
+    supervisor_test.go:86: capacity-pressure accepted pids.max 512
+--- FAIL: TestOuterPidsRaisedForCapacityPressureOnly (0.00s)
+FAIL
+FAIL	warden/runtimes/firecracker	0.003s
+FAIL
+exit 1
+
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_firecracker_lab.py -k OuterPidsTests -k DevicePolicyModeTests -v
+test_all_six_privileged_modes_require_interactive_fixed_entrypoint (test_firecracker_lab.DevicePolicyModeTests.test_all_six_privileged_modes_require_interactive_fixed_entrypoint) ... ERROR
+test_only_capacity_pressure_gets_the_raised_pid_limit (test_firecracker_lab.OuterPidsTests.test_only_capacity_pressure_gets_the_raised_pid_limit) ... FAIL
+
+======================================================================
+ERROR: test_all_six_privileged_modes_require_interactive_fixed_entrypoint (test_firecracker_lab.DevicePolicyModeTests.test_all_six_privileged_modes_require_interactive_fixed_entrypoint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_firecracker_lab.py", line 165, in test_all_six_privileged_modes_require_interactive_fixed_entrypoint
+    with redirect_stdout(io.StringIO()):lab.inspect_live(data,mode,binding())
+                                        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden-next/scripts/firecracker_lab.py", line 335, in inspect_live
+    if h.get('Privileged') or h['Memory']!=memory or h['MemorySwap']!=memory or h['PidsLimit']!=512 or h['NanoCpus']!=2000000000 or h['NetworkMode']!='none' or h['IpcMode']!='private' or h['CgroupnsMode']!='private' or h['PidMode'] or not h['ReadonlyRootfs'] or h['CapDrop']!=['ALL'] or h.get('DeviceCgroupRules') or h.get('DeviceRequests'):raise ValueError('inspected outer bounds differ')
+                                                                                                                                                                                                                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: inspected outer bounds differ
+
+======================================================================
+FAIL: test_only_capacity_pressure_gets_the_raised_pid_limit (test_firecracker_lab.OuterPidsTests.test_only_capacity_pressure_gets_the_raised_pid_limit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_firecracker_lab.py", line 180, in test_only_capacity_pressure_gets_the_raised_pid_limit
+    self.assertEqual([a for a in args if a.startswith('--pids-limit=')],['--pids-limit=%d'%want],mode)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['--pids-limit=512'] != ['--pids-limit=1024']
+
+First differing element 0:
+'--pids-limit=512'
+'--pids-limit=1024'
+
+- ['--pids-limit=512']
+?                -
+
++ ['--pids-limit=1024']
+?                 + +
+ : capacity-pressure
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.010s
+
+FAILED (failures=1, errors=1)
+exit 1

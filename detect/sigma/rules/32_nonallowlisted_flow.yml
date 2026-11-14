@@ -1,0 +1,36 @@
+{
+  "title": "Outbound flow outside illustrative IP allowlist",
+  "id": "354ba4e7-c8c7-5f4f-9b5a-6c8ae8292aac",
+  "status": "experimental",
+  "description": "Synthetic fixed-IP allowlist only; no domain/SNI/policy verdict or Pod identity. Synthetic fixtures; ATT&CK tags describe related investigation scenarios, not observed technique success.",
+  "references": [],
+  "author": "Warden",
+  "date": "2026-10-25",
+  "logsource": {
+    "product": "azure",
+    "service": "vnet"
+  },
+  "detection": {
+    "source": {
+      "class_uid": 4001,
+      "metadata.product.name": "azure vnet flow logs"
+    },
+    "action": {
+      "unmapped.direction": "o"
+    },
+    "required": {
+      "dst_endpoint.ip|exists": true
+    },
+    "allowed": {
+      "dst_endpoint.ip": [
+        "192.0.2.10",
+        "192.0.2.53"
+      ]
+    },
+    "condition": "source and action and required and not allowed"
+  },
+  "falsepositives": [
+    "Authorized administration, developer/debug tooling, permitted workloads or unrelated protocol use; tune local IP/principal allowlists."
+  ],
+  "level": "medium"
+}

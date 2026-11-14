@@ -1,0 +1,66 @@
+# Warden's settings for both Falco instances (detect/falco/detector.py mounts
+# this file as /etc/falco/config.d/90-warden.yaml). The rules stay the image's
+# stock files: rules_files and the rules are not touched.
+#
+# Alerts leave Falco only through file_output, into a FIFO that
+# detect/falco/collector.py reads. stdout (which Docker would keep in the
+# container log), syslog, HTTP, program output and captures are all off, so
+# no alert is written anywhere before the collector has decided whether it
+# belongs to a Warden container.
+watch_config_files: false
+json_output: true
+json_include_output_property: true
+json_include_output_fields_property: true
+json_include_tags_property: true
+json_include_message_property: false
+stdout_output:
+  enabled: false
+syslog_output:
+  enabled: false
+http_output:
+  enabled: false
+program_output:
+  enabled: false
+webserver:
+  enabled: false
+capture:
+  enabled: false
+file_output:
+  enabled: true
+  keep_alive: false
+  filename: /warden-detect-out/alerts.fifo
+log_stderr: true
+log_syslog: false
+log_level: info
+# A full queue drops the alert and counts it (falco.outputs_queue_num_drops)
+# instead of growing until the memory limit kills Falco.
+outputs_queue:
+  capacity: 100000
+# Any drop is reported at once ("Falco internal: syscall event drop").
+syscall_event_drops:
+  threshold: 0
+  actions:
+    - log
+    - alert
+  rate: 0.03333
+  max_burst: 1
+  simulate_drops: false
+# Falco's own health: one "Falco internal: metrics snapshot" a minute through
+# the same output (the gVisor engine only while sandboxes send events). No
+# per-rule counters: they would count other projects' alerts by rule. No
+# libbpf stats: they need kernel.bpf_stats_enabled.
+metrics:
+  enabled: true
+  interval: 60s
+  output_rule: true
+  output_file: ""
+  rules_counters_enabled: false
+  resource_utilization_enabled: true
+  state_counters_enabled: true
+  kernel_event_counters_enabled: true
+  kernel_event_counters_per_cpu_enabled: false
+  libbpf_stats_enabled: false
+  plugins_metrics_enabled: true
+  jemalloc_stats_enabled: false
+  convert_memory_to_mb: true
+  include_empty_values: true

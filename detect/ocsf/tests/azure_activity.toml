@@ -1,0 +1,42 @@
+[[tests]]
+name = "azure_rest_full_golden"
+[[tests.inputs]]
+insert_at = "norm_azure"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "azure"
+message = '''{"eventTimestamp":"2026-01-01T00:00:00Z","operationName":{"value":"Microsoft.Compute/virtualMachines/write"},"caller":"fixture-user","httpRequest":{"clientIpAddress":"192.0.2.10"},"eventDataId":"azure-1","status":{"value":"Succeeded"},"fixture_extra":"kept"}'''
+[[tests.outputs]]
+extract_from = "norm_azure"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"activity_id":99,"category_uid":6,"class_uid":6003,"type_uid":600399,"severity_id":0,"time":1767225600000,"metadata":{"version":"1.3.0","product":{"name":"Azure Activity Log","vendor_name":"Microsoft"},"uid":"azure-1"},"api":{"operation":"Microsoft.Compute/virtualMachines/write"},"actor":{"user":{"uid":"fixture-user"}},"src_endpoint":{"ip":"192.0.2.10"},"status_id":1,"unmapped":{"fixture_extra":"kept"},"activity_name":"Microsoft.Compute/virtualMachines/write"})'''
+
+[[tests]]
+name = "azure_2_crud"
+[[tests.inputs]]
+insert_at = "norm_azure"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "azure"
+message = '''{"eventTimestamp":"2026-01-01T00:00:00Z","operationName":{"value":"Microsoft.Compute/virtualMachines/read"},"caller":"fixture-user","httpRequest":{"clientIpAddress":"192.0.2.10"},"eventDataId":"azure-1","status":{"value":"Succeeded"},"fixture_extra":"kept"}'''
+[[tests.outputs]]
+extract_from = "norm_azure"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"activity_id":2,"category_uid":6,"class_uid":6003,"type_uid":600302,"severity_id":0,"time":1767225600000,"metadata":{"version":"1.3.0","product":{"name":"Azure Activity Log","vendor_name":"Microsoft"},"uid":"azure-1"},"api":{"operation":"Microsoft.Compute/virtualMachines/read"},"actor":{"user":{"uid":"fixture-user"}},"src_endpoint":{"ip":"192.0.2.10"},"status_id":1,"unmapped":{"fixture_extra":"kept"}})'''
+
+[[tests]]
+name = "azure_4_crud"
+[[tests.inputs]]
+insert_at = "norm_azure"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "azure"
+message = '''{"eventTimestamp":"2026-01-01T00:00:00Z","operationName":{"value":"Microsoft.Compute/virtualMachines/delete"},"caller":"fixture-user","httpRequest":{"clientIpAddress":"192.0.2.10"},"eventDataId":"azure-1","status":{"value":"Succeeded"},"fixture_extra":"kept"}'''
+[[tests.outputs]]
+extract_from = "norm_azure"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"activity_id":4,"category_uid":6,"class_uid":6003,"type_uid":600304,"severity_id":0,"time":1767225600000,"metadata":{"version":"1.3.0","product":{"name":"Azure Activity Log","vendor_name":"Microsoft"},"uid":"azure-1"},"api":{"operation":"Microsoft.Compute/virtualMachines/delete"},"actor":{"user":{"uid":"fixture-user"}},"src_endpoint":{"ip":"192.0.2.10"},"status_id":1,"unmapped":{"fixture_extra":"kept"}})'''
+

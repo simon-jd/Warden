@@ -1,0 +1,27 @@
+{
+  "changed_source_snapshots": [
+    "scripts/identity_cache_capture.py",
+    "scripts/identity_cache_control.py",
+    "scripts/identity_cache_maintenance.py",
+    "scripts/identity_cache_observe.py",
+    "scripts/test_identity_cache_control.py"
+  ],
+  "command": [
+    "python3",
+    "-B",
+    "docs/evidence/task-6/controller-operations-fix3-cover-04/run.py"
+  ],
+  "dispatch_base": "b7682d02eb7d78712f819adca38da07dae0b694f",
+  "limits": {
+    "address_bytes": 536870912,
+    "cpu_seconds": 30,
+    "file_bytes": 33554432,
+    "wall_seconds": 45
+  },
+  "live_cache_access": false,
+  "source_commit_at_launch": "61477c02d3bb482af9d0cf3233312e5c53dcca4c",
+  "started_utc": "2026-10-25T13:09:55.076105+00:00",
+  "test_target": "test_identity_cache_control only, unittest in process",
+  "tested_prefix_sha256": "7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa",
+  "timing_scope": "earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded"
+}

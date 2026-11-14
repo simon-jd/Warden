@@ -1,0 +1,22 @@
+# 2026-11-12T23:39:41-08:00 head 082cc71; git status --short:
+?? controlplane/internal/ciliumlab/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run1-1945/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2-attempt1/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2/
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/08-ciliumlab-parsers-red.txt
+$ taskset -c 0-7,16-31 .tools/go/bin/go test -buildvcs=false -count=1 -v ./controlplane/internal/ciliumlab (Makefile GOENV)
+# warden/controlplane/internal/ciliumlab [warden/controlplane/internal/ciliumlab.test]
+controlplane/internal/ciliumlab/ciliumlab_test.go:15:14: undefined: ParseNetResults
+controlplane/internal/ciliumlab/ciliumlab_test.go:28:15: undefined: ParseNetResults
+controlplane/internal/ciliumlab/ciliumlab_test.go:31:15: undefined: ParseNetResults
+controlplane/internal/ciliumlab/ciliumlab_test.go:34:15: undefined: ParseNetResults
+controlplane/internal/ciliumlab/ciliumlab_test.go:48:8: undefined: ParseLog
+controlplane/internal/ciliumlab/ciliumlab_test.go:61:12: undefined: ParseLog
+controlplane/internal/ciliumlab/ciliumlab_test.go:66:11: undefined: ParseLog
+controlplane/internal/ciliumlab/ciliumlab_test.go:72:7: undefined: Stream
+controlplane/internal/ciliumlab/ciliumlab_test.go:86:10: undefined: Count
+controlplane/internal/ciliumlab/ciliumlab_test.go:89:10: undefined: Last
+controlplane/internal/ciliumlab/ciliumlab_test.go:89:10: too many errors
+FAIL	warden/controlplane/internal/ciliumlab [build failed]
+FAIL
+exit 1

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "scripts/azure_guard.py",
+    "reserve",
+    "docs/azure-reservation.example.json",
+    "--ledger",
+    "TEMP/ledger.json",
+    "--markdown",
+    "TEMP/spend.md"
+  ],
+  "exit_code": 0,
+  "estimate_usd": "0.1448",
+  "stderr": "",
+  "scope": "offline real archived Retail API quote parsing only; temporary ledger; no Azure commands"
+}

@@ -1,0 +1,132 @@
+test_anchor_replacement_refuses_both_renamed_and_replacement_tree (__main__.IdentityCacheTests.test_anchor_replacement_refuses_both_renamed_and_replacement_tree) ... ok
+test_change_after_scan_refuses_before_deletion (__main__.IdentityCacheTests.test_change_after_scan_refuses_before_deletion) ... ok
+test_changed_layout_after_tightening_prevents_unlink (__main__.IdentityCacheTests.test_changed_layout_after_tightening_prevents_unlink) ... ERROR
+test_cli_rejects_all_path_and_mode_arguments_before_open (__main__.IdentityCacheTests.test_cli_rejects_all_path_and_mode_arguments_before_open) ... ok
+test_deletes_only_derived_entries_keeps_buckets_and_metadata_without_reads (__main__.IdentityCacheTests.test_deletes_only_derived_entries_keeps_buckets_and_metadata_without_reads) ... ok
+test_executable_directory_must_contain_exactly_one_plain_executable (__main__.IdentityCacheTests.test_executable_directory_must_contain_exactly_one_plain_executable) ... ok
+test_existing_intent_or_intent_alias_refuses_without_chmod (__main__.IdentityCacheTests.test_existing_intent_or_intent_alias_refuses_without_chmod) ... ERROR
+test_fifo_rejected_without_blocking_open (__main__.IdentityCacheTests.test_fifo_rejected_without_blocking_open) ... ok
+test_file_replacement_after_scan_is_not_removed (__main__.IdentityCacheTests.test_file_replacement_after_scan_is_not_removed) ... ok
+test_fixed_tightening_persists_intent_then_reduces_permissions_before_unlink (__main__.IdentityCacheTests.test_fixed_tightening_persists_intent_then_reduces_permissions_before_unlink) ... ERROR
+test_group_writable_root_bucket_file_rejected (__main__.IdentityCacheTests.test_group_writable_root_bucket_file_rejected) ... ok
+test_hardlink_file_rejected (__main__.IdentityCacheTests.test_hardlink_file_rejected) ... ok
+test_legacy_plan_cannot_unlink_without_completed_tightening (__main__.IdentityCacheTests.test_legacy_plan_cannot_unlink_without_completed_tightening) ... ERROR
+test_lock_busy_and_wrong_lock_layout_fail_without_cache_access (__main__.IdentityCacheTests.test_lock_busy_and_wrong_lock_layout_fail_without_cache_access) ... ok
+test_malformed_action_length_rejected (__main__.IdentityCacheTests.test_malformed_action_length_rejected) ... ok
+test_missing_bucket_rejected (__main__.IdentityCacheTests.test_missing_bucket_rejected) ... ok
+test_partial_tightening_keeps_intent_and_narrowed_modes_and_never_unlinks (__main__.IdentityCacheTests.test_partial_tightening_keeps_intent_and_narrowed_modes_and_never_unlinks) ... ERROR
+test_symlink_root_bucket_file_rejected (__main__.IdentityCacheTests.test_symlink_root_bucket_file_rejected) ... ok
+test_tightening_replacement_after_plan_has_no_mutation (__main__.IdentityCacheTests.test_tightening_replacement_after_plan_has_no_mutation) ... ERROR
+test_unknown_bucket_entry_and_wrong_hash_prefix_fail (__main__.IdentityCacheTests.test_unknown_bucket_entry_and_wrong_hash_prefix_fail) ... ok
+test_unknown_entry_added_after_scan_refuses_before_deletion (__main__.IdentityCacheTests.test_unknown_entry_added_after_scan_refuses_before_deletion) ... ok
+test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent (__main__.IdentityCacheTests.test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent) ... 
+  test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent (__main__.IdentityCacheTests.test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent) (target=PosixPath('/tmp/warden-identity-cache-fixture-el5nho17/go-build')) ... ERROR
+  test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent (__main__.IdentityCacheTests.test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent) (target=PosixPath('/tmp/warden-identity-cache-fixture-el5nho17/go-build/01/0111111111111111111111111111111111111111111111111111111111111111-d')) ... ERROR
+test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent (__main__.IdentityCacheTests.test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent) ... ERROR
+test_unknown_top_entry_fails_before_any_deletion (__main__.IdentityCacheTests.test_unknown_top_entry_fails_before_any_deletion) ... ok
+test_wrong_owner_rejected (__main__.IdentityCacheTests.test_wrong_owner_rejected) ... ok
+
+======================================================================
+ERROR: test_changed_layout_after_tightening_prevents_unlink (__main__.IdentityCacheTests.test_changed_layout_after_tightening_prevents_unlink)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 289, in test_changed_layout_after_tightening_prevents_unlink
+    plan = self.tightening_plan()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 196, in tightening_plan
+    result = cache.TighteningPlan(self.parent, os.getuid())
+             ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'identity_cache' has no attribute 'TighteningPlan'
+
+======================================================================
+ERROR: test_existing_intent_or_intent_alias_refuses_without_chmod (__main__.IdentityCacheTests.test_existing_intent_or_intent_alias_refuses_without_chmod)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 278, in test_existing_intent_or_intent_alias_refuses_without_chmod
+    intent = self.root / cache.INTENT_NAME
+                         ^^^^^^^^^^^^^^^^^
+AttributeError: module 'identity_cache' has no attribute 'INTENT_NAME'
+
+======================================================================
+ERROR: test_fixed_tightening_persists_intent_then_reduces_permissions_before_unlink (__main__.IdentityCacheTests.test_fixed_tightening_persists_intent_then_reduces_permissions_before_unlink)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 204, in test_fixed_tightening_persists_intent_then_reduces_permissions_before_unlink
+    plan = self.tightening_plan()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 196, in tightening_plan
+    result = cache.TighteningPlan(self.parent, os.getuid())
+             ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'identity_cache' has no attribute 'TighteningPlan'
+
+======================================================================
+ERROR: test_legacy_plan_cannot_unlink_without_completed_tightening (__main__.IdentityCacheTests.test_legacy_plan_cannot_unlink_without_completed_tightening)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 221, in test_legacy_plan_cannot_unlink_without_completed_tightening
+    plan = self.tightening_plan()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 196, in tightening_plan
+    result = cache.TighteningPlan(self.parent, os.getuid())
+             ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'identity_cache' has no attribute 'TighteningPlan'
+
+======================================================================
+ERROR: test_partial_tightening_keeps_intent_and_narrowed_modes_and_never_unlinks (__main__.IdentityCacheTests.test_partial_tightening_keeps_intent_and_narrowed_modes_and_never_unlinks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 256, in test_partial_tightening_keeps_intent_and_narrowed_modes_and_never_unlinks
+    plan = self.tightening_plan()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 196, in tightening_plan
+    result = cache.TighteningPlan(self.parent, os.getuid())
+             ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'identity_cache' has no attribute 'TighteningPlan'
+
+======================================================================
+ERROR: test_tightening_replacement_after_plan_has_no_mutation (__main__.IdentityCacheTests.test_tightening_replacement_after_plan_has_no_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 245, in test_tightening_replacement_after_plan_has_no_mutation
+    plan = self.tightening_plan()
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 196, in tightening_plan
+    result = cache.TighteningPlan(self.parent, os.getuid())
+             ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'identity_cache' has no attribute 'TighteningPlan'
+
+======================================================================
+ERROR: test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent (__main__.IdentityCacheTests.test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent) (target=PosixPath('/tmp/warden-identity-cache-fixture-el5nho17/go-build'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 234, in test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent
+    self.tightening_plan()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 196, in tightening_plan
+    result = cache.TighteningPlan(self.parent, os.getuid())
+             ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'identity_cache' has no attribute 'TighteningPlan'
+
+======================================================================
+ERROR: test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent (__main__.IdentityCacheTests.test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent) (target=PosixPath('/tmp/warden-identity-cache-fixture-el5nho17/go-build/01/0111111111111111111111111111111111111111111111111111111111111111-d'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 234, in test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent
+    self.tightening_plan()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 196, in tightening_plan
+    result = cache.TighteningPlan(self.parent, os.getuid())
+             ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'identity_cache' has no attribute 'TighteningPlan'
+
+======================================================================
+ERROR: test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent (__main__.IdentityCacheTests.test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 239, in test_unknown_legacy_mode_or_layout_never_chmods_or_writes_intent
+    self.tightening_plan()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/test_identity_cache.py", line 196, in tightening_plan
+    result = cache.TighteningPlan(self.parent, os.getuid())
+             ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'identity_cache' has no attribute 'TighteningPlan'
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.104s
+
+FAILED (errors=9)

@@ -1,0 +1,7 @@
+--- FAIL: TestQueuedRunPersistsSecureDefaults (0.06s)
+    api_test.go:210: queued logs={"logs":[]}
+--- FAIL: TestCompletedRequestCancellationDoesNotCancelExecution (0.06s)
+    api_test.go:521: logs {"logs":[]}
+FAIL
+FAIL	warden/controlplane/internal/api	0.127s
+FAIL

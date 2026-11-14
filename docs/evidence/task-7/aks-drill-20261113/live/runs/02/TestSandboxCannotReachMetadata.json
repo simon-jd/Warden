@@ -1,0 +1,782 @@
+{
+  "after deleting the policy": {
+    "md-a": {
+      "api": {
+        "key": "api",
+        "ok": true,
+        "ms": 2.988
+      },
+      "dns": {
+        "key": "dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "10.0.0.1"
+        ],
+        "ms": 1.486
+      },
+      "imds": {
+        "key": "imds",
+        "ok": true,
+        "status": 200,
+        "body": "SwedenCentral",
+        "ms": 6.354
+      },
+      "internet": {
+        "key": "internet",
+        "ok": true,
+        "ms": 3.652
+      },
+      "origin": {
+        "key": "origin",
+        "ok": true,
+        "status": 200,
+        "body": "warden-aks-origin",
+        "ms": 0.919
+      },
+      "wire-dns": {
+        "key": "wire-dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "150.171.70.10",
+          "150.171.69.10"
+        ],
+        "ms": 1.452
+      }
+    },
+    "md-ctl": {
+      "api": {
+        "key": "api",
+        "ok": true,
+        "ms": 2.426
+      },
+      "dns": {
+        "key": "dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "10.0.0.1"
+        ],
+        "ms": 0.676
+      },
+      "imds": {
+        "key": "imds",
+        "ok": true,
+        "status": 200,
+        "body": "SwedenCentral",
+        "ms": 6.752
+      },
+      "internet": {
+        "key": "internet",
+        "ok": true,
+        "ms": 1.728
+      },
+      "origin": {
+        "key": "origin",
+        "ok": true,
+        "status": 200,
+        "body": "warden-aks-origin",
+        "ms": 0.834
+      },
+      "wire-dns": {
+        "key": "wire-dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "150.171.70.10",
+          "150.171.69.10"
+        ],
+        "ms": 1.315
+      }
+    },
+    "md-proxy": {
+      "api": {
+        "key": "api",
+        "ok": true,
+        "ms": 15.121
+      },
+      "dns": {
+        "key": "dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "10.0.0.1"
+        ],
+        "ms": 0.501
+      },
+      "imds": {
+        "key": "imds",
+        "ok": true,
+        "status": 200,
+        "body": "SwedenCentral",
+        "ms": 6.664
+      },
+      "internet": {
+        "key": "internet",
+        "ok": true,
+        "ms": 2.365
+      },
+      "origin": {
+        "key": "origin",
+        "ok": true,
+        "status": 200,
+        "body": "warden-aks-origin",
+        "ms": 1.257
+      },
+      "wire-dns": {
+        "key": "wire-dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "150.171.70.10",
+          "150.171.69.10"
+        ],
+        "ms": 1.892
+      }
+    }
+  },
+  "checks": [
+    {
+      "name": "without the policy: md-a dns (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"dns\",\"ok\":true,\"rcode\":0,\"answers\":[\"10.0.0.1\"],\"ms\":0.747}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-a api (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"api\",\"ok\":true,\"ms\":3.384}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-a origin (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"origin\",\"ok\":true,\"status\":200,\"body\":\"warden-aks-origin\",\"ms\":1.275}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-a internet (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"internet\",\"ok\":true,\"ms\":4.604}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-proxy dns (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"dns\",\"ok\":true,\"rcode\":0,\"answers\":[\"10.0.0.1\"],\"ms\":0.648}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-proxy api (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"api\",\"ok\":true,\"ms\":2.285}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-proxy origin (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"origin\",\"ok\":true,\"status\":200,\"body\":\"warden-aks-origin\",\"ms\":0.972}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-proxy internet (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"internet\",\"ok\":true,\"ms\":2.775}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-ctl dns (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"dns\",\"ok\":true,\"rcode\":0,\"answers\":[\"10.0.0.1\"],\"ms\":0.525}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-ctl api (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"api\",\"ok\":true,\"ms\":2.423}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-ctl origin (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"origin\",\"ok\":true,\"status\":200,\"body\":\"warden-aks-origin\",\"ms\":0.997}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-ctl internet (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"internet\",\"ok\":true,\"ms\":8.594}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-a imds (positive control)",
+      "want": "the region swedencentral",
+      "got": "{\"key\":\"imds\",\"ok\":true,\"status\":200,\"body\":\"SwedenCentral\",\"ms\":7.777}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-proxy imds (positive control)",
+      "want": "the region swedencentral",
+      "got": "{\"key\":\"imds\",\"ok\":true,\"status\":200,\"body\":\"SwedenCentral\",\"ms\":6.843}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-ctl imds (positive control)",
+      "want": "the region swedencentral",
+      "got": "{\"key\":\"imds\",\"ok\":true,\"status\":200,\"body\":\"SwedenCentral\",\"ms\":7.133}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-a wire-dns (positive control)",
+      "want": "an answer from 168.63.129.16",
+      "got": "{\"key\":\"wire-dns\",\"ok\":true,\"rcode\":0,\"answers\":[\"150.171.69.10\",\"150.171.70.10\"],\"ms\":1.835}",
+      "pass": true
+    },
+    {
+      "name": "without the policy: md-proxy wire-dns (positive control)",
+      "want": "an answer from 168.63.129.16",
+      "got": "{\"key\":\"wire-dns\",\"ok\":true,\"rcode\":0,\"answers\":[\"150.171.70.10\",\"150.171.69.10\"],\"ms\":1.686}",
+      "pass": true
+    },
+    {
+      "name": "stored policy warden-sandbox-deny-metadata",
+      "want": "enableDefaultDeny egress and ingress false",
+      "got": "false/false",
+      "pass": true
+    },
+    {
+      "name": "stored policy warden-egress-proxy-deny-metadata",
+      "want": "enableDefaultDeny egress and ingress false",
+      "got": "false/false",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-a dns (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"dns\",\"ok\":true,\"rcode\":0,\"answers\":[\"10.0.0.1\"],\"ms\":0.53}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-a api (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"api\",\"ok\":true,\"ms\":4.326}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-a origin (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"origin\",\"ok\":true,\"status\":200,\"body\":\"warden-aks-origin\",\"ms\":1.04}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-a internet (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"internet\",\"ok\":true,\"ms\":3.055}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-proxy dns (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"dns\",\"ok\":true,\"rcode\":0,\"answers\":[\"10.0.0.1\"],\"ms\":0.767}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-proxy api (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"api\",\"ok\":true,\"ms\":6.472}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-proxy origin (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"origin\",\"ok\":true,\"status\":200,\"body\":\"warden-aks-origin\",\"ms\":1.209}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-proxy internet (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"internet\",\"ok\":true,\"ms\":1.202}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-ctl dns (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"dns\",\"ok\":true,\"rcode\":0,\"answers\":[\"10.0.0.1\"],\"ms\":0.811}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-ctl api (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"api\",\"ok\":true,\"ms\":2.309}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-ctl origin (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"origin\",\"ok\":true,\"status\":200,\"body\":\"warden-aks-origin\",\"ms\":0.923}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-ctl internet (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"internet\",\"ok\":true,\"ms\":1.52}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-a imds",
+      "want": "no connection",
+      "got": "{\"key\":\"imds\",\"ok\":false,\"connect_error\":\"dial tcp 169.254.169.254:80: i/o timeout\",\"ms\":3001.672}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-a wire-dns",
+      "want": "no answer",
+      "got": "{\"key\":\"wire-dns\",\"ok\":false,\"error\":\"read udp 10.244.0.207:36311-\\u003e168.63.129.16:53: i/o timeout\",\"ms\":3002.14}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-proxy imds",
+      "want": "no connection",
+      "got": "{\"key\":\"imds\",\"ok\":false,\"connect_error\":\"dial tcp 169.254.169.254:80: i/o timeout\",\"ms\":3000.261}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-proxy wire-dns",
+      "want": "no answer",
+      "got": "{\"key\":\"wire-dns\",\"ok\":false,\"error\":\"read udp 10.244.0.91:42332-\\u003e168.63.129.16:53: i/o timeout\",\"ms\":3000.18}",
+      "pass": true
+    },
+    {
+      "name": "with deny-metadata.yaml: md-ctl imds (not selected)",
+      "want": "the region swedencentral",
+      "got": "{\"key\":\"imds\",\"ok\":true,\"status\":200,\"body\":\"SwedenCentral\",\"ms\":6.625}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-a dns (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"dns\",\"ok\":true,\"rcode\":0,\"answers\":[\"10.0.0.1\"],\"ms\":1.486}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-a api (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"api\",\"ok\":true,\"ms\":2.988}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-a origin (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"origin\",\"ok\":true,\"status\":200,\"body\":\"warden-aks-origin\",\"ms\":0.919}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-a internet (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"internet\",\"ok\":true,\"ms\":3.652}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-proxy dns (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"dns\",\"ok\":true,\"rcode\":0,\"answers\":[\"10.0.0.1\"],\"ms\":0.501}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-proxy api (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"api\",\"ok\":true,\"ms\":15.121}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-proxy origin (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"origin\",\"ok\":true,\"status\":200,\"body\":\"warden-aks-origin\",\"ms\":1.257}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-proxy internet (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"internet\",\"ok\":true,\"ms\":2.365}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-ctl dns (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"dns\",\"ok\":true,\"rcode\":0,\"answers\":[\"10.0.0.1\"],\"ms\":0.676}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-ctl api (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"api\",\"ok\":true,\"ms\":2.426}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-ctl origin (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"origin\",\"ok\":true,\"status\":200,\"body\":\"warden-aks-origin\",\"ms\":0.834}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-ctl internet (other traffic)",
+      "want": "reached",
+      "got": "{\"key\":\"internet\",\"ok\":true,\"ms\":1.728}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-a imds",
+      "want": "the region swedencentral",
+      "got": "{\"key\":\"imds\",\"ok\":true,\"status\":200,\"body\":\"SwedenCentral\",\"ms\":6.354}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-proxy imds",
+      "want": "the region swedencentral",
+      "got": "{\"key\":\"imds\",\"ok\":true,\"status\":200,\"body\":\"SwedenCentral\",\"ms\":6.664}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-ctl imds",
+      "want": "the region swedencentral",
+      "got": "{\"key\":\"imds\",\"ok\":true,\"status\":200,\"body\":\"SwedenCentral\",\"ms\":6.752}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-a wire-dns",
+      "want": "an answer from 168.63.129.16",
+      "got": "{\"key\":\"wire-dns\",\"ok\":true,\"rcode\":0,\"answers\":[\"150.171.70.10\",\"150.171.69.10\"],\"ms\":1.452}",
+      "pass": true
+    },
+    {
+      "name": "after deleting the policy: md-proxy wire-dns",
+      "want": "an answer from 168.63.129.16",
+      "got": "{\"key\":\"wire-dns\",\"ok\":true,\"rcode\":0,\"answers\":[\"150.171.70.10\",\"150.171.69.10\"],\"ms\":1.892}",
+      "pass": true
+    }
+  ],
+  "environment": {
+    "cilium_image": "mcr.microsoft.com/containernetworking/cilium/cilium-distroless:v1.19.9-261023",
+    "cilium_version": "Client: 1.19.9 4eb1f165c2 2026-10-22T21:50:35-05:00 go version go1.26.10 linux/amd64\nDaemon: 1.19.9 4eb1f165c2 2026-10-22T21:50:35-05:00 go version go1.26.10 linux/amd64",
+    "kubernetes": "v1.36.5",
+    "nodes": [
+      {
+        "container_runtime": "containerd://2.3.7-4",
+        "instance_type": "Standard_B2as_v2",
+        "kernel": "6.8.0-1073-azure",
+        "kubelet": "v1.36.5",
+        "name": "aks-system-14705254-vmss000000",
+        "os_image": "Ubuntu 24.04.5 LTS"
+      }
+    ],
+    "nproc_test_host": 24
+  },
+  "finished": "2026-11-14T00:20:06Z",
+  "image": "mcr.microsoft.com/azurelinux/busybox@sha256:0c30d83ac4d5b06d6124a7b69618887dcb72424e82ec1d50010943e9e1b276bd",
+  "pods": {
+    "ips": {
+      "aks-origin": "10.244.0.14",
+      "md-a": "10.244.0.207",
+      "md-ctl": "10.244.0.163",
+      "md-proxy": "10.244.0.91"
+    },
+    "labels": {
+      "md-a": {
+        "warden.dev/sandbox": "true"
+      },
+      "md-ctl": null,
+      "md-proxy": {
+        "app.kubernetes.io/name": "warden-egress"
+      }
+    }
+  },
+  "policy": {
+    "file": "policies/cilium/deny-metadata.yaml",
+    "names": [
+      "warden-sandbox-deny-metadata",
+      "warden-egress-proxy-deny-metadata"
+    ],
+    "realization": {
+      "after_ms": 3407,
+      "realized": "agent revision 8"
+    },
+    "stored_default_deny_off": {
+      "warden-egress-proxy-deny-metadata": true,
+      "warden-sandbox-deny-metadata": true
+    }
+  },
+  "policy_deleted": {
+    "after_ms": 3515,
+    "realized": "agent revision 10"
+  },
+  "started": "2026-11-14T00:19:05Z",
+  "summary": {
+    "pass": 53,
+    "total": 53
+  },
+  "with deny-metadata.yaml": {
+    "md-a": {
+      "api": {
+        "key": "api",
+        "ok": true,
+        "ms": 4.326
+      },
+      "dns": {
+        "key": "dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "10.0.0.1"
+        ],
+        "ms": 0.53
+      },
+      "imds": {
+        "key": "imds",
+        "ok": false,
+        "connect_error": "dial tcp 169.254.169.254:80: i/o timeout",
+        "ms": 3001.672
+      },
+      "internet": {
+        "key": "internet",
+        "ok": true,
+        "ms": 3.055
+      },
+      "origin": {
+        "key": "origin",
+        "ok": true,
+        "status": 200,
+        "body": "warden-aks-origin",
+        "ms": 1.04
+      },
+      "wire-dns": {
+        "key": "wire-dns",
+        "ok": false,
+        "error": "read udp 10.244.0.207:36311-\u003e168.63.129.16:53: i/o timeout",
+        "ms": 3002.14
+      }
+    },
+    "md-ctl": {
+      "api": {
+        "key": "api",
+        "ok": true,
+        "ms": 2.309
+      },
+      "dns": {
+        "key": "dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "10.0.0.1"
+        ],
+        "ms": 0.811
+      },
+      "imds": {
+        "key": "imds",
+        "ok": true,
+        "status": 200,
+        "body": "SwedenCentral",
+        "ms": 6.625
+      },
+      "internet": {
+        "key": "internet",
+        "ok": true,
+        "ms": 1.52
+      },
+      "origin": {
+        "key": "origin",
+        "ok": true,
+        "status": 200,
+        "body": "warden-aks-origin",
+        "ms": 0.923
+      },
+      "wire-dns": {
+        "key": "wire-dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "150.171.69.10",
+          "150.171.70.10"
+        ],
+        "ms": 1.507
+      }
+    },
+    "md-proxy": {
+      "api": {
+        "key": "api",
+        "ok": true,
+        "ms": 6.472
+      },
+      "dns": {
+        "key": "dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "10.0.0.1"
+        ],
+        "ms": 0.767
+      },
+      "imds": {
+        "key": "imds",
+        "ok": false,
+        "connect_error": "dial tcp 169.254.169.254:80: i/o timeout",
+        "ms": 3000.261
+      },
+      "internet": {
+        "key": "internet",
+        "ok": true,
+        "ms": 1.202
+      },
+      "origin": {
+        "key": "origin",
+        "ok": true,
+        "status": 200,
+        "body": "warden-aks-origin",
+        "ms": 1.209
+      },
+      "wire-dns": {
+        "key": "wire-dns",
+        "ok": false,
+        "error": "read udp 10.244.0.91:42332-\u003e168.63.129.16:53: i/o timeout",
+        "ms": 3000.18
+      }
+    }
+  },
+  "without the policy": {
+    "md-a": {
+      "api": {
+        "key": "api",
+        "ok": true,
+        "ms": 3.384
+      },
+      "dns": {
+        "key": "dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "10.0.0.1"
+        ],
+        "ms": 0.747
+      },
+      "imds": {
+        "key": "imds",
+        "ok": true,
+        "status": 200,
+        "body": "SwedenCentral",
+        "ms": 7.777
+      },
+      "internet": {
+        "key": "internet",
+        "ok": true,
+        "ms": 4.604
+      },
+      "origin": {
+        "key": "origin",
+        "ok": true,
+        "status": 200,
+        "body": "warden-aks-origin",
+        "ms": 1.275
+      },
+      "wire-dns": {
+        "key": "wire-dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "150.171.69.10",
+          "150.171.70.10"
+        ],
+        "ms": 1.835
+      }
+    },
+    "md-ctl": {
+      "api": {
+        "key": "api",
+        "ok": true,
+        "ms": 2.423
+      },
+      "dns": {
+        "key": "dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "10.0.0.1"
+        ],
+        "ms": 0.525
+      },
+      "imds": {
+        "key": "imds",
+        "ok": true,
+        "status": 200,
+        "body": "SwedenCentral",
+        "ms": 7.133
+      },
+      "internet": {
+        "key": "internet",
+        "ok": true,
+        "ms": 8.594
+      },
+      "origin": {
+        "key": "origin",
+        "ok": true,
+        "status": 200,
+        "body": "warden-aks-origin",
+        "ms": 0.997
+      },
+      "wire-dns": {
+        "key": "wire-dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "150.171.70.10",
+          "150.171.69.10"
+        ],
+        "ms": 1.573
+      }
+    },
+    "md-proxy": {
+      "api": {
+        "key": "api",
+        "ok": true,
+        "ms": 2.285
+      },
+      "dns": {
+        "key": "dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "10.0.0.1"
+        ],
+        "ms": 0.648
+      },
+      "imds": {
+        "key": "imds",
+        "ok": true,
+        "status": 200,
+        "body": "SwedenCentral",
+        "ms": 6.843
+      },
+      "internet": {
+        "key": "internet",
+        "ok": true,
+        "ms": 2.775
+      },
+      "origin": {
+        "key": "origin",
+        "ok": true,
+        "status": 200,
+        "body": "warden-aks-origin",
+        "ms": 0.972
+      },
+      "wire-dns": {
+        "key": "wire-dns",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "150.171.70.10",
+          "150.171.69.10"
+        ],
+        "ms": 1.686
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{"class": "node", "disposition": "unreviewed", "process": "bridge", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "unreviewed", "process": "cat", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "unreviewed", "process": "containerd", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "unreviewed", "process": "containerd-shim", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "unreviewed", "process": "crictl", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "unreviewed", "process": "ctr", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "unreviewed", "process": "exe", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "unreviewed", "process": "host-local", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "unreviewed", "process": "k3s-server", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "unreviewed", "process": "kubectl", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "unreviewed", "process": "loopback", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "unreviewed", "process": "modprobe", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "unreviewed", "process": "runc", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "unreviewed", "process": "umount", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "unreviewed", "process": "unpigz", "rule": "Drop and execute new binary in container"}
+{"class": "platform", "disposition": "unreviewed", "process": "gvisor_sentry", "rule": "PTRACE attached to process"}
+{"class": "sandbox", "disposition": "unreviewed", "process": "cat", "rule": "Read sensitive file untrusted"}
+{"class": "sandbox", "disposition": "unreviewed", "process": "sh", "rule": "Terminal shell in container"}

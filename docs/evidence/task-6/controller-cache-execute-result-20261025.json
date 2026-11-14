@@ -1,0 +1,37 @@
+{
+  "started": "2026-10-25T10:02:24.874869+00:00",
+  "ended": "2026-10-25T10:05:24.909528+00:00",
+  "duration_seconds": 180.02577900898177,
+  "command": [
+    "python3",
+    "-B",
+    "scripts/identity_cache.py"
+  ],
+  "pid": 977390,
+  "exit_code": -15,
+  "timed_out": true,
+  "recorder_error": null,
+  "source_hashes_before": {
+    "scripts/identity_cache.py": "f608dc714b79dcc4f3c4c2071ba6dd561c88eec10c45fc905820ec447d8a1ede",
+    "scripts/test_identity_cache.py": "807fc390ea6b807f895b39acfd9ffc48d143ccd5a3b3dc4f1f3d05cfdeb93bc2",
+    "scripts/runtime_lab_paths.py": "0ce3287feab8197839cf2e7e1cf297fd5cad0e740069023b188e4c366b643f84",
+    "scripts/firecracker_recovery.py": "cccb3378b92816dc5242fd79e72df5fc79fcda338b8f20d34c5a9ca655a8453b",
+    "scripts/firecracker_recovery_init.py": "72675e91ac22ab3f1607fc5f21b90db18fc8c115e9a50bd8a48761cf70c8c9b2",
+    "scripts/azure_guard.py": "303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48"
+  },
+  "source_hashes_after": {
+    "scripts/identity_cache.py": "f608dc714b79dcc4f3c4c2071ba6dd561c88eec10c45fc905820ec447d8a1ede",
+    "scripts/test_identity_cache.py": "807fc390ea6b807f895b39acfd9ffc48d143ccd5a3b3dc4f1f3d05cfdeb93bc2",
+    "scripts/runtime_lab_paths.py": "0ce3287feab8197839cf2e7e1cf297fd5cad0e740069023b188e4c366b643f84",
+    "scripts/firecracker_recovery.py": "cccb3378b92816dc5242fd79e72df5fc79fcda338b8f20d34c5a9ca655a8453b",
+    "scripts/firecracker_recovery_init.py": "72675e91ac22ab3f1607fc5f21b90db18fc8c115e9a50bd8a48761cf70c8c9b2",
+    "scripts/azure_guard.py": "303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48"
+  },
+  "log_bytes": 99,
+  "log_sha256": "b07c2158184747b65c7f089a4b09622b8685c8383c29acbab036505a91545aca",
+  "command_exit_zero_not_yet_postflight": false,
+  "postflight_pending": true,
+  "Q_released": false,
+  "task6_complete": false,
+  "goal_complete": false
+}

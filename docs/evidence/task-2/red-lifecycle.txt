@@ -1,0 +1,12 @@
+=== RUN   TestWaitCancellationDoesNotCancelLifecycle
+    runc_test.go:59: cleanup abandoned
+--- FAIL: TestWaitCancellationDoesNotCancelLifecycle (1.00s)
+=== RUN   TestTimeoutKillsAndReportsCleanupFailure
+    runc_test.go:63: timeout/cleanup lost: {Code:0 OOMKilled:false TimedOut:false CgroupEmpty:false} <nil>
+--- FAIL: TestTimeoutKillsAndReportsCleanupFailure (0.00s)
+=== RUN   TestNaturalExitKillsResidualProcesses
+    runc_test.go:67: residual cleanup omitted: {Code:0 OOMKilled:false TimedOut:false CgroupEmpty:false} <nil>
+--- FAIL: TestNaturalExitKillsResidualProcesses (0.00s)
+FAIL
+FAIL	warden/runtimes/runc	1.003s
+FAIL

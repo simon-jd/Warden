@@ -1,0 +1,66 @@
+{"owned_image_charge": 0, "outstanding": 5000000000, "additional": 0, "service_memory": 2000000000}
+{"additional_bytes": "5000000000", "at": "2026-10-24T20:05:21Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 286686232576, "project_allocated_bytes": 3389513728, "service_memory_bytes": "2000000000"}
+{"owned_image_charge": 75712056, "outstanding": 5000000000, "additional": 0, "service_memory": 2000000000}
+{"additional_bytes": "5075712056", "at": "2026-10-24T20:05:22Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 286680203264, "project_allocated_bytes": 3389513728, "service_memory_bytes": "2000000000"}
+{
+  "source": "5d780d23ed8d762c547ecf7dd4765a25b6c968b9",
+  "load_response": "Loaded image: warden-fc-probe:e8256cfac7abc6d246ccba7638dacbff\n",
+  "original_config_sha256": "030d9ff8db0922d0e9d5cb0fd3f289cd69f06f874274ea4cb4132e170fa1df37",
+  "saved_config_sha256": "030d9ff8db0922d0e9d5cb0fd3f289cd69f06f874274ea4cb4132e170fa1df37",
+  "config_bytes_identical": true,
+  "image_inspect": {
+    "Id": "sha256:d27b1a3cf5a047ee18639b413dd561e0e57cac217022fc6005665ce42bd929ad",
+    "RepoTags": [
+      "warden-fc-probe:e8256cfac7abc6d246ccba7638dacbff"
+    ],
+    "RepoDigests": [
+      "warden-fc-probe@sha256:d27b1a3cf5a047ee18639b413dd561e0e57cac217022fc6005665ce42bd929ad"
+    ],
+    "Config": {
+      "User": "65534:65534",
+      "Entrypoint": [
+        "/warden-probe"
+      ],
+      "Labels": {
+        "owner": "codex-warden",
+        "project": "warden",
+        "session": "e8256cfac7abc6d246ccba7638dacbff",
+        "task": "firecracker",
+        "ttl": "2026-10-24T21:03:16.249579+00:00"
+      }
+    },
+    "Architecture": "amd64",
+    "Os": "linux",
+    "Size": 5856028,
+    "RootFS": {
+      "Type": "layers",
+      "Layers": [
+        "sha256:a99b337ffe5bc45858c89e91b231873c3714f7c47257c2847d96d28d997a3d80"
+      ]
+    },
+    "Metadata": {
+      "LastTagTime": "2026-10-24T20:05:21.441725514Z"
+    },
+    "Descriptor": {
+      "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+      "digest": "sha256:d27b1a3cf5a047ee18639b413dd561e0e57cac217022fc6005665ce42bd929ad",
+      "size": 422,
+      "annotations": {
+        "io.containerd.image.name": "docker.io/library/warden-fc-probe:e8256cfac7abc6d246ccba7638dacbff",
+        "org.opencontainers.image.ref.name": "e8256cfac7abc6d246ccba7638dacbff"
+      }
+    }
+  },
+  "saved_manifest": [
+    {
+      "Config": "blobs/sha256/030d9ff8db0922d0e9d5cb0fd3f289cd69f06f874274ea4cb4132e170fa1df37",
+      "RepoTags": null,
+      "Layers": [
+        "blobs/sha256/a99b337ffe5bc45858c89e91b231873c3714f7c47257c2847d96d28d997a3d80"
+      ]
+    }
+  ],
+  "executed_payload": false
+}
+{"owned_image_charge": 0, "outstanding": 0, "additional": 0, "service_memory": 0}
+{"additional_bytes": "0", "at": "2026-10-24T20:05:25Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 286680522752, "project_allocated_bytes": 3392446464, "service_memory_bytes": "0"}

@@ -1,0 +1,14 @@
+test_capacity_leaves_exact_host_allowance (test_firecracker_lab.FirecrackerLabTests.test_capacity_leaves_exact_host_allowance) ... ok
+test_live_profile_has_only_exact_kvm_and_eight_caps (test_firecracker_lab.FirecrackerLabTests.test_live_profile_has_only_exact_kvm_and_eight_caps) ... ok
+test_material_pin_distinguishes_computed_and_published (test_firecracker_lab.FirecrackerLabTests.test_material_pin_distinguishes_computed_and_published) ... ok
+test_package_limit_fails_before_archive_write (test_firecracker_lab.FirecrackerLabTests.test_package_limit_fails_before_archive_write) ... ok
+test_archived_actual_eight_prefixed_capabilities_pass (test_firecracker_lab.InspectedCapabilityTests.test_archived_actual_eight_prefixed_capabilities_pass) ... ok
+test_missing_extra_invalid_names_and_types_fail (test_firecracker_lab.InspectedCapabilityTests.test_missing_extra_invalid_names_and_types_fail) ... ok
+test_other_deny_conditions_remain (test_firecracker_lab.InspectedCapabilityTests.test_other_deny_conditions_remain) ... ok
+test_raw_bounds_are_logged_before_rejection (test_firecracker_lab.InspectedCapabilityTests.test_raw_bounds_are_logged_before_rejection) ... ok
+test_descriptor_id_is_distinct_from_verified_config_id (test_firecracker_lab.LoadedImageIdentityTests.test_descriptor_id_is_distinct_from_verified_config_id) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+OK

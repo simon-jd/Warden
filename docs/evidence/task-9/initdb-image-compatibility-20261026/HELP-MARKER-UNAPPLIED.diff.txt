@@ -1,0 +1,7 @@
+--- CONSUMED_DO_NOT_EXECUTE/task-9-initdb-image-compatibility-20261026-a.py.txt
++++ UNAPPLIED_CONCEPT_ONLY/future-help-marker.py.txt
+@@ -121,3 +121,3 @@
+  version=(N/'initdb-version.txt').read_bytes();help_text=(N/'initdb-help.txt').read_bytes();entry=(N/'docker-entrypoint.sh.txt').read_bytes()
+- indicators={'version_identifies_initdb':version.startswith(b'initdb (PostgreSQL) '),'help_has_set_name_value':b'--set=NAME=VALUE' in help_text,'entrypoint_mentions_initdb':b'initdb' in entry,'entrypoint_mentions_POSTGRES_INITDB_ARGS':b'POSTGRES_INITDB_ARGS' in entry,'entrypoint_bytes':len(entry),'stderr_empty':not stderr}
++ indicators={'version_identifies_initdb':version.startswith(b'initdb (PostgreSQL) '),'help_has_set_name_value':b'--set NAME=VALUE' in help_text,'entrypoint_mentions_initdb':b'initdb' in entry,'entrypoint_mentions_POSTGRES_INITDB_ARGS':b'POSTGRES_INITDB_ARGS' in entry,'entrypoint_bytes':len(entry),'stderr_empty':not stderr}
+  if stderr or len(entry)>65536 or not all(indicators[k] for k in ['version_identifies_initdb','help_has_set_name_value','entrypoint_mentions_initdb','entrypoint_mentions_POSTGRES_INITDB_ARGS','stderr_empty']):raise RuntimeError('compatibility_evidence_missing')

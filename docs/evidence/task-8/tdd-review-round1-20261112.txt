@@ -1,0 +1,124 @@
+# Task 8 review fix round 1: RED and GREEN logs (C2 8c7b8c2)
+# Review fix round 1 (2026-11-12, worktree cloud-identity, home-ubuntu). Each RED was run on the commit named in its
+# header with only the new or changed tests applied, before the fix; GREEN after the fix. Logs copied verbatim from the
+# run (kept outside the repo until now); test IDs are made up; the real subscription ID never appears (D11 uses <SUB>).
+
+################ C2: the long-lived key audit checks and records its scope; empty scope does not pass; MC_rg-warden-lab_* (8c7b8c2)
+
+======== c2-red.log
+# C2 RED at 61e6c60 + test changes, new tests only (-k; the old script rejects the new --scope-file flag in every test), 2026-11-12T17:29:53Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_longlived_keys_audit.py -v -k other_subscription -k matched_scope -k empty_scope -k aks_node
+test_aks_node_resource_group_belongs_to_the_project (test_longlived_keys_audit.LongLivedKeysAuditTest.test_aks_node_resource_group_belongs_to_the_project) ... FAIL
+test_empty_scope_is_not_a_pass_unless_expected (test_longlived_keys_audit.LongLivedKeysAuditTest.test_empty_scope_is_not_a_pass_unless_expected) ... FAIL
+test_other_subscription_or_missing_scope_fails_closed (test_longlived_keys_audit.LongLivedKeysAuditTest.test_other_subscription_or_missing_scope_fails_closed) ... FAIL
+test_report_records_the_matched_scope_without_ids (test_longlived_keys_audit.LongLivedKeysAuditTest.test_report_records_the_matched_scope_without_ids) ... FAIL
+
+======================================================================
+FAIL: test_aks_node_resource_group_belongs_to_the_project (test_longlived_keys_audit.LongLivedKeysAuditTest.test_aks_node_resource_group_belongs_to_the_project)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_longlived_keys_audit.py", line 207, in test_aks_node_resource_group_belongs_to_the_project
+    self.assertEqual(code, 1, err)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: 2 != 1 : unknown argument: --scope-file
+
+
+======================================================================
+FAIL: test_empty_scope_is_not_a_pass_unless_expected (test_longlived_keys_audit.LongLivedKeysAuditTest.test_empty_scope_is_not_a_pass_unless_expected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_longlived_keys_audit.py", line 190, in test_empty_scope_is_not_a_pass_unless_expected
+    self.assertEqual(code, 3, err)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: 2 != 3 : unknown argument: --scope-file
+
+
+======================================================================
+FAIL: test_other_subscription_or_missing_scope_fails_closed (test_longlived_keys_audit.LongLivedKeysAuditTest.test_other_subscription_or_missing_scope_fails_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_longlived_keys_audit.py", line 156, in test_other_subscription_or_missing_scope_fails_closed
+    self.assertIn("not the expected subscription", err)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'not the expected subscription' not found in 'unknown argument: --scope-file\n'
+
+======================================================================
+FAIL: test_report_records_the_matched_scope_without_ids (test_longlived_keys_audit.LongLivedKeysAuditTest.test_report_records_the_matched_scope_without_ids)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_longlived_keys_audit.py", line 170, in test_report_records_the_matched_scope_without_ids
+    self.assertEqual(code, 0, err)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : unknown argument: --scope-file
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.011s
+
+FAILED (failures=4)
+
+# C2 RED, behaviour: the same new tests with run() not passing --scope-file (the old script has no such flag), 2026-11-12T17:30:04Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_llka_red_tmp.py -v -k other_subscription -k matched_scope -k empty_scope -k aks_node
+test_aks_node_resource_group_belongs_to_the_project (test_longlived_keys_audit(no --scope-file).LongLivedKeysAuditTest.test_aks_node_resource_group_belongs_to_the_project) ... FAIL
+test_empty_scope_is_not_a_pass_unless_expected (test_longlived_keys_audit(no --scope-file).LongLivedKeysAuditTest.test_empty_scope_is_not_a_pass_unless_expected) ... FAIL
+test_other_subscription_or_missing_scope_fails_closed (test_longlived_keys_audit(no --scope-file).LongLivedKeysAuditTest.test_other_subscription_or_missing_scope_fails_closed) ... FAIL
+test_report_records_the_matched_scope_without_ids (test_longlived_keys_audit(no --scope-file).LongLivedKeysAuditTest.test_report_records_the_matched_scope_without_ids) ... ERROR
+
+======================================================================
+ERROR: test_report_records_the_matched_scope_without_ids (test_longlived_keys_audit(no --scope-file).LongLivedKeysAuditTest.test_report_records_the_matched_scope_without_ids)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_longlived_keys_audit(no --scope-file).py", line 172, in test_report_records_the_matched_scope_without_ids
+    scope = report["scope"]
+            ~~~~~~^^^^^^^^^
+KeyError: 'scope'
+
+======================================================================
+FAIL: test_aks_node_resource_group_belongs_to_the_project (test_longlived_keys_audit(no --scope-file).LongLivedKeysAuditTest.test_aks_node_resource_group_belongs_to_the_project)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_longlived_keys_audit(no --scope-file).py", line 207, in test_aks_node_resource_group_belongs_to_the_project
+    self.assertEqual(code, 1, err)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : 
+
+======================================================================
+FAIL: test_empty_scope_is_not_a_pass_unless_expected (test_longlived_keys_audit(no --scope-file).LongLivedKeysAuditTest.test_empty_scope_is_not_a_pass_unless_expected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_longlived_keys_audit(no --scope-file).py", line 190, in test_empty_scope_is_not_a_pass_unless_expected
+    self.assertEqual(code, 3, err)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: 0 != 3 : 
+
+======================================================================
+FAIL: test_other_subscription_or_missing_scope_fails_closed (test_longlived_keys_audit(no --scope-file).LongLivedKeysAuditTest.test_other_subscription_or_missing_scope_fails_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_longlived_keys_audit(no --scope-file).py", line 154, in test_other_subscription_or_missing_scope_fails_closed
+    self.assertEqual(code, 2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^
+AssertionError: 1 != 2
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.108s
+
+FAILED (failures=3, errors=1)
+
+======== c2-green.log
+# C2 GREEN, 2026-11-12T17:30:35Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_longlived_keys_audit.py -v
+test_aks_node_resource_group_belongs_to_the_project (test_longlived_keys_audit.LongLivedKeysAuditTest.test_aks_node_resource_group_belongs_to_the_project) ... ok
+test_bad_input_is_an_error_not_a_pass (test_longlived_keys_audit.LongLivedKeysAuditTest.test_bad_input_is_an_error_not_a_pass) ... ok
+test_counts_secret_certificate_and_shared_key (test_longlived_keys_audit.LongLivedKeysAuditTest.test_counts_secret_certificate_and_shared_key) ... ok
+test_empty_scope_is_not_a_pass_unless_expected (test_longlived_keys_audit.LongLivedKeysAuditTest.test_empty_scope_is_not_a_pass_unless_expected) ... ok
+test_live_mode_reads_through_az (test_longlived_keys_audit.LongLivedKeysAuditTest.test_live_mode_reads_through_az) ... ok
+test_no_long_lived_keys_passes (test_longlived_keys_audit.LongLivedKeysAuditTest.test_no_long_lived_keys_passes) ... ok
+test_other_subscription_or_missing_scope_fails_closed (test_longlived_keys_audit.LongLivedKeysAuditTest.test_other_subscription_or_missing_scope_fails_closed) ... ok
+test_project_scope_lists_other_projects_but_counts_only_its_own (test_longlived_keys_audit.LongLivedKeysAuditTest.test_project_scope_lists_other_projects_but_counts_only_its_own) ... ok
+test_report_records_the_matched_scope_without_ids (test_longlived_keys_audit.LongLivedKeysAuditTest.test_report_records_the_matched_scope_without_ids) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.878s
+
+OK

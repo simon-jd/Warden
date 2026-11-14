@@ -1,0 +1,22 @@
+{
+  "request": {
+    "cmd": "bash scripts/azure_reaper.sh",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "workdir": "/home/postedism/Desktop/Warden",
+    "sandbox_permissions": "require_escalated",
+    "justification": "Required current Warden session-start TTL reaper, exact same original no-args command/actor/normal route; previous historical denials kept. New independent static scope proof was fully trusted-read609e72/a91f4f and locally committedc2bf4a6 in docs/evidence/azure-budget/reaper-task9-r1-end-new-static-scope-20261026.json; same command normally approved f12d3e→ffccc9 at09:23:31Z RGabsent. Wrapper115B SHA8334c343107c59ef2db2f59b508e2caee6dca3647db8d63ebc10fe0ecc5671d6 only invokes guard reap; guard27828B SHA303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48 hardcodes Students subscription <subscription-id>/GROUP rg-warden-lab, no env/arg replacement. Validates exact full resourceID, no nested scopes, project=warden/owner=codex-warden/UTCttl; defaultsessionNone only expired owned; rereads every candidate id/tags before any deletion; unknown/change refuses; cannot reach down branch or protected rg-mlinfra-westus. Budget2.3 explicitly requires session-start/end. All commits since source0cd7af9 only docs/evidence; exact scripts unchanged, no Azure created. If rejected STOP this action, no alternate SSH/az/wrapper/repeated submission.",
+    "max_output_tokens": 2000,
+    "yield_time_ms": 1000
+  },
+  "native": {
+    "chunk_id": "ae5078",
+    "wall_time_seconds": 0.681309829,
+    "exit_code": 0,
+    "original_token_count": 37,
+    "output": "{\"at\": \"2026-10-26T09:54:59Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+  },
+  "scope_proof": "Already committed c2bf4a6; exact original command/normal route; all prior rejections immutable",
+  "last_observation": "2026-10-26T09:54:59Z rg-warden-lab absent; no project Azure creation, estimate0.00 not bill"
+}

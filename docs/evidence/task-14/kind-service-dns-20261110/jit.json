@@ -1,0 +1,80 @@
+{
+  "approve_to_binding_active_ms": {
+    "max": 12.5,
+    "p50": 8.6,
+    "p95": 12.5
+  },
+  "expire_to_binding_deleted_ms": {
+    "max": 11.6,
+    "p50": 11.1,
+    "p95": 11.6
+  },
+  "grants": 5,
+  "jit_sa_rbac": {
+    "create clusterrolebindings": false,
+    "create rolebindings kube-system": false,
+    "create rolebindings tenant-a": true,
+    "create rolebindings tenant-b": false,
+    "get secrets tenant-a (sa itself)": false,
+    "list pods tenant-a (sa itself)": false,
+    "update roles tenant-a": false
+  },
+  "load": {
+    "loadavg_end": "8.31 6.75 4.47 12/6267 472573",
+    "loadavg_start": "8.31 6.75 4.47 10/6324 472457",
+    "nproc": 32
+  },
+  "runs": [
+    {
+      "alice_after": 403,
+      "alice_during": 200,
+      "alice_other_ns_during": 403,
+      "approve_ms": 12.5,
+      "binding": "jit-i5eotsrnwbyhxh5rqask5lymji",
+      "expire_ms": 11.1,
+      "request": "I5EOTSRNWBYHXH5RQASK5LYMJI",
+      "state_after": "expired"
+    },
+    {
+      "alice_after": 403,
+      "alice_during": 200,
+      "alice_other_ns_during": 403,
+      "approve_ms": 8.6,
+      "binding": "jit-2z443owly3nokgc7ezrgcndr3e",
+      "expire_ms": 9.7,
+      "request": "2Z443OWLY3NOKGC7EZRGCNDR3E",
+      "state_after": "expired"
+    },
+    {
+      "alice_after": 403,
+      "alice_during": 200,
+      "alice_other_ns_during": 403,
+      "approve_ms": 8.2,
+      "binding": "jit-p6m6frptqf2cnoqoz7gnsps37u",
+      "expire_ms": 11.4,
+      "request": "P6M6FRPTQF2CNOQOZ7GNSPS37U",
+      "state_after": "expired"
+    },
+    {
+      "alice_after": 403,
+      "alice_during": 200,
+      "alice_other_ns_during": 403,
+      "approve_ms": 10,
+      "binding": "jit-cv3habwbltlcya3yyiq6lwuwti",
+      "expire_ms": 11,
+      "request": "CV3HABWBLTLCYA3YYIQ6LWUWTI",
+      "state_after": "expired"
+    },
+    {
+      "alice_after": 403,
+      "alice_during": 200,
+      "alice_other_ns_during": 403,
+      "approve_ms": 8,
+      "binding": "jit-eca2koleprhjm4nnbz4ut2w2cy",
+      "expire_ms": 11.6,
+      "request": "ECA2KOLEPRHJM4NNBZ4UT2W2CY",
+      "state_after": "expired"
+    }
+  ],
+  "token_ttl_s": 599.7844077
+}

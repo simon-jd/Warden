@@ -1,0 +1,46 @@
+{
+  "observed_at": "2026-10-24T03:24:05.989692+00:00",
+  "implementation_sha": "38771399948944c9570cd205e297007584179d16",
+  "scope": "actual end-session reaper safely no-ops on absent own RG; make azure-down dry-run; zero resource mutations",
+  "checks": [
+    {
+      "command": [
+        "az",
+        "group",
+        "show",
+        "--name",
+        "rg-warden-lab",
+        "--subscription",
+        "<subscription-id>",
+        "--query",
+        "{id:id,name:name,tags:tags}",
+        "-o",
+        "json",
+        "--only-show-errors"
+      ],
+      "exit_code": 3,
+      "stdout": "",
+      "stderr": "ERROR: (ResourceGroupNotFound) Resource group 'rg-warden-lab' could not be found.\nCode: ResourceGroupNotFound\nMessage: Resource group 'rg-warden-lab' could not be found.\n"
+    },
+    {
+      "command": [
+        "./scripts/azure_reaper.sh",
+        "--end-session",
+        "budget-evidence-20261023"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"at\": \"2026-10-24T03:24:05Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "make",
+        "azure-down",
+        "DRY_RUN=1"
+      ],
+      "exit_code": 0,
+      "stdout": "python3 -B scripts/azure_guard.py down --dry-run\n{\"at\": \"2026-10-24T03:24:05Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "event": {
+    "kind": "exec_command",
+    "request": {
+      "cmd": "bash scripts/azure_reaper.sh",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "sandbox_permissions": "require_escalated",
+      "justification": "按AZURE-BUDGET.md尝试本轮结束固定reaper，仍走同一正常审批通道，仅本项目rg-warden-lab TTL过期资源；无创建资源，禁止操作rg-mlinfra-westus。不通过则保留未执行事实，不绕过。",
+      "yield_time_ms": 1000,
+      "max_output_tokens": 2000
+    },
+    "response": {
+      "chunk_id": "00a9fb",
+      "wall_time_seconds": 1.000894842,
+      "session_id": 45675,
+      "original_token_count": 0,
+      "output": ""
+    },
+    "polls": [
+      {
+        "kind": "write_stdin",
+        "request": {
+          "session_id": 45675,
+          "chars": "",
+          "yield_time_ms": 1000,
+          "max_output_tokens": 2000
+        },
+        "response": {
+          "chunk_id": "d381f5",
+          "wall_time_seconds": 0.000008003,
+          "exit_code": 0,
+          "original_token_count": 37,
+          "output": "{\"at\": \"2026-10-26T00:15:53Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+        }
+      }
+    ]
+  }
+}

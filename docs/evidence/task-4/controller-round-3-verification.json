@@ -1,0 +1,25 @@
+{
+  "utc": "2026-10-24T21:58:40.755065+00:00",
+  "source": "12abd9ef909a1e03c59770243669c78ea11e3d1f",
+  "tested_source": "8af8ee3dd8188e413b33f9d81b516ec2f3994066",
+  "evidence": "c26975462bccfc8e258802a6635d063be087769e",
+  "tree_equal": true,
+  "changed_source_files_verified": 10,
+  "unchanged_interfaces_verified": 10,
+  "evidence_entries_verified": 17,
+  "new_evidence_files_only": 18,
+  "old_index_entries_verified": [
+    36,
+    13,
+    16,
+    9
+  ],
+  "report_contains_exact_readme": true,
+  "recorded_go_counts": {
+    "PASS": 52,
+    "FAIL": 0,
+    "SKIP": 4
+  },
+  "recorded_python_pass": 22,
+  "scope": "Independent controller hashes/tree/modes/log-count verification; no tests or device/BPF/Docker/cloud/VM operations rerun. Original index paths resolved at Task4 root per its original schema; round indexes at their containing directory."
+}

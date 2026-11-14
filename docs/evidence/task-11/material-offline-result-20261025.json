@@ -1,0 +1,101 @@
+{
+  "scope": "Task11 second/final offline tool material; known native/child normal0 only, not pipeline test",
+  "prerequisites": {
+    "requests": {
+      "budget": {
+        "cmd": "ulimit -t 20\nulimit -v 262144\nulimit -f 2048\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 7337167168 --service-memory-bytes 13000000000 --download-bytes 0",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "最后一次Task11离线材料操作前的fresh预算；旧archive实占已计入R，Q5GB/剩余完整峰值/13GB resident全部计入，只读不创建资源。",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 2000
+      },
+      "metadata": {
+        "cmd": "python3 -I -S -B - <<'PY'\nimport pathlib,os,hashlib,json,resource,stat\nr=pathlib.Path('/home/postedism/Desktop/Warden');assert os.geteuid()==1000\ncache=r/'.cache';s=cache.lstat();assert stat.S_ISDIR(s.st_mode) and s.st_uid==1000 and not s.st_mode&0o022\nassert not os.path.lexists(cache/'task11-offline-tool-0.45.0')\nm={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()};v=int(m['MemAvailable'].split()[0])*1024;assert v>=5000000000\nh=hashlib.sha256((r/'docs/evidence/task-11/material-offline-command.sh.txt').read_bytes()).hexdigest();assert h=='10139182b0b285b87e945c778955c9db6bc4668f3a308e66b06bf28cb84cd9de'\nlimits={}\nfor name,k,want in [('AS',resource.RLIMIT_AS,3000000000),('CPU',resource.RLIMIT_CPU,55),('FSIZE',resource.RLIMIT_FSIZE,200000000),('NOFILE',resource.RLIMIT_NOFILE,128)]:\n soft,hard=resource.getrlimit(k);assert hard==resource.RLIM_INFINITY or hard>=want;limits[name]=[soft,hard]\nprint(json.dumps({'state':'PASS','MemAvailable':v,'command_sha256':h,'fresh_destination_absent':True,'inherited_limits':limits,'scope':'Task11 second/final offline material only'},sort_keys=True))\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "只读核对Task11最后离线命令身份、新目标不存在、原生继承限额/当前内存与cache归属；不执行Vector或扫描PID。",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 2000
+      }
+    },
+    "results": [
+      {
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "4cd1b9",
+          "wall_time_seconds": 0.218831842,
+          "exit_code": 0,
+          "original_token_count": 56,
+          "output": "{\"additional_bytes\": \"7337167168\", \"at\": \"2026-10-25T21:07:30Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 262273716224, \"project_allocated_bytes\": 4319121408, \"service_memory_bytes\": \"13000000000\"}\n"
+        }
+      },
+      {
+        "status": "fulfilled",
+        "value": {
+          "chunk_id": "9855b7",
+          "wall_time_seconds": 0.000007329,
+          "exit_code": 0,
+          "original_token_count": 81,
+          "output": "{\"MemAvailable\": 87173873664, \"command_sha256\": \"10139182b0b285b87e945c778955c9db6bc4668f3a308e66b06bf28cb84cd9de\", \"fresh_destination_absent\": true, \"inherited_limits\": {\"AS\": [-1, -1], \"CPU\": [-1, -1], \"FSIZE\": [-1, -1], \"NOFILE\": [1024, 524288]}, \"scope\": \"Task11 second/final offline material only\", \"state\": \"PASS\"}\n"
+        }
+      }
+    ]
+  },
+  "actual_events": [
+    {
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 T11_R_BYTES=4319121408 /bin/sh docs/evidence/task-11/material-offline-command.sh.txt",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/sh",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "执行已全文核对并本地冻结的Task11第二次且最后离线材料操作：只读已校验官方archive到全新自有目录安全解包，只允许合法单一./，再仅--version；无网络下载，fresh R/Q/峰值/13GB resident/当前内存与absence门禁通过。90秒有界owned-child收尾，失败即停无第三次，不触Task6/16/现场/宿主或云。",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 3000
+      },
+      "response": {
+        "chunk_id": "8488c2",
+        "wall_time_seconds": 0.265652303,
+        "exit_code": 0,
+        "original_token_count": 125,
+        "output": "{\"result\": \"material-and-version-only\", \"returncode\": 0, \"archive_bytes\": 46464472, \"unpack_bytes\": 127005783, \"vector\": \"/home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector\", \"stdout\": \"/home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/version.stdout\", \"stderr\": \"/home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/version.stderr\"}\n{\"cleanup\": \"known-terminal\", \"returncode\": 0, \"historical_pid\": 3705829}\n"
+      }
+    }
+  ],
+  "postread_events": [
+    {
+      "kind": "exec_command",
+      "request": {
+        "cmd": "python3 -I -S -B - <<'PY'\nimport pathlib,os,json,stat\nw=pathlib.Path('/home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0');rows={}\nfor name in ('version.stdout','version.stderr'):\n p=w/name;s=p.lstat();assert stat.S_ISREG(s.st_mode) and s.st_uid==1000 and s.st_nlink==1 and s.st_size<=524288\n rows[name]={'bytes':s.st_size,'text':p.read_bytes().decode('utf-8')}\nv=w/'unpack/vector-x86_64-unknown-linux-musl/bin/vector';s=v.lstat();assert stat.S_ISREG(s.st_mode) and s.st_uid==1000 and s.st_nlink==1 and stat.S_IMODE(s.st_mode)==0o700\nfiles=allocated=0\nfor d,ds,fs in os.walk(w,followlinks=False):\n for n in fs:\n  st=(pathlib.Path(d)/n).lstat();assert stat.S_ISREG(st.st_mode);files+=1;allocated+=st.st_blocks*512\nprint(json.dumps({'scope':'read retained output/owned new material footprint only; no CLI execution','outputs':rows,'vector_path':str(v),'vector_bytes':s.st_size,'vector_mode':oct(stat.S_IMODE(s.st_mode)),'owned_files':files,'owned_files_allocated_bytes':allocated,'tmp_entries':len(list((w/'tmp').iterdir()))},sort_keys=True))\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "读取Task11已知正常终态的两个原始--version输出和新自有工具树占用；不重新执行Vector、不改旧失败或扫描PID。",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 2500
+      },
+      "response": {
+        "chunk_id": "2b0cbc",
+        "wall_time_seconds": 0.000008224,
+        "exit_code": 0,
+        "original_token_count": 134,
+        "output": "{\"outputs\": {\"version.stderr\": {\"bytes\": 0, \"text\": \"\"}, \"version.stdout\": {\"bytes\": 80, \"text\": \"vector 0.45.0 (x86_64-unknown-linux-musl 063cabb 2025-02-24 14:52:02.810034614)\\n\"}}, \"owned_files\": 38, \"owned_files_allocated_bytes\": 127115264, \"scope\": \"read retained output/owned new material footprint only; no CLI execution\", \"tmp_entries\": 0, \"vector_bytes\": 126829696, \"vector_mode\": \"0o700\", \"vector_path\": \"/home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector\"}\n"
+      }
+    }
+  ],
+  "first_failed_operation_retained": true,
+  "material_operations_consumed": 2,
+  "remaining_material_operations": 0,
+  "task6_actual_admitted": false
+}

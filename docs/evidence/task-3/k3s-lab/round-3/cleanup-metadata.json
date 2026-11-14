@@ -1,0 +1,40 @@
+{
+  "container": "37b95dd4bbd84a5aa9b33a1f5d8d40402d26f0e1b765c4779ea47294eaa2f2b5",
+  "fixed_private_metadata": [
+    {
+      "name": "root",
+      "status": 404
+    },
+    {
+      "name": "state",
+      "status": 404
+    },
+    {
+      "name": "io",
+      "status": 404
+    },
+    {
+      "name": "containerd.toml",
+      "status": 200,
+      "size": 124,
+      "mode": 384
+    },
+    {
+      "name": "containerd.log",
+      "status": 200,
+      "size": 0,
+      "mode": 384
+    },
+    {
+      "name": "startup-private.log",
+      "status": 200,
+      "size": 30471,
+      "mode": 384
+    }
+  ],
+  "cgroup_driver": "systemd",
+  "exact_original_scope": {
+    "exists": false
+  },
+  "content_read": false
+}

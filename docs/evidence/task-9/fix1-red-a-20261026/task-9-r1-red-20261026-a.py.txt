@@ -1,0 +1,216 @@
+# INERT FIX_ROUND1_RED attempt1; only two new no-op cleanup regressions. Production unchanged.
+# PG diagnostics3/3 and metadata1/1 remain SPENT. Root fresh admission required.
+# Outer: timeout --signal=TERM --kill-after=4s 86s python3 -B -
+# Work deadline65, cleanup deadline82, status85, whole90. No execution authorized.
+import hashlib,json,os,pathlib,resource,selectors,signal,stat,subprocess,sys,time
+T=time.monotonic(); W=pathlib.Path('/home/postedism/Desktop/Warden')
+D=W/'.superpowers/sdd/2-warden-security-plan'
+M=D/'task-9-material-manifest.json'
+F=D/'task-9-r1-red-20261026-a-source-freeze.json' # Exact hashes below; future execution still needs fresh admission
+N=W/'.cache/task9-r1-red-20261026-a'
+G=W/'.cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64'
+IMAGE='sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873'
+PG='warden-task9-r1-red-20261026-a-pg'; GO='warden-task9-r1-red-20261026-a-go'
+TESTS=['TestKubernetesEmptyReservationCleanup', 'TestKubernetesRemovalRetryAfterClearAndDeleteFailure']
+MAXOUT=131072; seen=0; events=[]; attempted=[]; status='UNKNOWN'; interrupted=False; callno=0; cli_safe=True; OWN=None; created=False
+resource.setrlimit(resource.RLIMIT_AS,(268435456,4294967296)) # parent soft cap; child may raise only its own soft limit
+resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+resource.setrlimit(resource.RLIMIT_FSIZE,(41943040,41943040))
+def term(sig,frame):
+ global interrupted
+ interrupted=True
+signal.signal(signal.SIGTERM,term)
+def digest(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def checked(rel,expected):
+ p=W/rel
+ assert not pathlib.PurePosixPath(rel).is_absolute() and '..' not in pathlib.PurePosixPath(rel).parts
+ q=W
+ for part in pathlib.PurePosixPath(rel).parts:
+  q=q/part; assert not q.is_symlink()
+ assert p.is_file() and digest(p)==expected
+ return p
+def cli_limits():
+ resource.setrlimit(resource.RLIMIT_AS,(4294967296,4294967296))
+ resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+ resource.setrlimit(resource.RLIMIT_CPU,(20,20))
+
+def cli(args,deadline):
+ global seen,callno,cli_safe
+ if not cli_safe:raise RuntimeError('prior_cli_cleanup_unknown')
+ if time.monotonic()>=deadline or (interrupted and deadline<=T+65): raise RuntimeError('deadline')
+ callno+=1
+ argv=['/usr/bin/docker','--config',str(N/'docker'),*args]
+ env={'PATH':'/usr/bin:/bin','DOCKER_HOST':'unix:///var/run/docker.sock','GOMAXPROCS':'2','GOMEMLIMIT':'256MiB'}
+ raw={k:open(N/('cli-%03d-%s.raw'%(callno,k)),'xb',buffering=0) for k in ['out','err']}
+ cli_safe=False
+ p=subprocess.Popen(argv,env=env,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,stderr=subprocess.PIPE,start_new_session=True,preexec_fn=cli_limits)
+ sel=selectors.DefaultSelector(); buffers={'out':bytearray(),'err':bytearray()}; failure=''
+ for pipe,key in [(p.stdout,'out'),(p.stderr,'err')]:
+  os.set_blocking(pipe.fileno(),False);sel.register(pipe,selectors.EVENT_READ,key)
+ def peek():return os.waitid(os.P_PID,p.pid,os.WEXITED|os.WNOHANG|os.WNOWAIT)
+ try:
+  while sel.get_map() or peek() is None:
+   if time.monotonic()>=deadline:failure='cli_timeout';break
+   for k,_ in sel.select(.05):
+    b=os.read(k.fileobj.fileno(),8192)
+    if not b:sel.unregister(k.fileobj);k.fileobj.close();continue
+    keep=b[:max(0,MAXOUT-seen)];seen+=len(keep)
+    raw[k.data].write(keep);buffers[k.data].extend(keep)
+    if len(keep)!=len(b):failure='output_cap';break
+   if failure:break
+ finally:
+  sel.close()
+  for f in raw.values():f.close()
+  # Retain unreaped session leader until group signals; only this owned CLI.
+  for sig in [signal.SIGTERM,signal.SIGKILL]:
+   try:os.killpg(p.pid,sig)
+   except ProcessLookupError:pass
+  until=min(deadline+.5,T+83)
+  while peek() is None and time.monotonic()<until:time.sleep(.01)
+  if peek() is None:raise RuntimeError('cli_cleanup_unknown')
+  rc=p.wait(timeout=max(.01,until-time.monotonic()))
+  try:os.killpg(p.pid,0)
+  except ProcessLookupError:pass
+  else:raise RuntimeError('cli_group_unknown')
+ cli_safe=True
+ event={'args':args,'rc':rc,'out':buffers['out'].decode('utf8','replace'),'err':buffers['err'].decode('utf8','replace'),'failure':failure}
+ events.append(event)
+ if failure:raise RuntimeError(failure)
+ return event
+
+def must(args,deadline):
+ e=cli(args,deadline)
+ if e['rc']!=0:raise RuntimeError('docker_failed')
+ return e
+
+def absent(name,deadline):
+ e=cli(['container','inspect','--format','{{.Name}}',name],deadline)
+ expected=['Error: No such container: '+name+'\n','Error response from daemon: No such container: '+name+'\n','Error: No such object: '+name+'\n']
+ if e['rc']!=1 or e['out'] not in ['', '\n'] or e['err'] not in expected:raise RuntimeError('container_not_proven_absent')
+
+def common(name,memory,pids):
+ return ['run','--pull=never','--name',name,'--cidfile',str(N/(name+'.cid')),'--label','warden.test=task9','--label','warden.owner='+OWN,'--network','none','--read-only','--cap-drop','ALL','--security-opt','no-new-privileges','--user','postgres','--memory',memory,'--memory-swap',memory,'--pids-limit',pids,'--cpus','2','--shm-size','1m','--log-driver','local' if name==PG else 'none']+(['--log-opt','max-size=1m','--log-opt','max-file=1','--log-opt','compress=false'] if name==PG else [])
+
+def bind(src,dst,readonly=True):
+ return ['--mount','type=bind,src='+str(src)+',dst='+dst+(',readonly' if readonly else '')]
+
+CIDS={};states={};cleaned=[];observations=[];errors=[];ready=False;candidate=False
+
+def bind_owned(name,deadline):
+ p=N/(name+'.cid')
+ if p.is_symlink() or not p.is_file():raise RuntimeError('owned_cidfile_missing')
+ raw=p.read_bytes()
+ if len(raw) not in [64,65] or (len(raw)==65 and raw[-1:]!=b'\n'):raise RuntimeError('owned_cidfile_invalid')
+ cid=raw[:64].decode('ascii')
+ if any(c not in '0123456789abcdef' for c in cid):raise RuntimeError('owned_cidfile_invalid')
+ if name in CIDS and CIDS[name]!=cid:raise RuntimeError('owned_cid_changed')
+ template='{"id":{{json .Id}},"name":{{json .Name}},"owner":{{json (index .Config.Labels "warden.owner")}},"state":{{json .State}}}'
+ e=must(['container','inspect','--format',template,cid],deadline)
+ identity=json.loads(e['out'])
+ if e['err'] or identity.get('id')!=cid or identity.get('name')!='/'+name or identity.get('owner')!=OWN or not isinstance(identity.get('state'),dict):raise RuntimeError('owned_identity_mismatch')
+ CIDS[name]=cid;states[name]=identity['state']
+ return cid
+
+try:
+ assert os.getuid()==1000 and os.geteuid()==1000 and not os.path.lexists(N)
+ assert digest(M)=='1ca3cbfa3cf4a3ba960dc4ced03f8eb24d2e8429e9ae5e7b0e34d3d08b54fbbd'
+ assert digest(F)=='9361774dbe5d0c58cc37c83ad1c4016e35ae5daf0052ea11b8a29ea302a26aec'
+ material=json.loads(M.read_text());freeze=json.loads(F.read_text())
+ assert freeze['tests']==TESTS and freeze['phase']=='FIX_ROUND1_RED' and freeze['base']
+ assert digest(D/'task-9-first-red-source-freeze.json')=='8f498b9220b29dd8b26753950a1896631265df3a6e2a3abf810872eb2e5be6a8'
+ assert freeze['material_sha256']==digest(M) and not material['missing']
+ for x in material['module_inputs']+material['sdk']+material['artifacts']:checked(x['path'],x['sha256'])
+ allowed=['go.mod','go.sum','controlplane/internal/audit/audit.go','controlplane/internal/canonical/json.go','controlplane/internal/store/store.go','controlplane/internal/store/migration_test.go','controlplane/internal/store/migrations/001_init.sql','controlplane/internal/store/migrations/002_execution.sql','controlplane/internal/testutil/database.go']
+ for rel,h in freeze['source'].items():
+  assert rel in allowed or rel.startswith('controlplane/internal/jit/') or rel=='controlplane/internal/store/migrations/003_jit.sql'
+  checked(rel,h)
+ assert set(allowed)<=set(freeze['source'])
+ N.mkdir(mode=0o700)
+ created=True
+ OWN=os.urandom(16).hex()
+ for d in ['docker','source','proxy','socket','empty']:(N/d).mkdir(mode=0o755)
+ # Outer N0700 excludes other host users. Both nonroot owned containers need socket writes.
+ (N/'socket').chmod(0o777)
+ total=0
+ for rel,h in freeze['source'].items():
+  p=checked(rel,h);b=p.read_bytes();total+=len(b);assert total<=4194304
+  target=N/'source'/rel;target.parent.mkdir(mode=0o755,parents=True,exist_ok=True);target.write_bytes(b);target.chmod(0o444)
+ prefix='.cache/go-mod/cache/download/'
+ for x in material['artifacts']:
+  assert x['path'].startswith(prefix)
+  p=checked(x['path'],x['sha256']);b=p.read_bytes();total+=len(b);assert total<=16777216
+  target=N/'proxy'/x['path'][len(prefix):];target.parent.mkdir(mode=0o755,parents=True,exist_ok=True);target.write_bytes(b);target.chmod(0o444)
+ absent(PG,min(T+12,time.monotonic()+2));absent(GO,min(T+14,time.monotonic()+2))
+ assert time.monotonic()<T+15
+ pgargs=common(PG,'512m','96')+['-d','--tmpfs','/var/lib/postgresql:rw,noexec,nosuid,nodev,size=192m,mode=1777','--tmpfs','/tmp:rw,noexec,nosuid,nodev,size=8m,mode=1777']+bind(N/'socket','/var/run/postgresql',False)+['-e','PGDATA=/var/lib/postgresql/task9','-e','POSTGRES_DB=warden_test','-e','POSTGRES_HOST_AUTH_METHOD=trust','-e','POSTGRES_INITDB_ARGS=-c dynamic_shared_memory_type=mmap',IMAGE,'postgres','-c','listen_addresses=','-c','unix_socket_directories=/var/run/postgresql','-c','unix_socket_permissions=0777','-c','shared_buffers=32MB','-c','max_connections=20','-c','max_parallel_workers=0','-c','dynamic_shared_memory_type=mmap','-c','max_wal_size=32MB','-c','min_wal_size=32MB']
+ attempted.append(PG)
+ started=must(pgargs,min(T+22,time.monotonic()+6))
+ cid=bind_owned(PG,min(T+24,time.monotonic()+2))
+ if started['out'] not in [cid,cid+'\n'] or started['err']:raise RuntimeError('run_cid_receipt_mismatch')
+ while time.monotonic()<T+30:
+  e=cli(['exec','--user','postgres',cid,'/bin/sh','-c','test "$(cat /proc/1/comm)" = postgres && exec pg_isready -h /var/run/postgresql -U postgres -d warden_test -t 1'],min(T+31,time.monotonic()+2))
+  if e['rc']==0:ready=True;break
+  stopped=['Error response from daemon: container '+cid+' is not running\n','Error response from daemon: Container '+cid+' is not running\n']
+  if e['rc']==1 and e['out']=='' and e['err'] in stopped:raise RuntimeError('owned_pg_not_running')
+  if e['rc'] not in [1,2] or e['err']:raise RuntimeError('readiness_unknown')
+  time.sleep(.1)
+ if not ready:raise RuntimeError('pg_not_ready')
+ env={'GOROOT':'/sdk','GOENV':'off','GOWORK':'off','GOTOOLCHAIN':'local','GOPROXY':'file:///proxy','GOSUMDB':'off','GOVCS':'*:off','CGO_ENABLED':'0','GOOS':'linux','GOARCH':'amd64','GOMAXPROCS':'2','GOMEMLIMIT':'700MiB','GOCACHE':'/work/cache','GOTMPDIR':'/work/tmp','TMPDIR':'/work/tmp','GOPATH':'/work/gopath','GOMODCACHE':'/work/mod','XDG_CONFIG_HOME':'/work/config','GOTELEMETRY':'off','TEST_TELEMETRY_DIR':'/work/telemetry','WARDEN_TEST_DATABASE_URL':'postgres://postgres@/warden_test?host=/var/run/postgresql&sslmode=disable'}
+ goargs=common(GO,'1g','96')+['--tmpfs','/work:rw,exec,nosuid,nodev,size=472m,mode=1777']+bind(G,'/sdk')+bind(N/'source','/source')+bind(N/'proxy','/proxy')+bind(N/'empty','/var/lib/postgresql')+bind(N/'socket','/var/run/postgresql')+['--workdir','/source','--entrypoint','/bin/sh']
+ for k,v in env.items():goargs+=['-e',k+'='+v]
+ goargs += [IMAGE,'-c','mkdir -p /work/tmp /work/cache /work/mod /work/gopath /work/config/go/telemetry /work/telemetry && printf "off\\n" > /work/config/go/telemetry/mode && printf "off\\n" > /work/telemetry/mode && exec /sdk/bin/go test -mod=readonly -buildvcs=false -vet=off -p=1 -parallel=1 -count=1 -timeout=18s -run "^(TestKubernetesEmptyReservationCleanup|TestKubernetesRemovalRetryAfterClearAndDeleteFailure)$" -v ./controlplane/internal/jit']
+ attempted.append(GO);test=cli(goargs,T+59) # reserve <=6s of work budget for State/logs
+ # Full raw output preserved; RED requires both new business assertions to fail.
+ expected={n for n in TESTS}
+ import re
+ failures=set(re.findall(r'^--- FAIL: (\S+) ',test['out'],re.M))
+ local_downloads={'go: downloading '+m+' '+v for m,v in [('github.com/jackc/pgx/v5','v5.11.0'),('github.com/jackc/pgpassfile','v1.0.0'),('github.com/jackc/pgservicefile','v0.0.0-20240606120523-5a60cdf6a761'),('github.com/jackc/puddle/v2','v2.2.2'),('golang.org/x/sync','v0.24.0'),('golang.org/x/text','v0.43.0')]}
+ semantic=['empty reservation cleanup must reach DELETE:', 'cleanup retry after cleared binding must reach DELETE:']
+ candidate=test['rc']==1 and failures==expected and all(x in test['out'] for x in semantic) and 'prerequisite' not in test['out'] and '--- SKIP:' not in test['out'] and '[build failed]' not in test['out'] and set(test['err'].splitlines())<=local_downloads
+ status='CANDIDATE_FIX_ROUND1_RED' if candidate else 'NOT_EXPECTED_FIX_ROUND1_RED'
+except BaseException as exc:
+ errors.append('work:'+type(exc).__name__+':'+str(exc))
+ status='UNKNOWN_FAILURE'
+finally:
+ # State/owned identity of both attempted containers, then full PG tail80.
+ # Go's complete foreground stdout/stderr already lives in its raw files.
+ for name in reversed(attempted):
+  if not cli_safe:break
+  try:
+   bind_owned(name,min(T+63,time.monotonic()+2));observations.append(name)
+  except BaseException as exc:errors.append('state:'+name+':'+type(exc).__name__+':'+str(exc))
+ if PG in observations and cli_safe:
+  try:
+   log_event=cli(['logs','--tail','80',CIDS[PG]],min(T+65,time.monotonic()+2))
+   if log_event['rc']!=0:raise RuntimeError('pg_log_observation_failed')
+  except BaseException as exc:errors.append('logs:'+type(exc).__name__+':'+str(exc))
+ elif PG in attempted:errors.append('pg_logs_unavailable')
+ # Work ends65; only positively owned cleanup follows, reverse creation order.
+ for name in reversed(attempted):
+  if not cli_safe:break
+  try:
+   if not (N/(name+'.cid')).exists():
+    absent(name,min(T+80,time.monotonic()+2));cleaned.append(name);continue
+   cid=bind_owned(name,min(T+78,time.monotonic()+2))
+   must(['rm','-f','-v',cid],min(T+80,time.monotonic()+4))
+   absent(name,min(T+82,time.monotonic()+2));cleaned.append(name)
+  except BaseException as exc:errors.append('cleanup:'+name+':'+type(exc).__name__+':'+str(exc))
+ if not cli_safe:errors.append('owned_cli_cleanup_unknown_STOP')
+ if interrupted:errors.append('external_TERM')
+ if time.monotonic()>=T+85:errors.append('status_deadline')
+ if 'freeze' in locals():
+  try:
+   for rel,h in freeze['source'].items():checked(rel,h)
+   assert digest(M)==freeze['material_sha256'] and digest(F)=='9361774dbe5d0c58cc37c83ad1c4016e35ae5daf0052ea11b8a29ea302a26aec'
+   assert digest(D/'task-9-first-red-source-freeze.json')=='8f498b9220b29dd8b26753950a1896631265df3a6e2a3abf810872eb2e5be6a8'
+  except BaseException as exc:errors.append('source_or_material:'+type(exc).__name__+':'+str(exc))
+ pg_state=states.get(PG,{});go_state=states.get(GO,{})
+ state_ok=pg_state.get('Running') is True and pg_state.get('OOMKilled') is False and not pg_state.get('Error') and go_state.get('Running') is False and go_state.get('ExitCode')==1 and go_state.get('OOMKilled') is False and not go_state.get('Error')
+ accepted=candidate and ready and state_ok and len(cleaned)==len(attempted)==2 and cli_safe and not errors
+ status='CANDIDATE_FIX_ROUND1_RED' if accepted else ('UNKNOWN_FAILURE' if errors else 'NOT_EXPECTED_FIX_ROUND1_RED')
+ result={'phase':'FIX_ROUND1_RED','review_round':'1/5','harness_attempt':1,'first_green_and_migration':'SPENT_1/1_EACH_ACCEPTED','prior_first_red':'ORIGINAL_2/2_AND_RESTORED_1/1_SPENT_SEMANTIC_RED_ACCEPTED','diagnostics':'SPENT_3/3_UNCHANGED','metadata':'SPENT_1/1_ORIGINAL_UNKNOWN_FAILURE_UNCHANGED','status':status,'semantic_candidate':candidate,'pg_ready':ready,'states':states,'observed':observations,'errors':errors,'cleaned':cleaned,'CIDS':CIDS,'owner_label':OWN,'cli_group_cleanup_known':cli_safe,'evidence_bytes':seen,'elapsed':time.monotonic()-T,'old_task16':'UNTOUCHED_UNKNOWN'}
+ if created:
+  (N/'events.json').write_text(json.dumps(events,indent=2)+'\n')
+  (N/'status.json').write_text(json.dumps(result,indent=2)+'\n')
+ print(json.dumps(result))
+sys.exit(0 if accepted else 2)

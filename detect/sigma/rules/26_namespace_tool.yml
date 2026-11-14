@@ -1,0 +1,35 @@
+{
+  "title": "Namespace-entry tool execution indicator",
+  "id": "38b28b75-ff7f-54ec-ad62-7482c9298352",
+  "status": "experimental",
+  "description": "Full binary-path indicator only. No args, connection, Pod/sandbox identity, transfer, mining or escape success exists in current Tetragon mapping. Synthetic fixtures; ATT&CK tags describe related investigation scenarios, not observed technique success.",
+  "references": [
+    "https://attack.mitre.org/techniques/T1611/"
+  ],
+  "author": "Warden",
+  "date": "2026-10-25",
+  "logsource": {
+    "product": "linux",
+    "category": "process_creation"
+  },
+  "detection": {
+    "source": {
+      "class_uid": 1007,
+      "metadata.product.name": "tetragon"
+    },
+    "action": {
+      "process.name|endswith": [
+        "/nsenter"
+      ]
+    },
+    "condition": "source and action"
+  },
+  "falsepositives": [
+    "Authorized administration, developer/debug tooling, permitted workloads or unrelated protocol use; tune local IP/principal allowlists."
+  ],
+  "level": "medium",
+  "tags": [
+    "attack.privilege_escalation",
+    "attack.t1611"
+  ]
+}

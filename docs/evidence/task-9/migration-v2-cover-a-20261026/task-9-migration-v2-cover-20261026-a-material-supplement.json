@@ -1,0 +1,28 @@
+{
+  "phase": "MIGRATION_V2_COVER_SUPPLEMENT",
+  "original_material_manifest_sha256": "1ca3cbfa3cf4a3ba960dc4ced03f8eb24d2e8429e9ae5e7b0e34d3d08b54fbbd",
+  "artifacts": [
+    {
+      "path": ".cache/go-mod/cache/download/golang.org/x/sys/@v/v0.49.0.info",
+      "bytes": 190,
+      "sha256": "b1eeba05824e4c555cee0454171f3dbc0b9bce51e322237b5bd98ceb14a62346"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/golang.org/x/sys/@v/v0.49.0.zip",
+      "bytes": 2115196,
+      "sha256": "e73a06591ca0d7016ce3ccb45c36a8ed7128468aecc1a357f94d815c760c6b31"
+    },
+    {
+      "path": ".cache/go-mod/cache/download/golang.org/x/sys/@v/v0.49.0.ziphash",
+      "bytes": 47,
+      "sha256": "8e8fca3d7c98412293c464210faee575bead41f70018e258051b1d4452ffec69"
+    }
+  ],
+  "module": "golang.org/x/sys",
+  "version": "v0.49.0",
+  "go_sum_h1": "h1:XbzkgYJHdqh/8m2Uu0W/dQv8nktxx4BFHp1M0gROTXA=",
+  "zip_h1_verified_readonly": true,
+  "zip_entries": 555,
+  "zip_uncompressed_bytes": 9688775,
+  "source": "already cached; no download; .mod already pinned in original M"
+}

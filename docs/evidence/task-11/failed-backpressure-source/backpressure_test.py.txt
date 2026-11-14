@@ -1,0 +1,542 @@
+"""One finite Vector0.45.0 disk-buffer experiment; synthetic IDs, owned peer only.
+
+Each canonical input JSON+LF is exactly16384B. Baseline320 events/10s, then
+32000 target events/100s. Burst first20s peer ACK<=32/s, next60s no ACK,
+last20s unrestricted. Pre-stall target excess=(320-32)*20*16384=94371840B;
+stall target bytes=314572800B; sum408944640 > disk268435488+96MiB inflight.
+Pinned topology source queue=threads2*CHUNK1000; allow pending/pump1000 each,
+stdio1024*8KiB plus HTTP/pipe/partial frames, rounded UP to96MiB. This is a
+static offered-load bound, not proof actual acceptance reached target rate.
+PASS additionally needs >=1s continuous EAGAIN during ACK stall, overlapping
+an actual sampled buffer_byte_size>=260000000, and all32320 received IDs.
+Short pipe partial writes or occupancy>0 alone cannot pass. No exact-once,
+physical-crash, production-source, OpenSearch or real-alert-firing claim.
+"""
+import time
+START = time.monotonic()
+import collections
+import http.server
+import json
+import math
+import os
+from pathlib import Path
+import resource
+import selectors
+import signal
+import socket
+import stat
+import subprocess
+import threading
+
+REPO = Path('/home/postedism/Desktop/Warden')
+V = REPO / '.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector'
+RUN = REPO / '.cache/task11-backpressure'
+COUNT = 32320
+LINE_BYTES = 16384
+WORK_END = START + 150
+END = START + 170
+resource.setrlimit(resource.RLIMIT_CPU, (15, 140))
+resource.setrlimit(resource.RLIMIT_AS, (1000000000, 3000000000))
+resource.setrlimit(resource.RLIMIT_FSIZE, (67108864, 335544320))
+resource.setrlimit(resource.RLIMIT_NOFILE, (128, 128))
+resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
+stop = threading.Event()
+lock = threading.Lock()
+seen = bytearray(COUNT)
+state = {'received': 0, 'duplicates': 0, 'error': None, 'burst_start': None,
+         'next_ack': 0.0, 'throttled_acks': 0, 'first_received': None,
+         'last_ack_before_stall': None, 'first_ack_after_stall': None,
+         'last_ack_before_interval': None, 'first_ack_after_interval': None, 'ack_checked_count': 0,
+         'ack_window_violation': None, 'active_connection': None}
+cancelled = False
+
+def emit(**obj):
+    print(json.dumps(obj, sort_keys=True), flush=True)
+
+def cancel(_sig, _frame):
+    global cancelled
+    cancelled = True
+
+signal.signal(signal.SIGTERM, cancel)
+signal.signal(signal.SIGALRM, cancel)
+signal.signal(signal.SIGXCPU, cancel)
+signal.setitimer(signal.ITIMER_REAL, max(0.001, WORK_END-time.monotonic()))
+
+def check():
+    if truncated:
+        raise ValueError('child output cap; prefixes retained')
+    if cancelled or time.monotonic() >= WORK_END:
+        raise TimeoutError('fixed work deadline; retain partial/unknown before cleanup')
+
+def phase(now):
+    b = state['burst_start']
+    if b is None or now < b:
+        return 'baseline'
+    if now < b+20:
+        return 'burst_1x_peer'
+    if now < b+80:
+        return 'burst_stall'
+    if now < b+100:
+        return 'burst_release'
+    return 'drain'
+
+phase_counts = {s: {'attempted': 0, 'accepted': 0, 'bytes': 0, 'received': 0}
+                for s in ('baseline', 'burst_1x_peer', 'burst_stall', 'burst_release', 'drain')}
+
+BASE = {'activity_id': 6, 'category_uid': 4, 'class_uid': 4001,
+        'type_uid': 400106, 'severity_id': 0, 'time': 1767225600000,
+        'metadata': {'version': '1.3.0', 'product': {'name': 'Task11 Fixture', 'vendor_name': 'Warden'}, 'uid': 'bp-00000'},
+        'src_endpoint': {'ip': '192.0.2.100'}, 'dst_endpoint': {'ip': '198.51.100.100'},
+        'unmapped': {'padding': ''}}
+PAD = LINE_BYTES-len(json.dumps(BASE, sort_keys=True, separators=(',', ':')).encode())-1
+BASE['unmapped']['padding'] = 'p'*PAD
+
+def line(number):
+    BASE['metadata']['uid'] = 'bp-%05d' % number
+    b = json.dumps(BASE, sort_keys=True, separators=(',', ':')).encode()+b'\n'
+    if len(b) != LINE_BYTES:
+        raise ValueError('fixed line size changed')
+    return b
+
+class Peer(http.server.HTTPServer):
+    timeout = 0.1
+    allow_reuse_address = False
+    def get_request(self):
+        connection, address = super().get_request()
+        remaining = END-time.monotonic()
+        if remaining <= 0:
+            connection.close()
+            raise TimeoutError('peer accept deadline')
+        connection.settimeout(min(0.2, remaining))
+        with lock:
+            state['active_connection'] = connection
+        return connection, address
+    def close_request(self, request):
+        with lock:
+            if state['active_connection'] is request:
+                state['active_connection'] = None
+        super().close_request(request)
+    def handle_error(self, _request, _address):
+        with lock:
+            state['error'] = 'owned HTTP peer handler failed'
+
+class Handler(http.server.BaseHTTPRequestHandler):
+    protocol_version = 'HTTP/1.1'
+    def log_message(self, *_args):
+        pass
+    def do_POST(self):
+        try:
+            remaining = END-time.monotonic()
+            if remaining <= 0 or stop.is_set():
+                raise TimeoutError('peer body deadline')
+            self.connection.settimeout(min(0.2, remaining))
+            n = int(self.headers.get('Content-Length', '-1'))
+            if not 0 < n <= 65536:
+                raise ValueError('HTTP body cap/framing')
+            body = self.rfile.read(n)
+            if len(body) != n:
+                raise ValueError('short HTTP body')
+            rows = body.splitlines()
+            if len(rows) != 1:
+                raise ValueError('expected one event/request')
+            obj = json.loads(rows[0])
+            uid = obj['metadata']['uid']
+            if not isinstance(uid, str) or len(uid) != 8 or not uid.startswith('bp-') or not uid[3:].isdigit():
+                raise ValueError('unexpected synthetic ID')
+            i = int(uid[3:])
+            if not 0 <= i < COUNT or obj['unmapped']['padding'] != 'p'*PAD:
+                raise ValueError('synthetic payload mismatch')
+            if len(json.dumps(obj, sort_keys=True, separators=(',', ':')).encode())+1 != LINE_BYTES:
+                raise ValueError('received canonical event size')
+            with lock:
+                phase_counts[phase(time.monotonic())]['received'] += 1
+                if seen[i]:
+                    state['duplicates'] += 1
+                else:
+                    seen[i] = 1
+                    state['received'] += 1
+                if state['first_received'] is None:
+                    state['first_received'] = time.monotonic()-START
+            throttled = False
+            while not stop.is_set():
+                now = time.monotonic()
+                if now >= END:
+                    raise TimeoutError('peer ACK deadline')
+                b = state['burst_start']
+                if b is not None and b <= now < b+20:
+                    if throttled:
+                        break
+                    with lock:
+                        target = max(state['next_ack'], b)
+                        state['next_ack'] = target+1/32
+                        state['throttled_acks'] += 1
+                    if target > now:
+                        stop.wait(min(target-now, max(0.0, END-now)))
+                    throttled = True
+                    continue
+                if b is not None and b+20 <= now < b+80:
+                    stop.wait(min(0.05, b+80-now, END-now))
+                    continue
+                break
+            before = time.monotonic()
+            if before >= END or stop.is_set():
+                raise TimeoutError('peer stopped before ACK')
+            b = state['burst_start']
+            if b is not None and b+20 <= before < b+80:
+                raise RuntimeError('ACK send check inside fixed stall window')
+            self.send_response(200 if not stop.is_set() else 503)
+            self.send_header('Content-Length', '0')
+            self.end_headers()
+            now = time.monotonic()
+            b = state['burst_start']
+            with lock:
+                state['ack_checked_count'] += 1
+                if b is not None and before < b+80 and now >= b+20:
+                    state['ack_window_violation'] = {'before_seconds': before-START, 'after_seconds': now-START}
+                    state['error'] = 'ACK send overlaps fixed stall window'
+                if b is not None and now < b+20:
+                    state['last_ack_before_stall'] = now-START
+                    state['last_ack_before_interval'] = [before-START, now-START]
+                elif b is not None and now >= b+80 and state['first_ack_after_stall'] is None:
+                    state['first_ack_after_stall'] = now-START
+                    state['first_ack_after_interval'] = [before-START, now-START]
+        except Exception as exc:
+            with lock:
+                state['error'] = str(exc)[:256]
+            self.close_connection = True
+
+def child_limits():
+    resource.setrlimit(resource.RLIMIT_CPU, (120, 120))
+    resource.setrlimit(resource.RLIMIT_AS, (3000000000, 3000000000))
+    # Buffer data files need128MiB; output is separately piped/capped at1MiB.
+    resource.setrlimit(resource.RLIMIT_FSIZE, (335544320, 335544320))
+
+p = None
+pfd = None
+peer = None
+thread = None
+sel = selectors.DefaultSelector()
+logs = {}
+log_sizes = {'stdout': 0, 'stderr': 0}
+truncated = False
+metric_fd = None
+metric_offset = 0
+metric_tail = b''
+metric_bytes = 0
+metric_samples = 0
+peak_buffer = 0
+last_buffer = None
+last_buffer_events = None
+counter = {}
+occupancy = collections.deque(maxlen=400)
+stalls = []
+blocked_since = None
+accepted = 0
+attempted = 0
+write_calls = 0
+write_bytes = 0
+max_allocated = 0
+failure = None
+result = None
+
+def capture(key, data):
+    global truncated
+    room = 524288-log_sizes[key]
+    prefix = data[:room]
+    if prefix:
+        logs[key].write(prefix)
+        log_sizes[key] += len(prefix)
+    if len(data) > room:
+        truncated = True
+
+def io_once(timeout):
+    for key, _mask in sel.select(max(0.0, timeout)):
+        if key.data in ('stdout', 'stderr'):
+            data = os.read(key.fd, 65536)
+            if data:
+                capture(key.data, data)
+            else:
+                sel.unregister(key.fileobj)
+
+def metrics():
+    global metric_fd, metric_offset, metric_tail, metric_bytes, metric_samples
+    global peak_buffer, last_buffer, last_buffer_events
+    path = RUN/'metrics.ndjson'
+    if metric_fd is None:
+        if not path.exists():
+            return
+        s = path.lstat()
+        if not stat.S_ISREG(s.st_mode) or s.st_uid != 1000 or s.st_nlink != 1:
+            raise ValueError('owned metrics type/owner')
+        metric_fd = path.open('rb', buffering=0)
+    data = metric_fd.read(65536)
+    if not data:
+        return
+    metric_bytes += len(data)
+    if metric_bytes > 2097152:
+        raise ValueError('metrics2MiB cap')
+    metric_tail += data
+    rows = metric_tail.split(b'\n')
+    metric_tail = rows.pop()
+    if len(metric_tail) > 16384:
+        raise ValueError('metric line cap')
+    for raw in rows:
+        m = json.loads(raw)
+        if m.get('namespace') != 'vector' or m.get('tags', {}).get('component_id') != 'bp_http':
+            raise ValueError('unexpected metrics series')
+        name = m['name']
+        if name in ('buffer_byte_size', 'buffer_events'):
+            value = m['gauge']['value']
+            if not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0:
+                raise ValueError('invalid occupancy gauge')
+            if name == 'buffer_byte_size':
+                last_buffer = value
+                peak_buffer = max(peak_buffer, value)
+                occupancy.append((time.monotonic(), value))
+                metric_samples += 1
+            else:
+                last_buffer_events = value
+        elif name == 'buffer_discarded_events_total':
+            value = m['counter']['value']
+            if not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0:
+                raise ValueError('invalid discard counter')
+            k = tuple(sorted(m.get('tags', {}).items()))
+            if value < counter.get(k, 0):
+                raise ValueError('counter reset')
+            counter[k] = value
+
+def allocated():
+    global max_allocated
+    total = 0
+    count = 0
+    for d, dirs, files in os.walk(RUN/'data', followlinks=False):
+        if len(dirs) > 32:
+            raise ValueError('data directory cap')
+        for name in files:
+            count += 1
+            s = (Path(d)/name).lstat()
+            if count > 64 or not stat.S_ISREG(s.st_mode):
+                raise ValueError('data file cap/type')
+            total += s.st_blocks*512
+    max_allocated = max(max_allocated, total)
+    if total > 268435488+67108864:
+        raise ValueError('buffer+overhead disk cap')
+
+def close_stall(now):
+    global blocked_since
+    if blocked_since is not None:
+        a = blocked_since
+        b = state['burst_start']
+        overlap_start = max(a, b+20)
+        overlap_end = min(now, b+80)
+        samples = [v for t, v in occupancy if overlap_start <= t <= overlap_end]
+        if now-a >= 0.05:
+            stalls.append({'start': a-START, 'end': now-START, 'seconds': now-a,
+                           'phase': phase(a), 'stall_overlap_seconds': max(0, overlap_end-overlap_start),
+                           'peak_occupancy_during_stall': max(samples, default=None)})
+        blocked_since = None
+
+def signal_child(sig):
+    if time.monotonic() >= END:
+        raise TimeoutError('no signal time remaining')
+    if p is not None and p.poll() is None:
+        if pfd is not None and hasattr(signal, 'pidfd_send_signal'):
+            signal.pidfd_send_signal(pfd, sig)
+        else:
+            p.send_signal(sig)
+
+def wait_child(until):
+    while p.poll() is None:
+        rem = until-time.monotonic()
+        if rem <= 0:
+            return False
+        io_once(min(0.05, rem))
+    return True
+
+try:
+    check()
+    if Path.cwd() != REPO or os.geteuid() != 1000:
+        raise ValueError('fixed cwd/native UID required')
+    RUN.mkdir(mode=0o700)
+    (RUN/'data').mkdir(mode=0o700)
+    (RUN/'tmp').mkdir(mode=0o700)
+    for key in log_sizes:
+        logs[key] = (RUN/('vector.'+key)).open('xb', buffering=0)
+    peer = Peer(('127.0.0.1', 0), Handler)
+    def serve():
+        while not stop.is_set() and time.monotonic() < END:
+            peer.handle_request()
+    env = {'PATH': '/usr/bin:/bin', 'LANG': 'C.UTF-8', 'LC_ALL': 'C.UTF-8',
+           'VECTOR_THREADS': '2', 'RUST_LOG': 'error', 'TMPDIR': str(RUN/'tmp'),
+           'T11_BP_DATA': str(RUN/'data'), 'T11_BP_METRICS': str(RUN/'metrics.ndjson'),
+           'T11_BP_URI': 'http://127.0.0.1:%d/' % peer.server_address[1]}
+    p = subprocess.Popen([str(V), '--config', 'detect/tests/backpressure.toml'],
+                         stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                         cwd=REPO, env=env, close_fds=True, preexec_fn=child_limits)
+    # Only child has inherited permission to set120; parent now hard-caps20.
+    resource.setrlimit(resource.RLIMIT_CPU, (15, 20))
+    if hasattr(os, 'pidfd_open'):
+        try:
+            pfd = os.pidfd_open(p.pid, 0)
+        except ProcessLookupError:
+            if p.poll() is None:
+                raise RuntimeError('unknown child birth')
+    for stream, key in ((p.stdout, 'stdout'), (p.stderr, 'stderr')):
+        os.set_blocking(stream.fileno(), False)
+        sel.register(stream, selectors.EVENT_READ, key)
+    os.set_blocking(p.stdin.fileno(), False)
+    # Fork/preexec completes before the only peer thread starts.
+    thread = threading.Thread(target=serve, daemon=False)
+    thread.start()
+    start = time.monotonic()
+    if start-START > 10:
+        raise TimeoutError('setup10s cap')
+    state['burst_start'] = start+10
+    pending = b''
+    next_metrics = start
+    while time.monotonic() < start+110:
+        check()
+        now = time.monotonic()
+        if p.poll() is not None:
+            raise RuntimeError('Vector exited before all events')
+        if state['error']:
+            raise RuntimeError(state['error'])
+        if now < start+10:
+            target = min(320, int((now-start)*32)+1)
+        else:
+            target = min(COUNT, 320+int((now-start-10)*320)+1)
+        if not pending and accepted < target:
+            pending = line(accepted)
+            attempted += 1
+            phase_counts[phase(now)]['attempted'] += 1
+        blocked = False
+        progressed = False
+        if pending:
+            write_calls += 1
+            try:
+                n = os.write(p.stdin.fileno(), pending)
+                progressed = n > 0
+                close_stall(now)
+                pending = pending[n:]
+                write_bytes += n
+                phase_counts[phase(now)]['bytes'] += n
+                if not pending:
+                    accepted += 1
+                    phase_counts[phase(now)]['accepted'] += 1
+            except BlockingIOError:
+                blocked = True
+                if blocked_since is None:
+                    blocked_since = now
+        if now >= next_metrics:
+            metrics(); allocated(); next_metrics = now+0.1
+        remaining = min(WORK_END, start+110)-time.monotonic()
+        if blocked and remaining > 0:
+            sel.register(p.stdin, selectors.EVENT_WRITE, 'stdin-ready')
+            try:
+                io_once(min(0.05, remaining))
+            finally:
+                sel.unregister(p.stdin)
+        elif progressed or pending or accepted < target:
+            io_once(0)
+        else:
+            due = (start+accepted/32 if accepted < 320 else
+                   start+10+(accepted-320)/320 if accepted < COUNT else start+110)
+            io_once(max(0.0, min(0.05, remaining, due-time.monotonic())))
+    close_stall(time.monotonic())
+    p.stdin.close()
+    missed_target = COUNT-accepted
+    if missed_target:
+        emit(result='missed-target', accepted=accepted, missed_target=missed_target,
+             actual_write_bytes=write_bytes, producer_seconds=time.monotonic()-start)
+    drain_end = min(WORK_END, time.monotonic()+30)
+    while time.monotonic() < drain_end:
+        check(); metrics(); allocated()
+        if state['error']:
+            raise RuntimeError(state['error'])
+        if state['received'] == COUNT and last_buffer_events == 0:
+            break
+        io_once(min(0.05, max(0.0, drain_end-time.monotonic())))
+    missing = COUNT-state['received']
+    overlap = [s for s in stalls if s['stall_overlap_seconds'] >= 1
+               and s['peak_occupancy_during_stall'] is not None and s['peak_occupancy_during_stall'] >= 260000000]
+    ack_gap = None
+    if state['last_ack_before_stall'] is not None and state['first_ack_after_stall'] is not None:
+        ack_gap = state['first_ack_after_stall']-state['last_ack_before_stall']
+    if missing or accepted != COUNT or not overlap or metric_samples == 0 or any(v > 0 for v in counter.values()) or ack_gap is None or ack_gap < 60:
+        raise AssertionError('ID/occupancy-aligned stall/discard criteria failed')
+    result = {'target_baseline_rate': 32, 'target_burst_rate': 320, 'input_line_bytes': LINE_BYTES,
+              'target_events': COUNT, 'attempted_events': attempted, 'accepted_events': accepted,
+              'actual_write_bytes': write_bytes, 'write_calls': write_calls,
+              'received_unique': state['received'], 'missing': missing, 'duplicates': state['duplicates'],
+              'peak_buffer_bytes': peak_buffer, 'buffer_allocated_peak': max_allocated,
+              'metric_samples': metric_samples, 'discard_series_seen': bool(counter),
+              'discard_observed_total': sum(counter.values()) if counter else None,
+              'aligned_stalls': overlap, 'first_received_seconds': state['first_received'],
+              'phase_counts': phase_counts,
+              'observed_peer_ack_gap_seconds': ack_gap,
+              'ack_window_violation': state['ack_window_violation'],
+              'ack_checked_count': state['ack_checked_count'],
+              'last_ack_before_interval': state['last_ack_before_interval'],
+              'first_ack_after_interval': state['first_ack_after_interval'],
+              'elapsed_work_seconds': time.monotonic()-START}
+except BaseException as exc:
+    failure = exc
+    emit(result='failed-before-cleanup', error=type(exc).__name__, detail=str(exc)[:512],
+         accepted=accepted, received=state['received'], peak_buffer_bytes=peak_buffer,
+         stalls=stalls[-8:], partial={k: {'path': str(RUN/('vector.'+k)), 'bytes': v} for k, v in log_sizes.items()},
+         output_truncated=truncated, historical_pid=p.pid if p else None)
+finally:
+    signal.setitimer(signal.ITIMER_REAL, 0)
+    try:
+        resource.setrlimit(resource.RLIMIT_CPU, (15, 20))
+        if p is not None and not p.stdin.closed:
+            p.stdin.close()
+        if p is not None and p.poll() is None:
+            signal_child(signal.SIGTERM)
+            if not wait_child(min(END-5, time.monotonic()+10)):
+                signal_child(signal.SIGKILL)
+                wait_child(END-3)
+        if p is not None and p.poll() is not None:
+            until = min(END-2, time.monotonic()+1)
+            while sel.get_map() and time.monotonic() < until:
+                io_once(min(0.05, max(0.0, until-time.monotonic())))
+        stop.set()
+        if peer is not None:
+            with lock:
+                connection = state['active_connection']
+            if connection is not None:
+                try:
+                    connection.shutdown(socket.SHUT_RDWR)
+                except OSError:
+                    pass
+            peer.server_close()
+        if thread is not None:
+            rem = END-time.monotonic()
+            if rem > 0:
+                thread.join(timeout=rem)
+        known = (p is None or p.poll() is not None) and (thread is None or not thread.is_alive())
+        if not known or (p is not None and p.returncode != 0):
+            failure = failure or RuntimeError('unknown/nonzero child or peer terminal')
+        if truncated:
+            failure = failure or ValueError('child output cap during cleanup; prefixes retained')
+        emit(cleanup='known-terminal' if known else 'UNKNOWN', child_return=p.returncode if p else None,
+             peer_joined=thread is None or not thread.is_alive(), historical_pid=p.pid if p else None)
+    except BaseException as exc:
+        failure = failure or exc
+        emit(cleanup='UNKNOWN', error=type(exc).__name__, historical_pid=p.pid if p else None)
+    finally:
+        for log in logs.values():
+            log.close()
+        if metric_fd is not None:
+            metric_fd.close()
+        for stream in (() if p is None else (p.stdout, p.stderr)):
+            stream.close()
+        if pfd is not None:
+            os.close(pfd)
+        sel.close()
+if failure is None:
+    emit(result='PASS-local-buffer-only', **result)
+else:
+    emit(result='FAIL', error=type(failure).__name__, detail=str(failure)[:512])
+# Retain exact owned data/logs/metrics on every outcome; no PID/PG reuse after exit.
+raise SystemExit(1 if failure is not None else 0)

@@ -1,0 +1,29 @@
+# 2026-11-13T08:38:59-08:00 cleanup after the Cilium lab (lab-run3 is down)
+## before
+warden-k3s-gvisor:cilium f03caf92e9a5 401MB
+warden-lab/pause:1 ce86acc58e20 2.09MB
+447M	.tools/cilium
+59M	.tools/helm
+19M	.cache/cilium-download
+239M	.cache/k3s-gvisor
+2.9M	.cache/cilium-spike
+24K	.cache/cilium-lab-baseline
+505abff8385811df1a949776fc42e9f10697989a332acc86d6e8933efcb855ed  cilium-1.20.4.tgz
+2e372e4011818a9b3e42a762b73a236e0ad6ad780953722da4da48f90bb41317  images/cilium-envoy.oci.tar
+24ad3e49b1be0c3bfc8a0aee8c03816d56ba1898d4b5e465ef542fd1334d8277  images/cilium.oci.tar
+f4f168b33574c27c6cd7b09dd76994642b3a5020856701948ac2a889b8f26b85  images/coredns.oci.tar
+47205f0daaaf69fc13f43113cb82b4ff1d9b18f8af850f49e5ad3fa17bf1495e  images/envoy.oci.tar
+8ec2631398d189a21243ed4d29dd7c318d2510f37b6baedb7592f4e5c5196181  images/operator-generic.oci.tar
+46aeab5e043f62d01f7c168823b392cabc1cea3807b67906296290483791be43  .tools/helm/helm
+896cf63684a42a723d61c980369d6e588330927deb13676ca0d85006dd6da0ea  .cache/cilium-download/helm-v3.22.1-linux-amd64.tar.gz
+$ scripts/k3s_gvisor_lab.sh purge
+purge rc=0
+$ rm -rf .tools/cilium .tools/helm .cache/cilium-download .cache/k3s-gvisor
+rm rc=0
+## after
+no warden-* images
+ls: cannot access '.tools/cilium': No such file or directory
+ls: cannot access '.tools/helm': No such file or directory
+ls: cannot access '.cache/cilium-download': No such file or directory
+ls: cannot access '.cache/k3s-gvisor': No such file or directory
+/dev/nvme1n1p3  1.7T  1.5T  104G  94% /

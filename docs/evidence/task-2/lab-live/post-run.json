@@ -1,0 +1,66 @@
+{
+  "owned_containers": {
+    "command": [
+      "/usr/bin/docker",
+      "--host=unix:///var/run/docker.sock",
+      "ps",
+      "-a",
+      "--filter",
+      "label=project=warden",
+      "--format",
+      "{{.ID}} {{.Labels}}"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "owned_images": {
+    "command": [
+      "/usr/bin/docker",
+      "--host=unix:///var/run/docker.sock",
+      "image",
+      "ls",
+      "--filter",
+      "label=project=warden",
+      "--no-trunc",
+      "--format",
+      "{{.ID}} {{.Labels}}"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "local_preflight": {
+    "command": [
+      "python3",
+      "-B",
+      "scripts/azure_guard.py",
+      "preflight"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"additional_bytes\": \"0\", \"at\": \"2026-10-24T04:02:28Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 383619055616, \"project_allocated_bytes\": 2186362880, \"service_memory_bytes\": \"0\"}\n",
+    "stderr": ""
+  },
+  "retained_files": [
+    {
+      "path": ".cache/warden-lab/docker-7f8a085397d34ff7d987c9caab550d5a/session-e5a36401b948ab03",
+      "uid": 1000,
+      "mode": "0o700",
+      "bytes": 4096
+    },
+    {
+      "path": ".cache/warden-lab/docker-7f8a085397d34ff7d987c9caab550d5a/session-e5a36401b948ab03/containerd.log",
+      "uid": 1000,
+      "mode": "0o600",
+      "bytes": 37016
+    },
+    {
+      "path": ".cache/warden-lab/docker-7f8a085397d34ff7d987c9caab550d5a/session-e5a36401b948ab03/containerd.toml",
+      "uid": 1000,
+      "mode": "0o600",
+      "bytes": 124
+    }
+  ],
+  "recorded_at": "2026-10-24T04:02:28.863157+00:00",
+  "scope": "read-only post-run checks, no Azure operations"
+}

@@ -1,0 +1,68 @@
+....FF.FF..........F...
+======================================================================
+FAIL: test_down_dry_run_and_real_fake_boundary (scripts.test_azure_guard.AzureGuardTests.test_down_dry_run_and_real_fake_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 196, in test_down_dry_run_and_real_fake_boundary
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : guard refused: Azure returned invalid JSON
+
+
+======================================================================
+FAIL: test_down_records_deletion_without_refund (scripts.test_azure_guard.AzureGuardTests.test_down_records_deletion_without_refund)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 277, in test_down_records_deletion_without_refund
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : guard refused: Azure returned invalid JSON
+
+
+======================================================================
+FAIL: test_duplicate_api_id_is_rejected_before_delete (scripts.test_azure_guard.AzureGuardTests.test_duplicate_api_id_is_rejected_before_delete)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 173, in test_duplicate_api_id_is_rejected_before_delete
+    self.assertEqual(self.mutations(), [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [['resource', 'delete', '--ids', '/subscri[222 chars]rs']] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+['resource', 'delete', '--ids', '/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab/providers/Microsoft.Storage/storageAccounts/warden1', '--subscription', '<subscription-id>', '--output', 'json', '--only-show-errors']
+
++ []
+- [['resource',
+-   'delete',
+-   '--ids',
+-   '/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab/providers/Microsoft.Storage/storageAccounts/warden1',
+-   '--subscription',
+-   '<subscription-id>',
+-   '--output',
+-   'json',
+-   '--only-show-errors']]
+
+======================================================================
+FAIL: test_exact_expiry_deletes_only_full_scoped_id (scripts.test_azure_guard.AzureGuardTests.test_exact_expiry_deletes_only_full_scoped_id)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 110, in test_exact_expiry_deletes_only_full_scoped_id
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : guard refused: Azure returned invalid JSON
+
+
+======================================================================
+FAIL: test_session_end_uses_reservation_binding_and_keeps_cost (scripts.test_azure_guard.AzureGuardTests.test_session_end_uses_reservation_binding_and_keeps_cost)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 314, in test_session_end_uses_reservation_binding_and_keeps_cost
+    self.assertEqual(self.reaper('--end-session', 'session-1').returncode, 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+----------------------------------------------------------------------
+Ran 23 tests in 5.979s
+
+FAILED (failures=5)

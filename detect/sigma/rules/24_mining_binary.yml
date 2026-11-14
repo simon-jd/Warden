@@ -1,0 +1,36 @@
+{
+  "title": "Mining-named executable indicator",
+  "id": "65a7f1d4-3276-544f-8ca7-01e78c1db2d1",
+  "status": "experimental",
+  "description": "Full binary-path indicator only. No args, connection, Pod/sandbox identity, transfer, mining or escape success exists in current Tetragon mapping. Synthetic fixtures; ATT&CK tags describe related investigation scenarios, not observed technique success.",
+  "references": [
+    "https://attack.mitre.org/techniques/T1496/"
+  ],
+  "author": "Warden",
+  "date": "2026-10-25",
+  "logsource": {
+    "product": "linux",
+    "category": "process_creation"
+  },
+  "detection": {
+    "source": {
+      "class_uid": 1007,
+      "metadata.product.name": "tetragon"
+    },
+    "action": {
+      "process.name|endswith": [
+        "/xmrig",
+        "/minerd"
+      ]
+    },
+    "condition": "source and action"
+  },
+  "falsepositives": [
+    "Authorized administration, developer/debug tooling, permitted workloads or unrelated protocol use; tune local IP/principal allowlists."
+  ],
+  "level": "medium",
+  "tags": [
+    "attack.impact",
+    "attack.t1496"
+  ]
+}

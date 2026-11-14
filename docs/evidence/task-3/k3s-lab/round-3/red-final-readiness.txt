@@ -1,0 +1,15 @@
+test_final_readiness_recheck_refuses_persistent_api_or_node_failure (test_k3s_lab_init.InitTest.test_final_readiness_recheck_refuses_persistent_api_or_node_failure) ... FAIL
+
+======================================================================
+FAIL: test_final_readiness_recheck_refuses_persistent_api_or_node_failure (test_k3s_lab_init.InitTest.test_final_readiness_recheck_refuses_persistent_api_or_node_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 224, in test_final_readiness_recheck_refuses_persistent_api_or_node_failure
+    self.assertTrue(callable(getattr(init, 'confirm_ready', None)), 'final Ready check missing')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : final Ready check missing
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)

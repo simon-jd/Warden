@@ -1,0 +1,10 @@
+# gVisor options for the "runsc" CRI handler (RuntimeClass gvisor).
+# network=none: sandboxes get loopback only, whatever CNI set up outside.
+# in-sandbox-cgroup=v2: the cgroup2 view warden-gvisor-init sets pids.max in.
+# oci-seccomp: the pod's seccompProfile (RuntimeDefault) is enforced inside
+# the sandbox too; without it runsc ignores the OCI seccomp section.
+[runsc_config]
+  platform = "systrap"
+  network = "none"
+  in-sandbox-cgroup = "v2"
+  oci-seccomp = "true"

@@ -1,0 +1,11 @@
+{
+  "source": "d8f54d90d77465f97c7d1d0d7327fa36d7ad4cf7",
+  "production_delta_only": "one exact successful-static branch in dependencies",
+  "unchanged_host_functions": 50,
+  "unchanged_bindings": 14,
+  "prior_index_artifacts": 7,
+  "new_index_artifacts": 7,
+  "exact_diagnostic_bytes_match": true,
+  "tests_or_actual_operations_rerun": false,
+  "all_match": true
+}

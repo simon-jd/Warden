@@ -1,0 +1,18 @@
+{
+  "source": "8c8e9edf4a269effb155ae027b703cd9dc770836",
+  "material_helper_envelope_settled": true,
+  "retained_helper_growth_bytes": 0,
+  "original_Q_bytes": 5000000000,
+  "original_Q_released": false,
+  "owned_containers": [],
+  "owned_images": [],
+  "helper_never_created_or_started": true,
+  "live_uid": 0,
+  "live_dev": 66307,
+  "live_ino": 56377608,
+  "ordinary_guard_pass": false,
+  "private_scene_entries_read": false,
+  "original_owner_retirement": "cleanup_pending",
+  "creation_outcome": "unknown",
+  "never_reopen": true
+}

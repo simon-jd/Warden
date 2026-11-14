@@ -1,0 +1,25 @@
+{
+  "events": [
+    {
+      "kind": "exec_command",
+      "request": {
+        "cmd": "set -eu\nulimit -t 20\nulimit -v 262144\nulimit -f 1024\nulimit -n 128\nulimit -c 0\n/usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 5128000000 --service-memory-bytes 10000000000 --download-bytes 0\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=2s 10s /usr/bin/python3 -I -B - <<'PY'\nimport importlib.metadata,json,os,pathlib,sys\nassert os.geteuid()==1000\nm={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}\na=int(m['MemAvailable'].split()[0])*1024\nassert a>=2000000000\ntry: pip=importlib.metadata.version('pip')\nexcept importlib.metadata.PackageNotFoundError: pip=None\nprint(json.dumps({'uid':os.geteuid(),'python':sys.version,'executable':sys.executable,'pip_metadata_version':pip,'MemAvailable':a,'resident_reserve_bytes':10000000000,'Q_bytes':5000000000,'proposed_local_peak_bytes':128000000,'execution_scope':'inventory-only; no packages acquired or imported; no services'}))\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "为原Task12做一次有界只读native资源/Python元数据核对。仅项目磁盘preflight、MemAvailable、解释器版本与pip元数据；不安装、不下载、不执行包代码或服务，不访问旧进程。Q5GB和旧UNKNOWN9GB预留保持。",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 2500
+      },
+      "response": {
+        "chunk_id": "cfeb0b",
+        "wall_time_seconds": 0.279580059,
+        "exit_code": 0,
+        "original_token_count": 146,
+        "output": "{\"additional_bytes\": \"5128000000\", \"at\": \"2026-10-25T22:27:55Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 261677178880, \"project_allocated_bytes\": 4449996800, \"service_memory_bytes\": \"10000000000\"}\n{\"uid\": 1000, \"python\": \"3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]\", \"executable\": \"/usr/bin/python3\", \"pip_metadata_version\": \"25.1.1\", \"MemAvailable\": 86735925248, \"resident_reserve_bytes\": 10000000000, \"Q_bytes\": 5000000000, \"proposed_local_peak_bytes\": 128000000, \"execution_scope\": \"inventory-only; no packages acquired or imported; no services\"}\n"
+      }
+    }
+  ]
+}

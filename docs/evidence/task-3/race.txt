@@ -1,0 +1,4 @@
+COMMAND: .cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/bin/go test -race ./runtimes/gvisor ./runtimes/gate -count=1
+EXIT: 0
+ok  	warden/runtimes/gvisor	2.041s
+ok  	warden/runtimes/gate	1.061s

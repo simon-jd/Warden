@@ -1,0 +1,157 @@
+{
+  "scope": "Read-only root fix5 artifact accounting/check and raw review package generation; no project tests/imports or actual admission",
+  "attempts": [
+    {
+      "request": {
+        "request": {
+          "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C python3 -I -S -B docs/evidence/task-6/controller-fix5-scope-check-20261025.py",
+          "workdir": "/home/postedism/Desktop/Warden",
+          "shell": "/bin/bash",
+          "login": false,
+          "tty": false,
+          "sandbox_permissions": "require_escalated",
+          "justification": "仅核对第五轮新增公开文件/运行留痕/冻结关系并生成两份定向复核diff；不重跑测试、不导入项目或执行实际准入。",
+          "yield_time_ms": 1000,
+          "max_output_tokens": 3000
+        },
+        "initial": {
+          "chunk_id": "e84b6b",
+          "wall_time_seconds": 1.000879673,
+          "session_id": 87367,
+          "original_token_count": 0,
+          "output": ""
+        }
+      },
+      "poll": {
+        "request": {
+          "session_id": 87367,
+          "chars": "",
+          "yield_time_ms": 1000,
+          "max_output_tokens": 3000
+        },
+        "result": {
+          "chunk_id": "823683",
+          "wall_time_seconds": 0.00001625,
+          "exit_code": 1,
+          "original_token_count": 66,
+          "output": "Traceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/docs/evidence/task-6/controller-fix5-scope-check-20261025.py\", line 48, in <module>\n    assert b'```js\\n'+candidate+b'```' in b\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+        }
+      },
+      "scope": "Root metadata check assumed js fence; actual frozen plan uses javascript; no tests or worker artifacts changed"
+    },
+    {
+      "request": {
+        "request": {
+          "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C python3 -I -S -B docs/evidence/task-6/controller-fix5-scope-check-20261025.py",
+          "workdir": "/home/postedism/Desktop/Warden",
+          "shell": "/bin/bash",
+          "login": false,
+          "tty": false,
+          "sandbox_permissions": "require_escalated",
+          "justification": "修正root元数据核对的code-fence文本假设后核对本轮留痕；仅元数据，不重跑任何测试或实际操作。",
+          "yield_time_ms": 1000,
+          "max_output_tokens": 3000
+        },
+        "initial": {
+          "chunk_id": "71fad1",
+          "wall_time_seconds": 1.000919573,
+          "session_id": 61807,
+          "original_token_count": 0,
+          "output": ""
+        }
+      },
+      "poll": {
+        "request": {
+          "session_id": 61807,
+          "chars": "",
+          "yield_time_ms": 1000,
+          "max_output_tokens": 3000
+        },
+        "result": {
+          "chunk_id": "62d6b4",
+          "wall_time_seconds": 0.000013822,
+          "exit_code": 1,
+          "original_token_count": 118,
+          "output": "Traceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/docs/evidence/task-6/controller-fix5-scope-check-20261025.py\", line 101, in <module>\n    assert request['stdin_bytes']==len(stdin) and request['stdin_sha256']==sha(stdin) and stdin.endswith(body) and 0<request['timeout_seconds']<=30\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+        }
+      },
+      "reason": "Child fixture stores unchanged body in BODY_LITERAL and compiles it; raw-stdin suffix assumption was wrong; no worker changes/tests"
+    },
+    {
+      "request": {
+        "request": {
+          "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C python3 -I -S -B docs/evidence/task-6/controller-fix5-scope-check-20261025.py",
+          "workdir": "/home/postedism/Desktop/Warden",
+          "shell": "/bin/bash",
+          "login": false,
+          "tty": false,
+          "sandbox_permissions": "require_escalated",
+          "justification": "按实际冻结夹具的BODY_LITERAL格式核对公开证据；仅AST/哈希/留痕检查及定向diff生成，不重跑测试或实际调用。",
+          "yield_time_ms": 1000,
+          "max_output_tokens": 3000
+        },
+        "initial": {
+          "chunk_id": "73d423",
+          "wall_time_seconds": 1.000696581,
+          "session_id": 66077,
+          "original_token_count": 0,
+          "output": ""
+        }
+      },
+      "poll": {
+        "request": {
+          "session_id": 66077,
+          "chars": "",
+          "yield_time_ms": 1000,
+          "max_output_tokens": 3000
+        },
+        "result": {
+          "chunk_id": "39ce3c",
+          "wall_time_seconds": 0.000007961,
+          "exit_code": 1,
+          "original_token_count": 82,
+          "output": "Traceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/docs/evidence/task-6/controller-fix5-scope-check-20261025.py\", line 102, in <module>\n    assert len(literals)==1 and ast.literal_eval(literals[0]).encode()==body\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+        }
+      },
+      "reason": "Fixture renderer substitutes BODY_LITERAL directly as compile first argument; no BODY_LITERAL assignment exists; read-only metadata assumption, no worker changes/tests"
+    },
+    {
+      "request": {
+        "request": {
+          "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C python3 -I -S -B docs/evidence/task-6/controller-fix5-scope-check-20261025.py",
+          "workdir": "/home/postedism/Desktop/Warden",
+          "shell": "/bin/bash",
+          "login": false,
+          "tty": false,
+          "sandbox_permissions": "require_escalated",
+          "justification": "核对真实固定compile常量格式的公开留痕并生成两份定向复核diff；仅元数据，不测试、不执行候选或实际准入。",
+          "yield_time_ms": 1000,
+          "max_output_tokens": 3000
+        },
+        "initial": {
+          "chunk_id": "a201a6",
+          "wall_time_seconds": 1.001100062,
+          "session_id": 97520,
+          "original_token_count": 0,
+          "output": ""
+        }
+      },
+      "poll": {
+        "request": {
+          "session_id": 97520,
+          "chars": "",
+          "yield_time_ms": 1000,
+          "max_output_tokens": 3000
+        },
+        "result": {
+          "chunk_id": "38cf31",
+          "wall_time_seconds": 0.000008345,
+          "exit_code": 0,
+          "original_token_count": 692,
+          "output": "{\"actual_admission\": false, \"all150plus2_unchanged\": true, \"allocated_excluding_index\": 2867200, \"approval_python_body_unchanged\": true, \"artifacts\": 310, \"dispatch_base\": \"50a8f7ca76b65348210752d7a7a93108d4237f8a\", \"elapsed_before_write_seconds\": 1.4750494989566505, \"evidence\": \"2c2b869cce28bdfe602e80c5f0415e41492e073c\", \"index_bytes\": 96742, \"index_sha256\": \"7c802eb45741936728fcf73713ddcecaac83578037efd1ad3d794d3bacd26532\", \"js\": [{\"cases\": 1, \"failures\": 1, \"kind\": \"material\", \"metadata_post\": \"a26bdf\", \"metadata_pre\": \"aea3c9\", \"stage\": \"red\"}, {\"cases\": 22, \"failures\": 0, \"kind\": \"material\", \"metadata_post\": \"4b4487\", \"metadata_pre\": \"b73365\", \"stage\": \"green\"}, {\"cases\": 22, \"failures\": 0, \"kind\": \"material\", \"metadata_post\": \"6d3b00\", \"metadata_pre\": \"7fdb0e\", \"stage\": \"cover\"}, {\"cases\": 3, \"failures\": 3, \"kind\": \"approval\", \"metadata_post\": \"492690\", \"metadata_pre\": \"f4b331\", \"stage\": \"red\"}, {\"cases\": 35, \"failures\": 0, \"kind\": \"approval\", \"metadata_post\": \"3b6942\", \"metadata_pre\": \"7daaab\", \"stage\": \"green\"}, {\"cases\": 35, \"failures\": 0, \"kind\": \"approval\", \"metadata_post\": \"1c42dc\", \"metadata_pre\": \"cab2d5\", \"stage\": \"cover\"}], \"logical_excluding_index\": 1988043, \"missing_outputs_preserved\": 16, \"native\": [{\"cases\": 1, \"complete\": true, \"exit_code\": 1, \"label\": \"red-01\", \"terminal_chunk\": \"c192d1\"}, {\"cases\": null, \"complete\": false, \"exit_code\": 1, \"label\": \"green-01\", \"terminal_chunk\": \"e13bcf\"}, {\"cases\": 10, \"complete\": true, \"exit_code\": 0, \"label\": \"green-02\", \"terminal_chunk\": \"f314ec\"}, {\"cases\": 10, \"complete\": true, \"exit_code\": 0, \"label\": \"cover-01\", \"terminal_chunk\": \"902d59\"}], \"net_allocated_excluding_index\": 2756608, \"net_logical_excluding_index\": 1881697, \"old138_bodies_and_plan_prefix_preserved\": true, \"packages\": [{\"base\": \"20fdff98c16d51d02cc2d9021bb373b6fb4a2dcf\", \"bytes\": 2362029, \"filtering_or_dedup\": false, \"head\": \"aaad04b685a9b4e8fbece34a416e468f3d8a4728\", \"path\": \".superpowers/sdd/2-warden-security-plan/review-fix5-material-20fdff9..aaad04b.diff\", \"scope\": \"material\", \"sha256\": \"a021357d8ab9f3a7b6661222292e8e9a5ea04135e1d61404c97c4d12fc124de8\"}, {\"base\": \"6bbf995e4a069b596660e00d99d81fd9e93a1815\", \"bytes\": 2228644, \"filtering_or_dedup\": false, \"head\": \"aaad04b685a9b4e8fbece34a416e468f3d8a4728\", \"path\": \".superpowers/sdd/2-warden-security-plan/review-fix5-approval-6bbf995..aaad04b.diff\", \"scope\": \"approval\", \"sha256\": \"e957cdddd91e7396c31eb07d02ab9b097aa4777d7da597e7660a084ce8f1a755\"}], \"physical_startup_termination_bound_proved\": false, \"review_head\": \"aaad04b685a9b4e8fbece34a416e468f3d8a4728\", \"scope\": \"new fix5 artifacts/runs/freeze only; no old proof expansion, project imports, tests or actual operation\", \"source\": \"8bf623b6b5fc04a1d2c0a979a274cfeb3f643f51\", \"status\": \"PASS\"}\n"
+        }
+      }
+    }
+  ],
+  "corrections": "Root format assumptions only: javascript fence, body compiled from a string literal rather than raw stdin suffix, direct compile argument rather than an assignment. Original checker versions retained. Worker artifacts/tests untouched."
+}

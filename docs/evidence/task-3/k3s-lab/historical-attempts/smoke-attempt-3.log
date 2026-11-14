@@ -1,0 +1,7 @@
+{"owned_image_charge": 0, "outstanding_charge": 0}
+{"additional_bytes": "6000000000", "at": "2026-10-24T06:18:57Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 359461404672, "project_allocated_bytes": 3019702272, "service_memory_bytes": "4000000000"}
+{"rootfs_bytes": 496028842, "archive_bytes": 496599040, "manifest_sha256": "9f6e1ccb60a97bad446c74199b9b5679b829545764380d48cf08ebc494b548ef"}
+{"owned_image_charge": 0, "outstanding_charge": 0}
+{"additional_bytes": "6000000000", "at": "2026-10-24T06:19:04Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 358964060160, "project_allocated_bytes": 3516416000, "service_memory_bytes": "4000000000"}
+k3s lab failed: ValueError
+k3s lab failed: CalledProcessError

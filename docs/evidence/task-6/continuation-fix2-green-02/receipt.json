@@ -1,0 +1,32 @@
+{
+  "changed_source_snapshots": [
+    "scripts/identity_cache_continue.py",
+    "scripts/test_identity_cache_continue.py"
+  ],
+  "command": [
+    "python3",
+    "-B",
+    "docs/evidence/task-6/continuation-fix2-green-02/run.py"
+  ],
+  "completion_requires_process_exit_zero": true,
+  "dispatch_base": "1fb644b1a6b00165bb08e4447ba7550241b729f5",
+  "duration_seconds": 0.22348464198876172,
+  "errors": 0,
+  "exit_code": 0,
+  "failures": 0,
+  "limits": {
+    "address_bytes": 536870912,
+    "cpu_seconds": 30,
+    "file_bytes": 33554432,
+    "wall_seconds": 45
+  },
+  "live_cache_access": false,
+  "skipped": 0,
+  "source_commit_at_launch": "1fb644b1a6b00165bb08e4447ba7550241b729f5",
+  "source_files": 145,
+  "source_unchanged": true,
+  "started_utc": "2026-10-25T11:29:49.534855+00:00",
+  "test_target": "four fixed journal-parent-fsync I1 cases only, unittest in process",
+  "tests_run": 4,
+  "whole_wall_until_receipt_seconds": 0.22539618308655918
+}

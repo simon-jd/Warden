@@ -1,0 +1,26 @@
+test_reads_ignore_atime_but_keep_content_identity_checks (test_firecracker_recovery.PackageTests.test_reads_ignore_atime_but_keep_content_identity_checks) ... FAIL
+
+======================================================================
+FAIL: test_reads_ignore_atime_but_keep_content_identity_checks (test_firecracker_recovery.PackageTests.test_reads_ignore_atime_but_keep_content_identity_checks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 87, in test_reads_ignore_atime_but_keep_content_identity_checks
+    try: recovery.build_archive(root / 'image.tar', {'usr/bin/python3': source}, module)
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery.py", line 190, in build_archive
+    if os.fstat(f) != s: raise ValueError('package_input_changed')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: package_input_changed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 88, in test_reads_ignore_atime_but_keep_content_identity_checks
+    except ValueError as error: self.fail('atime-only change refused: ' + str(error))
+                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: atime-only change refused: package_input_changed
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

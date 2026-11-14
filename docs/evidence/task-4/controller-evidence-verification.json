@@ -1,0 +1,28 @@
+{
+  "source": "55bd96828669c8e1536da321bcb87bae13afa6ea",
+  "evidence": "7517790515289e6fcc9334ee5f0c0a353fada976",
+  "source_files_checked": 43,
+  "indexed_evidence_files_checked": 36,
+  "committed_bytes_and_sha256_match": true,
+  "source_modes_100644": true,
+  "source_tree_and_first_parent_match": true,
+  "private_report_contains_exact_public_report": true,
+  "reported_go_pass": 38,
+  "reported_go_fail": 0,
+  "reported_go_skips": [
+    "TestFirecrackerCapacity",
+    "TestFirecrackerConformance",
+    "TestFirecrackerBoot",
+    "TestSnapshotRestoreFasterThanBoot"
+  ],
+  "reported_python_pass": 5,
+  "historical_reds_checked": [
+    "explicit-benchmark-machine-shape",
+    "exact-mtab-metadata-omission",
+    "ordinary-regular-mtab-retention"
+  ],
+  "test_suites_rerun": false,
+  "vm_executed": false,
+  "controller_resource_postflight": "controller-code-postflight.json",
+  "scope": "Controller evidence integrity and output inspection; independent source review remains pending."
+}

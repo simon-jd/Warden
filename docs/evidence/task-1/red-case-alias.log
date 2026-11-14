@@ -1,0 +1,8 @@
+=== RUN   TestRejectsCaseAliasedFields
+    api_test.go:274: ambiguous field accepted status=201 body={"image_digest":"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","CMD":["/bin/true"]}
+    api_test.go:274: ambiguous field accepted status=201 body={"image_digest":"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","Cmd":["/bin/false"],"cmd":["/bin/true"]}
+    api_test.go:274: ambiguous field accepted status=409 body={"image_digest":"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","cmd":["/bin/true"],"limits":{"CPU":2}}
+--- FAIL: TestRejectsCaseAliasedFields (0.04s)
+FAIL
+FAIL	warden/controlplane/internal/api	0.047s
+FAIL

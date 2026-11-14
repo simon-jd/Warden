@@ -1,0 +1,7 @@
+test_ordinary_postflight_includes_original_charge_and_never_repairs_it (test_firecracker_recovery.WorkflowTests.test_ordinary_postflight_includes_original_charge_and_never_repairs_it) ... ok
+test_host_post_restore_check_preserves_files_and_rejects_owner_mode_drift (test_firecracker_recovery_init.InventoryFixture.test_host_post_restore_check_preserves_files_and_rejects_owner_mode_drift) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.008s
+
+OK

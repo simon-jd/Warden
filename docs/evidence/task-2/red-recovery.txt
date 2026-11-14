@@ -1,0 +1,6 @@
+=== RUN   TestReapRejectsUncontrolledRunIDBeforeConnecting
+    runc_test.go:91: uncontrolled recovery ID accepted
+--- FAIL: TestReapRejectsUncontrolledRunIDBeforeConnecting (0.00s)
+FAIL
+FAIL	warden/runtimes/runc	0.005s
+FAIL

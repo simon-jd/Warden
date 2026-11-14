@@ -1,0 +1,227 @@
+[
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{{.Name}}",
+      "warden-task9-pg-diag-20261026-b"
+    ],
+    "rc": 1,
+    "out": "\n",
+    "err": "Error response from daemon: No such container: warden-task9-pg-diag-20261026-b\n",
+    "failure": ""
+  },
+  {
+    "args": [
+      "run",
+      "--pull=never",
+      "--name",
+      "warden-task9-pg-diag-20261026-b",
+      "--cidfile",
+      "/home/postedism/Desktop/Warden/.cache/task9-pg-startup-diagnostic-20261026-b/warden-task9-pg-diag-20261026-b.cid",
+      "--label",
+      "warden.test=task9",
+      "--label",
+      "warden.owner=f0cd72248dd966d3a831d1f84cdb35a3",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--user",
+      "postgres",
+      "--memory",
+      "512m",
+      "--memory-swap",
+      "512m",
+      "--pids-limit",
+      "96",
+      "--cpus",
+      "2",
+      "--shm-size",
+      "1m",
+      "--log-driver",
+      "local",
+      "--log-opt",
+      "max-size=1m",
+      "--log-opt",
+      "max-file=1",
+      "--log-opt",
+      "compress=false",
+      "-d",
+      "--tmpfs",
+      "/var/lib/postgresql:rw,noexec,nosuid,nodev,size=192m,mode=1777",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,nodev,size=8m,mode=1777",
+      "--mount",
+      "type=bind,src=/home/postedism/Desktop/Warden/.cache/task9-pg-startup-diagnostic-20261026-b/socket,dst=/var/run/postgresql",
+      "-e",
+      "PGDATA=/var/lib/postgresql/task9",
+      "-e",
+      "POSTGRES_DB=warden_test",
+      "-e",
+      "POSTGRES_HOST_AUTH_METHOD=trust",
+      "sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873",
+      "postgres",
+      "-c",
+      "listen_addresses=",
+      "-c",
+      "unix_socket_directories=/var/run/postgresql",
+      "-c",
+      "unix_socket_permissions=0777",
+      "-c",
+      "shared_buffers=32MB",
+      "-c",
+      "max_connections=20",
+      "-c",
+      "max_parallel_workers=0",
+      "-c",
+      "dynamic_shared_memory_type=mmap",
+      "-c",
+      "max_wal_size=32MB",
+      "-c",
+      "min_wal_size=32MB"
+    ],
+    "rc": 0,
+    "out": "76a50d91d24bcb5ac0754ceb01896504acce85944bc3e80f093ebbfd04c2d8a4\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{\"id\":{{json .Id}},\"name\":{{json .Name}},\"owner\":{{json (index .Config.Labels \"warden.owner\")}}}",
+      "76a50d91d24bcb5ac0754ceb01896504acce85944bc3e80f093ebbfd04c2d8a4"
+    ],
+    "rc": 0,
+    "out": "{\"id\":\"76a50d91d24bcb5ac0754ceb01896504acce85944bc3e80f093ebbfd04c2d8a4\",\"name\":\"/warden-task9-pg-diag-20261026-b\",\"owner\":\"f0cd72248dd966d3a831d1f84cdb35a3\"}\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "exec",
+      "--user",
+      "postgres",
+      "76a50d91d24bcb5ac0754ceb01896504acce85944bc3e80f093ebbfd04c2d8a4",
+      "/bin/sh",
+      "-c",
+      "test \"$(cat /proc/1/comm)\" = postgres && exec pg_isready -h /var/run/postgresql -U postgres -d warden_test -t 1"
+    ],
+    "rc": 1,
+    "out": "",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "exec",
+      "--user",
+      "postgres",
+      "76a50d91d24bcb5ac0754ceb01896504acce85944bc3e80f093ebbfd04c2d8a4",
+      "/bin/sh",
+      "-c",
+      "test \"$(cat /proc/1/comm)\" = postgres && exec pg_isready -h /var/run/postgresql -U postgres -d warden_test -t 1"
+    ],
+    "rc": 1,
+    "out": "",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "exec",
+      "--user",
+      "postgres",
+      "76a50d91d24bcb5ac0754ceb01896504acce85944bc3e80f093ebbfd04c2d8a4",
+      "/bin/sh",
+      "-c",
+      "test \"$(cat /proc/1/comm)\" = postgres && exec pg_isready -h /var/run/postgresql -U postgres -d warden_test -t 1"
+    ],
+    "rc": 1,
+    "out": "",
+    "err": "Error response from daemon: container 76a50d91d24bcb5ac0754ceb01896504acce85944bc3e80f093ebbfd04c2d8a4 is not running\n",
+    "failure": ""
+  },
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{\"id\":{{json .Id}},\"name\":{{json .Name}},\"owner\":{{json (index .Config.Labels \"warden.owner\")}}}",
+      "76a50d91d24bcb5ac0754ceb01896504acce85944bc3e80f093ebbfd04c2d8a4"
+    ],
+    "rc": 0,
+    "out": "{\"id\":\"76a50d91d24bcb5ac0754ceb01896504acce85944bc3e80f093ebbfd04c2d8a4\",\"name\":\"/warden-task9-pg-diag-20261026-b\",\"owner\":\"f0cd72248dd966d3a831d1f84cdb35a3\"}\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "76a50d91d24bcb5ac0754ceb01896504acce85944bc3e80f093ebbfd04c2d8a4"
+    ],
+    "rc": 0,
+    "out": "{\"Status\":\"exited\",\"Running\":false,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":0,\"ExitCode\":1,\"Error\":\"\",\"StartedAt\":\"2026-10-26T05:24:14.213716398Z\",\"FinishedAt\":\"2026-10-26T05:24:14.588916345Z\"}\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "logs",
+      "--tail",
+      "80",
+      "76a50d91d24bcb5ac0754ceb01896504acce85944bc3e80f093ebbfd04c2d8a4"
+    ],
+    "rc": 0,
+    "out": "The files belonging to this database system will be owned by user \"postgres\".\nThis user must also own the server process.\n\nThe database cluster will be initialized with locale \"en_US.utf8\".\nThe default database encoding has accordingly been set to \"UTF8\".\nThe default text search configuration will be set to \"english\".\n\nData page checksums are enabled.\n\nfixing permissions on existing directory /var/lib/postgresql/task9 ... ok\ncreating subdirectories ... ok\nselecting dynamic shared memory implementation ... posix\nselecting default \"max_connections\" ... 100\nselecting default \"shared_buffers\" ... 128MB\nselecting default time zone ... UTC\ncreating configuration files ... ok\nrunning bootstrap script ... ",
+    "err": "chmod: /var/run/postgresql: Operation not permitted\n********************************************************************************\nWARNING: POSTGRES_HOST_AUTH_METHOD has been set to \"trust\". This will allow\n         anyone with access to the Postgres port to access your database without\n         a password, even if POSTGRES_PASSWORD is set. See PostgreSQL\n         documentation about \"trust\":\n         https://www.postgresql.org/docs/current/auth-trust.html\n         In Docker's default configuration, this is effectively any other\n         container on the same system.\n\n         It is not recommended to use POSTGRES_HOST_AUTH_METHOD=trust. Replace\n         it with \"-e POSTGRES_PASSWORD=password\" instead to set a password in\n         \"docker run\".\n********************************************************************************\n2026-10-26 05:24:14.506 UTC [29] FATAL:  could not resize shared memory segment \"/PostgreSQL.3862904388\" to 1048576 bytes: No space left on device\n2026-10-26 05:24:14.506 UTC [29] PANIC:  cannot abort transaction 1, it was already committed\nchild process was terminated by signal 6: Aborted\ninitdb: removing contents of data directory \"/var/lib/postgresql/task9\"\n",
+    "failure": ""
+  },
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{\"id\":{{json .Id}},\"name\":{{json .Name}},\"owner\":{{json (index .Config.Labels \"warden.owner\")}}}",
+      "76a50d91d24bcb5ac0754ceb01896504acce85944bc3e80f093ebbfd04c2d8a4"
+    ],
+    "rc": 0,
+    "out": "{\"id\":\"76a50d91d24bcb5ac0754ceb01896504acce85944bc3e80f093ebbfd04c2d8a4\",\"name\":\"/warden-task9-pg-diag-20261026-b\",\"owner\":\"f0cd72248dd966d3a831d1f84cdb35a3\"}\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "rm",
+      "-f",
+      "-v",
+      "76a50d91d24bcb5ac0754ceb01896504acce85944bc3e80f093ebbfd04c2d8a4"
+    ],
+    "rc": 0,
+    "out": "76a50d91d24bcb5ac0754ceb01896504acce85944bc3e80f093ebbfd04c2d8a4\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{{.Name}}",
+      "warden-task9-pg-diag-20261026-b"
+    ],
+    "rc": 1,
+    "out": "\n",
+    "err": "Error response from daemon: No such container: warden-task9-pg-diag-20261026-b\n",
+    "failure": ""
+  }
+]

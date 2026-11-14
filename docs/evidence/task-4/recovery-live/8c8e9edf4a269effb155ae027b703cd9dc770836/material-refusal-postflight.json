@@ -1,0 +1,58 @@
+{
+  "source": "8c8e9edf4a269effb155ae027b703cd9dc770836",
+  "state": "material-pending",
+  "helper_image": null,
+  "helper_cid": null,
+  "helper_settled": false,
+  "staging_tar_exists": false,
+  "owned_images": [],
+  "owned_containers": [],
+  "original_Q_bytes": 5000000000,
+  "original_Q_released": false,
+  "live": {
+    "dev": 66307,
+    "ino": 56377608,
+    "uid": 0,
+    "mode": "0o700"
+  },
+  "fresh_necessary_recovery_admission": {
+    "kind": "exact-scene-recovery-admission-v1",
+    "rest_allocated_bytes": 4016091136,
+    "original_opaque_charge": 5000000000,
+    "all_outstanding_bytes": 5000000000,
+    "all_owned_image_charge": 0,
+    "prospective_helper_growth": 736000000,
+    "disk_bytes": 9752091136,
+    "resident_bytes": 1256000000,
+    "ordinary_guard_pass": false,
+    "free_bytes": 270266093568,
+    "utc": "2026-10-24T23:33:02.151972+00:00"
+  },
+  "public_stdlib_aliases": [
+    {
+      "path": "/usr/lib/python3.14/_sysconfigdata__x86_64-linux-gnu.py",
+      "target": "_sysconfigdata__linux_x86_64-linux-gnu.py",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o777"
+    },
+    {
+      "path": "/usr/lib/python3.14/sitecustomize.py",
+      "target": "/etc/python3.14/sitecustomize.py",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o777"
+    },
+    {
+      "path": "/usr/lib/python3.14/config-3.14-x86_64-linux-gnu/libpython3.14.so",
+      "target": "../../x86_64-linux-gnu/libpython3.14.so.1",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o777"
+    }
+  ],
+  "private_scene_entries_read": false,
+  "helper_started": false,
+  "ordinary_full_guard": "blocked_by_unchanged_opaque_live",
+  "physical_retirement": "cleanup_pending"
+}

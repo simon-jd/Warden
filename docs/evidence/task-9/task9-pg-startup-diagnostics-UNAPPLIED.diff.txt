@@ -1,0 +1,39 @@
+--- a/task-9-first-red-caller-absence-fix1.py.txt
++++ b/task-9-first-red-caller-absence-fix1.py.txt
+@@ -88,7 +88,10 @@
+  if e['rc']!=1 or e['out'] not in ['', '\n'] or e['err'] not in expected:raise RuntimeError('container_not_proven_absent')
+ 
+ def common(name,memory,pids):
+- return ['run','--pull=never','--name',name,'--cidfile',str(N/(name+'.cid')),'--label','warden.test=task9','--label','warden.owner='+OWN,'--network','none','--read-only','--cap-drop','ALL','--security-opt','no-new-privileges','--user','postgres','--memory',memory,'--memory-swap',memory,'--pids-limit',pids,'--cpus','2','--shm-size','1m','--log-driver','none']
++ args=['run','--pull=never','--name',name,'--cidfile',str(N/(name+'.cid')),'--label','warden.test=task9','--label','warden.owner='+OWN,'--network','none','--read-only','--cap-drop','ALL','--security-opt','no-new-privileges','--user','postgres','--memory',memory,'--memory-swap',memory,'--pids-limit',pids,'--cpus','2','--shm-size','1m','--log-driver','none']
++ if name==PG:
++  args[-1]='local';args+=['--log-opt','max-size=1m','--log-opt','max-file=1']
++ return args
+ 
+ def bind(src,dst,readonly=True):
+  return ['--mount','type=bind,src='+str(src)+',dst='+dst+(',readonly' if readonly else '')]
+@@ -124,16 +127,22 @@
+  absent(PG,min(T+12,time.monotonic()+2));absent(GO,min(T+14,time.monotonic()+2))
+  assert time.monotonic()<T+15
+  pgargs=common(PG,'512m','96')+['-d','--tmpfs','/var/lib/postgresql:rw,noexec,nosuid,nodev,size=192m,mode=1777','--tmpfs','/tmp:rw,noexec,nosuid,nodev,size=8m,mode=1777']+bind(N/'socket','/var/run/postgresql',False)+['-e','PGDATA=/var/lib/postgresql/task9','-e','POSTGRES_DB=warden_test','-e','POSTGRES_HOST_AUTH_METHOD=trust',IMAGE,'postgres','-c','listen_addresses=','-c','unix_socket_directories=/var/run/postgresql','-c','unix_socket_permissions=0777','-c','shared_buffers=32MB','-c','max_connections=20','-c','max_parallel_workers=0','-c','dynamic_shared_memory_type=mmap','-c','max_wal_size=32MB','-c','min_wal_size=32MB']
+- attempted.append(PG);must(pgargs,min(T+22,time.monotonic()+6))
++ attempted.append(PG);started=must(pgargs,min(T+22,time.monotonic()+6))
++ cid=started['out'].removesuffix('\n')
++ assert len(cid)==64 and all(c in '0123456789abcdef' for c in cid)
+  ownership=must(['container','inspect','--format','{{ index .Config.Labels "warden.owner" }}',PG],min(T+24,time.monotonic()+2))
+  assert ownership['out']==OWN+'\n'
+  ready=False
+  while time.monotonic()<T+30:
+   e=cli(['exec','--user','postgres',PG,'/bin/sh','-c','test "$(cat /proc/1/comm)" = postgres && exec pg_isready -h /var/run/postgresql -U postgres -d warden_test -t 1'],min(T+31,time.monotonic()+2))
+   if e['rc']==0:ready=True;break
++  if e['err']=='Error response from daemon: container '+cid+' is not running\n':break
+   if e['rc'] not in [1,2]:raise RuntimeError('readiness_unknown')
+   time.sleep(.1)
+- if not ready:raise RuntimeError('pg_not_ready')
++ if not ready:
++  cli(['container','inspect','--format','{{json .State}}',PG],min(T+34,time.monotonic()+2))
++  cli(['logs','--tail','80',PG],min(T+36,time.monotonic()+2))
++  raise RuntimeError('pg_not_ready')
+  env={'GOROOT':'/sdk','GOENV':'off','GOWORK':'off','GOTOOLCHAIN':'local','GOPROXY':'file:///proxy','GOSUMDB':'off','GOVCS':'*:off','CGO_ENABLED':'0','GOOS':'linux','GOARCH':'amd64','GOMAXPROCS':'2','GOMEMLIMIT':'700MiB','GOCACHE':'/work/cache','GOTMPDIR':'/work/tmp','TMPDIR':'/work/tmp','GOPATH':'/work/gopath','GOMODCACHE':'/work/mod','XDG_CONFIG_HOME':'/work/config','GOTELEMETRY':'off','TEST_TELEMETRY_DIR':'/work/telemetry','WARDEN_TEST_DATABASE_URL':'postgres://postgres@/warden_test?host=/var/run/postgresql&sslmode=disable'}
+  goargs=common(GO,'1g','96')+['--tmpfs','/work:rw,exec,nosuid,nodev,size=472m,mode=1777']+bind(G,'/sdk')+bind(N/'source','/source')+bind(N/'proxy','/proxy')+bind(N/'empty','/var/lib/postgresql')+bind(N/'socket','/var/run/postgresql')+['--workdir','/source','--entrypoint','/bin/sh']
+  for k,v in env.items():goargs+=['-e',k+'='+v]

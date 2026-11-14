@@ -1,0 +1,30 @@
+profile_source_sha256=56abda58b8a822b7bc1ce7311025763878e7110c2d4cfabd84203dce556db4dd
+{"image_id": "sha256:a688600ca24f8a4d3ca77f95b0dd40704a9fc787c826660eb7ba0b641b8b175d", "owned_image_charge": 0, "outstanding": 0}
+{"additional_bytes": "512000000", "at": "2026-10-24T21:47:13Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 272259702784, "project_allocated_bytes": 3922759680, "service_memory_bytes": "2000000000"}
+{"container_id": "af4e85cf786b8a777cfaab488f39c51821b91186af9a13df78e8db663cdda563", "labels": {"project": "warden", "owner": "codex-warden", "session": "5ac2843402a3b5f835fbbb86b958b3ba", "task": "firecracker-code", "ttl": "2026-10-24T22:47:13.010806+00:00"}}
+{"inspected_host_config": {"Binds": null, "ContainerIDFile": "", "LogConfig": {"Type": "json-file", "Config": {"max-file": "1", "max-size": "10m"}}, "NetworkMode": "none", "PortBindings": {}, "RestartPolicy": {"Name": "no", "MaximumRetryCount": 0}, "AutoRemove": false, "VolumeDriver": "", "VolumesFrom": null, "ConsoleSize": [0, 0], "CapAdd": null, "CapDrop": ["ALL"], "CgroupnsMode": "private", "Dns": null, "DnsOptions": [], "DnsSearch": [], "ExtraHosts": null, "GroupAdd": null, "IpcMode": "private", "Cgroup": "", "Links": null, "OomScoreAdj": 0, "PidMode": "", "Privileged": false, "PublishAllPorts": false, "ReadonlyRootfs": true, "SecurityOpt": ["no-new-privileges"], "Tmpfs": {"/tmp": "rw,exec,nosuid,nodev,size=268435456"}, "UTSMode": "", "UsernsMode": "", "ShmSize": 67108864, "Runtime": "runc", "Isolation": "", "CpuShares": 0, "Memory": 2000000000, "NanoCpus": 2000000000, "CgroupParent": "", "BlkioWeight": 0, "BlkioWeightDevice": [], "BlkioDeviceReadBps": [], "BlkioDeviceWriteBps": [], "BlkioDeviceReadIOps": [], "BlkioDeviceWriteIOps": [], "CpuPeriod": 0, "CpuQuota": 0, "CpuRealtimePeriod": 0, "CpuRealtimeRuntime": 0, "CpusetCpus": "", "CpusetMems": "", "Devices": [], "DeviceCgroupRules": null, "DeviceRequests": null, "MemoryReservation": 0, "MemorySwap": 2000000000, "MemorySwappiness": null, "OomKillDisable": false, "PidsLimit": 256, "Ulimits": null, "CpuCount": 0, "CpuPercent": 0, "IOMaximumIOps": 0, "IOMaximumBandwidth": 0, "Mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden", "Target": "/workspace", "ReadOnly": true}, {"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/firecracker-code", "Target": "/workspace/.cache/firecracker-code"}], "MaskedPaths": ["/proc/acpi", "/proc/asound", "/proc/interrupts", "/proc/kcore", "/proc/keys", "/proc/latency_stats", "/proc/sched_debug", "/proc/scsi", "/proc/timer_list", "/proc/timer_stats", "/sys/devices/virtual/powercap", "/sys/firmware", "/sys/devices/system/cpu/cpu0/thermal_throttle", "/sys/devices/system/cpu/cpu1/thermal_throttle", "/sys/devices/system/cpu/cpu2/thermal_throttle", "/sys/devices/system/cpu/cpu3/thermal_throttle", "/sys/devices/system/cpu/cpu4/thermal_throttle", "/sys/devices/system/cpu/cpu5/thermal_throttle", "/sys/devices/system/cpu/cpu6/thermal_throttle", "/sys/devices/system/cpu/cpu7/thermal_throttle", "/sys/devices/system/cpu/cpu8/thermal_throttle", "/sys/devices/system/cpu/cpu9/thermal_throttle", "/sys/devices/system/cpu/cpu10/thermal_throttle", "/sys/devices/system/cpu/cpu11/thermal_throttle", "/sys/devices/system/cpu/cpu12/thermal_throttle", "/sys/devices/system/cpu/cpu13/thermal_throttle", "/sys/devices/system/cpu/cpu14/thermal_throttle", "/sys/devices/system/cpu/cpu15/thermal_throttle", "/sys/devices/system/cpu/cpu16/thermal_throttle", "/sys/devices/system/cpu/cpu17/thermal_throttle", "/sys/devices/system/cpu/cpu18/thermal_throttle", "/sys/devices/system/cpu/cpu19/thermal_throttle", "/sys/devices/system/cpu/cpu20/thermal_throttle", "/sys/devices/system/cpu/cpu21/thermal_throttle", "/sys/devices/system/cpu/cpu22/thermal_throttle", "/sys/devices/system/cpu/cpu23/thermal_throttle", "/sys/devices/system/cpu/cpu24/thermal_throttle", "/sys/devices/system/cpu/cpu25/thermal_throttle", "/sys/devices/system/cpu/cpu26/thermal_throttle", "/sys/devices/system/cpu/cpu27/thermal_throttle", "/sys/devices/system/cpu/cpu28/thermal_throttle", "/sys/devices/system/cpu/cpu29/thermal_throttle", "/sys/devices/system/cpu/cpu30/thermal_throttle", "/sys/devices/system/cpu/cpu31/thermal_throttle"], "ReadonlyPaths": ["/proc/bus", "/proc/fs", "/proc/irq", "/proc/sys", "/proc/sysrq-trigger"]}}
+=== RUN   TestDevicePolicyDeniesOnlyTUNReadWrite
+--- PASS: TestDevicePolicyDeniesOnlyTUNReadWrite (0.00s)
+=== RUN   TestDevicePolicyRequiresAdditiveComposition
+=== RUN   TestDevicePolicyRequiresAdditiveComposition/query
+=== RUN   TestDevicePolicyRequiresAdditiveComposition/flags
+=== RUN   TestDevicePolicyRequiresAdditiveComposition/duplicate
+=== RUN   TestDevicePolicyRequiresAdditiveComposition/load
+=== RUN   TestDevicePolicyRequiresAdditiveComposition/attach
+=== RUN   TestDevicePolicyRequiresAdditiveComposition/removed
+=== RUN   TestDevicePolicyRequiresAdditiveComposition/extra
+--- PASS: TestDevicePolicyRequiresAdditiveComposition (0.00s)
+    --- PASS: TestDevicePolicyRequiresAdditiveComposition/query (0.00s)
+    --- PASS: TestDevicePolicyRequiresAdditiveComposition/flags (0.00s)
+    --- PASS: TestDevicePolicyRequiresAdditiveComposition/duplicate (0.00s)
+    --- PASS: TestDevicePolicyRequiresAdditiveComposition/load (0.00s)
+    --- PASS: TestDevicePolicyRequiresAdditiveComposition/attach (0.00s)
+    --- PASS: TestDevicePolicyRequiresAdditiveComposition/removed (0.00s)
+    --- PASS: TestDevicePolicyRequiresAdditiveComposition/extra (0.00s)
+=== RUN   TestDevicePolicyFixedABIAndDigest
+--- PASS: TestDevicePolicyFixedABIAndDigest (0.00s)
+=== RUN   TestDevicePolicySingleACKClosedAndBounded
+--- PASS: TestDevicePolicySingleACKClosedAndBounded (0.01s)
+PASS
+ok  	warden/runtimes/firecracker	0.009s
+{"removed_container": "af4e85cf786b8a777cfaab488f39c51821b91186af9a13df78e8db663cdda563"}

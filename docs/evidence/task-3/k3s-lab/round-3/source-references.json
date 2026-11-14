@@ -1,0 +1,52 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/go.mod",
+    "bytes": 29811,
+    "sha256": "72bb94b9186b0cbc0fca5f892e9c0bcde01d2d856f8c92a043d9259c29d34aa1"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/pkg/server/server.go",
+    "bytes": 19420,
+    "sha256": "efbdb4a18c88d1c78b63c428a35e16b390f542ba3d527c7dad0c2607cc437b29"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/pkg/util/apierrors.go",
+    "bytes": 2920,
+    "sha256": "8f85f3d3b8c7df072a3d9bdd9e5953d1f5b75a6bfcf360d3813d7aa6a6409b08"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/pkg/agent/templates/templates.go",
+    "bytes": 13973,
+    "sha256": "63e8139adfc8d3f1bc1cb23581769bb7ad1a0e6b14a266f8a000e4ba42eca9f1"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/k3s-io/containerd/v2.3.4-k3s1.36/internal/nri/config.go",
+    "bytes": 3919,
+    "sha256": "a28444c285bcaad06a267e6a6c66e67c1ddd697330f6271a0d37ee37c258a01b"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/k3s-io/containerd/v2.3.4-k3s1.36/internal/nri/nri.go",
+    "bytes": 13844,
+    "sha256": "ab97b06b087725405ea4cf4b29c9a97a3c22bc7c35ecbaa4a3c2b7ec2321691b"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/k3s-io/containerd/v2.3.4-k3s1.36/cmd/containerd/server/config/config.go",
+    "bytes": 22300,
+    "sha256": "b13ef64bff6a8f50bc6ef8f94e436fd03f4a255283fee47f5896a115fa806ab5"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/k3s-io/containerd/v2.3.4-k3s1.36/plugins/content/local/store.go",
+    "bytes": 19286,
+    "sha256": "8cde60fa4822a02b074828d0de1352ad51a3d36e9dcbce8f8c2480592fdb7716"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/k3s-io/containerd/v2.3.4-k3s1.36/internal/fsverity/fsverity_linux.go",
+    "bytes": 2968,
+    "sha256": "7d277a1c8b37f9dae4920002b30517d14969b07f719d6fbd3a8180c96a4fbe5e"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/rancher/dynamiclistener/e4a1908ede0d/listener.go",
+    "bytes": 13980,
+    "sha256": "6324f61339bc78f1a612f4da6363ab4bd56499cd8bf0695062da181b13935c5f"
+  }
+]

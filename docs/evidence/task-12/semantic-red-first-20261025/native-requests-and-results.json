@@ -1,0 +1,117 @@
+{
+  "scope": "sole Task12 first semantic RED; no OpenSearch execution",
+  "implementation_base": "9691c9d7b9bb03e503964e4c6a0d97b5982b8373",
+  "records": [
+    {
+      "phase": "fresh_disk_resident_gate",
+      "tool": "exec_command",
+      "request": {
+        "cmd": "ulimit -c 0\nulimit -n 64\nulimit -v 262144\nulimit -f 1024\nulimit -t 20\nexec /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -B scripts/azure_guard.py preflight --additional-bytes 5134217728 --service-memory-bytes 10000000000 --download-bytes 0",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Run the root-authorized fresh local disk/resident preflight for the one Task12 semantic RED; no cloud or downloads.",
+        "max_output_tokens": 3000,
+        "yield_time_ms": 1000
+      },
+      "response": {
+        "chunk_id": "9d249c",
+        "wall_time_seconds": 0.220848793,
+        "exit_code": 0,
+        "original_token_count": 56,
+        "output": "{\"additional_bytes\": \"5134217728\", \"at\": \"2026-10-25T22:57:06Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 261621358592, \"project_allocated_bytes\": 4467036160, \"service_memory_bytes\": \"10000000000\"}\n"
+      }
+    },
+    {
+      "phase": "fresh_memory_absence_gate",
+      "tool": "exec_command",
+      "request": {
+        "cmd": "ulimit -c 0\nulimit -n 64\nulimit -v 262144\nulimit -f 1024\nulimit -t 20\nexec /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -B - <<'PY'\nimport json, os, sys\nfrom pathlib import Path\nrun=Path('/home/postedism/Desktop/Warden/.cache/task12-semantic-red-20261025-a')\nvalues=dict(line.split(':',1) for line in Path('/proc/meminfo').read_text().splitlines())\navailable=int(values['MemAvailable'].split()[0])*1024\nresult={'uid':os.getuid(),'MemAvailable_bytes':available,'owned_run_lexists':os.path.lexists(run)}\nprint(json.dumps(result,sort_keys=True))\nsys.exit(0 if result['uid']==1000 and available>=2000000000 and not result['owned_run_lexists'] else 1)\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Run the authorized fresh UID1000/MemAvailable/new-namespace gate immediately before the sole Task12 RED; read only /proc/meminfo.",
+        "max_output_tokens": 3000,
+        "yield_time_ms": 1000
+      },
+      "response": {
+        "chunk_id": "35a76d",
+        "wall_time_seconds": 0.000026954,
+        "exit_code": 0,
+        "original_token_count": 20,
+        "output": "{\"MemAvailable_bytes\": 86663315456, \"owned_run_lexists\": false, \"uid\": 1000}\n"
+      }
+    },
+    {
+      "phase": "sole_semantic_red",
+      "tool": "exec_command",
+      "request": {
+        "cmd": "/bin/bash .superpowers/sdd/2-warden-security-plan/task-12-red-command.sh.txt",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Execute the root-FULLREAD 2605-byte Task12 first RED caller exactly once: real backend reference and coverage assertions only, with the admitted 60-second bounds.",
+        "max_output_tokens": 3000,
+        "yield_time_ms": 1000
+      },
+      "response": {
+        "chunk_id": "dff954",
+        "wall_time_seconds": 0.146364581,
+        "exit_code": 1,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "phase": "bounded_full_original_postread",
+      "tool": "exec_command",
+      "request": {
+        "cmd": "ulimit -c 0\nulimit -n 64\nulimit -v 262144\nulimit -f 1024\nulimit -t 20\nexec /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -B - <<'PY'\nimport hashlib, json, os\nfrom pathlib import Path\nassert os.getuid()==1000\nbase=Path('.cache/task12-semantic-red-20261025-a')\nfiles=[]\nfor name in ('output.txt','status.txt','postflight.txt'):\n    path=base/name\n    raw=path.read_bytes()\n    assert len(raw)<=1048576\n    files.append({'path':str(path),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),'content':raw.decode()})\nprint(json.dumps({'files':files,'tmp_lexists':os.path.lexists(base/'tmp')},indent=2))\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Read the complete original output/status/postflight from this one owned Task12 RED and verify cleanup; no test rerun or old-cache access.",
+        "max_output_tokens": 7000,
+        "yield_time_ms": 1000
+      },
+      "response": {
+        "chunk_id": "c5bf17",
+        "wall_time_seconds": 0.000025057,
+        "exit_code": 0,
+        "original_token_count": 761,
+        "output": "{\n  \"files\": [\n    {\n      \"path\": \".cache/task12-semantic-red-20261025-a/output.txt\",\n      \"bytes\": 2260,\n      \"sha256\": \"09d5baa739831fa0e772215160a6412f8806e0f7194a035c8d257337a2bc3474\",\n      \"content\": \"test_returns_backend_reference (detect.sigma.test_contract.AdapterRedTest.test_returns_backend_reference) ... FAIL\\ntest_reports_tagged_and_unassigned_rules (detect.report.test_coverage.CoverageRedTest.test_reports_tagged_and_unassigned_rules) ... FAIL\\n\\n======================================================================\\nFAIL: test_returns_backend_reference (detect.sigma.test_contract.AdapterRedTest.test_returns_backend_reference)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/home/postedism/Desktop/Warden/detect/sigma/test_contract.py\\\", line 43, in test_returns_backend_reference\\n    self.assertEqual(convert_rule(REFERENCE_RULE), reference)\\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nAssertionError: Lists differ: [] != ['class_uid:6003 AND metadata.product.name[86 chars]ite']\\n\\nSecond list contains 1 additional elements.\\nFirst extra element 0:\\n'class_uid:6003 AND metadata.product.name:\\\"azure activity log\\\" AND api.operation:microsoft.authorization\\\\\\\\/roleassignments\\\\\\\\/write'\\n\\n- []\\n+ ['class_uid:6003 AND metadata.product.name:\\\"azure activity log\\\" AND '\\n+  'api.operation:microsoft.authorization\\\\\\\\/roleassignments\\\\\\\\/write']\\n\\n======================================================================\\nFAIL: test_reports_tagged_and_unassigned_rules (detect.report.test_coverage.CoverageRedTest.test_reports_tagged_and_unassigned_rules)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/home/postedism/Desktop/Warden/detect/report/test_coverage.py\\\", line 20, in test_reports_tagged_and_unassigned_rules\\n    self.assertEqual(\\n    ~~~~~~~~~~~~~~~~^\\n        summarize_rules(rules),\\n        ^^^^^^^^^^^^^^^^^^^^^^^\\n    ...<10 lines>...\\n        },\\n        ^^\\n    )\\n    ^\\nAssertionError: {'rule_count': 0, 'tagged_rule_count': 0, 'unassigned_ru[61 chars]: []} != {'rule_count': 2, 'tagged_rule_count': 1, 'unassigned_ru[342 chars]']}]}\\nDiff is 764 characters long. Set self.maxDiff to None to see it.\\n\\n----------------------------------------------------------------------\\nRan 2 tests in 0.003s\\n\\nFAILED (failures=2)\\n{\\\"assertion_failures\\\": 2, \\\"errors\\\": 0, \\\"skips\\\": 0, \\\"tests_run\\\": 2, \\\"unexpected_successes\\\": 0}\\n\"\n    },\n    {\n      \"path\": \".cache/task12-semantic-red-20261025-a/status.txt\",\n      \"bytes\": 37,\n      \"sha256\": \"028cbc502bb51b2acfa95d8dc90eb033997181ab3a9272fb27387697f1eebcd5\",\n      \"content\": \"exit=1\\ntest_rc=1\\nhead_rc=0\\ncleanup=1\\n\"\n    },\n    {\n      \"path\": \".cache/task12-semantic-red-20261025-a/postflight.txt\",\n      \"bytes\": 15,\n      \"sha256\": \"32d8508ce28f4e8a3fa09c9315c97b1bff710fb368ad17fb5d0f8eeffa4cc589\",\n      \"content\": \"tmp_bytes=4096\\n\"\n    }\n  ],\n  \"tmp_lexists\": false\n}\n"
+      }
+    }
+  ],
+  "full_original_postread": {
+    "files": [
+      {
+        "path": ".cache/task12-semantic-red-20261025-a/output.txt",
+        "bytes": 2260,
+        "sha256": "09d5baa739831fa0e772215160a6412f8806e0f7194a035c8d257337a2bc3474",
+        "content": "test_returns_backend_reference (detect.sigma.test_contract.AdapterRedTest.test_returns_backend_reference) ... FAIL\ntest_reports_tagged_and_unassigned_rules (detect.report.test_coverage.CoverageRedTest.test_reports_tagged_and_unassigned_rules) ... FAIL\n\n======================================================================\nFAIL: test_returns_backend_reference (detect.sigma.test_contract.AdapterRedTest.test_returns_backend_reference)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/detect/sigma/test_contract.py\", line 43, in test_returns_backend_reference\n    self.assertEqual(convert_rule(REFERENCE_RULE), reference)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: [] != ['class_uid:6003 AND metadata.product.name[86 chars]ite']\n\nSecond list contains 1 additional elements.\nFirst extra element 0:\n'class_uid:6003 AND metadata.product.name:\"azure activity log\" AND api.operation:microsoft.authorization\\\\/roleassignments\\\\/write'\n\n- []\n+ ['class_uid:6003 AND metadata.product.name:\"azure activity log\" AND '\n+  'api.operation:microsoft.authorization\\\\/roleassignments\\\\/write']\n\n======================================================================\nFAIL: test_reports_tagged_and_unassigned_rules (detect.report.test_coverage.CoverageRedTest.test_reports_tagged_and_unassigned_rules)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/detect/report/test_coverage.py\", line 20, in test_reports_tagged_and_unassigned_rules\n    self.assertEqual(\n    ~~~~~~~~~~~~~~~~^\n        summarize_rules(rules),\n        ^^^^^^^^^^^^^^^^^^^^^^^\n    ...<10 lines>...\n        },\n        ^^\n    )\n    ^\nAssertionError: {'rule_count': 0, 'tagged_rule_count': 0, 'unassigned_ru[61 chars]: []} != {'rule_count': 2, 'tagged_rule_count': 1, 'unassigned_ru[342 chars]']}]}\nDiff is 764 characters long. Set self.maxDiff to None to see it.\n\n----------------------------------------------------------------------\nRan 2 tests in 0.003s\n\nFAILED (failures=2)\n{\"assertion_failures\": 2, \"errors\": 0, \"skips\": 0, \"tests_run\": 2, \"unexpected_successes\": 0}\n"
+      },
+      {
+        "path": ".cache/task12-semantic-red-20261025-a/status.txt",
+        "bytes": 37,
+        "sha256": "028cbc502bb51b2acfa95d8dc90eb033997181ab3a9272fb27387697f1eebcd5",
+        "content": "exit=1\ntest_rc=1\nhead_rc=0\ncleanup=1\n"
+      },
+      {
+        "path": ".cache/task12-semantic-red-20261025-a/postflight.txt",
+        "bytes": 15,
+        "sha256": "32d8508ce28f4e8a3fa09c9315c97b1bff710fb368ad17fb5d0f8eeffa4cc589",
+        "content": "tmp_bytes=4096\n"
+      }
+    ],
+    "tmp_lexists": false
+  }
+}

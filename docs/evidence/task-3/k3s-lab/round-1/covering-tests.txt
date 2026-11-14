@@ -1,0 +1,74 @@
+$ /usr/bin/python3 -B -m unittest discover -s scripts -p test_k3s_lab*.py -v
+test_capless_smoke_does_not_bind_host_paths_or_grant_capabilities (test_k3s_lab.LabTest.test_capless_smoke_does_not_bind_host_paths_or_grant_capabilities) ... ok
+test_failed_capless_smoke_releases_charge_only_after_verified_image_removal (test_k3s_lab.LabTest.test_failed_capless_smoke_releases_charge_only_after_verified_image_removal) ... ok
+test_failed_live_cleanup_preserves_container_and_raises (test_k3s_lab.LabTest.test_failed_live_cleanup_preserves_container_and_raises) ... ok
+test_image_session_drift_before_delete_preserves_objects_and_charge (test_k3s_lab.LabTest.test_image_session_drift_before_delete_preserves_objects_and_charge) ... ok
+test_live_requires_review_and_fixed_fd_bind (test_k3s_lab.LabTest.test_live_requires_review_and_fixed_fd_bind) ... ok
+test_packaged_selection_drops_wrapper_module_applets_and_unsafe_tools (test_k3s_lab.LabTest.test_packaged_selection_drops_wrapper_module_applets_and_unsafe_tools) ... ok
+test_python_object_file_is_not_a_missing_dynamic_dependency (test_k3s_lab.LabTest.test_python_object_file_is_not_a_missing_dynamic_dependency) ... ok
+test_removal_failure_is_not_cleanup_success (test_k3s_lab.LabTest.test_removal_failure_is_not_cleanup_success) ... ok
+test_renamed_session_anchor_fails_postflight (test_k3s_lab.LabTest.test_renamed_session_anchor_fails_postflight) ... ok
+test_shared_accounting_counts_k3s_charge_before_other_lab_can_run (test_k3s_lab.LabTest.test_shared_accounting_counts_k3s_charge_before_other_lab_can_run) ... ok
+test_success_removes_only_the_exact_owned_container (test_k3s_lab.LabTest.test_success_removes_only_the_exact_owned_container) ... ok
+test_unrecognized_modes_labels_and_nonexact_image_ids_fail (test_k3s_lab.LabTest.test_unrecognized_modes_labels_and_nonexact_image_ids_fail) ... ok
+test_failed_bootstrap_retains_bounded_private_snapshot_and_reaps (test_k3s_lab_init.InitTest.test_failed_bootstrap_retains_bounded_private_snapshot_and_reaps) ... ok
+test_fixed_kubelet_config_protects_host_and_limits_owned_subtree (test_k3s_lab_init.InitTest.test_fixed_kubelet_config_protects_host_and_limits_owned_subtree) ... ok
+test_handler_verification_rejects_flag_or_runtime_drift (test_k3s_lab_init.InitTest.test_handler_verification_rejects_flag_or_runtime_drift) ... ok
+test_host_cannot_call_smoke_or_forward_arbitrary_commands (test_k3s_lab_init.InitTest.test_host_cannot_call_smoke_or_forward_arbitrary_commands) ... ok
+test_log_growth_after_metadata_check_still_obeys_combined_read_bound (test_k3s_lab_init.InitTest.test_log_growth_after_metadata_check_still_obeys_combined_read_bound) ... ok
+test_only_public_identity_fields_leave_the_controller (test_k3s_lab_init.InitTest.test_only_public_identity_fields_leave_the_controller) ... ok
+test_rotated_containerd_history_cannot_bypass_startup_gate (test_k3s_lab_init.InitTest.test_rotated_containerd_history_cannot_bypass_startup_gate) ... ok
+test_safe_observed_denial_lines_preserve_order_and_duplicates (test_k3s_lab_init.InitTest.test_safe_observed_denial_lines_preserve_order_and_duplicates) ... ok
+test_separate_containerd_warnings_cannot_bypass_clean_main_log (test_k3s_lab_init.InitTest.test_separate_containerd_warnings_cannot_bypass_clean_main_log) ... ok
+test_startup_diagnostics_total_bound_and_symlinks_fail_closed (test_k3s_lab_init.InitTest.test_startup_diagnostics_total_bound_and_symlinks_fail_closed) ... ok
+test_successful_cleanup_exports_actual_denials_and_removes_private_data (test_k3s_lab_init.InitTest.test_successful_cleanup_exports_actual_denials_and_removes_private_data) ... ok
+test_sysctl_mismatch_or_writable_proc_sys_refuses_start (test_k3s_lab_init.InitTest.test_sysctl_mismatch_or_writable_proc_sys_refuses_start) ... ok
+test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected (test_k3s_lab_init.InitTest.test_warning_extra_fields_secret_prefixes_and_unknown_text_are_rejected) ... ok
+test_wrong_node_version_or_namespace_identity_fails (test_k3s_lab_init.InitTest.test_wrong_node_version_or_namespace_identity_fails) ... ok
+test_embedded_zstd_requires_digest_named_frame_and_safe_tar (test_k3s_lab_materials.MaterialsTest.test_embedded_zstd_requires_digest_named_frame_and_safe_tar) ... ok
+test_internal_parent_alias_is_checked_but_never_installed (test_k3s_lab_materials.MaterialsTest.test_internal_parent_alias_is_checked_but_never_installed) ... ok
+test_tar_returns_regular_bytes_without_extracting_links (test_k3s_lab_materials.MaterialsTest.test_tar_returns_regular_bytes_without_extracting_links) ... ok
+test_unsafe_paths_aliases_devices_duplicates_and_oversize_fail (test_k3s_lab_materials.MaterialsTest.test_unsafe_paths_aliases_devices_duplicates_and_oversize_fail) ... ok
+test_wrong_length_or_digest_cannot_be_used (test_k3s_lab_materials.MaterialsTest.test_wrong_length_or_digest_cannot_be_used) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.424s
+
+OK
+exit=0
+$ /usr/bin/python3 -B -m unittest discover -s scripts -p test_runtime_lab_docker.py -v
+test_aggregate_memory_guard_stops_main_before_create_or_import (test_runtime_lab_docker.DockerLabTests.test_aggregate_memory_guard_stops_main_before_create_or_import) ... ok
+test_arbitrary_command_and_mount_syntax_injection_rejected (test_runtime_lab_docker.DockerLabTests.test_arbitrary_command_and_mount_syntax_injection_rejected) ... ok
+test_artifact_symlink_and_writable_owner_rejected (test_runtime_lab_docker.DockerLabTests.test_artifact_symlink_and_writable_owner_rejected) ... ok
+test_budget_guard_refusal_precedes_docker_mutation (test_runtime_lab_docker.DockerLabTests.test_budget_guard_refusal_precedes_docker_mutation) ... ok
+test_committed_create_with_lost_response_recovers_exact_owned_id (test_runtime_lab_docker.DockerLabTests.test_committed_create_with_lost_response_recovers_exact_owned_id) ... ok
+test_confirmed_image_cleanup_releases_charge_but_failed_removal_keeps_it (test_runtime_lab_docker.DockerLabTests.test_confirmed_image_cleanup_releases_charge_but_failed_removal_keeps_it) ... ok
+test_failed_image_import_cleans_committed_owned_image (test_runtime_lab_docker.DockerLabTests.test_failed_image_import_cleans_committed_owned_image) ... ok
+test_failed_import_charges_accumulate_and_block_retries_at_guard (test_runtime_lab_docker.DockerLabTests.test_failed_import_charges_accumulate_and_block_retries_at_guard) ... ok
+test_interrupt_cleans_exact_owned_id (test_runtime_lab_docker.DockerLabTests.test_interrupt_cleans_exact_owned_id) ... ok
+test_local_cli_ignores_remote_docker_environment (test_runtime_lab_docker.DockerLabTests.test_local_cli_ignores_remote_docker_environment) ... ok
+test_malformed_import_response_recovers_id_instead_of_using_it_as_selector (test_runtime_lab_docker.DockerLabTests.test_malformed_import_response_recovers_id_instead_of_using_it_as_selector) ... ok
+test_nonzero_exit_cleans_exact_owned_id (test_runtime_lab_docker.DockerLabTests.test_nonzero_exit_cleans_exact_owned_id) ... ok
+test_only_session_bind_and_fixed_command_with_private_namespaces_and_limits (test_runtime_lab_docker.DockerLabTests.test_only_session_bind_and_fixed_command_with_private_namespaces_and_limits) ... ok
+test_real_sigterm_reaches_owned_cleanup (test_runtime_lab_docker.DockerLabTests.test_real_sigterm_reaches_owned_cleanup) ... ok
+test_smoke_never_adds_capabilities_or_disables_security_profiles (test_runtime_lab_docker.DockerLabTests.test_smoke_never_adds_capabilities_or_disables_security_profiles) ... ok
+test_unknown_inspection_error_is_not_absence_or_cleanup_success (test_runtime_lab_docker.DockerLabTests.test_unknown_inspection_error_is_not_absence_or_cleanup_success) ... ok
+test_unowned_object_is_never_removed_or_started (test_runtime_lab_docker.DockerLabTests.test_unowned_object_is_never_removed_or_started) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.990s
+
+OK
+exit=0
+$ /usr/bin/python3 -B -m unittest discover -s scripts -p test_runtime_lab_cleanup.py -v
+test_docker_cleanup_hands_back_only_verified_evidence (test_runtime_lab_cleanup.OwnedCleanupTests.test_docker_cleanup_hands_back_only_verified_evidence) ... ok
+test_kill_write_failure_still_reaps_daemon_and_preserves_unknown_state (test_runtime_lab_cleanup.OwnedCleanupTests.test_kill_write_failure_still_reaps_daemon_and_preserves_unknown_state) ... ok
+test_retired_gate_markers_are_retained_and_returned_by_fd (test_runtime_lab_cleanup.OwnedCleanupTests.test_retired_gate_markers_are_retained_and_returned_by_fd) ... ok
+test_owned_retirement_cleanup_reaps_and_propagates_data_failure (test_runtime_lab_cleanup.RetirementCleanupTests.test_owned_retirement_cleanup_reaps_and_propagates_data_failure) ... ok
+test_populated_node_does_not_delete_data (test_runtime_lab_cleanup.RetirementCleanupTests.test_populated_node_does_not_delete_data) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.017s
+
+OK
+exit=0

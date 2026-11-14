@@ -1,0 +1,52 @@
+test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields (test_k3s_lab_init.InitTest.test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields) ... 
+  test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields (test_k3s_lab_init.InitTest.test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields) (code='certificate-cache') ... ERROR
+  test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields (test_k3s_lab_init.InitTest.test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields) (code='core-initializing') ... ERROR
+  test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields (test_k3s_lab_init.InitTest.test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields) (code='v3-migration') ... ERROR
+  test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields (test_k3s_lab_init.InitTest.test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields) (code='fsverity-unsupported') ... ERROR
+test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields (test_k3s_lab_init.InitTest.test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields) ... ERROR
+
+======================================================================
+ERROR: test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields (test_k3s_lab_init.InitTest.test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields) (code='certificate-cache')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 208, in test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields
+    records = init.warning_lines(line, source=source, root='/proc/1/fd/6/root', ready_window=(start, start + 10))
+TypeError: warning_lines() got an unexpected keyword argument 'source'
+
+======================================================================
+ERROR: test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields (test_k3s_lab_init.InitTest.test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields) (code='core-initializing')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 208, in test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields
+    records = init.warning_lines(line, source=source, root='/proc/1/fd/6/root', ready_window=(start, start + 10))
+TypeError: warning_lines() got an unexpected keyword argument 'source'
+
+======================================================================
+ERROR: test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields (test_k3s_lab_init.InitTest.test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields) (code='v3-migration')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 208, in test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields
+    records = init.warning_lines(line, source=source, root='/proc/1/fd/6/root', ready_window=(start, start + 10))
+TypeError: warning_lines() got an unexpected keyword argument 'source'
+
+======================================================================
+ERROR: test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields (test_k3s_lab_init.InitTest.test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields) (code='fsverity-unsupported')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 208, in test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields
+    records = init.warning_lines(line, source=source, root='/proc/1/fd/6/root', ready_window=(start, start + 10))
+TypeError: warning_lines() got an unexpected keyword argument 'source'
+
+======================================================================
+ERROR: test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields (test_k3s_lab_init.InitTest.test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 221, in test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields
+    with self.assertRaises(ValueError): init.warning_lines(bad, source='containerd', root='/proc/1/fd/6/root', ready_window=(start, start + 10))
+                                        ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: warning_lines() got an unexpected keyword argument 'source'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=5)

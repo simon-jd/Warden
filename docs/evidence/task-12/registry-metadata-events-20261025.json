@@ -1,0 +1,83 @@
+{
+  "events": [
+    {
+      "kind": "exec_command",
+      "request": {
+        "cmd": "set -eu\nulimit -t 20\nulimit -v 262144\nulimit -f 1024\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 5134217728 --service-memory-bytes 10000000000 --download-bytes 0",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "原Task12候选OpenSearch只读Registry manifest/config查询前fresh预算门禁；不GET layer、不pull/创建容器或服务。Q5GB/旧UNKNOWN9GB保留，metadata包含在原128MiB未来预留内。",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 1000
+      },
+      "response": {
+        "chunk_id": "fb5fe7",
+        "wall_time_seconds": 0.250769196,
+        "exit_code": 0,
+        "original_token_count": 56,
+        "output": "{\"additional_bytes\": \"5134217728\", \"at\": \"2026-10-25T23:01:01Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 261602738176, \"project_allocated_bytes\": 4467097600, \"service_memory_bytes\": \"10000000000\"}\n"
+      }
+    },
+    {
+      "kind": "exec_command",
+      "request": {
+        "cmd": "set -eu\nulimit -t 20\nulimit -v 524288\nulimit -f 2048\nulimit -n 128\nulimit -c 0\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=10s 50s /usr/bin/python3 -I -S -B - <<'PY'\nimport datetime,hashlib,json,os,pathlib,re,signal,time,urllib.error,urllib.parse,urllib.request\nassert os.geteuid()==1000\nmem={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}\nassert int(mem['MemAvailable'].split()[0])*1024>=2000000000\nroot=pathlib.Path('.cache/task12-registry-metadata-20261025-a')\nassert not os.path.lexists(root);root.mkdir(mode=0o700)\ndeadline=time.monotonic()+45\ndef alarm(_s,_f):raise TimeoutError('absolute registry metadata deadline')\nsignal.signal(signal.SIGALRM,alarm);signal.setitimer(signal.ITIMER_REAL,45)\nclass NoRedirect(urllib.request.HTTPRedirectHandler):\n def redirect_request(self,*a,**k):raise RuntimeError('redirect refused')\nopener=urllib.request.build_opener(NoRedirect)\nbase='https://registry-1.docker.io/v2/opensearchproject/opensearch/'\naccept='application/vnd.oci.image.index.v1+json,application/vnd.docker.distribution.manifest.list.v2+json,application/vnd.oci.image.manifest.v1+json,application/vnd.docker.distribution.manifest.v2+json'\ncount=0;total=0;token=None;phase='start'\ndef save(name,raw):\n fd=os.open(root/name,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)\n with os.fdopen(fd,'wb') as f:f.write(raw);f.flush();os.fsync(f.fileno())\ndef get(url,name=None,auth=False):\n global count,total\n count+=1;assert count<=6 and time.monotonic()<deadline\n headers={'Accept':accept,'Accept-Encoding':'identity','User-Agent':'Warden-Task12-registry-metadata/1'}\n if auth:headers['Authorization']='Bearer '+token\n req=urllib.request.Request(url,headers=headers)\n try:response=opener.open(req,timeout=min(8,deadline-time.monotonic()))\n except urllib.error.HTTPError as e:\n  if e.code!=401:raise\n  response=e\n with response:\n  status=response.code;hdr=dict(response.headers.items());parts=[];size=0\n  while True:\n   assert time.monotonic()<deadline\n   b=response.read(min(65536,2097153-size))\n   if not b:break\n   size+=len(b);total+=len(b);assert size<=2097152 and total<=8388608;parts.append(b)\n  raw=b''.join(parts)\n if name:save(name,raw)\n return status,hdr,raw\ndef digest(raw):return 'sha256:'+hashlib.sha256(raw).hexdigest()\ndef header(h,key):return next((v for k,v in h.items() if k.lower()==key.lower()),None)\ntry:\n phase='tag'\n status,headers,raw=get(base+'manifests/2.19.1','initial.json')\n if status==401:\n  challenge=header(headers,'WWW-Authenticate')\n  assert challenge and challenge.startswith('Bearer ')\n  fields=dict(re.findall(r'([a-z]+)=\"([^\"]*)\"',challenge))\n  assert fields=={'realm':'https://auth.docker.io/token','service':'registry.docker.io','scope':'repository:opensearchproject/opensearch:pull'}\n  phase='anonymous-token'\n  status,_,authraw=get('https://auth.docker.io/token?service=registry.docker.io&scope=repository%3Aopensearchproject%2Fopensearch%3Apull')\n  assert status==200\n  authdata=json.loads(authraw);token=authdata.get('token') or authdata.get('access_token')\n  assert isinstance(token,str) and 0<len(token)<=32768\n  phase='authenticated-tag'\n  status,headers,raw=get(base+'manifests/2.19.1','tag.json',True)\n assert status==200\n tag_digest=digest(raw);assert header(headers,'Docker-Content-Digest')==tag_digest\n doc=json.loads(raw);assert doc['schemaVersion']==2\n child_digest=tag_digest\n if 'manifests' in doc:\n  matches=[x for x in doc['manifests'] if x.get('platform',{}).get('os')=='linux' and x.get('platform',{}).get('architecture')=='amd64']\n  assert len(matches)==1\n  chosen=matches[0];child_digest=chosen['digest'];assert re.fullmatch(r'sha256:[0-9a-f]{64}',child_digest)\n  phase='amd64-manifest'\n  status,headers,raw=get(base+'manifests/'+child_digest,'amd64-manifest.json',True)\n  assert status==200 and len(raw)==chosen['size'] and digest(raw)==child_digest\n  doc=json.loads(raw)\n assert doc['schemaVersion']==2\n layers=doc['layers'];assert 0<len(layers)<=64\n assert all(re.fullmatch(r'sha256:[0-9a-f]{64}',x['digest']) and type(x['size']) is int and x['size']>0 for x in layers)\n config=doc['config'];assert re.fullmatch(r'sha256:[0-9a-f]{64}',config['digest'])\n phase='config'\n status,_,raw=get(base+'blobs/'+config['digest'],'config.json',True)\n assert status==200 and len(raw)==config['size'] and digest(raw)==config['digest']\n cfg=json.loads(raw);assert cfg['os']=='linux' and cfg['architecture']=='amd64'\n result={'status':'PASS','at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'image':'opensearchproject/opensearch:2.19.1','platform':'linux/amd64','tag_digest':tag_digest,'manifest_digest':child_digest,'config_digest':config['digest'],'compressed_layer_bytes':sum(x['size'] for x in layers),'layers':layers,'request_count':count,'metadata_bytes':total,'expanded_and_daemon_peak':'UNKNOWN; no layer GET/pull/container occurred'}\n save('result.json',(json.dumps(result,indent=2)+'\\n').encode());print(json.dumps(result,sort_keys=True))\nexcept BaseException as exc:\n result={'status':'FAILED','phase':phase,'type':type(exc).__name__,'detail':str(exc)[:512],'request_count':count,'metadata_bytes':total,'no_layer_get':True}\n save('failure.json',(json.dumps(result,indent=2)+'\\n').encode());print(json.dumps(result));raise\nfinally:\n token=None;signal.setitimer(signal.ITIMER_REAL,0)\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "root已全文核对固定Task12 Registry metadata caller：最多6请求/8MiB、45秒work/60秒整体，只读候选2.19.1 manifest与config，匿名pull token仅内存、禁止重定向和layer GET；新namespace，fresh预算已通过，不联系daemon或启动服务。",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 3000
+      },
+      "response": {
+        "chunk_id": "9f2649",
+        "wall_time_seconds": 1.000760462,
+        "session_id": 91889,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "kind": "write_stdin",
+      "request": {
+        "session_id": 91889,
+        "chars": "",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 3500
+      },
+      "response": {
+        "chunk_id": "621fd6",
+        "wall_time_seconds": 0.000009482,
+        "exit_code": 1,
+        "original_token_count": 239,
+        "output": "{\"status\": \"FAILED\", \"phase\": \"config\", \"type\": \"RuntimeError\", \"detail\": \"redirect refused\", \"request_count\": 5, \"metadata_bytes\": 8062, \"no_layer_get\": true}\nTraceback (most recent call last):\n  File \"<stdin>\", line 73, in <module>\n  File \"<stdin>\", line 25, in get\n  File \"/usr/lib/python3.14/urllib/request.py\", line 493, in open\n    response = meth(req, response)\n  File \"/usr/lib/python3.14/urllib/request.py\", line 602, in http_response\n    response = self.parent.error(\n        'http', request, response, code, msg, hdrs)\n  File \"/usr/lib/python3.14/urllib/request.py\", line 525, in error\n    result = self._call_chain(*args)\n  File \"/usr/lib/python3.14/urllib/request.py\", line 464, in _call_chain\n    result = func(*args)\n  File \"/usr/lib/python3.14/urllib/request.py\", line 697, in http_error_302\n    new = self.redirect_request(req, fp, code, msg, headers, newurl)\n  File \"<stdin>\", line 11, in redirect_request\nRuntimeError: redirect refused\n"
+      }
+    },
+    {
+      "kind": "exec_command",
+      "request": {
+        "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'\nimport hashlib,json,os,pathlib,resource,stat\nresource.setrlimit(resource.RLIMIT_CPU,(10,10));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));resource.setrlimit(resource.RLIMIT_FSIZE,(2097152,2097152))\nassert os.geteuid()==1000\nsrc=pathlib.Path('.cache/task12-registry-metadata-20261025-a');out=pathlib.Path('docs/evidence/task-12/registry-partial-first-20261025');assert not os.path.lexists(out);out.mkdir(mode=0o755)\ncontents={}\nfor name in ('initial.json','tag.json','amd64-manifest.json','failure.json'):\n if not os.path.lexists(src/name):continue\n fd=os.open(src/name,os.O_RDONLY|os.O_NOFOLLOW)\n with os.fdopen(fd,'rb') as f:\n  s=os.fstat(f.fileno());assert stat.S_ISREG(s.st_mode) and s.st_uid==1000 and s.st_nlink==1 and s.st_size<=2097152\n  raw=f.read(2097153);assert len(raw)==s.st_size\n contents[name]=raw\n fd=os.open(out/name,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o644)\n with os.fdopen(fd,'wb') as f:f.write(raw);f.flush();os.fsync(f.fileno())\ntag=json.loads(contents['tag.json']);raw=contents.get('amd64-manifest.json',contents['tag.json']);doc=json.loads(raw)\nprint(json.dumps({'status':'PARTIAL; config redirect refused; original call FAILED','tag_digest':'sha256:'+hashlib.sha256(contents['tag.json']).hexdigest(),'manifest_digest':'sha256:'+hashlib.sha256(raw).hexdigest(),'compressed_layer_bytes':sum(x['size'] for x in doc['layers']),'layers':doc['layers'],'expected_config':doc['config'],'config_received':False,'expanded_and_daemon_peak':'UNKNOWN','files':{k:len(v) for k,v in contents.items()}},sort_keys=True))\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "只读保留本次Registry失败前已收到的manifest原件和failure，提取真实部分摘要/压缩体积，不再请求网络、不拉layer、不改失败namespace/权限。限定新项目文件，25秒上限。",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 3000
+      },
+      "response": {
+        "chunk_id": "bd2653",
+        "wall_time_seconds": 0.000029967,
+        "exit_code": 0,
+        "original_token_count": 457,
+        "output": "{\"compressed_layer_bytes\": 1028720640, \"config_received\": false, \"expanded_and_daemon_peak\": \"UNKNOWN\", \"expected_config\": {\"digest\": \"sha256:731779f1c50424e38335b0af191058642a4964a2b2c62175ebcc8d5734fee13a\", \"mediaType\": \"application/vnd.docker.container.image.v1+json\", \"size\": 6445}, \"files\": {\"amd64-manifest.json\": 1679, \"failure.json\": 176, \"initial.json\": 171, \"tag.json\": 685}, \"layers\": [{\"digest\": \"sha256:a60da04a601b8a4165b40817da07cd2d6e94c2b008c87988152b943d6465d10c\", \"mediaType\": \"application/vnd.docker.image.rootfs.diff.tar.gzip\", \"size\": 55907053}, {\"digest\": \"sha256:4c036822f6972a70db1138880fd0393f04b6282d21076fc40dfe111b2107852b\", \"mediaType\": \"application/vnd.docker.image.rootfs.diff.tar.gzip\", \"size\": 4347658}, {\"digest\": \"sha256:4077e1cc9344da79a471c1c0fed320cc57a6a51195d63a2e120dca794b55f67f\", \"mediaType\": \"application/vnd.docker.image.rootfs.diff.tar.gzip\", \"size\": 1562}, {\"digest\": \"sha256:83ca2899e055720360c7bc6d02ecee536f886e8a459368ebab8006ca8f96e469\", \"mediaType\": \"application/vnd.docker.image.rootfs.diff.tar.gzip\", \"size\": 968462249}, {\"digest\": \"sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1\", \"mediaType\": \"application/vnd.docker.image.rootfs.diff.tar.gzip\", \"size\": 32}, {\"digest\": \"sha256:7d34d22a493124a217fb0e1a1f02414d3be8295e34d06437778095ee8af3492c\", \"mediaType\": \"application/vnd.docker.image.rootfs.diff.tar.gzip\", \"size\": 228}, {\"digest\": \"sha256:002fbd2438c8055a1353ecb89a44e5c7aaa8ee4a141bb82f92b9e25638c3b1ee\", \"mediaType\": \"application/vnd.docker.image.rootfs.diff.tar.gzip\", \"size\": 1858}], \"manifest_digest\": \"sha256:7ad3c515e43fb1642ddf2181dfd03402e42e85a16030e098ed1f3fc1404d7e89\", \"status\": \"PARTIAL; config redirect refused; original call FAILED\", \"tag_digest\": \"sha256:72fe2fc84be8295906b8efca020b46c58ed45c8da60cd9b8b49e1991e38e89a4\"}\n"
+      }
+    }
+  ]
+}

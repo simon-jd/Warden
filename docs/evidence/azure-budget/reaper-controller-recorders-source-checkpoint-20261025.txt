@@ -1,0 +1,2 @@
+{"command": ["bash", "scripts/azure_reaper.sh"], "duration_seconds": 0.9179855259135365, "ended_at": "2026-10-25T11:56:34.057358+00:00", "exit_code": 0, "raw_bytes": 146, "raw_sha256": "97916b9ebb7cbd508f06f777ce7d08931cc9a0229e75fb856fd39e97a335f61b", "reason": "controller_recorders_source_checkpoint_no_project_azure_creation", "started_at": "2026-10-25T11:56:33.139366+00:00"}
+{"at": "2026-10-25T11:56:34Z", "event": "group-absent", "id": "/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab"}

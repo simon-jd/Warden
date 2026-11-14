@@ -1,0 +1,60 @@
+[[tests]]
+name = "route_api_literal_class"
+[[tests.inputs]]
+insert_at = "class_route"
+type = "vrl"
+source = '''. = {"class_uid":6003,"category_uid":6,"metadata":{"version":"1.3.0"}}'''
+[[tests.outputs]]
+extract_from = "class_route.api"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"class_uid":6003,"category_uid":6,"metadata":{"version":"1.3.0"}})'''
+
+[[tests]]
+name = "route_process_literal_class"
+[[tests.inputs]]
+insert_at = "class_route"
+type = "vrl"
+source = '''. = {"class_uid":1007,"category_uid":1,"metadata":{"version":"1.3.0"}}'''
+[[tests.outputs]]
+extract_from = "class_route.process"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"class_uid":1007,"category_uid":1,"metadata":{"version":"1.3.0"}})'''
+
+[[tests]]
+name = "route_network_literal_class"
+[[tests.inputs]]
+insert_at = "class_route"
+type = "vrl"
+source = '''. = {"class_uid":4001,"category_uid":4,"metadata":{"version":"1.3.0"}}'''
+[[tests.outputs]]
+extract_from = "class_route.network"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"class_uid":4001,"category_uid":4,"metadata":{"version":"1.3.0"}})'''
+
+[[tests]]
+name = "reject_route_wrong_version"
+[[tests.inputs]]
+insert_at = "class_route"
+type = "vrl"
+source = '''. = {"class_uid":6003,"category_uid":6,"metadata":{"version":"9.9.9"},"warden_source":"azure","secret":"never-diagnostic"}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"azure"})'''
+
+[[tests]]
+name = "reject_route_unknown_class"
+[[tests.inputs]]
+insert_at = "class_route"
+type = "vrl"
+source = '''. = {"class_uid":9999,"category_uid":6,"metadata":{"version":"1.3.0"},"warden_source":"attacker","secret":"never-diagnostic"}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"unrecognized"})'''
+

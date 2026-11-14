@@ -1,0 +1,36 @@
+{
+  "classification_only_not_readiness": true,
+  "raw_persisted": false,
+  "matches": [
+    {
+      "line_number": 32,
+      "exact_template_matches": [
+        "certificate-cache"
+      ]
+    },
+    {
+      "line_number": 39,
+      "exact_template_matches": [
+        "core-initializing"
+      ]
+    },
+    {
+      "line_number": 74,
+      "exact_template_matches": [
+        "core-initializing"
+      ]
+    },
+    {
+      "line_number": 81,
+      "exact_template_matches": [
+        "v3-migration"
+      ]
+    },
+    {
+      "line_number": 84,
+      "exact_template_matches": [
+        "fsverity-unsupported"
+      ]
+    }
+  ]
+}

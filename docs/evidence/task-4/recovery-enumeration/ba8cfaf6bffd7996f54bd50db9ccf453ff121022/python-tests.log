@@ -1,0 +1,17 @@
+test_alias_shape_target_identity_and_drift_refuse (test_firecracker_recovery.MaterialPolicyTests.test_alias_shape_target_identity_and_drift_refuse) ... ok
+test_copied_input_drift_after_host_check_refuses_before_package (test_firecracker_recovery.MaterialPolicyTests.test_copied_input_drift_after_host_check_refuses_before_package) ... ok
+test_dependency_omission_conflict_refuses_before_resolution (test_firecracker_recovery.MaterialPolicyTests.test_dependency_omission_conflict_refuses_before_resolution) ... ok
+test_each_expected_link_requires_exact_own_metadata_without_target_access (test_firecracker_recovery.MaterialPolicyTests.test_each_expected_link_requires_exact_own_metadata_without_target_access) ... ok
+test_enumeration_never_implicitly_follows_omitted_link_targets (test_firecracker_recovery.MaterialPolicyTests.test_enumeration_never_implicitly_follows_omitted_link_targets) ... ok
+test_exact_development_object_rejects_unknown_metadata_and_header (test_firecracker_recovery.MaterialPolicyTests.test_exact_development_object_rejects_unknown_metadata_and_header) ... ok
+test_exact_materials_copy_both_regular_names_and_never_access_omitted_targets (test_firecracker_recovery.MaterialPolicyTests.test_exact_materials_copy_both_regular_names_and_never_access_omitted_targets) ... ok
+test_fixed_host_abi_command_and_closed_sanitized_receipt (test_firecracker_recovery.MaterialPolicyTests.test_fixed_host_abi_command_and_closed_sanitized_receipt) ... ok
+test_nofollow_enumeration_refuses_unknown_links_and_types_and_keeps_directory_exclusions (test_firecracker_recovery.MaterialPolicyTests.test_nofollow_enumeration_refuses_unknown_links_and_types_and_keeps_directory_exclusions) ... ok
+test_nofollow_enumeration_rejects_directory_replacement_before_descent (test_firecracker_recovery.MaterialPolicyTests.test_nofollow_enumeration_rejects_directory_replacement_before_descent) ... ok
+test_omitted_archive_names_cannot_be_reintroduced (test_firecracker_recovery.MaterialPolicyTests.test_omitted_archive_names_cannot_be_reintroduced) ... ok
+test_runtime_closure_never_probes_exact_object_but_rejects_an_unknown_relocatable (test_firecracker_recovery.MaterialPolicyTests.test_runtime_closure_never_probes_exact_object_but_rejects_an_unknown_relocatable) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.034s
+
+OK

@@ -1,0 +1,64 @@
+{
+  "expire": {
+    "failed_login_error": "failed to connect to `user=v-root-warden-t-1szVZ51vlwQSwvcw2kpY-1793139133 database=warden`: 127.0.0.1:32772 (127.0.0.1): failed SASL auth: FATAL: password authentication failed for user \"v-root-warden-t-1szVZ51vlwQSwvcw2kpY-1793139133\" (SQLSTATE 28P01)",
+    "first_failed_login_s": 60.318365478,
+    "last_successful_login_s": 59.314745185,
+    "open_session_after_expiry_error": "FATAL: terminating connection due to administrator command (SQLSTATE 57P01)",
+    "role_dropped_by_s": 60.323547618,
+    "ttl": "1m0s"
+  },
+  "host": {
+    "loadavg": "5.23 6.51 5.94 8/10119 2080577",
+    "nproc": 32
+  },
+  "mount_cap_raw_24h_role_lease": "4h0m0s",
+  "postgres_image": "postgres:18-alpine",
+  "raft_configuration": {
+    "config": {
+      "index": 0,
+      "servers": [
+        {
+          "address": "127.0.0.1:8201",
+          "leader": true,
+          "node_id": "warden-1",
+          "protocol_version": "3",
+          "voter": true
+        }
+      ]
+    }
+  },
+  "revoke": {
+    "login_after_revoke_ms": 10,
+    "login_error": "failed to connect to `user=v-root-warden-a-iyvtBNCZ8sbAu2lmo5ay-1793139194 database=warden`: 127.0.0.1:32772 (127.0.0.1): failed SASL auth: FATAL: password authentication failed for user \"v-root-warden-a-iyvtBNCZ8sbAu2lmo5ay-1793139194\" (SQLSTATE 28P01)",
+    "open_session_error": "FATAL: terminating connection due to administrator command (SQLSTATE 57P01)",
+    "revoke_call_ms": 8,
+    "role_exists_after": false
+  },
+  "role_ttl_warden-app": {
+    "default_ttl": "1h0m0s",
+    "max_ttl": "4h0m0s"
+  },
+  "role_ttl_warden-test-1m": {
+    "default_ttl": "1m0s",
+    "max_ttl": "1h0m0s"
+  },
+  "rotate_root": "vault_admin's bootstrap password rejected after rotate-root; only Vault holds the new one",
+  "vault_health": {
+    "clock_skew_ms": 0,
+    "cluster_id": "918de7cf-ff97-fd23-c12f-daa4e84c68e3",
+    "cluster_name": "vault-cluster-8c15fc48",
+    "echo_duration_ms": 0,
+    "enterprise": false,
+    "initialized": true,
+    "performance_standby": false,
+    "removed_from_cluster": false,
+    "replication_dr_mode": "disabled",
+    "replication_performance_mode": "disabled",
+    "replication_primary_canary_age_ms": 0,
+    "sealed": false,
+    "server_time_utc": 1793139133,
+    "standby": false,
+    "version": "2.2.1"
+  },
+  "vault_image": "hashicorp/vault:2.2.1 [\"hashicorp/vault@sha256:962a92876e168d68eaaa24b0b8b49bbce1cb63024060a67bba95cd158a366fc2\"]"
+}

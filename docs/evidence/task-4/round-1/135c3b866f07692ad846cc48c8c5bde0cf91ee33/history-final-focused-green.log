@@ -1,0 +1,70 @@
+profile_source_sha256=56abda58b8a822b7bc1ce7311025763878e7110c2d4cfabd84203dce556db4dd
+{"image_id": "sha256:a688600ca24f8a4d3ca77f95b0dd40704a9fc787c826660eb7ba0b641b8b175d", "owned_image_charge": 0, "outstanding": 0}
+{"additional_bytes": "512000000", "at": "2026-10-24T20:39:22Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 283255234560, "project_allocated_bytes": 3737522176, "service_memory_bytes": "2000000000"}
+{"container_id": "e3b92302bd2fee65239e952e3ed03fdbb9eaec05219a4a8b74825781932f26b2", "labels": {"project": "warden", "owner": "codex-warden", "session": "c68015cc5dd6c2f10c38d07c9a3341d0", "task": "firecracker-code", "ttl": "2026-10-24T21:39:22.637823+00:00"}}
+{"inspected_host_config": {"Binds": null, "ContainerIDFile": "", "LogConfig": {"Type": "json-file", "Config": {"max-file": "1", "max-size": "10m"}}, "NetworkMode": "none", "PortBindings": {}, "RestartPolicy": {"Name": "no", "MaximumRetryCount": 0}, "AutoRemove": false, "VolumeDriver": "", "VolumesFrom": null, "ConsoleSize": [0, 0], "CapAdd": null, "CapDrop": ["ALL"], "CgroupnsMode": "private", "Dns": null, "DnsOptions": [], "DnsSearch": [], "ExtraHosts": null, "GroupAdd": null, "IpcMode": "private", "Cgroup": "", "Links": null, "OomScoreAdj": 0, "PidMode": "", "Privileged": false, "PublishAllPorts": false, "ReadonlyRootfs": true, "SecurityOpt": ["no-new-privileges"], "Tmpfs": {"/tmp": "rw,exec,nosuid,nodev,size=268435456"}, "UTSMode": "", "UsernsMode": "", "ShmSize": 67108864, "Runtime": "runc", "Isolation": "", "CpuShares": 0, "Memory": 2000000000, "NanoCpus": 2000000000, "CgroupParent": "", "BlkioWeight": 0, "BlkioWeightDevice": [], "BlkioDeviceReadBps": [], "BlkioDeviceWriteBps": [], "BlkioDeviceReadIOps": [], "BlkioDeviceWriteIOps": [], "CpuPeriod": 0, "CpuQuota": 0, "CpuRealtimePeriod": 0, "CpuRealtimeRuntime": 0, "CpusetCpus": "", "CpusetMems": "", "Devices": [], "DeviceCgroupRules": null, "DeviceRequests": null, "MemoryReservation": 0, "MemorySwap": 2000000000, "MemorySwappiness": null, "OomKillDisable": false, "PidsLimit": 256, "Ulimits": null, "CpuCount": 0, "CpuPercent": 0, "IOMaximumIOps": 0, "IOMaximumBandwidth": 0, "Mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden", "Target": "/workspace", "ReadOnly": true}, {"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/firecracker-code", "Target": "/workspace/.cache/firecracker-code"}], "MaskedPaths": ["/proc/acpi", "/proc/asound", "/proc/interrupts", "/proc/kcore", "/proc/keys", "/proc/latency_stats", "/proc/sched_debug", "/proc/scsi", "/proc/timer_list", "/proc/timer_stats", "/sys/devices/virtual/powercap", "/sys/firmware", "/sys/devices/system/cpu/cpu0/thermal_throttle", "/sys/devices/system/cpu/cpu1/thermal_throttle", "/sys/devices/system/cpu/cpu2/thermal_throttle", "/sys/devices/system/cpu/cpu3/thermal_throttle", "/sys/devices/system/cpu/cpu4/thermal_throttle", "/sys/devices/system/cpu/cpu5/thermal_throttle", "/sys/devices/system/cpu/cpu6/thermal_throttle", "/sys/devices/system/cpu/cpu7/thermal_throttle", "/sys/devices/system/cpu/cpu8/thermal_throttle", "/sys/devices/system/cpu/cpu9/thermal_throttle", "/sys/devices/system/cpu/cpu10/thermal_throttle", "/sys/devices/system/cpu/cpu11/thermal_throttle", "/sys/devices/system/cpu/cpu12/thermal_throttle", "/sys/devices/system/cpu/cpu13/thermal_throttle", "/sys/devices/system/cpu/cpu14/thermal_throttle", "/sys/devices/system/cpu/cpu15/thermal_throttle", "/sys/devices/system/cpu/cpu16/thermal_throttle", "/sys/devices/system/cpu/cpu17/thermal_throttle", "/sys/devices/system/cpu/cpu18/thermal_throttle", "/sys/devices/system/cpu/cpu19/thermal_throttle", "/sys/devices/system/cpu/cpu20/thermal_throttle", "/sys/devices/system/cpu/cpu21/thermal_throttle", "/sys/devices/system/cpu/cpu22/thermal_throttle", "/sys/devices/system/cpu/cpu23/thermal_throttle", "/sys/devices/system/cpu/cpu24/thermal_throttle", "/sys/devices/system/cpu/cpu25/thermal_throttle", "/sys/devices/system/cpu/cpu26/thermal_throttle", "/sys/devices/system/cpu/cpu27/thermal_throttle", "/sys/devices/system/cpu/cpu28/thermal_throttle", "/sys/devices/system/cpu/cpu29/thermal_throttle", "/sys/devices/system/cpu/cpu30/thermal_throttle", "/sys/devices/system/cpu/cpu31/thermal_throttle"], "ReadonlyPaths": ["/proc/bus", "/proc/fs", "/proc/irq", "/proc/sys", "/proc/sysrq-trigger"]}}
+=== RUN   TestLocalRetirementCannotSwallowAmbiguousGate
+--- PASS: TestLocalRetirementCannotSwallowAmbiguousGate (0.00s)
+=== RUN   TestUnknownOriginalOwnerRemainsCleanupPending
+--- PASS: TestUnknownOriginalOwnerRemainsCleanupPending (0.00s)
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle/invalid-profile
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle/image-mismatch
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle/reservation-full
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle/record-collision
+=== RUN   TestCloseAccountsForGatedFailureWithoutHandle/allocator-state
+--- PASS: TestCloseAccountsForGatedFailureWithoutHandle (0.00s)
+    --- PASS: TestCloseAccountsForGatedFailureWithoutHandle/invalid-profile (0.00s)
+    --- PASS: TestCloseAccountsForGatedFailureWithoutHandle/image-mismatch (0.00s)
+    --- PASS: TestCloseAccountsForGatedFailureWithoutHandle/reservation-full (0.00s)
+    --- PASS: TestCloseAccountsForGatedFailureWithoutHandle/record-collision (0.00s)
+    --- PASS: TestCloseAccountsForGatedFailureWithoutHandle/allocator-state (0.00s)
+=== RUN   TestClosePreservesPendingFilesAfterReopen
+=== RUN   TestClosePreservesPendingFilesAfterReopen/launching
+=== RUN   TestClosePreservesPendingFilesAfterReopen/orphan-run
+--- PASS: TestClosePreservesPendingFilesAfterReopen (0.00s)
+    --- PASS: TestClosePreservesPendingFilesAfterReopen/launching (0.00s)
+    --- PASS: TestClosePreservesPendingFilesAfterReopen/orphan-run (0.00s)
+=== RUN   TestCloseSealsLateGateAndDirectStarts
+--- PASS: TestCloseSealsLateGateAndDirectStarts (0.00s)
+=== RUN   TestCloseCoordinatesInflightGateAdmission
+--- PASS: TestCloseCoordinatesInflightGateAdmission (0.03s)
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals/extra-gate
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals/extra-runs
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals/extra-uids
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals/corrupt-allocator
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals/unsafe-run
+=== RUN   TestCloseRejectsUnknownOrUnsafeJournals/lost-owner-started
+--- PASS: TestCloseRejectsUnknownOrUnsafeJournals (0.00s)
+    --- PASS: TestCloseRejectsUnknownOrUnsafeJournals/extra-gate (0.00s)
+    --- PASS: TestCloseRejectsUnknownOrUnsafeJournals/extra-runs (0.00s)
+    --- PASS: TestCloseRejectsUnknownOrUnsafeJournals/extra-uids (0.00s)
+    --- PASS: TestCloseRejectsUnknownOrUnsafeJournals/corrupt-allocator (0.00s)
+    --- PASS: TestCloseRejectsUnknownOrUnsafeJournals/unsafe-run (0.00s)
+    --- PASS: TestCloseRejectsUnknownOrUnsafeJournals/lost-owner-started (0.00s)
+=== RUN   TestCloseWaitsForAlreadyAdmittedCallback
+--- PASS: TestCloseWaitsForAlreadyAdmittedCallback (0.03s)
+PASS
+ok  	warden/runtimes/firecracker	0.074s
+=== RUN   TestSealAdmissionAcrossInstancesAndReopenWithoutProof
+--- PASS: TestSealAdmissionAcrossInstancesAndReopenWithoutProof (0.00s)
+=== RUN   TestSealAdmissionRejectsMalformedOrUnsafeState
+=== RUN   TestSealAdmissionRejectsMalformedOrUnsafeState/empty
+=== RUN   TestSealAdmissionRejectsMalformedOrUnsafeState/corrupt
+=== RUN   TestSealAdmissionRejectsMalformedOrUnsafeState/other-authority
+=== RUN   TestSealAdmissionRejectsMalformedOrUnsafeState/mode
+=== RUN   TestSealAdmissionRejectsMalformedOrUnsafeState/symlink
+=== RUN   TestSealAdmissionRejectsMalformedOrUnsafeState/hardlink
+--- PASS: TestSealAdmissionRejectsMalformedOrUnsafeState (0.00s)
+    --- PASS: TestSealAdmissionRejectsMalformedOrUnsafeState/empty (0.00s)
+    --- PASS: TestSealAdmissionRejectsMalformedOrUnsafeState/corrupt (0.00s)
+    --- PASS: TestSealAdmissionRejectsMalformedOrUnsafeState/other-authority (0.00s)
+    --- PASS: TestSealAdmissionRejectsMalformedOrUnsafeState/mode (0.00s)
+    --- PASS: TestSealAdmissionRejectsMalformedOrUnsafeState/symlink (0.00s)
+    --- PASS: TestSealAdmissionRejectsMalformedOrUnsafeState/hardlink (0.00s)
+=== RUN   TestSealAdmissionWaitIsBoundedByContext
+--- PASS: TestSealAdmissionWaitIsBoundedByContext (0.03s)
+PASS
+ok  	warden/runtimes/gate	0.034s
+{"removed_container": "e3b92302bd2fee65239e952e3ed03fdbb9eaec05219a4a8b74825781932f26b2"}

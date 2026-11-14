@@ -1,0 +1,122 @@
+[
+  {
+    "file": "k3s-go.mod",
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/go.mod",
+    "bytes": 29811,
+    "sha256": "72bb94b9186b0cbc0fca5f892e9c0bcde01d2d856f8c92a043d9259c29d34aa1"
+  },
+  {
+    "file": "container-manager.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/pkg/kubelet/cm/container_manager_linux.go",
+    "bytes": 40926,
+    "sha256": "96041eda883775d2a083fe128903c6718427fb5fa9a3e08bc8fd516d4da14c3a"
+  },
+  {
+    "file": "swap.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/pkg/kubelet/util/swap/swap_util.go",
+    "bytes": 4623,
+    "sha256": "5772a3b56eaf2bb2d8e0335daca78cc1829fea8d77b754939e5d5bbfd5537e19"
+  },
+  {
+    "file": "kubelet-types.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/staging/src/k8s.io/kubelet/config/v1beta1/types.go",
+    "bytes": 61729,
+    "sha256": "210947b343ef4220a005d71d602fa1f5cb71de2714f001977df142f745afacea"
+  },
+  {
+    "file": "kuberuntime-linux.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/pkg/kubelet/kuberuntime/kuberuntime_container_linux.go",
+    "bytes": 22732,
+    "sha256": "aa6a54cb2f2940d59eb2f8221b55f80e2e93989f9108e9ef274a0743a8353d35"
+  },
+  {
+    "file": "k3s-agent.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/pkg/daemons/agent/agent.go",
+    "bytes": 9374,
+    "sha256": "11da917d4ef2923cf34112d548d4845ae173b98ea273ceeb5486b553185c81d6"
+  },
+  {
+    "file": "genericapiserver.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/staging/src/k8s.io/apiserver/pkg/server/genericapiserver.go",
+    "bytes": 47885,
+    "sha256": "af6b5954e95eeaad9f7100e867e148d8e79f8682079bdbeb8d1c7d3b7dfbb862"
+  },
+  {
+    "file": "endpoint-controller.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/pkg/controlplane/controller/kubernetesservice/controller.go",
+    "bytes": 9897,
+    "sha256": "8e2f9ab35d4b1fedbb0c9f21d56eaffbadc4f0691f2197b0466e18e11cd8148e"
+  },
+  {
+    "file": "reconcilers-lease.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/pkg/controlplane/reconcilers/lease.go",
+    "bytes": 11540,
+    "sha256": "7759913d65ed1dfc174a45a9303cc2e3ddbe782a09f316528b68c0ef7cd15d22"
+  },
+  {
+    "file": "lease-controller.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/staging/src/k8s.io/component-helpers/apimachinery/lease/controller.go",
+    "bytes": 10885,
+    "sha256": "450c83760f475a196c43fb2adf501e9d3f239f4febf4d68f5cd1c7873117a019"
+  },
+  {
+    "file": "kubelet-server.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/cmd/kubelet/app/server.go",
+    "bytes": 56847,
+    "sha256": "46c346a9a4b69b4676109fc21ab785bfb65bb2f1339cf2748159cde62d83a0bd"
+  },
+  {
+    "file": "matched-b71871c7a351.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/staging/src/k8s.io/component-base/metrics/options.go",
+    "bytes": 8704,
+    "sha256": "4536a820dce37d7db2317f2480ea6eefe58a51d355709166f5d037343bd0fbe0"
+  },
+  {
+    "file": "matched-b90832e8d810.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/vendor/github.com/google/cadvisor/machine/info.go",
+    "bytes": 5043,
+    "sha256": "51a7b59e39212e5e7b14fa7a5227a86c58b9fd3aa5c8eafaf8c31336f767af2b"
+  },
+  {
+    "file": "k3s-match-fd994bb71c8d.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/pkg/nodepassword/controller.go",
+    "bytes": 7459,
+    "sha256": "fbdc2b57326ee547cfcbe064fa7e584a6f5160415c760e6b988a4721f9eeaa0f"
+  },
+  {
+    "file": "k3s-match-e7b27b1d9775.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/pkg/signals/signals.go",
+    "bytes": 1425,
+    "sha256": "3a8e27bdeb584bd92494fc0df4634e8f61d2871364bebe2150e2548f91803180"
+  },
+  {
+    "file": "fork-match-a5f7709533c9.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/pkg/controlplane/controller/legacytokentracking/controller.go",
+    "bytes": 6518,
+    "sha256": "7a2e6538f30497412438cc65f18af4cfb08a06c4558d79e0d36e71f63ad818a6"
+  },
+  {
+    "file": "runtime-errors.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/staging/src/k8s.io/apimachinery/pkg/util/runtime/runtime.go",
+    "bytes": 13039,
+    "sha256": "2207d2c88a6f79169667e093b10dad07b110b0d2defa98df39f417d876e6ce48"
+  },
+  {
+    "file": "k3s-logger.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/pkg/util/logger/logger.go",
+    "bytes": 2230,
+    "sha256": "6548d29587c97f8c5c9a4b81098534bd02e817885319543657d8bd27453ef638"
+  },
+  {
+    "file": "k3s-final-028a40e222df.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/pkg/executor/embed/embed.go",
+    "bytes": 14100,
+    "sha256": "2027bc7e7e55aedafcee3b314f4edc5597c3fa51077b6f1da37a6703e7ee7974"
+  },
+  {
+    "file": "k3s-cli-server.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/pkg/cli/server/server.go",
+    "bytes": 30870,
+    "sha256": "ffebfc3561d57b004f80cbe168a8a65e5bc5415865e2776ede15f74293de82bc"
+  }
+]

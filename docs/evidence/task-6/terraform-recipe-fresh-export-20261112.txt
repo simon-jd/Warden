@@ -1,0 +1,32 @@
+# fresh export of c7591f2 (git archive, empty .cache, .tools linked to the worktree's), 2026-11-13T03:02:05Z
+$ make tools
+scripts/restore-tools.sh python
+exit 0
+$ make terraform-plugins
+Initializing provider plugins...
+- Reusing version 3.10.0 of hashicorp/azuread from the dependency lock file
+- Installing hashicorp/azuread v3.10.0...
+- Installed hashicorp/azuread v3.10.0 (signed by HashiCorp)
+
+Terraform has been successfully initialized!
+exit 0
+$ ls .cache/terraform/plugins/registry.terraform.io/hashicorp/azuread
+3.10.0
+$ make test-terraform
+Terraform has been successfully initialized!
+/usr/bin/bwrap --dev-bind / / --unshare-net --die-with-parent env -i PATH=/usr/bin:/bin HOME=<export>/.cache/home CHECKPOINT_DISABLE=1 TF_IN_AUTOMATION=1 TF_DATA_DIR=<export>/.cache/terraform/data <export>/.tools/terraform/terraform -chdir=identity/terraform validate -no-color
+Success! The configuration is valid.
+
+exit 0
+### stale case: provider still in .cache/terraform/data, plugins dir removed
+$ make terraform-plugins
+- Installing hashicorp/azuread v3.10.0...
+- Installed hashicorp/azuread v3.10.0 (signed by HashiCorp)
+
+Terraform has been successfully initialized!
+exit 0
+$ make test-terraform
+/usr/bin/bwrap --dev-bind / / --unshare-net --die-with-parent env -i PATH=/usr/bin:/bin HOME=<export>/.cache/home CHECKPOINT_DISABLE=1 TF_IN_AUTOMATION=1 TF_DATA_DIR=<export>/.cache/terraform/data <export>/.tools/terraform/terraform -chdir=identity/terraform validate -no-color
+Success! The configuration is valid.
+
+exit 0

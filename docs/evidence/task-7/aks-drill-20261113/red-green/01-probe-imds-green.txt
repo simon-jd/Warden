@@ -1,0 +1,7 @@
+$ go test -count=1 -v -run TestNetIMDS ./runtimes/conformance/guest   # after net.go: imds case
+=== RUN   TestNetIMDSReadsOnlyTheLocation
+--- PASS: TestNetIMDSReadsOnlyTheLocation (0.00s)
+=== RUN   TestNetIMDSReportsAConnectError
+--- PASS: TestNetIMDSReportsAConnectError (0.00s)
+PASS
+ok  	warden/runtimes/conformance/guest	0.004s

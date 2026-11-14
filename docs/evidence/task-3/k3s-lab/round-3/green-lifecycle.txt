@@ -1,0 +1,8 @@
+test_adopted_children_are_waited_until_reapable_with_a_deadline (test_k3s_lab_init.InitTest.test_adopted_children_are_waited_until_reapable_with_a_deadline) ... ok
+test_fixed_client_directory_is_exclusive_private_and_preexisting_state_refused (test_k3s_lab_init.InitTest.test_fixed_client_directory_is_exclusive_private_and_preexisting_state_refused) ... ok
+test_packaged_selection_drops_wrapper_module_applets_and_unsafe_tools (test_k3s_lab.LabTest.test_packaged_selection_drops_wrapper_module_applets_and_unsafe_tools) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+OK

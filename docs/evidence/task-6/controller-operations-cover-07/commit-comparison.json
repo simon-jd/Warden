@@ -1,0 +1,86 @@
+{
+  "all_source_hashes_match_commit": true,
+  "dispatch_base": "86d8d1424f77113722a826b1e9cecda7da26d67b",
+  "kind": "subsequent read-only verification, not reconstructed run evidence",
+  "post_manifest_sha256": "b2854560a57a8c157cbe2d5f2e0d07bb89704ea7509d1ba7110e132f0fd3beca",
+  "pre_manifest_sha256": "b2854560a57a8c157cbe2d5f2e0d07bb89704ea7509d1ba7110e132f0fd3beca",
+  "runs": [
+    {
+      "changed_snapshots": [
+        "scripts/test_identity_cache_control.py"
+      ],
+      "pre_equals_post": true,
+      "source_files": 146,
+      "stage": "red-01"
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_capture.py",
+        "scripts/identity_cache_maintenance.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "pre_equals_post": true,
+      "source_files": 149,
+      "stage": "fixture-02"
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_capture.py",
+        "scripts/identity_cache_maintenance.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "pre_equals_post": true,
+      "source_files": 149,
+      "stage": "red-03"
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_capture.py",
+        "scripts/identity_cache_maintenance.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "pre_equals_post": true,
+      "source_files": 149,
+      "stage": "fixture-04"
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_capture.py",
+        "scripts/identity_cache_maintenance.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "pre_equals_post": true,
+      "source_files": 149,
+      "stage": "red-05"
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_capture.py",
+        "scripts/identity_cache_maintenance.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "pre_equals_post": true,
+      "source_files": 149,
+      "stage": "green-06"
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_capture.py",
+        "scripts/identity_cache_maintenance.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "pre_equals_post": true,
+      "source_files": 149,
+      "stage": "cover-07"
+    }
+  ],
+  "source_commit": "835600b611b631502b158b5037b8078921277f10",
+  "source_files": 149,
+  "unchanged_dispatch_sources": 145
+}

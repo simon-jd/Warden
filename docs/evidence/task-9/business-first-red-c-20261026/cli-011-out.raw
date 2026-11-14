@@ -1,0 +1,20 @@
+=== RUN   TestSelfApprovalRejected
+    jit_test.go:66: self-approval policy: want ErrSelfApproval, got WARDEN_JIT_NOT_IMPLEMENTED
+--- FAIL: TestSelfApprovalRejected (0.05s)
+=== RUN   TestGrantExpiresAndBindingRemoved
+    jit_test.go:77: approval outcome: WARDEN_JIT_NOT_IMPLEMENTED
+    jit_test.go:79: approved request has no external grant
+    jit_test.go:83: pre-expiry outcome: WARDEN_JIT_NOT_IMPLEMENTED
+    jit_test.go:84: grant missing before expiry
+    jit_test.go:86: expiry outcome: WARDEN_JIT_NOT_IMPLEMENTED
+    jit_test.go:88: expiry did not remove owned binding: []
+--- FAIL: TestGrantExpiresAndBindingRemoved (0.03s)
+=== RUN   TestAuditRecordedForGrantAndExpiry
+    jit_test.go:96: approval outcome: WARDEN_JIT_NOT_IMPLEMENTED
+    jit_test.go:98: expiry outcome: WARDEN_JIT_NOT_IMPLEMENTED
+    jit_test.go:115: real audit chain lacks grant/expiry events: map[]
+    jit_test.go:120: Task1 PostgreSQL audit Verify completed
+--- FAIL: TestAuditRecordedForGrantAndExpiry (0.04s)
+FAIL
+FAIL	warden/controlplane/internal/jit	0.131s
+FAIL

@@ -1,0 +1,31 @@
+test_owned_pid_cgroup_starttime_binding (test_firecracker_device_receipt.ReceiptTests.test_owned_pid_cgroup_starttime_binding) ... ERROR
+test_receipt_exact_schema_and_namespace (test_firecracker_device_receipt.ReceiptTests.test_receipt_exact_schema_and_namespace) ... ERROR
+
+======================================================================
+ERROR: test_owned_pid_cgroup_starttime_binding (test_firecracker_device_receipt.ReceiptTests.test_owned_pid_cgroup_starttime_binding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_device_receipt.py", line 20, in test_owned_pid_cgroup_starttime_binding
+    gate.validate_observation(CID,IMAGE,before,before,cg,status,123,123)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_device_receipt.py", line 3, in validate_observation
+    def validate_observation(cid,image,before,after,cgroup,status,start_before,start_after):raise ValueError('owned PID proof unavailable')
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: owned PID proof unavailable
+
+======================================================================
+ERROR: test_receipt_exact_schema_and_namespace (test_firecracker_device_receipt.ReceiptTests.test_receipt_exact_schema_and_namespace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_device_receipt.py", line 11, in test_receipt_exact_schema_and_namespace
+    r=self.receipt();self.assertEqual(gate.parse_receipt(json.dumps(r).encode()+b'\n','cgroup:[1]','mnt:[1]'),r)
+                                      ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_device_receipt.py", line 2, in parse_receipt
+    def parse_receipt(raw,host_cgroup_ns,host_mount_ns):raise ValueError('device receipt unavailable')
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: device receipt unavailable
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (errors=2)

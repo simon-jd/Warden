@@ -1,0 +1,44 @@
+....F.......FF.....F
+======================================================================
+FAIL: test_down_records_deletion_without_refund (scripts.test_azure_guard.AzureGuardTests.test_down_records_deletion_without_refund)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 246, in test_down_records_deletion_without_refund
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : usage: -c [-h] {reap,down,reserve,render,preflight} ...
+-c: error: unrecognized arguments: --ledger /tmp/tmptk67ak74/ledger.json --markdown /tmp/tmptk67ak74/spend.md
+
+
+======================================================================
+FAIL: test_multiple_operation_meters_can_cover_reads_and_writes (scripts.test_azure_guard.AzureGuardTests.test_multiple_operation_meters_can_cover_reads_and_writes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 231, in test_multiple_operation_meters_can_cover_reads_and_writes
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : guard refused: complete nonduplicate cost categories required
+
+
+======================================================================
+FAIL: test_operation_coverage_cannot_use_capacity_meter (scripts.test_azure_guard.AzureGuardTests.test_operation_coverage_cannot_use_capacity_meter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 215, in test_operation_coverage_cannot_use_capacity_meter
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_wrong_service_cannot_be_labeled_storage_cost (scripts.test_azure_guard.AzureGuardTests.test_wrong_service_cannot_be_labeled_storage_cost)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 240, in test_wrong_service_cannot_be_labeled_storage_cost
+    self.assertNotEqual(self.reserve(plan).returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 20 tests in 4.428s
+
+FAILED (failures=4)

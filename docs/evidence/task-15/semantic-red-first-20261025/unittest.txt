@@ -1,0 +1,58 @@
+test_fixable_critical_blocks_unfiltered_scan (task15_supplychain_tests.AssessScanTests.test_fixable_critical_blocks_unfiltered_scan) ... FAIL
+test_ignored_matches_rejected (task15_supplychain_tests.AssessScanTests.test_ignored_matches_rejected) ... ok
+test_missing_db_evidence_rejected (task15_supplychain_tests.AssessScanTests.test_missing_db_evidence_rejected) ... ok
+test_not_fixed_kev_still_blocks (task15_supplychain_tests.AssessScanTests.test_not_fixed_kev_still_blocks) ... FAIL
+test_related_kev_cve_is_not_lost (task15_supplychain_tests.AssessScanTests.test_related_kev_cve_is_not_lost) ... FAIL
+test_malformed_digest_rejected_without_policy (task15_supplychain_tests.RenderBindingTests.test_malformed_digest_rejected_without_policy) ... ok
+test_missing_binding_rejected_without_policy (task15_supplychain_tests.RenderBindingTests.test_missing_binding_rejected_without_policy) ... ok
+test_valid_binding_covers_every_image_and_exact_identity (task15_supplychain_tests.RenderBindingTests.test_valid_binding_covers_every_image_and_exact_identity) ... FAIL
+
+======================================================================
+FAIL: test_fixable_critical_blocks_unfiltered_scan (task15_supplychain_tests.AssessScanTests.test_fixable_critical_blocks_unfiltered_scan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_supplychain.py", line 83, in test_fixable_critical_blocks_unfiltered_scan
+    self.assertEqual(result["status"], "assessed")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'unimplemented' != 'assessed'
+- unimplemented
++ assessed
+
+
+======================================================================
+FAIL: test_not_fixed_kev_still_blocks (task15_supplychain_tests.AssessScanTests.test_not_fixed_kev_still_blocks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_supplychain.py", line 91, in test_not_fixed_kev_still_blocks
+    self.assertEqual(result["status"], "assessed")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'unimplemented' != 'assessed'
+- unimplemented
++ assessed
+
+
+======================================================================
+FAIL: test_related_kev_cve_is_not_lost (task15_supplychain_tests.AssessScanTests.test_related_kev_cve_is_not_lost)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_supplychain.py", line 99, in test_related_kev_cve_is_not_lost
+    self.assertEqual(result["status"], "assessed")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'unimplemented' != 'assessed'
+- unimplemented
++ assessed
+
+
+======================================================================
+FAIL: test_valid_binding_covers_every_image_and_exact_identity (task15_supplychain_tests.RenderBindingTests.test_valid_binding_covers_every_image_and_exact_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_supplychain.py", line 51, in test_valid_binding_covers_every_image_and_exact_identity
+    self.assertTrue(result["accepted"])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+FAILED (failures=4)

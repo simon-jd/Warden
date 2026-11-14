@@ -1,0 +1,20 @@
+test_capacity_leaves_exact_host_allowance (scripts.test_firecracker_lab.FirecrackerLabTests.test_capacity_leaves_exact_host_allowance) ... ok
+test_live_profile_has_only_exact_kvm_and_eight_caps (scripts.test_firecracker_lab.FirecrackerLabTests.test_live_profile_has_only_exact_kvm_and_eight_caps) ... ok
+test_material_pin_distinguishes_computed_and_published (scripts.test_firecracker_lab.FirecrackerLabTests.test_material_pin_distinguishes_computed_and_published) ... ok
+test_package_limit_fails_before_archive_write (scripts.test_firecracker_lab.FirecrackerLabTests.test_package_limit_fails_before_archive_write) ... ok
+test_arbitrary_source_and_identity_are_rejected (scripts.test_firecracker_lab.InitialReadonlyBindingTests.test_arbitrary_source_and_identity_are_rejected) ... ok
+test_fixed_live_realpath_is_initial_readonly (scripts.test_firecracker_lab.InitialReadonlyBindingTests.test_fixed_live_realpath_is_initial_readonly) ... ok
+test_inspection_rejects_rw_extra_mounts_alias_and_propagation (scripts.test_firecracker_lab.InitialReadonlyBindingTests.test_inspection_rejects_rw_extra_mounts_alias_and_propagation) ... ok
+test_real_held_fd_rejects_replacement_symlink_and_mode_change (scripts.test_firecracker_lab.InitialReadonlyBindingTests.test_real_held_fd_rejects_replacement_symlink_and_mode_change) ... ok
+test_smoke_is_fixed_capless_ro_only (scripts.test_firecracker_lab.InitialReadonlyBindingTests.test_smoke_is_fixed_capless_ro_only) ... ok
+test_archived_actual_eight_prefixed_capabilities_pass (scripts.test_firecracker_lab.InspectedCapabilityTests.test_archived_actual_eight_prefixed_capabilities_pass) ... ok
+test_missing_extra_invalid_names_and_types_fail (scripts.test_firecracker_lab.InspectedCapabilityTests.test_missing_extra_invalid_names_and_types_fail) ... ok
+test_other_deny_conditions_remain (scripts.test_firecracker_lab.InspectedCapabilityTests.test_other_deny_conditions_remain) ... ok
+test_oversized_raw_bounds_fail_with_bounded_diagnostic (scripts.test_firecracker_lab.InspectedCapabilityTests.test_oversized_raw_bounds_fail_with_bounded_diagnostic) ... ok
+test_raw_bounds_are_logged_before_rejection (scripts.test_firecracker_lab.InspectedCapabilityTests.test_raw_bounds_are_logged_before_rejection) ... ok
+test_descriptor_id_is_distinct_from_verified_config_id (scripts.test_firecracker_lab.LoadedImageIdentityTests.test_descriptor_id_is_distinct_from_verified_config_id) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.004s
+
+OK

@@ -1,0 +1,4 @@
+=== RUN   TestPidfdRequiresActualOriginalProcessExit
+--- PASS: TestPidfdRequiresActualOriginalProcessExit (0.00s)
+PASS
+ok  	warden/runtimes/gate	0.002s

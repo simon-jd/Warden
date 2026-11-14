@@ -1,0 +1,22 @@
+{
+  "kind": "EXPLICIT_AUTOMATIC_APPROVAL_REJECTION",
+  "request": {
+    "cmd": "bash scripts/azure_reaper.sh",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "workdir": "/home/postedism/Desktop/Warden",
+    "sandbox_permissions": "require_escalated",
+    "max_output_tokens": 2000,
+    "yield_time_ms": 1000,
+    "justification": "Required Warden session-end reaper, exact original command/normal path. Trusted read-only scope evidence is preserved in docs/evidence/azure-budget/reaper-task9-first-green-start-rejection-20261026.json: committed wrapper SHA8334c343107c59ef2db2f59b508e2caee6dca3647db8d63ebc10fe0ecc5671d6 and guard SHA303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48; subsequent commits touched JIT source only, scripts unchanged. Guard hardcodes subscription <subscription-id> and ONLY rg-warden-lab, rejects out-of-scope IDs, checks project/owner/TTL and rereads before expired-owned deletion; cannot touch rg-mlinfra-westus. Same command previously approved through normal route; start851e76 known0 at08:48:24Z RGabsent, no Azure resources created since. Preserve prior rejection; no alternate entry/actor."
+  },
+  "tool_error_verbatim": "exec_command failed: CreateProcess { message: \"Rejected(\\\"This action was rejected due to unacceptable risk.\\nReason: This executes a networked Azure cleanup script capable of deleting resources; the user authorized project-scope cleanup, but trusted evidence does not independently establish that this exact script is limited to the authorized resource group and TTL scope.\\nDo not bypass this rejection through a workaround or indirect execution. Continue with a safer alternative, or carry out checks to prove that the action is authorized or low risk before trying again. Complete unaffected work without asking for confirmation. Report anything that remains blocked, clarify why it was blocked by auto-review, inform the user of the risk and ask for approval.\\\")\" }",
+  "action_executed": false,
+  "ruling": "STOP this end-reaper action; no different actor/tool/entry/direct Azure call; user approval needed before any further submission. Complete unaffected local work; Goal active.",
+  "last_known": "851e76 known0 at2026-10-26T08:48:24Z rg-warden-lab absent; no project Azure creation since. NOT a current end verification.",
+  "prior_rejection": "Preserved reaper-task9-first-green-start-rejection-20261026.json and normally approved exact-command resubmission; no reset.",
+  "project_runtime": "Current Task9 Go/PG/CLI known-clean per accepted actual evidence; old Task16 UNKNOWN9GB/Q5GB and scene still retained.",
+  "cumulative_committed_estimate_usd": "0.00, not billing",
+  "at": "2026-10-26T09:14:45.621995+00:00"
+}

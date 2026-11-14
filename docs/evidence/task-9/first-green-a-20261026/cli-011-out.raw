@@ -1,0 +1,63 @@
+=== RUN   TestKubernetesBindingLifecycleAndFencing
+--- PASS: TestKubernetesBindingLifecycleAndFencing (0.00s)
+=== RUN   TestKubernetesStrictResponseValidation
+=== RUN   TestKubernetesStrictResponseValidation/wrong-role
+=== RUN   TestKubernetesStrictResponseValidation/wrong-tenant
+=== RUN   TestKubernetesStrictResponseValidation/wrong-kind
+=== RUN   TestKubernetesStrictResponseValidation/unknown-field
+=== RUN   TestKubernetesStrictResponseValidation/grant-in-reservation
+=== RUN   TestKubernetesStrictResponseValidation/duplicate
+=== RUN   TestKubernetesStrictResponseValidation/case-alias
+=== RUN   TestKubernetesStrictResponseValidation/trailing
+--- PASS: TestKubernetesStrictResponseValidation (0.00s)
+    --- PASS: TestKubernetesStrictResponseValidation/wrong-role (0.00s)
+    --- PASS: TestKubernetesStrictResponseValidation/wrong-tenant (0.00s)
+    --- PASS: TestKubernetesStrictResponseValidation/wrong-kind (0.00s)
+    --- PASS: TestKubernetesStrictResponseValidation/unknown-field (0.00s)
+    --- PASS: TestKubernetesStrictResponseValidation/grant-in-reservation (0.00s)
+    --- PASS: TestKubernetesStrictResponseValidation/duplicate (0.00s)
+    --- PASS: TestKubernetesStrictResponseValidation/case-alias (0.00s)
+    --- PASS: TestKubernetesStrictResponseValidation/trailing (0.00s)
+=== RUN   TestKubernetesRemovalRejectsForeignUIDAndUnconfirmedDeletion
+--- PASS: TestKubernetesRemovalRejectsForeignUIDAndUnconfirmedDeletion (0.00s)
+=== RUN   TestKubernetesTransportErrorsDoNotRetryActivation
+--- PASS: TestKubernetesTransportErrorsDoNotRetryActivation (0.00s)
+=== RUN   TestSelfApprovalRejected
+--- PASS: TestSelfApprovalRejected (0.04s)
+=== RUN   TestGrantExpiresAndBindingRemoved
+--- PASS: TestGrantExpiresAndBindingRemoved (0.04s)
+=== RUN   TestAuditRecordedForGrantAndExpiry
+    jit_test.go:134: Task1 PostgreSQL audit Verify completed
+--- PASS: TestAuditRecordedForGrantAndExpiry (0.07s)
+=== RUN   TestRequestBoundariesAndTenantIsolation
+--- PASS: TestRequestBoundariesAndTenantIsolation (0.06s)
+=== RUN   TestApprovalClockRetryAndExpiryFence
+--- PASS: TestApprovalClockRetryAndExpiryFence (0.06s)
+=== RUN   TestAuditFailuresRollbackAndRemoveAccess
+=== RUN   TestAuditFailuresRollbackAndRemoveAccess/jit.requested
+=== RUN   TestAuditFailuresRollbackAndRemoveAccess/jit.approval_intent
+=== RUN   TestAuditFailuresRollbackAndRemoveAccess/jit.granted
+--- PASS: TestAuditFailuresRollbackAndRemoveAccess (0.13s)
+    --- PASS: TestAuditFailuresRollbackAndRemoveAccess/jit.requested (0.04s)
+    --- PASS: TestAuditFailuresRollbackAndRemoveAccess/jit.approval_intent (0.05s)
+    --- PASS: TestAuditFailuresRollbackAndRemoveAccess/jit.granted (0.04s)
+=== RUN   TestRestartRevokesAmbiguousOperations
+=== RUN   TestRestartRevokesAmbiguousOperations/reserve
+=== RUN   TestRestartRevokesAmbiguousOperations/activate
+--- PASS: TestRestartRevokesAmbiguousOperations (0.07s)
+    --- PASS: TestRestartRevokesAmbiguousOperations/reserve (0.04s)
+    --- PASS: TestRestartRevokesAmbiguousOperations/activate (0.04s)
+=== RUN   TestExpiryAuditRetryAfterExternalDeletion
+--- PASS: TestExpiryAuditRetryAfterExternalDeletion (0.03s)
+=== RUN   TestDeadlineDuringReservationPreventsActivation
+--- PASS: TestDeadlineDuringReservationPreventsActivation (0.04s)
+=== RUN   TestConcurrentReconciliationCannotActivateTwice
+--- PASS: TestConcurrentReconciliationCannotActivateTwice (0.05s)
+=== RUN   TestMaintenanceRequiresTrustedAuthorization
+--- PASS: TestMaintenanceRequiresTrustedAuthorization (0.05s)
+=== RUN   TestRequesterMembershipRecheckedBeforeActivation
+--- PASS: TestRequesterMembershipRecheckedBeforeActivation (0.04s)
+=== RUN   TestExpiryBatchFailureDoesNotStarveLaterGrants
+--- PASS: TestExpiryBatchFailureDoesNotStarveLaterGrants (0.31s)
+PASS
+ok  	warden/controlplane/internal/jit	0.987s

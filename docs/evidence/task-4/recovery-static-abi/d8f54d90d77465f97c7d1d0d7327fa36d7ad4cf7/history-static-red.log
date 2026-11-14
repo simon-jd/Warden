@@ -1,0 +1,18 @@
+test_observed_zero_exit_static_output_has_no_dependencies (test_firecracker_recovery.DependencyParserTests.test_observed_zero_exit_static_output_has_no_dependencies) ... ERROR
+
+======================================================================
+ERROR: test_observed_zero_exit_static_output_has_no_dependencies (test_firecracker_recovery.DependencyParserTests.test_observed_zero_exit_static_output_has_no_dependencies)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 232, in test_observed_zero_exit_static_output_has_no_dependencies
+    self.assertEqual(recovery.dependencies(b'\tstatically linked\n', b'', 0), set())
+                     ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery.py", line 313, in dependencies
+    if not match or '..' in Path(match[1]).parts: raise Refusal('unknown_python_abi')
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+firecracker_recovery_init.Refusal: unknown_python_abi
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)

@@ -1,0 +1,58 @@
+{
+  "source_commit": "6f52f54e1a59a8cf7a7b36223f5cd6ab016b270b",
+  "source_parent": "43579657d42f835daf8d22c2a8d3f2f6fa4ff35c",
+  "dispatch_base": "93d7c0d951d69ef15354e848e1734f6222052e80",
+  "uid": 1000,
+  "umask": "0077",
+  "files": {
+    "docs/k3s-runtime-lab.md": {
+      "bytes": 19628,
+      "sha256": "6afc32d2f72d9fc8b1636f1aabaebe67deb4b353b6592764a832d1afee74b0bb",
+      "matches_commit": true
+    },
+    "scripts/k3s_lab_init.py": {
+      "bytes": 32546,
+      "sha256": "98976009dbc9f6ad61df2eb162141513bbd0543653a154cc8c3b689860935ee3",
+      "matches_commit": true
+    },
+    "scripts/k3s_lab_recover.py": {
+      "bytes": 12869,
+      "sha256": "ee0da6401f56e4e757bab46eca973f558346ac290d6b67a1e240d7c93fb4f979",
+      "matches_commit": true
+    },
+    "scripts/k3s_lab_recovery_init.py": {
+      "bytes": 3957,
+      "sha256": "f6b8f7aa6c29fadd7569962b34268810283d904a811cddbf4f7eb0f739668e3c",
+      "matches_commit": true
+    },
+    "scripts/test_k3s_lab_recovery.py": {
+      "bytes": 15976,
+      "sha256": "ec8551a096a076e1bfe66fe4926124a8436bc89ddb864a7262bb3a90aab1d62c",
+      "matches_commit": true
+    },
+    "scripts/test_k3s_lab_round4.py": {
+      "bytes": 15245,
+      "sha256": "50d3905dd64a64b213ec32d8db70e3eb885670ca6011193d286bd441dbd065eb",
+      "matches_commit": true
+    }
+  },
+  "test_command": "PYTHONPATH=scripts python3 -B -m unittest -v test_k3s_lab_init test_k3s_lab_recovery test_k3s_lab_round4",
+  "test_output_sha256": "1d19e9f95eb96b7e3c7b8ac6a62d9aeb7f2c510c8898b6452751c22dd65456a2",
+  "tests": 44,
+  "skips": 0,
+  "final_readonly_budget": {
+    "project_allocated_bytes": 3523018752,
+    "outstanding_bytes": 6000000000,
+    "all_owned_image_charges": 1434739404,
+    "helper_reserve_bytes": 64000000,
+    "accounted_disk_bytes": 11021758156,
+    "service_memory_bytes": 320000000
+  },
+  "scene_unchanged": true,
+  "archive_identity_verified": true,
+  "ordinary_complete_walk": false,
+  "ready_proven": false,
+  "docker_mutations": false,
+  "diagnostic_script_sha256": "40959c614e0e67cf9413daac5a25e3b94c9b8f54706d6822005b725a1d7d623c",
+  "diagnostic_output_sha256": "033b23146b34f609b6f8824f58439aee46598fc6d687d6e73cdc0456b7017e42"
+}

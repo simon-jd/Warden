@@ -1,0 +1,32 @@
+# RED: TestWaitFailsClosed (now also checks the DELETE), TestWaitRetriesTransientAPIErrors, TestWaitTearsDownWhenItsContextEnds against gvisor.go at 4c03ef5
+# 2026-11-10T20:40:23-08:00
+=== RUN   TestWaitFailsClosed
+=== RUN   TestWaitFailsClosed/forged_report
+    gvisor_test.go:402: failed Wait left the run: 0 DELETE requests [], job deleted=false
+=== RUN   TestWaitFailsClosed/code_mismatch
+    gvisor_test.go:402: failed Wait left the run: 0 DELETE requests [], job deleted=false
+=== RUN   TestWaitFailsClosed/image_never_pulled
+    gvisor_test.go:402: failed Wait left the run: 0 DELETE requests [], job deleted=false
+=== RUN   TestWaitFailsClosed/pod_failed_early
+    gvisor_test.go:402: failed Wait left the run: 0 DELETE requests [], job deleted=false
+=== RUN   TestWaitFailsClosed/teardown_never_ends
+=== RUN   TestWaitFailsClosed/API_keeps_failing
+    gvisor_test.go:402: failed Wait left the run: 0 DELETE requests [], job deleted=false
+--- FAIL: TestWaitFailsClosed (0.07s)
+    --- FAIL: TestWaitFailsClosed/forged_report (0.00s)
+    --- FAIL: TestWaitFailsClosed/code_mismatch (0.00s)
+    --- FAIL: TestWaitFailsClosed/image_never_pulled (0.00s)
+    --- FAIL: TestWaitFailsClosed/pod_failed_early (0.00s)
+    --- PASS: TestWaitFailsClosed/teardown_never_ends (0.05s)
+    --- FAIL: TestWaitFailsClosed/API_keeps_failing (0.00s)
+=== RUN   TestWaitTearsDownWhenItsContextEnds
+    gvisor_test.go:445: Wait gave up and left the run: 0 DELETE requests, job deleted=false
+--- FAIL: TestWaitTearsDownWhenItsContextEnds (0.03s)
+=== RUN   TestWaitRetriesTransientAPIErrors
+    gvisor_test.go:423: wait across three 503s: {Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:0 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:false} API server: HTTP 503: {"code":503,"kind":"Status","reason":"ServiceUnavailable"}
+--- FAIL: TestWaitRetriesTransientAPIErrors (0.00s)
+FAIL
+FAIL	warden/runtimes/gvisor	0.107s
+FAIL
+make: *** [Makefile:63: test-go] Error 1
+exit: 2

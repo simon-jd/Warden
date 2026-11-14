@@ -1,0 +1,9 @@
+nf_reject_ipv4
+nf_reject_ipv6
+nf_socket_ipv4
+nf_socket_ipv6
+nf_tables
+snd_soc_hda_codec
+usb_storage
+x_tables
+xt_MASQUERADE

@@ -1,0 +1,116 @@
+test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) ... 
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault=None) ... FAIL
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='lost-create') ... FAIL
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='wrong-command') ... FAIL
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='failed-helper') ... FAIL
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='drift') ... FAIL
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='unknown-absence') ... FAIL
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='image-rm') ... FAIL
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='ordinary-guard') ... FAIL
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='tar-drift') ... FAIL
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='tar-alias') ... FAIL
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='tar-fsync') ... FAIL
+
+======================================================================
+FAIL: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 214, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    self.assertEqual(journal.get('archive'), {'identity': list(archive_identity), 'size': len(b'fixed archive')})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != {'identity': [47, 1671127, 1000], 'size': 13}
+
+======================================================================
+FAIL: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='lost-create')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 214, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    self.assertEqual(journal.get('archive'), {'identity': list(archive_identity), 'size': len(b'fixed archive')})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != {'identity': [47, 1671136, 1000], 'size': 13}
+
+======================================================================
+FAIL: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='wrong-command')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 214, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    self.assertEqual(journal.get('archive'), {'identity': list(archive_identity), 'size': len(b'fixed archive')})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != {'identity': [47, 1671143, 1000], 'size': 13}
+
+======================================================================
+FAIL: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='failed-helper')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 214, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    self.assertEqual(journal.get('archive'), {'identity': list(archive_identity), 'size': len(b'fixed archive')})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != {'identity': [47, 1671150, 1000], 'size': 13}
+
+======================================================================
+FAIL: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='drift')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 214, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    self.assertEqual(journal.get('archive'), {'identity': list(archive_identity), 'size': len(b'fixed archive')})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != {'identity': [47, 1671157, 1000], 'size': 13}
+
+======================================================================
+FAIL: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='unknown-absence')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 214, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    self.assertEqual(journal.get('archive'), {'identity': list(archive_identity), 'size': len(b'fixed archive')})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != {'identity': [47, 1671165, 1000], 'size': 13}
+
+======================================================================
+FAIL: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='image-rm')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 214, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    self.assertEqual(journal.get('archive'), {'identity': list(archive_identity), 'size': len(b'fixed archive')})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != {'identity': [47, 1671172, 1000], 'size': 13}
+
+======================================================================
+FAIL: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='ordinary-guard')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 214, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    self.assertEqual(journal.get('archive'), {'identity': list(archive_identity), 'size': len(b'fixed archive')})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != {'identity': [47, 1671179, 1000], 'size': 13}
+
+======================================================================
+FAIL: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='tar-drift')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 208, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    with self.assertRaises((ValueError, RuntimeError, OSError)): host.recover(0, reviewed=True, cli=cli)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'ValueError'>, <class 'RuntimeError'>, <class 'OSError'>) not raised
+
+======================================================================
+FAIL: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='tar-alias')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 208, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    with self.assertRaises((ValueError, RuntimeError, OSError)): host.recover(0, reviewed=True, cli=cli)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'ValueError'>, <class 'RuntimeError'>, <class 'OSError'>) not raised
+
+======================================================================
+FAIL: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='tar-fsync')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 208, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    with self.assertRaises((ValueError, RuntimeError, OSError)): host.recover(0, reviewed=True, cli=cli)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'ValueError'>, <class 'RuntimeError'>, <class 'OSError'>) not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.014s
+
+FAILED (failures=11)

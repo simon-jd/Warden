@@ -1,0 +1,180 @@
+{
+ "alerts": 1673,
+ "false_positive": 0,
+ "groups": [
+  {
+   "class": "node",
+   "count": 14,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "bridge",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 14
+  },
+  {
+   "class": "node",
+   "count": 1,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "cat",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 1
+  },
+  {
+   "class": "node",
+   "count": 2,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "containerd",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 2
+  },
+  {
+   "class": "node",
+   "count": 1,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "containerd-shim",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 1
+  },
+  {
+   "class": "node",
+   "count": 10,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "ctr",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 10
+  },
+  {
+   "class": "node",
+   "count": 6,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "exe",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 6
+  },
+  {
+   "class": "node",
+   "count": 7,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "find",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 7
+  },
+  {
+   "class": "node",
+   "count": 14,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "host-local",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 14
+  },
+  {
+   "class": "node",
+   "count": 2,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "k3s-server",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 2
+  },
+  {
+   "class": "node",
+   "count": 16,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "kubectl",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 16
+  },
+  {
+   "class": "node",
+   "count": 14,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "loopback",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 14
+  },
+  {
+   "class": "node",
+   "count": 6,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "modprobe",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 6
+  },
+  {
+   "class": "node",
+   "count": 1,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "runc",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 1
+  },
+  {
+   "class": "node",
+   "count": 1,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "umount",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 1
+  },
+  {
+   "class": "node",
+   "count": 2,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "unpigz",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 2
+  },
+  {
+   "class": "sandbox",
+   "count": 1,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "warden-probe",
+   "rule": "PTRACE anti-debug attempt",
+   "true_positive": 0,
+   "unreviewed": 1
+  },
+  {
+   "class": "platform",
+   "count": 1575,
+   "disposition": "unreviewed",
+   "false_positive": 0,
+   "process": "gvisor_sentry",
+   "rule": "PTRACE attached to process",
+   "true_positive": 0,
+   "unreviewed": 1575
+  }
+ ],
+ "limitation": "Dispositions are the reviewer's; unmapped groups stay unreviewed.",
+ "true_positive": 0,
+ "unmatched_mappings": [],
+ "unreviewed": 1673
+}

@@ -1,0 +1,60 @@
+{
+  "files": [
+    {
+      "path": "consumed-packet/caller.py",
+      "bytes": 13568,
+      "sha256": "82d13cfd07617d69eef882ad7acff283ecb88d0db933db9c3803637b2c34ca0c"
+    },
+    {
+      "path": "consumed-packet/limit_child.py",
+      "bytes": 1695,
+      "sha256": "94885220573bf5a0460e34ec229fdb6132d0bda6d39011d8abf9d46df0da090d"
+    },
+    {
+      "path": "consumed-packet/freeze.json",
+      "bytes": 3597,
+      "sha256": "eb6f4269ab3190fa9dc32d20403189daa87c5e2053a8d77d3009bbddcaa1a6fc"
+    },
+    {
+      "path": "consumed-packet/isolated.go.mod",
+      "bytes": 159,
+      "sha256": "ab13da096721305be7e5d83ce9ef53df32c01fd8798224aad6409f48c4955fad"
+    },
+    {
+      "path": "consumed-packet/exact.diff",
+      "bytes": 3986,
+      "sha256": "c62abb607108b837a49df6b1e9ed4d9d1cfba8825dbd18f49fd1ef7a2a2f78ea"
+    },
+    {
+      "path": "consumed-packet/telemetry-note.md",
+      "bytes": 2863,
+      "sha256": "281065235a8f3a9d4cb4be1e6707f30be5b05130044999944331342609fe9249"
+    },
+    {
+      "path": "consumed-packet/preservation.json",
+      "bytes": 5341,
+      "sha256": "4fbde7e3f78ab4b582a7a55a6f31678b9b026ca3ff60fb32a721f5ba2849b241"
+    },
+    {
+      "path": "unchanged-stub-and-tests/score.go",
+      "bytes": 1294,
+      "sha256": "f90b35438d19e1fc02c883923da6e3a038fe80ac5f9ad8cedead3514bbe732bb"
+    },
+    {
+      "path": "unchanged-stub-and-tests/exfil_test.go",
+      "bytes": 9433,
+      "sha256": "78b27d2e00497fd4eefd26e87272b5d9f601ae252f0436a84e784c460817a585"
+    },
+    {
+      "path": "native-requests-and-results.json",
+      "bytes": 11196,
+      "sha256": "3077410cf5edee006b6bec86c192f73dbd5d0f64a5ed5324b99b62ebbe04baab"
+    },
+    {
+      "path": "root-ruling.json",
+      "bytes": 1471,
+      "sha256": "2af79d977c69111ef31b72a2b40db3cc7456828008f1a50140543c397851ea9d"
+    }
+  ],
+  "all_private_evidence_retained": true
+}

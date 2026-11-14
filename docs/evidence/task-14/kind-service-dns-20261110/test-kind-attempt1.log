@@ -1,0 +1,30 @@
+GO="env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS='-mod=readonly -buildvcs=false' GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/t WARDEN_LIVE_KIND=1 WARDEN_KIND_KUBECONFIG=/home/postedism/Desktop/Warden-task3/.cache/kind/kubeconfig KIND_OUT=/tmp/warden-t7k/kind.json JIT_OUT=/tmp/warden-t7k/jit.json TERMINATE_OUT=/tmp/warden-t7k/terminate.json SERVICE_OUT=/tmp/warden-t7k/service.json /home/postedism/Desktop/Warden-task3/.tools/go/bin/go" scripts/kind_lab.sh run scripts/test-postgres.sh \
+	test -count=1 -v -timeout 20m ./respond/kindlab ./controlplane/internal/jit
+Creating cluster "warden-respond" ...
+ • Ensuring node image (kindest/node:v1.34.11) 🖼️  ...
+WARNING: Overriding docker network due to KIND_EXPERIMENTAL_DOCKER_NETWORK
+WARNING: Here be dragons! This is not supported currently.
+ ✓ Ensuring node image (kindest/node:v1.34.11) 🖼️
+ • Preparing nodes 📦   ...
+ ✓ Preparing nodes 📦 
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Starting control-plane 🕹️
+ • Installing CNI 🔌  ...
+ ✓ Installing CNI 🔌
+ • Installing StorageClass 💾  ...
+ ✓ Installing StorageClass 💾
+ • Waiting ≤ 3m0s for control-plane = Ready ⏳  ...
+ ✓ Waiting ≤ 3m0s for control-plane = Ready ⏳
+ • Ready after 18s 💚
+Set kubectl context to "kind-warden-respond"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-warden-respond --kubeconfig /home/postedism/Desktop/Warden-task3/.cache/kind/kubeconfig
+
+Not sure what to do next? 😅  Check out https://kind.sigs.k8s.io/docs/user/quick-start/
+go: parsing $GOFLAGS: unterminated ' string
+Deleting cluster "warden-respond" ...
+Deleted nodes: ["warden-respond-control-plane"]
+make: *** [Makefile:146: test-kind] Error 1

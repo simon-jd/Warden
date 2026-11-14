@@ -1,0 +1,151 @@
+# INERT IMAGE_COMPATIBILITY_ONLY 1/1; no PG initialization/server or Go/tests.
+# Root FULLREAD/freeze/fresh normal admission required. No execution authorized.
+# Outer timeout --signal=TERM --kill-after=1s 14s python3 -B - (whole <=15s).
+import hashlib,json,os,pathlib,resource,selectors,signal,subprocess,sys,time
+T=time.monotonic();W=pathlib.Path('/home/postedism/Desktop/Warden')
+N=W/'.cache/task9-initdb-image-compatibility-20261026-a'
+NAME='warden-task9-initdb-image-compatibility-20261026-a'
+IMAGE='sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873'
+MAXOUT=65536;seen=0;events=[];interrupted=False;callno=0;cli_safe=True
+created=False;attempted=False;OWN=None;CID=None;cleanup_known=False
+capture_complete=False;state=None;outputs={};indicators={};failures=[]
+resource.setrlimit(resource.RLIMIT_AS,(268435456,4294967296))
+resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+resource.setrlimit(resource.RLIMIT_FSIZE,(41943040,41943040))
+def term(sig,frame):
+ global interrupted
+ interrupted=True
+signal.signal(signal.SIGTERM,term)
+def cli_limits():
+ resource.setrlimit(resource.RLIMIT_AS,(4294967296,4294967296))
+ resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+ resource.setrlimit(resource.RLIMIT_CPU,(20,20))
+
+def cli(args,deadline):
+ global seen,callno,cli_safe
+ if not cli_safe:raise RuntimeError('prior_cli_cleanup_unknown')
+ if time.monotonic()>=deadline or (interrupted and deadline<=T+9): raise RuntimeError('deadline')
+ callno+=1
+ argv=['/usr/bin/docker','--config',str(N/'docker'),*args]
+ env={'PATH':'/usr/bin:/bin','DOCKER_HOST':'unix:///var/run/docker.sock','GOMAXPROCS':'2','GOMEMLIMIT':'256MiB'}
+ raw={k:open(N/('cli-%03d-%s.raw'%(callno,k)),'xb',buffering=0) for k in ['out','err']}
+ cli_safe=False
+ p=subprocess.Popen(argv,env=env,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,stderr=subprocess.PIPE,start_new_session=True,preexec_fn=cli_limits)
+ sel=selectors.DefaultSelector(); buffers={'out':bytearray(),'err':bytearray()}; failure=''
+ for pipe,key in [(p.stdout,'out'),(p.stderr,'err')]:
+  os.set_blocking(pipe.fileno(),False);sel.register(pipe,selectors.EVENT_READ,key)
+ def peek():return os.waitid(os.P_PID,p.pid,os.WEXITED|os.WNOHANG|os.WNOWAIT)
+ try:
+  while sel.get_map() or peek() is None:
+   if time.monotonic()>=deadline:failure='cli_timeout';break
+   for k,_ in sel.select(.05):
+    b=os.read(k.fileobj.fileno(),8192)
+    if not b:sel.unregister(k.fileobj);k.fileobj.close();continue
+    keep=b[:max(0,MAXOUT-seen)];seen+=len(keep)
+    raw[k.data].write(keep);buffers[k.data].extend(keep)
+    if len(keep)!=len(b):failure='output_cap';break
+   if failure:break
+ finally:
+  sel.close()
+  for f in raw.values():f.close()
+  # Retain unreaped session leader until group signals; only this owned CLI.
+  for sig in [signal.SIGTERM,signal.SIGKILL]:
+   try:os.killpg(p.pid,sig)
+   except ProcessLookupError:pass
+  until=min(deadline+.2,T+13.3)
+  while peek() is None and time.monotonic()<until:time.sleep(.01)
+  if peek() is None:raise RuntimeError('cli_cleanup_unknown')
+  rc=p.wait(timeout=max(.01,until-time.monotonic()))
+  try:os.killpg(p.pid,0)
+  except ProcessLookupError:pass
+  else:raise RuntimeError('cli_group_unknown')
+ cli_safe=True
+ event={'args':args,'rc':rc,'out':buffers['out'].decode('utf8','replace'),'err':buffers['err'].decode('utf8','replace'),'failure':failure}
+ events.append(event)
+ if failure:raise RuntimeError(failure)
+ return event
+
+def must(args,deadline):
+ e=cli(args,deadline)
+ if e['rc']!=0:raise RuntimeError('docker_failed')
+ return e
+
+def absent(name,deadline):
+ e=cli(['container','inspect','--format','{{.Name}}',name],deadline)
+ expected=['Error: No such container: '+name+'\n','Error response from daemon: No such container: '+name+'\n','Error: No such object: '+name+'\n']
+ if e['rc']!=1 or e['out'] not in ['', '\n'] or e['err'] not in expected:raise RuntimeError('container_not_proven_absent')
+
+def owned(deadline):
+ global CID,state
+ p=N/(NAME+'.cid')
+ if p.is_symlink() or not p.is_file():raise RuntimeError('owned_cidfile_missing')
+ raw=p.read_bytes()
+ if len(raw) not in [64,65] or (len(raw)==65 and raw[-1:]!=b'\n'):raise RuntimeError('owned_cidfile_invalid')
+ candidate=raw[:64].decode('ascii')
+ if any(c not in '0123456789abcdef' for c in candidate):raise RuntimeError('owned_cidfile_invalid')
+ if CID is not None and CID!=candidate:raise RuntimeError('owned_cid_changed')
+ template='{"id":{{json .Id}},"name":{{json .Name}},"owner":{{json (index .Config.Labels "warden.owner")}},"state":{{json .State}}}'
+ e=must(['container','inspect','--format',template,candidate],deadline)
+ value=json.loads(e['out'])
+ if e['err'] or value.get('id')!=candidate or value.get('name')!='/'+NAME or value.get('owner')!=OWN:raise RuntimeError('owned_identity_mismatch')
+ if not isinstance(value.get('state'),dict):raise RuntimeError('owned_state_missing')
+ CID=candidate;state=value['state']
+ return CID
+
+try:
+ assert os.getuid()==1000 and os.geteuid()==1000 and not os.path.lexists(N)
+ N.mkdir(mode=0o700);created=True;OWN=os.urandom(16).hex()
+ (N/'docker').mkdir(mode=0o700)
+ assert not os.path.lexists(N/(NAME+'.cid'))
+ absent(NAME,min(T+2,time.monotonic()+1.5))
+ # Only public metadata commands; image entrypoint is OVERRIDDEN, never sourced.
+ # NUL-delimited sections preserve exact bytes even if a file lacks final LF.
+ script='set -eu; printf "\\000%s:VERSION\\000" "$1"; initdb --version; printf "\\000%s:HELP\\000" "$1"; initdb --help; printf "\\000%s:ENTRYPOINT\\000" "$1"; cat /usr/local/bin/docker-entrypoint.sh; printf "\\000%s:END\\000" "$1"'
+ args=['run','--pull=never','--name',NAME,'--cidfile',str(N/(NAME+'.cid')),'--label','warden.test=task9','--label','warden.owner='+OWN,'--network','none','--read-only','--cap-drop','ALL','--security-opt','no-new-privileges','--user','postgres','--memory','512m','--memory-swap','512m','--pids-limit','96','--cpus','2','--shm-size','1m','--log-driver','local','--log-opt','max-size=1m','--log-opt','max-file=1','--log-opt','compress=false','--tmpfs','/var/lib/postgresql:ro,noexec,nosuid,nodev,size=1m,mode=0555','--entrypoint','/bin/sh',IMAGE,'-c',script,'image-metadata-only',OWN]
+ attempted=True
+ run=must(args,min(T+6,time.monotonic()+4))
+ run_call=callno
+ owned(min(T+8,time.monotonic()+1.5))
+ if state.get('Running') is not False or state.get('ExitCode')!=0 or state.get('OOMKilled') is not False or state.get('Error'):raise RuntimeError('inspection_container_not_clean_exit')
+ stdout=(N/('cli-%03d-out.raw'%run_call)).read_bytes()
+ stderr=(N/('cli-%03d-err.raw'%run_call)).read_bytes()
+ marks=[b'\0'+OWN.encode()+b':'+x+b'\0' for x in [b'VERSION',b'HELP',b'ENTRYPOINT',b'END']]
+ if any(stdout.count(mark)!=1 for mark in marks) or not stdout.startswith(marks[0]) or not stdout.endswith(marks[3]):raise RuntimeError('metadata_framing_incomplete')
+ positions=[stdout.index(mark) for mark in marks]
+ if positions!=sorted(positions):raise RuntimeError('metadata_framing_order')
+ for i,name in enumerate(['initdb-version.txt','initdb-help.txt','docker-entrypoint.sh.txt']):
+  raw=stdout[positions[i]+len(marks[i]):positions[i+1]]
+  if not raw:raise RuntimeError('metadata_empty')
+  (N/name).write_bytes(raw)
+  outputs[name]={'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}
+ version=(N/'initdb-version.txt').read_bytes();help_text=(N/'initdb-help.txt').read_bytes();entry=(N/'docker-entrypoint.sh.txt').read_bytes()
+ indicators={'version_identifies_initdb':version.startswith(b'initdb (PostgreSQL) '),'help_has_set_name_value':b'--set=NAME=VALUE' in help_text,'entrypoint_mentions_initdb':b'initdb' in entry,'entrypoint_mentions_POSTGRES_INITDB_ARGS':b'POSTGRES_INITDB_ARGS' in entry,'entrypoint_bytes':len(entry),'stderr_empty':not stderr}
+ if stderr or len(entry)>65536 or not all(indicators[k] for k in ['version_identifies_initdb','help_has_set_name_value','entrypoint_mentions_initdb','entrypoint_mentions_POSTGRES_INITDB_ARGS','stderr_empty']):raise RuntimeError('compatibility_evidence_missing')
+ # These byte indicators do not prove shell forwarding semantics. Root must
+ # FULLREAD exact script/help before declaring compatibility PASS / next PG gate.
+ capture_complete=True
+ if time.monotonic()>=T+9:raise RuntimeError('work_deadline')
+except BaseException as exc:
+ failures.append('work:'+type(exc).__name__+':'+str(exc))
+finally:
+ if attempted and cli_safe:
+  try:
+   if not (N/(NAME+'.cid')).exists():
+    absent(NAME,min(T+12,time.monotonic()+1.5));cleanup_known=True
+   else:
+    owned(min(T+10.5,time.monotonic()+1.5))
+    must(['rm','-f','-v',CID],min(T+12,time.monotonic()+1.5))
+    absent(NAME,min(T+13,time.monotonic()+1));cleanup_known=True
+  except BaseException as exc:failures.append('cleanup:'+type(exc).__name__+':'+str(exc))
+ elif not attempted:cleanup_known=True
+ if not cli_safe:failures.append('owned_cli_cleanup_unknown_STOP')
+ if interrupted:failures.append('external_TERM')
+ if time.monotonic()>=T+13.5:failures.append('status_deadline')
+ complete=capture_complete and cleanup_known and cli_safe and not failures
+ status='COMPATIBILITY_EVIDENCE_COMPLETE_PENDING_ROOT_REVIEW' if complete else 'UNKNOWN_FAILURE'
+ result={'phase':'IMAGE_COMPATIBILITY_ONLY','allowance':'1/1','status':status,'capture_complete':capture_complete,'compatibility_gate':'PENDING_ROOT_FULL_HELP_AND_ENTRYPOINT_REVIEW' if complete else 'NOT_PASSED','prior_first_red':'SPENT_2/2_UNCHANGED','prior_diagnostics':'SPENT_2/2_UNCHANGED','pg_started':False,'database_initialized':False,'CID':CID,'owner_label':OWN,'owned_name':NAME,'container_state':state,'outputs':outputs,'indicators':indicators,'failures':failures,'cleanup_known':cleanup_known,'cli_group_cleanup_known':cli_safe,'evidence_bytes':seen,'elapsed':time.monotonic()-T,'old_task16':'UNTOUCHED_UNKNOWN'}
+ if created:
+  (N/'events.json').write_text(json.dumps(events,indent=2)+'\n')
+  (N/'status.json').write_text(json.dumps(result,indent=2)+'\n')
+ print(json.dumps(result))
+sys.exit(0 if complete else 2)

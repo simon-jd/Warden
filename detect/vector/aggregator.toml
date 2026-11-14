@@ -1,0 +1,152 @@
+# Unstarted template: configure real credentials/trust before deployment.
+data_dir = "/var/lib/warden/vector-aggregator"
+[sources.agent]
+type = "vector"
+address = "127.0.0.1:6000"
+acknowledgements.enabled = true
+
+[transforms.source_route]
+type = "route"
+inputs = ["agent"]
+[transforms.source_route.route]
+azure = '.warden_source == "azure"'
+aks = '.warden_source == "aks"'
+k3s = '.warden_source == "k3s"'
+vnet = '.warden_source == "vnet"'
+tetragon = '.warden_source == "tetragon"'
+warden = '.warden_source == "warden"'
+
+[transforms.norm_azure]
+type = "remap"
+inputs = ["source_route.azure"]
+file = "detect/ocsf/azure_activity.vrl"
+drop_on_error = true
+drop_on_abort = true
+reroute_dropped = true
+
+[transforms.norm_aks]
+type = "remap"
+inputs = ["source_route.aks"]
+file = "detect/ocsf/k8s_audit.vrl"
+drop_on_error = true
+drop_on_abort = true
+reroute_dropped = true
+
+[transforms.norm_k3s]
+type = "remap"
+inputs = ["source_route.k3s"]
+file = "detect/ocsf/k8s_audit.vrl"
+drop_on_error = true
+drop_on_abort = true
+reroute_dropped = true
+
+[transforms.norm_vnet]
+type = "remap"
+inputs = ["source_route.vnet"]
+file = "detect/ocsf/vnet_flow.vrl"
+drop_on_error = true
+drop_on_abort = true
+reroute_dropped = true
+
+[transforms.norm_tetragon]
+type = "remap"
+inputs = ["source_route.tetragon"]
+file = "detect/ocsf/tetragon.vrl"
+drop_on_error = true
+drop_on_abort = true
+reroute_dropped = true
+
+[transforms.norm_warden]
+type = "remap"
+inputs = ["source_route.warden"]
+file = "detect/ocsf/warden_audit.vrl"
+drop_on_error = true
+drop_on_abort = true
+reroute_dropped = true
+
+[transforms.class_route]
+type = "route"
+inputs = ["norm_azure", "norm_aks", "norm_k3s", "norm_vnet", "norm_tetragon", "norm_warden"]
+[transforms.class_route.route]
+api = '.metadata.version == "1.3.0" && .class_uid == 6003 && .category_uid == 6'
+process = '.metadata.version == "1.3.0" && .class_uid == 1007 && .category_uid == 1'
+network = '.metadata.version == "1.3.0" && .class_uid == 4001 && .category_uid == 4'
+
+[transforms.reject_redact]
+type = "remap"
+inputs = ["norm_azure.dropped", "norm_aks.dropped", "norm_k3s.dropped", "norm_vnet.dropped", "norm_tetragon.dropped", "norm_warden.dropped", "source_route._unmatched", "class_route._unmatched"]
+source = 's = .warden_source; if !includes(["azure", "aks", "k3s", "vnet", "tetragon", "warden"], s) { s = "unrecognized" }; . = {"reason": "normalization_or_route_rejected", "source": s}'
+
+[sinks.os_api]
+type = "elasticsearch"
+inputs = ["class_route.api"]
+endpoints = ["https://127.0.0.1:9200"]
+api_version = "v7"
+mode = "bulk"
+bulk.index = "warden-ocsf-6003"
+bulk.action = "index"
+auth.strategy = "basic"
+auth.user = "warden_ingest"
+auth.password = "REPLACE_BEFORE_DEPLOYMENT"
+tls.verify_certificate = true
+tls.verify_hostname = true
+acknowledgements.enabled = true
+buffer.type = "disk"
+buffer.max_size = 268435488
+buffer.when_full = "block"
+
+[sinks.os_process]
+type = "elasticsearch"
+inputs = ["class_route.process"]
+endpoints = ["https://127.0.0.1:9200"]
+api_version = "v7"
+mode = "bulk"
+bulk.index = "warden-ocsf-1007"
+bulk.action = "index"
+auth.strategy = "basic"
+auth.user = "warden_ingest"
+auth.password = "REPLACE_BEFORE_DEPLOYMENT"
+tls.verify_certificate = true
+tls.verify_hostname = true
+acknowledgements.enabled = true
+buffer.type = "disk"
+buffer.max_size = 268435488
+buffer.when_full = "block"
+
+[sinks.os_network]
+type = "elasticsearch"
+inputs = ["class_route.network"]
+endpoints = ["https://127.0.0.1:9200"]
+api_version = "v7"
+mode = "bulk"
+bulk.index = "warden-ocsf-4001"
+bulk.action = "index"
+auth.strategy = "basic"
+auth.user = "warden_ingest"
+auth.password = "REPLACE_BEFORE_DEPLOYMENT"
+tls.verify_certificate = true
+tls.verify_hostname = true
+acknowledgements.enabled = true
+buffer.type = "disk"
+buffer.max_size = 268435488
+buffer.when_full = "block"
+
+[sinks.reject]
+type = "console"
+inputs = ["reject_redact"]
+target = "stderr"
+encoding.codec = "json"
+buffer.type = "disk"
+buffer.max_size = 268435488
+buffer.when_full = "block"
+
+[sources.aggregator_metrics]
+type = "internal_metrics"
+namespace = "vector"
+[sinks.aggregator_metrics_export]
+type = "prometheus_exporter"
+inputs = ["aggregator_metrics"]
+address = "127.0.0.1:19598"
+buffer.type = "memory"
+buffer.max_events = 500
+buffer.when_full = "block"

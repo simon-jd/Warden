@@ -1,0 +1,241 @@
+[
+  {
+    "name": "wrong_product",
+    "document_id": "bf33a165-c7cf-56b8-a2ad-118388de235a",
+    "expected_match": false,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 1,
+      "category_uid": 6,
+      "class_uid": 6003,
+      "type_uid": 600301,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Synthetic Other Product",
+          "vendor_name": "Kubernetes"
+        },
+        "uid": "9ace58df-4b68-5c6a-9d83-03764071c777"
+      },
+      "unmapped": {
+        "objectRef": {
+          "resource": "serviceaccounts",
+          "subresource": "token"
+        }
+      },
+      "api": {
+        "operation": "create"
+      },
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1
+    }
+  },
+  {
+    "name": "wrong_class",
+    "document_id": "c9690b58-be4a-591f-9fb7-28d91f5ed0ba",
+    "expected_match": false,
+    "scope": "deliberately_wrong_class_query_edge",
+    "event": {
+      "activity_id": 1,
+      "category_uid": 6,
+      "class_uid": 9999,
+      "type_uid": 600301,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Kubernetes Audit",
+          "vendor_name": "Kubernetes"
+        },
+        "uid": "9ace58df-4b68-5c6a-9d83-03764071c777"
+      },
+      "unmapped": {
+        "objectRef": {
+          "resource": "serviceaccounts",
+          "subresource": "token"
+        }
+      },
+      "api": {
+        "operation": "create"
+      },
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1
+    }
+  },
+  {
+    "name": "missing_action_field",
+    "document_id": "7d0c805c-cc98-5ac2-9d35-c6503697e58d",
+    "expected_match": false,
+    "scope": "deliberately_missing_field_query_edge",
+    "event": {
+      "activity_id": 1,
+      "category_uid": 6,
+      "class_uid": 6003,
+      "type_uid": 600301,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Kubernetes Audit",
+          "vendor_name": "Kubernetes"
+        },
+        "uid": "9ace58df-4b68-5c6a-9d83-03764071c777"
+      },
+      "unmapped": {
+        "objectRef": {
+          "resource": "serviceaccounts",
+          "subresource": "token"
+        }
+      },
+      "api": {},
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1
+    }
+  },
+  {
+    "name": "reserved_identifier_value",
+    "document_id": "389816da-b185-5cde-b577-8f013be476d9",
+    "expected_match": true,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 1,
+      "category_uid": 6,
+      "class_uid": 6003,
+      "type_uid": 600301,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Kubernetes Audit",
+          "vendor_name": "Kubernetes"
+        },
+        "uid": "neg OR class_uid:9999 *"
+      },
+      "unmapped": {
+        "objectRef": {
+          "resource": "serviceaccounts",
+          "subresource": "token"
+        }
+      },
+      "api": {
+        "operation": "create"
+      },
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1
+    }
+  },
+  {
+    "name": "string_case_variant",
+    "document_id": "2f359a7f-65a9-5d46-ad89-602fbc8f29fa",
+    "expected_match": true,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 99,
+      "category_uid": 6,
+      "class_uid": 6003,
+      "type_uid": 600399,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Kubernetes Audit",
+          "vendor_name": "Kubernetes"
+        },
+        "uid": "9ace58df-4b68-5c6a-9d83-03764071c777"
+      },
+      "unmapped": {
+        "objectRef": {
+          "resource": "SERVICEACCOUNTS",
+          "subresource": "TOKEN"
+        }
+      },
+      "api": {
+        "operation": "CREATE"
+      },
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1,
+      "activity_name": "CREATE"
+    }
+  },
+  {
+    "name": "near_miss",
+    "document_id": "caacee24-1978-555f-80e1-6a3075e8fc80",
+    "expected_match": false,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 1,
+      "category_uid": 6,
+      "class_uid": 6003,
+      "type_uid": 600301,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Kubernetes Audit",
+          "vendor_name": "Kubernetes"
+        },
+        "uid": "9ace58df-4b68-5c6a-9d83-03764071c777"
+      },
+      "unmapped": {
+        "objectRef": {
+          "resource": "serviceaccounts-history",
+          "subresource": "token"
+        }
+      },
+      "api": {
+        "operation": "create"
+      },
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1
+    }
+  }
+]

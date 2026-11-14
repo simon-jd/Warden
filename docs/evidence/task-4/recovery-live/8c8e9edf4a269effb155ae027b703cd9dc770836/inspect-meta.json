@@ -1,0 +1,28 @@
+{
+  "source": "8c8e9edf4a269effb155ae027b703cd9dc770836",
+  "mode": "inspect",
+  "command": [
+    "python3",
+    "-B",
+    "scripts/firecracker_recovery.py",
+    "inspect",
+    "--reviewed-exact-scene",
+    "--other-service-memory-bytes",
+    "0"
+  ],
+  "started_at": "2026-10-24T23:31:25.031623+00:00",
+  "ended_at": "2026-10-24T23:31:26.924980+00:00",
+  "duration_seconds": 1.893453,
+  "exit_code": 1,
+  "original_charge_released": false,
+  "original_charge_bytes": 5000000000,
+  "review_file": "docs/evidence/task-4/review-recovery-safety-amendment.md",
+  "review_sha256": "24f4e420821c1c36199fc771ce11b50f80b8af53101ffaf4bff9b0431648f424",
+  "controller_command_sha256": "f333779add4a5dfc7d4ad0bea714255d776056d2ab3b578e9295e7d34a5b20da",
+  "log_bytes": 124,
+  "log_sha256": "965e587ccbf1b5e0657acb6aa1497dd54eee231618a38a90aa357eb5dd25a66c",
+  "original_owner_retirement": "cleanup_pending",
+  "creation_outcome": "unknown",
+  "never_reopen": true,
+  "guest_boot_acceptance": false
+}

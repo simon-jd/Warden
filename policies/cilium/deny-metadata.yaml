@@ -1,0 +1,50 @@
+# Cloud metadata endpoints, denied to sandboxes and to the egress proxy that
+# resolves and connects on their behalf (egress-proxy.yaml). Deny rules win
+# over every allow, so no allowlist entry can reopen them. Hostname forms
+# (metadata.google.internal, metadata) resolve to these addresses: a sandbox
+# can resolve only the proxy's name (default-deny.yaml), and whatever the
+# proxy resolves for it still ends at this list. Neither document allows
+# anything, and neither denies anything else: Cilium puts every endpoint that
+# a policy with egress rules (deny rules too) selects into default deny,
+# unless the policy turns that off (enableDefaultDeny). Default deny comes
+# from default-deny.yaml and egress-proxy.yaml.
+#
+#   169.254.169.254  IMDS (Azure, GCP, AWS)
+#   169.254.169.252  GKE metadata server (workload identity)
+#   169.254.170.23   EKS Pod Identity agent; fd00:ec2::23 is its IPv6 form
+#   168.63.129.16    Azure WireServer
+#   fd00:ec2::254    EC2 IMDS over IPv6
+#
+# The offline check is TestDenyMetadataPolicyCoversSandboxesAndTheirProxy in
+# runtimes/conformance/identity_test.go; the live one, on the Cilium lab, is
+# TestSandboxCannotReachMetadata in controlplane/internal/ciliumlab.
+apiVersion: cilium.io/v2
+kind: CiliumClusterwideNetworkPolicy
+metadata:
+  name: warden-sandbox-deny-metadata
+spec:
+  description: Sandboxes never reach cloud metadata endpoints.
+  enableDefaultDeny:
+    egress: false
+    ingress: false
+  endpointSelector:
+    matchLabels:
+      warden.dev/sandbox: "true"
+  egressDeny:
+    - toCIDR: [169.254.169.254/32, 169.254.169.252/32, 169.254.170.23/32, 168.63.129.16/32, fd00:ec2::254/128, fd00:ec2::23/128]
+---
+apiVersion: cilium.io/v2
+kind: CiliumClusterwideNetworkPolicy
+metadata:
+  name: warden-egress-proxy-deny-metadata
+spec:
+  description: The egress proxy never reaches cloud metadata endpoints for a sandbox.
+  enableDefaultDeny:
+    egress: false
+    ingress: false
+  endpointSelector:
+    matchLabels:
+      k8s:io.kubernetes.pod.namespace: warden-system
+      app.kubernetes.io/name: warden-egress
+  egressDeny:
+    - toCIDR: [169.254.169.254/32, 169.254.169.252/32, 169.254.170.23/32, 168.63.129.16/32, fd00:ec2::254/128, fd00:ec2::23/128]

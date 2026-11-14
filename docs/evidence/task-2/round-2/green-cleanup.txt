@@ -1,0 +1,6 @@
+test_kill_write_failure_still_reaps_daemon_and_preserves_unknown_state (__main__.OwnedCleanupTests.test_kill_write_failure_still_reaps_daemon_and_preserves_unknown_state) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.012s
+
+OK

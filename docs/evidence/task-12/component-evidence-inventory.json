@@ -1,0 +1,167 @@
+{
+  "artifacts": [
+    {
+      "bytes": 3999,
+      "path": "docs/evidence/task-12/local-callers-20261025/affected-command.sh.txt",
+      "sha256": "62fe70c31d1df4f26e64aefaece173842c3604f410d616861804d45cc0a54ef8"
+    },
+    {
+      "bytes": 3310,
+      "path": "docs/evidence/task-12/local-callers-20261025/green-command.sh.txt",
+      "sha256": "b311c213f9d2ca9c2e7f125f791077b64578a8c937f23e8798afa1638fb7fb70"
+    },
+    {
+      "bytes": 8593,
+      "path": "docs/evidence/task-12/local-callers-20261025/install-command.sh.txt",
+      "sha256": "59a15974a42fdb415989a4a6856ef6bfc6d6cd8b7c3ef0c5b2f9637c192f4ae1"
+    },
+    {
+      "bytes": 2605,
+      "path": "docs/evidence/task-12/local-callers-20261025/red-command.sh.txt",
+      "sha256": "8f4d7df08adca3cf3a539c62ea26364e32c1a0b1aefcf73f0840d60762d837e1"
+    },
+    {
+      "bytes": 734,
+      "path": "docs/evidence/task-12/local-callers-20261025/source-freeze-affected.json",
+      "sha256": "156fd8d7762904ad7619d2fe0f6d6681ca82214139e892204dff24b3385e8769"
+    },
+    {
+      "bytes": 26930,
+      "path": "docs/evidence/task-12/local-callers-20261025/source-freeze.json",
+      "sha256": "81f642d89345ad3eac8750c44725a466585c7079f7eb239d441ff356ae76e870"
+    },
+    {
+      "bytes": 7948,
+      "path": "docs/evidence/task-12/local-callers-20261025/source-paths.txt",
+      "sha256": "11dddbb7c0d158a7259425da5ae658ac9d26d2f77a7ad6e760c77daecd7fcb2d"
+    },
+    {
+      "bytes": 5748,
+      "path": "docs/evidence/task-12/local-cover-affected-first-20261025/attack-coverage.md",
+      "sha256": "4afc44dc25af7db91293fce7c8bdb47598a0b040c86c4c475db1479eb12f9f75"
+    },
+    {
+      "bytes": 26848,
+      "path": "docs/evidence/task-12/local-cover-affected-first-20261025/native-requests-and-results.json",
+      "sha256": "6014a2889507ab97c110f433101e81b8bd4828a117f6fa316cbaf806cadf50d2"
+    },
+    {
+      "bytes": 6047,
+      "path": "docs/evidence/task-12/local-cover-affected-first-20261025/output.txt",
+      "sha256": "cf3b0124a130212001ebd19581f7e972d84401cc3b7a0ee1fbc2215eba88b096"
+    },
+    {
+      "bytes": 42,
+      "path": "docs/evidence/task-12/local-cover-affected-first-20261025/postflight.txt",
+      "sha256": "1aea4d40adab88ddeb2f862de921793d40f83a1b4eadd830822c440253aa35c3"
+    },
+    {
+      "bytes": 37,
+      "path": "docs/evidence/task-12/local-cover-affected-first-20261025/status.txt",
+      "sha256": "98d2fa4a19193d8bf2b7d69d2811291e539b81a6b8ec1a59fffb4469b3150e14"
+    },
+    {
+      "bytes": 7305,
+      "path": "docs/evidence/task-12/local-cover-affected-first-20261025/summary.json",
+      "sha256": "11c6fd948b3247c921a35a75df74c9ac2d167d5591fc0b95fff2ed84d983f347"
+    },
+    {
+      "bytes": 3310,
+      "path": "docs/evidence/task-12/local-cover-failed-first-20261025/green-command.sh.txt",
+      "sha256": "b311c213f9d2ca9c2e7f125f791077b64578a8c937f23e8798afa1638fb7fb70"
+    },
+    {
+      "bytes": 17035,
+      "path": "docs/evidence/task-12/local-cover-failed-first-20261025/native-requests-and-results.json",
+      "sha256": "7a6dae67c9692160596e46eefdff0df9b2787c1d66a60302dc1e796857b3af28"
+    },
+    {
+      "bytes": 9942,
+      "path": "docs/evidence/task-12/local-cover-failed-first-20261025/output.txt",
+      "sha256": "5f22f844a191c8f38d98695af525781d771977a7a16f911e97d016e9e9daf15c"
+    },
+    {
+      "bytes": 42,
+      "path": "docs/evidence/task-12/local-cover-failed-first-20261025/postflight.txt",
+      "sha256": "5355e748d7e8abb78df61c0ea0de598a042a758bb1e73f8f01c0ef564eda6486"
+    },
+    {
+      "bytes": 26930,
+      "path": "docs/evidence/task-12/local-cover-failed-first-20261025/source-freeze.json",
+      "sha256": "81f642d89345ad3eac8750c44725a466585c7079f7eb239d441ff356ae76e870"
+    },
+    {
+      "bytes": 37,
+      "path": "docs/evidence/task-12/local-cover-failed-first-20261025/status.txt",
+      "sha256": "028cbc502bb51b2acfa95d8dc90eb033997181ab3a9272fb27387697f1eebcd5"
+    },
+    {
+      "bytes": 14203,
+      "path": "docs/evidence/task-12/local-cover-failed-first-20261025/test_contract.py.txt",
+      "sha256": "dcbd62965146ee42c5c1c4465a4a3fc23a7357e7938b84daa538bb08b8d36eda"
+    },
+    {
+      "bytes": 181569,
+      "path": "docs/evidence/task-12/material-first-20261025/install-report.json",
+      "sha256": "1cc06f1656f8fc89ee6b49fc734a73ef4e71a789ca1410c242a4649025f53e3c"
+    },
+    {
+      "bytes": 4400,
+      "path": "docs/evidence/task-12/material-first-20261025/output.txt",
+      "sha256": "2ed7912bb138ca4f36be290cdef232e6c154947df1d878f8a1aff9f6b46bfcb0"
+    },
+    {
+      "bytes": 34,
+      "path": "docs/evidence/task-12/material-first-20261025/postflight.txt",
+      "sha256": "52e8589a7c5325e93fe0d13fb877518741021abdb43828dd18989f624a8e7e0f"
+    },
+    {
+      "bytes": 9835,
+      "path": "docs/evidence/task-12/material-first-20261025/selected.json",
+      "sha256": "9b024677a4058d6867948c5d5ed682e5787aea57536b9fb20d74aad2ba950c3d"
+    },
+    {
+      "bytes": 37,
+      "path": "docs/evidence/task-12/material-first-20261025/status.txt",
+      "sha256": "2858271a0aa6f08f8eeb5e2531365b7fa1ce2ec1c6641f9449acccf1ec0ef99d"
+    },
+    {
+      "bytes": 503,
+      "path": "docs/evidence/task-12/semantic-red-first-20261025/convert.py.txt",
+      "sha256": "4d71609c6c564edd986b683b8e7616809e49b763dc63df74430137c6b2f4c3d4"
+    },
+    {
+      "bytes": 540,
+      "path": "docs/evidence/task-12/semantic-red-first-20261025/coverage.py.txt",
+      "sha256": "3f185b58797539e068bb6e95f6cb4b1f39abc01ba3ddf762e60ab6e4f6c90085"
+    },
+    {
+      "bytes": 11397,
+      "path": "docs/evidence/task-12/semantic-red-first-20261025/native-requests-and-results.json",
+      "sha256": "34059ced387251252427f814ff0237fd7bd4d001f0a968890c8ffca6c15d87e5"
+    },
+    {
+      "bytes": 2260,
+      "path": "docs/evidence/task-12/semantic-red-first-20261025/output.txt",
+      "sha256": "09d5baa739831fa0e772215160a6412f8806e0f7194a035c8d257337a2bc3474"
+    },
+    {
+      "bytes": 15,
+      "path": "docs/evidence/task-12/semantic-red-first-20261025/postflight.txt",
+      "sha256": "32d8508ce28f4e8a3fa09c9315c97b1bff710fb368ad17fb5d0f8eeffa4cc589"
+    },
+    {
+      "bytes": 4942,
+      "path": "docs/evidence/task-12/semantic-red-first-20261025/source-snapshot.json",
+      "sha256": "68568c133402a3f607906dc9fb913679b01adffe0501a1454f7c1a231c759450"
+    },
+    {
+      "bytes": 37,
+      "path": "docs/evidence/task-12/semantic-red-first-20261025/status.txt",
+      "sha256": "028cbc502bb51b2acfa95d8dc90eb033997181ab3a9272fb27387697f1eebcd5"
+    }
+  ],
+  "base": "9691c9d7b9bb03e503964e4c6a0d97b5982b8373",
+  "note": "Reports and this inventory are not self-hashed; EVIDENCE commit hash is returned separately. Root coordination artifacts excluded.",
+  "source": "6791f7b6c004e5fff2a0af415ad41ca7a933dc0d"
+}

@@ -1,0 +1,101 @@
+{"image_id": "sha256:a688600ca24f8a4d3ca77f95b0dd40704a9fc787c826660eb7ba0b641b8b175d", "owned_image_charge": 0, "outstanding": 5000000000}
+{"additional_bytes": "5512000000", "at": "2026-10-25T10:30:20Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 265730441216, "project_allocated_bytes": 4206465024, "service_memory_bytes": "3000000000"}
+{"container_id": "cced259dace90152e75759a8ee2fe98f5d33587a60618a0d7580021c2ff48412", "labels": {"project": "warden", "owner": "codex-warden", "session": "b71a063f0780bf464264480b9563b598", "task": "identity-unit", "ttl": "2026-10-25T11:30:20.474798+00:00"}}
+{"inspected_host_config": {"Binds": null, "ContainerIDFile": "", "LogConfig": {"Type": "json-file", "Config": {"max-file": "1", "max-size": "10m"}}, "NetworkMode": "none", "PortBindings": {}, "RestartPolicy": {"Name": "no", "MaximumRetryCount": 0}, "AutoRemove": false, "VolumeDriver": "", "VolumesFrom": null, "ConsoleSize": [0, 0], "CapAdd": null, "CapDrop": ["ALL"], "CgroupnsMode": "private", "Dns": null, "DnsOptions": [], "DnsSearch": [], "ExtraHosts": null, "GroupAdd": null, "IpcMode": "private", "Cgroup": "", "Links": null, "OomScoreAdj": 0, "PidMode": "", "Privileged": false, "PublishAllPorts": false, "ReadonlyRootfs": true, "SecurityOpt": ["no-new-privileges"], "Tmpfs": {"/tmp": "rw,exec,nosuid,nodev,size=268435456"}, "UTSMode": "", "UsernsMode": "", "ShmSize": 67108864, "Runtime": "runc", "Isolation": "", "CpuShares": 0, "Memory": 2000000000, "NanoCpus": 2000000000, "CgroupParent": "", "BlkioWeight": 0, "BlkioWeightDevice": [], "BlkioDeviceReadBps": [], "BlkioDeviceWriteBps": [], "BlkioDeviceReadIOps": [], "BlkioDeviceWriteIOps": [], "CpuPeriod": 0, "CpuQuota": 0, "CpuRealtimePeriod": 0, "CpuRealtimeRuntime": 0, "CpusetCpus": "", "CpusetMems": "", "Devices": [], "DeviceCgroupRules": null, "DeviceRequests": null, "MemoryReservation": 0, "MemorySwap": 2000000000, "MemorySwappiness": null, "OomKillDisable": false, "PidsLimit": 256, "Ulimits": null, "CpuCount": 0, "CpuPercent": 0, "IOMaximumIOps": 0, "IOMaximumBandwidth": 0, "Mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden", "Target": "/workspace", "ReadOnly": true}, {"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/firecracker-code", "Target": "/workspace/.cache/firecracker-code"}], "MaskedPaths": ["/proc/acpi", "/proc/asound", "/proc/interrupts", "/proc/kcore", "/proc/keys", "/proc/latency_stats", "/proc/sched_debug", "/proc/scsi", "/proc/timer_list", "/proc/timer_stats", "/sys/devices/virtual/powercap", "/sys/firmware", "/sys/devices/system/cpu/cpu0/thermal_throttle", "/sys/devices/system/cpu/cpu1/thermal_throttle", "/sys/devices/system/cpu/cpu2/thermal_throttle", "/sys/devices/system/cpu/cpu3/thermal_throttle", "/sys/devices/system/cpu/cpu4/thermal_throttle", "/sys/devices/system/cpu/cpu5/thermal_throttle", "/sys/devices/system/cpu/cpu6/thermal_throttle", "/sys/devices/system/cpu/cpu7/thermal_throttle", "/sys/devices/system/cpu/cpu8/thermal_throttle", "/sys/devices/system/cpu/cpu9/thermal_throttle", "/sys/devices/system/cpu/cpu10/thermal_throttle", "/sys/devices/system/cpu/cpu11/thermal_throttle", "/sys/devices/system/cpu/cpu12/thermal_throttle", "/sys/devices/system/cpu/cpu13/thermal_throttle", "/sys/devices/system/cpu/cpu14/thermal_throttle", "/sys/devices/system/cpu/cpu15/thermal_throttle", "/sys/devices/system/cpu/cpu16/thermal_throttle", "/sys/devices/system/cpu/cpu17/thermal_throttle", "/sys/devices/system/cpu/cpu18/thermal_throttle", "/sys/devices/system/cpu/cpu19/thermal_throttle", "/sys/devices/system/cpu/cpu20/thermal_throttle", "/sys/devices/system/cpu/cpu21/thermal_throttle", "/sys/devices/system/cpu/cpu22/thermal_throttle", "/sys/devices/system/cpu/cpu23/thermal_throttle", "/sys/devices/system/cpu/cpu24/thermal_throttle", "/sys/devices/system/cpu/cpu25/thermal_throttle", "/sys/devices/system/cpu/cpu26/thermal_throttle", "/sys/devices/system/cpu/cpu27/thermal_throttle", "/sys/devices/system/cpu/cpu28/thermal_throttle", "/sys/devices/system/cpu/cpu29/thermal_throttle", "/sys/devices/system/cpu/cpu30/thermal_throttle", "/sys/devices/system/cpu/cpu31/thermal_throttle"], "ReadonlyPaths": ["/proc/bus", "/proc/fs", "/proc/irq", "/proc/sys", "/proc/sysrq-trigger"]}}
+=== RUN   TestVerify_RejectsWrongAudience
+--- PASS: TestVerify_RejectsWrongAudience (0.07s)
+=== RUN   TestVerify_JWKSRotation
+--- PASS: TestVerify_JWKSRotation (0.00s)
+=== RUN   TestVerify_ClaimsAndSignatureBoundaries
+=== RUN   TestVerify_ClaimsAndSignatureBoundaries/missing-exp
+=== RUN   TestVerify_ClaimsAndSignatureBoundaries/future-nbf
+=== RUN   TestVerify_ClaimsAndSignatureBoundaries/v1
+=== RUN   TestVerify_ClaimsAndSignatureBoundaries/id-token
+=== RUN   TestVerify_ClaimsAndSignatureBoundaries/wrong-scope
+=== RUN   TestVerify_ClaimsAndSignatureBoundaries/subject
+=== RUN   TestVerify_ClaimsAndSignatureBoundaries/fractional-exp
+=== RUN   TestVerify_ClaimsAndSignatureBoundaries/string-exp
+=== RUN   TestVerify_ClaimsAndSignatureBoundaries/wrong-nbf-type
+=== RUN   TestVerify_ClaimsAndSignatureBoundaries/app-token
+=== RUN   TestVerify_ClaimsAndSignatureBoundaries/issuer
+=== RUN   TestVerify_ClaimsAndSignatureBoundaries/expired
+--- PASS: TestVerify_ClaimsAndSignatureBoundaries (0.01s)
+    --- PASS: TestVerify_ClaimsAndSignatureBoundaries/missing-exp (0.00s)
+    --- PASS: TestVerify_ClaimsAndSignatureBoundaries/future-nbf (0.00s)
+    --- PASS: TestVerify_ClaimsAndSignatureBoundaries/v1 (0.00s)
+    --- PASS: TestVerify_ClaimsAndSignatureBoundaries/id-token (0.00s)
+    --- PASS: TestVerify_ClaimsAndSignatureBoundaries/wrong-scope (0.00s)
+    --- PASS: TestVerify_ClaimsAndSignatureBoundaries/subject (0.00s)
+    --- PASS: TestVerify_ClaimsAndSignatureBoundaries/fractional-exp (0.00s)
+    --- PASS: TestVerify_ClaimsAndSignatureBoundaries/string-exp (0.00s)
+    --- PASS: TestVerify_ClaimsAndSignatureBoundaries/wrong-nbf-type (0.00s)
+    --- PASS: TestVerify_ClaimsAndSignatureBoundaries/app-token (0.00s)
+    --- PASS: TestVerify_ClaimsAndSignatureBoundaries/issuer (0.00s)
+    --- PASS: TestVerify_ClaimsAndSignatureBoundaries/expired (0.00s)
+=== RUN   TestVerify_RejectsAmbiguousOrMalformedJWT
+--- PASS: TestVerify_RejectsAmbiguousOrMalformedJWT (0.01s)
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/wrong-use
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/wrong-alg
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/wrong-kty
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/even-exponent
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/huge-exponent
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/small-modulus
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/oversize-modulus
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/private
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/wrong-op
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/noncanonical-modulus
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/secret-key
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/duplicate-json
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/trailing
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/duplicate-kid
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/oversize
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/empty
+=== RUN   TestVerify_JWKSRejectsUntrustedMaterial/too-many-keys
+--- PASS: TestVerify_JWKSRejectsUntrustedMaterial (0.04s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/wrong-use (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/wrong-alg (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/wrong-kty (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/even-exponent (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/huge-exponent (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/small-modulus (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/oversize-modulus (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/private (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/wrong-op (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/noncanonical-modulus (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/secret-key (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/duplicate-json (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/trailing (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/duplicate-kid (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/oversize (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/empty (0.00s)
+    --- PASS: TestVerify_JWKSRejectsUntrustedMaterial/too-many-keys (0.00s)
+=== RUN   TestVerify_FetchFailureNeverExtendsSnapshot
+=== RUN   TestVerify_FetchFailureNeverExtendsSnapshot/Internal_Server_Error
+=== RUN   TestVerify_FetchFailureNeverExtendsSnapshot/Found
+=== RUN   TestVerify_FetchFailureNeverExtendsSnapshot/OK
+--- PASS: TestVerify_FetchFailureNeverExtendsSnapshot (0.04s)
+    --- PASS: TestVerify_FetchFailureNeverExtendsSnapshot/Internal_Server_Error (0.01s)
+    --- PASS: TestVerify_FetchFailureNeverExtendsSnapshot/Found (0.02s)
+    --- PASS: TestVerify_FetchFailureNeverExtendsSnapshot/OK (0.01s)
+=== RUN   TestVerify_RefreshCoalescesAndCallerCancellationIsIsolated
+--- PASS: TestVerify_RefreshCoalescesAndCallerCancellationIsIsolated (0.00s)
+=== RUN   TestVerify_UnknownKidPressureIsBounded
+--- PASS: TestVerify_UnknownKidPressureIsBounded (0.03s)
+=== RUN   TestVerify_ConcurrentWaitersAreBounded
+--- PASS: TestVerify_ConcurrentWaitersAreBounded (3.00s)
+=== RUN   TestVerify_BoundedFetchTimeoutAndCanceledInput
+--- PASS: TestVerify_BoundedFetchTimeoutAndCanceledInput (3.00s)
+=== RUN   TestVerifier_ProductionConfigFailsClosed
+--- PASS: TestVerifier_ProductionConfigFailsClosed (0.00s)
+=== RUN   TestVerify_DoesNotFollowRedirect
+--- PASS: TestVerify_DoesNotFollowRedirect (0.01s)
+=== RUN   TestVerify_RechecksTokenExpiryAfterFetch
+--- PASS: TestVerify_RechecksTokenExpiryAfterFetch (0.01s)
+=== RUN   TestVerify_InvalidJWKSDoesNotReplaceFreshKnownKeys
+--- PASS: TestVerify_InvalidJWKSDoesNotReplaceFreshKnownKeys (0.01s)
+=== RUN   TestVerify_RejectsNoncanonicalBase64AndDuplicateEscapedNames
+--- PASS: TestVerify_RejectsNoncanonicalBase64AndDuplicateEscapedNames (0.01s)
+PASS
+ok  	warden/controlplane/internal/authn	6.252s
+{"removed_container": "cced259dace90152e75759a8ee2fe98f5d33587a60618a0d7580021c2ff48412"}

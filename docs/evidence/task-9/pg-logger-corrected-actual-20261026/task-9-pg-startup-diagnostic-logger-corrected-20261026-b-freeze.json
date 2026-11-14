@@ -1,0 +1,42 @@
+{
+  "phase": "LOGGER_CORRECTED_PG_DIAGNOSTIC_PREPARATION_ONLY",
+  "execution": "NOT_ADMITTED_NOT_RUN",
+  "prior_first_red": "SPENT_2/2_UNCHANGED",
+  "prior_diagnostic": "SPENT_1/1_UNCHANGED",
+  "new_diagnostic_allowance": 1,
+  "total_diagnostic_attempts_after_execution": 2,
+  "consumed_body_sha256": "d4f01316984c4d33425c0e4dcc006a1d22becceee8b99ca9e91016ff8341da70",
+  "authority": {
+    "path": "docs/COORDINATOR-TASK9-LOGGER-CORRECTION-20261026.json",
+    "bytes": 2820,
+    "sha256": "2f1c1d1cb778b12c09ac511fb3e0863217de3adb80aec0aa9ee6d72d5b3481d2"
+  },
+  "historical_F_sha256": "8f498b9220b29dd8b26753950a1896631265df3a6e2a3abf810872eb2e5be6a8",
+  "historical_M_sha256": "1ca3cbfa3cf4a3ba960dc4ced03f8eb24d2e8429e9ae5e7b0e34d3d08b54fbbd",
+  "files": [
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-pg-startup-diagnostic-logger-corrected-20261026-b.py.txt",
+      "bytes": 12312,
+      "allocated_bytes": 16384,
+      "sha256": "68c82e12362296db7193bfbafe8613378d8dbcecf9b561c0921efd4152ac0f31"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-pg-startup-diagnostic-logger-corrected-20261026-b.diff",
+      "bytes": 2056,
+      "allocated_bytes": 4096,
+      "sha256": "419b485e204c8bd25cea168cc443d26adbe138ea64df39b1b33066e83893dcde"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-pg-startup-diagnostic-logger-corrected-20261026-b.md",
+      "bytes": 2753,
+      "allocated_bytes": 4096,
+      "sha256": "5fc81aeabe0f72553f5dc08dc16f43ae69788d2c23e83d4a4d576347068daebe"
+    }
+  ],
+  "allocation": {
+    "new_files_allocated_bytes": 28672,
+    "parent_directory_growth_bytes": 0,
+    "total_additional_allocated_bytes": 28672,
+    "cap_bytes": 65536
+  }
+}

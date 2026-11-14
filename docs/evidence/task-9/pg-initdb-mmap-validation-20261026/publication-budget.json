@@ -1,0 +1,13 @@
+{
+  "utc": "2026-10-26T07:15:32.163934+00:00",
+  "scope": "Task9 PG-only successful validation evidence, no product",
+  "R": 5092749312,
+  "extra_all_old_holds_plus_full_phase_and_next_prep": 6258670592,
+  "total": 11351419904,
+  "disk_cap": 12000000000,
+  "Task9_output_copy_Git_subreserve": 41943040,
+  "new_Git_upper": 33554432,
+  "temporary_index_copy_upper": 655360,
+  "object_baseline": 34754560,
+  "Task15_524288_CODE_and1MiBpublication_closed_not_reused": true
+}

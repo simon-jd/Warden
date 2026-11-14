@@ -1,0 +1,29 @@
+[[tests]]
+name = "warden_rejects_reserved_tenant_collision"
+no_outputs_from = ["norm_warden"]
+[[tests.inputs]]
+insert_at = "source_route"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "warden"
+message = '''{"synthetic_context":true,"original_event_time":"2026-01-01T00:00:00Z","event_uid":"fixture-seq-1","actor_uid":"fixture-actor","source_ip":"192.0.2.30","event":{"tenant_id":"fixture-tenant","run_id":"fixture-run","type":"run.created","payload":{}},"tenant_id":"envelope-spoofed-tenant"}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"warden"})'''
+
+[[tests]]
+name = "warden_rejects_reserved_run_collision_nonstring"
+no_outputs_from = ["norm_warden"]
+[[tests.inputs]]
+insert_at = "source_route"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "warden"
+message = '''{"synthetic_context":true,"original_event_time":"2026-01-01T00:00:00Z","event_uid":"fixture-seq-2","actor_uid":"fixture-actor","source_ip":"192.0.2.30","event":{"tenant_id":"fixture-tenant","run_id":"fixture-run","type":"run.created","payload":{}},"run_id":{"spoof":"nonstring-run"}}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"warden"})'''

@@ -1,0 +1,77 @@
+{
+  "all145_original_sources_unchanged": true,
+  "all_cover_sources_match_commit": true,
+  "canonical_source_count": 150,
+  "dispatch_base": "b7682d02eb7d78712f819adca38da07dae0b694f",
+  "historical_document_prefixes": {
+    "continuation-controller-operations-execution-plan.md": {
+      "bytes": 16915,
+      "sha256": "897445b1f09923df9795e8863c230448d0c10ece0bda1ce684c930a6f28d2162"
+    },
+    "continuation-controller-operations-substage-report.md": {
+      "bytes": 12868,
+      "sha256": "4b78e604f4f6ed09c5860f32caeb4b12db69d083290a8063370c6c64fea1f4e1"
+    }
+  },
+  "note": "Subsequent read-only commit/artifact verification, not reconstructed run evidence. Historical artifacts verified before append-only report/plan corrections.",
+  "old_artifact_rows_verified": 85,
+  "runs": {
+    "cover-04": {
+      "changed_snapshot_count": 5,
+      "count": 150,
+      "manifest_sha256": "b68db0f454f631bd6ec257499ec1f4db41d0a9d30fba0f280b13ecbf29c58924",
+      "pre_equals_post": true,
+      "tested_prefix_sha256": "7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa"
+    },
+    "green-02": {
+      "changed_snapshot_count": 5,
+      "count": 150,
+      "manifest_sha256": "7113df8429dfbd41b9d7b60cc2ebbda48253dcd4995e00a27ac0683dd4f1ee14",
+      "pre_equals_post": true,
+      "tested_prefix_sha256": "7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa"
+    },
+    "green-03": {
+      "changed_snapshot_count": 5,
+      "count": 150,
+      "manifest_sha256": "b68db0f454f631bd6ec257499ec1f4db41d0a9d30fba0f280b13ecbf29c58924",
+      "pre_equals_post": true,
+      "tested_prefix_sha256": "7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa"
+    },
+    "red-01": {
+      "changed_snapshot_count": 1,
+      "count": 149,
+      "manifest_sha256": "c32543c00ae70e5e444be7ad8f567858b1440c272f30141fb48729a3726a366b",
+      "pre_equals_post": true,
+      "tested_prefix_sha256": "7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa"
+    }
+  },
+  "source_bytes": 117958,
+  "source_commit": "61477c02d3bb482af9d0cf3233312e5c53dcca4c",
+  "source_files": [
+    {
+      "bytes": 1534,
+      "path": "scripts/identity_cache_capture.py",
+      "sha256": "87eb64a7e88431ddbe6caca092c95e3ca50988835d72509179a6d352488ba25f"
+    },
+    {
+      "bytes": 3924,
+      "path": "scripts/identity_cache_control.py",
+      "sha256": "5517d2953b17edd9ca056c531dd9eeeb291c830dff333e7a5ac92166bc7dd8f5"
+    },
+    {
+      "bytes": 4012,
+      "path": "scripts/identity_cache_maintenance.py",
+      "sha256": "fefff23eddc09a39ae261edf8046abe59a377e283362833ed1790a3d5b7fed3f"
+    },
+    {
+      "bytes": 44785,
+      "path": "scripts/identity_cache_observe.py",
+      "sha256": "6d3d310478bf8c080a4cc0915a3b701803e3a24e51a4b98559178230f4746dc2"
+    },
+    {
+      "bytes": 63703,
+      "path": "scripts/test_identity_cache_control.py",
+      "sha256": "615e5022c4cceb72707ff030dc14da28c5254c8bfc797c75cdf4291778cb38f1"
+    }
+  ]
+}

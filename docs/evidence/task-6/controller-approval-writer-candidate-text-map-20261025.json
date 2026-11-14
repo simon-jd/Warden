@@ -1,0 +1,18 @@
+{
+  "actual": false,
+  "append_bytes": 15891,
+  "archive_bytes": 28459,
+  "archive_sha256": "00272fd64d05926b7c817b205934e3032e7dfe5acb2f833c780bd5744bec90f8",
+  "both_python_bodies_equal": true,
+  "candidate_bytes": 11852,
+  "candidate_sha256": "9d1be21f84edd0fdf21a64def1b03626a79035fb65bb561cd7a36acc28218052",
+  "origin": "identity subagent proposal; text-only root extraction, no execution",
+  "plan_body_bytes": 28097,
+  "plan_body_sha256": "5e8d26a43a7381bc9c934a22ab26823923937a2ee1cc2b2486b5488967a57f6e",
+  "preserved_prefix_bytes": 12206,
+  "preserved_prefix_sha256": "b9b4e42cc73020383af2307b4ac2e089ca53103b759b7f3337fa887f0a6edb0d",
+  "python_body_bytes": 5657,
+  "python_body_sha256": "cfe6d2a9db0b2a7d00526a174bcc530fb611e84ecde7bc62a8f1f6ab125530f2",
+  "source_changed": false,
+  "tests_rerun": false
+}

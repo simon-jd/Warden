@@ -1,0 +1,58 @@
+{
+  "source": "135c3b866f07692ad846cc48c8c5bde0cf91ee33",
+  "scope": "I1 fix round1 code phase only; no new prepare/ABI/live evidence",
+  "files": {
+    "README.md": {
+      "sha256": "34f696409ae6b7d4e23ad3205fa39eaf5af5ab31f6dff48cd2413a0e45d3836e",
+      "bytes": 7938
+    },
+    "covering-command.py": {
+      "sha256": "faa0ebf36133dffd5c01fb1158f1a14fa1588f13370962a07d432eff0c74c2e1",
+      "bytes": 622
+    },
+    "covering-tests.log": {
+      "sha256": "515aad22c30f761beaca03c2ddc820754f85a077dd565a06afe6b83fd3d30539",
+      "bytes": 19999
+    },
+    "focused-command.py": {
+      "sha256": "2196a40e710fe166f260c1fa8dce7389832b37a9b569bc2b8128039d55b91136",
+      "bytes": 700
+    },
+    "history-behavior-red.log": {
+      "sha256": "8ed5c36df1803d599d0045622486d14953383ac76344b324ebce9e1e7164642f",
+      "bytes": 6902
+    },
+    "history-final-focused-green.log": {
+      "sha256": "7eb43917a0a93cc2b32168641a51231afe44f2700933cbc9b438e184cc315a11",
+      "bytes": 8525
+    },
+    "history-focused-green.log": {
+      "sha256": "31946012c3e3beeab60b9e7e09da3921b04b5ff5b256c2dee6fa491f1012c946",
+      "bytes": 8307
+    },
+    "history-runner-syntax-error.log": {
+      "sha256": "a587ff6560b440698299a771d8b4c358ed93a550ba6fee68cc0f1fcf43bbc927",
+      "bytes": 670
+    },
+    "history-seal-red.log": {
+      "sha256": "d18f8b9500204afe79d1808a7d61a31675f10f45e80bbe6f28ee82ca56152e65",
+      "bytes": 8317
+    },
+    "old-evidence-verification.json": {
+      "sha256": "092243cc03254d1fc0e2b9ea70847dae89b80c6524cdc3ad6750543c700c8624",
+      "bytes": 136
+    },
+    "postflight-command.py": {
+      "sha256": "586fb54b21781bc2ca6f36bf8e1ff75727bfa02cf1b38b967b181bf18982daf9",
+      "bytes": 1472
+    },
+    "postflight.json": {
+      "sha256": "8cd22ed052d5e0781099fed8df44b0b12452411c3645f0afa464bdc5033c2262",
+      "bytes": 914
+    },
+    "source-manifest.json": {
+      "sha256": "936e271fa7d0711bf5460275e745217c177507db3b4e9297ce046075c40e3b6f",
+      "bytes": 1554
+    }
+  }
+}

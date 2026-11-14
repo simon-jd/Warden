@@ -1,0 +1,26 @@
+{
+  "code": {
+    "candidate": {
+      "bytes": 11526,
+      "path": "docs/evidence/task-6/controller-caller-integrity-fix5-material-candidate.js",
+      "sha256": "dd9553eec47723a1159bc421478cad1b9ad21a97d639f8783a2abdf700f66e13"
+    },
+    "fixture": {
+      "bytes": 12699,
+      "path": "docs/evidence/task-6/controller-caller-integrity-fix5-material-fixture.js",
+      "sha256": "6783d92bae44aaedf1b21540aa368bd2d5ea2724715c4c9b309dfd85079baebb"
+    }
+  },
+  "controller_files": 2,
+  "elapsed_seconds": 0.009871411952190101,
+  "equal": null,
+  "limits": {
+    "address_bytes": 536870912,
+    "cpu_seconds": 30,
+    "file_bytes": 33554432,
+    "wall_seconds": 45
+  },
+  "phase": "pre",
+  "source_files": 150,
+  "timing_scope": "metadata recorder only; JS isolate and interpreter startup not measured"
+}

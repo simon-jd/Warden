@@ -1,0 +1,38 @@
+{
+  "all_frozen": true,
+  "files": {
+    "docs/evidence/task-6/continuation-controller-operations-execution-plan.md": {
+      "bytes": 135091,
+      "frozen": true,
+      "sha256": "b8bde9c79d038690284d3d8c40d2ade0125ecedb1a69eba40e9212c2f28c1a5a"
+    },
+    "docs/evidence/task-6/controller-six-mode-metadata-baseline.json": {
+      "bytes": 852,
+      "frozen": true,
+      "sha256": "e45c34738df54abbfc6a4066601c5a288a65699c9588b23b3c2ab2058b3560fe"
+    },
+    "docs/evidence/task-6/controller-six-mode-metadata-candidate.md": {
+      "bytes": 25638,
+      "frozen": true,
+      "sha256": "fba173360172a5b5a80d08398aab05ec800c82124cfa6482fe28a873b3c84eb5"
+    },
+    "docs/evidence/task-6/controller-six-mode-metadata-events-fixture.js": {
+      "bytes": 5313,
+      "frozen": true,
+      "sha256": "900cbc724f42d99772a169ff6b630d585c00defb8b3d4358a2f54b07a05c93f8"
+    },
+    "docs/evidence/task-6/controller-six-mode-metadata-execute.js": {
+      "bytes": 1987,
+      "frozen": true,
+      "sha256": "ee54795b00414c6d217bc140ad7828b18929b1d15aefd0393d60df3b7c291412"
+    },
+    "docs/evidence/task-6/controller-six-mode-metadata-verification.py": {
+      "bytes": 12038,
+      "frozen": true,
+      "sha256": "9e959371e05edf7703a8d4bf26bea88214bfcf2d1252b0c278edb46790bca51c"
+    }
+  },
+  "plan_prefix_unchanged": true,
+  "scope": "changed source files and plan prefix only; no old runtime/canonical evidence read",
+  "source_freeze": "d05a374bf3632616e8e76aa9c07cd524af5b077d"
+}

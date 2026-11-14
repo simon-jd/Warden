@@ -1,0 +1,2 @@
+{"executed_at": "2026-11-14T05:03:00.020359896Z", "execution_id": "benign-runc-lab-session", "outcome": "succeeded", "run_id": "f0d80928f17846bfc478bc36c869be73", "technique_id": "T1622"}
+{"executed_at": "2026-11-14T05:03:15Z", "execution_id": "benign-gvisor-run", "outcome": "succeeded", "run_id": "io5maux43snyvqzfomieczghi4", "technique_id": "T1055.008"}

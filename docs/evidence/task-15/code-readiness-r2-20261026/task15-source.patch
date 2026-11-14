@@ -1,0 +1,185 @@
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -1,15 +1,31 @@
+ name: Warden control-plane supply chain
+ 
+ on:
+-  push:
+   workflow_dispatch:
++    inputs:
++      proof_case:
++        description: Immutable-digest proof subject; fixtures use a separate private package.
++        type: choice
++        required: true
++        default: clean
++        options:
++          - clean
++          - unsigned
++          - kev
++
++# Serializes this workflow/ref. Human admission still limits dispatch to one run.
++concurrency:
++  group: warden-task15-oci-${{ github.ref }}
++  cancel-in-progress: false
+ 
+ permissions: {}
+ 
+ jobs:
+   build:
+     runs-on: ubuntu-24.04
+-    environment: supplychain-publish
++    timeout-minutes: 20
++    # Fixture environment must have a distinct private GHCR package and the same protected ref.
++    environment: ${{ inputs.proof_case == 'clean' && 'supplychain-publish' || 'supplychain-oci-fixture' }}
+     permissions:
+       contents: read
+       packages: write
+@@ -18,6 +34,7 @@
+       image: ${{ steps.publish.outputs.image }}
+       digest: ${{ steps.publish.outputs.digest }}
+     env:
++      PROOF_CASE: ${{ inputs.proof_case }}
+       TRUSTED_REPOSITORY: ${{ vars.WARDEN_TRUSTED_REPOSITORY }}
+       TRUSTED_REF: ${{ vars.WARDEN_TRUSTED_REF }}
+       IMAGE_REPOSITORY: ${{ vars.WARDEN_IMAGE_REPOSITORY }}
+@@ -35,7 +52,15 @@
+           test "$ALLOW_PUBLIC_REKOR" = true
+           test "$ACTUAL_REPOSITORY" = "$TRUSTED_REPOSITORY"
+           test "$ACTUAL_REF" = "$TRUSTED_REF"
+-          [[ "$TRUSTED_REPOSITORY" =~ ^[a-z0-9_.-]+/[a-z0-9_.-]+$ ]]
++          [[ "$TRUSTED_REPOSITORY" =~ ^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$ ]]
++          owner="${TRUSTED_REPOSITORY%%/*}"
++          [[ "$IMAGE_REPOSITORY" == "ghcr.io/${owner,,}/"* ]]
++          if [[ "$PROOF_CASE" == clean ]]; then
++            [[ "$IMAGE_REPOSITORY" != *-fixtures ]]
++          else
++            [[ "$PROOF_CASE" == unsigned || "$PROOF_CASE" == kev ]]
++            [[ "$IMAGE_REPOSITORY" == *-fixtures ]]
++          fi
+           [[ "$TRUSTED_REF" =~ ^refs/(heads|tags)/[A-Za-z0-9._/-]+$ ]]
+           [[ "$TRUSTED_REF" != *".."* ]]
+           [[ "$IMAGE_REPOSITORY" =~ ^ghcr[.]io(/[a-z0-9][a-z0-9._-]*)+$ ]]
+@@ -69,7 +94,13 @@
+           set -euo pipefail
+           echo "$REGISTRY_PASSWORD" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+           tag="$IMAGE_REPOSITORY:$GITHUB_SHA"
+-          docker build --pull -f controlplane/Dockerfile -t "$tag" .
++          if [[ "$PROOF_CASE" == clean ]]; then
++            docker build --pull -f controlplane/Dockerfile -t "$tag" .
++          else
++            # Label changes the fixture digest; never reuse a signed release digest.
++            docker build --pull --label "dev.warden.task15.proof-case=$PROOF_CASE" \
++              -f controlplane/Dockerfile -t "$tag" .
++          fi
+           docker push "$tag"
+           ref="$(docker image inspect --format '{{index .RepoDigests 0}}' "$tag")"
+           [[ "$ref" == "$IMAGE_REPOSITORY@sha256:"* ]]
+@@ -98,6 +129,7 @@
+           PY
+           python3 scripts/supplychain.py render --binding binding.json --output-dir rendered-policies
+       - name: Generate CycloneDX SBOM for that digest
++        if: inputs.proof_case != 'unsigned'
+         run: |
+           set -euo pipefail
+           syft "registry:$IMAGE_REF" -o cyclonedx-json > sbom.cdx.json
+@@ -107,6 +139,7 @@
+               assert json.load(file)["bomFormat"] == "CycloneDX"
+           PY
+       - name: Scan complete image and fetch official CISA KEV catalog
++        if: inputs.proof_case != 'unsigned'
+         env:
+           GRYPE_CHECK_FOR_APP_UPDATE: 'false'
+           GRYPE_DB_UPDATE_URL: https://grype.anchore.io/databases
+@@ -118,6 +151,7 @@
+           curl --fail --location --silent --show-error --proto '=https' --proto-redir '=https' \
+             -o cisa-kev.json https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+       - name: Assess unfiltered findings and preserve complete scan
++        if: inputs.proof_case != 'unsigned'
+         id: gate
+         run: |
+           set -euo pipefail
+@@ -130,6 +164,7 @@
+           if [[ "$code" -gt 1 ]]; then exit "$code"; fi
+           echo "gate=$code" >> "$GITHUB_OUTPUT"
+       - name: Sign same-digest SBOM and complete scan attestations
++        if: inputs.proof_case != 'unsigned'
+         env:
+           COSIGN_YES: 'true'
+         run: |
+@@ -138,13 +173,30 @@
+             --predicate sbom.cdx.json "$IMAGE_REF"
+           cosign attest --yes --type https://warden.dev/attestations/grype-complete/v1 \
+             --predicate scan-predicate.json "$IMAGE_REF"
+-      - name: Enforce fixable critical and KEV gate before signing image
++      - name: Enforce release gate or genuine KEV-only fixture before image signing
++        if: inputs.proof_case != 'unsigned'
+         env:
+           GATE_RESULT: ${{ steps.gate.outputs.gate }}
+         run: |
+           set -euo pipefail
+-          test "$GATE_RESULT" = 0
++          if [[ "$PROOF_CASE" == clean ]]; then
++            test "$GATE_RESULT" = 0
++          else
++            test "$PROOF_CASE" = kev && test "$GATE_RESULT" = 1
++            python3 - <<'PYFIXTURE'
++          import json
++          with open('scan-decision.json', encoding='utf-8') as source:
++              decision = json.load(source)
++          if not (decision.get('status') == 'assessed'
++                  and decision.get('block_reasons') == ['kev']
++                  and decision.get('fixable_critical') == []
++                  and isinstance(decision.get('kev_cves'), list)
++                  and decision['kev_cves']):
++              raise SystemExit('fixture requires real KEV-only complete scan')
++          PYFIXTURE
++          fi
+       - name: Keyless sign exact digest
++        if: inputs.proof_case != 'unsigned'
+         env:
+           COSIGN_YES: 'true'
+         run: |
+@@ -153,6 +205,9 @@
+ 
+   provenance:
+     needs: [build]
++    if: inputs.proof_case != 'unsigned'
++    # GitHub forbids timeout-minutes on a reusable-workflow caller. This job
++    # remains closed for execution until an equivalent bounded SLSA builder is reviewed.
+     permissions:
+       actions: read
+       id-token: write
+--- a/scripts/supplychain.py
++++ b/scripts/supplychain.py
+@@ -14,7 +14,7 @@
+ 
+ DIGEST = re.compile(r"sha256:[0-9a-f]{64}\Z")
+ CVE = re.compile(r"CVE-[0-9]{4}-[0-9]{4,}\Z")
+-REPO = re.compile(r"[a-z0-9_.-]+/[a-z0-9_.-]+\Z")
++REPO = re.compile(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+\Z")
+ IMAGE = re.compile(r"[a-z0-9][a-z0-9.-]*(?::[0-9]+)?(?:/[a-z0-9][a-z0-9._-]*)+\Z")
+ ISSUER = "https://token.actions.githubusercontent.com"
+ REKOR = "https://rekor.sigstore.dev"
+--- a/scripts/test_supplychain.py
++++ b/scripts/test_supplychain.py
+@@ -117,6 +117,20 @@
+                        "value": DIGEST}, conditions)
+         self.assertIn({"key": "{{ kevCatalogSource }}", "operator": "Equals",
+                        "value": CISA_SOURCE}, conditions)
++
++    def test_raw_github_repository_case_is_preserved_in_certificate_binding(self):
++        binding = dict(BINDING, repository="JDinSeattle/warden-task15-oci-proof")
++        result = render_binding(binding)
++        self.assertTrue(result["accepted"])
++        verify = json.loads(result["policies"]["verify-images.yaml"])
++        signer = verify["spec"]["rules"][0]["verifyImages"][0]["attestors"][0]["entries"][0]["keyless"]
++        self.assertEqual(signer["subject"],
++                         "https://github.com/JDinSeattle/warden-task15-oci-proof/"
++                         ".github/workflows/build.yml@refs/heads/main")
++        provenance = verify["spec"]["rules"][1]["verifyImages"][0]["attestations"][0]
++        self.assertIn({"key": "{{ invocation.configSource.uri }}", "operator": "Equals",
++                       "value": "git+https://github.com/JDinSeattle/warden-task15-oci-proof@refs/heads/main.git"},
++                      provenance["conditions"][0]["all"])
+ 
+     def test_missing_binding_rejected_without_policy(self):
+         for omitted in BINDING:

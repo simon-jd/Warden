@@ -1,0 +1,12 @@
+{
+  "checked_utc": "2026-10-24T05:51:50.793753+00:00",
+  "checked_hashes": 23,
+  "implementation_sha": "f232b0d5e833e1060afa5df2533b2421ee714e2c",
+  "evidence_commit": "88813cd",
+  "controller_dispatch_base": "c0ae3a0",
+  "manifest_source_parent": "2dc90459cb924c6ee78040460de72ec2950a8b8a",
+  "base_distinction": "2dc9045 is an interleaved controller documentation commit after dispatch BASE c0ae3a0; the full review package includes both. The report calls c0ae3a0 its base while the manifest records the immediate source parent.",
+  "report_archived_byte_identical": true,
+  "full_suite_passed": false,
+  "task3_overall": "in_progress"
+}

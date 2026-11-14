@@ -1,0 +1,58 @@
+{
+  "phase": "FIX_ROUND1_RED",
+  "review_round": "1/5",
+  "harness_attempt": 1,
+  "first_green_and_migration": "SPENT_1/1_EACH_ACCEPTED",
+  "prior_first_red": "ORIGINAL_2/2_AND_RESTORED_1/1_SPENT_SEMANTIC_RED_ACCEPTED",
+  "diagnostics": "SPENT_3/3_UNCHANGED",
+  "metadata": "SPENT_1/1_ORIGINAL_UNKNOWN_FAILURE_UNCHANGED",
+  "status": "CANDIDATE_FIX_ROUND1_RED",
+  "semantic_candidate": true,
+  "pg_ready": true,
+  "states": {
+    "warden-task9-r1-red-20261026-a-pg": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 0,
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 2150829,
+      "Restarting": false,
+      "Running": true,
+      "StartedAt": "2026-10-26T08:49:32.336467106Z",
+      "Status": "running"
+    },
+    "warden-task9-r1-red-20261026-a-go": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 1,
+      "FinishedAt": "2026-10-26T08:49:51.163232237Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 0,
+      "Restarting": false,
+      "Running": false,
+      "StartedAt": "2026-10-26T08:49:33.636733311Z",
+      "Status": "exited"
+    }
+  },
+  "observed": [
+    "warden-task9-r1-red-20261026-a-go",
+    "warden-task9-r1-red-20261026-a-pg"
+  ],
+  "errors": [],
+  "cleaned": [
+    "warden-task9-r1-red-20261026-a-go",
+    "warden-task9-r1-red-20261026-a-pg"
+  ],
+  "CIDS": {
+    "warden-task9-r1-red-20261026-a-pg": "10da918f2028a53f82c148fe58a44f053acffa8b1d56b59915b8dd2a56d71004",
+    "warden-task9-r1-red-20261026-a-go": "ee557725aaf929bb94005d79f9ee7fdad63f8c04f5bfbde51662f11cf481bebf"
+  },
+  "owner_label": "3495309fe6d4eed2643f6428a4f8abe5",
+  "cli_group_cleanup_known": true,
+  "evidence_bytes": 7461,
+  "elapsed": 19.827796132070944,
+  "old_task16": "UNTOUCHED_UNKNOWN"
+}

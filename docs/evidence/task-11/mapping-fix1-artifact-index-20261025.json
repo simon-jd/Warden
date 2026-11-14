@@ -1,0 +1,90 @@
+{
+  "scope": "Original Task11 mapping/static fixR1of5 only, I1/I2. Narrow5-source+7-other-evidence list. Index excludes itself; no old artifacts hashed/re-written.",
+  "base": "0beb321125600fda112bb8c08355457d481938cb",
+  "source_commit": "3b6016521dd0a3359df8232c3562ef91ec7d90be",
+  "evidence_commit": "Separate commit containing this index; final full identity supplied to root after commit.",
+  "source_files": [
+    {
+      "path": "detect/README.md",
+      "bytes": 9653,
+      "sha256": "06fbb5aaeb5bc7460c02f7a95a9e5ffeca48e8e61bf102db5467a6c1d1047dd9"
+    },
+    {
+      "path": "detect/ocsf/tests/00-topology.toml",
+      "bytes": 314,
+      "sha256": "bbdb805d06b74e53ca7a4d896fe57286ddeca11208c4b66e9ca20c883e4cca9d"
+    },
+    {
+      "path": "detect/ocsf/tests/production_routes.toml",
+      "bytes": 4935,
+      "sha256": "605b25bb9a16ba44be09520bf89f7c6307eaab919ff7b954642ce4fd572bdc6d"
+    },
+    {
+      "path": "detect/ocsf/tests/warden_collisions.toml",
+      "bytes": 1383,
+      "sha256": "0cb0d138aad996bef498171ad5e6742da9531d70b287cfca63f25c58777c86f3"
+    },
+    {
+      "path": "detect/ocsf/warden_audit.vrl",
+      "bytes": 1725,
+      "sha256": "316bce0bb9fc30390bf2a36e4c21df21c01f5e3097ae17ca193af539fade191c"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "docs/evidence/task-11/mapping-fix1-green-command.txt",
+      "bytes": 4798,
+      "sha256": "0b2d91ca0627308181eb6f874ef0ad59b1df0a63cf3ef1941b7d1524c65bae79"
+    },
+    {
+      "path": "docs/evidence/task-11/mapping-fix1-green-output-20261025.txt",
+      "bytes": 836,
+      "sha256": "9409e0aaf6bcf8f1d67841563e2dde0b6d2398d70fac73caf80a8c7f96e3b1ac"
+    },
+    {
+      "path": "docs/evidence/task-11/mapping-fix1-native-20261025.json",
+      "bytes": 21631,
+      "sha256": "01e9dc901b8fd4f0db5d2d6b2e875d74f08036898db7c00b0fca5dd371c1cc7e"
+    },
+    {
+      "path": "docs/evidence/task-11/mapping-fix1-red-command.txt",
+      "bytes": 3365,
+      "sha256": "01dddf1375ae68837db9a8ddec4634c91717bf452d114acfbebf18b1e59952df"
+    },
+    {
+      "path": "docs/evidence/task-11/mapping-fix1-red-output-20261025.txt",
+      "bytes": 643,
+      "sha256": "614bcbf56148fe40d268418a29ebc93a110c0775e0b1c18b34e631cca5593ef7"
+    },
+    {
+      "path": "docs/evidence/task-11/mapping-fix1-report.md",
+      "bytes": 10191,
+      "sha256": "dbbd1d5656adc18c29392b5f1f26e376af098df76f89a0ed7c6ed3dcf182922c"
+    },
+    {
+      "path": "docs/evidence/task-11/mapping-fix1-validation-output-20261025.txt",
+      "bytes": 131,
+      "sha256": "0091ac7a09bb4b5b2770737c615c7861c1b2453a753391315f2d2e0540f3cb99"
+    }
+  ],
+  "results": {
+    "red": "d75cb9 known78;2named collision semantic failures;643B",
+    "green": "f777b5 known0;17focused named cases PASS;836B",
+    "aggregator_static": "8e63af known0;131B Validated",
+    "five_unchanged_source_goldens": "priorPASS retained, not rerun",
+    "agent": "priorPASS retained, not rerun",
+    "backpressure": "Original soleFAILED unchanged; no new run or draft/archive change",
+    "I3_I4_I5": "OPEN",
+    "task11_goal": "OPEN;pending root scoped re-review"
+  },
+  "exclusions": [
+    "docs/STATUS.md",
+    "docs/COORDINATOR-TASK11-REVIEW-FOLLOWUP-20261025.txt",
+    "root review/archive/ruling/basiccheck/handoff coordination files",
+    "all priorTask11 material/evidence/index/report",
+    "detect/tests/failed untracked drafts",
+    "scripts/firecracker_code.py",
+    "vuln/",
+    "Task1/Task6/Task16/private/Q/scene/host/cloud"
+  ]
+}

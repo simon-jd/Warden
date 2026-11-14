@@ -1,0 +1,6 @@
+go version go1.26.10 linux/amd64
+Observed harness container: add9514d3c1923be393f03100a502308374eeeb0e18ed6da1e5eb5f98e541cf1
+Observed container Mount.Name: d4fc8021c411db7f964ec23c7ef773e98bf189de6bb41bc3dde94998ea2aab8c
+[]
+Error response from daemon: get d4fc8021c411db7f964ec23c7ef773e98bf189de6bb41bc3dde94998ea2aab8c: no such volume
+PASS: captured volume inspect reports absent: d4fc8021c411db7f964ec23c7ef773e98bf189de6bb41bc3dde94998ea2aab8c

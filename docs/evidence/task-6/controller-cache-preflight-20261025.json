@@ -1,0 +1,161 @@
+{
+  "at": "2026-10-25T09:59:13.240741+00:00",
+  "ordinary_uid_gid": 1000,
+  "source_hashes": {
+    "scripts/identity_cache.py": "f608dc714b79dcc4f3c4c2071ba6dd561c88eec10c45fc905820ec447d8a1ede",
+    "scripts/test_identity_cache.py": "807fc390ea6b807f895b39acfd9ffc48d143ccd5a3b3dc4f1f3d05cfdeb93bc2",
+    "scripts/runtime_lab_paths.py": "0ce3287feab8197839cf2e7e1cf297fd5cad0e740069023b188e4c366b643f84",
+    "scripts/firecracker_recovery.py": "cccb3378b92816dc5242fd79e72df5fc79fcda338b8f20d34c5a9ca655a8453b",
+    "scripts/firecracker_recovery_init.py": "72675e91ac22ab3f1607fc5f21b90db18fc8c115e9a50bd8a48761cf70c8c9b2",
+    "scripts/azure_guard.py": "303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48"
+  },
+  "pinned_local_go_format_source_hashes": {
+    "cache/cache.go": "22da4896758772a443d90dd148719866d20e811bfefd3668597eae083b6f39b2",
+    "cache/default.go": "3b4697e22509682f6339813ab7fdd9ed0f5628bdcbed261ee2eff3003b7f5d54",
+    "clean/clean.go": "52db63640ae65ee1ba34c67b92eea3e6634f5876b8de2e92c09c5e0a6ae0153b"
+  },
+  "format_source_read_not_executed": true,
+  "retired_go_entrypoint_sha256": "8682e3c696de6ee3a597554edda7f30ddfd2afbdcac8c90b2216b1a2523ad463",
+  "old_cache_classification_basis": "fixed project-owned GOCACHE in retired go.sh and prior completed project runs; not a per-file publisher attestation",
+  "trusted_anchors_metadata": {
+    ".cache": [
+      66307,
+      54036708,
+      1000,
+      1000,
+      16877,
+      20,
+      4096,
+      8,
+      1792918706681088616,
+      1792918706681088616
+    ],
+    ".cache/warden-lab": [
+      66307,
+      54554042,
+      1000,
+      1000,
+      16877,
+      46,
+      4096,
+      8,
+      1792888413081792039,
+      1792888413081792039
+    ],
+    "go-build": [
+      66307,
+      54309375,
+      1000,
+      1000,
+      16893,
+      258,
+      4096,
+      8,
+      1792807938577257313,
+      1792807938577257313
+    ]
+  },
+  "existing_project_lock_metadata": [
+    66307,
+    54563251,
+    1000,
+    1000,
+    33152,
+    1,
+    0,
+    0,
+    1792813374318948032,
+    1792813374318948032
+  ],
+  "maintenance_receipts_absent": true,
+  "original_ordinary_postflight": {
+    "ordinary_full_guard": {
+      "additional_bytes": "5000000000",
+      "at": "2026-10-25T09:59:11Z",
+      "download_bytes": "0",
+      "event": "local-preflight",
+      "free_bytes": 265534689280,
+      "project_allocated_bytes": 4195131392,
+      "service_memory_bytes": "1000000000"
+    },
+    "protected_sysctls": {
+      "vm/overcommit_memory": "1",
+      "vm/panic_on_oom": "0",
+      "kernel/panic": "10",
+      "kernel/panic_on_oops": "1",
+      "kernel/keys/root_maxkeys": "1000000",
+      "kernel/keys/root_maxbytes": "25000000"
+    },
+    "protected_baseline_match": true,
+    "original_owner_retirement": "cleanup_pending",
+    "creation_outcome": "unknown",
+    "never_reopen": true,
+    "reserved_bytes": 5000000000,
+    "released": false
+  },
+  "maintenance_headroom_total_bytes": 96000000,
+  "charged_with_maintenance_headroom": 9291131392,
+  "prospective_new3GB_total_before_cleanup": 12195131392,
+  "new3GB_not_admitted_by_this_preflight": true,
+  "sibling_cache_metadata": {
+    "firecracker-code": {
+      "entries": 4669,
+      "allocated_metadata_bytes_including_dirs": 548540416,
+      "sha256": "d63d196502cbd3f6acaf3ebbcb4de28f147ce7186f28433bf0cfa150d67f6b85",
+      "root_metadata": [
+        66307,
+        55344746,
+        1000,
+        1000,
+        16832,
+        259,
+        4096,
+        8,
+        1792880303286621776,
+        1792880303286621776
+      ]
+    },
+    "go-mod": {
+      "entries": 35503,
+      "allocated_metadata_bytes_including_dirs": 772935680,
+      "sha256": "602f39db8c7fb6b80dd76f518683930030545ed0fbc93eade97f9d21160e47d0",
+      "root_metadata": [
+        66307,
+        54309376,
+        1000,
+        1000,
+        16893,
+        11,
+        4096,
+        8,
+        1792809235361758009,
+        1792809235361758009
+      ]
+    },
+    "warden-lab": {
+      "entries": 305,
+      "allocated_metadata_bytes_including_dirs": 713883648,
+      "sha256": "13696d018119163207b8d4d674386d79dc0a6756c4c0c754f48933fc0e00b49c",
+      "root_metadata": [
+        66307,
+        54554042,
+        1000,
+        1000,
+        16877,
+        46,
+        4096,
+        8,
+        1792888413081792039,
+        1792888413081792039
+      ]
+    }
+  },
+  "writer_free_window_basis": "controller exclusive maintenance window; all earlier project Go/Docker command receipts terminal, identity implementer idle after doc-only handoff, reviewer read-only, no legacy entrypoint or service started; flock alone is insufficient",
+  "project_process_inventory_or_nonproject_actions_performed": false,
+  "old_recovery_operation_reexecuted": false,
+  "cache_mutated": false,
+  "actual_cleanup_requires_separate_review_and_controller_ruling": true,
+  "Q_released": false,
+  "task6_complete": false,
+  "goal_complete": false
+}

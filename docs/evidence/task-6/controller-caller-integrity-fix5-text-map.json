@@ -1,0 +1,46 @@
+{
+  "approval": {
+    "candidate": "controller-caller-integrity-fix5-approval-candidate.js",
+    "candidate_bytes": 12373,
+    "candidate_sha256": "7441ed1a8acf65caed11aa3621c4ec9768ab9d2e2f8424c7ada9bc8ec51710d0",
+    "plan": "controller-approval-writer-plan.md",
+    "plan_bytes": 41533,
+    "plan_sha256": "7da82564f369bba947a8144bdf1dc340cf8b7e30e285949380bbcbd868605629",
+    "preserved_prefix_bytes": 28459,
+    "preserved_prefix_sha256": "00272fd64d05926b7c817b205934e3032e7dfe5acb2f833c780bd5744bec90f8"
+  },
+  "approval_body": {
+    "bytes": 5657,
+    "sha256": "cfe6d2a9db0b2a7d00526a174bcc530fb611e84ecde7bc62a8f1f6ab125530f2"
+  },
+  "material": {
+    "candidate": "controller-caller-integrity-fix5-material-candidate.js",
+    "candidate_bytes": 11526,
+    "candidate_sha256": "dd9553eec47723a1159bc421478cad1b9ad21a97d639f8783a2abdf700f66e13",
+    "plan": "continuation-controller-operations-execution-plan.md",
+    "plan_bytes": 90095,
+    "plan_sha256": "e3996d2be4ffb4b3bd684ca46316766b306d54a7b7a514ab9bfc170990019892",
+    "preserved_prefix_bytes": 77887,
+    "preserved_prefix_sha256": "0af34159f1ae1c9ff2d522f37ae63cd91d35961102c991341951aa5e2806ccf8"
+  },
+  "material_collector": {
+    "bytes": 1855,
+    "sha256": "a9399f32eae83ada51191bfc36d8d70de914041c93f6b4ef4011a652e522bee3",
+    "unchanged": true
+  },
+  "material_get": {
+    "bytes": 126,
+    "sha256": "10e0136f53f644e722f6774d5055c84501636b71ae8497bd5cea42910bf4e096",
+    "unchanged": true
+  },
+  "material_reconcile": {
+    "bytes": 127,
+    "sha256": "ca45a39b99cd390d3e9ecef75f779e1b0fc1daf812a41bd57bff274b3b07cd28",
+    "unchanged": true
+  },
+  "old139": {
+    "append_only_plan_rows": 1,
+    "index_sha256": "d061fa481af490b84fe74fb8938ff134e1c65b3028e322d16ab14c6fb85fd0ca",
+    "unchanged_rows": 138
+  }
+}

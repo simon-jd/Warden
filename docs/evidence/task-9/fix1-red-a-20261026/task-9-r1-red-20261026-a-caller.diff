@@ -1,0 +1,78 @@
+--- CONSUMED_NEVER_EXECUTE/task-9-first-green-20261026-a.py.txt
++++ task-9-r1-red-20261026-a.py.txt
+@@ -1,4 +1,4 @@
+-# INERT FIRST_GREEN attempt1; accepted original semantic RED and all old attempts remain immutable.
++# INERT FIX_ROUND1_RED attempt1; only two new no-op cleanup regressions. Production unchanged.
+ # PG diagnostics3/3 and metadata1/1 remain SPENT. Root fresh admission required.
+ # Outer: timeout --signal=TERM --kill-after=4s 86s python3 -B -
+ # Work deadline65, cleanup deadline82, status85, whole90. No execution authorized.
+@@ -6,12 +6,12 @@
+ T=time.monotonic(); W=pathlib.Path('/home/postedism/Desktop/Warden')
+ D=W/'.superpowers/sdd/2-warden-security-plan'
+ M=D/'task-9-material-manifest.json'
+-F=D/'task-9-first-green-20261026-a-source-freeze.json' # Exact hashes below; future execution still needs fresh admission
+-N=W/'.cache/task9-first-green-20261026-a'
++F=D/'task-9-r1-red-20261026-a-source-freeze.json' # Exact hashes below; future execution still needs fresh admission
++N=W/'.cache/task9-r1-red-20261026-a'
+ G=W/'.cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64'
+ IMAGE='sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873'
+-PG='warden-task9-green-20261026-a-pg'; GO='warden-task9-green-20261026-a-go'
+-TESTS=['TestSelfApprovalRejected', 'TestGrantExpiresAndBindingRemoved', 'TestAuditRecordedForGrantAndExpiry', 'TestRequestBoundariesAndTenantIsolation', 'TestApprovalClockRetryAndExpiryFence', 'TestAuditFailuresRollbackAndRemoveAccess', 'TestRestartRevokesAmbiguousOperations', 'TestExpiryAuditRetryAfterExternalDeletion', 'TestDeadlineDuringReservationPreventsActivation', 'TestConcurrentReconciliationCannotActivateTwice', 'TestMaintenanceRequiresTrustedAuthorization', 'TestRequesterMembershipRecheckedBeforeActivation', 'TestExpiryBatchFailureDoesNotStarveLaterGrants', 'TestKubernetesBindingLifecycleAndFencing', 'TestKubernetesStrictResponseValidation', 'TestKubernetesRemovalRejectsForeignUIDAndUnconfirmedDeletion', 'TestKubernetesTransportErrorsDoNotRetryActivation']
++PG='warden-task9-r1-red-20261026-a-pg'; GO='warden-task9-r1-red-20261026-a-go'
++TESTS=['TestKubernetesEmptyReservationCleanup', 'TestKubernetesRemovalRetryAfterClearAndDeleteFailure']
+ MAXOUT=131072; seen=0; events=[]; attempted=[]; status='UNKNOWN'; interrupted=False; callno=0; cli_safe=True; OWN=None; created=False
+ resource.setrlimit(resource.RLIMIT_AS,(268435456,4294967296)) # parent soft cap; child may raise only its own soft limit
+ resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+@@ -114,9 +114,9 @@
+ try:
+  assert os.getuid()==1000 and os.geteuid()==1000 and not os.path.lexists(N)
+  assert digest(M)=='1ca3cbfa3cf4a3ba960dc4ced03f8eb24d2e8429e9ae5e7b0e34d3d08b54fbbd'
+- assert digest(F)=='1136c050db7e2a33d2e1ad19a9553ccb8c8cdb99f2c60366357436fac59bb0c0'
++ assert digest(F)=='9361774dbe5d0c58cc37c83ad1c4016e35ae5daf0052ea11b8a29ea302a26aec'
+  material=json.loads(M.read_text());freeze=json.loads(F.read_text())
+- assert freeze['tests']==TESTS and freeze['phase']=='FIRST_GREEN' and freeze['base']
++ assert freeze['tests']==TESTS and freeze['phase']=='FIX_ROUND1_RED' and freeze['base']
+  assert digest(D/'task-9-first-red-source-freeze.json')=='8f498b9220b29dd8b26753950a1896631265df3a6e2a3abf810872eb2e5be6a8'
+  assert freeze['material_sha256']==digest(M) and not material['missing']
+  for x in material['module_inputs']+material['sdk']+material['artifacts']:checked(x['path'],x['sha256'])
+@@ -158,15 +158,16 @@
+  env={'GOROOT':'/sdk','GOENV':'off','GOWORK':'off','GOTOOLCHAIN':'local','GOPROXY':'file:///proxy','GOSUMDB':'off','GOVCS':'*:off','CGO_ENABLED':'0','GOOS':'linux','GOARCH':'amd64','GOMAXPROCS':'2','GOMEMLIMIT':'700MiB','GOCACHE':'/work/cache','GOTMPDIR':'/work/tmp','TMPDIR':'/work/tmp','GOPATH':'/work/gopath','GOMODCACHE':'/work/mod','XDG_CONFIG_HOME':'/work/config','GOTELEMETRY':'off','TEST_TELEMETRY_DIR':'/work/telemetry','WARDEN_TEST_DATABASE_URL':'postgres://postgres@/warden_test?host=/var/run/postgresql&sslmode=disable'}
+  goargs=common(GO,'1g','96')+['--tmpfs','/work:rw,exec,nosuid,nodev,size=472m,mode=1777']+bind(G,'/sdk')+bind(N/'source','/source')+bind(N/'proxy','/proxy')+bind(N/'empty','/var/lib/postgresql')+bind(N/'socket','/var/run/postgresql')+['--workdir','/source','--entrypoint','/bin/sh']
+  for k,v in env.items():goargs+=['-e',k+'='+v]
+- goargs += [IMAGE,'-c','mkdir -p /work/tmp /work/cache /work/mod /work/gopath /work/config/go/telemetry /work/telemetry && printf "off\\n" > /work/config/go/telemetry/mode && printf "off\\n" > /work/telemetry/mode && exec /sdk/bin/go test -mod=readonly -buildvcs=false -vet=off -p=1 -parallel=1 -count=1 -timeout=18s -run "^(TestSelfApprovalRejected|TestGrantExpiresAndBindingRemoved|TestAuditRecordedForGrantAndExpiry|TestRequestBoundariesAndTenantIsolation|TestApprovalClockRetryAndExpiryFence|TestAuditFailuresRollbackAndRemoveAccess|TestRestartRevokesAmbiguousOperations|TestExpiryAuditRetryAfterExternalDeletion|TestDeadlineDuringReservationPreventsActivation|TestConcurrentReconciliationCannotActivateTwice|TestMaintenanceRequiresTrustedAuthorization|TestRequesterMembershipRecheckedBeforeActivation|TestExpiryBatchFailureDoesNotStarveLaterGrants|TestKubernetesBindingLifecycleAndFencing|TestKubernetesStrictResponseValidation|TestKubernetesRemovalRejectsForeignUIDAndUnconfirmedDeletion|TestKubernetesTransportErrorsDoNotRetryActivation)$" -v ./controlplane/internal/jit']
++ goargs += [IMAGE,'-c','mkdir -p /work/tmp /work/cache /work/mod /work/gopath /work/config/go/telemetry /work/telemetry && printf "off\\n" > /work/config/go/telemetry/mode && printf "off\\n" > /work/telemetry/mode && exec /sdk/bin/go test -mod=readonly -buildvcs=false -vet=off -p=1 -parallel=1 -count=1 -timeout=18s -run "^(TestKubernetesEmptyReservationCleanup|TestKubernetesRemovalRetryAfterClearAndDeleteFailure)$" -v ./controlplane/internal/jit']
+  attempted.append(GO);test=cli(goargs,T+59) # reserve <=6s of work budget for State/logs
+- # Full raw output preserved; GREEN requires every frozen top-level test PASS.
++ # Full raw output preserved; RED requires both new business assertions to fail.
+  expected={n for n in TESTS}
+  import re
+- passes=set(re.findall(r'^--- PASS: (\S+) ',test['out'],re.M))
++ failures=set(re.findall(r'^--- FAIL: (\S+) ',test['out'],re.M))
+  local_downloads={'go: downloading '+m+' '+v for m,v in [('github.com/jackc/pgx/v5','v5.11.0'),('github.com/jackc/pgpassfile','v1.0.0'),('github.com/jackc/pgservicefile','v0.0.0-20240606120523-5a60cdf6a761'),('github.com/jackc/puddle/v2','v2.2.2'),('golang.org/x/sync','v0.24.0'),('golang.org/x/text','v0.43.0')]}
+- candidate=test['rc']==0 and passes==expected and 'Task1 PostgreSQL audit Verify completed' in test['out'] and re.search(r'^PASS$',test['out'],re.M) is not None and re.search(r'^ok\s+warden/controlplane/internal/jit\s',test['out'],re.M) is not None and '--- SKIP:' not in test['out'] and '--- FAIL:' not in test['out'] and '[build failed]' not in test['out'] and set(test['err'].splitlines())<=local_downloads
+- status='CANDIDATE_FIRST_GREEN' if candidate else 'NOT_EXPECTED_GREEN'
++ semantic=['empty reservation cleanup must reach DELETE:', 'cleanup retry after cleared binding must reach DELETE:']
++ candidate=test['rc']==1 and failures==expected and all(x in test['out'] for x in semantic) and 'prerequisite' not in test['out'] and '--- SKIP:' not in test['out'] and '[build failed]' not in test['out'] and set(test['err'].splitlines())<=local_downloads
++ status='CANDIDATE_FIX_ROUND1_RED' if candidate else 'NOT_EXPECTED_FIX_ROUND1_RED'
+ except BaseException as exc:
+  errors.append('work:'+type(exc).__name__+':'+str(exc))
+  status='UNKNOWN_FAILURE'
+@@ -200,14 +201,14 @@
+  if 'freeze' in locals():
+   try:
+    for rel,h in freeze['source'].items():checked(rel,h)
+-   assert digest(M)==freeze['material_sha256'] and digest(F)=='1136c050db7e2a33d2e1ad19a9553ccb8c8cdb99f2c60366357436fac59bb0c0'
++   assert digest(M)==freeze['material_sha256'] and digest(F)=='9361774dbe5d0c58cc37c83ad1c4016e35ae5daf0052ea11b8a29ea302a26aec'
+    assert digest(D/'task-9-first-red-source-freeze.json')=='8f498b9220b29dd8b26753950a1896631265df3a6e2a3abf810872eb2e5be6a8'
+   except BaseException as exc:errors.append('source_or_material:'+type(exc).__name__+':'+str(exc))
+  pg_state=states.get(PG,{});go_state=states.get(GO,{})
+- state_ok=pg_state.get('Running') is True and pg_state.get('OOMKilled') is False and not pg_state.get('Error') and go_state.get('Running') is False and go_state.get('ExitCode')==0 and go_state.get('OOMKilled') is False and not go_state.get('Error')
++ state_ok=pg_state.get('Running') is True and pg_state.get('OOMKilled') is False and not pg_state.get('Error') and go_state.get('Running') is False and go_state.get('ExitCode')==1 and go_state.get('OOMKilled') is False and not go_state.get('Error')
+  accepted=candidate and ready and state_ok and len(cleaned)==len(attempted)==2 and cli_safe and not errors
+- status='CANDIDATE_FIRST_GREEN' if accepted else ('UNKNOWN_FAILURE' if errors else 'NOT_EXPECTED_GREEN')
+- result={'phase':'FIRST_GREEN','harness_attempt':1,'prior_first_red':'ORIGINAL_2/2_AND_RESTORED_1/1_SPENT_SEMANTIC_RED_ACCEPTED','diagnostics':'SPENT_3/3_UNCHANGED','metadata':'SPENT_1/1_ORIGINAL_UNKNOWN_FAILURE_UNCHANGED','status':status,'semantic_candidate':candidate,'pg_ready':ready,'states':states,'observed':observations,'errors':errors,'cleaned':cleaned,'CIDS':CIDS,'owner_label':OWN,'cli_group_cleanup_known':cli_safe,'evidence_bytes':seen,'elapsed':time.monotonic()-T,'old_task16':'UNTOUCHED_UNKNOWN'}
++ status='CANDIDATE_FIX_ROUND1_RED' if accepted else ('UNKNOWN_FAILURE' if errors else 'NOT_EXPECTED_FIX_ROUND1_RED')
++ result={'phase':'FIX_ROUND1_RED','review_round':'1/5','harness_attempt':1,'first_green_and_migration':'SPENT_1/1_EACH_ACCEPTED','prior_first_red':'ORIGINAL_2/2_AND_RESTORED_1/1_SPENT_SEMANTIC_RED_ACCEPTED','diagnostics':'SPENT_3/3_UNCHANGED','metadata':'SPENT_1/1_ORIGINAL_UNKNOWN_FAILURE_UNCHANGED','status':status,'semantic_candidate':candidate,'pg_ready':ready,'states':states,'observed':observations,'errors':errors,'cleaned':cleaned,'CIDS':CIDS,'owner_label':OWN,'cli_group_cleanup_known':cli_safe,'evidence_bytes':seen,'elapsed':time.monotonic()-T,'old_task16':'UNTOUCHED_UNKNOWN'}
+  if created:
+   (N/'events.json').write_text(json.dumps(events,indent=2)+'\n')
+   (N/'status.json').write_text(json.dumps(result,indent=2)+'\n')

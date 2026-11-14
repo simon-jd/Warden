@@ -1,0 +1,24 @@
+{
+  "base": "9691c9d7b9bb03e503964e4c6a0d97b5982b8373",
+  "evidence": "58cff52be14fcd5969f1f115f15755fbe6bd27b0",
+  "evidence_bytes": 420061,
+  "evidence_paths": 35,
+  "index_empty": true,
+  "matrix_bytes": 5748,
+  "matrix_equals_affected_original": true,
+  "report_bytes": 13040,
+  "report_mirror_equal": true,
+  "report_sha256": "5b06d2eff81194330857e10c4e01740d4d742a939fc871e7c596264dce504ef6",
+  "root_handoff_history": {
+    "first_assertion_chunk": "1c1ebc",
+    "package_helper_exit126_chunk": "d433ad",
+    "reason": "incorrectly required all35 evidence paths under docs/evidence/task-12; required ignored report mirror is the35th path",
+    "resolution": "use supported explicit OUTFILE argument, without chmod or host changes"
+  },
+  "source": "6791f7b6c004e5fff2a0af415ad41ca7a933dc0d",
+  "source_bytes": 346441,
+  "source_paths": 139,
+  "tests_rerun": false,
+  "whole_task12": "OPEN",
+  "worktree_matches_committed_public_paths": true
+}

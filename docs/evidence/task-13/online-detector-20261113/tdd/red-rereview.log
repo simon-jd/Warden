@@ -1,0 +1,26 @@
+# RED, second re-review: no silent alert loss on errors, idempotent writes, runsc start-up as platform, both runtimes per hour, worktree-scoped lab cleanup (c68b4d0, 2026-11-14T04:57:49Z)
+$ taskset -c 0-7,16-31 python3 -E -s -B -m unittest detect.falco.test_collector detect.falco.test_recorder detect.falco.test_detector
+ERROR: test_a_failed_write_is_retried_without_duplicating (detect.falco.test_collector.CollectorTest.test_a_failed_write_is_retried_without_duplicating)
+ERROR: test_a_failing_container_in_a_tick_rewrites_nothing (detect.falco.test_collector.CollectorTest.test_a_failing_container_in_a_tick_rewrites_nothing)
+ERROR: test_a_lookup_error_keeps_the_alert_for_a_retry (detect.falco.test_collector.CollectorTest.test_a_lookup_error_keeps_the_alert_for_a_retry)
+ERROR: test_a_persistent_error_expires_into_a_counted_drop (detect.falco.test_collector.CollectorTest.test_a_persistent_error_expires_into_a_counted_drop)
+ERROR: test_root_id_is_what_the_lab_script_labels_its_node_with (detect.falco.test_detector.CleanLabsTest.test_root_id_is_what_the_lab_script_labels_its_node_with)
+ERROR: test_this_worktrees_labs_are_taken_down (detect.falco.test_detector.CleanLabsTest.test_this_worktrees_labs_are_taken_down)
+ERROR: test_stop_writes_the_records_and_takes_the_labs_down_even_when_down_fails (detect.falco.test_detector.SevenDayTest.test_stop_writes_the_records_and_takes_the_labs_down_even_when_down_fails)
+FAIL: test_runscs_start_up_signature_is_platform_not_a_run_alert (detect.falco.test_collector.CollectorTest.test_runscs_start_up_signature_is_platform_not_a_run_alert)
+FAIL: test_writes_are_idempotent_per_alert_id_also_after_a_restart (detect.falco.test_collector.CollectorTest.test_writes_are_idempotent_per_alert_id_also_after_a_restart)
+FAIL: test_cli_writes_new_files_only (detect.falco.test_recorder.CommandTest.test_cli_writes_new_files_only)
+FAIL: test_an_hour_needs_a_successful_run_on_every_runtime (detect.falco.test_recorder.IntervalTest.test_an_hour_needs_a_successful_run_on_every_runtime)
+FAIL: test_collector_drops_that_may_hide_an_alert_are_drops (detect.falco.test_recorder.IntervalTest.test_collector_drops_that_may_hide_an_alert_are_drops) (key='dropped_error')
+FAIL: test_collector_errors_or_restarts_make_the_hour_unhealthy (detect.falco.test_recorder.IntervalTest.test_collector_errors_or_restarts_make_the_hour_unhealthy) (key='collector_errors')
+FAIL: test_collector_errors_or_restarts_make_the_hour_unhealthy (detect.falco.test_recorder.IntervalTest.test_collector_errors_or_restarts_make_the_hour_unhealthy) (key='collector_restarts')
+FAIL: test_records_are_the_slices_exactly_and_contiguous (detect.falco.test_recorder.IntervalTest.test_records_are_the_slices_exactly_and_contiguous)
+FAIL: test_an_hour_whose_gvisor_run_failed_makes_it_ineligible (detect.falco.test_recorder.ObservationTest.test_an_hour_whose_gvisor_run_failed_makes_it_ineligible)
+FAIL: test_another_worktrees_labs_are_left_alone (detect.falco.test_detector.CleanLabsTest.test_another_worktrees_labs_are_left_alone)
+Ran 79 tests in 6.271s
+FAILED (failures=10, errors=7)
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -s scripts -t scripts -p "test_k3s_gvisor_lab.py" -k worktree
+FAIL: test_the_node_says_which_worktree_made_it (test_k3s_gvisor_lab.GVisorLabScriptTest.test_the_node_says_which_worktree_made_it) (mode=[])
+FAIL: test_the_node_says_which_worktree_made_it (test_k3s_gvisor_lab.GVisorLabScriptTest.test_the_node_says_which_worktree_made_it) (mode=['--cilium'])
+Ran 1 test in 2.300s
+FAILED (failures=2)

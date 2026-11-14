@@ -1,0 +1,47 @@
+{
+  "events": [
+    {
+      "kind": "exec_command",
+      "request": {
+        "cmd": "set -eu\nulimit -t 20\nulimit -v 262144\nulimit -f 1024\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 5128000000 --service-memory-bytes 10000000000 --download-bytes 0",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "原Task12解析前核对两个已知二进制依赖的官方wheel大小，只读固定版本JSON；fresh资源门禁保留全部Q5GB/旧UNKNOWN9GB，不安装或运行包。",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 1000
+      },
+      "response": {
+        "chunk_id": "66bc64",
+        "wall_time_seconds": 0.229181727,
+        "exit_code": 0,
+        "original_token_count": 56,
+        "output": "{\"additional_bytes\": \"5128000000\", \"at\": \"2026-10-25T22:38:55Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 261671350272, \"project_allocated_bytes\": 4450103296, \"service_memory_bytes\": \"10000000000\"}\n"
+      }
+    },
+    {
+      "kind": "exec_command",
+      "request": {
+        "cmd": "set -eu\nulimit -t 20\nulimit -v 524288\nulimit -f 2048\nulimit -n 128\nulimit -c 0\nexec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=10s 50s /usr/bin/python3 -I -S -B - <<'PY'\nimport hashlib,json,os,pathlib,signal,socket,time,urllib.error,urllib.request\nassert os.geteuid()==1000\nmem={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}\nassert int(mem['MemAvailable'].split()[0])*1024>=2000000000\nroot=pathlib.Path('.cache/task12-pypi-abi-sizes-20261025-a')\nassert not os.path.lexists(root)\nroot.mkdir(mode=0o700)\ndeadline=time.monotonic()+45\ndef expired(_s,_f): raise TimeoutError('absolute metadata deadline')\nsignal.signal(signal.SIGALRM,expired)\nsignal.setitimer(signal.ITIMER_REAL,45)\nclass NoRedirect(urllib.request.HTTPRedirectHandler):\n    def redirect_request(self,*a,**k): raise RuntimeError('redirect refused')\nopener=urllib.request.build_opener(NoRedirect)\nnames=[('jq','1.12'),('pyyaml','6.0.3')]\ntotal=0\nresults=[]\nphase='start'\ntry:\n    for name,version in names:\n        phase=name\n        url='https://pypi.org/pypi/'+name+'/'+version+'/json'\n        remaining=deadline-time.monotonic()\n        assert remaining>0\n        chunks=[]\n        size=0\n        with opener.open(urllib.request.Request(url,headers={'Accept':'application/json','User-Agent':'Warden-Task12-metadata/1'}),timeout=min(8,remaining)) as response:\n            assert response.status==200 and response.geturl()==url\n            while True:\n                if time.monotonic()>=deadline: raise TimeoutError('absolute metadata deadline')\n                chunk=response.read(min(65536,2097153-size))\n                if not chunk: break\n                size+=len(chunk);total+=len(chunk)\n                if size>2097152 or total>6291456: raise ValueError('metadata byte cap')\n                chunks.append(chunk)\n        raw=b''.join(chunks)\n        data=json.loads(raw)\n        assert data['info']['version']==version\n        wheels=[x for x in data['urls'] if x['packagetype']=='bdist_wheel' and 'cp314-cp314-' in x['filename'] and 'manylinux' in x['filename'] and 'x86_64' in x['filename']]\n        assert wheels and all(x['url'].startswith('https://files.pythonhosted.org/') for x in wheels)\n        result={'name':name,'version':version,'json_bytes':len(raw),'json_sha256':hashlib.sha256(raw).hexdigest(),'requires_python':data['info']['requires_python'],'requires_dist':data['info']['requires_dist'],'wheels':[{'filename':x['filename'],'size':x['size'],'sha256':x['digests']['sha256'],'url':x['url'],'requires_python':x['requires_python'],'yanked':x['yanked']} for x in wheels]}\n        fd=os.open(root/(name+'.json'),os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)\n        with os.fdopen(fd,'wb') as out:\n            out.write(raw);out.flush();os.fsync(out.fileno())\n        results.append(result)\n    payload=json.dumps({'scope':'metadata only; no wheels/install/import/service','results':results,'total_bytes':total},ensure_ascii=True,sort_keys=True)\n    assert len(payload.encode())<=32768\n    fd=os.open(root/'selected.json',os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)\n    with os.fdopen(fd,'w',encoding='utf-8') as out:\n        out.write(payload+'\\n');out.flush();os.fsync(out.fileno())\n    print(payload)\nexcept BaseException as exc:\n    print(json.dumps({'status':'FAILED','phase':phase,'type':type(exc).__name__,'detail':str(exc)[:512],'completed_roots':len(results),'received_bytes':total}))\n    raise\nfinally:\n    signal.setitimer(signal.ITIMER_REAL,0)\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "固定读取jq1.12和PyYAML6.0.3的官方JSON，以静态确认Python3.14 Linux wheel大小和兼容性。复用已全文核对的仅metadata caller，两个新目标/全新namespace，不获取wheel或执行包，fresh门禁已通过。",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 2500
+      },
+      "response": {
+        "chunk_id": "bffaeb",
+        "wall_time_seconds": 0.180048055,
+        "exit_code": 1,
+        "original_token_count": 53,
+        "output": "{\"status\": \"FAILED\", \"phase\": \"jq\", \"type\": \"AssertionError\", \"detail\": \"\", \"completed_roots\": 0, \"received_bytes\": 59120}\nTraceback (most recent call last):\n  File \"<stdin>\", line 38, in <module>\nAssertionError\n"
+      }
+    }
+  ],
+  "ruling": "Metadata-only selector failure, not a no-compatible-wheel finding. cp314-cp314 filename filtering excludes potentially compatible abi3 wheels. Original failed namespace remains unchanged. One static correction will use installed pip's actual sys_tags; no pip material operation or threshold search occurred."
+}

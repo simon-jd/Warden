@@ -1,0 +1,21 @@
+# Final selected verification; ordinary UID with process umask0077.
+umask 0077
+PYTHONPATH=scripts python3 -B -m unittest test_k3s_lab test_k3s_lab_init test_k3s_lab_materials test_k3s_lab_recovery -v
+# verification-tests.txt:53 PASS,0 skips.
+
+# Final recovery hardening, no repeated broad suite.
+umask 0077
+PYTHONPATH=scripts python3 -B -m unittest test_k3s_lab_recovery -v
+# final-recovery-focused.txt:7 PASS,0 skips.
+
+# Source staging check before source commit.
+git diff --cached --check
+
+# Diagnosis was read-only, exact-owned stopped CID, fixed bounded archive
+# streams in memory and authorized fixed HEAD metadata only. No raw private
+# stream was written to disk or stdout. Source references were fixed pinned
+# upstream files; only URLs/lengths/hashes are retained.
+# The recovery accounting operation called only the dedicated read-only
+# preflight after exact identity/state/charge/daemon checks. No main recovery,
+# journal write, import, create, start or cleanup operation was executed.
+# Early RED outputs are retained with their original filenames; see README.

@@ -1,0 +1,102 @@
+{
+  "base": "955ef5da9d0044ab7ec1d8d4db31c8cd38286175",
+  "status": "INERT_FIX1_FINAL_AFFECTED_COVER_NOT_EXECUTED",
+  "source": {
+    "respond/actions.go": {
+      "bytes": 6655,
+      "sha256": "7224f114e7b9ef5aa926e43299a54fe01f9e90da329b6cd49d953a28bbbf2b02"
+    },
+    "respond/executor.go": {
+      "bytes": 7915,
+      "sha256": "36a055922fcdb82464f058cac481beecdc8b38b4a89dd3f7cce261127cd06244"
+    },
+    "respond/ledger.go": {
+      "bytes": 7080,
+      "sha256": "7ecde030467a5f69890fff24b0ec255ede41c5b1b61de9f40f070c2f19d8be1c"
+    },
+    "respond/executor_test.go": {
+      "bytes": 19211,
+      "sha256": "aadc94db405e2a970737b19ecfddb0eb790f84be3fd59aaa97fd312d8b3bee0e"
+    },
+    "respond/ledger_test.go": {
+      "bytes": 15193,
+      "sha256": "4720fec3b18c3f4602632084f6a016c7b2ffcb131026d0828e0d72356e70290e"
+    },
+    "respond/README.md": {
+      "bytes": 6386,
+      "sha256": "581a18f7aadf7429c82d8fbcf0c4ad7c0ff55bc3911cb06ae5479a7fa327ce74"
+    },
+    "respond/playbooks/suspend-tenant.yaml": {
+      "bytes": 179,
+      "sha256": "8cdfbdfdfe5bac22452006f0af89b22e9f50a05a32a454e081db114b6402acfa"
+    }
+  },
+  "module_inputs": {
+    "go.mod": {
+      "bytes": 2483,
+      "sha256": "bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa"
+    },
+    "go.sum": {
+      "bytes": 11340,
+      "sha256": "cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0"
+    }
+  },
+  "changed_source": [
+    "respond/executor.go",
+    "respond/ledger.go",
+    "respond/ledger_test.go",
+    "respond/README.md"
+  ],
+  "tests": {
+    "TestJournalCreationDurabilityBeforeClient": [
+      "failure",
+      "success"
+    ],
+    "TestConcurrentDuplicateAndCloseRetainsLock": [],
+    "TestDurableIncompleteIntentSuppressesRestart": [],
+    "TestDurableBindingConflictAndTenantKeys": [],
+    "TestCorruptJournalFailsClosedWithoutRepair": [
+      "short-prefix",
+      "oversized-record",
+      "short-payload",
+      "checksum",
+      "complete-without-intent",
+      "duplicate-intent",
+      "duplicate-complete",
+      "wrong-fingerprint",
+      "version",
+      "bad-digest",
+      "bad-status",
+      "unknown-key",
+      "duplicate-key",
+      "case-alias"
+    ],
+    "TestPrivateJournalPathAndPermissions": [
+      "directory-mode",
+      "file-mode",
+      "symlink-file",
+      "symlink-parent",
+      "hardlink",
+      "fifo",
+      "oversized"
+    ],
+    "TestPartialWriteAndSyncFailuresSuppressAttempts": [
+      "intent-write",
+      "intent-sync",
+      "completion-write",
+      "completion-sync"
+    ]
+  },
+  "expected": {
+    "top_level_tests": 7,
+    "named_subtests": 27,
+    "reported_cases": 34,
+    "PASS": 34,
+    "FAIL": 0,
+    "SKIP": 0
+  },
+  "selection_reason": "I1 regression tests real create-before-lock failure/success. Existing lock/reopen tests cover ownership and incomplete/completed durable state; corruption/private-path tests cover locked validated initialization failure; partial write/sync tests cover uncertain-state reopening. No approval/parser/preview/capacity or full81 repeat.",
+  "minimal_fix": "Retain created-file f.Sync; independently require syncDir after lock+validation on every opener before any intent/client. Only README wording changes beyond behavior; private seam/test bytes unchanged from accepted fix1 RED.",
+  "test_source_sha256_from_accepted_red": "4720fec3b18c3f4602632084f6a016c7b2ffcb131026d0828e0d72356e70290e",
+  "scope": "Original Task14 continuous fix1/5 only; real identity/adapters/multistep/live and Goal OPEN. No new formatter/Go/guard/Git invoked."
+}

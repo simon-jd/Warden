@@ -1,0 +1,3 @@
+√ Loaded ["detect/vector/agent.toml"]
+-------------------------------------
+                            Validated

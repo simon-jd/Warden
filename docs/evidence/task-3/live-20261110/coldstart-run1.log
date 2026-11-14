@@ -1,0 +1,40 @@
+scripts/k3s_gvisor_lab.sh run scripts/k3s_gvisor_lab.sh env \
+	env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS='-mod=readonly -buildvcs=false' GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/t WARDEN_LIVE_GVISOR=1 WARDEN_GVISOR_COLD_STARTS=100 GVISOR_OUT=/home/postedism/Desktop/Warden-task3/docs/evidence/task-3/live-20261110/cold-starts-100.jsonl /home/postedism/Desktop/Warden-task3/.tools/go/bin/go test -count=1 -v -timeout 40m -run '^(TestGVisorConformance|TestGVisorColdStarts)$' ./runtimes/gvisor
+lab up: warden-k3s-gvisor on warden-k3s (192.168.192.10), probe sha256:2f4ec662b7b52207452e3097bdf56563dc3d1879599eafbd6dfe6de71b3355cf
+=== RUN   TestGVisorConformance
+=== RUN   TestGVisorConformance/ForkBombCappedByPids
+    suite.go:61: real guest mode=fork exit={Code:0 LogsTruncated:false PidsMaxEvents:1 PeakPids:32 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS fork
+=== RUN   TestGVisorConformance/RootfsReadOnly
+    suite.go:61: real guest mode=readonly exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS readonly
+=== RUN   TestGVisorConformance/NoNetworkByDefault
+    suite.go:61: real guest mode=network exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:5 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS network
+=== RUN   TestGVisorConformance/RunsAsNonRoot
+    suite.go:61: real guest mode=uid exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:5 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS uid
+=== RUN   TestGVisorConformance/TimeoutKillsProcessGroup
+    suite.go:61: real guest mode=timeout exit={Code:137 LogsTruncated:false PidsMaxEvents:0 PeakPids:7 DroppedLogBytes:0 OOMKilled:false TimedOut:true CgroupEmpty:true} logs=READY timeout
+=== RUN   TestGVisorConformance/MemoryLimitOOMKilled
+    suite.go:61: real guest mode=oom exit={Code:137 LogsTruncated:false PidsMaxEvents:0 PeakPids:0 DroppedLogBytes:0 OOMKilled:true TimedOut:false CgroupEmpty:true} logs=READY oom
+=== RUN   TestGVisorConformance/SeccompBlocksMountAndPtrace
+    suite.go:61: real guest mode=seccomp exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS seccomp
+=== NAME  TestGVisorConformance
+    lab_test.go:169: run fork pod 5523319e-4266-4a1f-acb4-11dacaffef08: pod cgroup on the node gone=true start->exec=2369.58 ms
+    lab_test.go:169: run readonly pod 69022b71-3643-4f04-8606-8c6be7e86e31: pod cgroup on the node gone=true start->exec=522.62 ms
+    lab_test.go:169: run network pod 883d0897-e2c8-4d39-a581-48abed861e24: pod cgroup on the node gone=true start->exec=505.95 ms
+    lab_test.go:169: run uid pod 27a0e4b9-c3c2-430b-98f1-7d877117f343: pod cgroup on the node gone=true start->exec=516.02 ms
+    lab_test.go:169: run timeout pod 5907509f-1362-45a9-a2ce-bded1efc4f9a: pod cgroup on the node gone=true start->exec=507.15 ms
+    lab_test.go:169: run oom pod 0fd7d2b0-3bbb-475e-96d9-0fe62b7561c6: pod cgroup on the node gone=true start->exec=n/a (no supervisor report)
+    lab_test.go:169: run seccomp pod 7c5add80-4595-4299-a796-0537a7028b8d: pod cgroup on the node gone=true start->exec=581.05 ms
+--- PASS: TestGVisorConformance (25.76s)
+    --- PASS: TestGVisorConformance/ForkBombCappedByPids (5.56s)
+    --- PASS: TestGVisorConformance/RootfsReadOnly (2.88s)
+    --- PASS: TestGVisorConformance/NoNetworkByDefault (3.03s)
+    --- PASS: TestGVisorConformance/RunsAsNonRoot (2.98s)
+    --- PASS: TestGVisorConformance/TimeoutKillsProcessGroup (4.99s)
+    --- PASS: TestGVisorConformance/MemoryLimitOOMKilled (3.02s)
+    --- PASS: TestGVisorConformance/SeccompBlocksMountAndPtrace (2.99s)
+=== RUN   TestGVisorColdStarts
+    lab_test.go:274: cold starts: {"began":"2026-11-10T17:11:34-08:00","ended":"2026-11-10T17:16:37-08:00","loadavg_end":"6.68 8.20 7.13 8/5891 166733","loadavg_start":"10.67 8.27 6.54 8/6030 92692","runs":100,"start_to_exec_ms":{"max":934.228884,"min":485.234613,"p50":547.7746555000001,"p95":741.108064},"start_to_init_ms":{"max":837.368392,"min":465.820546,"p50":523.847953,"p95":695.166339},"start_to_wait_ms":{"max":3956.1765,"min":2761.988305,"p50":2976.5411355,"p95":3079.619283},"summary":true}
+{"began":"2026-11-10T17:11:34-08:00","ended":"2026-11-10T17:16:37-08:00","loadavg_end":"6.68 8.20 7.13 8/5891 166733","loadavg_start":"10.67 8.27 6.54 8/6030 92692","runs":100,"start_to_exec_ms":{"max":934.228884,"min":485.234613,"p50":547.7746555000001,"p95":741.108064},"start_to_init_ms":{"max":837.368392,"min":465.820546,"p50":523.847953,"p95":695.166339},"start_to_wait_ms":{"max":3956.1765,"min":2761.988305,"p50":2976.5411355,"p95":3079.619283},"summary":true}
+--- PASS: TestGVisorColdStarts (303.37s)
+PASS
+ok  	warden/runtimes/gvisor	329.136s

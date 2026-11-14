@@ -1,0 +1,38 @@
+INERT fixR1of5 first collision RED exact command. BASE0beb321125600fda112bb8c08355457d481938cb. Root FULL read/admission before actual. Same nativeUID1000/require_escalated, /bin/bash login=false tty=false cwd=/home/postedism/Desktop/Warden for every request. No HOME/umask change, material/version call, BP/agent run or old-suite rerun.
+
+FIRST separately fresh budget; known normal0 required:
+ulimit -t 20
+ulimit -v 262144
+ulimit -f 1024
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -S -B scripts/azure_guard.py preflight --additional-bytes 7137167168 --service-memory-bytes 13000000000 --download-bytes 0
+
+SECOND separately memory/new-namespace absence; known normal0 required:
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=5s 20s /usr/bin/python3 -I -S -B - <<'PY'
+import os,pathlib,resource,signal
+resource.setrlimit(resource.RLIMIT_CPU,(5,5));resource.setrlimit(resource.RLIMIT_AS,(134217728,134217728));signal.alarm(10)
+assert os.geteuid()==1000
+m={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}
+a=int(m['MemAvailable'].split()[0])*1024
+assert a>=5000000000
+assert not os.path.lexists('.cache/task11-fix1-red')
+print('MemAvailable',a,'resident_reserve',13000000000,'new_run_absent',True)
+PY
+
+THIRD exact first RED body, existing mapper UNFIXED, only2new collision cases through production aggregator:
+set -eu
+ulimit -t 45
+ulimit -v 2929687
+ulimit -f 1024
+ulimit -n 128
+ulimit -c 0
+mkdir -m 700 .cache/task11-fix1-red
+mkdir -m 700 .cache/task11-fix1-red/tmp
+set -- detect/vector/aggregator.toml detect/ocsf/tests/warden_collisions.toml
+for f do test -f "$f"; done
+test "$#" -eq 2
+set -C
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 VECTOR_THREADS=2 TMPDIR=/home/postedism/Desktop/Warden/.cache/task11-fix1-red/tmp /usr/bin/timeout --signal=TERM --kill-after=10s 50s /home/postedism/Desktop/Warden/.cache/task11-offline-tool-0.45.0/unpack/vector-x86_64-unknown-linux-musl/bin/vector test "$@" > .cache/task11-fix1-red/output 2>&1
+
+Pinned retained primary facts: docs/evidence/task-11/static-material-preparation.md lines7-10 verifies commit063cabbbf4bc6f75794fa0ccd3b0bd5c074f0e35 src/config/unit_test/mod.rs98-122 clears real sources/sinks before test topology construction. Thus loading production transforms via test does not start Vector listener/OpenSearch/metrics exporter. Attempt to refresh that same raw primary URL by web on2026-10-25 returned Cache miss; no native metadata/prod startup used to discover behavior. Original pinned notes retained.
+
+Caps unchanged: GNU TERM50+kill10 whole60, CPU45/AS<=3GB/output combined1MiB/NOFILE128/core0/threads2/ownedTMP64MiB, freshR+Q5GB+remaining2137167168<=12GB,13GBresident/MemAvailable5GB. Tool yield is not deadline. Save full exposed requests/returns/polls plus bounded original output; need2named semantic failures (normal output remains/reject missing) not empty/config error. Ordinary build/config correction retains history; timeout/resource/UNKNOWN STOP/no thresholdsearch. After genuineRED only minimal collision reject fix, then one frozen affected production-topology golden+aggstaticvalidate, not agent/BP. No Task6 actual authority or Task11/Goal completion.

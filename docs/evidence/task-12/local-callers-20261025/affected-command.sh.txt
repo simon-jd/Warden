@@ -1,0 +1,76 @@
+#!/bin/bash
+# INERT affected harness cover; root FULLREAD and fresh gates first.
+set -eu
+run=/home/postedism/Desktop/Warden/.cache/task12-local-cover-affected-20261025-a
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 TMPDIR="$run/tmp" \
+ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 \
+ /usr/bin/timeout --signal=TERM --kill-after=5s 55s /bin/bash -s "$run" <<'OUTER'
+set -eu
+run=$1
+test "$(/usr/bin/id -u)" = 1000
+test "$PWD" = /home/postedism/Desktop/Warden
+test ! -e "$run" && test ! -L "$run" || exit 1
+umask 077
+ulimit -c 0; ulimit -n 128; ulimit -v 1048576; ulimit -f 1024; ulimit -t 45
+/bin/mkdir -m 700 -- "$run"
+finish() {
+ rc=$?; trap - EXIT TERM INT
+ cleanup=0
+ if /bin/rm -rf -- "$run/tmp" && test ! -e "$run/tmp"; then cleanup=1; else rc=2; fi
+ printf 'exit=%s\ntest_rc=%s\nhead_rc=%s\ncleanup=%s\n' "$rc" "${test_rc:-unknown}" "${head_rc:-unknown}" "$cleanup" > "$run/status.txt"
+ exit "$rc"
+}
+trap finish EXIT
+trap 'exit 124' TERM
+trap 'exit 130' INT
+/bin/mkdir -m 700 -- "$run/tmp"
+set +e
+/usr/bin/timeout --foreground --signal=TERM --kill-after=5s 45s \
+ /usr/bin/python3 -I -B - "$run" 2>&1 <<'PYCODE' | /usr/bin/head -c 1048576 > "$run/output.txt"
+import json, sys, unittest
+from pathlib import Path
+run=Path(sys.argv[1])
+site=Path(".cache/task12-material-20261025-a/site").resolve(strict=True)
+sys.path[:0]=[str(site),str(Path.cwd())]
+from detect.sigma import test_contract
+suite=unittest.TestSuite(test_contract.AdapterEdgeTest(name) for name in (
+ "test_casefold_matches_real_backend_without_changing_fields",
+ "test_path_suffix_and_literal_characters_use_real_backend",
+ "test_rejects_reserved_query_fields_and_unsupported_modifiers"))
+result=unittest.TextTestRunner(verbosity=2).run(suite)
+summary={"tests_run":result.testsRun,"assertion_failures":len(result.failures),
+         "errors":len(result.errors),"skips":len(result.skipped),
+         "unexpected_successes":len(result.unexpectedSuccesses)}
+passed=(result.testsRun==3 and result.wasSuccessful() and not result.skipped
+        and not result.unexpectedSuccesses)
+if passed:
+    import hashlib
+    from detect.report.coverage import summarize_rules, render_markdown
+    old=Path("docs/evidence/task-12/local-cover-failed-first-20261025/output.txt").read_bytes()
+    if hashlib.sha256(old).hexdigest()!="5f22f844a191c8f38d98695af525781d771977a7a16f911e97d016e9e9daf15c":
+        raise RuntimeError("historical evidence hash mismatch")
+    rules=[json.loads(p.read_text()) for p in sorted(test_contract.RULES_DIR.glob("*.yml"))]
+    tags=summarize_rules(rules)
+    provenance=("Conversion PASS cites 32-rule catalogue tests inside initial overall FAILED batch "
+      "(10 tests/6 harness errors); output SHA256 5f22f844a191c8f38d98695af525781d771977a7a16f911e97d016e9e9daf15c. "
+      "This run executes only 3 AdapterEdgeTest methods and derives tags; no catalogue conversion/query reconstruction. Indexed/live UNRUN.\n\n")
+    text=provenance+render_markdown(tags,set(test_contract.EXPECTED_IDS))
+    if len(text.encode())>=1048576: raise RuntimeError("artifact size limit")
+    (run/"attack-coverage.md").write_text(text)
+    summary.update(tags)
+    summary.update(catalogue_conversion="historical_pass_inside_overall_failed_batch",indexed_query="UNRUN",live_detection="UNRUN",whole_task12="OPEN")
+    (run/"summary.json").write_text(json.dumps(summary,indent=2,sort_keys=True)+"\n")
+print(json.dumps(summary,sort_keys=True),flush=True)
+sys.exit(0 if passed else 1)
+PYCODE
+codes=("${PIPESTATUS[@]}")
+set -e
+test_rc=${codes[0]}; head_rc=${codes[1]}
+tmp_bytes=$(/usr/bin/du -s -B1 -- "$run/tmp"); tmp_bytes=${tmp_bytes%%[[:space:]]*}
+run_bytes=$(/usr/bin/du -s -B1 -- "$run"); run_bytes=${run_bytes%%[[:space:]]*}
+printf 'tmp_bytes=%s\nrun_bytes_postflight=%s\n' "$tmp_bytes" "$run_bytes" > "$run/postflight.txt"
+test "$head_rc" -eq 0 && test "$tmp_bytes" -le 16777216 || exit 2
+test "$run_bytes" -le 16777216 || exit 2
+test "$(/usr/bin/stat -c %s -- "$run/output.txt")" -lt 1048576 || exit 2
+exit "$test_rc"
+OUTER

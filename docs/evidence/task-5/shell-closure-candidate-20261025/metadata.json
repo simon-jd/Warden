@@ -1,0 +1,115 @@
+{
+  "at": "2026-10-25T08:31:52.799200+00:00",
+  "scope": "fixed installed-material read-only ELF closure and package/license metadata; no material copied or executed",
+  "tools": {
+    "readelf": {
+      "path": "/usr/bin/x86_64-linux-gnu-readelf",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "nlink": 1,
+      "bytes": 818312,
+      "sha256": "c857339616bbbfa5eba32733e22365048903fbaf6ed2126b897dd138bcb741fc"
+    },
+    "dpkg_query": {
+      "path": "/usr/bin/dpkg-query",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "nlink": 1,
+      "bytes": 142160,
+      "sha256": "82a19acac53907f83faca7d6494289fe2d074514cf1b09933114635415c2e876"
+    }
+  },
+  "package_metadata": [
+    "dash\t0.5.12-12ubuntu3\tamd64\tinstall ok installed",
+    "libc6\t2.43-2ubuntu2.4\tamd64\tinstall ok installed"
+  ],
+  "materials": {
+    "/usr/bin/dash": {
+      "path": "/usr/bin/dash",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "nlink": 1,
+      "bytes": 129856,
+      "sha256": "c626229526bb58ec2d0f585f3c3ae1412e6f973b4353385042d11c38d8426917",
+      "DT_NEEDED": [
+        "libc.so.6"
+      ],
+      "dynamic_output_sha256": "0d1e94fa5461a886cfa98078c42155da7f058d7893f6853ab30588c269e9b595"
+    },
+    "/usr/lib/x86_64-linux-gnu/libc.so.6": {
+      "path": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "nlink": 1,
+      "bytes": 2190608,
+      "sha256": "85e64f97e348786a8fb4d9f3d52fec289e2fb86bba20f0731dfe61990525e0f7",
+      "DT_NEEDED": [
+        "ld-linux-x86-64.so.2"
+      ],
+      "dynamic_output_sha256": "5d3a018a97c2d4dd840d3bd97d2b7a0b380933ad028c1061759ab86ecdf054ac"
+    },
+    "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2": {
+      "path": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o755",
+      "nlink": 1,
+      "bytes": 254864,
+      "sha256": "bda779ea9e9ad234f60315477d7cfd0bdde861cd8ddd9df8cdaf62f18c4cec14",
+      "DT_NEEDED": [],
+      "dynamic_output_sha256": "2b1c6b3fffc3127ce45aa00e21b6129c5d011bb0fbd7d8416f42136167ea2a9c"
+    }
+  },
+  "public_material_bytes": 2575328,
+  "license_notice_inputs": {
+    "/usr/share/doc/dash/copyright": {
+      "path": "/usr/share/doc/dash/copyright",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "nlink": 1,
+      "bytes": 3878,
+      "sha256": "d98c53f281321baad38164aa9ae6e368a9253be6ec51bd26a759b5e72b326f4a"
+    },
+    "/usr/share/doc/libc6/copyright": {
+      "path": "/usr/share/doc/libc6/copyright",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "nlink": 1,
+      "bytes": 53241,
+      "sha256": "c31d10900fdb95d1889005145a2205bb75e3bc018d3ec8265b81364901748e09"
+    },
+    "/usr/share/common-licenses/GPL-2": {
+      "path": "/usr/share/common-licenses/GPL-2",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "nlink": 1,
+      "bytes": 17984,
+      "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
+    },
+    "/usr/share/common-licenses/LGPL-2.1": {
+      "path": "/usr/share/common-licenses/LGPL-2.1",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o644",
+      "nlink": 1,
+      "bytes": 26419,
+      "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95"
+    }
+  },
+  "interpreter_guest_path": "/lib64/ld-linux-x86-64.so.2",
+  "future_guest_materialization": "regular copies at exact loader/library paths; no symlinks implied",
+  "publisher_signature_verified": false,
+  "dpkg_package_archive_hash_verified": false,
+  "shell_executed": false,
+  "guest_ABI_verified": false,
+  "actual_32MiB_payload_fit_verified": false,
+  "new_resource_created": false,
+  "task5_matrix_cells_executed": 0
+}

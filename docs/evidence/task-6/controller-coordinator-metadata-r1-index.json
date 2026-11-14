@@ -1,0 +1,92 @@
+{
+  "dispatch_base": "ba87a3cb2a73a30309914792c14765fc7a622b20",
+  "excluded": [
+    "this index (nonrecursive)",
+    "ignored byte-identical report mirror"
+  ],
+  "report_mirror_equal": true,
+  "rows": [
+    {
+      "allocated_bytes": 110592,
+      "bytes": 109113,
+      "path": "docs/evidence/task-6/continuation-controller-operations-execution-plan.md",
+      "sha256": "1c341b2f6bc3420245a6327d64501dd8c8f2f416d6b9f9f3c28b928218d240ea"
+    },
+    {
+      "allocated_bytes": 4096,
+      "bytes": 3410,
+      "path": "docs/evidence/task-6/controller-coordinator-metadata-r1-baseline.json",
+      "sha256": "fbaa4eaa5b16027833ec5c8d99b0a262977add5598d38a3aaf603c55f0934902"
+    },
+    {
+      "allocated_bytes": 8192,
+      "bytes": 6171,
+      "path": "docs/evidence/task-6/controller-coordinator-metadata-r1-events-fixture.js",
+      "sha256": "b01f56b760e93706bc7462790a7b5c28760b8687bf7fc7e4a16ab84411efd5cd"
+    },
+    {
+      "allocated_bytes": 4096,
+      "bytes": 2043,
+      "path": "docs/evidence/task-6/controller-coordinator-metadata-r1-execute.js",
+      "sha256": "4e7887688a9156ccb2718a897060f3da3357a75929a47aa8ee06db12e927c46f"
+    },
+    {
+      "allocated_bytes": 20480,
+      "bytes": 18336,
+      "path": "docs/evidence/task-6/controller-coordinator-metadata-r1-material-candidate.js",
+      "sha256": "dff4ae160f80cdf37b642b9809e1384034d011d4e9fe68a1fead87b45190c7c2"
+    },
+    {
+      "allocated_bytes": 20480,
+      "bytes": 18067,
+      "path": "docs/evidence/task-6/controller-coordinator-metadata-r1-report.md",
+      "sha256": "d3e7d68aa7d2c69d010cfd517ee4d6918be3b55b75c06dff279b1bb07b4f844a"
+    },
+    {
+      "allocated_bytes": 4096,
+      "bytes": 2127,
+      "path": "docs/evidence/task-6/controller-coordinator-metadata-r1-source-manifest.json",
+      "sha256": "50728967d29be68e31e95d78db2bbced7bbb10d67b01bcd4ecf7dbc953590403"
+    },
+    {
+      "allocated_bytes": 163840,
+      "bytes": 160664,
+      "path": "docs/evidence/task-6/controller-coordinator-metadata-r1-source-text-snapshot.json",
+      "sha256": "1a1c9c9d4b9e9274bbc345151195fb9cbbb465d5367aec21450afa964418be4b"
+    },
+    {
+      "allocated_bytes": 16384,
+      "bytes": 12369,
+      "path": "docs/evidence/task-6/controller-coordinator-metadata-r1-verification.py",
+      "sha256": "f863923c0e12fc9b3c142a012df415283927b00c5117cf57dceeb992936c3e83"
+    },
+    {
+      "allocated_bytes": 77824,
+      "bytes": 73922,
+      "path": "docs/evidence/task-6/controller-coordinator-metadata-r1-verification/native.json",
+      "sha256": "be70a68de226c160b8eb920a4540991d7382c6c0024765f0c6eff4ec06044a31"
+    },
+    {
+      "allocated_bytes": 8192,
+      "bytes": 5066,
+      "path": "docs/evidence/task-6/controller-coordinator-metadata-r1-verification/preservation.json",
+      "sha256": "eab2eebe166b8fbf6b97b9871ec9f6d23b12c9cb45f4a720a1629ee38a90f787"
+    },
+    {
+      "allocated_bytes": 917504,
+      "bytes": 915593,
+      "path": "docs/evidence/task-6/controller-coordinator-metadata-r1-verification/tool-record.json",
+      "sha256": "e6ab2e7d4406a254c93f5a07e1afb48aa74d056b38eb534a1b627ae9f848cdc8"
+    },
+    {
+      "allocated_bytes": 8192,
+      "bytes": 5771,
+      "path": "scripts/identity_cache_control.py",
+      "sha256": "05d6e2c23b24a3182756116abff4b6c141bbc4168f5d8813da2a079b8811806c"
+    }
+  ],
+  "scope": "only this allowance changed/new artifact inventory; full changed-file sizes, not R or a renewed source proof",
+  "source_freeze": "e202ef2c3464e0c8b0d86781fe93de4e82cd21a5",
+  "total_allocated_bytes": 1363968,
+  "total_bytes": 1332652
+}

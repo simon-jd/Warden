@@ -1,0 +1,160 @@
+import hashlib,json,os,resource,signal,ssl,stat,tarfile,urllib.parse,urllib.request
+signal.signal(signal.SIGTERM,lambda *_: (_ for _ in ()).throw(TimeoutError('whole90')))
+assert os.getuid()==os.geteuid()==1000
+root='/home/postedism/Desktop/Warden/.superpowers/sdd/2-warden-security-plan'
+N='.task15-cli-v1.19.2-material-20261025'
+D=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC
+X=os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW|os.O_CLOEXEC
+fd=os.open('/',D)
+try:
+    for i,part in enumerate(root.strip('/').split('/'),1):
+        s=os.stat(part,dir_fd=fd,follow_symlinks=False)
+        assert stat.S_ISDIR(s.st_mode) and not (s.st_mode&stat.S_IWOTH)
+        if i>=2:
+            assert s.st_uid==1000 and (not s.st_mode&stat.S_IWGRP or s.st_gid==1000)
+        nextfd=os.open(part,D,dir_fd=fd)
+        a=os.fstat(nextfd)
+        assert (a.st_dev,a.st_ino)==(s.st_dev,s.st_ino)
+        os.close(fd);fd=nextfd
+    for k,v in ((resource.RLIMIT_AS,1_073_741_824),(resource.RLIMIT_CPU,45),
+                (resource.RLIMIT_FSIZE,268_435_456),(resource.RLIMIT_CORE,0),
+                (resource.RLIMIT_NOFILE,64)):
+        resource.setrlimit(k,(v,v))
+    assert 9_000_000_000+1_073_741_824==10_073_741_824<16_000_000_000
+    v=os.fstatvfs(fd)
+    assert v.f_bavail*v.f_frsize>=5_419_430_400
+    with open('/proc/meminfo',encoding='ascii') as f:
+        mem={x[0].rstrip(':'):int(x[1])*1024 for x in (l.split() for l in f)}
+    assert mem['MemAvailable']>=1_073_741_824
+    os.mkdir(N,0o700,dir_fd=fd)
+    os.chmod(N,0o700,dir_fd=fd,follow_symlinks=False)
+    nfd=os.open(N,D,dir_fd=fd)
+finally:os.close(fd)
+os.fchmod(nfd,0o700)
+assert stat.S_IMODE(os.fstat(nfd).st_mode)==0o700
+stage='setup'
+try:
+    tag='v1.19.2'
+    api='https://api.github.com/repos/kyverno/kyverno/releases/tags/'+tag
+    base='https://github.com/kyverno/kyverno/releases/download/'+tag+'/'
+    sizes={
+      'checksums.txt':(830,'f06301cec9bd1ed8e22fb94572fabd98726facd45de01b274db8ed283f36a822'),
+      'checksums.txt.sigstore.json':(10079,'c6299581ae93e69b60e56fa86d89b4a2f66d7eebfba0be45cebc6b792de00e64'),
+      'kyverno-cli_v1.19.2_linux_x86_64.tar.gz':(53485462,'357eaf1df8bc24ddd5a73979fadeaae6a032e8710f11af264229756e4956bf4a')}
+    hosts={'api.github.com','github.com','release-assets.githubusercontent.com'}
+    class Redirect(urllib.request.HTTPRedirectHandler):
+        def __init__(self):self.n=0
+        def redirect_request(self,req,fp,code,msg,headers,url):
+            self.n+=1;p=urllib.parse.urlsplit(url)
+            if self.n>2 or p.scheme!='https' or p.hostname not in hosts or p.username or p.password:
+                raise ValueError('redirect denied')
+            return super().redirect_request(req,fp,code,msg,headers,url)
+    def get(url,limit,accept):
+        p=urllib.parse.urlsplit(url)
+        assert p.scheme=='https' and p.hostname in hosts and not p.username and not p.password
+        rd=Redirect()
+        op=urllib.request.build_opener(urllib.request.ProxyHandler({}),
+            urllib.request.HTTPSHandler(context=ssl.create_default_context()),rd)
+        q=urllib.request.Request(url,headers={'User-Agent':'warden-task15-material-v1','Accept':accept})
+        with op.open(q,timeout=15) as r:
+            final=urllib.parse.urlsplit(r.geturl())
+            assert r.status==200 and final.scheme=='https' and final.hostname in hosts
+            if url==api:assert rd.n==0 and r.geturl()==api
+            length=r.headers.get('Content-Length')
+            if length is not None:assert int(length)<=limit
+            data=r.read(limit+1)
+        assert len(data)<=limit
+        return data
+    stage='api'
+    meta=json.loads(get(api,131072,'application/vnd.github+json'))
+    assert meta['tag_name']==tag and not meta['draft'] and not meta['prerelease']
+    assets={a['name']:a for a in meta['assets'] if a['name'] in sizes}
+    assert set(assets)==set(sizes)
+    for name,(size,digest) in sizes.items():
+        a=assets[name]
+        assert (a['size'],a['digest'],a['browser_download_url'])==(size,'sha256:'+digest,base+name)
+    def write(name,data,at=nfd):
+        f=os.open(name,X,0o600,dir_fd=at)
+        with os.fdopen(f,'wb') as out:out.write(data)
+    for name,(size,digest) in sizes.items():
+        stage='asset_'+name
+        data=get(base+name,size,'application/octet-stream')
+        assert len(data)==size and hashlib.sha256(data).hexdigest()==digest
+        write(name,data);del data
+    archive='kyverno-cli_v1.19.2_linux_x86_64.tar.gz'
+    with os.fdopen(os.open('checksums.txt',os.O_RDONLY|os.O_NOFOLLOW,dir_fd=nfd),'r') as f:
+        assert sizes[archive][1]+'  '+archive in f.read().splitlines()
+    def tar():
+        f=os.fdopen(os.open(archive,os.O_RDONLY|os.O_NOFOLLOW,dir_fd=nfd),'rb')
+        return tarfile.open(fileobj=f,mode='r:gz',errorlevel=2)
+    def normalize(raw):
+        while raw.startswith('./'):raw=raw[2:]
+        path=raw.rstrip('/');parts=path.split('/')
+        assert path and len(path.encode())<=1024 and not path.startswith('/') and '\\' not in path
+        assert all(p not in ('','.','..') for p in parts)
+        return path,parts
+    stage='list'
+    entries=[];kinds={};needed=set();expanded=0
+    with tar() as t:
+        for m in t:
+            path,parts=normalize(m.name)
+            assert len(entries)<512 and path not in kinds and not m.pax_headers
+            assert (m.isfile() or m.isdir()) and m.size>=0 and (m.isfile() or m.size==0)
+            parents={'/'.join(parts[:i]) for i in range(1,len(parts))}
+            assert (path not in needed or m.isdir()) and all(kinds.get(x,'dir')=='dir' for x in parents)
+            needed|=parents;kinds[path]='dir' if m.isdir() else 'file'
+            expanded+=m.size;assert expanded<=268_435_456
+            entries.append((path,kinds[path],m.size))
+    assert entries
+    def dirs(start,parts):
+        f=os.dup(start)
+        try:
+            for p in parts:
+                try:os.mkdir(p,0o700,dir_fd=f)
+                except FileExistsError:pass
+                nxt=os.open(p,D,dir_fd=f)
+                os.close(f);f=nxt
+            return f
+        except BaseException:
+            os.close(f);raise
+    stage='extract'
+    os.mkdir('extract',0o700,dir_fd=nfd)
+    efd=os.open('extract',D,dir_fd=nfd)
+    files=[]
+    try:
+        with tar() as t:
+            count=0
+            for m in t:
+                assert count<len(entries)
+                path,parts=normalize(m.name)
+                kind='dir' if m.isdir() else 'file'
+                assert (path,kind,m.size)==entries[count]
+                count+=1
+                pfd=dirs(efd,parts if kind=='dir' else parts[:-1])
+                try:
+                    if kind=='dir':continue
+                    src=t.extractfile(m);assert src is not None
+                    h=hashlib.sha256();left=m.size
+                    outfd=os.open(parts[-1],X,0o600,dir_fd=pfd)
+                    with src,os.fdopen(outfd,'wb') as out:
+                        while left:
+                            b=src.read(min(left,1024*1024));assert b
+                            out.write(b);h.update(b);left-=len(b)
+                    files.append({'path':path,'bytes':m.size,'sha256':h.hexdigest()})
+                finally:os.close(pfd)
+            assert count==len(entries)
+    finally:os.close(efd)
+    stage='report'
+    report={'source':api,'trust':'TLS GitHub API digest; bundle hash only, no publisher proof',
+            'archive_bytes':sizes[archive][0],'expanded_bytes':expanded,
+            'expanded_cap':268_435_456,'files':files,'download0_before_guard':True}
+    data=json.dumps(report,sort_keys=True).encode()
+    assert len(data)<=32*1024*1024
+    assert expanded+sum(s for s,_ in sizes.values())+len(data)+131072<=419_430_400
+    write('material-report.json',data)
+except BaseException as error:
+    status=json.dumps({'stage':stage,'result':'failed','error_type':type(error).__name__}).encode()
+    try:write('material-status.json',status)
+    except BaseException:pass
+    raise SystemExit(1)
+finally:os.close(nfd)

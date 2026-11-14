@@ -1,0 +1,246 @@
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_azure_guard.py   # AKS tests added, azure_guard.py unchanged
+.FF.FFF...........F.F.F.................FFFFFFFFFFFFFFFF...........F..........
+======================================================================
+FAIL: test_aks_drill_cap_is_ninety_percent_of_two_dollars (test_azure_guard.AzureGuardTests.test_aks_drill_cap_is_ninety_percent_of_two_dollars)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 347, in test_aks_drill_cap_is_ninety_percent_of_two_dollars
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : guard refused: unsupported kind; AKS node RG is not authorized
+
+
+======================================================================
+FAIL: test_aks_drill_reserves_the_approved_cluster_and_its_identity (test_azure_guard.AzureGuardTests.test_aks_drill_reserves_the_approved_cluster_and_its_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 256, in test_aks_drill_reserves_the_approved_cluster_and_its_identity
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : guard refused: unsupported kind; AKS node RG is not authorized
+
+
+======================================================================
+FAIL: test_aks_is_refused_while_an_approval_is_pending (test_azure_guard.AzureGuardTests.test_aks_is_refused_while_an_approval_is_pending) (pending='premium_os_disk')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 282, in test_aks_is_refused_while_an_approval_is_pending
+    self.assertIn(pending.replace('_', ' '), p.stderr)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'premium os disk' not found in 'guard refused: unsupported kind; AKS node RG is not authorized\n'
+
+======================================================================
+FAIL: test_aks_is_refused_while_an_approval_is_pending (test_azure_guard.AzureGuardTests.test_aks_is_refused_while_an_approval_is_pending) (pending='network_watcher_autocreate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 282, in test_aks_is_refused_while_an_approval_is_pending
+    self.assertIn(pending.replace('_', ' '), p.stderr)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'network watcher autocreate' not found in 'guard refused: unsupported kind; AKS node RG is not authorized\n'
+
+======================================================================
+FAIL: test_aks_meters_must_be_the_drill_billing_identities (test_azure_guard.AzureGuardTests.test_aks_meters_must_be_the_drill_billing_identities)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 309, in test_aks_meters_must_be_the_drill_billing_identities
+    self.assertEqual(self.aks_reserve(plan).returncode, 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_down_deletes_the_cluster_then_the_group_and_sees_both_gone (test_azure_guard.AzureGuardTests.test_down_deletes_the_cluster_then_the_group_and_sees_both_gone)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 416, in test_down_deletes_the_cluster_then_the_group_and_sees_both_gone
+    self.assertEqual([x[:2] for x in m], [['aks', 'delete'], ['group', 'delete']])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [['group', 'delete']] != [['aks', 'delete'], ['group', 'delete']]
+
+First differing element 0:
+['group', 'delete']
+['aks', 'delete']
+
+Second list contains 1 additional elements.
+First extra element 1:
+['group', 'delete']
+
+- [['group', 'delete']]
++ [['aks', 'delete'], ['group', 'delete']]
+
+======================================================================
+FAIL: test_down_fails_when_the_node_group_outlives_the_cluster (test_azure_guard.AzureGuardTests.test_down_fails_when_the_node_group_outlives_the_cluster)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 427, in test_down_fails_when_the_node_group_outlives_the_cluster
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_down_refuses_a_node_group_without_its_cluster_group (test_azure_guard.AzureGuardTests.test_down_refuses_a_node_group_without_its_cluster_group)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 446, in test_down_refuses_a_node_group_without_its_cluster_group
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_only_one_aks_cluster_is_ever_reserved (test_azure_guard.AzureGuardTests.test_only_one_aks_cluster_is_ever_reserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 355, in test_only_one_aks_cluster_is_ever_reserved
+    self.assertEqual(self.aks_reserve(self.aks_plan()).returncode, 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_only_the_named_node_group_managed_by_the_cluster_is_accepted (test_azure_guard.AzureGuardTests.test_only_the_named_node_group_managed_by_the_cluster_is_accepted) (fields={'managedBy': '/subscriptions/11111111-2222-4333-8444-555555555555/resourceGroups/rg-warden-lab/providers/Microsoft.ContainerService/managedClusters/other'}, command=('down',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 439, in test_only_the_named_node_group_managed_by_the_cluster_is_accepted
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_only_the_named_node_group_managed_by_the_cluster_is_accepted (test_azure_guard.AzureGuardTests.test_only_the_named_node_group_managed_by_the_cluster_is_accepted) (fields={'managedBy': '/subscriptions/11111111-2222-4333-8444-555555555555/resourceGroups/rg-warden-lab/providers/Microsoft.ContainerService/managedClusters/other'}, command=('down', '--dry-run'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 439, in test_only_the_named_node_group_managed_by_the_cluster_is_accepted
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_only_the_named_node_group_managed_by_the_cluster_is_accepted (test_azure_guard.AzureGuardTests.test_only_the_named_node_group_managed_by_the_cluster_is_accepted) (fields={'managedBy': '/subscriptions/11111111-2222-4333-8444-555555555555/resourceGroups/rg-warden-lab/providers/Microsoft.ContainerService/managedClusters/other'}, command=('reap',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 439, in test_only_the_named_node_group_managed_by_the_cluster_is_accepted
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_only_the_named_node_group_managed_by_the_cluster_is_accepted (test_azure_guard.AzureGuardTests.test_only_the_named_node_group_managed_by_the_cluster_is_accepted) (fields={'managedBy': None}, command=('down',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 439, in test_only_the_named_node_group_managed_by_the_cluster_is_accepted
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_only_the_named_node_group_managed_by_the_cluster_is_accepted (test_azure_guard.AzureGuardTests.test_only_the_named_node_group_managed_by_the_cluster_is_accepted) (fields={'managedBy': None}, command=('down', '--dry-run'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 439, in test_only_the_named_node_group_managed_by_the_cluster_is_accepted
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_only_the_named_node_group_managed_by_the_cluster_is_accepted (test_azure_guard.AzureGuardTests.test_only_the_named_node_group_managed_by_the_cluster_is_accepted) (fields={'managedBy': None}, command=('reap',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 439, in test_only_the_named_node_group_managed_by_the_cluster_is_accepted
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_only_the_named_node_group_managed_by_the_cluster_is_accepted (test_azure_guard.AzureGuardTests.test_only_the_named_node_group_managed_by_the_cluster_is_accepted) (fields={'id': '/subscriptions/11111111-2222-4333-8444-555555555555/resourceGroups/rg-mlinfra-westus'}, command=('down',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 439, in test_only_the_named_node_group_managed_by_the_cluster_is_accepted
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_only_the_named_node_group_managed_by_the_cluster_is_accepted (test_azure_guard.AzureGuardTests.test_only_the_named_node_group_managed_by_the_cluster_is_accepted) (fields={'id': '/subscriptions/11111111-2222-4333-8444-555555555555/resourceGroups/rg-mlinfra-westus'}, command=('down', '--dry-run'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 439, in test_only_the_named_node_group_managed_by_the_cluster_is_accepted
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_only_the_named_node_group_managed_by_the_cluster_is_accepted (test_azure_guard.AzureGuardTests.test_only_the_named_node_group_managed_by_the_cluster_is_accepted) (fields={'id': '/subscriptions/11111111-2222-4333-8444-555555555555/resourceGroups/rg-mlinfra-westus'}, command=('reap',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 439, in test_only_the_named_node_group_managed_by_the_cluster_is_accepted
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_only_the_named_node_group_managed_by_the_cluster_is_accepted (test_azure_guard.AzureGuardTests.test_only_the_named_node_group_managed_by_the_cluster_is_accepted) (fields={'tags': None}, command=('down',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 439, in test_only_the_named_node_group_managed_by_the_cluster_is_accepted
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_only_the_named_node_group_managed_by_the_cluster_is_accepted (test_azure_guard.AzureGuardTests.test_only_the_named_node_group_managed_by_the_cluster_is_accepted) (fields={'tags': None}, command=('down', '--dry-run'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 439, in test_only_the_named_node_group_managed_by_the_cluster_is_accepted
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_only_the_named_node_group_managed_by_the_cluster_is_accepted (test_azure_guard.AzureGuardTests.test_only_the_named_node_group_managed_by_the_cluster_is_accepted) (fields={'tags': None}, command=('reap',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 439, in test_only_the_named_node_group_managed_by_the_cluster_is_accepted
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_only_the_named_node_group_managed_by_the_cluster_is_accepted (test_azure_guard.AzureGuardTests.test_only_the_named_node_group_managed_by_the_cluster_is_accepted) (fields={'tags': {'project': 'pathwatch', 'owner': 'pathwatch-lab', 'ttl': '2026-10-24T04:00:00Z', 'est_usd_per_hour': '0'}}, command=('down',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 439, in test_only_the_named_node_group_managed_by_the_cluster_is_accepted
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_only_the_named_node_group_managed_by_the_cluster_is_accepted (test_azure_guard.AzureGuardTests.test_only_the_named_node_group_managed_by_the_cluster_is_accepted) (fields={'tags': {'project': 'pathwatch', 'owner': 'pathwatch-lab', 'ttl': '2026-10-24T04:00:00Z', 'est_usd_per_hour': '0'}}, command=('down', '--dry-run'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 439, in test_only_the_named_node_group_managed_by_the_cluster_is_accepted
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_only_the_named_node_group_managed_by_the_cluster_is_accepted (test_azure_guard.AzureGuardTests.test_only_the_named_node_group_managed_by_the_cluster_is_accepted) (fields={'tags': {'project': 'pathwatch', 'owner': 'pathwatch-lab', 'ttl': '2026-10-24T04:00:00Z', 'est_usd_per_hour': '0'}}, command=('reap',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 439, in test_only_the_named_node_group_managed_by_the_cluster_is_accepted
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_teardown_check_passes_only_when_nothing_of_the_drill_is_left (test_azure_guard.AzureGuardTests.test_teardown_check_passes_only_when_nothing_of_the_drill_is_left)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-aks/scripts/test_azure_guard.py", line 457, in test_teardown_check_passes_only_when_nothing_of_the_drill_is_left
+    self.assertEqual(p.returncode, 0, p.stderr + p.stdout)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : usage: -c [-h] {reap,down,reserve,render,preflight} ...
+-c: error: argument command: invalid choice: 'teardown-check' (choose from reap, down, reserve, render, preflight)
+
+
+----------------------------------------------------------------------
+Ran 63 tests in 12.761s
+
+FAILED (failures=25)

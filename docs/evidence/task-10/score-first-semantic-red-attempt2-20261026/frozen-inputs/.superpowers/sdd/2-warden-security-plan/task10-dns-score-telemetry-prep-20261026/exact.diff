@@ -1,0 +1,51 @@
+--- .superpowers/sdd/2-warden-security-plan/task10-dns-score-caller-repair-20261026/caller.py
++++ .superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/caller.py
+@@ -17,7 +17,7 @@
+ import time
+ 
+ ROOT = '/home/postedism/Desktop/Warden'
+-PREP = ROOT + '/.superpowers/sdd/2-warden-security-plan/task10-dns-score-caller-repair-20261026'
++PREP = ROOT + '/.superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026'
+ SDK = ROOT + '/.cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64'
+ RUN = PREP + '/red-run'
+ WORK = RUN + '/work'
+@@ -128,8 +128,18 @@
+     os.mkdir(RUN, 0o700)
+     owned_run = True
+     os.mkdir(WORK, 0o700)
+-    for part in ('cache', 'tmp', 'mod', 'gopath', 'stage'):
++    for part in ('cache', 'tmp', 'mod', 'gopath', 'stage', 'config', 'telemetry'):
+         os.mkdir(WORK + '/' + part, 0o700)
++    # Confine both telemetry roots and disable their mode BEFORE any Go launch.
++    # HOME/CODEX_HOME and any host telemetry mode are untouched.
++    os.mkdir(WORK + '/config/go', 0o700)
++    os.mkdir(WORK + '/config/go/telemetry', 0o700)
++    for telemetry_root in (WORK + '/config/go/telemetry', WORK + '/telemetry'):
++        fd = os.open(telemetry_root + '/mode', os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
++        with os.fdopen(fd, 'wb') as mode:
++            mode.write(b'off\n')
++            mode.flush()
++            os.fsync(mode.fileno())
+     os.mkdir(WORK + '/stage/detect', 0o700)
+     os.mkdir(WORK + '/stage/detect/dns_exfil', 0o700)
+     for name in ('score.go', 'exfil_test.go'):
+@@ -146,7 +156,7 @@
+     if libc.prctl(36, 1, 0, 0, 0) != 0:  # PR_SET_CHILD_SUBREAPER, process-local
+         raise RuntimeError('cannot establish owned-descendant reaping')
+     env = os.environ.copy()  # HOME/CODEX_HOME/umask are neither reset nor printed.
+-    env.update({'GOROOT': SDK, 'GOTOOLCHAIN': 'local', 'GOPROXY': 'off', 'GOSUMDB': 'off', 'GONOSUMDB': '*', 'GONOPROXY': 'none', 'GOPRIVATE': '', 'GOENV': 'off', 'GOTELEMETRY': 'off', 'GOWORK': 'off', 'CGO_ENABLED': '0', 'GOMAXPROCS': '1', 'GOFLAGS': '', 'GOEXPERIMENT': '', 'GOOS': 'linux', 'GOARCH': 'amd64', 'GOCACHE': WORK + '/cache', 'GOTMPDIR': WORK + '/tmp', 'TMPDIR': WORK + '/tmp', 'GOPATH': WORK + '/gopath', 'GOMODCACHE': WORK + '/mod'})
++    env.update({'GOROOT': SDK, 'GOTOOLCHAIN': 'local', 'GOPROXY': 'off', 'GOSUMDB': 'off', 'GONOSUMDB': '*', 'GONOPROXY': 'none', 'GOPRIVATE': '', 'GOENV': 'off', 'GOTELEMETRY': 'off', 'XDG_CONFIG_HOME': WORK + '/config', 'TEST_TELEMETRY_DIR': WORK + '/telemetry', 'GOWORK': 'off', 'CGO_ENABLED': '0', 'GOMAXPROCS': '1', 'GOFLAGS': '', 'GOEXPERIMENT': '', 'GOOS': 'linux', 'GOARCH': 'amd64', 'GOCACHE': WORK + '/cache', 'GOTMPDIR': WORK + '/tmp', 'TMPDIR': WORK + '/tmp', 'GOPATH': WORK + '/gopath', 'GOMODCACHE': WORK + '/mod'})
+     wrapper = '/usr/bin/python3 -I -S ' + PREP + '/limit_child.py '
+     cmd = [SDK + '/bin/go', 'test', '-mod=readonly', '-p=1', '-vet=off', '-count=1', '-parallel=1', '-timeout=20s', '-v', '-toolexec=' + wrapper + 'tool', '-exec=' + wrapper + 'test', '-run=^TestDNSScoreTXT4KiBAlert$', './detect/dns_exfil']
+     child = subprocess.Popen(cmd, cwd=WORK + '/stage', env=env, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, start_new_session=True, preexec_fn=go_limits)
+--- .superpowers/sdd/2-warden-security-plan/task10-dns-score-caller-repair-20261026/limit_child.py
++++ .superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/limit_child.py
+@@ -10,7 +10,7 @@
+ import sys
+ 
+ ROOT = '/home/postedism/Desktop/Warden'
+-PREP = ROOT + '/.superpowers/sdd/2-warden-security-plan/task10-dns-score-caller-repair-20261026'
++PREP = ROOT + '/.superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026'
+ SDK = ROOT + '/.cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64'
+ if len(sys.argv) < 3 or sys.argv[1] not in ('tool', 'test'):
+     raise SystemExit('invalid child wrapper invocation')

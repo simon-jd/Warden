@@ -1,0 +1,29 @@
+{
+  "kind": "Task9 original fix round1/5 ruling",
+  "reviewer": "/root/task9_component_review",
+  "source": "1eb3ccb257d5faffa35a6438c550639b4fe76859",
+  "verdict": "SPEC_ISSUES_QUALITY_NEEDS_FIXES",
+  "findings": {
+    "critical": 0,
+    "important": 1,
+    "minor": 1
+  },
+  "I1": "ACCEPTED: Remove no-op clear cannot be assumed to advance resourceVersion; fixture conceals real protocol behavior.",
+  "primary_source": "https://github.com/kubernetes/kubernetes/blob/v1.34.0/staging/src/k8s.io/apiserver/pkg/storage/etcd3/store.go",
+  "action": "Original author first adds only minimal faithful no-op/delete-failure protocol regressions and frozen exact new RED caller. Preserve existing source until root admits actual RED. Then minimal affected fix/fresh affected cover and SAME reviewer scoped re-review. No unchanged successful suite replay, Task15 loop or mock framework.",
+  "M1": "Deferred Minor to final whole-branch review; keep all historical warnings/fault-injection and fileproxy notices. No harness config guess or new PG diagnostic permitted here.",
+  "cannot_verify": "Identity/real RBAC/expiry deployment remain independently OPEN; Task1 output filtering outside diff was already separately accepted at Task1, not re-proved here.",
+  "resource_ruling": "Initial Task9 source+preparation is CLOSED at net237568B/conservative253952B of262144B, remains charged in R without reset/refund. Original Task9 ECC expressly allows review-needed changed-case fixes max5 within original resource envelope. Round1 preparation/new report/test delta is bounded to65536B NEW, charged as existing original40MiB host source/proxy/raw/evidence/Git/index/daemon phase budget and measured in fresh R; full new runtime peak1750780416B/90s/12GB/16GB and all holds unchanged. This does not increase any user budget, Task15 CODE quota, old counter, or runtime cap. If forecast fails STOP rather than enlarge.",
+  "allowlist": [
+    "controlplane/internal/jit/bindings_test.go (new minimal regressions first)",
+    "controlplane/internal/jit/bindings.go (only after genuine new RED)",
+    "controlplane/internal/jit/README.md (only directly affected explanation if needed)",
+    "original task-9-report.md append after actual result",
+    "new round1 inert caller/freezes/preparation in same ignored plan workspace"
+  ],
+  "forbidden": "No source tests/runtime/Git by author before separate root fullread/fresh admission; no new image/download/host changes/fees/CI/publish/Task15 restart/other source writers.",
+  "provenance": {
+    "source": "root_agent_ruling_in_existing_user_scope",
+    "human_response": false
+  }
+}

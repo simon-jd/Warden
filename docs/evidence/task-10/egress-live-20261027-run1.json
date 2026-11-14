@@ -1,0 +1,210 @@
+{
+  "block_connect_other_domain": {
+    "ok": false,
+    "status": 0,
+    "proxy_status": 403,
+    "body": "warden egress: domain not allowlisted",
+    "error": "",
+    "resolved": "",
+    "resolve_error": "",
+    "connect_error": "",
+    "attempts": 0,
+    "succeeded_at": 0
+  },
+  "block_connect_suffix_trick": {
+    "ok": false,
+    "status": 0,
+    "proxy_status": 403,
+    "body": "warden egress: domain not allowlisted",
+    "error": "",
+    "resolved": "",
+    "resolve_error": "",
+    "connect_error": "",
+    "attempts": 0,
+    "succeeded_at": 0
+  },
+  "block_direct_bypass": {
+    "ok": false,
+    "status": 0,
+    "proxy_status": 0,
+    "body": "",
+    "error": "",
+    "resolved": "",
+    "resolve_error": "gaierror",
+    "connect_error": "OSError: [Errno 101] Network unreachable",
+    "attempts": 0,
+    "succeeded_at": 0
+  },
+  "block_http_other_domain": {
+    "ok": false,
+    "status": 403,
+    "proxy_status": 0,
+    "body": "warden egress: domain not allowlisted",
+    "error": "",
+    "resolved": "",
+    "resolve_error": "",
+    "connect_error": "",
+    "attempts": 0,
+    "succeeded_at": 0
+  },
+  "block_run_b_no_domains": {
+    "ok": false,
+    "status": 0,
+    "proxy_status": 403,
+    "body": "warden egress: domain not allowlisted",
+    "error": "",
+    "resolved": "",
+    "resolve_error": "",
+    "connect_error": "",
+    "attempts": 0,
+    "succeeded_at": 0
+  },
+  "block_run_b_sni": {
+    "ok": false,
+    "status": 0,
+    "proxy_status": 0,
+    "body": "",
+    "error": "ConnectionResetError: [Errno 104] Connection reset by peer",
+    "resolved": "",
+    "resolve_error": "",
+    "connect_error": "",
+    "attempts": 0,
+    "succeeded_at": 0
+  },
+  "block_sni_other_domain": {
+    "ok": false,
+    "status": 0,
+    "proxy_status": 0,
+    "body": "",
+    "error": "ConnectionResetError: [Errno 104] Connection reset by peer",
+    "resolved": "",
+    "resolve_error": "",
+    "connect_error": "",
+    "attempts": 0,
+    "succeeded_at": 0
+  },
+  "block_unknown_source": {
+    "ok": false,
+    "status": 0,
+    "proxy_status": 0,
+    "body": "",
+    "error": "ConnectionResetError: [Errno 104] Connection reset by peer",
+    "resolved": "",
+    "resolve_error": "",
+    "connect_error": "",
+    "attempts": 0,
+    "succeeded_at": 0
+  },
+  "envoy_image": "envoyproxy/envoy:v1.40.2 [\"envoyproxy/envoy@sha256:8de97e654644827d62afdbf7e1d3dc9fee01a8690d410dd1c63a30dc6b6cecbb\"]",
+  "envoy_version": "envoy  version: b2d89e0ae53916f28770771fbdd49c5c99c5c5a2/1.40.2/Clean/RELEASE/BoringSSL",
+  "front_sni_allowed_host_blocked": {
+    "ok": true,
+    "status": 200,
+    "proxy_status": 0,
+    "body": "origin-allowed",
+    "error": "",
+    "resolved": "",
+    "resolve_error": "",
+    "connect_error": "",
+    "attempts": 0,
+    "succeeded_at": 0
+  },
+  "host": {
+    "loadavg": "10.21 7.68 6.10 7/10454 2044293",
+    "nproc": 32
+  },
+  "proxy_access_log": [
+    "http run=AAAAAAAAAAAAAAAAAAAAAAAAAA src=10.231.207.10 method=CONNECT authority=allowed.warden.test:443 status=200 upstream=192.168.176.2:443",
+    "http run=AAAAAAAAAAAAAAAAAAAAAAAAAA src=10.231.207.10 method=CONNECT authority=allowed.warden.test:443 status=200 upstream=192.168.176.2:443",
+    "http run=AAAAAAAAAAAAAAAAAAAAAAAAAA src=10.231.207.10 method=CONNECT authority=img.cdn.warden.test:443 status=200 upstream=192.168.176.2:443",
+    "http run=AAAAAAAAAAAAAAAAAAAAAAAAAA src=10.231.207.10 method=GET authority=allowed.warden.test status=200 upstream=192.168.176.2:80",
+    "sni run=AAAAAAAAAAAAAAAAAAAAAAAAAA src=10.231.207.10 sni=allowed.warden.test upstream=192.168.176.2:443",
+    "http run=AAAAAAAAAAAAAAAAAAAAAAAAAA src=10.231.207.10 method=CONNECT authority=allowed.warden.test:443 status=200 upstream=192.168.176.2:443",
+    "http run=AAAAAAAAAAAAAAAAAAAAAAAAAA src=10.231.207.10 method=CONNECT authority=blocked.warden.test:443 status=403 upstream=-",
+    "http run=AAAAAAAAAAAAAAAAAAAAAAAAAA src=10.231.207.10 method=CONNECT authority=allowed.warden.test.blocked.warden.test:443 status=403 upstream=-",
+    "http run=AAAAAAAAAAAAAAAAAAAAAAAAAA src=10.231.207.10 method=GET authority=blocked.warden.test status=403 upstream=-",
+    "sni run=AAAAAAAAAAAAAAAAAAAAAAAAAA src=10.231.207.10 sni=allowed.warden.test upstream=192.168.176.2:443",
+    "http run=BBBBBBBBBBBBBBBBBBBBBBBBBB src=10.231.207.11 method=CONNECT authority=allowed.warden.test:443 status=403 upstream=-"
+  ],
+  "reach_connect_allowed": {
+    "ok": true,
+    "status": 200,
+    "proxy_status": 200,
+    "body": "origin-allowed",
+    "error": "",
+    "resolved": "",
+    "resolve_error": "",
+    "connect_error": "",
+    "attempts": 0,
+    "succeeded_at": 0
+  },
+  "reach_connect_wildcard": {
+    "ok": true,
+    "status": 200,
+    "proxy_status": 200,
+    "body": "origin-allowed",
+    "error": "",
+    "resolved": "",
+    "resolve_error": "",
+    "connect_error": "",
+    "attempts": 0,
+    "succeeded_at": 0
+  },
+  "reach_http_allowed": {
+    "ok": true,
+    "status": 200,
+    "proxy_status": 0,
+    "body": "origin-allowed",
+    "error": "",
+    "resolved": "",
+    "resolve_error": "",
+    "connect_error": "",
+    "attempts": 0,
+    "succeeded_at": 0
+  },
+  "reach_sni_allowed": {
+    "ok": true,
+    "status": 200,
+    "proxy_status": 0,
+    "body": "origin-allowed",
+    "error": "",
+    "resolved": "",
+    "resolve_error": "",
+    "connect_error": "",
+    "attempts": 0,
+    "succeeded_at": 0
+  },
+  "reload_grant_latency": {
+    "final": {
+      "ok": true,
+      "status": 200,
+      "proxy_status": 200,
+      "body": "origin-blocked",
+      "error": "",
+      "resolved": "",
+      "resolve_error": "",
+      "connect_error": "",
+      "attempts": 12,
+      "succeeded_at": 1793138983.8997595
+    },
+    "latency_ms": 43,
+    "poll_attempts": 12
+  },
+  "reload_revoke_latency": {
+    "final": {
+      "ok": false,
+      "status": 0,
+      "proxy_status": 0,
+      "body": "",
+      "error": "ConnectionResetError: [Errno 104] Connection reset by peer",
+      "resolved": "",
+      "resolve_error": "",
+      "connect_error": "",
+      "attempts": 11,
+      "succeeded_at": 1793138984.906447
+    },
+    "latency_ms": 44,
+    "poll_attempts": 11
+  },
+  "subnet": "10.231.207.0/24"
+}

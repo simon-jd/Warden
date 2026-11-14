@@ -1,0 +1,26 @@
+2026-11-13 09:40 PST: leftovers final/cleanup.txt did not cover
+
+/tmp/warden-chart-peek (184K): the Cilium chart extracted on 11-12 19:36 to
+read its templates. Removed.
+
+BuildKit cache of the Cilium-mode node image (Dockerfile with 11 steps).
+Removed with `docker buildx prune -f --filter id=<id>`, children first:
+  build 2026-11-13 03:45:17Z (run 1)
+    p2gbkju2351q46sk4bdmta2kd  37.44kB  [ 7/11] COPY config-v3.toml.tmpl
+    jzir369vdtozsxeyeyxnlktrj  16.52kB  [ 8/11] COPY cni-conf/
+    8jb0erkxvcemolfecgr3xmanf  16.61kB  [ 9/11] COPY cni-bin/
+    gyg21jnnntwem53nq1yizdtuw   3.592MB [10/11] COPY gvisor-init /opt/warden/gvisor-init
+    phzan3hei8w7twh23jkvddz0p   2.396MB [11/11] COPY extra/ /
+  build 2026-11-11 01:49:02Z and 01:51:15Z (the 2026-11-10 attempt)
+    rc068758agp7e6tnypqq2kdm3  16.52kB  [ 8/11] COPY cni-conf/
+    itytf69udlzomree68exif9p3  16.61kB  [ 9/11] COPY cni-bin/
+    4inoh82zl9h72vgdme2vxu6h9   3.587MB [10/11] COPY gvisor-init /opt/warden/gvisor-init
+    yx12b8adzdx759vuxq08f3999   2.361MB [11/11] COPY node-init /warden-node-init
+    hkemr1qxlmdbo2nvmwx0y3pxq   2.361MB [11/11] COPY node-init /warden-node-init
+Afterwards `docker buildx du --verbose` lists no record with an [n/11] step.
+The Task 3 node image's records (10 steps or fewer) are kept.
+
+/tmp: scripts/test_oci_fetch.py made a directory per test with mkdtemp and
+never removed it (fixed in f2ae4e4). Four make test runs since 2026-11-10
+17:38 had left 20 of them: 8 holding only img.oci.tar and 12 empty ones
+created within 3 s of those. Removed.

@@ -1,0 +1,22 @@
+615133 2996767 10423506 11706368 52190460
+Looking in links: /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/wheels
+Processing ./.cache/task12-material-20261025-a/wheels/certifi-2026.10.23-py3-none-any.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 3))
+Processing ./.cache/task12-material-20261025-a/wheels/charset_normalizer-3.5.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 4))
+Processing ./.cache/task12-material-20261025-a/wheels/diskcache-5.6.3-py3-none-any.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 5))
+Processing ./.cache/task12-material-20261025-a/wheels/diskcache_stubs-5.6.3.6.20240818-py3-none-any.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 6))
+Processing ./.cache/task12-material-20261025-a/wheels/idna-3.20-py3-none-any.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 7))
+Processing ./.cache/task12-material-20261025-a/wheels/jinja2-3.1.6-py3-none-any.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 8))
+Processing ./.cache/task12-material-20261025-a/wheels/jq-1.13.0-cp314-cp314-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 9))
+Processing ./.cache/task12-material-20261025-a/wheels/markupsafe-3.0.4-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 10))
+Processing ./.cache/task12-material-20261025-a/wheels/packaging-26.3-py3-none-any.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 11))
+Processing ./.cache/task12-material-20261025-a/wheels/pyparsing-3.3.3-py3-none-any.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 12))
+Processing ./.cache/task12-material-20261025-a/wheels/pysigma-1.5.1-py3-none-any.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 13))
+Processing ./.cache/task12-material-20261025-a/wheels/pysigma_backend_elasticsearch-2.1.1-py3-none-any.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 14))
+Processing ./.cache/task12-material-20261025-a/wheels/pysigma_backend_opensearch-2.0.3-py3-none-any.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 15))
+Processing ./.cache/task12-material-20261025-a/wheels/pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 16))
+Processing ./.cache/task12-material-20261025-a/wheels/requests-2.34.2-py3-none-any.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 17))
+Processing ./.cache/task12-material-20261025-a/wheels/types_pyyaml-6.0.12.20260906-py3-none-any.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 18))
+Processing ./.cache/task12-material-20261025-a/wheels/typing_extensions-4.16.0-py3-none-any.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 19))
+Processing ./.cache/task12-material-20261025-a/wheels/urllib3-2.8.0-py3-none-any.whl (from -r /home/postedism/Desktop/Warden/.cache/task12-material-20261025-a/offline.lock (line 20))
+Installing collected packages: urllib3, typing_extensions, types-PyYAML, requests, PyYAML, pySigma-backend-opensearch, pySigma-backend-elasticsearch, pySigma, pyparsing, packaging, MarkupSafe, jq, Jinja2, idna, diskcache-stubs, diskcache, charset-normalizer, certifi
+Successfully installed Jinja2-3.1.6 MarkupSafe-3.0.4 PyYAML-6.0.3 certifi-2026.10.23 charset-normalizer-3.5.2 diskcache-5.6.3 diskcache-stubs-5.6.3.6.20240818 idna-3.20 jq-1.13.0 packaging-26.3 pySigma-1.5.1 pySigma-backend-elasticsearch-2.1.1 pySigma-backend-opensearch-2.0.3 pyparsing-3.3.3 requests-2.34.2 types-PyYAML-6.0.12.20260906 typing_extensions-4.16.0 urllib3-2.8.0

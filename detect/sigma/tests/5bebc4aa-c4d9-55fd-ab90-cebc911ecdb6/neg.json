@@ -1,0 +1,34 @@
+{
+  "activity_id": 1,
+  "category_uid": 1,
+  "class_uid": 1007,
+  "type_uid": 100701,
+  "severity_id": 0,
+  "time": 1767225600000,
+  "metadata": {
+    "version": "1.3.0",
+    "product": {
+      "name": "Tetragon",
+      "vendor_name": "Cilium"
+    },
+    "uid": "1fe10db7-91f2-5721-8062-8eb705187da1"
+  },
+  "unmapped": {},
+  "actor": {
+    "process": {
+      "pid": 100,
+      "uid": "synthetic-parent",
+      "name": "/usr/bin/synthetic-approved-worker"
+    }
+  },
+  "process": {
+    "pid": 101,
+    "uid": "synthetic-exec",
+    "name": "/usr/bin/python3"
+  },
+  "device": {
+    "uid": "synthetic-node",
+    "name": "synthetic-node",
+    "type_id": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "phase": "DIAGNOSTIC_ONLY",
+  "diagnostic_allowance": "1/1",
+  "first_red": "SPENT_2/2_UNCHANGED",
+  "status": "UNKNOWN_FAILURE",
+  "receipt_complete": false,
+  "pg_ready": false,
+  "readiness_result": "NOT_ATTEMPTED",
+  "runtime_state": {
+    "Status": "created",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 128,
+    "Error": "failed to create task for container: failed to initialize logging driver: compression cannot be enabled when max file count is 1",
+    "StartedAt": "0001-01-01T00:00:00Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "runtime_exit": 128,
+  "cause_known_or_unknown": "KNOWN_DAEMON_STATE_ERROR",
+  "cause_evidence": "failed to create task for container: failed to initialize logging driver: compression cannot be enabled when max file count is 1",
+  "state_observed": true,
+  "logs_observed": false,
+  "failures": [
+    "work:RuntimeError:docker_failed",
+    "logs:RuntimeError:log_observation_failed"
+  ],
+  "cleanup_known": true,
+  "cli_group_cleanup_known": true,
+  "CID": "3305aff74c4112e0ecedeb6e9edde0f2a82714087b77d4593f5dfe0c2b9c949a",
+  "owner_label": "00070c9067462be4a2b41027198ba11c",
+  "owned_name": "warden-task9-pg-diag-20261026-a",
+  "evidence_bytes": 1237,
+  "elapsed": 0.4168766440125182,
+  "old_task16": "UNTOUCHED_UNKNOWN"
+}

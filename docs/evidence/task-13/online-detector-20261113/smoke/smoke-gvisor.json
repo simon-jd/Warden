@@ -1,0 +1,40 @@
+{
+ "executions": [
+  {
+   "executed_at": "2026-11-14T05:02:05.667029000Z",
+   "execution_id": "smoke-gvisor-guest-read",
+   "outcome": "succeeded",
+   "run_id": "smoke-gvisor-guest-read-04944add",
+   "technique_id": "T1555"
+  }
+ ],
+ "pods": {
+  "warden-detect-control": {
+   "containers": [
+    "containerd://1a04c17418f8fecabf0b918b368a57875a7a2717900807be5960c77f69ec00c8"
+   ],
+   "namespace": "default",
+   "phase": "Running",
+   "sandbox": "f25e91f5124208cfcad0d74f4eef767fb7bef69665d081b8771a1ce31bcaaa71"
+  },
+  "warden-detect-smoke-read": {
+   "containers": [
+    "containerd://5561c6d862ccf51b4c7a2399a6ab76df863de9a2918817abdbe7bc50e52d0a46"
+   ],
+   "namespace": "warden-lab",
+   "phase": "Succeeded",
+   "sandbox": "47064bc70fbd82324037506d2661a74bb236bc42667b09ef9c7dbb7c10bd0df5"
+  },
+  "warden-detect-smoke-sandbox": {
+   "containers": [
+    "containerd://22f40f72b8b5c0b6df481f6c3cd5c2725daad149bdd3e4158b4d8b8c22b2f1ab"
+   ],
+   "namespace": "warden-lab",
+   "phase": "Running",
+   "sandbox": "deee9ce2f0f0611fd06287f47461c524d458ecf5f2b607aa88311d119f770190"
+  }
+ },
+ "runtime": "gvisor",
+ "sandbox_started": true,
+ "token": "04944add"
+}

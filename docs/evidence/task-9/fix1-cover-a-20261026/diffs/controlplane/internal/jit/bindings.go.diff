@@ -1,0 +1,47 @@
+--- consumed-red/controlplane/internal/jit/bindings.go
++++ r1-cover/controlplane/internal/jit/bindings.go
+@@ -3,6 +3,8 @@
+ import (
+ 	"bytes"
+ 	"context"
++	"crypto/rand"
++	"encoding/hex"
+ 	"encoding/json"
+ 	"errors"
+ 	"io"
+@@ -56,6 +58,7 @@
+ 
+ const rbacAPI = "rbac.authorization.k8s.io"
+ const maxBindingBody = 65536
++const revocationFence = "warden.io/revocation-fence"
+ 
+ func raw(v any) json.RawMessage { b, _ := json.Marshal(v); return b }
+ 
+@@ -178,8 +181,16 @@
+ 		o, err := decodeBinding(b, t)
+ 		if err != nil { return err }
+ 		if r.UID != "" && r.UID != metaString(o, "uid") { return ErrBindingConflict }
+-		// Always write an empty subject set, even if already empty. This advances
+-		// the version and fences a delayed Activate using the reserved version.
++		// An empty-to-empty PUT may preserve resourceVersion. Change a persisted
++		// annotation on every clear attempt so even cleanup retries fence Activate.
++		var annotations map[string]string
++		if err = json.Unmarshal(o.Metadata["annotations"], &annotations); err != nil || annotations == nil { return ErrBindingConflict }
++		var nonce [16]byte
++		if _, err = rand.Read(nonce[:]); err != nil { return ErrUnavailable }
++		fence := hex.EncodeToString(nonce[:])
++		if fence == annotations[revocationFence] { return ErrUnavailable }
++		annotations[revocationFence] = fence
++		o.Metadata["annotations"] = raw(annotations)
+ 		o.Subjects = []subject{}
+ 		b, status, err = k.call(ctx, http.MethodPut, t, false, o)
+ 		if err != nil { return err }
+@@ -187,6 +198,8 @@
+ 		if status != http.StatusOK { return ErrBindingConflict }
+ 		cleared, err := decodeBinding(b, t)
+ 		if err != nil { return err }
++		var persisted map[string]string
++		if err = json.Unmarshal(cleared.Metadata["annotations"], &persisted); err != nil || persisted[revocationFence] != fence { return ErrBindingConflict }
+ 		if metaString(cleared, "uid") != metaString(o, "uid") || metaString(cleared, "resourceVersion") == metaString(o, "resourceVersion") || len(cleared.Subjects) != 0 { return ErrBindingConflict }
+ 		options := map[string]any{"apiVersion": "v1", "kind": "DeleteOptions", "preconditions": map[string]string{"uid": metaString(cleared, "uid"), "resourceVersion": metaString(cleared, "resourceVersion")}}
+ 		_, status, err = k.call(ctx, http.MethodDelete, t, false, options)

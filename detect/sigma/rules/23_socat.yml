@@ -1,0 +1,29 @@
+{
+  "title": "Socat execution indicator",
+  "id": "04b1c6e8-bc83-5f59-8b27-acf635891f11",
+  "status": "experimental",
+  "description": "Full binary-path indicator only. No args, connection, Pod/sandbox identity, transfer, mining or escape success exists in current Tetragon mapping. Synthetic fixtures; ATT&CK tags describe related investigation scenarios, not observed technique success.",
+  "references": [],
+  "author": "Warden",
+  "date": "2026-10-25",
+  "logsource": {
+    "product": "linux",
+    "category": "process_creation"
+  },
+  "detection": {
+    "source": {
+      "class_uid": 1007,
+      "metadata.product.name": "tetragon"
+    },
+    "action": {
+      "process.name|endswith": [
+        "/socat"
+      ]
+    },
+    "condition": "source and action"
+  },
+  "falsepositives": [
+    "Authorized administration, developer/debug tooling, permitted workloads or unrelated protocol use; tune local IP/principal allowlists."
+  ],
+  "level": "medium"
+}

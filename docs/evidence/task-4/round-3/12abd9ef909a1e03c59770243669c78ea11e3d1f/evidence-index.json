@@ -1,0 +1,75 @@
+{
+  "source": "12abd9ef909a1e03c59770243669c78ea11e3d1f",
+  "tested_source": "8af8ee3dd8188e413b33f9d81b516ec2f3994066",
+  "scope": "Round3 code-only; exact tracked tree equality after explicit revert, historical working-tree logs separate; no real device/BPF/VM execution",
+  "files": {
+    "README.md": {
+      "sha256": "a6a94845869dc297e2dd21292502d8c3bf7217f7f1b660103dd8021be79e5f65",
+      "bytes": 14065
+    },
+    "code-tests.log": {
+      "sha256": "2b885360daec7f83cb8451e8c26cac1d34f280a0d6a6c04e0299464d2fbcdccf",
+      "bytes": 21678
+    },
+    "focused-command.py": {
+      "sha256": "8852a5aa95468ccc9161a1f20304c7732cd63251fde82fdeb2cab33194365a83",
+      "bytes": 548
+    },
+    "history-policy-green.log": {
+      "sha256": "efda219c2a668c1003658d161509537196aa614295827d389d3ab509ddf95f48",
+      "bytes": 5831
+    },
+    "history-policy-red.log": {
+      "sha256": "c22e75c6f67ef29c6b413db6deb36690d4f0ddb817afcb3a03beca06655101d9",
+      "bytes": 5164
+    },
+    "history-python-fixture-error.log": {
+      "sha256": "236628f8aa2ed14e109fd2a1ee05b82fc731a96b3e11be8017298982b2c14b70",
+      "bytes": 5541
+    },
+    "history-python-focused-green.log": {
+      "sha256": "0134cff23ffe265af36256f789b83722458ab2035aa7ee9b8a6e1bf37b45dab3",
+      "bytes": 3486
+    },
+    "history-python-green.log": {
+      "sha256": "92a03ff65552de7198d667ec038ef5cb242c5b22ce7d814868ca322f612de587",
+      "bytes": 3319
+    },
+    "history-receipt-red.log": {
+      "sha256": "80e75a46dadc46b3ec70f180dc2b3567bd5164c00e269154d1abb5746290acc0",
+      "bytes": 2432
+    },
+    "history-withdrawn-namespace-red.log": {
+      "sha256": "3ca78dfffffea55a8d8c4fb732cd2fae70b30ffa7b6d91c953637ba34e7114da",
+      "bytes": 3026
+    },
+    "observed-guard-maxima.json": {
+      "sha256": "d8c86d0efbeb4c6cec4754f6d1c3d7195f54b0f29a13f56807df29dc92a35702",
+      "bytes": 1314
+    },
+    "old-evidence-verification.json": {
+      "sha256": "d9536936f240fdb2d0f5f5f01fbb62ec1235a7882fd14330edc86c8bcec43e76",
+      "bytes": 1131
+    },
+    "postflight-command.py": {
+      "sha256": "b994e93893fd6cd44841aaff220454389e00b7d464018c64c63685353bf2cca7",
+      "bytes": 1561
+    },
+    "postflight.json": {
+      "sha256": "339f0770c70865fc3a98a10fcda182e00562a1775418e36bb336fe31b4c3b55c",
+      "bytes": 1011
+    },
+    "primary-source-observations.json": {
+      "sha256": "6d0faa43e2a871df12f06e6ca157b1d0b9f7e102c4105699ada8cfe7ef68703d",
+      "bytes": 1571
+    },
+    "python-tests.log": {
+      "sha256": "bc5f9a0524461ce7d40e8b68c6a45faf571258d077be428e50f5a01651156f5a",
+      "bytes": 3486
+    },
+    "source-manifest.json": {
+      "sha256": "7bd5ccf76d18350796d4970fbbd3506617ee033b97fabe092484797cde740998",
+      "bytes": 3466
+    }
+  }
+}

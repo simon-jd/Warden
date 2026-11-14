@@ -1,0 +1,1301 @@
+{
+  "all152_frozen_equal_source_git_and_worktree": true,
+  "candidate_bytes": 10842,
+  "candidate_sha256": "58095573ef0f31c78429d9dd5169ced6ea58c5c23f04526b651f73b1eb8b73b1",
+  "canonical_count": 150,
+  "canonical_names_unchanged": true,
+  "collector_body_bytes": 1855,
+  "collector_body_sha256": "a9399f32eae83ada51191bfc36d8d70de914041c93f6b4ef4011a652e522bee3",
+  "dispatch_base": "b5780a09cb3c0a81b37207dca31ad5c2103c4395",
+  "fixture_bytes": 10578,
+  "fixture_sha256": "41d7755dbef715914e54d3732c326d2db1a0c42fd0c9360c2971f3164fc973a9",
+  "frozen_method_counts": {
+    "APITests": 27,
+    "ClockTests": 10,
+    "ControllerTests": 84,
+    "GeneratedInvokerTests": 25,
+    "InvokerTests": 5,
+    "MaterialEntryTests": 1,
+    "MaterialTests": 17,
+    "ReconcileTests": 34
+  },
+  "js_runs": {
+    "js-cover-01": {
+      "actual_metadata_post": "988d9f",
+      "actual_metadata_pre": "a34247",
+      "changed_only_snapshots": [
+        "scripts/identity_cache_control.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py",
+        "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      ],
+      "code": {
+        "candidate": {
+          "bytes": 10842,
+          "path": "docs/evidence/task-6/controller-four-get-material-source-caller-candidate.js",
+          "sha256": "58095573ef0f31c78429d9dd5169ced6ea58c5c23f04526b651f73b1eb8b73b1"
+        },
+        "fixture": {
+          "bytes": 10578,
+          "path": "docs/evidence/task-6/controller-four-get-material-source-caller-fixture.js",
+          "sha256": "41d7755dbef715914e54d3732c326d2db1a0c42fd0c9360c2971f3164fc973a9"
+        }
+      },
+      "pre_post_equal": true,
+      "simulation": {
+        "output": {
+          "actual_nested_tools": 0,
+          "actual_store_interlock_set": false,
+          "cases": [
+            {
+              "name": "normal-immediate",
+              "native_calls": 3,
+              "passed": true,
+              "patch_calls": 3,
+              "saved_snapshots": 17,
+              "state": "normal-chain-recorded"
+            },
+            {
+              "name": "normal-session",
+              "native_calls": 4,
+              "passed": true,
+              "patch_calls": 3,
+              "saved_snapshots": 19,
+              "state": "normal-chain-recorded"
+            },
+            {
+              "name": "interlock-absent",
+              "native_calls": 0,
+              "passed": true,
+              "patch_calls": 0,
+              "saved_snapshots": 0,
+              "state": "interlock-refused"
+            },
+            {
+              "name": "initial-rejected",
+              "native_calls": 1,
+              "passed": true,
+              "patch_calls": 1,
+              "saved_snapshots": 6,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "poll-rejected",
+              "native_calls": 2,
+              "passed": true,
+              "patch_calls": 1,
+              "saved_snapshots": 8,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "reader-rejected",
+              "native_calls": 2,
+              "passed": true,
+              "patch_calls": 1,
+              "saved_snapshots": 9,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "reconcile-rejected",
+              "native_calls": 3,
+              "passed": true,
+              "patch_calls": 3,
+              "saved_snapshots": 16,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "first-patch-rejected",
+              "native_calls": 2,
+              "passed": true,
+              "patch_calls": 2,
+              "saved_snapshots": 11,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "last-normal-patch-rejected",
+              "native_calls": 3,
+              "passed": true,
+              "patch_calls": 4,
+              "saved_snapshots": 18,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "failed-save-not-retried",
+              "native_calls": 2,
+              "passed": true,
+              "patch_calls": 2,
+              "saved_snapshots": 11,
+              "state": "stopped-unknown-outer-retention-only"
+            },
+            {
+              "name": "patch-nonempty",
+              "native_calls": 2,
+              "passed": true,
+              "patch_calls": 2,
+              "saved_snapshots": 12,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "patch-null",
+              "native_calls": 2,
+              "passed": true,
+              "patch_calls": 2,
+              "saved_snapshots": 12,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "patch-foreign-prototype",
+              "native_calls": 2,
+              "passed": true,
+              "patch_calls": 1,
+              "saved_snapshots": 11,
+              "state": "stopped-unknown-outer-retention-only"
+            },
+            {
+              "name": "missing-actual-return",
+              "native_calls": 1,
+              "passed": true,
+              "patch_calls": 0,
+              "saved_snapshots": 6,
+              "state": "stopped-unknown-outer-retention-only"
+            },
+            {
+              "name": "normal-nonzero",
+              "native_calls": 1,
+              "passed": true,
+              "patch_calls": 1,
+              "saved_snapshots": 7,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "complete-oversize-to-diagnostic",
+              "native_calls": 1,
+              "passed": true,
+              "patch_calls": 1,
+              "saved_snapshots": 7,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "noncanonical-marker-refused",
+              "native_calls": 3,
+              "passed": true,
+              "patch_calls": 3,
+              "saved_snapshots": 17,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "array-properties-retained-externally",
+              "native_calls": 1,
+              "passed": true,
+              "patch_calls": 0,
+              "saved_snapshots": 6,
+              "state": "stopped-unknown-outer-retention-only"
+            }
+          ],
+          "errors": 0,
+          "failures": 0,
+          "generated_payload_max_output_bytes": 65537,
+          "limits": "Pure functions isolate; native CPU/AS/45s limits do not measure this JS simulation.",
+          "skipped": 0,
+          "tests_run": 18,
+          "total_fake_native_calls": 35,
+          "total_fake_patch_calls": 30
+        },
+        "status": "Script completed",
+        "wall_time_seconds": 0
+      }
+    },
+    "js-green-01": {
+      "actual_metadata_post": "407dd3",
+      "actual_metadata_pre": "bfad95",
+      "changed_only_snapshots": [
+        "scripts/identity_cache_control.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py",
+        "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      ],
+      "code": {
+        "candidate": {
+          "bytes": 10842,
+          "path": "docs/evidence/task-6/controller-four-get-material-source-caller-candidate.js",
+          "sha256": "58095573ef0f31c78429d9dd5169ced6ea58c5c23f04526b651f73b1eb8b73b1"
+        },
+        "fixture": {
+          "bytes": 10578,
+          "path": "docs/evidence/task-6/controller-four-get-material-source-caller-fixture.js",
+          "sha256": "1ab75f32849d81f6bc545a4b9f562ff432b6f975605ad9093e398317b08342fb"
+        }
+      },
+      "pre_post_equal": true,
+      "simulation": {
+        "output": "Script error:\nError: lossless large metadata\n    at assert (eval at <anonymous> (exec_main.mjs:3:20), <anonymous>:14:44)\n    at eval (eval at <anonymous> (exec_main.mjs:3:20), <anonymous>:109:7)\n    at async exec_main.mjs:3:14",
+        "source": "Actual functions.exec failure copied verbatim; not a fabricated test response",
+        "status": "Script failed",
+        "wall_time_seconds": 0
+      }
+    },
+    "js-green-02": {
+      "actual_metadata_post": "048caf",
+      "actual_metadata_pre": "0c5ed1",
+      "changed_only_snapshots": [
+        "scripts/identity_cache_control.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py",
+        "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      ],
+      "code": {
+        "candidate": {
+          "bytes": 10842,
+          "path": "docs/evidence/task-6/controller-four-get-material-source-caller-candidate.js",
+          "sha256": "58095573ef0f31c78429d9dd5169ced6ea58c5c23f04526b651f73b1eb8b73b1"
+        },
+        "fixture": {
+          "bytes": 10578,
+          "path": "docs/evidence/task-6/controller-four-get-material-source-caller-fixture.js",
+          "sha256": "41d7755dbef715914e54d3732c326d2db1a0c42fd0c9360c2971f3164fc973a9"
+        }
+      },
+      "pre_post_equal": true,
+      "simulation": {
+        "output": {
+          "actual_nested_tools": 0,
+          "actual_store_interlock_set": false,
+          "cases": [
+            {
+              "name": "normal-immediate",
+              "native_calls": 3,
+              "passed": true,
+              "patch_calls": 3,
+              "saved_snapshots": 17,
+              "state": "normal-chain-recorded"
+            },
+            {
+              "name": "normal-session",
+              "native_calls": 4,
+              "passed": true,
+              "patch_calls": 3,
+              "saved_snapshots": 19,
+              "state": "normal-chain-recorded"
+            },
+            {
+              "name": "interlock-absent",
+              "native_calls": 0,
+              "passed": true,
+              "patch_calls": 0,
+              "saved_snapshots": 0,
+              "state": "interlock-refused"
+            },
+            {
+              "name": "initial-rejected",
+              "native_calls": 1,
+              "passed": true,
+              "patch_calls": 1,
+              "saved_snapshots": 6,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "poll-rejected",
+              "native_calls": 2,
+              "passed": true,
+              "patch_calls": 1,
+              "saved_snapshots": 8,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "reader-rejected",
+              "native_calls": 2,
+              "passed": true,
+              "patch_calls": 1,
+              "saved_snapshots": 9,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "reconcile-rejected",
+              "native_calls": 3,
+              "passed": true,
+              "patch_calls": 3,
+              "saved_snapshots": 16,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "first-patch-rejected",
+              "native_calls": 2,
+              "passed": true,
+              "patch_calls": 2,
+              "saved_snapshots": 11,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "last-normal-patch-rejected",
+              "native_calls": 3,
+              "passed": true,
+              "patch_calls": 4,
+              "saved_snapshots": 18,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "failed-save-not-retried",
+              "native_calls": 2,
+              "passed": true,
+              "patch_calls": 2,
+              "saved_snapshots": 11,
+              "state": "stopped-unknown-outer-retention-only"
+            },
+            {
+              "name": "patch-nonempty",
+              "native_calls": 2,
+              "passed": true,
+              "patch_calls": 2,
+              "saved_snapshots": 12,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "patch-null",
+              "native_calls": 2,
+              "passed": true,
+              "patch_calls": 2,
+              "saved_snapshots": 12,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "patch-foreign-prototype",
+              "native_calls": 2,
+              "passed": true,
+              "patch_calls": 1,
+              "saved_snapshots": 11,
+              "state": "stopped-unknown-outer-retention-only"
+            },
+            {
+              "name": "missing-actual-return",
+              "native_calls": 1,
+              "passed": true,
+              "patch_calls": 0,
+              "saved_snapshots": 6,
+              "state": "stopped-unknown-outer-retention-only"
+            },
+            {
+              "name": "normal-nonzero",
+              "native_calls": 1,
+              "passed": true,
+              "patch_calls": 1,
+              "saved_snapshots": 7,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "complete-oversize-to-diagnostic",
+              "native_calls": 1,
+              "passed": true,
+              "patch_calls": 1,
+              "saved_snapshots": 7,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "noncanonical-marker-refused",
+              "native_calls": 3,
+              "passed": true,
+              "patch_calls": 3,
+              "saved_snapshots": 17,
+              "state": "stopped-unknown"
+            },
+            {
+              "name": "array-properties-retained-externally",
+              "native_calls": 1,
+              "passed": true,
+              "patch_calls": 0,
+              "saved_snapshots": 6,
+              "state": "stopped-unknown-outer-retention-only"
+            }
+          ],
+          "errors": 0,
+          "failures": 0,
+          "generated_payload_max_output_bytes": 65537,
+          "limits": "Pure functions isolate; native CPU/AS/45s limits do not measure this JS simulation.",
+          "skipped": 0,
+          "tests_run": 18,
+          "total_fake_native_calls": 35,
+          "total_fake_patch_calls": 30
+        },
+        "status": "Script completed",
+        "wall_time_seconds": 0
+      }
+    }
+  },
+  "old_partial_missing_still_absent": [
+    "docs/evidence/task-6/controller-readonly-api-source-red-01/post-source.json",
+    "docs/evidence/task-6/controller-readonly-api-source-red-01/post-controller.json",
+    "docs/evidence/task-6/controller-readonly-api-source-red-01/receipt.json"
+  ],
+  "other147_equal_dispatch": true,
+  "preserved_api_hash_count": 60,
+  "preserved_indexes": {
+    "controller-terminal-reconcile-artifact-sizes.json": {
+      "index": {
+        "allocated_bytes": 57344,
+        "bytes": 53984,
+        "sha256": "d22cd13338670bea2323ccbbd5873a47a8bafbd827e2a6b334f5920f34ba65bc"
+      },
+      "preserved_row_count": 72,
+      "preserved_rows": {
+        "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/baseline.json": {
+          "allocated_bytes": 20480,
+          "bytes": 16787,
+          "sha256": "35449a8dc1c07a164016247abf1fb8894633ac7cf5e2e56e1b5b032334952d03"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": {
+          "allocated_bytes": 28672,
+          "bytes": 25874,
+          "sha256": "a59651fe438f1f035d73b4d319e9ee5a47217c82e56a8016402df3ece7fa256d"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+          "allocated_bytes": 53248,
+          "bytes": 51863,
+          "sha256": "695973e5761113ac22d59eca83f8a0d1fec3f51d1909a7beafdbab81817eb3c2"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/scripts/identity_cache_control.py": {
+          "allocated_bytes": 8192,
+          "bytes": 4821,
+          "sha256": "20754530fbaab07a27a6d0ec343dee2ac2239dcd28401eb844058184619fc199"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/scripts/identity_cache_observe.py": {
+          "allocated_bytes": 73728,
+          "bytes": 71769,
+          "sha256": "9389182719aa261afe491e1b3620e1b62781035c258f2f34a360e29352adbceb"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/changed-source/scripts/test_identity_cache_control.py": {
+          "allocated_bytes": 90112,
+          "bytes": 89929,
+          "sha256": "eb6bf6de8761b22012e621aad7d25571eabba01d6cd8c89b206415e9da0f46a2"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/intent.json": {
+          "allocated_bytes": 4096,
+          "bytes": 1100,
+          "sha256": "ce69e51d620b98b6f584f750b065875f94fa57888a856b03c512cdf42744c218"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/outer-tool-result.json": {
+          "allocated_bytes": 4096,
+          "bytes": 2127,
+          "sha256": "2db2b792035ca9a27af5f9a6d163869235725955f66f421d91ec0f57db244e4a"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/output.txt": {
+          "allocated_bytes": 32768,
+          "bytes": 29957,
+          "sha256": "3ae0488500954a2631d968d6ae1db7af8160a4ca4e653ca0a59b51b6c3c53d77"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/post-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "10be732897dbc69611acb203df6127b04a313b515a98f49b11df91e78739cd23"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/post-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/pre-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "10be732897dbc69611acb203df6127b04a313b515a98f49b11df91e78739cd23"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/pre-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/receipt.json": {
+          "allocated_bytes": 4096,
+          "bytes": 1409,
+          "sha256": "a26945ae3614e4cf4b4c2047496c99a334b1d100c2944e6850e18f2c953d103b"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-cover-01/run.py": {
+          "allocated_bytes": 8192,
+          "bytes": 4432,
+          "sha256": "63192e53633cba4c9706afa1f84f5a2ca3c97e82b8ee1a80ccb951d436849194"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/baseline.json": {
+          "allocated_bytes": 20480,
+          "bytes": 16749,
+          "sha256": "daed5906edc4afca1631b501f5dd380041f16cd911eb5fbf1efd7d34dd4e091c"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": {
+          "allocated_bytes": 28672,
+          "bytes": 25298,
+          "sha256": "37840c922e7e7692c6c83f8dc2ff08edbaa594b7450d21cf8238cebe31ee2ec5"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+          "allocated_bytes": 45056,
+          "bytes": 44068,
+          "sha256": "190a416cf97d64364bf9b638bec698d40ff699877517fbe4e2231f6786e7fe0c"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/changed-source/scripts/identity_cache_control.py": {
+          "allocated_bytes": 8192,
+          "bytes": 4821,
+          "sha256": "1c80e4cc7cfe4f5aa86051293fa9d291a1b9b82b0209486f1dc6e65e888aa4c0"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/changed-source/scripts/identity_cache_observe.py": {
+          "allocated_bytes": 73728,
+          "bytes": 71641,
+          "sha256": "83f8e50893bc6ae73eba63bbbea713e2c7afa9bd3692908576a391d6366dca93"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/changed-source/scripts/test_identity_cache_control.py": {
+          "allocated_bytes": 90112,
+          "bytes": 89929,
+          "sha256": "eb6bf6de8761b22012e621aad7d25571eabba01d6cd8c89b206415e9da0f46a2"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/intent.json": {
+          "allocated_bytes": 4096,
+          "bytes": 1061,
+          "sha256": "3117672df78c45a7d659efc5276c09652755b47a694193308c4d1cae66c4a647"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/outer-tool-result.json": {
+          "allocated_bytes": 4096,
+          "bytes": 2069,
+          "sha256": "f81805777a4436494d899e6372420c2df84b264c31fb4ad1883d2102ccd0d1e4"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/output.txt": {
+          "allocated_bytes": 40960,
+          "bytes": 37441,
+          "sha256": "b5e59e1b8025185b277c0509ee9fd921b803aca39983cad1742a62771f9f00bd"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/post-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "ab684568509f59c46866ed635028cedf03378341727b12380870ae918e144aee"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/post-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "ba5f4d35f3bc7fbb4f1abb15445553733d7ba88efa2d8734cbf6ebb417c5df90"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/pre-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "ab684568509f59c46866ed635028cedf03378341727b12380870ae918e144aee"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/pre-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "ba5f4d35f3bc7fbb4f1abb15445553733d7ba88efa2d8734cbf6ebb417c5df90"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/receipt.json": {
+          "allocated_bytes": 4096,
+          "bytes": 1371,
+          "sha256": "f50dc3f447155307f0799c53e5dac5b46da2b2125359225e2ffe55b3e0fe3033"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/run.py": {
+          "allocated_bytes": 8192,
+          "bytes": 4431,
+          "sha256": "6515d1a74d1f58cf44a433642ac5b84b828df0c2c25ea937ebd8f820b6fe3fc4"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/baseline.json": {
+          "allocated_bytes": 20480,
+          "bytes": 16749,
+          "sha256": "daed5906edc4afca1631b501f5dd380041f16cd911eb5fbf1efd7d34dd4e091c"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": {
+          "allocated_bytes": 28672,
+          "bytes": 25874,
+          "sha256": "a59651fe438f1f035d73b4d319e9ee5a47217c82e56a8016402df3ece7fa256d"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+          "allocated_bytes": 53248,
+          "bytes": 50216,
+          "sha256": "6d1303406bea8febce7fc2dea3a5da7e9304309d7cd94c7b357d4609ca3ccf96"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/changed-source/scripts/identity_cache_control.py": {
+          "allocated_bytes": 8192,
+          "bytes": 4821,
+          "sha256": "20754530fbaab07a27a6d0ec343dee2ac2239dcd28401eb844058184619fc199"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/changed-source/scripts/identity_cache_observe.py": {
+          "allocated_bytes": 73728,
+          "bytes": 71769,
+          "sha256": "9389182719aa261afe491e1b3620e1b62781035c258f2f34a360e29352adbceb"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/changed-source/scripts/test_identity_cache_control.py": {
+          "allocated_bytes": 90112,
+          "bytes": 89929,
+          "sha256": "eb6bf6de8761b22012e621aad7d25571eabba01d6cd8c89b206415e9da0f46a2"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/intent.json": {
+          "allocated_bytes": 4096,
+          "bytes": 1061,
+          "sha256": "51129af998986f065947ccfba60f723476eda089c55162d27662231bbf92b8f9"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/outer-tool-result.json": {
+          "allocated_bytes": 4096,
+          "bytes": 2079,
+          "sha256": "63577323ddea0563c477fdf136c4fba34aa65a3bda2e1b4df450d43df3c05e0b"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/output.txt": {
+          "allocated_bytes": 32768,
+          "bytes": 30209,
+          "sha256": "3c4ee9a3ca6234f6e79da4a8617906f7367e12264abb31b7191152d8e565380e"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/post-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "d91623211a11ea237af4ae45a90b3d1421a4aa7186d48eabe43ef6cc194ec875"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/post-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/pre-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "d91623211a11ea237af4ae45a90b3d1421a4aa7186d48eabe43ef6cc194ec875"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/pre-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/receipt.json": {
+          "allocated_bytes": 4096,
+          "bytes": 1370,
+          "sha256": "db8d434b4138cc12fb41a4115d4185fcaf15ebcbb511c77f4f56732410a15e5e"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-02/run.py": {
+          "allocated_bytes": 8192,
+          "bytes": 4431,
+          "sha256": "6515d1a74d1f58cf44a433642ac5b84b828df0c2c25ea937ebd8f820b6fe3fc4"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/baseline.json": {
+          "allocated_bytes": 20480,
+          "bytes": 16749,
+          "sha256": "daed5906edc4afca1631b501f5dd380041f16cd911eb5fbf1efd7d34dd4e091c"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": {
+          "allocated_bytes": 28672,
+          "bytes": 25874,
+          "sha256": "a59651fe438f1f035d73b4d319e9ee5a47217c82e56a8016402df3ece7fa256d"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+          "allocated_bytes": 53248,
+          "bytes": 51863,
+          "sha256": "695973e5761113ac22d59eca83f8a0d1fec3f51d1909a7beafdbab81817eb3c2"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/changed-source/scripts/identity_cache_control.py": {
+          "allocated_bytes": 8192,
+          "bytes": 4821,
+          "sha256": "20754530fbaab07a27a6d0ec343dee2ac2239dcd28401eb844058184619fc199"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/changed-source/scripts/identity_cache_observe.py": {
+          "allocated_bytes": 73728,
+          "bytes": 71769,
+          "sha256": "9389182719aa261afe491e1b3620e1b62781035c258f2f34a360e29352adbceb"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/changed-source/scripts/test_identity_cache_control.py": {
+          "allocated_bytes": 90112,
+          "bytes": 89929,
+          "sha256": "eb6bf6de8761b22012e621aad7d25571eabba01d6cd8c89b206415e9da0f46a2"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/intent.json": {
+          "allocated_bytes": 4096,
+          "bytes": 1100,
+          "sha256": "b8304f5a49e2a4e03d7e661271e7ba89f587244d47855db97d4dc0b2dadfa61c"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/outer-tool-result.json": {
+          "allocated_bytes": 4096,
+          "bytes": 2120,
+          "sha256": "c239f976c16ec4bf004974d8feee693f7246aab48121746a79b9cfe990008dd2"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/output.txt": {
+          "allocated_bytes": 8192,
+          "bytes": 5189,
+          "sha256": "9881061a22d74dbfc158a2dc645d67852f180f12b602c6f60de55b7cfcebfd35"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/post-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "10be732897dbc69611acb203df6127b04a313b515a98f49b11df91e78739cd23"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/post-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/pre-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "10be732897dbc69611acb203df6127b04a313b515a98f49b11df91e78739cd23"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/pre-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/receipt.json": {
+          "allocated_bytes": 4096,
+          "bytes": 1410,
+          "sha256": "020442412698bacef2d7e475547f170bf8fa4585d6ea8aa57c617019ce87346d"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-green-03/run.py": {
+          "allocated_bytes": 8192,
+          "bytes": 4455,
+          "sha256": "e1bb56242b4989e0439520617696617f895a9b1bf2473f3c59aca0d0466a720a"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-plan-prefix.json": {
+          "allocated_bytes": 4096,
+          "bytes": 348,
+          "sha256": "680d99899f1ae02a89990a807927004f1f3ff53f7e5ca5383ff3f1c766c57142"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/baseline.json": {
+          "allocated_bytes": 20480,
+          "bytes": 16749,
+          "sha256": "daed5906edc4afca1631b501f5dd380041f16cd911eb5fbf1efd7d34dd4e091c"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+          "allocated_bytes": 28672,
+          "bytes": 26614,
+          "sha256": "463092fa5b8ccc04a84fd653a95c5a32350909bb7604b50d741af14b40b66231"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/intent.json": {
+          "allocated_bytes": 4096,
+          "bytes": 856,
+          "sha256": "a98ad9a9f3727f10cf2c918803eff27a8b6691b0d0edc7c0e515d10061ca294e"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/outer-tool-result.json": {
+          "allocated_bytes": 4096,
+          "bytes": 1718,
+          "sha256": "f89608542bb128d640ecba67e88550e6f680ca0c429c16253578f2c2e0f67010"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/output.txt": {
+          "allocated_bytes": 4096,
+          "bytes": 1962,
+          "sha256": "882a951e957102e8b7a327ef901c42424049c6b7fa48c3923caba6c05f128681"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/post-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "0d14502067d710319945600a504ad77adabe4d5c5b5a9b20cd1e22754753c916"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/post-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "36a6e24e177180be1f9ff339d88c3cf59e8abdeaebbb172e3c165577ebbbe265"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/pre-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "0d14502067d710319945600a504ad77adabe4d5c5b5a9b20cd1e22754753c916"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/pre-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "36a6e24e177180be1f9ff339d88c3cf59e8abdeaebbb172e3c165577ebbbe265"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/receipt.json": {
+          "allocated_bytes": 4096,
+          "bytes": 1167,
+          "sha256": "cb3c67b8159ceaefcda5c7d6dc62ce53b543a93fdbbba6f8340bf059def33ad0"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-source-red-01/run.py": {
+          "allocated_bytes": 8192,
+          "bytes": 4597,
+          "sha256": "9e0d311c6a57a06170a8d31dd20ae629f425ce457682bb2a99798ec4c0c1f077"
+        }
+      },
+      "row_count": 79
+    },
+    "controller-terminal-reconcile-fix4-artifact-sizes.json": {
+      "index": {
+        "allocated_bytes": 20480,
+        "bytes": 19413,
+        "sha256": "1a52be45121aecc695f81838053b8585866ae83200774f028832bb584da51edd"
+      },
+      "preserved_row_count": 39,
+      "preserved_rows": {
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/baseline.json": {
+          "allocated_bytes": 20480,
+          "bytes": 16852,
+          "sha256": "1eac1898b79c3b6dcb3591012ec90a08f501e42f6a0c900ab81079cb04711831"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": {
+          "allocated_bytes": 28672,
+          "bytes": 26016,
+          "sha256": "bd10c55befc5b29e28bed7844a01a28ab843a22d79cc5e25c9761402ac379563"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+          "allocated_bytes": 61440,
+          "bytes": 57668,
+          "sha256": "fee4ef5b707539994cbd0ab2191c0ec57fbe19d8e4f71bf5ed66b847bf97efa0"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/intent.json": {
+          "allocated_bytes": 4096,
+          "bytes": 993,
+          "sha256": "8abbaac7048ff26148b541e4be819e799d2aba8cf329843e70c2ece1f9c67779"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/outer-tool-result.json": {
+          "allocated_bytes": 4096,
+          "bytes": 3721,
+          "sha256": "c0b7a5130e0e6d09f81f7700be79eaca331f7f04f6246bccdfaa52e62f08bfa4"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/output.txt": {
+          "allocated_bytes": 16384,
+          "bytes": 14249,
+          "sha256": "a3fc6d06c34cfcff798d658f65588e2ff4dc638d2262f9c9f9801448fe8b9180"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/post-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "32fcb9888136a176a9a8d10f21d962202537e47aa77fd3ba8b54ea8293141a7a"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/post-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/pre-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "32fcb9888136a176a9a8d10f21d962202537e47aa77fd3ba8b54ea8293141a7a"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/pre-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/receipt.json": {
+          "allocated_bytes": 4096,
+          "bytes": 1303,
+          "sha256": "5c3f7f23e808295aa2d670b7301e6d728e83b6ada2ea2d95d68784e31209823b"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-cover-01/run.py": {
+          "allocated_bytes": 8192,
+          "bytes": 4425,
+          "sha256": "d5f6872eded06762db863a66e637c1a8cccaa694645e43fae1a83f356cd650bb"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-dispatch-baseline.json": {
+          "allocated_bytes": 20480,
+          "bytes": 16852,
+          "sha256": "5fab684c289b3015d40e9975da40a5f173f58d2d1ce6f17f2b1ff4c9336fd742"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/baseline.json": {
+          "allocated_bytes": 20480,
+          "bytes": 16852,
+          "sha256": "5fab684c289b3015d40e9975da40a5f173f58d2d1ce6f17f2b1ff4c9336fd742"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/changed-source/docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": {
+          "allocated_bytes": 28672,
+          "bytes": 26016,
+          "sha256": "bd10c55befc5b29e28bed7844a01a28ab843a22d79cc5e25c9761402ac379563"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+          "allocated_bytes": 61440,
+          "bytes": 57668,
+          "sha256": "fee4ef5b707539994cbd0ab2191c0ec57fbe19d8e4f71bf5ed66b847bf97efa0"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/intent.json": {
+          "allocated_bytes": 4096,
+          "bytes": 964,
+          "sha256": "b976aa1460a861a3603835ed087407933d62164ad38065f8ff5ac8c68b9ddbf5"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/outer-tool-result.json": {
+          "allocated_bytes": 4096,
+          "bytes": 3639,
+          "sha256": "1c0b62e0d02e0ec40c5061260dfd28cdbe8904ac4913e32e2d5f1d2b7bbe0e43"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/output.txt": {
+          "allocated_bytes": 4096,
+          "bytes": 2483,
+          "sha256": "40f02bc2476db614a519370ee34b0ca5ebe0b125c7d7305882c12d9511f9602c"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/post-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "32fcb9888136a176a9a8d10f21d962202537e47aa77fd3ba8b54ea8293141a7a"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/post-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/pre-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "32fcb9888136a176a9a8d10f21d962202537e47aa77fd3ba8b54ea8293141a7a"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/pre-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/receipt.json": {
+          "allocated_bytes": 4096,
+          "bytes": 1273,
+          "sha256": "993ff675013a04136607414a27a74547565694b9228230668b6615a38e2f61e5"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-green-01/run.py": {
+          "allocated_bytes": 8192,
+          "bytes": 5917,
+          "sha256": "3428e6b8d66f58cbc398193096b1dcd38bc61b9f8c0f852d2e01ba562d078002"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-preserved-prefixes.json": {
+          "allocated_bytes": 4096,
+          "bytes": 433,
+          "sha256": "e391ece56387478a1bc8e94d395b1ba6d2a1d585269cdc83bed99165dd030b9c"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/baseline.json": {
+          "allocated_bytes": 20480,
+          "bytes": 16852,
+          "sha256": "5fab684c289b3015d40e9975da40a5f173f58d2d1ce6f17f2b1ff4c9336fd742"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/changed-source/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+          "allocated_bytes": 61440,
+          "bytes": 57668,
+          "sha256": "fee4ef5b707539994cbd0ab2191c0ec57fbe19d8e4f71bf5ed66b847bf97efa0"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/intent.json": {
+          "allocated_bytes": 4096,
+          "bytes": 860,
+          "sha256": "cc09ca63fc74a60235153339dac8e2a4cb866b885ff1745b43bb3e5d56e3f7bc"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/outer-tool-result.json": {
+          "allocated_bytes": 4096,
+          "bytes": 3423,
+          "sha256": "f7d1f46fd235d449698a9e364c4536369d8ea40d4189cbba48643b8fe16461a4"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/output.txt": {
+          "allocated_bytes": 16384,
+          "bytes": 12356,
+          "sha256": "eb1168419157c8a40fb1361ee46cbaf23fd479617c92cea7ccd8a8cc96d7cdc3"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/post-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "df219f22c2868f7c46573dfaa1d1b46b9e4017268138f648e7eebad748b4f177"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/post-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/pre-controller.json": {
+          "allocated_bytes": 4096,
+          "bytes": 302,
+          "sha256": "df219f22c2868f7c46573dfaa1d1b46b9e4017268138f648e7eebad748b4f177"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/pre-source.json": {
+          "allocated_bytes": 16384,
+          "bytes": 15999,
+          "sha256": "9c778497e4a79b088af25f776a519fc9ee58b4779613e4d3960436e3ec8fe24b"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/receipt.json": {
+          "allocated_bytes": 4096,
+          "bytes": 1168,
+          "sha256": "f2e5b40912ff6969c1fd5e2bb92500f3b48ef35e51a21a943cfbfb615b72f323"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/run.py": {
+          "allocated_bytes": 8192,
+          "bytes": 5234,
+          "sha256": "5d2e7659ebd26853bd9b0eaf8695f6db8b7f38933b6f05f6804810828be9d0fa"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-fix4-verification.json": {
+          "allocated_bytes": 53248,
+          "bytes": 52141,
+          "sha256": "746d875e8b75a57e9d71070bf05648a4612d022200025eaa332702a93f7561cb"
+        },
+        "docs/evidence/task-6/controller-terminal-reconcile-substage-report.md": {
+          "allocated_bytes": 28672,
+          "bytes": 27169,
+          "sha256": "ec5588a4f3a9d0530889bc2e91b5f8161da2cb311b0c299588fed4c3c0eef5d2"
+        }
+      },
+      "row_count": 42
+    }
+  },
+  "preserved_older_run_hash_count": 101,
+  "preserved_terminal_report": {
+    "allocated_bytes": 28672,
+    "bytes": 27169,
+    "sha256": "ec5588a4f3a9d0530889bc2e91b5f8161da2cb311b0c299588fed4c3c0eef5d2"
+  },
+  "runs": {
+    "cover-01": {
+      "actual_exit_code": 0,
+      "actual_initial": "676e52",
+      "actual_session": 15216,
+      "actual_terminal": "9ddee2",
+      "changed_only_snapshots": [
+        "scripts/identity_cache_control.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py",
+        "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      ],
+      "pre_post_equal": true,
+      "receipt": {
+        "changed_source_snapshots": [
+          "scripts/identity_cache_control.py",
+          "scripts/identity_cache_observe.py",
+          "scripts/test_identity_cache_control.py",
+          "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+          "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+        ],
+        "command": [
+          "python3",
+          "-B",
+          "docs/evidence/task-6/controller-four-get-material-source-cover-01/run.py"
+        ],
+        "completion_requires_process_exit_zero": true,
+        "controller_files": 2,
+        "dispatch_base": "b5780a09cb3c0a81b37207dca31ad5c2103c4395",
+        "duration_seconds": 14.217328450991772,
+        "errors": 0,
+        "exit_code": 0,
+        "failures": 0,
+        "limits": {
+          "address_bytes": 536870912,
+          "cpu_seconds": 30,
+          "file_bytes": 33554432,
+          "wall_seconds": 45
+        },
+        "live_cache_access": false,
+        "skipped": 0,
+        "source_commit_at_launch": "2f0bb21f7cad5eaf0d5f1a7d05cc058138eb8460",
+        "source_files": 150,
+        "source_unchanged": true,
+        "started_utc": "2026-10-25T16:54:24.621090+00:00",
+        "test_target": "once-frozen affected controller and dedicated invoker cover; all locally defined test classes",
+        "tested_prefix_sha256": "7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa",
+        "tests_run": 203,
+        "timing_scope": "earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded",
+        "whole_wall_until_receipt_seconds": 14.241586068063043
+      }
+    },
+    "green-01": {
+      "actual_exit_code": 1,
+      "actual_initial": "2f38b9",
+      "actual_session": null,
+      "actual_terminal": "2f38b9",
+      "changed_only_snapshots": [
+        "scripts/identity_cache_control.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py",
+        "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      ],
+      "pre_post_equal": true,
+      "receipt": {
+        "changed_source_snapshots": [
+          "scripts/identity_cache_control.py",
+          "scripts/identity_cache_observe.py",
+          "scripts/test_identity_cache_control.py",
+          "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+          "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+        ],
+        "command": [
+          "python3",
+          "-B",
+          "docs/evidence/task-6/controller-four-get-material-source-green-01/run.py"
+        ],
+        "completion_requires_process_exit_zero": true,
+        "controller_files": 2,
+        "dispatch_base": "b5780a09cb3c0a81b37207dca31ad5c2103c4395",
+        "duration_seconds": 0.2883308300515637,
+        "errors": 0,
+        "exit_code": 1,
+        "failures": 13,
+        "limits": {
+          "address_bytes": 536870912,
+          "cpu_seconds": 30,
+          "file_bytes": 33554432,
+          "wall_seconds": 45
+        },
+        "live_cache_access": false,
+        "skipped": 0,
+        "source_commit_at_launch": "b5780a09cb3c0a81b37207dca31ad5c2103c4395",
+        "source_files": 150,
+        "source_unchanged": true,
+        "started_utc": "2026-10-25T16:43:04.550684+00:00",
+        "test_target": "material focused generated GREEN; new source context and transport/terminal boundaries",
+        "tested_prefix_sha256": "7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa",
+        "tests_run": 18,
+        "timing_scope": "earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded",
+        "whole_wall_until_receipt_seconds": 0.30907243792898953
+      }
+    },
+    "green-02": {
+      "actual_exit_code": 1,
+      "actual_initial": "ac2e23",
+      "actual_session": null,
+      "actual_terminal": "ac2e23",
+      "changed_only_snapshots": [
+        "scripts/identity_cache_control.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py",
+        "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      ],
+      "pre_post_equal": true,
+      "receipt": {
+        "changed_source_snapshots": [
+          "scripts/identity_cache_control.py",
+          "scripts/identity_cache_observe.py",
+          "scripts/test_identity_cache_control.py",
+          "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+          "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+        ],
+        "command": [
+          "python3",
+          "-B",
+          "docs/evidence/task-6/controller-four-get-material-source-green-02/run.py"
+        ],
+        "completion_requires_process_exit_zero": true,
+        "controller_files": 2,
+        "dispatch_base": "b5780a09cb3c0a81b37207dca31ad5c2103c4395",
+        "duration_seconds": 0.47303555195685476,
+        "errors": 10,
+        "exit_code": 1,
+        "failures": 0,
+        "limits": {
+          "address_bytes": 536870912,
+          "cpu_seconds": 30,
+          "file_bytes": 33554432,
+          "wall_seconds": 45
+        },
+        "live_cache_access": false,
+        "skipped": 0,
+        "source_commit_at_launch": "b5780a09cb3c0a81b37207dca31ad5c2103c4395",
+        "source_files": 150,
+        "source_unchanged": true,
+        "started_utc": "2026-10-25T16:43:39.426683+00:00",
+        "test_target": "material focused generated GREEN; new source context and transport/terminal boundaries",
+        "tested_prefix_sha256": "7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa",
+        "tests_run": 18,
+        "timing_scope": "earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded",
+        "whole_wall_until_receipt_seconds": 0.49566063401289284
+      }
+    },
+    "green-03": {
+      "actual_exit_code": 0,
+      "actual_initial": "bcfbb5",
+      "actual_session": null,
+      "actual_terminal": "bcfbb5",
+      "changed_only_snapshots": [
+        "scripts/identity_cache_control.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py",
+        "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      ],
+      "pre_post_equal": true,
+      "receipt": {
+        "changed_source_snapshots": [
+          "scripts/identity_cache_control.py",
+          "scripts/identity_cache_observe.py",
+          "scripts/test_identity_cache_control.py",
+          "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+          "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+        ],
+        "command": [
+          "python3",
+          "-B",
+          "docs/evidence/task-6/controller-four-get-material-source-green-03/run.py"
+        ],
+        "completion_requires_process_exit_zero": true,
+        "controller_files": 2,
+        "dispatch_base": "b5780a09cb3c0a81b37207dca31ad5c2103c4395",
+        "duration_seconds": 0.9773192070424557,
+        "errors": 0,
+        "exit_code": 0,
+        "failures": 0,
+        "limits": {
+          "address_bytes": 536870912,
+          "cpu_seconds": 30,
+          "file_bytes": 33554432,
+          "wall_seconds": 45
+        },
+        "live_cache_access": false,
+        "skipped": 0,
+        "source_commit_at_launch": "b5780a09cb3c0a81b37207dca31ad5c2103c4395",
+        "source_files": 150,
+        "source_unchanged": true,
+        "started_utc": "2026-10-25T16:44:29.028452+00:00",
+        "test_target": "material focused generated GREEN; new source context and transport/terminal boundaries",
+        "tested_prefix_sha256": "7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa",
+        "tests_run": 18,
+        "timing_scope": "earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded",
+        "whole_wall_until_receipt_seconds": 1.0009156350279227
+      }
+    },
+    "red-01": {
+      "actual_exit_code": 1,
+      "actual_initial": "731c63",
+      "actual_session": null,
+      "actual_terminal": "731c63",
+      "changed_only_snapshots": [
+        "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+      ],
+      "pre_post_equal": true,
+      "receipt": {
+        "changed_source_snapshots": [
+          "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+        ],
+        "command": [
+          "python3",
+          "-B",
+          "docs/evidence/task-6/controller-four-get-material-source-red-01/run.py"
+        ],
+        "completion_requires_process_exit_zero": true,
+        "controller_files": 2,
+        "dispatch_base": "b5780a09cb3c0a81b37207dca31ad5c2103c4395",
+        "duration_seconds": 0.0506362309679389,
+        "errors": 0,
+        "exit_code": 1,
+        "failures": 2,
+        "limits": {
+          "address_bytes": 536870912,
+          "cpu_seconds": 30,
+          "file_bytes": 33554432,
+          "wall_seconds": 45
+        },
+        "live_cache_access": false,
+        "skipped": 0,
+        "source_commit_at_launch": "b5780a09cb3c0a81b37207dca31ad5c2103c4395",
+        "source_files": 150,
+        "source_unchanged": true,
+        "started_utc": "2026-10-25T16:35:44.032436+00:00",
+        "test_target": "material genuine old-entry behavior RED",
+        "tested_prefix_sha256": "7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa",
+        "tests_run": 1,
+        "timing_scope": "earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded",
+        "whole_wall_until_receipt_seconds": 0.07505906489677727
+      }
+    }
+  },
+  "source_commit": "2f0bb21f7cad5eaf0d5f1a7d05cc058138eb8460",
+  "source_rows": {
+    "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py": {
+      "allocated_bytes": 40960,
+      "bytes": 37144,
+      "sha256": "13d302f6d1a4e04dda727c6c855410585cfea889b9761bd6d2dae716bfb25541"
+    },
+    "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py": {
+      "allocated_bytes": 81920,
+      "bytes": 77993,
+      "sha256": "69f77e01060ae9eea4888278578150d27fb9dbbece039524197ffb5e544ceb77"
+    },
+    "scripts/identity_cache_control.py": {
+      "allocated_bytes": 8192,
+      "bytes": 5684,
+      "sha256": "b0d50167c80a66b3f6e1858ae4a5ff97f24dd74f79898236ecbd1c6f1bff6457"
+    },
+    "scripts/identity_cache_observe.py": {
+      "allocated_bytes": 77824,
+      "bytes": 76030,
+      "sha256": "85faa1129c1772df6368f22cc69140ece57aaaadcbf1e3fe91e5dd68aad41299"
+    },
+    "scripts/test_identity_cache_control.py": {
+      "allocated_bytes": 94208,
+      "bytes": 90732,
+      "sha256": "64216df2d3a2a6a174e8a6439a97fd222222a535226f428f489948100ae67623"
+    }
+  },
+  "verification_kind": "public metadata/hash/Git reads only; no test rerun, project import or actual operation"
+}

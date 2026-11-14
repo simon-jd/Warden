@@ -1,0 +1,12 @@
+{
+  "docs/evidence/task-4/55bd96828669c8e1536da321bcb87bae13afa6ea/evidence-index.json": {
+    "sha256": "eb6fc3327e7b408d3ac2b514128de4055106347dedfcda34a00999b4f4b36e58",
+    "entries_verified": 36,
+    "all_unchanged": true
+  },
+  "docs/evidence/task-4/round-1/135c3b866f07692ad846cc48c8c5bde0cf91ee33/evidence-index.json": {
+    "sha256": "f883f1733730435c581615e17f4aabfd8220182dce124bc5f7fab0aa16b462c0",
+    "entries_verified": 13,
+    "all_unchanged": true
+  }
+}

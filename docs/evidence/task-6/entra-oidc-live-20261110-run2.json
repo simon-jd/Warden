@@ -1,0 +1,285 @@
+{
+  "checks": [
+    {
+      "got": 401,
+      "ms": 0.78,
+      "name": "no Authorization header",
+      "pass": true,
+      "want": 401
+    },
+    {
+      "got": 401,
+      "ms": 438.29,
+      "name": "real token, user not provisioned (first request, includes JWKS fetch)",
+      "pass": true,
+      "want": 401
+    },
+    {
+      "got": 201,
+      "ms": 8.72,
+      "name": "SCIM POST /scim/v2/Users externalId=oid (static Warden SCIM token)",
+      "note": "manual provisioning through Warden's endpoint, not Entra's provisioning service",
+      "pass": true,
+      "want": 201
+    },
+    {
+      "body": {
+        "run_id": "WBWKGLO57SB4VPOI45OL7SGGTE"
+      },
+      "got": 201,
+      "ms": 5.74,
+      "name": "real token POST /v1/runs",
+      "pass": true,
+      "want": 201
+    },
+    {
+      "body": {
+        "run_id": "WBWKGLO57SB4VPOI45OL7SGGTE",
+        "state": "queued"
+      },
+      "got": 200,
+      "ms": 2.2,
+      "name": "real token GET /v1/runs/{id}",
+      "pass": true,
+      "want": 200
+    },
+    {
+      "got": 201,
+      "ms": 2.64,
+      "name": "same Idempotency-Key again",
+      "pass": true,
+      "want": 201
+    },
+    {
+      "got": true,
+      "ms": 2.64,
+      "name": "same Idempotency-Key returns the same run_id",
+      "pass": true,
+      "want": true
+    },
+    {
+      "got": 401,
+      "ms": 1.37,
+      "name": "token for another resource (Azure Resource Manager)",
+      "pass": true,
+      "want": 401
+    },
+    {
+      "got": 401,
+      "ms": 1.13,
+      "name": "tampered payload (exp +1 h, original signature)",
+      "pass": true,
+      "want": 401
+    },
+    {
+      "got": 401,
+      "ms": 0.91,
+      "name": "tampered signature (one bit)",
+      "pass": true,
+      "want": 401
+    },
+    {
+      "got": 401,
+      "ms": 0.68,
+      "name": "alg=none, no signature",
+      "pass": true,
+      "want": 401
+    },
+    {
+      "got": 401,
+      "ms": 0.98,
+      "name": "not a JWT",
+      "pass": true,
+      "want": 401
+    },
+    {
+      "got": 200,
+      "ms": 4.05,
+      "name": "SCIM PATCH active=false",
+      "pass": true,
+      "want": 200
+    },
+    {
+      "got": 401,
+      "ms": 5.75,
+      "name": "real token after SCIM deactivation",
+      "pass": true,
+      "want": 401
+    },
+    {
+      "got": 200,
+      "ms": 3.13,
+      "name": "SCIM PATCH active=true",
+      "pass": true,
+      "want": 200
+    },
+    {
+      "got": 200,
+      "ms": 1.77,
+      "name": "real token after reactivation",
+      "pass": true,
+      "want": 200
+    },
+    {
+      "got": 401,
+      "ms": 0.74,
+      "name": "real token at a Warden whose audience is another app",
+      "pass": true,
+      "want": 401
+    }
+  ],
+  "control_plane": {
+    "binary": "controlplane/cmd/warden-api",
+    "sha256": "9d455c707b346208fb3be6ad9d247a84fd48f9a8f4fafd7c151527995a72e9d9"
+  },
+  "finished_at": "2026-11-11T02:38:40Z",
+  "host": "postedism-ubuntu-system-selfuse",
+  "mode": "run",
+  "oidc": {
+    "audience": "00000000-0000-0000-0000-000000000001",
+    "issuer": "https://login.microsoftonline.com/<tenant-id>/v2.0",
+    "jwks_url": "https://login.microsoftonline.com/<tenant-id>/discovery/v2.0/keys",
+    "scope": "api://00000000-0000-0000-0000-000000000001/warden.access"
+  },
+  "other_resource_token": {
+    "claim_names": [
+      "acr",
+      "acrs",
+      "aio",
+      "amr",
+      "appid",
+      "appidacr",
+      "aud",
+      "exp",
+      "family_name",
+      "given_name",
+      "groups",
+      "iat",
+      "idtyp",
+      "ipaddr",
+      "iss",
+      "name",
+      "nbf",
+      "oid",
+      "onprem_sid",
+      "puid",
+      "rh",
+      "scp",
+      "sid",
+      "sub",
+      "tid",
+      "unique_name",
+      "upn",
+      "uti",
+      "ver",
+      "wids",
+      "xms_act_fct",
+      "xms_aud_guid",
+      "xms_ftd",
+      "xms_idrel",
+      "xms_sub_fct",
+      "xms_tcdt"
+    ],
+    "claims": {
+      "appid": "04b07795-8ddb-461a-bbee-02f9e1bf7b46",
+      "aud": "https://management.azure.com/",
+      "exp": "2026-11-11T03:48:48Z",
+      "iat": "2026-11-11T02:33:37Z",
+      "idtyp": "user",
+      "iss": "https://sts.windows.net/<tenant-id>/",
+      "nbf": "2026-11-11T02:33:37Z",
+      "oid": "<user-oid>",
+      "scp": "user_impersonation",
+      "tid": "<tenant-id>",
+      "ver": "1.0"
+    },
+    "header": {
+      "alg": "RS256",
+      "kid": "xH9DJH3N086Ags8JL6IQzeQh1p8",
+      "typ": "JWT"
+    },
+    "header_names": [
+      "alg",
+      "kid",
+      "typ",
+      "x5t"
+    ],
+    "lifetime_s": 4511,
+    "signature_bytes": 256
+  },
+  "postgres": {
+    "container": "warden-task6-entra-pg-1000-528768",
+    "image": "postgres:18-alpine",
+    "image_id": "sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873",
+    "removed": true
+  },
+  "result": "PASS",
+  "run_read_back": true,
+  "schema": "warden.task6.entra-live/v1",
+  "scim_deactivate_polls": 1,
+  "scim_deactivate_to_401_ms": 5.75,
+  "server_logs": {
+    "server-a.log": [
+      "2026/11/10 18:38:39 control plane listening on 127.0.0.1:40825; OIDC and SCIM on"
+    ],
+    "server-b.log": [
+      "2026/11/10 18:38:40 control plane listening on 127.0.0.1:45807; OIDC on, SCIM off: only already-provisioned users"
+    ]
+  },
+  "source": {
+    "commit": "6283e49b0160ff5a1bdc50c210ae07101bbc92fa",
+    "tracked_changes": false
+  },
+  "started_at": "2026-11-11T02:38:36Z",
+  "token": {
+    "claim_names": [
+      "aio",
+      "aud",
+      "azp",
+      "azpacr",
+      "exp",
+      "iat",
+      "iss",
+      "name",
+      "nbf",
+      "oid",
+      "preferred_username",
+      "rh",
+      "scp",
+      "sid",
+      "sub",
+      "tid",
+      "uti",
+      "ver",
+      "xms_ftd"
+    ],
+    "claims": {
+      "aud": "00000000-0000-0000-0000-000000000001",
+      "azp": "04b07795-8ddb-461a-bbee-02f9e1bf7b46",
+      "exp": "2026-11-11T03:41:09Z",
+      "iat": "2026-11-11T02:33:09Z",
+      "iss": "https://login.microsoftonline.com/<tenant-id>/v2.0",
+      "nbf": "2026-11-11T02:33:09Z",
+      "oid": "<user-oid>",
+      "scp": "warden.access",
+      "tid": "<tenant-id>",
+      "ver": "2.0"
+    },
+    "header": {
+      "alg": "RS256",
+      "kid": "xH9DJH3N086Ags8JL6IQzeQh1p8",
+      "typ": "JWT"
+    },
+    "header_names": [
+      "alg",
+      "kid",
+      "typ"
+    ],
+    "lifetime_s": 4080,
+    "signature_bytes": 256
+  },
+  "wrong_audience_server": {
+    "audience": "bbc25aa8-d0bd-4fcb-a089-a92bacd9c3e3",
+    "note": "random GUID standing for another app"
+  }
+}

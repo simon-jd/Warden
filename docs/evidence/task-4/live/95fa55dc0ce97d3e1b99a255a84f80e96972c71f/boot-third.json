@@ -1,0 +1,21 @@
+{
+  "source": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f",
+  "review": "docs/evidence/task-4/review-code-round-4.md",
+  "command": [
+    "python3",
+    "-B",
+    "scripts/firecracker_lab.py",
+    "boot",
+    "--other-service-memory-bytes",
+    "0",
+    "--reviewed-live-profile"
+  ],
+  "uid": 1000,
+  "start_utc": "2026-10-24T22:22:47.070994+00:00",
+  "end_utc": "2026-10-24T22:22:56.893386+00:00",
+  "elapsed_seconds": 9.822382314945571,
+  "exit_code": 1,
+  "log_bytes": 11433,
+  "log_sha256": "57f3eb0624a4770d8876f551c9e2a1789ca20d849386c783146b81889391bcbc",
+  "scope": "boot controller gate only; result does not imply other unexecuted acceptance gates"
+}

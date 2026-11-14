@@ -1,0 +1,307 @@
+{
+  "runtime": "firecracker",
+  "image_digest": "sha256:3f6d50fd88e37524b54beee9ee6380a1f485de8ea5a195c57983c94af1d04e76",
+  "corpus_digest": "sha256:541438cdbd805a8b4558cae8a9eaea5fe9d72b0d8a68d1258b93b832cfb9c091",
+  "limits": {
+    "CPU": 1,
+    "MemoryMiB": 512,
+    "Pids": 128,
+    "TimeoutS": 60
+  },
+  "cells": [
+    {
+      "attack": "arp-spoof",
+      "technique": "T1557.002",
+      "runtime": "firecracker",
+      "run_id": "NTJP7GRBWCARWJDO2DFZUTEXN4",
+      "started_at": "2026-11-14T00:41:12.110743805Z",
+      "finished_at": "2026-11-14T00:41:12.910912293Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 4,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED arp-spoof operation not permitted\n"
+    },
+    {
+      "attack": "disk-fill",
+      "technique": "T1499.003",
+      "runtime": "firecracker",
+      "run_id": "JGLENE72WYABOALYHBDRUJAD34",
+      "started_at": "2026-11-14T00:41:12.910918364Z",
+      "finished_at": "2026-11-14T00:41:13.731127301Z",
+      "verdict": "error",
+      "reason": "probe objective or denial not recorded",
+      "exit": {
+        "Code": 3,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 4,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_INCONCLUSIVE disk-fill open /dev/shm/warden-attack-fill: no such file or directory\n"
+    },
+    {
+      "attack": "dns-exfil",
+      "technique": "T1048.003",
+      "runtime": "firecracker",
+      "run_id": "6IUEWXYUENTT5ANWOYRYQZCXEE",
+      "started_at": "2026-11-14T00:41:13.731132841Z",
+      "finished_at": "2026-11-14T00:41:14.54483754Z",
+      "verdict": "error",
+      "reason": "probe objective or denial not recorded",
+      "exit": {
+        "Code": 3,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 4,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_INCONCLUSIVE dns-exfil lookup aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.invalid on [::1]:53: dial udp [::1]:53: connect: cannot assign requested address\n"
+    },
+    {
+      "attack": "fork-bomb",
+      "technique": "T1499.003",
+      "runtime": "firecracker",
+      "run_id": "B4KTVOMC6ELJHIGGT74TZ6GM4I",
+      "started_at": "2026-11-14T00:41:14.544844871Z",
+      "finished_at": "2026-11-14T00:41:15.384887334Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 23,
+        "PeakPids": 128,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED fork-bomb fork stopped at 56: fork/exec /warden-attack: resource temporarily unavailable\n"
+    },
+    {
+      "attack": "kernel-module",
+      "technique": "T1547.006",
+      "runtime": "firecracker",
+      "run_id": "PX2I4MVVK6SLAN5C2SGDHODNDQ",
+      "started_at": "2026-11-14T00:41:15.384894979Z",
+      "finished_at": "2026-11-14T00:41:16.221926213Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 4,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED kernel-module init_module denied EPERM\n"
+    },
+    {
+      "attack": "memory-exhaustion",
+      "technique": "T1499.003",
+      "runtime": "firecracker",
+      "run_id": "BN7GR3KLOGXMQYQADLWXX4ZGIM",
+      "started_at": "2026-11-14T00:41:16.22193269Z",
+      "finished_at": "2026-11-14T00:41:17.381375633Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 137,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 4,
+        "DroppedLogBytes": 0,
+        "OOMKilled": true,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": ""
+    },
+    {
+      "attack": "metadata-host",
+      "technique": "T1552.005",
+      "runtime": "firecracker",
+      "run_id": "GWROYCKFZVJCW7SJMNOI3W2T2Q",
+      "started_at": "2026-11-14T00:41:17.381381961Z",
+      "finished_at": "2026-11-14T00:41:18.223743183Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 4,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED metadata-host dial tcp: lookup metadata.google.internal on [::1]:53: dial udp [::1]:53: connect: cannot assign requested address\n"
+    },
+    {
+      "attack": "metadata-ip",
+      "technique": "T1552.005",
+      "runtime": "firecracker",
+      "run_id": "KEGCCBJB3J4QVA3UEQVBQCHNHU",
+      "started_at": "2026-11-14T00:41:18.223751553Z",
+      "finished_at": "2026-11-14T00:41:19.043653077Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 4,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED metadata-ip dial tcp 169.254.169.254:80: connect: network is unreachable\n"
+    },
+    {
+      "attack": "mount-unshare",
+      "technique": "T1611",
+      "runtime": "firecracker",
+      "run_id": "2Y33TKNASSH22GKUIT3LPRSLEI",
+      "started_at": "2026-11-14T00:41:19.043657378Z",
+      "finished_at": "2026-11-14T00:41:19.849253552Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 4,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED mount-unshare unshare=operation not permitted mount=operation not permitted\n"
+    },
+    {
+      "attack": "proc-leak",
+      "technique": "T1082",
+      "runtime": "firecracker",
+      "run_id": "JFX3LMQDYPBC5DAHABUFII5O7U",
+      "started_at": "2026-11-14T00:41:19.849259792Z",
+      "finished_at": "2026-11-14T00:41:20.651975886Z",
+      "verdict": "error",
+      "reason": "probe objective or denial not recorded",
+      "exit": {
+        "Code": 3,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 4,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_INCONCLUSIVE proc-leak PID1 environment readable (36 bytes, contents withheld)\n"
+    },
+    {
+      "attack": "ptrace",
+      "technique": "T1055",
+      "runtime": "firecracker",
+      "run_id": "K3Y2DG7MUACSJRYYZDA6HCTN4U",
+      "started_at": "2026-11-14T00:41:20.6519866Z",
+      "finished_at": "2026-11-14T00:41:21.423835309Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 4,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED ptrace operation not permitted\n"
+    },
+    {
+      "attack": "raw-socket",
+      "technique": "T1016",
+      "runtime": "firecracker",
+      "run_id": "YAKDHWEP2OQN4U2NUNFWR7TZRY",
+      "started_at": "2026-11-14T00:41:21.423840308Z",
+      "finished_at": "2026-11-14T00:41:22.252807849Z",
+      "verdict": "blocked",
+      "reason": "no success signal in the complete output",
+      "exit": {
+        "Code": 0,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 5,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_DENIED raw-socket operation not permitted\n"
+    },
+    {
+      "attack": "reverse-shell",
+      "technique": "T1059.004",
+      "runtime": "firecracker",
+      "run_id": "WAWU2MNVILD3ACMVGYCCBB2CDQ",
+      "started_at": "2026-11-14T00:41:22.252813488Z",
+      "finished_at": "2026-11-14T00:41:23.163487959Z",
+      "verdict": "error",
+      "reason": "probe objective or denial not recorded",
+      "exit": {
+        "Code": 3,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 4,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_INCONCLUSIVE reverse-shell dial tcp 192.0.2.1:4444: connect: network is unreachable\n"
+    },
+    {
+      "attack": "sys-leak",
+      "technique": "T1082",
+      "runtime": "firecracker",
+      "run_id": "ZEHKG2NMVVUMEQR4DYXEPQWB4E",
+      "started_at": "2026-11-14T00:41:23.163496004Z",
+      "finished_at": "2026-11-14T00:41:24.018609003Z",
+      "verdict": "error",
+      "reason": "probe objective or denial not recorded",
+      "exit": {
+        "Code": 3,
+        "LogsTruncated": false,
+        "PidsMaxEvents": 0,
+        "PeakPids": 4,
+        "DroppedLogBytes": 0,
+        "OOMKilled": false,
+        "TimedOut": false,
+        "CgroupEmpty": true
+      },
+      "output": "WARDEN_INCONCLUSIVE sys-leak CPU topology readable (2 bytes, contents withheld)\n"
+    }
+  ]
+}

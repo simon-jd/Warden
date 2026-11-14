@@ -1,0 +1,114 @@
+[
+  {
+    "name": ".dockerenv",
+    "type": "0",
+    "mode": "0o755",
+    "link": "",
+    "size": 0,
+    "pax": {}
+  },
+  {
+    "name": "dev",
+    "type": "5",
+    "mode": "0o755",
+    "link": "",
+    "size": 0,
+    "pax": {}
+  },
+  {
+    "name": "dev/console",
+    "type": "0",
+    "mode": "0o755",
+    "link": "",
+    "size": 0,
+    "pax": {}
+  },
+  {
+    "name": "dev/pts",
+    "type": "5",
+    "mode": "0o755",
+    "link": "",
+    "size": 0,
+    "pax": {}
+  },
+  {
+    "name": "dev/shm",
+    "type": "5",
+    "mode": "0o755",
+    "link": "",
+    "size": 0,
+    "pax": {}
+  },
+  {
+    "name": "etc",
+    "type": "5",
+    "mode": "0o755",
+    "link": "",
+    "size": 0,
+    "pax": {}
+  },
+  {
+    "name": "etc/hostname",
+    "type": "0",
+    "mode": "0o755",
+    "link": "",
+    "size": 0,
+    "pax": {}
+  },
+  {
+    "name": "etc/hosts",
+    "type": "0",
+    "mode": "0o755",
+    "link": "",
+    "size": 0,
+    "pax": {}
+  },
+  {
+    "name": "etc/mtab",
+    "type": "2",
+    "mode": "0o777",
+    "link": "/proc/mounts",
+    "size": 0,
+    "pax": {}
+  },
+  {
+    "name": "etc/resolv.conf",
+    "type": "0",
+    "mode": "0o755",
+    "link": "",
+    "size": 0,
+    "pax": {}
+  },
+  {
+    "name": "proc",
+    "type": "5",
+    "mode": "0o755",
+    "link": "",
+    "size": 0,
+    "pax": {}
+  },
+  {
+    "name": "sys",
+    "type": "5",
+    "mode": "0o755",
+    "link": "",
+    "size": 0,
+    "pax": {}
+  },
+  {
+    "name": "warden-probe",
+    "type": "0",
+    "mode": "0o555",
+    "link": "",
+    "size": 2909895,
+    "pax": {}
+  },
+  {
+    "name": "write-probe",
+    "type": "0",
+    "mode": "0o666",
+    "link": "",
+    "size": 0,
+    "pax": {}
+  }
+]

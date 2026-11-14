@@ -1,0 +1,95 @@
+# make test-terraform offline check, 2026-11-12T17:25:06Z, host home-ubuntu, worktree cloud-identity
+# HEAD f52b5a2 + uncommitted Makefile/test change for C4; git status --short:
+#    M Makefile
+#   ?? scripts/test_terraform_offline.py
+
+### 1. make test-terraform (real terraform 1.17.1, provider from .cache/terraform/plugins)
+/usr/bin/bwrap --dev-bind / / --unshare-net --die-with-parent env -i PATH=/usr/bin:/bin HOME=/home/postedism/Desktop/Warden-cloud/.cache/home CHECKPOINT_DISABLE=1 TF_IN_AUTOMATION=1 TF_DATA_DIR=/home/postedism/Desktop/Warden-cloud/.cache/terraform/data /home/postedism/Desktop/Warden-cloud/.tools/terraform/terraform -chdir=identity/terraform fmt -check -diff
+/usr/bin/bwrap --dev-bind / / --unshare-net --die-with-parent env -i PATH=/usr/bin:/bin HOME=/home/postedism/Desktop/Warden-cloud/.cache/home CHECKPOINT_DISABLE=1 TF_IN_AUTOMATION=1 TF_DATA_DIR=/home/postedism/Desktop/Warden-cloud/.cache/terraform/data /home/postedism/Desktop/Warden-cloud/.tools/terraform/terraform -chdir=identity/terraform init -backend=false -input=false -lockfile=readonly -no-color \
+	-plugin-dir=/home/postedism/Desktop/Warden-cloud/.cache/terraform/plugins
+Initializing provider plugins...
+- Reusing version 3.10.0 of hashicorp/azuread from the dependency lock file
+- Using previously-installed hashicorp/azuread v3.10.0
+
+Terraform has been successfully initialized!
+/usr/bin/bwrap --dev-bind / / --unshare-net --die-with-parent env -i PATH=/usr/bin:/bin HOME=/home/postedism/Desktop/Warden-cloud/.cache/home CHECKPOINT_DISABLE=1 TF_IN_AUTOMATION=1 TF_DATA_DIR=/home/postedism/Desktop/Warden-cloud/.cache/terraform/data /home/postedism/Desktop/Warden-cloud/.tools/terraform/terraform -chdir=identity/terraform validate -no-color
+Success! The configuration is valid.
+
+exit 0
+
+### 2. make test-terraform TF_PLUGINS=<empty dir> (provider missing)
+test-terraform: no hashicorp/azuread provider in <empty-dir>; run `make terraform-plugins` once (networked)
+make: *** [Makefile:178: test-terraform] Error 1
+exit 2
+
+### 3. the namespace really has no network: the same bwrap + env -i, a registry init (no -plugin-dir) into an empty TF_DATA_DIR
+$ /usr/bin/bwrap --dev-bind / / --unshare-net --die-with-parent env -i PATH=/usr/bin:/bin HOME=.cache/home CHECKPOINT_DISABLE=1 TF_IN_AUTOMATION=1 TF_DATA_DIR=<empty> .tools/terraform/terraform -chdir=identity/terraform init -backend=false -input=false -lockfile=readonly -no-color
+Initializing provider plugins...
+- Reusing version 3.10.0 of hashicorp/azuread from the dependency lock file
+
+Error: Failed to query available provider packages
+
+Could not retrieve the list of available versions for provider
+hashicorp/azuread: could not connect to registry.terraform.io: failed to
+request discovery document: GET
+https://registry.terraform.io/.well-known/terraform.json giving up after 4
+attempt(s): Get "https://registry.terraform.io/.well-known/terraform.json":
+dial tcp: lookup registry.terraform.io on 127.0.0.53:53: read udp
+127.0.0.1:39873->127.0.0.53:53: read: connection refused
+
+To see which modules are currently depending on hashicorp/azuread and what
+versions are specified, run the following command:
+    terraform providers
+exit 1
+$ /usr/bin/bwrap --dev-bind / / --unshare-net sh -c 'tail -n +3 /proc/net/dev | cut -d: -f1'
+    lo
+
+### RED and GREEN of scripts/test_terraform_offline.py (fake terraform that records arguments and the interfaces in /proc/net/dev)
+# C4 RED at f52b5a2 + new test only, 2026-11-12T17:24:41Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_terraform_offline.py -v
+test_every_call_runs_without_network_and_init_uses_only_the_plugin_dir (test_terraform_offline.TerraformOfflineTest.test_every_call_runs_without_network_and_init_uses_only_the_plugin_dir) ... FAIL
+test_failed_offline_init_is_not_retried_with_the_registry (test_terraform_offline.TerraformOfflineTest.test_failed_offline_init_is_not_retried_with_the_registry) ... FAIL
+test_missing_provider_fails_before_terraform_runs (test_terraform_offline.TerraformOfflineTest.test_missing_provider_fails_before_terraform_runs) ... FAIL
+
+======================================================================
+FAIL: test_every_call_runs_without_network_and_init_uses_only_the_plugin_dir (test_terraform_offline.TerraformOfflineTest.test_every_call_runs_without_network_and_init_uses_only_the_plugin_dir)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_terraform_offline.py", line 66, in test_every_call_runs_without_network_and_init_uses_only_the_plugin_dir
+    self.assertTrue(nets == ["lo"], f"`terraform {args}` saw {len(nets)} network interfaces")
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : `terraform -chdir=identity/terraform fmt -check -diff` saw 52 network interfaces
+
+======================================================================
+FAIL: test_failed_offline_init_is_not_retried_with_the_registry (test_terraform_offline.TerraformOfflineTest.test_failed_offline_init_is_not_retried_with_the_registry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_terraform_offline.py", line 75, in test_failed_offline_init_is_not_retried_with_the_registry
+    self.assertEqual(len(inits), 1, inits)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 1 : ['-chdir=identity/terraform init -backend=false -input=false -lockfile=readonly -no-color -plugin-dir=/home/postedism/Desktop/Warden-cloud/.cache/terraform/plugins', '-chdir=identity/terraform init -backend=false -input=false -lockfile=readonly -no-color']
+
+======================================================================
+FAIL: test_missing_provider_fails_before_terraform_runs (test_terraform_offline.TerraformOfflineTest.test_missing_provider_fails_before_terraform_runs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_terraform_offline.py", line 80, in test_missing_provider_fails_before_terraform_runs
+    self.assertNotEqual(proc.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.063s
+
+FAILED (failures=3)
+
+# C4 GREEN, 2026-11-12T17:24:53Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_terraform_offline.py -v
+test_every_call_runs_without_network_and_init_uses_only_the_plugin_dir (test_terraform_offline.TerraformOfflineTest.test_every_call_runs_without_network_and_init_uses_only_the_plugin_dir) ... ok
+test_failed_offline_init_is_not_retried_with_the_registry (test_terraform_offline.TerraformOfflineTest.test_failed_offline_init_is_not_retried_with_the_registry) ... ok
+test_missing_provider_fails_before_terraform_runs (test_terraform_offline.TerraformOfflineTest.test_missing_provider_fails_before_terraform_runs) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.077s
+
+OK

@@ -1,0 +1,6 @@
+taskset -c 0-7,16-31 python3 -I -B detect/falco/detector.py status
+state: {"session": "20261114T152748Z", "started_at": "2026-11-14T15:27:48Z", "stopped_at": null, "up": true}
+host: container running since 2026-11-14T15:27:48.458020071Z; collector active
+  last heartbeat 2026-11-14T15:29:57.175784081Z: {"collector_errors": 0, "collector_restarts": 0, "dropped_error": 0, "dropped_host": 0, "dropped_malformed": 0, "dropped_other_container": 2, "dropped_other_lab_owned": 0, "dropped_other_lab_pod": 0, "dropped_overflow": 0, "dropped_unresolved": 0, "duplicates": 0, "health_events": 3, "pending": 0, "platform_alerts": 4251, "received": 4534, "warden_alerts": 278}
+warden-detect-benign.timer: inactive
+warden-detect-seven-day-stop.timer: inactive

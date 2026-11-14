@@ -1,0 +1,65 @@
+package respond
+
+import (
+	"context"
+	"errors"
+	"time"
+)
+
+var ErrNotImplemented = errors.New("respond executor not implemented")
+
+type Status string
+
+const (
+	Unimplemented Status = "Unimplemented"
+	Preview Status = "Preview"
+	Completed Status = "Completed"
+	InProgress Status = "InProgress"
+	Unknown Status = "Unknown"
+	Cancelled Status = "Cancelled"
+)
+
+type Result struct {
+	Status Status
+	NoOp bool
+	ApprovalNeeded bool
+	Resource Resource
+}
+
+type Config struct {
+	Playbook Playbook
+	AllowedTenantIDs []string
+	JournalPath string
+	Authority ApprovalAuthority
+	Client TenantClient
+	Now func() time.Time
+}
+
+// Executor is deliberately inert in the first RED phase. It does not open a
+// journal, verify credentials, invoke a client or claim completed containment.
+type Executor struct {
+	config Config
+}
+
+func New(config Config) (*Executor, error) {
+	config.Playbook.Steps = append([]Action(nil), config.Playbook.Steps...)
+	config.AllowedTenantIDs = append([]string(nil), config.AllowedTenantIDs...)
+	return &Executor{config: config}, nil
+}
+
+func (e *Executor) Handle(alert Alert, dryRun bool) (Result, error) {
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+	return e.HandleContext(ctx, alert, dryRun)
+}
+
+func (e *Executor) HandleContext(ctx context.Context, alert Alert, dryRun bool) (Result, error) {
+	if err := ctx.Err(); err != nil {
+		return Result{Status: Cancelled}, err
+	}
+	return Result{Status: Unimplemented}, ErrNotImplemented
+}
+
+// Close has no resources to release in this inert stub. The later journal
+// implementation must reject Close while work is in flight and retain its lock.
+func (e *Executor) Close() error { return nil }

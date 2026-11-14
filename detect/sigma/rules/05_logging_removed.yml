@@ -1,0 +1,34 @@
+{
+  "title": "Diagnostic setting deletion action",
+  "id": "58e9df96-53e1-5d33-8a80-3b48baf30196",
+  "status": "experimental",
+  "description": "Action or binary indicator only; no adversary intent or technique success is established. Synthetic fixtures; ATT&CK tags describe related investigation scenarios, not observed technique success.",
+  "references": [
+    "https://attack.mitre.org/techniques/T1685/002/"
+  ],
+  "author": "Warden",
+  "date": "2026-10-25",
+  "logsource": {
+    "product": "azure",
+    "service": "activity"
+  },
+  "detection": {
+    "source": {
+      "class_uid": 6003,
+      "metadata.product.name": "azure activity log",
+      "status_id": 1
+    },
+    "action": {
+      "api.operation": "microsoft.insights/diagnosticsettings/delete"
+    },
+    "condition": "source and action"
+  },
+  "falsepositives": [
+    "Authorized administration, developer/debug tooling, permitted workloads or unrelated protocol use; tune local IP/principal allowlists."
+  ],
+  "level": "medium",
+  "tags": [
+    "attack.defense_impairment",
+    "attack.t1685.002"
+  ]
+}

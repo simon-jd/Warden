@@ -1,0 +1,206 @@
+{
+  "ancestors": {
+    "/": [
+      66307,
+      2,
+      0,
+      0,
+      16877,
+      20
+    ],
+    "/home": [
+      66307,
+      53608449,
+      0,
+      0,
+      16877,
+      4
+    ],
+    "/home/postedism": [
+      66307,
+      53608450,
+      1000,
+      1000,
+      16872,
+      55
+    ],
+    "/home/postedism/Desktop": [
+      66307,
+      53608583,
+      1000,
+      1000,
+      16877,
+      59
+    ],
+    "/home/postedism/Desktop/Warden": [
+      66307,
+      53918810,
+      1000,
+      1000,
+      16877,
+      12
+    ],
+    "/home/postedism/Desktop/Warden/docs": [
+      66307,
+      54036704,
+      1000,
+      1000,
+      16877,
+      3
+    ],
+    "/home/postedism/Desktop/Warden/docs/evidence": [
+      66307,
+      54036705,
+      1000,
+      1000,
+      16877,
+      12
+    ],
+    "/home/postedism/Desktop/Warden/docs/evidence/task-6": [
+      66307,
+      54046311,
+      1000,
+      1000,
+      16877,
+      71
+    ],
+    "/home/postedism/Desktop/Warden/scripts": [
+      66307,
+      54036706,
+      1000,
+      1000,
+      16877,
+      2
+    ]
+  },
+  "clock": {
+    "bracket": [
+      749782179209996,
+      749782179210857,
+      749782179487702
+    ],
+    "child_time_namespace": "time:[4026531834]",
+    "info": "namespace(implementation='clock_gettime(CLOCK_MONOTONIC)', monotonic=True, adjustable=False, resolution=1e-09)",
+    "offsets": "monotonic           0         0\nboottime            0         0\n",
+    "ticks": 100,
+    "time_namespace": "time:[4026531834]"
+  },
+  "clock_identity": {
+    "boot_id": "c29103ef-a3e1-4be8-bf6c-3cacf7ec13a9",
+    "machine_id": "1bf0d0e5b49e4272ba141f926ae1b7e7"
+  },
+  "end_monotonic_ns": 749782179671294,
+  "entry_monotonic_ns": 749782135894853,
+  "failures": [],
+  "gid": 1000,
+  "host_mem_available_bytes": 86731218944,
+  "invoker_sha256": "13d302f6d1a4e04dda727c6c855410585cfea889b9761bd6d2dae716bfb25541",
+  "isolated_inspection_stdlib_origins": {
+    "hashlib": "/usr/lib/python3.14/hashlib.py",
+    "json": "/usr/lib/python3.14/json/__init__.py",
+    "resource": "/usr/lib/python3.14/lib-dynload/resource.cpython-314-x86_64-linux-gnu.so",
+    "select": "built-in",
+    "signal": "/usr/lib/python3.14/signal.py",
+    "site": "/usr/lib/python3.14/site.py",
+    "socket": "/usr/lib/python3.14/socket.py",
+    "struct": "/usr/lib/python3.14/struct.py",
+    "subprocess": "/usr/lib/python3.14/subprocess.py",
+    "urllib.parse": "/usr/lib/python3.14/urllib/parse.py"
+  },
+  "native": {
+    "/bin/bash": {
+      "metadata": [
+        66307,
+        112591278,
+        0,
+        0,
+        33261,
+        1
+      ],
+      "resolved": "/usr/bin/bash",
+      "sha256": "3efccc187bafa75ff1e37d246270ab3e7aa559f242c7a52bf3ec2a1b5450bdbd"
+    },
+    "/usr/bin/env": {
+      "metadata": [
+        66307,
+        112591433,
+        0,
+        0,
+        33261,
+        116
+      ],
+      "resolved": "/usr/lib/cargo/bin/coreutils/env",
+      "sha256": "f84e76ea4da1e0c4e92254bd0d7dccdabe2c8b3098e734f27997dae3ee5d8e02"
+    },
+    "/usr/bin/python3": {
+      "metadata": [
+        66307,
+        112593332,
+        0,
+        0,
+        33261,
+        1
+      ],
+      "resolved": "/usr/bin/python3.14",
+      "sha256": "52e0a13e60a981d8c4b6478be2ba5176f69da07948a056bf49cf6f077e30cb41"
+    }
+  },
+  "output_absence": {
+    "admission.json": true,
+    "diagnostic-tool.json": true,
+    "receipt.json": true,
+    "root-proof-reader-tool.json": true,
+    "root-reconcile-tool.json": true,
+    "root-tool.json": true,
+    "terminal.json": true
+  },
+  "passed": true,
+  "resident_scope": "root owns no resident service/container/GPU in this session; all known fixture children terminal, all project agents completed; native reserve1GB, no global process scan",
+  "scope": "root actual readonly metadata gate; no Docker GET/private body/operation/admission",
+  "script_stdlib_collisions": [],
+  "site_paths": {
+    "/home/postedism/.local/lib/python3.14/site-packages": {
+      "exists": false
+    },
+    "/usr/lib/python3.14/dist-packages": {
+      "exists": false
+    },
+    "/usr/lib/python3/dist-packages": {
+      "exists": true,
+      "metadata": [
+        66307,
+        112611466,
+        0,
+        0,
+        16877,
+        190
+      ],
+      "pth": [
+        "distutils-precedence.pth"
+      ]
+    },
+    "/usr/local/lib/python3.14/dist-packages": {
+      "exists": true,
+      "metadata": [
+        66307,
+        4719420,
+        0,
+        0,
+        16877,
+        2
+      ],
+      "pth": []
+    }
+  },
+  "socket_metadata": [
+    29,
+    4756,
+    0,
+    115,
+    49584,
+    1
+  ],
+  "source150_match": true,
+  "source_manifest_sha256": "aa382a447881cfac451c36c70bcea8ef35a1794da55baf445e26656c3390da0e",
+  "uid": 1000
+}

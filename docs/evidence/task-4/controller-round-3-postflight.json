@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-24T21:58:23.498407+00:00",
+  "source": "12abd9ef909a1e03c59770243669c78ea11e3d1f",
+  "evidence": "c26975462bccfc8e258802a6635d063be087769e",
+  "scope": "Independent controller read-only postflight under existing project Docker lock; no tests rerun or object/device mutation; configured memory is not peak RSS.",
+  "uid": 1000,
+  "host": "postedism-ubuntu-system-selfuse",
+  "owned_images_all": [],
+  "owned_containers_all": [],
+  "outstanding_bytes": 0,
+  "configured_running_container_memory_bytes": 0,
+  "host_allowance_bytes": 1000000000,
+  "preflight": {
+    "additional_bytes": "0",
+    "at": "2026-10-24T21:58:23Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 272245108736,
+    "project_allocated_bytes": 3930951680,
+    "service_memory_bytes": "1000000000"
+  },
+  "protected_sysctls": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "protected_baseline_match": true,
+  "vm_executed_by_controller": false
+}

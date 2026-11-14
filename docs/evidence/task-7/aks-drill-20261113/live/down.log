@@ -1,0 +1,9 @@
+python3 -B scripts/aks_drill.py down --reason manual
+{"at": "2026-11-14T00:21:45Z", "event": "teardown", "reason": "manual"}
+{"at": "2026-11-14T00:21:50Z", "event": "delete-cluster", "id": "/subscriptions/<id>/resourceGroups/rg-warden-lab/providers/Microsoft.ContainerService/managedClusters/warden-lab-aks", "node_group": "/subscriptions/<id>/resourceGroups/rg-warden-lab-aks-nodes"}
+{"at": "2026-11-14T00:21:50Z", "event": "delete-group", "id": "/subscriptions/<id>/resourceGroups/rg-warden-lab", "warning": "rg-mlinfra-westus is always protected; never operate on it"}
+{"at": "2026-11-14T00:29:07Z", "event": "node-group-absent", "id": "/subscriptions/<id>/resourceGroups/rg-warden-lab-aks-nodes"}
+{"at": "2026-11-14T00:29:15Z", "event": "teardown-check", "found": {"clusters": [], "group": false, "groups": [], "identities": [], "network_watcher": "the Network Watcher that was there before has changed", "node_group": false, "role_assignments": [], "tagged_resources": []}, "network_watcher": "changed", "ok": false, "principals_checked": 3}
+{"at": "2026-11-14T00:29:15Z", "error": "AKS drill resources are still there: network_watcher", "event": "teardown-check-failed"}
+aks drill refused: teardown check: AKS drill resources are still there: network_watcher
+make: *** [Makefile:249: aks-drill-down] Error 1

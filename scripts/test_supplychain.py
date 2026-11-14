@@ -1,0 +1,274 @@
+"""Local synthetic semantics only; real three cryptographic cases remain UNRUN."""
+from datetime import datetime, timezone
+import json
+from pathlib import Path
+import sys
+import unittest
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from supplychain import assess_scan, render_binding, CISA_SOURCE  # noqa: E402
+
+NOW = datetime(2026, 10, 25, 12, tzinfo=timezone.utc)
+DIGEST = "sha256:" + "a" * 64
+IMAGE = "ghcr.io/synthetic-owner/synthetic-repo/warden-api"
+BINDING = {
+    "repository": "synthetic-owner/synthetic-repo",
+    "ref": "refs/heads/main",
+    "image_repository": IMAGE,
+    "image_digest": DIGEST,
+    "namespace": "synthetic-warden",
+    "slsa_subject": "https://github.com/slsa-framework/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@refs/tags/v2.1.0",
+    "slsa_builder_id": "https://github.com/slsa-framework/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@refs/tags/v2.1.0",
+}
+
+
+def catalog(*cves):
+    # Structural fixture, not a fetched or authenticated CISA response.
+    return {"title": "CISA Known Exploited Vulnerabilities Catalog",
+            "catalogVersion": "2026.10.25", "dateReleased": "2026-10-25T01:00:00Z",
+            "count": len(cves),
+            "vulnerabilities": [{"cveID": cve} for cve in cves]}
+
+
+def report(matches):
+    # Grype v0.121.0 Document, dbInfo, ProviderStatus and DataProvenance fields.
+    # These values are synthetic and make no release/DB trust claim.
+    return {
+        "matches": matches,
+        "ignoredMatches": [],
+        "source": {"type": "image", "target": {"repoDigests": [f"{IMAGE}@{DIGEST}"]}},
+        "descriptor": {"name": "grype", "version": "0.121.0",
+                       # Grype v0.121.0 options.Grype JSON tags. Nil Go slices
+                       # serialize as null; VexAdd is initialized as [].
+                       "configuration": {"only-fixed": False, "only-notfixed": False,
+                                         "ignore-wontfix": "", "ignore": None,
+                                         "exclude": None, "vex-documents": None,
+                                         "vex-add": [],
+                                         "include-matcher-suppressions": True,
+                                         "match-upstream-kernel-headers": True},
+                       "db": {"status": {"schemaVersion": "v6.1.8",
+                                         "from": "https://grype.anchore.io/databases",
+                                         "built": "2026-10-25T00:00:00Z",
+                                         "valid": True},
+                              "providers": {"synthetic-provider": {
+                                  "captured": "2026-10-25T00:00:00Z",
+                                  "input": "sha256:" + "b" * 64}}}},
+    }
+
+
+def match(identifier, *, severity="High", state="not-fixed", known=(), related=()):
+    return {
+        "vulnerability": {
+            "id": identifier, "severity": severity,
+            "fix": {"state": state, "versions": ["9.9.9"] if state == "fixed" else []},
+            "knownExploited": [{"cve": cve} for cve in known]},
+        "relatedVulnerabilities": [
+            {"id": cve, "knownExploited": [{"cve": cve}]} for cve in related],
+        "artifact": {"name": "synthetic-package", "version": "1.0.0"},
+    }
+
+
+def assess(document, feed=None):
+    return assess_scan(document, DIGEST, image_repository=IMAGE,
+                       kev_catalog=catalog("CVE-2026-9999") if feed is None else feed,
+                       now=NOW)
+
+
+class RenderBindingTests(unittest.TestCase):
+    def test_checked_in_unbound_templates_always_deny(self):
+        root = Path(__file__).resolve().parent.parent / "policies" / "kyverno"
+        for filename in ("verify-images.yaml", "block-kev.yaml"):
+            with self.subTest(filename=filename):
+                document = json.loads((root / filename).read_text(encoding="utf-8"))
+                self.assertEqual(document["kind"], "ClusterPolicy")
+                self.assertEqual(document["spec"]["validationFailureAction"], "Enforce")
+                rule = document["spec"]["rules"][0]
+                self.assertEqual(rule["match"]["any"][0]["resources"]["kinds"], ["Pod"])
+                self.assertEqual(rule["validate"]["deny"]["conditions"]["all"],
+                                 [{"key": True, "operator": "Equals", "value": True}])
+
+    def test_valid_binding_covers_every_image_and_exact_identity(self):
+        result = render_binding(BINDING)
+        self.assertTrue(result["accepted"])
+        self.assertEqual(result["status"], "rendered")
+        policies = {name: json.loads(body) for name, body in result["policies"].items()}
+        self.assertEqual(set(policies), {"verify-images.yaml", "block-kev.yaml"})
+        workflow = ("https://github.com/synthetic-owner/synthetic-repo/"
+                    ".github/workflows/build.yml@refs/heads/main")
+        for document in policies.values():
+            self.assertEqual(document["kind"], "ClusterPolicy")
+            self.assertEqual(document["spec"]["webhookConfiguration"]["failurePolicy"], "Fail")
+            for rule in document["spec"]["rules"]:
+                self.assertEqual(rule["match"]["any"][0]["resources"]["namespaces"],
+                                 ["synthetic-warden"])
+                entry = rule["verifyImages"][0]
+                self.assertEqual(entry["imageReferences"], ["*"])
+                self.assertTrue(entry["required"])
+                self.assertTrue(entry["verifyDigest"])
+                self.assertEqual(entry["failureAction"], "Enforce")
+                # One signature format for all four checks: the SLSA generator
+                # v2.1.0 writes legacy cosign .sig/.att tags, so CI does too.
+                self.assertNotIn("type", entry)
+        signature =policies["verify-images.yaml"]["spec"]["rules"][0]["verifyImages"][0]
+        signer = signature["attestors"][0]["entries"][0]["keyless"]
+        self.assertEqual(signer["subject"], workflow)
+        self.assertEqual(signer["issuer"], "https://token.actions.githubusercontent.com")
+        self.assertEqual(signer["rekor"]["url"], "https://rekor.sigstore.dev")
+        scan = policies["block-kev.yaml"]["spec"]["rules"][0]["verifyImages"][0]
+        conditions = scan["attestations"][0]["conditions"][0]["all"]
+        self.assertIn({"key": "{{ imageDigest }}", "operator": "Equals",
+                       "value": DIGEST}, conditions)
+        self.assertIn({"key": "{{ kevCatalogSource }}", "operator": "Equals",
+                       "value": CISA_SOURCE}, conditions)
+
+    def test_missing_binding_rejected_without_policy(self):
+        for omitted in BINDING:
+            with self.subTest(omitted=omitted):
+                partial = {k: v for k, v in BINDING.items() if k != omitted}
+                result = render_binding(partial)
+                self.assertEqual(result["status"], "rejected")
+                self.assertFalse(result["accepted"])
+                self.assertIsNone(result["policies"])
+
+    def test_malformed_digest_rejected_without_policy(self):
+        result = render_binding(dict(BINDING, image_digest="sha256:not-a-digest"))
+        self.assertEqual(result["status"], "rejected")
+        self.assertIsNone(result["policies"])
+
+
+class AssessScanTests(unittest.TestCase):
+    def test_actual_grype_configuration_must_prove_unfiltered_scan(self):
+        # Every case below currently looks clean to the old camelCase gate.
+        # Mutations are to the pinned Grype JSON option keys, not test-only
+        # decision logic. An absent key cannot prove a safe default.
+        required = ("only-fixed", "only-notfixed", "ignore-wontfix",
+                    "ignore", "exclude", "vex-documents", "vex-add",
+                    "include-matcher-suppressions", "match-upstream-kernel-headers")
+        cases = [("empty profile", {})]
+        complete = report([])["descriptor"]["configuration"]
+        for key in required:
+            cases.append(("missing " + key,
+                          {name: value for name, value in complete.items() if name != key}))
+        for key, value in (
+            ("only-fixed", True), ("only-notfixed", True),
+            ("ignore-wontfix", "fixed"),
+            ("ignore", {}), ("exclude", ["/usr/**"]),
+            ("vex-documents", ["synthetic.vex.json"]),
+            ("vex-add", ["not_affected"]),
+            ("include-matcher-suppressions", False),
+            ("match-upstream-kernel-headers", False),
+        ):
+            cases.append(("unsafe " + key, dict(complete, **{key: value})))
+        for key, value in (("only-fixed", 0), ("exclude", ""),
+                           ("include-matcher-suppressions", 1)):
+            cases.append(("wrong type " + key, dict(complete, **{key: value})))
+        unexpectedly_accepted = []
+        for label, configuration in cases:
+            document = report([])
+            document["descriptor"]["configuration"] = configuration
+            if assess(document)["status"] != "rejected":
+                unexpectedly_accepted.append(label)
+        self.assertEqual(unexpectedly_accepted, [])
+
+    def test_severity_must_be_valid_before_release_decision(self):
+        cases = [("missing", object()), ("null", None), ("empty", ""),
+                 ("invalid", "Synthetic"), ("boolean", False),
+                 ("number", 5), ("list", []), ("mapping", {})]
+        unexpectedly_accepted = []
+        for label, value in cases:
+            document = report([match("CVE-2026-1006", state="fixed")])
+            vulnerability = document["matches"][0]["vulnerability"]
+            if label == "missing":
+                del vulnerability["severity"]
+            else:
+                vulnerability["severity"] = value
+            if assess(document)["status"] != "rejected":
+                unexpectedly_accepted.append(label)
+        self.assertEqual(unexpectedly_accepted, [])
+        # Unknown is a legitimate Grype severity, not malformed metadata.
+        unknown = assess(report([match("CVE-2026-1007", severity="Unknown",
+                                       state="fixed")]))
+        self.assertEqual(unknown["status"], "assessed")
+        self.assertTrue(unknown["release_allowed"])
+
+    def test_fixable_critical_blocks_unfiltered_scan(self):
+        result = assess(report([match("CVE-2026-1001", severity="Critical", state="fixed")]))
+        self.assertEqual(result["status"], "assessed")
+        self.assertFalse(result["release_allowed"])
+        self.assertIn("fixable-critical", result["block_reasons"])
+        self.assertIn("CVE-2026-1001", result["fixable_critical"])
+        self.assertEqual(result["predicate"]["grypeReport"]["matches"][0]["vulnerability"]["id"],
+                         "CVE-2026-1001")
+
+    def test_not_fixed_kev_still_blocks(self):
+        feed = catalog("CVE-2026-1002")
+        result = assess(report([match("CVE-2026-1002", known=("CVE-2026-1002",))]), feed)
+        self.assertEqual(result["status"], "assessed")
+        self.assertFalse(result["release_allowed"])
+        self.assertIn("kev", result["block_reasons"])
+        self.assertIn("CVE-2026-1002", result["kev_cves"])
+
+    def test_related_kev_cve_is_not_lost(self):
+        feed = catalog("CVE-2026-1003")
+        document = report([match("GHSA-synthetic-aaaa-bbbb", related=("CVE-2026-1003",))])
+        result = assess(document, feed)
+        self.assertEqual(result["status"], "assessed")
+        self.assertIn("CVE-2026-1003", result["kev_cves"])
+        self.assertFalse(result["release_allowed"])
+
+    def test_ignored_matches_rejected(self):
+        document = report([])
+        document["ignoredMatches"] = [match("CVE-2026-1004")]
+        result = assess(document)
+        self.assertEqual(result["status"], "rejected")
+        self.assertFalse(result["release_allowed"])
+
+    def test_missing_db_evidence_rejected(self):
+        document = report([])
+        del document["descriptor"]["db"]
+        result = assess(document)
+        self.assertEqual(result["status"], "rejected")
+        self.assertFalse(result["release_allowed"])
+
+    def test_incomplete_provider_or_scan_configuration_rejected(self):
+        document = report([])
+        del document["descriptor"]["db"]["providers"]["synthetic-provider"]["input"]
+        self.assertEqual(assess(document)["status"], "rejected")
+        document = report([])
+        del document["descriptor"]["configuration"]
+        self.assertEqual(assess(document)["status"], "rejected")
+
+    def test_clean_complete_scan_allows_local_semantics_only(self):
+        result = assess(report([]))
+        self.assertEqual(result["status"], "assessed")
+        self.assertTrue(result["release_allowed"])
+        self.assertEqual(result["predicate"]["kevCves"], [])
+        self.assertEqual(result["predicate"]["fixableCritical"], [])
+
+    def test_grype_omitted_zero_ignored_matches_is_complete(self):
+        document = report([])
+        del document["ignoredMatches"]
+        self.assertTrue(assess(document)["release_allowed"])
+
+    def test_stale_db_or_catalog_rejected(self):
+        document = report([])
+        document["descriptor"]["db"]["status"]["built"] = "2026-10-01T00:00:00Z"
+        self.assertEqual(assess(document)["status"], "rejected")
+        feed = catalog("CVE-2026-9999")
+        feed["dateReleased"] = "2026-10-01T00:00:00Z"
+        self.assertEqual(assess(report([]), feed)["status"], "rejected")
+
+    def test_wrong_image_digest_rejected(self):
+        document = report([])
+        document["source"]["target"]["repoDigests"] = [f"{IMAGE}@sha256:{'c' * 64}"]
+        self.assertEqual(assess(document)["status"], "rejected")
+
+    def test_grype_self_report_without_catalog_rejected(self):
+        document = report([match("CVE-2026-1005", known=("CVE-2026-1005",))])
+        result = assess_scan(document, DIGEST, image_repository=IMAGE, now=NOW)
+        self.assertEqual(result["status"], "rejected")
+        self.assertFalse(result["release_allowed"])
+
+
+if __name__ == "__main__":
+    unittest.main()

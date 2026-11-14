@@ -1,0 +1,18 @@
+{
+  "base": "26405c9a0aed8ae53889a831e2ba94cc37d2944f",
+  "source": "0fefe2627e7c765fd8cc055fad0b1e30e2388897",
+  "evidence": "f7722ed8970eda81280cccc201f4b99db3aa75e7",
+  "commits": 2,
+  "source_paths": 6,
+  "source_final_bytes": 44608,
+  "evidence_paths": 16,
+  "raw_paths": 14,
+  "raw_bytes": 83029,
+  "all_22_public_paths_match_git": true,
+  "inventory_rows": 20,
+  "report_mirror_equal": true,
+  "index_empty": true,
+  "tests_rerun": false,
+  "fix_round": "original Task15 1/5",
+  "source_ownership": "returned to root; single scoped re-review pending"
+}

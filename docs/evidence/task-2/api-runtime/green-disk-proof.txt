@@ -1,0 +1,6 @@
+=== RUN   TestPidfdRequiresActualOriginalProcessExit
+--- PASS: TestPidfdRequiresActualOriginalProcessExit (0.00s)
+=== RUN   TestDiskProofRequiresOriginalDirectoriesRemovedWithoutReplacement
+--- PASS: TestDiskProofRequiresOriginalDirectoriesRemovedWithoutReplacement (0.00s)
+PASS
+ok  	warden/runtimes/gate	0.003s

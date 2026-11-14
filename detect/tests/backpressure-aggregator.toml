@@ -1,0 +1,57 @@
+# Aggregator half of the two-hop backpressure experiment (BP_SOURCE=vector):
+# the acknowledged `vector` source of detect/vector/aggregator.toml, then one
+# sink named like the production os_api sink with the same disk buffer, posting
+# to the test's loopback peer instead of OpenSearch.
+data_dir = "${BP_DATA_AGG}"
+
+[sources.agent]
+type = "vector"
+address = "${BP_AGG}"
+acknowledgements.enabled = true
+
+[sinks.os_api]
+type = "http"
+inputs = ["agent"]
+uri = "${BP_URI}"
+method = "post"
+compression = "none"
+encoding.codec = "json"
+framing.method = "newline_delimited"
+batch.max_events = 50
+batch.timeout_secs = 0.2
+request.concurrency = 1
+request.retry_initial_backoff_secs = 1
+request.retry_max_duration_secs = 2
+healthcheck.enabled = false
+acknowledgements.enabled = true
+buffer.type = "disk"
+buffer.max_size = 268435488
+buffer.when_full = "block"
+
+[sources.metrics]
+type = "internal_metrics"
+namespace = "vector"
+scrape_interval_secs = 0.5
+
+[sinks.metrics_export]
+type = "prometheus_exporter"
+inputs = ["metrics"]
+address = "${BP_AGG_PROM_EXPORT}"
+buffer.type = "memory"
+buffer.max_events = 500
+buffer.when_full = "block"
+
+[transforms.bp_metrics]
+type = "filter"
+inputs = ["metrics"]
+# Plus every discard/drop counter of any component, so a loss can be traced.
+condition = '(.tags.component_id == "os_api" && includes(["buffer_byte_size", "buffer_events", "buffer_discarded_events_total", "component_discarded_events_total"], .name)) || contains(string!(.name), "discard") || contains(string!(.name), "drop")'
+
+[sinks.metrics_file]
+type = "file"
+inputs = ["bp_metrics"]
+path = "${BP_METRICS_AGG}"
+encoding.codec = "json"
+buffer.type = "memory"
+buffer.max_events = 64
+buffer.when_full = "block"

@@ -1,0 +1,46 @@
+{
+  "config": {
+    "base_rate": 20,
+    "buffer_max_size": 268435488,
+    "burst_events": 24000,
+    "burst_rate": 200,
+    "line_bytes": 16384,
+    "when_full": "block"
+  },
+  "metrics": {
+    "buffer_byte_size_max": 134205944.0,
+    "buffer_byte_size_min": 0.0,
+    "buffer_discarded_events_total": 0.0,
+    "buffer_events_max": 8093.0,
+    "component_discarded_events_total": 0.0,
+    "negative_gauge_samples": 0,
+    "samples": 524
+  },
+  "peer_requests": {
+    "ok": 526,
+    "rejected": 120
+  },
+  "reconcile": {
+    "duplicates": 0,
+    "lost": 0,
+    "received_unique": 24200,
+    "sent": 24200,
+    "unexpected_ids": 0
+  },
+  "released_by_block": false,
+  "scratch_bytes": 133058517,
+  "sender": {
+    "baseline_sent": 200,
+    "blocked_total_s": 0.0,
+    "burst_sent": 24000,
+    "longest_block_s": 0.0,
+    "sent": 24200
+  },
+  "timeline_s": {
+    "burst_end": 130.0156830570195,
+    "burst_start": 10.008346425951459,
+    "drain_end": 133.02362828492187,
+    "release": 130.01567672297824
+  },
+  "vector_stderr_tail": "after response.] is being suppressed to avoid flooding.\n2026-10-27T13:43:16.419914Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] has been suppressed 9 times.\n2026-10-27T13:43:16.419934Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Retrying after response. reason=Http Status: 503 Service Unavailable internal_log_rate_limit=true\n2026-10-27T13:43:17.953341Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] is being suppressed to avoid flooding.\n2026-10-27T13:43:27.374799Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] has been suppressed 9 times.\n2026-10-27T13:43:27.374821Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Retrying after response. reason=Http Status: 503 Service Unavailable internal_log_rate_limit=true\n2026-10-27T13:43:28.744855Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] is being suppressed to avoid flooding.\n2026-10-27T13:43:37.389406Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] has been suppressed 9 times.\n2026-10-27T13:43:37.389449Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Retrying after response. reason=Http Status: 503 Service Unavailable internal_log_rate_limit=true\n2026-10-27T13:43:38.454945Z  WARN sink{component_kind=\"sink\" component_id=bp_http component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] is being suppressed to avoid flooding.\n"
+}

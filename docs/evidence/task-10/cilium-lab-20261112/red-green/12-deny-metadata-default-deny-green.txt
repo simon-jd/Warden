@@ -1,0 +1,17 @@
+# 2026-11-13T00:09:58-08:00 head 3a4f8a8; git status --short:
+ M policies/cilium/deny-metadata.yaml
+ M runtimes/conformance/identity_test.go
+?? controlplane/internal/ciliumlab/metadata_test.go
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run1-1945/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2-attempt1/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2/
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/12-deny-metadata-default-deny-green.txt
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/12-deny-metadata-default-deny-red.txt
+?? docs/evidence/task-10/cilium-lab-20261112/runs/05-task10/
+?? docs/evidence/task-10/cilium-lab-20261112/runs/06-task7/
+$ taskset -c 0-7,16-31 .tools/go/bin/go test -buildvcs=false -count=1 -v -run TestDenyMetadataPolicyCoversSandboxesAndTheirProxy ./runtimes/conformance (Makefile GOENV)
+=== RUN   TestDenyMetadataPolicyCoversSandboxesAndTheirProxy
+--- PASS: TestDenyMetadataPolicyCoversSandboxesAndTheirProxy (0.00s)
+PASS
+ok  	warden/runtimes/conformance	0.002s
+exit 0

@@ -1,0 +1,172 @@
+# Task 6 real-IdP work: test output before (RED) and after (GREEN) each change, home-ubuntu 2026-11-10
+
+### idp-tf-red.log — scripts/test_idp_tf.py before identity/terraform/idp.tf existed
+FFFFFFF.E
+======================================================================
+ERROR: test_v2_single_tenant_tokens (test_idp_tf.IdpTerraformTest.test_v2_single_tenant_tokens)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_idp_tf.py", line 95, in test_v2_single_tenant_tokens
+    app = blocks(self.tf, "resource", "azuread_application")[0]
+          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+FAIL: test_file_exists (test_idp_tf.IdpTerraformTest.test_file_exists)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_idp_tf.py", line 82, in test_file_exists
+    self.assertTrue(TF.is_file(), f"{TF} missing")
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : /home/postedism/Desktop/Warden-cloud/identity/terraform/idp.tf missing
+
+======================================================================
+FAIL: test_identifier_uri_is_api_client_id (test_idp_tf.IdpTerraformTest.test_identifier_uri_is_api_client_id)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_idp_tf.py", line 104, in test_identifier_uri_is_api_client_id
+    self.assertEqual(len(uris), 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_lab_names_tags_and_ownership (test_idp_tf.IdpTerraformTest.test_lab_names_tags_and_ownership)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_idp_tf.py", line 118, in test_lab_names_tags_and_ownership
+    self.assertTrue(names, "display_name missing")
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true : display_name missing
+
+======================================================================
+FAIL: test_no_client_credentials (test_idp_tf.IdpTerraformTest.test_no_client_credentials)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_idp_tf.py", line 114, in test_no_client_credentials
+    self.assertRegex(self.tf, r'fallback_public_client_enabled\s*=\s*false')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Regex didn't match: 'fallback_public_client_enabled\\s*=\\s*false' not found in ''
+
+======================================================================
+FAIL: test_preauthorized_clients_are_explicit (test_idp_tf.IdpTerraformTest.test_preauthorized_clients_are_explicit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_idp_tf.py", line 132, in test_preauthorized_clients_are_explicit
+    self.assertEqual(len(pre), 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_provider_pinned_and_locked (test_idp_tf.IdpTerraformTest.test_provider_pinned_and_locked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_idp_tf.py", line 139, in test_provider_pinned_and_locked
+    self.assertRegex(self.tf, r'source\s*=\s*"hashicorp/azuread"')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Regex didn't match: 'source\\s*=\\s*"hashicorp/azuread"' not found in ''
+
+======================================================================
+FAIL: test_scope_matches_verifier (test_idp_tf.IdpTerraformTest.test_scope_matches_verifier)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_idp_tf.py", line 87, in test_scope_matches_verifier
+    self.assertEqual(len(apps), 1, "exactly one azuread_application")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : exactly one azuread_application
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+FAILED (failures=7, errors=1)
+
+### idp-tf-green.log — scripts/test_idp_tf.py with idp.tf and .terraform.lock.hcl
+test_file_exists (test_idp_tf.IdpTerraformTest.test_file_exists) ... ok
+test_identifier_uri_is_api_client_id (test_idp_tf.IdpTerraformTest.test_identifier_uri_is_api_client_id) ... ok
+test_lab_names_tags_and_ownership (test_idp_tf.IdpTerraformTest.test_lab_names_tags_and_ownership) ... ok
+test_no_client_credentials (test_idp_tf.IdpTerraformTest.test_no_client_credentials) ... ok
+test_preauthorized_clients_are_explicit (test_idp_tf.IdpTerraformTest.test_preauthorized_clients_are_explicit) ... ok
+test_provider_pinned_and_locked (test_idp_tf.IdpTerraformTest.test_provider_pinned_and_locked) ... ok
+test_scope_matches_verifier (test_idp_tf.IdpTerraformTest.test_scope_matches_verifier) ... ok
+test_strip_comments_keeps_strings (test_idp_tf.IdpTerraformTest.test_strip_comments_keeps_strings) ... ok
+test_v2_single_tenant_tokens (test_idp_tf.IdpTerraformTest.test_v2_single_tenant_tokens) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.003s
+
+OK
+
+### test-terraform-green.log — make test-terraform (fmt -check, validate)
+env -i PATH=/usr/bin:/bin HOME=/home/postedism/Desktop/Warden-cloud/.cache/home CHECKPOINT_DISABLE=1 TF_IN_AUTOMATION=1 TF_DATA_DIR=/home/postedism/Desktop/Warden-cloud/.cache/terraform/data TF_PLUGIN_CACHE_DIR=/home/postedism/Desktop/Warden-cloud/.cache/terraform/plugins /home/postedism/Desktop/Warden-cloud/.tools/terraform/terraform -chdir=identity/terraform fmt -check -diff
+env -i PATH=/usr/bin:/bin HOME=/home/postedism/Desktop/Warden-cloud/.cache/home CHECKPOINT_DISABLE=1 TF_IN_AUTOMATION=1 TF_DATA_DIR=/home/postedism/Desktop/Warden-cloud/.cache/terraform/data TF_PLUGIN_CACHE_DIR=/home/postedism/Desktop/Warden-cloud/.cache/terraform/plugins /home/postedism/Desktop/Warden-cloud/.tools/terraform/terraform -chdir=identity/terraform init -backend=false -input=false -lockfile=readonly -no-color \
+	-plugin-dir=/home/postedism/Desktop/Warden-cloud/.cache/terraform/plugins >/dev/null 2>&1 || \
+	env -i PATH=/usr/bin:/bin HOME=/home/postedism/Desktop/Warden-cloud/.cache/home CHECKPOINT_DISABLE=1 TF_IN_AUTOMATION=1 TF_DATA_DIR=/home/postedism/Desktop/Warden-cloud/.cache/terraform/data TF_PLUGIN_CACHE_DIR=/home/postedism/Desktop/Warden-cloud/.cache/terraform/plugins /home/postedism/Desktop/Warden-cloud/.tools/terraform/terraform -chdir=identity/terraform init -backend=false -input=false -lockfile=readonly -no-color >/dev/null
+env -i PATH=/usr/bin:/bin HOME=/home/postedism/Desktop/Warden-cloud/.cache/home CHECKPOINT_DISABLE=1 TF_IN_AUTOMATION=1 TF_DATA_DIR=/home/postedism/Desktop/Warden-cloud/.cache/terraform/data TF_PLUGIN_CACHE_DIR=/home/postedism/Desktop/Warden-cloud/.cache/terraform/plugins /home/postedism/Desktop/Warden-cloud/.tools/terraform/terraform -chdir=identity/terraform validate -no-color
+Success! The configuration is valid.
+
+
+### entra-live-red.log — scripts/test_entra_oidc_live.py before entra_oidc_live.py existed
+E
+======================================================================
+ERROR: test_entra_oidc_live (unittest.loader._FailedTest.test_entra_oidc_live)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_entra_oidc_live
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/unittest/loader.py", line 426, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.14/unittest/loader.py", line 367, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 11, in <module>
+    import entra_oidc_live as live
+ModuleNotFoundError: No module named 'entra_oidc_live'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+
+### entra-live-green.log — scripts/test_entra_oidc_live.py with entra_oidc_live.py
+test_assert_clean_catches_leftovers (test_entra_oidc_live.RedactTest.test_assert_clean_catches_leftovers) ... ok
+test_extra_secrets (test_entra_oidc_live.RedactTest.test_extra_secrets) ... ok
+test_redact_tokens_segments_and_ids (test_entra_oidc_live.RedactTest.test_redact_tokens_segments_and_ids) ... ok
+test_user_body_maps_oid_without_profile_data (test_entra_oidc_live.ScimBodyTest.test_user_body_maps_oid_without_profile_data) ... ok
+test_seconds_until_expiry (test_entra_oidc_live.SummaryTest.test_seconds_until_expiry) ... ok
+test_summary_keeps_shape_not_identity (test_entra_oidc_live.SummaryTest.test_summary_keeps_shape_not_identity) ... ok
+test_payload_tamper_keeps_header_and_signature (test_entra_oidc_live.TamperTest.test_payload_tamper_keeps_header_and_signature) ... ok
+test_signature_tamper_changes_only_the_signature (test_entra_oidc_live.TamperTest.test_signature_tamper_changes_only_the_signature) ... ok
+test_unsigned_variant_has_alg_none (test_entra_oidc_live.TamperTest.test_unsigned_variant_has_alg_none) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+OK
+
+### unassign-red.log — unassign helpers and probe summary tests before entra_token_probe.py existed
+E
+======================================================================
+ERROR: test_entra_oidc_live (unittest.loader._FailedTest.test_entra_oidc_live)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_entra_oidc_live
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/unittest/loader.py", line 426, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.14/unittest/loader.py", line 367, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_entra_oidc_live.py", line 12, in <module>
+    import entra_token_probe as probe
+ModuleNotFoundError: No module named 'entra_token_probe'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
+
+### unassign-green.log — the same tests after the unassign mode and the probe
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 0.001s
+
+OK

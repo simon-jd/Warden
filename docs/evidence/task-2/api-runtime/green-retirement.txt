@@ -1,0 +1,4 @@
+=== RUN   TestRetirementFenceRejectsNewStartsAcrossInstances
+--- PASS: TestRetirementFenceRejectsNewStartsAcrossInstances (0.00s)
+PASS
+ok  	warden/runtimes/gate	0.002s

@@ -1,0 +1,87 @@
+# RED, the online detector (detect/falco) and its lab hooks, tests only (784281a, 2026-11-14T03:22:31Z)
+$ taskset -c 0-7,16-31 python3 -E -s -B -m unittest detect.falco.test_collector detect.falco.test_recorder detect.falco.test_bindings detect.falco.test_detector detect.falco.test_benign
+======================================================================
+FAIL: test_an_unknown_session_is_refused (detect.falco.test_benign.BenignTest.test_an_unknown_session_is_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-detect/detect/falco/test_benign.py", line 32, in setUp
+    self.assertIsNotNone(benign, 'detect/falco/benign.py missing')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : detect/falco/benign.py missing
+
+======================================================================
+FAIL: test_exit_zero_without_the_pass_line_is_not_ok (detect.falco.test_benign.BenignTest.test_exit_zero_without_the_pass_line_is_not_ok)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-detect/detect/falco/test_benign.py", line 32, in setUp
+    self.assertIsNotNone(benign, 'detect/falco/benign.py missing')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : detect/falco/benign.py missing
+
+======================================================================
+FAIL: test_no_detector_no_run (detect.falco.test_benign.BenignTest.test_no_detector_no_run)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-detect/detect/falco/test_benign.py", line 32, in setUp
+    self.assertIsNotNone(benign, 'detect/falco/benign.py missing')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : detect/falco/benign.py missing
+
+======================================================================
+FAIL: test_one_hour_runs_runc_then_gvisor_pinned_to_the_lab_cpus (detect.falco.test_benign.BenignTest.test_one_hour_runs_runc_then_gvisor_pinned_to_the_lab_cpus)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-detect/detect/falco/test_benign.py", line 32, in setUp
+    self.assertIsNotNone(benign, 'detect/falco/benign.py missing')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : detect/falco/benign.py missing
+
+----------------------------------------------------------------------
+Ran 64 tests in 0.009s
+
+FAILED (failures=64)
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -s scripts -t scripts -p "test_k3s_gvisor_lab.py" -k falco
+FAIL: test_falco_in_cilium_mode_configures_both_handlers (test_k3s_gvisor_lab.GVisorLabScriptTest.test_falco_in_cilium_mode_configures_both_handlers)
+AssertionError: 2 != 0 : unknown option --falco
+FAIL: test_run_falco_tears_down_only_the_lab (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_falco_tears_down_only_the_lab)
+AssertionError: 127 != 0 : /tmp/tmpmxzxa_p7/repo/scripts/k3s_gvisor_lab.sh: line 525: --falco: command not found
+FAIL: test_up_falco_mounts_the_detector_socket_and_points_runsc_at_it (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_falco_mounts_the_detector_socket_and_points_runsc_at_it)
+AssertionError: 2 != 0 : unknown option --falco
+FAIL: test_up_falco_needs_the_detectors_gvisor_instance (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_falco_needs_the_detectors_gvisor_instance) (case='absent')
+AssertionError: 'detector' not found in 'unknown option --falco\n'
+FAIL: test_up_falco_needs_the_detectors_gvisor_instance (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_falco_needs_the_detectors_gvisor_instance) (case='stopped')
+AssertionError: 'detector' not found in 'unknown option --falco\n'
+FAIL: test_up_falco_needs_the_detectors_gvisor_instance (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_falco_needs_the_detectors_gvisor_instance) (case='not the detector')
+AssertionError: 'detector' not found in 'unknown option --falco\n'
+FAIL: test_up_falco_needs_the_detectors_gvisor_instance (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_falco_needs_the_detectors_gvisor_instance) (case='foreign volume')
+AssertionError: 'detector' not found in 'unknown option --falco\n'
+Ran 4 tests in 0.802s
+FAILED (failures=7)
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -s scripts -t scripts -p "test_runtime_lab_docker.py" -k cpuset
+FAIL: test_cpuset_pins_the_outer_container_only_when_asked (test_runtime_lab_docker.DockerLabTests.test_cpuset_pins_the_outer_container_only_when_asked) (env={'WARDEN_LAB_CPUSET': '0-7,16-31'})
+AssertionError: Lists differ: [] != ['--cpuset-cpus=0-7,16-31']
+FAIL: test_cpuset_pins_the_outer_container_only_when_asked (test_runtime_lab_docker.DockerLabTests.test_cpuset_pins_the_outer_container_only_when_asked) (bad='0-7;true')
+AssertionError: ValueError not raised
+FAIL: test_cpuset_pins_the_outer_container_only_when_asked (test_runtime_lab_docker.DockerLabTests.test_cpuset_pins_the_outer_container_only_when_asked) (bad='0-7,')
+AssertionError: ValueError not raised
+FAIL: test_cpuset_pins_the_outer_container_only_when_asked (test_runtime_lab_docker.DockerLabTests.test_cpuset_pins_the_outer_container_only_when_asked) (bad='all')
+AssertionError: ValueError not raised
+FAIL: test_cpuset_pins_the_outer_container_only_when_asked (test_runtime_lab_docker.DockerLabTests.test_cpuset_pins_the_outer_container_only_when_asked) (bad='0-7 16')
+AssertionError: ValueError not raised
+Ran 1 test in 0.002s
+FAILED (failures=5)
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -s scripts -t scripts -p "test_makefile.py" -k detector
+FAIL: test_detector_targets_run_the_lifecycle_on_the_lab_cpus (test_makefile.MakefileGoTargetsTest.test_detector_targets_run_the_lifecycle_on_the_lab_cpus) (target='detect-up')
+AssertionError: 2 != 0 : make: *** No rule to make target 'detect-up'.  Stop.
+FAIL: test_detector_targets_run_the_lifecycle_on_the_lab_cpus (test_makefile.MakefileGoTargetsTest.test_detector_targets_run_the_lifecycle_on_the_lab_cpus) (target='detect-status')
+AssertionError: 2 != 0 : make: *** No rule to make target 'detect-status'.  Stop.
+FAIL: test_detector_targets_run_the_lifecycle_on_the_lab_cpus (test_makefile.MakefileGoTargetsTest.test_detector_targets_run_the_lifecycle_on_the_lab_cpus) (target='detect-down')
+AssertionError: 2 != 0 : make: *** No rule to make target 'detect-down'.  Stop.
+FAIL: test_detector_targets_run_the_lifecycle_on_the_lab_cpus (test_makefile.MakefileGoTargetsTest.test_detector_targets_run_the_lifecycle_on_the_lab_cpus) (target='detect-purge')
+AssertionError: 2 != 0 : make: *** No rule to make target 'detect-purge'.  Stop.
+FAIL: test_detector_targets_run_the_lifecycle_on_the_lab_cpus (test_makefile.MakefileGoTargetsTest.test_detector_targets_run_the_lifecycle_on_the_lab_cpus) (target='detect-seven-day-start')
+AssertionError: 2 != 0 : make: *** No rule to make target 'detect-seven-day-start'.  Stop.
+FAIL: test_detector_targets_run_the_lifecycle_on_the_lab_cpus (test_makefile.MakefileGoTargetsTest.test_detector_targets_run_the_lifecycle_on_the_lab_cpus)
+AssertionError: 'detect/falco/detector.py seven-day-start --dry-run' not found in ''
+Ran 1 test in 0.009s
+FAILED (failures=6)

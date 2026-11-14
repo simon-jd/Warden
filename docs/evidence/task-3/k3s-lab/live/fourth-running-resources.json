@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-24T18:13:07.572492+00:00",
+  "container": "9a22e3c1817441fa2c4f50616e68a333d2a06c98641d430a05a810ea3f7cac50",
+  "scope": "/sys/fs/cgroup/system.slice/docker-9a22e3c1817441fa2c4f50616e68a333d2a06c98641d430a05a810ea3f7cac50.scope",
+  "cgroup_driver": "systemd",
+  "values": {
+    "memory.max": "3999997952",
+    "memory.swap.max": "0",
+    "memory.swap.current": "0",
+    "memory.current": "348737536",
+    "memory.peak": "403394560",
+    "pids.max": "512",
+    "pids.current": "60",
+    "pids.peak": "85",
+    "cpu.max": "200000 100000",
+    "cgroup.events": "populated 1\nfrozen 0"
+  },
+  "configured_memory_bytes": 4000000000,
+  "initial_observer_assertion": "Exact memory.max equality failed; actual kernel value is recorded. Corrected observer validates actual positive limit does not exceed configured bound; runtime guards unchanged.",
+  "meaning": "Single read-only own outer-cgroup observation while fixed bootstrap waits; not Ready, guest limits or complete measured peak."
+}

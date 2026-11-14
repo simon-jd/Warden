@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-26T09:06:00.455479+00:00",
+  "kind": "ROOT_FIX_ROUND1_COVER_ADMISSION_ONCE",
+  "source_base": "1eb3ccb257d5faffa35a6438c550639b4fe76859",
+  "caller_bytes": 16049,
+  "caller_sha256": "c65b73d4309282340370a594aee2a48fa52d45c34f346362425d76b3cd1c6d3d",
+  "packet_sha256": "4913035a3f8f6f9f0327c2e895a998f50a2e2498ff5e4e3c3175b72db3ca9107",
+  "source_freeze_sha256": "4852dfe21bf283649bf0a5275db89dda003d33326efc717a2a22f7949cac1d8a",
+  "tests": [
+    "TestKubernetesEmptyReservationCleanup",
+    "TestKubernetesRemovalRetryAfterClearAndDeleteFailure",
+    "TestKubernetesBindingLifecycleAndFencing",
+    "TestKubernetesRemovalRejectsForeignUIDAndUnconfirmedDeletion"
+  ],
+  "source_count": 15,
+  "changed_from_accepted_r1_red": [
+    "controlplane/internal/jit/bindings.go",
+    "controlplane/internal/jit/bindings_test.go",
+    "controlplane/internal/jit/README.md"
+  ],
+  "all_material_and_mainreport_verified": true,
+  "namespace_absent": true,
+  "R": 5135667200,
+  "other_holds": 5003801088,
+  "full_new_disk": 1750780416,
+  "total": 11890248704,
+  "headroom": 109751296,
+  "disk_cap": 12000000000,
+  "resident": 15500000000,
+  "resident_cap": 16000000000,
+  "old_UNKNOWN": 9000000000,
+  "bounds": {
+    "whole": 90,
+    "work": 65,
+    "GoCLI": 59,
+    "cleanup": 82,
+    "status": 85,
+    "raw": 131072
+  },
+  "initial_source_prep_closed_net": 237568,
+  "round1_new_net": 57344,
+  "round1_new_cap": 65536,
+  "start_reaper": "851e76 known0 RGabsent08:48:24Z, original normal route",
+  "ruling": "One exact frozen four-test I1 affected cover, original R1/5. Accepted RED preserved. No successful whole-suite, metadata or PG diagnostic replay. Actual cluster/RBAC/identity/supervised expiry remain OPEN.",
+  "provenance": {
+    "source": "root_agent_in_existing_user_scope",
+    "human_response": false
+  }
+}

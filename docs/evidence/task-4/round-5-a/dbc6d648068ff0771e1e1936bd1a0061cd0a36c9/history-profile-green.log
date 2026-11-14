@@ -1,0 +1,8 @@
+test_exact_profile_and_unique_readonly_binding (test_firecracker_recovery.ProfileTests.test_exact_profile_and_unique_readonly_binding) ... ok
+test_fixed_runtime_refuses_extra_caps_or_host_writable_proc (test_firecracker_recovery_init.MountTests.test_fixed_runtime_refuses_extra_caps_or_host_writable_proc) ... ok
+test_only_initial_ro_private_matching_mount_is_accepted (test_firecracker_recovery_init.MountTests.test_only_initial_ro_private_matching_mount_is_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK

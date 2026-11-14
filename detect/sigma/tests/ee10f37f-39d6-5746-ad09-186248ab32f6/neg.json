@@ -1,0 +1,29 @@
+{
+  "activity_id": 2,
+  "category_uid": 6,
+  "class_uid": 6003,
+  "type_uid": 600302,
+  "severity_id": 0,
+  "time": 1767225600000,
+  "metadata": {
+    "version": "1.3.0",
+    "product": {
+      "name": "Azure Activity Log",
+      "vendor_name": "Microsoft"
+    },
+    "uid": "d836ac2f-1831-55b1-a648-889cb38f6299"
+  },
+  "unmapped": {},
+  "api": {
+    "operation": "Microsoft.Storage/storageAccounts/listkeys/read"
+  },
+  "actor": {
+    "user": {
+      "uid": "synthetic-operator"
+    }
+  },
+  "src_endpoint": {
+    "ip": "192.0.2.10"
+  },
+  "status_id": 1
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Storage shared-key listing action",
+  "id": "ee10f37f-39d6-5746-ad09-186248ab32f6",
+  "status": "experimental",
+  "description": "Action or binary indicator only; no adversary intent or technique success is established. Synthetic fixtures; ATT&CK tags describe related investigation scenarios, not observed technique success.",
+  "references": [],
+  "author": "Warden",
+  "date": "2026-10-25",
+  "logsource": {
+    "product": "azure",
+    "service": "activity"
+  },
+  "detection": {
+    "source": {
+      "class_uid": 6003,
+      "metadata.product.name": "azure activity log",
+      "status_id": 1
+    },
+    "action": {
+      "api.operation": "microsoft.storage/storageaccounts/listkeys/action"
+    },
+    "condition": "source and action"
+  },
+  "falsepositives": [
+    "Authorized administration, developer/debug tooling, permitted workloads or unrelated protocol use; tune local IP/principal allowlists."
+  ],
+  "level": "medium"
+}

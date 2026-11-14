@@ -1,0 +1,120 @@
+{
+  "utc": "2026-10-24T16:45:13.663355+00:00",
+  "container": "37b95dd4bbd84a5aa9b33a1f5d8d40402d26f0e1b765c4779ea47294eaa2f2b5",
+  "image": "sha256:a2bd74a7126bbb0c858d2e904a0eb4feef8849b83527193a89ebde08bf96f7fc",
+  "labels": {
+    "owner": "codex-warden",
+    "project": "warden",
+    "session": "5c8b4330bd7a1a3a6d0e237a604370d0",
+    "ttl": "2026-10-24T17:43:26Z"
+  },
+  "state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 2,
+    "Error": "",
+    "StartedAt": "2026-10-24T16:43:50.181336917Z",
+    "FinishedAt": "2026-10-24T16:43:52.593105319Z"
+  },
+  "restart_count": 0,
+  "image_size_bytes": 685366794,
+  "session": "/home/postedism/Desktop/Warden/.cache/warden-lab/docker-5c8b4330bd7a1a3a6d0e237a604370d0",
+  "session_device": 66307,
+  "session_inode": 55586536,
+  "session_uid": 1000,
+  "session_mode": "0o700",
+  "session_children_metadata": [
+    {
+      "name": "charge.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o600",
+      "device": 66307,
+      "inode": 55619973,
+      "size": 64
+    },
+    {
+      "name": "identity.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o600",
+      "device": 66307,
+      "inode": 55619974,
+      "size": 252
+    },
+    {
+      "name": "manifest.json",
+      "uid": 1000,
+      "gid": 1000,
+      "mode": "0o600",
+      "device": 66307,
+      "inode": 55619971,
+      "size": 111105
+    },
+    {
+      "name": "session-224a50855c9a6da6",
+      "uid": 0,
+      "gid": 0,
+      "mode": "0o700",
+      "device": 66307,
+      "inode": 55619975,
+      "size": 4096
+    }
+  ],
+  "charge": {
+    "version": 1,
+    "reserved_bytes": 6000000000,
+    "released": false
+  },
+  "owned_containers_all": [
+    "37b95dd4bbd84a5aa9b33a1f5d8d40402d26f0e1b765c4779ea47294eaa2f2b5"
+  ],
+  "owned_images_all": [
+    "sha256:a2bd74a7126bbb0c858d2e904a0eb4feef8849b83527193a89ebde08bf96f7fc"
+  ],
+  "host_config": {
+    "Memory": 4000000000,
+    "MemorySwap": 4000000000,
+    "PidsLimit": 512,
+    "NanoCpus": 2000000000,
+    "Privileged": false,
+    "ReadonlyRootfs": true,
+    "PidMode": "",
+    "IpcMode": "private",
+    "NetworkMode": "none",
+    "CgroupnsMode": "private",
+    "CapDrop": [
+      "ALL"
+    ],
+    "CapAdd": [
+      "CAP_CHOWN",
+      "CAP_DAC_OVERRIDE",
+      "CAP_FOWNER",
+      "CAP_KILL",
+      "CAP_MKNOD",
+      "CAP_NET_ADMIN",
+      "CAP_SETGID",
+      "CAP_SETPCAP",
+      "CAP_SETUID",
+      "CAP_SYS_ADMIN",
+      "CAP_SYS_CHROOT"
+    ],
+    "Mounts": [
+      {
+        "Type": "bind",
+        "Source": "/home/postedism/Desktop/Warden/.cache/warden-lab/docker-5c8b4330bd7a1a3a6d0e237a604370d0",
+        "Target": "/session",
+        "ReadOnly": true,
+        "BindOptions": {
+          "Propagation": "rprivate"
+        }
+      }
+    ]
+  },
+  "scope": "Only selected public Docker/session metadata; no private diagnostics or credential content read."
+}

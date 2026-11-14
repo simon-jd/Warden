@@ -1,0 +1,131 @@
+{
+  "utc": "2026-10-24T17:36:16.677133+00:00",
+  "source_commit": "e91e9addbf85c4314630d32dd8f62bb607fe84e3",
+  "run_head": "b89835a",
+  "mode": "bootstrap",
+  "exit_code": 2,
+  "seconds": 27.81,
+  "container": "57a48b46ee5477bf65fdb6ae60bf5b7766c652630c7f2549b3e1e013a696c360",
+  "image": "sha256:53914c90accfbe8f1e11b530a7ae42edc9d1a79e098a01d50d14f244b5991514",
+  "image_size_bytes": 685369702,
+  "labels": {
+    "owner": "codex-warden",
+    "project": "warden",
+    "session": "454fc203bfa3b1bb6296520028e6a1cd",
+    "ttl": "2026-10-24T18:35:22Z"
+  },
+  "state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 2,
+    "Error": "",
+    "StartedAt": "2026-10-24T17:35:43.698764982Z",
+    "FinishedAt": "2026-10-24T17:35:49.306965619Z"
+  },
+  "restart_count": 0,
+  "session": "/home/postedism/Desktop/Warden/.cache/warden-lab/docker-454fc203bfa3b1bb6296520028e6a1cd",
+  "session_device": 66307,
+  "session_inode": 56011098,
+  "session_uid": 1000,
+  "session_mode": "0o700",
+  "top_level_metadata": [
+    {
+      "name": "charge.json",
+      "device": 66307,
+      "inode": 56011128,
+      "uid": 1000,
+      "mode": "0o600",
+      "regular": true,
+      "directory": false,
+      "bytes": 64
+    },
+    {
+      "name": "rootfs.tar",
+      "device": 66307,
+      "inode": 56011120,
+      "uid": 1000,
+      "mode": "0o600",
+      "regular": true,
+      "directory": false,
+      "bytes": 496609280
+    },
+    {
+      "name": "session-365b23ee00074b56",
+      "device": 66307,
+      "inode": 56011150,
+      "uid": 0,
+      "mode": "0o700",
+      "regular": false,
+      "directory": true,
+      "bytes": 4096
+    },
+    {
+      "name": "manifest.json",
+      "device": 66307,
+      "inode": 56011115,
+      "uid": 1000,
+      "mode": "0o600",
+      "regular": true,
+      "directory": false,
+      "bytes": 111147
+    },
+    {
+      "name": "identity.json",
+      "device": 66307,
+      "inode": 56011143,
+      "uid": 1000,
+      "mode": "0o600",
+      "regular": true,
+      "directory": false,
+      "bytes": 252
+    }
+  ],
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "/home/postedism/Desktop/Warden/.cache/warden-lab/docker-454fc203bfa3b1bb6296520028e6a1cd",
+      "Destination": "/session",
+      "Mode": "",
+      "RW": false,
+      "Propagation": "rprivate"
+    }
+  ],
+  "caps": [
+    "CAP_CHOWN",
+    "CAP_DAC_OVERRIDE",
+    "CAP_FOWNER",
+    "CAP_KILL",
+    "CAP_MKNOD",
+    "CAP_NET_ADMIN",
+    "CAP_SETGID",
+    "CAP_SETPCAP",
+    "CAP_SETUID",
+    "CAP_SYS_ADMIN",
+    "CAP_SYS_CHROOT"
+  ],
+  "readonly_rootfs": true,
+  "memory": 4000000000,
+  "pids_limit": 512,
+  "owned_containers_all": [
+    "57a48b46ee5477bf65fdb6ae60bf5b7766c652630c7f2549b3e1e013a696c360"
+  ],
+  "owned_images_all": [
+    "sha256:53914c90accfbe8f1e11b530a7ae42edc9d1a79e098a01d50d14f244b5991514"
+  ],
+  "outstanding_bytes": 6000000000,
+  "manifest_sha256": "f6da1b8ebfcf82e5a5750026616b165db656b66718f2f807159f8a99b3adf894",
+  "protected_sysctls": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "scope": "Public state only, no private contents read; retained scene and reservation; no Ready/full cleanup claim."
+}

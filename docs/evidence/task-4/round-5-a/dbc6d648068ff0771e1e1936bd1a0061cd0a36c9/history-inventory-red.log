@@ -1,0 +1,93 @@
+test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors (test_firecracker_recovery_init.InventoryFixture.test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors) ... FAIL
+test_inventory_refuses_unknown_alias_link_and_nonempty_jail (test_firecracker_recovery_init.InventoryFixture.test_inventory_refuses_unknown_alias_link_and_nonempty_jail) ... ok
+test_replacement_after_inventory_refuses_before_any_mutation (test_firecracker_recovery_init.InventoryFixture.test_replacement_after_inventory_refuses_before_any_mutation) ... ERROR
+test_restore_changes_only_directory_fds_deepest_first_and_preserves_files (test_firecracker_recovery_init.InventoryFixture.test_restore_changes_only_directory_fds_deepest_first_and_preserves_files) ... ERROR
+test_restore_failure_is_incomplete_and_attempts_readonly_remount (test_firecracker_recovery_init.InventoryFixture.test_restore_failure_is_incomplete_and_attempts_readonly_remount) ... ERROR
+test_only_initial_ro_private_matching_mount_is_accepted (test_firecracker_recovery_init.MountTests.test_only_initial_ro_private_matching_mount_is_accepted) ... FAIL
+
+======================================================================
+ERROR: test_replacement_after_inventory_refuses_before_any_mutation (test_firecracker_recovery_init.InventoryFixture.test_replacement_after_inventory_refuses_before_any_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 87, in test_replacement_after_inventory_refuses_before_any_mutation
+    with self.collect() as held:
+         ~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 45, in collect
+    return recovery.collect(self.fd)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery_init.py", line 4, in collect
+    raise ValueError('recovery inventory not implemented')
+ValueError: recovery inventory not implemented
+
+======================================================================
+ERROR: test_restore_changes_only_directory_fds_deepest_first_and_preserves_files (test_firecracker_recovery_init.InventoryFixture.test_restore_changes_only_directory_fds_deepest_first_and_preserves_files)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 100, in test_restore_changes_only_directory_fds_deepest_first_and_preserves_files
+    with self.collect() as held:
+         ~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 45, in collect
+    return recovery.collect(self.fd)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery_init.py", line 4, in collect
+    raise ValueError('recovery inventory not implemented')
+ValueError: recovery inventory not implemented
+
+======================================================================
+ERROR: test_restore_failure_is_incomplete_and_attempts_readonly_remount (test_firecracker_recovery_init.InventoryFixture.test_restore_failure_is_incomplete_and_attempts_readonly_remount)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 119, in test_restore_failure_is_incomplete_and_attempts_readonly_remount
+    with self.collect() as held:
+         ~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 45, in collect
+    return recovery.collect(self.fd)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery_init.py", line 4, in collect
+    raise ValueError('recovery inventory not implemented')
+ValueError: recovery inventory not implemented
+
+======================================================================
+FAIL: test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors (test_firecracker_recovery_init.InventoryFixture.test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 50, in test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors
+    held = self.collect()
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 45, in collect
+    return recovery.collect(self.fd)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery_init.py", line 4, in collect
+    raise ValueError('recovery inventory not implemented')
+ValueError: recovery inventory not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 52, in test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors
+    self.fail('valid closed fixture refused: ' + str(error))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: valid closed fixture refused: recovery inventory not implemented
+
+======================================================================
+FAIL: test_only_initial_ro_private_matching_mount_is_accepted (test_firecracker_recovery_init.MountTests.test_only_initial_ro_private_matching_mount_is_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 136, in test_only_initial_ro_private_matching_mount_is_accepted
+    mount_id, flags = recovery.verify_mount(line, meta, 'mnt:[12]', 'mnt:[13]', True)
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery_init.py", line 10, in verify_mount
+    raise ValueError('recovery mount validation not implemented')
+ValueError: recovery mount validation not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 137, in test_only_initial_ro_private_matching_mount_is_accepted
+    except ValueError as error: self.fail('valid private RO fixture refused: ' + str(error))
+                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: valid private RO fixture refused: recovery mount validation not implemented
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+FAILED (failures=2, errors=3)

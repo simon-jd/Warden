@@ -1,0 +1,23 @@
+postflight 2026-11-10 18:32:06 PST
+loadavg 1.95 3.76 3.84 11/5724 499502
+head 86289ca clean=0
+--- containers label project=warden or name warden*:
+(end)
+--- networks:
+(end)
+--- images label project=warden:
+(end)
+--- kind clusters:
+materialflow
+--- host snapshot:
+fs.inotify.max_user_instances=512
+fs.inotify.max_user_watches=524288
+modules_sha256=9e93ec2d4a03e3645eb14d4ecae80b91b53ea53c2a7fbc09a259e0987b89afdf
+--- disk:
+/dev/nvme1n1p3  1.7T  1.5T   99G  94% /
+/dev/nvme0n1p1  1.8T  462G  1.4T  26% /mnt/dev-data
+--- worktree du:
+915M	/home/postedism/Desktop/Warden-task3
+--- main checkout intentional changes:
+ M scripts/firecracker_code.py
+?? detect/tests/backpressure_test.sh

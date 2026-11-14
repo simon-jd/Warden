@@ -1,0 +1,5 @@
+--- FAIL: TestLogSnapshotDeadlineClosesReaderAndMarksLost (1.14s)
+    scheduler_test.go:551: timed out snapshot was not closed
+FAIL
+FAIL	warden/controlplane/internal/scheduler	1.142s
+FAIL

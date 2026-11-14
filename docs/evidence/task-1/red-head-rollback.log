@@ -1,0 +1,6 @@
+=== RUN   TestVerifyDetectsHeadSequenceRollback
+    audit_test.go:135: want integrity error seq=3 for head rollback, got <nil>
+--- FAIL: TestVerifyDetectsHeadSequenceRollback (0.11s)
+FAIL
+FAIL	warden/controlplane/internal/audit	0.111s
+FAIL

@@ -1,0 +1,63 @@
+{
+  "cleanup_independent_observation": false,
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/postedism/Desktop/Warden/scripts/firecracker_code.py",
+    "vuln-unit"
+  ],
+  "elapsed_s": 2.765453835017979,
+  "failure": "Stop: finite poll limit; terminal/cleanup unknown",
+  "finished": "2026-10-25T19:32:44.000691+00:00",
+  "limits": {
+    "cpu_s": 20,
+    "fsize_bytes": 4194304,
+    "log_bytes": 2097152,
+    "parent_as_hard_bytes": 2147483648,
+    "parent_as_soft_bytes": 268435456,
+    "poll_max_s": 5,
+    "polls": 48,
+    "profile_cli_as_bytes": 2147483648,
+    "resident_reserve_bytes": 7000000000,
+    "wall_s": 240
+  },
+  "mem_available_before": 87148711936,
+  "native_kill_returncode": -9,
+  "owned_resident_policy": "existing profile refuses every other project-labeled container before guard/create",
+  "phase": "red-assertions",
+  "polls_used": 48,
+  "source_after": {
+    "scripts/firecracker_code.py": "b11f2eabf11d0a8f6ab8f11427c07fb2a870b2657d77d1411fb26cf9feaced90",
+    "vuln/feeds.go": "e67eb7b38fc4e073278b58d04c427a32b2af7e5cbc0d8ac5644ed634e102e096",
+    "vuln/prioritize.go": "6e2dfc775956ac473ac51edf89ee6ada2f1de351313acc57999615d9853be9c3",
+    "vuln/prioritize_test.go": "5993a8d9561f9a91e37d6d194489f8212d78c78fa23c349daad3b8bc58d074b7",
+    "vuln/sla.go": "40d05898c185f61b5ee553ef1b961cc71a17544c6d8cf448bc72849af8d071f4"
+  },
+  "source_before": {
+    "scripts/firecracker_code.py": "b11f2eabf11d0a8f6ab8f11427c07fb2a870b2657d77d1411fb26cf9feaced90",
+    "vuln/feeds.go": "e67eb7b38fc4e073278b58d04c427a32b2af7e5cbc0d8ac5644ed634e102e096",
+    "vuln/prioritize.go": "6e2dfc775956ac473ac51edf89ee6ada2f1de351313acc57999615d9853be9c3",
+    "vuln/prioritize_test.go": "5993a8d9561f9a91e37d6d194489f8212d78c78fa23c349daad3b8bc58d074b7",
+    "vuln/sla.go": "40d05898c185f61b5ee553ef1b961cc71a17544c6d8cf448bc72849af8d071f4"
+  },
+  "source_unchanged": true,
+  "started": "2026-10-25T19:32:41.235317+00:00",
+  "sysctls_after": {
+    "kernel/keys/root_maxbytes": "25000000",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0"
+  },
+  "sysctls_before": {
+    "kernel/keys/root_maxbytes": "25000000",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0"
+  },
+  "sysctls_unchanged": true,
+  "terminal_known": false
+}

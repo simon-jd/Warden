@@ -1,0 +1,16 @@
+$ go test -count=1 -v ./controlplane/internal/aksdrill   # after IsRegion
+=== RUN   TestProbePodRunsAsNobodyWithNothingToSpare
+--- PASS: TestProbePodRunsAsNobodyWithNothingToSpare (0.00s)
+=== RUN   TestDefaultDenyOffReadsTheStoredPolicy
+--- PASS: TestDefaultDenyOffReadsTheStoredPolicy (0.00s)
+=== RUN   TestIMDSLocationURLIsTheProbes
+--- PASS: TestIMDSLocationURLIsTheProbes (0.00s)
+=== RUN   TestRegionIsTheGuardsAKSRegion
+--- PASS: TestRegionIsTheGuardsAKSRegion (0.00s)
+=== RUN   TestIsRegionIgnoresCase
+--- PASS: TestIsRegionIgnoresCase (0.00s)
+=== RUN   TestSandboxCannotReachMetadata
+    metadata_test.go:37: live AKS test: needs WARDEN_LIVE_AKS=1 and the AKS drill (scripts/aks_drill.py up; make test-aks)
+--- SKIP: TestSandboxCannotReachMetadata (0.00s)
+PASS
+ok  	warden/controlplane/internal/aksdrill	0.002s

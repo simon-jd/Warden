@@ -1,0 +1,52 @@
+{
+  "observed_at": "2026-10-24T03:35:02.185096+00:00",
+  "review_base": "3afa92f",
+  "fix_sha": "7906ba660b315d6011d4a6425d0ef71b68d1894c",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "suite_command": [
+    "make",
+    "test-azure-budget"
+  ],
+  "suite_result": "40 tests passed in 10.537s; full related suite executed once after focused RED/GREEN",
+  "suite_raw_log": "docs/evidence/azure-budget/round-1/green.log",
+  "committed_source_sha256": {
+    "scripts/azure_guard.py": "303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48",
+    "scripts/test_azure_guard.py": "63d4aabdd7159a39396792b12355e99361a65d4f6683c6a900a97de3c6e63f80",
+    "docs/azure-reservation.example.json": "cdf23bb5afee040bcb4095c0e027dccb19b7f4718a79556734e60c0bc8246d04",
+    "docs/azure-budget-tools.md": "3647e7626ef240e366dc5391351a2ea80b149dc298646a1ed5f06438adeabdf5",
+    ".superpowers/sdd/2-warden-security-plan/budget-report.md": "000b0dbaf9a34dfe67f34f30127c1d3a8e49ab70f6da8ce1fad0e545bbfd694e"
+  },
+  "source_matches_committed_fix": true,
+  "checks": [
+    {
+      "command": [
+        "bash",
+        "-n",
+        "scripts/azure_reaper.sh"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "authoritative_reservations": 0,
+  "authoritative_committed_usd": "0.00",
+  "external_operations": "public Retail Prices API read only; all Azure CLI tests use fake boundary; no live Azure create/delete/subscription change",
+  "raw_evidence_sha256": {
+    "red-declared-compute-product.log": "f0884480225c3e27b629b772944aa799721f3b4621d24f5b28c5b6379807f72a",
+    "focused-green.log": "b5cf809afbf634eaf094050ede30b87f77579e33fe01547726018403047d6859",
+    "red.log": "59845037a2b75396a68d3639947e0c81de8af719343ec03157091566a33a40c3",
+    "s4-retail.json": "7256b8dd1f9bab7a61919e4ce30c6fc324a62a2242b0e9fcede2a2cd546be3c3",
+    "green.log": "46498cc51a2cf362f9b5ae73088bd80bff225085addc638fec6e70304d9564cb"
+  }
+}

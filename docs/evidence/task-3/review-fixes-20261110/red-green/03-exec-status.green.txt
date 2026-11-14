@@ -1,0 +1,6 @@
+# GREEN: the same test against the fixed await
+# 2026-11-10T20:38:10-08:00
+=== RUN   TestAwaitKeepsTheExecStatusWhenTheExitIsReadyFirst
+--- PASS: TestAwaitKeepsTheExecStatusWhenTheExitIsReadyFirst (0.00s)
+ok  	warden/runtimes/gvisor/supervisor	0.002s
+exit: 0

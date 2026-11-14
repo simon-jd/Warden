@@ -1,0 +1,79 @@
+{
+  "ancestors": {
+    "/": {
+      "blocks": 8,
+      "ctime_ns": 1792811120358138473,
+      "dev": 66307,
+      "gid": 0,
+      "ino": 2,
+      "mode": 16877,
+      "mtime_ns": 1792811120358138473,
+      "nlink": 20,
+      "size": 4096,
+      "uid": 0
+    },
+    "/run": {
+      "blocks": 0,
+      "ctime_ns": 1792935018566106133,
+      "dev": 29,
+      "gid": 0,
+      "ino": 1,
+      "mode": 16877,
+      "mtime_ns": 1792935018566106133,
+      "nlink": 53,
+      "size": 1420,
+      "uid": 0
+    },
+    "/var": {
+      "blocks": 8,
+      "ctime_ns": 1783055633402555025,
+      "dev": 66307,
+      "gid": 0,
+      "ino": 29884417,
+      "mode": 16877,
+      "mtime_ns": 1783055633402555025,
+      "nlink": 14,
+      "size": 4096,
+      "uid": 0
+    }
+  },
+  "compatibility": "NOT EXERCISED; no API request",
+  "legacy_alias": {
+    "metadata": {
+      "blocks": 0,
+      "ctime_ns": 1782971561603971598,
+      "dev": 66307,
+      "gid": 0,
+      "ino": 29884419,
+      "mode": 41471,
+      "mtime_ns": 1776906904000000000,
+      "nlink": 1,
+      "size": 4,
+      "uid": 0
+    },
+    "path": "/var/run",
+    "target": "/run"
+  },
+  "measured_entry_elapsed_seconds": 0.007554315961897373,
+  "observed_utc": "2026-10-25T14:24:42.509568+00:00",
+  "peer_identity": "NOT OBSERVED; no connection",
+  "scope": "fixed root-/run-/var/socket/legacy-alias metadata only; no socket open/connect, daemon API, peer PID, config, environment or private cache read",
+  "socket": {
+    "metadata": {
+      "blocks": 0,
+      "ctime_ns": 1792202257208000402,
+      "dev": 29,
+      "gid": 115,
+      "ino": 4756,
+      "mode": 49584,
+      "mtime_ns": 1792202257182516165,
+      "nlink": 1,
+      "size": 0,
+      "uid": 0
+    },
+    "path": "/run/docker.sock",
+    "permission_mode": "0o660"
+  },
+  "timing_scope": "30s from earliest measured Python entry; interpreter startup not externally bounded",
+  "version": 1
+}

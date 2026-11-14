@@ -1,0 +1,146 @@
+{
+  "cordon": {
+    "alert_to_new_pod_unschedulable_ms": 146.7,
+    "handle_ms": 39.8,
+    "pod_scheduled_after_uncordon": true,
+    "replay_noop": true
+  },
+  "isolate": {
+    "alert_to_both_blocked_ms": {
+      "max": 72.9,
+      "min": 32.8,
+      "p50": 60.5,
+      "p95": 72.9
+    },
+    "alert_to_egress_blocked_ms": {
+      "max": 72.9,
+      "min": 32.8,
+      "p50": 57.5,
+      "p95": 72.9
+    },
+    "alert_to_ingress_blocked_ms": {
+      "max": 62.8,
+      "min": 23.3,
+      "p50": 41.9,
+      "p95": 62.8
+    },
+    "control_fail_probes": 0,
+    "handle_ms": {
+      "max": 46.4,
+      "min": 24.9,
+      "p50": 32.2,
+      "p95": 46.4
+    },
+    "persist_old_ok_samples_1to3s_after_isolation": 199,
+    "probe": "fresh TCP connect every 50 ms (0.3 s timeout) to pod IPs (no kube-proxy, see podIP); time = attempt start of the first failed probe",
+    "release_to_healthy_ms": {
+      "max": 845.8,
+      "min": 833.3,
+      "p50": 838.3,
+      "p95": 845.8
+    },
+    "replays_noop": 10,
+    "runs": [
+      {
+        "alert": "kind-isolate-00",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 62.8,
+        "handle_ms": 44.5,
+        "ingress_blocked_ms": 62.8,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-01",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 65.3,
+        "handle_ms": 29.8,
+        "ingress_blocked_ms": 33.3,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-02",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 72.9,
+        "handle_ms": 36,
+        "ingress_blocked_ms": 51.9,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-03",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 56.7,
+        "handle_ms": 25,
+        "ingress_blocked_ms": 47.7,
+        "persist_old_ok_after_isolation": 19
+      },
+      {
+        "alert": "kind-isolate-04",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 57.5,
+        "handle_ms": 35.3,
+        "ingress_blocked_ms": 60.5,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-05",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 42.1,
+        "handle_ms": 46.4,
+        "ingress_blocked_ms": 56.1,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-06",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 69.9,
+        "handle_ms": 37.4,
+        "ingress_blocked_ms": 41.9,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-07",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 49.4,
+        "handle_ms": 24.9,
+        "ingress_blocked_ms": 31.4,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-08",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 32.8,
+        "handle_ms": 28.2,
+        "ingress_blocked_ms": 28.8,
+        "persist_old_ok_after_isolation": 20
+      },
+      {
+        "alert": "kind-isolate-09",
+        "control_fail_probes": 0,
+        "egress_blocked_ms": 70.3,
+        "handle_ms": 32.2,
+        "ingress_blocked_ms": 23.3,
+        "persist_old_ok_after_isolation": 20
+      }
+    ]
+  },
+  "isolate_runs": 10,
+  "load": {
+    "loadavg_end": "7.20 4.52 2.90 19/9931 1425532",
+    "loadavg_start": "7.29 3.98 2.63 5/9662 1407829",
+    "nproc": 32
+  },
+  "node": "warden-respond-control-plane",
+  "persist_fail_samples_1to10s_run0": 0,
+  "persist_old_ok_samples_1to10s_run0": 90,
+  "responder_rbac": {
+    "create pods/exec": false,
+    "delete nodes": false,
+    "delete pods warden-sandbox": false,
+    "get secrets warden-sandbox": false,
+    "patch nodes": true,
+    "patch pods kube-system": false,
+    "patch pods warden-sandbox": true
+  },
+  "server_version": "v1.34.11",
+  "token_ttl_s": 599.241382716
+}

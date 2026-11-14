@@ -1,0 +1,80 @@
+{
+  "utc": "2026-10-24T06:53:52.715656+00:00",
+  "container": "251ea8cc88d93962727b7372a9b70863cf4cefeaa188f1dde28a30b887369f6c",
+  "image": "sha256:00ae4976ee488e52ae72d9cf30ac0d6349cfd65438a45b695a875f314a9a0e4e",
+  "labels": {
+    "owner": "codex-warden",
+    "project": "warden",
+    "session": "0cfb8703e1819f45ddd582801eaf9ad0",
+    "ttl": "2026-10-24T07:52:24Z"
+  },
+  "state": {
+    "Status": "created",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 128,
+    "Error": "failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error mounting \"/proc/1962670/fd/6\" to rootfs at \"/session\": mount src=/proc/1962670/fd/6, dst=/session, dstFd=/proc/thread-self/fd/14, flags=MS_BIND|MS_REC: invalid argument",
+    "StartedAt": "0001-01-01T00:00:00Z",
+    "FinishedAt": "0001-01-01T00:00:00Z"
+  },
+  "restart_count": 0,
+  "image_size_bytes": 685362655,
+  "session": "/home/postedism/Desktop/Warden/.cache/warden-lab/docker-0cfb8703e1819f45ddd582801eaf9ad0",
+  "session_device": 66307,
+  "session_inode": 55491838,
+  "session_uid": 1000,
+  "session_mode": "0o700",
+  "session_files": [
+    "charge.json",
+    "identity.json",
+    "manifest.json"
+  ],
+  "charge": {
+    "version": 1,
+    "reserved_bytes": 6000000000,
+    "released": false
+  },
+  "owned_containers": [
+    "251ea8cc88d93962727b7372a9b70863cf4cefeaa188f1dde28a30b887369f6c"
+  ],
+  "owned_images": [],
+  "host_config": {
+    "Memory": 4000000000,
+    "MemorySwap": 4000000000,
+    "PidsLimit": 512,
+    "NanoCpus": 2000000000,
+    "Privileged": false,
+    "ReadonlyRootfs": true,
+    "PidMode": "",
+    "IpcMode": "private",
+    "NetworkMode": "none",
+    "CgroupnsMode": "private",
+    "CapDrop": [
+      "ALL"
+    ],
+    "CapAdd": [
+      "CAP_CHOWN",
+      "CAP_DAC_OVERRIDE",
+      "CAP_FOWNER",
+      "CAP_KILL",
+      "CAP_MKNOD",
+      "CAP_NET_ADMIN",
+      "CAP_SETGID",
+      "CAP_SETPCAP",
+      "CAP_SETUID",
+      "CAP_SYS_ADMIN",
+      "CAP_SYS_CHROOT"
+    ],
+    "Mounts": [
+      {
+        "Type": "bind",
+        "Source": "/proc/1962670/fd/6",
+        "Target": "/session"
+      }
+    ]
+  }
+}

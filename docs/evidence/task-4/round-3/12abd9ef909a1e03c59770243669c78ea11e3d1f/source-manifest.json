@@ -1,0 +1,70 @@
+{
+  "source": "12abd9ef909a1e03c59770243669c78ea11e3d1f",
+  "fix_base": "43e9d70babaf02d09a4e42281225f2d335f38791",
+  "source_parent": "3db3316bbd404069a3cd1049f0e8a24888454136",
+  "original_dispatch_base": "ad1ede992409dbea92be531f83ecb4e988ddd19f",
+  "files": {
+    "docs/firecracker-lab.md": {
+      "sha256": "249722350a43c4992f81c62a9582c7e96ed1ba9f34748aab2782d6c5ef20f7c3",
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/device_gate.go": {
+      "sha256": "62db9b4066b31e88bbab23d450ed59f3ffa2124b4f2447fc862aeb87a4d5c5d0",
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/device_policy.go": {
+      "sha256": "7d9161b75588f642b11a448831fc54d98b03c2874d0180d98a4f67f14139419d",
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/device_policy_test.go": {
+      "sha256": "79618f492d9dd3f4bc5ffad1d9ad1c8de43a32f68b2f8aabd0019e9c2dddad92",
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/driver.go": {
+      "sha256": "4132c95539e1eca6f95d0b288b5b24c1263cb89a39b2d12656b7d9b1ca648dd7",
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/supervisor.go": {
+      "sha256": "8a6f0a7a9c94df87388c6ee601597fcbe0047c043e3eb51ceae071a939761d0f",
+      "mode": "0o644"
+    },
+    "scripts/firecracker_device_receipt.py": {
+      "sha256": "c9d10f1cea6f60a15a7d70b818121538b93b76e5d42a94eb3fbe62594855da4b",
+      "mode": "0o644"
+    },
+    "scripts/firecracker_lab.py": {
+      "sha256": "662ecac38d4fd5e5d04222886e214f1b4211e26481c60ea47d3b88a657ffb2d1",
+      "mode": "0o644"
+    },
+    "scripts/test_firecracker_device_receipt.py": {
+      "sha256": "29d1db6d9e22b227f9c144cfdb2b0548d763bf29ed477a14b6c87c30bd9009ff",
+      "mode": "0o644"
+    },
+    "scripts/test_firecracker_lab.py": {
+      "sha256": "b912d30077202e98a5a82bcf11f44000aed19638071e5125b79308ac817a3af5",
+      "mode": "0o644"
+    }
+  },
+  "unchanged_interfaces_and_profiles": {
+    "scripts/firecracker_code.py": "56abda58b8a822b7bc1ce7311025763878e7110c2d4cfabd84203dce556db4dd",
+    "scripts/go.sh": "8682e3c696de6ee3a597554edda7f30ddfd2afbdcac8c90b2216b1a2523ad463",
+    "scripts/k3s_lab.py": "65b746e1bc715203b56b98f85517a9bc109f0d19984a36455d308da03489167e",
+    "scripts/k3s_lab_init.py": "df9d551de26c306b4e45439138173c169c6e6fe6f39eac012b7805bf3f48944a",
+    "scripts/runtime_lab_paths.py": "0ce3287feab8197839cf2e7e1cf297fd5cad0e740069023b188e4c366b643f84",
+    "runtimes/gate/gate.go": "0b5a5b140a7124c9d2a65567694e5b662d13bb99b7fdcd1cedadc434273f8284",
+    "runtimes/gate/admission.go": "3aabb68f81513df1a571da54f371a114aa552a8b79c693e45ad807318f70d1fc",
+    "runtimes/gate/retirement.go": "962cfa63ac1f252e95375c63d076f079abc6ddf0a851b6b61f5b76f55b9c428f",
+    "runtimes/firecracker/shutdown.go": "61ec1b2f167aeea83815a3b51ba0cd19e140b6a1dbdd9f8454c1046f4bcf1350",
+    "runtimes/conformance/suite.go": "0f840d48bd15b53ef59a24db34424ebeb5b330a413bd85edda9737bf3b0621ed"
+  },
+  "driver_delta": "Manifest policy version/hash fields and exact Open validation only; retirement implementation unchanged",
+  "tested_source": "8af8ee3dd8188e413b33f9d81b516ec2f3994066",
+  "initial_round3_parent": "81dad6ca36b4613a8387b28493d6e6b754bf5fde",
+  "namespace_patch_reverted": "3db3316bbd404069a3cd1049f0e8a24888454136",
+  "tracked_tree_identity": {
+    "tested_tree": "43745b95842e9e993e99cf2546403737e37a400b",
+    "final_tree": "43745b95842e9e993e99cf2546403737e37a400b",
+    "all_tracked_bytes_and_git_modes_identical": true,
+    "suite_rerun_at_final": false
+  }
+}

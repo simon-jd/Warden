@@ -1,0 +1,117 @@
+# scratch clone /tmp/w3m-clone-0002-old of ~/Desktop/Warden-task3 at e4c856d, umask 0002 for git clone and make
+# 2026-11-12T09:17:14-08:00, load 1.92 2.45 3.01
+# head e4c856df4d67e75bc021778cef7fa477a2bf3c86
+# git status --short:
+#   (end)
+# modes:
+#   drwxrwxr-x postedism /tmp/w3m-clone-0002-old
+#   drwxrwxr-x postedism /tmp/w3m-clone-0002-old/.cache
+#   drwxrwxr-x postedism /tmp/w3m-clone-0002-old/.tools
+#   drwxrwxrwt root /tmp
+# $ make test
+pkgs=$(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/tmp/w3m-clone-0002-old/.cache/go-build GOMODCACHE=/tmp/w3m-clone-0002-old/.cache/go-mod GOPATH=/tmp/w3m-clone-0002-old/.cache/go HOME=/tmp/w3m-clone-0002-old/.cache/home TMPDIR=/tmp/w3m-clone-0002-old/.cache/test-tmp /tmp/w3m-clone-0002-old/.tools/go/bin/go list -buildvcs=false ./...) && pkgs=$(printf '%s\n' $pkgs | grep -Ev '^$|^warden/docs/') || exit 1; env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/tmp/w3m-clone-0002-old/.cache/go-build GOMODCACHE=/tmp/w3m-clone-0002-old/.cache/go-mod GOPATH=/tmp/w3m-clone-0002-old/.cache/go HOME=/tmp/w3m-clone-0002-old/.cache/home TMPDIR=/tmp/w3m-clone-0002-old/.cache/test-tmp WARDEN_KYVERNO=/tmp/w3m-clone-0002-old/.tools/kyverno/kyverno /tmp/w3m-clone-0002-old/.tools/go/bin/go test -buildvcs=false -count=1 -shuffle=on  $pkgs
+ok  	warden/attacks/matrix	0.007s
+ok  	warden/controlplane/cmd/warden-api	0.005s
+ok  	warden/controlplane/internal/api	0.005s
+ok  	warden/controlplane/internal/apilab	0.005s
+ok  	warden/controlplane/internal/audit	0.003s
+ok  	warden/controlplane/internal/authn	6.332s
+?   	warden/controlplane/internal/canonical	[no test files]
+ok  	warden/controlplane/internal/jit	0.006s
+ok  	warden/controlplane/internal/runs	0.003s
+ok  	warden/controlplane/internal/scheduler	0.011s
+ok  	warden/controlplane/internal/scim	0.005s
+ok  	warden/controlplane/internal/store	0.003s
+?   	warden/controlplane/internal/tenant	[no test files]
+?   	warden/controlplane/internal/testutil	[no test files]
+ok  	warden/detect/dns_exfil	0.006s
+ok  	warden/identity/tests	0.003s
+ok  	warden/identity/vault	0.004s
+ok  	warden/policies/seccomp	0.006s
+ok  	warden/respond	1.084s
+ok  	warden/respond/kindlab	0.004s
+?   	warden/runtimes	[no test files]
+ok  	warden/runtimes/conformance	6.019s
+ok  	warden/runtimes/conformance/guest	0.006s
+-test.shuffle 1794503842187591402
+--- FAIL: TestRootFSExportProvenance (0.00s)
+    rootfs_test.go:38: writable private ancestor
+--- FAIL: TestDockerMtabOmittedWithoutCreatingAlias (0.00s)
+    rootfs_test.go:92: writable private ancestor
+--- FAIL: TestCloseSealsLateGateAndDirectStarts (0.00s)
+    driver_test.go:197: writable private ancestor
+--- FAIL: TestCloseCoordinatesInflightGateAdmission (0.00s)
+    driver_test.go:225: writable private ancestor
+--- FAIL: TestOrdinaryMtabFileIsKeptAndNeverOmitted (0.00s)
+    rootfs_test.go:191: writable private ancestor
+--- FAIL: TestUIDAllocatorRejectsOrphansAndUnsafeFiles (0.00s)
+    --- FAIL: TestUIDAllocatorRejectsOrphansAndUnsafeFiles/symlink (0.00s)
+        identity_test.go:80: writable private ancestor
+    --- FAIL: TestUIDAllocatorRejectsOrphansAndUnsafeFiles/hardlink (0.00s)
+        identity_test.go:80: writable private ancestor
+    --- FAIL: TestUIDAllocatorRejectsOrphansAndUnsafeFiles/corrupt (0.00s)
+        identity_test.go:80: writable private ancestor
+    --- FAIL: TestUIDAllocatorRejectsOrphansAndUnsafeFiles/mode (0.00s)
+        identity_test.go:80: writable private ancestor
+--- FAIL: TestClosePreservesPendingFilesAfterReopen (0.00s)
+    --- FAIL: TestClosePreservesPendingFilesAfterReopen/launching (0.00s)
+        driver_test.go:169: writable private ancestor
+    --- FAIL: TestClosePreservesPendingFilesAfterReopen/orphan-run (0.00s)
+        driver_test.go:169: writable private ancestor
+--- FAIL: TestUIDsSurviveProcessReopen (0.00s)
+    identity_test.go:40: writable private ancestor
+--- FAIL: TestExt4BuilderDropsHostACLs (0.00s)
+    ext4_test.go:59: writable private ancestor
+--- FAIL: TestCloseRejectsUnknownOrUnsafeJournals (0.00s)
+    --- FAIL: TestCloseRejectsUnknownOrUnsafeJournals/extra-gate (0.00s)
+        driver_test.go:290: writable private ancestor
+    --- FAIL: TestCloseRejectsUnknownOrUnsafeJournals/extra-runs (0.00s)
+        driver_test.go:290: writable private ancestor
+    --- FAIL: TestCloseRejectsUnknownOrUnsafeJournals/extra-uids (0.00s)
+        driver_test.go:290: writable private ancestor
+    --- FAIL: TestCloseRejectsUnknownOrUnsafeJournals/corrupt-allocator (0.00s)
+        driver_test.go:290: writable private ancestor
+    --- FAIL: TestCloseRejectsUnknownOrUnsafeJournals/unsafe-run (0.00s)
+        driver_test.go:290: writable private ancestor
+    --- FAIL: TestCloseRejectsUnknownOrUnsafeJournals/lost-owner-started (0.00s)
+        driver_test.go:290: writable private ancestor
+    --- FAIL: TestCloseRejectsUnknownOrUnsafeJournals/missing-runs (0.00s)
+        driver_test.go:290: writable private ancestor
+    --- FAIL: TestCloseRejectsUnknownOrUnsafeJournals/corrupt-gate-node (0.00s)
+        driver_test.go:290: writable private ancestor
+--- FAIL: TestCloseAccountsForGatedFailureWithoutHandle (0.00s)
+    --- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/invalid-profile (0.00s)
+        driver_test.go:135: writable private ancestor
+    --- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/image-mismatch (0.00s)
+        driver_test.go:135: writable private ancestor
+    --- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/reservation-full (0.00s)
+        driver_test.go:135: writable private ancestor
+    --- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/record-collision (0.00s)
+        driver_test.go:135: writable private ancestor
+    --- FAIL: TestCloseAccountsForGatedFailureWithoutHandle/allocator-state (0.00s)
+        driver_test.go:135: writable private ancestor
+--- FAIL: TestExt4BuilderCreatesBoundedReadOnlyProbeDisk (0.00s)
+    ext4_test.go:22: writable private ancestor
+--- FAIL: TestConcurrentUIDAllocation (0.00s)
+    identity_test.go:108: writable private ancestor
+--- FAIL: TestCloseWaitsForAlreadyAdmittedCallback (0.00s)
+    driver_test.go:338: writable private ancestor
+FAIL
+FAIL	warden/runtimes/firecracker	0.139s
+?   	warden/runtimes/firecracker/cmd/agent	[no test files]
+?   	warden/runtimes/firecracker/cmd/lab	[no test files]
+?   	warden/runtimes/firecracker/cmd/rootfs	[no test files]
+ok  	warden/runtimes/firecracker/guest	0.006s
+ok  	warden/runtimes/gate	0.082s
+ok  	warden/runtimes/gvisor	0.611s
+?   	warden/runtimes/gvisor/cmd/warden-gvisor-init	[no test files]
+?   	warden/runtimes/gvisor/lab/pause	[no test files]
+ok  	warden/runtimes/gvisor/supervisor	0.004s
+ok  	warden/runtimes/runc	0.088s
+ok  	warden/supplychain/kyvernolab	0.545s
+ok  	warden/vuln	0.036s
+ok  	warden/vuln/cmd/vulnfeeds	0.007s
+FAIL
+make: *** [Makefile:63: test-go] Error 1
+# make test exit: 2
+# end 2026-11-12T09:17:28-08:00

@@ -1,0 +1,4 @@
+# Test fixture: a fake probe that always reaches its goal.
+id: fake-always-succeeds
+technique: T1059.004
+success_signal: FAKE_REACHED_GOAL

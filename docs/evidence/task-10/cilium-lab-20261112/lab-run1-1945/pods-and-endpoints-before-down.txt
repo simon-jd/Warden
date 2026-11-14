@@ -1,0 +1,23 @@
+2026-11-12T23:26:42-08:00
+NAMESPACE     NAME                               READY   STATUS    RESTARTS   AGE     IP               NODE            NOMINATED NODE   READINESS GATES
+kube-system   cilium-envoy-kxqcl                 1/1     Running   0          3h41m   192.168.192.10   warden-gvisor   <none>           <none>
+kube-system   cilium-nq6gt                       1/1     Running   0          3h41m   192.168.192.10   warden-gvisor   <none>           <none>
+kube-system   cilium-operator-74f886c9cb-fl64s   1/1     Running   0          3h41m   192.168.192.10   warden-gvisor   <none>           <none>
+kube-system   coredns-6768dd4866-hq6sm           1/1     Running   0          3h36m   10.42.0.225      warden-gvisor   <none>           <none>
+warden-lab    spike-s1                           1/1     Running   0          3h37m   10.42.0.224      warden-gvisor   <none>           <none>
+ENDPOINT   POLICY (ingress)   POLICY (egress)   IDENTITY   LABELS (source:key[=value])                                                  IPv6   IPv4          STATUS   
+           ENFORCEMENT        ENFORCEMENT                                                                                                                    
+23         Disabled           Disabled          4          reserved:health                                                                     10.42.0.252   ready   
+59         Disabled           Disabled          15469      k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=warden-lab           10.42.0.224   ready   
+                                                           k8s:io.cilium.k8s.policy.cluster=default                                                                  
+                                                           k8s:io.cilium.k8s.policy.serviceaccount=default                                                           
+                                                           k8s:io.kubernetes.pod.namespace=warden-lab                                                                
+                                                           k8s:warden.dev/sandbox=true                                                                               
+202        Disabled           Disabled          65328      gen:io.cilium.k8s.named-ports=dns.UDP.53_dns-tcp.TCP.53                             10.42.0.225   ready   
+                                                           k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=kube-system                                
+                                                           k8s:io.cilium.k8s.policy.cluster=default                                                                  
+                                                           k8s:io.cilium.k8s.policy.serviceaccount=coredns                                                           
+                                                           k8s:io.kubernetes.pod.namespace=kube-system                                                               
+                                                           k8s:k8s-app=kube-dns                                                                                      
+425        Disabled           Disabled          1          k8s:node-role.kubernetes.io/control-plane=true                                                    ready   
+                                                           reserved:host                                                                                             

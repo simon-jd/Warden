@@ -1,0 +1,24 @@
+{
+  "source": "ba8cfaf6bffd7996f54bd50db9ccf453ff121022",
+  "command": [
+    "python3",
+    "-B",
+    "scripts/firecracker_recovery.py",
+    "cleanup-inspect",
+    "--reviewed-exact-scene",
+    "--other-service-memory-bytes",
+    "0"
+  ],
+  "started_at": "2026-10-25T00:11:37.039698+00:00",
+  "ended_at": "2026-10-25T00:11:39.178556+00:00",
+  "duration_seconds": 2.138858,
+  "exit_code": 0,
+  "log_bytes": 138,
+  "log_sha256": "f7566144e404ed423e0ee3f689fbb905883a149e50097161b29795cd60249d6c",
+  "original_Q_bytes": 5000000000,
+  "original_Q_released": false,
+  "original_owner_retirement": "cleanup_pending",
+  "creation_outcome": "unknown",
+  "never_reopen": true,
+  "new_attempt_authorized": false
+}

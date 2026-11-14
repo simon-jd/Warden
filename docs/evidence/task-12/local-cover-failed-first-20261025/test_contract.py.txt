@@ -1,0 +1,291 @@
+"""The first RED compares an adapter with the actual released backend."""
+
+import unittest
+
+from sigma.backends.opensearch import OpensearchLuceneBackend
+from sigma.collection import SigmaCollection
+from sigma.processing.pipeline import ProcessingItem, ProcessingPipeline
+from sigma.processing.transformations.values import CaseTransformation
+
+from detect.sigma.convert import convert_rule
+
+
+REFERENCE_RULE = """title: Synthetic Azure Role Assignment Action
+id: 8ce13e27-4f0d-5d85-a22d-c53c1726b629
+status: experimental
+description: Synthetic conversion contract, not live detection evidence.
+author: Warden
+date: 2026-10-25
+logsource:
+  product: azure
+  service: activity
+detection:
+  selection:
+    class_uid: 6003
+    metadata.product.name: Azure Activity Log
+    api.operation: Microsoft.Authorization/roleAssignments/write
+  condition: selection
+level: medium
+"""
+
+
+class AdapterRedTest(unittest.TestCase):
+    def test_returns_backend_reference(self):
+        reference = OpensearchLuceneBackend(
+            ProcessingPipeline(
+                items=[ProcessingItem(transformation=CaseTransformation(method="lower"))]
+            ),
+            collect_errors=False,
+        ).convert(SigmaCollection.from_yaml(REFERENCE_RULE, collect_errors=False))
+        self.assertEqual(len(reference), 1, "real backend must emit one query")
+        self.assertIsInstance(reference[0], str)
+        self.assertTrue(reference[0].strip(), "reference query cannot be empty")
+        self.assertEqual(convert_rule(REFERENCE_RULE), reference)
+
+
+import copy
+import ipaddress
+import json
+from pathlib import Path
+
+import yaml
+from detect.report.coverage import build_report, render_markdown, summarize_rules
+from detect.sigma.convert import FIELDS, RULES_DIR, read_rule
+
+EXPECTED_IDS = frozenset("""
+ee10f37f-39d6-5746-ad09-186248ab32f6
+90c3f14c-fcf7-5b78-a05c-f43813fc28ee
+01e2eafe-0802-518d-bbac-d17c0c6b50e4
+8a8ca06b-b667-5dfb-958e-0256c9d4372f
+58e9df96-53e1-5d33-8a80-3b48baf30196
+bc213666-ff5e-5223-96f8-3d21affacea4
+1e994d5d-1ab5-5b63-ad54-67a5a17b95a6
+3753e3e6-fbcf-5103-8493-cf9a6f517a9d
+bcaf0c3b-51b0-5485-8a44-b2f6d50d64df
+9ea8a65f-02da-57e8-88bc-9955b56384b4
+5dcab9b5-554a-5da0-bab2-f29b80cd543a
+f8b2e145-130b-548f-87bd-79cae5113265
+3045a181-2881-5ffd-8413-7d35b2bf6c59
+bf4653a2-80c9-58b5-8602-96998c1e82d0
+21c89bd1-10e0-53da-9f47-0d173fa49bb6
+19f0e5bc-cf4d-5173-aee9-4142047fa8ae
+56cd6626-b755-5bab-a3d5-31b85d03f3e4
+df4d7f13-64ec-5102-967d-4b25096eb332
+5bebc4aa-c4d9-55fd-ab90-cebc911ecdb6
+06332649-217d-51ea-be55-6a3e9f0e38d5
+3bb574eb-18ef-5b54-90b7-ac292b52b11f
+e723ccc6-00ea-5cbd-934d-d803f343fea4
+04b1c6e8-bc83-5f59-8b27-acf635891f11
+65a7f1d4-3276-544f-8ca7-01e78c1db2d1
+68eccb16-f177-5280-aec8-98e9b1d75ac7
+38b28b75-ff7f-54ec-ad62-7482c9298352
+4d088f9b-509f-5ce6-ac7e-a410fdb27f32
+768e57f3-2e80-52d1-a2c7-106e69830e15
+a44b26f2-1d12-5c80-87a6-ba82dc24db6d
+1753c574-aa24-59ed-827d-a688f2514636
+f29f2482-2c13-5fdc-8ef1-c01886f4de0c
+354ba4e7-c8c7-5f4f-9b5a-6c8ae8292aac
+""".split())
+EXPECTED_TECHNIQUES = {
+    "T1098.003", "T1685.002", "T1609", "T1572", "T1610", "T1098.006",
+    "T1552.007", "T1059.004", "T1059.006", "T1105", "T1496", "T1611",
+    "T1552.005", "T1021.004", "T1021.001",
+}
+
+
+def field_value(event, name):
+    """Structural JSON pointer only; this does not evaluate a Sigma predicate."""
+    node = event
+    for part in name.split("."):
+        if not isinstance(node, dict) or part not in node:
+            return None
+        node = node[part]
+    return node
+
+
+class AdapterEdgeTest(unittest.TestCase):
+    def test_casefold_matches_real_backend_without_changing_fields(self):
+        document = yaml.safe_load(REFERENCE_RULE)
+        uppercase = copy.deepcopy(document)
+        for field, value in uppercase["detection"]["selection"].items():
+            if isinstance(value, str):
+                uppercase["detection"]["selection"][field] = value.upper()
+        self.assertEqual(convert_rule(json.dumps(document)), convert_rule(json.dumps(uppercase)))
+
+    def test_path_suffix_and_literal_characters_use_real_backend(self):
+        document = yaml.safe_load(REFERENCE_RULE)
+        document["logsource"] = {"product": "linux", "category": "process_creation"}
+        document["detection"] = {
+            "selection": {
+                "class_uid": 1007,
+                "metadata.product.name": "Tetragon",
+                "process.name|endswith": r"/Bash:literal+name\*",
+            },
+            "condition": "selection",
+        }
+        text = json.dumps(document)
+        reference = OpensearchLuceneBackend(
+            ProcessingPipeline(items=[ProcessingItem(transformation=CaseTransformation(method="lower"))]),
+            collect_errors=False,
+        ).convert(SigmaCollection.from_yaml(text, collect_errors=False))
+        self.assertEqual(convert_rule(text), reference)
+        self.assertTrue(reference[0].strip())
+        self.assertIn("process.name", reference[0])
+
+    def test_rejects_reserved_query_fields_and_unsupported_modifiers(self):
+        for field in ("_id", "api.operation|re", "api.operation|cased", "api.operation|expand"):
+            with self.subTest(field=field):
+                document = yaml.safe_load(REFERENCE_RULE)
+                document["detection"]["selection"][field] = "literal"
+                with self.assertRaises(ValueError):
+                    convert_rule(json.dumps(document))
+
+
+class CatalogueContractTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # Exactly one catalogue compilation is shared across these contract tests.
+        cls.report = build_report()
+        cls.compiled = cls.report["compiled"]
+        cls.manifest = json.loads((RULES_DIR.parent / "tests" / "manifest.json").read_text())
+        cls.by_id = {item["rule"]["id"]: item for item in cls.compiled}
+        cls.mapping = json.loads((RULES_DIR.parent / "opensearch-mapping.json").read_text())
+
+    def test_all_32_real_conversions_and_exact_id_inventory(self):
+        self.assertEqual(len(self.compiled), 32)
+        self.assertEqual(set(self.by_id), EXPECTED_IDS)
+        self.assertEqual({row["id"] for row in self.manifest["rules"]}, EXPECTED_IDS)
+        for item in self.compiled:
+            with self.subTest(rule=item["file"]):
+                self.assertEqual(len(item["queries"]), 1)
+                self.assertIsInstance(item["queries"][0], str)
+                self.assertTrue(item["queries"][0].strip())
+                self.assertIn("class_uid", item["queries"][0])
+                self.assertIn("metadata.product.name", item["queries"][0])
+
+    def test_rule_guards_declared_fields_and_mapping(self):
+        self.assertEqual(self.mapping["mappings"]["dynamic"], "strict")
+        normalizer = self.mapping["settings"]["analysis"]["normalizer"]["warden_ascii_lower"]
+        self.assertEqual(normalizer["filter"], ["lowercase"])
+        for row in self.manifest["rules"]:
+            rule = self.by_id[row["id"]]["rule"]
+            detection = rule["detection"]
+            with self.subTest(rule=row["number"]):
+                self.assertRegex(detection["condition"], r"^source and action(?: and required)?(?: and not allowed)?$")
+                self.assertEqual(detection["source"]["class_uid"], row["class_uid"])
+                self.assertEqual(detection["source"]["metadata.product.name"], row["product"].lower())
+                fields = {key.split("|")[0] for value in detection.values() if isinstance(value, dict) for key in value}
+                self.assertEqual(fields, set(row["fields"]))
+                self.assertLessEqual(fields, FIELDS)
+                for field in fields:
+                    properties = self.mapping["mappings"]["properties"]
+                    parts = field.split(".")
+                    for part in parts[:-1]:
+                        properties = properties[part]["properties"]
+                    leaf = properties[parts[-1]]
+                    self.assertIn(leaf["type"], ("integer", "keyword", "ip"))
+                    if leaf["type"] == "keyword":
+                        self.assertEqual(leaf["normalizer"], "warden_ascii_lower")
+                if "allowed" in detection:
+                    for field in detection["allowed"]:
+                        self.assertIs(detection["required"][field + "|exists"], True)
+                self.assertEqual(read_rule(json.dumps(rule)), rule)
+
+    def assert_fixture_contract(self, event, row):
+        cls = row["class_uid"]
+        self.assertEqual(event["class_uid"], cls)
+        self.assertIs(type(event["class_uid"]), int)
+        self.assertEqual(event["category_uid"], {6003: 6, 1007: 1, 4001: 4}[cls])
+        self.assertEqual(event["type_uid"], cls * 100 + event["activity_id"])
+        self.assertEqual(event["time"], 1767225600000)
+        self.assertIs(type(event["time"]), int)
+        self.assertEqual(event["metadata"]["version"], "1.3.0")
+        self.assertEqual(event["metadata"]["product"]["name"], row["product"])
+        self.assertLessEqual(len(json.dumps(event["unmapped"], separators=(",", ":")).encode()), 2048)
+        if cls == 6003:
+            self.assertIsInstance(event["api"]["operation"], str)
+            self.assertTrue(event["actor"]["user"]["uid"])
+            ipaddress.ip_address(event["src_endpoint"]["ip"])
+            operation = event["api"]["operation"]
+            if row["product"] == "Azure Activity Log":
+                activity = 2 if operation.endswith("/read") else 4 if operation.endswith("/delete") else 99
+            else:
+                activity = 1 if operation == "create" else 2 if operation in ("get", "list", "watch") else 3 if operation in ("update", "patch") else 4 if operation in ("delete", "deletecollection") else 99
+            self.assertEqual(event["activity_id"], activity)
+            if activity == 99:
+                self.assertEqual(event["activity_name"], operation)
+            else:
+                self.assertNotIn("activity_name", event)
+        elif cls == 1007:
+            for process in (event["process"], event["actor"]["process"]):
+                self.assertTrue(process["name"].startswith("/"))
+                self.assertTrue(process["uid"])
+                self.assertIs(type(process["pid"]), int)
+            self.assertTrue(event["device"]["uid"])
+        else:
+            self.assertNotIn("uid", event["metadata"])
+            for endpoint in (event["src_endpoint"], event["dst_endpoint"]):
+                ipaddress.ip_address(endpoint["ip"])
+                self.assertIs(type(endpoint["port"]), int)
+                self.assertGreaterEqual(endpoint["port"], 0)
+                self.assertLessEqual(endpoint["port"], 65535)
+            self.assertIn(event["unmapped"]["direction"], ("I", "O"))
+
+    def test_all_64_fixture_contracts_and_distinct_document_ids(self):
+        ids = set()
+        pairs = 0
+        for row in self.manifest["rules"]:
+            directory = RULES_DIR.parent / "tests" / row["id"]
+            positive = json.loads((directory / "pos.json").read_text())
+            negative = json.loads((directory / "neg.json").read_text())
+            with self.subTest(rule=row["number"]):
+                self.assert_fixture_contract(positive, row)
+                self.assert_fixture_contract(negative, row)
+                self.assertNotEqual(positive, negative)
+                # A selector field differs, without evaluating any rule predicate.
+                self.assertTrue(any(field_value(positive, field) != field_value(negative, field) for field in row["fields"]))
+                for key in ("positive", "negative"):
+                    document_id = row["document_ids"][key]
+                    self.assertNotIn(document_id, ids)
+                    ids.add(document_id)
+                if row["source_contract"] == "conditional_objectRef_passthrough":
+                    self.assertIn("objectRef", positive["unmapped"])
+            pairs += 2
+        self.assertEqual(pairs, 64)
+        self.assertEqual(len(ids), 64)
+        self.assertEqual(self.manifest["fixture_origin"], "synthetic")
+
+    def test_declared_edge_cases_are_not_claimed_query_results(self):
+        self.assertTrue(self.manifest["query_status"].startswith("UNRUN"))
+        names = {"wrong_product", "wrong_class", "missing_action_field", "reserved_identifier_value", "string_case_variant"}
+        case_ids = set()
+        for row in self.manifest["rules"]:
+            cases = json.loads((RULES_DIR.parent / "tests" / row["id"] / "cases.json").read_text())
+            with self.subTest(rule=row["number"]):
+                self.assertGreaterEqual(len(cases), 6)
+                self.assertLessEqual(names, {case["name"] for case in cases})
+                for case in cases:
+                    self.assertIs(type(case["expected_match"]), bool)
+                    self.assertIn("query", case["scope"])
+                    self.assertNotIn(case["document_id"], case_ids)
+                    case_ids.add(case["document_id"])
+                reserved = next(case for case in cases if case["name"] == "reserved_identifier_value")
+                self.assertTrue(reserved["expected_match"])
+                self.assertNotIn("class_uid:9999", self.by_id[row["id"]]["queries"][0])
+                self.assertEqual(row["query_status"], "UNRUN")
+                self.assertEqual(row["live_status"], "UNRUN")
+
+    def test_deterministic_coverage_counts_and_exact_technique_inventory(self):
+        summary = self.report["summary"]
+        self.assertEqual((summary["rule_count"], summary["tagged_rule_count"], summary["unassigned_rule_count"], summary["technique_count"]), (32, 20, 12, 15))
+        self.assertEqual({row["id"] for row in summary["techniques"]}, EXPECTED_TECHNIQUES)
+        reversed_rules = [item["rule"] for item in reversed(self.compiled)]
+        self.assertEqual(summarize_rules(reversed_rules), summary)
+        self.assertEqual(render_markdown(summary, set(self.by_id)), self.report["markdown"])
+        self.assertEqual(self.report["markdown"].count("| PASS | UNRUN | UNRUN |"), 32)
+        self.assertIn("Fixture events are synthetic", self.report["markdown"])
+        self.assertIn("Whole Task12 remains OPEN", self.report["markdown"])
+
+
+if __name__ == "__main__":
+    unittest.main()

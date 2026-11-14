@@ -1,0 +1,15 @@
+test_handshake_rechecks_retained_flags_after_remount (test_k3s_lab_init.InitTest.test_handshake_rechecks_retained_flags_after_remount) ... FAIL
+
+======================================================================
+FAIL: test_handshake_rechecks_retained_flags_after_remount (test_k3s_lab_init.InitTest.test_handshake_rechecks_retained_flags_after_remount)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 76, in test_handshake_rechecks_retained_flags_after_remount
+    with self.assertRaises(ValueError):init.session_handshake(live=True)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

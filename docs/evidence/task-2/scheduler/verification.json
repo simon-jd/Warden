@@ -1,0 +1,80 @@
+{
+  "implementation_sha": "77e4e057eb074b39ceb5396ea09d74e824a8b41b",
+  "evidence_recorded_utc": "2026-10-24T04:35:02.850120+00:00",
+  "local_date": "2026-10-23",
+  "timezone": "America/Los_Angeles",
+  "source_binding": "Post-commit git diff --exit-code implementation_sha -- controlplane runtimes/gate scripts/test-postgres.sh returned 0; final checks ran on this identical source tree immediately before the implementation commit.",
+  "commands": [
+    {
+      "command": "scripts/test-postgres.sh test -p 1 ./controlplane/... ./runtimes/gate -count=1 -v",
+      "exit_code": 0,
+      "log": "test-final.txt"
+    },
+    {
+      "command": "scripts/test-postgres.sh test -p 1 -race ./controlplane/... ./runtimes/gate -count=1 -v",
+      "exit_code": 0,
+      "log": "race-final.txt"
+    },
+    {
+      "command": "scripts/go.sh vet ./controlplane/... ./runtimes/gate",
+      "exit_code": 0,
+      "log": "vet-final.txt"
+    },
+    {
+      "command": "scripts/check-test-postgres-cleanup.sh",
+      "exit_code": 0,
+      "log": "postgres-cleanup.txt"
+    }
+  ],
+  "results": {
+    "top_level_pass": 53,
+    "pass_including_subcases": 66,
+    "includes_child_worker_entrypoint": true,
+    "skip": 0,
+    "race_reports": 0
+  },
+  "external_boundary": "Controlled Runtime/Handle fakes; actual Postgres, filesystem locking/fsync, OS process workers and HTTP handlers.",
+  "remaining_integration_gate": "Actual API-to-runc proof plus original-daemon quiescence/reconciliation for ambiguous creation. Uncertainty remains cleanup_pending across retries/restarts.",
+  "postgres_fixture": {
+    "memory_bytes": 536870912,
+    "memory_swap_bytes": 536870912,
+    "pids": 128,
+    "cpu": 2,
+    "resident_after_cleanup": false
+  },
+  "azure_estimate_usd": 0,
+  "log_sha256": {
+    "green-all-core.txt": "5349ea0aabb4298a466e90bf9b976cf8a3997c9b8ada8c2ea121e3679e3b4780",
+    "green-ambiguous-creation.txt": "13e2a4d601048865a3a082312f8b79cea05824c689cb1bd471e1f41ae30114e9",
+    "green-api-faults.txt": "9a441698c1a0a6392977a2c6c5b56c208c71680a5a25147b6763497a70a138c8",
+    "green-authority-terminal.txt": "fa52fb38ac68805acb85ddd473e76c0d67fdb93cf33e1b2fe680b4c4e3117bac",
+    "green-directory-replacement.txt": "446b384800116e1892c744d28bfef3afe6e020ec68688b2929b2699fc3cc3a21",
+    "green-fault-boundaries.txt": "d09febdfb1af86e04f9ccd7099bb00c90c97e28a464ee10e1f7238160798a9b2",
+    "green-log-timeout.txt": "6c42b1c14cf30ade1a2e93b118c9c6391b3d5ef53b49f87f66e1dea1b7d38c1c",
+    "green-migration.txt": "02ed8f0f22ae32b820f2b5438818960344d7c2e1ed88966ca8e2841dbbab2f93",
+    "green-multiprocess.txt": "aa14686c2ac20b924b3202a1ebbc621df69409921bfddd8b0e95341ae6cba024",
+    "green-refinements.txt": "add9c5331e08a1c8d033630c70d2d4c70bce99080d0c5b65b052b0d49630cb0c",
+    "green-scheduler.txt": "580c7bee647555e630d3b11b44a3b865de116f5cca2927deddcfb9c26f27ae25",
+    "green-store.txt": "a9daac6f14cc4b9284539975798c22462f6dc35ada0aeefb016be5bda3e741fe",
+    "postgres-cleanup.txt": "c5969582a2f2e455e250d30522562e2aeed2d6ef200b85fbcc6c9fd2a8d149fc",
+    "race-final.txt": "aa84d54033a0667b3622d2a2b2dc12c224d1f1cb885cf86a756f20322802b378",
+    "red-ambiguous-creation.txt": "e10e30fd7eee6d23f04e8d320d02f682216b09ccbe9529a4877ce26ca2e37b9f",
+    "red-api.txt": "d5baad74961ecaba4c63cc5551d4d3d402c3b93765657c27d9e274ec2ee35f65",
+    "red-binary-logs.txt": "f9adcd2b862bf09d9b658bfa9ce0021b556e9ac7edd559f12ed83a8e8a8d45d4",
+    "red-config.txt": "847a1e0bed589d7025cd46b5a6df9e4aaa403dd83aaafe50bcf229305ed00e98",
+    "red-directory-replacement.txt": "08f84c95e9bab59af1cdfd9a4ed22658fee579a65bd0ac5b27326feca2b45ff8",
+    "red-gate-descriptors.txt": "4c400bc2f7534e51fb4051a1e2f384243686434950077f038277d85ef4d9b838",
+    "red-gate.txt": "a78ff325ad5eeec852de0adf95809220afb525aec4db2ceea601e463ccd53703",
+    "red-interrupted-logs.txt": "7bcdb68d6810e0522f8698cad7605d0d1b4775476b188f47c7a545933df217eb",
+    "red-legal-success.txt": "3ab9cd83889cf6aae8d728d2d17765ce586127ca41ab48050ba4ef834b1fc026",
+    "red-log-timeout.txt": "dd17db0f85dcb78d0fe7ffd79cea88976664ae9df85384d7d5bffd0001af15b8",
+    "red-node-authority.txt": "33e9c1faaaf88df8257f662e32a9d0c92121d7bdbd008df5200e1df5a6869e5e",
+    "red-partial-start.txt": "241e5d6007d92e20104103152880eeaa8b93d95d6c40a37c2b3007cf42f65302",
+    "red-scheduler.txt": "4ebb8cbbcdcd3e8866ac001f869fdfeae568724b54c046f37e445d85fcc8046b",
+    "red-store.txt": "e0cf635d60b2c34edd17260e2e8dc7da2d0a004d1fda5ffcf6e71157539b7014",
+    "red-terminal-fence.txt": "e3838985cbd2a26fbee8925493baef37ceaaf3427094d39232c472e2284e0deb",
+    "test-final.txt": "bc2a72f821b902754a8d926abc2428a53e6b576f8b78ce9b3afeedec18b26e65",
+    "vet-final.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fixture-directory-mode-failure.txt": "7f0fcb5ce5170f4c2f6cecc3325ed8a3819577f59dbe59bb1f7778eb46a34814"
+  }
+}

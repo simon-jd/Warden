@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-25T08:55:08.822900+00:00",
+  "source": "0da497136069bf045912f257f7c6d26c962f9d34",
+  "base": "f40934a5a3e6bc5f2d741120bcc5448ba996cd12",
+  "evidence": "df12df11de2e6d7a7f7f0d7187f6b48e6fd8a18d",
+  "source_files_verified": 6,
+  "unchanged_bindings_verified": 13,
+  "indexed_new_artifacts_verified": 14,
+  "recorded_top_tests": {
+    "behavior_red": {
+      "pass": 1,
+      "fail": 2
+    },
+    "green": {
+      "pass": 7
+    },
+    "committed_cover": {
+      "pass": 59,
+      "live_skip": 4
+    }
+  },
+  "tests_rerun_by_controller": false,
+  "semantic_review": "independent B review pending",
+  "ordinary_code_postflight": {
+    "ordinary_full_guard": {
+      "additional_bytes": "5000000000",
+      "at": "2026-10-25T08:55:07Z",
+      "download_bytes": "0",
+      "event": "local-preflight",
+      "free_bytes": 266103889920,
+      "project_allocated_bytes": 4191490048,
+      "service_memory_bytes": "1000000000"
+    },
+    "protected_sysctls": {
+      "vm/overcommit_memory": "1",
+      "vm/panic_on_oom": "0",
+      "kernel/panic": "10",
+      "kernel/panic_on_oops": "1",
+      "kernel/keys/root_maxkeys": "1000000",
+      "kernel/keys/root_maxbytes": "25000000"
+    },
+    "protected_baseline_match": true,
+    "original_owner_retirement": "cleanup_pending",
+    "creation_outcome": "unknown",
+    "never_reopen": true,
+    "reserved_bytes": 5000000000,
+    "released": false
+  },
+  "original_scene_metadata_unchanged": true,
+  "owned_images_and_containers": 0,
+  "old_recovery_operation_reexecuted": false,
+  "Q_released": false,
+  "new_boot_authorized": false,
+  "task4_accepted": false,
+  "goal_complete": false
+}

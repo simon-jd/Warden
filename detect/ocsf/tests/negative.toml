@@ -1,0 +1,210 @@
+[[tests]]
+name = "azure_rejects_invalid_without_raw_body"
+no_outputs_from = ["norm_azure"]
+[[tests.inputs]]
+insert_at = "norm_azure"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "azure"
+message = '''{bad'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"azure"})'''
+
+[[tests]]
+name = "aks_rejects_invalid_without_raw_body"
+no_outputs_from = ["norm_aks"]
+[[tests.inputs]]
+insert_at = "norm_aks"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "aks"
+message = '''{"category":"wrong","properties":{"log":"{}"}}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"aks"})'''
+
+[[tests]]
+name = "k3s_rejects_invalid_without_raw_body"
+no_outputs_from = ["norm_k3s"]
+[[tests.inputs]]
+insert_at = "norm_k3s"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "k3s"
+message = '''{"apiVersion":"audit.k8s.io/v9","kind":"Event","auditID":"k8s-1","verb":"create","requestReceivedTimestamp":"2026-01-01T00:00:00Z","user":{"username":"system:serviceaccount:fixture:worker"},"sourceIPs":["192.0.2.11"],"responseStatus":{"code":201},"fixture_extra":"kept"}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"k3s"})'''
+
+[[tests]]
+name = "tetragon_rejects_invalid_without_raw_body"
+no_outputs_from = ["norm_tetragon"]
+[[tests.inputs]]
+insert_at = "norm_tetragon"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "tetragon"
+message = '''{"time":"bad"}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"tetragon"})'''
+
+[[tests]]
+name = "warden_rejects_invalid_without_raw_body"
+no_outputs_from = ["norm_warden"]
+[[tests.inputs]]
+insert_at = "norm_warden"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "warden"
+message = '''{"tenant_id":"fixture-tenant","run_id":"fixture-run","type":"run.created","payload":{}}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"warden"})'''
+
+[[tests]]
+name = "vnet_rejects_invalid_without_raw_body"
+no_outputs_from = ["norm_vnet"]
+[[tests.inputs]]
+insert_at = "norm_vnet"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "vnet"
+message = '''{"flowLogVersion":999,"flowLogGUID":"flow-1","flowRecords":{"flows":[{"aclID":"acl-1","flowGroups":[{"rule":"fixture-rule","flowTuples":["1767225600,192.0.2.20,198.51.100.20,12345,443,6,O,E,NX,0,1,64,1,64"]}]}]}}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"vnet"})'''
+
+[[tests]]
+name = "azure_invalid_eventTimestamp"
+no_outputs_from = ["norm_azure"]
+[[tests.inputs]]
+insert_at = "norm_azure"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "azure"
+message = '''{"eventTimestamp":"not-a-time","operationName":{"value":"Microsoft.Compute/virtualMachines/write"},"caller":"fixture-user","httpRequest":{"clientIpAddress":"192.0.2.10"},"eventDataId":"azure-1","status":{"value":"Succeeded"},"fixture_extra":"kept"}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"azure"})'''
+
+[[tests]]
+name = "azure_invalid_caller"
+no_outputs_from = ["norm_azure"]
+[[tests.inputs]]
+insert_at = "norm_azure"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "azure"
+message = '''{"eventTimestamp":"2026-01-01T00:00:00Z","operationName":{"value":"Microsoft.Compute/virtualMachines/write"},"caller":"","httpRequest":{"clientIpAddress":"192.0.2.10"},"eventDataId":"azure-1","status":{"value":"Succeeded"},"fixture_extra":"kept"}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"azure"})'''
+
+[[tests]]
+name = "azure_invalid_ip"
+no_outputs_from = ["norm_azure"]
+[[tests.inputs]]
+insert_at = "norm_azure"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "azure"
+message = '''{"eventTimestamp":"2026-01-01T00:00:00Z","operationName":{"value":"Microsoft.Compute/virtualMachines/write"},"caller":"fixture-user","httpRequest":{"clientIpAddress":"not-an-IP"},"eventDataId":"azure-1","status":{"value":"Succeeded"},"fixture_extra":"kept"}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"azure"})'''
+
+[[tests]]
+name = "azure_unknown_overflow_visible"
+no_outputs_from = ["norm_azure"]
+[[tests.inputs]]
+insert_at = "norm_azure"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "azure"
+message = '''{"eventTimestamp":"2026-01-01T00:00:00Z","operationName":{"value":"Microsoft.Compute/virtualMachines/write"},"caller":"fixture-user","httpRequest":{"clientIpAddress":"192.0.2.10"},"eventDataId":"azure-1","status":{"value":"Succeeded"},"fixture_extra":"kept","extra":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"azure"})'''
+
+[[tests]]
+name = "k3s_no_actor_rejected"
+no_outputs_from = ["norm_k3s"]
+[[tests.inputs]]
+insert_at = "norm_k3s"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "k3s"
+message = '''{"apiVersion":"audit.k8s.io/v1","kind":"Event","auditID":"k8s-1","verb":"create","requestReceivedTimestamp":"2026-01-01T00:00:00Z","sourceIPs":["192.0.2.11"],"responseStatus":{"code":201},"fixture_extra":"kept"}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"k3s"})'''
+
+[[tests]]
+name = "tetragon_no_parent_actor_rejected"
+no_outputs_from = ["norm_tetragon"]
+[[tests.inputs]]
+insert_at = "norm_tetragon"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "tetragon"
+message = '''{"time":"2026-01-01T00:00:00Z","node_name":"fixture-node","process_exec":{"process":{"pid":123,"exec_id":"exec-1","binary":"/bin/true"}},"fixture_extra":"kept"}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"tetragon"})'''
+
+[[tests]]
+name = "observation_is_not_occurrence"
+no_outputs_from = ["norm_warden"]
+[[tests.inputs]]
+insert_at = "norm_warden"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "warden"
+message = '''{"synthetic_context":true,"actor_uid":"fixture-actor","source_ip":"192.0.2.30","event":{"tenant_id":"fixture-tenant","run_id":"fixture-run","type":"run.created","payload":{}},"fixture_extra":"kept","event_uid":"fixture-seq-1","collector_observed_at":"2026-01-01T00:00:00Z"}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"warden"})'''
+
+[[tests]]
+name = "vnet_malformed_tuple_rejected"
+no_outputs_from = ["norm_vnet"]
+[[tests.inputs]]
+insert_at = "norm_vnet"
+type = "log"
+[tests.inputs.log_fields]
+warden_source = "vnet"
+message = '''{"flowLogVersion":4,"flowLogGUID":"flow-1","flowRecords":{"flows":[{"aclID":"acl-1","flowGroups":[{"rule":"fixture-rule","flowTuples":["bad,tuple"]}]}]}}'''
+[[tests.outputs]]
+extract_from = "reject_redact"
+[[tests.outputs.conditions]]
+type = "vrl"
+source = '''assert_eq!(., {"reason":"normalization_or_route_rejected","source":"vnet"})'''
+

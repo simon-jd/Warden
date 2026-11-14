@@ -1,0 +1,745 @@
+{"Time":"2026-10-23T22:41:55.53049155-07:00","Action":"start","Package":"warden/controlplane/cmd/warden-api"}
+{"Time":"2026-10-23T22:41:55.539118439-07:00","Action":"output","Package":"warden/controlplane/cmd/warden-api","Output":"?   \twarden/controlplane/cmd/warden-api\t[no test files]\n"}
+{"Time":"2026-10-23T22:41:55.539137442-07:00","Action":"skip","Package":"warden/controlplane/cmd/warden-api","Elapsed":0.009}
+{"Time":"2026-10-23T22:41:55.926035595-07:00","Action":"start","Package":"warden/controlplane/internal/api"}
+{"Time":"2026-10-23T22:41:55.931264008-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestIdempotencyKeyReturnsSameRun"}
+{"Time":"2026-10-23T22:41:55.931279345-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestIdempotencyKeyReturnsSameRun","Output":"=== RUN   TestIdempotencyKeyReturnsSameRun\n"}
+{"Time":"2026-10-23T22:41:55.931299826-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestIdempotencyKeyReturnsSameRun","Output":"    api_test.go:79: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.93130665-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestIdempotencyKeyReturnsSameRun","Output":"--- FAIL: TestIdempotencyKeyReturnsSameRun (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931310152-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestIdempotencyKeyReturnsSameRun","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931314157-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestCrossTenantReadDenied"}
+{"Time":"2026-10-23T22:41:55.931317073-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestCrossTenantReadDenied","Output":"=== RUN   TestCrossTenantReadDenied\n"}
+{"Time":"2026-10-23T22:41:55.93131901-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestCrossTenantReadDenied","Output":"    api_test.go:97: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931324541-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestCrossTenantReadDenied","Output":"--- FAIL: TestCrossTenantReadDenied (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931327131-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestCrossTenantReadDenied","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931330375-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestConcurrentIdempotency"}
+{"Time":"2026-10-23T22:41:55.931332997-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestConcurrentIdempotency","Output":"=== RUN   TestConcurrentIdempotency\n"}
+{"Time":"2026-10-23T22:41:55.931334806-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestConcurrentIdempotency","Output":"    api_test.go:117: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931337409-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestConcurrentIdempotency","Output":"--- FAIL: TestConcurrentIdempotency (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931339387-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestConcurrentIdempotency","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931341651-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestIdempotencyPayloadAndTenantScope"}
+{"Time":"2026-10-23T22:41:55.931344394-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestIdempotencyPayloadAndTenantScope","Output":"=== RUN   TestIdempotencyPayloadAndTenantScope\n"}
+{"Time":"2026-10-23T22:41:55.93134638-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestIdempotencyPayloadAndTenantScope","Output":"    api_test.go:165: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931349024-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestIdempotencyPayloadAndTenantScope","Output":"--- FAIL: TestIdempotencyPayloadAndTenantScope (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931354534-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestIdempotencyPayloadAndTenantScope","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931356975-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestQueuedRunPersistsSecureDefaults"}
+{"Time":"2026-10-23T22:41:55.931358614-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestQueuedRunPersistsSecureDefaults","Output":"=== RUN   TestQueuedRunPersistsSecureDefaults\n"}
+{"Time":"2026-10-23T22:41:55.93136067-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestQueuedRunPersistsSecureDefaults","Output":"    api_test.go:184: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931363969-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestQueuedRunPersistsSecureDefaults","Output":"--- FAIL: TestQueuedRunPersistsSecureDefaults (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931366333-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestQueuedRunPersistsSecureDefaults","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931368292-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestAuthenticationFailsClosed"}
+{"Time":"2026-10-23T22:41:55.931370217-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestAuthenticationFailsClosed","Output":"=== RUN   TestAuthenticationFailsClosed\n"}
+{"Time":"2026-10-23T22:41:55.931371982-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestAuthenticationFailsClosed","Output":"    api_test.go:216: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931374651-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestAuthenticationFailsClosed","Output":"--- FAIL: TestAuthenticationFailsClosed (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931376761-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestAuthenticationFailsClosed","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931380301-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestInvalidRequestsRejectedWithoutWrites"}
+{"Time":"2026-10-23T22:41:55.931383532-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestInvalidRequestsRejectedWithoutWrites","Output":"=== RUN   TestInvalidRequestsRejectedWithoutWrites\n"}
+{"Time":"2026-10-23T22:41:55.931385386-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestInvalidRequestsRejectedWithoutWrites","Output":"    api_test.go:239: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931388045-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestInvalidRequestsRejectedWithoutWrites","Output":"--- FAIL: TestInvalidRequestsRejectedWithoutWrites (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931390368-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestInvalidRequestsRejectedWithoutWrites","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931392241-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestCreateRollsBackWhenAuditFails"}
+{"Time":"2026-10-23T22:41:55.931394239-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestCreateRollsBackWhenAuditFails","Output":"=== RUN   TestCreateRollsBackWhenAuditFails\n"}
+{"Time":"2026-10-23T22:41:55.931396008-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestCreateRollsBackWhenAuditFails","Output":"    api_test.go:262: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931398482-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestCreateRollsBackWhenAuditFails","Output":"--- FAIL: TestCreateRollsBackWhenAuditFails (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931400772-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestCreateRollsBackWhenAuditFails","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931402566-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestRejectsCaseAliasedFields"}
+{"Time":"2026-10-23T22:41:55.931404284-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestRejectsCaseAliasedFields","Output":"=== RUN   TestRejectsCaseAliasedFields\n"}
+{"Time":"2026-10-23T22:41:55.931406126-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestRejectsCaseAliasedFields","Output":"    api_test.go:280: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931413237-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestRejectsCaseAliasedFields","Output":"--- FAIL: TestRejectsCaseAliasedFields (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931415813-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestRejectsCaseAliasedFields","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931417683-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestRejectsNullCommandArguments"}
+{"Time":"2026-10-23T22:41:55.93141964-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestRejectsNullCommandArguments","Output":"=== RUN   TestRejectsNullCommandArguments\n"}
+{"Time":"2026-10-23T22:41:55.931421505-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestRejectsNullCommandArguments","Output":"    api_test.go:295: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931424071-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestRejectsNullCommandArguments","Output":"--- FAIL: TestRejectsNullCommandArguments (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931426358-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestRejectsNullCommandArguments","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931433157-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestRejectsIPAllowlistEntries"}
+{"Time":"2026-10-23T22:41:55.93143512-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestRejectsIPAllowlistEntries","Output":"=== RUN   TestRejectsIPAllowlistEntries\n"}
+{"Time":"2026-10-23T22:41:55.931436909-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestRejectsIPAllowlistEntries","Output":"    api_test.go:304: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931439139-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestRejectsIPAllowlistEntries","Output":"--- FAIL: TestRejectsIPAllowlistEntries (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931442339-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestRejectsIPAllowlistEntries","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931444348-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyDefaultsDenyRelaxation"}
+{"Time":"2026-10-23T22:41:55.931446307-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyDefaultsDenyRelaxation","Output":"=== RUN   TestTenantPolicyDefaultsDenyRelaxation\n"}
+{"Time":"2026-10-23T22:41:55.931448345-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyDefaultsDenyRelaxation","Output":"    api_test.go:332: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931451003-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyDefaultsDenyRelaxation","Output":"--- FAIL: TestTenantPolicyDefaultsDenyRelaxation (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931453248-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyDefaultsDenyRelaxation","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931455121-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyAllowsExplicitScopedRelaxation"}
+{"Time":"2026-10-23T22:41:55.931457379-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyAllowsExplicitScopedRelaxation","Output":"=== RUN   TestTenantPolicyAllowsExplicitScopedRelaxation\n"}
+{"Time":"2026-10-23T22:41:55.931459517-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyAllowsExplicitScopedRelaxation","Output":"    api_test.go:351: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931462938-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyAllowsExplicitScopedRelaxation","Output":"--- FAIL: TestTenantPolicyAllowsExplicitScopedRelaxation (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931466241-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyAllowsExplicitScopedRelaxation","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931468292-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyLookupFailsClosed"}
+{"Time":"2026-10-23T22:41:55.931470282-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyLookupFailsClosed","Output":"=== RUN   TestTenantPolicyLookupFailsClosed\n"}
+{"Time":"2026-10-23T22:41:55.931472221-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyLookupFailsClosed","Output":"    api_test.go:415: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931474655-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyLookupFailsClosed","Output":"--- FAIL: TestTenantPolicyLookupFailsClosed (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931476988-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyLookupFailsClosed","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931478966-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyCannotComeFromRequest"}
+{"Time":"2026-10-23T22:41:55.931481007-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyCannotComeFromRequest","Output":"=== RUN   TestTenantPolicyCannotComeFromRequest\n"}
+{"Time":"2026-10-23T22:41:55.931485482-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyCannotComeFromRequest","Output":"    api_test.go:433: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931488228-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyCannotComeFromRequest","Output":"--- FAIL: TestTenantPolicyCannotComeFromRequest (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931490572-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyCannotComeFromRequest","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931492424-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyRecheckedOnIdempotentReplay"}
+{"Time":"2026-10-23T22:41:55.931494413-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyRecheckedOnIdempotentReplay","Output":"=== RUN   TestTenantPolicyRecheckedOnIdempotentReplay\n"}
+{"Time":"2026-10-23T22:41:55.931496352-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyRecheckedOnIdempotentReplay","Output":"    api_test.go:465: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931498922-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyRecheckedOnIdempotentReplay","Output":"--- FAIL: TestTenantPolicyRecheckedOnIdempotentReplay (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931501224-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyRecheckedOnIdempotentReplay","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931503135-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyRuntimeAndPartialLimits"}
+{"Time":"2026-10-23T22:41:55.93150506-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyRuntimeAndPartialLimits","Output":"=== RUN   TestTenantPolicyRuntimeAndPartialLimits\n"}
+{"Time":"2026-10-23T22:41:55.931506921-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyRuntimeAndPartialLimits","Output":"    api_test.go:486: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931509452-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyRuntimeAndPartialLimits","Output":"--- FAIL: TestTenantPolicyRuntimeAndPartialLimits (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.93151169-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestTenantPolicyRuntimeAndPartialLimits","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931513571-07:00","Action":"run","Package":"warden/controlplane/internal/api","Test":"TestCompletedRequestCancellationDoesNotCancelExecution"}
+{"Time":"2026-10-23T22:41:55.931515556-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestCompletedRequestCancellationDoesNotCancelExecution","Output":"=== RUN   TestCompletedRequestCancellationDoesNotCancelExecution\n"}
+{"Time":"2026-10-23T22:41:55.931518088-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestCompletedRequestCancellationDoesNotCancelExecution","Output":"    api_test.go:508: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.931521019-07:00","Action":"output","Package":"warden/controlplane/internal/api","Test":"TestCompletedRequestCancellationDoesNotCancelExecution","Output":"--- FAIL: TestCompletedRequestCancellationDoesNotCancelExecution (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.931524055-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Test":"TestCompletedRequestCancellationDoesNotCancelExecution","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.931527371-07:00","Action":"output","Package":"warden/controlplane/internal/api","Output":"FAIL\n"}
+{"Time":"2026-10-23T22:41:55.931771234-07:00","Action":"output","Package":"warden/controlplane/internal/api","Output":"FAIL\twarden/controlplane/internal/api\t0.006s\n"}
+{"Time":"2026-10-23T22:41:55.931782523-07:00","Action":"fail","Package":"warden/controlplane/internal/api","Elapsed":0.006}
+{"Time":"2026-10-23T22:41:55.961563509-07:00","Action":"start","Package":"warden/controlplane/internal/apilab"}
+{"Time":"2026-10-23T22:41:55.961623862-07:00","Action":"start","Package":"warden/controlplane/internal/audit"}
+{"Time":"2026-10-23T22:41:55.961716349-07:00","Action":"start","Package":"warden/controlplane/internal/canonical"}
+{"Time":"2026-10-23T22:41:55.96173328-07:00","Action":"output","Package":"warden/controlplane/internal/canonical","Output":"?   \twarden/controlplane/internal/canonical\t[no test files]\n"}
+{"Time":"2026-10-23T22:41:55.961738913-07:00","Action":"skip","Package":"warden/controlplane/internal/canonical","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.961742999-07:00","Action":"start","Package":"warden/controlplane/internal/runs"}
+{"Time":"2026-10-23T22:41:55.963686687-07:00","Action":"run","Package":"warden/controlplane/internal/runs","Test":"TestDurableClaimAndFencedTransitions"}
+{"Time":"2026-10-23T22:41:55.963700668-07:00","Action":"output","Package":"warden/controlplane/internal/runs","Test":"TestDurableClaimAndFencedTransitions","Output":"=== RUN   TestDurableClaimAndFencedTransitions\n"}
+{"Time":"2026-10-23T22:41:55.96371954-07:00","Action":"output","Package":"warden/controlplane/internal/runs","Test":"TestDurableClaimAndFencedTransitions","Output":"    execution_test.go:17: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.96372589-07:00","Action":"output","Package":"warden/controlplane/internal/runs","Test":"TestDurableClaimAndFencedTransitions","Output":"--- FAIL: TestDurableClaimAndFencedTransitions (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.963728399-07:00","Action":"fail","Package":"warden/controlplane/internal/runs","Test":"TestDurableClaimAndFencedTransitions","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.963732005-07:00","Action":"run","Package":"warden/controlplane/internal/runs","Test":"TestRecoveryClaimCannotOverwriteTerminalResult"}
+{"Time":"2026-10-23T22:41:55.963733888-07:00","Action":"output","Package":"warden/controlplane/internal/runs","Test":"TestRecoveryClaimCannotOverwriteTerminalResult","Output":"=== RUN   TestRecoveryClaimCannotOverwriteTerminalResult\n"}
+{"Time":"2026-10-23T22:41:55.963736428-07:00","Action":"output","Package":"warden/controlplane/internal/runs","Test":"TestRecoveryClaimCannotOverwriteTerminalResult","Output":"    execution_test.go:77: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.963739084-07:00","Action":"output","Package":"warden/controlplane/internal/runs","Test":"TestRecoveryClaimCannotOverwriteTerminalResult","Output":"--- FAIL: TestRecoveryClaimCannotOverwriteTerminalResult (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.963741958-07:00","Action":"fail","Package":"warden/controlplane/internal/runs","Test":"TestRecoveryClaimCannotOverwriteTerminalResult","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.963746095-07:00","Action":"run","Package":"warden/controlplane/internal/runs","Test":"TestSuccessRequiresRunningAndCleanExit"}
+{"Time":"2026-10-23T22:41:55.963747911-07:00","Action":"output","Package":"warden/controlplane/internal/runs","Test":"TestSuccessRequiresRunningAndCleanExit","Output":"=== RUN   TestSuccessRequiresRunningAndCleanExit\n"}
+{"Time":"2026-10-23T22:41:55.963749767-07:00","Action":"output","Package":"warden/controlplane/internal/runs","Test":"TestSuccessRequiresRunningAndCleanExit","Output":"    execution_test.go:108: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.963751856-07:00","Action":"output","Package":"warden/controlplane/internal/runs","Test":"TestSuccessRequiresRunningAndCleanExit","Output":"--- FAIL: TestSuccessRequiresRunningAndCleanExit (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.963753695-07:00","Action":"fail","Package":"warden/controlplane/internal/runs","Test":"TestSuccessRequiresRunningAndCleanExit","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.963755358-07:00","Action":"run","Package":"warden/controlplane/internal/runs","Test":"TestForgedReconciliationCannotClearPending"}
+{"Time":"2026-10-23T22:41:55.963756816-07:00","Action":"output","Package":"warden/controlplane/internal/runs","Test":"TestForgedReconciliationCannotClearPending","Output":"=== RUN   TestForgedReconciliationCannotClearPending\n"}
+{"Time":"2026-10-23T22:41:55.963758467-07:00","Action":"output","Package":"warden/controlplane/internal/runs","Test":"TestForgedReconciliationCannotClearPending","Output":"    execution_test.go:143: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.963760648-07:00","Action":"output","Package":"warden/controlplane/internal/runs","Test":"TestForgedReconciliationCannotClearPending","Output":"--- FAIL: TestForgedReconciliationCannotClearPending (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.963763701-07:00","Action":"fail","Package":"warden/controlplane/internal/runs","Test":"TestForgedReconciliationCannotClearPending","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.963765474-07:00","Action":"output","Package":"warden/controlplane/internal/runs","Output":"FAIL\n"}
+{"Time":"2026-10-23T22:41:55.963774058-07:00","Action":"run","Package":"warden/controlplane/internal/audit","Test":"TestAuditChainDetectsTamper"}
+{"Time":"2026-10-23T22:41:55.963775503-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Test":"TestAuditChainDetectsTamper","Output":"=== RUN   TestAuditChainDetectsTamper\n"}
+{"Time":"2026-10-23T22:41:55.963797531-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Test":"TestAuditChainDetectsTamper","Output":"    audit_test.go:20: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.963809853-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Test":"TestAuditChainDetectsTamper","Output":"--- FAIL: TestAuditChainDetectsTamper (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.963814596-07:00","Action":"fail","Package":"warden/controlplane/internal/audit","Test":"TestAuditChainDetectsTamper","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.963819014-07:00","Action":"run","Package":"warden/controlplane/internal/audit","Test":"TestAppendOnlyGuards"}
+{"Time":"2026-10-23T22:41:55.963822053-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Test":"TestAppendOnlyGuards","Output":"=== RUN   TestAppendOnlyGuards\n"}
+{"Time":"2026-10-23T22:41:55.963826659-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Test":"TestAppendOnlyGuards","Output":"    audit_test.go:43: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.963830557-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Test":"TestAppendOnlyGuards","Output":"--- FAIL: TestAppendOnlyGuards (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.963833263-07:00","Action":"fail","Package":"warden/controlplane/internal/audit","Test":"TestAppendOnlyGuards","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.963835863-07:00","Action":"run","Package":"warden/controlplane/internal/audit","Test":"TestConcurrentAppendAndCanonicalHash"}
+{"Time":"2026-10-23T22:41:55.963837672-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Test":"TestConcurrentAppendAndCanonicalHash","Output":"=== RUN   TestConcurrentAppendAndCanonicalHash\n"}
+{"Time":"2026-10-23T22:41:55.963841685-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Test":"TestConcurrentAppendAndCanonicalHash","Output":"    audit_test.go:60: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.963845274-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Test":"TestConcurrentAppendAndCanonicalHash","Output":"--- FAIL: TestConcurrentAppendAndCanonicalHash (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.963847704-07:00","Action":"fail","Package":"warden/controlplane/internal/audit","Test":"TestConcurrentAppendAndCanonicalHash","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.963851729-07:00","Action":"run","Package":"warden/controlplane/internal/audit","Test":"TestAppendSnapshotsPayloadAndRejectsAmbiguity"}
+{"Time":"2026-10-23T22:41:55.963853914-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Test":"TestAppendSnapshotsPayloadAndRejectsAmbiguity","Output":"=== RUN   TestAppendSnapshotsPayloadAndRejectsAmbiguity\n"}
+{"Time":"2026-10-23T22:41:55.963856518-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Test":"TestAppendSnapshotsPayloadAndRejectsAmbiguity","Output":"    audit_test.go:102: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.963859418-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Test":"TestAppendSnapshotsPayloadAndRejectsAmbiguity","Output":"--- FAIL: TestAppendSnapshotsPayloadAndRejectsAmbiguity (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.963863943-07:00","Action":"fail","Package":"warden/controlplane/internal/audit","Test":"TestAppendSnapshotsPayloadAndRejectsAmbiguity","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.963866473-07:00","Action":"run","Package":"warden/controlplane/internal/audit","Test":"TestVerifyDetectsHeadSequenceRollback"}
+{"Time":"2026-10-23T22:41:55.963868194-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Test":"TestVerifyDetectsHeadSequenceRollback","Output":"=== RUN   TestVerifyDetectsHeadSequenceRollback\n"}
+{"Time":"2026-10-23T22:41:55.963871049-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Test":"TestVerifyDetectsHeadSequenceRollback","Output":"    audit_test.go:132: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:55.963875922-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Test":"TestVerifyDetectsHeadSequenceRollback","Output":"--- FAIL: TestVerifyDetectsHeadSequenceRollback (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.963881393-07:00","Action":"fail","Package":"warden/controlplane/internal/audit","Test":"TestVerifyDetectsHeadSequenceRollback","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.963883787-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Output":"FAIL\n"}
+{"Time":"2026-10-23T22:41:55.964109254-07:00","Action":"output","Package":"warden/controlplane/internal/runs","Output":"FAIL\twarden/controlplane/internal/runs\t0.002s\n"}
+{"Time":"2026-10-23T22:41:55.964117886-07:00","Action":"fail","Package":"warden/controlplane/internal/runs","Elapsed":0.002}
+{"Time":"2026-10-23T22:41:55.96411799-07:00","Action":"output","Package":"warden/controlplane/internal/audit","Output":"FAIL\twarden/controlplane/internal/audit\t0.002s\n"}
+{"Time":"2026-10-23T22:41:55.964128717-07:00","Action":"fail","Package":"warden/controlplane/internal/audit","Elapsed":0.003}
+{"Time":"2026-10-23T22:41:55.965223295-07:00","Action":"run","Package":"warden/controlplane/internal/apilab","Test":"TestHTTPPostgresRuntime"}
+{"Time":"2026-10-23T22:41:55.965225997-07:00","Action":"output","Package":"warden/controlplane/internal/apilab","Test":"TestHTTPPostgresRuntime","Output":"=== RUN   TestHTTPPostgresRuntime\n"}
+{"Time":"2026-10-23T22:41:55.965238696-07:00","Action":"output","Package":"warden/controlplane/internal/apilab","Test":"TestHTTPPostgresRuntime","Output":"    api_runtime_test.go:117: NOT EXECUTED: reviewed dedicated API/runc lab acknowledgement required\n"}
+{"Time":"2026-10-23T22:41:55.965242395-07:00","Action":"output","Package":"warden/controlplane/internal/apilab","Test":"TestHTTPPostgresRuntime","Output":"--- SKIP: TestHTTPPostgresRuntime (0.00s)\n"}
+{"Time":"2026-10-23T22:41:55.96524444-07:00","Action":"skip","Package":"warden/controlplane/internal/apilab","Test":"TestHTTPPostgresRuntime","Elapsed":0}
+{"Time":"2026-10-23T22:41:55.965246359-07:00","Action":"output","Package":"warden/controlplane/internal/apilab","Output":"PASS\n"}
+{"Time":"2026-10-23T22:41:55.965436658-07:00","Action":"output","Package":"warden/controlplane/internal/apilab","Output":"ok  \twarden/controlplane/internal/apilab\t0.004s\n"}
+{"Time":"2026-10-23T22:41:55.9654461-07:00","Action":"pass","Package":"warden/controlplane/internal/apilab","Elapsed":0.004}
+{"Time":"2026-10-23T22:41:56.019220847-07:00","Action":"start","Package":"warden/controlplane/internal/scheduler"}
+{"Time":"2026-10-23T22:41:56.019284065-07:00","Action":"start","Package":"warden/controlplane/internal/store"}
+{"Time":"2026-10-23T22:41:56.019410386-07:00","Action":"start","Package":"warden/controlplane/internal/tenant"}
+{"Time":"2026-10-23T22:41:56.019439205-07:00","Action":"output","Package":"warden/controlplane/internal/tenant","Output":"?   \twarden/controlplane/internal/tenant\t[no test files]\n"}
+{"Time":"2026-10-23T22:41:56.019443351-07:00","Action":"skip","Package":"warden/controlplane/internal/tenant","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.019447995-07:00","Action":"start","Package":"warden/controlplane/internal/testutil"}
+{"Time":"2026-10-23T22:41:56.019449863-07:00","Action":"output","Package":"warden/controlplane/internal/testutil","Output":"?   \twarden/controlplane/internal/testutil\t[no test files]\n"}
+{"Time":"2026-10-23T22:41:56.019452393-07:00","Action":"skip","Package":"warden/controlplane/internal/testutil","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.019455072-07:00","Action":"start","Package":"warden/policies/seccomp"}
+{"Time":"2026-10-23T22:41:56.01945679-07:00","Action":"output","Package":"warden/policies/seccomp","Output":"?   \twarden/policies/seccomp\t[no test files]\n"}
+{"Time":"2026-10-23T22:41:56.01945839-07:00","Action":"skip","Package":"warden/policies/seccomp","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.019462187-07:00","Action":"start","Package":"warden/runtimes"}
+{"Time":"2026-10-23T22:41:56.019464377-07:00","Action":"output","Package":"warden/runtimes","Output":"?   \twarden/runtimes\t[no test files]\n"}
+{"Time":"2026-10-23T22:41:56.019465994-07:00","Action":"skip","Package":"warden/runtimes","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.019468114-07:00","Action":"start","Package":"warden/runtimes/conformance"}
+{"Time":"2026-10-23T22:41:56.019472635-07:00","Action":"output","Package":"warden/runtimes/conformance","Output":"?   \twarden/runtimes/conformance\t[no test files]\n"}
+{"Time":"2026-10-23T22:41:56.019474344-07:00","Action":"skip","Package":"warden/runtimes/conformance","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.019476334-07:00","Action":"start","Package":"warden/runtimes/conformance/guest"}
+{"Time":"2026-10-23T22:41:56.01947789-07:00","Action":"output","Package":"warden/runtimes/conformance/guest","Output":"?   \twarden/runtimes/conformance/guest\t[no test files]\n"}
+{"Time":"2026-10-23T22:41:56.019479251-07:00","Action":"skip","Package":"warden/runtimes/conformance/guest","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.019481419-07:00","Action":"start","Package":"warden/runtimes/gate"}
+{"Time":"2026-10-23T22:41:56.019516696-07:00","Action":"start","Package":"warden/runtimes/gvisor"}
+{"Time":"2026-10-23T22:41:56.019626888-07:00","Action":"start","Package":"warden/runtimes/runc"}
+{"Time":"2026-10-23T22:41:56.021146587-07:00","Action":"run","Package":"warden/runtimes/gate","Test":"TestPidfdRequiresActualOriginalProcessExit"}
+{"Time":"2026-10-23T22:41:56.02117368-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestPidfdRequiresActualOriginalProcessExit","Output":"=== RUN   TestPidfdRequiresActualOriginalProcessExit\n"}
+{"Time":"2026-10-23T22:41:56.021847093-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations"}
+{"Time":"2026-10-23T22:41:56.021854915-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations","Output":"=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations\n"}
+{"Time":"2026-10-23T22:41:56.021873609-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/namespace_UID"}
+{"Time":"2026-10-23T22:41:56.021876705-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/namespace_UID","Output":"=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations/namespace_UID\n"}
+{"Time":"2026-10-23T22:41:56.022080939-07:00","Action":"run","Package":"warden/controlplane/internal/store","Test":"TestExecutionMigrationPreservesVersionOneRunsAndAudit"}
+{"Time":"2026-10-23T22:41:56.022089353-07:00","Action":"output","Package":"warden/controlplane/internal/store","Test":"TestExecutionMigrationPreservesVersionOneRunsAndAudit","Output":"=== RUN   TestExecutionMigrationPreservesVersionOneRunsAndAudit\n"}
+{"Time":"2026-10-23T22:41:56.022103562-07:00","Action":"output","Package":"warden/controlplane/internal/store","Test":"TestExecutionMigrationPreservesVersionOneRunsAndAudit","Output":"    migration_test.go:19: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.022113023-07:00","Action":"output","Package":"warden/controlplane/internal/store","Test":"TestExecutionMigrationPreservesVersionOneRunsAndAudit","Output":"--- FAIL: TestExecutionMigrationPreservesVersionOneRunsAndAudit (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.02211827-07:00","Action":"fail","Package":"warden/controlplane/internal/store","Test":"TestExecutionMigrationPreservesVersionOneRunsAndAudit","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.022123572-07:00","Action":"output","Package":"warden/controlplane/internal/store","Output":"FAIL\n"}
+{"Time":"2026-10-23T22:41:56.022296591-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/namespace_UID","Output":"--- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations/namespace_UID (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.022302351-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/namespace_UID","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.022308295-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/node_name"}
+{"Time":"2026-10-23T22:41:56.02231066-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/node_name","Output":"=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations/node_name\n"}
+{"Time":"2026-10-23T22:41:56.022380418-07:00","Action":"output","Package":"warden/controlplane/internal/store","Output":"FAIL\twarden/controlplane/internal/store\t0.003s\n"}
+{"Time":"2026-10-23T22:41:56.022387963-07:00","Action":"fail","Package":"warden/controlplane/internal/store","Elapsed":0.003}
+{"Time":"2026-10-23T22:41:56.022599988-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/node_name","Output":"--- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations/node_name (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.022606848-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/node_name","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.022609816-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/node_UID"}
+{"Time":"2026-10-23T22:41:56.022612152-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/node_UID","Output":"=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations/node_UID\n"}
+{"Time":"2026-10-23T22:41:56.022867918-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/node_UID","Output":"--- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations/node_UID (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.022872646-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/node_UID","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.02287515-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/node_config"}
+{"Time":"2026-10-23T22:41:56.022876981-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/node_config","Output":"=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations/node_config\n"}
+{"Time":"2026-10-23T22:41:56.0231765-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/node_config","Output":"--- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations/node_config (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.023180215-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/node_config","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.02318322-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/server"}
+{"Time":"2026-10-23T22:41:56.023185017-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/server","Output":"=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations/server\n"}
+{"Time":"2026-10-23T22:41:56.023442392-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/server","Output":"--- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations/server (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.023445981-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/server","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.023448139-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/CA"}
+{"Time":"2026-10-23T22:41:56.023450804-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/CA","Output":"=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations/CA\n"}
+{"Time":"2026-10-23T22:41:56.023491318-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestPidfdRequiresActualOriginalProcessExit","Output":"--- PASS: TestPidfdRequiresActualOriginalProcessExit (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.023500584-07:00","Action":"pass","Package":"warden/runtimes/gate","Test":"TestPidfdRequiresActualOriginalProcessExit","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.023505992-07:00","Action":"run","Package":"warden/runtimes/gate","Test":"TestDiskProofRequiresOriginalDirectoriesRemovedWithoutReplacement"}
+{"Time":"2026-10-23T22:41:56.023508589-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestDiskProofRequiresOriginalDirectoriesRemovedWithoutReplacement","Output":"=== RUN   TestDiskProofRequiresOriginalDirectoriesRemovedWithoutReplacement\n"}
+{"Time":"2026-10-23T22:41:56.02368761-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestDiskProofRequiresOriginalDirectoriesRemovedWithoutReplacement","Output":"--- PASS: TestDiskProofRequiresOriginalDirectoriesRemovedWithoutReplacement (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.02369104-07:00","Action":"pass","Package":"warden/runtimes/gate","Test":"TestDiskProofRequiresOriginalDirectoriesRemovedWithoutReplacement","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.023694293-07:00","Action":"run","Package":"warden/runtimes/gate","Test":"TestReapPermanentlyRevokesDelayedStartAcrossInstances"}
+{"Time":"2026-10-23T22:41:56.023696564-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestReapPermanentlyRevokesDelayedStartAcrossInstances","Output":"=== RUN   TestReapPermanentlyRevokesDelayedStartAcrossInstances\n"}
+{"Time":"2026-10-23T22:41:56.023703992-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/CA","Output":"--- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations/CA (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.023706959-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/CA","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.02371128-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/cluster"}
+{"Time":"2026-10-23T22:41:56.02371346-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/cluster","Output":"=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations/cluster\n"}
+{"Time":"2026-10-23T22:41:56.023820114-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestDrainWaitsForTailAfterExitBeforeCancel"}
+{"Time":"2026-10-23T22:41:56.023830219-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestDrainWaitsForTailAfterExitBeforeCancel","Output":"=== RUN   TestDrainWaitsForTailAfterExitBeforeCancel\n"}
+{"Time":"2026-10-23T22:41:56.023937808-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestReapPermanentlyRevokesDelayedStartAcrossInstances","Output":"--- PASS: TestReapPermanentlyRevokesDelayedStartAcrossInstances (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.023942591-07:00","Action":"pass","Package":"warden/runtimes/gate","Test":"TestReapPermanentlyRevokesDelayedStartAcrossInstances","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.023945347-07:00","Action":"run","Package":"warden/runtimes/gate","Test":"TestInflightLaunchBlocksReapUntilBoundedTimeout"}
+{"Time":"2026-10-23T22:41:56.023948683-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestInflightLaunchBlocksReapUntilBoundedTimeout","Output":"=== RUN   TestInflightLaunchBlocksReapUntilBoundedTimeout\n"}
+{"Time":"2026-10-23T22:41:56.023988884-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/cluster","Output":"--- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations/cluster (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.023993849-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations/cluster","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.023997474-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations","Output":"--- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.024000226-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBackendReplacementRejectedBeforeRuntimeOperations","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.024002353-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState"}
+{"Time":"2026-10-23T22:41:56.024004463-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState","Output":"=== RUN   TestBindingRefusesLegacyUnknownAndOrphanedState\n"}
+{"Time":"2026-10-23T22:41:56.024007156-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_unused"}
+{"Time":"2026-10-23T22:41:56.024009124-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_unused","Output":"=== RUN   TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_unused\n"}
+{"Time":"2026-10-23T22:41:56.024090765-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestLateSnapshotPublicationClosesReaderAndCollectorExits"}
+{"Time":"2026-10-23T22:41:56.024097306-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestLateSnapshotPublicationClosesReaderAndCollectorExits","Output":"=== RUN   TestLateSnapshotPublicationClosesReaderAndCollectorExits\n"}
+{"Time":"2026-10-23T22:41:56.0241392-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_unused","Output":"--- PASS: TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_unused (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.02414269-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_unused","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.02414849-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestLateSnapshotPublicationClosesReaderAndCollectorExits","Output":"--- PASS: TestLateSnapshotPublicationClosesReaderAndCollectorExits (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.024152308-07:00","Action":"pass","Package":"warden/controlplane/internal/scheduler","Test":"TestLateSnapshotPublicationClosesReaderAndCollectorExits","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.024154561-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestSchedulerConfigurationFailsClosed"}
+{"Time":"2026-10-23T22:41:56.024156523-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestSchedulerConfigurationFailsClosed","Output":"=== RUN   TestSchedulerConfigurationFailsClosed\n"}
+{"Time":"2026-10-23T22:41:56.024160871-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_consumed"}
+{"Time":"2026-10-23T22:41:56.024163015-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_consumed","Output":"=== RUN   TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_consumed\n"}
+{"Time":"2026-10-23T22:41:56.024292872-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_consumed","Output":"--- PASS: TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_consumed (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.024296363-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_consumed","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.024300775-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/unknown"}
+{"Time":"2026-10-23T22:41:56.024303584-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/unknown","Output":"=== RUN   TestBindingRefusesLegacyUnknownAndOrphanedState/unknown\n"}
+{"Time":"2026-10-23T22:41:56.024404234-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/unknown","Output":"--- PASS: TestBindingRefusesLegacyUnknownAndOrphanedState/unknown (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.024407492-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/unknown","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.02441993-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/orphaned"}
+{"Time":"2026-10-23T22:41:56.024422355-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/orphaned","Output":"=== RUN   TestBindingRefusesLegacyUnknownAndOrphanedState/orphaned\n"}
+{"Time":"2026-10-23T22:41:56.024541756-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/orphaned","Output":"--- PASS: TestBindingRefusesLegacyUnknownAndOrphanedState/orphaned (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.024544727-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState/orphaned","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.024577161-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestSchedulerConfigurationFailsClosed","Output":"--- PASS: TestSchedulerConfigurationFailsClosed (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.024585843-07:00","Action":"pass","Package":"warden/controlplane/internal/scheduler","Test":"TestSchedulerConfigurationFailsClosed","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.024590654-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestSchedulerConfigurationPreservesExplicitRuntimeBinding"}
+{"Time":"2026-10-23T22:41:56.024593343-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestSchedulerConfigurationPreservesExplicitRuntimeBinding","Output":"=== RUN   TestSchedulerConfigurationPreservesExplicitRuntimeBinding\n"}
+{"Time":"2026-10-23T22:41:56.024650403-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState","Output":"--- PASS: TestBindingRefusesLegacyUnknownAndOrphanedState (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.024654088-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRefusesLegacyUnknownAndOrphanedState","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.02467151-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBoundGatePreservesAmbiguityAcrossReopen"}
+{"Time":"2026-10-23T22:41:56.02467405-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBoundGatePreservesAmbiguityAcrossReopen","Output":"=== RUN   TestBoundGatePreservesAmbiguityAcrossReopen\n"}
+{"Time":"2026-10-23T22:41:56.024745827-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestSchedulerConfigurationPreservesExplicitRuntimeBinding","Output":"--- PASS: TestSchedulerConfigurationPreservesExplicitRuntimeBinding (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.024750179-07:00","Action":"pass","Package":"warden/controlplane/internal/scheduler","Test":"TestSchedulerConfigurationPreservesExplicitRuntimeBinding","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.024756539-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestConcurrentWorkersExecuteOnce"}
+{"Time":"2026-10-23T22:41:56.024759328-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestConcurrentWorkersExecuteOnce","Output":"=== RUN   TestConcurrentWorkersExecuteOnce\n"}
+{"Time":"2026-10-23T22:41:56.024774388-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestConcurrentWorkersExecuteOnce","Output":"    scheduler_test.go:121: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.024787378-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestConcurrentWorkersExecuteOnce","Output":"--- FAIL: TestConcurrentWorkersExecuteOnce (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.024790961-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestConcurrentWorkersExecuteOnce","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.024794149-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed"}
+{"Time":"2026-10-23T22:41:56.0247961-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed","Output":"=== RUN   TestPolicyAndMissingDriverFailClosed\n"}
+{"Time":"2026-10-23T22:41:56.024799309-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed/revoked"}
+{"Time":"2026-10-23T22:41:56.024801564-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed/revoked","Output":"=== RUN   TestPolicyAndMissingDriverFailClosed/revoked\n"}
+{"Time":"2026-10-23T22:41:56.024821708-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed/revoked","Output":"    scheduler_test.go:157: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.024825409-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed/revoked","Output":"--- FAIL: TestPolicyAndMissingDriverFailClosed/revoked (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.024829814-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed/revoked","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.024831951-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed/unavailable"}
+{"Time":"2026-10-23T22:41:56.024835235-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed/unavailable","Output":"=== RUN   TestPolicyAndMissingDriverFailClosed/unavailable\n"}
+{"Time":"2026-10-23T22:41:56.024850556-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed/unavailable","Output":"    scheduler_test.go:157: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.02485406-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed/unavailable","Output":"--- FAIL: TestPolicyAndMissingDriverFailClosed/unavailable (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.024857009-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed/unavailable","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.024859369-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed/missing"}
+{"Time":"2026-10-23T22:41:56.024861099-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed/missing","Output":"=== RUN   TestPolicyAndMissingDriverFailClosed/missing\n"}
+{"Time":"2026-10-23T22:41:56.024872933-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed/missing","Output":"    scheduler_test.go:157: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.024876245-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed/missing","Output":"--- FAIL: TestPolicyAndMissingDriverFailClosed/missing (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.024884229-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed/missing","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.024887026-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed","Output":"--- FAIL: TestPolicyAndMissingDriverFailClosed (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.024889153-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestPolicyAndMissingDriverFailClosed","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.024891482-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata"}
+{"Time":"2026-10-23T22:41:56.024893119-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata","Output":"=== RUN   TestOutcomesAndLogMetadata\n"}
+{"Time":"2026-10-23T22:41:56.024971002-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBoundGatePreservesAmbiguityAcrossReopen","Output":"--- PASS: TestBoundGatePreservesAmbiguityAcrossReopen (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.024976174-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBoundGatePreservesAmbiguityAcrossReopen","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.024979398-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState"}
+{"Time":"2026-10-23T22:41:56.024982354-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState\n"}
+{"Time":"2026-10-23T22:41:56.02498777-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/path"}
+{"Time":"2026-10-23T22:41:56.024989941-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/path","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/path\n"}
+{"Time":"2026-10-23T22:41:56.025063589-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/path","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/path (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025066454-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/path","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025069083-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/invalid_port"}
+{"Time":"2026-10-23T22:41:56.025071136-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/invalid_port","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/invalid_port\n"}
+{"Time":"2026-10-23T22:41:56.025125706-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/invalid_port","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/invalid_port (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025128496-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/invalid_port","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025131184-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/zero_port"}
+{"Time":"2026-10-23T22:41:56.025133266-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/zero_port","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/zero_port\n"}
+{"Time":"2026-10-23T22:41:56.025202231-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/zero_port","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/zero_port (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025205097-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/zero_port","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025207807-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/invalid_host"}
+{"Time":"2026-10-23T22:41:56.025210951-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/invalid_host","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/invalid_host\n"}
+{"Time":"2026-10-23T22:41:56.025304919-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/invalid_host","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/invalid_host (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025309612-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/invalid_host","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025312691-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_CA"}
+{"Time":"2026-10-23T22:41:56.025314258-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_CA","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/empty_CA\n"}
+{"Time":"2026-10-23T22:41:56.025376658-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_CA","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/empty_CA (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025387022-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_CA","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025399504-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/bad_hash"}
+{"Time":"2026-10-23T22:41:56.025408121-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/bad_hash","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/bad_hash\n"}
+{"Time":"2026-10-23T22:41:56.025410805-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/bad_hash","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/bad_hash (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025412164-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/bad_hash","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025413868-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/other_namespace"}
+{"Time":"2026-10-23T22:41:56.025415617-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/other_namespace","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/other_namespace\n"}
+{"Time":"2026-10-23T22:41:56.025439383-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/other_namespace","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/other_namespace (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.0254409-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/other_namespace","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025442365-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/invalid_node_name"}
+{"Time":"2026-10-23T22:41:56.025443562-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/invalid_node_name","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/invalid_node_name\n"}
+{"Time":"2026-10-23T22:41:56.025476859-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/invalid_node_name","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/invalid_node_name (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025482763-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/invalid_node_name","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025484702-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/bad_node_label"}
+{"Time":"2026-10-23T22:41:56.025485893-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/bad_node_label","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/bad_node_label\n"}
+{"Time":"2026-10-23T22:41:56.025504923-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/bad_node_label","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/bad_node_label (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025507125-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/bad_node_label","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025508472-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/HTTP"}
+{"Time":"2026-10-23T22:41:56.025509837-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/HTTP","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/HTTP\n"}
+{"Time":"2026-10-23T22:41:56.025538826-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/HTTP","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/HTTP (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025540336-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/HTTP","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025547224-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/credentials"}
+{"Time":"2026-10-23T22:41:56.025549304-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/credentials","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/credentials\n"}
+{"Time":"2026-10-23T22:41:56.025575788-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/credentials","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/credentials (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025578179-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/credentials","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025580704-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/query"}
+{"Time":"2026-10-23T22:41:56.025581711-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/query","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/query\n"}
+{"Time":"2026-10-23T22:41:56.025601924-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/query","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/query (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025603522-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/query","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025604973-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/fragment"}
+{"Time":"2026-10-23T22:41:56.025606485-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/fragment","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/fragment\n"}
+{"Time":"2026-10-23T22:41:56.025629906-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/fragment","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/fragment (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025631472-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/fragment","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025635834-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_port"}
+{"Time":"2026-10-23T22:41:56.025637166-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_port","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/empty_port\n"}
+{"Time":"2026-10-23T22:41:56.025660996-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_port","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/empty_port (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025662543-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_port","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025664071-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_namespace_UID"}
+{"Time":"2026-10-23T22:41:56.025665374-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_namespace_UID","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/empty_namespace_UID\n"}
+{"Time":"2026-10-23T22:41:56.025697933-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_namespace_UID","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/empty_namespace_UID (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025704822-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_namespace_UID","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025708059-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_node_label"}
+{"Time":"2026-10-23T22:41:56.025710705-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_node_label","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/empty_node_label\n"}
+{"Time":"2026-10-23T22:41:56.025720992-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_node_label","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/empty_node_label (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025724065-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_node_label","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025728228-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_cluster"}
+{"Time":"2026-10-23T22:41:56.025730047-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_cluster","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/empty_cluster\n"}
+{"Time":"2026-10-23T22:41:56.025751376-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_cluster","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/empty_cluster (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025753492-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_cluster","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025755082-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_node_UID"}
+{"Time":"2026-10-23T22:41:56.025756401-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_node_UID","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/empty_node_UID\n"}
+{"Time":"2026-10-23T22:41:56.025780162-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_node_UID","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/empty_node_UID (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025781908-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/empty_node_UID","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025783298-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/control_character"}
+{"Time":"2026-10-23T22:41:56.025785002-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/control_character","Output":"=== RUN   TestBindingRejectsInvalidIdentityWithoutState/control_character\n"}
+{"Time":"2026-10-23T22:41:56.025815225-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/control_character","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState/control_character (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025816962-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState/control_character","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025818633-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState","Output":"--- PASS: TestBindingRejectsInvalidIdentityWithoutState (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.025820156-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBindingRejectsInvalidIdentityWithoutState","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.025826551-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBackendBindingAcrossProcess"}
+{"Time":"2026-10-23T22:41:56.025828169-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendBindingAcrossProcess","Output":"=== RUN   TestBackendBindingAcrossProcess\n"}
+{"Time":"2026-10-23T22:41:56.026129869-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/nonzero"}
+{"Time":"2026-10-23T22:41:56.026137736-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/nonzero","Output":"=== RUN   TestOutcomesAndLogMetadata/nonzero\n"}
+{"Time":"2026-10-23T22:41:56.026169969-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/nonzero","Output":"    scheduler_test.go:209: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026175575-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/nonzero","Output":"--- FAIL: TestOutcomesAndLogMetadata/nonzero (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026180583-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/nonzero","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.02618427-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/oom"}
+{"Time":"2026-10-23T22:41:56.026186434-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/oom","Output":"=== RUN   TestOutcomesAndLogMetadata/oom\n"}
+{"Time":"2026-10-23T22:41:56.026203168-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/oom","Output":"    scheduler_test.go:209: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.02620755-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/oom","Output":"--- FAIL: TestOutcomesAndLogMetadata/oom (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026210717-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/oom","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026213803-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/timeout"}
+{"Time":"2026-10-23T22:41:56.026216729-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/timeout","Output":"=== RUN   TestOutcomesAndLogMetadata/timeout\n"}
+{"Time":"2026-10-23T22:41:56.026228865-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/timeout","Output":"    scheduler_test.go:209: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.02623216-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/timeout","Output":"--- FAIL: TestOutcomesAndLogMetadata/timeout (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026237105-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/timeout","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.02623964-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/cleanup"}
+{"Time":"2026-10-23T22:41:56.026241449-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/cleanup","Output":"=== RUN   TestOutcomesAndLogMetadata/cleanup\n"}
+{"Time":"2026-10-23T22:41:56.02625803-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/cleanup","Output":"    scheduler_test.go:209: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.02626123-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/cleanup","Output":"--- FAIL: TestOutcomesAndLogMetadata/cleanup (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026264542-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/cleanup","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026266925-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/start"}
+{"Time":"2026-10-23T22:41:56.026269651-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/start","Output":"=== RUN   TestOutcomesAndLogMetadata/start\n"}
+{"Time":"2026-10-23T22:41:56.026279106-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/start","Output":"    scheduler_test.go:209: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026282363-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/start","Output":"--- FAIL: TestOutcomesAndLogMetadata/start (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026285367-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/start","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026295633-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/logs"}
+{"Time":"2026-10-23T22:41:56.026298707-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/logs","Output":"=== RUN   TestOutcomesAndLogMetadata/logs\n"}
+{"Time":"2026-10-23T22:41:56.026319732-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/logs","Output":"    scheduler_test.go:209: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026324504-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/logs","Output":"--- FAIL: TestOutcomesAndLogMetadata/logs (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026327832-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/logs","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026329874-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/empty"}
+{"Time":"2026-10-23T22:41:56.026331912-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/empty","Output":"=== RUN   TestOutcomesAndLogMetadata/empty\n"}
+{"Time":"2026-10-23T22:41:56.026341037-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/empty","Output":"    scheduler_test.go:209: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026345906-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/empty","Output":"--- FAIL: TestOutcomesAndLogMetadata/empty (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026348887-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/empty","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026352482-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/truncated"}
+{"Time":"2026-10-23T22:41:56.026354183-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/truncated","Output":"=== RUN   TestOutcomesAndLogMetadata/truncated\n"}
+{"Time":"2026-10-23T22:41:56.026359812-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/truncated","Output":"    scheduler_test.go:209: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026364006-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/truncated","Output":"--- FAIL: TestOutcomesAndLogMetadata/truncated (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026366147-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata/truncated","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026370211-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata","Output":"--- FAIL: TestOutcomesAndLogMetadata (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026372464-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestOutcomesAndLogMetadata","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026375362-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryReapsOnlyAndPreservesLiveOwner"}
+{"Time":"2026-10-23T22:41:56.026377948-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryReapsOnlyAndPreservesLiveOwner","Output":"=== RUN   TestRecoveryReapsOnlyAndPreservesLiveOwner\n"}
+{"Time":"2026-10-23T22:41:56.026380512-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryReapsOnlyAndPreservesLiveOwner/starting"}
+{"Time":"2026-10-23T22:41:56.026382554-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryReapsOnlyAndPreservesLiveOwner/starting","Output":"=== RUN   TestRecoveryReapsOnlyAndPreservesLiveOwner/starting\n"}
+{"Time":"2026-10-23T22:41:56.026407905-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryReapsOnlyAndPreservesLiveOwner/starting","Output":"    scheduler_test.go:237: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026411406-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryReapsOnlyAndPreservesLiveOwner/starting","Output":"--- FAIL: TestRecoveryReapsOnlyAndPreservesLiveOwner/starting (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026414609-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryReapsOnlyAndPreservesLiveOwner/starting","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026417818-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryReapsOnlyAndPreservesLiveOwner/running"}
+{"Time":"2026-10-23T22:41:56.026419898-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryReapsOnlyAndPreservesLiveOwner/running","Output":"=== RUN   TestRecoveryReapsOnlyAndPreservesLiveOwner/running\n"}
+{"Time":"2026-10-23T22:41:56.026423655-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryReapsOnlyAndPreservesLiveOwner/running","Output":"    scheduler_test.go:237: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026426979-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryReapsOnlyAndPreservesLiveOwner/running","Output":"--- FAIL: TestRecoveryReapsOnlyAndPreservesLiveOwner/running (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026443949-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryReapsOnlyAndPreservesLiveOwner/running","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026447146-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryReapsOnlyAndPreservesLiveOwner","Output":"--- FAIL: TestRecoveryReapsOnlyAndPreservesLiveOwner (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026450499-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryReapsOnlyAndPreservesLiveOwner","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026452963-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestCleanupFailureRemainsRetryable"}
+{"Time":"2026-10-23T22:41:56.026454955-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestCleanupFailureRemainsRetryable","Output":"=== RUN   TestCleanupFailureRemainsRetryable\n"}
+{"Time":"2026-10-23T22:41:56.026466077-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestCleanupFailureRemainsRetryable","Output":"    scheduler_test.go:270: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026469298-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestCleanupFailureRemainsRetryable","Output":"--- FAIL: TestCleanupFailureRemainsRetryable (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026472574-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestCleanupFailureRemainsRetryable","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026474904-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestWorkerLifecycleBoundedConcurrencyAndShutdown"}
+{"Time":"2026-10-23T22:41:56.026476493-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestWorkerLifecycleBoundedConcurrencyAndShutdown","Output":"=== RUN   TestWorkerLifecycleBoundedConcurrencyAndShutdown\n"}
+{"Time":"2026-10-23T22:41:56.026485514-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestWorkerLifecycleBoundedConcurrencyAndShutdown","Output":"    scheduler_test.go:299: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026489435-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestWorkerLifecycleBoundedConcurrencyAndShutdown","Output":"--- FAIL: TestWorkerLifecycleBoundedConcurrencyAndShutdown (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026492616-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestWorkerLifecycleBoundedConcurrencyAndShutdown","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026495044-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryCannotMoveRuntimeNodes"}
+{"Time":"2026-10-23T22:41:56.026500964-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryCannotMoveRuntimeNodes","Output":"=== RUN   TestRecoveryCannotMoveRuntimeNodes\n"}
+{"Time":"2026-10-23T22:41:56.026503763-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryCannotMoveRuntimeNodes","Output":"    scheduler_test.go:345: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026507-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryCannotMoveRuntimeNodes","Output":"--- FAIL: TestRecoveryCannotMoveRuntimeNodes (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026510052-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestRecoveryCannotMoveRuntimeNodes","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026512294-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestTerminalAuditFailureRollsBackLogsAndResult"}
+{"Time":"2026-10-23T22:41:56.026514135-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestTerminalAuditFailureRollsBackLogsAndResult","Output":"=== RUN   TestTerminalAuditFailureRollsBackLogsAndResult\n"}
+{"Time":"2026-10-23T22:41:56.026530272-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestTerminalAuditFailureRollsBackLogsAndResult","Output":"    scheduler_test.go:367: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026533449-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestTerminalAuditFailureRollsBackLogsAndResult","Output":"--- FAIL: TestTerminalAuditFailureRollsBackLogsAndResult (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026536635-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestTerminalAuditFailureRollsBackLogsAndResult","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026538982-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestClaimCommitTimeoutNeverStarts"}
+{"Time":"2026-10-23T22:41:56.02654065-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestClaimCommitTimeoutNeverStarts","Output":"=== RUN   TestClaimCommitTimeoutNeverStarts\n"}
+{"Time":"2026-10-23T22:41:56.026546385-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestClaimCommitTimeoutNeverStarts","Output":"    scheduler_test.go:395: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026549803-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestClaimCommitTimeoutNeverStarts","Output":"--- FAIL: TestClaimCommitTimeoutNeverStarts (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026552253-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestClaimCommitTimeoutNeverStarts","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026555024-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestLostSessionBeforeLaunchCannotCreateAfterRecovery"}
+{"Time":"2026-10-23T22:41:56.026557055-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestLostSessionBeforeLaunchCannotCreateAfterRecovery","Output":"=== RUN   TestLostSessionBeforeLaunchCannotCreateAfterRecovery\n"}
+{"Time":"2026-10-23T22:41:56.026566791-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestLostSessionBeforeLaunchCannotCreateAfterRecovery","Output":"    scheduler_test.go:421: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026570044-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestLostSessionBeforeLaunchCannotCreateAfterRecovery","Output":"--- FAIL: TestLostSessionBeforeLaunchCannotCreateAfterRecovery (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026574825-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestLostSessionBeforeLaunchCannotCreateAfterRecovery","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026577165-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestLostSessionInsideLaunchLeavesPendingCleanup"}
+{"Time":"2026-10-23T22:41:56.026578945-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestLostSessionInsideLaunchLeavesPendingCleanup","Output":"=== RUN   TestLostSessionInsideLaunchLeavesPendingCleanup\n"}
+{"Time":"2026-10-23T22:41:56.026584727-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestLostSessionInsideLaunchLeavesPendingCleanup","Output":"    scheduler_test.go:460: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026588287-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestLostSessionInsideLaunchLeavesPendingCleanup","Output":"--- FAIL: TestLostSessionInsideLaunchLeavesPendingCleanup (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026591292-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestLostSessionInsideLaunchLeavesPendingCleanup","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026595043-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestIndependentProcessesExecuteOnce"}
+{"Time":"2026-10-23T22:41:56.026596927-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestIndependentProcessesExecuteOnce","Output":"=== RUN   TestIndependentProcessesExecuteOnce\n"}
+{"Time":"2026-10-23T22:41:56.026608136-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestIndependentProcessesExecuteOnce","Output":"    scheduler_test.go:527: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026611241-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestIndependentProcessesExecuteOnce","Output":"--- FAIL: TestIndependentProcessesExecuteOnce (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026613876-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestIndependentProcessesExecuteOnce","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026616877-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestSchedulerProcessHelper"}
+{"Time":"2026-10-23T22:41:56.026618882-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestSchedulerProcessHelper","Output":"=== RUN   TestSchedulerProcessHelper\n"}
+{"Time":"2026-10-23T22:41:56.026628061-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestSchedulerProcessHelper","Output":"--- PASS: TestSchedulerProcessHelper (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026631354-07:00","Action":"pass","Package":"warden/controlplane/internal/scheduler","Test":"TestSchedulerProcessHelper","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026633707-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestLogSnapshotDeadlineClosesReaderAndMarksLost"}
+{"Time":"2026-10-23T22:41:56.026635422-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestLogSnapshotDeadlineClosesReaderAndMarksLost","Output":"=== RUN   TestLogSnapshotDeadlineClosesReaderAndMarksLost\n"}
+{"Time":"2026-10-23T22:41:56.026648607-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestLogSnapshotDeadlineClosesReaderAndMarksLost","Output":"    scheduler_test.go:601: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026658666-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestLogSnapshotDeadlineClosesReaderAndMarksLost","Output":"--- FAIL: TestLogSnapshotDeadlineClosesReaderAndMarksLost (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026662133-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestLogSnapshotDeadlineClosesReaderAndMarksLost","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026664524-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestBinaryLogsPersistWithoutLoss"}
+{"Time":"2026-10-23T22:41:56.026666522-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestBinaryLogsPersistWithoutLoss","Output":"=== RUN   TestBinaryLogsPersistWithoutLoss\n"}
+{"Time":"2026-10-23T22:41:56.026677028-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestBinaryLogsPersistWithoutLoss","Output":"    scheduler_test.go:633: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026681092-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestBinaryLogsPersistWithoutLoss","Output":"--- FAIL: TestBinaryLogsPersistWithoutLoss (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026684256-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestBinaryLogsPersistWithoutLoss","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026686571-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestActiveGuestDoesNotHoldAuditLockAndUsesStoredSpec"}
+{"Time":"2026-10-23T22:41:56.026689424-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestActiveGuestDoesNotHoldAuditLockAndUsesStoredSpec","Output":"=== RUN   TestActiveGuestDoesNotHoldAuditLockAndUsesStoredSpec\n"}
+{"Time":"2026-10-23T22:41:56.026701362-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestActiveGuestDoesNotHoldAuditLockAndUsesStoredSpec","Output":"    scheduler_test.go:649: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026707946-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestActiveGuestDoesNotHoldAuditLockAndUsesStoredSpec","Output":"--- FAIL: TestActiveGuestDoesNotHoldAuditLockAndUsesStoredSpec (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026711229-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestActiveGuestDoesNotHoldAuditLockAndUsesStoredSpec","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026713264-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestAmbiguousStartRemainsPendingAcrossRecovery"}
+{"Time":"2026-10-23T22:41:56.026715198-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestAmbiguousStartRemainsPendingAcrossRecovery","Output":"=== RUN   TestAmbiguousStartRemainsPendingAcrossRecovery\n"}
+{"Time":"2026-10-23T22:41:56.026725647-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestAmbiguousStartRemainsPendingAcrossRecovery","Output":"    scheduler_test.go:683: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026728781-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestAmbiguousStartRemainsPendingAcrossRecovery","Output":"--- FAIL: TestAmbiguousStartRemainsPendingAcrossRecovery (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026731862-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestAmbiguousStartRemainsPendingAcrossRecovery","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026734207-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestStartErrorStillKillsReturnedHandle"}
+{"Time":"2026-10-23T22:41:56.02673587-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestStartErrorStillKillsReturnedHandle","Output":"=== RUN   TestStartErrorStillKillsReturnedHandle\n"}
+{"Time":"2026-10-23T22:41:56.026741809-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestStartErrorStillKillsReturnedHandle","Output":"    scheduler_test.go:707: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026747977-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestStartErrorStillKillsReturnedHandle","Output":"--- FAIL: TestStartErrorStillKillsReturnedHandle (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026751147-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestStartErrorStillKillsReturnedHandle","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.02675422-07:00","Action":"run","Package":"warden/controlplane/internal/scheduler","Test":"TestLateRemoteCreationIsReapedByNewWorkerWithoutClearingAmbiguity"}
+{"Time":"2026-10-23T22:41:56.026756373-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestLateRemoteCreationIsReapedByNewWorkerWithoutClearingAmbiguity","Output":"=== RUN   TestLateRemoteCreationIsReapedByNewWorkerWithoutClearingAmbiguity\n"}
+{"Time":"2026-10-23T22:41:56.026769366-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestLateRemoteCreationIsReapedByNewWorkerWithoutClearingAmbiguity","Output":"    scheduler_test.go:738: WARDEN_TEST_DATABASE_URL required; run scripts/test-postgres.sh\n"}
+{"Time":"2026-10-23T22:41:56.026772839-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Test":"TestLateRemoteCreationIsReapedByNewWorkerWithoutClearingAmbiguity","Output":"--- FAIL: TestLateRemoteCreationIsReapedByNewWorkerWithoutClearingAmbiguity (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.026775908-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Test":"TestLateRemoteCreationIsReapedByNewWorkerWithoutClearingAmbiguity","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.026778241-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Output":"FAIL\n"}
+{"Time":"2026-10-23T22:41:56.027006774-07:00","Action":"output","Package":"warden/controlplane/internal/scheduler","Output":"FAIL\twarden/controlplane/internal/scheduler\t0.008s\n"}
+{"Time":"2026-10-23T22:41:56.027018418-07:00","Action":"fail","Package":"warden/controlplane/internal/scheduler","Elapsed":0.008}
+{"Time":"2026-10-23T22:41:56.031313144-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendBindingAcrossProcess","Output":"--- PASS: TestBackendBindingAcrossProcess (0.01s)\n"}
+{"Time":"2026-10-23T22:41:56.031320367-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBackendBindingAcrossProcess","Elapsed":0.01}
+{"Time":"2026-10-23T22:41:56.031323702-07:00","Action":"run","Package":"warden/runtimes/gvisor","Test":"TestBackendBindingChild"}
+{"Time":"2026-10-23T22:41:56.031325061-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendBindingChild","Output":"=== RUN   TestBackendBindingChild\n"}
+{"Time":"2026-10-23T22:41:56.031326804-07:00","Action":"output","Package":"warden/runtimes/gvisor","Test":"TestBackendBindingChild","Output":"--- PASS: TestBackendBindingChild (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.031328223-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Test":"TestBackendBindingChild","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.031329463-07:00","Action":"output","Package":"warden/runtimes/gvisor","Output":"PASS\n"}
+{"Time":"2026-10-23T22:41:56.03150953-07:00","Action":"output","Package":"warden/runtimes/gvisor","Output":"ok  \twarden/runtimes/gvisor\t0.012s\n"}
+{"Time":"2026-10-23T22:41:56.031519264-07:00","Action":"pass","Package":"warden/runtimes/gvisor","Elapsed":0.012}
+{"Time":"2026-10-23T22:41:56.044135994-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestDrainWaitsForTailAfterExitBeforeCancel","Output":"--- PASS: TestDrainWaitsForTailAfterExitBeforeCancel (0.02s)\n"}
+{"Time":"2026-10-23T22:41:56.044148536-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestDrainWaitsForTailAfterExitBeforeCancel","Elapsed":0.02}
+{"Time":"2026-10-23T22:41:56.04415427-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestDrainTimeoutReturnsTruncationError"}
+{"Time":"2026-10-23T22:41:56.044157091-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestDrainTimeoutReturnsTruncationError","Output":"=== RUN   TestDrainTimeoutReturnsTruncationError\n"}
+{"Time":"2026-10-23T22:41:56.064508051-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestDrainTimeoutReturnsTruncationError","Output":"--- PASS: TestDrainTimeoutReturnsTruncationError (0.02s)\n"}
+{"Time":"2026-10-23T22:41:56.064527309-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestDrainTimeoutReturnsTruncationError","Elapsed":0.02}
+{"Time":"2026-10-23T22:41:56.064535913-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases"}
+{"Time":"2026-10-23T22:41:56.064538553-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases","Output":"=== RUN   TestSocketRejectsSymlinkAliases\n"}
+{"Time":"2026-10-23T22:41:56.064702594-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases/socket"}
+{"Time":"2026-10-23T22:41:56.064705954-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases/socket","Output":"=== RUN   TestSocketRejectsSymlinkAliases/socket\n"}
+{"Time":"2026-10-23T22:41:56.064799818-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestInflightLaunchBlocksReapUntilBoundedTimeout","Output":"--- PASS: TestInflightLaunchBlocksReapUntilBoundedTimeout (0.04s)\n"}
+{"Time":"2026-10-23T22:41:56.064817416-07:00","Action":"pass","Package":"warden/runtimes/gate","Test":"TestInflightLaunchBlocksReapUntilBoundedTimeout","Elapsed":0.04}
+{"Time":"2026-10-23T22:41:56.064824347-07:00","Action":"run","Package":"warden/runtimes/gate","Test":"TestDistinctGateDirectoriesHaveDistinctAuthority"}
+{"Time":"2026-10-23T22:41:56.064826692-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestDistinctGateDirectoriesHaveDistinctAuthority","Output":"=== RUN   TestDistinctGateDirectoriesHaveDistinctAuthority\n"}
+{"Time":"2026-10-23T22:41:56.064845517-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases/socket","Output":"--- PASS: TestSocketRejectsSymlinkAliases/socket (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.064851614-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases/socket","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.064855265-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases/parent"}
+{"Time":"2026-10-23T22:41:56.064857437-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases/parent","Output":"=== RUN   TestSocketRejectsSymlinkAliases/parent\n"}
+{"Time":"2026-10-23T22:41:56.064925829-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases/parent","Output":"--- PASS: TestSocketRejectsSymlinkAliases/parent (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.064928805-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases/parent","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.064931997-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases/dangling"}
+{"Time":"2026-10-23T22:41:56.064936418-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases/dangling","Output":"=== RUN   TestSocketRejectsSymlinkAliases/dangling\n"}
+{"Time":"2026-10-23T22:41:56.064981247-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestDistinctGateDirectoriesHaveDistinctAuthority","Output":"--- PASS: TestDistinctGateDirectoriesHaveDistinctAuthority (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.064986472-07:00","Action":"pass","Package":"warden/runtimes/gate","Test":"TestDistinctGateDirectoriesHaveDistinctAuthority","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.064989583-07:00","Action":"run","Package":"warden/runtimes/gate","Test":"TestGateRefusesReplacedDirectory"}
+{"Time":"2026-10-23T22:41:56.064992021-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestGateRefusesReplacedDirectory","Output":"=== RUN   TestGateRefusesReplacedDirectory\n"}
+{"Time":"2026-10-23T22:41:56.065015644-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases/dangling","Output":"--- PASS: TestSocketRejectsSymlinkAliases/dangling (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.065021271-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases/dangling","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.065069662-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases","Output":"--- PASS: TestSocketRejectsSymlinkAliases (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.065073384-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestSocketRejectsSymlinkAliases","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.065075784-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestSocketRejectsRegularFileAndWrongDaemon"}
+{"Time":"2026-10-23T22:41:56.065077435-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketRejectsRegularFileAndWrongDaemon","Output":"=== RUN   TestSocketRejectsRegularFileAndWrongDaemon\n"}
+{"Time":"2026-10-23T22:41:56.065145647-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestGateRefusesReplacedDirectory","Output":"--- PASS: TestGateRefusesReplacedDirectory (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.06514951-07:00","Action":"pass","Package":"warden/runtimes/gate","Test":"TestGateRefusesReplacedDirectory","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.065152403-07:00","Action":"run","Package":"warden/runtimes/gate","Test":"TestAmbiguousCreationCannotBeClearedBySuccessfulReap"}
+{"Time":"2026-10-23T22:41:56.06515472-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestAmbiguousCreationCannotBeClearedBySuccessfulReap","Output":"=== RUN   TestAmbiguousCreationCannotBeClearedBySuccessfulReap\n"}
+{"Time":"2026-10-23T22:41:56.065216202-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketRejectsRegularFileAndWrongDaemon","Output":"--- PASS: TestSocketRejectsRegularFileAndWrongDaemon (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.065219738-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestSocketRejectsRegularFileAndWrongDaemon","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.065222949-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestSocketAcceptsOwnedDedicatedUnixListener"}
+{"Time":"2026-10-23T22:41:56.06522503-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketAcceptsOwnedDedicatedUnixListener","Output":"=== RUN   TestSocketAcceptsOwnedDedicatedUnixListener\n"}
+{"Time":"2026-10-23T22:41:56.065287955-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketAcceptsOwnedDedicatedUnixListener","Output":"    review_test.go:137: untrusted socket directory owner\n"}
+{"Time":"2026-10-23T22:41:56.065337012-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketAcceptsOwnedDedicatedUnixListener","Output":"--- FAIL: TestSocketAcceptsOwnedDedicatedUnixListener (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.065340133-07:00","Action":"fail","Package":"warden/runtimes/runc","Test":"TestSocketAcceptsOwnedDedicatedUnixListener","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.065343998-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestLogOverflowReportsDroppedBytes"}
+{"Time":"2026-10-23T22:41:56.065346203-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestLogOverflowReportsDroppedBytes","Output":"=== RUN   TestLogOverflowReportsDroppedBytes\n"}
+{"Time":"2026-10-23T22:41:56.065371066-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestLogOverflowReportsDroppedBytes","Output":"--- PASS: TestLogOverflowReportsDroppedBytes (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.06537391-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestLogOverflowReportsDroppedBytes","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.065376538-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestPauseIsAllowedWhileMountRemainsDenied"}
+{"Time":"2026-10-23T22:41:56.065378576-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestPauseIsAllowedWhileMountRemainsDenied","Output":"=== RUN   TestPauseIsAllowedWhileMountRemainsDenied\n"}
+{"Time":"2026-10-23T22:41:56.065459786-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestAmbiguousCreationCannotBeClearedBySuccessfulReap","Output":"--- PASS: TestAmbiguousCreationCannotBeClearedBySuccessfulReap (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.065463901-07:00","Action":"pass","Package":"warden/runtimes/gate","Test":"TestAmbiguousCreationCannotBeClearedBySuccessfulReap","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.065466701-07:00","Action":"run","Package":"warden/runtimes/gate","Test":"TestGateOperationsReleaseDirectoryDescriptors"}
+{"Time":"2026-10-23T22:41:56.065468499-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestGateOperationsReleaseDirectoryDescriptors","Output":"=== RUN   TestGateOperationsReleaseDirectoryDescriptors\n"}
+{"Time":"2026-10-23T22:41:56.065786494-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestPauseIsAllowedWhileMountRemainsDenied","Output":"--- PASS: TestPauseIsAllowedWhileMountRemainsDenied (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.065790325-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestPauseIsAllowedWhileMountRemainsDenied","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.065792972-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestPidsEvidenceNeedsEventsAndRealLimitPeak"}
+{"Time":"2026-10-23T22:41:56.065795034-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestPidsEvidenceNeedsEventsAndRealLimitPeak","Output":"=== RUN   TestPidsEvidenceNeedsEventsAndRealLimitPeak\n"}
+{"Time":"2026-10-23T22:41:56.065980568-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestPidsEvidenceNeedsEventsAndRealLimitPeak","Output":"--- PASS: TestPidsEvidenceNeedsEventsAndRealLimitPeak (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.065983571-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestPidsEvidenceNeedsEventsAndRealLimitPeak","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.065986449-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestSocketRejectsUntrustedOwnershipAndWritableParents"}
+{"Time":"2026-10-23T22:41:56.065988507-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketRejectsUntrustedOwnershipAndWritableParents","Output":"=== RUN   TestSocketRejectsUntrustedOwnershipAndWritableParents\n"}
+{"Time":"2026-10-23T22:41:56.066095937-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketRejectsUntrustedOwnershipAndWritableParents","Output":"--- PASS: TestSocketRejectsUntrustedOwnershipAndWritableParents (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.066099053-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestSocketRejectsUntrustedOwnershipAndWritableParents","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.066101831-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestSocketRevalidationRejectsAliasAfterConstruction"}
+{"Time":"2026-10-23T22:41:56.066103875-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketRevalidationRejectsAliasAfterConstruction","Output":"=== RUN   TestSocketRevalidationRejectsAliasAfterConstruction\n"}
+{"Time":"2026-10-23T22:41:56.066126308-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestGateOperationsReleaseDirectoryDescriptors","Output":"--- PASS: TestGateOperationsReleaseDirectoryDescriptors (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.066130354-07:00","Action":"pass","Package":"warden/runtimes/gate","Test":"TestGateOperationsReleaseDirectoryDescriptors","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.066144246-07:00","Action":"run","Package":"warden/runtimes/gate","Test":"TestRetirementFenceRejectsNewStartsAcrossInstances"}
+{"Time":"2026-10-23T22:41:56.066146904-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestRetirementFenceRejectsNewStartsAcrossInstances","Output":"=== RUN   TestRetirementFenceRejectsNewStartsAcrossInstances\n"}
+{"Time":"2026-10-23T22:41:56.066159508-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketRevalidationRejectsAliasAfterConstruction","Output":"    review_test.go:214: untrusted socket directory owner\n"}
+{"Time":"2026-10-23T22:41:56.066207162-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestSocketRevalidationRejectsAliasAfterConstruction","Output":"--- FAIL: TestSocketRevalidationRejectsAliasAfterConstruction (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.066210881-07:00","Action":"fail","Package":"warden/runtimes/runc","Test":"TestSocketRevalidationRejectsAliasAfterConstruction","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.066213404-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestPidsEvidenceRejectsMalformedAndBackwardsCounters"}
+{"Time":"2026-10-23T22:41:56.066215083-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestPidsEvidenceRejectsMalformedAndBackwardsCounters","Output":"=== RUN   TestPidsEvidenceRejectsMalformedAndBackwardsCounters\n"}
+{"Time":"2026-10-23T22:41:56.066342788-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestRetirementFenceRejectsNewStartsAcrossInstances","Output":"--- PASS: TestRetirementFenceRejectsNewStartsAcrossInstances (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.066347466-07:00","Action":"pass","Package":"warden/runtimes/gate","Test":"TestRetirementFenceRejectsNewStartsAcrossInstances","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.066350419-07:00","Action":"run","Package":"warden/runtimes/gate","Test":"TestRetirementRejectsUnboundTargetsAndForgedProof"}
+{"Time":"2026-10-23T22:41:56.066352545-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestRetirementRejectsUnboundTargetsAndForgedProof","Output":"=== RUN   TestRetirementRejectsUnboundTargetsAndForgedProof\n"}
+{"Time":"2026-10-23T22:41:56.066424447-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestPidsEvidenceRejectsMalformedAndBackwardsCounters","Output":"--- PASS: TestPidsEvidenceRejectsMalformedAndBackwardsCounters (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.066428076-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestPidsEvidenceRejectsMalformedAndBackwardsCounters","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.066434113-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestContainerdClientDialsOnlyAuthenticatedListener"}
+{"Time":"2026-10-23T22:41:56.066436432-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestContainerdClientDialsOnlyAuthenticatedListener","Output":"=== RUN   TestContainerdClientDialsOnlyAuthenticatedListener\n"}
+{"Time":"2026-10-23T22:41:56.066876503-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestContainerdClientDialsOnlyAuthenticatedListener","Output":"    review_test.go:269: owned listener not reached: {Version: Revision:} rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing: untrusted socket directory owner\"\n"}
+{"Time":"2026-10-23T22:41:56.067028581-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestContainerdClientDialsOnlyAuthenticatedListener","Output":"--- FAIL: TestContainerdClientDialsOnlyAuthenticatedListener (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.067035134-07:00","Action":"fail","Package":"warden/runtimes/runc","Test":"TestContainerdClientDialsOnlyAuthenticatedListener","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.067038166-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting"}
+{"Time":"2026-10-23T22:41:56.067040013-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting","Output":"=== RUN   TestRejectsUnsafeLaunchBeforeConnecting\n"}
+{"Time":"2026-10-23T22:41:56.067041374-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/mutable-image"}
+{"Time":"2026-10-23T22:41:56.067042699-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/mutable-image","Output":"=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/mutable-image\n"}
+{"Time":"2026-10-23T22:41:56.06704535-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/mutable-image","Output":"--- PASS: TestRejectsUnsafeLaunchBeforeConnecting/mutable-image (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.067049383-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/mutable-image","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.06705126-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/traversal-id"}
+{"Time":"2026-10-23T22:41:56.067052855-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/traversal-id","Output":"=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/traversal-id\n"}
+{"Time":"2026-10-23T22:41:56.067054427-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/traversal-id","Output":"--- PASS: TestRejectsUnsafeLaunchBeforeConnecting/traversal-id (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.067055811-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/traversal-id","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.067056908-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/allowlist-unimplemented"}
+{"Time":"2026-10-23T22:41:56.067058254-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/allowlist-unimplemented","Output":"=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/allowlist-unimplemented\n"}
+{"Time":"2026-10-23T22:41:56.067060074-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/allowlist-unimplemented","Output":"--- PASS: TestRejectsUnsafeLaunchBeforeConnecting/allowlist-unimplemented (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.067061481-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/allowlist-unimplemented","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.067062834-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/none-with-domains"}
+{"Time":"2026-10-23T22:41:56.067064138-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/none-with-domains","Output":"=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/none-with-domains\n"}
+{"Time":"2026-10-23T22:41:56.067065413-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/none-with-domains","Output":"--- PASS: TestRejectsUnsafeLaunchBeforeConnecting/none-with-domains (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.067067077-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/none-with-domains","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.067068398-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/zero-memory"}
+{"Time":"2026-10-23T22:41:56.067069395-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/zero-memory","Output":"=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/zero-memory\n"}
+{"Time":"2026-10-23T22:41:56.067070885-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/zero-memory","Output":"--- PASS: TestRejectsUnsafeLaunchBeforeConnecting/zero-memory (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.067073197-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/zero-memory","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.067074571-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/empty-cmd"}
+{"Time":"2026-10-23T22:41:56.067075493-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/empty-cmd","Output":"=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/empty-cmd\n"}
+{"Time":"2026-10-23T22:41:56.067076898-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/empty-cmd","Output":"--- PASS: TestRejectsUnsafeLaunchBeforeConnecting/empty-cmd (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.067078419-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting/empty-cmd","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.067079955-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting","Output":"--- PASS: TestRejectsUnsafeLaunchBeforeConnecting (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.067081088-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestRejectsUnsafeLaunchBeforeConnecting","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.06708311-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestOCISecurityAndResourceEnforcement"}
+{"Time":"2026-10-23T22:41:56.067085174-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestOCISecurityAndResourceEnforcement","Output":"=== RUN   TestOCISecurityAndResourceEnforcement\n"}
+{"Time":"2026-10-23T22:41:56.067146702-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestOCISecurityAndResourceEnforcement","Output":"--- PASS: TestOCISecurityAndResourceEnforcement (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.067148378-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestOCISecurityAndResourceEnforcement","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.067150149-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestBoundedLogsDiscardOverflowWithoutBlocking"}
+{"Time":"2026-10-23T22:41:56.067151319-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestBoundedLogsDiscardOverflowWithoutBlocking","Output":"=== RUN   TestBoundedLogsDiscardOverflowWithoutBlocking\n"}
+{"Time":"2026-10-23T22:41:56.067153022-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestBoundedLogsDiscardOverflowWithoutBlocking","Output":"--- PASS: TestBoundedLogsDiscardOverflowWithoutBlocking (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.067154756-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestBoundedLogsDiscardOverflowWithoutBlocking","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.067160605-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestCgroupRejectsSymlinkEscape"}
+{"Time":"2026-10-23T22:41:56.067161892-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestCgroupRejectsSymlinkEscape","Output":"=== RUN   TestCgroupRejectsSymlinkEscape\n"}
+{"Time":"2026-10-23T22:41:56.067226357-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestCgroupRejectsSymlinkEscape","Output":"--- PASS: TestCgroupRejectsSymlinkEscape (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.067227713-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestCgroupRejectsSymlinkEscape","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.067229255-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestKillWaitsForEntireSubtree"}
+{"Time":"2026-10-23T22:41:56.067230406-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestKillWaitsForEntireSubtree","Output":"=== RUN   TestKillWaitsForEntireSubtree\n"}
+{"Time":"2026-10-23T22:41:56.067352532-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestRetirementRejectsUnboundTargetsAndForgedProof","Output":"--- PASS: TestRetirementRejectsUnboundTargetsAndForgedProof (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.067357608-07:00","Action":"pass","Package":"warden/runtimes/gate","Test":"TestRetirementRejectsUnboundTargetsAndForgedProof","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.067360493-07:00","Action":"run","Package":"warden/runtimes/gate","Test":"TestUnprovenRetirementKeepsAmbiguity"}
+{"Time":"2026-10-23T22:41:56.067362278-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestUnprovenRetirementKeepsAmbiguity","Output":"=== RUN   TestUnprovenRetirementKeepsAmbiguity\n"}
+{"Time":"2026-10-23T22:41:56.067930038-07:00","Action":"output","Package":"warden/runtimes/gate","Test":"TestUnprovenRetirementKeepsAmbiguity","Output":"--- PASS: TestUnprovenRetirementKeepsAmbiguity (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.067933507-07:00","Action":"pass","Package":"warden/runtimes/gate","Test":"TestUnprovenRetirementKeepsAmbiguity","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.067936135-07:00","Action":"output","Package":"warden/runtimes/gate","Output":"PASS\n"}
+{"Time":"2026-10-23T22:41:56.068249947-07:00","Action":"output","Package":"warden/runtimes/gate","Output":"ok  \twarden/runtimes/gate\t0.049s\n"}
+{"Time":"2026-10-23T22:41:56.06825481-07:00","Action":"pass","Package":"warden/runtimes/gate","Elapsed":0.049}
+{"Time":"2026-10-23T22:41:56.097814461-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestKillWaitsForEntireSubtree","Output":"--- PASS: TestKillWaitsForEntireSubtree (0.03s)\n"}
+{"Time":"2026-10-23T22:41:56.097849916-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestKillWaitsForEntireSubtree","Elapsed":0.03}
+{"Time":"2026-10-23T22:41:56.097865164-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestWaitCancellationDoesNotCancelLifecycle"}
+{"Time":"2026-10-23T22:41:56.097873654-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestWaitCancellationDoesNotCancelLifecycle","Output":"=== RUN   TestWaitCancellationDoesNotCancelLifecycle\n"}
+{"Time":"2026-10-23T22:41:56.097893764-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestWaitCancellationDoesNotCancelLifecycle","Output":"--- PASS: TestWaitCancellationDoesNotCancelLifecycle (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.097902953-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestWaitCancellationDoesNotCancelLifecycle","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.097913747-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestTimeoutKillsAndReportsCleanupFailure"}
+{"Time":"2026-10-23T22:41:56.097926926-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestTimeoutKillsAndReportsCleanupFailure","Output":"=== RUN   TestTimeoutKillsAndReportsCleanupFailure\n"}
+{"Time":"2026-10-23T22:41:56.098901206-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestTimeoutKillsAndReportsCleanupFailure","Output":"--- PASS: TestTimeoutKillsAndReportsCleanupFailure (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.098903335-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestTimeoutKillsAndReportsCleanupFailure","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.098913036-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestNaturalExitKillsResidualProcesses"}
+{"Time":"2026-10-23T22:41:56.098914409-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestNaturalExitKillsResidualProcesses","Output":"=== RUN   TestNaturalExitKillsResidualProcesses\n"}
+{"Time":"2026-10-23T22:41:56.09893044-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestNaturalExitKillsResidualProcesses","Output":"--- PASS: TestNaturalExitKillsResidualProcesses (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.098931854-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestNaturalExitKillsResidualProcesses","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.098933323-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestRejectsSharedDaemonConfiguration"}
+{"Time":"2026-10-23T22:41:56.098934483-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsSharedDaemonConfiguration","Output":"=== RUN   TestRejectsSharedDaemonConfiguration\n"}
+{"Time":"2026-10-23T22:41:56.098944526-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestRejectsSharedDaemonConfiguration","Output":"--- PASS: TestRejectsSharedDaemonConfiguration (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.098946253-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestRejectsSharedDaemonConfiguration","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.098948088-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestStartHonorsCanceledSetupWithoutConnecting"}
+{"Time":"2026-10-23T22:41:56.098949107-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestStartHonorsCanceledSetupWithoutConnecting","Output":"=== RUN   TestStartHonorsCanceledSetupWithoutConnecting\n"}
+{"Time":"2026-10-23T22:41:56.099040876-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestStartHonorsCanceledSetupWithoutConnecting","Output":"    runc_test.go:210: untrusted socket directory owner\n"}
+{"Time":"2026-10-23T22:41:56.099085895-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestStartHonorsCanceledSetupWithoutConnecting","Output":"--- FAIL: TestStartHonorsCanceledSetupWithoutConnecting (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.099088322-07:00","Action":"fail","Package":"warden/runtimes/runc","Test":"TestStartHonorsCanceledSetupWithoutConnecting","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.099090141-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestCgroupMalformedEventsFailClosed"}
+{"Time":"2026-10-23T22:41:56.099091297-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestCgroupMalformedEventsFailClosed","Output":"=== RUN   TestCgroupMalformedEventsFailClosed\n"}
+{"Time":"2026-10-23T22:41:56.099166875-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestCgroupMalformedEventsFailClosed","Output":"--- PASS: TestCgroupMalformedEventsFailClosed (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.099168381-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestCgroupMalformedEventsFailClosed","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.099169914-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestOCIDevicePolicyDeniesHostDevices"}
+{"Time":"2026-10-23T22:41:56.099170782-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestOCIDevicePolicyDeniesHostDevices","Output":"=== RUN   TestOCIDevicePolicyDeniesHostDevices\n"}
+{"Time":"2026-10-23T22:41:56.099264077-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestOCIDevicePolicyDeniesHostDevices","Output":"--- PASS: TestOCIDevicePolicyDeniesHostDevices (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.099265537-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestOCIDevicePolicyDeniesHostDevices","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.099267202-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestReapRejectsUncontrolledRunIDBeforeConnecting"}
+{"Time":"2026-10-23T22:41:56.099268431-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestReapRejectsUncontrolledRunIDBeforeConnecting","Output":"=== RUN   TestReapRejectsUncontrolledRunIDBeforeConnecting\n"}
+{"Time":"2026-10-23T22:41:56.099311077-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestReapRejectsUncontrolledRunIDBeforeConnecting","Output":"    runc_test.go:257: untrusted socket directory owner\n"}
+{"Time":"2026-10-23T22:41:56.099350358-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestReapRejectsUncontrolledRunIDBeforeConnecting","Output":"--- FAIL: TestReapRejectsUncontrolledRunIDBeforeConnecting (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.099352227-07:00","Action":"fail","Package":"warden/runtimes/runc","Test":"TestReapRejectsUncontrolledRunIDBeforeConnecting","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.099354182-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestClosedExitChannelNeverReportsSuccess"}
+{"Time":"2026-10-23T22:41:56.099355425-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestClosedExitChannelNeverReportsSuccess","Output":"=== RUN   TestClosedExitChannelNeverReportsSuccess\n"}
+{"Time":"2026-10-23T22:41:56.099370676-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestClosedExitChannelNeverReportsSuccess","Output":"--- PASS: TestClosedExitChannelNeverReportsSuccess (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.099372043-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestClosedExitChannelNeverReportsSuccess","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.099373671-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestConformance"}
+{"Time":"2026-10-23T22:41:56.099375039-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance","Output":"=== RUN   TestConformance\n"}
+{"Time":"2026-10-23T22:41:56.09938304-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestConformance/ForkBombCappedByPids"}
+{"Time":"2026-10-23T22:41:56.099384289-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/ForkBombCappedByPids","Output":"=== RUN   TestConformance/ForkBombCappedByPids\n"}
+{"Time":"2026-10-23T22:41:56.0993899-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/ForkBombCappedByPids","Output":"    suite.go:35: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden\n"}
+{"Time":"2026-10-23T22:41:56.099397895-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/ForkBombCappedByPids","Output":"--- SKIP: TestConformance/ForkBombCappedByPids (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.099399379-07:00","Action":"skip","Package":"warden/runtimes/runc","Test":"TestConformance/ForkBombCappedByPids","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.099404482-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestConformance/RootfsReadOnly"}
+{"Time":"2026-10-23T22:41:56.099405667-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/RootfsReadOnly","Output":"=== RUN   TestConformance/RootfsReadOnly\n"}
+{"Time":"2026-10-23T22:41:56.099408028-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/RootfsReadOnly","Output":"    suite.go:35: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden\n"}
+{"Time":"2026-10-23T22:41:56.099414611-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/RootfsReadOnly","Output":"--- SKIP: TestConformance/RootfsReadOnly (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.099416419-07:00","Action":"skip","Package":"warden/runtimes/runc","Test":"TestConformance/RootfsReadOnly","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.099418147-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestConformance/NoNetworkByDefault"}
+{"Time":"2026-10-23T22:41:56.099419089-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/NoNetworkByDefault","Output":"=== RUN   TestConformance/NoNetworkByDefault\n"}
+{"Time":"2026-10-23T22:41:56.099425653-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/NoNetworkByDefault","Output":"    suite.go:35: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden\n"}
+{"Time":"2026-10-23T22:41:56.099430508-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/NoNetworkByDefault","Output":"--- SKIP: TestConformance/NoNetworkByDefault (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.099435833-07:00","Action":"skip","Package":"warden/runtimes/runc","Test":"TestConformance/NoNetworkByDefault","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.099437503-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestConformance/RunsAsNonRoot"}
+{"Time":"2026-10-23T22:41:56.099438498-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/RunsAsNonRoot","Output":"=== RUN   TestConformance/RunsAsNonRoot\n"}
+{"Time":"2026-10-23T22:41:56.099444276-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/RunsAsNonRoot","Output":"    suite.go:35: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden\n"}
+{"Time":"2026-10-23T22:41:56.099447883-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/RunsAsNonRoot","Output":"--- SKIP: TestConformance/RunsAsNonRoot (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.099449534-07:00","Action":"skip","Package":"warden/runtimes/runc","Test":"TestConformance/RunsAsNonRoot","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.099451841-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestConformance/TimeoutKillsProcessGroup"}
+{"Time":"2026-10-23T22:41:56.09945312-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/TimeoutKillsProcessGroup","Output":"=== RUN   TestConformance/TimeoutKillsProcessGroup\n"}
+{"Time":"2026-10-23T22:41:56.099462164-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/TimeoutKillsProcessGroup","Output":"    suite.go:35: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden\n"}
+{"Time":"2026-10-23T22:41:56.099466234-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/TimeoutKillsProcessGroup","Output":"--- SKIP: TestConformance/TimeoutKillsProcessGroup (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.099467885-07:00","Action":"skip","Package":"warden/runtimes/runc","Test":"TestConformance/TimeoutKillsProcessGroup","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.099473235-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestConformance/MemoryLimitOOMKilled"}
+{"Time":"2026-10-23T22:41:56.099474472-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/MemoryLimitOOMKilled","Output":"=== RUN   TestConformance/MemoryLimitOOMKilled\n"}
+{"Time":"2026-10-23T22:41:56.099482168-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/MemoryLimitOOMKilled","Output":"    suite.go:35: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden\n"}
+{"Time":"2026-10-23T22:41:56.099487006-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/MemoryLimitOOMKilled","Output":"--- SKIP: TestConformance/MemoryLimitOOMKilled (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.099488631-07:00","Action":"skip","Package":"warden/runtimes/runc","Test":"TestConformance/MemoryLimitOOMKilled","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.099493646-07:00","Action":"run","Package":"warden/runtimes/runc","Test":"TestConformance/SeccompBlocksMountAndPtrace"}
+{"Time":"2026-10-23T22:41:56.099494841-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/SeccompBlocksMountAndPtrace","Output":"=== RUN   TestConformance/SeccompBlocksMountAndPtrace\n"}
+{"Time":"2026-10-23T22:41:56.099499689-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/SeccompBlocksMountAndPtrace","Output":"    suite.go:35: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden\n"}
+{"Time":"2026-10-23T22:41:56.099503383-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance/SeccompBlocksMountAndPtrace","Output":"--- SKIP: TestConformance/SeccompBlocksMountAndPtrace (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.099505008-07:00","Action":"skip","Package":"warden/runtimes/runc","Test":"TestConformance/SeccompBlocksMountAndPtrace","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.099507167-07:00","Action":"output","Package":"warden/runtimes/runc","Test":"TestConformance","Output":"--- PASS: TestConformance (0.00s)\n"}
+{"Time":"2026-10-23T22:41:56.099508774-07:00","Action":"pass","Package":"warden/runtimes/runc","Test":"TestConformance","Elapsed":0}
+{"Time":"2026-10-23T22:41:56.099511998-07:00","Action":"output","Package":"warden/runtimes/runc","Output":"FAIL\n"}
+{"Time":"2026-10-23T22:41:56.100325407-07:00","Action":"output","Package":"warden/runtimes/runc","Output":"FAIL\twarden/runtimes/runc\t0.081s\n"}
+{"Time":"2026-10-23T22:41:56.10033724-07:00","Action":"fail","Package":"warden/runtimes/runc","Elapsed":0.081}

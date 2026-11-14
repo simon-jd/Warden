@@ -1,0 +1,287 @@
+{"owned_image_charge": 0, "outstanding": 0, "additional": 5000000000, "service_memory": 16000000000}
+{"additional_bytes": "5000000000", "at": "2026-11-10T23:40:31Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 118783447040, "project_allocated_bytes": 1425313792, "service_memory_bytes": "16000000000"}
+{"owned_image_charge": 0, "outstanding": 5000000000, "additional": 0, "service_memory": 16000000000}
+{"additional_bytes": "5000000000", "at": "2026-11-10T23:40:32Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 118783438848, "project_allocated_bytes": 1425317888, "service_memory_bytes": "16000000000"}
+{"owned_image_charge": 365705736, "outstanding": 5000000000, "additional": 0, "service_memory": 16000000000}
+{"additional_bytes": "5365705736", "at": "2026-11-10T23:40:35Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 118783414272, "project_allocated_bytes": 1425321984, "service_memory_bytes": "16000000000"}
+{"inspected_host_config": {"Binds": null, "ContainerIDFile": "", "LogConfig": {"Type": "json-file", "Config": {"max-file": "2", "max-size": "10m"}}, "NetworkMode": "none", "PortBindings": {}, "RestartPolicy": {"Name": "no", "MaximumRetryCount": 0}, "AutoRemove": false, "VolumeDriver": "", "VolumesFrom": null, "ConsoleSize": [0, 0], "CapAdd": ["CAP_CHOWN", "CAP_DAC_OVERRIDE", "CAP_KILL", "CAP_MKNOD", "CAP_SETGID", "CAP_SETUID", "CAP_SYS_ADMIN", "CAP_SYS_CHROOT"], "CapDrop": ["ALL"], "CgroupnsMode": "private", "Dns": null, "DnsOptions": [], "DnsSearch": [], "ExtraHosts": null, "GroupAdd": null, "IpcMode": "private", "Cgroup": "", "Links": null, "OomScoreAdj": 0, "PidMode": "", "Privileged": false, "PublishAllPorts": false, "ReadonlyRootfs": true, "SecurityOpt": ["no-new-privileges", "apparmor=unconfined", "seccomp=unconfined"], "Tmpfs": {"/run": "rw,nosuid,nodev,size=64m", "/tmp": "rw,nosuid,nodev,size=64m"}, "UTSMode": "", "UsernsMode": "", "ShmSize": 67108864, "Runtime": "runc", "Isolation": "", "CpuShares": 0, "Memory": 15000000000, "NanoCpus": 2000000000, "CgroupParent": "", "BlkioWeight": 0, "BlkioWeightDevice": [], "BlkioDeviceReadBps": [], "BlkioDeviceWriteBps": [], "BlkioDeviceReadIOps": [], "BlkioDeviceWriteIOps": [], "CpuPeriod": 0, "CpuQuota": 0, "CpuRealtimePeriod": 0, "CpuRealtimeRuntime": 0, "CpusetCpus": "", "CpusetMems": "", "Devices": [{"PathOnHost": "/dev/kvm", "PathInContainer": "/dev/kvm", "CgroupPermissions": "rw"}], "DeviceCgroupRules": null, "DeviceRequests": null, "MemoryReservation": 0, "MemorySwap": 15000000000, "MemorySwappiness": null, "OomKillDisable": false, "PidsLimit": 512, "Ulimits": null, "CpuCount": 0, "CpuPercent": 0, "IOMaximumIOps": 0, "IOMaximumBandwidth": 0, "Mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/fc-wt/.cache/warden-lab/docker-firecracker-f3b88c7693461ecedda585bf603890f8/live", "Target": "/opt/warden/session", "ReadOnly": true, "BindOptions": {"Propagation": "rprivate"}}], "MaskedPaths": ["/proc/acpi", "/proc/asound", "/proc/interrupts", "/proc/kcore", "/proc/keys", "/proc/latency_stats", "/proc/sched_debug", "/proc/scsi", "/proc/timer_list", "/proc/timer_stats", "/sys/devices/virtual/powercap", "/sys/firmware", "/sys/devices/system/cpu/cpu0/thermal_throttle", "/sys/devices/system/cpu/cpu1/thermal_throttle", "/sys/devices/system/cpu/cpu2/thermal_throttle", "/sys/devices/system/cpu/cpu3/thermal_throttle", "/sys/devices/system/cpu/cpu4/thermal_throttle", "/sys/devices/system/cpu/cpu5/thermal_throttle", "/sys/devices/system/cpu/cpu6/thermal_throttle", "/sys/devices/system/cpu/cpu7/thermal_throttle", "/sys/devices/system/cpu/cpu8/thermal_throttle", "/sys/devices/system/cpu/cpu9/thermal_throttle", "/sys/devices/system/cpu/cpu10/thermal_throttle", "/sys/devices/system/cpu/cpu11/thermal_throttle", "/sys/devices/system/cpu/cpu12/thermal_throttle", "/sys/devices/system/cpu/cpu13/thermal_throttle", "/sys/devices/system/cpu/cpu14/thermal_throttle", "/sys/devices/system/cpu/cpu15/thermal_throttle", "/sys/devices/system/cpu/cpu16/thermal_throttle", "/sys/devices/system/cpu/cpu17/thermal_throttle", "/sys/devices/system/cpu/cpu18/thermal_throttle", "/sys/devices/system/cpu/cpu19/thermal_throttle", "/sys/devices/system/cpu/cpu20/thermal_throttle", "/sys/devices/system/cpu/cpu21/thermal_throttle", "/sys/devices/system/cpu/cpu22/thermal_throttle", "/sys/devices/system/cpu/cpu23/thermal_throttle", "/sys/devices/system/cpu/cpu24/thermal_throttle", "/sys/devices/system/cpu/cpu25/thermal_throttle", "/sys/devices/system/cpu/cpu26/thermal_throttle", "/sys/devices/system/cpu/cpu27/thermal_throttle", "/sys/devices/system/cpu/cpu28/thermal_throttle", "/sys/devices/system/cpu/cpu29/thermal_throttle", "/sys/devices/system/cpu/cpu30/thermal_throttle", "/sys/devices/system/cpu/cpu31/thermal_throttle"], "ReadonlyPaths": ["/proc/bus", "/proc/fs", "/proc/irq", "/proc/sys", "/proc/sysrq-trigger"]}, "inspected_mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/fc-wt/.cache/warden-lab/docker-firecracker-f3b88c7693461ecedda585bf603890f8/live", "Destination": "/opt/warden/session", "Mode": "", "RW": false, "Propagation": "rprivate"}]}
+{"kind":"warden-device-receipt-v1","pid":1,"cgroup_ns":"cgroup:[4026534763]","mount_ns":"mnt:[4026533650]","device":30,"inode":2598816,"mount_id":16837,"policy_version":"warden-tun-deny-v1","policy_sha256":"bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404"}
+{"device_policy_query_effective":false,"flags":2,"ids":[21965]}
+{"device_policy_query_effective":true,"flags":0,"ids":[21965]}
+{"device_policy_query_effective":false,"flags":2,"ids":[21965,21966]}
+{"device_policy_query_effective":true,"flags":0,"ids":[21965,21966]}
+device policy verified: version=warden-tun-deny-v1 sha256=bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404 program_id=21966; TUN rw EPERM, basics and KVM API12; no VM from probe
+=== RUN   TestFirecrackerCapacity
+    capacity_test.go:72: actual active=1 outer_memory_current=192614400
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=2 outer_memory_current=284667904
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=3 outer_memory_current=371077120
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=4 outer_memory_current=458399744
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=5 outer_memory_current=548147200
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=6 outer_memory_current=634007552
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=7 outer_memory_current=723918848
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=8 outer_memory_current=808509440
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=9 outer_memory_current=898412544
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=10 outer_memory_current=985538560
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=11 outer_memory_current=1070145536
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=12 outer_memory_current=1155198976
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=13 outer_memory_current=1242955776
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=14 outer_memory_current=1328381952
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=15 outer_memory_current=1418297344
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=16 outer_memory_current=1506492416
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:85: simultaneously launched=16 reviewed upper bound=16 right_censored=true outer=15000000000 host_allowance=1000000000
+--- PASS: TestFirecrackerCapacity (14.40s)
+PASS
+known-owner VMM/worker pidfds reaped; cgroup populated=0; owned data and FDs retired; metadata released
+{"kind":"warden-device-receipt-v1","pid":1,"cgroup_ns":"cgroup:[4026534763]","mount_ns":"mnt:[4026533650]","device":30,"inode":2598816,"mount_id":16837,"policy_version":"warden-tun-deny-v1","policy_sha256":"bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404"}
+{"device_policy_query_effective":false,"flags":2,"ids":[21965]}
+{"device_policy_query_effective":true,"flags":0,"ids":[21965]}
+{"device_policy_query_effective":false,"flags":2,"ids":[21965,21966]}
+{"device_policy_query_effective":true,"flags":0,"ids":[21965,21966]}
+device policy verified: version=warden-tun-deny-v1 sha256=bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404 program_id=21966; TUN rw EPERM, basics and KVM API12; no VM from probe
+=== RUN   TestFirecrackerCapacity
+    capacity_test.go:72: actual active=1 outer_memory_current=192614400
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=2 outer_memory_current=284667904
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=3 outer_memory_current=371077120
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=4 outer_memory_current=458399744
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=5 outer_memory_current=548147200
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=6 outer_memory_current=634007552
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=7 outer_memory_current=723918848
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=8 outer_memory_current=808509440
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=9 outer_memory_current=898412544
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=10 outer_memory_current=985538560
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=11 outer_memory_current=1070145536
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=12 outer_memory_current=1155198976
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=13 outer_memory_current=1242955776
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=14 outer_memory_current=1328381952
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=15 outer_memory_current=1418297344
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:72: actual active=16 outer_memory_current=1506492416
+         outer_memory_events=low 0
+        high 0
+        max 0
+        oom 0
+        oom_kill 0
+        oom_group_kill 0
+        sock_throttled 0
+    capacity_test.go:85: simultaneously launched=16 reviewed upper bound=16 right_censored=true outer=15000000000 host_allowance=1000000000
+--- PASS: TestFirecrackerCapacity (14.40s)
+PASS
+known-owner VMM/worker pidfds reaped; cgroup populated=0; owned data and FDs retired; metadata released
+{"owned_image_charge": 0, "outstanding": 0, "additional": 0, "service_memory": 0}
+{"additional_bytes": "0", "at": "2026-11-10T23:40:53Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 118765912064, "project_allocated_bytes": 1425960960, "service_memory_bytes": "0"}

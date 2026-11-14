@@ -1,0 +1,189 @@
+time="2026-10-24T05:29:17Z" level=warning msg="Configuration migrated from version 3, use `containerd config migrate` to avoid migration" t="3.856µs"
+time="2026-10-24T05:29:17.905060345Z" level=info msg="starting containerd" revision=b7a25261e029d68978bbf290df0a62fc819b3c51 version=v2.4.2
+time="2026-10-24T05:29:17.905145901Z" level=info msg="loading plugin" id=io.containerd.content.v1.content type=io.containerd.content.v1
+time="2026-10-24T05:29:17.905289444Z" level=warning msg="failed check for fsverity support" error="enable fsverity failed: operation not supported" path=/proc/1/fd/5/root/io.containerd.content.v1.content
+time="2026-10-24T05:29:17.905300729Z" level=info msg="loading plugin" id=io.containerd.image-verifier.v1.bindir type=io.containerd.image-verifier.v1
+time="2026-10-24T05:29:17.905307976Z" level=info msg="loading plugin" id=io.containerd.internal.v1.opt type=io.containerd.internal.v1
+time="2026-10-24T05:29:17.905338795Z" level=warning msg="failed to load plugin" error="mkdir /opt/containerd: read-only file system" id=io.containerd.internal.v1.opt type=io.containerd.internal.v1
+time="2026-10-24T05:29:17.905345649Z" level=info msg="loading plugin" id=io.containerd.warning.v1.deprecations type=io.containerd.warning.v1
+time="2026-10-24T05:29:17.905352037Z" level=info msg="loading plugin" id=io.containerd.event.v1.exchange type=io.containerd.event.v1
+time="2026-10-24T05:29:17.905367661Z" level=info msg="loading plugin" id=io.containerd.mount-handler.v1.erofs type=io.containerd.mount-handler.v1
+time="2026-10-24T05:29:17.905374040Z" level=info msg="loading plugin" id=io.containerd.snapshotter.v1.blockfile type=io.containerd.snapshotter.v1
+time="2026-10-24T05:29:17.905411154Z" level=info msg="skip loading plugin" error="no scratch file generator: skip plugin" id=io.containerd.snapshotter.v1.blockfile type=io.containerd.snapshotter.v1
+time="2026-10-24T05:29:17.905418316Z" level=info msg="loading plugin" id=io.containerd.snapshotter.v1.btrfs type=io.containerd.snapshotter.v1
+time="2026-10-24T05:29:17.905564681Z" level=info msg="skip loading plugin" error="path /proc/1/fd/5/root/io.containerd.snapshotter.v1.btrfs (ext4) must be a btrfs filesystem to be used with the btrfs snapshotter: skip plugin" id=io.containerd.snapshotter.v1.btrfs type=io.containerd.snapshotter.v1
+time="2026-10-24T05:29:17.905577082Z" level=info msg="loading plugin" id=io.containerd.snapshotter.v1.devmapper type=io.containerd.snapshotter.v1
+time="2026-10-24T05:29:17.905584972Z" level=info msg="skip loading plugin" error="devmapper not configured: skip plugin" id=io.containerd.snapshotter.v1.devmapper type=io.containerd.snapshotter.v1
+time="2026-10-24T05:29:17.905589902Z" level=info msg="loading plugin" id=io.containerd.snapshotter.v1.native type=io.containerd.snapshotter.v1
+time="2026-10-24T05:29:17.905635512Z" level=info msg="loading plugin" id=io.containerd.snapshotter.v1.overlayfs type=io.containerd.snapshotter.v1
+time="2026-10-24T05:29:17.905754978Z" level=info msg="loading plugin" id=io.containerd.snapshotter.v1.zfs type=io.containerd.snapshotter.v1
+time="2026-10-24T05:29:17.905797762Z" level=info msg="skip loading plugin" error="lstat /opt/warden/.cache/warden-lab/session-44c68a7f0877e687/root/io.containerd.snapshotter.v1.zfs: no such file or directory: skip plugin" id=io.containerd.snapshotter.v1.zfs type=io.containerd.snapshotter.v1
+time="2026-10-24T05:29:17.905804720Z" level=info msg="loading plugin" id=io.containerd.monitor.task.v1.cgroups type=io.containerd.monitor.task.v1
+time="2026-10-24T05:29:17.905909709Z" level=info msg="loading plugin" id=io.containerd.snapshotter.v1.erofs type=io.containerd.snapshotter.v1
+time="2026-10-24T05:29:17.906020097Z" level=info msg="skip loading plugin" error="EROFS unsupported, please `modprobe erofs`: skip plugin" id=io.containerd.snapshotter.v1.erofs type=io.containerd.snapshotter.v1
+time="2026-10-24T05:29:17.906032931Z" level=info msg="loading plugin" id=io.containerd.metadata.v1.bolt type=io.containerd.metadata.v1
+time="2026-10-24T05:29:17.906065614Z" level=info msg="metadata content store policy set" policy=shared
+time="2026-10-24T05:29:17.936031120Z" level=info msg="loading plugin" id=io.containerd.gc.v1.scheduler type=io.containerd.gc.v1
+time="2026-10-24T05:29:17.936075129Z" level=info msg="loading plugin" id=io.containerd.server.v1.metrics type=io.containerd.server.v1
+time="2026-10-24T05:29:17.936080140Z" level=info msg="skip loading plugin" error="skip plugin" id=io.containerd.server.v1.metrics type=io.containerd.server.v1
+time="2026-10-24T05:29:17.936083185Z" level=info msg="loading plugin" id=io.containerd.tracing.processor.v1.otlp type=io.containerd.tracing.processor.v1
+time="2026-10-24T05:29:17.936089296Z" level=info msg="skip loading plugin" error="skip plugin: tracing endpoint not configured" id=io.containerd.tracing.processor.v1.otlp type=io.containerd.tracing.processor.v1
+time="2026-10-24T05:29:17.936091534Z" level=info msg="loading plugin" id=io.containerd.internal.v1.tracing type=io.containerd.internal.v1
+time="2026-10-24T05:29:17.936095496Z" level=info msg="skip loading plugin" error="skip plugin: tracing endpoint not configured" id=io.containerd.internal.v1.tracing type=io.containerd.internal.v1
+time="2026-10-24T05:29:17.936097538Z" level=info msg="loading plugin" id=io.containerd.nri.v1.nri type=io.containerd.nri.v1
+time="2026-10-24T05:29:17.936140925Z" level=info msg="built-in NRI default validator is disabled"
+time="2026-10-24T05:29:17.936143008Z" level=info msg="runtime interface created"
+time="2026-10-24T05:29:17.936144180Z" level=info msg="created NRI interface"
+time="2026-10-24T05:29:17.936146001Z" level=info msg="loading plugin" id=io.containerd.ttrpc.v1.otelttrpc type=io.containerd.ttrpc.v1
+time="2026-10-24T05:29:17.936148622Z" level=info msg="loading plugin" id=io.containerd.service.v1.containers-service type=io.containerd.service.v1
+time="2026-10-24T05:29:17.936155563Z" level=info msg="loading plugin" id=io.containerd.service.v1.content-service type=io.containerd.service.v1
+time="2026-10-24T05:29:17.936158120Z" level=info msg="loading plugin" id=io.containerd.differ.v1.erofs type=io.containerd.differ.v1
+time="2026-10-24T05:29:17.936208406Z" level=info msg="skip loading plugin" error="failed to check mkfs.erofs availability: failed to run mkfs.erofs --help: exec: \"mkfs.erofs\": executable file not found in $PATH: skip plugin" id=io.containerd.differ.v1.erofs type=io.containerd.differ.v1
+time="2026-10-24T05:29:17.936213711Z" level=info msg="loading plugin" id=io.containerd.mount-manager.v1.bolt type=io.containerd.mount-manager.v1
+time="2026-10-24T05:29:17.945350167Z" level=info msg="loading plugin" id=io.containerd.differ.v1.walking type=io.containerd.differ.v1
+time="2026-10-24T05:29:17.945373666Z" level=info msg="loading plugin" id=io.containerd.service.v1.diff-service type=io.containerd.service.v1
+time="2026-10-24T05:29:17.945379774Z" level=info msg="loading plugin" id=io.containerd.service.v1.images-service type=io.containerd.service.v1
+time="2026-10-24T05:29:17.945385337Z" level=info msg="loading plugin" id=io.containerd.service.v1.introspection-service type=io.containerd.service.v1
+time="2026-10-24T05:29:17.945395109Z" level=info msg="loading plugin" id=io.containerd.service.v1.namespaces-service type=io.containerd.service.v1
+time="2026-10-24T05:29:17.945398182Z" level=info msg="loading plugin" id=io.containerd.service.v1.snapshots-service type=io.containerd.service.v1
+time="2026-10-24T05:29:17.945402064Z" level=info msg="loading plugin" id=io.containerd.shim.v1.manager type=io.containerd.shim.v1
+time="2026-10-24T05:29:17.945405813Z" level=info msg="loading plugin" id=io.containerd.runtime.v2.task type=io.containerd.runtime.v2
+time="2026-10-24T05:29:17.945497124Z" level=info msg="loading plugin" id=io.containerd.service.v1.tasks-service type=io.containerd.service.v1
+time="2026-10-24T05:29:17.945503258Z" level=debug msg="No blockio config file specified, blockio not configured"
+time="2026-10-24T05:29:17.945505339Z" level=debug msg="No RDT config file specified, RDT not configured"
+time="2026-10-24T05:29:17.945507262Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.containers type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945513630Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.content type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945516315Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.diff type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945521032Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.events type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945523405Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.images type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945527572Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.introspection type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945529930Z" level=info msg="loading plugin" id=io.containerd.lease.v1.manager type=io.containerd.lease.v1
+time="2026-10-24T05:29:17.945535068Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.leases type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945538931Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.mounts type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945541057Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.namespaces type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945544823Z" level=info msg="loading plugin" id=io.containerd.sandbox.store.v1.local type=io.containerd.sandbox.store.v1
+time="2026-10-24T05:29:17.945547184Z" level=info msg="loading plugin" id=io.containerd.transfer.v1.local type=io.containerd.transfer.v1
+time="2026-10-24T05:29:17.945566811Z" level=info msg="loading plugin" id=io.containerd.podsandbox.controller.v1.podsandbox type=io.containerd.podsandbox.controller.v1
+time="2026-10-24T05:29:17.945588036Z" level=warning msg="failed to load plugin" error="unable to load CRI runtime service plugin dependency: no plugins registered for io.containerd.cri.v1.runtime: plugin: not found" id=io.containerd.podsandbox.controller.v1.podsandbox type=io.containerd.podsandbox.controller.v1
+time="2026-10-24T05:29:17.945591321Z" level=info msg="loading plugin" id=io.containerd.sandbox.controller.v1.shim type=io.containerd.sandbox.controller.v1
+time="2026-10-24T05:29:17.945624657Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.sandbox-controllers type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945631317Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.sandboxes type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945633827Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.snapshots type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945636121Z" level=info msg="loading plugin" id=io.containerd.streaming.v1.manager type=io.containerd.streaming.v1
+time="2026-10-24T05:29:17.945639162Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.streaming type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945644686Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.tasks type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945647197Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.transfer type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945650848Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.version type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945653133Z" level=info msg="loading plugin" id=io.containerd.grpc.v1.healthcheck type=io.containerd.grpc.v1
+time="2026-10-24T05:29:17.945655773Z" level=info msg="loading plugin" id=io.containerd.server.v1.ttrpc type=io.containerd.server.v1
+time="2026-10-24T05:29:17.945697607Z" level=info msg="loading plugin" id=io.containerd.monitor.container.v1.restart type=io.containerd.monitor.container.v1
+time="2026-10-24T05:29:17.945721278Z" level=info msg="loading plugin" id=io.containerd.metrics.v1.grpc-prometheus type=io.containerd.metrics.v1
+time="2026-10-24T05:29:17.945737911Z" level=info msg="loading plugin" id=io.containerd.metrics.v1.grpc-otel type=io.containerd.metrics.v1
+time="2026-10-24T05:29:17.945753356Z" level=info msg="loading plugin" id=io.containerd.server.v1.grpc type=io.containerd.server.v1
+time="2026-10-24T05:29:17.947766434Z" level=info msg="loading plugin" id=io.containerd.server.v1.grpc-tcp type=io.containerd.server.v1
+time="2026-10-24T05:29:17.947785312Z" level=info msg="skip loading plugin" error="skip plugin" id=io.containerd.server.v1.grpc-tcp type=io.containerd.server.v1
+time="2026-10-24T05:29:17.947788606Z" level=info msg="loading plugin" id=io.containerd.http.v1.pprof type=io.containerd.http.v1
+time="2026-10-24T05:29:17.947816019Z" level=info msg="loading plugin" id=io.containerd.server.v1.debug type=io.containerd.server.v1
+time="2026-10-24T05:29:17.947819105Z" level=info msg="skip loading plugin" error="skip plugin" id=io.containerd.server.v1.debug type=io.containerd.server.v1
+time="2026-10-24T05:29:17.947922806Z" level=info msg=serving... address=/proc/1/fd/5/containerd.sock.ttrpc
+time="2026-10-24T05:29:17.947927723Z" level=info msg="starting GRPC server" address=/proc/1/fd/5/containerd.sock gid=0 uid=0
+time="2026-10-24T05:29:17.947943286Z" level=info msg=serving... address=/proc/1/fd/5/containerd.sock
+time="2026-10-24T05:29:17.947948875Z" level=debug msg="systemd notification is not sent (i.e. NOTIFY_SOCKET is unset)" notified=false state="READY=1"
+time="2026-10-24T05:29:17.947952427Z" level=info msg="containerd successfully booted in 0.043327s"
+time="2026-10-24T05:29:18.084340186Z" level=debug msg="registering stream" stream=progress-84105764-I0uR
+time="2026-10-24T05:29:18.084629483Z" level=debug msg="registering stream" stream=import-84485998-iJRh
+time="2026-10-24T05:29:18.460578680Z" level=debug msg="diff applied" d=2.045428ms digest="sha256:1773fcbd8c0ebfc7646957271f5ddaf1207196a47f0b46fe6a9398d867e05f10" media=application/vnd.oci.image.layer.v1.tar size=1884160
+time="2026-10-24T05:29:18.493576318Z" level=debug msg="layer unpacked" duration=96.231833ms layer="sha256:1773fcbd8c0ebfc7646957271f5ddaf1207196a47f0b46fe6a9398d867e05f10"
+time="2026-10-24T05:29:18.500022310Z" level=debug msg="image unpacked" chainID="sha256:1773fcbd8c0ebfc7646957271f5ddaf1207196a47f0b46fe6a9398d867e05f10" config="sha256:68c9624167fbd5f5a3d3264e740deaefd3e24282767283e43b46f8b40f12f6f8" duration=102.763942ms parallel=false
+time="2026-10-24T05:29:18.500050481Z" level=info msg="No images store for sha256:aa41098d99b0f818fda0e91700a946fe1f0aec18faad0554336ab4754e469060"
+time="2026-10-24T05:29:18.559886519Z" level=debug msg="remove content" key="sha256:aa41098d99b0f818fda0e91700a946fe1f0aec18faad0554336ab4754e469060"
+time="2026-10-24T05:29:18.568328296Z" level=debug msg="schedule content cleanup"
+time="2026-10-24T05:29:18.568528908Z" level=debug msg="removed content" digest="sha256:aa41098d99b0f818fda0e91700a946fe1f0aec18faad0554336ab4754e469060"
+time="2026-10-24T05:29:18.619930893Z" level=debug msg="prepare snapshot" key=warden-K5HAFNJHZXUERZF6GPML5LDJDI parent="sha256:1773fcbd8c0ebfc7646957271f5ddaf1207196a47f0b46fe6a9398d867e05f10" snapshotter=overlayfs
+time="2026-10-24T05:29:18.661268997Z" level=debug msg="get snapshot mounts" key=warden-K5HAFNJHZXUERZF6GPML5LDJDI snapshotter=overlayfs
+time="2026-10-24T05:29:18.662413136Z" level=debug msg="creating task" id=warden-K5HAFNJHZXUERZF6GPML5LDJDI runtime=io.containerd.runc.v2
+time="2026-10-24T05:29:18.665922135Z" level=info msg="connecting to shim warden-K5HAFNJHZXUERZF6GPML5LDJDI" address="unix:///run/containerd/s/5e0a5a55ab6c2b3ad1ddcd7f480ac81e92b0f345195fdd4e6f366beb381753d5" namespace=warden-lab protocol=ttrpc version=3
+time="2026-10-24T05:29:18.667314832Z" level=debug msg="loading plugin" id=io.containerd.event.v1.publisher runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+time="2026-10-24T05:29:18.667394124Z" level=debug msg="loading plugin" id=io.containerd.internal.v1.shutdown runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+time="2026-10-24T05:29:18.667402898Z" level=debug msg="loading plugin" id=io.containerd.ttrpc.v1.task runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+time="2026-10-24T05:29:18.667461477Z" level=debug msg="registering ttrpc service" id=io.containerd.ttrpc.v1.task runtime=io.containerd.runc.v2
+time="2026-10-24T05:29:18.667514735Z" level=debug msg="serving api on socket" socket="[inherited from parent]"
+time="2026-10-24T05:29:18.667528345Z" level=debug msg="starting signal loop" namespace=warden-lab path=/opt/warden/.cache/warden-lab/session-44c68a7f0877e687/state/io.containerd.runtime.v2.task/warden-lab/warden-K5HAFNJHZXUERZF6GPML5LDJDI pid=130 runtime=io.containerd.runc.v2
+time="2026-10-24T05:29:18.675487608Z" level=debug msg="activating mount" mounts="[{overlay overlay  [workdir=/proc/1/fd/5/root/io.containerd.snapshotter.v1.overlayfs/snapshots/2/work upperdir=/proc/1/fd/5/root/io.containerd.snapshotter.v1.overlayfs/snapshots/2/fs lowerdir=/proc/1/fd/5/root/io.containerd.snapshotter.v1.overlayfs/snapshots/1/fs index=off]}]" name=warden-K5HAFNJHZXUERZF6GPML5LDJDI
+time="2026-10-24T05:29:18.741738192Z" level=info msg="shim disconnected" id=warden-K5HAFNJHZXUERZF6GPML5LDJDI namespace=warden-lab
+time="2026-10-24T05:29:18.741765612Z" level=info msg="cleaning up after shim disconnected" id=warden-K5HAFNJHZXUERZF6GPML5LDJDI namespace=warden-lab
+time="2026-10-24T05:29:18.741772556Z" level=info msg="cleaning up dead shim" id=warden-K5HAFNJHZXUERZF6GPML5LDJDI namespace=warden-lab
+time="2026-10-24T05:29:18.746010064Z" level=warning msg="warnings while cleaning up dead shim" id=warden-K5HAFNJHZXUERZF6GPML5LDJDI namespace=warden-lab warnings="time=\"2026-10-24T05:29:18Z\" level=debug msg=\"starting signal loop\" namespace=warden-lab pid=183 runtime=io.containerd.runc.v2\n"
+time="2026-10-24T05:29:18.747090103Z" level=debug msg="remove snapshot" key=warden-K5HAFNJHZXUERZF6GPML5LDJDI snapshotter=overlayfs
+time="2026-10-24T05:29:18.819002888Z" level=debug msg="prepare snapshot" key=warden-P7WROBMVRQ6Q6JEFUWNVS4HRUI parent="sha256:1773fcbd8c0ebfc7646957271f5ddaf1207196a47f0b46fe6a9398d867e05f10" snapshotter=overlayfs
+time="2026-10-24T05:29:18.868854843Z" level=debug msg="get snapshot mounts" key=warden-P7WROBMVRQ6Q6JEFUWNVS4HRUI snapshotter=overlayfs
+time="2026-10-24T05:29:18.869509850Z" level=debug msg="creating task" id=warden-P7WROBMVRQ6Q6JEFUWNVS4HRUI runtime=io.containerd.runc.v2
+time="2026-10-24T05:29:18.873020330Z" level=info msg="connecting to shim warden-P7WROBMVRQ6Q6JEFUWNVS4HRUI" address="unix:///run/containerd/s/ac38aabc740cc8a52d3ad523b7d4fc89ddfd7de57b9ffb0f6ab91c0a7342b596" namespace=warden-lab protocol=ttrpc version=3
+time="2026-10-24T05:29:18.874400373Z" level=debug msg="loading plugin" id=io.containerd.event.v1.publisher runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+time="2026-10-24T05:29:18.874487204Z" level=debug msg="loading plugin" id=io.containerd.internal.v1.shutdown runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+time="2026-10-24T05:29:18.874494873Z" level=debug msg="loading plugin" id=io.containerd.ttrpc.v1.task runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+time="2026-10-24T05:29:18.874533594Z" level=debug msg="registering ttrpc service" id=io.containerd.ttrpc.v1.task runtime=io.containerd.runc.v2
+time="2026-10-24T05:29:18.874634183Z" level=debug msg="serving api on socket" socket="[inherited from parent]"
+time="2026-10-24T05:29:18.874689651Z" level=debug msg="starting signal loop" namespace=warden-lab path=/opt/warden/.cache/warden-lab/session-44c68a7f0877e687/state/io.containerd.runtime.v2.task/warden-lab/warden-P7WROBMVRQ6Q6JEFUWNVS4HRUI pid=205 runtime=io.containerd.runc.v2
+time="2026-10-24T05:29:18.880303871Z" level=debug msg="activating mount" mounts="[{overlay overlay  [workdir=/proc/1/fd/5/root/io.containerd.snapshotter.v1.overlayfs/snapshots/3/work upperdir=/proc/1/fd/5/root/io.containerd.snapshotter.v1.overlayfs/snapshots/3/fs lowerdir=/proc/1/fd/5/root/io.containerd.snapshotter.v1.overlayfs/snapshots/1/fs index=off]}]" name=warden-P7WROBMVRQ6Q6JEFUWNVS4HRUI
+time="2026-10-24T05:29:18.884772456Z" level=debug msg="schedule snapshotter cleanup" snapshotter=overlayfs
+time="2026-10-24T05:29:18.896267900Z" level=debug msg="removed snapshot" key=warden-lab/3/warden-K5HAFNJHZXUERZF6GPML5LDJDI snapshotter=overlayfs
+time="2026-10-24T05:29:18.942326948Z" level=info msg="shim disconnected" id=warden-P7WROBMVRQ6Q6JEFUWNVS4HRUI namespace=warden-lab
+time="2026-10-24T05:29:18.942351899Z" level=info msg="cleaning up after shim disconnected" id=warden-P7WROBMVRQ6Q6JEFUWNVS4HRUI namespace=warden-lab
+time="2026-10-24T05:29:18.942365001Z" level=info msg="cleaning up dead shim" id=warden-P7WROBMVRQ6Q6JEFUWNVS4HRUI namespace=warden-lab
+time="2026-10-24T05:29:18.947342744Z" level=warning msg="warnings while cleaning up dead shim" id=warden-P7WROBMVRQ6Q6JEFUWNVS4HRUI namespace=warden-lab warnings="time=\"2026-10-24T05:29:18Z\" level=debug msg=\"starting signal loop\" namespace=warden-lab pid=259 runtime=io.containerd.runc.v2\n"
+time="2026-10-24T05:29:18.948443912Z" level=debug msg="remove snapshot" key=warden-P7WROBMVRQ6Q6JEFUWNVS4HRUI snapshotter=overlayfs
+time="2026-10-24T05:29:19.007559325Z" level=debug msg="prepare snapshot" key=warden-X6UFO3GGROOV5QQ4G5KMK2FPII parent="sha256:1773fcbd8c0ebfc7646957271f5ddaf1207196a47f0b46fe6a9398d867e05f10" snapshotter=overlayfs
+time="2026-10-24T05:29:19.041534458Z" level=debug msg="get snapshot mounts" key=warden-X6UFO3GGROOV5QQ4G5KMK2FPII snapshotter=overlayfs
+time="2026-10-24T05:29:19.042267493Z" level=debug msg="creating task" id=warden-X6UFO3GGROOV5QQ4G5KMK2FPII runtime=io.containerd.runc.v2
+time="2026-10-24T05:29:19.044901679Z" level=info msg="connecting to shim warden-X6UFO3GGROOV5QQ4G5KMK2FPII" address="unix:///run/containerd/s/89f4cafd4efe719179188eb413fd24664ded60275f4d90a64dc16c5b3de412e7" namespace=warden-lab protocol=ttrpc version=3
+time="2026-10-24T05:29:19.046045999Z" level=debug msg="loading plugin" id=io.containerd.event.v1.publisher runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+time="2026-10-24T05:29:19.046135242Z" level=debug msg="loading plugin" id=io.containerd.internal.v1.shutdown runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+time="2026-10-24T05:29:19.046144729Z" level=debug msg="loading plugin" id=io.containerd.ttrpc.v1.task runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+time="2026-10-24T05:29:19.046174607Z" level=debug msg="registering ttrpc service" id=io.containerd.ttrpc.v1.task runtime=io.containerd.runc.v2
+time="2026-10-24T05:29:19.046208804Z" level=debug msg="serving api on socket" socket="[inherited from parent]"
+time="2026-10-24T05:29:19.046245275Z" level=debug msg="starting signal loop" namespace=warden-lab path=/opt/warden/.cache/warden-lab/session-44c68a7f0877e687/state/io.containerd.runtime.v2.task/warden-lab/warden-X6UFO3GGROOV5QQ4G5KMK2FPII pid=282 runtime=io.containerd.runc.v2
+time="2026-10-24T05:29:19.054057185Z" level=debug msg="activating mount" mounts="[{overlay overlay  [workdir=/proc/1/fd/5/root/io.containerd.snapshotter.v1.overlayfs/snapshots/4/work upperdir=/proc/1/fd/5/root/io.containerd.snapshotter.v1.overlayfs/snapshots/4/fs lowerdir=/proc/1/fd/5/root/io.containerd.snapshotter.v1.overlayfs/snapshots/1/fs index=off]}]" name=warden-X6UFO3GGROOV5QQ4G5KMK2FPII
+time="2026-10-24T05:29:19.275658239Z" level=debug msg="schedule snapshotter cleanup" snapshotter=overlayfs
+time="2026-10-24T05:29:19.287268053Z" level=debug msg="removed snapshot" key=warden-lab/4/warden-P7WROBMVRQ6Q6JEFUWNVS4HRUI snapshotter=overlayfs
+time="2026-10-24T05:29:20.130691263Z" level=info msg="shim disconnected" id=warden-X6UFO3GGROOV5QQ4G5KMK2FPII namespace=warden-lab
+time="2026-10-24T05:29:20.130715375Z" level=info msg="cleaning up after shim disconnected" id=warden-X6UFO3GGROOV5QQ4G5KMK2FPII namespace=warden-lab
+time="2026-10-24T05:29:20.130722879Z" level=info msg="cleaning up dead shim" id=warden-X6UFO3GGROOV5QQ4G5KMK2FPII namespace=warden-lab
+time="2026-10-24T05:29:20.135813579Z" level=warning msg="warnings while cleaning up dead shim" id=warden-X6UFO3GGROOV5QQ4G5KMK2FPII namespace=warden-lab warnings="time=\"2026-10-24T05:29:20Z\" level=debug msg=\"starting signal loop\" namespace=warden-lab pid=340 runtime=io.containerd.runc.v2\n"
+time="2026-10-24T05:29:20.136886483Z" level=debug msg="remove snapshot" key=warden-X6UFO3GGROOV5QQ4G5KMK2FPII snapshotter=overlayfs
+time="2026-10-24T05:29:20.196780437Z" level=debug msg="prepare snapshot" key=warden-FMAWUNLAQQW45TY7GTOGRFGDEM parent="sha256:1773fcbd8c0ebfc7646957271f5ddaf1207196a47f0b46fe6a9398d867e05f10" snapshotter=overlayfs
+time="2026-10-24T05:29:20.233189997Z" level=debug msg="get snapshot mounts" key=warden-FMAWUNLAQQW45TY7GTOGRFGDEM snapshotter=overlayfs
+time="2026-10-24T05:29:20.233946469Z" level=debug msg="creating task" id=warden-FMAWUNLAQQW45TY7GTOGRFGDEM runtime=io.containerd.runc.v2
+time="2026-10-24T05:29:20.236721260Z" level=info msg="connecting to shim warden-FMAWUNLAQQW45TY7GTOGRFGDEM" address="unix:///run/containerd/s/04a2370a9195a9ecbcbeee930fe61926121e885119c32e78f3208c0b098b5d65" namespace=warden-lab protocol=ttrpc version=3
+time="2026-10-24T05:29:20.238189118Z" level=debug msg="loading plugin" id=io.containerd.event.v1.publisher runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+time="2026-10-24T05:29:20.238265603Z" level=debug msg="loading plugin" id=io.containerd.internal.v1.shutdown runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+time="2026-10-24T05:29:20.238275213Z" level=debug msg="loading plugin" id=io.containerd.ttrpc.v1.task runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+time="2026-10-24T05:29:20.238318561Z" level=debug msg="registering ttrpc service" id=io.containerd.ttrpc.v1.task runtime=io.containerd.runc.v2
+time="2026-10-24T05:29:20.238433716Z" level=debug msg="serving api on socket" socket="[inherited from parent]"
+time="2026-10-24T05:29:20.238475115Z" level=debug msg="starting signal loop" namespace=warden-lab path=/opt/warden/.cache/warden-lab/session-44c68a7f0877e687/state/io.containerd.runtime.v2.task/warden-lab/warden-FMAWUNLAQQW45TY7GTOGRFGDEM pid=361 runtime=io.containerd.runc.v2
+time="2026-10-24T05:29:20.245698382Z" level=debug msg="activating mount" mounts="[{overlay overlay  [workdir=/proc/1/fd/5/root/io.containerd.snapshotter.v1.overlayfs/snapshots/5/work upperdir=/proc/1/fd/5/root/io.containerd.snapshotter.v1.overlayfs/snapshots/5/fs lowerdir=/proc/1/fd/5/root/io.containerd.snapshotter.v1.overlayfs/snapshots/1/fs index=off]}]" name=warden-FMAWUNLAQQW45TY7GTOGRFGDEM
+time="2026-10-24T05:29:20.285646317Z" level=debug msg="schedule snapshotter cleanup" snapshotter=overlayfs
+time="2026-10-24T05:29:20.292531188Z" level=debug msg="removed snapshot" key=warden-lab/5/warden-X6UFO3GGROOV5QQ4G5KMK2FPII snapshotter=overlayfs
+time="2026-10-24T05:29:20.357489422Z" level=debug msg="prepare snapshot" key=warden-GHELQEWRWGIXBMOPG46AVTVMFI parent="sha256:1773fcbd8c0ebfc7646957271f5ddaf1207196a47f0b46fe6a9398d867e05f10" snapshotter=overlayfs
+time="2026-10-24T05:29:20.402971165Z" level=debug msg="get snapshot mounts" key=warden-GHELQEWRWGIXBMOPG46AVTVMFI snapshotter=overlayfs
+time="2026-10-24T05:29:20.403944424Z" level=debug msg="creating task" id=warden-GHELQEWRWGIXBMOPG46AVTVMFI runtime=io.containerd.runc.v2
+time="2026-10-24T05:29:20.407423538Z" level=info msg="connecting to shim warden-GHELQEWRWGIXBMOPG46AVTVMFI" address="unix:///run/containerd/s/14edb2f543d0793dab99b79082f89d107ce755a74fef424a68ff16484e07158e" namespace=warden-lab protocol=ttrpc version=3
+time="2026-10-24T05:29:20.408803883Z" level=debug msg="loading plugin" id=io.containerd.event.v1.publisher runtime=io.containerd.runc.v2 type=io.containerd.event.v1
+time="2026-10-24T05:29:20.408884818Z" level=debug msg="loading plugin" id=io.containerd.internal.v1.shutdown runtime=io.containerd.runc.v2 type=io.containerd.internal.v1
+time="2026-10-24T05:29:20.408895869Z" level=debug msg="loading plugin" id=io.containerd.ttrpc.v1.task runtime=io.containerd.runc.v2 type=io.containerd.ttrpc.v1
+time="2026-10-24T05:29:20.408939418Z" level=debug msg="registering ttrpc service" id=io.containerd.ttrpc.v1.task runtime=io.containerd.runc.v2
+time="2026-10-24T05:29:20.408976054Z" level=debug msg="serving api on socket" socket="[inherited from parent]"
+time="2026-10-24T05:29:20.409000194Z" level=debug msg="starting signal loop" namespace=warden-lab path=/opt/warden/.cache/warden-lab/session-44c68a7f0877e687/state/io.containerd.runtime.v2.task/warden-lab/warden-GHELQEWRWGIXBMOPG46AVTVMFI pid=412 runtime=io.containerd.runc.v2
+time="2026-10-24T05:29:20.416588040Z" level=debug msg="activating mount" mounts="[{overlay overlay  [workdir=/proc/1/fd/5/root/io.containerd.snapshotter.v1.overlayfs/snapshots/6/work upperdir=/proc/1/fd/5/root/io.containerd.snapshotter.v1.overlayfs/snapshots/6/fs lowerdir=/proc/1/fd/5/root/io.containerd.snapshotter.v1.overlayfs/snapshots/1/fs index=off]}]" name=warden-GHELQEWRWGIXBMOPG46AVTVMFI
+time="2026-10-24T05:29:20.474445513Z" level=error msg="ttrpc: received message on inactive stream" stream=9
+time="2026-10-24T05:29:20.511487704Z" level=info msg="shim disconnected" id=warden-FMAWUNLAQQW45TY7GTOGRFGDEM namespace=warden-lab
+time="2026-10-24T05:29:20.511511112Z" level=info msg="cleaning up after shim disconnected" id=warden-FMAWUNLAQQW45TY7GTOGRFGDEM namespace=warden-lab
+time="2026-10-24T05:29:20.511518113Z" level=info msg="cleaning up dead shim" id=warden-FMAWUNLAQQW45TY7GTOGRFGDEM namespace=warden-lab
+time="2026-10-24T05:29:20.517046708Z" level=warning msg="warnings while cleaning up dead shim" id=warden-FMAWUNLAQQW45TY7GTOGRFGDEM namespace=warden-lab warnings="time=\"2026-10-24T05:29:20Z\" level=debug msg=\"starting signal loop\" namespace=warden-lab pid=465 runtime=io.containerd.runc.v2\n"
+time="2026-10-24T05:29:20.518344152Z" level=debug msg="remove snapshot" key=warden-FMAWUNLAQQW45TY7GTOGRFGDEM snapshotter=overlayfs
+time="2026-10-24T05:29:20.550235264Z" level=error msg="ttrpc: received message on inactive stream" stream=9
+time="2026-10-24T05:29:20.578649842Z" level=info msg="shim disconnected" id=warden-GHELQEWRWGIXBMOPG46AVTVMFI namespace=warden-lab
+time="2026-10-24T05:29:20.578677430Z" level=info msg="cleaning up after shim disconnected" id=warden-GHELQEWRWGIXBMOPG46AVTVMFI namespace=warden-lab
+time="2026-10-24T05:29:20.578684223Z" level=info msg="cleaning up dead shim" id=warden-GHELQEWRWGIXBMOPG46AVTVMFI namespace=warden-lab
+time="2026-10-24T05:29:20.583560210Z" level=warning msg="warnings while cleaning up dead shim" id=warden-GHELQEWRWGIXBMOPG46AVTVMFI namespace=warden-lab warnings="time=\"2026-10-24T05:29:20Z\" level=debug msg=\"starting signal loop\" namespace=warden-lab pid=491 runtime=io.containerd.runc.v2\n"
+time="2026-10-24T05:29:20.584662333Z" level=debug msg="remove snapshot" key=warden-GHELQEWRWGIXBMOPG46AVTVMFI snapshotter=overlayfs

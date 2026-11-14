@@ -1,0 +1,213 @@
+[
+  {
+    "name": "wrong_product",
+    "document_id": "ad927336-109d-55ae-8a96-3a8d4dbfc03b",
+    "expected_match": false,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 4,
+      "category_uid": 6,
+      "class_uid": 6003,
+      "type_uid": 600304,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Synthetic Other Product",
+          "vendor_name": "Microsoft"
+        },
+        "uid": "76d74761-d576-5381-a21a-fdfe1564eff2"
+      },
+      "unmapped": {},
+      "api": {
+        "operation": "Microsoft.Insights/diagnosticSettings/delete"
+      },
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1
+    }
+  },
+  {
+    "name": "wrong_class",
+    "document_id": "84646fb3-8935-558c-a49c-8c7a24ce862a",
+    "expected_match": false,
+    "scope": "deliberately_wrong_class_query_edge",
+    "event": {
+      "activity_id": 4,
+      "category_uid": 6,
+      "class_uid": 9999,
+      "type_uid": 600304,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure Activity Log",
+          "vendor_name": "Microsoft"
+        },
+        "uid": "76d74761-d576-5381-a21a-fdfe1564eff2"
+      },
+      "unmapped": {},
+      "api": {
+        "operation": "Microsoft.Insights/diagnosticSettings/delete"
+      },
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1
+    }
+  },
+  {
+    "name": "missing_action_field",
+    "document_id": "ac9d309a-963c-54f0-ac63-13d03b3f45f7",
+    "expected_match": false,
+    "scope": "deliberately_missing_field_query_edge",
+    "event": {
+      "activity_id": 99,
+      "category_uid": 6,
+      "class_uid": 6003,
+      "type_uid": 600399,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure Activity Log",
+          "vendor_name": "Microsoft"
+        },
+        "uid": "76d74761-d576-5381-a21a-fdfe1564eff2"
+      },
+      "unmapped": {},
+      "api": {},
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1,
+      "activity_name": "Microsoft.Insights/diagnosticSettings/delete"
+    }
+  },
+  {
+    "name": "reserved_identifier_value",
+    "document_id": "4c849523-33ea-5207-93a1-5a4db1a71314",
+    "expected_match": true,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 4,
+      "category_uid": 6,
+      "class_uid": 6003,
+      "type_uid": 600304,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure Activity Log",
+          "vendor_name": "Microsoft"
+        },
+        "uid": "neg OR class_uid:9999 *"
+      },
+      "unmapped": {},
+      "api": {
+        "operation": "Microsoft.Insights/diagnosticSettings/delete"
+      },
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1
+    }
+  },
+  {
+    "name": "string_case_variant",
+    "document_id": "86236268-0209-5dd2-a9cd-cd7aaec8d0a2",
+    "expected_match": true,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 99,
+      "category_uid": 6,
+      "class_uid": 6003,
+      "type_uid": 600399,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure Activity Log",
+          "vendor_name": "Microsoft"
+        },
+        "uid": "76d74761-d576-5381-a21a-fdfe1564eff2"
+      },
+      "unmapped": {},
+      "api": {
+        "operation": "mICROSOFT.iNSIGHTS/DIAGNOSTICsETTINGS/DELETE"
+      },
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1,
+      "activity_name": "mICROSOFT.iNSIGHTS/DIAGNOSTICsETTINGS/DELETE"
+    }
+  },
+  {
+    "name": "literal_star_is_not_wildcard_in_event",
+    "document_id": "b861f3df-ae00-57db-a969-92c27efe3e6f",
+    "expected_match": false,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 99,
+      "category_uid": 6,
+      "class_uid": 6003,
+      "type_uid": 600399,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure Activity Log",
+          "vendor_name": "Microsoft"
+        },
+        "uid": "76d74761-d576-5381-a21a-fdfe1564eff2"
+      },
+      "unmapped": {},
+      "api": {
+        "operation": "Microsoft.Insights/diagnosticSettings/delete*"
+      },
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1,
+      "activity_name": "Microsoft.Insights/diagnosticSettings/delete*"
+    }
+  }
+]

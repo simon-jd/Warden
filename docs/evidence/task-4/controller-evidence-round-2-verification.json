@@ -1,0 +1,38 @@
+{
+  "source": "772136927eb6eb9576e473eef5f7b716b80696f6",
+  "full_suite_checkpoint": "01bccef0a6a7eab10f25660fbc7f6cf6e9d92041",
+  "evidence": "e46973967a5cacd1ee8e23acf7ef8c0f715e3897",
+  "source_files_verified": 8,
+  "unchanged_from_full_suite": 5,
+  "unchanged_interfaces_verified": 11,
+  "evidence_counts": {
+    "55bd96828669c8e1536da321bcb87bae13afa6ea": 36,
+    "round-1/135c3b866f07692ad846cc48c8c5bde0cf91ee33": 13,
+    "round-2/01bccef0a6a7eab10f25660fbc7f6cf6e9d92041": 16,
+    "round-2/772136927eb6eb9576e473eef5f7b716b80696f6": 9
+  },
+  "committed_bytes_modes_hashes_match": true,
+  "i4_delta_exact": [
+    "docs/firecracker-lab.md",
+    "runtimes/firecracker/supervisor.go",
+    "runtimes/firecracker/supervisor_test.go"
+  ],
+  "checkpoint_go_pass": 47,
+  "checkpoint_go_fail": 0,
+  "checkpoint_live_skips": [
+    "TestFirecrackerCapacity",
+    "TestFirecrackerConformance",
+    "TestFirecrackerBoot",
+    "TestSnapshotRestoreFasterThanBoot"
+  ],
+  "checkpoint_python_tail": [
+    "----------------------------------------------------------------------",
+    "Ran 15 tests in 0.005s",
+    "",
+    "OK"
+  ],
+  "final_i4_pass": 3,
+  "final_i4_fail": 0,
+  "tests_rerun": false,
+  "vm_executed": false
+}

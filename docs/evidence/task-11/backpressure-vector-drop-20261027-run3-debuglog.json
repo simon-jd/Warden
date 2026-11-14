@@ -1,0 +1,648 @@
+{
+  "alert": {
+    "errors": 0,
+    "firing": [],
+    "first_discard_epoch": null,
+    "first_seen": null,
+    "polls": 232,
+    "prometheus": {
+      "container": "warden-bp-prom-461f3c24",
+      "final_series": {
+        "vector_component_discarded_events_total{component_id=bp_metrics,component_kind=transform,component_type=filter,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:38459,intentional=true,job=warden-vector}": "41019",
+        "vector_component_discarded_events_total{component_id=bp_metrics,component_kind=transform,component_type=filter,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:45025,intentional=true,job=warden-vector}": "45356"
+      },
+      "image": "prom/prometheus:v3.14.0",
+      "removed": true,
+      "rules_loaded": [
+        "WardenVectorBufferDiscarded",
+        "WardenVectorNormalizationError"
+      ],
+      "targets": [
+        "127.0.0.1:38459",
+        "127.0.0.1:45025"
+      ],
+      "targets_up": [
+        "http://127.0.0.1:38459/metrics",
+        "http://127.0.0.1:45025/metrics"
+      ]
+    }
+  },
+  "config": {
+    "base_rate": 20,
+    "buffer_max_size": 268435488,
+    "burst_events": 24000,
+    "burst_rate": 200,
+    "hops": 2,
+    "line_bytes": 16384,
+    "when_full": "drop_newest"
+  },
+  "counter_series": {
+    "agent": {
+      "component_discarded_events_total{component_id=bp_metrics,component_kind=transform,component_type=filter,host=postedism-ubuntu-system-selfuse,intentional=true}": 41019.0
+    },
+    "aggregator": {
+      "component_discarded_events_total{component_id=bp_metrics,component_kind=transform,component_type=filter,host=postedism-ubuntu-system-selfuse,intentional=true}": 45356.0
+    }
+  },
+  "failures": [
+    "nothing was discarded: the buffer never overflowed",
+    "7585 lost but only 0 counted as discarded",
+    "WardenVectorBufferDiscarded did not fire"
+  ],
+  "load": {
+    "loadavg_end": [
+      10.31201171875,
+      7.48095703125,
+      6.97265625
+    ],
+    "loadavg_start": [
+      6.0693359375,
+      7.16943359375,
+      6.86376953125
+    ],
+    "nproc": 32
+  },
+  "metrics": {
+    "buffer_byte_size_max": 134210184.0,
+    "buffer_byte_size_min": 0.0,
+    "buffer_discarded_events_total": 0.0,
+    "buffer_events_max": 8107.0,
+    "component_discarded_events_total": 0.0,
+    "negative_gauge_samples": 0,
+    "samples": 966
+  },
+  "metrics_aggregator": {
+    "buffer_byte_size_max": 134061784.0,
+    "buffer_byte_size_min": 0.0,
+    "buffer_discarded_events_total": 0.0,
+    "buffer_events_max": 8120.0,
+    "component_discarded_events_total": 0.0,
+    "negative_gauge_samples": 0,
+    "samples": 966
+  },
+  "occupancy": {
+    "disk_bytes_max": 140832240,
+    "rss_bytes_max": 181948416,
+    "samples": 498,
+    "series_t_disk_rss": [
+      [
+        0.5,
+        24,
+        53817344
+      ],
+      [
+        5.5,
+        24,
+        55652352
+      ],
+      [
+        10.51,
+        1258584,
+        64811008
+      ],
+      [
+        15.51,
+        2914584,
+        71602176
+      ],
+      [
+        20.51,
+        15993720,
+        98844672
+      ],
+      [
+        25.52,
+        32565000,
+        99024896
+      ],
+      [
+        30.52,
+        49120128,
+        93851648
+      ],
+      [
+        35.52,
+        65675304,
+        98586624
+      ],
+      [
+        40.52,
+        82230480,
+        95072256
+      ],
+      [
+        45.53,
+        98802168,
+        95784960
+      ],
+      [
+        50.53,
+        115373856,
+        99078144
+      ],
+      [
+        55.53,
+        131929032,
+        108802048
+      ],
+      [
+        60.53,
+        14270392,
+        106344448
+      ],
+      [
+        65.54,
+        30825568,
+        97775616
+      ],
+      [
+        70.54,
+        47397224,
+        97161216
+      ],
+      [
+        75.54,
+        63952320,
+        94822400
+      ],
+      [
+        80.55,
+        80540480,
+        94236672
+      ],
+      [
+        85.55,
+        97112128,
+        93921280
+      ],
+      [
+        90.55,
+        113667264,
+        95748096
+      ],
+      [
+        95.56,
+        130238440,
+        95719424
+      ],
+      [
+        100.56,
+        140832240,
+        96034816
+      ],
+      [
+        105.56,
+        140832240,
+        95358976
+      ],
+      [
+        110.56,
+        140832240,
+        91951104
+      ],
+      [
+        115.57,
+        140832240,
+        92749824
+      ],
+      [
+        120.57,
+        140832240,
+        96321536
+      ],
+      [
+        125.57,
+        140832240,
+        93802496
+      ],
+      [
+        130.57,
+        140832240,
+        90394624
+      ],
+      [
+        135.58,
+        140832240,
+        89767936
+      ],
+      [
+        140.58,
+        6620888,
+        169816064
+      ],
+      [
+        145.59,
+        6620888,
+        122118144
+      ],
+      [
+        150.59,
+        6620888,
+        96944128
+      ],
+      [
+        155.59,
+        6620888,
+        94203904
+      ],
+      [
+        160.6,
+        6620888,
+        93249536
+      ],
+      [
+        165.6,
+        6620888,
+        91996160
+      ],
+      [
+        170.6,
+        6620888,
+        91189248
+      ],
+      [
+        175.6,
+        6620888,
+        91230208
+      ],
+      [
+        180.61,
+        6620888,
+        90136576
+      ],
+      [
+        185.61,
+        6620888,
+        90464256
+      ],
+      [
+        190.61,
+        6620888,
+        88940544
+      ],
+      [
+        195.62,
+        6620888,
+        89219072
+      ],
+      [
+        200.62,
+        6620888,
+        89055232
+      ],
+      [
+        205.62,
+        6620888,
+        87703552
+      ],
+      [
+        210.63,
+        6620888,
+        86880256
+      ],
+      [
+        215.63,
+        6620888,
+        86802432
+      ],
+      [
+        220.63,
+        6620888,
+        87425024
+      ],
+      [
+        225.63,
+        6620888,
+        87212032
+      ],
+      [
+        230.64,
+        6620888,
+        87949312
+      ],
+      [
+        235.64,
+        6620888,
+        87576576
+      ],
+      [
+        240.65,
+        6620888,
+        87482368
+      ],
+      [
+        245.65,
+        6620888,
+        87920640
+      ]
+    ]
+  },
+  "occupancy_aggregator": {
+    "disk_bytes_max": 137116688,
+    "rss_bytes_max": 524140544,
+    "samples": 498,
+    "series_t_disk_rss": [
+      [
+        0.7,
+        24,
+        54525952
+      ],
+      [
+        5.71,
+        24,
+        55877632
+      ],
+      [
+        10.71,
+        1023832,
+        70901760
+      ],
+      [
+        15.71,
+        2741152,
+        76247040
+      ],
+      [
+        20.72,
+        14381440,
+        118280192
+      ],
+      [
+        25.72,
+        30957584,
+        118693888
+      ],
+      [
+        30.72,
+        47517080,
+        111239168
+      ],
+      [
+        35.72,
+        64093088,
+        120160256
+      ],
+      [
+        40.73,
+        80685608,
+        121769984
+      ],
+      [
+        45.73,
+        97278128,
+        112173056
+      ],
+      [
+        50.73,
+        113887160,
+        127758336
+      ],
+      [
+        55.73,
+        130496192,
+        130519040
+      ],
+      [
+        60.73,
+        137116688,
+        132460544
+      ],
+      [
+        65.74,
+        137116688,
+        117956608
+      ],
+      [
+        70.74,
+        137116688,
+        103383040
+      ],
+      [
+        75.74,
+        137116688,
+        105406464
+      ],
+      [
+        80.75,
+        137116688,
+        103456768
+      ],
+      [
+        85.75,
+        137116688,
+        101572608
+      ],
+      [
+        90.75,
+        137116688,
+        102535168
+      ],
+      [
+        95.76,
+        137116688,
+        101650432
+      ],
+      [
+        100.76,
+        137116688,
+        101924864
+      ],
+      [
+        105.76,
+        137116688,
+        100032512
+      ],
+      [
+        110.76,
+        137116688,
+        102375424
+      ],
+      [
+        115.77,
+        137116688,
+        99667968
+      ],
+      [
+        120.77,
+        137116688,
+        115687424
+      ],
+      [
+        125.77,
+        137116688,
+        114839552
+      ],
+      [
+        130.78,
+        137116688,
+        109842432
+      ],
+      [
+        135.78,
+        137116688,
+        109998080
+      ],
+      [
+        140.78,
+        24829472,
+        502747136
+      ],
+      [
+        145.79,
+        24829472,
+        448204800
+      ],
+      [
+        150.79,
+        24829472,
+        435003392
+      ],
+      [
+        155.79,
+        24829472,
+        434294784
+      ],
+      [
+        160.8,
+        24829472,
+        434024448
+      ],
+      [
+        165.8,
+        24829472,
+        433319936
+      ],
+      [
+        170.8,
+        24829472,
+        432115712
+      ],
+      [
+        175.81,
+        24829472,
+        431550464
+      ],
+      [
+        180.81,
+        24829472,
+        430522368
+      ],
+      [
+        185.81,
+        24829472,
+        430317568
+      ],
+      [
+        190.81,
+        24829472,
+        429629440
+      ],
+      [
+        195.82,
+        24829472,
+        429842432
+      ],
+      [
+        200.82,
+        24829472,
+        430096384
+      ],
+      [
+        205.82,
+        24829472,
+        429711360
+      ],
+      [
+        210.83,
+        24829472,
+        429879296
+      ],
+      [
+        215.83,
+        24829472,
+        429441024
+      ],
+      [
+        220.83,
+        24829472,
+        429174784
+      ],
+      [
+        225.84,
+        24829472,
+        429264896
+      ],
+      [
+        230.84,
+        24829472,
+        428273664
+      ],
+      [
+        235.84,
+        24829472,
+        429117440
+      ],
+      [
+        240.85,
+        24829472,
+        428711936
+      ],
+      [
+        245.85,
+        24829472,
+        428957696
+      ]
+    ]
+  },
+  "peer_requests": {
+    "ok": 347,
+    "rejected": 107
+  },
+  "reconcile": {
+    "duplicates": 401,
+    "lost": 7585,
+    "received_unique": 16614,
+    "sent": 24199,
+    "unexpected_ids": 0
+  },
+  "released_by_block": false,
+  "scratch_bytes": 32353059,
+  "sender": {
+    "baseline_sent": 199,
+    "blocked_total_s": 0.0,
+    "burst_sent": 24000,
+    "http_errors": 0,
+    "longest_block_s": 0.027,
+    "sent": 24199
+  },
+  "source": "vector",
+  "timeline_s": {
+    "burst_end": 130.0074908460956,
+    "burst_start": 10.00233653106261,
+    "drain_end": 152.5694479130907,
+    "drain_idle_stop": true,
+    "extra_alert_wait": 90.08,
+    "release": 130.00748839508742
+  },
+  "vector_log": "warn,vector_buffers=debug",
+  "vector_stderr_counts": {
+    "vector-agent.stderr": {
+      "Events dropped.": 0,
+      "Request timed out": 2,
+      "Retrying": 0
+    },
+    "vector-aggregator.stderr": {
+      "Events dropped.": 0,
+      "Request timed out": 0,
+      "Retrying": 32
+    }
+  },
+  "vector_stderr_dropped_lines": {
+    "vector-agent.stderr": [],
+    "vector-aggregator.stderr": []
+  },
+  "vector_stderr_tail": {
+    "vector-agent.stderr": "ression` if applicable. Alternatively `request.timeout_secs` can be increased.] is being suppressed to avoid flooding.\n2026-10-28T03:50:54.926283Z DEBUG sink{component_kind=\"sink\" component_id=agent_forward component_type=vector}: vector_buffers::variants::disk_v2::reader: Reached the end of current data file. reader_file_id=1 writer_file_id=2\n2026-10-28T03:50:54.926299Z DEBUG sink{component_kind=\"sink\" component_id=agent_forward component_type=vector}: vector_buffers::variants::disk_v2::reader: Marking data file for deletion. data_file_path=\"/home/postedism/Desktop/Warden/.cache/test-tmp/warden-bp-azegbcjm/data/buffer/v2/agent_forward/buffer-data-1.dat\" first_record_id=8108 last_record_id=16214 record_count=7248 event_count=8107 bytes_read=134211352\n2026-10-28T03:50:54.926311Z DEBUG sink{component_kind=\"sink\" component_id=agent_forward component_type=vector}: vector_buffers::variants::disk_v2::reader: Rolling to next data file.\n2026-10-28T03:50:54.926336Z DEBUG sink{component_kind=\"sink\" component_id=agent_forward component_type=vector}: vector_buffers::variants::disk_v2::reader: Opened data file for reading. data_file_path=\"/home/postedism/Desktop/Warden/.cache/test-tmp/warden-bp-azegbcjm/data/buffer/v2/agent_forward/buffer-data-2.dat\"\n2026-10-28T03:50:55.995189Z DEBUG sink{component_kind=\"sink\" component_id=agent_forward component_type=vector}: vector_buffers::variants::disk_v2::reader: Deleting completed data file. data_file_path=\"/home/postedism/Desktop/Warden/.cache/test-tmp/warden-bp-azegbcjm/data/buffer/v2/agent_forward/buffer-data-1.dat\" bytes_read=134211352\n2026-10-28T03:50:56.012363Z DEBUG sink{component_kind=\"sink\" component_id=agent_forward component_type=vector}: vector_buffers::variants::disk_v2::reader: Flushed after deleting data file, notifying writers and continuing.\n2026-10-28T03:52:46.749455Z DEBUG source{component_kind=\"source\" component_id=fixture component_type=http_server}: vector_buffers::variants::disk_v2::writer: Writer marked as closed.\n",
+    "vector-aggregator.stderr": "onent_id=agent component_type=vector}:write_record:try_write_record_inner:ensure_ready_for_write: vector_buffers::variants::disk_v2::writer: Writer now on new data file. new_writer_file_id=2\n2026-10-28T03:50:55.085182Z DEBUG sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector_buffers::variants::disk_v2::reader: Reached the end of current data file. reader_file_id=1 writer_file_id=2\n2026-10-28T03:50:55.085198Z DEBUG sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector_buffers::variants::disk_v2::reader: Marking data file for deletion. data_file_path=\"/home/postedism/Desktop/Warden/.cache/test-tmp/warden-bp-azegbcjm/data-agg/buffer/v2/os_api/buffer-data-1.dat\" first_record_id=8106 last_record_id=15511 record_count=13 event_count=7406 bytes_read=122266624\n2026-10-28T03:50:55.085887Z DEBUG sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector_buffers::variants::disk_v2::reader: Rolling to next data file.\n2026-10-28T03:50:55.085922Z DEBUG sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector_buffers::variants::disk_v2::reader: Opened data file for reading. data_file_path=\"/home/postedism/Desktop/Warden/.cache/test-tmp/warden-bp-azegbcjm/data-agg/buffer/v2/os_api/buffer-data-2.dat\"\n2026-10-28T03:50:55.143628Z DEBUG sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector_buffers::variants::disk_v2::reader: Deleting completed data file. data_file_path=\"/home/postedism/Desktop/Warden/.cache/test-tmp/warden-bp-azegbcjm/data-agg/buffer/v2/os_api/buffer-data-1.dat\" bytes_read=122266624\n2026-10-28T03:50:55.150056Z DEBUG sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector_buffers::variants::disk_v2::reader: Flushed after deleting data file, notifying writers and continuing.\n2026-10-28T03:52:46.749557Z DEBUG source{component_kind=\"source\" component_id=agent component_type=vector}: vector_buffers::variants::disk_v2::writer: Writer marked as closed.\n"
+  }
+}

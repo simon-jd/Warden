@@ -1,0 +1,32 @@
+test_boottime_sample_between_monotonic_bracket_is_valid (test_controller_cache_continuation_invoker_20261025.ClockTests.test_boottime_sample_between_monotonic_bracket_is_valid) ... ERROR
+test_eof_observed_after_drain_cutoff_remains_unknown (test_controller_cache_continuation_invoker_20261025.GeneratedInvokerTests.test_eof_observed_after_drain_cutoff_remains_unknown) ... FAIL
+
+======================================================================
+ERROR: test_boottime_sample_between_monotonic_bracket_is_valid (test_controller_cache_continuation_invoker_20261025.ClockTests.test_boottime_sample_between_monotonic_bracket_is_valid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 65, in test_boottime_sample_between_monotonic_bracket_is_valid
+    api.validate_sample(value)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 557, in validate_sample
+    require(0 <= before <= after and after - before <= 100000000 and
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            boot >= after and value['birth_boot_lower_ns'] <= boot, 'clock_sample_order')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/identity_cache_observe.py", line 54, in require
+    raise ValueError(reason)
+ValueError: clock_sample_order
+
+======================================================================
+FAIL: test_eof_observed_after_drain_cutoff_remains_unknown (test_controller_cache_continuation_invoker_20261025.GeneratedInvokerTests.test_eof_observed_after_drain_cutoff_remains_unknown)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 345, in test_eof_observed_after_drain_cutoff_remains_unknown
+    with self.assertRaises(api.UnknownChild):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: UnknownChild not raised
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.005s
+
+FAILED (failures=1, errors=1)

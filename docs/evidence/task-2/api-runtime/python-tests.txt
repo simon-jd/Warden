@@ -1,0 +1,47 @@
+owned image: sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+owned private PostgreSQL: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+owned container: eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+outer container removed: eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+owned image removed: sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+.owned container: eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+outer container removed: eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+..owned private PostgreSQL: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+owned PostgreSQL removed: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+.......local Docker daemon: postedism-ubuntu-system-selfuse test systemd
+outstanding Docker allocation charge: 0
+guard refused: aggregate resident service memory exceeds 16GB
+...guard refused: Warden project disk would exceed 12GB
+.fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+.owned image: sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+owned container: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+owned image removed: sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+owned image: sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+owned container: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+.owned image removed: sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+.guard refused: Warden project disk would exceed 12GB
+.owned container: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+..owned image removed: sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+.owned container: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+.owned container: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+.owned container: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+.owned container: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+fixed conformance output
+outer container removed: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+.................
+----------------------------------------------------------------------
+Ran 41 tests in 0.990s
+
+OK

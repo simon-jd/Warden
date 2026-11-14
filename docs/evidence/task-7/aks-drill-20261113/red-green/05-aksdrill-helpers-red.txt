@@ -1,0 +1,8 @@
+$ go test -count=1 ./controlplane/internal/aksdrill   # offline tests only, no aksdrill.go yet
+# warden/controlplane/internal/aksdrill [warden/controlplane/internal/aksdrill.test]
+controlplane/internal/aksdrill/aksdrill_test.go:10:7: undefined: ProbePod
+controlplane/internal/aksdrill/aksdrill_test.go:68:12: undefined: ProbePod
+controlplane/internal/aksdrill/aksdrill_test.go:82:15: undefined: DefaultDenyOff
+controlplane/internal/aksdrill/aksdrill_test.go:87:15: undefined: DefaultDenyOff
+FAIL	warden/controlplane/internal/aksdrill [build failed]
+FAIL

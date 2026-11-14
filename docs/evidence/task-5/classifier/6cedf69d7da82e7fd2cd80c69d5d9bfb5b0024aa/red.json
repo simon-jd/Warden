@@ -1,0 +1,44 @@
+{
+  "mode": "matrix-code",
+  "source_head": "b765fe109251ed7579386a70d5655c7e4edcccdd",
+  "started_utc": "2026-10-25T08:58:41.352109+00:00",
+  "before": {
+    "containers": [],
+    "images": [],
+    "image_charge": 0,
+    "outstanding": 5000000000
+  },
+  "sysctls_before": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "exit_code": 1,
+  "after": {
+    "containers": [],
+    "images": [],
+    "image_charge": 0,
+    "outstanding": 5000000000
+  },
+  "sysctls_after": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "ordinary_postflight": {
+    "additional_bytes": "5000000000",
+    "at": "2026-10-25T08:58:45Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 266061344768,
+    "project_allocated_bytes": 4192092160,
+    "service_memory_bytes": "1000000000"
+  },
+  "finished_utc": "2026-10-25T08:58:45.435137+00:00"
+}

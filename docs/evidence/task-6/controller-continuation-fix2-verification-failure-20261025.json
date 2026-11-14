@@ -1,0 +1,12 @@
+{
+  "at_utc": "2026-10-25T11:34:40.036254+00:00",
+  "kind": "controller read-only metadata verifier failure, not test/product failure",
+  "failed_source_sha256": "b8e43d14a29d0dad121a6eba8cd3d621a8292a795fa96f471ef88d37f2a87cc9",
+  "preserved_source": "controller-continuation-fix2-verification-attempt-1-20261025.py",
+  "exit_code": 1,
+  "exception": "KeyError: 'exit_code' at line52; cover outer-tool-result has initial+completion rather than direct result",
+  "duration_seconds": 0.397193484,
+  "tests_or_cache_actuals_run": false,
+  "result_and_view_created": false,
+  "correction": "accept exact preserved completion envelope and verify initial session/empty output, then compare completed result with recorded receipt; no artifact or tests changed"
+}

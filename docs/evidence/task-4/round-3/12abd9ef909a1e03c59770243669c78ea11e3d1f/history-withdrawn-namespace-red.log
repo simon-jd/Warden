@@ -1,0 +1,36 @@
+test_actual_anchored_proc_namespace_links_must_match_receipt (test_firecracker_device_receipt.ReceiptTests.test_actual_anchored_proc_namespace_links_must_match_receipt) ... 
+  test_actual_anchored_proc_namespace_links_must_match_receipt (test_firecracker_device_receipt.ReceiptTests.test_actual_anchored_proc_namespace_links_must_match_receipt) (name='cgroup') ... FAIL
+  test_actual_anchored_proc_namespace_links_must_match_receipt (test_firecracker_device_receipt.ReceiptTests.test_actual_anchored_proc_namespace_links_must_match_receipt) (name='mnt') ... FAIL
+test_actual_anchored_proc_namespace_links_must_match_receipt (test_firecracker_device_receipt.ReceiptTests.test_actual_anchored_proc_namespace_links_must_match_receipt) ... FAIL
+
+======================================================================
+FAIL: test_actual_anchored_proc_namespace_links_must_match_receipt (test_firecracker_device_receipt.ReceiptTests.test_actual_anchored_proc_namespace_links_must_match_receipt) (name='cgroup')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_device_receipt.py", line 41, in test_actual_anchored_proc_namespace_links_must_match_receipt
+    with self.subTest(name=name),self.assertRaises(ValueError):gate.verify_proc_namespaces(proc,self.receipt())
+                                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_actual_anchored_proc_namespace_links_must_match_receipt (test_firecracker_device_receipt.ReceiptTests.test_actual_anchored_proc_namespace_links_must_match_receipt) (name='mnt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_device_receipt.py", line 41, in test_actual_anchored_proc_namespace_links_must_match_receipt
+    with self.subTest(name=name),self.assertRaises(ValueError):gate.verify_proc_namespaces(proc,self.receipt())
+                                 ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_actual_anchored_proc_namespace_links_must_match_receipt (test_firecracker_device_receipt.ReceiptTests.test_actual_anchored_proc_namespace_links_must_match_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_device_receipt.py", line 44, in test_actual_anchored_proc_namespace_links_must_match_receipt
+    with self.assertRaises(FileNotFoundError):gate.verify_proc_namespaces(proc,self.receipt())
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: FileNotFoundError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=3)

@@ -1,0 +1,24 @@
+{
+  "utc": "2026-10-24T06:55:07.358824+00:00",
+  "scope": "Exact never-executed OCI mount failure only; not general failed-bootstrap retirement proof.",
+  "validated_original_session_device": 66307,
+  "validated_original_session_inode": 55491838,
+  "image_all_before": [
+    "sha256:00ae4976ee488e52ae72d9cf30ac0d6349cfd65438a45b695a875f314a9a0e4e"
+  ],
+  "removed_container": "251ea8cc88d93962727b7372a9b70863cf4cefeaa188f1dde28a30b887369f6c",
+  "removed_image_response": "Deleted: sha256:00ae4976ee488e52ae72d9cf30ac0d6349cfd65438a45b695a875f314a9a0e4e",
+  "session_files": [
+    "charge.json",
+    "identity.json",
+    "manifest.json"
+  ],
+  "project_containers_after": [],
+  "project_images_after": [],
+  "outstanding_bytes_after": 0,
+  "charge": {
+    "version": 1,
+    "reserved_bytes": 6000000000,
+    "released": true
+  }
+}

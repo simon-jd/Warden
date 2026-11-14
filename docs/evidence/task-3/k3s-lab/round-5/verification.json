@@ -1,0 +1,78 @@
+{
+  "dispatch_base": "81a46b0c49e9c8c0ddcc523bdea9d6faa5043015",
+  "evidence_files": {
+    "README.md": {
+      "bytes": 12024,
+      "sha256": "0838735448d2a8f8744bc951d857512b78a4676552c6221dc4e8728198b1059d"
+    },
+    "diagnose-fourth.py": {
+      "bytes": 10600,
+      "sha256": "d33a616290f0a4c8f30e98d9b4bc9834ff00c8df0b7abc15fb16f27e01fbfd40"
+    },
+    "diagnostic-final.json": {
+      "bytes": 68589,
+      "sha256": "4c1fda2d2fde22570723a0833f2ce06968daa2013eab1f6a0cd6015e0ee4a3b7"
+    },
+    "intermediate-tests.txt": {
+      "bytes": 8930,
+      "sha256": "8dcda3ebb40739338a3e7f6c2dc04a2610a87ba385ca47f1c2d728da05e0e2a3"
+    },
+    "red-tests.txt": {
+      "bytes": 13429,
+      "sha256": "eeff9d6679da0ff878a50c5868201e83a93187fee6907e7ecc67f1d236a5dc5d"
+    },
+    "source-references.json": {
+      "bytes": 4360,
+      "sha256": "2f8f42d339025e4bb970d95da8941c0865c3fbae9b2350b5b13818a129b552a3"
+    },
+    "verification-tests.txt": {
+      "bytes": 9166,
+      "sha256": "3319274580995bd8a44a7b99a6a2f2e15105e27fadb28df092b13e348cca485e"
+    }
+  },
+  "execution_uid": 1000,
+  "primary_source_bytes": 338191,
+  "primary_source_count": 17,
+  "private_raw_logs_exported": false,
+  "ready_proven": false,
+  "real_docker_mutations": false,
+  "real_inotify_probe": false,
+  "source_commit": "30ac35088034db0d21fc1fc3ea681a973c9bab95",
+  "source_files": {
+    "scripts/k3s_lab.py": {
+      "bytes": 23176,
+      "sha256": "65b746e1bc715203b56b98f85517a9bc109f0d19984a36455d308da03489167e"
+    },
+    "scripts/k3s_lab_init.py": {
+      "bytes": 33616,
+      "sha256": "df9d551de26c306b4e45439138173c169c6e6fe6f39eac012b7805bf3f48944a"
+    },
+    "scripts/k3s_lab_recover.py": {
+      "bytes": 13983,
+      "sha256": "c2f06633c72ecabf2001f28e7d3c92cf2394787f8c38263845e9f510117a9047"
+    },
+    "scripts/k3s_lab_recovery_init.py": {
+      "bytes": 6578,
+      "sha256": "45129ce29e6d9f67ad1a807754cad932aac70c0999572b1226189cafbf0d5224"
+    },
+    "scripts/test_k3s_lab_recovery.py": {
+      "bytes": 18083,
+      "sha256": "cdf543602de40dc7a859e3de66d99b8fef6e514ee5dd97eca013fb8f0392cbc1"
+    },
+    "scripts/test_k3s_lab_round4.py": {
+      "bytes": 14501,
+      "sha256": "97a0d9953c13e79c0d62778c748a71226438cb3d01076193815afca7cece40bf"
+    },
+    "scripts/test_k3s_lab_round5.py": {
+      "bytes": 11207,
+      "sha256": "b17507e3e6f3a8d0436508469aaf019a57abe412fda695b0160fc0b9b56a1636"
+    }
+  },
+  "source_parent": "a853f0155e8c082de71f446d5637f8295a2edb2a",
+  "task3_complete": false,
+  "test_command": "umask 0077; PYTHONPATH=scripts python3 -B -m unittest -v test_k3s_lab_round5 test_k3s_lab_recovery test_k3s_lab_init test_k3s_lab_round4",
+  "test_count": 50,
+  "test_exit_code": 0,
+  "test_skips": 0,
+  "umask": "0077"
+}

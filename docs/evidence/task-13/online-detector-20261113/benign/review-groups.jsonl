@@ -1,0 +1,17 @@
+{"class": "node", "count": 14, "first": "2026-11-14T05:03:16.101299000Z", "last": "2026-11-14T05:03:38.444477749Z", "process": "bridge", "rule": "Drop and execute new binary in container"}
+{"class": "node", "count": 1, "first": "2026-11-14T05:03:13.423604575Z", "last": "2026-11-14T05:03:13.423604575Z", "process": "cat", "rule": "Drop and execute new binary in container"}
+{"class": "node", "count": 2, "first": "2026-11-14T05:03:08.333002789Z", "last": "2026-11-14T05:03:08.377044679Z", "process": "containerd", "rule": "Drop and execute new binary in container"}
+{"class": "node", "count": 1, "first": "2026-11-14T05:03:08.405151434Z", "last": "2026-11-14T05:03:08.405151434Z", "process": "containerd-shim", "rule": "Drop and execute new binary in container"}
+{"class": "node", "count": 10, "first": "2026-11-14T05:03:12.325886394Z", "last": "2026-11-14T05:03:13.129830525Z", "process": "ctr", "rule": "Drop and execute new binary in container"}
+{"class": "node", "count": 6, "first": "2026-11-14T05:03:07.155737572Z", "last": "2026-11-14T05:03:10.358604869Z", "process": "exe", "rule": "Drop and execute new binary in container"}
+{"class": "node", "count": 7, "first": "2026-11-14T05:03:39.483531305Z", "last": "2026-11-14T05:03:39.732690056Z", "process": "find", "rule": "Drop and execute new binary in container"}
+{"class": "node", "count": 14, "first": "2026-11-14T05:03:16.104713764Z", "last": "2026-11-14T05:03:38.467896993Z", "process": "host-local", "rule": "Drop and execute new binary in container"}
+{"class": "node", "count": 2, "first": "2026-11-14T05:03:07.090850506Z", "last": "2026-11-14T05:03:07.134737358Z", "process": "k3s-server", "rule": "Drop and execute new binary in container"}
+{"class": "node", "count": 16, "first": "2026-11-14T05:03:07.970039528Z", "last": "2026-11-14T05:03:13.705166243Z", "process": "kubectl", "rule": "Drop and execute new binary in container"}
+{"class": "node", "count": 14, "first": "2026-11-14T05:03:16.101289636Z", "last": "2026-11-14T05:03:38.441887607Z", "process": "loopback", "rule": "Drop and execute new binary in container"}
+{"class": "node", "count": 6, "first": "2026-11-14T05:03:08.323912455Z", "last": "2026-11-14T05:03:08.325121823Z", "process": "modprobe", "rule": "Drop and execute new binary in container"}
+{"class": "node", "count": 1, "first": "2026-11-14T05:03:08.408178833Z", "last": "2026-11-14T05:03:08.408178833Z", "process": "runc", "rule": "Drop and execute new binary in container"}
+{"class": "node", "count": 1, "first": "2026-11-14T05:03:10.336750875Z", "last": "2026-11-14T05:03:10.336750875Z", "process": "umount", "rule": "Drop and execute new binary in container"}
+{"class": "node", "count": 2, "first": "2026-11-14T05:03:12.474480546Z", "last": "2026-11-14T05:03:16.120513358Z", "process": "unpigz", "rule": "Drop and execute new binary in container"}
+{"class": "sandbox", "count": 1, "first": "2026-11-14T05:03:03.531633465Z", "last": "2026-11-14T05:03:03.531633465Z", "process": "warden-probe", "rule": "PTRACE anti-debug attempt"}
+{"class": "platform", "count": 1575, "first": "2026-11-14T05:03:16.176370828Z", "last": "2026-11-14T05:03:36.963093105Z", "process": "gvisor_sentry", "rule": "PTRACE attached to process"}

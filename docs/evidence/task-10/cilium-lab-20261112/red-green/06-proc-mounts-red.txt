@@ -1,0 +1,118 @@
+# 2026-11-12T23:32:10-08:00 head dea027e; git status --short:
+ M scripts/test_k3s_gvisor_lab.py
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run1-1945/
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/06-proc-mounts-red.txt
+?? scripts/test_cilium_proc_mounts.py
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -v -s scripts -t scripts -p test_cilium_proc_mounts.py
+test_a_chart_without_the_agents_kernel_mount_is_refused (test_cilium_proc_mounts.ReadOnlyProcMountsTest.test_a_chart_without_the_agents_kernel_mount_is_refused) ... 
+  test_a_chart_without_the_agents_kernel_mount_is_refused (test_cilium_proc_mounts.ReadOnlyProcMountsTest.test_a_chart_without_the_agents_kernel_mount_is_refused) (items=1) ... FAIL
+  test_a_chart_without_the_agents_kernel_mount_is_refused (test_cilium_proc_mounts.ReadOnlyProcMountsTest.test_a_chart_without_the_agents_kernel_mount_is_refused) (items=0) ... FAIL
+test_any_workload_and_any_path_under_proc (test_cilium_proc_mounts.ReadOnlyProcMountsTest.test_any_workload_and_any_path_under_proc) ... FAIL
+test_input_that_is_not_a_list_is_refused (test_cilium_proc_mounts.ReadOnlyProcMountsTest.test_input_that_is_not_a_list_is_refused) ... ok
+test_the_agents_proc_mounts_become_read_only_except_net (test_cilium_proc_mounts.ReadOnlyProcMountsTest.test_the_agents_proc_mounts_become_read_only_except_net) ... FAIL
+
+======================================================================
+FAIL: test_a_chart_without_the_agents_kernel_mount_is_refused (test_cilium_proc_mounts.ReadOnlyProcMountsTest.test_a_chart_without_the_agents_kernel_mount_is_refused) (items=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_cilium_proc_mounts.py", line 101, in test_a_chart_without_the_agents_kernel_mount_is_refused
+    self.assertIn('/proc/sys/kernel', r.stderr)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '/proc/sys/kernel' not found in "/usr/bin/python3: can't open file '/home/postedism/Desktop/Warden-next/runtimes/gvisor/lab/cilium/readonly_proc_mounts.py': [Errno 2] No such file or directory\n"
+
+======================================================================
+FAIL: test_a_chart_without_the_agents_kernel_mount_is_refused (test_cilium_proc_mounts.ReadOnlyProcMountsTest.test_a_chart_without_the_agents_kernel_mount_is_refused) (items=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_cilium_proc_mounts.py", line 101, in test_a_chart_without_the_agents_kernel_mount_is_refused
+    self.assertIn('/proc/sys/kernel', r.stderr)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '/proc/sys/kernel' not found in "/usr/bin/python3: can't open file '/home/postedism/Desktop/Warden-next/runtimes/gvisor/lab/cilium/readonly_proc_mounts.py': [Errno 2] No such file or directory\n"
+
+======================================================================
+FAIL: test_any_workload_and_any_path_under_proc (test_cilium_proc_mounts.ReadOnlyProcMountsTest.test_any_workload_and_any_path_under_proc)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_cilium_proc_mounts.py", line 83, in test_any_workload_and_any_path_under_proc
+    self.assertEqual(r.returncode, 0, r.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : /usr/bin/python3: can't open file '/home/postedism/Desktop/Warden-next/runtimes/gvisor/lab/cilium/readonly_proc_mounts.py': [Errno 2] No such file or directory
+
+
+======================================================================
+FAIL: test_the_agents_proc_mounts_become_read_only_except_net (test_cilium_proc_mounts.ReadOnlyProcMountsTest.test_the_agents_proc_mounts_become_read_only_except_net)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_cilium_proc_mounts.py", line 60, in test_the_agents_proc_mounts_become_read_only_except_net
+    self.assertEqual(r.returncode, 0, r.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : /usr/bin/python3: can't open file '/home/postedism/Desktop/Warden-next/runtimes/gvisor/lab/cilium/readonly_proc_mounts.py': [Errno 2] No such file or directory
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.037s
+
+FAILED (failures=4)
+exit 1
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -v -s scripts -t scripts -p test_k3s_gvisor_lab.py
+test_a_sysctl_change_fails_in_both_modes (test_k3s_gvisor_lab.GVisorLabScriptTest.test_a_sysctl_change_fails_in_both_modes) ... ok
+test_bridge_run_fails_when_the_modules_change (test_k3s_gvisor_lab.GVisorLabScriptTest.test_bridge_run_fails_when_the_modules_change) ... ok
+test_cilium_agent_gets_the_nodes_proc_read_only (test_k3s_gvisor_lab.GVisorLabScriptTest.test_cilium_agent_gets_the_nodes_proc_read_only) ... FAIL
+test_cilium_run_reports_the_modules_it_added_and_passes (test_k3s_gvisor_lab.GVisorLabScriptTest.test_cilium_run_reports_the_modules_it_added_and_passes) ... ok
+test_cpuset_pins_every_container_the_lab_creates (test_k3s_gvisor_lab.GVisorLabScriptTest.test_cpuset_pins_every_container_the_lab_creates) ... ok
+test_down_leaves_a_container_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_leaves_a_container_that_is_not_wardens) ... ok
+test_down_leaves_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_leaves_a_network_that_is_not_wardens) ... ok
+test_down_removes_the_warden_lab (test_k3s_gvisor_lab.GVisorLabScriptTest.test_down_removes_the_warden_lab) ... ok
+test_module_lists_sort_bytewise_whatever_the_locale (test_k3s_gvisor_lab.GVisorLabScriptTest.test_module_lists_sort_bytewise_whatever_the_locale) ... ok
+test_run_cilium_tears_down_everything_it_created (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_cilium_tears_down_everything_it_created) ... ok
+test_run_fails_when_its_teardown_fails (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_fails_when_its_teardown_fails) ... ok
+test_run_keeps_the_commands_exit_status (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_keeps_the_commands_exit_status) ... ok
+test_run_leaves_a_lab_that_was_already_up (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_leaves_a_lab_that_was_already_up) ... ok
+test_run_leaves_a_node_someone_else_created_first (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_leaves_a_node_someone_else_created_first) ... ok
+test_run_leaves_a_warden_network_it_did_not_create (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_leaves_a_warden_network_it_did_not_create) ... ok
+test_run_tears_down_the_lab_it_created (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_tears_down_the_lab_it_created) ... ok
+test_run_tears_down_what_it_created_when_up_fails (test_k3s_gvisor_lab.GVisorLabScriptTest.test_run_tears_down_what_it_created_when_up_fails) ... ok
+test_up_cilium_builds_the_world_and_the_node (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_cilium_builds_the_world_and_the_node) ... ok
+test_up_cilium_does_not_pull_the_world_image (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_cilium_does_not_pull_the_world_image) ... ok
+test_up_cilium_fails_as_soon_as_a_sysctl_changed (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_cilium_fails_as_soon_as_a_sysctl_changed) ... FAIL
+test_up_cilium_fails_when_the_agent_can_write_kernel_sysctls (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_cilium_fails_when_the_agent_can_write_kernel_sysctls) ... FAIL
+test_up_cilium_leaves_a_standin_name_that_exists (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_cilium_leaves_a_standin_name_that_exists) ... ok
+test_up_refuses_a_network_that_is_not_wardens (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_refuses_a_network_that_is_not_wardens) ... ok
+test_up_rejects_an_unknown_option (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_rejects_an_unknown_option) ... ok
+test_world_network_skips_a_subnet_another_network_uses (test_k3s_gvisor_lab.GVisorLabScriptTest.test_world_network_skips_a_subnet_another_network_uses) ... ok
+
+======================================================================
+FAIL: test_cilium_agent_gets_the_nodes_proc_read_only (test_k3s_gvisor_lab.GVisorLabScriptTest.test_cilium_agent_gets_the_nodes_proc_read_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_k3s_gvisor_lab.py", line 552, in test_cilium_agent_gets_the_nodes_proc_read_only
+    self.assertEqual(self.applied_agent(), {
+                     ~~~~~~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden-next/scripts/test_k3s_gvisor_lab.py", line 544, in applied_agent
+    self.fail('no cilium DaemonSet was applied')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: no cilium DaemonSet was applied
+
+======================================================================
+FAIL: test_up_cilium_fails_as_soon_as_a_sysctl_changed (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_cilium_fails_as_soon_as_a_sysctl_changed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_k3s_gvisor_lab.py", line 570, in test_up_cilium_fails_as_soon_as_a_sysctl_changed
+    self.assertNotEqual(r.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_up_cilium_fails_when_the_agent_can_write_kernel_sysctls (test_k3s_gvisor_lab.GVisorLabScriptTest.test_up_cilium_fails_when_the_agent_can_write_kernel_sysctls)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_k3s_gvisor_lab.py", line 560, in test_up_cilium_fails_when_the_agent_can_write_kernel_sysctls
+    self.assertNotEqual(r.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 25 tests in 16.893s
+
+FAILED (failures=3)
+exit 1

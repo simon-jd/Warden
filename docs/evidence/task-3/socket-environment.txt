@@ -1,0 +1,9 @@
+Observed read-only diagnostics, 2026-10-24 UTC:
+Sandbox: uid=1000; TMPDIR unset; Python default tempdir /tmp.
+stat /tmp: UID65534 mode1777; /home: UID65534 mode755.
+Outside UID remapping: uid=1000; TMPDIR unset.
+stat /tmp: UID0 mode1777; /home: UID0 mode755; /home/postedism: UID1000 mode750; project: UID1000 mode755.
+
+Initial full-suite socket failure: untrusted socket directory owner.
+Focused ordinary-UID execution outside remapping, including the rebuilt standalone binary: socket ancestor writable by untrusted group/other.
+The validator permits root-owned sticky /tmp. Its error does not identify the failing component; the ephemeral test directories were already removed. The second failure is unlocalized. No directory permissions, validator checks, host services, or shared resources were changed. No more retries were made.

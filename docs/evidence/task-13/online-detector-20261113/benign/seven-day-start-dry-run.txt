@@ -1,0 +1,16 @@
+taskset -c 0-7,16-31 python3 -I -B detect/falco/detector.py seven-day-start --dry-run
+dry run: nothing started. The real start needs CONFIRM=seven-day (make) or --confirm seven-day, and no DRY_RUN.
+would run: /usr/bin/taskset -c 0-7,16-31 /home/postedism/Desktop/Warden-detect/scripts/build-runtime-lab.sh
+would run: /usr/bin/chmod go-w /home/postedism/Desktop/Warden-detect /home/postedism/Desktop/Warden-detect/.cache /home/postedism/Desktop/Warden-detect/.cache/warden-lab /home/postedism/Desktop/Warden-detect/scripts /home/postedism/Desktop/Warden-detect/scripts/runtime_lab_docker.py /home/postedism/Desktop/Warden-detect/scripts/runtime_lab_docker_init.py /home/postedism/Desktop/Warden-detect/scripts/runtime_lab_runner.py /home/postedism/Desktop/Warden-detect/scripts/runtime_lab_paths.py
+would run: detector.py up (host instance only)
+would wait for the first counting metrics snapshot and flush a heartbeat: the window starts there
+would run: systemd-run --user --unit warden-detect-benign --collect --on-active=120 --on-unit-active=3600 --timer-property=AccuracySec=1s --property=RuntimeMaxSec=3000 --property=KillSignal=SIGTERM --property=TimeoutStopSec=300 -- /usr/bin/taskset -c 0-7,16-31 /usr/bin/python3 -I -B /home/postedism/Desktop/Warden-detect/detect/falco/benign.py --session <session>
+would run: systemd-run --user --unit warden-detect-seven-day-stop --collect --on-active=605700 --timer-property=AccuracySec=1s -- /usr/bin/taskset -c 0-7,16-31 /usr/bin/python3 -I -B /home/postedism/Desktop/Warden-detect/detect/falco/detector.py seven-day-stop
+taskset -c 0-7,16-31 python3 -I -B detect/falco/detector.py seven-day-start --dry-run
+dry run: nothing started. The real start needs CONFIRM=seven-day (make) or --confirm seven-day, and no DRY_RUN.
+would run: /usr/bin/taskset -c 0-7,16-31 /home/postedism/Desktop/Warden-detect/scripts/build-runtime-lab.sh
+would run: /usr/bin/chmod go-w /home/postedism/Desktop/Warden-detect /home/postedism/Desktop/Warden-detect/.cache /home/postedism/Desktop/Warden-detect/.cache/warden-lab /home/postedism/Desktop/Warden-detect/scripts /home/postedism/Desktop/Warden-detect/scripts/runtime_lab_docker.py /home/postedism/Desktop/Warden-detect/scripts/runtime_lab_docker_init.py /home/postedism/Desktop/Warden-detect/scripts/runtime_lab_runner.py /home/postedism/Desktop/Warden-detect/scripts/runtime_lab_paths.py
+would run: detector.py up (host instance only)
+would wait for the first counting metrics snapshot and flush a heartbeat: the window starts there
+would run: systemd-run --user --unit warden-detect-benign --collect --on-active=120 --on-unit-active=3600 --timer-property=AccuracySec=1s --property=RuntimeMaxSec=3000 --property=KillSignal=SIGTERM --property=TimeoutStopSec=300 -- /usr/bin/taskset -c 0-7,16-31 /usr/bin/python3 -I -B /home/postedism/Desktop/Warden-detect/detect/falco/benign.py --session <session>
+would run: systemd-run --user --unit warden-detect-seven-day-stop --collect --on-active=605700 --timer-property=AccuracySec=1s -- /usr/bin/taskset -c 0-7,16-31 /usr/bin/python3 -I -B /home/postedism/Desktop/Warden-detect/detect/falco/detector.py seven-day-stop

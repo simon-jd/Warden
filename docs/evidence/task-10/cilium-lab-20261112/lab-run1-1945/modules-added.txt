@@ -1,0 +1,15 @@
+cls_bpf
+nf_reject_ipv4
+nf_reject_ipv6
+nf_socket_ipv4
+nf_socket_ipv6
+nf_tables
+nf_tproxy_ipv4
+nf_tproxy_ipv6
+sch_ingress
+snd_soc_hda_codec
+usb_storage
+x_tables
+xt_CT
+xt_MASQUERADE
+xt_TPROXY

@@ -1,0 +1,35 @@
+{
+  "source": "ba8cfaf6bffd7996f54bd50db9ccf453ff121022",
+  "tested_source": "ba8cfaf6bffd7996f54bd50db9ccf453ff121022",
+  "scope": "I9 minimal necessary nofollow enumeration amendment; native MaterialPolicyTests only; no actual execution or extra operation/boot",
+  "files": {
+    "README.md": {
+      "bytes": 6391,
+      "sha256": "e97a1fed05c5feac818d6cc8a8bbd5bfe066c3916fc0739d5ab697ec5a942a08"
+    },
+    "history-enumeration-green.log": {
+      "bytes": 709,
+      "sha256": "14420b0c378065e7eb2d318c0ce1c9a140b09ad44e62816d7d7343701485e8f4"
+    },
+    "history-enumeration-red.log": {
+      "bytes": 1686,
+      "sha256": "c7f987a4c07798af1c36a2a184f7a1c5b2ff4c0175c3b6bd6713003d312d858e"
+    },
+    "python-tests.log": {
+      "bytes": 2367,
+      "sha256": "3a2f96d3821c2b48219dacddbf6ea3ebb229add5313b6cf24428d4f1cff0398c"
+    },
+    "source-verification.json": {
+      "bytes": 4932,
+      "sha256": "99a6d709734cf1748732773fa3ba21e997e77e53008b4acae09406131102b323"
+    },
+    "source-verification.log": {
+      "bytes": 272,
+      "sha256": "d8b4a2f0991a9d838a57b56072bd0f1fe3df3dfa712dca510d09ea17631f316d"
+    },
+    "verify-command.py": {
+      "bytes": 5304,
+      "sha256": "2cabb56bc499c01e87842cc0f8de7156c3a22cd71b7eceff8f7129a9c0b0a961"
+    }
+  }
+}

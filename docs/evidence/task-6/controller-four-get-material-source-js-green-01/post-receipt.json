@@ -1,0 +1,26 @@
+{
+  "code": {
+    "candidate": {
+      "bytes": 10842,
+      "path": "docs/evidence/task-6/controller-four-get-material-source-caller-candidate.js",
+      "sha256": "58095573ef0f31c78429d9dd5169ced6ea58c5c23f04526b651f73b1eb8b73b1"
+    },
+    "fixture": {
+      "bytes": 10578,
+      "path": "docs/evidence/task-6/controller-four-get-material-source-caller-fixture.js",
+      "sha256": "1ab75f32849d81f6bc545a4b9f562ff432b6f975605ad9093e398317b08342fb"
+    }
+  },
+  "controller_files": 2,
+  "elapsed_seconds": 0.010972443036735058,
+  "equal": true,
+  "limits": {
+    "address_bytes": 536870912,
+    "cpu_seconds": 30,
+    "file_bytes": 33554432,
+    "wall_seconds": 45
+  },
+  "phase": "post",
+  "source_files": 150,
+  "timing_scope": "metadata recorder only; JS isolate and interpreter startup not measured"
+}

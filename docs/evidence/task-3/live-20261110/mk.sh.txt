@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Worktree-only wrapper: Go's VCS stamping does not recognise a worktree's .git
+# file and picks up the empty ~/.git, so disable VCS stamping here.
+cd "$HOME/Desktop/Warden-task3" || exit 1
+r=$PWD; mkdir -p -m 700 "$r/.cache/t"
+exec make GOENV="env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS='-mod=readonly -buildvcs=false' GOCACHE=$r/.cache/go-build GOMODCACHE=$r/.cache/go-mod GOPATH=$r/.cache/go HOME=$r/.cache/home TMPDIR=$r/.cache/t" "$@"

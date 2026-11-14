@@ -1,0 +1,59 @@
+#!/bin/bash
+# INERT first semantic RED. Root FULLREAD/fresh UID1000 budget/memory first.
+# No installation, CLI/Docker/OpenSearch service, network or old tests.
+# Source stubs stay frozen; two intended assertion failures are required.
+set -eu
+run=/home/postedism/Desktop/Warden/.cache/task12-semantic-red-20261025-a
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 TMPDIR="$run/tmp" \
+ OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 \
+ /usr/bin/timeout --signal=TERM --kill-after=5s 55s /bin/bash -s "$run" <<'OUTER'
+set -eu
+run=$1
+test "$(/usr/bin/id -u)" = 1000
+test "$PWD" = /home/postedism/Desktop/Warden
+test ! -e "$run" && test ! -L "$run" || exit 1
+umask 077
+ulimit -c 0; ulimit -n 128; ulimit -v 1048576; ulimit -f 16384; ulimit -t 45
+/bin/mkdir -m 700 -- "$run"
+finish() {
+ rc=$?; trap - EXIT TERM INT
+ cleanup=0
+ if /bin/rm -rf -- "$run/tmp" && test ! -e "$run/tmp"; then cleanup=1; else rc=2; fi
+ printf 'exit=%s\ntest_rc=%s\nhead_rc=%s\ncleanup=%s\n' "$rc" "${test_rc:-unknown}" "${head_rc:-unknown}" "$cleanup" > "$run/status.txt"
+ exit "$rc"
+}
+trap finish EXIT
+trap 'exit 124' TERM
+trap 'exit 130' INT
+/bin/mkdir -m 700 -- "$run/tmp"
+set +e
+/usr/bin/timeout --foreground --signal=TERM --kill-after=5s 45s \
+ /usr/bin/python3 -I -B - 2>&1 <<'PY' | /usr/bin/head -c 1048576 > "$run/output.txt"
+import json, sys, unittest
+from pathlib import Path
+site=Path(".cache/task12-material-20261025-a/site").resolve(strict=True)
+sys.path[:0]=[str(site),str(Path.cwd())]
+from detect.sigma.test_contract import AdapterRedTest
+from detect.report.test_coverage import CoverageRedTest
+suite=unittest.TestSuite([
+ AdapterRedTest("test_returns_backend_reference"),
+ CoverageRedTest("test_reports_tagged_and_unassigned_rules"),
+])
+result=unittest.TextTestRunner(verbosity=2).run(suite)
+summary={"tests_run":result.testsRun,"assertion_failures":len(result.failures),
+         "errors":len(result.errors),"skips":len(result.skipped),
+         "unexpected_successes":len(result.unexpectedSuccesses)}
+print(json.dumps(summary,sort_keys=True),flush=True)
+semantic=(result.testsRun==2 and len(result.failures)==2 and not result.errors
+          and not result.skipped and not result.unexpectedSuccesses)
+sys.exit(1 if semantic else 2)
+PY
+codes=("${PIPESTATUS[@]}")
+set -e
+test_rc=${codes[0]}; head_rc=${codes[1]}
+tmp_bytes=$(/usr/bin/du -s -B1 -- "$run/tmp"); tmp_bytes=${tmp_bytes%%[[:space:]]*}
+printf 'tmp_bytes=%s\n' "$tmp_bytes" > "$run/postflight.txt"
+test "$head_rc" -eq 0 && test "$tmp_bytes" -le 16777216 || exit 2
+test "$(/usr/bin/stat -c %s -- "$run/output.txt")" -lt 1048576 || exit 2
+exit "$test_rc"
+OUTER

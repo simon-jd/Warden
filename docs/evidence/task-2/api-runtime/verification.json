@@ -1,0 +1,107 @@
+{
+  "implementation_sha": "09eed7b622bc70081eb751ea42dd0c81bd5c1395",
+  "base_sha": "c3f182386186d52bc8589c706843128ebd398e2c",
+  "created_utc": "2026-10-24T05:23:21.947876+00:00",
+  "status": "code_phase_only_live_not_executed",
+  "source_only_diff_exit": 0,
+  "checks": [
+    {
+      "command": "scripts/build-runtime-lab.sh",
+      "exit": 0
+    },
+    {
+      "command": "python3 -B -m unittest discover -s scripts -p 'test_runtime_lab*.py'",
+      "exit": 0,
+      "tests_passed": 41
+    },
+    {
+      "command": "scripts/go.sh test -race ./runtimes/gate ./runtimes/runc ./controlplane/internal/apilab -count=1 -v",
+      "exit": 0,
+      "top_level_pass": 38,
+      "live_skips": 8,
+      "race_reports": 0
+    },
+    {
+      "command": "scripts/go.sh vet ./controlplane/... ./runtimes/...",
+      "exit": 0
+    },
+    {
+      "command": "python3 -B scripts/runtime_lab_docker.py api-code --other-service-memory-bytes 0",
+      "exit": 0,
+      "top_level_pass": 26,
+      "skips": 0,
+      "runtime": "external-boundary doubles; real PG"
+    },
+    {
+      "command": "python3 -B scripts/runtime_lab_docker.py api-smoke --other-service-memory-bytes 0",
+      "exit": 0,
+      "api_live_skip": 1
+    },
+    {
+      "command": "python3 -B scripts/runtime_lab_docker.py api --other-service-memory-bytes 0",
+      "exit": 2,
+      "expected": "missing independent-review acknowledgement; no live executed"
+    },
+    {
+      "command": "ordinary-user exact resource postflight and budget preflight",
+      "exit": 0
+    }
+  ],
+  "source_sha256": {
+    "controlplane/internal/apilab/api_runtime_test.go": "7f260d5fb692550cd127a90ad8e7e6cf1043164aeb6038977479fc8a385578ef",
+    "controlplane/internal/runs/execution.go": "c51f603ae01bbdc29d2166f1bdde235b8a566a076545cd49f2775939f65298b7",
+    "controlplane/internal/runs/execution_test.go": "e5978ff4cb212282e8258ce30bef22232d3ad4933bc4b5ce48d18995f67ef002",
+    "controlplane/internal/scheduler/scheduler.go": "7da31a4beb0f05440fa8a29e1aefbedbccb65a24bc35652c5b3b03dbf07727f9",
+    "runtimes/gate/gate.go": "3f90f5d567375aae3f766b8c2a35c194a2ac59e53c26670f9cb9aee5b1d646d5",
+    "runtimes/gate/retirement.go": "962cfa63ac1f252e95375c63d076f079abc6ddf0a851b6b61f5b76f55b9c428f",
+    "runtimes/gate/retirement_kernel_test.go": "45cd8b00b5c8396438588ba3aef3cc5bc1406dac08bc451f0374e190200aa7bf",
+    "runtimes/gate/retirement_test.go": "5552937b58df947fe85710f88b8afe233425dfc491e8ade5d78fd051a3493516",
+    "runtimes/runc/driver.go": "03553fcef14b58060129d3a16ae5ee012df9777699664ad289fffd232efe86f4",
+    "scripts/build-runtime-lab.sh": "c8e1f203a4b756f9f57b766a6e330aa5ca665f3d57f76e90e2aed8fe2df90909",
+    "scripts/runtime_lab_api.py": "d31a908639e8f683cd7f8164983632449c4f0ae2910b4916af3e966e0b45df03",
+    "scripts/runtime_lab_docker.py": "18be958d740430662c8cd17067625f7528bcb32ddb52349e1147b83b123137b3",
+    "scripts/runtime_lab_docker_init.py": "276663d6578ff4fd8ebf817e5279c2435de087b2082ee2514bee5ef4901b896c",
+    "scripts/runtime_lab_paths.py": "0ce3287feab8197839cf2e7e1cf297fd5cad0e740069023b188e4c366b643f84",
+    "scripts/runtime_lab_runner.py": "e45e9f9ef18c6e95562d6b4f670ae718c9e10f14b91727fcd46b0a6298cdacbc",
+    "scripts/test_runtime_lab_api.py": "366816d0acb7b64073ad10bd204201568d5bdea38a753efc68a04c5285d47d45",
+    "scripts/test_runtime_lab_cleanup.py": "b613b0b7e905f73e02e201ab024dc8291ff9cdf9445360772a1ba3447ddffd8e"
+  },
+  "evidence_sha256": {
+    "README.md": "13b692222362971b8f6da9aefb1f2f9e8f456c63f57d9e242ad9daf466ad284c",
+    "build.txt": "8e939f02515b884d78de75c9c607ef36a4d7153d3bf8f7984eefc9f1bc808ec5",
+    "code-charge.json": "25fd7efe8d33b031a647c5b8f6e95a1afed520d11292dd9b08b6aff2d41af8e1",
+    "code-final.txt": "c10c14425f4237dee07b44a79ed0e63afc20325e70bb64a62e14448de8a5d029",
+    "code-identity.json": "637f5ca1b75f68e7bd4283166f67d9365d1842fa3bc40386356acb123bae62b8",
+    "code-manifest.json": "f779e37304caf704af2c27626f1eb0c818e8e1c62f2bf8bcdfd9096774ba37ee",
+    "compiler.txt": "4e0b213cba780f63b02f3ab9001ee61e4101d254e0af1a8205574c19dad0f93b",
+    "gate-final.txt": "a5410aa1739342fc4855cd5fe5c58e093b5fc531c1c69de4bb37dc583fbfef2d",
+    "go-focused.txt": "9fae586ddf5aaf8713a7d90916086e34c643a6e9d6d83eb1e27237f23b45f146",
+    "green-disk-proof.txt": "018b11e2f9146d62c304817c7c819f06fe252dad37748258b1d6c8912cb2a71d",
+    "green-pidfd.txt": "c7325e77d619120e1a3ce924f3af1179eb144ca356b70b24904c4d09af809210",
+    "green-reconciliation.txt": "4a691383200e83fbf9d3293547567ef487e97491fd3ce3f5ba15089f03a1ef65",
+    "green-retirement.txt": "6728934b518e22275ca09722c35e86a2482711ed8b9b7742e946c8da956d7778",
+    "green-topology.txt": "0e4bd6794dc7b62f8e4b0cb567dab93c5d25c8afdb6853db6c33479264a02a24",
+    "live-refused.txt": "84e50832a0b0e68196cc4d2b310dddce08c3a2e7fde08eec82b2d966e1e62684",
+    "postflight-budget.txt": "ddae4f0abbfece6b572519cd5154408c8fd06b87f1209cb69d08145759ab5f41",
+    "postflight.json": "09174c4c1c18934b4ea4dc368717a83887ecce8307e552a244abc2645ffed7ac",
+    "python-tests.txt": "e59d2ec2b1efaf07a01ff7874c398cb38f74413346236936059a39c5cc4065c3",
+    "red-ambiguity-label.txt": "631d7be28b9b8286e9d5ff65c00d250bbb0f22036b439c416e1358d4bce0b10b",
+    "red-capless-tmp.txt": "ae057e8592118cbe1cb40e23a3f265d33185a01a781215a0793695a77c91f614",
+    "red-disk-proof.txt": "3cdda6a5e58518e7232b49a01fc1351e77f9442518f93072a847e52260e53605",
+    "red-gate-evidence.txt": "4e4e9329b268b49643cbccf579200ceaf91ab21c175ae9ac328788b551044950",
+    "red-pidfd.txt": "bc3bff7c3e5e6f63b7c9d37044a1d9caecf9edeec5ef84272a0c152419d4c084",
+    "red-reaped-interface.txt": "219c503b99b9230bc9c741cbe452bc6a235e9aed4a7bc103063b981e5701951e",
+    "red-reconciliation-interface.txt": "531388647c5b58e563dc847e701fee1892acbd7e71e3a789e3af9e0fd70c954e",
+    "red-reconciliation.txt": "a8cd5e49311ef7f4c314389bfb275b146fc27ba3d83e09faf05938a8b16d7acf",
+    "red-retirement-disk.txt": "76ae6d8321e2c2fdabce6a701fcdaf97f08ee1dd1322bab91f952abe43d56fbb",
+    "red-retirement-interface.txt": "2665d22c940edeb940620c5f0447a496eea3a9b9e781e27afb85d6c92b20d8e9",
+    "red-retirement.txt": "43946f25e97bf02a51182ba9f3d20ab0d80df458216739de3a2fe75ba1641638",
+    "red-topology.txt": "0cb66cf1cf8010d33bbebc02642932ab494900b9e8c9cbc5e57fa4fe1a6e24fa",
+    "report.md": "64d5d2ca953d4b7db1b0c830c6de5ce9b5c82cce4a70587e4cd569f725d5cf32",
+    "smoke-charge.json": "c5ced6d249cdcfd88a9e175300cea5330af501c2e78a99298e9df52ddd8bfd27",
+    "smoke-final.txt": "ce659debaa051d09008d850eedd726c51b755dcfb55e1ac04d5a651d6ec7a1f5",
+    "smoke-identity.json": "3d504947495a6316b5d4d4d74eeb436e216a792f64ab970a52a43b3aab9e96cc",
+    "smoke-manifest.json": "f779e37304caf704af2c27626f1eb0c818e8e1c62f2bf8bcdfd9096774ba37ee",
+    "vet.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

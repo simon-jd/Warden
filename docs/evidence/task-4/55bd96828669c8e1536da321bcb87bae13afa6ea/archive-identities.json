@@ -1,0 +1,92 @@
+{
+  "source": "55bd96828669c8e1536da321bcb87bae13afa6ea",
+  "session": "docker-firecracker-d723f7159ba7af3196d4d478e18047a0",
+  "archive_format": "Docker image load/save tar, manifest.json is a JSON array index; not an OCI image manifest",
+  "files": {
+    "probe.tar": {
+      "size": 2928640,
+      "sha256": "f68f97f940eb85d8016e1d8412ce05197f42c1840699062d559c7bc5af1e07a5"
+    },
+    "saved-probe.tar": {
+      "size": 2926080,
+      "sha256": "20b385bf82fa1c19f444db38236ae62d1e20f87e5553f43856a3c76e6b995920"
+    },
+    "probe-oci-manifest.json": {
+      "size": 400,
+      "sha256": "06465162372c10087cca5570018d24fb6017906c7b8d167b1840972ec891d207"
+    },
+    "export.tar": {
+      "size": 2918400,
+      "sha256": "bf08594b0cacc178bd79551b8d3d46c1893342787f249a898aec445f17487be6"
+    },
+    "export-provenance.json": {
+      "size": 895,
+      "sha256": "f016175f431d3ac1064172cffda1956cbb17ade852f0a7c69702d6534bccd0c5"
+    },
+    "charge.json": {
+      "size": 63,
+      "sha256": "25fd7efe8d33b031a647c5b8f6e95a1afed520d11292dd9b08b6aff2d41af8e1"
+    }
+  },
+  "archive_manifest_index": [
+    {
+      "Config": "dd35cef8155eb9dcdc82dcc125e3c77d9be5efc708bf479aa64f678cb4437a20.json",
+      "Layers": [
+        "layer.tar"
+      ],
+      "RepoTags": [
+        "warden-fc-probe:d723f7159ba7af3196d4d478e18047a0"
+      ]
+    }
+  ],
+  "config_bytes_sha256": "dd35cef8155eb9dcdc82dcc125e3c77d9be5efc708bf479aa64f678cb4437a20",
+  "config": {
+    "architecture": "amd64",
+    "config": {
+      "Entrypoint": [
+        "/warden-probe"
+      ],
+      "Labels": {
+        "owner": "codex-warden",
+        "project": "warden",
+        "session": "d723f7159ba7af3196d4d478e18047a0",
+        "task": "firecracker",
+        "ttl": "2026-10-24T21:18:21.343854+00:00"
+      },
+      "User": "65534:65534"
+    },
+    "os": "linux",
+    "rootfs": {
+      "diff_ids": [
+        "sha256:8dd8a0170bee88a6c6ef0f668c0cd86ad4e953d4b61d627585370043a854a4d8"
+      ],
+      "type": "layers"
+    }
+  },
+  "source_oci_manifest": {
+    "config": {
+      "digest": "sha256:dd35cef8155eb9dcdc82dcc125e3c77d9be5efc708bf479aa64f678cb4437a20",
+      "mediaType": "application/vnd.oci.image.config.v1+json",
+      "size": 374
+    },
+    "layers": [
+      {
+        "digest": "sha256:8dd8a0170bee88a6c6ef0f668c0cd86ad4e953d4b61d627585370043a854a4d8",
+        "mediaType": "application/vnd.oci.image.layer.v1.tar",
+        "size": 2918400
+      }
+    ],
+    "mediaType": "application/vnd.oci.image.manifest.v1+json",
+    "schemaVersion": 2
+  },
+  "docker_descriptor": {
+    "annotations": {
+      "io.containerd.image.name": "docker.io/library/warden-fc-probe:d723f7159ba7af3196d4d478e18047a0",
+      "org.opencontainers.image.ref.name": "d723f7159ba7af3196d4d478e18047a0"
+    },
+    "digest": "sha256:b6876b2d508a122b8085ff56841054c02df5c3f55c65e83c30a6cde960ec1035",
+    "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
+    "size": 422
+  },
+  "descriptor_source": "Docker29.9.1 image inspect, separately recorded; saved config bytes and RootFS diffID verified, not treated as the config digest or source OCI manifest"
+}

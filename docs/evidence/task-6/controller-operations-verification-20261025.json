@@ -1,0 +1,611 @@
+{
+  "actual_gate": "Outer invoker/startup-envelope/tool integration and live owned-child/resource proof unimplemented/unverified; no actual admission.",
+  "artifacts_excluding_index": 85,
+  "at_utc": "2026-10-25T12:42:03.099293+00:00",
+  "canonical_new_source_bytes": 98685,
+  "diagnostic_note": "An earlier ad-hoc index summary used old files/sources field names and raised KeyError after printing; this verifier uses this stage artifacts/source_files schema. No test or artifact was regenerated.",
+  "dispatch_base": "86d8d1424f77113722a826b1e9cecda7da26d67b",
+  "evidence_bytes_including_index": 1060608,
+  "frozen_source_files": 149,
+  "head": "e9acbe412e699da32a0546de7e98527ba87eae83",
+  "limits": "Public/Git bytes and generated fixture records corroborated only; no tests, imported project modules, private cache bodies, host probes, Docker, Go or cloud operation.",
+  "review_view": {
+    "full_bytes": 1213116,
+    "full_path": ".superpowers/sdd/2-warden-security-plan/review-86d8d14..e9acbe4.diff",
+    "full_sha256": "724a9ca3a34c3541c59828069d52175c4bfde3cb9ae8a413dedc53d819bebf1e",
+    "omitted_exact_duplicate_bodies": [
+      {
+        "block_sha256": "38ffc01b3c9451952145a2d068a0965618e9bcef989e230b94f32a1e72145296",
+        "body_bytes": 4631,
+        "body_sha256": "229d8bf0a0da59ec33e69c63c31809169015b51e8585207ff5fb73d192ed1f85",
+        "identical_body_kept_at": "scripts/identity_cache_capture.py",
+        "path": "docs/evidence/task-6/controller-operations-cover-07/changed-source/scripts/identity_cache_capture.py"
+      },
+      {
+        "block_sha256": "5f7116b3cfb89468184c9644712df84c6d31db24b96b19d694c0ab4f3653737b",
+        "body_bytes": 7072,
+        "body_sha256": "155607da15266715699c323a5a822ffbb9bc18756e76b5341833be110e7de76a",
+        "identical_body_kept_at": "scripts/identity_cache_maintenance.py",
+        "path": "docs/evidence/task-6/controller-operations-cover-07/changed-source/scripts/identity_cache_maintenance.py"
+      },
+      {
+        "block_sha256": "a66f6a5d9b6dec2bf41aea694b5a81c8a7518d0bf68cfc1deac47233e5cd0cac",
+        "body_bytes": 41285,
+        "body_sha256": "4039c311d36a770a5eda41dd1b3128364d8b3931deaedffd92e01328ade6ac36",
+        "identical_body_kept_at": "scripts/identity_cache_observe.py",
+        "path": "docs/evidence/task-6/controller-operations-cover-07/changed-source/scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "c37c129c9e80d7392170f9d5be8e70007c9b476216d688b086f1615b18a37185",
+        "body_bytes": 45697,
+        "body_sha256": "63641c485f35faf0a7def839a969a5420cc38b14a0c5a084363d29faf05d0bcb",
+        "identical_body_kept_at": "scripts/test_identity_cache_control.py",
+        "path": "docs/evidence/task-6/controller-operations-cover-07/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "10eaea440fde9b0f95082b688bbd004202e65d2b771a0ae2989657d78666961f",
+        "body_bytes": 15892,
+        "body_sha256": "b2854560a57a8c157cbe2d5f2e0d07bb89704ea7509d1ba7110e132f0fd3beca",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-cover-07/post-source.json",
+        "path": "docs/evidence/task-6/controller-operations-cover-07/pre-source.json"
+      },
+      {
+        "block_sha256": "69f8995c330f0b4c4a87773094d2d49885bab111d71ee677e0ca777a702909a7",
+        "body_bytes": 15892,
+        "body_sha256": "c3ffd3b556d1e4436cf29df2c88d88e57710e8685e846ad23502a678ddb89d6b",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-fixture-02/post-source.json",
+        "path": "docs/evidence/task-6/controller-operations-fixture-02/pre-source.json"
+      },
+      {
+        "block_sha256": "e6795cc874ca7933b9b021cbab6ad60a440002a060d284ddaa2460126a5bc6e7",
+        "body_bytes": 3498,
+        "body_sha256": "ec3585f5e2ba40062126b6177a022f729a58043d6aa70b5ff6f10d358a9fb973",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-cover-07/run.py",
+        "path": "docs/evidence/task-6/controller-operations-fixture-02/run.py"
+      },
+      {
+        "block_sha256": "64f85860941bd5477ab8f50205b37587794c5eb8c1d6801e6c01544f621f5644",
+        "body_bytes": 15900,
+        "body_sha256": "1b880cdd85205e87460c1477fbac260366f700014378de7af7e2e6386eb4939f",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-fixture-02/baseline.json",
+        "path": "docs/evidence/task-6/controller-operations-fixture-04/baseline.json"
+      },
+      {
+        "block_sha256": "8fc7babf8ec55f864305730c8da9a31f011d3a5e7ecb44218280c909bdf385f7",
+        "body_bytes": 7016,
+        "body_sha256": "f6c916b8e5fbd6d4e75e5263dff0a469068621eaec0ad6d6ed7b4c432e1c212d",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-fixture-02/changed-source/scripts/identity_cache_maintenance.py",
+        "path": "docs/evidence/task-6/controller-operations-fixture-04/changed-source/scripts/identity_cache_maintenance.py"
+      },
+      {
+        "block_sha256": "3c520b9bfba5323f6e912e80d964cd738f7981e3d8790162793faff6b4c5770b",
+        "body_bytes": 15892,
+        "body_sha256": "ef69fdfc9285d0706985af39d95572800c9bba8ee03bccd6b1a12a9182887198",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-fixture-04/post-source.json",
+        "path": "docs/evidence/task-6/controller-operations-fixture-04/pre-source.json"
+      },
+      {
+        "block_sha256": "edc6a1e34251cab6074be5ff82df51188085f60eef382ae52d18a1dcaebcf085",
+        "body_bytes": 3498,
+        "body_sha256": "ec3585f5e2ba40062126b6177a022f729a58043d6aa70b5ff6f10d358a9fb973",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-cover-07/run.py",
+        "path": "docs/evidence/task-6/controller-operations-fixture-04/run.py"
+      },
+      {
+        "block_sha256": "0a09d43443a80cb52416979cd2eeace6eb10c94f8bc17a3cc6f1253cd4f05432",
+        "body_bytes": 15900,
+        "body_sha256": "1b880cdd85205e87460c1477fbac260366f700014378de7af7e2e6386eb4939f",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-fixture-02/baseline.json",
+        "path": "docs/evidence/task-6/controller-operations-green-06/baseline.json"
+      },
+      {
+        "block_sha256": "8fae036fb0c3722b22f2b519c6b7e8b4f001e2628513bdadd195f03b4e184ce6",
+        "body_bytes": 4631,
+        "body_sha256": "229d8bf0a0da59ec33e69c63c31809169015b51e8585207ff5fb73d192ed1f85",
+        "identical_body_kept_at": "scripts/identity_cache_capture.py",
+        "path": "docs/evidence/task-6/controller-operations-green-06/changed-source/scripts/identity_cache_capture.py"
+      },
+      {
+        "block_sha256": "b0c8b46a773e801d5af1fa43c2023f873b56e8fd2521c6bc07d88d885ef24c6d",
+        "body_bytes": 7072,
+        "body_sha256": "155607da15266715699c323a5a822ffbb9bc18756e76b5341833be110e7de76a",
+        "identical_body_kept_at": "scripts/identity_cache_maintenance.py",
+        "path": "docs/evidence/task-6/controller-operations-green-06/changed-source/scripts/identity_cache_maintenance.py"
+      },
+      {
+        "block_sha256": "98f57ecfe5db3b4db78940fc417863462112853754427c66e67b4577b092cfa0",
+        "body_bytes": 41285,
+        "body_sha256": "4039c311d36a770a5eda41dd1b3128364d8b3931deaedffd92e01328ade6ac36",
+        "identical_body_kept_at": "scripts/identity_cache_observe.py",
+        "path": "docs/evidence/task-6/controller-operations-green-06/changed-source/scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "409bc8f2c66ac4d575653b33ac6666bef917b0284d850277d3f78b67fa1ea726",
+        "body_bytes": 45697,
+        "body_sha256": "63641c485f35faf0a7def839a969a5420cc38b14a0c5a084363d29faf05d0bcb",
+        "identical_body_kept_at": "scripts/test_identity_cache_control.py",
+        "path": "docs/evidence/task-6/controller-operations-green-06/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "68aa8b7bba9cf1048cba99b9121a5a6a93472a0724917b1fe41914c607c762f0",
+        "body_bytes": 15892,
+        "body_sha256": "b2854560a57a8c157cbe2d5f2e0d07bb89704ea7509d1ba7110e132f0fd3beca",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-cover-07/post-source.json",
+        "path": "docs/evidence/task-6/controller-operations-green-06/post-source.json"
+      },
+      {
+        "block_sha256": "ca9d8adad831bf6ca16beb9a168564723e4bdbda4bb32e659db963a8fde2968c",
+        "body_bytes": 15892,
+        "body_sha256": "b2854560a57a8c157cbe2d5f2e0d07bb89704ea7509d1ba7110e132f0fd3beca",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-cover-07/post-source.json",
+        "path": "docs/evidence/task-6/controller-operations-green-06/pre-source.json"
+      },
+      {
+        "block_sha256": "205e606d76f17d1ff966202741d8b79bc1c2bad78b380e417e4ead2b22cbee2a",
+        "body_bytes": 3498,
+        "body_sha256": "ec3585f5e2ba40062126b6177a022f729a58043d6aa70b5ff6f10d358a9fb973",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-cover-07/run.py",
+        "path": "docs/evidence/task-6/controller-operations-green-06/run.py"
+      },
+      {
+        "block_sha256": "ff8438227e3d2c983abbe6edad181088ccd24b7843e7ab7906664764d6db233a",
+        "body_bytes": 15900,
+        "body_sha256": "1b880cdd85205e87460c1477fbac260366f700014378de7af7e2e6386eb4939f",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-fixture-02/baseline.json",
+        "path": "docs/evidence/task-6/controller-operations-red-01/baseline.json"
+      },
+      {
+        "block_sha256": "3ad0130d99bbd2bdb766e472b3f90721b9c200382ac8eceb581e3be17ca23cfa",
+        "body_bytes": 15567,
+        "body_sha256": "e29968ded0baa3d3fbbe6f8226a2bd42eab72088d4e3d1c43c558913968d27db",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-red-01/post-source.json",
+        "path": "docs/evidence/task-6/controller-operations-red-01/pre-source.json"
+      },
+      {
+        "block_sha256": "914134b59010c0bd01d91d15e429579d8457720a0ec4d9a16810540ca56df390",
+        "body_bytes": 3498,
+        "body_sha256": "ec3585f5e2ba40062126b6177a022f729a58043d6aa70b5ff6f10d358a9fb973",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-cover-07/run.py",
+        "path": "docs/evidence/task-6/controller-operations-red-01/run.py"
+      },
+      {
+        "block_sha256": "cf1aa604f89c6089767a0c31cad56f417bcad5b7f868d17154c6bbc5cbdf886a",
+        "body_bytes": 15900,
+        "body_sha256": "1b880cdd85205e87460c1477fbac260366f700014378de7af7e2e6386eb4939f",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-fixture-02/baseline.json",
+        "path": "docs/evidence/task-6/controller-operations-red-03/baseline.json"
+      },
+      {
+        "block_sha256": "4def6d435cfe5ba9028e87bb7e515b3291c166233978a75196f00c61b78a5cd9",
+        "body_bytes": 4255,
+        "body_sha256": "3842121393df9f6a0b40a10c2cd947e070ad4a1bfb8844c9d95e9c0a40427009",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-fixture-02/changed-source/scripts/identity_cache_capture.py",
+        "path": "docs/evidence/task-6/controller-operations-red-03/changed-source/scripts/identity_cache_capture.py"
+      },
+      {
+        "block_sha256": "324c54e43d0b841d74a412bbe630edec28b34bf20278884cebc2a0321df5a6e6",
+        "body_bytes": 7016,
+        "body_sha256": "f6c916b8e5fbd6d4e75e5263dff0a469068621eaec0ad6d6ed7b4c432e1c212d",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-fixture-02/changed-source/scripts/identity_cache_maintenance.py",
+        "path": "docs/evidence/task-6/controller-operations-red-03/changed-source/scripts/identity_cache_maintenance.py"
+      },
+      {
+        "block_sha256": "8b9922ff69099a8c40147871dc7ddd3c8bdfd52a6a2a106e0298f304d67acf08",
+        "body_bytes": 38048,
+        "body_sha256": "76728d1ecdfdaafc48bdb4a4d5c39e9428c068452ccd8c47494e5bcddf860da2",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-fixture-02/changed-source/scripts/identity_cache_observe.py",
+        "path": "docs/evidence/task-6/controller-operations-red-03/changed-source/scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "532af388fd40746bd69d64d57e5ef667567e5f1775a095e98ce90df80d64e730",
+        "body_bytes": 15892,
+        "body_sha256": "a8719d45c3a4fe2403c1a9d64a4e2a9f4888f14227ffb597f4d557d9ffe1dabf",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-red-03/post-source.json",
+        "path": "docs/evidence/task-6/controller-operations-red-03/pre-source.json"
+      },
+      {
+        "block_sha256": "0ef665a9ea43df6f6e52c24b676eefcdc6b5eb9098345c7579b813967f502315",
+        "body_bytes": 3498,
+        "body_sha256": "ec3585f5e2ba40062126b6177a022f729a58043d6aa70b5ff6f10d358a9fb973",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-cover-07/run.py",
+        "path": "docs/evidence/task-6/controller-operations-red-03/run.py"
+      },
+      {
+        "block_sha256": "04db3e6a7628df092abda4f30e8b9071f0c4458dcf56d68fd3f25dea6bbe4f79",
+        "body_bytes": 15900,
+        "body_sha256": "1b880cdd85205e87460c1477fbac260366f700014378de7af7e2e6386eb4939f",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-fixture-02/baseline.json",
+        "path": "docs/evidence/task-6/controller-operations-red-05/baseline.json"
+      },
+      {
+        "block_sha256": "854779b5f61d0e05b4b7b4f49ac0ca6c3690708e18825b4895e4fc5a7b844d82",
+        "body_bytes": 4575,
+        "body_sha256": "5a9dfcf160b0e46a58ec23b7910e4af47126c79007c41addedb7782fb201c15b",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-fixture-04/changed-source/scripts/identity_cache_capture.py",
+        "path": "docs/evidence/task-6/controller-operations-red-05/changed-source/scripts/identity_cache_capture.py"
+      },
+      {
+        "block_sha256": "083a279221c922a2efd401261232c4a72d6994b5bc224ca03ecf970fb0b79b89",
+        "body_bytes": 7016,
+        "body_sha256": "f6c916b8e5fbd6d4e75e5263dff0a469068621eaec0ad6d6ed7b4c432e1c212d",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-fixture-02/changed-source/scripts/identity_cache_maintenance.py",
+        "path": "docs/evidence/task-6/controller-operations-red-05/changed-source/scripts/identity_cache_maintenance.py"
+      },
+      {
+        "block_sha256": "368b1ec84d546d75ea939709f396d995bdabf2bf23e2a686708efad30368a2be",
+        "body_bytes": 15892,
+        "body_sha256": "5465235e43e74bd297e292ab1e2da817078e0081e485b6e0441a01a0d6e6638b",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-red-05/post-source.json",
+        "path": "docs/evidence/task-6/controller-operations-red-05/pre-source.json"
+      },
+      {
+        "block_sha256": "080764c5067a5f79a0d847bb294227baa11ec066614a731a65fbbd752222a777",
+        "body_bytes": 3498,
+        "body_sha256": "ec3585f5e2ba40062126b6177a022f729a58043d6aa70b5ff6f10d358a9fb973",
+        "identical_body_kept_at": "docs/evidence/task-6/controller-operations-cover-07/run.py",
+        "path": "docs/evidence/task-6/controller-operations-red-05/run.py"
+      }
+    ],
+    "retained_blocks": [
+      {
+        "block_sha256": "c730f770d541e0787e83b9ddcad220dc5c0d9f7bb2a4b9df4fa9e3eb4810117d",
+        "path": "docs/evidence/task-6/continuation-controller-operations-execution-plan.md"
+      },
+      {
+        "block_sha256": "50c01f0970515d222ef7649069f60b8654b335bbe96aa3a23ca5e720e9f5ad8c",
+        "path": "docs/evidence/task-6/continuation-controller-operations-substage-report.md"
+      },
+      {
+        "block_sha256": "38903cd579192b12ca1defd7c9cd65c6923e18445f96ee911446a6dff2559fb7",
+        "path": "docs/evidence/task-6/controller-operations-artifact-sizes.json"
+      },
+      {
+        "block_sha256": "61f3ed2e3a3c9e77339a4dfb8970ff2c5a1d422debcdd5e3ac5b050d5306c991",
+        "path": "docs/evidence/task-6/controller-operations-cover-07/baseline.json"
+      },
+      {
+        "block_sha256": "0ba537d4490f33da87e82380ec454a1ed2f992bc1d32039256f4d1782d23f1d7",
+        "path": "docs/evidence/task-6/controller-operations-cover-07/commit-comparison.json"
+      },
+      {
+        "block_sha256": "490699b783c6e47fadfc2a9c8f7dfd4668a3382e6d97a3c1974b92fb0dc37d49",
+        "path": "docs/evidence/task-6/controller-operations-cover-07/intent.json"
+      },
+      {
+        "block_sha256": "a641f897375d1958c61cf5d5cc64a84a4b43db7ad4378c7d91da878a533510d4",
+        "path": "docs/evidence/task-6/controller-operations-cover-07/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "838833cdc18ae942a9edc6e3f44cb06359f8ca4dd1720f877216403bde2ec319",
+        "path": "docs/evidence/task-6/controller-operations-cover-07/output.txt"
+      },
+      {
+        "block_sha256": "f206472bd9e8771db7697e421e19b4c9dbdc5eba0686e6afb52ea044eda5a9d5",
+        "path": "docs/evidence/task-6/controller-operations-cover-07/post-source.json"
+      },
+      {
+        "block_sha256": "67028e8f813a4c196fad68bbb58b90ef383c330684c79fadde5586dadb0c0f6b",
+        "path": "docs/evidence/task-6/controller-operations-cover-07/receipt.json"
+      },
+      {
+        "block_sha256": "48d4809f3b155ad4f7345cda40a98b352a995ff352021835c92c1ac6e24da209",
+        "path": "docs/evidence/task-6/controller-operations-cover-07/run.py"
+      },
+      {
+        "block_sha256": "2886ef5546a939802a394b64c72bd3ecefe94356ad8677afd2cecf4769d45e26",
+        "path": "docs/evidence/task-6/controller-operations-fixture-02/baseline.json"
+      },
+      {
+        "block_sha256": "8202df13f27605f20e54015cb456abeaea03655077584e115b2e1fa0d63f9dc0",
+        "path": "docs/evidence/task-6/controller-operations-fixture-02/changed-source/scripts/identity_cache_capture.py"
+      },
+      {
+        "block_sha256": "a77dd11c4858ca2ddc8ce5104b556d9f4436626660df7ea654b7abfa193ce6a0",
+        "path": "docs/evidence/task-6/controller-operations-fixture-02/changed-source/scripts/identity_cache_maintenance.py"
+      },
+      {
+        "block_sha256": "d13c7281ed03ca00f7fa7c8b28c58d54154a436986ecd12e320e3e84240f0658",
+        "path": "docs/evidence/task-6/controller-operations-fixture-02/changed-source/scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "5fb0eca7999ae22cec517b7f85292f290fbe481cdf9e103c8c4bade6e745fa48",
+        "path": "docs/evidence/task-6/controller-operations-fixture-02/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "a70ea4b7f3bc55b29d05c53716e077151ca2e08046dd5fe808d6cfc3c24150fd",
+        "path": "docs/evidence/task-6/controller-operations-fixture-02/intent.json"
+      },
+      {
+        "block_sha256": "672795693cb4405aa113bb9d886251d1734a542f3e3062489e72a8aaf19c015e",
+        "path": "docs/evidence/task-6/controller-operations-fixture-02/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "87ae356a8ccfca8a0e68ddcac0e9ea0d766532cd64e43e690cd5990e457221b2",
+        "path": "docs/evidence/task-6/controller-operations-fixture-02/output.txt"
+      },
+      {
+        "block_sha256": "72b93ffff0dbda832b5c6caabba010e4fa5751facb6748bc60d10bdf438b76a6",
+        "path": "docs/evidence/task-6/controller-operations-fixture-02/post-source.json"
+      },
+      {
+        "block_sha256": "b72b961b2f9c41902be520c9abf7126153b57057a0cc4ada0f1bcfe656871441",
+        "path": "docs/evidence/task-6/controller-operations-fixture-02/receipt.json"
+      },
+      {
+        "block_sha256": "f81d6fd036d77bb7bc48dec42577d7bb8b0c585a0da30c0fe2a90ebcf2d69eb6",
+        "path": "docs/evidence/task-6/controller-operations-fixture-04/changed-source/scripts/identity_cache_capture.py"
+      },
+      {
+        "block_sha256": "8049779d34d5b5f970bc959fc031d8210e61e5596d5068c653a0fb05c38d848c",
+        "path": "docs/evidence/task-6/controller-operations-fixture-04/changed-source/scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "0dfb3cd8642362c46285bfa60cd5b65d78a9e94579e78099dd873a818ee616f5",
+        "path": "docs/evidence/task-6/controller-operations-fixture-04/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "c4c71e94e6d799d59d715170a647679f821e4b4a6cb54aff46c4bfcdfbea023d",
+        "path": "docs/evidence/task-6/controller-operations-fixture-04/intent.json"
+      },
+      {
+        "block_sha256": "b8db1a96ccd3d796c542d492c8e08d93f9f181352491aefeb17589bb4d9a9dbe",
+        "path": "docs/evidence/task-6/controller-operations-fixture-04/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "13be89c5718922b8760483b815d0c167351de4671076deb058213b1c294e8ec0",
+        "path": "docs/evidence/task-6/controller-operations-fixture-04/output.txt"
+      },
+      {
+        "block_sha256": "ec959198790e27a3134b4303e4ad16d6c17008596897171de60c8244fb207b50",
+        "path": "docs/evidence/task-6/controller-operations-fixture-04/post-source.json"
+      },
+      {
+        "block_sha256": "6235bc112761f23d894556d7de061c0f618e0f619bac86b6d01da0cf79b23fd3",
+        "path": "docs/evidence/task-6/controller-operations-fixture-04/receipt.json"
+      },
+      {
+        "block_sha256": "be9ee37994045a12a8cdb0dfa685db2cba5d57bf38ca53bc6013c9ae1f6da6ac",
+        "path": "docs/evidence/task-6/controller-operations-green-06/intent.json"
+      },
+      {
+        "block_sha256": "fae1b9a5821a318ef759b1e845b31263219f50133c159b87cf2362222f075fd1",
+        "path": "docs/evidence/task-6/controller-operations-green-06/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "8f150a3348af24d9eafd3beb44e38f41eca46656184b2da5495dafb22f4f4716",
+        "path": "docs/evidence/task-6/controller-operations-green-06/output.txt"
+      },
+      {
+        "block_sha256": "c2728b41beff0f5b852fcb0f4e56428a869638c4dd688048f65a14ebe40474e8",
+        "path": "docs/evidence/task-6/controller-operations-green-06/receipt.json"
+      },
+      {
+        "block_sha256": "60e7e1daf650e1ecb9b481fc86ad54934106e1c483ce848a4f307ff04c67d5ca",
+        "path": "docs/evidence/task-6/controller-operations-red-01/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "2d19f066bdabb080346cab8d225d6fee1c0b1ba9bd0a535a67696bbd9f681dd6",
+        "path": "docs/evidence/task-6/controller-operations-red-01/intent.json"
+      },
+      {
+        "block_sha256": "6d3870d3ab9bc729a17b1eed1b8354135d24511797f9587354812d272fbfd54f",
+        "path": "docs/evidence/task-6/controller-operations-red-01/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "b136291c27a0f719355cd8fa96bb31e749cf0303ff25e4830e63545a195834d1",
+        "path": "docs/evidence/task-6/controller-operations-red-01/output.txt"
+      },
+      {
+        "block_sha256": "0678ce3fb0b7d145757ce60e4b3760382fb37aafb004e2161a34cf7106b21335",
+        "path": "docs/evidence/task-6/controller-operations-red-01/post-source.json"
+      },
+      {
+        "block_sha256": "df16814e8a2d617ff6ccf1352cd7a90f908c448d667cce79e75e8111d79b7e92",
+        "path": "docs/evidence/task-6/controller-operations-red-01/receipt.json"
+      },
+      {
+        "block_sha256": "db0fe0aeda252c61526274e57faef153a6263db3416d58b9c8f76a8d755adc7b",
+        "path": "docs/evidence/task-6/controller-operations-red-03/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "7105fb6b53ec1c0adf1c295b852d31cb5d0262daa61ba9007030e0b31c38d8dc",
+        "path": "docs/evidence/task-6/controller-operations-red-03/intent.json"
+      },
+      {
+        "block_sha256": "bf2d4a4749960181becdccaf97a4e128ce5a95c8475cd1b241215e04bf924fec",
+        "path": "docs/evidence/task-6/controller-operations-red-03/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "d58062c36e566c405fab8ff0cda265c3d6b1a9c901d466caf4fa40f7ee46a8bb",
+        "path": "docs/evidence/task-6/controller-operations-red-03/output.txt"
+      },
+      {
+        "block_sha256": "e0bc9acdd88ab39fe9cbb7c8ebe5ca8c34e8fea7f3455f8af65d192f645630cc",
+        "path": "docs/evidence/task-6/controller-operations-red-03/post-source.json"
+      },
+      {
+        "block_sha256": "52840efc5208e491a5c6c7023ceffdcb3cdfad898c507f4623f92d45b60ce650",
+        "path": "docs/evidence/task-6/controller-operations-red-03/receipt.json"
+      },
+      {
+        "block_sha256": "fb960bc9e0356d0cdf206e32d099c171f2a349bb127753c64bc168b39f4f3b25",
+        "path": "docs/evidence/task-6/controller-operations-red-05/changed-source/scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "eb6c6fc534e54771b75bf17257914c0fda0d7028ff097b86375718e3451ecac7",
+        "path": "docs/evidence/task-6/controller-operations-red-05/changed-source/scripts/test_identity_cache_control.py"
+      },
+      {
+        "block_sha256": "abfd6ea49014e01dc0ce912f096fb9b3278726f16fcd497e7c11f086e1bfda70",
+        "path": "docs/evidence/task-6/controller-operations-red-05/intent.json"
+      },
+      {
+        "block_sha256": "2eb877e404f42bb8899ef0e23382e30b8ce4c987e554d329b4670800cdc43bd6",
+        "path": "docs/evidence/task-6/controller-operations-red-05/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "a1731d5f3d08239fff8e304582640405f4bd0ee9a4f73f73afefc75ec725b29d",
+        "path": "docs/evidence/task-6/controller-operations-red-05/output.txt"
+      },
+      {
+        "block_sha256": "22e8cbff6b8ad68079da9e5cb31d00a1e687a7206e306c0331f754aded397f8e",
+        "path": "docs/evidence/task-6/controller-operations-red-05/post-source.json"
+      },
+      {
+        "block_sha256": "9261238a03f8d214b42e716900b610ce23bd0f2f632253f9f1a7e013c05c896f",
+        "path": "docs/evidence/task-6/controller-operations-red-05/receipt.json"
+      },
+      {
+        "block_sha256": "3a88ba65723b00ec8b4d6d8fadcfcc7cebfec0f4aecff223391e356743644461",
+        "path": "docs/evidence/task-6/controller-operations-source-permissions.json"
+      },
+      {
+        "block_sha256": "ffe65c880f4c0e2e14f6be346d4fdcf035f3c90b84829cc82a13a54cc6af3ae4",
+        "path": "scripts/identity_cache_capture.py"
+      },
+      {
+        "block_sha256": "e815645d47ee1730eb6918ae59e2987d20e89a44789bcfa4c55eafba9faa6bf9",
+        "path": "scripts/identity_cache_maintenance.py"
+      },
+      {
+        "block_sha256": "9ba83f243e6a297fdff54adc2ced4aa7ba57203d5d23b4895b41699c0992718e",
+        "path": "scripts/identity_cache_observe.py"
+      },
+      {
+        "block_sha256": "abad0fdbfad164c5d72721f1017d1bef6304e033d5aad811e4b1d1ae16f3dc7c",
+        "path": "scripts/test_identity_cache_control.py"
+      }
+    ],
+    "view_bytes": 711854,
+    "view_path": ".superpowers/sdd/2-warden-security-plan/review-86d8d14..e9acbe4-deduplicated-view.diff",
+    "view_sha256": "457174ae3ed95b4cb11320ea056f15a069bf7e182045037d55633fcf45feed66"
+  },
+  "runs": [
+    {
+      "changed_snapshots": [
+        "scripts/test_identity_cache_control.py"
+      ],
+      "duration_seconds": 0.002941207028925419,
+      "errors": 1,
+      "exit_code": 1,
+      "failures": 0,
+      "outer_exit_code": 1,
+      "source_files": 146,
+      "source_pre_post_equal": true,
+      "stage": "red-01",
+      "tests": 1,
+      "whole_wall_until_receipt_seconds": 0.004856784013099968
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_capture.py",
+        "scripts/identity_cache_maintenance.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "duration_seconds": 0.17413438693620265,
+      "errors": 19,
+      "exit_code": 1,
+      "failures": 8,
+      "outer_exit_code": 1,
+      "source_files": 149,
+      "source_pre_post_equal": true,
+      "stage": "fixture-02",
+      "tests": 44,
+      "whole_wall_until_receipt_seconds": 0.17617876909207553
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_capture.py",
+        "scripts/identity_cache_maintenance.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "duration_seconds": 0.7227568619418889,
+      "errors": 1,
+      "exit_code": 1,
+      "failures": 1,
+      "outer_exit_code": 1,
+      "source_files": 149,
+      "source_pre_post_equal": true,
+      "stage": "red-03",
+      "tests": 48,
+      "whole_wall_until_receipt_seconds": 0.7268965620314702
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_capture.py",
+        "scripts/identity_cache_maintenance.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "duration_seconds": 0.568808926967904,
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "outer_exit_code": 0,
+      "source_files": 149,
+      "source_pre_post_equal": true,
+      "stage": "fixture-04",
+      "tests": 59,
+      "whole_wall_until_receipt_seconds": 0.5708853049436584
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_capture.py",
+        "scripts/identity_cache_maintenance.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "duration_seconds": 0.7906498300144449,
+      "errors": 0,
+      "exit_code": 1,
+      "failures": 1,
+      "outer_exit_code": 1,
+      "source_files": 149,
+      "source_pre_post_equal": true,
+      "stage": "red-05",
+      "tests": 67,
+      "whole_wall_until_receipt_seconds": 0.7930627119494602
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_capture.py",
+        "scripts/identity_cache_maintenance.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "duration_seconds": 0.732661338057369,
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "outer_exit_code": 0,
+      "source_files": 149,
+      "source_pre_post_equal": true,
+      "stage": "green-06",
+      "tests": 68,
+      "whole_wall_until_receipt_seconds": 0.734731677104719
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_capture.py",
+        "scripts/identity_cache_maintenance.py",
+        "scripts/identity_cache_observe.py",
+        "scripts/test_identity_cache_control.py"
+      ],
+      "duration_seconds": 1.32829740899615,
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "outer_exit_code": 0,
+      "source_files": 149,
+      "source_pre_post_equal": true,
+      "stage": "cover-07",
+      "tests": 68,
+      "whole_wall_until_receipt_seconds": 1.3303336229873821
+    }
+  ],
+  "source": "835600b611b631502b158b5037b8078921277f10",
+  "status": "PASS",
+  "unchanged_base_sources": 145
+}

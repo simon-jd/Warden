@@ -1,0 +1,36 @@
+{
+  "changed_source_snapshots": [
+    "scripts/identity_cache_control.py",
+    "scripts/identity_cache_observe.py",
+    "scripts/test_identity_cache_control.py"
+  ],
+  "command": [
+    "python3",
+    "-B",
+    "docs/evidence/task-6/controller-readonly-api-source-green-01/run.py"
+  ],
+  "completion_requires_process_exit_zero": true,
+  "controller_files": 2,
+  "dispatch_base": "4e197bd899a768449bb5b19dace8b5e88b9b713d",
+  "duration_seconds": 1.5811710499692708,
+  "errors": 0,
+  "exit_code": 0,
+  "failures": 0,
+  "limits": {
+    "address_bytes": 536870912,
+    "cpu_seconds": 30,
+    "file_bytes": 33554432,
+    "wall_seconds": 45
+  },
+  "live_cache_access": false,
+  "skipped": 0,
+  "source_commit_at_launch": "4e197bd899a768449bb5b19dace8b5e88b9b713d",
+  "source_files": 150,
+  "source_unchanged": true,
+  "started_utc": "2026-10-25T14:40:23.978126+00:00",
+  "test_target": "amended controller module including fixed four-GET generated fixtures",
+  "tested_prefix_sha256": "7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa",
+  "tests_run": 109,
+  "timing_scope": "earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded",
+  "whole_wall_until_receipt_seconds": 1.6035139940213412
+}

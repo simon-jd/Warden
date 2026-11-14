@@ -1,0 +1,15 @@
+test_kill_write_failure_still_reaps_daemon_and_preserves_unknown_state (__main__.OwnedCleanupTests.test_kill_write_failure_still_reaps_daemon_and_preserves_unknown_state) ... FAIL
+
+======================================================================
+FAIL: test_kill_write_failure_still_reaps_daemon_and_preserves_unknown_state (__main__.OwnedCleanupTests.test_kill_write_failure_still_reaps_daemon_and_preserves_unknown_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_cleanup.py", line 41, in test_kill_write_failure_still_reaps_daemon_and_preserves_unknown_state
+    self.assertIsNotNone(child.poll(), 'cgroup.kill failure skipped owned daemon termination/reap')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : cgroup.kill failure skipped owned daemon termination/reap
+
+----------------------------------------------------------------------
+Ran 1 test in 0.010s
+
+FAILED (failures=1)

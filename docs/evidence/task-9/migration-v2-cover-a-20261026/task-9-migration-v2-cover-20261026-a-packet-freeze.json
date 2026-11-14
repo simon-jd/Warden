@@ -1,0 +1,74 @@
+{
+  "phase": "INERT_MIGRATION_V2_COVER_ONLY",
+  "execution_authorized": false,
+  "files": [
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-migration-v2-cover-20261026-a.py.txt",
+      "bytes": 16817,
+      "allocated_bytes": 20480,
+      "sha256": "b02917ecf2778063363f58abd77f347231e2097de7ba938a84a7f936e7ba0b11"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-migration-v2-cover-20261026-a-caller.diff",
+      "bytes": 13347,
+      "allocated_bytes": 16384,
+      "sha256": "8215d5843f9afbb08561efd30e19359273022fe3b4c75979fcc8a90233cc3919"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-migration-v2-cover-20261026-a-source-freeze.json",
+      "bytes": 2808,
+      "allocated_bytes": 4096,
+      "sha256": "efdbbf1ea0db70f18269f7dbddb885690f2123cf4b46f23bcaaf9317991d1211"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-migration-v2-cover-20261026-a-material-supplement.json",
+      "bytes": 1060,
+      "allocated_bytes": 4096,
+      "sha256": "980c544827e4c459565535bbddc8ebfbfe953be62fe9b364bfae28062abb1944"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-migration-v2-cover-20261026-a.md",
+      "bytes": 4542,
+      "allocated_bytes": 8192,
+      "sha256": "d5ae7acdd8d24523519822780f90c48c116b4a28d68c3ecb345a67a01b18d8d4"
+    }
+  ],
+  "preserved_main_report": {
+    "path": ".superpowers/sdd/2-warden-security-plan/task-9-report.md",
+    "bytes": 11850,
+    "allocated_bytes": 12288,
+    "sha256": "36889d7491e586a7d3cae6e85b411a7756ebe0ebdd8ee2537d0c630c661548dd"
+  },
+  "consumed_first_green_caller": {
+    "path": ".superpowers/sdd/2-warden-security-plan/task-9-first-green-20261026-a.py.txt",
+    "bytes": 17098,
+    "allocated_bytes": 20480,
+    "sha256": "0ba998acf79d599c259dad09e53083769a99a027d3c652f63d42ae2f9d8d99e9"
+  },
+  "preserved_first_green_freeze": {
+    "path": ".superpowers/sdd/2-warden-security-plan/task-9-first-green-20261026-a-source-freeze.json",
+    "bytes": 3086,
+    "allocated_bytes": 4096,
+    "sha256": "1136c050db7e2a33d2e1ad19a9553ccb8c8cdb99f2c60366357436fac59bb0c0"
+  },
+  "previous_phase_net_allocation_bytes": 172032,
+  "allocation_cap_bytes": 262144,
+  "new_packet_allocated_bytes": 57344,
+  "cumulative_net_allocated_bytes": 229376,
+  "cumulative_conservative_including_preexisting_source_bytes": 245760,
+  "directory_baseline_allocated_bytes": {
+    "controlplane/internal/jit": 4096,
+    "controlplane/internal/store": 4096,
+    "controlplane/internal/store/migrations": 4096,
+    ".superpowers/sdd/2-warden-security-plan": 28672
+  },
+  "directory_growth_bytes": 0,
+  "runtime_full_new_disk_bytes": 1750780416,
+  "global_other_holds_bytes": 5003801088,
+  "resident_including_old_UNKNOWN_bytes": 15500000000,
+  "source_projection_count": 17,
+  "projection_bytes": 76465,
+  "all_proxy_bytes": 10306556,
+  "runtime_namespace_absent_at_preparation": true,
+  "stop": "SAFE handback, root FULLREAD/fresh original normal admission required; no execution, source/Git/index/report mutation authorized by packet"
+}

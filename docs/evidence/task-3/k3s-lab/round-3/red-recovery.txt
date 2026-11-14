@@ -1,0 +1,35 @@
+test_exact_private_files_removed_without_reading_contents_or_public_files (test_k3s_lab_recovery.RecoveryTest.test_exact_private_files_removed_without_reading_contents_or_public_files) ... FAIL
+test_replacement_during_remount_preserves_both_directories (test_k3s_lab_recovery.RecoveryTest.test_replacement_during_remount_preserves_both_directories) ... FAIL
+test_wrong_private_shape_never_remounts_or_deletes (test_k3s_lab_recovery.RecoveryTest.test_wrong_private_shape_never_remounts_or_deletes) ... FAIL
+
+======================================================================
+FAIL: test_exact_private_files_removed_without_reading_contents_or_public_files (test_k3s_lab_recovery.RecoveryTest.test_exact_private_files_removed_without_reading_contents_or_public_files)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 17, in setUp
+    self.assertIsNotNone(SPEC, 'fixed stopped-scene recovery not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : fixed stopped-scene recovery not implemented
+
+======================================================================
+FAIL: test_replacement_during_remount_preserves_both_directories (test_k3s_lab_recovery.RecoveryTest.test_replacement_during_remount_preserves_both_directories)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 17, in setUp
+    self.assertIsNotNone(SPEC, 'fixed stopped-scene recovery not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : fixed stopped-scene recovery not implemented
+
+======================================================================
+FAIL: test_wrong_private_shape_never_remounts_or_deletes (test_k3s_lab_recovery.RecoveryTest.test_wrong_private_shape_never_remounts_or_deletes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 17, in setUp
+    self.assertIsNotNone(SPEC, 'fixed stopped-scene recovery not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : fixed stopped-scene recovery not implemented
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+FAILED (failures=3)

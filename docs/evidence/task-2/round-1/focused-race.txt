@@ -1,0 +1,32 @@
+=== RUN   TestDrainWaitsForTailAfterExitBeforeCancel
+--- PASS: TestDrainWaitsForTailAfterExitBeforeCancel (0.02s)
+=== RUN   TestDrainTimeoutReturnsTruncationError
+--- PASS: TestDrainTimeoutReturnsTruncationError (0.02s)
+=== RUN   TestSocketRejectsSymlinkAliases
+=== RUN   TestSocketRejectsSymlinkAliases/socket
+=== RUN   TestSocketRejectsSymlinkAliases/parent
+=== RUN   TestSocketRejectsSymlinkAliases/dangling
+--- PASS: TestSocketRejectsSymlinkAliases (0.00s)
+    --- PASS: TestSocketRejectsSymlinkAliases/socket (0.00s)
+    --- PASS: TestSocketRejectsSymlinkAliases/parent (0.00s)
+    --- PASS: TestSocketRejectsSymlinkAliases/dangling (0.00s)
+=== RUN   TestSocketRejectsRegularFileAndWrongDaemon
+--- PASS: TestSocketRejectsRegularFileAndWrongDaemon (0.00s)
+=== RUN   TestSocketAcceptsOwnedDedicatedUnixListener
+--- PASS: TestSocketAcceptsOwnedDedicatedUnixListener (0.00s)
+=== RUN   TestLogOverflowReportsDroppedBytes
+--- PASS: TestLogOverflowReportsDroppedBytes (0.00s)
+=== RUN   TestPauseIsAllowedWhileMountRemainsDenied
+--- PASS: TestPauseIsAllowedWhileMountRemainsDenied (0.00s)
+=== RUN   TestPidsEvidenceNeedsEventsAndRealLimitPeak
+--- PASS: TestPidsEvidenceNeedsEventsAndRealLimitPeak (0.00s)
+=== RUN   TestSocketRejectsUntrustedOwnershipAndWritableParents
+--- PASS: TestSocketRejectsUntrustedOwnershipAndWritableParents (0.00s)
+=== RUN   TestSocketRevalidationRejectsAliasAfterConstruction
+--- PASS: TestSocketRevalidationRejectsAliasAfterConstruction (0.00s)
+=== RUN   TestPidsEvidenceRejectsMalformedAndBackwardsCounters
+--- PASS: TestPidsEvidenceRejectsMalformedAndBackwardsCounters (0.00s)
+=== RUN   TestContainerdClientDialsOnlyAuthenticatedListener
+--- PASS: TestContainerdClientDialsOnlyAuthenticatedListener (0.00s)
+PASS
+ok  	warden/runtimes/runc	1.072s

@@ -1,0 +1,174 @@
+test_host_accepts_only_exact_bounded_diagnostic_and_original_marker (test_k3s_lab_round5.FourthRecoveryTest.test_host_accepts_only_exact_bounded_diagnostic_and_original_marker) ... FAIL
+test_only_fourth_scene_and_exact_tar_are_selected (test_k3s_lab_round5.FourthRecoveryTest.test_only_fourth_scene_and_exact_tar_are_selected) ... FAIL
+test_probe_refuses_large_fd_inventory_before_inotify_and_close_failure_propagates (test_k3s_lab_round5.FourthRecoveryTest.test_probe_refuses_large_fd_inventory_before_inotify_and_close_failure_propagates) ... FAIL
+test_self_probe_is_single_bounded_and_closes_success_without_reading_targets (test_k3s_lab_round5.FourthRecoveryTest.test_self_probe_is_single_bounded_and_closes_success_without_reading_targets) ... FAIL
+test_packaged_empty_flexvolume_directory_exists_with_root_owned_parents (test_k3s_lab_round5.ImageDirectoryTest.test_packaged_empty_flexvolume_directory_exists_with_root_owned_parents) ... FAIL
+test_actual_query_loop_reports_one_fixed_phase_without_private_bodies (test_k3s_lab_round5.ReadinessDiagnosticTest.test_actual_query_loop_reports_one_fixed_phase_without_private_bodies) ... 
+  test_actual_query_loop_reports_one_fixed_phase_without_private_bodies (test_k3s_lab_round5.ReadinessDiagnosticTest.test_actual_query_loop_reports_one_fixed_phase_without_private_bodies) (phase='api-query') ... FAIL
+  test_actual_query_loop_reports_one_fixed_phase_without_private_bodies (test_k3s_lab_round5.ReadinessDiagnosticTest.test_actual_query_loop_reports_one_fixed_phase_without_private_bodies) (phase='api-body') ... FAIL
+  test_actual_query_loop_reports_one_fixed_phase_without_private_bodies (test_k3s_lab_round5.ReadinessDiagnosticTest.test_actual_query_loop_reports_one_fixed_phase_without_private_bodies) (phase='node-query') ... FAIL
+  test_actual_query_loop_reports_one_fixed_phase_without_private_bodies (test_k3s_lab_round5.ReadinessDiagnosticTest.test_actual_query_loop_reports_one_fixed_phase_without_private_bodies) (phase='node-json') ... FAIL
+  test_actual_query_loop_reports_one_fixed_phase_without_private_bodies (test_k3s_lab_round5.ReadinessDiagnosticTest.test_actual_query_loop_reports_one_fixed_phase_without_private_bodies) (phase='node-ready') ... FAIL
+
+======================================================================
+FAIL: test_host_accepts_only_exact_bounded_diagnostic_and_original_marker (test_k3s_lab_round5.FourthRecoveryTest.test_host_accepts_only_exact_bounded_diagnostic_and_original_marker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round5.py", line 99, in test_host_accepts_only_exact_bounded_diagnostic_and_original_marker
+    self.assertTrue(callable(getattr(host, 'recovery_proof', None)))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_only_fourth_scene_and_exact_tar_are_selected (test_k3s_lab_round5.FourthRecoveryTest.test_only_fourth_scene_and_exact_tar_are_selected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round5.py", line 59, in test_only_fourth_scene_and_exact_tar_are_selected
+    self.assertEqual(host.ORIGINAL, '9a22e3c1817441fa2c4f50616e68a333d2a06c98641d430a05a810ea3f7cac50')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '57a48b46ee5477bf65fdb6ae60bf5b7766c652630c7f2549b3e1e013a696c360' != '9a22e3c1817441fa2c4f50616e68a333d2a06c98641d430a05a810ea3f7cac50'
+- 57a48b46ee5477bf65fdb6ae60bf5b7766c652630c7f2549b3e1e013a696c360
++ 9a22e3c1817441fa2c4f50616e68a333d2a06c98641d430a05a810ea3f7cac50
+
+
+======================================================================
+FAIL: test_probe_refuses_large_fd_inventory_before_inotify_and_close_failure_propagates (test_k3s_lab_round5.FourthRecoveryTest.test_probe_refuses_large_fd_inventory_before_inotify_and_close_failure_propagates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round5.py", line 89, in test_probe_refuses_large_fd_inventory_before_inotify_and_close_failure_propagates
+    self.assertTrue(callable(getattr(inner, 'resource_diagnostic', None)))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_self_probe_is_single_bounded_and_closes_success_without_reading_targets (test_k3s_lab_round5.FourthRecoveryTest.test_self_probe_is_single_bounded_and_closes_success_without_reading_targets)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round5.py", line 70, in test_self_probe_is_single_bounded_and_closes_success_without_reading_targets
+    self.assertTrue(callable(getattr(inner, 'resource_diagnostic', None)))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_packaged_empty_flexvolume_directory_exists_with_root_owned_parents (test_k3s_lab_round5.ImageDirectoryTest.test_packaged_empty_flexvolume_directory_exists_with_root_owned_parents)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round5.py", line 50, in test_packaged_empty_flexvolume_directory_exists_with_root_owned_parents
+    self.assertIn(str(path), names)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: 'usr/libexec/kubernetes/kubelet-plugins/volume/exec' not found in ['dev', 'etc', 'etc/rancher/node', 'opt', 'opt/warden', 'opt/warden/input', 'opt/warden/input/cni', 'opt/warden/scripts', 'proc', 'run', 'session', 'sys', 'sys/fs', 'sys/fs/cgroup', 'tmp', 'usr', 'usr/bin', 'var/lib', 'var/lib/kubelet', 'var/log', 'etc/group', 'etc/os-release', 'etc/passwd', 'opt/warden/input/bootstrap.json', 'opt/warden/input/cni/10-loopback.conflist', 'opt/warden/input/manifest.json', 'opt/warden/input/runsc.toml', 'opt/warden/scripts/k3s_lab_init.py', 'opt/warden/scripts/runtime_lab_docker_init.py', 'opt/warden/scripts/runtime_lab_paths.py', 'opt/warden/scripts/runtime_lab_runner.py', 'usr/bin/k3s', 'usr/bin/python3.14', 'usr/bin/python3']
+
+======================================================================
+FAIL: test_actual_query_loop_reports_one_fixed_phase_without_private_bodies (test_k3s_lab_round5.ReadinessDiagnosticTest.test_actual_query_loop_reports_one_fixed_phase_without_private_bodies) (phase='api-query')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round5.py", line 153, in test_actual_query_loop_reports_one_fixed_phase_without_private_bodies
+    self.assertEqual(reports, [{'last_stage': phase, 'attempts': 1, 'failures': {name: int(name == phase) for name in phases}}])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [{'last_stage': 'api-query', 'attempts': 1[92 chars] 0}}]
+
+Second list contains 1 additional elements.
+First extra element 0:
+{'last_stage': 'api-query', 'attempts': 1, 'failures': {'api-query': 1, 'api-body': 0, 'node-query': 0, 'node-json': 0, 'node-ready': 0}}
+
+- []
++ [{'attempts': 1,
++   'failures': {'api-body': 0,
++                'api-query': 1,
++                'node-json': 0,
++                'node-query': 0,
++                'node-ready': 0},
++   'last_stage': 'api-query'}]
+
+======================================================================
+FAIL: test_actual_query_loop_reports_one_fixed_phase_without_private_bodies (test_k3s_lab_round5.ReadinessDiagnosticTest.test_actual_query_loop_reports_one_fixed_phase_without_private_bodies) (phase='api-body')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round5.py", line 153, in test_actual_query_loop_reports_one_fixed_phase_without_private_bodies
+    self.assertEqual(reports, [{'last_stage': phase, 'attempts': 1, 'failures': {name: int(name == phase) for name in phases}}])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [{'last_stage': 'api-body', 'attempts': 1,[91 chars] 0}}]
+
+Second list contains 1 additional elements.
+First extra element 0:
+{'last_stage': 'api-body', 'attempts': 1, 'failures': {'api-query': 0, 'api-body': 1, 'node-query': 0, 'node-json': 0, 'node-ready': 0}}
+
+- []
++ [{'attempts': 1,
++   'failures': {'api-body': 1,
++                'api-query': 0,
++                'node-json': 0,
++                'node-query': 0,
++                'node-ready': 0},
++   'last_stage': 'api-body'}]
+
+======================================================================
+FAIL: test_actual_query_loop_reports_one_fixed_phase_without_private_bodies (test_k3s_lab_round5.ReadinessDiagnosticTest.test_actual_query_loop_reports_one_fixed_phase_without_private_bodies) (phase='node-query')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round5.py", line 153, in test_actual_query_loop_reports_one_fixed_phase_without_private_bodies
+    self.assertEqual(reports, [{'last_stage': phase, 'attempts': 1, 'failures': {name: int(name == phase) for name in phases}}])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [{'last_stage': 'node-query', 'attempts': [93 chars] 0}}]
+
+Second list contains 1 additional elements.
+First extra element 0:
+{'last_stage': 'node-query', 'attempts': 1, 'failures': {'api-query': 0, 'api-body': 0, 'node-query': 1, 'node-json': 0, 'node-ready': 0}}
+
+- []
++ [{'attempts': 1,
++   'failures': {'api-body': 0,
++                'api-query': 0,
++                'node-json': 0,
++                'node-query': 1,
++                'node-ready': 0},
++   'last_stage': 'node-query'}]
+
+======================================================================
+FAIL: test_actual_query_loop_reports_one_fixed_phase_without_private_bodies (test_k3s_lab_round5.ReadinessDiagnosticTest.test_actual_query_loop_reports_one_fixed_phase_without_private_bodies) (phase='node-json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round5.py", line 153, in test_actual_query_loop_reports_one_fixed_phase_without_private_bodies
+    self.assertEqual(reports, [{'last_stage': phase, 'attempts': 1, 'failures': {name: int(name == phase) for name in phases}}])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [{'last_stage': 'node-json', 'attempts': 1[92 chars] 0}}]
+
+Second list contains 1 additional elements.
+First extra element 0:
+{'last_stage': 'node-json', 'attempts': 1, 'failures': {'api-query': 0, 'api-body': 0, 'node-query': 0, 'node-json': 1, 'node-ready': 0}}
+
+- []
++ [{'attempts': 1,
++   'failures': {'api-body': 0,
++                'api-query': 0,
++                'node-json': 1,
++                'node-query': 0,
++                'node-ready': 0},
++   'last_stage': 'node-json'}]
+
+======================================================================
+FAIL: test_actual_query_loop_reports_one_fixed_phase_without_private_bodies (test_k3s_lab_round5.ReadinessDiagnosticTest.test_actual_query_loop_reports_one_fixed_phase_without_private_bodies) (phase='node-ready')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_round5.py", line 153, in test_actual_query_loop_reports_one_fixed_phase_without_private_bodies
+    self.assertEqual(reports, [{'last_stage': phase, 'attempts': 1, 'failures': {name: int(name == phase) for name in phases}}])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [{'last_stage': 'node-ready', 'attempts': [93 chars] 1}}]
+
+Second list contains 1 additional elements.
+First extra element 0:
+{'last_stage': 'node-ready', 'attempts': 1, 'failures': {'api-query': 0, 'api-body': 0, 'node-query': 0, 'node-json': 0, 'node-ready': 1}}
+
+- []
++ [{'attempts': 1,
++   'failures': {'api-body': 0,
++                'api-query': 0,
++                'node-json': 0,
++                'node-query': 0,
++                'node-ready': 1},
++   'last_stage': 'node-ready'}]
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.025s
+
+FAILED (failures=10)

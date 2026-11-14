@@ -1,0 +1,185 @@
+# RED: scripts/test_makefile.py against the Makefile at 8667bde (unchanged)
+# 2026-11-10T20:33:23-08:00
+test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) ... 
+  test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-go') ... FAIL
+  test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='check') ... FAIL
+  test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-kyverno') ... FAIL
+  test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-postgres') ... FAIL
+  test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-egress') ... FAIL
+  test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-egress-runc') ... FAIL
+  test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-vault') ... FAIL
+  test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-kind') ... FAIL
+  test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-gvisor') ... FAIL
+  test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-identity') ... FAIL
+  test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='vuln-feeds') ... FAIL
+test_failed_go_list_stops_test_and_vet (test_makefile.MakefileGoTargetsTest.test_failed_go_list_stops_test_and_vet) ... 
+  test_failed_go_list_stops_test_and_vet (test_makefile.MakefileGoTargetsTest.test_failed_go_list_stops_test_and_vet) (target='test-go') ... FAIL
+  test_failed_go_list_stops_test_and_vet (test_makefile.MakefileGoTargetsTest.test_failed_go_list_stops_test_and_vet) (target='check') ... FAIL
+test_go_test_gets_listed_packages_without_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_go_test_gets_listed_packages_without_vcs_stamping) ... FAIL
+test_no_packages_left_is_a_failure (test_makefile.MakefileGoTargetsTest.test_no_packages_left_is_a_failure) ... FAIL
+
+======================================================================
+FAIL: test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-go')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_makefile.py", line 88, in test_every_go_command_disables_vcs_stamping
+    self.assertEqual(proc.stdout.count(NOVCS), gos, proc.stdout)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_KYVERNO=/tmp/tmplg61m8yl/kyverno /tmp/tmplg61m8yl/go test -count=1 -shuffle=on  $(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /tmp/tmplg61m8yl/go list ./... | grep -Ev '^warden/docs/')
+
+
+======================================================================
+FAIL: test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='check')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_makefile.py", line 88, in test_every_go_command_disables_vcs_stamping
+    self.assertEqual(proc.stdout.count(NOVCS), gos, proc.stdout)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 2 : env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /tmp/tmplg61m8yl/go vet $(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /tmp/tmplg61m8yl/go list ./... | grep -Ev '^warden/docs/')
+out=$(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /home/postedism/Desktop/Warden-task3/.tools/go/bin/gofmt -l $(git ls-files '*.go' ':!docs/**')); \
+	if [ -n "$out" ]; then echo "gofmt needed:"; echo "$out"; exit 1; fi
+shellcheck -S warning scripts/*.sh
+
+
+======================================================================
+FAIL: test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-kyverno')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_makefile.py", line 88, in test_every_go_command_disables_vcs_stamping
+    self.assertEqual(proc.stdout.count(NOVCS), gos, proc.stdout)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_KYVERNO=/tmp/tmplg61m8yl/kyverno KYVERNO_OUT= \
+	/tmp/tmplg61m8yl/go test -count=1 -v -run '^TestKyvernoAdmission$' ./supplychain/kyvernolab
+
+
+======================================================================
+FAIL: test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-postgres')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_makefile.py", line 88, in test_every_go_command_disables_vcs_stamping
+    self.assertEqual(proc.stdout.count(NOVCS), gos, proc.stdout)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : GO="env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /tmp/tmplg61m8yl/go" scripts/test-postgres.sh test -count=1  ./controlplane/...
+
+
+======================================================================
+FAIL: test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-egress')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_makefile.py", line 88, in test_every_go_command_disables_vcs_stamping
+    self.assertEqual(proc.stdout.count(NOVCS), gos, proc.stdout)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_LIVE_EGRESS=1 EGRESS_OUT= /tmp/tmplg61m8yl/go test -count=1 -v \
+	-run '^(TestAllowlistedDomainReachable|TestNonAllowlistedBlocked|TestEgressHotReload)$' ./controlplane/internal/scheduler
+
+
+======================================================================
+FAIL: test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-egress-runc')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_makefile.py", line 88, in test_every_go_command_disables_vcs_stamping
+    self.assertEqual(proc.stdout.count(NOVCS), gos, proc.stdout)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : scripts/build-runtime-lab.sh
+env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_LIVE_EGRESS=1 WARDEN_LIVE_EGRESS_RUNC=1 EGRESS_OUT= /tmp/tmplg61m8yl/go test -count=1 -v -timeout 15m \
+	-run '^TestRuncSandboxEgress$' ./controlplane/internal/scheduler
+
+
+======================================================================
+FAIL: test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-vault')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_makefile.py", line 88, in test_every_go_command_disables_vcs_stamping
+    self.assertEqual(proc.stdout.count(NOVCS), gos, proc.stdout)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_LIVE_VAULT=1 VAULT_OUT= /tmp/tmplg61m8yl/go test -count=1 -v ./identity/tests
+
+
+======================================================================
+FAIL: test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-kind')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_makefile.py", line 88, in test_every_go_command_disables_vcs_stamping
+    self.assertEqual(proc.stdout.count(NOVCS), gos, proc.stdout)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : GO="env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_LIVE_KIND=1 WARDEN_KIND_KUBECONFIG=/home/postedism/Desktop/Warden-task3/.cache/kind/kubeconfig KIND_OUT= JIT_OUT= TERMINATE_OUT= SERVICE_OUT= /tmp/tmplg61m8yl/go" scripts/kind_lab.sh run scripts/test-postgres.sh \
+	test -count=1 -v -timeout 20m ./respond/kindlab ./controlplane/internal/jit
+
+
+======================================================================
+FAIL: test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-gvisor')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_makefile.py", line 88, in test_every_go_command_disables_vcs_stamping
+    self.assertEqual(proc.stdout.count(NOVCS), gos, proc.stdout)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : scripts/k3s_gvisor_lab.sh run scripts/k3s_gvisor_lab.sh env \
+	env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_LIVE_GVISOR=1 WARDEN_GVISOR_COLD_STARTS= GVISOR_OUT= /tmp/tmplg61m8yl/go test -count=1 -v -timeout 40m -run '^(TestGVisorConformance|TestGVisorColdStarts)$' ./runtimes/gvisor
+
+
+======================================================================
+FAIL: test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='test-identity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_makefile.py", line 88, in test_every_go_command_disables_vcs_stamping
+    self.assertEqual(proc.stdout.count(NOVCS), gos, proc.stdout)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : scripts/k3s_gvisor_lab.sh run scripts/k3s_gvisor_lab.sh env \
+	env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_LIVE_IDENTITY=1 IDENTITY_OUT= /tmp/tmplg61m8yl/go test -count=1 -v -timeout 10m -run '^(TestControlPlaneTokenIsShortLived|TestSandboxSAHasNoBindings)$' ./runtimes/conformance
+
+
+======================================================================
+FAIL: test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) (target='vuln-feeds')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_makefile.py", line 88, in test_every_go_command_disables_vcs_stamping
+    self.assertEqual(proc.stdout.count(NOVCS), gos, proc.stdout)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1 : env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /tmp/tmplg61m8yl/go run ./vuln/cmd/vulnfeeds 
+
+
+======================================================================
+FAIL: test_failed_go_list_stops_test_and_vet (test_makefile.MakefileGoTargetsTest.test_failed_go_list_stops_test_and_vet) (target='test-go')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_makefile.py", line 56, in test_failed_go_list_stops_test_and_vet
+    self.assertNotEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0 : env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_KYVERNO=/tmp/tmplqkkravs/kyverno /tmp/tmplqkkravs/go test -count=1 -shuffle=on  $(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /tmp/tmplqkkravs/go list ./... | grep -Ev '^warden/docs/')
+
+
+======================================================================
+FAIL: test_failed_go_list_stops_test_and_vet (test_makefile.MakefileGoTargetsTest.test_failed_go_list_stops_test_and_vet) (target='check')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_makefile.py", line 56, in test_failed_go_list_stops_test_and_vet
+    self.assertNotEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0 : env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /tmp/tmplqkkravs/go vet $(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /tmp/tmplqkkravs/go list ./... | grep -Ev '^warden/docs/')
+shellcheck -S warning scripts/*.sh
+
+
+======================================================================
+FAIL: test_go_test_gets_listed_packages_without_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_go_test_gets_listed_packages_without_vcs_stamping)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_makefile.py", line 71, in test_go_test_gets_listed_packages_without_vcs_stamping
+    self.assertIn(NOVCS, calls[0])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: '-buildvcs=false' not found in ['list', './...']
+
+======================================================================
+FAIL: test_no_packages_left_is_a_failure (test_makefile.MakefileGoTargetsTest.test_no_packages_left_is_a_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-task3/scripts/test_makefile.py", line 62, in test_no_packages_left_is_a_failure
+    self.assertNotEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0 : env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp WARDEN_KYVERNO=/tmp/tmpv7qxdtqc/kyverno /tmp/tmpv7qxdtqc/go test -count=1 -shuffle=on  $(env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-task3/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-task3/.cache/go HOME=/home/postedism/Desktop/Warden-task3/.cache/home TMPDIR=/home/postedism/Desktop/Warden-task3/.cache/test-tmp /tmp/tmpv7qxdtqc/go list ./... | grep -Ev '^warden/docs/')
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.459s
+
+FAILED (failures=15)
+exit: 1

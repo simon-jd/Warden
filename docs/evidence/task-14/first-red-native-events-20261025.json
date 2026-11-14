@@ -1,0 +1,83 @@
+{
+  "kind": "root-original-task14-first-semantic-red",
+  "events": [
+    {
+      "kind": "fresh-budget",
+      "request": {
+        "cmd": "ulimit -c 0; ulimit -n 64; ulimit -v 262144; ulimit -f 8192; ulimit -t 20\n/usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -B scripts/azure_guard.py preflight --additional-bytes 6073741824 --service-memory-bytes 11000000000 --download-bytes 0",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Task14冻结首RED caller已root全文核定；只先运行既有本地fresh预算guard，保留Q5GB及新1GiB完整峰值，常驻预留旧9GB+新2GB；无Go/服务/云创建。",
+        "max_output_tokens": 1500
+      },
+      "response": {
+        "chunk_id": "6580ff",
+        "wall_time_seconds": 0.273429141,
+        "exit_code": 0,
+        "original_token_count": 56,
+        "output": "{\"additional_bytes\": \"6073741824\", \"at\": \"2026-10-26T00:56:42Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 261223702528, \"project_allocated_bytes\": 4470009856, \"service_memory_bytes\": \"11000000000\"}\n"
+      }
+    },
+    {
+      "kind": "sole-actual-red",
+      "request": {
+        "cmd": "/usr/bin/timeout --signal=TERM --kill-after=4s 86s /usr/bin/python3 -I -B .superpowers/sdd/2-warden-security-plan/task-14-first-red-command.py.txt",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Root已FULLREAD冻结7151B代码及原三个测试，fresh guard6580ff通过10.544GB≤12GB；仅一次离线Go首RED，body自检UID/内存/新namespace，保留自有PG leader直至信号结束，总86+4≤90秒，任何异常停止不重试，不跑旧Task12/Task11。",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 2500
+      },
+      "response": {
+        "chunk_id": "eb79aa",
+        "wall_time_seconds": 1.001059054,
+        "session_id": 64805,
+        "original_token_count": 0,
+        "output": ""
+      },
+      "polls": [
+        {
+          "request": {
+            "session_id": 64805,
+            "chars": "",
+            "yield_time_ms": 20000,
+            "max_output_tokens": 2500
+          },
+          "response": {
+            "chunk_id": "88eb80",
+            "wall_time_seconds": 2.1292157019999998,
+            "exit_code": 1,
+            "original_token_count": 184,
+            "output": "{\"candidate_semantic_red\": true, \"decision\": \"STOP_FOR_ROOT\", \"elapsed_seconds\": 7.6512264820048586, \"go_returncode\": 1, \"namespace_allocated_bytes\": 60235776, \"own_group_absent\": true, \"post_hashes\": {\"go.mod\": \"bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa\", \"go.sum\": \"cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0\", \"respond/actions.go\": \"8f9b25aa2824017c0ddb8b3a5acbe2f5c6e2a88aafff67e6ddac87b141259006\", \"respond/executor.go\": \"1fd4224c4e5b6d04cbd9e1c4d16b2d3dcbf7baf5e08bfc6cfd01a9bf75913685\", \"respond/executor_test.go\": \"d104aff34a26fe593d7955ddf0267590d8b3ecb0d966ae39a22c42ca60aecbe3\"}, \"post_mem_available\": 83011563520, \"raw_stderr_bytes\": 0, \"raw_stdout_bytes\": 631, \"reason\": \"\"}\n"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "root-full-postread-and-seven-snapshots",
+      "request": {
+        "cmd": "/usr/bin/python3 -I -S -B - <<'PY'\nfrom pathlib import Path\nimport hashlib,json,os,stat\nassert os.getuid()==1000\nroot=Path('/home/postedism/Desktop/Warden')\nsrc=root/'.cache/task14-first-red-20261025-a'\ndst=root/'docs/evidence/task-14/semantic-red-first-20261025'\nassert not os.path.lexists(dst);dst.mkdir(mode=0o755)\nitems=[(src/'stdout.raw','stdout.raw'),(src/'stderr.raw','stderr.raw'),(src/'status.json','status.json'),(src/'request.json','request.json'),(root/'respond/actions.go','actions.go.txt'),(root/'respond/executor.go','executor.go.txt'),(root/'respond/executor_test.go','executor_test.go.txt')]\nfor path,name in items:\n fd=os.open(path,os.O_RDONLY|os.O_NOFOLLOW)\n try:\n  s=os.fstat(fd);assert stat.S_ISREG(s.st_mode) and s.st_uid==1000 and s.st_nlink==1 and s.st_size<=65536\n  with os.fdopen(fd,'rb',closefd=False) as f:b=f.read(65537)\n  assert len(b)==s.st_size and len(b)<=65536\n finally:os.close(fd)\n out=os.open(dst/name,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o644)\n with os.fdopen(out,'wb') as f:f.write(b)\n print(json.dumps({'file':name,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()},sort_keys=True))\n if name in ('stdout.raw','stderr.raw','status.json','request.json'):print(b.decode())\nprint('Only seven new copies; original bytes/permissions unchanged; no tests rerun.')\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Root只读核对唯一Task14首RED的四个固定原件并新建公开副本，同时保留未改的3个初始stub/test快照；不改原文件或权限、不遍历cache/scene、不执行Go或重复测试。",
+        "max_output_tokens": 6500
+      },
+      "response": {
+        "chunk_id": "8ab3f6",
+        "wall_time_seconds": 0.00000924,
+        "exit_code": 0,
+        "original_token_count": 1083,
+        "output": "{\"bytes\": 631, \"file\": \"stdout.raw\", \"sha256\": \"6e6ca04e7c21f860bb270dd58d8b513958386dfc44beb1e131219aabf2ba532a\"}\n=== RUN   TestPlaybookIdempotentPerAlert\n    executor_test.go:81: RED_REQUIRED authorized first execution must complete: respond executor not implemented\n--- FAIL: TestPlaybookIdempotentPerAlert (0.00s)\n=== RUN   TestDestructiveRequiresApproval\n    executor_test.go:110: RED_REQUIRED distinct authenticated approval must execute: respond executor not implemented\n--- FAIL: TestDestructiveRequiresApproval (0.00s)\n=== RUN   TestDryRunMakesNoChanges\n    executor_test.go:122: RED_REQUIRED dry-run must return a preview: respond executor not implemented\n--- FAIL: TestDryRunMakesNoChanges (0.00s)\nFAIL\nFAIL\twarden/respond\t0.002s\nFAIL\n\n{\"bytes\": 0, \"file\": \"stderr.raw\", \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"}\n\n{\"bytes\": 732, \"file\": \"status.json\", \"sha256\": \"0fcf760f0d6d3daf3a65f75c3feb292c0403b8bbfec980cb5977c323cfd8ee59\"}\n{\"candidate_semantic_red\": true, \"decision\": \"STOP_FOR_ROOT\", \"elapsed_seconds\": 7.6512264820048586, \"go_returncode\": 1, \"namespace_allocated_bytes\": 60235776, \"own_group_absent\": true, \"post_hashes\": {\"go.mod\": \"bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa\", \"go.sum\": \"cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0\", \"respond/actions.go\": \"8f9b25aa2824017c0ddb8b3a5acbe2f5c6e2a88aafff67e6ddac87b141259006\", \"respond/executor.go\": \"1fd4224c4e5b6d04cbd9e1c4d16b2d3dcbf7baf5e08bfc6cfd01a9bf75913685\", \"respond/executor_test.go\": \"d104aff34a26fe593d7955ddf0267590d8b3ecb0d966ae39a22c42ca60aecbe3\"}, \"post_mem_available\": 83011563520, \"raw_stderr_bytes\": 0, \"raw_stdout_bytes\": 631, \"reason\": \"\"}\n{\"bytes\": 2057, \"file\": \"request.json\", \"sha256\": \"06dda3f39790dc2d069200fa93f90562ae4061a0abe5bd620b6de5d7ec1b1f83\"}\n{\"argv\": [\"/home/postedism/Desktop/Warden/.cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/bin/go\", \"test\", \"-mod=readonly\", \"-buildvcs=false\", \"-vet=off\", \"-p=1\", \"-parallel=1\", \"-count=1\", \"-timeout=20s\", \"-run\", \"^(TestPlaybookIdempotentPerAlert|TestDestructiveRequiresApproval|TestDryRunMakesNoChanges)$\", \"-v\", \"./respond\"], \"cwd\": \"/home/postedism/Desktop/Warden\", \"env_overrides\": {\"CGO_ENABLED\": \"0\", \"GOARCH\": \"amd64\", \"GOCACHE\": \"/home/postedism/Desktop/Warden/.cache/task14-first-red-20261025-a/cache\", \"GOENV\": \"off\", \"GOMAXPROCS\": \"2\", \"GOMEMLIMIT\": \"512MiB\", \"GOMODCACHE\": \"/home/postedism/Desktop/Warden/.cache/task14-first-red-20261025-a/modcache\", \"GOOS\": \"linux\", \"GOPATH\": \"/home/postedism/Desktop/Warden/.cache/task14-first-red-20261025-a/gopath\", \"GOPROXY\": \"off\", \"GOROOT\": \"/home/postedism/Desktop/Warden/.cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64\", \"GOSUMDB\": \"off\", \"GOTMPDIR\": \"/home/postedism/Desktop/Warden/.cache/task14-first-red-20261025-a/tmp\", \"GOTOOLCHAIN\": \"local\", \"GOVCS\": \"*:off\", \"GOWORK\": \"off\", \"PATH\": \"/usr/bin:/bin\", \"TEST_TELEMETRY_DIR\": \"/home/postedism/Desktop/Warden/.cache/task14-first-red-20261025-a/telemetry\", \"TMPDIR\": \"/home/postedism/Desktop/Warden/.cache/task14-first-red-20261025-a/tmp\", \"XDG_CONFIG_HOME\": \"/home/postedism/Desktop/Warden/.cache/task14-first-red-20261025-a/config\"}, \"hashes\": {\"go.mod\": \"bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa\", \"go.sum\": \"cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0\", \"respond/actions.go\": \"8f9b25aa2824017c0ddb8b3a5acbe2f5c6e2a88aafff67e6ddac87b141259006\", \"respond/executor.go\": \"1fd4224c4e5b6d04cbd9e1c4d16b2d3dcbf7baf5e08bfc6cfd01a9bf75913685\", \"respond/executor_test.go\": \"d104aff34a26fe593d7955ddf0267590d8b3ecb0d966ae39a22c42ca60aecbe3\"}, \"limits\": {\"as_perprocess\": 4294967296, \"cpu_perprocess\": 60, \"file_perprocess\": 268435456, \"output_combined\": 65536, \"reap_end\": 84, \"signal_end\": 82, \"status_target\": 85, \"whole\": 90, \"work_end\": 70}, \"pre_mem_available\": 83324051456}\n{\"bytes\": 2059, \"file\": \"actions.go.txt\", \"sha256\": \"8f9b25aa2824017c0ddb8b3a5acbe2f5c6e2a88aafff67e6ddac87b141259006\"}\n{\"bytes\": 1688, \"file\": \"executor.go.txt\", \"sha256\": \"1fd4224c4e5b6d04cbd9e1c4d16b2d3dcbf7baf5e08bfc6cfd01a9bf75913685\"}\n{\"bytes\": 4900, \"file\": \"executor_test.go.txt\", \"sha256\": \"d104aff34a26fe593d7955ddf0267590d8b3ecb0d966ae39a22c42ca60aecbe3\"}\nOnly seven new copies; original bytes/permissions unchanged; no tests rerun.\n"
+      }
+    }
+  ]
+}

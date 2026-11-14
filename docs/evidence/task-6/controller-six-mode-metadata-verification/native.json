@@ -1,0 +1,565 @@
+{
+  "cases": [
+    {
+      "actual_envelope_proof": {
+        "bytes": 604,
+        "metadata": [
+          47,
+          2662128,
+          1000,
+          1000,
+          33152,
+          1,
+          604,
+          1792958917395530004,
+          1792958917395530004,
+          8
+        ],
+        "sha256": "a2e1074bd480ae6378620d5019b8c5d8c5521f47a37c3a3f26654399d92b6bbd"
+      },
+      "after": {
+        "controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json": {
+          "metadata": [
+            47,
+            2662128,
+            1000,
+            1000,
+            33152,
+            1,
+            604,
+            1792958917395530004,
+            1792958917395530004,
+            8
+          ],
+          "sha256": "a2e1074bd480ae6378620d5019b8c5d8c5521f47a37c3a3f26654399d92b6bbd"
+        },
+        "controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json": {
+          "metadata": [
+            47,
+            2662127,
+            1000,
+            1000,
+            33152,
+            1,
+            40,
+            1792958917395491425,
+            1792958917407616330,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "before": {
+        "controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json": {
+          "metadata": [
+            47,
+            2662128,
+            1000,
+            1000,
+            33152,
+            1,
+            604,
+            1792958917395530004,
+            1792958917395530004,
+            8
+          ],
+          "sha256": "a2e1074bd480ae6378620d5019b8c5d8c5521f47a37c3a3f26654399d92b6bbd"
+        },
+        "controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json": {
+          "metadata": [
+            47,
+            2662127,
+            1000,
+            1000,
+            33204,
+            1,
+            40,
+            1792958917395491425,
+            1792958917395491425,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "case": "happy",
+      "exit_code": 0,
+      "owned_pid": 3,
+      "passed": true,
+      "request": {
+        "argv": [
+          "/usr/bin/python3",
+          "-I",
+          "-S",
+          "-B",
+          "-",
+          "{\"collector\":\"{\\\"envelope\\\":{\\\"bytes\\\":604,\\\"metadata\\\":[47,2662128,1000,1000,33152,1,604,1792958917395530004,1792958917395530004,8],\\\"sha256\\\":\\\"a2e1074bd480ae6378620d5019b8c5d8c5521f47a37c3a3f26654399d92b6bbd\\\"},\\\"source_commit\\\":\\\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\\\",\\\"source_manifest_sha256\\\":\\\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\\\",\\\"clock_identity\\\":{\\\"machine_id\\\":\\\"fixture-only\\\",\\\"boot_id\\\":\\\"fixture-only\\\"}}\",\"raw\":\"{\\\"fixture\\\":\\\"raw apostrophe ' retained\\\"}\\n\"}"
+        ],
+        "cwd": "/tmp/warden-six-metadata-zdbjrxrw/happy",
+        "env": {
+          "LANG": "C",
+          "LC_ALL": "C",
+          "PATH": "/usr/bin:/bin"
+        },
+        "stdin": "import os,sys,time,signal,resource,json,hashlib,stat\n_root='/tmp/warden-six-metadata-zdbjrxrw/happy'\n_P='controller-cache-continuation-v1-20261025-capture-preprobe'\n_parts=('home','postedism','Desktop','Warden','docs','evidence','task-6')\n_names=(_P+'-deadline.json',_P+'-root-tool.json')\n_df=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\n_ff=os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC\n_open,_stat,_fstat,_pread,_close,_chmod,_sync=os.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync\n_held={};_root_used=False;_chmods=[];_syncs=[];_opens=[]\ndef _need(v):\n if not v:raise RuntimeError('fixture path/FD firewall')\ndef _o(path,flags,mode=0o777,*,dir_fd=None):\n global _root_used\n if dir_fd is None:\n  _need(not _root_used and path=='/' and flags==_df);_root_used=True\n  fd=_open(_root,flags);_held[fd]=('dir',0);_opens.append('ROUTED_ROOT');return fd\n _need(dir_fd in _held and _held[dir_fd][0]=='dir');depth=_held[dir_fd][1]\n if depth<len(_parts):\n  _need(path==_parts[depth] and flags==_df);fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('dir',depth+1)\n else:\n  _need(path in _names and flags==_ff);fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('file',path)\n _opens.append(path);return fd\ndef _s(path,*,dir_fd=None,follow_symlinks=True):\n _need(dir_fd in _held and _held[dir_fd][0]=='dir' and follow_symlinks is False)\n depth=_held[dir_fd][1];_need(path==_parts[depth] if depth<len(_parts) else path in _names)\n return _stat(path,dir_fd=dir_fd,follow_symlinks=False)\ndef _f(fd):_need(fd in _held);return _fstat(fd)\ndef _p(fd,n,offset):\n _need(fd in _held and _held[fd][0]=='file' and 0<n<=65537 and offset==0);return _pread(fd,n,offset)\ndef _c(fd):_need(fd in _held);_close(fd);del _held[fd]\ndef _m(fd,mode):\n _need(fd in _held and _held[fd]==('file',_names[1]) and mode==0o600);_chmods.append(_names[1]);return _chmod(fd,mode)\ndef _y(fd):\n _need(fd in _held and _held[fd]==('file',_names[1]));_syncs.append(_names[1]);return _sync(fd)\nos.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync=_o,_s,_f,_p,_c,_m,_y\ntry:\n exec(compile('import time\\nM0=time.monotonic_ns();B0=time.clock_gettime_ns(time.CLOCK_BOOTTIME);A0=time.monotonic_ns()\\nimport os,sys,signal,resource\\ndef need(ok):\\n if not ok:raise ValueError(\\'six-mode metadata refusal\\')\\nneed(0<=A0-M0<=100000000)\\nme=M0+5000000000;be=B0+5000000000;lo=B0-A0;hi=B0-M0;fm=A0;fb=B0\\ndef check():\\n global lo,hi,fm,fb\\n u=time.monotonic_ns();b=time.clock_gettime_ns(time.CLOCK_BOOTTIME);a=time.monotonic_ns()\\n need(0<=a-u<=100000000 and fm<=u<=a<me and fb<=b<be)\\n lo=max(lo,b-a);hi=min(hi,b-u);need(lo<=hi);fm=a;fb=b\\n return a,b\\ndef arm():\\n a,b=check();signal.setitimer(signal.ITIMER_REAL,min(me-a,be-b)/1000000000)\\nsignal.signal(signal.SIGALRM,lambda *_:os._exit(124));arm()\\nfor k,n in ((resource.RLIMIT_CPU,2),(resource.RLIMIT_AS,134217728),(resource.RLIMIT_FSIZE,1048576)):\\n soft,hard=resource.getrlimit(k);need(hard==resource.RLIM_INFINITY or hard>=n);resource.setrlimit(k,(n,n))\\nimport json,hashlib,stat\\ndef pairs(items):\\n value={}\\n for k,v in items:need(k not in value);value[k]=v\\n return value\\ndef bad(_):raise ValueError(\\'noninteger JSON\\')\\ndef parse(s):return json.loads(s,object_pairs_hook=pairs,parse_float=bad,parse_constant=bad)\\ndef meta(s):return [getattr(s,\\'st_\\'+k) for k in (\\'dev\\',\\'ino\\',\\'uid\\',\\'gid\\',\\'mode\\',\\'nlink\\',\\'size\\',\\'mtime_ns\\',\\'ctime_ns\\',\\'blocks\\')]\\nfds=[];dirs=[];records=[]\\ndef keep(fd):fds.append(fd);return fd\\ndef parents():\\n check()\\n for parent,name,fd,before in dirs:\\n  now=meta(os.fstat(fd));need(now==before)\\n  if parent is not None:need(meta(os.stat(name,dir_fd=parent,follow_symlinks=False))==now)\\n check()\\ndef same(record):\\n check();parents();fd,name,data,m=record\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)))\\n need(os.pread(fd,65537,0)==data)\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)));check()\\ndef all_same():\\n for record in records:same(record)\\ndef read(name,cap,modes,want=None):\\n check();parents()\\n fd=keep(os.open(name,os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC,dir_fd=public));s=os.fstat(fd)\\n need(stat.S_ISREG(s.st_mode) and s.st_uid==s.st_gid==1000 and s.st_nlink==1 and s.st_dev==os.fstat(public).st_dev and stat.S_IMODE(s.st_mode) in modes and 0<s.st_size<=cap)\\n data=os.pread(fd,cap+1,0);need(len(data)==s.st_size and (want is None or data==want))\\n record=[fd,name,data,meta(s)];same(record);records.append(record);return record\\ntry:\\n need(os.getuid()==os.geteuid()==os.getgid()==os.getegid()==1000 and len(sys.argv)==2)\\n value=parse(sys.argv[1]);need(type(value) is dict and set(value)=={\\'collector\\',\\'raw\\'} and all(type(v) is str for v in value.values()))\\n intended=value[\\'raw\\'].encode();need(0<len(intended)<=65536 and intended.endswith(b\\'\\\\n\\'))\\n collected=parse(value[\\'collector\\']);expected=collected[\\'envelope\\']\\n need(type(expected) is dict and set(expected)=={\\'bytes\\',\\'metadata\\',\\'sha256\\'} and type(expected[\\'bytes\\']) is int and type(expected[\\'metadata\\']) is list and len(expected[\\'metadata\\'])==10 and all(type(x) is int for x in expected[\\'metadata\\']))\\n flags=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\\n public=keep(os.open(\\'/\\',flags));s=os.fstat(public);need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((None,None,public,meta(s)))\\n for part in (\\'home\\',\\'postedism\\',\\'Desktop\\',\\'Warden\\',\\'docs\\',\\'evidence\\',\\'task-6\\'):\\n  parent=public;public=keep(os.open(part,flags,dir_fd=parent));s=os.fstat(public)\\n  need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((parent,part,public,meta(s)))\\n P=\\'controller-cache-continuation-v1-20261025-\\';M=\\'capture-preprobe\\'\\n SECONDS={\"capture-preprobe\":180,\"capture\":90,\"capture-postflight\":180,\"continue-preprobe\":180,\"continue\":600,\"continue-postflight\":180}\\n need(M in SECONDS);T=SECONDS[M]\\n envelope=read(P+M+\\'-deadline.json\\',4096,(0o600,0o644))\\n need(expected=={\\'bytes\\':len(envelope[2]),\\'metadata\\':envelope[3],\\'sha256\\':hashlib.sha256(envelope[2]).hexdigest()})\\n received=parse(envelope[2]);need(received[\\'mode\\']==M and received[\\'stage\\']==M.split(\\'-\\')[0] and type(received[\\'wall_seconds\\']) is int and received[\\'wall_seconds\\']==T)\\n need(all(received[k]==collected[k] for k in (\\'source_commit\\',\\'source_manifest_sha256\\',\\'clock_identity\\')))\\n timing=received[\\'timing\\'];need(type(timing) is dict and set(timing)=={\\'sample\\',\\'budget_start_monotonic_lower_ns\\',\\'outer_entry_monotonic_ns\\'})\\n first=timing[\\'sample\\'];names=(\\'pid\\',\\'hz\\',\\'birth_ticks\\',\\'birth_boot_lower_ns\\',\\'monotonic_before_ns\\',\\'boottime_ns\\',\\'monotonic_after_ns\\')\\n need(type(first) is dict and set(first)==set(names)|{\\'namespace\\'})\\n values=[timing[\\'budget_start_monotonic_lower_ns\\'],timing[\\'outer_entry_monotonic_ns\\']]+[first[k] for k in names]\\n need(all(type(x) is int and 0<=x<10**18 for x in values))\\n need(first[\\'pid\\']>0 and first[\\'hz\\']==100 and first[\\'birth_ticks\\']>0 and first[\\'birth_boot_lower_ns\\']==first[\\'birth_ticks\\']*1000000000//100-1000000000//100)\\n need(type(first[\\'namespace\\']) is list and len(first[\\'namespace\\'])==2 and all(type(x) is int and x>=0 for x in first[\\'namespace\\']))\\n start=first[\\'birth_boot_lower_ns\\']-(first[\\'boottime_ns\\']-first[\\'monotonic_before_ns\\'])\\n need(start==timing[\\'budget_start_monotonic_lower_ns\\'] and 0<=start<=timing[\\'outer_entry_monotonic_ns\\']<=first[\\'monotonic_after_ns\\'])\\n need(0<=first[\\'monotonic_before_ns\\']<=first[\\'monotonic_after_ns\\']<=M0 and first[\\'monotonic_after_ns\\']-first[\\'monotonic_before_ns\\']<=100000000)\\n need(first[\\'monotonic_before_ns\\']<=first[\\'boottime_ns\\']<=B0 and first[\\'birth_boot_lower_ns\\']<=first[\\'boottime_ns\\'])\\n lo=max(lo,first[\\'boottime_ns\\']-first[\\'monotonic_after_ns\\']);hi=min(hi,first[\\'boottime_ns\\']-first[\\'monotonic_before_ns\\']);need(lo<=hi)\\n next_me=min(me,start+T*1000000000);next_be=min(be,first[\\'birth_boot_lower_ns\\']+T*1000000000)\\n a,b=check();need(a<next_me and b<next_be)\\n me=next_me;be=next_be;arm()\\n target=read(P+M+\\'-root-tool.json\\',65536,(0o600,0o644,0o664),intended);all_same()\\n for record in (target,):\\n  all_same();check();before=record[3];os.fchmod(record[0],0o600);check();after=meta(os.fstat(record[0]))\\n  need(after[4]==stat.S_IFREG|0o600 and all(after[i]==before[i] for i in (0,1,2,3,5,6,7,9)))\\n  record[3]=after;os.fsync(record[0]);check();all_same()\\n all_same();sys.stdout.write(\\'{\"state\":\"six-mode-metadata-finalized\",\"authority\":false}\\\\n\\');sys.stdout.flush();all_same()\\nfinally:\\n for fd in reversed(fds):check();os.close(fd);check()\\ncheck()\\n','<unchanged-six-metadata-body>','exec'),{})\nfinally:\n sys.stderr.write('WARDEN_SIX_METADATA_FD_TELEMETRY '+json.dumps({'root_routed':_root_used,'opens':_opens,'fchmod':_chmods,'fsync':_syncs,'held_count':len(_held)},separators=(',',':'))+'\\n');sys.stderr.flush()\n"
+      },
+      "stderr": "WARDEN_SIX_METADATA_FD_TELEMETRY {\"root_routed\":true,\"opens\":[\"ROUTED_ROOT\",\"home\",\"postedism\",\"Desktop\",\"Warden\",\"docs\",\"evidence\",\"task-6\",\"controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json\",\"controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json\"],\"fchmod\":[\"controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json\"],\"fsync\":[\"controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json\"],\"held_count\":0}\n",
+      "stdout": "{\"state\":\"six-mode-metadata-finalized\",\"authority\":false}\n",
+      "telemetry": {
+        "fchmod": [
+          "controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json"
+        ],
+        "fsync": [
+          "controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json"
+        ],
+        "held_count": 0,
+        "opens": [
+          "ROUTED_ROOT",
+          "home",
+          "postedism",
+          "Desktop",
+          "Warden",
+          "docs",
+          "evidence",
+          "task-6",
+          "controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json",
+          "controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json"
+        ],
+        "root_routed": true
+      },
+      "temporary_allocated_after": 8192,
+      "temporary_allocated_before": 8192,
+      "timed_out": false
+    },
+    {
+      "actual_envelope_proof": {
+        "bytes": 604,
+        "metadata": [
+          47,
+          2662138,
+          1000,
+          1000,
+          33152,
+          1,
+          604,
+          1792958917412394852,
+          1792958917412394852,
+          8
+        ],
+        "sha256": "8a6e151eba9cc2e9d994f88e141c066a7c89bf873743e1ba6833f1d778d4cc7f"
+      },
+      "after": {
+        "controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json": {
+          "metadata": [
+            47,
+            2662138,
+            1000,
+            1000,
+            33152,
+            1,
+            604,
+            1792958917412394852,
+            1792958917412394852,
+            8
+          ],
+          "sha256": "8a6e151eba9cc2e9d994f88e141c066a7c89bf873743e1ba6833f1d778d4cc7f"
+        },
+        "controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json": {
+          "metadata": [
+            47,
+            2662137,
+            1000,
+            1000,
+            33204,
+            1,
+            40,
+            1792958917412355342,
+            1792958917412355342,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "before": {
+        "controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json": {
+          "metadata": [
+            47,
+            2662138,
+            1000,
+            1000,
+            33152,
+            1,
+            604,
+            1792958917412394852,
+            1792958917412394852,
+            8
+          ],
+          "sha256": "8a6e151eba9cc2e9d994f88e141c066a7c89bf873743e1ba6833f1d778d4cc7f"
+        },
+        "controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json": {
+          "metadata": [
+            47,
+            2662137,
+            1000,
+            1000,
+            33204,
+            1,
+            40,
+            1792958917412355342,
+            1792958917412355342,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "case": "wrong-intended",
+      "exit_code": 1,
+      "owned_pid": 4,
+      "passed": true,
+      "request": {
+        "argv": [
+          "/usr/bin/python3",
+          "-I",
+          "-S",
+          "-B",
+          "-",
+          "{\"collector\":\"{\\\"envelope\\\":{\\\"bytes\\\":604,\\\"metadata\\\":[47,2662138,1000,1000,33152,1,604,1792958917412394852,1792958917412394852,8],\\\"sha256\\\":\\\"8a6e151eba9cc2e9d994f88e141c066a7c89bf873743e1ba6833f1d778d4cc7f\\\"},\\\"source_commit\\\":\\\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\\\",\\\"source_manifest_sha256\\\":\\\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\\\",\\\"clock_identity\\\":{\\\"machine_id\\\":\\\"fixture-only\\\",\\\"boot_id\\\":\\\"fixture-only\\\"}}\",\"raw\":\"{\\\"fixture\\\":\\\"wrong intended\\\"}\\n\"}"
+        ],
+        "cwd": "/tmp/warden-six-metadata-zdbjrxrw/wrong-intended",
+        "env": {
+          "LANG": "C",
+          "LC_ALL": "C",
+          "PATH": "/usr/bin:/bin"
+        },
+        "stdin": "import os,sys,time,signal,resource,json,hashlib,stat\n_root='/tmp/warden-six-metadata-zdbjrxrw/wrong-intended'\n_P='controller-cache-continuation-v1-20261025-capture-preprobe'\n_parts=('home','postedism','Desktop','Warden','docs','evidence','task-6')\n_names=(_P+'-deadline.json',_P+'-root-tool.json')\n_df=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\n_ff=os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC\n_open,_stat,_fstat,_pread,_close,_chmod,_sync=os.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync\n_held={};_root_used=False;_chmods=[];_syncs=[];_opens=[]\ndef _need(v):\n if not v:raise RuntimeError('fixture path/FD firewall')\ndef _o(path,flags,mode=0o777,*,dir_fd=None):\n global _root_used\n if dir_fd is None:\n  _need(not _root_used and path=='/' and flags==_df);_root_used=True\n  fd=_open(_root,flags);_held[fd]=('dir',0);_opens.append('ROUTED_ROOT');return fd\n _need(dir_fd in _held and _held[dir_fd][0]=='dir');depth=_held[dir_fd][1]\n if depth<len(_parts):\n  _need(path==_parts[depth] and flags==_df);fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('dir',depth+1)\n else:\n  _need(path in _names and flags==_ff);fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('file',path)\n _opens.append(path);return fd\ndef _s(path,*,dir_fd=None,follow_symlinks=True):\n _need(dir_fd in _held and _held[dir_fd][0]=='dir' and follow_symlinks is False)\n depth=_held[dir_fd][1];_need(path==_parts[depth] if depth<len(_parts) else path in _names)\n return _stat(path,dir_fd=dir_fd,follow_symlinks=False)\ndef _f(fd):_need(fd in _held);return _fstat(fd)\ndef _p(fd,n,offset):\n _need(fd in _held and _held[fd][0]=='file' and 0<n<=65537 and offset==0);return _pread(fd,n,offset)\ndef _c(fd):_need(fd in _held);_close(fd);del _held[fd]\ndef _m(fd,mode):\n _need(fd in _held and _held[fd]==('file',_names[1]) and mode==0o600);_chmods.append(_names[1]);return _chmod(fd,mode)\ndef _y(fd):\n _need(fd in _held and _held[fd]==('file',_names[1]));_syncs.append(_names[1]);return _sync(fd)\nos.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync=_o,_s,_f,_p,_c,_m,_y\ntry:\n exec(compile('import time\\nM0=time.monotonic_ns();B0=time.clock_gettime_ns(time.CLOCK_BOOTTIME);A0=time.monotonic_ns()\\nimport os,sys,signal,resource\\ndef need(ok):\\n if not ok:raise ValueError(\\'six-mode metadata refusal\\')\\nneed(0<=A0-M0<=100000000)\\nme=M0+5000000000;be=B0+5000000000;lo=B0-A0;hi=B0-M0;fm=A0;fb=B0\\ndef check():\\n global lo,hi,fm,fb\\n u=time.monotonic_ns();b=time.clock_gettime_ns(time.CLOCK_BOOTTIME);a=time.monotonic_ns()\\n need(0<=a-u<=100000000 and fm<=u<=a<me and fb<=b<be)\\n lo=max(lo,b-a);hi=min(hi,b-u);need(lo<=hi);fm=a;fb=b\\n return a,b\\ndef arm():\\n a,b=check();signal.setitimer(signal.ITIMER_REAL,min(me-a,be-b)/1000000000)\\nsignal.signal(signal.SIGALRM,lambda *_:os._exit(124));arm()\\nfor k,n in ((resource.RLIMIT_CPU,2),(resource.RLIMIT_AS,134217728),(resource.RLIMIT_FSIZE,1048576)):\\n soft,hard=resource.getrlimit(k);need(hard==resource.RLIM_INFINITY or hard>=n);resource.setrlimit(k,(n,n))\\nimport json,hashlib,stat\\ndef pairs(items):\\n value={}\\n for k,v in items:need(k not in value);value[k]=v\\n return value\\ndef bad(_):raise ValueError(\\'noninteger JSON\\')\\ndef parse(s):return json.loads(s,object_pairs_hook=pairs,parse_float=bad,parse_constant=bad)\\ndef meta(s):return [getattr(s,\\'st_\\'+k) for k in (\\'dev\\',\\'ino\\',\\'uid\\',\\'gid\\',\\'mode\\',\\'nlink\\',\\'size\\',\\'mtime_ns\\',\\'ctime_ns\\',\\'blocks\\')]\\nfds=[];dirs=[];records=[]\\ndef keep(fd):fds.append(fd);return fd\\ndef parents():\\n check()\\n for parent,name,fd,before in dirs:\\n  now=meta(os.fstat(fd));need(now==before)\\n  if parent is not None:need(meta(os.stat(name,dir_fd=parent,follow_symlinks=False))==now)\\n check()\\ndef same(record):\\n check();parents();fd,name,data,m=record\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)))\\n need(os.pread(fd,65537,0)==data)\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)));check()\\ndef all_same():\\n for record in records:same(record)\\ndef read(name,cap,modes,want=None):\\n check();parents()\\n fd=keep(os.open(name,os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC,dir_fd=public));s=os.fstat(fd)\\n need(stat.S_ISREG(s.st_mode) and s.st_uid==s.st_gid==1000 and s.st_nlink==1 and s.st_dev==os.fstat(public).st_dev and stat.S_IMODE(s.st_mode) in modes and 0<s.st_size<=cap)\\n data=os.pread(fd,cap+1,0);need(len(data)==s.st_size and (want is None or data==want))\\n record=[fd,name,data,meta(s)];same(record);records.append(record);return record\\ntry:\\n need(os.getuid()==os.geteuid()==os.getgid()==os.getegid()==1000 and len(sys.argv)==2)\\n value=parse(sys.argv[1]);need(type(value) is dict and set(value)=={\\'collector\\',\\'raw\\'} and all(type(v) is str for v in value.values()))\\n intended=value[\\'raw\\'].encode();need(0<len(intended)<=65536 and intended.endswith(b\\'\\\\n\\'))\\n collected=parse(value[\\'collector\\']);expected=collected[\\'envelope\\']\\n need(type(expected) is dict and set(expected)=={\\'bytes\\',\\'metadata\\',\\'sha256\\'} and type(expected[\\'bytes\\']) is int and type(expected[\\'metadata\\']) is list and len(expected[\\'metadata\\'])==10 and all(type(x) is int for x in expected[\\'metadata\\']))\\n flags=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\\n public=keep(os.open(\\'/\\',flags));s=os.fstat(public);need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((None,None,public,meta(s)))\\n for part in (\\'home\\',\\'postedism\\',\\'Desktop\\',\\'Warden\\',\\'docs\\',\\'evidence\\',\\'task-6\\'):\\n  parent=public;public=keep(os.open(part,flags,dir_fd=parent));s=os.fstat(public)\\n  need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((parent,part,public,meta(s)))\\n P=\\'controller-cache-continuation-v1-20261025-\\';M=\\'capture-preprobe\\'\\n SECONDS={\"capture-preprobe\":180,\"capture\":90,\"capture-postflight\":180,\"continue-preprobe\":180,\"continue\":600,\"continue-postflight\":180}\\n need(M in SECONDS);T=SECONDS[M]\\n envelope=read(P+M+\\'-deadline.json\\',4096,(0o600,0o644))\\n need(expected=={\\'bytes\\':len(envelope[2]),\\'metadata\\':envelope[3],\\'sha256\\':hashlib.sha256(envelope[2]).hexdigest()})\\n received=parse(envelope[2]);need(received[\\'mode\\']==M and received[\\'stage\\']==M.split(\\'-\\')[0] and type(received[\\'wall_seconds\\']) is int and received[\\'wall_seconds\\']==T)\\n need(all(received[k]==collected[k] for k in (\\'source_commit\\',\\'source_manifest_sha256\\',\\'clock_identity\\')))\\n timing=received[\\'timing\\'];need(type(timing) is dict and set(timing)=={\\'sample\\',\\'budget_start_monotonic_lower_ns\\',\\'outer_entry_monotonic_ns\\'})\\n first=timing[\\'sample\\'];names=(\\'pid\\',\\'hz\\',\\'birth_ticks\\',\\'birth_boot_lower_ns\\',\\'monotonic_before_ns\\',\\'boottime_ns\\',\\'monotonic_after_ns\\')\\n need(type(first) is dict and set(first)==set(names)|{\\'namespace\\'})\\n values=[timing[\\'budget_start_monotonic_lower_ns\\'],timing[\\'outer_entry_monotonic_ns\\']]+[first[k] for k in names]\\n need(all(type(x) is int and 0<=x<10**18 for x in values))\\n need(first[\\'pid\\']>0 and first[\\'hz\\']==100 and first[\\'birth_ticks\\']>0 and first[\\'birth_boot_lower_ns\\']==first[\\'birth_ticks\\']*1000000000//100-1000000000//100)\\n need(type(first[\\'namespace\\']) is list and len(first[\\'namespace\\'])==2 and all(type(x) is int and x>=0 for x in first[\\'namespace\\']))\\n start=first[\\'birth_boot_lower_ns\\']-(first[\\'boottime_ns\\']-first[\\'monotonic_before_ns\\'])\\n need(start==timing[\\'budget_start_monotonic_lower_ns\\'] and 0<=start<=timing[\\'outer_entry_monotonic_ns\\']<=first[\\'monotonic_after_ns\\'])\\n need(0<=first[\\'monotonic_before_ns\\']<=first[\\'monotonic_after_ns\\']<=M0 and first[\\'monotonic_after_ns\\']-first[\\'monotonic_before_ns\\']<=100000000)\\n need(first[\\'monotonic_before_ns\\']<=first[\\'boottime_ns\\']<=B0 and first[\\'birth_boot_lower_ns\\']<=first[\\'boottime_ns\\'])\\n lo=max(lo,first[\\'boottime_ns\\']-first[\\'monotonic_after_ns\\']);hi=min(hi,first[\\'boottime_ns\\']-first[\\'monotonic_before_ns\\']);need(lo<=hi)\\n next_me=min(me,start+T*1000000000);next_be=min(be,first[\\'birth_boot_lower_ns\\']+T*1000000000)\\n a,b=check();need(a<next_me and b<next_be)\\n me=next_me;be=next_be;arm()\\n target=read(P+M+\\'-root-tool.json\\',65536,(0o600,0o644,0o664),intended);all_same()\\n for record in (target,):\\n  all_same();check();before=record[3];os.fchmod(record[0],0o600);check();after=meta(os.fstat(record[0]))\\n  need(after[4]==stat.S_IFREG|0o600 and all(after[i]==before[i] for i in (0,1,2,3,5,6,7,9)))\\n  record[3]=after;os.fsync(record[0]);check();all_same()\\n all_same();sys.stdout.write(\\'{\"state\":\"six-mode-metadata-finalized\",\"authority\":false}\\\\n\\');sys.stdout.flush();all_same()\\nfinally:\\n for fd in reversed(fds):check();os.close(fd);check()\\ncheck()\\n','<unchanged-six-metadata-body>','exec'),{})\nfinally:\n sys.stderr.write('WARDEN_SIX_METADATA_FD_TELEMETRY '+json.dumps({'root_routed':_root_used,'opens':_opens,'fchmod':_chmods,'fsync':_syncs,'held_count':len(_held)},separators=(',',':'))+'\\n');sys.stderr.flush()\n"
+      },
+      "stderr": "WARDEN_SIX_METADATA_FD_TELEMETRY {\"root_routed\":true,\"opens\":[\"ROUTED_ROOT\",\"home\",\"postedism\",\"Desktop\",\"Warden\",\"docs\",\"evidence\",\"task-6\",\"controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json\",\"controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json\"],\"fchmod\":[],\"fsync\":[],\"held_count\":0}\nTraceback (most recent call last):\n  File \"<stdin>\", line 37, in <module>\n  File \"<unchanged-six-metadata-body>\", line 81, in <module>\n  File \"<unchanged-six-metadata-body>\", line 46, in read\n  File \"<unchanged-six-metadata-body>\", line 5, in need\nValueError: six-mode metadata refusal\n",
+      "stderr_classification": "expected intended refusal traceback retained in full; exact telemetry separately parsed",
+      "stdout": "",
+      "telemetry": {
+        "fchmod": [],
+        "fsync": [],
+        "held_count": 0,
+        "opens": [
+          "ROUTED_ROOT",
+          "home",
+          "postedism",
+          "Desktop",
+          "Warden",
+          "docs",
+          "evidence",
+          "task-6",
+          "controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json",
+          "controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json"
+        ],
+        "root_routed": true
+      },
+      "temporary_allocated_after": 16384,
+      "temporary_allocated_before": 16384,
+      "timed_out": false
+    },
+    {
+      "actual_envelope_proof": {
+        "bytes": 604,
+        "metadata": [
+          47,
+          2662148,
+          1000,
+          1000,
+          33152,
+          1,
+          604,
+          1792958917440559072,
+          1792958917440559072,
+          8
+        ],
+        "sha256": "904bf40b1457a32574a93a36ae45b18991f9e00894219da097fb489d344c6601"
+      },
+      "after": {
+        "controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json": {
+          "metadata": [
+            47,
+            2662148,
+            1000,
+            1000,
+            33152,
+            1,
+            604,
+            1792958917440559072,
+            1792958917440559072,
+            8
+          ],
+          "sha256": "904bf40b1457a32574a93a36ae45b18991f9e00894219da097fb489d344c6601"
+        },
+        "controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json": {
+          "metadata": [
+            47,
+            2662147,
+            1000,
+            1000,
+            33204,
+            1,
+            40,
+            1792958917440519315,
+            1792958917440519315,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "before": {
+        "controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json": {
+          "metadata": [
+            47,
+            2662148,
+            1000,
+            1000,
+            33152,
+            1,
+            604,
+            1792958917440559072,
+            1792958917440559072,
+            8
+          ],
+          "sha256": "904bf40b1457a32574a93a36ae45b18991f9e00894219da097fb489d344c6601"
+        },
+        "controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json": {
+          "metadata": [
+            47,
+            2662147,
+            1000,
+            1000,
+            33204,
+            1,
+            40,
+            1792958917440519315,
+            1792958917440519315,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "case": "envelope-proof-mismatch",
+      "exit_code": 1,
+      "owned_pid": 5,
+      "passed": true,
+      "request": {
+        "argv": [
+          "/usr/bin/python3",
+          "-I",
+          "-S",
+          "-B",
+          "-",
+          "{\"collector\":\"{\\\"envelope\\\":{\\\"bytes\\\":604,\\\"metadata\\\":[47,2662148,1000,1000,33152,1,604,1792958917440559072,1792958917440559072,8],\\\"sha256\\\":\\\"0000000000000000000000000000000000000000000000000000000000000000\\\"},\\\"source_commit\\\":\\\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\\\",\\\"source_manifest_sha256\\\":\\\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\\\",\\\"clock_identity\\\":{\\\"machine_id\\\":\\\"fixture-only\\\",\\\"boot_id\\\":\\\"fixture-only\\\"}}\",\"raw\":\"{\\\"fixture\\\":\\\"raw apostrophe ' retained\\\"}\\n\"}"
+        ],
+        "cwd": "/tmp/warden-six-metadata-zdbjrxrw/envelope-proof-mismatch",
+        "env": {
+          "LANG": "C",
+          "LC_ALL": "C",
+          "PATH": "/usr/bin:/bin"
+        },
+        "stdin": "import os,sys,time,signal,resource,json,hashlib,stat\n_root='/tmp/warden-six-metadata-zdbjrxrw/envelope-proof-mismatch'\n_P='controller-cache-continuation-v1-20261025-capture-preprobe'\n_parts=('home','postedism','Desktop','Warden','docs','evidence','task-6')\n_names=(_P+'-deadline.json',_P+'-root-tool.json')\n_df=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\n_ff=os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC\n_open,_stat,_fstat,_pread,_close,_chmod,_sync=os.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync\n_held={};_root_used=False;_chmods=[];_syncs=[];_opens=[]\ndef _need(v):\n if not v:raise RuntimeError('fixture path/FD firewall')\ndef _o(path,flags,mode=0o777,*,dir_fd=None):\n global _root_used\n if dir_fd is None:\n  _need(not _root_used and path=='/' and flags==_df);_root_used=True\n  fd=_open(_root,flags);_held[fd]=('dir',0);_opens.append('ROUTED_ROOT');return fd\n _need(dir_fd in _held and _held[dir_fd][0]=='dir');depth=_held[dir_fd][1]\n if depth<len(_parts):\n  _need(path==_parts[depth] and flags==_df);fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('dir',depth+1)\n else:\n  _need(path in _names and flags==_ff);fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('file',path)\n _opens.append(path);return fd\ndef _s(path,*,dir_fd=None,follow_symlinks=True):\n _need(dir_fd in _held and _held[dir_fd][0]=='dir' and follow_symlinks is False)\n depth=_held[dir_fd][1];_need(path==_parts[depth] if depth<len(_parts) else path in _names)\n return _stat(path,dir_fd=dir_fd,follow_symlinks=False)\ndef _f(fd):_need(fd in _held);return _fstat(fd)\ndef _p(fd,n,offset):\n _need(fd in _held and _held[fd][0]=='file' and 0<n<=65537 and offset==0);return _pread(fd,n,offset)\ndef _c(fd):_need(fd in _held);_close(fd);del _held[fd]\ndef _m(fd,mode):\n _need(fd in _held and _held[fd]==('file',_names[1]) and mode==0o600);_chmods.append(_names[1]);return _chmod(fd,mode)\ndef _y(fd):\n _need(fd in _held and _held[fd]==('file',_names[1]));_syncs.append(_names[1]);return _sync(fd)\nos.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync=_o,_s,_f,_p,_c,_m,_y\ntry:\n exec(compile('import time\\nM0=time.monotonic_ns();B0=time.clock_gettime_ns(time.CLOCK_BOOTTIME);A0=time.monotonic_ns()\\nimport os,sys,signal,resource\\ndef need(ok):\\n if not ok:raise ValueError(\\'six-mode metadata refusal\\')\\nneed(0<=A0-M0<=100000000)\\nme=M0+5000000000;be=B0+5000000000;lo=B0-A0;hi=B0-M0;fm=A0;fb=B0\\ndef check():\\n global lo,hi,fm,fb\\n u=time.monotonic_ns();b=time.clock_gettime_ns(time.CLOCK_BOOTTIME);a=time.monotonic_ns()\\n need(0<=a-u<=100000000 and fm<=u<=a<me and fb<=b<be)\\n lo=max(lo,b-a);hi=min(hi,b-u);need(lo<=hi);fm=a;fb=b\\n return a,b\\ndef arm():\\n a,b=check();signal.setitimer(signal.ITIMER_REAL,min(me-a,be-b)/1000000000)\\nsignal.signal(signal.SIGALRM,lambda *_:os._exit(124));arm()\\nfor k,n in ((resource.RLIMIT_CPU,2),(resource.RLIMIT_AS,134217728),(resource.RLIMIT_FSIZE,1048576)):\\n soft,hard=resource.getrlimit(k);need(hard==resource.RLIM_INFINITY or hard>=n);resource.setrlimit(k,(n,n))\\nimport json,hashlib,stat\\ndef pairs(items):\\n value={}\\n for k,v in items:need(k not in value);value[k]=v\\n return value\\ndef bad(_):raise ValueError(\\'noninteger JSON\\')\\ndef parse(s):return json.loads(s,object_pairs_hook=pairs,parse_float=bad,parse_constant=bad)\\ndef meta(s):return [getattr(s,\\'st_\\'+k) for k in (\\'dev\\',\\'ino\\',\\'uid\\',\\'gid\\',\\'mode\\',\\'nlink\\',\\'size\\',\\'mtime_ns\\',\\'ctime_ns\\',\\'blocks\\')]\\nfds=[];dirs=[];records=[]\\ndef keep(fd):fds.append(fd);return fd\\ndef parents():\\n check()\\n for parent,name,fd,before in dirs:\\n  now=meta(os.fstat(fd));need(now==before)\\n  if parent is not None:need(meta(os.stat(name,dir_fd=parent,follow_symlinks=False))==now)\\n check()\\ndef same(record):\\n check();parents();fd,name,data,m=record\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)))\\n need(os.pread(fd,65537,0)==data)\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)));check()\\ndef all_same():\\n for record in records:same(record)\\ndef read(name,cap,modes,want=None):\\n check();parents()\\n fd=keep(os.open(name,os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC,dir_fd=public));s=os.fstat(fd)\\n need(stat.S_ISREG(s.st_mode) and s.st_uid==s.st_gid==1000 and s.st_nlink==1 and s.st_dev==os.fstat(public).st_dev and stat.S_IMODE(s.st_mode) in modes and 0<s.st_size<=cap)\\n data=os.pread(fd,cap+1,0);need(len(data)==s.st_size and (want is None or data==want))\\n record=[fd,name,data,meta(s)];same(record);records.append(record);return record\\ntry:\\n need(os.getuid()==os.geteuid()==os.getgid()==os.getegid()==1000 and len(sys.argv)==2)\\n value=parse(sys.argv[1]);need(type(value) is dict and set(value)=={\\'collector\\',\\'raw\\'} and all(type(v) is str for v in value.values()))\\n intended=value[\\'raw\\'].encode();need(0<len(intended)<=65536 and intended.endswith(b\\'\\\\n\\'))\\n collected=parse(value[\\'collector\\']);expected=collected[\\'envelope\\']\\n need(type(expected) is dict and set(expected)=={\\'bytes\\',\\'metadata\\',\\'sha256\\'} and type(expected[\\'bytes\\']) is int and type(expected[\\'metadata\\']) is list and len(expected[\\'metadata\\'])==10 and all(type(x) is int for x in expected[\\'metadata\\']))\\n flags=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\\n public=keep(os.open(\\'/\\',flags));s=os.fstat(public);need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((None,None,public,meta(s)))\\n for part in (\\'home\\',\\'postedism\\',\\'Desktop\\',\\'Warden\\',\\'docs\\',\\'evidence\\',\\'task-6\\'):\\n  parent=public;public=keep(os.open(part,flags,dir_fd=parent));s=os.fstat(public)\\n  need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((parent,part,public,meta(s)))\\n P=\\'controller-cache-continuation-v1-20261025-\\';M=\\'capture-preprobe\\'\\n SECONDS={\"capture-preprobe\":180,\"capture\":90,\"capture-postflight\":180,\"continue-preprobe\":180,\"continue\":600,\"continue-postflight\":180}\\n need(M in SECONDS);T=SECONDS[M]\\n envelope=read(P+M+\\'-deadline.json\\',4096,(0o600,0o644))\\n need(expected=={\\'bytes\\':len(envelope[2]),\\'metadata\\':envelope[3],\\'sha256\\':hashlib.sha256(envelope[2]).hexdigest()})\\n received=parse(envelope[2]);need(received[\\'mode\\']==M and received[\\'stage\\']==M.split(\\'-\\')[0] and type(received[\\'wall_seconds\\']) is int and received[\\'wall_seconds\\']==T)\\n need(all(received[k]==collected[k] for k in (\\'source_commit\\',\\'source_manifest_sha256\\',\\'clock_identity\\')))\\n timing=received[\\'timing\\'];need(type(timing) is dict and set(timing)=={\\'sample\\',\\'budget_start_monotonic_lower_ns\\',\\'outer_entry_monotonic_ns\\'})\\n first=timing[\\'sample\\'];names=(\\'pid\\',\\'hz\\',\\'birth_ticks\\',\\'birth_boot_lower_ns\\',\\'monotonic_before_ns\\',\\'boottime_ns\\',\\'monotonic_after_ns\\')\\n need(type(first) is dict and set(first)==set(names)|{\\'namespace\\'})\\n values=[timing[\\'budget_start_monotonic_lower_ns\\'],timing[\\'outer_entry_monotonic_ns\\']]+[first[k] for k in names]\\n need(all(type(x) is int and 0<=x<10**18 for x in values))\\n need(first[\\'pid\\']>0 and first[\\'hz\\']==100 and first[\\'birth_ticks\\']>0 and first[\\'birth_boot_lower_ns\\']==first[\\'birth_ticks\\']*1000000000//100-1000000000//100)\\n need(type(first[\\'namespace\\']) is list and len(first[\\'namespace\\'])==2 and all(type(x) is int and x>=0 for x in first[\\'namespace\\']))\\n start=first[\\'birth_boot_lower_ns\\']-(first[\\'boottime_ns\\']-first[\\'monotonic_before_ns\\'])\\n need(start==timing[\\'budget_start_monotonic_lower_ns\\'] and 0<=start<=timing[\\'outer_entry_monotonic_ns\\']<=first[\\'monotonic_after_ns\\'])\\n need(0<=first[\\'monotonic_before_ns\\']<=first[\\'monotonic_after_ns\\']<=M0 and first[\\'monotonic_after_ns\\']-first[\\'monotonic_before_ns\\']<=100000000)\\n need(first[\\'monotonic_before_ns\\']<=first[\\'boottime_ns\\']<=B0 and first[\\'birth_boot_lower_ns\\']<=first[\\'boottime_ns\\'])\\n lo=max(lo,first[\\'boottime_ns\\']-first[\\'monotonic_after_ns\\']);hi=min(hi,first[\\'boottime_ns\\']-first[\\'monotonic_before_ns\\']);need(lo<=hi)\\n next_me=min(me,start+T*1000000000);next_be=min(be,first[\\'birth_boot_lower_ns\\']+T*1000000000)\\n a,b=check();need(a<next_me and b<next_be)\\n me=next_me;be=next_be;arm()\\n target=read(P+M+\\'-root-tool.json\\',65536,(0o600,0o644,0o664),intended);all_same()\\n for record in (target,):\\n  all_same();check();before=record[3];os.fchmod(record[0],0o600);check();after=meta(os.fstat(record[0]))\\n  need(after[4]==stat.S_IFREG|0o600 and all(after[i]==before[i] for i in (0,1,2,3,5,6,7,9)))\\n  record[3]=after;os.fsync(record[0]);check();all_same()\\n all_same();sys.stdout.write(\\'{\"state\":\"six-mode-metadata-finalized\",\"authority\":false}\\\\n\\');sys.stdout.flush();all_same()\\nfinally:\\n for fd in reversed(fds):check();os.close(fd);check()\\ncheck()\\n','<unchanged-six-metadata-body>','exec'),{})\nfinally:\n sys.stderr.write('WARDEN_SIX_METADATA_FD_TELEMETRY '+json.dumps({'root_routed':_root_used,'opens':_opens,'fchmod':_chmods,'fsync':_syncs,'held_count':len(_held)},separators=(',',':'))+'\\n');sys.stderr.flush()\n"
+      },
+      "stderr": "WARDEN_SIX_METADATA_FD_TELEMETRY {\"root_routed\":true,\"opens\":[\"ROUTED_ROOT\",\"home\",\"postedism\",\"Desktop\",\"Warden\",\"docs\",\"evidence\",\"task-6\",\"controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json\"],\"fchmod\":[],\"fsync\":[],\"held_count\":0}\nTraceback (most recent call last):\n  File \"<stdin>\", line 37, in <module>\n  File \"<unchanged-six-metadata-body>\", line 63, in <module>\n  File \"<unchanged-six-metadata-body>\", line 5, in need\nValueError: six-mode metadata refusal\n",
+      "stderr_classification": "expected intended refusal traceback retained in full; exact telemetry separately parsed",
+      "stdout": "",
+      "telemetry": {
+        "fchmod": [],
+        "fsync": [],
+        "held_count": 0,
+        "opens": [
+          "ROUTED_ROOT",
+          "home",
+          "postedism",
+          "Desktop",
+          "Warden",
+          "docs",
+          "evidence",
+          "task-6",
+          "controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json"
+        ],
+        "root_routed": true
+      },
+      "temporary_allocated_after": 24576,
+      "temporary_allocated_before": 24576,
+      "timed_out": false
+    },
+    {
+      "actual_envelope_proof": {
+        "bytes": 604,
+        "metadata": [
+          47,
+          2662158,
+          1000,
+          1000,
+          33152,
+          1,
+          604,
+          1792958917465554968,
+          1792958917465554968,
+          8
+        ],
+        "sha256": "eba426c26fbee3ddfa3b0eb80e83d1b6b99ac5992b7c898be8294673a39b2f52"
+      },
+      "after": {
+        "controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json": {
+          "metadata": [
+            47,
+            2662158,
+            1000,
+            1000,
+            33152,
+            1,
+            604,
+            1792958917465554968,
+            1792958917465554968,
+            8
+          ],
+          "sha256": "eba426c26fbee3ddfa3b0eb80e83d1b6b99ac5992b7c898be8294673a39b2f52"
+        },
+        "controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json": {
+          "metadata": [
+            47,
+            2662157,
+            1000,
+            1000,
+            33204,
+            1,
+            40,
+            1792958917465514522,
+            1792958917465514522,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "before": {
+        "controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json": {
+          "metadata": [
+            47,
+            2662158,
+            1000,
+            1000,
+            33152,
+            1,
+            604,
+            1792958917465554968,
+            1792958917465554968,
+            8
+          ],
+          "sha256": "eba426c26fbee3ddfa3b0eb80e83d1b6b99ac5992b7c898be8294673a39b2f52"
+        },
+        "controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json": {
+          "metadata": [
+            47,
+            2662157,
+            1000,
+            1000,
+            33204,
+            1,
+            40,
+            1792958917465514522,
+            1792958917465514522,
+            8
+          ],
+          "sha256": "9c98e734e6b2b14556f62d9dd15a4594017cb9bcccbb45445898bd341c2cd0db"
+        }
+      },
+      "case": "spent-deadline",
+      "exit_code": 1,
+      "owned_pid": 6,
+      "passed": true,
+      "request": {
+        "argv": [
+          "/usr/bin/python3",
+          "-I",
+          "-S",
+          "-B",
+          "-",
+          "{\"collector\":\"{\\\"envelope\\\":{\\\"bytes\\\":604,\\\"metadata\\\":[47,2662158,1000,1000,33152,1,604,1792958917465554968,1792958917465554968,8],\\\"sha256\\\":\\\"eba426c26fbee3ddfa3b0eb80e83d1b6b99ac5992b7c898be8294673a39b2f52\\\"},\\\"source_commit\\\":\\\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\\\",\\\"source_manifest_sha256\\\":\\\"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\\\",\\\"clock_identity\\\":{\\\"machine_id\\\":\\\"fixture-only\\\",\\\"boot_id\\\":\\\"fixture-only\\\"}}\",\"raw\":\"{\\\"fixture\\\":\\\"raw apostrophe ' retained\\\"}\\n\"}"
+        ],
+        "cwd": "/tmp/warden-six-metadata-zdbjrxrw/spent-deadline",
+        "env": {
+          "LANG": "C",
+          "LC_ALL": "C",
+          "PATH": "/usr/bin:/bin"
+        },
+        "stdin": "import os,sys,time,signal,resource,json,hashlib,stat\n_root='/tmp/warden-six-metadata-zdbjrxrw/spent-deadline'\n_P='controller-cache-continuation-v1-20261025-capture-preprobe'\n_parts=('home','postedism','Desktop','Warden','docs','evidence','task-6')\n_names=(_P+'-deadline.json',_P+'-root-tool.json')\n_df=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\n_ff=os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC\n_open,_stat,_fstat,_pread,_close,_chmod,_sync=os.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync\n_held={};_root_used=False;_chmods=[];_syncs=[];_opens=[]\ndef _need(v):\n if not v:raise RuntimeError('fixture path/FD firewall')\ndef _o(path,flags,mode=0o777,*,dir_fd=None):\n global _root_used\n if dir_fd is None:\n  _need(not _root_used and path=='/' and flags==_df);_root_used=True\n  fd=_open(_root,flags);_held[fd]=('dir',0);_opens.append('ROUTED_ROOT');return fd\n _need(dir_fd in _held and _held[dir_fd][0]=='dir');depth=_held[dir_fd][1]\n if depth<len(_parts):\n  _need(path==_parts[depth] and flags==_df);fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('dir',depth+1)\n else:\n  _need(path in _names and flags==_ff);fd=_open(path,flags,dir_fd=dir_fd);_held[fd]=('file',path)\n _opens.append(path);return fd\ndef _s(path,*,dir_fd=None,follow_symlinks=True):\n _need(dir_fd in _held and _held[dir_fd][0]=='dir' and follow_symlinks is False)\n depth=_held[dir_fd][1];_need(path==_parts[depth] if depth<len(_parts) else path in _names)\n return _stat(path,dir_fd=dir_fd,follow_symlinks=False)\ndef _f(fd):_need(fd in _held);return _fstat(fd)\ndef _p(fd,n,offset):\n _need(fd in _held and _held[fd][0]=='file' and 0<n<=65537 and offset==0);return _pread(fd,n,offset)\ndef _c(fd):_need(fd in _held);_close(fd);del _held[fd]\ndef _m(fd,mode):\n _need(fd in _held and _held[fd]==('file',_names[1]) and mode==0o600);_chmods.append(_names[1]);return _chmod(fd,mode)\ndef _y(fd):\n _need(fd in _held and _held[fd]==('file',_names[1]));_syncs.append(_names[1]);return _sync(fd)\nos.open,os.stat,os.fstat,os.pread,os.close,os.fchmod,os.fsync=_o,_s,_f,_p,_c,_m,_y\ntry:\n exec(compile('import time\\nM0=time.monotonic_ns();B0=time.clock_gettime_ns(time.CLOCK_BOOTTIME);A0=time.monotonic_ns()\\nimport os,sys,signal,resource\\ndef need(ok):\\n if not ok:raise ValueError(\\'six-mode metadata refusal\\')\\nneed(0<=A0-M0<=100000000)\\nme=M0+5000000000;be=B0+5000000000;lo=B0-A0;hi=B0-M0;fm=A0;fb=B0\\ndef check():\\n global lo,hi,fm,fb\\n u=time.monotonic_ns();b=time.clock_gettime_ns(time.CLOCK_BOOTTIME);a=time.monotonic_ns()\\n need(0<=a-u<=100000000 and fm<=u<=a<me and fb<=b<be)\\n lo=max(lo,b-a);hi=min(hi,b-u);need(lo<=hi);fm=a;fb=b\\n return a,b\\ndef arm():\\n a,b=check();signal.setitimer(signal.ITIMER_REAL,min(me-a,be-b)/1000000000)\\nsignal.signal(signal.SIGALRM,lambda *_:os._exit(124));arm()\\nfor k,n in ((resource.RLIMIT_CPU,2),(resource.RLIMIT_AS,134217728),(resource.RLIMIT_FSIZE,1048576)):\\n soft,hard=resource.getrlimit(k);need(hard==resource.RLIM_INFINITY or hard>=n);resource.setrlimit(k,(n,n))\\nimport json,hashlib,stat\\ndef pairs(items):\\n value={}\\n for k,v in items:need(k not in value);value[k]=v\\n return value\\ndef bad(_):raise ValueError(\\'noninteger JSON\\')\\ndef parse(s):return json.loads(s,object_pairs_hook=pairs,parse_float=bad,parse_constant=bad)\\ndef meta(s):return [getattr(s,\\'st_\\'+k) for k in (\\'dev\\',\\'ino\\',\\'uid\\',\\'gid\\',\\'mode\\',\\'nlink\\',\\'size\\',\\'mtime_ns\\',\\'ctime_ns\\',\\'blocks\\')]\\nfds=[];dirs=[];records=[]\\ndef keep(fd):fds.append(fd);return fd\\ndef parents():\\n check()\\n for parent,name,fd,before in dirs:\\n  now=meta(os.fstat(fd));need(now==before)\\n  if parent is not None:need(meta(os.stat(name,dir_fd=parent,follow_symlinks=False))==now)\\n check()\\ndef same(record):\\n check();parents();fd,name,data,m=record\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)))\\n need(os.pread(fd,65537,0)==data)\\n need(meta(os.fstat(fd))==m==meta(os.stat(name,dir_fd=public,follow_symlinks=False)));check()\\ndef all_same():\\n for record in records:same(record)\\ndef read(name,cap,modes,want=None):\\n check();parents()\\n fd=keep(os.open(name,os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK|os.O_CLOEXEC,dir_fd=public));s=os.fstat(fd)\\n need(stat.S_ISREG(s.st_mode) and s.st_uid==s.st_gid==1000 and s.st_nlink==1 and s.st_dev==os.fstat(public).st_dev and stat.S_IMODE(s.st_mode) in modes and 0<s.st_size<=cap)\\n data=os.pread(fd,cap+1,0);need(len(data)==s.st_size and (want is None or data==want))\\n record=[fd,name,data,meta(s)];same(record);records.append(record);return record\\ntry:\\n need(os.getuid()==os.geteuid()==os.getgid()==os.getegid()==1000 and len(sys.argv)==2)\\n value=parse(sys.argv[1]);need(type(value) is dict and set(value)=={\\'collector\\',\\'raw\\'} and all(type(v) is str for v in value.values()))\\n intended=value[\\'raw\\'].encode();need(0<len(intended)<=65536 and intended.endswith(b\\'\\\\n\\'))\\n collected=parse(value[\\'collector\\']);expected=collected[\\'envelope\\']\\n need(type(expected) is dict and set(expected)=={\\'bytes\\',\\'metadata\\',\\'sha256\\'} and type(expected[\\'bytes\\']) is int and type(expected[\\'metadata\\']) is list and len(expected[\\'metadata\\'])==10 and all(type(x) is int for x in expected[\\'metadata\\']))\\n flags=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\\n public=keep(os.open(\\'/\\',flags));s=os.fstat(public);need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((None,None,public,meta(s)))\\n for part in (\\'home\\',\\'postedism\\',\\'Desktop\\',\\'Warden\\',\\'docs\\',\\'evidence\\',\\'task-6\\'):\\n  parent=public;public=keep(os.open(part,flags,dir_fd=parent));s=os.fstat(public)\\n  need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((parent,part,public,meta(s)))\\n P=\\'controller-cache-continuation-v1-20261025-\\';M=\\'capture-preprobe\\'\\n SECONDS={\"capture-preprobe\":180,\"capture\":90,\"capture-postflight\":180,\"continue-preprobe\":180,\"continue\":600,\"continue-postflight\":180}\\n need(M in SECONDS);T=SECONDS[M]\\n envelope=read(P+M+\\'-deadline.json\\',4096,(0o600,0o644))\\n need(expected=={\\'bytes\\':len(envelope[2]),\\'metadata\\':envelope[3],\\'sha256\\':hashlib.sha256(envelope[2]).hexdigest()})\\n received=parse(envelope[2]);need(received[\\'mode\\']==M and received[\\'stage\\']==M.split(\\'-\\')[0] and type(received[\\'wall_seconds\\']) is int and received[\\'wall_seconds\\']==T)\\n need(all(received[k]==collected[k] for k in (\\'source_commit\\',\\'source_manifest_sha256\\',\\'clock_identity\\')))\\n timing=received[\\'timing\\'];need(type(timing) is dict and set(timing)=={\\'sample\\',\\'budget_start_monotonic_lower_ns\\',\\'outer_entry_monotonic_ns\\'})\\n first=timing[\\'sample\\'];names=(\\'pid\\',\\'hz\\',\\'birth_ticks\\',\\'birth_boot_lower_ns\\',\\'monotonic_before_ns\\',\\'boottime_ns\\',\\'monotonic_after_ns\\')\\n need(type(first) is dict and set(first)==set(names)|{\\'namespace\\'})\\n values=[timing[\\'budget_start_monotonic_lower_ns\\'],timing[\\'outer_entry_monotonic_ns\\']]+[first[k] for k in names]\\n need(all(type(x) is int and 0<=x<10**18 for x in values))\\n need(first[\\'pid\\']>0 and first[\\'hz\\']==100 and first[\\'birth_ticks\\']>0 and first[\\'birth_boot_lower_ns\\']==first[\\'birth_ticks\\']*1000000000//100-1000000000//100)\\n need(type(first[\\'namespace\\']) is list and len(first[\\'namespace\\'])==2 and all(type(x) is int and x>=0 for x in first[\\'namespace\\']))\\n start=first[\\'birth_boot_lower_ns\\']-(first[\\'boottime_ns\\']-first[\\'monotonic_before_ns\\'])\\n need(start==timing[\\'budget_start_monotonic_lower_ns\\'] and 0<=start<=timing[\\'outer_entry_monotonic_ns\\']<=first[\\'monotonic_after_ns\\'])\\n need(0<=first[\\'monotonic_before_ns\\']<=first[\\'monotonic_after_ns\\']<=M0 and first[\\'monotonic_after_ns\\']-first[\\'monotonic_before_ns\\']<=100000000)\\n need(first[\\'monotonic_before_ns\\']<=first[\\'boottime_ns\\']<=B0 and first[\\'birth_boot_lower_ns\\']<=first[\\'boottime_ns\\'])\\n lo=max(lo,first[\\'boottime_ns\\']-first[\\'monotonic_after_ns\\']);hi=min(hi,first[\\'boottime_ns\\']-first[\\'monotonic_before_ns\\']);need(lo<=hi)\\n next_me=min(me,start+T*1000000000);next_be=min(be,first[\\'birth_boot_lower_ns\\']+T*1000000000)\\n a,b=check();need(a<next_me and b<next_be)\\n me=next_me;be=next_be;arm()\\n target=read(P+M+\\'-root-tool.json\\',65536,(0o600,0o644,0o664),intended);all_same()\\n for record in (target,):\\n  all_same();check();before=record[3];os.fchmod(record[0],0o600);check();after=meta(os.fstat(record[0]))\\n  need(after[4]==stat.S_IFREG|0o600 and all(after[i]==before[i] for i in (0,1,2,3,5,6,7,9)))\\n  record[3]=after;os.fsync(record[0]);check();all_same()\\n all_same();sys.stdout.write(\\'{\"state\":\"six-mode-metadata-finalized\",\"authority\":false}\\\\n\\');sys.stdout.flush();all_same()\\nfinally:\\n for fd in reversed(fds):check();os.close(fd);check()\\ncheck()\\n','<unchanged-six-metadata-body>','exec'),{})\nfinally:\n sys.stderr.write('WARDEN_SIX_METADATA_FD_TELEMETRY '+json.dumps({'root_routed':_root_used,'opens':_opens,'fchmod':_chmods,'fsync':_syncs,'held_count':len(_held)},separators=(',',':'))+'\\n');sys.stderr.flush()\n"
+      },
+      "stderr": "WARDEN_SIX_METADATA_FD_TELEMETRY {\"root_routed\":true,\"opens\":[\"ROUTED_ROOT\",\"home\",\"postedism\",\"Desktop\",\"Warden\",\"docs\",\"evidence\",\"task-6\",\"controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json\"],\"fchmod\":[],\"fsync\":[],\"held_count\":0}\nTraceback (most recent call last):\n  File \"<stdin>\", line 37, in <module>\n  File \"<unchanged-six-metadata-body>\", line 79, in <module>\n  File \"<unchanged-six-metadata-body>\", line 5, in need\nValueError: six-mode metadata refusal\n",
+      "stderr_classification": "expected intended refusal traceback retained in full; exact telemetry separately parsed",
+      "stdout": "",
+      "telemetry": {
+        "fchmod": [],
+        "fsync": [],
+        "held_count": 0,
+        "opens": [
+          "ROUTED_ROOT",
+          "home",
+          "postedism",
+          "Desktop",
+          "Warden",
+          "docs",
+          "evidence",
+          "task-6",
+          "controller-cache-continuation-v1-20261025-capture-preprobe-deadline.json"
+        ],
+        "root_routed": true
+      },
+      "temporary_allocated_after": 32768,
+      "temporary_allocated_before": 32768,
+      "timed_out": false
+    }
+  ],
+  "cases_passed": 4,
+  "elapsed_monotonic_ns": 123917200,
+  "errors": 0,
+  "failures": 0,
+  "frozen_changed_sources_verified": 6,
+  "helper_sha256": "d1662fb46fae9df41297a805588a3ed1d1356f3448b94c719b9e932d53bf6cbb",
+  "limits": {
+    "address_bytes": 268435456,
+    "cpu_seconds": 20,
+    "file_bytes": 2097152,
+    "temporary_bytes": 5242880,
+    "wall_seconds": 45
+  },
+  "missing": [],
+  "owned_temp": "/tmp/warden-six-metadata-zdbjrxrw",
+  "owned_temp_removed_after_known_terminal": true,
+  "real_runtime_paths_accessed": false,
+  "scope": "four FD cases plus static six path/time mappings only",
+  "static_mapping": [
+    {
+      "mode": "capture-preprobe",
+      "seconds": 180,
+      "target": "/home/postedism/Desktop/Warden/docs/evidence/task-6/controller-cache-continuation-v1-20261025-capture-preprobe-root-tool.json"
+    },
+    {
+      "mode": "capture",
+      "seconds": 90,
+      "target": "/home/postedism/Desktop/Warden/docs/evidence/task-6/controller-cache-continuation-v1-20261025-capture-root-tool.json"
+    },
+    {
+      "mode": "capture-postflight",
+      "seconds": 180,
+      "target": "/home/postedism/Desktop/Warden/docs/evidence/task-6/controller-cache-continuation-v1-20261025-capture-postflight-root-tool.json"
+    },
+    {
+      "mode": "continue-preprobe",
+      "seconds": 180,
+      "target": "/home/postedism/Desktop/Warden/docs/evidence/task-6/controller-cache-continuation-v1-20261025-continue-preprobe-root-tool.json"
+    },
+    {
+      "mode": "continue",
+      "seconds": 600,
+      "target": "/home/postedism/Desktop/Warden/docs/evidence/task-6/controller-cache-continuation-v1-20261025-continue-root-tool.json"
+    },
+    {
+      "mode": "continue-postflight",
+      "seconds": 180,
+      "target": "/home/postedism/Desktop/Warden/docs/evidence/task-6/controller-cache-continuation-v1-20261025-continue-postflight-root-tool.json"
+    }
+  ],
+  "static_mappings_passed": 6,
+  "temporary_peak_final": 32768
+}

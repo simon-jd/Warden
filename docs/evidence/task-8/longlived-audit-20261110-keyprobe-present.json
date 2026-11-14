@@ -1,0 +1,38 @@
+{
+  "now": "2026-11-11T04:27:47.592728+00:00",
+  "apps_scanned": 2,
+  "storage_accounts_scanned": 1,
+  "long_lived_count": 3,
+  "expired_ignored": 0,
+  "findings": [
+    {
+      "kind": "app_client_secret",
+      "app": "<other-project-app>",
+      "app_id": "<other-project-app-id>",
+      "key_id": "<other-project-key>",
+      "expires": "2026-12-31T00:00:00Z",
+      "lifetime_days": 51,
+      "owner_project": "<other-project>",
+      "counted": false
+    },
+    {
+      "kind": "app_client_secret",
+      "app": "warden-lab-keyprobe",
+      "app_id": "00000000-0000-0000-0000-000000000004",
+      "key_id": "00000000-0000-0000-0000-000000000006",
+      "expires": "2028-11-11T04:27:45.5257102Z",
+      "lifetime_days": 731,
+      "owner_project": "warden",
+      "counted": true
+    },
+    {
+      "kind": "storage_shared_key",
+      "account": "<other-project-storage>",
+      "resource_group": "rg-mlinfra-westus",
+      "owner_project": null,
+      "counted": false
+    }
+  ],
+  "project": "warden",
+  "project_long_lived_count": 1
+}

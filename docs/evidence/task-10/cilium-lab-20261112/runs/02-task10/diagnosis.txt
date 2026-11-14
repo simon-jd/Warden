@@ -1,0 +1,52 @@
+# Why run 02's DNS queries timed out under default-deny.yaml (2026-11-12, ~23:50-00:00 -08:00, lab run2)
+# Commands run against the live lab; outputs copied as printed. Pods: diag-dns (gVisor,
+# 10.42.0.93) and diag-dns-runc (runc, 10.42.0.225), both warden.dev/sandbox=true, with
+# policies/cilium/default-deny.yaml and egress-proxy.yaml applied by hand.
+
+## Cilium redirects the queries to its DNS proxy (port 33847)...
+$ cilium-dbg status --verbose | grep -A3 'Proxy Status'
+Proxy Status:   OK, ip 10.42.0.245, 2 redirects active on ports 10000-20000, Envoy: external
+  Protocol            Redirect              Proxy Port
+  cilium-dns-egress   1089:egress:UDP:53:   33847
+  cilium-dns-egress   3474:egress:UDP:53:   33847
+$ iptables -t mangle -L CILIUM_PRE_mangle -v -n -x | grep udp     # in the agent container
+      22     2130 TPROXY     udp  --  *      *       0.0.0.0/0            0.0.0.0/0            mark match 0x37840200 /* cilium: TPROXY to host cilium-dns-egress proxy */ TPROXY redirect 127.0.0.1:33847 mark 0x200/0xffffffff
+$ ss -uanpe | grep 33847
+UNCONN 0      0          127.0.0.1:33847      0.0.0.0:*    users:(("cilium-agent",pid=1,fd=85)) ino:183347748 sk:2c82 fwmark:0xb00 cgroup:/ <->
+
+## ...but the proxy never gets one: no UDP datagram reaches any socket in the node's netns
+$ cilium-dbg metrics list | grep 'proxy_type=fqdn'
+cilium_policy_l7_total   proxy_type=fqdn rule=received   0.000000   (forwarded, denied, parse_errors: 0 too)
+$ grep '^Udp:' /proc/net/snmp      # node netns
+Udp: InDatagrams NoPorts InErrors OutDatagrams RcvbufErrors SndbufErrors InCsumErrors IgnoredMulti MemErrors
+Udp: 0 0 0 0 0 0 0 0 0
+# One query from diag-dns-runc (warden-probe net q1,dns,A,warden-egress.warden-system.svc.cluster.local):
+# the TPROXY counter went 22 -> 23, Ip:InReceives +307, Ip:InDelivers +306, no error counter moved
+# (InDiscards, InAddrErrors, TcpExt:IPReversePathFilter all +0): one packet dropped without a counter.
+
+## The drop: the reverse-path check of the TPROXY'd packet
+$ ip route   # node: the pod CIDR is behind cilium_host; ip rule 9: fwmark 0x200/0xf00 lookup 2004; table 2004: local default dev lo
+$ cat /proc/sys/net/ipv4/conf/all/src_valid_mark   # node netns, inherited from the host's (host: 1)
+1
+$ ip route get 10.42.0.254 from 10.42.0.225 iif lxc491de4a42698 mark 0x200
+RTNETLINK answers: Invalid argument
+# With src_valid_mark=1 the kernel validates the source with the packet's mark: the reverse
+# lookup of 10.42.0.225 with mark 0x200 hits rule 9 -> table 2004 -> a local route, which is
+# not accepted as a source (accept_local=0), so the packet is a martian and is dropped
+# (fib_validate_source; martian drops have no SNMP counter).
+
+## The node's own setting set to 0 (per-netns; the host's stays 1)
+$ docker exec warden-k3s-gvisor sysctl -w net.ipv4.conf.all.src_valid_mark=0
+net.ipv4.conf.all.src_valid_mark = 0
+$ cat /proc/sys/net/ipv4/conf/all/src_valid_mark   # host
+1
+$ ip route get 10.42.0.254 from 10.42.0.225 iif lxc491de4a42698 mark 0x200
+local 10.42.0.254 from 10.42.0.225 dev lo table 2004 mark 0x200
+    cache <local> iif lxc491de4a42698
+$ warden-probe net q1,dns,A,warden-egress.warden-system.svc.cluster.local q2,dns,A,allowed.warden.test
+diag-dns-runc: {"key":"q1","ok":false,"rcode":3,"ms":2.013}   {"key":"q2","ok":false,"rcode":5,"ms":0.125}
+diag-dns:      {"key":"q1","ok":false,"rcode":3,"ms":1.005}   {"key":"q2","ok":false,"rcode":5,"ms":0.352}
+# The proxy now answers: REFUSED (5) for a name the policy does not allow, NXDOMAIN (3) for the
+# allowed name (the warden-system Service did not exist at that moment).
+# Fix: scripts/k3s_gvisor_lab.sh creates the Cilium node with --sysctl
+# net.ipv4.conf.all.src_valid_mark=0 (red-green/10-src-valid-mark-*.txt).

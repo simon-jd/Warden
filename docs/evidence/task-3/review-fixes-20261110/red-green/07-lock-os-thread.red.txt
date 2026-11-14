@@ -1,0 +1,10 @@
+# RED: TestPayloadLocksItsThreadBeforeChangingCredentials against payload() at 8ded85d
+# 2026-11-10T20:38:36-08:00
+=== RUN   TestPayloadLocksItsThreadBeforeChangingCredentials
+    supervisor_linux_test.go:95: payload calls unix.Prctl before runtime.LockOSThread
+--- FAIL: TestPayloadLocksItsThreadBeforeChangingCredentials (0.00s)
+FAIL
+FAIL	warden/runtimes/gvisor/supervisor	0.003s
+FAIL
+make: *** [Makefile:63: test-go] Error 1
+exit: 2

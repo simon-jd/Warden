@@ -1,0 +1,20 @@
+{"owned_image_charge": 0, "outstanding": 0, "additional": 5000000000, "service_memory": 5000000000}
+{"additional_bytes": "5000000000", "at": "2026-10-24T20:49:18Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 270725529600, "project_allocated_bytes": 3826446336, "service_memory_bytes": "5000000000"}
+{"owned_image_charge": 0, "outstanding": 5000000000, "additional": 0, "service_memory": 5000000000}
+{"additional_bytes": "5000000000", "at": "2026-10-24T20:49:19Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 270685863936, "project_allocated_bytes": 3826450432, "service_memory_bytes": "5000000000"}
+{"owned_image_charge": 358868574, "outstanding": 5000000000, "additional": 0, "service_memory": 5000000000}
+{"additional_bytes": "5358868574", "at": "2026-10-24T20:49:23Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 270461952000, "project_allocated_bytes": 3826454528, "service_memory_bytes": "5000000000"}
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 315, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 314, in main
+    else:execute(args.mode,args.other_service_memory_bytes)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 287, in execute
+    if mode in LIVE:inspect_live(data,mode,bind)
+                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 258, in inspect_live
+    if h.get('Privileged') or h['Memory']!=memory or h['MemorySwap']!=memory or h['PidsLimit']!=512 or h['NanoCpus']!=2000000000 or h['NetworkMode']!='none' or h['IpcMode']!='private' or h['CgroupnsMode']!='private' or h['PidMode'] or not h['ReadonlyRootfs'] or set(h['CapAdd'])!=set(CAPS) or h['CapDrop']!=['ALL'] or h.get('DeviceCgroupRules') or h.get('DeviceRequests'):raise ValueError('inspected outer bounds differ')
+                                                                                                                                                                                                                                                                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: inspected outer bounds differ

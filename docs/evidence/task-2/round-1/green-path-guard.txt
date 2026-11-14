@@ -1,0 +1,13 @@
+test_ancestor_symlink_is_rejected (__main__.LabPathsTests.test_ancestor_symlink_is_rejected) ... ok
+test_artifact_symlinks_and_group_writable_files_are_rejected (__main__.LabPathsTests.test_artifact_symlinks_and_group_writable_files_are_rejected) ... ok
+test_cleanup_never_follows_replaced_session_path (__main__.LabPathsTests.test_cleanup_never_follows_replaced_session_path) ... ok
+test_cleanup_rejects_replaced_daemon_child_directory (__main__.LabPathsTests.test_cleanup_rejects_replaced_daemon_child_directory) ... ok
+test_lab_directory_symlink_is_rejected_before_write (__main__.LabPathsTests.test_lab_directory_symlink_is_rejected_before_write) ... ok
+test_preexisting_targets_and_dangling_aliases_are_rejected (__main__.LabPathsTests.test_preexisting_targets_and_dangling_aliases_are_rejected) ... ok
+test_session_is_exclusive_and_files_do_not_overwrite_prior_session (__main__.LabPathsTests.test_session_is_exclusive_and_files_do_not_overwrite_prior_session) ... ok
+test_untrusted_owner_and_writable_ancestor_fail_closed (__main__.LabPathsTests.test_untrusted_owner_and_writable_ancestor_fail_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.005s
+
+OK

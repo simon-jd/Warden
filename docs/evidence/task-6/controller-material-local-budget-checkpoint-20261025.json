@@ -1,0 +1,53 @@
+{
+  "scope": "Local disk budget checkpoint only; no Docker/API/private body/host mutation/cloud/GPU. Not complete actual material admission.",
+  "request": {
+    "cmd": "ulimit -t 20\nulimit -v 262144\nulimit -f 2048\nexec /usr/bin/timeout --signal=TERM --kill-after=5s 45s /usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C python3 -B scripts/azure_guard.py preflight --additional-bytes 5004489216 --service-memory-bytes 1000000000 --download-bytes 0",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "sandbox_permissions": "require_escalated",
+    "justification": "仅运行已审查且冻结未变的本项目本地磁盘预算检查，保留Q5GB并加完整材料证据上限；不访问Docker、私有正文、云API、GPU或修改宿主网络。",
+    "yield_time_ms": 1000,
+    "max_output_tokens": 2000
+  },
+  "initial": {
+    "chunk_id": "c5fea9",
+    "wall_time_seconds": 0.295917575,
+    "exit_code": 0,
+    "original_token_count": 56,
+    "output": "{\"additional_bytes\": \"5004489216\", \"at\": \"2026-10-25T17:20:40Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 263708983296, \"project_allocated_bytes\": 4254707712, \"service_memory_bytes\": \"1000000000\"}\n"
+  },
+  "final": {
+    "chunk_id": "c5fea9",
+    "wall_time_seconds": 0.295917575,
+    "exit_code": 0,
+    "original_token_count": 56,
+    "output": "{\"additional_bytes\": \"5004489216\", \"at\": \"2026-10-25T17:20:40Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 263708983296, \"project_allocated_bytes\": 4254707712, \"service_memory_bytes\": \"1000000000\"}\n"
+  },
+  "facts": {
+    "additional_bytes": "5004489216",
+    "at": "2026-10-25T17:20:40Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 263708983296,
+    "project_allocated_bytes": 4254707712,
+    "service_memory_bytes": "1000000000"
+  },
+  "limits": {
+    "cpu_seconds": 20,
+    "address_kib": 262144,
+    "file_blocks_1024_bytes": 2048,
+    "timeout_seconds": 45,
+    "kill_after_seconds": 5
+  },
+  "memory_scope": "1,000,000,000 byte conservative service-memory declaration; no new RSS/PID/service census; not a measured resident result",
+  "additional_scope": "Q5,000,000,000 retained plus complete 4,489,216 material evidence cap; no new charge or Q release",
+  "total_project_plus_reserved_bytes": 9259196928,
+  "new_3000000000_charge_fits": false,
+  "not_verified": [
+    "native origin/ancestors/stdlib/clock namespace and physical bootstrap bound",
+    "ordinary recovery/sibling/scene/sysctl/private eligibility",
+    "actual material socket/API/tool chain/capture/approval/continue"
+  ]
+}

@@ -1,0 +1,5 @@
+--- FAIL: TestReapPermanentlyRevokesDelayedStartAcrossInstances (0.00s)
+    gate_test.go:29: delayed launch: <nil>
+FAIL
+FAIL	warden/runtimes/gate	0.002s
+FAIL

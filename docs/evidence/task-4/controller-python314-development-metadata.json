@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-24T23:48:15.170883+00:00",
+  "path": "/usr/lib/python3.14/config-3.14-x86_64-linux-gnu/python.o",
+  "uid": 0,
+  "gid": 0,
+  "nlink": 1,
+  "mode": "0644",
+  "bytes": 11504,
+  "dev": 66307,
+  "ino": 112601252,
+  "xattrs": [],
+  "read_bytes": 20,
+  "header_hex": "7f454c4602010100000000000000000001003e00",
+  "header_sha256": "f43453b3fe51a3fba833a8277427ab17f9bd218590b0c87a13151612e1b7fe3e",
+  "elf_class": 2,
+  "elf_data": 1,
+  "elf_type": 1,
+  "elf_machine": 62,
+  "file_body_beyond_header_read": false,
+  "ABI_executed": false,
+  "packaging_or_Docker": false,
+  "private_scene_access": false
+}

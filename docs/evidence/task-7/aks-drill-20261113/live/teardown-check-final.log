@@ -1,0 +1,3 @@
+{"at": "2026-11-14T00:33:52Z", "event": "teardown-check", "found": {"clusters": [], "group": false, "groups": [], "identities": [], "network_watcher": "the Network Watcher that was there before has changed", "node_group": false, "role_assignments": [], "tagged_resources": []}, "network_watcher": "changed", "ok": false, "principals_checked": 3}
+guard refused: AKS drill resources are still there: network_watcher
+exit 1

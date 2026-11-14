@@ -1,0 +1,4 @@
+=== RUN   TestClosedExitChannelNeverReportsSuccess
+--- PASS: TestClosedExitChannelNeverReportsSuccess (0.00s)
+PASS
+ok  	warden/runtimes/runc	0.005s

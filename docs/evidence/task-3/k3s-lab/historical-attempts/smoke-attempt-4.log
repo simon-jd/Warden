@@ -1,0 +1,13 @@
+{"owned_image_charge": 0, "outstanding_charge": 0}
+{"additional_bytes": "6000000000", "at": "2026-10-24T06:20:49Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 359437320192, "project_allocated_bytes": 3019829248, "service_memory_bytes": "4000000000"}
+{"rootfs_bytes": 496028842, "archive_bytes": 496599040, "manifest_sha256": "9f6e1ccb60a97bad446c74199b9b5679b829545764380d48cf08ebc494b548ef"}
+{"owned_image_charge": 0, "outstanding_charge": 0}
+{"additional_bytes": "6000000000", "at": "2026-10-24T06:20:56Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 358940254208, "project_allocated_bytes": 3516542976, "service_memory_bytes": "4000000000"}
+k3s lab failed: ValueError
+k3s lab failed: ValueError
+k3s version v1.36.5+k3s1 (3dd98cc5)
+go version go1.26.8
+containerd github.com/k3s-io/containerd/v2 v2.3.4-k3s1.36
+runsc version release-20261019.0
+spec: 1.2.1
+k3s lab failed: CalledProcessError

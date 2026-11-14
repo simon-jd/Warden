@@ -1,0 +1,38 @@
+{
+  "source": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f",
+  "scope": "One actual device-policy gate plus source-bound prepare/packageverification and independentpostflight; no VM",
+  "files": {
+    "prepare-first.json": {
+      "sha256": "054879c9fb80bfa4e012661939e17c6344af4539f1cabefdfcfe69a9f402225d",
+      "bytes": 636
+    },
+    "device-policy-first-postflight.json": {
+      "sha256": "b01f77dd3178231c3e723f7c4556b30449765d611547fda3fe1a55ab4508da63",
+      "bytes": 6199
+    },
+    "prepare-first.log": {
+      "sha256": "cb05c4e7258c8b8b4376cca4be6b6afa443e1c5667e0a0aed428f1bf99792dc7",
+      "bytes": 14163
+    },
+    "package-verification-device-policy.json": {
+      "sha256": "6b163e25740bb3fddab93a6ecef84f4764631d14502377bc0ffb0f6ae82cfc1f",
+      "bytes": 5652
+    },
+    "device-policy-first.log": {
+      "sha256": "0ef5226f65a5a42a14958a433f081264cc7aae8d234b1a1029576f834cccaaa0",
+      "bytes": 6865
+    },
+    "device-policy.md": {
+      "sha256": "d63f3533e169d00d2e7c2866c8d10d3205887fdf9e9f0b64dcd6c18bbf3fe155",
+      "bytes": 3214
+    },
+    "controller-run-mode-round4-command.py": {
+      "sha256": "04ee1dd85e574419022f2d1557889fe064d1fee163b5a5fda5cc7445338c2ba0",
+      "bytes": 2018
+    },
+    "device-policy-first.json": {
+      "sha256": "9337231068cf9f2ace593344d0a5cdeb0cf607103f9e31543bd6225c20db3d07",
+      "bytes": 677
+    }
+  }
+}

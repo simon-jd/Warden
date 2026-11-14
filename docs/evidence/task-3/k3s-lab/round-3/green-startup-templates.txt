@@ -1,0 +1,7 @@
+test_final_readiness_recheck_refuses_persistent_api_or_node_failure (test_k3s_lab_init.InitTest.test_final_readiness_recheck_refuses_persistent_api_or_node_failure) ... ok
+test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields (test_k3s_lab_init.InitTest.test_source_backed_startup_templates_need_ready_window_and_redact_internal_fields) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.003s
+
+OK

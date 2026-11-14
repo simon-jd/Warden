@@ -1,0 +1,5 @@
+--- FAIL: TestSuccessRequiresRunningAndCleanExit (0.05s)
+    execution_test.go:111: success before running accepted
+FAIL
+FAIL	warden/controlplane/internal/runs	0.055s
+FAIL

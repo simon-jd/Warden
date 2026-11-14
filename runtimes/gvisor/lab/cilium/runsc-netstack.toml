@@ -1,0 +1,9 @@
+# gVisor options for the "runsc-netstack" CRI handler (RuntimeClass
+# gvisor-netstack, Cilium mode of the k3s lab only). As runsc.toml, except
+# network=sandbox: the sandbox runs gVisor's netstack on the pod's veth, so
+# its traffic leaves through the interface Cilium enforces policy on.
+[runsc_config]
+  platform = "systrap"
+  network = "sandbox"
+  in-sandbox-cgroup = "v2"
+  oci-seccomp = "true"

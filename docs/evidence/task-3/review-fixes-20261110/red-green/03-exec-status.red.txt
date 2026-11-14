@@ -1,0 +1,10 @@
+# RED: TestAwaitKeepsTheExecStatusWhenTheExitIsReadyFirst against await at 0911847 (the old select loop, moved)
+# 2026-11-10T20:37:32-08:00
+=== RUN   TestAwaitKeepsTheExecStatusWhenTheExitIsReadyFirst
+    supervisor_linux_test.go:23: run 1 of 200: setup error lost, report {Version:0 Code:0 TimedOut:false PidsMaxEvents:0 PeakPids:0 CgroupEmpty:false InitUnixNano:0 ExecUnixNano:0 Error:}
+--- FAIL: TestAwaitKeepsTheExecStatusWhenTheExitIsReadyFirst (0.00s)
+FAIL
+FAIL	warden/runtimes/gvisor/supervisor	0.003s
+FAIL
+make: *** [Makefile:63: test-go] Error 1
+exit: 2

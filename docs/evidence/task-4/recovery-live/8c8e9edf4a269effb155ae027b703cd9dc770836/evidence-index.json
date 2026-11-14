@@ -1,0 +1,38 @@
+{
+  "source": "8c8e9edf4a269effb155ae027b703cd9dc770836",
+  "scope": "pre-daemon material refusal and known material-only cleanup; no actual inventory/recovery",
+  "files": {
+    "README.md": {
+      "bytes": 2895,
+      "sha256": "51101eadb175e94c1a9bb3bf15f20d1b4fec34b1141ab0e0bfba8096f4276fd8"
+    },
+    "controller-recovery-a-command.py": {
+      "bytes": 3446,
+      "sha256": "f333779add4a5dfc7d4ad0bea714255d776056d2ab3b578e9295e7d34a5b20da"
+    },
+    "inspect-meta.json": {
+      "bytes": 989,
+      "sha256": "2106ab99094a0c8a2aa289e327368bb072e5ae6b5d2532cba59896ae8d18e230"
+    },
+    "inspect.log": {
+      "bytes": 124,
+      "sha256": "965e587ccbf1b5e0657acb6aa1497dd54eee231618a38a90aa357eb5dd25a66c"
+    },
+    "material-cleanup-postflight.json": {
+      "bytes": 537,
+      "sha256": "c30f508912fe41ae49742fd11cb502e70845071f572e94cd8fa25c571c2697a3"
+    },
+    "material-only-cleanup-meta.json": {
+      "bytes": 583,
+      "sha256": "18412cb47d0c27a0eb2e4afc13c0bb89eed38f7d115773213c95fba5f03f6a4d"
+    },
+    "material-only-cleanup.log": {
+      "bytes": 138,
+      "sha256": "f7566144e404ed423e0ee3f689fbb905883a149e50097161b29795cd60249d6c"
+    },
+    "material-refusal-postflight.json": {
+      "bytes": 1659,
+      "sha256": "890fccb4acc709b1b9b96e922d8e57f0f755ed9ef0a1740bcc56c8450ada7429"
+    }
+  }
+}

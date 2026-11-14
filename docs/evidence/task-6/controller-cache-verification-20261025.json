@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-25T09:49:36.481718+00:00",
+  "base": "0a18e1aa54619097cfc90fa0488ddb3e2269ac25",
+  "source": "7be15fa29aafc7cf84dcd488dbf8aadc22ae2655",
+  "evidence": "3f417651b257d91ea892b8cf0ffbcf45778adfd8",
+  "new_source_files": [
+    "scripts/identity_cache.py",
+    "scripts/test_identity_cache.py"
+  ],
+  "frozen_pre_post_commit_workspace_source_files_verified": 139,
+  "artifacts": {
+    "docs/evidence/task-6/cache-cover-05/output.txt": {
+      "bytes": 4820,
+      "sha256": "c3cfff472e0208778b02217eabc44b27481fdb07b11587f2a4ac7c1f2a919d10"
+    },
+    "docs/evidence/task-6/cache-cover-05/post-source.json": {
+      "bytes": 14783,
+      "sha256": "240775e85e6ad28311cd942d5927013eded7ddef151e7a356961ce20f50f6589"
+    },
+    "docs/evidence/task-6/cache-cover-05/pre-source.json": {
+      "bytes": 14783,
+      "sha256": "240775e85e6ad28311cd942d5927013eded7ddef151e7a356961ce20f50f6589"
+    },
+    "docs/evidence/task-6/cache-cover-05/receipt.json": {
+      "bytes": 373,
+      "sha256": "3b464384a9d5cd064c89f3831382bfc7e684f305e60311dc890c02284f163821"
+    },
+    "docs/evidence/task-6/cache-cover-06/output.txt": {
+      "bytes": 3893,
+      "sha256": "e844957c0d59a262c00ebc0161a9c252cf7f27385782a7338674c49cbfc28f12"
+    },
+    "docs/evidence/task-6/cache-cover-06/post-source.json": {
+      "bytes": 14783,
+      "sha256": "55c32249d7ba56ce2be01c7997b2e86cf350da2ec13958d1d1d560cd4def4c09"
+    },
+    "docs/evidence/task-6/cache-cover-06/pre-source.json": {
+      "bytes": 14783,
+      "sha256": "55c32249d7ba56ce2be01c7997b2e86cf350da2ec13958d1d1d560cd4def4c09"
+    },
+    "docs/evidence/task-6/cache-cover-06/receipt.json": {
+      "bytes": 392,
+      "sha256": "3f5e22df18fc2d3205fd8289c3ec7568ebaf36fa1b9ded201f66a4014f61fd83"
+    },
+    "docs/evidence/task-6/cache-execution-plan.md": {
+      "bytes": 9572,
+      "sha256": "b530d33a718733234b2815ae178314ab538caf409505602088e97530f333c8ca"
+    },
+    "docs/evidence/task-6/cache-fixture-02/output.txt": {
+      "bytes": 2394,
+      "sha256": "e6ee20d988514c3feb52730cc0e6f1b0c026c90ed9ae685bdba4079f007bd98c"
+    },
+    "docs/evidence/task-6/cache-fixture-02/post-source.json": {
+      "bytes": 14783,
+      "sha256": "39669ccd0887a67ac984c0e206b12c97b7100509df7231ba90388d4b71c1cc79"
+    },
+    "docs/evidence/task-6/cache-fixture-02/pre-source.json": {
+      "bytes": 14783,
+      "sha256": "39669ccd0887a67ac984c0e206b12c97b7100509df7231ba90388d4b71c1cc79"
+    },
+    "docs/evidence/task-6/cache-fixture-02/receipt.json": {
+      "bytes": 221,
+      "sha256": "932bd66d11b5f1a58cbd26e0e54609a041aa35385cd7635091df90ef837050db"
+    },
+    "docs/evidence/task-6/cache-fixture-04/output.txt": {
+      "bytes": 3539,
+      "sha256": "3efd6875f5208912bd6568d62fcdf7582d1bbd55a94f0949cd6126535a55e5d8"
+    },
+    "docs/evidence/task-6/cache-fixture-04/post-source.json": {
+      "bytes": 14783,
+      "sha256": "f56501085e94d4e9d450306533bfdb0c45eb916c7494c1c826e9096069396277"
+    },
+    "docs/evidence/task-6/cache-fixture-04/pre-source.json": {
+      "bytes": 14783,
+      "sha256": "f56501085e94d4e9d450306533bfdb0c45eb916c7494c1c826e9096069396277"
+    },
+    "docs/evidence/task-6/cache-fixture-04/receipt.json": {
+      "bytes": 221,
+      "sha256": "c9f82f4f4062a95142a142c2b31116578526d8a40ab0217ba4aff03b8ca068e4"
+    },
+    "docs/evidence/task-6/cache-red-01/output.txt": {
+      "bytes": 216,
+      "sha256": "a22e2b8fadccaca32eaf463a47b05e10dbc9ee8578309279cc02240a6d34bec2"
+    },
+    "docs/evidence/task-6/cache-red-01/post-source.json": {
+      "bytes": 14721,
+      "sha256": "5a9164fb372bf4ae40062449602fdd799938fe2dcca2b22fcded5ed369217526"
+    },
+    "docs/evidence/task-6/cache-red-01/pre-source.json": {
+      "bytes": 14721,
+      "sha256": "5a9164fb372bf4ae40062449602fdd799938fe2dcca2b22fcded5ed369217526"
+    },
+    "docs/evidence/task-6/cache-red-01/receipt.json": {
+      "bytes": 284,
+      "sha256": "71e8ecca82897a94ae9bed00c1be83cc12ddc62b43b836083fa5d9c4bf9fdbd0"
+    },
+    "docs/evidence/task-6/cache-red-03/output.txt": {
+      "bytes": 11584,
+      "sha256": "0aeba97e4154fb7a0199cf25456fb9c90c8d679ca24f6f2d329478e52fbd3697"
+    },
+    "docs/evidence/task-6/cache-red-03/post-source.json": {
+      "bytes": 14783,
+      "sha256": "64a9874fe1935e3a94a7a0ce730dfa0b686fab30e803255fd25a1ffce2df6bec"
+    },
+    "docs/evidence/task-6/cache-red-03/pre-source.json": {
+      "bytes": 14783,
+      "sha256": "64a9874fe1935e3a94a7a0ce730dfa0b686fab30e803255fd25a1ffce2df6bec"
+    },
+    "docs/evidence/task-6/cache-red-03/receipt.json": {
+      "bytes": 301,
+      "sha256": "d4394cfff3dcf95b6c6365af863dde6215a962620efa22fb41f6d9d1332e1c25"
+    },
+    "docs/evidence/task-6/cache-substage-report.md": {
+      "bytes": 5513,
+      "sha256": "bb38e8bd775e94eb7c629e733abd61e3523e9e45c292be9344190a149581e0fa"
+    }
+  },
+  "final_fixture_tests_pass": 26,
+  "fixture_authorship": "subagent /root/identity, not human or actual cache execution",
+  "tests_rerun_by_controller": false,
+  "historical_setup_api_and_cover_failures_preserved": true,
+  "whole_main_fixture_actual_ancestor_admission_not_proved": true,
+  "actual_cache_operation_executed": false,
+  "semantic_source_review": "pending independent reviewer",
+  "Q_released": false,
+  "task6_complete": false,
+  "goal_complete": false
+}

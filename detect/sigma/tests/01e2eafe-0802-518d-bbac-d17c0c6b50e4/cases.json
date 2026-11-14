@@ -1,0 +1,216 @@
+[
+  {
+    "name": "wrong_product",
+    "document_id": "92e9e27a-2f2f-572d-abdd-85ed1ad3f136",
+    "expected_match": false,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 99,
+      "category_uid": 6,
+      "class_uid": 6003,
+      "type_uid": 600399,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Synthetic Other Product",
+          "vendor_name": "Microsoft"
+        },
+        "uid": "cc21c608-059c-5818-a1af-f10c0272e1b1"
+      },
+      "unmapped": {},
+      "api": {
+        "operation": "Microsoft.Authorization/roleAssignments/write"
+      },
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1,
+      "activity_name": "Microsoft.Authorization/roleAssignments/write"
+    }
+  },
+  {
+    "name": "wrong_class",
+    "document_id": "b2777826-518e-5bf9-ad0c-94ebe9c23b31",
+    "expected_match": false,
+    "scope": "deliberately_wrong_class_query_edge",
+    "event": {
+      "activity_id": 99,
+      "category_uid": 6,
+      "class_uid": 9999,
+      "type_uid": 600399,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure Activity Log",
+          "vendor_name": "Microsoft"
+        },
+        "uid": "cc21c608-059c-5818-a1af-f10c0272e1b1"
+      },
+      "unmapped": {},
+      "api": {
+        "operation": "Microsoft.Authorization/roleAssignments/write"
+      },
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1,
+      "activity_name": "Microsoft.Authorization/roleAssignments/write"
+    }
+  },
+  {
+    "name": "missing_action_field",
+    "document_id": "2199b2d5-2caf-5c2a-aa89-671bcef2320a",
+    "expected_match": false,
+    "scope": "deliberately_missing_field_query_edge",
+    "event": {
+      "activity_id": 99,
+      "category_uid": 6,
+      "class_uid": 6003,
+      "type_uid": 600399,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure Activity Log",
+          "vendor_name": "Microsoft"
+        },
+        "uid": "cc21c608-059c-5818-a1af-f10c0272e1b1"
+      },
+      "unmapped": {},
+      "api": {},
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1,
+      "activity_name": "Microsoft.Authorization/roleAssignments/write"
+    }
+  },
+  {
+    "name": "reserved_identifier_value",
+    "document_id": "27d35acc-5ace-5024-98d9-dfea65b8cdc5",
+    "expected_match": true,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 99,
+      "category_uid": 6,
+      "class_uid": 6003,
+      "type_uid": 600399,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure Activity Log",
+          "vendor_name": "Microsoft"
+        },
+        "uid": "neg OR class_uid:9999 *"
+      },
+      "unmapped": {},
+      "api": {
+        "operation": "Microsoft.Authorization/roleAssignments/write"
+      },
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1,
+      "activity_name": "Microsoft.Authorization/roleAssignments/write"
+    }
+  },
+  {
+    "name": "string_case_variant",
+    "document_id": "29b37cc9-a2b9-5625-b797-e03637a12bb1",
+    "expected_match": true,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 99,
+      "category_uid": 6,
+      "class_uid": 6003,
+      "type_uid": 600399,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure Activity Log",
+          "vendor_name": "Microsoft"
+        },
+        "uid": "cc21c608-059c-5818-a1af-f10c0272e1b1"
+      },
+      "unmapped": {},
+      "api": {
+        "operation": "mICROSOFT.aUTHORIZATION/ROLEaSSIGNMENTS/WRITE"
+      },
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1,
+      "activity_name": "mICROSOFT.aUTHORIZATION/ROLEaSSIGNMENTS/WRITE"
+    }
+  },
+  {
+    "name": "literal_star_is_not_wildcard_in_event",
+    "document_id": "0a61209d-8d57-5677-bc63-0bca7ce5c9c5",
+    "expected_match": false,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 99,
+      "category_uid": 6,
+      "class_uid": 6003,
+      "type_uid": 600399,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure Activity Log",
+          "vendor_name": "Microsoft"
+        },
+        "uid": "cc21c608-059c-5818-a1af-f10c0272e1b1"
+      },
+      "unmapped": {},
+      "api": {
+        "operation": "Microsoft.Authorization/roleAssignments/write*"
+      },
+      "actor": {
+        "user": {
+          "uid": "synthetic-operator"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.10"
+      },
+      "status_id": 1,
+      "activity_name": "Microsoft.Authorization/roleAssignments/write*"
+    }
+  }
+]

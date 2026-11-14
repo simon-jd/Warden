@@ -1,0 +1,16 @@
+=== RUN   TestSocketAcceptsOwnedDedicatedUnixListener
+    review_test.go:137: socket ancestor writable by untrusted group/other
+--- FAIL: TestSocketAcceptsOwnedDedicatedUnixListener (0.00s)
+=== RUN   TestSocketRevalidationRejectsAliasAfterConstruction
+    review_test.go:214: socket ancestor writable by untrusted group/other
+--- FAIL: TestSocketRevalidationRejectsAliasAfterConstruction (0.00s)
+=== RUN   TestContainerdClientDialsOnlyAuthenticatedListener
+    review_test.go:269: owned listener not reached: {Version: Revision:} rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: socket ancestor writable by untrusted group/other"
+--- FAIL: TestContainerdClientDialsOnlyAuthenticatedListener (0.00s)
+=== RUN   TestStartHonorsCanceledSetupWithoutConnecting
+    runc_test.go:210: socket ancestor writable by untrusted group/other
+--- FAIL: TestStartHonorsCanceledSetupWithoutConnecting (0.00s)
+=== RUN   TestReapRejectsUncontrolledRunIDBeforeConnecting
+    runc_test.go:257: socket ancestor writable by untrusted group/other
+--- FAIL: TestReapRejectsUncontrolledRunIDBeforeConnecting (0.00s)
+FAIL

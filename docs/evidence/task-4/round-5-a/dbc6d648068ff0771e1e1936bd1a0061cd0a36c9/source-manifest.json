@@ -1,0 +1,332 @@
+{
+  "source": "dbc6d648068ff0771e1e1936bd1a0061cd0a36c9",
+  "source_parent": "ef7fd7b83bd9d7989c4246f6be1137868b2f9984",
+  "fix_base": "a683b6e580200ec522012f59c30a029a83a3922d",
+  "runtime_source": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f",
+  "files": {
+    "docs/firecracker-recovery.md": {
+      "sha256": "75f7654eab233626e91c991a38f9b17f826a27fe481446afa89a13a4700b0313",
+      "bytes": 12745,
+      "mode": "0o644"
+    },
+    "scripts/firecracker_recovery.py": {
+      "sha256": "11e2e35522cdad96f08b7ab3c5b31ad0cac8510b9efe9d1ae08514267ddb3c84",
+      "bytes": 46022,
+      "mode": "0o644"
+    },
+    "scripts/firecracker_recovery_init.py": {
+      "sha256": "72675e91ac22ab3f1607fc5f21b90db18fc8c115e9a50bd8a48761cf70c8c9b2",
+      "bytes": 14633,
+      "mode": "0o644"
+    },
+    "scripts/test_firecracker_recovery.py": {
+      "sha256": "9dc9ce336275870368141c4ee2753e3e294969ac0c7f9b2529c35c96a6a6d1c9",
+      "bytes": 21192,
+      "mode": "0o644"
+    },
+    "scripts/test_firecracker_recovery_init.py": {
+      "sha256": "78cc1d28223ceaa8c5b9f433dce41c08f328f13a9f9e2af950cddc7f5d893776",
+      "bytes": 12811,
+      "mode": "0o644"
+    }
+  },
+  "unchanged_runtime_interfaces_and_profiles": {
+    "runtimes/firecracker/abi.go": {
+      "sha256": "dd1271af87599bb17386be44ce8eeddcec2128f1aeb6a7dc471786f67aafa7f8",
+      "bytes": 787,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/api.go": {
+      "sha256": "8e133deb4f75b019453014d4a41939e08342cf55e02daf93a14efc1917882431",
+      "bytes": 2801,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/api_test.go": {
+      "sha256": "9e865ba7ebf1f27f2bc1e356b510a6dd4655815c1ce35a1fe7717a0796966afc",
+      "bytes": 2144,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/capacity_test.go": {
+      "sha256": "e82211a6a8c4b84ebe2a6381cffed5009c16668d28071ab0769c91d36077b5cd",
+      "bytes": 2401,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/cgroup.go": {
+      "sha256": "223b6e1ea3de576b353937f67ee422870c2c43ddcbca747508432b2274553cff",
+      "bytes": 722,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/cgroup_test.go": {
+      "sha256": "f3dfbc652b2cb186cea229854ee71307361dfdbaf5f557f9d2ede2e25c5e6b9c",
+      "bytes": 596,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/cmd/agent/main.go": {
+      "sha256": "54d5e4dadd966e06ece9ce3a507ebdda6ca76fd36dbde914439bbab81da1654f",
+      "bytes": 403,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/cmd/lab/main.go": {
+      "sha256": "93d2436a2b3fceb2e063404b4764a14ee45e9111950a9e991445ba388d838157",
+      "bytes": 471,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/cmd/rootfs/main.go": {
+      "sha256": "e6e5cfd8569c54ecb55618d448c99289fe3e0a7baaedfc63c20759fcba376ddb",
+      "bytes": 2179,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/device_gate.go": {
+      "sha256": "62db9b4066b31e88bbab23d450ed59f3ffa2124b4f2447fc862aeb87a4d5c5d0",
+      "bytes": 6343,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/device_policy.go": {
+      "sha256": "7d9161b75588f642b11a448831fc54d98b03c2874d0180d98a4f67f14139419d",
+      "bytes": 7774,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/device_policy_test.go": {
+      "sha256": "79618f492d9dd3f4bc5ffad1d9ad1c8de43a32f68b2f8aabd0019e9c2dddad92",
+      "bytes": 5316,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/driver.go": {
+      "sha256": "4132c95539e1eca6f95d0b288b5b24c1263cb89a39b2d12656b7d9b1ca648dd7",
+      "bytes": 9027,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/driver_test.go": {
+      "sha256": "e051bb8406d855984636e1f5a82adafa58bfffa2231facfd27958f0fc5a629e4",
+      "bytes": 11737,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/ext4.go": {
+      "sha256": "a9a159ff73cf9b6bf21bb55c6662c511188151e9ecd88055144af4a1b5124ce4",
+      "bytes": 1954,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/ext4_test.go": {
+      "sha256": "1ad058b7f73e34c6a571e45ff65d355916586713ff384e132dcd885222659fd4",
+      "bytes": 990,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/firecracker.go": {
+      "sha256": "a3a37976aed06329ade7dd00009c7919eb5296904543e2da2a028136fa614160",
+      "bytes": 1727,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/firecracker_test.go": {
+      "sha256": "080d9f84a7581d70ded28500f7f855cdd4b50f9dc67f3df9aac07cd8f55b4a8e",
+      "bytes": 2892,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/guest/bootstrap.go": {
+      "sha256": "59a5aa8059839e0a346282ac50b0bd1b7704c076709256c6a00b3f2c35da0566",
+      "bytes": 8745,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/guest/bootstrap_test.go": {
+      "sha256": "b39dc9da8f8fa8e7e246d4e6cd55c78ba108dda8d908d80334b368d4fb5e65eb",
+      "bytes": 199,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/guest/seccomp.go": {
+      "sha256": "06f764997061a95f823f6c93e80a0c83d68e74769c9954cd754fd4f74487639e",
+      "bytes": 4518,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/guest/seccomp_test.go": {
+      "sha256": "4a559a2b681da09a61d8ad2d68d833b97b5aa19b1c16a336eb9aab87f323131c",
+      "bytes": 1189,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/guest/session.go": {
+      "sha256": "9fd2ba121c475f42c9bfb376b2eb0968e4e47418cfe94bd78a8981fbdc0c4fd6",
+      "bytes": 3470,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/guest/session_test.go": {
+      "sha256": "0414df974429b845e821944a189848cb2ab0c72cb114553c85d766cf238b887e",
+      "bytes": 3320,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/identity.go": {
+      "sha256": "b96416588f72a2a26023e268ff26f74329005773811bcc78f7b232b6e2e932fd",
+      "bytes": 5278,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/identity_test.go": {
+      "sha256": "308cff556de268c6d9c0ba3faa2ad1a861a784a18847db93ed22333dd2ac92dc",
+      "bytes": 3401,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/lab_test.go": {
+      "sha256": "2ded56cebd172f7b8464b48af0074dfcbf6150a84221867f9bc0dbf922f70d36",
+      "bytes": 3608,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/launch.go": {
+      "sha256": "a97c2ecf361e207abc0225f2bc353ca58e761eafb766681ba8fa301bffaf33f2",
+      "bytes": 1991,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/launch_test.go": {
+      "sha256": "bd601172e9aa28af91d032bc35dbcc151bdd085a9ddcf6df7aa38a7b7e3a6005",
+      "bytes": 1780,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/process.go": {
+      "sha256": "c5bd0e2dc5cb78475659410689118931e75d848fd53c386b0a9beda94eb38861",
+      "bytes": 1766,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/process_test.go": {
+      "sha256": "edc14d562a130c9ccc9b99fe4f97fc00f2bbd0e690839f697200f0f16303ba8d",
+      "bytes": 1458,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/protocol.go": {
+      "sha256": "a00379b864434992dbdb9f8cd86a4365f843ca5a60234f0f260452218beb9269",
+      "bytes": 2864,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/protocol_test.go": {
+      "sha256": "7f4494079f28740710f2628fc9673a14d84977820a5008553e35e87592658c23",
+      "bytes": 2277,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/rootfs.go": {
+      "sha256": "ec50e657b9ac533319cecc950081a45d157886f524ab7237dd6dee148ca31ef6",
+      "bytes": 6271,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/rootfs_test.go": {
+      "sha256": "f84c443534815b05967a4db019864b98c1a5deaec4f775873b536f74170318e7",
+      "bytes": 7556,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/scope.go": {
+      "sha256": "203f94a84990405f1f9e63869e844be03da65cea958c0070a0df9f5249a69684",
+      "bytes": 2206,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/session_mount.go": {
+      "sha256": "5db6f7f42598139a1a816d77b84312edbd96cd420274182aba874e74a2815f10",
+      "bytes": 6503,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/session_mount_test.go": {
+      "sha256": "65c316905c90975e30448be08e931ef82fd23ff3451a06586bca092236ab0973",
+      "bytes": 3244,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/shutdown.go": {
+      "sha256": "61ec1b2f167aeea83815a3b51ba0cd19e140b6a1dbdd9f8454c1046f4bcf1350",
+      "bytes": 3698,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/snapshot.go": {
+      "sha256": "b94f8c8e14fa49b306828fdce4d0e2620e132bf47490de3275ffe112065c4190",
+      "bytes": 2091,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/snapshot_io.go": {
+      "sha256": "627133f59bc2ac4c86e0cd2e5d4bbbc29c4bd2d81afc99d0f423c10b5852e073",
+      "bytes": 8289,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/snapshot_test.go": {
+      "sha256": "431b69c1185aafb6f23796360f2d514c987c4ee4d7f7c20b8c353fa31af70388",
+      "bytes": 3382,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/supervisor.go": {
+      "sha256": "8a6f0a7a9c94df87388c6ee601597fcbe0047c043e3eb51ceae071a939761d0f",
+      "bytes": 9909,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/supervisor_test.go": {
+      "sha256": "f1bb697ca5878a3cf4c1c14c424fac9ff54f7d5b9a89bc474756d59a034efa49",
+      "bytes": 2359,
+      "mode": "0o644"
+    },
+    "runtimes/firecracker/vm.go": {
+      "sha256": "b6d892dd1ef51d2a7c06a7eb5d4b545c79a503fb52f08a2e95d073bc7bc72bee",
+      "bytes": 11123,
+      "mode": "0o644"
+    },
+    "runtimes/gate/admission.go": {
+      "sha256": "3aabb68f81513df1a571da54f371a114aa552a8b79c693e45ad807318f70d1fc",
+      "bytes": 1919,
+      "mode": "0o644"
+    },
+    "runtimes/gate/admission_test.go": {
+      "sha256": "b6c94934ac1244c52c3de431e6044a9f3a0c4e8269d4f1fa10ef3d7073874ca4",
+      "bytes": 3962,
+      "mode": "0o644"
+    },
+    "runtimes/gate/gate.go": {
+      "sha256": "0b5a5b140a7124c9d2a65567694e5b662d13bb99b7fdcd1cedadc434273f8284",
+      "bytes": 8507,
+      "mode": "0o644"
+    },
+    "runtimes/gate/gate_test.go": {
+      "sha256": "b5d7c41936e20e90d1282d1d801e0d2f0cd18c106d7b0bf906bffd0a2288b834",
+      "bytes": 5775,
+      "mode": "0o664"
+    },
+    "runtimes/gate/retirement.go": {
+      "sha256": "962cfa63ac1f252e95375c63d076f079abc6ddf0a851b6b61f5b76f55b9c428f",
+      "bytes": 13854,
+      "mode": "0o664"
+    },
+    "runtimes/gate/retirement_kernel_test.go": {
+      "sha256": "45cd8b00b5c8396438588ba3aef3cc5bc1406dac08bc451f0374e190200aa7bf",
+      "bytes": 2980,
+      "mode": "0o664"
+    },
+    "runtimes/gate/retirement_test.go": {
+      "sha256": "5552937b58df947fe85710f88b8afe233425dfc491e8ade5d78fd051a3493516",
+      "bytes": 3590,
+      "mode": "0o664"
+    },
+    "scripts/azure_guard.py": {
+      "sha256": "303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48",
+      "bytes": 27828,
+      "mode": "0o664"
+    },
+    "scripts/firecracker_code.py": {
+      "sha256": "56abda58b8a822b7bc1ce7311025763878e7110c2d4cfabd84203dce556db4dd",
+      "bytes": 5257,
+      "mode": "0o644"
+    },
+    "scripts/firecracker_device_receipt.py": {
+      "sha256": "c9d10f1cea6f60a15a7d70b818121538b93b76e5d42a94eb3fbe62594855da4b",
+      "bytes": 9016,
+      "mode": "0o644"
+    },
+    "scripts/firecracker_lab.py": {
+      "sha256": "551ba57ba4081155a612d0282a9a9299910390c67322b2042041642d45cafb0b",
+      "bytes": 32100,
+      "mode": "0o644"
+    },
+    "scripts/k3s_lab.py": {
+      "sha256": "65b746e1bc715203b56b98f85517a9bc109f0d19984a36455d308da03489167e",
+      "bytes": 23176,
+      "mode": "0o644"
+    },
+    "scripts/runtime_lab_docker.py": {
+      "sha256": "affadf0269b18f4352902801c2992e7a5cf14b57639d62be173a8619185f5773",
+      "bytes": 17520,
+      "mode": "0o644"
+    },
+    "scripts/runtime_lab_paths.py": {
+      "sha256": "0ce3287feab8197839cf2e7e1cf297fd5cad0e740069023b188e4c366b643f84",
+      "bytes": 7395,
+      "mode": "0o644"
+    }
+  },
+  "actual_operations": false,
+  "original_charge_released": false
+}

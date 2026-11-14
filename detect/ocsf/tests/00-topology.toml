@@ -1,0 +1,4 @@
+# Test with detect/vector/aggregator.toml plus these fixtures, from repo root.
+# Production owns source_route, class_route, reject_redact and all normalizers.
+# Vector0.45.0's unit runner clears deployment sources/sinks before building
+# per-test injection/assertion components; no copied transform topology here.

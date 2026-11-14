@@ -1,0 +1,3 @@
+{"alert_id": "falco-10b025e8550af489879624e1d27ba6c9655f9c2a6cf0e0489b69d6fa6249fd46", "alerted_at": "2026-11-14T15:28:20.600449161Z", "execution_id": "WL7VNKJ7WNX3TDG426BCOUGCQU", "rule_id": "Packet socket created in container"}
+{"alert_id": "falco-51478f0330d80afe1853ff073d62568cba65ee437717c4768ac14c4a089e78cf", "alerted_at": "2026-11-14T15:28:19.101981451Z", "execution_id": "TRQH2B3QSM4U72NS5YF6R3VFYQ", "rule_id": "Packet socket created in container"}
+{"alert_id": "falco-6a7c337e42b4f7426dd6b0314651ccb4a278f84939f210537270c35b0a10de67", "alerted_at": "2026-11-14T15:28:20.477997843Z", "execution_id": "CHSGIOOMRNRTMGNIRWP2XNGJHA", "rule_id": "PTRACE attached to process"}

@@ -1,0 +1,69 @@
+# Helm values for Cilium 1.20.4 on the one-node k3s lab
+# (scripts/k3s_gvisor_lab.sh up --cilium); k8sServiceHost is set at render
+# time to the node's address. The chart and every image come from
+# scripts/restore-tools.sh cilium, by digest, and are imported into the node,
+# so pods use the tags with pullPolicy Never.
+#
+# This configuration lets Cilium install its iptables rules and load the
+# kernel modules it needs on the host (user decision 2026-11-11); the lab
+# records the host's module list before and after every run. The 2026-11-10
+# attempt avoided both and failed: 1.20.4's kube-proxy replacement and BPF
+# masquerade require the iptables rules
+# (docs/evidence/task-10/cilium-k3s-20261110).
+k8sServicePort: 6443
+kubeProxyReplacement: true
+routingMode: native
+ipv4NativeRoutingCIDR: 10.42.0.0/16
+autoDirectNodeRoutes: false
+ipam:
+  mode: kubernetes
+ipv6:
+  enabled: false
+enableIPv4Masquerade: true
+bpf:
+  masquerade: true
+# The node has no default route (internal Docker networks), so Cilium is told
+# its devices: the cluster network (warden-k3s) and the lab's "world"
+# (warden-k3s-world), where the origin and metadata stand-ins are. Docker
+# names them when the node starts; on 2026-11-12 the world was eth0.
+devices: [eth0, eth1]
+# gVisor sandboxes with network=sandbox run their own TCP/IP stack, so their
+# connect() never reaches the host kernel's cgroup hooks: service addresses
+# (kube-dns, the egress proxy) are translated per packet at the pod's veth.
+socketLB:
+  hostNamespaceOnly: true
+# The DNS proxy (rules: dns in policies/cilium/default-deny.yaml) is an L7
+# proxy; the chart's default cilium-envoy DaemonSet stays on.
+l7Proxy: true
+hubble:
+  enabled: false
+# sysctlfix writes the node's /etc/sysctl.d; the node has no systemd.
+sysctlfix:
+  enabled: false
+cni:
+  exclusive: true
+# IsolatePod (respond) labels a pod, and Cilium enforces quarantine.yaml on
+# it only once its endpoint has a new identity carrying that label. With the
+# defaults the agent first waits a random delay of up to identity-max-jitter
+# (30 s) to allocate that identity, then identity-change-grace-period (5 s)
+# before the endpoint uses it: 9.9-32.2 s on this lab
+# (docs/evidence/task-10/cilium-lab-20261112/runs/08-task14). Both are 0
+# here. The cost, on a cluster bigger than this one node: a namespace label
+# change makes every agent allocate identities at once, and an endpoint can
+# use a new identity before other nodes know it, so their policy may drop
+# its packets for a moment.
+identityChangeGracePeriod: "0s"
+extraConfig:
+  identity-max-jitter: "0s"
+image:
+  useDigest: false
+  pullPolicy: Never
+envoy:
+  image:
+    useDigest: false
+    pullPolicy: Never
+operator:
+  replicas: 1
+  image:
+    useDigest: false
+    pullPolicy: Never

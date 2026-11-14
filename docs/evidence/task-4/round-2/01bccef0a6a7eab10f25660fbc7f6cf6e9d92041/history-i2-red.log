@@ -1,0 +1,93 @@
+test_capacity_leaves_exact_host_allowance (test_firecracker_lab.FirecrackerLabTests.test_capacity_leaves_exact_host_allowance) ... ok
+test_live_profile_has_only_exact_kvm_and_eight_caps (test_firecracker_lab.FirecrackerLabTests.test_live_profile_has_only_exact_kvm_and_eight_caps) ... ok
+test_material_pin_distinguishes_computed_and_published (test_firecracker_lab.FirecrackerLabTests.test_material_pin_distinguishes_computed_and_published) ... ok
+test_package_limit_fails_before_archive_write (test_firecracker_lab.FirecrackerLabTests.test_package_limit_fails_before_archive_write) ... ok
+test_archived_actual_eight_prefixed_capabilities_pass (test_firecracker_lab.InspectedCapabilityTests.test_archived_actual_eight_prefixed_capabilities_pass) ... ERROR
+test_missing_extra_invalid_names_and_types_fail (test_firecracker_lab.InspectedCapabilityTests.test_missing_extra_invalid_names_and_types_fail) ... 
+  test_missing_extra_invalid_names_and_types_fail (test_firecracker_lab.InspectedCapabilityTests.test_missing_extra_invalid_names_and_types_fail) (caps=['CAP_CHOWN', 'CAP_DAC_OVERRIDE', 'CAP_KILL', 'CAP_MKNOD', 'CAP_SETGID', 'CAP_SETUID', 'CAP_SYS_ADMIN', {}]) ... ERROR
+  test_missing_extra_invalid_names_and_types_fail (test_firecracker_lab.InspectedCapabilityTests.test_missing_extra_invalid_names_and_types_fail) (caps=None) ... ERROR
+  test_missing_extra_invalid_names_and_types_fail (test_firecracker_lab.InspectedCapabilityTests.test_missing_extra_invalid_names_and_types_fail) (caps=12) ... ERROR
+test_other_deny_conditions_remain (test_firecracker_lab.InspectedCapabilityTests.test_other_deny_conditions_remain) ... ok
+test_raw_bounds_are_logged_before_rejection (test_firecracker_lab.InspectedCapabilityTests.test_raw_bounds_are_logged_before_rejection) ... ERROR
+test_descriptor_id_is_distinct_from_verified_config_id (test_firecracker_lab.LoadedImageIdentityTests.test_descriptor_id_is_distinct_from_verified_config_id) ... ok
+
+======================================================================
+ERROR: test_archived_actual_eight_prefixed_capabilities_pass (test_firecracker_lab.InspectedCapabilityTests.test_archived_actual_eight_prefixed_capabilities_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_lab.py", line 51, in test_archived_actual_eight_prefixed_capabilities_pass
+    self.check(self.actual())
+    ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_lab.py", line 49, in check
+    lab.inspect_live({'HostConfig':h},'boot',h['Mounts'][0]['Source'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 258, in inspect_live
+    if h.get('Privileged') or h['Memory']!=memory or h['MemorySwap']!=memory or h['PidsLimit']!=512 or h['NanoCpus']!=2000000000 or h['NetworkMode']!='none' or h['IpcMode']!='private' or h['CgroupnsMode']!='private' or h['PidMode'] or not h['ReadonlyRootfs'] or set(h['CapAdd'])!=set(CAPS) or h['CapDrop']!=['ALL'] or h.get('DeviceCgroupRules') or h.get('DeviceRequests'):raise ValueError('inspected outer bounds differ')
+                                                                                                                                                                                                                                                                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: inspected outer bounds differ
+
+======================================================================
+ERROR: test_missing_extra_invalid_names_and_types_fail (test_firecracker_lab.InspectedCapabilityTests.test_missing_extra_invalid_names_and_types_fail) (caps=['CAP_CHOWN', 'CAP_DAC_OVERRIDE', 'CAP_KILL', 'CAP_MKNOD', 'CAP_SETGID', 'CAP_SETUID', 'CAP_SYS_ADMIN', {}])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_lab.py", line 61, in test_missing_extra_invalid_names_and_types_fail
+    with self.assertRaises(ValueError):self.check(h)
+                                       ~~~~~~~~~~^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_lab.py", line 49, in check
+    lab.inspect_live({'HostConfig':h},'boot',h['Mounts'][0]['Source'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 258, in inspect_live
+    if h.get('Privileged') or h['Memory']!=memory or h['MemorySwap']!=memory or h['PidsLimit']!=512 or h['NanoCpus']!=2000000000 or h['NetworkMode']!='none' or h['IpcMode']!='private' or h['CgroupnsMode']!='private' or h['PidMode'] or not h['ReadonlyRootfs'] or set(h['CapAdd'])!=set(CAPS) or h['CapDrop']!=['ALL'] or h.get('DeviceCgroupRules') or h.get('DeviceRequests'):raise ValueError('inspected outer bounds differ')
+                                                                                                                                                                                                                                                                      ~~~^^^^^^^^^^^^^
+TypeError: cannot use 'dict' as a set element (unhashable type: 'dict')
+
+======================================================================
+ERROR: test_missing_extra_invalid_names_and_types_fail (test_firecracker_lab.InspectedCapabilityTests.test_missing_extra_invalid_names_and_types_fail) (caps=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_lab.py", line 61, in test_missing_extra_invalid_names_and_types_fail
+    with self.assertRaises(ValueError):self.check(h)
+                                       ~~~~~~~~~~^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_lab.py", line 49, in check
+    lab.inspect_live({'HostConfig':h},'boot',h['Mounts'][0]['Source'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 258, in inspect_live
+    if h.get('Privileged') or h['Memory']!=memory or h['MemorySwap']!=memory or h['PidsLimit']!=512 or h['NanoCpus']!=2000000000 or h['NetworkMode']!='none' or h['IpcMode']!='private' or h['CgroupnsMode']!='private' or h['PidMode'] or not h['ReadonlyRootfs'] or set(h['CapAdd'])!=set(CAPS) or h['CapDrop']!=['ALL'] or h.get('DeviceCgroupRules') or h.get('DeviceRequests'):raise ValueError('inspected outer bounds differ')
+                                                                                                                                                                                                                                                                      ~~~^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+
+======================================================================
+ERROR: test_missing_extra_invalid_names_and_types_fail (test_firecracker_lab.InspectedCapabilityTests.test_missing_extra_invalid_names_and_types_fail) (caps=12)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_lab.py", line 61, in test_missing_extra_invalid_names_and_types_fail
+    with self.assertRaises(ValueError):self.check(h)
+                                       ~~~~~~~~~~^^^
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_lab.py", line 49, in check
+    lab.inspect_live({'HostConfig':h},'boot',h['Mounts'][0]['Source'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 258, in inspect_live
+    if h.get('Privileged') or h['Memory']!=memory or h['MemorySwap']!=memory or h['PidsLimit']!=512 or h['NanoCpus']!=2000000000 or h['NetworkMode']!='none' or h['IpcMode']!='private' or h['CgroupnsMode']!='private' or h['PidMode'] or not h['ReadonlyRootfs'] or set(h['CapAdd'])!=set(CAPS) or h['CapDrop']!=['ALL'] or h.get('DeviceCgroupRules') or h.get('DeviceRequests'):raise ValueError('inspected outer bounds differ')
+                                                                                                                                                                                                                                                                      ~~~^^^^^^^^^^^^^
+TypeError: 'int' object is not iterable
+
+======================================================================
+ERROR: test_raw_bounds_are_logged_before_rejection (test_firecracker_lab.InspectedCapabilityTests.test_raw_bounds_are_logged_before_rejection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_lab.py", line 67, in test_raw_bounds_are_logged_before_rejection
+    raw=json.loads(output.getvalue())
+  File "/usr/lib/python3.14/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.14/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.003s
+
+FAILED (errors=5)

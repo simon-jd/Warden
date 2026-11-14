@@ -1,0 +1,106 @@
+test_completed_outer_cannot_release_without_cgroup_absence (test_firecracker_lab.DeviceReleaseTests.test_completed_outer_cannot_release_without_cgroup_absence) ... 
+  test_completed_outer_cannot_release_without_cgroup_absence (test_firecracker_lab.DeviceReleaseTests.test_completed_outer_cannot_release_without_cgroup_absence) (mode='device-policy', completed=False, absence=True) ... ERROR
+  test_completed_outer_cannot_release_without_cgroup_absence (test_firecracker_lab.DeviceReleaseTests.test_completed_outer_cannot_release_without_cgroup_absence) (mode='device-policy', completed=True, absence=False) ... ERROR
+  test_completed_outer_cannot_release_without_cgroup_absence (test_firecracker_lab.DeviceReleaseTests.test_completed_outer_cannot_release_without_cgroup_absence) (mode='device-policy', completed=True, absence=True) ... ERROR
+  test_completed_outer_cannot_release_without_cgroup_absence (test_firecracker_lab.DeviceReleaseTests.test_completed_outer_cannot_release_without_cgroup_absence) (mode='boot', completed=False, absence=True) ... ERROR
+  test_completed_outer_cannot_release_without_cgroup_absence (test_firecracker_lab.DeviceReleaseTests.test_completed_outer_cannot_release_without_cgroup_absence) (mode='boot', completed=True, absence=False) ... ERROR
+  test_completed_outer_cannot_release_without_cgroup_absence (test_firecracker_lab.DeviceReleaseTests.test_completed_outer_cannot_release_without_cgroup_absence) (mode='boot', completed=True, absence=True) ... ERROR
+
+======================================================================
+ERROR: test_completed_outer_cannot_release_without_cgroup_absence (test_firecracker_lab.DeviceReleaseTests.test_completed_outer_cannot_release_without_cgroup_absence) (mode='device-policy', completed=False, absence=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_lab.py", line 211, in test_completed_outer_cannot_release_without_cgroup_absence
+    with self.assertRaises(ValueError if completed else RuntimeError):lab.execute(mode,0)
+                                                                      ~~~~~~~~~~~^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 324, in execute
+    validate_package_sizes(package['file_bytes'],len(raw));del raw;output,labels=fresh_session();record_charge(output,reserve=RESERVE);complete=False;livefd=None;device_gate=None
+                                                                                                 ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/runtime_lab_docker.py", line 198, in record_charge
+    parent = trusted_directory(str(output), os.getuid())
+  File "/home/postedism/Desktop/Warden/scripts/runtime_lab_paths.py", line 25, in trusted_directory
+    raise ValueError('untrusted directory owner')
+ValueError: untrusted directory owner
+
+======================================================================
+ERROR: test_completed_outer_cannot_release_without_cgroup_absence (test_firecracker_lab.DeviceReleaseTests.test_completed_outer_cannot_release_without_cgroup_absence) (mode='device-policy', completed=True, absence=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_lab.py", line 212, in test_completed_outer_cannot_release_without_cgroup_absence
+    self.assertEqual(json.loads((output/'charge.json').read_text())['released'],completed and absence)
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 788, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/warden-release-mg8m3baw/docker-firecracker-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/charge.json'
+
+======================================================================
+ERROR: test_completed_outer_cannot_release_without_cgroup_absence (test_firecracker_lab.DeviceReleaseTests.test_completed_outer_cannot_release_without_cgroup_absence) (mode='device-policy', completed=True, absence=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_lab.py", line 209, in test_completed_outer_cannot_release_without_cgroup_absence
+    if completed and absence:lab.execute(mode,0)
+                             ~~~~~~~~~~~^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 324, in execute
+    validate_package_sizes(package['file_bytes'],len(raw));del raw;output,labels=fresh_session();record_charge(output,reserve=RESERVE);complete=False;livefd=None;device_gate=None
+                                                                                                 ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/runtime_lab_docker.py", line 198, in record_charge
+    parent = trusted_directory(str(output), os.getuid())
+  File "/home/postedism/Desktop/Warden/scripts/runtime_lab_paths.py", line 25, in trusted_directory
+    raise ValueError('untrusted directory owner')
+ValueError: untrusted directory owner
+
+======================================================================
+ERROR: test_completed_outer_cannot_release_without_cgroup_absence (test_firecracker_lab.DeviceReleaseTests.test_completed_outer_cannot_release_without_cgroup_absence) (mode='boot', completed=False, absence=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_lab.py", line 211, in test_completed_outer_cannot_release_without_cgroup_absence
+    with self.assertRaises(ValueError if completed else RuntimeError):lab.execute(mode,0)
+                                                                      ~~~~~~~~~~~^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 324, in execute
+    validate_package_sizes(package['file_bytes'],len(raw));del raw;output,labels=fresh_session();record_charge(output,reserve=RESERVE);complete=False;livefd=None;device_gate=None
+                                                                                                 ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/runtime_lab_docker.py", line 198, in record_charge
+    parent = trusted_directory(str(output), os.getuid())
+  File "/home/postedism/Desktop/Warden/scripts/runtime_lab_paths.py", line 25, in trusted_directory
+    raise ValueError('untrusted directory owner')
+ValueError: untrusted directory owner
+
+======================================================================
+ERROR: test_completed_outer_cannot_release_without_cgroup_absence (test_firecracker_lab.DeviceReleaseTests.test_completed_outer_cannot_release_without_cgroup_absence) (mode='boot', completed=True, absence=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_lab.py", line 212, in test_completed_outer_cannot_release_without_cgroup_absence
+    self.assertEqual(json.loads((output/'charge.json').read_text())['released'],completed and absence)
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 788, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/warden-release-_lgh6_1w/docker-firecracker-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/charge.json'
+
+======================================================================
+ERROR: test_completed_outer_cannot_release_without_cgroup_absence (test_firecracker_lab.DeviceReleaseTests.test_completed_outer_cannot_release_without_cgroup_absence) (mode='boot', completed=True, absence=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_lab.py", line 209, in test_completed_outer_cannot_release_without_cgroup_absence
+    if completed and absence:lab.execute(mode,0)
+                             ~~~~~~~~~~~^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_lab.py", line 324, in execute
+    validate_package_sizes(package['file_bytes'],len(raw));del raw;output,labels=fresh_session();record_charge(output,reserve=RESERVE);complete=False;livefd=None;device_gate=None
+                                                                                                 ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/runtime_lab_docker.py", line 198, in record_charge
+    parent = trusted_directory(str(output), os.getuid())
+  File "/home/postedism/Desktop/Warden/scripts/runtime_lab_paths.py", line 25, in trusted_directory
+    raise ValueError('untrusted directory owner')
+ValueError: untrusted directory owner
+
+----------------------------------------------------------------------
+Ran 1 test in 0.008s
+
+FAILED (errors=6)

@@ -1,0 +1,165 @@
+"""The OCI fetcher only writes an archive whose every byte matches the pin."""
+import hashlib
+import http.server
+import importlib.util
+import io
+import json
+import os
+import shutil
+import tarfile
+import tempfile
+import threading
+import unittest
+
+SPEC = importlib.util.find_spec('oci_fetch')
+if SPEC:
+    import oci_fetch
+
+
+def enc(obj):
+    return json.dumps(obj, sort_keys=True).encode()
+
+
+def sha(data):
+    return 'sha256:' + hashlib.sha256(data).hexdigest()
+
+
+class Registry:
+    """A registry with one multi-platform image, token auth and a blob redirect."""
+
+    def __init__(self):
+        self.layer = b'layer-bytes'
+        self.config = enc({'architecture': 'amd64', 'os': 'linux', 'rootfs': {'type': 'layers', 'diff_ids': []}})
+        self.manifest = enc({'schemaVersion': 2, 'mediaType': 'application/vnd.oci.image.manifest.v1+json',
+                             'config': {'mediaType': 'application/vnd.oci.image.config.v1+json',
+                                        'digest': sha(self.config), 'size': len(self.config)},
+                             'layers': [{'mediaType': 'application/vnd.oci.image.layer.v1.tar+gzip',
+                                         'digest': sha(self.layer), 'size': len(self.layer)}]})
+        arm = enc({'schemaVersion': 2, 'mediaType': 'application/vnd.oci.image.manifest.v1+json', 'layers': []})
+        self.index = enc({'schemaVersion': 2, 'mediaType': 'application/vnd.oci.image.index.v1+json', 'manifests': [
+            {'mediaType': 'application/vnd.oci.image.manifest.v1+json', 'digest': sha(arm), 'size': len(arm),
+             'platform': {'architecture': 'arm64', 'os': 'linux'}},
+            {'mediaType': 'application/vnd.oci.image.manifest.v1+json', 'digest': sha(self.manifest),
+             'size': len(self.manifest), 'platform': {'architecture': 'amd64', 'os': 'linux'}}]})
+        self.tamper = False
+        self.redirect_auth = []
+        reg = self
+
+        class H(http.server.BaseHTTPRequestHandler):
+            def log_message(self, *a):
+                pass
+
+            def send(self, code, body=b'', headers=()):
+                self.send_response(code)
+                for k, v in headers:
+                    self.send_header(k, v)
+                self.send_header('Content-Length', str(len(body)))
+                self.end_headers()
+                self.wfile.write(body)
+
+            def do_GET(self):
+                base = 'http://127.0.0.1:%d' % self.server.server_port
+                if self.path.startswith('/token'):
+                    return self.send(200, enc({'token': 'T'}))
+                if self.path.startswith('/cdn/'):
+                    reg.redirect_auth.append(self.headers.get('Authorization'))
+                    data = reg.layer if not reg.tamper else b'evil-bytes!'
+                    return self.send(200, data)
+                if self.headers.get('Authorization') != 'Bearer T':
+                    return self.send(401, b'', [('WWW-Authenticate',
+                                                 'Bearer realm="%s/token",service="fake",scope="repository:lib/img:pull"' % base)])
+                objects = {sha(reg.index): (reg.index, 'application/vnd.oci.image.index.v1+json'),
+                           'v1': (reg.index, 'application/vnd.oci.image.index.v1+json'),
+                           sha(reg.manifest): (reg.manifest, 'application/vnd.oci.image.manifest.v1+json'),
+                           sha(reg.config): (reg.config, 'application/octet-stream')}
+                kind, _, ref = self.path.removeprefix('/v2/lib/img/').partition('/')
+                if kind == 'blobs' and ref == sha(reg.layer):
+                    return self.send(307, b'', [('Location', base + '/cdn/layer')])
+                if kind in ('manifests', 'blobs') and ref in objects:
+                    body, mt = objects[ref]
+                    return self.send(200, body, [('Content-Type', mt)])
+                return self.send(404)
+
+        self.server = http.server.ThreadingHTTPServer(('127.0.0.1', 0), H)
+        threading.Thread(target=self.server.serve_forever, daemon=True).start()
+        self.url = 'http://127.0.0.1:%d' % self.server.server_port
+
+    def close(self):
+        self.server.shutdown()
+        self.server.server_close()
+
+
+class FetchTest(unittest.TestCase):
+    def setUp(self):
+        self.assertIsNotNone(SPEC, 'scripts/oci_fetch.py is not implemented')
+        self.reg = Registry()
+        self.addCleanup(self.reg.close)
+        self.dir = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, self.dir)
+        self.out = os.path.join(self.dir, 'img.oci.tar')
+
+    def ref(self, digest=None):
+        return 'example.test/lib/img:v1@' + (digest or sha(self.reg.index))
+
+    def fetch(self, ref):
+        return oci_fetch.fetch(ref, self.out, registry_url=self.reg.url)
+
+    def test_archive_has_the_pinned_platform_image_and_its_name(self):
+        receipt = self.fetch(self.ref())
+        self.assertEqual(receipt['index_digest'], sha(self.reg.index))
+        self.assertEqual(receipt['manifest_digest'], sha(self.reg.manifest))
+        self.assertEqual(receipt['name'], 'example.test/lib/img:v1')
+        with tarfile.open(self.out) as tar:
+            names = set(tar.getnames())
+            index = json.load(tar.extractfile('index.json'))
+            blobs = {n: tar.extractfile(n).read() for n in names if n.startswith('blobs/')}
+        self.assertIn('oci-layout', names)
+        [m] = index['manifests']
+        self.assertEqual(m['digest'], sha(self.reg.manifest))
+        self.assertEqual(m['annotations']['io.containerd.image.name'], 'example.test/lib/img:v1')
+        self.assertEqual(m['annotations']['org.opencontainers.image.ref.name'], 'v1')
+        for name, data in blobs.items():
+            self.assertEqual('sha256:' + name.rsplit('/', 1)[1], sha(data))
+        self.assertEqual(len(blobs), 3)  # manifest, config, layer; not the arm64 manifest
+
+    def test_wrong_pin_writes_nothing(self):
+        with self.assertRaises(ValueError):
+            self.fetch(self.ref(sha(b'something else')))
+        self.assertFalse(os.path.exists(self.out))
+
+    def test_tampered_blob_writes_nothing(self):
+        self.reg.tamper = True
+        with self.assertRaises(ValueError):
+            self.fetch(self.ref())
+        self.assertFalse(os.path.exists(self.out))
+
+    def test_token_is_not_sent_to_the_redirect_target(self):
+        self.fetch(self.ref())
+        self.assertEqual(self.reg.redirect_auth, [None])
+
+    def test_reference_needs_a_digest_and_maps_docker_hub(self):
+        with self.assertRaises(ValueError):
+            oci_fetch.parse_ref('quay.io/cilium/cilium:v1.20.4')
+        r = oci_fetch.parse_ref('docker.io/library/nginx:1.29-alpine@sha256:' + 'a' * 64)
+        self.assertEqual((r.host, r.repo, r.tag), ('registry-1.docker.io', 'library/nginx', '1.29-alpine'))
+        self.assertEqual(r.name, 'docker.io/library/nginx:1.29-alpine')
+        r = oci_fetch.parse_ref('quay.io/cilium/operator-generic:v1.20.4@sha256:' + 'b' * 64)
+        self.assertEqual((r.host, r.repo, r.tag), ('quay.io', 'cilium/operator-generic', 'v1.20.4'))
+
+
+class ScratchTest(unittest.TestCase):
+    def test_fetch_tests_leave_nothing_in_the_temp_dir(self):
+        # make test runs this file with the host's TMPDIR, /tmp on a shared box.
+        with tempfile.TemporaryDirectory() as tmp:
+            saved, tempfile.tempdir = tempfile.tempdir, tmp
+            try:
+                result = unittest.TextTestRunner(stream=io.StringIO()).run(
+                    unittest.defaultTestLoader.loadTestsFromTestCase(FetchTest))
+            finally:
+                tempfile.tempdir = saved
+            self.assertTrue(result.wasSuccessful(), result.failures + result.errors)
+            self.assertEqual(sorted(os.listdir(tmp)), [])
+
+
+if __name__ == '__main__':
+    unittest.main()

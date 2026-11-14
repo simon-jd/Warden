@@ -1,0 +1,13 @@
+$ go test -count=1 -run TestNetIMDS ./runtimes/conformance/guest   # tests added, net.go unchanged
+# warden/runtimes/conformance/guest [warden/runtimes/conformance/guest.test]
+runtimes/conformance/guest/net_test.go:353:9: undefined: imdsAddr
+runtimes/conformance/guest/net_test.go:354:2: undefined: imdsAddr
+runtimes/conformance/guest/net_test.go:355:17: undefined: imdsAddr
+runtimes/conformance/guest/net_test.go:358:15: undefined: imdsLocationURL
+runtimes/conformance/guest/net_test.go:361:23: undefined: imdsAddr
+runtimes/conformance/guest/net_test.go:383:9: undefined: imdsAddr
+runtimes/conformance/guest/net_test.go:384:2: undefined: imdsAddr
+runtimes/conformance/guest/net_test.go:385:17: undefined: imdsAddr
+runtimes/conformance/guest/net_test.go:386:29: undefined: imdsLocationURL
+FAIL	warden/runtimes/conformance/guest [build failed]
+FAIL

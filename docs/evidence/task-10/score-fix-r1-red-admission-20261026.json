@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-26T10:21:30.899256+00:00",
+  "decision": "ROOT_ADMIT_ORIGINAL_TASK10_R1_ONE_NEW_REGRESSION_RED",
+  "head": "e2fbb97f05f4d062e7a310f23a3907b4be127cc6",
+  "freeze_sha256": "abf0fc6d9f76fcf5fa365cd18eee570cd685e649dd73872502454891e5a1316e",
+  "all17_inputs_SDK_four_tools_verified": true,
+  "production_unchanged": {
+    "bytes": 5141,
+    "path": "detect/dns_exfil/score.go",
+    "sha256": "0a9e6854c04985ec8dc517191016df2949af5ba8c85849e4b1bbe217f46053d3"
+  },
+  "test_only_new_name": "TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions",
+  "namespace_absent": true,
+  "author_SAFE": true,
+  "original_author_cumulative": 249856,
+  "cap": 262144,
+  "remaining": 12288,
+  "root_owned_material_in_original_per_run1MiB": true,
+  "R": 5316816896,
+  "holds": 5003801088,
+  "new_forecast": 806354944,
+  "total": 11126972928,
+  "headroom": 873027072,
+  "resident": 15777995264,
+  "resident_cap": 16000000000,
+  "old_UNKNOWN": 9000000000,
+  "Q": 5000000000,
+  "bounds": {
+    "whole": 90,
+    "work": 80,
+    "process_cleanup": 87,
+    "final_hard_exit": 89,
+    "Go_test": 20,
+    "raw": 65536
+  },
+  "forecast_not_hard_filesystem_quota": true,
+  "old_RED2_2_FIRSTGREEN1_1": "SPENT unchanged; no replay",
+  "R1_new_RED": "one exact attempt, any failure/incomplete STOP",
+  "full_Task10": "OPEN network/collector/enforcement",
+  "provenance": {
+    "source": "root_agent_in_existing_user_scope",
+    "human_response": false
+  }
+}

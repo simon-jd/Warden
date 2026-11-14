@@ -1,0 +1,3 @@
+{"owned_image_charge": 0, "outstanding_charge": 0}
+{"additional_bytes": "6000000000", "at": "2026-10-24T06:15:59Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 359560970240, "project_allocated_bytes": 3019694080, "service_memory_bytes": "4000000000"}
+k3s lab failed: ValueError

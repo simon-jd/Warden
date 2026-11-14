@@ -1,0 +1,10 @@
+--- FAIL: TestSchedulerConfigurationFailsClosed (0.00s)
+    config_test.go:16: accepted {}
+    config_test.go:16: accepted {"node":"node-A","gate_dir":"/private/gate","drivers":{"gvisor":{}}}
+    config_test.go:16: accepted {"node":"node-A","gate_dir":"relative","drivers":{"runc":{}}}
+    config_test.go:16: accepted {"node":"node-A","gate_dir":"/private/gate","concurrency":100,"drivers":{"runc":{}}}
+    config_test.go:16: accepted {"node":"node-A","gate_dir":"/private/gate","concurrency":2,"unknown":true,"drivers":{"runc":{}}}
+    config_test.go:16: accepted {"node":"node-A","gate_dir":"/private/gate","drivers":{"runc":{"socket":"/lab/socket","expected_daemon_pid":0}}}
+FAIL
+FAIL	warden/controlplane/internal/scheduler	0.003s
+FAIL

@@ -1,0 +1,8 @@
+# GREEN, the first smoke's fixes (2026-11-14T03:36:25Z)
+$ taskset -c 0-7,16-31 python3 -E -s -B -m unittest detect.falco.test_collector detect.falco.test_recorder detect.falco.test_bindings detect.falco.test_detector detect.falco.test_benign
+Ran 66 tests in 3.436s
+OK
+# GREEN, dropped containers counted by kind (2026-11-14T03:39:34Z)
+$ taskset -c 0-7,16-31 python3 -E -s -B -m unittest detect.falco.test_collector detect.falco.test_recorder detect.falco.test_bindings detect.falco.test_detector detect.falco.test_benign
+Ran 67 tests in 4.188s
+OK

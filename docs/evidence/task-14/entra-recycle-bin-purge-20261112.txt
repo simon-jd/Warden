@@ -1,0 +1,196 @@
+# Tasks 6, 8, 14: Warden's deleted lab apps and service principals purged from the Entra recycle bin, 2026-11-12 UTC
+# Why: deleted apps stay restorable with their credentials (including warden-lab-keyprobe's 731-day secret) for about 30 days.
+# IDs: exactly the 13 applications and 12 service principals listed in task-6/entra-objects-20261110.txt and
+# task-14/azure-entra-objects-20261111.txt (service principals first). The deleted-items collection was never listed.
+# Before each purge: GET /v1.0/directory/deletedItems/<id>?$select=id,displayName,deletedDateTime; the purge ran only if the
+# type matched and displayName starts with warden-lab-. After it: the same GET, which must say Not Found.
+# Host home-ubuntu, azure-cli 2.92.0, signed-in user's own token (az rest). Redacted: subscription ID -> <subscription-id>.
+# Only type, id, displayName and deletedDateTime are printed; no credential fields.
+# Result: 25 purged, 0 refused, 0 skipped; every GET after the purge is Request_ResourceNotFound.
+
+## scripts/azure_reaper.sh --dry-run before and after (read-only)
+reaper start 2026-11-12T23:23:31Z
+{"at": "2026-11-12T23:23:32Z", "event": "group-absent", "id": "/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab"}
+exit 0
+reaper end 2026-11-12T23:24:09Z
+{"at": "2026-11-12T23:24:10Z", "event": "group-absent", "id": "/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab"}
+exit 0
+
+## driver (python3 -I -B purge.py <ids>)
+    """L2: permanently delete Warden's deleted lab apps/SPs from the Entra recycle bin, by exact ID only.
+    
+    Before each purge: GET /v1.0/directory/deletedItems/<id> and require the expected type and a
+    displayName starting with warden-lab-. The deleted-items collection is never listed. Only
+    type, id, displayName and deletedDateTime are printed (never credentials or hints). A refused
+    purge (permission) is recorded verbatim and stops the step.
+    """
+    import datetime as dt, json, subprocess, sys
+    GRAPH = "https://graph.microsoft.com/v1.0/directory/deletedItems/"
+    TYPES = {"application": "#microsoft.graph.application", "servicePrincipal": "#microsoft.graph.servicePrincipal"}
+    def now():
+        return dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
+    def az(*args):
+        p = subprocess.run(["az", *args], capture_output=True, text=True, timeout=120)
+        return p.returncode, p.stdout, p.stderr.strip()
+    def get(i):
+        code, out, err = az("rest", "--method", "GET", "--uri", GRAPH + i + "?$select=id,displayName,deletedDateTime")
+        if code != 0:
+            return None, err
+        d = json.loads(out)
+        return {"type": d.get("@odata.type"), "id": d.get("id"), "displayName": d.get("displayName"),
+                "deletedDateTime": d.get("deletedDateTime")}, None
+    done = refused = 0
+    for line in open(sys.argv[1]):
+        run, kind, i = line.split()
+        print(f"### {now()} {run} {kind} {i}")
+        item, err = get(i)
+        print(f"GET deletedItems/{i} -> " + (json.dumps(item) if item else f"error: {err}"))
+        if not item:
+            print("skipped: not in the recycle bin (nothing purged)")
+            continue
+        if item["id"] != i or item["type"] != TYPES[kind] or not str(item["displayName"]).startswith("warden-lab-"):
+            print("skipped: type or displayName does not match (nothing purged)")
+            continue
+        t = now()
+        code, out, err = az("rest", "--method", "DELETE", "--uri", GRAPH + i)
+        print(f"{t} DELETE deletedItems/{i} -> exit {code}" + (f": {err}" if err else ""))
+        if code != 0:
+            refused += 1
+            if any(s in err for s in ("Authorization_RequestDenied", "Forbidden", "Insufficient privileges", "403")):
+                print("STOP: the tenant refused the purge; no further purge attempted")
+                break
+            continue
+        done += 1
+        after, err = get(i)
+        print(f"{now()} GET deletedItems/{i} after purge -> " + (json.dumps(after) if after else f"error: {err}"))
+    print(f"### {now()} purged {done}, refused {refused}")
+
+## ids (run, kind, object ID)
+task6 servicePrincipal 00000000-0000-0000-0000-000000000003
+run0-smoke servicePrincipal 00000000-0000-0000-0000-000000000039
+run1 servicePrincipal 00000000-0000-0000-0000-000000000036
+run1 servicePrincipal 00000000-0000-0000-0000-000000000033
+run1 servicePrincipal 00000000-0000-0000-0000-000000000031
+run1 servicePrincipal 00000000-0000-0000-0000-000000000032
+run1 servicePrincipal 00000000-0000-0000-0000-000000000019
+run2 servicePrincipal 00000000-0000-0000-0000-000000000035
+run2 servicePrincipal 00000000-0000-0000-0000-000000000038
+run2 servicePrincipal 00000000-0000-0000-0000-000000000022
+run2 servicePrincipal 00000000-0000-0000-0000-000000000037
+run2 servicePrincipal 00000000-0000-0000-0000-000000000028
+task6 application 00000000-0000-0000-0000-000000000002
+task8-keyprobe application 00000000-0000-0000-0000-000000000005
+run0-smoke application 00000000-0000-0000-0000-000000000018
+run1 application 00000000-0000-0000-0000-000000000027
+run1 application 00000000-0000-0000-0000-000000000023
+run1 application 00000000-0000-0000-0000-000000000020
+run1 application 00000000-0000-0000-0000-000000000030
+run1 application 00000000-0000-0000-0000-000000000026
+run2 application 00000000-0000-0000-0000-000000000024
+run2 application 00000000-0000-0000-0000-000000000034
+run2 application 00000000-0000-0000-0000-000000000021
+run2 application 00000000-0000-0000-0000-000000000025
+run2 application 00000000-0000-0000-0000-000000000029
+
+## output
+### 2026-11-12T23:23:32.099Z task6 servicePrincipal 00000000-0000-0000-0000-000000000003
+GET deletedItems/00000000-0000-0000-0000-000000000003 -> {"type": "#microsoft.graph.servicePrincipal", "id": "00000000-0000-0000-0000-000000000003", "displayName": "warden-lab-api", "deletedDateTime": "2026-11-11T02:38:55Z"}
+2026-11-12T23:23:32.535Z DELETE deletedItems/00000000-0000-0000-0000-000000000003 -> exit 0
+2026-11-12T23:23:33.526Z GET deletedItems/00000000-0000-0000-0000-000000000003 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000003' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:33","request-id":"cd3862a0-8f04-42a5-854d-3b2b36428459","client-request-id":"cd3862a0-8f04-42a5-854d-3b2b36428459"}}})
+### 2026-11-12T23:23:33.526Z run0-smoke servicePrincipal 00000000-0000-0000-0000-000000000039
+GET deletedItems/00000000-0000-0000-0000-000000000039 -> {"type": "#microsoft.graph.servicePrincipal", "id": "00000000-0000-0000-0000-000000000039", "displayName": "warden-lab-respond", "deletedDateTime": "2026-11-11T04:44:27Z"}
+2026-11-12T23:23:34.084Z DELETE deletedItems/00000000-0000-0000-0000-000000000039 -> exit 0
+2026-11-12T23:23:35.058Z GET deletedItems/00000000-0000-0000-0000-000000000039 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000039' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:34","request-id":"7b7e3ed5-7da6-4122-895f-420ba1f8514e","client-request-id":"7b7e3ed5-7da6-4122-895f-420ba1f8514e"}}})
+### 2026-11-12T23:23:35.058Z run1 servicePrincipal 00000000-0000-0000-0000-000000000036
+GET deletedItems/00000000-0000-0000-0000-000000000036 -> {"type": "#microsoft.graph.servicePrincipal", "id": "00000000-0000-0000-0000-000000000036", "displayName": "warden-lab-respond-1", "deletedDateTime": "2026-11-11T05:00:46Z"}
+2026-11-12T23:23:35.435Z DELETE deletedItems/00000000-0000-0000-0000-000000000036 -> exit 0
+2026-11-12T23:23:36.460Z GET deletedItems/00000000-0000-0000-0000-000000000036 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000036' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:36","request-id":"73a907e0-bd71-4af2-9317-c785bab5f96a","client-request-id":"73a907e0-bd71-4af2-9317-c785bab5f96a"}}})
+### 2026-11-12T23:23:36.460Z run1 servicePrincipal 00000000-0000-0000-0000-000000000033
+GET deletedItems/00000000-0000-0000-0000-000000000033 -> {"type": "#microsoft.graph.servicePrincipal", "id": "00000000-0000-0000-0000-000000000033", "displayName": "warden-lab-respond-2", "deletedDateTime": "2026-11-11T05:02:28Z"}
+2026-11-12T23:23:36.857Z DELETE deletedItems/00000000-0000-0000-0000-000000000033 -> exit 0
+2026-11-12T23:23:37.874Z GET deletedItems/00000000-0000-0000-0000-000000000033 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000033' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:37","request-id":"96285c91-ce5f-4452-83e5-11f09a1dd11d","client-request-id":"96285c91-ce5f-4452-83e5-11f09a1dd11d"}}})
+### 2026-11-12T23:23:37.874Z run1 servicePrincipal 00000000-0000-0000-0000-000000000031
+GET deletedItems/00000000-0000-0000-0000-000000000031 -> {"type": "#microsoft.graph.servicePrincipal", "id": "00000000-0000-0000-0000-000000000031", "displayName": "warden-lab-respond-3", "deletedDateTime": "2026-11-11T05:10:34Z"}
+2026-11-12T23:23:38.253Z DELETE deletedItems/00000000-0000-0000-0000-000000000031 -> exit 0
+2026-11-12T23:23:39.217Z GET deletedItems/00000000-0000-0000-0000-000000000031 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000031' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:39","request-id":"eb09f41a-54c8-4d7b-a01d-10c9e0bb0917","client-request-id":"eb09f41a-54c8-4d7b-a01d-10c9e0bb0917"}}})
+### 2026-11-12T23:23:39.217Z run1 servicePrincipal 00000000-0000-0000-0000-000000000032
+GET deletedItems/00000000-0000-0000-0000-000000000032 -> {"type": "#microsoft.graph.servicePrincipal", "id": "00000000-0000-0000-0000-000000000032", "displayName": "warden-lab-respond-4", "deletedDateTime": "2026-11-11T05:02:24Z"}
+2026-11-12T23:23:39.662Z DELETE deletedItems/00000000-0000-0000-0000-000000000032 -> exit 0
+2026-11-12T23:23:40.841Z GET deletedItems/00000000-0000-0000-0000-000000000032 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000032' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:40","request-id":"e37e979f-fcd0-4ded-a876-db4e51d54ae3","client-request-id":"e37e979f-fcd0-4ded-a876-db4e51d54ae3"}}})
+### 2026-11-12T23:23:40.841Z run1 servicePrincipal 00000000-0000-0000-0000-000000000019
+GET deletedItems/00000000-0000-0000-0000-000000000019 -> {"type": "#microsoft.graph.servicePrincipal", "id": "00000000-0000-0000-0000-000000000019", "displayName": "warden-lab-respond-5", "deletedDateTime": "2026-11-11T05:00:43Z"}
+2026-11-12T23:23:41.220Z DELETE deletedItems/00000000-0000-0000-0000-000000000019 -> exit 0
+2026-11-12T23:23:42.113Z GET deletedItems/00000000-0000-0000-0000-000000000019 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000019' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:42","request-id":"9fd5dd1a-a2eb-4013-9352-2a6504b92ebe","client-request-id":"9fd5dd1a-a2eb-4013-9352-2a6504b92ebe"}}})
+### 2026-11-12T23:23:42.113Z run2 servicePrincipal 00000000-0000-0000-0000-000000000035
+GET deletedItems/00000000-0000-0000-0000-000000000035 -> {"type": "#microsoft.graph.servicePrincipal", "id": "00000000-0000-0000-0000-000000000035", "displayName": "warden-lab-respond-1", "deletedDateTime": "2026-11-11T15:42:44Z"}
+2026-11-12T23:23:42.512Z DELETE deletedItems/00000000-0000-0000-0000-000000000035 -> exit 0
+2026-11-12T23:23:43.453Z GET deletedItems/00000000-0000-0000-0000-000000000035 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000035' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:43","request-id":"2ee4d4ca-4cfb-482d-aeef-d729dd5ccc6c","client-request-id":"2ee4d4ca-4cfb-482d-aeef-d729dd5ccc6c"}}})
+### 2026-11-12T23:23:43.453Z run2 servicePrincipal 00000000-0000-0000-0000-000000000038
+GET deletedItems/00000000-0000-0000-0000-000000000038 -> {"type": "#microsoft.graph.servicePrincipal", "id": "00000000-0000-0000-0000-000000000038", "displayName": "warden-lab-respond-2", "deletedDateTime": "2026-11-11T15:41:20Z"}
+2026-11-12T23:23:43.886Z DELETE deletedItems/00000000-0000-0000-0000-000000000038 -> exit 0
+2026-11-12T23:23:44.918Z GET deletedItems/00000000-0000-0000-0000-000000000038 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000038' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:44","request-id":"e1af2522-c5f8-4ef3-bc91-61e8b5ad3681","client-request-id":"e1af2522-c5f8-4ef3-bc91-61e8b5ad3681"}}})
+### 2026-11-12T23:23:44.918Z run2 servicePrincipal 00000000-0000-0000-0000-000000000022
+GET deletedItems/00000000-0000-0000-0000-000000000022 -> {"type": "#microsoft.graph.servicePrincipal", "id": "00000000-0000-0000-0000-000000000022", "displayName": "warden-lab-respond-3", "deletedDateTime": "2026-11-11T15:50:10Z"}
+2026-11-12T23:23:45.390Z DELETE deletedItems/00000000-0000-0000-0000-000000000022 -> exit 0
+2026-11-12T23:23:46.438Z GET deletedItems/00000000-0000-0000-0000-000000000022 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000022' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:46","request-id":"bc388024-9bb7-4146-80cf-a5cdce3caf96","client-request-id":"bc388024-9bb7-4146-80cf-a5cdce3caf96"}}})
+### 2026-11-12T23:23:46.438Z run2 servicePrincipal 00000000-0000-0000-0000-000000000037
+GET deletedItems/00000000-0000-0000-0000-000000000037 -> {"type": "#microsoft.graph.servicePrincipal", "id": "00000000-0000-0000-0000-000000000037", "displayName": "warden-lab-respond-4", "deletedDateTime": "2026-11-11T15:49:58Z"}
+2026-11-12T23:23:46.867Z DELETE deletedItems/00000000-0000-0000-0000-000000000037 -> exit 0
+2026-11-12T23:23:47.794Z GET deletedItems/00000000-0000-0000-0000-000000000037 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000037' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:47","request-id":"d0c58f31-812b-40dd-a528-c2a47ea293a3","client-request-id":"d0c58f31-812b-40dd-a528-c2a47ea293a3"}}})
+### 2026-11-12T23:23:47.794Z run2 servicePrincipal 00000000-0000-0000-0000-000000000028
+GET deletedItems/00000000-0000-0000-0000-000000000028 -> {"type": "#microsoft.graph.servicePrincipal", "id": "00000000-0000-0000-0000-000000000028", "displayName": "warden-lab-respond-5", "deletedDateTime": "2026-11-11T15:50:11Z"}
+2026-11-12T23:23:48.177Z DELETE deletedItems/00000000-0000-0000-0000-000000000028 -> exit 0
+2026-11-12T23:23:49.343Z GET deletedItems/00000000-0000-0000-0000-000000000028 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000028' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:49","request-id":"e4b84fcf-952f-48ef-a822-e77195a10b8f","client-request-id":"e4b84fcf-952f-48ef-a822-e77195a10b8f"}}})
+### 2026-11-12T23:23:49.343Z task6 application 00000000-0000-0000-0000-000000000002
+GET deletedItems/00000000-0000-0000-0000-000000000002 -> {"type": "#microsoft.graph.application", "id": "00000000-0000-0000-0000-000000000002", "displayName": "warden-lab-api", "deletedDateTime": "2026-11-11T02:39:16Z"}
+2026-11-12T23:23:49.709Z DELETE deletedItems/00000000-0000-0000-0000-000000000002 -> exit 0
+2026-11-12T23:23:50.849Z GET deletedItems/00000000-0000-0000-0000-000000000002 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000002' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:50","request-id":"3c7bff6e-a911-4954-9aa9-950beb2d215e","client-request-id":"3c7bff6e-a911-4954-9aa9-950beb2d215e"}}})
+### 2026-11-12T23:23:50.849Z task8-keyprobe application 00000000-0000-0000-0000-000000000005
+GET deletedItems/00000000-0000-0000-0000-000000000005 -> {"type": "#microsoft.graph.application", "id": "00000000-0000-0000-0000-000000000005", "displayName": "warden-lab-keyprobe", "deletedDateTime": "2026-11-11T04:27:48Z"}
+2026-11-12T23:23:51.280Z DELETE deletedItems/00000000-0000-0000-0000-000000000005 -> exit 0
+2026-11-12T23:23:52.313Z GET deletedItems/00000000-0000-0000-0000-000000000005 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000005' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:52","request-id":"b4eed1f1-443d-4068-becf-26d93a0a3c34","client-request-id":"b4eed1f1-443d-4068-becf-26d93a0a3c34"}}})
+### 2026-11-12T23:23:52.313Z run0-smoke application 00000000-0000-0000-0000-000000000018
+GET deletedItems/00000000-0000-0000-0000-000000000018 -> {"type": "#microsoft.graph.application", "id": "00000000-0000-0000-0000-000000000018", "displayName": "warden-lab-respond", "deletedDateTime": "2026-11-11T04:44:28Z"}
+2026-11-12T23:23:52.700Z DELETE deletedItems/00000000-0000-0000-0000-000000000018 -> exit 0
+2026-11-12T23:23:53.664Z GET deletedItems/00000000-0000-0000-0000-000000000018 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000018' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:53","request-id":"7c636400-54e9-4f97-9b79-1af682200a19","client-request-id":"7c636400-54e9-4f97-9b79-1af682200a19"}}})
+### 2026-11-12T23:23:53.664Z run1 application 00000000-0000-0000-0000-000000000027
+GET deletedItems/00000000-0000-0000-0000-000000000027 -> {"type": "#microsoft.graph.application", "id": "00000000-0000-0000-0000-000000000027", "displayName": "warden-lab-respond-1", "deletedDateTime": "2026-11-11T05:00:47Z"}
+2026-11-12T23:23:54.050Z DELETE deletedItems/00000000-0000-0000-0000-000000000027 -> exit 0
+2026-11-12T23:23:55.096Z GET deletedItems/00000000-0000-0000-0000-000000000027 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000027' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:54","request-id":"54902c9b-a892-4f48-8055-ba846b37f9a5","client-request-id":"54902c9b-a892-4f48-8055-ba846b37f9a5"}}})
+### 2026-11-12T23:23:55.097Z run1 application 00000000-0000-0000-0000-000000000023
+GET deletedItems/00000000-0000-0000-0000-000000000023 -> {"type": "#microsoft.graph.application", "id": "00000000-0000-0000-0000-000000000023", "displayName": "warden-lab-respond-2", "deletedDateTime": "2026-11-11T05:02:29Z"}
+2026-11-12T23:23:55.464Z DELETE deletedItems/00000000-0000-0000-0000-000000000023 -> exit 0
+2026-11-12T23:23:56.568Z GET deletedItems/00000000-0000-0000-0000-000000000023 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000023' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:56","request-id":"0a3ad2ae-b5f1-4d6a-bf20-0f5f4816d58f","client-request-id":"0a3ad2ae-b5f1-4d6a-bf20-0f5f4816d58f"}}})
+### 2026-11-12T23:23:56.568Z run1 application 00000000-0000-0000-0000-000000000020
+GET deletedItems/00000000-0000-0000-0000-000000000020 -> {"type": "#microsoft.graph.application", "id": "00000000-0000-0000-0000-000000000020", "displayName": "warden-lab-respond-3", "deletedDateTime": "2026-11-11T05:10:35Z"}
+2026-11-12T23:23:56.975Z DELETE deletedItems/00000000-0000-0000-0000-000000000020 -> exit 0
+2026-11-12T23:23:58.076Z GET deletedItems/00000000-0000-0000-0000-000000000020 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000020' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:57","request-id":"c58ae42c-715c-47c7-856c-ed6bb90e74e0","client-request-id":"c58ae42c-715c-47c7-856c-ed6bb90e74e0"}}})
+### 2026-11-12T23:23:58.076Z run1 application 00000000-0000-0000-0000-000000000030
+GET deletedItems/00000000-0000-0000-0000-000000000030 -> {"type": "#microsoft.graph.application", "id": "00000000-0000-0000-0000-000000000030", "displayName": "warden-lab-respond-4", "deletedDateTime": "2026-11-11T05:02:25Z"}
+2026-11-12T23:23:58.669Z DELETE deletedItems/00000000-0000-0000-0000-000000000030 -> exit 0
+2026-11-12T23:23:59.787Z GET deletedItems/00000000-0000-0000-0000-000000000030 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000030' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:23:59","request-id":"31b0ccc4-26ae-4545-b8c1-a3e859f5d7bd","client-request-id":"31b0ccc4-26ae-4545-b8c1-a3e859f5d7bd"}}})
+### 2026-11-12T23:23:59.787Z run1 application 00000000-0000-0000-0000-000000000026
+GET deletedItems/00000000-0000-0000-0000-000000000026 -> {"type": "#microsoft.graph.application", "id": "00000000-0000-0000-0000-000000000026", "displayName": "warden-lab-respond-5", "deletedDateTime": "2026-11-11T05:00:43Z"}
+2026-11-12T23:24:00.223Z DELETE deletedItems/00000000-0000-0000-0000-000000000026 -> exit 0
+2026-11-12T23:24:01.337Z GET deletedItems/00000000-0000-0000-0000-000000000026 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000026' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:24:01","request-id":"40c4f0a2-7839-4337-9504-f06f3fe19f29","client-request-id":"40c4f0a2-7839-4337-9504-f06f3fe19f29"}}})
+### 2026-11-12T23:24:01.337Z run2 application 00000000-0000-0000-0000-000000000024
+GET deletedItems/00000000-0000-0000-0000-000000000024 -> {"type": "#microsoft.graph.application", "id": "00000000-0000-0000-0000-000000000024", "displayName": "warden-lab-respond-1", "deletedDateTime": "2026-11-11T15:42:44Z"}
+2026-11-12T23:24:01.798Z DELETE deletedItems/00000000-0000-0000-0000-000000000024 -> exit 0
+2026-11-12T23:24:03.040Z GET deletedItems/00000000-0000-0000-0000-000000000024 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000024' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:24:02","request-id":"7e15a638-b8c2-4ba5-9a02-1b6e54ecd1fb","client-request-id":"7e15a638-b8c2-4ba5-9a02-1b6e54ecd1fb"}}})
+### 2026-11-12T23:24:03.040Z run2 application 00000000-0000-0000-0000-000000000034
+GET deletedItems/00000000-0000-0000-0000-000000000034 -> {"type": "#microsoft.graph.application", "id": "00000000-0000-0000-0000-000000000034", "displayName": "warden-lab-respond-2", "deletedDateTime": "2026-11-11T15:41:21Z"}
+2026-11-12T23:24:03.911Z DELETE deletedItems/00000000-0000-0000-0000-000000000034 -> exit 0
+2026-11-12T23:24:05.156Z GET deletedItems/00000000-0000-0000-0000-000000000034 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000034' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:24:05","request-id":"fb96633f-7548-49fc-a4d6-c74a45b0b90b","client-request-id":"fb96633f-7548-49fc-a4d6-c74a45b0b90b"}}})
+### 2026-11-12T23:24:05.156Z run2 application 00000000-0000-0000-0000-000000000021
+GET deletedItems/00000000-0000-0000-0000-000000000021 -> {"type": "#microsoft.graph.application", "id": "00000000-0000-0000-0000-000000000021", "displayName": "warden-lab-respond-3", "deletedDateTime": "2026-11-11T15:50:11Z"}
+2026-11-12T23:24:05.676Z DELETE deletedItems/00000000-0000-0000-0000-000000000021 -> exit 0
+2026-11-12T23:24:06.765Z GET deletedItems/00000000-0000-0000-0000-000000000021 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000021' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:24:06","request-id":"dbb01069-6086-47da-8aee-16a2371feba0","client-request-id":"dbb01069-6086-47da-8aee-16a2371feba0"}}})
+### 2026-11-12T23:24:06.765Z run2 application 00000000-0000-0000-0000-000000000025
+GET deletedItems/00000000-0000-0000-0000-000000000025 -> {"type": "#microsoft.graph.application", "id": "00000000-0000-0000-0000-000000000025", "displayName": "warden-lab-respond-4", "deletedDateTime": "2026-11-11T15:49:59Z"}
+2026-11-12T23:24:07.195Z DELETE deletedItems/00000000-0000-0000-0000-000000000025 -> exit 0
+2026-11-12T23:24:08.195Z GET deletedItems/00000000-0000-0000-0000-000000000025 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000025' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:24:08","request-id":"3840bf95-c3b0-41d8-a6c0-135164f1ea35","client-request-id":"3840bf95-c3b0-41d8-a6c0-135164f1ea35"}}})
+### 2026-11-12T23:24:08.195Z run2 application 00000000-0000-0000-0000-000000000029
+GET deletedItems/00000000-0000-0000-0000-000000000029 -> {"type": "#microsoft.graph.application", "id": "00000000-0000-0000-0000-000000000029", "displayName": "warden-lab-respond-5", "deletedDateTime": "2026-11-11T15:50:12Z"}
+2026-11-12T23:24:08.597Z DELETE deletedItems/00000000-0000-0000-0000-000000000029 -> exit 0
+2026-11-12T23:24:09.584Z GET deletedItems/00000000-0000-0000-0000-000000000029 after purge -> error: ERROR: Not Found({"error":{"code":"Request_ResourceNotFound","message":"Resource '00000000-0000-0000-0000-000000000029' does not exist or one of its queried reference-property objects are not present.","innerError":{"date":"2026-11-12T23:24:09","request-id":"c74d0d71-5a2d-44f3-b8ca-b4d2dc62517d","client-request-id":"c74d0d71-5a2d-44f3-b8ca-b4d2dc62517d"}}})
+### 2026-11-12T23:24:09.584Z purged 25, refused 0

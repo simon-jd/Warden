@@ -1,0 +1,18 @@
+{
+  "apiVersion": "kyverno.io/v1",
+  "kind": "ClusterPolicy",
+  "metadata": {"name": "warden-verify-images-unbound"},
+  "spec": {
+    "background": false,
+    "validationFailureAction": "Enforce",
+    "webhookConfiguration": {"failurePolicy": "Fail", "timeoutSeconds": 30},
+    "rules": [{
+      "name": "deny-unbound-image-trust",
+      "match": {"any": [{"resources": {"kinds": ["Pod"]}}]},
+      "validate": {
+        "message": "Warden image identity is unbound; render a policy from trusted GitHub context before admitting Pods",
+        "deny": {"conditions": {"all": [{"key": true, "operator": "Equals", "value": true}]}}
+      }
+    }]
+  }
+}

@@ -1,0 +1,6 @@
+test_normal_operation_receipts_require_recorder_exit_agreement (test_controller_cache_continuation_invoker_20261025.GeneratedInvokerTests.test_normal_operation_receipts_require_recorder_exit_agreement) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.150s
+
+OK

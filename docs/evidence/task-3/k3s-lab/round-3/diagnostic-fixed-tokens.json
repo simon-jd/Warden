@@ -1,0 +1,63 @@
+{
+  "raw_persisted": false,
+  "fixed_token_matches": [
+    {
+      "line_number": 39,
+      "safe_fixed_tokens": [
+        "runtime"
+      ]
+    },
+    {
+      "line_number": 70,
+      "safe_fixed_tokens": [
+        "mkdir",
+        "write",
+        "create",
+        "failed",
+        "PATH",
+        "etc",
+        "read-only file system"
+      ]
+    },
+    {
+      "line_number": 74,
+      "safe_fixed_tokens": [
+        "runtime"
+      ]
+    },
+    {
+      "line_number": 75,
+      "safe_fixed_tokens": [
+        "containerd",
+        "exit"
+      ]
+    },
+    {
+      "line_number": 116,
+      "safe_fixed_tokens": [
+        "failed",
+        "plugin",
+        "containerd",
+        "executable",
+        "not found",
+        "exec",
+        "PATH",
+        "run"
+      ]
+    },
+    {
+      "line_number": 173,
+      "safe_fixed_tokens": [
+        "mkdir",
+        "create",
+        "failed",
+        "CRI",
+        "service",
+        "var",
+        "run",
+        "read-only file system",
+        "socket"
+      ]
+    }
+  ]
+}

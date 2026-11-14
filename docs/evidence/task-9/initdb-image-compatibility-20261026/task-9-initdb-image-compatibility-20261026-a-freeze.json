@@ -1,0 +1,33 @@
+{
+  "phase": "IMAGE_COMPATIBILITY_PREPARATION_ONLY",
+  "execution": "NOT_ADMITTED_NOT_RUN",
+  "allowance": 1,
+  "authority": {
+    "path": "docs/COORDINATOR-TASK9-INITDB-CAUSE-TDD-20261026.json",
+    "bytes": 4016,
+    "sha256": "ecc874eadea4890733fa044a3f79a0efdd8a34630f9692051189e9aa29981841"
+  },
+  "consumed_logger_body_sha256": "68c82e12362296db7193bfbafe8613378d8dbcecf9b561c0921efd4152ac0f31",
+  "prior_first_red": "SPENT_2/2_UNCHANGED",
+  "prior_diagnostics": "SPENT_2/2_UNCHANGED",
+  "files": [
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-initdb-image-compatibility-20261026-a.py.txt",
+      "bytes": 9912,
+      "allocated_bytes": 12288,
+      "sha256": "176d9f914e2e4bf136d34fd0b8fce84e5ebd74fd9472bb02e770db0c83103bc7"
+    },
+    {
+      "path": ".superpowers/sdd/2-warden-security-plan/task-9-initdb-image-compatibility-20261026-a.md",
+      "bytes": 4720,
+      "allocated_bytes": 8192,
+      "sha256": "254a83eacb481ff374054830246ffd83b8ad7ab5a8e79f0e7b14ccf54bd8b8e6"
+    }
+  ],
+  "allocation": {
+    "new_files_allocated_bytes": 24576,
+    "directory_growth_bytes": 0,
+    "total_additional_allocated_bytes": 24576,
+    "cap_bytes": 65536
+  }
+}

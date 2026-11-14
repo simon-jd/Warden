@@ -1,0 +1,57 @@
+{
+  "retrieved_at": "2026-10-24T02:39:51.500955+00:00",
+  "url": "https://prices.azure.com/api/retail/prices?%24filter=armRegionName+eq+%27westus2%27+and+serviceName+eq+%27Virtual+Machines%27+and+armSkuName+eq+%27Standard_B2s%27+and+priceType+eq+%27Consumption%27&currencyCode=USD",
+  "response": {
+    "BillingCurrency": "USD",
+    "CustomerEntityId": "Default",
+    "CustomerEntityType": "Retail",
+    "Items": [
+      {
+        "currencyCode": "USD",
+        "tierMinimumUnits": 0.0,
+        "retailPrice": 0.0416,
+        "unitPrice": 0.0416,
+        "armRegionName": "westus2",
+        "location": "US West 2",
+        "effectiveStartDate": "2025-10-01T00:00:00Z",
+        "meterId": "4d1bb254-aaf7-40e8-99d3-65a628cdd037",
+        "meterName": "B2s",
+        "productId": "DZH318Z0BQ35",
+        "skuId": "DZH318Z0BQ35/00HH",
+        "productName": "Virtual Machines BS Series",
+        "skuName": "B2s",
+        "serviceName": "Virtual Machines",
+        "serviceId": "DZH313Z7MMC8",
+        "serviceFamily": "Compute",
+        "unitOfMeasure": "1 Hour",
+        "type": "Consumption",
+        "isPrimaryMeterRegion": true,
+        "armSkuName": "Standard_B2s"
+      },
+      {
+        "currencyCode": "USD",
+        "tierMinimumUnits": 0.0,
+        "retailPrice": 0.0496,
+        "unitPrice": 0.0496,
+        "armRegionName": "westus2",
+        "location": "US West 2",
+        "effectiveStartDate": "2025-10-01T00:00:00Z",
+        "meterId": "9be75bf3-3c16-4bbc-aac0-1c91c1ac44cb",
+        "meterName": "B2s",
+        "productId": "DZH318Z0BQNH",
+        "skuId": "DZH318Z0BQNH/0031",
+        "productName": "Virtual Machines BS Series Windows",
+        "skuName": "B2s",
+        "serviceName": "Virtual Machines",
+        "serviceId": "DZH313Z7MMC8",
+        "serviceFamily": "Compute",
+        "unitOfMeasure": "1 Hour",
+        "type": "Consumption",
+        "isPrimaryMeterRegion": true,
+        "armSkuName": "Standard_B2s"
+      }
+    ],
+    "NextPageLink": null,
+    "Count": 2
+  }
+}

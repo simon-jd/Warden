@@ -1,0 +1,57 @@
+{
+  "phase": "IMAGE_COMPATIBILITY_ONLY",
+  "allowance": "1/1",
+  "status": "UNKNOWN_FAILURE",
+  "capture_complete": false,
+  "compatibility_gate": "NOT_PASSED",
+  "prior_first_red": "SPENT_2/2_UNCHANGED",
+  "prior_diagnostics": "SPENT_2/2_UNCHANGED",
+  "pg_started": false,
+  "database_initialized": false,
+  "CID": "8695f02d2ad8edfe2295220e154796e904e551f78b359e6c44c5aae3c9cc5b73",
+  "owner_label": "a1f94b6a724cee95a2c14d5381fcda22",
+  "owned_name": "warden-task9-initdb-image-compatibility-20261026-a",
+  "container_state": {
+    "Dead": false,
+    "Error": "",
+    "ExitCode": 0,
+    "FinishedAt": "2026-10-26T06:50:46.549283772Z",
+    "OOMKilled": false,
+    "Paused": false,
+    "Pid": 0,
+    "Restarting": false,
+    "Running": false,
+    "StartedAt": "2026-10-26T06:50:46.44672637Z",
+    "Status": "exited"
+  },
+  "outputs": {
+    "initdb-version.txt": {
+      "bytes": 25,
+      "sha256": "70bab6da5f758348390f6440f51a98a06ade9ddebc50560151856827f05b37ed"
+    },
+    "initdb-help.txt": {
+      "bytes": 2911,
+      "sha256": "350fb75dc6d650cc5965837470f78275637da7c9dbe827067eaa5f6d5655c46e"
+    },
+    "docker-entrypoint.sh.txt": {
+      "bytes": 14577,
+      "sha256": "9c440299ae04a0a79d55b8bf03307036d890a40979d2fb698073c9050d4b20a5"
+    }
+  },
+  "indicators": {
+    "version_identifies_initdb": true,
+    "help_has_set_name_value": false,
+    "entrypoint_mentions_initdb": true,
+    "entrypoint_mentions_POSTGRES_INITDB_ARGS": true,
+    "entrypoint_bytes": 14577,
+    "stderr_empty": true
+  },
+  "failures": [
+    "work:RuntimeError:compatibility_evidence_missing"
+  ],
+  "cleanup_known": true,
+  "cli_group_cleanup_known": true,
+  "evidence_bytes": 18758,
+  "elapsed": 0.5024262930965051,
+  "old_task16": "UNTOUCHED_UNKNOWN"
+}

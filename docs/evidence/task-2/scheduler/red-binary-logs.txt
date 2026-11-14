@@ -1,0 +1,5 @@
+--- FAIL: TestBinaryLogsPersistWithoutLoss (0.09s)
+    scheduler_test.go:629: binary output prevented terminal commit: ERROR: unsupported Unicode escape sequence (SQLSTATE 22P05)
+FAIL
+FAIL	warden/controlplane/internal/scheduler	0.091s
+FAIL

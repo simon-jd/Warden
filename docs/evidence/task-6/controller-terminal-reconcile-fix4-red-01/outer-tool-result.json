@@ -1,0 +1,41 @@
+{
+  "request": {
+    "cmd": "python3 -B docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/run.py",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "sandbox_permissions": "require_escalated",
+    "justification": "运行授权round4生成夹具RED，CPU30/AS512MiB/FSIZE32MiB/最早测量45秒，持久哨兵禁止host clock/proc，无实际控制器、socket或子进程。",
+    "yield_time_ms": 1000,
+    "max_output_tokens": 3000
+  },
+  "initial": {
+    "chunk_id": "a6bd45",
+    "wall_time_seconds": 1.000836079,
+    "session_id": 32579,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "polls": [
+    {
+      "request": {
+        "session_id": 32579,
+        "chars": "",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 3000
+      },
+      "response": {
+        "chunk_id": "5bc580",
+        "wall_time_seconds": 0.000034105,
+        "exit_code": 1,
+        "original_token_count": 270,
+        "output": "{\"changed_source_snapshots\": [\"docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py\"], \"command\": [\"python3\", \"-B\", \"docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/run.py\"], \"completion_requires_process_exit_zero\": true, \"controller_files\": 2, \"dispatch_base\": \"c2436684c511bf2ae92982fb8141b1b7d0c41ee9\", \"duration_seconds\": 4.921275250031613, \"errors\": 0, \"exit_code\": 1, \"failures\": 11, \"limits\": {\"address_bytes\": 536870912, \"cpu_seconds\": 30, \"file_bytes\": 33554432, \"wall_seconds\": 45}, \"live_cache_access\": false, \"skipped\": 0, \"source_commit_at_launch\": \"c2436684c511bf2ae92982fb8141b1b7d0c41ee9\", \"source_files\": 150, \"source_unchanged\": true, \"started_utc\": \"2026-10-25T16:06:43.069264+00:00\", \"test_target\": \"round4 focused genuine I1/I2 behavior RED\", \"tested_prefix_sha256\": \"7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa\", \"tests_run\": 7, \"timing_scope\": \"earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded\", \"whole_wall_until_receipt_seconds\": 4.958364675054327}\n"
+      }
+    }
+  ],
+  "final": {
+    "chunk_id": "5bc580",
+    "wall_time_seconds": 0.000034105,
+    "exit_code": 1,
+    "original_token_count": 270,
+    "output": "{\"changed_source_snapshots\": [\"docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py\"], \"command\": [\"python3\", \"-B\", \"docs/evidence/task-6/controller-terminal-reconcile-fix4-red-01/run.py\"], \"completion_requires_process_exit_zero\": true, \"controller_files\": 2, \"dispatch_base\": \"c2436684c511bf2ae92982fb8141b1b7d0c41ee9\", \"duration_seconds\": 4.921275250031613, \"errors\": 0, \"exit_code\": 1, \"failures\": 11, \"limits\": {\"address_bytes\": 536870912, \"cpu_seconds\": 30, \"file_bytes\": 33554432, \"wall_seconds\": 45}, \"live_cache_access\": false, \"skipped\": 0, \"source_commit_at_launch\": \"c2436684c511bf2ae92982fb8141b1b7d0c41ee9\", \"source_files\": 150, \"source_unchanged\": true, \"started_utc\": \"2026-10-25T16:06:43.069264+00:00\", \"test_target\": \"round4 focused genuine I1/I2 behavior RED\", \"tested_prefix_sha256\": \"7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa\", \"tests_run\": 7, \"timing_scope\": \"earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded\", \"whole_wall_until_receipt_seconds\": 4.958364675054327}\n"
+  }
+}

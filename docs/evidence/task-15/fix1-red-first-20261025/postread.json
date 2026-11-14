@@ -1,0 +1,20 @@
+{
+  "status.txt": {
+    "bytes": 111,
+    "sha256": "3993f48fc726cc1ef9f43db60f1d780a63edffef17a255e813e6f5467d0e27a7",
+    "uid": 1000,
+    "mode": "0o600",
+    "nlink": 1
+  },
+  "unittest.txt": {
+    "bytes": 2656,
+    "sha256": "fbf771a2947530c94bc40d98689973080738b9a3bd28855f8cb77c4a79e92f90",
+    "uid": 1000,
+    "mode": "0o600",
+    "nlink": 1
+  },
+  "namespace": "/tmp/warden-task15-fix1-red-18981ab8-22c7197f",
+  "frozen_inputs_unchanged": 2,
+  "children_created_by_caller": false,
+  "cryptographic_acceptance": "UNRUN"
+}

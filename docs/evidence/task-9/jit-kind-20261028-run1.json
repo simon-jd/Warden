@@ -1,0 +1,80 @@
+{
+  "approve_to_binding_active_ms": {
+    "max": 12.8,
+    "p50": 8.6,
+    "p95": 12.8
+  },
+  "expire_to_binding_deleted_ms": {
+    "max": 11.3,
+    "p50": 10.8,
+    "p95": 11.3
+  },
+  "grants": 5,
+  "jit_sa_rbac": {
+    "create clusterrolebindings": false,
+    "create rolebindings kube-system": false,
+    "create rolebindings tenant-a": true,
+    "create rolebindings tenant-b": false,
+    "get secrets tenant-a (sa itself)": false,
+    "list pods tenant-a (sa itself)": false,
+    "update roles tenant-a": false
+  },
+  "load": {
+    "loadavg_end": "7.19 6.10 4.08 4/9762 1507443",
+    "loadavg_start": "7.19 6.10 4.08 6/9812 1507344",
+    "nproc": 32
+  },
+  "runs": [
+    {
+      "alice_after": 403,
+      "alice_during": 200,
+      "alice_other_ns_during": 403,
+      "approve_ms": 12.8,
+      "binding": "jit-oiy55xlavu3kwez2flq6iy3hba",
+      "expire_ms": 10.3,
+      "request": "OIY55XLAVU3KWEZ2FLQ6IY3HBA",
+      "state_after": "expired"
+    },
+    {
+      "alice_after": 403,
+      "alice_during": 200,
+      "alice_other_ns_during": 403,
+      "approve_ms": 8.4,
+      "binding": "jit-ogvwlauzbbv5kkjak2i4xgsid4",
+      "expire_ms": 11.3,
+      "request": "OGVWLAUZBBV5KKJAK2I4XGSID4",
+      "state_after": "expired"
+    },
+    {
+      "alice_after": 403,
+      "alice_during": 200,
+      "alice_other_ns_during": 403,
+      "approve_ms": 7.1,
+      "binding": "jit-33tpbuu5gxzbf2ix7l77kkskce",
+      "expire_ms": 11.3,
+      "request": "33TPBUU5GXZBF2IX7L77KKSKCE",
+      "state_after": "expired"
+    },
+    {
+      "alice_after": 403,
+      "alice_during": 200,
+      "alice_other_ns_during": 403,
+      "approve_ms": 10.6,
+      "binding": "jit-nko5vls5naiziml2o76qg4c2b4",
+      "expire_ms": 10.8,
+      "request": "NKO5VLS5NAIZIML2O76QG4C2B4",
+      "state_after": "expired"
+    },
+    {
+      "alice_after": 403,
+      "alice_during": 200,
+      "alice_other_ns_during": 403,
+      "approve_ms": 8.6,
+      "binding": "jit-rpmhjocktqxrhw4cn4wbklf36u",
+      "expire_ms": 10,
+      "request": "RPMHJOCKTQXRHW4CN4WBKLF36U",
+      "state_after": "expired"
+    }
+  ],
+  "token_ttl_s": 599.785864262
+}

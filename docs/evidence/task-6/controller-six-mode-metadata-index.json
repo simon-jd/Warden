@@ -1,0 +1,87 @@
+{
+  "dispatch_base": "ac0bf10feca7825bd81f3d20f896763d6ae003cd",
+  "excluded": [
+    "this index (nonrecursive)",
+    "ignored duplicate report mirror",
+    "unrelated Task16 and root documentation paths"
+  ],
+  "report_mirror_equal": true,
+  "rows": [
+    {
+      "allocated_bytes": 139264,
+      "bytes": 135091,
+      "path": "docs/evidence/task-6/continuation-controller-operations-execution-plan.md",
+      "sha256": "b8bde9c79d038690284d3d8c40d2ade0125ecedb1a69eba40e9212c2f28c1a5a"
+    },
+    {
+      "allocated_bytes": 4096,
+      "bytes": 852,
+      "path": "docs/evidence/task-6/controller-six-mode-metadata-baseline.json",
+      "sha256": "e45c34738df54abbfc6a4066601c5a288a65699c9588b23b3c2ab2058b3560fe"
+    },
+    {
+      "allocated_bytes": 28672,
+      "bytes": 25638,
+      "path": "docs/evidence/task-6/controller-six-mode-metadata-candidate.md",
+      "sha256": "fba173360172a5b5a80d08398aab05ec800c82124cfa6482fe28a873b3c84eb5"
+    },
+    {
+      "allocated_bytes": 8192,
+      "bytes": 5313,
+      "path": "docs/evidence/task-6/controller-six-mode-metadata-events-fixture.js",
+      "sha256": "900cbc724f42d99772a169ff6b630d585c00defb8b3d4358a2f54b07a05c93f8"
+    },
+    {
+      "allocated_bytes": 4096,
+      "bytes": 1987,
+      "path": "docs/evidence/task-6/controller-six-mode-metadata-execute.js",
+      "sha256": "ee54795b00414c6d217bc140ad7828b18929b1d15aefd0393d60df3b7c291412"
+    },
+    {
+      "allocated_bytes": 20480,
+      "bytes": 18825,
+      "path": "docs/evidence/task-6/controller-six-mode-metadata-report.md",
+      "sha256": "6896fb847f5718231cbc15352f26d0a8df0b0775e4b9c3fd92cc179de0174ba4"
+    },
+    {
+      "allocated_bytes": 4096,
+      "bytes": 1635,
+      "path": "docs/evidence/task-6/controller-six-mode-metadata-source-manifest.json",
+      "sha256": "bbab7db00fdba7208016837b9d4b9587bf6b9356a1cfc97e6fef4a4d79b5f1ec"
+    },
+    {
+      "allocated_bytes": 188416,
+      "bytes": 184458,
+      "path": "docs/evidence/task-6/controller-six-mode-metadata-source-text-snapshot.json",
+      "sha256": "a34a23d7fe7339a38801a11030f0234bb81e7d78db55185d778ccca1e24fda37"
+    },
+    {
+      "allocated_bytes": 12288,
+      "bytes": 12038,
+      "path": "docs/evidence/task-6/controller-six-mode-metadata-verification.py",
+      "sha256": "9e959371e05edf7703a8d4bf26bea88214bfcf2d1252b0c278edb46790bca51c"
+    },
+    {
+      "allocated_bytes": 57344,
+      "bytes": 56879,
+      "path": "docs/evidence/task-6/controller-six-mode-metadata-verification/native.json",
+      "sha256": "1fadab11f33f56af474eaacc9e7735aaab8bd64b99bcdbb6b7b6b82e692d59ec"
+    },
+    {
+      "allocated_bytes": 4096,
+      "bytes": 1485,
+      "path": "docs/evidence/task-6/controller-six-mode-metadata-verification/post-source.json",
+      "sha256": "475a92eb94f9e2b9ca9c90c86bd8c539110244ef79a0bfb8c064394fa59c2e19"
+    },
+    {
+      "allocated_bytes": 98304,
+      "bytes": 95288,
+      "path": "docs/evidence/task-6/controller-six-mode-metadata-verification/tool-record.json",
+      "sha256": "1c18a6d314c81be3015e69287fda82bfc76bb388b709d6c4a5e660f101c38b6b"
+    }
+  ],
+  "scope": "only this six-target batch changed/new artifacts; full changed-file sizes, no R/actual-source authority",
+  "source_freeze": "d05a374bf3632616e8e76aa9c07cd524af5b077d",
+  "total_allocated_bytes": 569344,
+  "total_bytes": 539489
+}

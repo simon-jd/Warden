@@ -1,0 +1,38 @@
+{
+  "phase": "MIGRATION_V2_COVER",
+  "base": "f83a41b8d5dd7f5a976852785a31aeee01596a19",
+  "tests": [
+    "TestJITMigrationPreservesVersionTwoRunsAndAudit"
+  ],
+  "material_sha256": "1ca3cbfa3cf4a3ba960dc4ced03f8eb24d2e8429e9ae5e7b0e34d3d08b54fbbd",
+  "supplement_sha256": "980c544827e4c459565535bbddc8ebfbfe953be62fe9b364bfae28062abb1944",
+  "source": {
+    "go.mod": "bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa",
+    "go.sum": "cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0",
+    "controlplane/internal/audit/audit.go": "0cb775bb602fcdcdefe405a8587d11aa4dac79e018d457c1328c7f00eb932439",
+    "controlplane/internal/canonical/json.go": "06b2298c869c69fa0877e120f4a14fd3942f5e5c60a0c79032bcb7ffcd8261a0",
+    "controlplane/internal/store/store.go": "d50bab2c3f628855f2b21b3c94ec8a5a2a8526907509916ef0b9ca4eabce5a62",
+    "controlplane/internal/store/migration_test.go": "6dc0d9b0f6d9a2b9d9c62a5b38353dbae2bb46a31abb0bf8400cc7642db11f6a",
+    "controlplane/internal/store/migrations/001_init.sql": "f0630b47de866d358a9290b746a2017be1275e83780ede92b22e61617e6c76d8",
+    "controlplane/internal/store/migrations/002_execution.sql": "6d0bd9ff177a820520a77ef2c9b8392a89567a8663497342aeb0ce8d128a350d",
+    "controlplane/internal/store/migrations/003_jit.sql": "b3699d3184e250e416735ce19ac12626d4ebfba70c58eb75c1f142d62f28a98a",
+    "controlplane/internal/testutil/database.go": "f6574dfe1f4b6eba56bcf9726756f2102c4ceebca3bd5d56e10b6fa9f03545e8",
+    "controlplane/internal/runs/runs.go": "873f31f39e7ee0da23699e0bb95d2f7d993269c1c1e7a078a7e9de5f06efc3da",
+    "controlplane/internal/runs/execution.go": "c51f603ae01bbdc29d2166f1bdde235b8a566a076545cd49f2775939f65298b7",
+    "controlplane/internal/runs/policy.go": "c7dee18859b6ef5394d54060eb05c8a282d9b2a7b2709ff7b63deed94792762b",
+    "runtimes/runtime.go": "8ac5e48f274292e74f9cd19d30f4e50b5ce8a772884f2ef361d3a2eec3af7f2b",
+    "runtimes/gate/admission.go": "3aabb68f81513df1a571da54f371a114aa552a8b79c693e45ad807318f70d1fc",
+    "runtimes/gate/gate.go": "0b5a5b140a7124c9d2a65567694e5b662d13bb99b7fdcd1cedadc434273f8284",
+    "runtimes/gate/retirement.go": "962cfa63ac1f252e95375c63d076f079abc6ddf0a851b6b61f5b76f55b9c428f"
+  },
+  "preserved_first_green_source_freeze": {
+    "path": ".superpowers/sdd/2-warden-security-plan/task-9-first-green-20261026-a-source-freeze.json",
+    "bytes": 3086,
+    "sha256": "1136c050db7e2a33d2e1ad19a9553ccb8c8cdb99f2c60366357436fac59bb0c0"
+  },
+  "historical_first_red_freeze": {
+    "path": ".superpowers/sdd/2-warden-security-plan/task-9-first-red-source-freeze.json",
+    "sha256": "8f498b9220b29dd8b26753950a1896631265df3a6e2a3abf810872eb2e5be6a8"
+  },
+  "scope": "exact one store migration-v2 test; all product bytes unchanged; runs/runtime/gate compiled dependencies only"
+}

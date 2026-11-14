@@ -1,0 +1,10 @@
+All multiline unittest runners set os.umask(0o077). No real Docker mutation/mount was run.
+red-images / green-images: python3 -B -m unittest discover -s scripts -p test_runtime_lab_docker.py -v; separately -p test_k3s_lab.py; green also -p test_runtime_lab_api.py.
+red-handshake / green-handshake-initial: same command with -p test_k3s_lab.py, separately -p test_k3s_lab_init.py.
+red-mount-content / final-mount-lifecycle: python3 -B -m unittest discover -s scripts -p test_k3s_lab.py -k content_drift -v.
+red-remount-flags: python3 -B -m unittest discover -s scripts -p test_k3s_lab_init.py -k retained_flags -v (simple invocation without wrapper umask; only real temporary directory and substituted mount/proc metadata).
+covering-tests: python3 -B -m unittest discover -s scripts -p 'test_k3s_lab*.py' -v; separately test_runtime_lab_docker.py, test_runtime_lab_api.py, test_runtime_lab_cleanup.py.
+final-focused: python3 -B -m unittest discover -s scripts -p test_k3s_lab_init.py -v.
+Source check: git diff --cached --check (PASS before commit).
+Readonly daemon queries: exact argv/full labels and selected metadata are preserved in daemon-readonly.txt. Default image list vs --all comparison, exact image inspect and server version only.
+Evidence check: git -c core.whitespace=-blank-at-eol diff --cached --check (preserve original unittest RED bytes).

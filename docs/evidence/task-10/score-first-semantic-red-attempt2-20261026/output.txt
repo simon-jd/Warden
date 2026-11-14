@@ -1,0 +1,7 @@
+=== RUN   TestDNSScoreTXT4KiBAlert
+    exfil_test.go:126: SCORING_FIXTURE_OK payload_bytes=4096 queries=128 span=31.75s first31_mean=4.529606776303
+    exfil_test.go:127: expected DNS score alert, got nil
+--- FAIL: TestDNSScoreTXT4KiBAlert (0.00s)
+FAIL
+FAIL	warden/detect/dns_exfil	0.010s
+FAIL

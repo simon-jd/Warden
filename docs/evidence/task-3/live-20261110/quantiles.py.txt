@@ -1,0 +1,30 @@
+# python3 -I quantiles.py.txt cold-starts-100.jsonl
+# Recomputes the cold-start summary from the per-run lines, with the method of
+# runtimes/firecracker CompareStarts: median = mean of the two middle values
+# (even n), p95 = nearest rank a[ceil(0.95 n) - 1]. Also the two stages the
+# test does not summarise: init->exec (inside warden-gvisor-init) and
+# exec->wait (payload, container exit, log read, teardown until the Job and
+# Pod objects are gone).
+import json, sys
+rows = [json.loads(l) for l in open(sys.argv[1])]
+runs = [r for r in rows if not r.get("summary")]
+summary = [r for r in rows if r.get("summary")]
+def q(v):
+    a = sorted(v); n = len(a)
+    med = (a[n // 2 - 1] + a[n // 2]) / 2 if n % 2 == 0 else a[n // 2]
+    return med, a[(95 * n + 99) // 100 - 1], a[0], a[-1]
+print("runs:", len(runs), "exit codes:", sorted({r["exit"]["Code"] for r in runs}),
+      "all CgroupEmpty:", all(r["exit"]["CgroupEmpty"] for r in runs),
+      "distinct pods:", len({r["pod_uid"] for r in runs}))
+print("%-18s %9s %9s %9s %9s" % ("ms", "p50", "p95", "min", "max"))
+series = {k: [r[k] for r in runs] for k in ("start_to_init_ms", "start_to_exec_ms", "start_to_wait_ms")}
+series["init_to_exec_ms"] = [(r["exec_ns"] - r["init_ns"]) / 1e6 for r in runs]
+series["exec_to_wait_ms"] = [(r["wait_ns"] - r["exec_ns"]) / 1e6 for r in runs]
+for k, v in series.items():
+    print("%-18s %9.2f %9.2f %9.2f %9.2f" % ((k,) + q(v)))
+for k in ("start_to_init_ms", "start_to_exec_ms", "start_to_wait_ms"):
+    s = summary[0][k]; m = q(series[k])
+    same = all(abs(a - b) < 1e-6 for a, b in zip(m, (s["p50"], s["p95"], s["min"], s["max"])))
+    print("matches the test's summary line:", k, same)
+se = series["start_to_exec_ms"]
+print("start_to_exec over 700 ms:", sum(x > 700 for x in se), "over 900 ms:", sum(x > 900 for x in se))

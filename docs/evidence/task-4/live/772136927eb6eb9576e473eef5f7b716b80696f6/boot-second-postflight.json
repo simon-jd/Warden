@@ -1,0 +1,70 @@
+{
+  "utc": "2026-10-24T21:24:16.226763+00:00",
+  "source": "772136927eb6eb9576e473eef5f7b716b80696f6",
+  "objects": {
+    "image": [],
+    "container": []
+  },
+  "outstanding": 5000000000,
+  "charged_sessions": [
+    {
+      "path": ".cache/warden-lab/docker-firecracker-e8e9f5b14136e9e2163f876cbf6291ee",
+      "parent_identity": {
+        "dev": 66307,
+        "ino": 56377617,
+        "uid": 1000,
+        "mode": "0o700"
+      },
+      "charge": {
+        "version": 1,
+        "reserved_bytes": 5000000000,
+        "released": false
+      },
+      "files": [
+        "charge.json",
+        "identity.json",
+        "live",
+        "session-binding.json"
+      ],
+      "identity": {
+        "image": "sha256:68fb0344fd631ef15ade02c96b36956d581b0d8f9be0f1b3d5b5751fd7806e9b",
+        "image_bytes": 147518128,
+        "labels": {
+          "owner": "codex-warden",
+          "project": "warden",
+          "session": "e8e9f5b14136e9e2163f876cbf6291ee",
+          "task": "firecracker",
+          "ttl": "2026-10-24T22:21:44.528333+00:00"
+        },
+        "mode": "boot",
+        "source": "772136927eb6eb9576e473eef5f7b716b80696f6"
+      },
+      "live": {
+        "mode": "0o700",
+        "uid": 1000,
+        "dev": 66307,
+        "ino": 56377620,
+        "names": []
+      }
+    }
+  ],
+  "preflight": {
+    "additional_bytes": "5000000000",
+    "at": "2026-10-24T21:24:16Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 272079659008,
+    "project_allocated_bytes": 3920134144,
+    "service_memory_bytes": "1000000000"
+  },
+  "protected_sysctls": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "protected_baseline_match": true,
+  "scope": "Independent read-only second boot failure postflight; no release, cleanup, retries or additional device probe."
+}

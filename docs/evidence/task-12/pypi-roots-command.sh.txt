@@ -1,0 +1,64 @@
+set -eu
+ulimit -t 20
+ulimit -v 524288
+ulimit -f 2048
+ulimit -n 128
+ulimit -c 0
+exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C.UTF-8 LC_ALL=C.UTF-8 /usr/bin/timeout --signal=TERM --kill-after=10s 50s /usr/bin/python3 -I -S -B - <<'PY'
+import hashlib,json,os,pathlib,signal,socket,time,urllib.error,urllib.request
+assert os.geteuid()==1000
+mem={x.split(':',1)[0]:x.split(':',1)[1] for x in pathlib.Path('/proc/meminfo').read_text().splitlines()}
+assert int(mem['MemAvailable'].split()[0])*1024>=2000000000
+root=pathlib.Path('.cache/task12-pypi-roots-20261025-a')
+assert not os.path.lexists(root)
+root.mkdir(mode=0o700)
+deadline=time.monotonic()+45
+def expired(_s,_f): raise TimeoutError('absolute metadata deadline')
+signal.signal(signal.SIGALRM,expired)
+signal.setitimer(signal.ITIMER_REAL,45)
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self,*a,**k): raise RuntimeError('redirect refused')
+opener=urllib.request.build_opener(NoRedirect)
+names=[('pysigma','1.5.1'),('pysigma-backend-opensearch','2.0.3'),('pysigma-backend-elasticsearch','2.1.1')]
+total=0
+results=[]
+phase='start'
+try:
+    for name,version in names:
+        phase=name
+        url='https://pypi.org/pypi/'+name+'/'+version+'/json'
+        remaining=deadline-time.monotonic()
+        assert remaining>0
+        chunks=[]
+        size=0
+        with opener.open(urllib.request.Request(url,headers={'Accept':'application/json','User-Agent':'Warden-Task12-metadata/1'}),timeout=min(8,remaining)) as response:
+            assert response.status==200 and response.geturl()==url
+            while True:
+                if time.monotonic()>=deadline: raise TimeoutError('absolute metadata deadline')
+                chunk=response.read(min(65536,2097153-size))
+                if not chunk: break
+                size+=len(chunk);total+=len(chunk)
+                if size>2097152 or total>6291456: raise ValueError('metadata byte cap')
+                chunks.append(chunk)
+        raw=b''.join(chunks)
+        data=json.loads(raw)
+        assert data['info']['version']==version
+        wheels=[x for x in data['urls'] if x['packagetype']=='bdist_wheel']
+        assert wheels and all(x['url'].startswith('https://files.pythonhosted.org/') for x in wheels)
+        result={'name':name,'version':version,'json_bytes':len(raw),'json_sha256':hashlib.sha256(raw).hexdigest(),'requires_python':data['info']['requires_python'],'requires_dist':data['info']['requires_dist'],'wheels':[{'filename':x['filename'],'size':x['size'],'sha256':x['digests']['sha256'],'url':x['url'],'requires_python':x['requires_python'],'yanked':x['yanked']} for x in wheels]}
+        fd=os.open(root/(name+'.json'),os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
+        with os.fdopen(fd,'wb') as out:
+            out.write(raw);out.flush();os.fsync(out.fileno())
+        results.append(result)
+    payload=json.dumps({'scope':'metadata only; no wheels/install/import/service','results':results,'total_bytes':total},ensure_ascii=True,sort_keys=True)
+    assert len(payload.encode())<=32768
+    fd=os.open(root/'selected.json',os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
+    with os.fdopen(fd,'w',encoding='utf-8') as out:
+        out.write(payload+'\n');out.flush();os.fsync(out.fileno())
+    print(payload)
+except BaseException as exc:
+    print(json.dumps({'status':'FAILED','phase':phase,'type':type(exc).__name__,'detail':str(exc)[:512],'completed_roots':len(results),'received_bytes':total}))
+    raise
+finally:
+    signal.setitimer(signal.ITIMER_REAL,0)
+PY

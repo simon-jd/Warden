@@ -1,0 +1,594 @@
+{
+  "checks": [
+    {
+      "name": "without policies: egr-a proxy-connect-allowed",
+      "want": "reached (positive control)",
+      "got": "ok status=200 proxy_status=200 body=origin-allowed",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-a proxy-http-allowed",
+      "want": "reached (positive control)",
+      "got": "ok status=200 body=origin-allowed",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-a dns-proxy-name",
+      "want": "reached (positive control)",
+      "got": "ok answers=10.43.243.52 rcode=0",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-a direct-allowed",
+      "want": "reached (positive control)",
+      "got": "ok status=200 body=origin-allowed",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-a direct-blocked",
+      "want": "reached (positive control)",
+      "got": "ok status=200 body=origin-blocked",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-a direct-name",
+      "want": "reached (positive control)",
+      "got": "ok status=200 body=origin-blocked",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-a direct-stream",
+      "want": "reached (positive control)",
+      "got": "ok",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-a dns-exfil",
+      "want": "reached (positive control)",
+      "got": "ok answers=warden-lab-exfil-received rcode=0",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-a dns-exfil-direct",
+      "want": "reached (positive control)",
+      "got": "ok answers=warden-lab-exfil-received rcode=0",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-a apiserver",
+      "want": "reached (positive control)",
+      "got": "ok",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-a node",
+      "want": "reached (positive control)",
+      "got": "ok",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-a metadata",
+      "want": "reached (positive control)",
+      "got": "ok status=200 body=warden-lab-imds",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-a proxy-connect-blocked",
+      "want": "proxy answers 403",
+      "got": "proxy_status=403 error=proxy answered 403",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-a proxy-http-blocked",
+      "want": "proxy answers 403",
+      "got": "status=403 body=warden egress: domain not allowlisted",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-a dns-exfil answer",
+      "want": "the sink's TXT",
+      "got": "ok answers=warden-lab-exfil-received rcode=0",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-b nogrant-tcp",
+      "want": "proxy reachable",
+      "got": "ok",
+      "pass": true
+    },
+    {
+      "name": "without policies: egr-b nogrant-connect",
+      "want": "proxy closes the connection (no grant)",
+      "got": "connect_error=proxy closed during CONNECT: EOF",
+      "pass": true
+    },
+    {
+      "name": "without policies: origin-blocked log",
+      "want": "direct requests /d- and /n- arrived",
+      "got": "198.18.18.21/d-a5389da342e1 blocked.warden.test/n-a5389da342e1",
+      "pass": true
+    },
+    {
+      "name": "without policies: DNS sink log",
+      "want": "both exfil queries arrived",
+      "got": "TXT ada4f3d7496f9673645c4477ffb3ce5ef0f7f0ab92b2f1a3-a5389da342e1.exfil.warden.test TXT 771d7d156765dd102489c243c7de39c19973a0ace5239a33-a5389da342e1.exfil.warden.test",
+      "pass": true
+    },
+    {
+      "name": "with policies: egr-a proxy-connect-allowed",
+      "want": "reached through the proxy",
+      "got": "connect_error=dial tcp 10.43.243.52:3128: i/o timeout",
+      "pass": false
+    },
+    {
+      "name": "with policies: egr-a proxy-http-allowed",
+      "want": "reached through the proxy",
+      "got": "connect_error=dial tcp 10.43.243.52:3128: i/o timeout",
+      "pass": false
+    },
+    {
+      "name": "with policies: egr-a proxy-connect-blocked",
+      "want": "proxy answers 403",
+      "got": "connect_error=dial tcp 10.43.243.52:3128: i/o timeout",
+      "pass": false
+    },
+    {
+      "name": "with policies: egr-a proxy-http-blocked",
+      "want": "proxy answers 403",
+      "got": "connect_error=dial tcp 10.43.243.52:3128: i/o timeout",
+      "pass": false
+    },
+    {
+      "name": "with policies: egr-a dns-proxy-name",
+      "want": "resolves (the one name allowed)",
+      "got": "ok answers=10.43.243.52 rcode=0",
+      "pass": true
+    },
+    {
+      "name": "with policies: egr-a direct-allowed",
+      "want": "no connection",
+      "got": "connect_error=dial tcp 198.18.18.20:80: i/o timeout",
+      "pass": true
+    },
+    {
+      "name": "with policies: egr-a direct-blocked",
+      "want": "no connection",
+      "got": "connect_error=dial tcp 198.18.18.21:80: i/o timeout",
+      "pass": true
+    },
+    {
+      "name": "with policies: egr-a direct-stream",
+      "want": "no connection",
+      "got": "error=dial tcp 198.18.18.22:443: i/o timeout",
+      "pass": true
+    },
+    {
+      "name": "with policies: egr-a apiserver",
+      "want": "no connection",
+      "got": "error=dial tcp 10.43.0.1:443: i/o timeout",
+      "pass": true
+    },
+    {
+      "name": "with policies: egr-a node",
+      "want": "no connection",
+      "got": "error=dial tcp 192.168.192.10:6443: i/o timeout",
+      "pass": true
+    },
+    {
+      "name": "with policies: egr-a metadata",
+      "want": "no connection",
+      "got": "connect_error=dial tcp 169.254.169.254:80: i/o timeout",
+      "pass": true
+    },
+    {
+      "name": "with policies: egr-a direct-name",
+      "want": "name not resolved",
+      "got": "resolve_error=lookup blocked.warden.test on 10.43.0.10:53: server misbehaving",
+      "pass": true
+    },
+    {
+      "name": "with policies: egr-a dns-exfil",
+      "want": "no answer from the sink",
+      "got": "rcode=5",
+      "pass": true
+    },
+    {
+      "name": "with policies: egr-a dns-exfil-direct",
+      "want": "no answer",
+      "got": "error=read udp 10.42.0.67:35613-\u003e198.18.18.40:53: i/o timeout",
+      "pass": true
+    },
+    {
+      "name": "with policies: egr-b nogrant-tcp",
+      "want": "proxy reachable",
+      "got": "error=dial tcp 10.43.243.52:3128: i/o timeout",
+      "pass": false
+    },
+    {
+      "name": "with policies: egr-b nogrant-connect",
+      "want": "proxy closes the connection (no grant)",
+      "got": "connect_error=dial tcp 10.43.243.52:3128: i/o timeout",
+      "pass": false
+    },
+    {
+      "name": "with policies: egr-ctl ctl-direct-blocked (control, no sandbox label)",
+      "want": "reached",
+      "got": "ok status=200 body=origin-blocked",
+      "pass": true
+    },
+    {
+      "name": "with policies: egr-ctl ctl-dns-exfil (control)",
+      "want": "the sink's TXT",
+      "got": "ok answers=warden-lab-exfil-received rcode=0",
+      "pass": true
+    },
+    {
+      "name": "with policies: origin-blocked log",
+      "want": "only the control's /c- request",
+      "got": "198.18.18.21/c-2a2498d1498a",
+      "pass": true
+    },
+    {
+      "name": "with policies: origin-allowed log",
+      "want": "only the proxied /p- request, Host allowed.warden.test",
+      "got": "",
+      "pass": false
+    },
+    {
+      "name": "with policies: DNS sink log",
+      "want": "only the control's query",
+      "got": "TXT ctl-2a2498d1498a.exfil.warden.test",
+      "pass": true
+    }
+  ],
+  "endpoint_egr-a": {
+    "id": 1471,
+    "identity": 57053,
+    "labels": [
+      "k8s:app=egr-a",
+      "k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=warden-lab",
+      "k8s:io.cilium.k8s.policy.cluster=default",
+      "k8s:io.cilium.k8s.policy.serviceaccount=default",
+      "k8s:io.kubernetes.pod.namespace=warden-lab",
+      "k8s:warden.dev/sandbox=true",
+      "k8s:warden.dev/test=cilium"
+    ],
+    "policy_enabled": "both",
+    "policy_revision": 24
+  },
+  "endpoint_egr-b": {
+    "id": 220,
+    "identity": 5282,
+    "labels": [
+      "k8s:app=egr-b",
+      "k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=warden-lab",
+      "k8s:io.cilium.k8s.policy.cluster=default",
+      "k8s:io.cilium.k8s.policy.serviceaccount=default",
+      "k8s:io.kubernetes.pod.namespace=warden-lab",
+      "k8s:warden.dev/sandbox=true",
+      "k8s:warden.dev/test=cilium"
+    ],
+    "policy_enabled": "both",
+    "policy_revision": 24
+  },
+  "endpoint_egr-ctl": {
+    "id": 3218,
+    "identity": 4424,
+    "labels": [
+      "k8s:app=egr-ctl",
+      "k8s:io.cilium.k8s.namespace.labels.kubernetes.io/metadata.name=warden-lab",
+      "k8s:io.cilium.k8s.policy.cluster=default",
+      "k8s:io.cilium.k8s.policy.serviceaccount=default",
+      "k8s:io.kubernetes.pod.namespace=warden-lab",
+      "k8s:warden.dev/test=cilium"
+    ],
+    "policy_enabled": "none",
+    "policy_revision": 24
+  },
+  "loadavg_end": "9.67 13.16 11.67 12/7093 4149214",
+  "loadavg_start": "9.71 14.08 11.85 3/6720 4135195",
+  "nproc": 24,
+  "pods": {
+    "egr-a": {
+      "grant": "allowed.warden.test",
+      "ip": "10.42.0.67",
+      "runtime_handler": "runsc-netstack",
+      "sandbox": "true"
+    },
+    "egr-b": {
+      "grant": "none",
+      "ip": "10.42.0.172",
+      "runtime_handler": "runsc-netstack",
+      "sandbox": "true"
+    },
+    "egr-ctl": {
+      "ip": "10.42.0.213",
+      "runtime_handler": "runsc-netstack",
+      "sandbox": "false (control)"
+    }
+  },
+  "policies": [
+    {
+      "file": "policies/cilium/default-deny.yaml",
+      "names": [
+        "warden-sandbox-default-deny"
+      ],
+      "realized_after_ms": 365,
+      "revision": 22
+    },
+    {
+      "file": "policies/cilium/egress-proxy.yaml",
+      "names": [
+        "warden-sandbox-to-egress-proxy",
+        "warden-egress-proxy"
+      ],
+      "realized_after_ms": 401.2,
+      "revision": 24
+    }
+  ],
+  "proxy_image": "sha256:0ca959846659403e7273526abfef31ec2e910c3a1735fcf73323eaa5cc80ed5e",
+  "started": "2026-11-13T08:02:12Z",
+  "with_policies": {
+    "dns_sink": [
+      "TXT ctl-2a2498d1498a.exfil.warden.test"
+    ],
+    "egr-a": {
+      "apiserver": {
+        "key": "apiserver",
+        "ok": false,
+        "error": "dial tcp 10.43.0.1:443: i/o timeout",
+        "ms": 3002.032
+      },
+      "direct-allowed": {
+        "key": "direct-allowed",
+        "ok": false,
+        "connect_error": "dial tcp 198.18.18.20:80: i/o timeout",
+        "ms": 3000.784
+      },
+      "direct-blocked": {
+        "key": "direct-blocked",
+        "ok": false,
+        "connect_error": "dial tcp 198.18.18.21:80: i/o timeout",
+        "ms": 3001.001
+      },
+      "direct-name": {
+        "key": "direct-name",
+        "ok": false,
+        "resolve_error": "lookup blocked.warden.test on 10.43.0.10:53: server misbehaving",
+        "ms": 1.775
+      },
+      "direct-stream": {
+        "key": "direct-stream",
+        "ok": false,
+        "error": "dial tcp 198.18.18.22:443: i/o timeout",
+        "ms": 3000.339
+      },
+      "dns-exfil": {
+        "key": "dns-exfil",
+        "ok": false,
+        "rcode": 5,
+        "ms": 0.445
+      },
+      "dns-exfil-direct": {
+        "key": "dns-exfil-direct",
+        "ok": false,
+        "error": "read udp 10.42.0.67:35613-\u003e198.18.18.40:53: i/o timeout",
+        "ms": 3000.245
+      },
+      "dns-proxy-name": {
+        "key": "dns-proxy-name",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "10.43.243.52"
+        ],
+        "ms": 1.157
+      },
+      "metadata": {
+        "key": "metadata",
+        "ok": false,
+        "connect_error": "dial tcp 169.254.169.254:80: i/o timeout",
+        "ms": 3000.844
+      },
+      "node": {
+        "key": "node",
+        "ok": false,
+        "error": "dial tcp 192.168.192.10:6443: i/o timeout",
+        "ms": 3001.046
+      },
+      "proxy-connect-allowed": {
+        "key": "proxy-connect-allowed",
+        "ok": false,
+        "connect_error": "dial tcp 10.43.243.52:3128: i/o timeout",
+        "ms": 3000.706
+      },
+      "proxy-connect-blocked": {
+        "key": "proxy-connect-blocked",
+        "ok": false,
+        "connect_error": "dial tcp 10.43.243.52:3128: i/o timeout",
+        "ms": 3002.077
+      },
+      "proxy-http-allowed": {
+        "key": "proxy-http-allowed",
+        "ok": false,
+        "connect_error": "dial tcp 10.43.243.52:3128: i/o timeout",
+        "ms": 3000.323
+      },
+      "proxy-http-blocked": {
+        "key": "proxy-http-blocked",
+        "ok": false,
+        "connect_error": "dial tcp 10.43.243.52:3128: i/o timeout",
+        "ms": 3001.018
+      }
+    },
+    "egr-b": {
+      "nogrant-connect": {
+        "key": "nogrant-connect",
+        "ok": false,
+        "connect_error": "dial tcp 10.43.243.52:3128: i/o timeout",
+        "ms": 3000.622
+      },
+      "nogrant-tcp": {
+        "key": "nogrant-tcp",
+        "ok": false,
+        "error": "dial tcp 10.43.243.52:3128: i/o timeout",
+        "ms": 3000.596
+      }
+    },
+    "egr-ctl": {
+      "ctl-direct-blocked": {
+        "key": "ctl-direct-blocked",
+        "ok": true,
+        "status": 200,
+        "body": "origin-blocked",
+        "ms": 1.284
+      },
+      "ctl-dns-exfil": {
+        "key": "ctl-dns-exfil",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "warden-lab-exfil-received"
+        ],
+        "ms": 0.76
+      }
+    },
+    "nonce": "2a2498d1498a",
+    "origin_allowed_paths": null,
+    "origin_blocked_paths": [
+      "198.18.18.21/c-2a2498d1498a"
+    ],
+    "sandbox_probes_ms": 39283.4
+  },
+  "without_policies": {
+    "dns_sink": [
+      "TXT ada4f3d7496f9673645c4477ffb3ce5ef0f7f0ab92b2f1a3-a5389da342e1.exfil.warden.test",
+      "TXT 771d7d156765dd102489c243c7de39c19973a0ace5239a33-a5389da342e1.exfil.warden.test"
+    ],
+    "egr-a": {
+      "apiserver": {
+        "key": "apiserver",
+        "ok": true,
+        "ms": 0.277
+      },
+      "direct-allowed": {
+        "key": "direct-allowed",
+        "ok": true,
+        "status": 200,
+        "body": "origin-allowed",
+        "ms": 0.74
+      },
+      "direct-blocked": {
+        "key": "direct-blocked",
+        "ok": true,
+        "status": 200,
+        "body": "origin-blocked",
+        "ms": 0.67
+      },
+      "direct-name": {
+        "key": "direct-name",
+        "ok": true,
+        "status": 200,
+        "body": "origin-blocked",
+        "resolved": "198.18.18.21",
+        "ms": 1.149
+      },
+      "direct-stream": {
+        "key": "direct-stream",
+        "ok": true,
+        "ms": 0.123
+      },
+      "dns-exfil": {
+        "key": "dns-exfil",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "warden-lab-exfil-received"
+        ],
+        "ms": 0.543
+      },
+      "dns-exfil-direct": {
+        "key": "dns-exfil-direct",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "warden-lab-exfil-received"
+        ],
+        "ms": 0.22
+      },
+      "dns-proxy-name": {
+        "key": "dns-proxy-name",
+        "ok": true,
+        "rcode": 0,
+        "answers": [
+          "10.43.243.52"
+        ],
+        "ms": 0.545
+      },
+      "metadata": {
+        "key": "metadata",
+        "ok": true,
+        "status": 200,
+        "body": "warden-lab-imds",
+        "ms": 0.74
+      },
+      "node": {
+        "key": "node",
+        "ok": true,
+        "ms": 0.186
+      },
+      "proxy-connect-allowed": {
+        "key": "proxy-connect-allowed",
+        "ok": true,
+        "status": 200,
+        "proxy_status": 200,
+        "body": "origin-allowed",
+        "ms": 1004.011
+      },
+      "proxy-connect-blocked": {
+        "key": "proxy-connect-blocked",
+        "ok": false,
+        "proxy_status": 403,
+        "error": "proxy answered 403",
+        "ms": 0.775
+      },
+      "proxy-http-allowed": {
+        "key": "proxy-http-allowed",
+        "ok": true,
+        "status": 200,
+        "body": "origin-allowed",
+        "ms": 2.08
+      },
+      "proxy-http-blocked": {
+        "key": "proxy-http-blocked",
+        "ok": false,
+        "status": 403,
+        "body": "warden egress: domain not allowlisted",
+        "ms": 1002.202
+      }
+    },
+    "egr-b": {
+      "nogrant-connect": {
+        "key": "nogrant-connect",
+        "ok": false,
+        "connect_error": "proxy closed during CONNECT: EOF",
+        "ms": 0.637
+      },
+      "nogrant-tcp": {
+        "key": "nogrant-tcp",
+        "ok": true,
+        "ms": 1.092
+      }
+    },
+    "nonce": "a5389da342e1",
+    "origin_allowed_paths": [
+      "allowed.warden.test/",
+      "allowed.warden.test/p-a5389da342e1",
+      "198.18.18.20/d-a5389da342e1"
+    ],
+    "origin_blocked_paths": [
+      "198.18.18.21/d-a5389da342e1",
+      "blocked.warden.test/n-a5389da342e1"
+    ]
+  }
+}

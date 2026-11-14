@@ -1,0 +1,7 @@
+{
+ "busybox_package": "busybox-static 1:1.37.0-7ubuntu1",
+ "busybox_sha256": "df12634c17fcdca839ae5dc47d7627b7558511f7645de7c99ccf097a0f28ed5b",
+ "image": "warden-lab/detect-smoke:1",
+ "image_id": "sha256:f5bced47797a13f7af356cc1917f8f8157f3de2adecbb35a92809b057a2a731e",
+ "shadow_is_dummy": "root:*:20000:0:99999:7:::\nnobody:*:20000:0:99999:7:::\n"
+}

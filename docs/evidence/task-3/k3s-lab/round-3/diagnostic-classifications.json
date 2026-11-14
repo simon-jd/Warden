@@ -1,0 +1,36 @@
+{
+  "raw_persisted": false,
+  "error_lines": [
+    {
+      "line_number": 39,
+      "sha256": "5ca7e6c94f18fc0653b0bd0c6533f1bb61c4a870af2c75d06292431f5445e95a",
+      "classifications": []
+    },
+    {
+      "line_number": 70,
+      "sha256": "91291df877a209f4ebc07bb610e264a83433df7227f37d475b3a1843b2aee3a8",
+      "classifications": [
+        "readonly"
+      ]
+    },
+    {
+      "line_number": 74,
+      "sha256": "e1ac2c5a2e4ce37335fbdb67f5253ebb6022ef810ff06698442dc4471bd9313f",
+      "classifications": []
+    },
+    {
+      "line_number": 75,
+      "sha256": "e9943b603fa9f8a742a31a509c470904e0fb1c198d3725c41ae18217ae0f1913",
+      "classifications": [
+        "containerd_exit"
+      ]
+    },
+    {
+      "line_number": 173,
+      "sha256": "34124adb4b469ce0c837735f459434697c651dbb9fff61fdebb52a1a01dcd528",
+      "classifications": [
+        "readonly"
+      ]
+    }
+  ]
+}

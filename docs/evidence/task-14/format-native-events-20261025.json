@@ -1,0 +1,66 @@
+{
+  "kind": "root-task14-single-gofmt",
+  "events": [
+    {
+      "kind": "fresh-budget",
+      "request": {
+        "cmd": "ulimit -c 0; ulimit -n 64; ulimit -v 262144; ulimit -f 8192; ulimit -t 20\n/usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -B scripts/azure_guard.py preflight --additional-bytes 6073741824 --service-memory-bytes 11000000000 --download-bytes 0",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "原Task14唯一五文件gofmt前沿用现有fresh本地预算guard，含Q5GB和完整1GiB峰值/旧9GB+新2GB预留；不启动测试/服务或Azure资源。",
+        "max_output_tokens": 1500
+      },
+      "response": {
+        "chunk_id": "300588",
+        "wall_time_seconds": 0.246996022,
+        "exit_code": 0,
+        "original_token_count": 56,
+        "output": "{\"additional_bytes\": \"6073741824\", \"at\": \"2026-10-26T01:15:57Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 261118001152, \"project_allocated_bytes\": 4529274880, \"service_memory_bytes\": \"11000000000\"}\n"
+      }
+    },
+    {
+      "kind": "sole-gofmt",
+      "request": {
+        "cmd": "/usr/bin/timeout --signal=TERM --kill-after=1s 9s /usr/bin/python3 -I -B .superpowers/sdd/2-warden-security-plan/task-14-gofmt-command.py.txt",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Root全文核定d8d3fd并fresh300588通过；仅一次固定Go1.26.10 gofmt格式化五个respond新Go文件及其临时备份，9+1总10秒，不执行测试/业务/服务，失败停止不重试。",
+        "max_output_tokens": 1500,
+        "yield_time_ms": 1000
+      },
+      "response": {
+        "chunk_id": "3fb0a2",
+        "wall_time_seconds": 0.000007291,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "kind": "root-postread",
+      "request": {
+        "cmd": "/usr/bin/python3 -I -S -B - <<'PY'\nfrom pathlib import Path\nimport hashlib,json,os,stat\nassert os.getuid()==1000\nsrc=Path('.cache/task14-format-20261025-a');dst=Path('docs/evidence/task-14/format-first-20261025');assert not os.path.lexists(dst);dst.mkdir(mode=0o755)\nfor name in ('stdout.raw','stderr.raw'):\n fd=os.open(src/name,os.O_RDONLY|os.O_NOFOLLOW)\n try:\n  s=os.fstat(fd);assert stat.S_ISREG(s.st_mode) and s.st_uid==1000 and s.st_nlink==1 and s.st_size<=65536\n  with os.fdopen(fd,'rb',closefd=False) as f:b=f.read(65537)\n  assert len(b)==s.st_size\n finally:os.close(fd)\n out=os.open(dst/name,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o644)\n with os.fdopen(out,'wb') as f:f.write(b)\n print(json.dumps({'file':name,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()},sort_keys=True));print(b.decode())\nresult=[]\nfor p in sorted(Path('respond').rglob('*')):\n if p.is_file():\n  s=p.lstat();assert stat.S_ISREG(s.st_mode) and s.st_uid==1000\n  b=p.read_bytes();result.append({'path':str(p),'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()})\nprint(json.dumps({'respond_files':result,'only_seven_product_files':len(result)==7},sort_keys=True))\nassert len(result)==7\nPY",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "仅复核一次gofmt的两个固定原始输出并新建公开副本，列出本次respond七文件及五源码格式化后hash、确认无临时备份；不执行测试/Go，不读取旧缓存或改变原件。",
+        "max_output_tokens": 3000
+      },
+      "response": {
+        "chunk_id": "be6400",
+        "wall_time_seconds": 0.000011644,
+        "exit_code": 0,
+        "original_token_count": 297,
+        "output": "{\"bytes\": 0, \"file\": \"stdout.raw\", \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"}\n\n{\"bytes\": 0, \"file\": \"stderr.raw\", \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"}\n\n{\"only_seven_product_files\": true, \"respond_files\": [{\"bytes\": 6179, \"path\": \"respond/README.md\", \"sha256\": \"bd8ed3778a133c78f870d3993339c2427dfcbb176ad3b17b232a1fc36f46e2af\"}, {\"bytes\": 6655, \"path\": \"respond/actions.go\", \"sha256\": \"7224f114e7b9ef5aa926e43299a54fe01f9e90da329b6cd49d953a28bbbf2b02\"}, {\"bytes\": 7875, \"path\": \"respond/executor.go\", \"sha256\": \"6d15826ba07181d05d3b4a1b7791726d37011d983ae538f4228c1c0fa89e4698\"}, {\"bytes\": 19211, \"path\": \"respond/executor_test.go\", \"sha256\": \"aadc94db405e2a970737b19ecfddb0eb790f84be3fd59aaa97fd312d8b3bee0e\"}, {\"bytes\": 6462, \"path\": \"respond/ledger.go\", \"sha256\": \"2ace72087ba4e421db40dd6398f86585808563c51ce9eeb505fe35985c330f68\"}, {\"bytes\": 11531, \"path\": \"respond/ledger_test.go\", \"sha256\": \"42e7431cb64c459caf3057691d6a2a169998fa675dc9db3f0f6f42d3d569cb94\"}, {\"bytes\": 179, \"path\": \"respond/playbooks/suspend-tenant.yaml\", \"sha256\": \"8cdfbdfdfe5bac22452006f0af89b22e9f50a05a32a454e081db114b6402acfa\"}]}\n"
+      }
+    }
+  ]
+}

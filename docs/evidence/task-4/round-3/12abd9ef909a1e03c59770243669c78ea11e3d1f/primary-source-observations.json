@@ -1,0 +1,36 @@
+{
+  "meaning": "Computed SHA from bounded in-memory primary-source reads during proposal; not signatures, installed-runtime binary match, or host kernel verification. No downloaded code installed/executed.",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/opencontainers/runc/v1.3.0/libcontainer/specconv/spec_linux.go",
+      "bytes": 38634,
+      "computed_sha256": "f83e620065990e0685c57ad8baefbe68bb846234c2b009ea023522ce78544a0c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.18/kernel/bpf/syscall.c",
+      "bytes": 165520,
+      "computed_sha256": "e9b33cd5abc0aedd59ef559b72235b5ded0419ebe437cf6dbcf1b902d77c9dc8"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.18/kernel/bpf/token.c",
+      "bytes": 6955,
+      "computed_sha256": "72ec3352e1c033512f237796dd1fb90236556eb081830c3247e52885985e471a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.18/include/linux/capability.h",
+      "bytes": 6275,
+      "computed_sha256": "21997d157d5134b73891405ead9a44343882c8893d9574f2616a37c63eebc363"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v6.18/kernel/bpf/cgroup.c",
+      "bytes": 73725,
+      "computed_sha256": "0d26277bdeb44f86350f42d3afaee2e402d0916aee78057f200aa63a676a7e66"
+    }
+  ],
+  "unverified": [
+    "installed runc1.5.2 source/binary match",
+    "Moby29.9.1 raw source URL failed",
+    "Ubuntu7.0 source; upstreamv7 fetch returned429"
+  ],
+  "local_UAPI": "/usr/include/linux/bpf.h read for ABI only"
+}

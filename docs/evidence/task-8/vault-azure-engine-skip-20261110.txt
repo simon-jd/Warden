@@ -1,0 +1,28 @@
+# Task 8 step 3: Vault's Azure secrets engine issuing short-lived credentials -- SKIPPED (needs admin consent)
+# 2026-11-10 PST (2026-11-11 UTC). Nothing was created or requested in Entra for this step; no consent was attempted.
+
+What the engine needs (HashiCorp, https://developer.hashicorp.com/vault/docs/secrets/azure, fetched 2026-11-11T04:36Z):
+  "The following MS Graph API permissions must be assigned to the service principal provided to Vault for
+   managing Azure. ... Dynamic Service Principals: Application.ReadWrite.OwnedBy (Application),
+   GroupMember.ReadWrite.All (Application). Note: If you plan to use the rotate root credentials API, you'll
+   need to change Application.ReadWrite.OwnedBy to Application.ReadWrite.All. Existing Service Principals:
+   Application.ReadWrite.All (Application) ..."
+  Role assignments: "User Access Administrator, Subscription, Service Principal ID given in configuration".
+  Plugin workload identity federation (so Vault would not need a client secret of its own) is Vault Enterprise only.
+
+Why that stops here (Microsoft, https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview,
+ms.date 2025-03-18, fetched 2026-11-11T04:37Z):
+  Application permissions -- "Who can consent: Only admin can consent"; "application permissions and many
+  high-privilege delegated permissions can only be consented to by an administrator."
+
+Every mode of the engine authenticates to Graph as its own service principal (client credentials), so it needs
+one of the Application-type permissions above, and those need admin consent in the Northeastern tenant.
+The signed-in user holds no directory admin role (Task 6: wids has no Application, Cloud Application or
+Hybrid Identity Administrator; docs/evidence/task-6/entra-scim-probe-20261110.txt). Per the user's rule
+(stop at admin consent, record, do not work around a tenant policy) the step was not attempted.
+
+What would unblock it (user decision): a university directory admin grants admin consent of
+Application.ReadWrite.OwnedBy (and GroupMember.ReadWrite.All only if Vault roles use groups) to one
+warden-lab- app used as Vault's identity; the subscription part (User Access Administrator scoped to
+rg-warden-lab) is within the user's own subscription. Vault would then hold that app's client secret,
+which is itself a long-lived key that the Task 8 audit would report.

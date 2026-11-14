@@ -1,0 +1,15 @@
+test_template_disables_unused_nri_and_verification_refuses_socket_side_effect (test_k3s_lab_init.InitTest.test_template_disables_unused_nri_and_verification_refuses_socket_side_effect) ... FAIL
+
+======================================================================
+FAIL: test_template_disables_unused_nri_and_verification_refuses_socket_side_effect (test_k3s_lab_init.InitTest.test_template_disables_unused_nri_and_verification_refuses_socket_side_effect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_init.py", line 133, in test_template_disables_unused_nri_and_verification_refuses_socket_side_effect
+    self.assertEqual(config['plugins'].get('io.containerd.nri.v1.nri'), {'disable': True})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != {'disable': True}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)

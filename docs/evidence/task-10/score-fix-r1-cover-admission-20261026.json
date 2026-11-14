@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-26T10:31:32.186209+00:00",
+  "decision": "ROOT_ADMIT_ORIGINAL_TASK10_R1_ONE_AFFECTED_COVER",
+  "head": "e2fbb97f05f4d062e7a310f23a3907b4be127cc6",
+  "freeze_sha256": "61112de0c8ab8e1daae5fe31fcd4a52119028736b21a22bb4011b9bb13a0143b",
+  "all17_inputs_SDK_four_tools_verified": true,
+  "production_fix_frozen": {
+    "bytes": 7163,
+    "path": "detect/dns_exfil/score.go",
+    "sha256": "2e2999999053fbc7b123a49c6ee2f435ad1e2a4a4ff973578eecaf4730f334e6"
+  },
+  "six_affected_tests": [
+    "TestDNSScoreQualifiedWindowSurvivesLegalDNSQuestions",
+    "TestDNSScoreRejectsInvalidOrMixedBatch",
+    "TestDNSScoreRejectedNamesAreObservable",
+    "TestDNSScoreQuestionSyntaxAndSuffix",
+    "TestDNSScoreCanonicalSuffixAndNoCDNExemption",
+    "TestDNSScoreExpirationOnlyCrossing"
+  ],
+  "namespace_absent": true,
+  "author_SAFE": true,
+  "original_author_cumulative": 253952,
+  "cap": 262144,
+  "remaining": 8192,
+  "root_owned_material_in_original_per_run1MiB": true,
+  "R": 5424930816,
+  "holds": 5003801088,
+  "new_forecast": 806354944,
+  "total": 11235086848,
+  "headroom": 764913152,
+  "resident": 15777995264,
+  "resident_cap": 16000000000,
+  "old_UNKNOWN": 9000000000,
+  "Q": 5000000000,
+  "bounds": {
+    "whole": 90,
+    "work": 80,
+    "process_cleanup": 87,
+    "final_hard_exit": 89,
+    "Go_test": 20,
+    "raw": 65536
+  },
+  "forecast_not_hard_filesystem_quota": true,
+  "old_RED2_2_FIRSTGREEN1_1": "SPENT unchanged; no replay",
+  "R1_new_RED": "1/1SPENT trueRED, retained untouched",
+  "R1_cover": "one exact attempt, any failure/incomplete STOP",
+  "full_Task10": "OPEN network/collector/enforcement",
+  "provenance": {
+    "source": "root_agent_in_existing_user_scope",
+    "human_response": false
+  }
+}

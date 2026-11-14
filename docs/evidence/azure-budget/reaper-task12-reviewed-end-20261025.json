@@ -1,0 +1,22 @@
+{
+  "kind": "root-task12-local-component-reviewed-end-reaper",
+  "request": {
+    "cmd": "bash scripts/azure_reaper.sh",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "sandbox_permissions": "require_escalated",
+    "justification": "Task12本地组件审查结束后按AZURE-BUDGET.md执行固定结束reaper，仅清理rg-warden-lab内TTL到期资源；本轮未建资源，不触及rg-mlinfra-westus，继续正常审批路径。",
+    "yield_time_ms": 1000,
+    "max_output_tokens": 2000
+  },
+  "response": {
+    "chunk_id": "72aa87",
+    "wall_time_seconds": 0.900234143,
+    "exit_code": 0,
+    "original_token_count": 37,
+    "output": "{\"at\": \"2026-10-26T00:35:30Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+  },
+  "polls": []
+}

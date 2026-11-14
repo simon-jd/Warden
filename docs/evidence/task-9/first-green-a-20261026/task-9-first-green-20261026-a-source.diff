@@ -1,0 +1,1038 @@
+--- ACCEPTED_RED/controlplane/internal/jit/jit.go
++++ controlplane/internal/jit/jit.go
+@@ -5,12 +5,16 @@
+ import (
+ 	"context"
+ 	"crypto/rand"
++	"crypto/sha256"
+ 	"encoding/base32"
++	"encoding/binary"
+ 	"encoding/json"
+ 	"errors"
+ 	"strings"
+ 	"time"
+-
++	"unicode/utf8"
++
++	"github.com/jackc/pgx/v5"
+ 	"github.com/jackc/pgx/v5/pgxpool"
+ 	"warden/controlplane/internal/audit"
+ )
+@@ -18,20 +22,26 @@
+ var (
+ 	ErrInvalid = errors.New("invalid JIT request")
+ 	ErrSelfApproval = errors.New("JIT self-approval forbidden")
+-	ErrUnavailable = errors.New("WARDEN_JIT_NOT_IMPLEMENTED")
++	ErrUnavailable = errors.New("JIT operation unavailable")
++	ErrNotFound = errors.New("JIT request not found")
++	ErrExpired = errors.New("JIT approval is expired or revoked")
++	ErrBusy = errors.New("JIT request is being reconciled")
+ )
+ 
+-type Role struct {
+-	Namespace string
+-	Name string
+-}
+-
++type Role struct { Namespace, Name string }
+ type Config struct { Roles map[string]Role }
+ 
+-// Authorizer is a trusted integration port, never populated from request JSON.
+-// It must compare user to its authenticated principal and authorize this action.
++// Authorizer is trusted wiring, never populated from request JSON. For request
++// and approve it must require an active tenant member whose canonical identity
++// equals user, and authorize the configured role alias/action. Aliases for one
++// person must not pass as distinct identities. For expire, user and role are
++// empty: require a separately authorized tenant maintenance principal.
++// AuthorizeGrant must recheck the requester's active tenant membership and the
++// approver's permission to grant that configured alias to that requester.
++// Every call must honor ctx. No production identity integration is implied.
+ type Authorizer interface {
+ 	Authorize(context.Context, string, string, string, string) error
++	AuthorizeGrant(context.Context, string, string, string, string) error
+ }
+ 
+ type Target struct {
+@@ -46,8 +56,12 @@
+ 
+ type Receipt struct { UID, ResourceVersion string }
+ 
+-// Bindings must reserve without subjects, activate with UID/version fencing,
+-// and remove only the owned binding. A test fixture is not real RBAC evidence.
++// Bindings is a security boundary. Reserve creates ONLY an empty binding.
++// Activate conditionally updates the exact UID/version and MUST NOT create on
++// missing objects. Remove clears subjects with a fresh version fence, deletes
++// with UID/version preconditions and confirms absence. An empty Receipt means
++// discover by the complete owned Target after an ambiguous reservation. All
++// methods must honor ctx; errors may mean the external mutation happened.
+ type Bindings interface {
+ 	Reserve(context.Context, Target) (Receipt, error)
+ 	Activate(context.Context, Target, Receipt) error
+@@ -63,26 +77,22 @@
+ 	now func() time.Time
+ }
+ 
++func textID(s string, max int) bool {
++	return s != "" && s == strings.TrimSpace(s) && len(s) <= max && utf8.ValidString(s) && !strings.ContainsAny(s, "\x00\r\n")
++}
++
+ func New(pool *pgxpool.Pool, tenant string, config Config, caller Authorizer, bindings Bindings, now func() time.Time) (*Service, error) {
+-	if pool == nil || strings.TrimSpace(tenant) == "" || caller == nil || bindings == nil || now == nil || len(config.Roles) == 0 {
+-		return nil, ErrInvalid
+-	}
++	if pool == nil || !textID(tenant, 256) || caller == nil || bindings == nil || now == nil || len(config.Roles) == 0 { return nil, ErrInvalid }
+ 	roles := make(map[string]Role, len(config.Roles))
+ 	for alias, role := range config.Roles {
+-		if strings.TrimSpace(alias) == "" || strings.TrimSpace(role.Namespace) == "" || strings.TrimSpace(role.Name) == "" {
+-			return nil, ErrInvalid
+-		}
++		if !textID(alias, 128) || !dnsName(role.Namespace, 63) || strings.Contains(role.Namespace, ".") || !dnsName(role.Name, 253) { return nil, ErrInvalid }
+ 		roles[alias] = role
+ 	}
+ 	return &Service{pool: pool, tenant: tenant, config: Config{Roles: roles}, caller: caller, bindings: bindings, now: now}, nil
+ }
+ 
+-// Request is real durable scaffolding so the first RED reaches business
+-// assertions. Approval and expiry below remain explicitly fail-closed.
+ func (s *Service) Request(user, role string, d time.Duration, reason string) (string, error) {
+-	if s == nil || strings.TrimSpace(user) == "" || len(user) > 256 || strings.TrimSpace(reason) == "" || len(reason) > 2048 || d <= 0 || d > 2*time.Hour {
+-		return "", ErrInvalid
+-	}
++	if s == nil || !textID(user, 256) || !textID(reason, 2048) || d <= 0 || d > 2*time.Hour { return "", ErrInvalid }
+ 	if _, ok := s.config.Roles[role]; !ok { return "", ErrInvalid }
+ 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+ 	defer cancel()
+@@ -102,5 +112,186 @@
+ 	return id, nil
+ }
+ 
+-func (s *Service) Approve(id, approver string) error { return ErrUnavailable }
+-func (s *Service) Expire() error { return ErrUnavailable }
++type requestRow struct {
++	id, requester, alias, reason, state, approver string
++	duration int64
++	approved, expires *time.Time
++	target Target
++	receipt Receipt
++	granted bool
++}
++
++func (s *Service) load(ctx context.Context, conn *pgxpool.Conn, id string) (requestRow, error) {
++	r := requestRow{id: id}
++	err := conn.QueryRow(ctx, `SELECT requester,role_alias,reason,duration_ns,state,COALESCE(approver,''),approved_at,expires_at,binding_name,COALESCE(namespace,''),COALESCE(role_name,''),COALESCE(subject,''),COALESCE(binding_uid,''),COALESCE(binding_version,''),grant_confirmed FROM jit_requests WHERE tenant_id=$1 AND id=$2`, s.tenant, id).Scan(&r.requester, &r.alias, &r.reason, &r.duration, &r.state, &r.approver, &r.approved, &r.expires, &r.target.Name, &r.target.Namespace, &r.target.Role, &r.target.User, &r.receipt.UID, &r.receipt.ResourceVersion, &r.granted)
++	if errors.Is(err, pgx.ErrNoRows) { return r, ErrNotFound }
++	r.target.TenantID, r.target.RequestID = s.tenant, id
++	if r.expires != nil { r.target.ExpiresAt = *r.expires }
++	return r, err
++}
++
++// A dedicated session lock serializes this request without holding audit_head
++// across external I/O. Failed unlock discards the session, never pools a lock.
++func (s *Service) lock(ctx context.Context, id string) (*pgxpool.Conn, func(), error) {
++	conn, err := s.pool.Acquire(ctx)
++	if err != nil { return nil, nil, err }
++	h := sha256.Sum256([]byte("warden.jit\x00"+s.tenant+"\x00"+id))
++	key := int64(binary.BigEndian.Uint64(h[:8]))
++	var locked bool
++	if err = conn.QueryRow(ctx, `SELECT pg_try_advisory_lock($1)`, key).Scan(&locked); err != nil || !locked {
++		if err != nil {
++			cleanup, cancel := context.WithTimeout(context.Background(), time.Second)
++			_ = conn.Hijack().Close(cleanup)
++			cancel()
++		} else { conn.Release(); err = ErrBusy }
++		return nil, nil, err
++	}
++	release := func() {
++		cleanup, cancel := context.WithTimeout(context.Background(), time.Second)
++		defer cancel()
++		var unlocked bool
++		if err := conn.QueryRow(cleanup, `SELECT pg_advisory_unlock($1)`, key).Scan(&unlocked); err != nil || !unlocked {
++			_ = conn.Hijack().Close(cleanup)
++			return
++		}
++		conn.Release()
++	}
++	return conn, release, nil
++}
++
++// save commits state and its audit event together; expected is also a DB fence.
++func (s *Service) save(ctx context.Context, conn *pgxpool.Conn, r requestRow, expected, event, cause string) error {
++	tx, err := conn.Begin(ctx)
++	if err != nil { return err }
++	defer tx.Rollback(ctx)
++	tag, err := tx.Exec(ctx, `UPDATE jit_requests SET state=$3,approver=$4,approved_at=$5,expires_at=$6,namespace=$7,role_name=$8,subject=$9,binding_uid=NULLIF($10,''),binding_version=NULLIF($11,''),grant_confirmed=$12,last_error=$13 WHERE tenant_id=$1 AND id=$2 AND state=$14`, s.tenant, r.id, r.state, r.approver, r.approved, r.expires, r.target.Namespace, r.target.Role, r.target.User, r.receipt.UID, r.receipt.ResourceVersion, r.granted, cause, expected)
++	if err != nil { return err }
++	if tag.RowsAffected() != 1 { return ErrBusy }
++	if event != "" {
++		payload, err := json.Marshal(map[string]any{"request_id": r.id, "requester": r.requester, "approver": r.approver, "role": r.alias, "reason": r.reason, "approved_at": r.approved, "expires_at": r.expires, "target": r.target, "grant_confirmed": r.granted, "outcome": cause})
++		if err != nil { return err }
++		if _, _, err = audit.AppendTx(ctx, tx, audit.Event{TenantID: s.tenant, Type: event, Payload: payload}); err != nil { return err }
++	}
++	return tx.Commit(ctx)
++}
++
++// Approve starts the duration at the first committed approval, never at Request
++// and never again on retry. PostgreSQL microsecond rounding is downward: very
++// short windows can expire before activation, but cannot be lengthened.
++func (s *Service) Approve(id, approver string) (err error) {
++	if s == nil || !requestID(id) || !textID(approver, 256) { return ErrInvalid }
++	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
++	defer cancel()
++	conn, release, err := s.lock(ctx, id)
++	if err != nil { return err }
++	defer release()
++	r, err := s.load(ctx, conn, id)
++	if err != nil { return err }
++	if err = s.caller.Authorize(ctx, s.tenant, approver, r.alias, "approve"); err != nil { return err }
++	if approver == r.requester { return ErrSelfApproval }
++	if err = s.caller.AuthorizeGrant(ctx, s.tenant, r.requester, approver, r.alias); err != nil { return err }
++	role, configured := s.config.Roles[r.alias]
++	if !configured { return ErrInvalid }
++	if r.state == "active" && r.approver == approver && role.Namespace == r.target.Namespace && role.Name == r.target.Role && s.now().Before(*r.expires) { return nil }
++	if r.state != "requested" {
++		if r.state != "expired" { return errors.Join(ErrExpired, s.revoke(ctx, conn, r, "approval_retry")) }
++		return ErrExpired
++	}
++	approved := s.now().UTC().Truncate(time.Microsecond)
++	expires := approved.Add(time.Duration(r.duration)).Truncate(time.Microsecond)
++	r.approver, r.approved, r.expires = approver, &approved, &expires
++	r.target.Namespace, r.target.Role, r.target.User, r.target.ExpiresAt = role.Namespace, role.Name, r.requester, expires
++	r.state = "grant_pending"
++	if err = s.save(ctx, conn, r, "requested", "jit.approval_intent", "approved"); err != nil { return err }
++	// After durable intent, every error attempts removal, including ambiguous
++	// remote success or audit commit. Restart never finishes this activation.
++	defer func() {
++		if err == nil { return }
++		cleanup, stop := context.WithTimeout(context.Background(), 2*time.Second)
++		defer stop()
++		if latest, readErr := s.load(cleanup, conn, id); readErr == nil { r = latest }
++		err = errors.Join(err, s.revoke(cleanup, conn, r, "grant_failed"))
++	}()
++	if !s.now().Before(expires) { return ErrExpired }
++	r.receipt, err = s.bindings.Reserve(ctx, r.target)
++	if err != nil { return err }
++	if !textID(r.receipt.UID, 256) || !textID(r.receipt.ResourceVersion, 256) { return ErrUnavailable }
++	if err = s.save(ctx, conn, r, "grant_pending", "", "reserved"); err != nil { return err }
++	// Recheck the authenticated policy and session after reservation. The
++	// external UID/version fence still protects against late I/O/session loss.
++	if err = s.caller.Authorize(ctx, s.tenant, approver, r.alias, "approve"); err != nil { return err }
++	if err = s.caller.AuthorizeGrant(ctx, s.tenant, r.requester, approver, r.alias); err != nil { return err }
++	if !s.now().Before(expires) { return ErrExpired }
++	if err = conn.Ping(ctx); err != nil { return err }
++	if err = s.bindings.Activate(ctx, r.target, r.receipt); err != nil { return err }
++	if !s.now().Before(expires) { return ErrExpired }
++	r.state, r.granted = "active", true
++	if err = s.save(ctx, conn, r, "grant_pending", "jit.granted", "granted"); err != nil { return err }
++	return nil
++}
++
++func (s *Service) revoke(ctx context.Context, conn *pgxpool.Conn, r requestRow, cause string) error {
++	if r.state == "expired" { return nil }
++	if r.state == "requested" { return ErrInvalid }
++	previous := r.state
++	r.state = "revoke_pending"
++	var intentErr error
++	if previous != "revoke_pending" { intentErr = s.save(ctx, conn, r, previous, "jit.revocation_intent", cause) }
++	// Access removal must still be attempted if the database/audit is failing.
++	// The earlier durable grant_pending/active record remains discoverable.
++	removeErr := s.bindings.Remove(ctx, r.target, r.receipt)
++	if intentErr != nil || removeErr != nil { return errors.Join(intentErr, removeErr) }
++	r.state = "expired"
++	return s.save(ctx, conn, r, "revoke_pending", "jit.expired", cause)
++}
++
++// Expire is authorized tenant maintenance, bounded to 64 rows per call. Repeat
++// on startup and periodically until drained; pending grants are always revoked.
++// A stopped scheduler or unavailable external API cannot enforce wall-clock TTL.
++func (s *Service) Expire() error {
++	if s == nil { return ErrInvalid }
++	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
++	defer cancel()
++	if err := s.caller.Authorize(ctx, s.tenant, "", "", "expire"); err != nil { return err }
++	rows, err := s.pool.Query(ctx, `SELECT id FROM jit_requests WHERE tenant_id=$1 AND (state IN ('grant_pending','revoke_pending') OR (state='active' AND expires_at <= $2)) ORDER BY reconcile_order,expires_at,id LIMIT 64`, s.tenant, s.now().UTC())
++	if err != nil { return err }
++	var ids []string
++	for rows.Next() {
++		var id string
++		if err = rows.Scan(&id); err != nil { rows.Close(); return err }
++		ids = append(ids, id)
++	}
++	rows.Close()
++	if err = rows.Err(); err != nil { return err }
++	var failures []error
++	for _, id := range ids {
++		if ctx.Err() != nil { failures = append(failures, ctx.Err()); break }
++		conn, release, err := s.lock(ctx, id)
++		if err != nil { failures = append(failures, err); continue }
++		r, err := s.load(ctx, conn, id)
++		if err == nil && (r.state == "grant_pending" || r.state == "revoke_pending" || (r.state == "active" && !s.now().Before(*r.expires))) {
++			// Rotate attempted rows durably so a failing batch cannot starve
++			// other due grants, including after a maintenance restart.
++			_, orderErr := conn.Exec(ctx, `UPDATE jit_requests SET reconcile_order=nextval('jit_reconcile_order') WHERE tenant_id=$1 AND id=$2`, s.tenant, id)
++			err = errors.Join(orderErr, s.revoke(ctx, conn, r, "expiry_or_recovery"))
++		}
++		release()
++		if err != nil { failures = append(failures, err) }
++	}
++	return errors.Join(failures...)
++}
++
++func requestID(id string) bool {
++	if len(id) != 26 { return false }
++	for _, c := range id { if !(c >= 'A' && c <= 'Z' || c >= '2' && c <= '7') { return false } }
++	return true
++}
++
++func dnsName(s string, max int) bool {
++	if len(s) == 0 || len(s) > max { return false }
++	for _, label := range strings.Split(s, ".") {
++		if len(label) == 0 || len(label) > 63 || label[0] == '-' || label[len(label)-1] == '-' { return false }
++		for _, c := range label { if !(c >= 'a' && c <= 'z' || c >= '0' && c <= '9' || c == '-') { return false } }
++	}
++	return true
++}
+--- ACCEPTED_RED/controlplane/internal/jit/jit_test.go
++++ controlplane/internal/jit/jit_test.go
+@@ -15,7 +15,13 @@
+ // This explicit fixture does not represent authenticated production identity.
+ type callerFixture struct { user string }
+ func (c callerFixture) Authorize(_ context.Context, tenant, user, role, action string) error {
++	if tenant == "tenant-a" && action == "expire" && user == "" && role == "" { return nil }
+ 	if tenant != "tenant-a" || user != c.user || role != "operator" || (action != "request" && action != "approve") { return errors.New("fixture authorization denied") }
++	return nil
++}
++
++func (c callerFixture) AuthorizeGrant(_ context.Context, tenant, requester, approver, role string) error {
++	if tenant != "tenant-a" || requester != "alice" || approver != c.user || role != "operator" { return errors.New("fixture grant authorization denied") }
+ 	return nil
+ }
+ 
+@@ -23,16 +29,24 @@
+ 	active map[string]Target
+ 	removed []string
+ 	activations int
+-}
+-func (b *bindingFixture) Reserve(_ context.Context, target Target) (Receipt, error) { return Receipt{UID: target.RequestID, ResourceVersion: "1"}, nil }
++	reservations map[string]Receipt
++}
++func (b *bindingFixture) Reserve(_ context.Context, target Target) (Receipt, error) {
++	if b.reservations == nil { b.reservations = make(map[string]Receipt) }
++	if _, exists := b.reservations[target.RequestID]; exists { return Receipt{}, ErrBindingConflict }
++	r := Receipt{UID: target.RequestID, ResourceVersion: "1"}
++	b.reservations[target.RequestID] = r
++	return r, nil
++}
+ func (b *bindingFixture) Activate(_ context.Context, target Target, receipt Receipt) error {
+-	if receipt.UID != target.RequestID || receipt.ResourceVersion != "1" { return errors.New("fixture fence mismatch") }
++	if receipt.UID != target.RequestID || receipt.ResourceVersion != "1" || b.reservations[target.RequestID] != receipt { return errors.New("fixture fence mismatch") }
+ 	b.active[target.RequestID] = target
+ 	b.activations++
+ 	return nil
+ }
+ func (b *bindingFixture) Remove(_ context.Context, target Target, receipt Receipt) error {
+ 	delete(b.active, target.RequestID)
++	delete(b.reservations, target.RequestID)
+ 	b.removed = append(b.removed, target.RequestID)
+ 	return nil
+ }
+@@ -119,3 +133,231 @@
+ 	if err := (&audit.Log{Pool: pool}).Verify(1, head); err != nil { t.Fatal(err) }
+ 	t.Log("Task1 PostgreSQL audit Verify completed")
+ }
++
++// Fault wrapper models ambiguous external outcomes, not real Kubernetes RBAC.
++type faultBindings struct {
++	base *bindingFixture
++	reserve func(Target, Receipt) error
++	activate func(Target) error
++	removeError error
++}
++func (f *faultBindings) Reserve(ctx context.Context, target Target) (Receipt, error) {
++	r, err := f.base.Reserve(ctx, target)
++	if err == nil && f.reserve != nil { err = f.reserve(target, r) }
++	return r, err
++}
++func (f *faultBindings) Activate(ctx context.Context, target Target, r Receipt) error {
++	if err := f.base.Activate(ctx, target, r); err != nil { return err }
++	if f.activate != nil { return f.activate(target) }
++	return nil
++}
++func (f *faultBindings) Remove(ctx context.Context, target Target, r Receipt) error {
++	if f.removeError != nil { return f.removeError }
++	return f.base.Remove(ctx, target, r)
++}
++
++func stateOf(t *testing.T, pool *pgxpool.Pool, id string) string {
++	t.Helper()
++	var state string
++	if err := pool.QueryRow(context.Background(), `SELECT state FROM jit_requests WHERE id=$1`, id).Scan(&state); err != nil { t.Fatal(err) }
++	return state
++}
++
++func failAudit(t *testing.T, pool *pgxpool.Pool, event string) {
++	t.Helper()
++	// Fixed event values below, never user input. This fails the real Task1
++	// AppendTx INSERT, exposing state/event rollback and external cleanup.
++	if event != "jit.requested" && event != "jit.approval_intent" && event != "jit.granted" && event != "jit.expired" { t.Fatal("invalid test fault") }
++	ddl := `CREATE FUNCTION jit_test_reject_audit() RETURNS trigger LANGUAGE plpgsql AS $$ BEGIN IF convert_from(NEW.canonical_event,'UTF8')::jsonb->>'type' = '`+event+`' THEN RAISE EXCEPTION 'injected audit failure'; END IF; RETURN NEW; END; $$; CREATE TRIGGER jit_test_audit_fault BEFORE INSERT ON audit_entries FOR EACH ROW EXECUTE FUNCTION jit_test_reject_audit()`
++	if _, err := pool.Exec(context.Background(), ddl); err != nil { t.Fatal(err) }
++}
++func clearAuditFault(t *testing.T, pool *pgxpool.Pool) {
++	t.Helper()
++	if _, err := pool.Exec(context.Background(), `DROP TRIGGER jit_test_audit_fault ON audit_entries; DROP FUNCTION jit_test_reject_audit()`); err != nil { t.Fatal(err) }
++}
++func auditCount(t *testing.T, pool *pgxpool.Pool, event string) int {
++	t.Helper()
++	var count int
++	if err := pool.QueryRow(context.Background(), `SELECT count(*) FROM audit_entries WHERE convert_from(canonical_event,'UTF8')::jsonb->>'type'=$1`, event).Scan(&count); err != nil { t.Fatal(err) }
++	var head uint64
++	if err := pool.QueryRow(context.Background(), `SELECT last_seq FROM audit_head WHERE singleton`).Scan(&head); err != nil { t.Fatal(err) }
++	if head > 0 { if err := (&audit.Log{Pool: pool}).Verify(1, head); err != nil { t.Fatal(err) } }
++	return count
++}
++
++func TestRequestBoundariesAndTenantIsolation(t *testing.T) {
++	pool, alice, bob, bindings, now := fixture(t)
++	for _, d := range []time.Duration{0, -1, 2*time.Hour+1} {
++		if _, err := alice.Request("alice", "operator", d, "reason"); !errors.Is(err, ErrInvalid) { t.Fatalf("duration %v: %v", d, err) }
++	}
++	if _, err := alice.Request("bob", "operator", time.Hour, "reason"); err == nil { t.Fatal("unauthenticated user accepted") }
++	if _, err := alice.Request("alice", "admin", time.Hour, "reason"); !errors.Is(err, ErrInvalid) { t.Fatal("unconfigured role accepted") }
++	if _, err := alice.Request("alice", "operator", time.Hour, " "); !errors.Is(err, ErrInvalid) { t.Fatal("blank reason accepted") }
++	id, err := alice.Request("alice", "operator", 2*time.Hour, "maximum")
++	if err != nil { t.Fatal(err) }
++	if err = bob.Approve(id, "alice"); err == nil { t.Fatal("unbound approver string accepted") }
++	other, err := New(pool, "tenant-b", bob.config, bob.caller, bindings, func() time.Time { return *now })
++	if err != nil { t.Fatal(err) }
++	if err = other.Approve(id, "bob"); !errors.Is(err, ErrNotFound) { t.Fatalf("cross-tenant lookup: %v", err) }
++	if bindings.activations != 0 || stateOf(t, pool, id) != "requested" { t.Fatal("denial changed access") }
++	if err = bob.Approve(id, "bob"); err != nil { t.Fatal(err) }
++	if !bindings.active[id].ExpiresAt.Equal(now.Add(2*time.Hour)) { t.Fatal("maximum duration not preserved") }
++}
++
++func TestApprovalClockRetryAndExpiryFence(t *testing.T) {
++	pool, alice, bob, bindings, now := fixture(t)
++	id := request(t, alice)
++	*now = now.Add(30*time.Minute)
++	if err := bob.Approve(id, "bob"); err != nil { t.Fatal(err) }
++	expires := now.Add(time.Hour)
++	*now = now.Add(10*time.Minute)
++	if err := bob.Approve(id, "bob"); err != nil { t.Fatal(err) }
++	if bindings.activations != 1 || !bindings.active[id].ExpiresAt.Equal(expires) { t.Fatal("retry extended or duplicated grant") }
++	*now = expires
++	if err := bob.Approve(id, "bob"); !errors.Is(err, ErrExpired) { t.Fatalf("deadline retry: %v", err) }
++	if stateOf(t, pool, id) != "expired" || len(bindings.active) != 0 { t.Fatal("deadline retry left access") }
++	if err := bob.Approve(id, "bob"); !errors.Is(err, ErrExpired) { t.Fatal("terminal tombstone regranted") }
++	if auditCount(t, pool, "jit.granted") != 1 || auditCount(t, pool, "jit.expired") != 1 { t.Fatal("retry duplicated audit") }
++}
++
++func TestAuditFailuresRollbackAndRemoveAccess(t *testing.T) {
++	for _, event := range []string{"jit.requested", "jit.approval_intent", "jit.granted"} {
++		t.Run(event, func(t *testing.T) {
++			pool, alice, bob, bindings, _ := fixture(t)
++			if event == "jit.requested" {
++				failAudit(t, pool, event)
++				if _, err := alice.Request("alice", "operator", time.Hour, "reason"); err == nil { t.Fatal("request accepted audit failure") }
++				var count int
++				if err := pool.QueryRow(context.Background(), `SELECT count(*) FROM jit_requests`).Scan(&count); err != nil || count != 0 { t.Fatalf("request rollback: %d %v", count, err) }
++				return
++			}
++			id := request(t, alice)
++			failAudit(t, pool, event)
++			if err := bob.Approve(id, "bob"); err == nil { t.Fatal("approval accepted audit failure") }
++			if len(bindings.active) != 0 || len(bindings.reservations) != 0 { t.Fatal("audit failure left external access/reservation") }
++			want := "requested"
++			if event == "jit.granted" { want = "expired"; if bindings.activations != 1 { t.Fatal("fault did not reach post-activation audit") } }
++			if stateOf(t, pool, id) != want { t.Fatalf("state after %s: %s", event, stateOf(t, pool, id)) }
++			if auditCount(t, pool, "jit.granted") != 0 { t.Fatal("failed audit committed grant event") }
++		})
++	}
++}
++
++func TestRestartRevokesAmbiguousOperations(t *testing.T) {
++	for _, phase := range []string{"reserve", "activate"} {
++		t.Run(phase, func(t *testing.T) {
++			pool, alice, bob, bindings, now := fixture(t)
++			id := request(t, alice)
++			fault := &faultBindings{base: bindings, removeError: errors.New("external API unavailable")}
++			if phase == "reserve" { fault.reserve = func(Target, Receipt) error { return errors.New("reservation reply lost") } } else { fault.activate = func(Target) error { return errors.New("activation reply lost") } }
++			bob.bindings = fault
++			if err := bob.Approve(id, "bob"); err == nil { t.Fatal("ambiguous outcome accepted") }
++			if stateOf(t, pool, id) != "revoke_pending" { t.Fatal("missing durable recovery state") }
++			fault.removeError = nil
++			restarted, err := New(pool, "tenant-a", bob.config, bob.caller, fault, func() time.Time { return *now })
++			if err != nil { t.Fatal(err) }
++			if err = restarted.Expire(); err != nil { t.Fatal(err) }
++			if len(bindings.active) != 0 || len(bindings.reservations) != 0 || stateOf(t, pool, id) != "expired" { t.Fatal("restart failed to revoke") }
++			wantActivations := 0
++			if phase == "activate" { wantActivations = 1 }
++			if bindings.activations != wantActivations || auditCount(t, pool, "jit.granted") != 0 || auditCount(t, pool, "jit.expired") != 1 { t.Fatal("recovery resumed activation or lost audit") }
++		})
++	}
++}
++
++func TestExpiryAuditRetryAfterExternalDeletion(t *testing.T) {
++	pool, alice, bob, bindings, now := fixture(t)
++	id := request(t, alice)
++	if err := bob.Approve(id, "bob"); err != nil { t.Fatal(err) }
++	failAudit(t, pool, "jit.expired")
++	*now = now.Add(time.Hour)
++	if err := bob.Expire(); err == nil { t.Fatal("expiry hid audit failure") }
++	if len(bindings.active) != 0 || stateOf(t, pool, id) != "revoke_pending" { t.Fatal("expiry lost retryable state or retained access") }
++	clearAuditFault(t, pool)
++	if err := bob.Expire(); err != nil { t.Fatal(err) }
++	if err := bob.Expire(); err != nil { t.Fatal(err) }
++	if stateOf(t, pool, id) != "expired" || auditCount(t, pool, "jit.expired") != 1 { t.Fatal("expiry audit retry missing or duplicated") }
++}
++
++func TestDeadlineDuringReservationPreventsActivation(t *testing.T) {
++	_, alice, bob, bindings, now := fixture(t)
++	id := request(t, alice)
++	bob.bindings = &faultBindings{base: bindings, reserve: func(target Target, _ Receipt) error { *now = target.ExpiresAt; return nil }}
++	if err := bob.Approve(id, "bob"); !errors.Is(err, ErrExpired) { t.Fatalf("expired reservation: %v", err) }
++	if bindings.activations != 0 || len(bindings.reservations) != 0 { t.Fatal("late activation or unfenced reservation") }
++}
++
++func TestConcurrentReconciliationCannotActivateTwice(t *testing.T) {
++	_, alice, bob, bindings, now := fixture(t)
++	id := request(t, alice)
++	entered, unblock := make(chan struct{}), make(chan struct{})
++	bob.bindings = &faultBindings{base: bindings, reserve: func(Target, Receipt) error { close(entered); <-unblock; return nil }}
++	done := make(chan error, 1)
++	go func() { done <- bob.Approve(id, "bob") }()
++	select { case <-entered: case <-time.After(time.Second): close(unblock); t.Fatal("reservation not reached") }
++	approveErr := bob.Approve(id, "bob")
++	expireErr := bob.Expire()
++	close(unblock)
++	select { case err := <-done: if err != nil { t.Fatal(err) }; case <-time.After(time.Second): t.Fatal("approval did not finish") }
++	if !errors.Is(approveErr, ErrBusy) || !errors.Is(expireErr, ErrBusy) || bindings.activations != 1 { t.Fatalf("request lock failed: %v %v", approveErr, expireErr) }
++	*now = now.Add(time.Hour)
++	if err := bob.Expire(); err != nil { t.Fatal(err) }
++	if len(bindings.active) != 0 { t.Fatal("reconciliation after lock release left access") }
++}
++
++type deniedMaintenance struct { callerFixture }
++func (c deniedMaintenance) Authorize(ctx context.Context, tenant, user, role, action string) error {
++	if action == "expire" { return errors.New("maintenance denied") }
++	return c.callerFixture.Authorize(ctx, tenant, user, role, action)
++}
++func TestMaintenanceRequiresTrustedAuthorization(t *testing.T) {
++	pool, alice, bob, bindings, now := fixture(t)
++	id := request(t, alice)
++	if err := bob.Approve(id, "bob"); err != nil { t.Fatal(err) }
++	*now = now.Add(time.Hour)
++	bob.caller = deniedMaintenance{callerFixture{user: "bob"}}
++	if err := bob.Expire(); err == nil { t.Fatal("untrusted maintenance accepted") }
++	if len(bindings.active) != 1 || stateOf(t, pool, id) != "active" { t.Fatal("unauthorized maintenance changed access") }
++}
++
++
++type revokedRequester struct {
++	callerFixture
++	checks int
++}
++func (c *revokedRequester) AuthorizeGrant(ctx context.Context, tenant, requester, approver, role string) error {
++	c.checks++
++	if c.checks > 1 { return errors.New("requester membership revoked") }
++	return c.callerFixture.AuthorizeGrant(ctx, tenant, requester, approver, role)
++}
++func TestRequesterMembershipRecheckedBeforeActivation(t *testing.T) {
++	pool, alice, bob, bindings, _ := fixture(t)
++	id := request(t, alice)
++	bob.caller = &revokedRequester{callerFixture: callerFixture{user: "bob"}}
++	if err := bob.Approve(id, "bob"); err == nil { t.Fatal("revoked requester was granted access") }
++	if bindings.activations != 0 || len(bindings.reservations) != 0 || stateOf(t, pool, id) != "expired" { t.Fatal("authorization loss left access or an activatable reservation") }
++}
++
++
++type failingBatchBindings struct { *bindingFixture; removable string }
++func (b failingBatchBindings) Remove(ctx context.Context, target Target, r Receipt) error {
++	if target.RequestID != b.removable { return errors.New("this binding cannot yet be removed") }
++	return b.bindingFixture.Remove(ctx, target, r)
++}
++func TestExpiryBatchFailureDoesNotStarveLaterGrants(t *testing.T) {
++	pool, alice, bob, bindings, now := fixture(t)
++	for range 65 {
++		id := request(t, alice)
++		if err := bob.Approve(id, "bob"); err != nil { t.Fatal(err) }
++	}
++	// Equal fake deadlines intentionally exercise durable ordering, not a
++	// lucky change in the wall clock or in-memory scheduler cursor.
++	var last string
++	if err := pool.QueryRow(context.Background(), `SELECT id FROM jit_requests ORDER BY id DESC LIMIT 1`).Scan(&last); err != nil { t.Fatal(err) }
++	bob.bindings = failingBatchBindings{bindingFixture: bindings, removable: last}
++	*now = now.Add(time.Hour)
++	if err := bob.Expire(); err == nil { t.Fatal("first failed batch hidden") }
++	if _, exists := bindings.active[last]; !exists { t.Fatal("first batch exceeded 64 rows") }
++	if err := bob.Expire(); err == nil { t.Fatal("remaining failures hidden") }
++	if _, exists := bindings.active[last]; exists || stateOf(t, pool, last) != "expired" { t.Fatal("permanent failures starved later expired grant") }
++}
+--- ACCEPTED_RED/controlplane/internal/store/migrations/003_jit.sql
++++ controlplane/internal/store/migrations/003_jit.sql
+@@ -1,3 +1,4 @@
++CREATE SEQUENCE jit_reconcile_order;
+ CREATE TABLE jit_requests (
+  id text PRIMARY KEY CHECK (id ~ '^[A-Z2-7]{26}$'),
+  tenant_id text NOT NULL CHECK (tenant_id <> ''),
+@@ -17,11 +18,15 @@
+  binding_version text,
+  state text NOT NULL CHECK (state IN ('requested','grant_pending','active','revoke_pending','expired')),
+  last_error text NOT NULL DEFAULT '',
++ grant_confirmed boolean NOT NULL DEFAULT false,
++ reconcile_order bigint NOT NULL DEFAULT 0 CHECK (reconcile_order >= 0),
+  CHECK (approver IS NULL OR approver <> requester),
+  CHECK ((approved_at IS NULL) = (expires_at IS NULL)),
+- CHECK (expires_at IS NULL OR (expires_at > approved_at AND expires_at <= approved_at + interval '2 hours')),
++ CHECK (expires_at IS NULL OR (expires_at >= approved_at AND expires_at <= approved_at + interval '2 hours')),
+  CHECK (state = 'requested' OR (approver IS NOT NULL AND approved_at IS NOT NULL AND namespace IS NOT NULL AND role_name IS NOT NULL AND subject IS NOT NULL)),
+- CHECK (state <> 'active' OR (binding_uid IS NOT NULL AND binding_version IS NOT NULL))
++ CHECK ((binding_uid IS NULL) = (binding_version IS NULL)),
++ CHECK (state <> 'active' OR (binding_uid IS NOT NULL AND binding_version IS NOT NULL AND grant_confirmed)),
++ CHECK (NOT grant_confirmed OR state IN ('active','revoke_pending','expired'))
+ );
+-CREATE INDEX jit_pending_expiry ON jit_requests(tenant_id, expires_at, id)
++CREATE INDEX jit_pending_expiry ON jit_requests(tenant_id, reconcile_order, expires_at, id)
+  WHERE state IN ('grant_pending','active','revoke_pending');
+--- /dev/null
++++ controlplane/internal/jit/bindings.go
+@@ -0,0 +1,204 @@
++package jit
++
++import (
++	"bytes"
++	"context"
++	"encoding/json"
++	"errors"
++	"io"
++	"net/http"
++	"net/url"
++	"strings"
++	"time"
++
++	"warden/controlplane/internal/canonical"
++)
++
++var ErrBindingConflict = errors.New("JIT binding ownership or version conflict")
++
++// KubernetesConfig is trusted deployment configuration. Transport must validate
++// the cluster TLS certificate and must not follow redirects. No kubeconfig,
++// host credentials, environment discovery or default transport is used here.
++type KubernetesConfig struct {
++	Endpoint string
++	Transport http.RoundTripper
++	BearerToken func(context.Context) (string, error)
++}
++
++type KubernetesBindings struct { config KubernetesConfig }
++
++func NewKubernetesBindings(config KubernetesConfig) (*KubernetesBindings, error) {
++	u, err := url.Parse(config.Endpoint)
++	if err != nil || u.Scheme != "https" || u.Host == "" || u.User != nil || u.RawQuery != "" || u.ForceQuery || u.Fragment != "" || (u.Path != "" && u.Path != "/") || config.Transport == nil || config.BearerToken == nil { return nil, ErrInvalid }
++	config.Endpoint = strings.TrimSuffix(config.Endpoint, "/")
++	return &KubernetesBindings{config: config}, nil
++}
++
++type subject struct {
++	Kind string `json:"kind"`
++	APIGroup string `json:"apiGroup"`
++	Name string `json:"name"`
++}
++
++type roleReference struct {
++	APIGroup string `json:"apiGroup"`
++	Kind string `json:"kind"`
++	Name string `json:"name"`
++}
++
++type bindingObject struct {
++	APIVersion string `json:"apiVersion"`
++	Kind string `json:"kind"`
++	Metadata map[string]json.RawMessage `json:"metadata"`
++	Subjects []subject `json:"subjects"`
++	RoleRef roleReference `json:"roleRef"`
++}
++
++const rbacAPI = "rbac.authorization.k8s.io"
++const maxBindingBody = 65536
++
++func raw(v any) json.RawMessage { b, _ := json.Marshal(v); return b }
++
++func validTarget(t Target) bool {
++	return textID(t.TenantID, 256) && requestID(t.RequestID) && t.Name == "jit-"+strings.ToLower(t.RequestID) && dnsName(t.Namespace, 63) && !strings.Contains(t.Namespace, ".") && dnsName(t.Role, 253) && textID(t.User, 256) && !t.ExpiresAt.IsZero()
++}
++
++func ownedAnnotations(t Target) map[string]string {
++	return map[string]string{"warden.io/tenant": t.TenantID, "warden.io/request": t.RequestID, "warden.io/expires-at": t.ExpiresAt.UTC().Format(time.RFC3339Nano), "warden.io/user": t.User}
++}
++
++func newBinding(t Target) bindingObject {
++	return bindingObject{APIVersion: rbacAPI+"/v1", Kind: "RoleBinding", Metadata: map[string]json.RawMessage{"name": raw(t.Name), "namespace": raw(t.Namespace), "annotations": raw(ownedAnnotations(t))}, Subjects: []subject{}, RoleRef: roleReference{APIGroup: rbacAPI, Kind: "Role", Name: t.Role}}
++}
++
++func metaString(o bindingObject, key string) string {
++	var value string
++	_ = json.Unmarshal(o.Metadata[key], &value)
++	return value
++}
++
++// Exact-key checks precede encoding/json's case-insensitive struct matching.
++// canonical.JSON also rejects duplicate keys, invalid UTF-8 and trailing data.
++func keys(data []byte, allowed ...string) (map[string]json.RawMessage, error) {
++	var object map[string]json.RawMessage
++	if err := json.Unmarshal(data, &object); err != nil || object == nil { return nil, ErrBindingConflict }
++	for key := range object {
++		ok := false
++		for _, a := range allowed { if key == a { ok = true; break } }
++		if !ok { return nil, ErrBindingConflict }
++	}
++	return object, nil
++}
++
++func decodeBinding(body []byte, t Target) (bindingObject, error) {
++	var o bindingObject
++	canonicalBody, err := canonical.JSON(body)
++	if err != nil { return o, ErrBindingConflict }
++	fields, err := keys(canonicalBody, "apiVersion", "kind", "metadata", "subjects", "roleRef")
++	if err != nil { return o, err }
++	if _, err = keys(fields["metadata"], "name", "namespace", "uid", "resourceVersion", "annotations", "labels", "creationTimestamp", "deletionTimestamp", "deletionGracePeriodSeconds", "generation", "managedFields", "finalizers", "ownerReferences", "selfLink"); err != nil { return o, err }
++	if _, err = keys(fields["roleRef"], "apiGroup", "kind", "name"); err != nil { return o, err }
++	var subjects []json.RawMessage
++	if len(fields["subjects"]) != 0 { if err = json.Unmarshal(fields["subjects"], &subjects); err != nil { return o, ErrBindingConflict } }
++	for _, s := range subjects { if _, err = keys(s, "kind", "apiGroup", "name"); err != nil { return o, err } }
++	if err = json.Unmarshal(canonicalBody, &o); err != nil { return o, ErrBindingConflict }
++	if o.APIVersion != rbacAPI+"/v1" || o.Kind != "RoleBinding" || metaString(o, "name") != t.Name || metaString(o, "namespace") != t.Namespace || o.RoleRef != (roleReference{APIGroup: rbacAPI, Kind: "Role", Name: t.Role}) || !textID(metaString(o, "uid"), 256) || !textID(metaString(o, "resourceVersion"), 256) { return o, ErrBindingConflict }
++	var annotations map[string]string
++	if err = json.Unmarshal(o.Metadata["annotations"], &annotations); err != nil { return o, ErrBindingConflict }
++	for k, v := range ownedAnnotations(t) { if annotations[k] != v { return o, ErrBindingConflict } }
++	if len(o.Subjects) > 1 || (len(o.Subjects) == 1 && o.Subjects[0] != (subject{Kind: "User", APIGroup: rbacAPI, Name: t.User})) { return o, ErrBindingConflict }
++	return o, nil
++}
++
++func (k *KubernetesBindings) call(ctx context.Context, method string, t Target, collection bool, body any) ([]byte, int, error) {
++	if k == nil || !validTarget(t) { return nil, 0, ErrInvalid }
++	path := "/apis/"+rbacAPI+"/v1/namespaces/"+url.PathEscape(t.Namespace)+"/rolebindings"
++	if !collection { path += "/"+url.PathEscape(t.Name) }
++	var encoded []byte
++	var err error
++	if body != nil { encoded, err = json.Marshal(body); if err != nil { return nil, 0, err } }
++	if len(encoded) > maxBindingBody { return nil, 0, ErrBindingConflict }
++	token, err := k.config.BearerToken(ctx)
++	if err != nil { return nil, 0, ErrUnavailable }
++	if !textID(token, 16384) { return nil, 0, ErrUnavailable }
++	req, err := http.NewRequestWithContext(ctx, method, k.config.Endpoint+path, bytes.NewReader(encoded))
++	if err != nil { return nil, 0, err }
++	req.Header.Set("Authorization", "Bearer "+token)
++	req.Header.Set("Accept", "application/json")
++	if body != nil { req.Header.Set("Content-Type", "application/json") }
++	// RoundTrip, rather than Client.Do, never follows redirects or redirects credentials.
++	response, err := k.config.Transport.RoundTrip(req)
++	if err != nil { if response != nil && response.Body != nil { response.Body.Close() }; return nil, 0, ErrUnavailable }
++	if response == nil || response.Body == nil { return nil, 0, ErrUnavailable }
++	defer response.Body.Close()
++	b, err := io.ReadAll(io.LimitReader(response.Body, maxBindingBody+1))
++	if err != nil || len(b) > maxBindingBody { return nil, response.StatusCode, ErrUnavailable }
++	return b, response.StatusCode, nil
++}
++
++func receipt(o bindingObject) Receipt { return Receipt{UID: metaString(o, "uid"), ResourceVersion: metaString(o, "resourceVersion")} }
++
++func (k *KubernetesBindings) Reserve(parent context.Context, t Target) (Receipt, error) {
++	ctx, cancel := context.WithTimeout(parent, 2*time.Second)
++	defer cancel()
++	b, status, err := k.call(ctx, http.MethodPost, t, true, newBinding(t))
++	if err != nil { return Receipt{}, err }
++	if status != http.StatusCreated { return Receipt{}, ErrBindingConflict }
++	o, err := decodeBinding(b, t)
++	if err != nil { return Receipt{}, err }
++	if len(o.Subjects) != 0 || string(o.Metadata["deletionTimestamp"]) != "" && string(o.Metadata["deletionTimestamp"]) != "null" { return Receipt{}, ErrBindingConflict }
++	return receipt(o), nil
++}
++
++func (k *KubernetesBindings) Activate(parent context.Context, t Target, r Receipt) error {
++	if !textID(r.UID, 256) || !textID(r.ResourceVersion, 256) { return ErrInvalid }
++	ctx, cancel := context.WithTimeout(parent, 2*time.Second)
++	defer cancel()
++	o := newBinding(t)
++	o.Metadata["uid"], o.Metadata["resourceVersion"] = raw(r.UID), raw(r.ResourceVersion)
++	o.Subjects = []subject{{Kind: "User", APIGroup: rbacAPI, Name: t.User}}
++	b, status, err := k.call(ctx, http.MethodPut, t, false, o)
++	if err != nil { return err }
++	// Never retry an ambiguous activation or accept create-on-update (201).
++	if status != http.StatusOK { return ErrBindingConflict }
++	confirmed, err := decodeBinding(b, t)
++	if err != nil { return err }
++	if metaString(confirmed, "uid") != r.UID || metaString(confirmed, "resourceVersion") == r.ResourceVersion || len(confirmed.Subjects) != 1 { return ErrBindingConflict }
++	return nil
++}
++
++func (k *KubernetesBindings) Remove(parent context.Context, t Target, r Receipt) error {
++	ctx, cancel := context.WithTimeout(parent, 2*time.Second)
++	defer cancel()
++	for attempt := 0; attempt < 3; attempt++ {
++		b, status, err := k.call(ctx, http.MethodGet, t, false, nil)
++		if err != nil { return err }
++		if status == http.StatusNotFound { return nil }
++		if status != http.StatusOK { return ErrBindingConflict }
++		o, err := decodeBinding(b, t)
++		if err != nil { return err }
++		if r.UID != "" && r.UID != metaString(o, "uid") { return ErrBindingConflict }
++		// Always write an empty subject set, even if already empty. This advances
++		// the version and fences a delayed Activate using the reserved version.
++		o.Subjects = []subject{}
++		b, status, err = k.call(ctx, http.MethodPut, t, false, o)
++		if err != nil { return err }
++		if status == http.StatusConflict || status == http.StatusNotFound { continue }
++		if status != http.StatusOK { return ErrBindingConflict }
++		cleared, err := decodeBinding(b, t)
++		if err != nil { return err }
++		if metaString(cleared, "uid") != metaString(o, "uid") || metaString(cleared, "resourceVersion") == metaString(o, "resourceVersion") || len(cleared.Subjects) != 0 { return ErrBindingConflict }
++		options := map[string]any{"apiVersion": "v1", "kind": "DeleteOptions", "preconditions": map[string]string{"uid": metaString(cleared, "uid"), "resourceVersion": metaString(cleared, "resourceVersion")}}
++		_, status, err = k.call(ctx, http.MethodDelete, t, false, options)
++		if err != nil { return err }
++		if status == http.StatusConflict { continue }
++		if status != http.StatusOK && status != http.StatusAccepted && status != http.StatusNoContent && status != http.StatusNotFound { return ErrBindingConflict }
++		_, status, err = k.call(ctx, http.MethodGet, t, false, nil)
++		if err != nil { return err }
++		if status == http.StatusNotFound { return nil }
++		// Presence or an error is not a completed removal; retry through a
++		// fresh ownership check, and retain durable revoke_pending meanwhile.
++		if status != http.StatusOK { return ErrBindingConflict }
++	}
++	return ErrBindingConflict
++}
+--- /dev/null
++++ controlplane/internal/jit/bindings_test.go
+@@ -0,0 +1,150 @@
++package jit
++
++import (
++	"context"
++	"encoding/json"
++	"errors"
++	"io"
++	"net/http"
++	"strconv"
++	"strings"
++	"testing"
++	"time"
++)
++
++type roundTripFunc func(*http.Request) (*http.Response, error)
++func (f roundTripFunc) RoundTrip(r *http.Request) (*http.Response, error) { return f(r) }
++func response(status int, body string) *http.Response {
++	return &http.Response{StatusCode: status, Header: http.Header{"Content-Type": []string{"application/json"}}, Body: io.NopCloser(strings.NewReader(body))}
++}
++func adapterTarget() Target {
++	return Target{TenantID: "tenant-a", RequestID: strings.Repeat("A", 26), Name: "jit-"+strings.Repeat("a", 26), Namespace: "tenant-a", Role: "limited-operator", User: "alice", ExpiresAt: time.Date(2026, 10, 25, 13, 0, 0, 0, time.UTC)}
++}
++func adapter(t *testing.T, transport http.RoundTripper) *KubernetesBindings {
++	t.Helper()
++	k, err := NewKubernetesBindings(KubernetesConfig{Endpoint: "https://cluster.invalid", Transport: transport, BearerToken: func(context.Context) (string, error) { return "fixture-token", nil }})
++	if err != nil { t.Fatal(err) }
++	return k
++}
++
++// This in-process protocol fixture is not Kubernetes, RBAC or real-identity
++// acceptance. It enforces UID/version preconditions to expose stale writes.
++type apiFixture struct {
++	t *testing.T
++	object *bindingObject
++	version int
++	calls []string
++	keepDeleted bool
++	conflictClear bool
++}
++func (a *apiFixture) RoundTrip(req *http.Request) (*http.Response, error) {
++	a.calls = append(a.calls, req.Method)
++	if req.Header.Get("Authorization") != "Bearer fixture-token" || req.URL.Scheme != "https" || req.URL.Host != "cluster.invalid" { a.t.Fatal("unexpected authenticated endpoint") }
++	if req.URL.Path != "/apis/"+rbacAPI+"/v1/namespaces/tenant-a/rolebindings" && req.URL.Path != "/apis/"+rbacAPI+"/v1/namespaces/tenant-a/rolebindings/"+adapterTarget().Name { a.t.Fatal("wrong namespace/name path") }
++	encode := func() *http.Response { b, err := json.Marshal(a.object); if err != nil { a.t.Fatal(err) }; return response(http.StatusOK, string(b)) }
++	switch req.Method {
++	case http.MethodPost:
++		if a.object != nil { return response(http.StatusConflict, `{}`), nil }
++		var o bindingObject
++		if err := json.NewDecoder(req.Body).Decode(&o); err != nil { a.t.Fatal(err) }
++		if len(o.Subjects) != 0 { a.t.Fatal("reservation grants access") }
++		a.version++
++		o.Metadata["uid"], o.Metadata["resourceVersion"] = raw("fixture-uid"), raw(strconv.Itoa(a.version))
++		a.object = &o
++		r := encode(); r.StatusCode = http.StatusCreated
++		return r, nil
++	case http.MethodGet:
++		if a.object == nil { return response(http.StatusNotFound, `{}`), nil }
++		return encode(), nil
++	case http.MethodPut:
++		if a.object == nil { return response(http.StatusNotFound, `{}`), nil }
++		var o bindingObject
++		if err := json.NewDecoder(req.Body).Decode(&o); err != nil { a.t.Fatal(err) }
++		if metaString(o, "uid") != metaString(*a.object, "uid") || metaString(o, "resourceVersion") != metaString(*a.object, "resourceVersion") { return response(http.StatusConflict, `{}`), nil }
++		if len(o.Subjects) == 0 && a.conflictClear { a.conflictClear = false; return response(http.StatusConflict, `{}`), nil }
++		a.version++
++		o.Metadata["resourceVersion"] = raw(strconv.Itoa(a.version))
++		a.object = &o
++		return encode(), nil
++	case http.MethodDelete:
++		var opts struct { Preconditions struct { UID string `json:"uid"`; ResourceVersion string `json:"resourceVersion"` } `json:"preconditions"` }
++		if err := json.NewDecoder(req.Body).Decode(&opts); err != nil { a.t.Fatal(err) }
++		if a.object == nil { return response(http.StatusNotFound, `{}`), nil }
++		if opts.Preconditions.UID != metaString(*a.object, "uid") || opts.Preconditions.ResourceVersion != metaString(*a.object, "resourceVersion") || len(a.object.Subjects) != 0 { a.t.Fatal("delete lacks current UID/version or prior clearing") }
++		if !a.keepDeleted { a.object = nil }
++		return response(http.StatusAccepted, `{}`), nil
++	}
++	a.t.Fatal("unexpected method")
++	return nil, errors.New("unexpected method")
++}
++
++func TestKubernetesBindingLifecycleAndFencing(t *testing.T) {
++	api := &apiFixture{t: t, conflictClear: true}
++	k := adapter(t, api)
++	target := adapterTarget()
++	r, err := k.Reserve(context.Background(), target)
++	if err != nil { t.Fatal(err) }
++	if err = k.Activate(context.Background(), target, r); err != nil { t.Fatal(err) }
++	if len(api.object.Subjects) != 1 || api.object.Subjects[0].Name != "alice" { t.Fatal("wrong subject activated") }
++	if err = k.Remove(context.Background(), target, r); err != nil { t.Fatal(err) }
++	if api.object != nil { t.Fatal("external object remains") }
++	if err = k.Activate(context.Background(), target, r); err == nil || api.object != nil { t.Fatal("late activation recreated access") }
++	if err = k.Remove(context.Background(), target, r); err != nil { t.Fatal("absence is not idempotent", err) }
++	if strings.Join(api.calls, ",") != "POST,PUT,GET,PUT,GET,PUT,DELETE,GET,PUT,GET" { t.Fatalf("unexpected mutation/retry sequence: %v", api.calls) }
++}
++
++func TestKubernetesStrictResponseValidation(t *testing.T) {
++	target := adapterTarget()
++	o := newBinding(target)
++	o.Metadata["uid"], o.Metadata["resourceVersion"] = raw("fixture-uid"), raw("1")
++	good, err := json.Marshal(o)
++	if err != nil { t.Fatal(err) }
++	cases := map[string]string{
++		"duplicate": strings.Replace(string(good), `"kind":"RoleBinding"`, `"kind":"RoleBinding","kind":"RoleBinding"`, 1),
++		"case-alias": strings.Replace(string(good), `"kind":`, `"Kind":`, 1),
++		"trailing": string(good)+` {}`,
++		"wrong-role": strings.Replace(string(good), "limited-operator", "admin", 1),
++		"wrong-tenant": strings.Replace(string(good), `"warden.io/tenant":"tenant-a"`, `"warden.io/tenant":"tenant-b"`, 1),
++		"wrong-kind": strings.Replace(string(good), "RoleBinding", "ClusterRoleBinding", 1),
++		"unknown-field": strings.Replace(string(good), `"subjects":[]`, `"subjects":[],"unexpected":true`, 1),
++		"grant-in-reservation": strings.Replace(string(good), `"subjects":[]`, `"subjects":[{"kind":"User","apiGroup":"rbac.authorization.k8s.io","name":"alice"}]`, 1),
++	}
++	for name, body := range cases {
++		t.Run(name, func(t *testing.T) {
++			k := adapter(t, roundTripFunc(func(*http.Request) (*http.Response, error) { return response(http.StatusCreated, body), nil }))
++			if _, err := k.Reserve(context.Background(), target); err == nil { t.Fatal("malformed/foreign granting response accepted") }
++		})
++	}
++	// Kubernetes may omit subjects when the reservation is empty.
++	empty := strings.Replace(string(good), `,"subjects":[]`, "", 1)
++	k := adapter(t, roundTripFunc(func(*http.Request) (*http.Response, error) { return response(http.StatusCreated, empty), nil }))
++	if _, err := k.Reserve(context.Background(), target); err != nil { t.Fatal("empty omitted subjects rejected", err) }
++}
++
++func TestKubernetesRemovalRejectsForeignUIDAndUnconfirmedDeletion(t *testing.T) {
++	api := &apiFixture{t: t}
++	k, target := adapter(t, api), adapterTarget()
++	r, err := k.Reserve(context.Background(), target)
++	if err != nil { t.Fatal(err) }
++	foreign := r; foreign.UID = "foreign-uid"
++	before := len(api.calls)
++	if err = k.Remove(context.Background(), target, foreign); err == nil { t.Fatal("foreign UID removed") }
++	if len(api.calls) != before+1 || api.calls[before] != "GET" { t.Fatal("foreign object mutated") }
++	api.keepDeleted = true
++	if err = k.Remove(context.Background(), target, r); err == nil { t.Fatal("accepted deletion without confirmed absence") }
++	if api.object == nil || len(api.object.Subjects) != 0 { t.Fatal("pending deletion did not retain a fenced empty binding") }
++}
++
++func TestKubernetesTransportErrorsDoNotRetryActivation(t *testing.T) {
++	calls := 0
++	k := adapter(t, roundTripFunc(func(req *http.Request) (*http.Response, error) { calls++; return nil, errors.New("ambiguous transport error with private token") }))
++	if err := k.Activate(context.Background(), adapterTarget(), Receipt{UID: "uid", ResourceVersion: "1"}); !errors.Is(err, ErrUnavailable) { t.Fatalf("unsafe transport error: %v", err) }
++	if calls != 1 { t.Fatal("ambiguous activation retried") }
++	for _, status := range []int{http.StatusTemporaryRedirect, http.StatusUnauthorized, http.StatusForbidden, http.StatusInternalServerError} {
++		calls = 0
++		k = adapter(t, roundTripFunc(func(*http.Request) (*http.Response, error) { calls++; return response(status, `{}`), nil }))
++		if _, err := k.Reserve(context.Background(), adapterTarget()); err == nil || calls != 1 { t.Fatal("failed/redirected response accepted or followed") }
++	}
++	k = adapter(t, roundTripFunc(func(*http.Request) (*http.Response, error) { return response(http.StatusCreated, strings.Repeat(" ", maxBindingBody+1)), nil }))
++	if _, err := k.Reserve(context.Background(), adapterTarget()); !errors.Is(err, ErrUnavailable) { t.Fatal("oversized response accepted") }
++}
+--- /dev/null
++++ controlplane/internal/jit/README.md
+@@ -0,0 +1,80 @@
++# JIT operator access
++
++`New(pool, tenant, config, caller, bindings, clock)` constructs a tenant-bound service.
++`Request(user, role, duration, reason)` persists a request; `Approve(id, approver)`
++grants it; `Expire()` reconciles pending operations and removes expired access.
++Every instance needs trusted dependencies. There is no default allow-all caller,
++implicit credential lookup, automatic API route or background controller.
++
++The caller must bind canonical user strings to its authenticated principal and
++active tenant membership. `Authorize` checks request/approval actions;
++`AuthorizeGrant` checks both requester membership and the approver's permission
++to grant the configured alias to that requester. It is repeated immediately
++before activation. A separate maintenance principal must authorize `expire`
++(with empty user/role arguments). These are integration contracts, not an
++implemented identity provider. Do not expose the string APIs directly as an
++unauthenticated HTTP endpoint. Tenant and role configuration are trusted wiring;
++never derive them from the request. Configure only reviewed, least-privilege
++namespaced Roles, excluding permission to escalate, bind arbitrary roles or
++mutate this control plane. The configuration map is copied at construction.
++
++Requests require `0 < duration <= 2h`; requester and approver must differ.
++Duration begins with the first persisted approval intent, not the request, and
++retries never extend it. Timestamps are rounded downward to PostgreSQL's
++microsecond precision, so a sub-microsecond window can expire before activation.
++Equality with the deadline is expired. A clock used in production must be
++trustworthy and UTC; the tests inject a clock. An active successful retry is an
++idempotent acknowledgement of durable state, not a fresh grant or external
++health check.
++
++Approval commits a `grant_pending` record and real Task1 audit intent first.
++It reserves an empty external binding, persists its UID/resourceVersion,
++rechecks policy/deadline/session, then activates that exact reserved version.
++Only confirmed activation followed by an atomic `active` + `jit.granted`
++transaction returns success. A per-request PostgreSQL session lock serializes
++calls; state predicates and external UID/version fences protect late work.
++The audit head lock is never held across external I/O.
++
++Any incomplete or ambiguous grant is revoked, never resumed on restart.
++Failures attempt removal even when PostgreSQL/audit is unavailable. Durable
++`grant_pending`, `active` or `revoke_pending` remains for retry; raw provider
++errors are not stored. Revocation clears subjects with a fresh version fence,
++deletes the owned object conditionally and confirms absence before committing
++`expired` + `jit.expired`. Audit failure after deletion leaves retryable state;
++confirmed events occur once. `grant_confirmed` distinguishes a committed grant
++from cleanup of an uncertain attempt. Tombstones prevent regranting an ID.
++
++`Expire` is a bounded batch of up to 64 rows. A persisted sequence rotates
++attempted rows so permanent failures cannot starve later due grants. Deployment must run it with an
++authorized maintenance identity at startup before readiness and periodically,
++repeating until drained, alerting and retrying errors. This repository change
++does not wire that scheduler. A failed scheduler or unavailable Kubernetes API
++can leave access beyond its deadline. An expiry annotation is descriptive and
++has no Kubernetes enforcement power. Do not claim a hard external TTL guarantee
++until supervised reconciliation or an independently expiring binding is deployed
++and tested.
++
++`NewKubernetesBindings` provides an HTTP RBAC v1 adapter for namespaced
++RoleBindings. Supply an explicit HTTPS cluster endpoint, a trusted RoundTripper
++that validates TLS/CA and honors cancellation, and a bounded bearer-token
++provider. There is no kubeconfig, environment or host credential discovery.
++Direct RoundTrip calls prevent HTTP redirect following. Tokens and transport
++error bodies are not returned. Responses have a 64KiB cap, duplicate/case-alias
++key checks and exact target/owner/role/subject checks. Reservation is POST with
++no subjects. Activation is a single UID/resourceVersion-conditional PUT;
++ambiguous results are never retried as activation. Removal GETs and validates
++ownership, PUTs empty subjects with the current version, DELETEs with current
++UID/version preconditions, then confirms 404. At most three conflicts are
++reconciled within a two-second operation context. A foreign UID is never deleted.
++
++This adapter's deployment still requires real-cluster verification of RBAC,
++least-privilege credentials, conditional-update/delete behavior (including no
++create-on-update after a late activation), restart/recovery and expiry scheduling.
++The injected RoundTripper fixture tests HTTP contracts only; it is not evidence
++of actual Kubernetes permissions or real authenticated identity.
++
++The original three tests use real PostgreSQL and real Task1 `AppendTx`/`Verify`.
++Additional cases cover policy boundaries, retry/expiry fencing, audit rollback,
++ambiguous operations, restart and deletion/audit retry. No test skips missing
++PostgreSQL. Controlled execution is prepared separately; do not use historical
++unbounded mutable-image launcher scripts.

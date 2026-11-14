@@ -1,0 +1,28 @@
+# Explicit SYNTHETIC mapping envelope. Current raw audit.Event cannot satisfy it.
+message = string!(.message)
+assert!(length(message) <= 16384, "record_size")
+r = object!(parse_json!(message))
+assert!(r.synthetic_context == true, "synthetic_envelope_only")
+assert!(!exists(r.tenant_id) && !exists(r.run_id), "reserved_context_collision")
+event = object!(r.event)
+uid = string!(r.event_uid)
+actor = string!(r.actor_uid)
+ip = string!(r.source_ip)
+operation = string!(event.type)
+tenant = string!(event.tenant_id)
+run = string!(event.run_id)
+assert!(uid != "" && actor != "" && operation != "" && tenant != "" && run != "", "required_context")
+assert!(is_ipv4(ip) || is_ipv6(ip), "source_ip")
+time = to_unix_timestamp(parse_timestamp!(string!(r.original_event_time), format: "%+"), unit: "milliseconds")
+activity = 99
+if operation == "run.created" { activity = 1 }
+if includes(["run.claimed", "run.running", "run.succeeded", "run.failed", "run.interrupted"], operation) { activity = 3 }
+unmapped = {"tenant_id": tenant, "run_id": run, "synthetic_context": true}
+for_each(r) -> |key, value| {
+  if !includes(["synthetic_context", "original_event_time", "event_uid", "actor_uid", "source_ip", "event"], key) {
+    unmapped = set!(unmapped, [key], value)
+  }
+}
+assert!(length(encode_json(unmapped)) <= 2048, "unmapped_size")
+. = {"activity_id": activity, "category_uid": 6, "class_uid": 6003, "type_uid": 600300 + activity, "severity_id": 0, "time": time, "metadata": {"version": "1.3.0", "product": {"name": "Warden Audit", "vendor_name": "Warden"}, "uid": uid}, "api": {"operation": operation}, "actor": {"user": {"uid": actor}}, "src_endpoint": {"ip": ip}, "unmapped": unmapped}
+if activity == 99 { .activity_name = operation }

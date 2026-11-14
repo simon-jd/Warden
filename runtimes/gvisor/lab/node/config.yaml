@@ -1,0 +1,18 @@
+# k3s server config for the gVisor lab node (scripts/k3s_gvisor_lab.sh).
+# Everything a gVisor Job does not need is off. protect-kernel-defaults makes
+# kubelet only check (never write) the global kernel sysctls; the node runs
+# in a privileged container, so this keeps it from changing the host.
+node-name: warden-gvisor
+write-kubeconfig-mode: "0600"
+disable: [traefik, servicelb, metrics-server, local-storage, coredns]
+disable-network-policy: true
+disable-kube-proxy: true
+disable-cloud-controller: true
+disable-helm-controller: true
+flannel-backend: none
+snapshotter: native
+pause-image: docker.io/warden-lab/pause:1
+kubelet-arg:
+  - protect-kernel-defaults=true
+  - fail-swap-on=false
+  - pod-max-pids=1024

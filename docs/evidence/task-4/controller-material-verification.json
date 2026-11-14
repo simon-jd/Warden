@@ -1,0 +1,30 @@
+{
+  "utc": "2026-10-24T19:18:28.537651+00:00",
+  "scope": "Controller independent hash/size check only; no extraction, executable/device/VM operation or runtime acceptance. Kernel/config expected hashes are implementer computed pins, not publisher signatures. Task4 source is not yet frozen.",
+  "materials": [
+    {
+      "file": ".cache/warden-lab/firecracker-materials/firecracker-v1.17.0-x86_64.tgz",
+      "bytes": 7464385,
+      "sha256": "06094a1108ae9e82aa4c23a775aa92758f53f1175d422270d9d6162cb9ade558",
+      "expected_origin": "publisher-checksum"
+    },
+    {
+      "file": ".cache/warden-lab/firecracker-materials/vmlinux-6.18.54",
+      "bytes": 27893008,
+      "sha256": "da5e0041fb31fcc7337026da9e2b64fb7694b4eed760cc9b5e8fe54e52fa8188",
+      "expected_origin": "locally-computed-pin"
+    },
+    {
+      "file": ".cache/warden-lab/firecracker-materials/vmlinux-6.18.54.config",
+      "bytes": 101680,
+      "sha256": "7dbdc7445d01d3dd049b1e653534bde71266d59afaf9c1de50a8a6b8a8c138d0",
+      "expected_origin": "locally-computed-pin"
+    }
+  ],
+  "release_checksum_file": {
+    "file": ".cache/warden-lab/firecracker-materials/firecracker-v1.17.0-x86_64.tgz.sha256.txt",
+    "bytes": 97,
+    "sha256": "b89dea3edf551929f151b95d31168677ad2b8bb257d1d87a08470f7299749b7c",
+    "exact_release_entry_matches": true
+  }
+}

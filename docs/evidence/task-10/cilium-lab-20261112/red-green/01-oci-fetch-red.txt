@@ -1,0 +1,55 @@
+# RED: scripts/test_oci_fetch.py before scripts/oci_fetch.py exists
+# head 7d11cdf, 2026-11-12T19:36:05-08:00
+?? docs/evidence/task-10/cilium-lab-20261112/
+?? scripts/test_oci_fetch.py
+FFFFF
+======================================================================
+FAIL: test_archive_has_the_pinned_platform_image_and_its_name (test_oci_fetch.FetchTest.test_archive_has_the_pinned_platform_image_and_its_name)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_oci_fetch.py", line 93, in setUp
+    self.assertIsNotNone(SPEC, 'scripts/oci_fetch.py is not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : scripts/oci_fetch.py is not implemented
+
+======================================================================
+FAIL: test_reference_needs_a_digest_and_maps_docker_hub (test_oci_fetch.FetchTest.test_reference_needs_a_digest_and_maps_docker_hub)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_oci_fetch.py", line 93, in setUp
+    self.assertIsNotNone(SPEC, 'scripts/oci_fetch.py is not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : scripts/oci_fetch.py is not implemented
+
+======================================================================
+FAIL: test_tampered_blob_writes_nothing (test_oci_fetch.FetchTest.test_tampered_blob_writes_nothing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_oci_fetch.py", line 93, in setUp
+    self.assertIsNotNone(SPEC, 'scripts/oci_fetch.py is not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : scripts/oci_fetch.py is not implemented
+
+======================================================================
+FAIL: test_token_is_not_sent_to_the_redirect_target (test_oci_fetch.FetchTest.test_token_is_not_sent_to_the_redirect_target)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_oci_fetch.py", line 93, in setUp
+    self.assertIsNotNone(SPEC, 'scripts/oci_fetch.py is not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : scripts/oci_fetch.py is not implemented
+
+======================================================================
+FAIL: test_wrong_pin_writes_nothing (test_oci_fetch.FetchTest.test_wrong_pin_writes_nothing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/scripts/test_oci_fetch.py", line 93, in setUp
+    self.assertIsNotNone(SPEC, 'scripts/oci_fetch.py is not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : scripts/oci_fetch.py is not implemented
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=5)
+exit=1

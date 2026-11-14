@@ -1,0 +1,82 @@
+[
+  {
+    "kind": "fresh_preflight",
+    "request": {
+      "cmd": "ulimit -c 0\nulimit -n 64\nulimit -v 262144\nulimit -f 8192\nulimit -t 20\n/usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -B scripts/azure_guard.py preflight --additional-bytes 6073741824 --service-memory-bytes 11000000000 --download-bytes 0",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "sandbox_permissions": "require_escalated",
+      "justification": "为原Task14 fix1唯一34项受影响覆盖执行既定fresh磁盘/服务内存门禁，保留Q与旧UNKNOWN预留。",
+      "yield_time_ms": 1000,
+      "max_output_tokens": 3000
+    },
+    "result": {
+      "chunk_id": "1ef006",
+      "wall_time_seconds": 0.256650189,
+      "exit_code": 0,
+      "original_token_count": 56,
+      "output": "{\"additional_bytes\": \"6073741824\", \"at\": \"2026-10-26T01:59:10Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 260917272576, \"project_allocated_bytes\": 4650119168, \"service_memory_bytes\": \"11000000000\"}\n"
+    }
+  },
+  {
+    "kind": "sole_actual",
+    "request": {
+      "cmd": "/usr/bin/timeout --signal=TERM --kill-after=4s 86s /usr/bin/python3 -I -B /home/postedism/Desktop/Warden/.superpowers/sdd/2-warden-security-plan/task-14-fix1-cover-command.py.txt",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "sandbox_permissions": "require_escalated",
+      "justification": "执行已全文核对且fresh资源通过的原Task14 fix1唯一34项受影响覆盖，不运行整批或其他Task。",
+      "yield_time_ms": 1000,
+      "max_output_tokens": 3000
+    },
+    "result": {
+      "chunk_id": "5609cf",
+      "wall_time_seconds": 1.000806029,
+      "session_id": 90514,
+      "original_token_count": 0,
+      "output": ""
+    },
+    "polls": [
+      {
+        "request": {
+          "session_id": 90514,
+          "chars": "",
+          "yield_time_ms": 20000,
+          "max_output_tokens": 3000
+        },
+        "result": {
+          "chunk_id": "5a392f",
+          "wall_time_seconds": 0.917896713,
+          "exit_code": 0,
+          "original_token_count": 299,
+          "output": "{\"candidate_fix1_affected_cover\": true, \"case_counts\": {\"FAIL\": 0, \"PASS\": 34, \"SKIP\": 0}, \"decision\": \"STOP_FOR_ROOT\", \"elapsed_seconds\": 7.991837832028978, \"expected_cases\": 34, \"go_returncode\": 0, \"namespace_allocated_bytes\": 61190144, \"own_group_absent\": true, \"post_hashes\": {\"go.mod\": \"bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa\", \"go.sum\": \"cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0\", \"respond/README.md\": \"581a18f7aadf7429c82d8fbcf0c4ad7c0ff55bc3911cb06ae5479a7fa327ce74\", \"respond/actions.go\": \"7224f114e7b9ef5aa926e43299a54fe01f9e90da329b6cd49d953a28bbbf2b02\", \"respond/executor.go\": \"36a055922fcdb82464f058cac481beecdc8b38b4a89dd3f7cce261127cd06244\", \"respond/executor_test.go\": \"aadc94db405e2a970737b19ecfddb0eb790f84be3fd59aaa97fd312d8b3bee0e\", \"respond/ledger.go\": \"7ecde030467a5f69890fff24b0ec255ede41c5b1b61de9f40f070c2f19d8be1c\", \"respond/ledger_test.go\": \"4720fec3b18c3f4602632084f6a016c7b2ffcb131026d0828e0d72356e70290e\", \"respond/playbooks/suspend-tenant.yaml\": \"8cdfbdfdfe5bac22452006f0af89b22e9f50a05a32a454e081db114b6402acfa\"}, \"post_mem_available\": 85486526464, \"raw_stderr_bytes\": 0, \"raw_stdout_bytes\": 4660, \"reason\": \"\"}\n"
+        }
+      }
+    ]
+  },
+  {
+    "kind": "root_full_postread_and_archive",
+    "request": {
+      "cmd": "/usr/bin/python3 -I -B - <<'PY'\nimport os,stat,pathlib,hashlib,json\nW=pathlib.Path('/home/postedism/Desktop/Warden')\nN=W/'.cache/task14-fix1-cover-20261025-a'\nD=W/'docs/evidence/task-14/fix1-cover-first-20261025'\nassert os.getuid()==1000 and not os.path.lexists(D)\nD.mkdir(mode=0o755)\nrecord=[]\nfor name in ['stdout.raw','stderr.raw','status.json','request.json']:\n p=N/name\n fd=os.open(p,os.O_RDONLY|os.O_NOFOLLOW|os.O_CLOEXEC)\n try:\n  s=os.fstat(fd)\n  assert stat.S_ISREG(s.st_mode) and s.st_uid==1000 and s.st_nlink==1 and s.st_size<=65536\n  raw=os.read(fd,65537)\n  a=os.fstat(fd)\n  assert len(raw)==s.st_size and (s.st_dev,s.st_ino,s.st_size,s.st_mtime_ns,s.st_ctime_ns)==(a.st_dev,a.st_ino,a.st_size,a.st_mtime_ns,a.st_ctime_ns)\n finally:os.close(fd)\n out=os.open(D/name,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o644)\n with os.fdopen(out,'wb') as f:f.write(raw)\n record.append({'path':str(p.relative_to(W)),'copy':str((D/name).relative_to(W)),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()})\n print(name+'\\n'+raw.decode())\nprint(json.dumps(record,sort_keys=True))\nPY",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "sandbox_permissions": "require_escalated",
+      "justification": "按原审批路径全文读取Task14 fix1唯一受影响覆盖原件并逐字归档至新公开目录，不改旧记录。",
+      "yield_time_ms": 1000,
+      "max_output_tokens": 8000
+    },
+    "result": {
+      "chunk_id": "2d3a64",
+      "wall_time_seconds": 0.000039381,
+      "exit_code": 0,
+      "original_token_count": 2364,
+      "output": "stdout.raw\n=== RUN   TestConcurrentDuplicateAndCloseRetainsLock\n--- PASS: TestConcurrentDuplicateAndCloseRetainsLock (0.04s)\n=== RUN   TestDurableIncompleteIntentSuppressesRestart\n--- PASS: TestDurableIncompleteIntentSuppressesRestart (0.03s)\n=== RUN   TestDurableBindingConflictAndTenantKeys\n--- PASS: TestDurableBindingConflictAndTenantKeys (0.06s)\n=== RUN   TestCorruptJournalFailsClosedWithoutRepair\n=== RUN   TestCorruptJournalFailsClosedWithoutRepair/short-payload\n=== RUN   TestCorruptJournalFailsClosedWithoutRepair/checksum\n=== RUN   TestCorruptJournalFailsClosedWithoutRepair/duplicate-intent\n=== RUN   TestCorruptJournalFailsClosedWithoutRepair/duplicate-complete\n=== RUN   TestCorruptJournalFailsClosedWithoutRepair/wrong-fingerprint\n=== RUN   TestCorruptJournalFailsClosedWithoutRepair/bad-digest\n=== RUN   TestCorruptJournalFailsClosedWithoutRepair/unknown-key\n=== RUN   TestCorruptJournalFailsClosedWithoutRepair/duplicate-key\n=== RUN   TestCorruptJournalFailsClosedWithoutRepair/short-prefix\n=== RUN   TestCorruptJournalFailsClosedWithoutRepair/oversized-record\n=== RUN   TestCorruptJournalFailsClosedWithoutRepair/complete-without-intent\n=== RUN   TestCorruptJournalFailsClosedWithoutRepair/version\n=== RUN   TestCorruptJournalFailsClosedWithoutRepair/bad-status\n=== RUN   TestCorruptJournalFailsClosedWithoutRepair/case-alias\n--- PASS: TestCorruptJournalFailsClosedWithoutRepair (0.26s)\n    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/short-payload (0.02s)\n    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/checksum (0.02s)\n    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/duplicate-intent (0.02s)\n    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/duplicate-complete (0.03s)\n    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/wrong-fingerprint (0.02s)\n    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/bad-digest (0.02s)\n    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/unknown-key (0.02s)\n    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/duplicate-key (0.02s)\n    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/short-prefix (0.02s)\n    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/oversized-record (0.02s)\n    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/complete-without-intent (0.02s)\n    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/version (0.02s)\n    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/bad-status (0.02s)\n    --- PASS: TestCorruptJournalFailsClosedWithoutRepair/case-alias (0.02s)\n=== RUN   TestPrivateJournalPathAndPermissions\n=== RUN   TestPrivateJournalPathAndPermissions/directory-mode\n=== RUN   TestPrivateJournalPathAndPermissions/file-mode\n=== RUN   TestPrivateJournalPathAndPermissions/symlink-file\n=== RUN   TestPrivateJournalPathAndPermissions/symlink-parent\n=== RUN   TestPrivateJournalPathAndPermissions/hardlink\n=== RUN   TestPrivateJournalPathAndPermissions/fifo\n=== RUN   TestPrivateJournalPathAndPermissions/oversized\n--- PASS: TestPrivateJournalPathAndPermissions (0.04s)\n    --- PASS: TestPrivateJournalPathAndPermissions/directory-mode (0.00s)\n    --- PASS: TestPrivateJournalPathAndPermissions/file-mode (0.01s)\n    --- PASS: TestPrivateJournalPathAndPermissions/symlink-file (0.01s)\n    --- PASS: TestPrivateJournalPathAndPermissions/symlink-parent (0.00s)\n    --- PASS: TestPrivateJournalPathAndPermissions/hardlink (0.01s)\n    --- PASS: TestPrivateJournalPathAndPermissions/fifo (0.00s)\n    --- PASS: TestPrivateJournalPathAndPermissions/oversized (0.01s)\n=== RUN   TestPartialWriteAndSyncFailuresSuppressAttempts\n=== RUN   TestPartialWriteAndSyncFailuresSuppressAttempts/intent-write\n=== RUN   TestPartialWriteAndSyncFailuresSuppressAttempts/intent-sync\n=== RUN   TestPartialWriteAndSyncFailuresSuppressAttempts/completion-write\n=== RUN   TestPartialWriteAndSyncFailuresSuppressAttempts/completion-sync\n--- PASS: TestPartialWriteAndSyncFailuresSuppressAttempts (0.12s)\n    --- PASS: TestPartialWriteAndSyncFailuresSuppressAttempts/intent-write (0.03s)\n    --- PASS: TestPartialWriteAndSyncFailuresSuppressAttempts/intent-sync (0.03s)\n    --- PASS: TestPartialWriteAndSyncFailuresSuppressAttempts/completion-write (0.04s)\n    --- PASS: TestPartialWriteAndSyncFailuresSuppressAttempts/completion-sync (0.03s)\n=== RUN   TestJournalCreationDurabilityBeforeClient\n=== RUN   TestJournalCreationDurabilityBeforeClient/failure\n=== RUN   TestJournalCreationDurabilityBeforeClient/success\n--- PASS: TestJournalCreationDurabilityBeforeClient (0.04s)\n    --- PASS: TestJournalCreationDurabilityBeforeClient/failure (0.01s)\n    --- PASS: TestJournalCreationDurabilityBeforeClient/success (0.03s)\nPASS\nok  \twarden/respond\t0.579s\n\nstderr.raw\n\nstatus.json\n{\"candidate_fix1_affected_cover\": true, \"case_counts\": {\"FAIL\": 0, \"PASS\": 34, \"SKIP\": 0}, \"decision\": \"STOP_FOR_ROOT\", \"elapsed_seconds\": 7.991837832028978, \"expected_cases\": 34, \"go_returncode\": 0, \"namespace_allocated_bytes\": 61190144, \"own_group_absent\": true, \"post_hashes\": {\"go.mod\": \"bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa\", \"go.sum\": \"cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0\", \"respond/README.md\": \"581a18f7aadf7429c82d8fbcf0c4ad7c0ff55bc3911cb06ae5479a7fa327ce74\", \"respond/actions.go\": \"7224f114e7b9ef5aa926e43299a54fe01f9e90da329b6cd49d953a28bbbf2b02\", \"respond/executor.go\": \"36a055922fcdb82464f058cac481beecdc8b38b4a89dd3f7cce261127cd06244\", \"respond/executor_test.go\": \"aadc94db405e2a970737b19ecfddb0eb790f84be3fd59aaa97fd312d8b3bee0e\", \"respond/ledger.go\": \"7ecde030467a5f69890fff24b0ec255ede41c5b1b61de9f40f070c2f19d8be1c\", \"respond/ledger_test.go\": \"4720fec3b18c3f4602632084f6a016c7b2ffcb131026d0828e0d72356e70290e\", \"respond/playbooks/suspend-tenant.yaml\": \"8cdfbdfdfe5bac22452006f0af89b22e9f50a05a32a454e081db114b6402acfa\"}, \"post_mem_available\": 85486526464, \"raw_stderr_bytes\": 0, \"raw_stdout_bytes\": 4660, \"reason\": \"\"}\nrequest.json\n{\"argv\": [\"/home/postedism/Desktop/Warden/.cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/bin/go\", \"test\", \"-mod=readonly\", \"-buildvcs=false\", \"-vet=off\", \"-p=1\", \"-parallel=1\", \"-count=1\", \"-timeout=20s\", \"-run\", \"^(TestJournalCreationDurabilityBeforeClient|TestConcurrentDuplicateAndCloseRetainsLock|TestDurableIncompleteIntentSuppressesRestart|TestDurableBindingConflictAndTenantKeys|TestCorruptJournalFailsClosedWithoutRepair|TestPrivateJournalPathAndPermissions|TestPartialWriteAndSyncFailuresSuppressAttempts)$\", \"-v\", \"./respond\"], \"cwd\": \"/home/postedism/Desktop/Warden\", \"env_overrides\": {\"CGO_ENABLED\": \"0\", \"GOARCH\": \"amd64\", \"GOCACHE\": \"/home/postedism/Desktop/Warden/.cache/task14-fix1-cover-20261025-a/cache\", \"GOENV\": \"off\", \"GOMAXPROCS\": \"2\", \"GOMEMLIMIT\": \"512MiB\", \"GOMODCACHE\": \"/home/postedism/Desktop/Warden/.cache/task14-fix1-cover-20261025-a/modcache\", \"GOOS\": \"linux\", \"GOPATH\": \"/home/postedism/Desktop/Warden/.cache/task14-fix1-cover-20261025-a/gopath\", \"GOPROXY\": \"off\", \"GOROOT\": \"/home/postedism/Desktop/Warden/.cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64\", \"GOSUMDB\": \"off\", \"GOTMPDIR\": \"/home/postedism/Desktop/Warden/.cache/task14-fix1-cover-20261025-a/tmp\", \"GOTOOLCHAIN\": \"local\", \"GOVCS\": \"*:off\", \"GOWORK\": \"off\", \"PATH\": \"/usr/bin:/bin\", \"TEST_TELEMETRY_DIR\": \"/home/postedism/Desktop/Warden/.cache/task14-fix1-cover-20261025-a/telemetry\", \"TMPDIR\": \"/home/postedism/Desktop/Warden/.cache/task14-fix1-cover-20261025-a/tmp\", \"XDG_CONFIG_HOME\": \"/home/postedism/Desktop/Warden/.cache/task14-fix1-cover-20261025-a/config\"}, \"hashes\": {\"go.mod\": \"bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa\", \"go.sum\": \"cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0\", \"respond/README.md\": \"581a18f7aadf7429c82d8fbcf0c4ad7c0ff55bc3911cb06ae5479a7fa327ce74\", \"respond/actions.go\": \"7224f114e7b9ef5aa926e43299a54fe01f9e90da329b6cd49d953a28bbbf2b02\", \"respond/executor.go\": \"36a055922fcdb82464f058cac481beecdc8b38b4a89dd3f7cce261127cd06244\", \"respond/executor_test.go\": \"aadc94db405e2a970737b19ecfddb0eb790f84be3fd59aaa97fd312d8b3bee0e\", \"respond/ledger.go\": \"7ecde030467a5f69890fff24b0ec255ede41c5b1b61de9f40f070c2f19d8be1c\", \"respond/ledger_test.go\": \"4720fec3b18c3f4602632084f6a016c7b2ffcb131026d0828e0d72356e70290e\", \"respond/playbooks/suspend-tenant.yaml\": \"8cdfbdfdfe5bac22452006f0af89b22e9f50a05a32a454e081db114b6402acfa\"}, \"limits\": {\"as_perprocess\": 4294967296, \"cpu_perprocess\": 60, \"file_perprocess\": 268435456, \"output_combined\": 65536, \"reap_end\": 84, \"signal_end\": 82, \"status_target\": 85, \"whole\": 90, \"work_end\": 70}, \"pre_mem_available\": 86170243072}\n[{\"bytes\": 4660, \"copy\": \"docs/evidence/task-14/fix1-cover-first-20261025/stdout.raw\", \"path\": \".cache/task14-fix1-cover-20261025-a/stdout.raw\", \"sha256\": \"789f2390c8ed37b9e04ee569c7392d38cbe6891942826f24966443a13ae0d0bd\"}, {\"bytes\": 0, \"copy\": \"docs/evidence/task-14/fix1-cover-first-20261025/stderr.raw\", \"path\": \".cache/task14-fix1-cover-20261025-a/stderr.raw\", \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\"}, {\"bytes\": 1193, \"copy\": \"docs/evidence/task-14/fix1-cover-first-20261025/status.json\", \"path\": \".cache/task14-fix1-cover-20261025-a/status.json\", \"sha256\": \"13fafbcb60f4c2f14019d876fc96736e65aefaad8ff3a0ccc2b5224eb31be8aa\"}, {\"bytes\": 2655, \"copy\": \"docs/evidence/task-14/fix1-cover-first-20261025/request.json\", \"path\": \".cache/task14-fix1-cover-20261025-a/request.json\", \"sha256\": \"c6fe16a4ccad54994b7228145b20b7c3dbc37b7c8a7c19fd9baa28a80d6fdf79\"}]\n"
+    }
+  }
+]

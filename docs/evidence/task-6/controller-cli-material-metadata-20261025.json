@@ -1,0 +1,72 @@
+{
+  "ended_utc": "2026-10-25T13:31:40.879289+00:00",
+  "files": [
+    {
+      "md5_package_correspondence_only": "5e64027d462e881f0d312a872a4a8b19",
+      "metadata": {
+        "blocks": 92488,
+        "ctime_ns": 1792187858827506512,
+        "dev": 66307,
+        "gid": 0,
+        "ino": 112603433,
+        "mode": 33261,
+        "mtime_ns": 1792002755000000000,
+        "nlink": 1,
+        "size": 47353784,
+        "uid": 0
+      },
+      "path": "/usr/bin/docker",
+      "sha256": "32d26c4b23b14f4bd223338a10df671b8a247e69d959c2df01a01e94881705d1"
+    },
+    {
+      "md5_package_correspondence_only": "3566c8c1560837361c1cdfb02a3c00ac",
+      "metadata": {
+        "blocks": 4968,
+        "ctime_ns": 1792847437518470611,
+        "dev": 66307,
+        "gid": 0,
+        "ino": 29886780,
+        "mode": 33188,
+        "mtime_ns": 1792847437508470678,
+        "nlink": 1,
+        "size": 2542378,
+        "uid": 0
+      },
+      "path": "/var/lib/dpkg/status",
+      "sha256": "8aba5b204e3fb1a4773ae4e7c87ac16476e8be092cb27ce3c26b26c929aaa101"
+    },
+    {
+      "md5_package_correspondence_only": "17ecc2a1e3c79da4b5e696356561efe0",
+      "metadata": {
+        "blocks": 32,
+        "ctime_ns": 1792187858968505554,
+        "dev": 66307,
+        "gid": 0,
+        "ino": 29889042,
+        "mode": 33188,
+        "mtime_ns": 1792002755000000000,
+        "nlink": 1,
+        "size": 14132,
+        "uid": 0
+      },
+      "path": "/var/lib/dpkg/info/docker-ce-cli.md5sums",
+      "sha256": "3e8405bbfaa558491128fc3ff31915e89a1c6b96e0497fd4b4fe25b1c55b1f30"
+    }
+  ],
+  "measured_entry_elapsed_seconds": 0.09707210108172148,
+  "packages": [
+    {
+      "Architecture": "amd64",
+      "Package": "docker-ce-cli",
+      "Source": "docker-ce",
+      "Status": "install ok installed",
+      "Version": "5:29.9.1-1~ubuntu.26.04~resolute",
+      "binary_matches_local_package_md5": true
+    }
+  ],
+  "provenance_limit": "local root-owned package correspondence, not independent vendor attestation or installed-source equivalence",
+  "scope": "public binary and local package metadata only; no Docker execution, daemon, config, HOME, credential, private cache or runtime observation",
+  "started_utc": "2026-10-25T13:31:40.793354+00:00",
+  "timing_limit": "30s from earliest measured Python entry; interpreter startup not externally bounded",
+  "version": 1
+}

@@ -1,0 +1,23 @@
+{
+  "source": "05505bebb316a180c39e6e75f4a101e3c57224f1",
+  "source_paths": [
+    "docs/firecracker-recovery.md",
+    "scripts/firecracker_recovery.py",
+    "scripts/test_firecracker_recovery.py"
+  ],
+  "changed_existing_functions": [
+    "build_archive",
+    "execute_phase",
+    "main",
+    "new_phase",
+    "runtime_inputs"
+  ],
+  "added_functions": 13,
+  "unchanged_functions": 33,
+  "unchanged_bindings": 14,
+  "old_indexed_artifacts": 15,
+  "new_indexed_artifacts": 11,
+  "report_and_test_log_bound": true,
+  "tests_or_actual_operations_rerun": false,
+  "all_match": true
+}

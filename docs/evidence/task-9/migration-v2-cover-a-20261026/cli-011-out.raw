@@ -1,0 +1,4 @@
+=== RUN   TestJITMigrationPreservesVersionTwoRunsAndAudit
+--- PASS: TestJITMigrationPreservesVersionTwoRunsAndAudit (0.06s)
+PASS
+ok  	warden/controlplane/internal/store	0.059s

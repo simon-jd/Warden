@@ -1,0 +1,8 @@
+command: ordinary-UID local Docker metadata/owned-object + project/sysctl postflight; no runtime launch
+{"uid": 1000, "root_uid": 0, "home_uid": 0}
+{"Name": "postedism-ubuntu-system-selfuse", "CgroupVersion": "2", "SecurityOptions": ["name=apparmor,profile=default", "name=seccomp,profile=builtin", "name=cgroupns"]}
+{"project_containers": [], "project_images": [], "outstanding_bytes": 0}
+{"protected_host_sysctls": {"vm/overcommit_memory": "1", "vm/panic_on_oom": "0", "kernel/panic": "10", "kernel/panic_on_oops": "1", "kernel/keys/root_maxkeys": "1000000", "kernel/keys/root_maxbytes": "25000000"}}
+{"session": "/home/postedism/Desktop/Warden/.cache/warden-lab/docker-591a1ca1289f8529efea47978cfbc350", "remaining_files": ["charge.json", "identity.json", "manifest.json"], "mode": "0o700", "uid": 1000, "no_rootfs_tar": true, "no_inner_data": true}
+{"additional_bytes": "0", "at": "2026-10-24T06:32:00Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 359223398400, "project_allocated_bytes": 3020406784, "service_memory_bytes": "0"}
+postflight PASS; no owned objects/outstanding charges; no host sysctl fixup

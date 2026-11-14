@@ -1,0 +1,108 @@
+# Task 14 review fix round 1: RED and GREEN logs (C1 507bab1, C3 6ce981e, C6 89c0afd)
+# Review fix round 1 (2026-11-12, worktree cloud-identity, home-ubuntu). Each RED was run on the commit named in its
+# header with only the new or changed tests applied, before the fix; GREEN after the fix. Logs copied verbatim from the
+# run (kept outside the repo until now); test IDs are made up; the real subscription ID never appears (D11 uses <SUB>).
+
+################ C1: AzureCLI proves a missing password credential is gone, certificate and federated cases (507bab1)
+
+======== c1-red.log
+# C1 RED at 2833a1d + new tests only, 2026-11-12T17:20:21Z
+$ go test -count=1 -run TestAzureCLI -v ./respond
+=== RUN   TestAzureCLIDeletesAppCredential
+--- PASS: TestAzureCLIDeletesAppCredential (0.00s)
+=== RUN   TestAzureCLIMissingPasswordIsContainedOnlyWhenListedNowhere
+    adapters_test.go:230: az calls ["ad app credential delete --id 3f2b8c1e-4d5a-4b6c-9e7f-0a1b2c3d4e5f --key-id 9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d --only-show-errors"]
+--- FAIL: TestAzureCLIMissingPasswordIsContainedOnlyWhenListedNowhere (0.00s)
+=== RUN   TestAzureCLIDeletesCertificateCredentialWithCert
+    adapters_test.go:255: az calls ["ad app credential delete --id 3f2b8c1e-4d5a-4b6c-9e7f-0a1b2c3d4e5f --key-id 9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d --only-show-errors"]
+--- FAIL: TestAzureCLIDeletesCertificateCredentialWithCert (0.00s)
+=== RUN   TestAzureCLIRefusesFederatedCredential
+    adapters_test.go:269: federated credential: <nil>
+--- FAIL: TestAzureCLIRefusesFederatedCredential (0.00s)
+=== RUN   TestAzureCLIMissingPasswordUnprovenIsNotContained
+    adapters_test.go:283: app unreadable counted as contained
+--- FAIL: TestAzureCLIMissingPasswordUnprovenIsNotContained (0.00s)
+FAIL
+FAIL	warden/respond	0.021s
+FAIL
+
+======== c1-green.log
+# C1 GREEN, 2026-11-12T17:20:52Z
+$ go test -count=1 -run TestAzureCLI -v ./respond
+=== RUN   TestAzureCLIDeletesAppCredential
+--- PASS: TestAzureCLIDeletesAppCredential (0.00s)
+=== RUN   TestAzureCLIMissingPasswordIsContainedOnlyWhenListedNowhere
+--- PASS: TestAzureCLIMissingPasswordIsContainedOnlyWhenListedNowhere (0.02s)
+=== RUN   TestAzureCLIDeletesCertificateCredentialWithCert
+--- PASS: TestAzureCLIDeletesCertificateCredentialWithCert (0.02s)
+=== RUN   TestAzureCLIRefusesFederatedCredential
+--- PASS: TestAzureCLIRefusesFederatedCredential (0.01s)
+=== RUN   TestAzureCLIMissingPasswordUnprovenIsNotContained
+--- PASS: TestAzureCLIMissingPasswordUnprovenIsNotContained (0.04s)
+PASS
+ok  	warden/respond	0.099s
+
+################ C3: per-action budget, 30 s for the Azure CLI action (6ce981e)
+
+======== c3-red.log
+# C3 RED at 507bab1 + new tests only, 2026-11-12T17:21:44Z
+$ go test -count=1 -run "TestAzureActionBudgetFitsTheCLI|TestActionBudgetPerAction" -v ./respond
+=== RUN   TestAzureActionBudgetFitsTheCLI
+    containment_test.go:227: 2.5 s az = {Status:Unknown NoOp:false ApprovalNeeded:false Resource:{Type:azure_app_credential ID:3f2b8c1e-4d5a-4b6c-9e7f-0a1b2c3d4e5f/9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d}}, response outcome unknown; automatic retry suppressed
+--- FAIL: TestAzureActionBudgetFitsTheCLI (2.53s)
+=== RUN   TestActionBudgetPerAction
+    containment_test.go:251: DisableAzureServicePrincipalCredential action budget 1.999986162s, want 29s..30s
+--- FAIL: TestActionBudgetPerAction (0.02s)
+FAIL
+FAIL	warden/respond	2.552s
+FAIL
+
+======== c3-green.log
+# C3 GREEN, 2026-11-12T17:22:01Z
+$ go test -count=1 -run "TestAzureActionBudgetFitsTheCLI|TestActionBudgetPerAction|TestClientErrorPanicAndCooperativeCancellationStayUnknown|TestMissingPortsAndAuthorityErrorsFailClosed|TestCancelledBeforeReservationAndAfterIntent|TestApprovalExpiresAfterIntentDoesNotMutate" -v ./respond
+=== RUN   TestAzureActionBudgetFitsTheCLI
+--- PASS: TestAzureActionBudgetFitsTheCLI (2.54s)
+=== RUN   TestActionBudgetPerAction
+--- PASS: TestActionBudgetPerAction (0.06s)
+=== RUN   TestMissingPortsAndAuthorityErrorsFailClosed
+=== RUN   TestMissingPortsAndAuthorityErrorsFailClosed/nil-authority
+=== RUN   TestMissingPortsAndAuthorityErrorsFailClosed/nil-client
+=== RUN   TestMissingPortsAndAuthorityErrorsFailClosed/error
+=== RUN   TestMissingPortsAndAuthorityErrorsFailClosed/panic
+=== RUN   TestMissingPortsAndAuthorityErrorsFailClosed/cancel
+=== RUN   TestMissingPortsAndAuthorityErrorsFailClosed/empty-proof
+=== RUN   TestMissingPortsAndAuthorityErrorsFailClosed/large-proof
+=== RUN   TestMissingPortsAndAuthorityErrorsFailClosed/large-requester
+--- PASS: TestMissingPortsAndAuthorityErrorsFailClosed (0.00s)
+=== RUN   TestClientErrorPanicAndCooperativeCancellationStayUnknown
+=== RUN   TestClientErrorPanicAndCooperativeCancellationStayUnknown/error
+=== RUN   TestClientErrorPanicAndCooperativeCancellationStayUnknown/panic
+=== RUN   TestClientErrorPanicAndCooperativeCancellationStayUnknown/cancel
+=== RUN   TestClientErrorPanicAndCooperativeCancellationStayUnknown/deadline
+--- PASS: TestClientErrorPanicAndCooperativeCancellationStayUnknown (1.07s)
+=== RUN   TestCancelledBeforeReservationAndAfterIntent
+--- PASS: TestCancelledBeforeReservationAndAfterIntent (0.02s)
+=== RUN   TestApprovalExpiresAfterIntentDoesNotMutate
+--- PASS: TestApprovalExpiresAfterIntentDoesNotMutate (0.02s)
+PASS
+ok  	warden/respond	3.718s
+
+################ C6: azurelab records the source commit and dirty state (89c0afd)
+
+======== c6-red.log
+# C6 RED at 6ce981e + new test only, 2026-11-12T17:22:54Z
+$ go test -count=1 -run TestSourceStateRecordsCommitAndDirtyState -v ./respond/azurelab
+# warden/respond/azurelab [warden/respond/azurelab.test]
+respond/azurelab/azurelab_test.go:255:12: undefined: SourceState
+respond/azurelab/azurelab_test.go:265:13: undefined: SourceState
+respond/azurelab/azurelab_test.go:273:15: undefined: SourceState
+FAIL	warden/respond/azurelab [build failed]
+FAIL
+
+======== c6-green.log
+# C6 GREEN, 2026-11-12T17:23:11Z
+$ go test -count=1 -run TestSourceStateRecordsCommitAndDirtyState -v ./respond/azurelab
+=== RUN   TestSourceStateRecordsCommitAndDirtyState
+--- PASS: TestSourceStateRecordsCommitAndDirtyState (0.02s)
+PASS
+ok  	warden/respond/azurelab	0.023s

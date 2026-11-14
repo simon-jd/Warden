@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-next/runtimes/gvisor/lab/cilium/readonly_proc_mounts.py", line 76, in <module>
+    main()
+    ~~~~^^
+  File "/home/postedism/Desktop/Warden-next/runtimes/gvisor/lab/cilium/readonly_proc_mounts.py", line 47, in main
+    doc = json.load(sys.stdin)
+  File "/usr/lib/python3.14/json/__init__.py", line 298, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/usr/lib/python3.14/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.14/json/decoder.py", line 348, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 13 column 1 (char 266)
+up rc=1
+2026-11-12T23:34:23-08:00
+11.13 10.52 7.01 2/6263 3797154
+down 2026-11-12T23:34:41-08:00
+down rc=0

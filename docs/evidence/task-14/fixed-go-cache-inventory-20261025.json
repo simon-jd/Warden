@@ -1,0 +1,19 @@
+{
+  "request": {
+    "cmd": "ulimit -c 0; ulimit -n 32; ulimit -v 131072; ulimit -t 5\n/usr/bin/timeout --signal=TERM --kill-after=2s 10s /usr/bin/python3 -I -S -B - <<'PY'\nfrom pathlib import Path\nimport json,os,stat\nassert os.getuid()==1000\nroot=Path('/home/postedism/Desktop/Warden/.cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64')\nr={'uid':os.getuid(),'toolchain_root':str(root),'go_executed':False,'downloads':False,'writes':False,'items':[]}\nfor rel in ('VERSION','bin/go','pkg/tool/linux_amd64/compile'):\n p=root/rel\n item={'relative':rel,'lexists':os.path.lexists(p)}\n if item['lexists']:\n  s=p.lstat();item.update(bytes=s.st_size,uid=s.st_uid,mode=oct(stat.S_IMODE(s.st_mode)),regular=stat.S_ISREG(s.st_mode),symlink=stat.S_ISLNK(s.st_mode))\n  if rel=='VERSION' and stat.S_ISREG(s.st_mode) and s.st_size<=4096:item['text']=p.read_text()\n r['items'].append(item)\nprint(json.dumps(r,sort_keys=True))\nPY",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "sandbox_permissions": "require_escalated",
+    "justification": "仅核对公开Task1/Task16已记录的本项目固定Go1.26.10工具链缓存的VERSION与两个二进制元数据；不执行、不下载、不写入，不读取旧私有scene或处理旧进程，防止误用联网runner。",
+    "max_output_tokens": 2000
+  },
+  "response": {
+    "chunk_id": "acea1b",
+    "wall_time_seconds": 0.000009642,
+    "exit_code": 0,
+    "original_token_count": 161,
+    "output": "{\"downloads\": false, \"go_executed\": false, \"items\": [{\"bytes\": 36, \"lexists\": true, \"mode\": \"0o444\", \"regular\": true, \"relative\": \"VERSION\", \"symlink\": false, \"text\": \"go1.26.10\\ntime 2026-10-19T22:20:36Z\\n\", \"uid\": 1000}, {\"bytes\": 15456399, \"lexists\": true, \"mode\": \"0o555\", \"regular\": true, \"relative\": \"bin/go\", \"symlink\": false, \"uid\": 1000}, {\"bytes\": 25787733, \"lexists\": true, \"mode\": \"0o555\", \"regular\": true, \"relative\": \"pkg/tool/linux_amd64/compile\", \"symlink\": false, \"uid\": 1000}], \"toolchain_root\": \"/home/postedism/Desktop/Warden/.cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64\", \"uid\": 1000, \"writes\": false}\n"
+  }
+}

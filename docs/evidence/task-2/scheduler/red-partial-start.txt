@@ -1,0 +1,5 @@
+--- FAIL: TestStartErrorStillKillsReturnedHandle (0.07s)
+    scheduler_test.go:696: returned handle was not killed
+FAIL
+FAIL	warden/controlplane/internal/scheduler	0.074s
+FAIL

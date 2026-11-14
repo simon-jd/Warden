@@ -1,0 +1,17 @@
+{
+  "base": "9691c9d7b9bb03e503964e4c6a0d97b5982b8373",
+  "changed_files": [
+    {
+      "after_bytes": 14287,
+      "after_sha256": "d5ddb93e755bed28ca863ae8690c70d41a4d91737777ccae8d895f31acab13de",
+      "before_bytes": 14203,
+      "before_sha256": "dcbd62965146ee42c5c1c4465a4a3fc23a7357e7938b84daa538bb08b8d36eda",
+      "delta": "Only AdapterEdgeTest: four json.dumps calls replaced by yaml.safe_dump(..., sort_keys=False).",
+      "path": "detect/sigma/test_contract.py"
+    }
+  ],
+  "old_failed_evidence": "docs/evidence/task-12/local-cover-failed-first-20261025/",
+  "original_freeze_sha256": "81f642d89345ad3eac8750c44725a466585c7079f7eb239d441ff356ae76e870",
+  "state": "prepared_not_executed",
+  "unchanged_files": 137
+}

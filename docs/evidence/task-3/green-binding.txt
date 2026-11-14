@@ -1,0 +1,100 @@
+COMMAND: .cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/bin/go test ./runtimes/gvisor ./runtimes/gate -count=1 -v
+EXIT: 0
+=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations
+=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations/server
+=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations/CA
+=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations/cluster
+=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations/namespace_UID
+=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations/node_name
+=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations/node_UID
+=== RUN   TestBackendReplacementRejectedBeforeRuntimeOperations/node_config
+--- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations (0.00s)
+    --- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations/server (0.00s)
+    --- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations/CA (0.00s)
+    --- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations/cluster (0.00s)
+    --- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations/namespace_UID (0.00s)
+    --- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations/node_name (0.00s)
+    --- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations/node_UID (0.00s)
+    --- PASS: TestBackendReplacementRejectedBeforeRuntimeOperations/node_config (0.00s)
+=== RUN   TestBindingRefusesLegacyUnknownAndOrphanedState
+=== RUN   TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_unused
+=== RUN   TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_consumed
+=== RUN   TestBindingRefusesLegacyUnknownAndOrphanedState/unknown
+=== RUN   TestBindingRefusesLegacyUnknownAndOrphanedState/orphaned
+--- PASS: TestBindingRefusesLegacyUnknownAndOrphanedState (0.00s)
+    --- PASS: TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_unused (0.00s)
+    --- PASS: TestBindingRefusesLegacyUnknownAndOrphanedState/legacy_consumed (0.00s)
+    --- PASS: TestBindingRefusesLegacyUnknownAndOrphanedState/unknown (0.00s)
+    --- PASS: TestBindingRefusesLegacyUnknownAndOrphanedState/orphaned (0.00s)
+=== RUN   TestBoundGatePreservesAmbiguityAcrossReopen
+--- PASS: TestBoundGatePreservesAmbiguityAcrossReopen (0.00s)
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/invalid_port
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/bad_hash
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/other_namespace
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/bad_node_label
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/fragment
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/empty_cluster
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/empty_namespace_UID
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/empty_node_UID
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/invalid_node_name
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/control_character
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/credentials
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/path
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/zero_port
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/empty_port
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/invalid_host
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/empty_CA
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/empty_node_label
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/HTTP
+=== RUN   TestBindingRejectsInvalidIdentityWithoutState/query
+--- PASS: TestBindingRejectsInvalidIdentityWithoutState (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/invalid_port (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/bad_hash (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/other_namespace (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/bad_node_label (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/fragment (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/empty_cluster (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/empty_namespace_UID (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/empty_node_UID (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/invalid_node_name (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/control_character (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/credentials (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/path (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/zero_port (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/empty_port (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/invalid_host (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/empty_CA (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/empty_node_label (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/HTTP (0.00s)
+    --- PASS: TestBindingRejectsInvalidIdentityWithoutState/query (0.00s)
+=== RUN   TestBackendBindingAcrossProcess
+--- PASS: TestBackendBindingAcrossProcess (0.01s)
+=== RUN   TestBackendBindingChild
+--- PASS: TestBackendBindingChild (0.00s)
+PASS
+ok  	warden/runtimes/gvisor	0.015s
+=== RUN   TestPidfdRequiresActualOriginalProcessExit
+--- PASS: TestPidfdRequiresActualOriginalProcessExit (0.00s)
+=== RUN   TestDiskProofRequiresOriginalDirectoriesRemovedWithoutReplacement
+--- PASS: TestDiskProofRequiresOriginalDirectoriesRemovedWithoutReplacement (0.00s)
+=== RUN   TestReapPermanentlyRevokesDelayedStartAcrossInstances
+--- PASS: TestReapPermanentlyRevokesDelayedStartAcrossInstances (0.00s)
+=== RUN   TestInflightLaunchBlocksReapUntilBoundedTimeout
+--- PASS: TestInflightLaunchBlocksReapUntilBoundedTimeout (0.04s)
+=== RUN   TestDistinctGateDirectoriesHaveDistinctAuthority
+--- PASS: TestDistinctGateDirectoriesHaveDistinctAuthority (0.00s)
+=== RUN   TestGateRefusesReplacedDirectory
+--- PASS: TestGateRefusesReplacedDirectory (0.00s)
+=== RUN   TestAmbiguousCreationCannotBeClearedBySuccessfulReap
+--- PASS: TestAmbiguousCreationCannotBeClearedBySuccessfulReap (0.00s)
+=== RUN   TestGateOperationsReleaseDirectoryDescriptors
+--- PASS: TestGateOperationsReleaseDirectoryDescriptors (0.00s)
+=== RUN   TestRetirementFenceRejectsNewStartsAcrossInstances
+--- PASS: TestRetirementFenceRejectsNewStartsAcrossInstances (0.00s)
+=== RUN   TestRetirementRejectsUnboundTargetsAndForgedProof
+--- PASS: TestRetirementRejectsUnboundTargetsAndForgedProof (0.00s)
+=== RUN   TestUnprovenRetirementKeepsAmbiguity
+--- PASS: TestUnprovenRetirementKeepsAmbiguity (0.00s)
+PASS
+ok  	warden/runtimes/gate	0.049s

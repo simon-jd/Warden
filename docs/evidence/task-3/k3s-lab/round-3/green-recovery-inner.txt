@@ -1,0 +1,8 @@
+test_exact_private_files_removed_without_reading_contents_or_public_files (test_k3s_lab_recovery.RecoveryTest.test_exact_private_files_removed_without_reading_contents_or_public_files) ... ok
+test_replacement_during_remount_preserves_both_directories (test_k3s_lab_recovery.RecoveryTest.test_replacement_during_remount_preserves_both_directories) ... ok
+test_wrong_private_shape_never_remounts_or_deletes (test_k3s_lab_recovery.RecoveryTest.test_wrong_private_shape_never_remounts_or_deletes) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.005s
+
+OK

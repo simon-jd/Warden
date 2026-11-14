@@ -1,0 +1,22 @@
+{
+  "budget": {
+    "project_allocated_bytes": 3522371584,
+    "outstanding_bytes": 6000000000,
+    "all_owned_image_charges": 1434739404,
+    "helper_reserve_bytes": 64000000,
+    "accounted_disk_bytes": 11021110988,
+    "service_memory_bytes": 320000000
+  },
+  "image_size": 685369702,
+  "outer_memory": 4000000000,
+  "outer_memory_swap": 4000000000,
+  "tar": {
+    "dev": 66307,
+    "ino": 56011120,
+    "uid": 1000,
+    "mode": "0o600",
+    "size": 496609280,
+    "blocks": 969952,
+    "nlink": 1
+  }
+}

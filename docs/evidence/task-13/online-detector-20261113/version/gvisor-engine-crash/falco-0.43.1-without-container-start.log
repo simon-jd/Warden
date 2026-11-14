@@ -1,0 +1,102 @@
+# variant falco-0.43.1-without-container-start: image sha256:9f3e058ce652ecf98aa2b4d8a41e80385b08ecb17d3153bb1d1a03a406378a31, trace config gvisor-pod-init-without-container-start.json (sha256 27653f33c543b6364c096c57976a460274e6cc8539392893c861f28d3cb9c238)
+# probe pod gv-probe in warden-lab, app container containerd://81737fa04fd256da55b7520eb9da010bfc227e91f634752ddd65a6083811e688, pod sandbox 2190c9e3f01173c2344a26ebff66800708af013219c49b91e798b1737767c3f1
+# Falco container after the pod: exited exit=1
+Sat Nov 14 04:13:56 2026: Using deprecated engine 'gvisor'. Please consider switching to another engine.
+2026-11-14T04:13:56+0000: Falco version: 0.43.1 (x86_64)
+2026-11-14T04:13:56+0000: CLI args: /usr/bin/falco
+2026-11-14T04:13:56+0000: Falco initialized with configuration files:
+2026-11-14T04:13:56+0000:    /etc/falco/config.d/90-warden.yaml | schema validation: ok
+2026-11-14T04:13:56+0000:    /etc/falco/config.d/91-warden-engine.yaml | schema validation: ok
+2026-11-14T04:13:56+0000:    /etc/falco/config.d/falco.container_plugin.yaml | schema validation: ok
+2026-11-14T04:13:56+0000:    /etc/falco/config.d/falco.iso8601_timeformat.yaml | schema validation: ok
+2026-11-14T04:13:56+0000:    /etc/falco/falco.yaml | schema validation: ok
+2026-11-14T04:13:56+0000: [libs]: Cannot read host init process proc root: 2
+2026-11-14T04:13:56+0000: Loaded plugin 'container@0.6.4' from file /usr/share/falco/plugins/libcontainer.so
+2026-11-14T04:13:56+0000: [libs]: Cannot read host init process proc root: 2
+2026-11-14T04:13:56+0000: [libs]: container: Enabled 'podman' container engine.
+2026-11-14T04:13:56+0000: [libs]: container: * enabled container runtime socket at '/host/run/podman/podman.sock'
+2026-11-14T04:13:56+0000: [libs]: container: Enabled 'docker' container engine.
+2026-11-14T04:13:56+0000: [libs]: container: * enabled container runtime socket at '/host/var/run/docker.sock'
+2026-11-14T04:13:56+0000: [libs]: container: Enabled 'cri' container engine.
+2026-11-14T04:13:56+0000: [libs]: container: * enabled container runtime socket at '/host/run/containerd/containerd.sock'
+2026-11-14T04:13:56+0000: [libs]: container: * enabled container runtime socket at '/host/run/crio/crio.sock'
+2026-11-14T04:13:56+0000: [libs]: container: * enabled container runtime socket at '/host/run/k3s/containerd/containerd.sock'
+2026-11-14T04:13:56+0000: [libs]: container: * enabled container runtime socket at '/host/run/host-containerd/containerd.sock'
+2026-11-14T04:13:56+0000: [libs]: container: Enabled 'containerd' container engine.
+2026-11-14T04:13:56+0000: [libs]: container: * enabled container runtime socket at '/host/run/host-containerd/containerd.sock'
+2026-11-14T04:13:56+0000: [libs]: container: Enabled 'lxc' container engine.
+2026-11-14T04:13:56+0000: [libs]: container: Enabled 'libvirt_lxc' container engine.
+2026-11-14T04:13:56+0000: [libs]: container: Enabled 'bpm' container engine.
+2026-11-14T04:13:56+0000: [libs]: container: init the plugin
+2026-11-14T04:13:56+0000: Configured rules filenames:
+2026-11-14T04:13:56+0000:    /etc/falco/falco_rules.yaml
+2026-11-14T04:13:56+0000:    /etc/falco/falco_rules.local.yaml
+2026-11-14T04:13:56+0000:    /etc/falco/rules.d
+2026-11-14T04:13:56+0000: Loading rules from:
+2026-11-14T04:13:56+0000:    /etc/falco/falco_rules.yaml | schema validation: ok
+2026-11-14T04:13:56+0000:    /etc/falco/falco_rules.local.yaml | schema validation: none
+2026-11-14T04:13:56+0000: Refusing to start restart handler due to nothing to watch
+2026-11-14T04:13:56+0000: (19) syscalls in rules: connect, dup, dup2, dup3, execve, execveat, finit_module, init_module, link, linkat, open, openat, openat2, ptrace, sendmsg, sendto, socket, symlink, symlinkat
+2026-11-14T04:13:56+0000: +(52) syscalls (Falco's state engine set of syscalls): accept, accept4, bind, capset, chdir, chroot, clone, clone3, close, creat, epoll_create, epoll_create1, eventfd, eventfd2, fchdir, fcntl, fork, getsockopt, inotify_init, inotify_init1, io_uring_setup, memfd_create, mount, open_by_handle_at, pidfd_getfd, pidfd_open, pipe, pipe2, prctl, prlimit, procexit, recvfrom, recvmmsg, recvmsg, sendmmsg, setgid, setregid, setresgid, setresuid, setreuid, setrlimit, setsid, setuid, shutdown, signalfd, signalfd4, socketpair, timerfd_create, umount, umount2, userfaultfd, vfork
+2026-11-14T04:13:56+0000: (71) syscalls selected in total (final set): accept, accept4, bind, capset, chdir, chroot, clone, clone3, close, connect, creat, dup, dup2, dup3, epoll_create, epoll_create1, eventfd, eventfd2, execve, execveat, fchdir, fcntl, finit_module, fork, getsockopt, init_module, inotify_init, inotify_init1, io_uring_setup, link, linkat, memfd_create, mount, open, open_by_handle_at, openat, openat2, pidfd_getfd, pidfd_open, pipe, pipe2, prctl, prlimit, procexit, ptrace, recvfrom, recvmmsg, recvmsg, sendmmsg, sendmsg, sendto, setgid, setregid, setresgid, setresuid, setreuid, setrlimit, setsid, setuid, shutdown, signalfd, signalfd4, socket, socketpair, symlink, symlinkat, timerfd_create, umount, umount2, userfaultfd, vfork
+2026-11-14T04:13:56+0000: Enabled rules:
+2026-11-14T04:13:56+0000:    Clear Log Activities
+2026-11-14T04:13:56+0000:    Remove Bulk Data from Disk
+2026-11-14T04:13:56+0000:    Create Symlink Over Sensitive Files
+2026-11-14T04:13:56+0000:    Create Hardlink Over Sensitive Files
+2026-11-14T04:13:56+0000:    Packet socket created in container
+2026-11-14T04:13:56+0000:    Redirect STDOUT/STDIN to Network Connection in Container
+2026-11-14T04:13:56+0000:    Linux Kernel Module Injection Detected
+2026-11-14T04:13:56+0000:    Debugfs Launched in Privileged Container
+2026-11-14T04:13:56+0000:    Detect release_agent File Container Escapes
+2026-11-14T04:13:56+0000:    PTRACE attached to process
+2026-11-14T04:13:56+0000:    Search Private Keys or Passwords
+2026-11-14T04:13:56+0000:    Read sensitive file trusted after startup
+2026-11-14T04:13:56+0000:    Read sensitive file untrusted
+2026-11-14T04:13:56+0000:    Run shell untrusted
+2026-11-14T04:13:56+0000:    System user interactive
+2026-11-14T04:13:56+0000:    Terminal shell in container
+2026-11-14T04:13:56+0000:    PTRACE anti-debug attempt
+2026-11-14T04:13:56+0000:    Contact K8S API Server From Container
+2026-11-14T04:13:56+0000:    Netcat Remote Code Execution in Container
+2026-11-14T04:13:56+0000:    Directory traversal monitored file read
+2026-11-14T04:13:56+0000:    Find AWS Credentials
+2026-11-14T04:13:56+0000:    Execution from /dev/shm
+2026-11-14T04:13:56+0000:    Drop and execute new binary in container
+2026-11-14T04:13:56+0000:    Disallowed SSH Connection Non Standard Port
+2026-11-14T04:13:56+0000:    Fileless execution via memfd_create
+2026-11-14T04:13:56+0000: (25) enabled rules in total
+2026-11-14T04:13:56+0000: Loaded event sources: syscall
+2026-11-14T04:13:56+0000: Enabled event sources: syscall
+2026-11-14T04:13:56+0000: Opening event source 'syscall'
+2026-11-14T04:13:56+0000: Opening 'syscall' source with gVisor. Configuration path: /etc/warden-detect/gvisor-pod-init.json
+2026-11-14T04:13:56+0000: [libs]: Trying to open the right engine!
+2026-11-14T04:13:56+0000: [libs]: container: starting async go-worker
+2026-11-14T04:13:56+0000: [libs]: container: attached engine sockets: {}
+2026-11-14T04:13:56+0000: [libs]: container: enriching initial thread table entries
+2026-11-14T04:14:11+0000: Stopping capture for event source 'syscall'
+2026-11-14T04:14:11+0000: [libs]: 
+n_evts:23
+n_drops:0
+n_drops_buffer:0
+n_drops_buffer_clone_fork_exit:0
+n_drops_buffer_execve_exit:0
+n_drops_buffer_connect_enter:0
+n_drops_buffer_connect_exit:0
+n_drops_buffer_open_enter:0
+n_drops_buffer_open_exit:0
+n_drops_buffer_dir_file_exit:0
+n_drops_buffer_other_interest_exit:0
+n_drops_buffer_close_exit:0
+n_drops_buffer_proc_exit:0
+n_drops_scratch_map:0
+n_drops_pf:0
+n_drops_bug:0
+2026-11-14T04:14:11+0000: [libs]: total threads in the table:1, total fds in all threads:0
+2026-11-14T04:14:11+0000: closing inspectors
+2026-11-14T04:14:11+0000: [libs]: container: stopping async go-worker
+2026-11-14T04:14:11+0000: [libs]: container: detach the plugin
+Error: vector
+Events detected: 0
+Rule counts by severity:
+Triggered rules by rule name:

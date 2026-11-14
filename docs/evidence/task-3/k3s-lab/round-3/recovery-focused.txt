@@ -1,0 +1,123 @@
+test_accounting_excludes_only_exact_reserved_child_and_counts_all_images (test_k3s_lab_recovery.RecoveryHostTest.test_accounting_excludes_only_exact_reserved_child_and_counts_all_images) ... ok
+test_budget_preserves_six_gb_plus_images_and_helper_charge (test_k3s_lab_recovery.RecoveryHostTest.test_budget_preserves_six_gb_plus_images_and_helper_charge) ... ok
+test_profile_uses_retained_image_and_only_two_capabilities (test_k3s_lab_recovery.RecoveryHostTest.test_profile_uses_retained_image_and_only_two_capabilities) ... ok
+test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) ... 
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault=None) ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='lost-create') ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='wrong-command') ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='failed-helper') ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='drift') ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='unknown-absence') ... ERROR
+  test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='image-rm') ... ERROR
+test_exact_private_files_removed_without_reading_contents_or_public_files (test_k3s_lab_recovery.RecoveryTest.test_exact_private_files_removed_without_reading_contents_or_public_files) ... ok
+test_replacement_during_remount_preserves_both_directories (test_k3s_lab_recovery.RecoveryTest.test_replacement_during_remount_preserves_both_directories) ... ok
+test_wrong_private_shape_never_remounts_or_deletes (test_k3s_lab_recovery.RecoveryTest.test_wrong_private_shape_never_remounts_or_deletes) ... ok
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 183, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    else: host.recover(0, reviewed=True, cli=cli)
+          ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/k3s_lab_recover.py", line 183, in recover
+    code = read_trusted(ROOT / 'scripts/k3s_lab_recovery_init.py', os.getuid()).decode()
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/runtime_lab_docker.py", line 33, in read_trusted
+    raise ValueError('untrusted input: ' + str(path))
+ValueError: untrusted input: /home/postedism/Desktop/Warden/scripts/k3s_lab_recovery_init.py
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='lost-create')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 185, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    journal = json.loads((retained / 'recovery.json').read_text())
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 788, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmpisfpn3qt/docker-5c8b4330bd7a1a3a6d0e237a604370d0/recovery.json'
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='wrong-command')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 185, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    journal = json.loads((retained / 'recovery.json').read_text())
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 788, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmpovv4v4c7/docker-5c8b4330bd7a1a3a6d0e237a604370d0/recovery.json'
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='failed-helper')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 185, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    journal = json.loads((retained / 'recovery.json').read_text())
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 788, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmpj44nql_f/docker-5c8b4330bd7a1a3a6d0e237a604370d0/recovery.json'
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='drift')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 185, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    journal = json.loads((retained / 'recovery.json').read_text())
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 788, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmpzxb21jou/retained/recovery.json'
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='unknown-absence')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 185, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    journal = json.loads((retained / 'recovery.json').read_text())
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 788, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmpabwxv4_d/docker-5c8b4330bd7a1a3a6d0e237a604370d0/recovery.json'
+
+======================================================================
+ERROR: test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift (test_k3s_lab_recovery.RecoveryHostTest.test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift) (fault='image-rm')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 185, in test_recovery_lifecycle_preserves_journal_on_lost_response_failure_and_drift
+    journal = json.loads((retained / 'recovery.json').read_text())
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 788, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmptn38sqxx/docker-5c8b4330bd7a1a3a6d0e237a604370d0/recovery.json'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.013s
+
+FAILED (errors=7)

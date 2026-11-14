@@ -1,0 +1,987 @@
+{
+  "schema_version": 1,
+  "fixture_origin": "synthetic",
+  "query_status": "UNRUN: no OpenSearch backend admitted",
+  "live_status": "UNRUN",
+  "reserved_identifier_policy": "Document IDs are opaque UUIDs independent of pos/neg filenames and metadata.uid; event values are never concatenated as query syntax.",
+  "rules": [
+    {
+      "number": 1,
+      "id": "ee10f37f-39d6-5746-ad09-186248ab32f6",
+      "rule": "01_storage_key_listing.yml",
+      "product": "Azure Activity Log",
+      "class_uid": 6003,
+      "fields": [
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "status_id"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "ddfec36c-6ea1-56f6-93bf-95d4b200e8f5",
+        "negative": "9c1df5cc-a0b6-5aec-8ce3-c75145d7aab1"
+      },
+      "cases": "cases.json",
+      "techniques": [],
+      "technique_status": "unassigned",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 2,
+      "id": "90c3f14c-fcf7-5b78-a05c-f43813fc28ee",
+      "rule": "02_storage_key_rotation.yml",
+      "product": "Azure Activity Log",
+      "class_uid": 6003,
+      "fields": [
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "status_id"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "af2dd1b1-f7ce-5a1d-a816-99d4abb257f4",
+        "negative": "4e435226-50b5-5643-9377-373617b7ce8f"
+      },
+      "cases": "cases.json",
+      "techniques": [],
+      "technique_status": "unassigned",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 3,
+      "id": "01e2eafe-0802-518d-bbac-d17c0c6b50e4",
+      "rule": "03_role_assignment.yml",
+      "product": "Azure Activity Log",
+      "class_uid": 6003,
+      "fields": [
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "status_id"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "ad8ef8f9-dfda-5fa4-985a-d89a3cc56225",
+        "negative": "197c1789-542e-5cb8-b782-e6383146a3f1"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1098.003"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 4,
+      "id": "8a8ca06b-b667-5dfb-958e-0256c9d4372f",
+      "rule": "04_role_definition.yml",
+      "product": "Azure Activity Log",
+      "class_uid": 6003,
+      "fields": [
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "status_id"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "17a46c18-4ad1-59c2-82fc-85f8d7f2e146",
+        "negative": "bf54e34c-5f12-54d6-a6ca-97fdc22ab97a"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1098.003"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 5,
+      "id": "58e9df96-53e1-5d33-8a80-3b48baf30196",
+      "rule": "05_logging_removed.yml",
+      "product": "Azure Activity Log",
+      "class_uid": 6003,
+      "fields": [
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "status_id"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "eafbd2d5-5b28-585d-9885-fce1bc93a21e",
+        "negative": "fd553ae0-91ce-5728-a6e0-a539a3303fd4"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1685.002"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 6,
+      "id": "bc213666-ff5e-5223-96f8-3d21affacea4",
+      "rule": "06_logging_changed.yml",
+      "product": "Azure Activity Log",
+      "class_uid": 6003,
+      "fields": [
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "status_id"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "54b90726-4836-517f-8a46-741b61f4e079",
+        "negative": "69f66681-9b3c-5f65-85b8-85fa479be173"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1685.002"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 7,
+      "id": "1e994d5d-1ab5-5b63-ad54-67a5a17b95a6",
+      "rule": "07_lock_removed.yml",
+      "product": "Azure Activity Log",
+      "class_uid": 6003,
+      "fields": [
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "status_id"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "9bd70b3c-b4e9-5ec4-81ea-12b4ed382020",
+        "negative": "d9a22aa4-1043-579f-836a-3022a8720975"
+      },
+      "cases": "cases.json",
+      "techniques": [],
+      "technique_status": "unassigned",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 8,
+      "id": "3753e3e6-fbcf-5103-8493-cf9a6f517a9d",
+      "rule": "08_policy_removed.yml",
+      "product": "Azure Activity Log",
+      "class_uid": 6003,
+      "fields": [
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "status_id"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "4efc8460-7fb8-5a20-a3a9-f3490844907a",
+        "negative": "5175dd34-023f-593e-b98e-c0080109bfd0"
+      },
+      "cases": "cases.json",
+      "techniques": [],
+      "technique_status": "unassigned",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 9,
+      "id": "bcaf0c3b-51b0-5485-8a44-b2f6d50d64df",
+      "rule": "09_pod_exec.yml",
+      "product": "Kubernetes Audit",
+      "class_uid": 6003,
+      "fields": [
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "unmapped.objectRef.resource",
+        "unmapped.objectRef.subresource"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "c2f32182-8ec5-5a6a-a386-367b3d0e3e7c",
+        "negative": "b447f87e-be13-5257-8af0-e7d749b0124e"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1609"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "conditional_objectRef_passthrough",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 10,
+      "id": "9ea8a65f-02da-57e8-88bc-9955b56384b4",
+      "rule": "10_pod_attach.yml",
+      "product": "Kubernetes Audit",
+      "class_uid": 6003,
+      "fields": [
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "unmapped.objectRef.resource",
+        "unmapped.objectRef.subresource"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "78aef969-becb-5397-817b-72a60be698e9",
+        "negative": "146c77bb-7791-58d5-8cc9-2159a4472540"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1609"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "conditional_objectRef_passthrough",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 11,
+      "id": "5dcab9b5-554a-5da0-bab2-f29b80cd543a",
+      "rule": "11_pod_portforward.yml",
+      "product": "Kubernetes Audit",
+      "class_uid": 6003,
+      "fields": [
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "unmapped.objectRef.resource",
+        "unmapped.objectRef.subresource"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "812ce119-ea48-5b57-919c-a853003d0d0e",
+        "negative": "0563bb45-770c-5b5a-b262-442d9249aa3e"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1572"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "conditional_objectRef_passthrough",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 12,
+      "id": "f8b2e145-130b-548f-87bd-79cae5113265",
+      "rule": "12_ephemeral_container.yml",
+      "product": "Kubernetes Audit",
+      "class_uid": 6003,
+      "fields": [
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "unmapped.objectRef.resource",
+        "unmapped.objectRef.subresource"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "06d6b565-b444-54d5-9bd6-6842aec6b1f9",
+        "negative": "1030f017-1166-50e1-9af9-a9709d63335d"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1610"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "conditional_objectRef_passthrough",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 13,
+      "id": "3045a181-2881-5ffd-8413-7d35b2bf6c59",
+      "rule": "13_rolebinding.yml",
+      "product": "Kubernetes Audit",
+      "class_uid": 6003,
+      "fields": [
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "unmapped.objectRef.resource"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "5cc00c43-ebf2-5f03-be75-419b62c50538",
+        "negative": "0edc1d96-9665-5282-a4af-f99b6a90e8d8"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1098.006"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "conditional_objectRef_passthrough",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 14,
+      "id": "bf4653a2-80c9-58b5-8602-96998c1e82d0",
+      "rule": "14_clusterrolebinding.yml",
+      "product": "Kubernetes Audit",
+      "class_uid": 6003,
+      "fields": [
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "unmapped.objectRef.resource"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "1fc4eeae-2db8-541c-9240-b05cdab3bcdc",
+        "negative": "ed5ed03c-9093-53a8-8400-2ead121c62fb"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1098.006"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "conditional_objectRef_passthrough",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 15,
+      "id": "21c89bd1-10e0-53da-9f47-0d173fa49bb6",
+      "rule": "15_unusual_secret_reader.yml",
+      "product": "Kubernetes Audit",
+      "class_uid": 6003,
+      "fields": [
+        "actor.user.uid",
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "unmapped.objectRef.resource"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "255e9686-0dfa-5648-b8cf-6c775772f587",
+        "negative": "81a642de-5d95-5dc4-8a16-62d13609af88"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1552.007"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "conditional_objectRef_passthrough",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 16,
+      "id": "19f0e5bc-cf4d-5173-aee9-4142047fa8ae",
+      "rule": "16_sa_token_request.yml",
+      "product": "Kubernetes Audit",
+      "class_uid": 6003,
+      "fields": [
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "unmapped.objectRef.resource",
+        "unmapped.objectRef.subresource"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "5eb31d3c-d47e-56bd-a54c-625a12efb75a",
+        "negative": "bb067bda-7228-59ed-9411-f489384e84b1"
+      },
+      "cases": "cases.json",
+      "techniques": [],
+      "technique_status": "unassigned",
+      "source_contract": "conditional_objectRef_passthrough",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 17,
+      "id": "56cd6626-b755-5bab-a3d5-31b85d03f3e4",
+      "rule": "17_sa_csr.yml",
+      "product": "Kubernetes Audit",
+      "class_uid": 6003,
+      "fields": [
+        "actor.user.uid",
+        "api.operation",
+        "class_uid",
+        "metadata.product.name",
+        "unmapped.objectRef.resource"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "011f7bb1-4f48-5335-9998-d866957a3765",
+        "negative": "e9337197-2fcd-54e2-9996-9dab57e9ae3e"
+      },
+      "cases": "cases.json",
+      "techniques": [],
+      "technique_status": "unassigned",
+      "source_contract": "conditional_objectRef_passthrough",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 18,
+      "id": "df4d7f13-64ec-5102-967d-4b25096eb332",
+      "rule": "18_shell.yml",
+      "product": "Tetragon",
+      "class_uid": 1007,
+      "fields": [
+        "class_uid",
+        "metadata.product.name",
+        "process.name"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "046119c6-7b9a-553f-9fbb-a9e0215c5f94",
+        "negative": "23758cf9-af10-5057-8c2c-bb23cfb78c24"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1059.004"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 19,
+      "id": "5bebc4aa-c4d9-55fd-ab90-cebc911ecdb6",
+      "rule": "19_python_shell_child.yml",
+      "product": "Tetragon",
+      "class_uid": 1007,
+      "fields": [
+        "actor.process.name",
+        "class_uid",
+        "metadata.product.name",
+        "process.name"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "8f807469-cd12-5e34-9af8-c64930601f19",
+        "negative": "f7c5e0d7-20a2-5d38-a7e9-568b78e5d33c"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1059.006"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 20,
+      "id": "06332649-217d-51ea-be55-6a3e9f0e38d5",
+      "rule": "20_curl_shell_child.yml",
+      "product": "Tetragon",
+      "class_uid": 1007,
+      "fields": [
+        "actor.process.name",
+        "class_uid",
+        "metadata.product.name",
+        "process.name"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "e5833602-cd51-50f9-b39a-4d40f748e2da",
+        "negative": "522226f7-a7cd-5a3c-b176-c4d7695e77f5"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1105"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 21,
+      "id": "3bb574eb-18ef-5b54-90b7-ac292b52b11f",
+      "rule": "21_wget_shell_child.yml",
+      "product": "Tetragon",
+      "class_uid": 1007,
+      "fields": [
+        "actor.process.name",
+        "class_uid",
+        "metadata.product.name",
+        "process.name"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "483499bf-b9f5-5bb8-9e8f-e7b0cd2e1ede",
+        "negative": "f3fa1493-9654-571b-a254-0147f0e8a9a9"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1105"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 22,
+      "id": "e723ccc6-00ea-5cbd-934d-d803f343fea4",
+      "rule": "22_netcat_shell_child.yml",
+      "product": "Tetragon",
+      "class_uid": 1007,
+      "fields": [
+        "actor.process.name",
+        "class_uid",
+        "metadata.product.name",
+        "process.name"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "d8153add-a625-5b3b-b9fd-d0966bf9a0b6",
+        "negative": "ad3a915e-69fd-5a23-859f-c482dd595926"
+      },
+      "cases": "cases.json",
+      "techniques": [],
+      "technique_status": "unassigned",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 23,
+      "id": "04b1c6e8-bc83-5f59-8b27-acf635891f11",
+      "rule": "23_socat.yml",
+      "product": "Tetragon",
+      "class_uid": 1007,
+      "fields": [
+        "class_uid",
+        "metadata.product.name",
+        "process.name"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "0d7b4a21-0724-55ef-aea8-713d1ebb291f",
+        "negative": "02ffa409-9c7e-54e0-84a2-7b76ff8410d9"
+      },
+      "cases": "cases.json",
+      "techniques": [],
+      "technique_status": "unassigned",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 24,
+      "id": "65a7f1d4-3276-544f-8ca7-01e78c1db2d1",
+      "rule": "24_mining_binary.yml",
+      "product": "Tetragon",
+      "class_uid": 1007,
+      "fields": [
+        "class_uid",
+        "metadata.product.name",
+        "process.name"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "875a02f8-7c1e-5a66-b23f-ac25dcc9efb4",
+        "negative": "494b713a-14d1-595d-98f9-32c00ffb2e8b"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1496"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 25,
+      "id": "68eccb16-f177-5280-aec8-98e9b1d75ac7",
+      "rule": "25_kubectl_shell_child.yml",
+      "product": "Tetragon",
+      "class_uid": 1007,
+      "fields": [
+        "actor.process.name",
+        "class_uid",
+        "metadata.product.name",
+        "process.name"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "e1f50ddb-3edc-511c-af44-426108d18474",
+        "negative": "4177e580-654b-553a-b011-87b0b4dc81c4"
+      },
+      "cases": "cases.json",
+      "techniques": [],
+      "technique_status": "unassigned",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 26,
+      "id": "38b28b75-ff7f-54ec-ad62-7482c9298352",
+      "rule": "26_namespace_tool.yml",
+      "product": "Tetragon",
+      "class_uid": 1007,
+      "fields": [
+        "class_uid",
+        "metadata.product.name",
+        "process.name"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "3d8874ca-85af-5d9a-a440-01ecdea581de",
+        "negative": "f24a3937-5c07-59eb-8e18-f59036df23fc"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1611"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 27,
+      "id": "4d088f9b-509f-5ce6-ac7e-a410fdb27f32",
+      "rule": "27_module_loader.yml",
+      "product": "Tetragon",
+      "class_uid": 1007,
+      "fields": [
+        "class_uid",
+        "metadata.product.name",
+        "process.name"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "4a330952-2dab-58fa-9072-d5a76cbf3ca3",
+        "negative": "b5f27eaf-90ed-5f70-adb5-875510ad0a98"
+      },
+      "cases": "cases.json",
+      "techniques": [],
+      "technique_status": "unassigned",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 28,
+      "id": "768e57f3-2e80-52d1-a2c7-106e69830e15",
+      "rule": "28_metadata_flow.yml",
+      "product": "Azure VNet Flow Logs",
+      "class_uid": 4001,
+      "fields": [
+        "class_uid",
+        "dst_endpoint.ip",
+        "metadata.product.name",
+        "unmapped.direction"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "ecb40f0e-b2a7-51b6-b7d4-a28df7390867",
+        "negative": "f3427f7d-98dd-5bb8-84aa-33f231cd1336"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1552.005"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 29,
+      "id": "a44b26f2-1d12-5c80-87a6-ba82dc24db6d",
+      "rule": "29_external_dns.yml",
+      "product": "Azure VNet Flow Logs",
+      "class_uid": 4001,
+      "fields": [
+        "class_uid",
+        "dst_endpoint.ip",
+        "dst_endpoint.port",
+        "metadata.product.name",
+        "unmapped.direction"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "41bea536-6289-58be-ac23-3d918086e824",
+        "negative": "96f6e0e6-4b27-5836-ae05-fc22878d24a1"
+      },
+      "cases": "cases.json",
+      "techniques": [],
+      "technique_status": "unassigned",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 30,
+      "id": "1753c574-aa24-59ed-827d-a688f2514636",
+      "rule": "30_external_ssh.yml",
+      "product": "Azure VNet Flow Logs",
+      "class_uid": 4001,
+      "fields": [
+        "class_uid",
+        "dst_endpoint.ip",
+        "dst_endpoint.port",
+        "metadata.product.name",
+        "unmapped.direction"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "e87f6213-1993-5a1a-9982-ab4560409809",
+        "negative": "6e2a6c25-8270-5808-a887-032ac9793310"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1021.004"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 31,
+      "id": "f29f2482-2c13-5fdc-8ef1-c01886f4de0c",
+      "rule": "31_external_rdp.yml",
+      "product": "Azure VNet Flow Logs",
+      "class_uid": 4001,
+      "fields": [
+        "class_uid",
+        "dst_endpoint.ip",
+        "dst_endpoint.port",
+        "metadata.product.name",
+        "unmapped.direction"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "daa34af4-1375-5711-8bc4-fb1d2f9a5d40",
+        "negative": "91c75f81-68ed-51ee-b6e7-a5d73b8ca8cb"
+      },
+      "cases": "cases.json",
+      "techniques": [
+        "T1021.001"
+      ],
+      "technique_status": "related_hypothesis",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    },
+    {
+      "number": 32,
+      "id": "354ba4e7-c8c7-5f4f-9b5a-6c8ae8292aac",
+      "rule": "32_nonallowlisted_flow.yml",
+      "product": "Azure VNet Flow Logs",
+      "class_uid": 4001,
+      "fields": [
+        "class_uid",
+        "dst_endpoint.ip",
+        "metadata.product.name",
+        "unmapped.direction"
+      ],
+      "pair": {
+        "positive": "pos.json",
+        "negative": "neg.json"
+      },
+      "document_ids": {
+        "positive": "9f99f57b-5d22-59cf-898a-794295e2e69a",
+        "negative": "a3c4d576-cdad-5de4-9041-cbb5d895d728"
+      },
+      "cases": "cases.json",
+      "techniques": [],
+      "technique_status": "unassigned",
+      "source_contract": "current_mapping_shape_only",
+      "fixture_status": "synthetic_unrun",
+      "conversion_status": "UNRUN",
+      "query_status": "UNRUN",
+      "live_status": "UNRUN"
+    }
+  ],
+  "future_contracts": [
+    "Trusted Warden self-approval and cross-tenant denial context",
+    "Request-level privileged-Pod safe projection",
+    "Tetragon connect/file and Pod metadata attribution"
+  ]
+}

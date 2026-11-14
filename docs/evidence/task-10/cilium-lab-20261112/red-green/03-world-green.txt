@@ -1,0 +1,20 @@
+# GREEN: scripts/test_k3s_lab_world.py with world.py (test fixed: close the makefile and the HTTP client)
+# head a9ce3b9, 2026-11-12T19:42:00-08:00
+# git status --short:
+#   ?? docs/evidence/task-10/cilium-lab-20261112/red-green/03-world-green-attempt1-test-bug.txt
+#   ?? docs/evidence/task-10/cilium-lab-20261112/red-green/03-world-green.txt
+#   ?? docs/evidence/task-10/cilium-lab-20261112/red-green/03-world-red.txt
+#   ?? runtimes/gvisor/lab/cilium/
+#   ?? scripts/test_k3s_lab_world.py
+# python3 -I -B -m unittest discover -s scripts -t scripts -p test_k3s_lab_world.py -v
+test_dns_answers_other_types_nxdomain (test_k3s_lab_world.WorldTest.test_dns_answers_other_types_nxdomain) ... ok
+test_dns_answers_txt_and_logs_the_name (test_k3s_lab_world.WorldTest.test_dns_answers_txt_and_logs_the_name) ... ok
+test_dns_ignores_garbage (test_k3s_lab_world.WorldTest.test_dns_ignores_garbage) ... ok
+test_http_answers_the_body_and_logs_the_host (test_k3s_lab_world.WorldTest.test_http_answers_the_body_and_logs_the_host) ... ok
+test_stream_logs_lines_and_sends_heartbeats (test_k3s_lab_world.WorldTest.test_stream_logs_lines_and_sends_heartbeats) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.012s
+
+OK
+exit=0

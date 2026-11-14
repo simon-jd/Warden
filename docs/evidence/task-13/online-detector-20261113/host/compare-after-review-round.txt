@@ -1,0 +1,6 @@
+before: (modules-before.txt, sysctl-before.txt) 2026-11-14T01:22:40Z, before this work's first Falco start
+after:  2026-11-14T04:44:14Z, after the review round's make detect-purge and the lab purge
+modules: 214 before, 214 after
+--- module diff (comm -3):
+--- sysctl diff:
+fs.dentry-state fs.file-nr fs.inode-nr fs.inode-state fs.quota.cache_hits fs.quota.drops fs.quota.lookups fs.quota.syncs kernel.ns_last_pid kernel.pty.nr net.netfilter.nf_conntrack_count 

@@ -1,0 +1,66 @@
+# refcounts of the modules the lab uses, every 10 s after run 3 ended (lab-run3/finished.txt), until xt_TPROXY, xt_CT and xt_socket are unused or 10 min
+# 2026-11-13T08:37:25-08:00 warden containers: 0
+xt_TPROXY 2 -
+nf_tproxy_ipv6 1 xt_TPROXY,
+nf_tproxy_ipv4 1 xt_TPROXY,
+cls_bpf 0 -
+sch_ingress 0 -
+xt_CT 3 -
+nft_masq 0 -
+xt_socket 1 -
+nf_socket_ipv4 1 xt_socket,
+nf_socket_ipv6 1 xt_socket,
+geneve 0 -
+xt_mark 8 -
+# 2026-11-13T08:37:35-08:00 warden containers: 0
+xt_TPROXY 2 -
+nf_tproxy_ipv6 1 xt_TPROXY,
+nf_tproxy_ipv4 1 xt_TPROXY,
+cls_bpf 0 -
+sch_ingress 0 -
+xt_CT 3 -
+nft_masq 0 -
+xt_socket 1 -
+nf_socket_ipv4 1 xt_socket,
+nf_socket_ipv6 1 xt_socket,
+geneve 0 -
+xt_mark 8 -
+# 2026-11-13T08:37:45-08:00 warden containers: 0
+xt_TPROXY 2 -
+nf_tproxy_ipv6 1 xt_TPROXY,
+nf_tproxy_ipv4 1 xt_TPROXY,
+cls_bpf 0 -
+sch_ingress 0 -
+xt_CT 3 -
+nft_masq 0 -
+xt_socket 1 -
+nf_socket_ipv4 1 xt_socket,
+nf_socket_ipv6 1 xt_socket,
+geneve 0 -
+xt_mark 8 -
+# 2026-11-13T08:37:55-08:00 warden containers: 0
+xt_TPROXY 2 -
+nf_tproxy_ipv6 1 xt_TPROXY,
+nf_tproxy_ipv4 1 xt_TPROXY,
+cls_bpf 0 -
+sch_ingress 0 -
+xt_CT 3 -
+nft_masq 0 -
+xt_socket 1 -
+nf_socket_ipv4 1 xt_socket,
+nf_socket_ipv6 1 xt_socket,
+geneve 0 -
+xt_mark 8 -
+# 2026-11-13T08:38:05-08:00 warden containers: 0
+xt_TPROXY 0 -
+nf_tproxy_ipv6 1 xt_TPROXY,
+nf_tproxy_ipv4 1 xt_TPROXY,
+cls_bpf 0 -
+sch_ingress 0 -
+xt_CT 0 -
+nft_masq 0 -
+xt_socket 0 -
+nf_socket_ipv4 1 xt_socket,
+nf_socket_ipv6 1 xt_socket,
+geneve 0 -
+xt_mark 6 -

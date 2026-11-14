@@ -1,0 +1,20 @@
+{
+  "request": {
+    "cmd": "/usr/bin/python3 -I -B - <<'PY'\nfrom pathlib import Path\nimport subprocess,hashlib,json\nW=Path('/home/postedism/Desktop/Warden')\ndef git(*args):return subprocess.check_output(['/usr/bin/git',*args],cwd=W)\nbase='955ef5da9d0044ab7ec1d8d4db31c8cd38286175';source='d00bb72e9d68b6b5c818c88be9f54432df34fb6a';head='0f25d77f095dd9a94f1531a2618830c6467617bd'\nassert git('rev-parse','HEAD').decode().strip()==head\nassert git('rev-parse',source+'^').decode().strip()==base\nassert git('rev-parse',head+'^').decode().strip()==source\nS=['respond/executor.go','respond/ledger.go','respond/ledger_test.go','respond/README.md']\nD='docs/evidence/task-14/'\nE=[D+'fix1-red-first-20261025/'+n for n in ['stdout.raw','stderr.raw','status.json','request.json','executor.go.txt','ledger.go.txt','ledger_test.go.txt','freeze.json']]\nE += [D+'fix1-cover-first-20261025/'+n for n in ['stdout.raw','stderr.raw','status.json','request.json']]\nE += [D+'fix1-author-artifacts-20261025/task-14-fix1-'+k+ext for k in ['red','cover'] for ext in ['-caller.md','-command.py.txt','-freeze.json']]\nE += [D+'fix1-report.md',D+'fix1-author-inventory-20261025.json']\nfor a,b,paths in [(base,source,S),(source,head,E)]:\n assert set(git('diff','--name-only',a,b).decode().splitlines())==set(paths)\nfor name in S+E:assert (W/name).read_bytes()==git('show',head+':'+name)\nassert sum((W/p).stat().st_size for p in S)==36574\nassert sum((W/p).stat().st_size for p in E)==100182\nreport=(W/(D+'fix1-report.md')).read_bytes()\nassert report==(W/'.superpowers/sdd/2-warden-security-plan/task-14-fix1-report.md').read_bytes()\nassert len(report)==11487 and hashlib.sha256(report).hexdigest()=='d08ea56b8cd793aee9063717f764c2007fef4f56c69a0f371c6001e1ffc94d6f'\nassert hashlib.sha256((W/(D+'fix1-author-inventory-20261025.json')).read_bytes()).hexdigest()=='cd0f82717c801e920fdbc34c55b9397d0ed5e7508e0be308a3993295adc976d2'\nassert not git('diff','--cached','--name-only').strip()\nprint(json.dumps({'base':base,'source':source,'head':head,'source_paths':len(S),'source_file_bytes':36574,'evidence_paths':len(E),'evidence_file_bytes':100182,'worktree_git_paths_equal':24,'report_mirror_equal':True,'report_bytes':len(report),'report_sha256':hashlib.sha256(report).hexdigest(),'index':'EMPTY','scope':'narrow public fix1 handoff; no tests or old private scene reads'},sort_keys=True))\nPY",
+    "workdir": "/home/postedism/Desktop/Warden",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "sandbox_permissions": "require_escalated",
+    "justification": "对已授权的Task14 fix1两提交做一次限定24个公开路径的只读Git/报告交接核对，不运行测试或读取旧私有现场。",
+    "yield_time_ms": 1000,
+    "max_output_tokens": 2000
+  },
+  "result": {
+    "chunk_id": "7cdfbb",
+    "wall_time_seconds": 0.02311713,
+    "exit_code": 0,
+    "original_token_count": 131,
+    "output": "{\"base\": \"955ef5da9d0044ab7ec1d8d4db31c8cd38286175\", \"evidence_file_bytes\": 100182, \"evidence_paths\": 20, \"head\": \"0f25d77f095dd9a94f1531a2618830c6467617bd\", \"index\": \"EMPTY\", \"report_bytes\": 11487, \"report_mirror_equal\": true, \"report_sha256\": \"d08ea56b8cd793aee9063717f764c2007fef4f56c69a0f371c6001e1ffc94d6f\", \"scope\": \"narrow public fix1 handoff; no tests or old private scene reads\", \"source\": \"d00bb72e9d68b6b5c818c88be9f54432df34fb6a\", \"source_file_bytes\": 36574, \"source_paths\": 4, \"worktree_git_paths_equal\": 24}\n"
+  }
+}

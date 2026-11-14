@@ -1,0 +1,676 @@
+{
+  "alert": {
+    "agent_buffer_full_epoch": 1793160056.925052,
+    "buffer_full_to_gap_active_s": -82.119,
+    "buffer_full_to_gap_seen_s": -81.388,
+    "errors": 0,
+    "firing": [],
+    "first_discard_epoch": null,
+    "first_seen": null,
+    "gap_firing": [
+      {
+        "active_at": 1793159974.806351,
+        "component_id": null,
+        "value": "1.1464349405501514e+02"
+      }
+    ],
+    "gap_first_seen": 1793159975.537375,
+    "polls": 232,
+    "prometheus": {
+      "container": "warden-bp-prom-442ebeee",
+      "final_flow": {
+        "vector_buffer_received_events_total{buffer_type=disk,component_id=agent_forward,component_kind=sink,component_type=vector,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:54449,job=warden-vector,stage=0}": "16587",
+        "vector_buffer_received_events_total{buffer_type=disk,component_id=os_api,component_kind=sink,component_type=http,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:38145,job=warden-vector,stage=0}": "16989",
+        "vector_buffer_sent_events_total{buffer_type=disk,component_id=agent_forward,component_kind=sink,component_type=vector,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:54449,job=warden-vector,stage=0}": "16587",
+        "vector_buffer_sent_events_total{buffer_type=disk,component_id=os_api,component_kind=sink,component_type=http,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:38145,job=warden-vector,stage=0}": "16989",
+        "vector_component_received_events_total{component_id=agent,component_kind=source,component_type=vector,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:38145,job=warden-vector}": "16989",
+        "vector_component_received_events_total{component_id=agent_forward,component_kind=sink,component_type=vector,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:54449,job=warden-vector}": "16587",
+        "vector_component_received_events_total{component_id=label_warden,component_kind=transform,component_type=remap,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:54449,job=warden-vector}": "24199",
+        "vector_component_received_events_total{component_id=os_api,component_kind=sink,component_type=http,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:38145,job=warden-vector}": "16989",
+        "vector_component_received_events_total{component_id=spool_warden,component_kind=source,component_type=http_server,host=postedism-ubuntu-system-selfuse,http_path=/,instance=127.0.0.1:54449,job=warden-vector,protocol=http}": "24199",
+        "vector_component_sent_events_total{component_id=agent,component_kind=source,component_type=vector,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:38145,job=warden-vector,output=_default}": "16989",
+        "vector_component_sent_events_total{component_id=agent_forward,component_kind=sink,component_type=vector,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:54449,job=warden-vector}": "16587",
+        "vector_component_sent_events_total{component_id=label_warden,component_kind=transform,component_type=remap,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:54449,job=warden-vector,output=_default}": "24199",
+        "vector_component_sent_events_total{component_id=os_api,component_kind=sink,component_type=http,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:38145,job=warden-vector}": "16989",
+        "vector_component_sent_events_total{component_id=spool_warden,component_kind=source,component_type=http_server,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:54449,job=warden-vector,output=_default}": "24199"
+      },
+      "final_series": {
+        "vector_component_discarded_events_total{component_id=bp_metrics,component_kind=transform,component_type=filter,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:38145,intentional=true,job=warden-vector}": "45362",
+        "vector_component_discarded_events_total{component_id=bp_metrics,component_kind=transform,component_type=filter,host=postedism-ubuntu-system-selfuse,instance=127.0.0.1:54449,intentional=true,job=warden-vector}": "44492"
+      },
+      "image": "prom/prometheus:v3.14.0",
+      "removed": true,
+      "rules_loaded": [
+        "WardenVectorBufferDiscarded",
+        "WardenVectorAgentForwardGap",
+        "WardenVectorNormalizationError"
+      ],
+      "targets": [
+        "127.0.0.1:54449",
+        "127.0.0.1:38145"
+      ],
+      "targets_up": [
+        "http://127.0.0.1:54449/metrics",
+        "http://127.0.0.1:38145/metrics"
+      ]
+    }
+  },
+  "config": {
+    "base_rate": 20,
+    "buffer_max_size": 268435488,
+    "burst_events": 24000,
+    "burst_rate": 200,
+    "hops": 2,
+    "line_bytes": 16384,
+    "when_full": "drop_newest"
+  },
+  "counter_series": {
+    "agent": {
+      "component_discarded_events_total{component_id=bp_metrics,component_kind=transform,component_type=filter,host=postedism-ubuntu-system-selfuse,intentional=true}": 44582.0
+    },
+    "aggregator": {
+      "component_discarded_events_total{component_id=bp_metrics,component_kind=transform,component_type=filter,host=postedism-ubuntu-system-selfuse,intentional=true}": 45454.0
+    }
+  },
+  "failures": [
+    "nothing was discarded: the buffer never overflowed",
+    "7612 lost but only 0 counted as discarded",
+    "WardenVectorBufferDiscarded did not fire"
+  ],
+  "load": {
+    "loadavg_end": [
+      5.63330078125,
+      6.146484375,
+      6.61474609375
+    ],
+    "loadavg_start": [
+      5.0361328125,
+      6.68310546875,
+      6.873046875
+    ],
+    "nproc": 32
+  },
+  "metrics": {
+    "buffer_byte_size_max": 134201472.0,
+    "buffer_byte_size_min": 0.0,
+    "buffer_discarded_events_total": 0.0,
+    "buffer_events_max": 8088.0,
+    "component_discarded_events_total": 0.0,
+    "negative_gauge_samples": 0,
+    "samples": 968
+  },
+  "metrics_aggregator": {
+    "buffer_byte_size_max": 134181768.0,
+    "buffer_byte_size_min": 0.0,
+    "buffer_discarded_events_total": 0.0,
+    "buffer_events_max": 8114.0,
+    "component_discarded_events_total": 0.0,
+    "negative_gauge_samples": 0,
+    "samples": 968
+  },
+  "occupancy": {
+    "disk_bytes_max": 141037704,
+    "rss_bytes_max": 210833408,
+    "samples": 499,
+    "series_t_disk_rss": [
+      [
+        0.5,
+        24,
+        53919744
+      ],
+      [
+        5.5,
+        24,
+        55894016
+      ],
+      [
+        10.51,
+        1261624,
+        65699840
+      ],
+      [
+        15.51,
+        2921624,
+        68608000
+      ],
+      [
+        20.51,
+        16065264,
+        88887296
+      ],
+      [
+        25.52,
+        32660088,
+        95490048
+      ],
+      [
+        30.52,
+        49271072,
+        93569024
+      ],
+      [
+        35.52,
+        65882048,
+        99766272
+      ],
+      [
+        40.52,
+        82476872,
+        98234368
+      ],
+      [
+        45.53,
+        99088192,
+        101302272
+      ],
+      [
+        50.53,
+        115699568,
+        107413504
+      ],
+      [
+        55.53,
+        132310960,
+        104009728
+      ],
+      [
+        60.53,
+        14685488,
+        112295936
+      ],
+      [
+        65.54,
+        31311320,
+        97783808
+      ],
+      [
+        70.54,
+        47903640,
+        98623488
+      ],
+      [
+        75.54,
+        64512048,
+        97910784
+      ],
+      [
+        80.55,
+        81104824,
+        98398208
+      ],
+      [
+        85.55,
+        97713712,
+        94396416
+      ],
+      [
+        90.56,
+        114307328,
+        95076352
+      ],
+      [
+        95.56,
+        130916760,
+        96178176
+      ],
+      [
+        100.56,
+        141037704,
+        94474240
+      ],
+      [
+        105.56,
+        141037704,
+        94814208
+      ],
+      [
+        110.57,
+        141037704,
+        93446144
+      ],
+      [
+        115.57,
+        141037704,
+        94650368
+      ],
+      [
+        120.57,
+        141037704,
+        108171264
+      ],
+      [
+        125.58,
+        141037704,
+        103862272
+      ],
+      [
+        130.58,
+        141037704,
+        92164096
+      ],
+      [
+        135.58,
+        141037704,
+        96354304
+      ],
+      [
+        140.59,
+        6835760,
+        206823424
+      ],
+      [
+        145.59,
+        6835760,
+        149176320
+      ],
+      [
+        150.59,
+        6835760,
+        125009920
+      ],
+      [
+        155.59,
+        6835760,
+        124272640
+      ],
+      [
+        160.6,
+        6835760,
+        120913920
+      ],
+      [
+        165.6,
+        6835760,
+        120754176
+      ],
+      [
+        170.61,
+        6835760,
+        120254464
+      ],
+      [
+        175.61,
+        6835760,
+        118550528
+      ],
+      [
+        180.61,
+        6835760,
+        118050816
+      ],
+      [
+        185.61,
+        6835760,
+        88686592
+      ],
+      [
+        190.62,
+        6835760,
+        89010176
+      ],
+      [
+        195.62,
+        6835760,
+        88506368
+      ],
+      [
+        200.63,
+        6835760,
+        88649728
+      ],
+      [
+        205.63,
+        6835760,
+        86843392
+      ],
+      [
+        210.63,
+        6835760,
+        86302720
+      ],
+      [
+        215.64,
+        6835760,
+        86265856
+      ],
+      [
+        220.64,
+        6835760,
+        85704704
+      ],
+      [
+        225.64,
+        6835760,
+        85528576
+      ],
+      [
+        230.64,
+        6835760,
+        85102592
+      ],
+      [
+        235.65,
+        6835760,
+        85581824
+      ],
+      [
+        240.65,
+        6835760,
+        85442560
+      ],
+      [
+        245.65,
+        6835760,
+        85721088
+      ]
+    ]
+  },
+  "occupancy_aggregator": {
+    "disk_bytes_max": 157168720,
+    "rss_bytes_max": 513646592,
+    "samples": 499,
+    "series_t_disk_rss": [
+      [
+        0.7,
+        24,
+        54419456
+      ],
+      [
+        5.7,
+        24,
+        57143296
+      ],
+      [
+        10.71,
+        1042064,
+        70098944
+      ],
+      [
+        15.71,
+        2712584,
+        75919360
+      ],
+      [
+        20.71,
+        14107328,
+        110071808
+      ],
+      [
+        25.72,
+        30727104,
+        110526464
+      ],
+      [
+        30.72,
+        47363280,
+        119226368
+      ],
+      [
+        35.72,
+        63966392,
+        123277312
+      ],
+      [
+        40.73,
+        80586048,
+        121696256
+      ],
+      [
+        45.73,
+        97189160,
+        112746496
+      ],
+      [
+        50.73,
+        113792272,
+        118558720
+      ],
+      [
+        55.73,
+        130411928,
+        124903424
+      ],
+      [
+        60.74,
+        137225152,
+        124375040
+      ],
+      [
+        65.74,
+        137225152,
+        102846464
+      ],
+      [
+        70.74,
+        137225152,
+        102727680
+      ],
+      [
+        75.75,
+        137225152,
+        102100992
+      ],
+      [
+        80.75,
+        137225152,
+        99610624
+      ],
+      [
+        85.75,
+        137225152,
+        101937152
+      ],
+      [
+        90.76,
+        137225152,
+        100581376
+      ],
+      [
+        95.76,
+        137225152,
+        100601856
+      ],
+      [
+        100.76,
+        137225152,
+        100163584
+      ],
+      [
+        105.76,
+        137225152,
+        99721216
+      ],
+      [
+        110.77,
+        137225152,
+        100995072
+      ],
+      [
+        115.77,
+        137225152,
+        101621760
+      ],
+      [
+        120.77,
+        137225152,
+        129155072
+      ],
+      [
+        125.78,
+        137225152,
+        113725440
+      ],
+      [
+        130.78,
+        137225152,
+        109207552
+      ],
+      [
+        135.78,
+        137225152,
+        108392448
+      ],
+      [
+        140.78,
+        24555872,
+        513630208
+      ],
+      [
+        145.79,
+        24555872,
+        498683904
+      ],
+      [
+        150.79,
+        24555872,
+        488607744
+      ],
+      [
+        155.79,
+        24555872,
+        488640512
+      ],
+      [
+        160.8,
+        24555872,
+        488271872
+      ],
+      [
+        165.8,
+        24555872,
+        476573696
+      ],
+      [
+        170.81,
+        24555872,
+        476151808
+      ],
+      [
+        175.81,
+        24555872,
+        475447296
+      ],
+      [
+        180.81,
+        24555872,
+        476049408
+      ],
+      [
+        185.81,
+        24555872,
+        475009024
+      ],
+      [
+        190.82,
+        24555872,
+        473104384
+      ],
+      [
+        195.82,
+        24555872,
+        473247744
+      ],
+      [
+        200.83,
+        24555872,
+        472301568
+      ],
+      [
+        205.83,
+        24555872,
+        472997888
+      ],
+      [
+        210.83,
+        24555872,
+        472489984
+      ],
+      [
+        215.84,
+        24555872,
+        472428544
+      ],
+      [
+        220.84,
+        24555872,
+        472543232
+      ],
+      [
+        225.84,
+        24555872,
+        472133632
+      ],
+      [
+        230.84,
+        24555872,
+        471326720
+      ],
+      [
+        235.85,
+        24555872,
+        471912448
+      ],
+      [
+        240.85,
+        24555872,
+        472391680
+      ],
+      [
+        245.85,
+        24555872,
+        472088576
+      ]
+    ]
+  },
+  "peer_requests": {
+    "ok": 347,
+    "rejected": 121
+  },
+  "reconcile": {
+    "duplicates": 402,
+    "lost": 7612,
+    "received_unique": 16587,
+    "sent": 24199,
+    "unexpected_ids": 0
+  },
+  "released_by_block": false,
+  "scratch_bytes": 32280957,
+  "sender": {
+    "baseline_sent": 199,
+    "blocked_total_s": 0.0,
+    "burst_sent": 24000,
+    "http_errors": 0,
+    "longest_block_s": 0.037,
+    "sent": 24199
+  },
+  "source": "vector",
+  "timeline_s": {
+    "burst_end": 130.0087919960497,
+    "burst_start": 10.003145255031995,
+    "drain_end": 153.06813796795905,
+    "drain_idle_stop": true,
+    "extra_alert_wait": 90.07,
+    "release": 130.00878809404094
+  },
+  "vector_log": "warn",
+  "vector_stderr_counts": {
+    "vector-agent.stderr": {
+      "Events dropped.": 0,
+      "Request timed out": 2,
+      "Retrying": 0
+    },
+    "vector-aggregator.stderr": {
+      "Events dropped.": 0,
+      "Request timed out": 0,
+      "Retrying": 35
+    }
+  },
+  "vector_stderr_dropped_lines": {
+    "vector-agent.stderr": [],
+    "vector-aggregator.stderr": []
+  },
+  "vector_stderr_tail": {
+    "vector-agent.stderr": "2026-10-28T03:59:16.879160Z  WARN source{component_kind=\"source\" component_id=spool_warden component_type=http_server}: vector::config::source: Enabling `acknowledgements` on sources themselves is deprecated in favor of enabling them in the sink configuration, and will be removed in a future version. component_id=\"spool_warden\"\n2026-10-28T04:01:16.043604Z  WARN sink{component_kind=\"sink\" component_id=agent_forward component_type=vector}: vector::sinks::util::retries: Request timed out. If this happens often while the events are actually reaching their destination, try decreasing `batch.max_bytes` and/or using `compression` if applicable. Alternatively `request.timeout_secs` can be increased. internal_log_rate_limit=true\n2026-10-28T04:01:17.045640Z  WARN sink{component_kind=\"sink\" component_id=agent_forward component_type=vector}: vector::sinks::util::retries: Internal log [Request timed out. If this happens often while the events are actually reaching their destination, try decreasing `batch.max_bytes` and/or using `compression` if applicable. Alternatively `request.timeout_secs` can be increased.] is being suppressed to avoid flooding.\n",
+    "vector-aggregator.stderr": "trying after response.] is being suppressed to avoid flooding.\n2026-10-28T04:01:11.050647Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] has been suppressed 16 times.\n2026-10-28T04:01:11.050673Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Retrying after response. reason=Http Status: 503 Service Unavailable internal_log_rate_limit=true\n2026-10-28T04:01:12.945049Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] is being suppressed to avoid flooding.\n2026-10-28T04:01:21.314589Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] has been suppressed 6 times.\n2026-10-28T04:01:21.314603Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Retrying after response. reason=Http Status: 503 Service Unavailable internal_log_rate_limit=true\n2026-10-28T04:01:22.144275Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] is being suppressed to avoid flooding.\n2026-10-28T04:01:31.933636Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] has been suppressed 10 times.\n2026-10-28T04:01:31.933655Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Retrying after response. reason=Http Status: 503 Service Unavailable internal_log_rate_limit=true\n2026-10-28T04:01:33.436131Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] is being suppressed to avoid flooding.\n"
+  }
+}

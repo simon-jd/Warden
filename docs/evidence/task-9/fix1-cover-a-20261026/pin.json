@@ -1,0 +1,51 @@
+{
+  "phase": "FIX_ROUND1_COVER_PREPARATION_ONLY",
+  "execution_authorized": false,
+  "compressed_full_packet": {
+    "path": ".superpowers/sdd/2-warden-security-plan/task-9-r1-cover-20261026-a-packet.json.gz",
+    "bytes": 20125,
+    "sha256": "4913035a3f8f6f9f0327c2e895a998f50a2e2498ff5e4e3c3175b72db3ca9107"
+  },
+  "uncompressed_packet_bytes": 74069,
+  "uncompressed_packet_sha256": "80daa079af437083531e43e9c110ef04c608a2d11b565129075c2282cf0fe874",
+  "caller_bytes": 16049,
+  "caller_sha256": "c65b73d4309282340370a594aee2a48fa52d45c34f346362425d76b3cd1c6d3d",
+  "physical_source_freeze": {
+    "path": ".superpowers/sdd/2-warden-security-plan/task-9-r1-cover-20261026-a-source-freeze.json",
+    "bytes": 2474,
+    "sha256": "4852dfe21bf283649bf0a5275db89dda003d33326efc717a2a22f7949cac1d8a"
+  },
+  "changed_source": {
+    "controlplane/internal/jit/bindings.go": {
+      "bytes": 11197,
+      "sha256": "160f369269084164e8de7a8a40de0bfa7ddfe66340f7607d1515c5afdef80ad5"
+    },
+    "controlplane/internal/jit/bindings_test.go": {
+      "bytes": 13069,
+      "sha256": "cb3f76d8f37691892144b3c0af699e0a743799cb731e32b321b5e75b8c93a7a7"
+    },
+    "controlplane/internal/jit/README.md": {
+      "bytes": 5536,
+      "sha256": "9bc338b1f11ff9c27548169e397e181f5bb6cb43592fa7e88de73087bf4a9bf0"
+    }
+  },
+  "tests": [
+    "TestKubernetesEmptyReservationCleanup",
+    "TestKubernetesRemovalRetryAfterClearAndDeleteFailure",
+    "TestKubernetesBindingLifecycleAndFencing",
+    "TestKubernetesRemovalRejectsForeignUIDAndUnconfirmedDeletion"
+  ],
+  "initial_closed_net_bytes": 237568,
+  "initial_closed_conservative_bytes": 253952,
+  "round1_prior_bytes": 24576,
+  "round1_new_source_block_growth_bytes": 4096,
+  "new_preparation_blocks_including_this_pin": 28672,
+  "directory_growth_bytes": 0,
+  "round1_cumulative_bytes": 57344,
+  "round1_cap_bytes": 65536,
+  "round1_remaining_bytes": 8192,
+  "runtime_namespace_absent_at_preparation": true,
+  "runtime_full_new_disk_bytes": 1750780416,
+  "resident_including_old_UNKNOWN_bytes": 15500000000,
+  "handoff": "SAFE; source and inert preparation only; root FULLREAD/fresh separate admission required"
+}

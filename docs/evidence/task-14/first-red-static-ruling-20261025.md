@@ -1,0 +1,13 @@
+# 原Task14首次RED caller预执行核对
+
+root627217全文读取8183B首稿，846f83全文读取三份新源码/测试共8647B。三个原mandatory测试真实调用Executor.Handle；stub返回明确ErrNotImplemented、无client/journal变更，预期失败属于本地行为断言，不是假定真实身份/处置结果。尚未执行任何Go/guard/测试。
+
+首稿不准执行。仅定向改调用文本，源码与测试不变：删除os.umask，显式新namespace0700；在最后一次本次自有进程组信号结束前保留未reap的直接leader，不能p.wait/p.poll释放leader后再对旧数字PGID发信号；reap后只能只读检查，仍存在/未知停止。必须把whole90覆盖setup/work/cleanup/status并留余量，不能90秒后再加5秒；超时/异常按剩余绝对预算收尾，不延长或重跑。GOMEMLIMIT512MiB是协作目标，不宣称RSS硬配额。
+
+这是原Task14首次实际调用前的静态修正，未消费Go运行/测试或独立复核轮；不复活旧Task6/Task16/BP尝试，不新增控制器。旧8183B draft保留为未执行文本，改后仍须root全文读取和fresh门禁，不能自动运行。
+
+named risk为Go默认telemetry/config写HOME：rootf3c1b5限定读取已缓存SDK的dir.go，第二个路径误写cmd/internal/telemetrycmd导致静态rg exit2；d00c1a纠正为cmd/go/internal/telemetrycmd，确认GOTELEMETRY不可设置及XDG→mode=off读取规则，最后两个文件无TEST变量匹配使rg exit1（不是运行失败）。作者已静态检查cmd/internal wrapper的TEST_TELEMETRY_DIR。以固定新namespace的TEST目录与XDG config双off文件隔离，HOME不改；完整caller还待核定，不据静态查阅宣称Go已运行或网络已验。
+
+rootbe7259全文读取8189B修订caller与精确diff（diff正常差异exit1），SHA f22fc510a458b0a7d1078bed821220f011af5b5b8670a478eaebc9b1b6064320。三源码未改。删除umask，new0700目录；waitid WNOWAIT保留leader直至TERM/KILL结束，再wait回收，之后仅只读PG检测。原8183B未执行稿原样保留。绝对setup8/work70/signals82/reap84/status85留余量，外层86+4总90。外层只界定观察命令，阻塞I/O可能导致状态/后代终态未知；缺失或未知一律STOP不当RED、不自动重试。
+
+root准入一次首RED：先同native既有guard fresh additional6073741824/service11000000000/download0 known0；随后只执行从冻结Markdown逐字提取并静态AST检查的代码文件，以timeout86+kill4和/usr/bin/python3 -I -B运行，native UID1000/cwd本项目。body自行核对5个固定源/模块hash、MemAvailable≥2GB与新namespace不存在。只三个原方法，预期三RED_REQUIRED断言/0skip/非编译失败且已知终态、自有组不存在才可交root判断。Root自行保留实际请求/响应/原件；不准GREEN、CLI探针、网络/Docker/服务或旧测试。

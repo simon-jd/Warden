@@ -1,0 +1,17 @@
+test_charged_scene_is_counted_once_and_all_helper_growth_is_added (test_firecracker_recovery.AdmissionTests.test_charged_scene_is_counted_once_and_all_helper_growth_is_added) ... ok
+test_rest_walk_omits_only_exact_identity_and_counts_hardlink_names (test_firecracker_recovery.AdmissionTests.test_rest_walk_omits_only_exact_identity_and_counts_hardlink_names) ... ok
+test_unreadable_other_directory_is_not_silently_excluded (test_firecracker_recovery.AdmissionTests.test_unreadable_other_directory_is_not_silently_excluded) ... ok
+test_only_public_original_records_and_unreleased_charge_authorize_scene (test_firecracker_recovery.OriginalIdentityTests.test_only_public_original_records_and_unreleased_charge_authorize_scene) ... ok
+test_streamed_archive_has_only_regular_verified_inputs_and_fixed_entrypoints (test_firecracker_recovery.PackageTests.test_streamed_archive_has_only_regular_verified_inputs_and_fixed_entrypoints) ... ok
+test_immutable_inventory_ingress_binds_source_helper_and_digest (test_firecracker_recovery_init.InventoryFixture.test_immutable_inventory_ingress_binds_source_helper_and_digest) ... ok
+test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors (test_firecracker_recovery_init.InventoryFixture.test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors) ... ok
+test_inventory_refuses_unknown_alias_link_and_nonempty_jail (test_firecracker_recovery_init.InventoryFixture.test_inventory_refuses_unknown_alias_link_and_nonempty_jail) ... ok
+test_replacement_after_inventory_refuses_before_any_mutation (test_firecracker_recovery_init.InventoryFixture.test_replacement_after_inventory_refuses_before_any_mutation) ... ok
+test_restore_changes_only_directory_fds_deepest_first_and_preserves_files (test_firecracker_recovery_init.InventoryFixture.test_restore_changes_only_directory_fds_deepest_first_and_preserves_files) ... ok
+test_restore_failure_is_incomplete_and_attempts_readonly_remount (test_firecracker_recovery_init.InventoryFixture.test_restore_failure_is_incomplete_and_attempts_readonly_remount) ... ok
+test_only_initial_ro_private_matching_mount_is_accepted (test_firecracker_recovery_init.MountTests.test_only_initial_ro_private_matching_mount_is_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.010s
+
+OK

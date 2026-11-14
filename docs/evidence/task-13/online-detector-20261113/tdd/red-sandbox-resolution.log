@@ -1,0 +1,10 @@
+# RED, after the host-only benign hour dropped 282 gVisor sentry alerts as unresolved: lookups fell behind short-lived sandboxes (6e50df9, 2026-11-14T04:35:34Z)
+$ taskset -c 0-7,16-31 python3 -E -s -B -m unittest detect.falco.test_collector -k once_per_tick -k after_they_are_gone -k seen_once
+ERROR: test_a_nested_cgroup_seen_once_is_remembered (detect.falco.test_collector.ResolverTest.test_a_nested_cgroup_seen_once_is_remembered)
+AttributeError: 'NoneType' object has no attribute 'warden'
+ERROR: test_pod_sandboxes_seen_by_the_pod_watch_resolve_after_they_are_gone (detect.falco.test_collector.ResolverTest.test_pod_sandboxes_seen_by_the_pod_watch_resolve_after_they_are_gone)
+AttributeError: 'Resolver' object has no attribute 'remember_pod_cgroups'
+FAIL: test_pending_alerts_of_one_container_are_resolved_once_per_tick (detect.falco.test_collector.CollectorTest.test_pending_alerts_of_one_container_are_resolved_once_per_tick)
+AssertionError: Lists differ: ['aaaaaaaaaaaa', 'aaaaaaaaaaaa', 'aaaaaaaaaaaa', 'aaaaaa[739 chars]aaa'] != ['aaaaaaaaaaaa']
+Ran 3 tests in 0.002s
+FAILED (failures=1, errors=2)

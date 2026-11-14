@@ -1,0 +1,154 @@
+{"image_id": "sha256:a688600ca24f8a4d3ca77f95b0dd40704a9fc787c826660eb7ba0b641b8b175d", "owned_image_charge": 0, "outstanding": 5000000000}
+{"additional_bytes": "5512000000", "at": "2026-10-25T19:32:42Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 263199051776, "project_allocated_bytes": 4269150208, "service_memory_bytes": "3000000000"}
+{"container_id": "0ffb7b2a1b66db5310a0e139236dc6be0e502dc5d1f5ace4ab2e854452167ac4", "labels": {"project": "warden", "owner": "codex-warden", "session": "30baa590373f39cb53d6ad606cc969f3", "task": "vuln-unit", "ttl": "2026-10-25T20:32:42.794182+00:00"}}
+{"inspected_host_config": {"Binds": null, "ContainerIDFile": "", "LogConfig": {"Type": "json-file", "Config": {"max-file": "1", "max-size": "10m"}}, "NetworkMode": "none", "PortBindings": {}, "RestartPolicy": {"Name": "no", "MaximumRetryCount": 0}, "AutoRemove": false, "VolumeDriver": "", "VolumesFrom": null, "ConsoleSize": [0, 0], "CapAdd": null, "CapDrop": ["ALL"], "CgroupnsMode": "private", "Dns": null, "DnsOptions": [], "DnsSearch": [], "ExtraHosts": null, "GroupAdd": null, "IpcMode": "private", "Cgroup": "", "Links": null, "OomScoreAdj": 0, "PidMode": "", "Privileged": false, "PublishAllPorts": false, "ReadonlyRootfs": true, "SecurityOpt": ["no-new-privileges"], "Tmpfs": {"/tmp": "rw,exec,nosuid,nodev,size=268435456"}, "UTSMode": "", "UsernsMode": "", "ShmSize": 67108864, "Runtime": "runc", "Isolation": "", "CpuShares": 0, "Memory": 2000000000, "NanoCpus": 2000000000, "CgroupParent": "", "BlkioWeight": 0, "BlkioWeightDevice": [], "BlkioDeviceReadBps": [], "BlkioDeviceWriteBps": [], "BlkioDeviceReadIOps": [], "BlkioDeviceWriteIOps": [], "CpuPeriod": 0, "CpuQuota": 0, "CpuRealtimePeriod": 0, "CpuRealtimeRuntime": 0, "CpusetCpus": "", "CpusetMems": "", "Devices": [], "DeviceCgroupRules": null, "DeviceRequests": null, "MemoryReservation": 0, "MemorySwap": 2000000000, "MemorySwappiness": null, "OomKillDisable": false, "PidsLimit": 256, "Ulimits": null, "CpuCount": 0, "CpuPercent": 0, "IOMaximumIOps": 0, "IOMaximumBandwidth": 0, "Mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden", "Target": "/workspace", "ReadOnly": true}, {"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/firecracker-code", "Target": "/workspace/.cache/firecracker-code"}], "MaskedPaths": ["/proc/acpi", "/proc/asound", "/proc/interrupts", "/proc/kcore", "/proc/keys", "/proc/latency_stats", "/proc/sched_debug", "/proc/scsi", "/proc/timer_list", "/proc/timer_stats", "/sys/devices/virtual/powercap", "/sys/firmware", "/sys/devices/system/cpu/cpu0/thermal_throttle", "/sys/devices/system/cpu/cpu1/thermal_throttle", "/sys/devices/system/cpu/cpu2/thermal_throttle", "/sys/devices/system/cpu/cpu3/thermal_throttle", "/sys/devices/system/cpu/cpu4/thermal_throttle", "/sys/devices/system/cpu/cpu5/thermal_throttle", "/sys/devices/system/cpu/cpu6/thermal_throttle", "/sys/devices/system/cpu/cpu7/thermal_throttle", "/sys/devices/system/cpu/cpu8/thermal_throttle", "/sys/devices/system/cpu/cpu9/thermal_throttle", "/sys/devices/system/cpu/cpu10/thermal_throttle", "/sys/devices/system/cpu/cpu11/thermal_throttle", "/sys/devices/system/cpu/cpu12/thermal_throttle", "/sys/devices/system/cpu/cpu13/thermal_throttle", "/sys/devices/system/cpu/cpu14/thermal_throttle", "/sys/devices/system/cpu/cpu15/thermal_throttle", "/sys/devices/system/cpu/cpu16/thermal_throttle", "/sys/devices/system/cpu/cpu17/thermal_throttle", "/sys/devices/system/cpu/cpu18/thermal_throttle", "/sys/devices/system/cpu/cpu19/thermal_throttle", "/sys/devices/system/cpu/cpu20/thermal_throttle", "/sys/devices/system/cpu/cpu21/thermal_throttle", "/sys/devices/system/cpu/cpu22/thermal_throttle", "/sys/devices/system/cpu/cpu23/thermal_throttle", "/sys/devices/system/cpu/cpu24/thermal_throttle", "/sys/devices/system/cpu/cpu25/thermal_throttle", "/sys/devices/system/cpu/cpu26/thermal_throttle", "/sys/devices/system/cpu/cpu27/thermal_throttle", "/sys/devices/system/cpu/cpu28/thermal_throttle", "/sys/devices/system/cpu/cpu29/thermal_throttle", "/sys/devices/system/cpu/cpu30/thermal_throttle", "/sys/devices/system/cpu/cpu31/thermal_throttle"], "ReadonlyPaths": ["/proc/bus", "/proc/fs", "/proc/irq", "/proc/sys", "/proc/sysrq-trigger"]}}
+=== RUN   TestKEVRanksFirst
+    prioritize_test.go:34: KEV must dominate other dimensions: []
+--- FAIL: TestKEVRanksFirst (0.00s)
+=== RUN   TestEPSSBreaksTies
+    prioritize_test.go:40: EPSS must precede CVSS and exposure: []
+--- FAIL: TestEPSSBreaksTies (0.00s)
+=== RUN   TestComparatorStabilityAndCopies
+    prioritize_test.go:49: CVSS/exposure/stable ties: []
+--- FAIL: TestComparatorStabilityAndCopies (0.00s)
+=== RUN   TestInputValidation
+    prioritize_test.go:60: valid finding rejected: Task16 RED: not implemented
+--- FAIL: TestInputValidation (0.00s)
+=== RUN   TestSLABreachDetected
+    prioritize_test.go:101: inclusive due/fake clock: {Due:0001-01-01 00:00:00 +0000 UTC EvaluatedAt:0001-01-01 00:00:00 +0000 UTC Allowed:0s Closed:false Breached:false} Task16 RED: not implemented calls=0
+--- FAIL: TestSLABreachDetected (0.00s)
+=== RUN   TestSLAPolicyAndInvalidTimes
+    prioritize_test.go:119: policy {severity: cvss:0 kev:false days:90} got 0s
+    prioritize_test.go:119: policy {severity:low cvss:6.99 kev:false days:90} got 0s
+    prioritize_test.go:119: policy {severity:medium cvss:7 kev:false days:30} got 0s
+    prioritize_test.go:119: policy {severity: cvss:8.99 kev:false days:30} got 0s
+    prioritize_test.go:119: policy {severity: cvss:9 kev:false days:7} got 0s
+    prioritize_test.go:119: policy {severity:critical cvss:1 kev:false days:7} got 0s
+    prioritize_test.go:119: policy {severity:high cvss:1 kev:false days:30} got 0s
+    prioritize_test.go:119: policy {severity:high cvss:10 kev:false days:7} got 0s
+    prioritize_test.go:119: policy {severity:low cvss:0 kev:true days:7} got 0s
+    prioritize_test.go:126: elapsed hours/UTC: {Due:0001-01-01 00:00:00 +0000 UTC EvaluatedAt:0001-01-01 00:00:00 +0000 UTC Allowed:0s Closed:false Breached:false} Task16 RED: not implemented
+--- FAIL: TestSLAPolicyAndInvalidTimes (0.00s)
+=== RUN   TestSummaryCohortMedian
+    prioritize_test.go:150: cohort/even median/clock: {OpenCount:0 FixedCount:0 OpenBreaches:0 FixedBreaches:0 MedianRemediation:0s HasMedian:false} Task16 RED: not implemented calls=0
+--- FAIL: TestSummaryCohortMedian (0.00s)
+=== RUN   TestFeedParsersAndFreshness
+    prioritize_test.go:177: EPSS fixture: {Scores:map[] Published:0001-01-01 00:00:00 +0000 UTC Model: RetrievedAt:0001-01-01 00:00:00 +0000 UTC Source:} Task16 RED: not implemented
+--- FAIL: TestFeedParsersAndFreshness (0.00s)
+=== RUN   TestEPSSRejectsMalformedFixtures
+=== RUN   TestEPSSRejectsMalformedFixtures/bad-percentile
+=== RUN   TestEPSSRejectsMalformedFixtures/invalid-date
+=== RUN   TestEPSSRejectsMalformedFixtures/record-limit
+=== RUN   TestEPSSRejectsMalformedFixtures/missing-comment
+=== RUN   TestEPSSRejectsMalformedFixtures/duplicate-cve
+=== RUN   TestEPSSRejectsMalformedFixtures/nan
+=== RUN   TestEPSSRejectsMalformedFixtures/range
+=== RUN   TestEPSSRejectsMalformedFixtures/future-date
+=== RUN   TestEPSSRejectsMalformedFixtures/bad-cve
+=== RUN   TestEPSSRejectsMalformedFixtures/empty
+=== RUN   TestEPSSRejectsMalformedFixtures/duplicate-metadata
+=== RUN   TestEPSSRejectsMalformedFixtures/bad-checksum
+=== RUN   TestEPSSRejectsMalformedFixtures/truncated
+=== RUN   TestEPSSRejectsMalformedFixtures/not-gzip
+--- PASS: TestEPSSRejectsMalformedFixtures (0.00s)
+    --- PASS: TestEPSSRejectsMalformedFixtures/bad-percentile (0.00s)
+    --- PASS: TestEPSSRejectsMalformedFixtures/invalid-date (0.00s)
+    --- PASS: TestEPSSRejectsMalformedFixtures/record-limit (0.00s)
+    --- PASS: TestEPSSRejectsMalformedFixtures/missing-comment (0.00s)
+    --- PASS: TestEPSSRejectsMalformedFixtures/duplicate-cve (0.00s)
+    --- PASS: TestEPSSRejectsMalformedFixtures/nan (0.00s)
+    --- PASS: TestEPSSRejectsMalformedFixtures/range (0.00s)
+    --- PASS: TestEPSSRejectsMalformedFixtures/future-date (0.00s)
+    --- PASS: TestEPSSRejectsMalformedFixtures/bad-cve (0.00s)
+    --- PASS: TestEPSSRejectsMalformedFixtures/empty (0.00s)
+    --- PASS: TestEPSSRejectsMalformedFixtures/duplicate-metadata (0.00s)
+    --- PASS: TestEPSSRejectsMalformedFixtures/bad-checksum (0.00s)
+    --- PASS: TestEPSSRejectsMalformedFixtures/truncated (0.00s)
+    --- PASS: TestEPSSRejectsMalformedFixtures/not-gzip (0.00s)
+=== RUN   TestKEVRejectsMalformedFixtures
+=== RUN   TestKEVRejectsMalformedFixtures/future-release
+=== RUN   TestKEVRejectsMalformedFixtures/trailing
+=== RUN   TestKEVRejectsMalformedFixtures/fraction-count
+=== RUN   TestKEVRejectsMalformedFixtures/required-null
+=== RUN   TestKEVRejectsMalformedFixtures/due-before-added
+=== RUN   TestKEVRejectsMalformedFixtures/bad-cve
+=== RUN   TestKEVRejectsMalformedFixtures/truncated
+=== RUN   TestKEVRejectsMalformedFixtures/duplicate-cve
+=== RUN   TestKEVRejectsMalformedFixtures/empty
+=== RUN   TestKEVRejectsMalformedFixtures/duplicate-key
+=== RUN   TestKEVRejectsMalformedFixtures/wrong-count
+=== RUN   TestKEVRejectsMalformedFixtures/required-missing
+=== RUN   TestKEVRejectsMalformedFixtures/bad-date
+=== RUN   TestKEVRejectsMalformedFixtures/added-after-release
+=== NAME  TestKEVRejectsMalformedFixtures
+    prioritize_test.go:242: future unknown fields supported: Task16 RED: not implemented
+--- FAIL: TestKEVRejectsMalformedFixtures (0.00s)
+    --- PASS: TestKEVRejectsMalformedFixtures/future-release (0.00s)
+    --- PASS: TestKEVRejectsMalformedFixtures/trailing (0.00s)
+    --- PASS: TestKEVRejectsMalformedFixtures/fraction-count (0.00s)
+    --- PASS: TestKEVRejectsMalformedFixtures/required-null (0.00s)
+    --- PASS: TestKEVRejectsMalformedFixtures/due-before-added (0.00s)
+    --- PASS: TestKEVRejectsMalformedFixtures/bad-cve (0.00s)
+    --- PASS: TestKEVRejectsMalformedFixtures/truncated (0.00s)
+    --- PASS: TestKEVRejectsMalformedFixtures/duplicate-cve (0.00s)
+    --- PASS: TestKEVRejectsMalformedFixtures/empty (0.00s)
+    --- PASS: TestKEVRejectsMalformedFixtures/duplicate-key (0.00s)
+    --- PASS: TestKEVRejectsMalformedFixtures/wrong-count (0.00s)
+    --- PASS: TestKEVRejectsMalformedFixtures/required-missing (0.00s)
+    --- PASS: TestKEVRejectsMalformedFixtures/bad-date (0.00s)
+    --- PASS: TestKEVRejectsMalformedFixtures/added-after-release (0.00s)
+=== RUN   TestHTTPFetchBoundsAndProvenance
+    prioritize_test.go:261: fetch/provenance/close: {Scores:map[] Published:0001-01-01 00:00:00 +0000 UTC Model: RetrievedAt:0001-01-01 00:00:00 +0000 UTC Source:} Task16 RED: not implemented closed=false
+--- FAIL: TestHTTPFetchBoundsAndProvenance (0.00s)
+=== RUN   TestHTTPRedirectAndCancellation
+=== RUN   TestHTTPRedirectAndCancellation/same-origin
+    prioritize_test.go:285: redirect policy calls=0 err=Task16 RED: not implemented
+=== RUN   TestHTTPRedirectAndCancellation/downgrade
+=== RUN   TestHTTPRedirectAndCancellation/other-host
+=== RUN   TestHTTPRedirectAndCancellation/credentials
+=== RUN   TestHTTPRedirectAndCancellation/loop
+--- FAIL: TestHTTPRedirectAndCancellation (0.00s)
+    --- FAIL: TestHTTPRedirectAndCancellation/same-origin (0.00s)
+    --- PASS: TestHTTPRedirectAndCancellation/downgrade (0.00s)
+    --- PASS: TestHTTPRedirectAndCancellation/other-host (0.00s)
+    --- PASS: TestHTTPRedirectAndCancellation/credentials (0.00s)
+    --- PASS: TestHTTPRedirectAndCancellation/loop (0.00s)
+FAIL
+FAIL	warden/vuln	0.011s
+FAIL
+runtime: out of memory: cannot allocate 4194304-byte block (7405568 in use)
+fatal error: out of memory
+
+runtime stack:
+runtime.throw({0x5f1d7f621cdb?, 0x0?})
+	/usr/local/go/src/runtime/panic.go:1229 +0x4a fp=0x77b5277fd958 sp=0x77b5277fd928 pc=0x5f1d7e9935ca
+runtime.stackalloc(0x20000)
+	/usr/local/go/src/runtime/stack.go:424 +0x249 fp=0x77b5277fd9e0 sp=0x77b5277fd958 pc=0x5f1d7e976e89
+runtime.copystack(0x23d1478f41e0, 0x5f1d7e96a86e?)
+	/usr/local/go/src/runtime/stack.go:945 +0xe5 fp=0x77b5277fdad8 sp=0x77b5277fd9e0 pc=0x5f1d7e977b25
+runtime.shrinkstack(0x77b5277fdb48?)
+	/usr/local/go/src/runtime/stack.go:1334 +0x125 fp=0x77b5277fdaf8 sp=0x77b5277fdad8 pc=0x5f1d7e978c45
+runtime.scanstack(0x23d1478f41e0, 0x23d147943260)
+	/usr/local/go/src/runtime/mgcmark.go:946 +0x147 fp=0x77b5277fdc10 sp=0x77b5277fdaf8 pc=0x5f1d7e93e467
+runtime.markroot.func1()
+	/usr/local/go/src/runtime/mgcmark.go:306 +0xb1 fp=0x77b5277fdc60 sp=0x77b5277fdc10 pc=0x5f1d7e93d051
+runtime.markroot(0x23d147943260, 0x15, 0x1)
+	/usr/local/go/src/runtime/mgcmark.go:280 +0x1a5 fp=0x77b5277fdd10 sp=0x77b5277fdc60 pc=0x5f1d7e93cca5
+runtime.gcDrain(0x23d147943260, 0x3)
+	/usr/local/go/src/runtime/mgcmark.go:1284 +0x4a7 fp=0x77b5277fdd80 sp=0x77b5277fdd10 pc=0x5f1d7e93f1a7
+runtime.gcDrainMarkWorkerDedicated(...)
+	/usr/local/go/src/runtime/mgcmark.go:1187
+runtime.gcBgMarkWorker.func2()
+	/usr/local/go/src/runtime/mgc.go:1862 +0x9a fp=0x77b5277fddd0 sp=0x77b5277fdd80 pc=0x5f1d7e93af1a
+runtime.systemstack(0x800000)
+	/usr/local/go/src/runtime/asm_amd64.s:562 +0x47 fp=0x77b5277fdde0 sp=0x77b5277fddd0 pc=0x5f1d7e9997e7
+
+goroutine 23 gp=0x23d147e04960 m=5 mp=0x23d147a00008 [GC worker (active)]:
+runtime.systemstack_switch()
+	/usr/local/go/src/runtime/asm_amd64.s:516 +0x8 fp=0x23d1479c4f40 sp=0x23d1479c4f30 pc=0x5f1d7e999788
+runtime.gcBgMarkWorker(0x23d147a80770)
+	/usr/local/go/src/runtime/mgc.go:1847 +0x1df fp=0x23d1479c4fc8 sp=0x23d1479c4f40 pc=0x5f1d7e93acff
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/usr/local/go/src/runtime/mgc.go:1695 +0x17 fp=0x23d1479c4fe0 sp=0x23d1479c4fc8 pc=0x5f1d7e93aaf7
+runtime.goexit({})
+	/usr/local/go/src/runtime/asm_amd64.s:1771 +0x1 fp=0x23d1479c4fe8 sp=0x23d1479c4fe0 pc=0x5f1d7e99b421

@@ -1,0 +1,62 @@
+scripts/k3s_gvisor_lab.sh run scripts/k3s_gvisor_lab.sh env \
+	env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden/.cache/go HOME=/home/postedism/Desktop/Warden/.cache/home TMPDIR=/home/postedism/Desktop/Warden/.cache/test-tmp WARDEN_LIVE_GVISOR=1 WARDEN_GVISOR_COLD_STARTS= GVISOR_OUT= /home/postedism/Desktop/Warden/.tools/go/bin/go test -buildvcs=false -count=1 -v -timeout 40m -run '^(TestGVisorConformance|TestGVisorColdStarts)$' ./runtimes/gvisor
+lab up: warden-k3s-gvisor on warden-k3s (192.168.192.10), probe sha256:2f4ec662b7b52207452e3097bdf56563dc3d1879599eafbd6dfe6de71b3355cf
+=== RUN   TestGVisorConformance
+=== RUN   TestGVisorConformance/ForkBombCappedByPids
+    suite.go:61: real guest mode=fork exit={Code:0 LogsTruncated:false PidsMaxEvents:1 PeakPids:32 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS fork
+=== RUN   TestGVisorConformance/RootfsReadOnly
+    suite.go:61: real guest mode=readonly exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS readonly
+=== RUN   TestGVisorConformance/NoNetworkByDefault
+    suite.go:61: real guest mode=network exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS network
+=== RUN   TestGVisorConformance/RunsAsNonRoot
+    suite.go:61: real guest mode=uid exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS uid
+=== RUN   TestGVisorConformance/TimeoutKillsProcessGroup
+    suite.go:61: real guest mode=timeout exit={Code:137 LogsTruncated:false PidsMaxEvents:0 PeakPids:7 DroppedLogBytes:0 OOMKilled:false TimedOut:true CgroupEmpty:true} logs=READY timeout
+=== RUN   TestGVisorConformance/MemoryLimitOOMKilled
+    suite.go:61: real guest mode=oom exit={Code:137 LogsTruncated:false PidsMaxEvents:0 PeakPids:0 DroppedLogBytes:0 OOMKilled:true TimedOut:false CgroupEmpty:true} logs=READY oom
+=== RUN   TestGVisorConformance/SeccompBlocksMountAndPtrace
+    suite.go:61: real guest mode=seccomp exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:5 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS seccomp
+=== NAME  TestGVisorConformance
+    lab_test.go:170: run fork pod 570c83fd-bd9c-4302-828a-bdd38908e19e: pod cgroup on the node gone=true start->exec=3163.33 ms
+    lab_test.go:170: run readonly pod 81091a00-df4a-490f-b9d1-4c9fc6f3ac51: pod cgroup on the node gone=true start->exec=717.13 ms
+    lab_test.go:170: run network pod f6dd06c5-05ab-4dc8-9f57-044335f2bfb9: pod cgroup on the node gone=true start->exec=545.63 ms
+    lab_test.go:170: run uid pod 40388e33-a594-4f7b-bf4e-a6417a201439: pod cgroup on the node gone=true start->exec=745.00 ms
+    lab_test.go:170: run timeout pod ccaec30e-c902-48ed-b9e0-5f4a7779263a: pod cgroup on the node gone=true start->exec=743.89 ms
+    lab_test.go:170: run oom pod 1134e236-3b19-4dba-9a3b-58e70677bbca: pod cgroup on the node gone=true start->exec=n/a (no supervisor report)
+    lab_test.go:170: run seccomp pod 65e336da-821f-4b90-902f-798b99eb8e4c: pod cgroup on the node gone=true start->exec=715.07 ms
+=== RUN   TestGVisorConformance/IsolationMatrix
+    lab.go:67: arp-spoof on gvisor: blocked (no success signal in the complete output) run RMH5KKKCTEUDU3ZMJIE32XDYUE
+    lab.go:67: disk-fill on gvisor: error (probe objective or denial not recorded) run UFPOUBIZ7OKUUR6HIDTUUA45VQ
+    lab.go:69: disk-fill on gvisor: no verdict: probe objective or denial not recorded
+    lab.go:67: dns-exfil on gvisor: error (probe objective or denial not recorded) run ULZXSOSD3TYLIZ6NH3RBWPJRSQ
+    lab.go:69: dns-exfil on gvisor: no verdict: probe objective or denial not recorded
+    lab.go:67: fork-bomb on gvisor: blocked (no success signal in the complete output) run MFY5IMT77RXO3MQS33MWOJTVAE
+    lab.go:67: kernel-module on gvisor: blocked (no success signal in the complete output) run TTCLOOA64PMSPLUEYX2NDR3T3E
+    lab.go:67: memory-exhaustion on gvisor: missed (success signal in the output) run 5LR26PJNUBSSWISDG52HJNIWEE
+    lab.go:67: metadata-host on gvisor: blocked (no success signal in the complete output) run EKDVXRAL4WDQV7CREQI6BISQDM
+    lab.go:67: metadata-ip on gvisor: blocked (no success signal in the complete output) run KMCGZXW7HUWF3WGTYFCON7T344
+    lab.go:67: mount-unshare on gvisor: blocked (no success signal in the complete output) run GFXND6BD4GSM55DRHVTMSSFJDY
+    lab.go:67: proc-leak on gvisor: error (probe objective or denial not recorded) run 4EWTWCKVQCDTETNPS5JDSUQOEM
+    lab.go:69: proc-leak on gvisor: no verdict: probe objective or denial not recorded
+    lab.go:67: ptrace on gvisor: blocked (no success signal in the complete output) run KO3X5OP36MDBT3WRRJK3BZUUYM
+    lab.go:67: raw-socket on gvisor: blocked (no success signal in the complete output) run 5GIKB7TWDMFAZFXH4OELXQBCNA
+    lab.go:67: reverse-shell on gvisor: error (probe objective or denial not recorded) run TNT5LHTGGOECRY64655T4QXFUU
+    lab.go:69: reverse-shell on gvisor: no verdict: probe objective or denial not recorded
+    lab.go:67: sys-leak on gvisor: error (probe objective or denial not recorded) run JUF4R4YM5HNVAQENU2SDUAXNMA
+    lab.go:69: sys-leak on gvisor: no verdict: probe objective or denial not recorded
+--- FAIL: TestGVisorConformance (75.50s)
+    --- PASS: TestGVisorConformance/ForkBombCappedByPids (6.24s)
+    --- PASS: TestGVisorConformance/RootfsReadOnly (3.05s)
+    --- PASS: TestGVisorConformance/NoNetworkByDefault (2.93s)
+    --- PASS: TestGVisorConformance/RunsAsNonRoot (3.09s)
+    --- PASS: TestGVisorConformance/TimeoutKillsProcessGroup (5.00s)
+    --- PASS: TestGVisorConformance/MemoryLimitOOMKilled (2.98s)
+    --- PASS: TestGVisorConformance/SeccompBlocksMountAndPtrace (3.01s)
+    --- FAIL: TestGVisorConformance/IsolationMatrix (48.93s)
+=== RUN   TestGVisorColdStarts
+    lab_test.go:212: cold-start series: set WARDEN_GVISOR_COLD_STARTS=<n> (make test-gvisor GVISOR_COLD_STARTS=100)
+--- SKIP: TestGVisorColdStarts (0.00s)
+FAIL
+FAIL	warden/runtimes/gvisor	75.504s
+FAIL
+make: *** [Makefile:179: test-gvisor] Error 1

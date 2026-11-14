@@ -1,0 +1,26 @@
+test_material_literals_dispatch_without_operation_controller (test_controller_cache_continuation_invoker_20261025.MaterialEntryTests.test_material_literals_dispatch_without_operation_controller) ... 
+  test_material_literals_dispatch_without_operation_controller (test_controller_cache_continuation_invoker_20261025.MaterialEntryTests.test_material_literals_dispatch_without_operation_controller) (action='material-four-get') ... FAIL
+  test_material_literals_dispatch_without_operation_controller (test_controller_cache_continuation_invoker_20261025.MaterialEntryTests.test_material_literals_dispatch_without_operation_controller) (action='material-reconcile') ... FAIL
+
+======================================================================
+FAIL: test_material_literals_dispatch_without_operation_controller (test_controller_cache_continuation_invoker_20261025.MaterialEntryTests.test_material_literals_dispatch_without_operation_controller) (action='material-four-get')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 44, in test_material_literals_dispatch_without_operation_controller
+    self.assertEqual(result, 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+AssertionError: 'one_fixed_controller_mode' != 0
+
+======================================================================
+FAIL: test_material_literals_dispatch_without_operation_controller (test_controller_cache_continuation_invoker_20261025.MaterialEntryTests.test_material_literals_dispatch_without_operation_controller) (action='material-reconcile')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py", line 44, in test_material_literals_dispatch_without_operation_controller
+    self.assertEqual(result, 0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+AssertionError: 'one_fixed_controller_mode' != 0
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=2)

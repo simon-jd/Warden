@@ -1,0 +1,22 @@
+test_immutable_inventory_ingress_binds_source_helper_and_digest (test_firecracker_recovery_init.InventoryFixture.test_immutable_inventory_ingress_binds_source_helper_and_digest) ... 
+  test_immutable_inventory_ingress_binds_source_helper_and_digest (test_firecracker_recovery_init.InventoryFixture.test_immutable_inventory_ingress_binds_source_helper_and_digest) (key='allocated_bytes') ... FAIL
+test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors (test_firecracker_recovery_init.InventoryFixture.test_inventory_is_metadata_only_and_keeps_held_nofollow_descriptors) ... ok
+test_inventory_refuses_unknown_alias_link_and_nonempty_jail (test_firecracker_recovery_init.InventoryFixture.test_inventory_refuses_unknown_alias_link_and_nonempty_jail) ... ok
+test_replacement_after_inventory_refuses_before_any_mutation (test_firecracker_recovery_init.InventoryFixture.test_replacement_after_inventory_refuses_before_any_mutation) ... ok
+test_restore_changes_only_directory_fds_deepest_first_and_preserves_files (test_firecracker_recovery_init.InventoryFixture.test_restore_changes_only_directory_fds_deepest_first_and_preserves_files) ... ok
+test_restore_failure_is_incomplete_and_attempts_readonly_remount (test_firecracker_recovery_init.InventoryFixture.test_restore_failure_is_incomplete_and_attempts_readonly_remount) ... ok
+test_only_initial_ro_private_matching_mount_is_accepted (test_firecracker_recovery_init.MountTests.test_only_initial_ro_private_matching_mount_is_accepted) ... ok
+
+======================================================================
+FAIL: test_immutable_inventory_ingress_binds_source_helper_and_digest (test_firecracker_recovery_init.InventoryFixture.test_immutable_inventory_ingress_binds_source_helper_and_digest) (key='allocated_bytes')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 149, in test_immutable_inventory_ingress_binds_source_helper_and_digest
+    with self.subTest(key=key), self.assertRaises(ValueError):
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.008s
+
+FAILED (failures=1)

@@ -1,0 +1,5 @@
+--- FAIL: TestRecoveryClaimCannotOverwriteTerminalResult (0.07s)
+    execution_test.go:80: terminal overwrite allowed: <nil>
+FAIL
+FAIL	warden/controlplane/internal/runs	0.075s
+FAIL

@@ -1,0 +1,65 @@
+{
+  "utc": "2026-10-24T20:53:55.023500+00:00",
+  "current_source": "135c3b866f07692ad846cc48c8c5bde0cf91ee33",
+  "I2": {
+    "actual_cap_add": [
+      "CAP_CHOWN",
+      "CAP_DAC_OVERRIDE",
+      "CAP_KILL",
+      "CAP_MKNOD",
+      "CAP_SETGID",
+      "CAP_SETUID",
+      "CAP_SYS_ADMIN",
+      "CAP_SYS_CHROOT"
+    ],
+    "expected_cli_names": [
+      "CHOWN",
+      "DAC_OVERRIDE",
+      "SETUID",
+      "SETGID",
+      "SYS_CHROOT",
+      "MKNOD",
+      "SYS_ADMIN",
+      "KILL"
+    ],
+    "defect": "inspect_live compares actual CAP_-prefixed inspected capability names with unprefixed CLI names. Same eight capability bits; no expansion authorized.",
+    "current_container_state_at_inspect": "created"
+  },
+  "I3": {
+    "historical_evidence": "docs/evidence/task-3/k3s-lab/live/first-failure-state.json",
+    "historical_state": {
+      "Status": "created",
+      "Running": false,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 0,
+      "ExitCode": 128,
+      "Error": "failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error mounting \"/proc/1962670/fd/6\" to rootfs at \"/session\": mount src=/proc/1962670/fd/6, dst=/session, dstFd=/proc/thread-self/fd/14, flags=MS_BIND|MS_REC: invalid argument",
+      "StartedAt": "0001-01-01T00:00:00Z",
+      "FinishedAt": "0001-01-01T00:00:00Z"
+    },
+    "historical_mounts": [
+      {
+        "Type": "bind",
+        "Source": "/proc/1962670/fd/6",
+        "Target": "/session"
+      }
+    ],
+    "current_mounts": [
+      {
+        "Type": "bind",
+        "Source": "/proc/1682385/fd/3",
+        "Target": "/opt/warden/session"
+      }
+    ],
+    "observation": "Same host and direct /proc/PID/fd bind source form previously failed with OCI runc MS_BIND|MS_REC EINVAL before inner process. Current FC mount has not been attempted; carry this concrete known host-compatibility risk into a reviewed initial-RO realpath/held-FD identity handshake proposal rather than knowingly repeating the failed form.",
+    "accepted_reference": [
+      "scripts/k3s_lab.py",
+      "scripts/k3s_lab_init.py:358",
+      "docs/evidence/task-3/k3s-lab/live/mount-smoke-first.md"
+    ]
+  },
+  "vm_started": false
+}

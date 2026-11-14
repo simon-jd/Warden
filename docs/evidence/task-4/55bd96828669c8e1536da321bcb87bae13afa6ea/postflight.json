@@ -1,0 +1,232 @@
+{
+  "utc": "2026-10-24T20:19:13.968402+00:00",
+  "source": "55bd96828669c8e1536da321bcb87bae13afa6ea",
+  "uid": 1000,
+  "host": "postedism-ubuntu-system-selfuse",
+  "kernel": "7.0.0-38-generic",
+  "docker_version": {
+    "Client": {
+      "Platform": {
+        "Name": "Docker Engine - Community"
+      },
+      "Version": "29.9.1",
+      "ApiVersion": "1.56",
+      "DefaultAPIVersion": "1.56",
+      "GitCommit": "dfc520d",
+      "GoVersion": "go1.26.9",
+      "Os": "linux",
+      "Arch": "amd64",
+      "BuildTime": "Wed Oct 14 18:32:35 2026",
+      "Context": "default"
+    },
+    "Server": {
+      "Platform": {
+        "Name": "Docker Engine - Community"
+      },
+      "Version": "29.9.1",
+      "ApiVersion": "1.56",
+      "MinAPIVersion": "1.40",
+      "Os": "linux",
+      "Arch": "amd64",
+      "Components": [
+        {
+          "Name": "Engine",
+          "Version": "29.9.1",
+          "Details": {
+            "ApiVersion": "1.56",
+            "Arch": "amd64",
+            "BuildTime": "Wed Oct 14 18:32:35 2026",
+            "Experimental": "false",
+            "GitCommit": "b26fb77",
+            "GoVersion": "go1.26.9",
+            "KernelVersion": "7.0.0-38-generic",
+            "MinAPIVersion": "1.40",
+            "Module": "github.com/moby/moby/v2",
+            "ModuleVersion": "v2.0.0+unknown",
+            "Os": "linux"
+          }
+        },
+        {
+          "Name": "containerd",
+          "Version": "v2.4.2",
+          "Details": {
+            "GitCommit": "b7a25261e029d68978bbf290df0a62fc819b3c51"
+          }
+        },
+        {
+          "Name": "runc",
+          "Version": "1.5.2",
+          "Details": {
+            "GitCommit": "v1.5.2-0-g29dd3dc2"
+          }
+        },
+        {
+          "Name": "docker-init",
+          "Version": "0.19.0",
+          "Details": {
+            "GitCommit": "de40ad0"
+          }
+        }
+      ],
+      "GitCommit": "b26fb77",
+      "GoVersion": "go1.26.9",
+      "KernelVersion": "7.0.0-38-generic",
+      "BuildTime": "2026-10-14T18:32:35.000000000+00:00"
+    }
+  },
+  "owned_images_all": [],
+  "owned_containers_all": [],
+  "outstanding_bytes": 0,
+  "configured_resident_services_bytes": 0,
+  "host_allowance_bytes": 1000000000,
+  "preflight": {
+    "additional_bytes": "0",
+    "at": "2026-10-24T20:19:13Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 285893292032,
+    "project_allocated_bytes": 3728805888,
+    "service_memory_bytes": "1000000000"
+  },
+  "protected_sysctls": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "protected_baseline_match": true,
+  "materials": {
+    "firecracker-v1.17.0-x86_64.tgz": {
+      "size": 7464385,
+      "sha256": "06094a1108ae9e82aa4c23a775aa92758f53f1175d422270d9d6162cb9ade558",
+      "url": "https://github.com/firecracker-microvm/firecracker/releases/download/v1.17.0/firecracker-v1.17.0-x86_64.tgz",
+      "provenance": "publisher-release-checksum",
+      "observed_bytes": 7464385,
+      "observed_sha256": "06094a1108ae9e82aa4c23a775aa92758f53f1175d422270d9d6162cb9ade558"
+    },
+    "firecracker-v1.17.0-x86_64.tgz.sha256.txt": {
+      "size": 97,
+      "sha256": "b89dea3edf551929f151b95d31168677ad2b8bb257d1d87a08470f7299749b7c",
+      "url": "https://github.com/firecracker-microvm/firecracker/releases/download/v1.17.0/firecracker-v1.17.0-x86_64.tgz.sha256.txt",
+      "provenance": "computed-pin",
+      "observed_bytes": 97,
+      "observed_sha256": "b89dea3edf551929f151b95d31168677ad2b8bb257d1d87a08470f7299749b7c"
+    },
+    "vmlinux-6.18.54": {
+      "size": 27893008,
+      "sha256": "da5e0041fb31fcc7337026da9e2b64fb7694b4eed760cc9b5e8fe54e52fa8188",
+      "url": "https://s3.amazonaws.com/spec.ccfc.min/firecracker-ci/20261023-dd7c24b0d165-0/x86_64/vmlinux-6.18.54",
+      "provenance": "computed-pin",
+      "observed_bytes": 27893008,
+      "observed_sha256": "da5e0041fb31fcc7337026da9e2b64fb7694b4eed760cc9b5e8fe54e52fa8188"
+    },
+    "vmlinux-6.18.54.config": {
+      "size": 101680,
+      "sha256": "7dbdc7445d01d3dd049b1e653534bde71266d59afaf9c1de50a8a6b8a8c138d0",
+      "url": "https://s3.amazonaws.com/spec.ccfc.min/firecracker-ci/20261023-dd7c24b0d165-0/x86_64/vmlinux-6.18.54.config",
+      "provenance": "computed-pin",
+      "observed_bytes": 101680,
+      "observed_sha256": "7dbdc7445d01d3dd049b1e653534bde71266d59afaf9c1de50a8a6b8a8c138d0"
+    }
+  },
+  "sessions": [
+    {
+      "name": "docker-firecracker-0bde7ef9ad0858fab87a066fe51738d3",
+      "charge": {
+        "version": 1,
+        "reserved_bytes": 5000000000,
+        "released": true
+      },
+      "files": [
+        "charge.json",
+        "export-provenance.json",
+        "export.tar",
+        "package-result.json",
+        "probe-oci-manifest.json",
+        "probe.tar",
+        "saved-probe.tar"
+      ]
+    },
+    {
+      "name": "docker-firecracker-53059d96d8709ab60fcea51781899cda",
+      "charge": {
+        "version": 1,
+        "reserved_bytes": 5000000000,
+        "released": true
+      },
+      "files": [
+        "charge.json",
+        "export-provenance.json",
+        "export.tar",
+        "probe-oci-manifest.json",
+        "probe.tar",
+        "saved-probe.tar"
+      ]
+    },
+    {
+      "name": "docker-firecracker-77c53966ecac5db93458bd02dd184705",
+      "charge": {
+        "version": 1,
+        "reserved_bytes": 5000000000,
+        "released": true
+      },
+      "files": [
+        "charge.json",
+        "export-provenance.json",
+        "export.tar",
+        "probe-oci-manifest.json",
+        "probe.tar",
+        "saved-probe.tar"
+      ]
+    },
+    {
+      "name": "docker-firecracker-c6183831b54cdb01448398c8af409f35",
+      "charge": {
+        "version": 1,
+        "reserved_bytes": 5000000000,
+        "released": true
+      },
+      "files": [
+        "charge.json",
+        "identity.json",
+        "run.log"
+      ]
+    },
+    {
+      "name": "docker-firecracker-d723f7159ba7af3196d4d478e18047a0",
+      "charge": {
+        "version": 1,
+        "reserved_bytes": 5000000000,
+        "released": true
+      },
+      "files": [
+        "charge.json",
+        "export-provenance.json",
+        "export.tar",
+        "package-result.json",
+        "probe-oci-manifest.json",
+        "probe.tar",
+        "saved-probe.tar"
+      ]
+    },
+    {
+      "name": "docker-firecracker-e8256cfac7abc6d246ccba7638dacbff",
+      "charge": {
+        "version": 1,
+        "reserved_bytes": 5000000000,
+        "released": true
+      },
+      "files": [
+        "charge.json",
+        "image-binding-observation.json",
+        "probe-oci-manifest.json",
+        "probe.tar",
+        "roundtrip.tar"
+      ]
+    }
+  ],
+  "vm_executed": false,
+  "tenant_executed": false
+}

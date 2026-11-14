@@ -1,0 +1,11 @@
+test_each_bound_transition_recounts_rest_images_other_charges_and_full_envelope (test_firecracker_recovery.OperationBindingTests.test_each_bound_transition_recounts_rest_images_other_charges_and_full_envelope) ... ok
+test_exact_settled_predecessor_and_immutable_new_operation (test_firecracker_recovery.OperationBindingTests.test_exact_settled_predecessor_and_immutable_new_operation) ... ok
+test_initial_phase_cannot_reuse_an_existing_operation_root (test_firecracker_recovery.OperationBindingTests.test_initial_phase_cannot_reuse_an_existing_operation_root) ... ok
+test_metadata_read_pins_the_same_inode_observed_before_open (test_firecracker_recovery.OperationBindingTests.test_metadata_read_pins_the_same_inode_observed_before_open) ... ok
+test_predecessor_and_operation_drift_block_later_phase_admission (test_firecracker_recovery.OperationBindingTests.test_predecessor_and_operation_drift_block_later_phase_admission) ... ok
+test_predecessor_mismatch_pending_shape_and_objects_refuse_without_writes (test_firecracker_recovery.OperationBindingTests.test_predecessor_mismatch_pending_shape_and_objects_refuse_without_writes) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.023s
+
+OK

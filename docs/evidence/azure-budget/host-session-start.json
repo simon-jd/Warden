@@ -1,0 +1,82 @@
+{
+  "observed_at": "2026-10-24T03:23:37.164090+00:00",
+  "implementation_sha": "38771399948944c9570cd205e297007584179d16",
+  "scope": "actual host Azure reads; real reaper safely no-ops on absent own RG; zero resource mutations",
+  "checks": [
+    {
+      "command": [
+        "az",
+        "account",
+        "show",
+        "--subscription",
+        "<subscription-id>",
+        "--query",
+        "{id:id,name:name,state:state}",
+        "-o",
+        "json",
+        "--only-show-errors"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"id\": \"<subscription-id>\",\n  \"name\": \"Azure for Students\",\n  \"state\": \"Enabled\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "az",
+        "version",
+        "-o",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"azure-cli\": \"2.91.0\",\n  \"azure-cli-core\": \"2.91.0\",\n  \"azure-cli-telemetry\": \"1.1.0\",\n  \"extensions\": {\n    \"ml\": \"2.45.0\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Python 3.14.4\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "az",
+        "group",
+        "show",
+        "--name",
+        "rg-warden-lab",
+        "--subscription",
+        "<subscription-id>",
+        "--query",
+        "{id:id,name:name,tags:tags}",
+        "-o",
+        "json",
+        "--only-show-errors"
+      ],
+      "exit_code": 3,
+      "stdout": "",
+      "stderr": "ERROR: (ResourceGroupNotFound) Resource group 'rg-warden-lab' could not be found.\nCode: ResourceGroupNotFound\nMessage: Resource group 'rg-warden-lab' could not be found.\n"
+    },
+    {
+      "command": [
+        "./scripts/azure_reaper.sh"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"at\": \"2026-10-24T03:23:36Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "scripts/azure_guard.py",
+        "preflight"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"additional_bytes\": \"0\", \"at\": \"2026-10-24T03:23:37Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 385384325120, \"project_allocated_bytes\": 2184663040, \"service_memory_bytes\": \"0\"}\n",
+      "stderr": ""
+    }
+  ]
+}

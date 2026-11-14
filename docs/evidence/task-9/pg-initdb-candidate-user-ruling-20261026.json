@@ -1,0 +1,9 @@
+{
+  "record_type": "root record of latest direct user instruction, not an invented coordinator approval",
+  "user_quote_verbatim": "父已全文读现有实际25B version/2911B help/14577B entrypoint、1743B status及6events控制字段。metadata容器rc0/OOMfalse/PID0/cleanup known；唯一失败是help_has_set_name_value期待错格式。原UNKNOWN_FAILURE/false原件必须保持，不改成历史PASS。无需再跑metadata。现有help直接支持 -c, --set NAME=VALUE；entrypoint docker_init_database_dir 的eval逐字转发POSTGRES_INITDB_ARGS。父现按既有4016B ecc链裁定这个语义前置已具备，仅把待执行候选写为 POSTGRES_INITDB_ARGS=-c dynamic_shared_memory_type=mmap（值含空格，env单参数），其余原cap/logger/owner/networknone不变。当前writer安全返回后，全文冻结caller+fresh，只准ecc链原先尚未消费的一次PG-only验证；真实ready+clean后才可原3businessRED。旧所有2/2/2/2及本次metadata1/1均spent，不能重放它们或改旧证据。Task15原5/5和CODE524288耗尽保持，不扩第6轮。",
+  "previous_metadata_terminal": "UNKNOWN_FAILURE immutable",
+  "semantic_prerequisite_new_decision": "SATISFIED from already captured bytes",
+  "candidate_single_env_argv": "POSTGRES_INITDB_ARGS=-c dynamic_shared_memory_type=mmap",
+  "next_actual": "ecc-chain existing unspent one PG_ONLY, after safe writer return/fullread/freeze/fresh",
+  "Task10_writer": "safely returned; report says source/stub/preparation only, 57344B; Go UNRUN"
+}

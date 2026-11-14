@@ -1,0 +1,35 @@
+{
+  "source": "d8f54d90d77465f97c7d1d0d7327fa36d7ad4cf7",
+  "tested_source": "d8f54d90d77465f97c7d1d0d7327fa36d7ad4cf7",
+  "scope": "Exact code0 static literal / empty stderr parser-only amendment; native parser fixtures, no actual closure or new scene operation",
+  "files": {
+    "README.md": {
+      "bytes": 5883,
+      "sha256": "242a096dfa64ed33473b704c825a3a3c13cc995e4b1a4dfdad5bb7e8b9cbe872"
+    },
+    "history-static-green.log": {
+      "bytes": 770,
+      "sha256": "3495532d0d26c5d2e2574999910c143596f2cb5fe5aa378dbca43147c3404c27"
+    },
+    "history-static-red.log": {
+      "bytes": 1275,
+      "sha256": "80280751f64656685000a903151b0732539d2a2799f31fb7f389a48c9b6f70ea"
+    },
+    "python-tests.log": {
+      "bytes": 953,
+      "sha256": "936902153e21187e2a02236da6be7b115c1c6b640e58992a3800bb84bb22473e"
+    },
+    "source-verification.json": {
+      "bytes": 4906,
+      "sha256": "3cad615fd07a7960105719c383e7e692d294984a9dfa07346cdb9be4dd66390f"
+    },
+    "source-verification.log": {
+      "bytes": 292,
+      "sha256": "8055c4dfbe454de6dde3002eb51f47bb80e954ea6a834e2ff5dfe0347d9c774c"
+    },
+    "verify-command.py": {
+      "bytes": 6090,
+      "sha256": "6d0fcada4d58b626671f91f52d4bedbb18ed598298ab2b780667611c9b922be0"
+    }
+  }
+}

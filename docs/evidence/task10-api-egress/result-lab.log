@@ -1,0 +1,43 @@
+local Docker daemon: postedism-ubuntu-system-selfuse 29.9.2 systemd
+outstanding Docker allocation charge: 5000000000
+{"additional_bytes": "10000000000", "at": "2026-10-28T18:13:06Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 615667818496, "project_allocated_bytes": 6717607936, "service_memory_bytes": "4939524096"}
+owned image: sha256:c3c3ba6f62fd0cb59a9c57b80fa918dc2678e4cd12523437087b46a1b0fc12d1
+owned egress PostgreSQL: 159793a9c3e33c4755e785f7f8e91efd9224832dfd1c83ca519cb836fcfb2c4b 192.168.192.2
+owned container: bf6e434d5dae850d12cee28061731a7620a1fdfccd4b53dfacf6dba16c8f2143
+containerd containerd v2.4.2 b7a25261e029d68978bbf290df0a62fc819b3c51
+ctr containerd v2.4.2
+containerd-shim-runc-v2:
+  Version:  v2.4.2
+  Revision: b7a25261e029d68978bbf290df0a62fc819b3c51
+  Go version: go1.27.3
+
+runc version 1.5.2
+commit: v1.5.2-0-g29dd3dc2
+spec: 1.3.0
+go: go1.27.3
+libseccomp: 2.6.0
+Python: 3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]
+libseccomp: 7
+verified private outer cgroup limits: {"memory": "3999997952", "pids": "512", "cpu": "200000 100000"}
+warden lab/probe:conformance            	saved	
+application/vnd.oci.image.manifest.v1+json sha256:5b649f3f779a81941d2b0425a77ab4ecc0068fec5ad0386645cc9ec52f2f6c23
+Importing	elapsed: 0.6 s	total:   0.0 B	(0.0 B/s)	
+=== RUN   TestRuncEgressAllowlist
+=== RUN   TestRuncEgressAllowlist/AllowlistedDomainReachable
+=== RUN   TestRuncEgressAllowlist/NonAllowlistedBlocked
+=== RUN   TestRuncEgressAllowlist/EgressHotReload
+    egress_runc_lab_test.go:302: reload_grant_latency: 79 ms
+    egress_runc_lab_test.go:302: reload_revoke_latency: 38 ms
+--- PASS: TestRuncEgressAllowlist (4.35s)
+    --- PASS: TestRuncEgressAllowlist/AllowlistedDomainReachable (0.58s)
+    --- PASS: TestRuncEgressAllowlist/NonAllowlistedBlocked (1.84s)
+    --- PASS: TestRuncEgressAllowlist/EgressHotReload (1.91s)
+=== RUN   TestAPIProcessRuncEgress
+--- PASS: TestAPIProcessRuncEgress (0.87s)
+PASS
+Dedicated session logs/config retained: /opt/warden/.cache/warden-lab/session-c51eacc9d13c72ea
+outer container removed: bf6e434d5dae850d12cee28061731a7620a1fdfccd4b53dfacf6dba16c8f2143
+owned egress PostgreSQL removed: 159793a9c3e33c4755e785f7f8e91efd9224832dfd1c83ca519cb836fcfb2c4b
+owned egress PostgreSQL network removed: warden-pg-c4fa092e63c9a3a35ed437c99bbcdec5
+owned image removed: sha256:c3c3ba6f62fd0cb59a9c57b80fa918dc2678e4cd12523437087b46a1b0fc12d1
+evidence directory: /home/postedism/Desktop/Warden/.cache/warden-lab/docker-c4fa092e63c9a3a35ed437c99bbcdec5

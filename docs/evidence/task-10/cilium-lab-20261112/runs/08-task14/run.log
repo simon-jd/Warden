@@ -1,0 +1,1375 @@
+# 2026-11-13T08:14:17-08:00 head be0fd0f; git status --short:
+?? docs/evidence/task-10/cilium-lab-20261112/runs/08-task14/
+11.76 9.57 6.78 14/6704 1945294
+$ taskset -c 0-7,16-31 make test-cilium CILIUM_REUSE=1 CILIUM_RUN='^TestQuarantineCutsEstablishedConnections$' CILIUM_OUT=/home/postedism/Desktop/Warden-next/docs/evidence/task-10/cilium-lab-20261112/runs/08-task14 
+scripts/k3s_gvisor_lab.sh env \
+	env -u GOFLAGS -u GOPATH -u GOROOT GOTOOLCHAIN=local GOPROXY=off GOFLAGS=-mod=readonly GOCACHE=/home/postedism/Desktop/Warden-next/.cache/go-build GOMODCACHE=/home/postedism/Desktop/Warden-next/.cache/go-mod GOPATH=/home/postedism/Desktop/Warden-next/.cache/go HOME=/home/postedism/Desktop/Warden-next/.cache/home TMPDIR=/home/postedism/Desktop/Warden-next/.cache/test-tmp WARDEN_LIVE_CILIUM=1 CILIUM_OUT=/home/postedism/Desktop/Warden-next/docs/evidence/task-10/cilium-lab-20261112/runs/08-task14 WARDEN_CILIUM_REPS= /home/postedism/Desktop/Warden-next/.tools/go/bin/go test -buildvcs=false -count=1 -v -timeout 60m -run '^TestQuarantineCutsEstablishedConnections$' ./controlplane/internal/ciliumlab
+=== RUN   TestQuarantineCutsEstablishedConnections
+    quarantine_test.go:254: rep 00: cut within 1 s (requirement): want last line <= 1000 ms after the alert, got 12879.2 ms (up 12665.2, down 12879.2)
+    quarantine_test.go:254: rep 01: cut within 1 s (requirement): want last line <= 1000 ms after the alert, got 28622.2 ms (up 28402.2, down 28622.2)
+    quarantine_test.go:254: rep 02: cut within 1 s (requirement): want last line <= 1000 ms after the alert, got 27953.2 ms (up 27714.2, down 27953.2)
+    quarantine_test.go:254: rep 03: cut within 1 s (requirement): want last line <= 1000 ms after the alert, got 28966.9 ms (up 28737.9, down 28966.9)
+    quarantine_test.go:254: rep 04: cut within 1 s (requirement): want last line <= 1000 ms after the alert, got 26864.0 ms (up 26638.0, down 26864.0)
+    quarantine_test.go:254: rep 05: cut within 1 s (requirement): want last line <= 1000 ms after the alert, got 20302.8 ms (up 20066.8, down 20302.8)
+    quarantine_test.go:254: rep 06: cut within 1 s (requirement): want last line <= 1000 ms after the alert, got 29358.2 ms (up 29167.2, down 29358.2)
+    quarantine_test.go:254: rep 07: cut within 1 s (requirement): want last line <= 1000 ms after the alert, got 24232.0 ms (up 24074.0, down 24232.0)
+    quarantine_test.go:254: rep 08: cut within 1 s (requirement): want last line <= 1000 ms after the alert, got 32452.4 ms (up 32249.4, down 32452.4)
+    quarantine_test.go:254: rep 09: cut within 1 s (requirement): want last line <= 1000 ms after the alert, got 14465.8 ms (up 14253.8, down 14465.8)
+    quarantine_test.go:254: rep 10: cut within 1 s (requirement): want last line <= 1000 ms after the alert, got 16430.9 ms (up 16208.9, down 16430.9)
+    quarantine_test.go:254: rep 11: cut within 1 s (requirement): want last line <= 1000 ms after the alert, got 10146.2 ms (up 9938.2, down 10146.2)
+    lab_test.go:584: result: {
+          "checks": [
+            {
+              "name": "responder may delete ciliumclusterwidenetworkpolicies",
+              "want": "false",
+              "got": "false",
+              "pass": true
+            },
+            {
+              "name": "responder may patch pods warden-lab",
+              "want": "true",
+              "got": "true",
+              "pass": true
+            },
+            {
+              "name": "responder may get pods warden-lab",
+              "want": "true",
+              "got": "true",
+              "pass": true
+            },
+            {
+              "name": "responder may delete pods warden-lab",
+              "want": "false",
+              "got": "false",
+              "pass": true
+            },
+            {
+              "name": "responder may create pods/exec warden-lab",
+              "want": "false",
+              "got": "false",
+              "pass": true
+            },
+            {
+              "name": "responder may patch pods kube-system",
+              "want": "false",
+              "got": "false",
+              "pass": true
+            },
+            {
+              "name": "responder may get secrets warden-lab",
+              "want": "false",
+              "got": "false",
+              "pass": true
+            },
+            {
+              "name": "rep 00: new request before the alert (positive control)",
+              "want": "reached",
+              "got": "ok status=200 body=origin-allowed",
+              "pass": true
+            },
+            {
+              "name": "rep 00: dry run",
+              "want": "Preview",
+              "got": "{Status:Preview NoOp:false ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-00}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 00: dry run leaves the pod and its stream alone",
+              "want": "no label, lines both ways",
+              "got": "label \"\", up 50, down 50",
+              "pass": true
+            },
+            {
+              "name": "rep 00: IsolatePod",
+              "want": "Completed",
+              "got": "{Status:Completed NoOp:false ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-00}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 00: stream up before the alert",
+              "want": "lines both ways in the second before it",
+              "got": "up 50, down 49",
+              "pass": true
+            },
+            {
+              "name": "rep 00: pod labelled",
+              "want": "true",
+              "got": "true",
+              "pass": true
+            },
+            {
+              "name": "rep 00: established connection cut",
+              "want": "nothing either way for 5 s within 60 s of the alert",
+              "got": "{LastUpMS:12665.2 LastDownMS:12879.2 Stopped:true CutMS:12879.2}",
+              "pass": true
+            },
+            {
+              "name": "rep 00: cut within 1 s (requirement)",
+              "want": "last line \u003c= 1000 ms after the alert",
+              "got": "12879.2 ms (up 12665.2, down 12879.2)",
+              "pass": false
+            },
+            {
+              "name": "rep 00: control stream kept flowing",
+              "want": "no gap over 1000 ms either way, not closed",
+              "got": "gaps up 253.1 ms, down 25.0 ms, closed false",
+              "pass": true
+            },
+            {
+              "name": "rep 00: new request after the cut",
+              "want": "fails",
+              "got": "connect_error=dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+              "pass": true
+            },
+            {
+              "name": "rep 00: replay",
+              "want": "no-op",
+              "got": "{Status:Completed NoOp:true ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-00}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 01: new request before the alert (positive control)",
+              "want": "reached",
+              "got": "ok status=200 body=origin-allowed",
+              "pass": true
+            },
+            {
+              "name": "rep 01: IsolatePod",
+              "want": "Completed",
+              "got": "{Status:Completed NoOp:false ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-01}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 01: stream up before the alert",
+              "want": "lines both ways in the second before it",
+              "got": "up 50, down 50",
+              "pass": true
+            },
+            {
+              "name": "rep 01: pod labelled",
+              "want": "true",
+              "got": "true",
+              "pass": true
+            },
+            {
+              "name": "rep 01: established connection cut",
+              "want": "nothing either way for 5 s within 60 s of the alert",
+              "got": "{LastUpMS:28402.2 LastDownMS:28622.2 Stopped:true CutMS:28622.2}",
+              "pass": true
+            },
+            {
+              "name": "rep 01: cut within 1 s (requirement)",
+              "want": "last line \u003c= 1000 ms after the alert",
+              "got": "28622.2 ms (up 28402.2, down 28622.2)",
+              "pass": false
+            },
+            {
+              "name": "rep 01: control stream kept flowing",
+              "want": "no gap over 1000 ms either way, not closed",
+              "got": "gaps up 277.6 ms, down 32.0 ms, closed false",
+              "pass": true
+            },
+            {
+              "name": "rep 01: new request after the cut",
+              "want": "fails",
+              "got": "connect_error=dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+              "pass": true
+            },
+            {
+              "name": "rep 01: replay",
+              "want": "no-op",
+              "got": "{Status:Completed NoOp:true ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-01}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 02: new request before the alert (positive control)",
+              "want": "reached",
+              "got": "ok status=200 body=origin-allowed",
+              "pass": true
+            },
+            {
+              "name": "rep 02: IsolatePod",
+              "want": "Completed",
+              "got": "{Status:Completed NoOp:false ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-02}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 02: stream up before the alert",
+              "want": "lines both ways in the second before it",
+              "got": "up 50, down 49",
+              "pass": true
+            },
+            {
+              "name": "rep 02: pod labelled",
+              "want": "true",
+              "got": "true",
+              "pass": true
+            },
+            {
+              "name": "rep 02: established connection cut",
+              "want": "nothing either way for 5 s within 60 s of the alert",
+              "got": "{LastUpMS:27714.2 LastDownMS:27953.2 Stopped:true CutMS:27953.2}",
+              "pass": true
+            },
+            {
+              "name": "rep 02: cut within 1 s (requirement)",
+              "want": "last line \u003c= 1000 ms after the alert",
+              "got": "27953.2 ms (up 27714.2, down 27953.2)",
+              "pass": false
+            },
+            {
+              "name": "rep 02: control stream kept flowing",
+              "want": "no gap over 1000 ms either way, not closed",
+              "got": "gaps up 270.3 ms, down 26.3 ms, closed false",
+              "pass": true
+            },
+            {
+              "name": "rep 02: new request after the cut",
+              "want": "fails",
+              "got": "connect_error=dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+              "pass": true
+            },
+            {
+              "name": "rep 02: replay",
+              "want": "no-op",
+              "got": "{Status:Completed NoOp:true ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-02}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 03: new request before the alert (positive control)",
+              "want": "reached",
+              "got": "ok status=200 body=origin-allowed",
+              "pass": true
+            },
+            {
+              "name": "rep 03: IsolatePod",
+              "want": "Completed",
+              "got": "{Status:Completed NoOp:false ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-03}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 03: stream up before the alert",
+              "want": "lines both ways in the second before it",
+              "got": "up 50, down 49",
+              "pass": true
+            },
+            {
+              "name": "rep 03: pod labelled",
+              "want": "true",
+              "got": "true",
+              "pass": true
+            },
+            {
+              "name": "rep 03: established connection cut",
+              "want": "nothing either way for 5 s within 60 s of the alert",
+              "got": "{LastUpMS:28737.9 LastDownMS:28966.9 Stopped:true CutMS:28966.9}",
+              "pass": true
+            },
+            {
+              "name": "rep 03: cut within 1 s (requirement)",
+              "want": "last line \u003c= 1000 ms after the alert",
+              "got": "28966.9 ms (up 28737.9, down 28966.9)",
+              "pass": false
+            },
+            {
+              "name": "rep 03: control stream kept flowing",
+              "want": "no gap over 1000 ms either way, not closed",
+              "got": "gaps up 318.6 ms, down 30.0 ms, closed false",
+              "pass": true
+            },
+            {
+              "name": "rep 03: new request after the cut",
+              "want": "fails",
+              "got": "connect_error=dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+              "pass": true
+            },
+            {
+              "name": "rep 03: replay",
+              "want": "no-op",
+              "got": "{Status:Completed NoOp:true ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-03}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 04: new request before the alert (positive control)",
+              "want": "reached",
+              "got": "ok status=200 body=origin-allowed",
+              "pass": true
+            },
+            {
+              "name": "rep 04: IsolatePod",
+              "want": "Completed",
+              "got": "{Status:Completed NoOp:false ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-04}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 04: stream up before the alert",
+              "want": "lines both ways in the second before it",
+              "got": "up 50, down 49",
+              "pass": true
+            },
+            {
+              "name": "rep 04: pod labelled",
+              "want": "true",
+              "got": "true",
+              "pass": true
+            },
+            {
+              "name": "rep 04: established connection cut",
+              "want": "nothing either way for 5 s within 60 s of the alert",
+              "got": "{LastUpMS:26638 LastDownMS:26864 Stopped:true CutMS:26864}",
+              "pass": true
+            },
+            {
+              "name": "rep 04: cut within 1 s (requirement)",
+              "want": "last line \u003c= 1000 ms after the alert",
+              "got": "26864.0 ms (up 26638.0, down 26864.0)",
+              "pass": false
+            },
+            {
+              "name": "rep 04: control stream kept flowing",
+              "want": "no gap over 1000 ms either way, not closed",
+              "got": "gaps up 314.8 ms, down 28.0 ms, closed false",
+              "pass": true
+            },
+            {
+              "name": "rep 04: new request after the cut",
+              "want": "fails",
+              "got": "connect_error=dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+              "pass": true
+            },
+            {
+              "name": "rep 04: replay",
+              "want": "no-op",
+              "got": "{Status:Completed NoOp:true ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-04}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 05: new request before the alert (positive control)",
+              "want": "reached",
+              "got": "ok status=200 body=origin-allowed",
+              "pass": true
+            },
+            {
+              "name": "rep 05: IsolatePod",
+              "want": "Completed",
+              "got": "{Status:Completed NoOp:false ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-05}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 05: stream up before the alert",
+              "want": "lines both ways in the second before it",
+              "got": "up 45, down 47",
+              "pass": true
+            },
+            {
+              "name": "rep 05: pod labelled",
+              "want": "true",
+              "got": "true",
+              "pass": true
+            },
+            {
+              "name": "rep 05: established connection cut",
+              "want": "nothing either way for 5 s within 60 s of the alert",
+              "got": "{LastUpMS:20066.8 LastDownMS:20302.8 Stopped:true CutMS:20302.8}",
+              "pass": true
+            },
+            {
+              "name": "rep 05: cut within 1 s (requirement)",
+              "want": "last line \u003c= 1000 ms after the alert",
+              "got": "20302.8 ms (up 20066.8, down 20302.8)",
+              "pass": false
+            },
+            {
+              "name": "rep 05: control stream kept flowing",
+              "want": "no gap over 1000 ms either way, not closed",
+              "got": "gaps up 341.7 ms, down 25.0 ms, closed false",
+              "pass": true
+            },
+            {
+              "name": "rep 05: new request after the cut",
+              "want": "fails",
+              "got": "connect_error=dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+              "pass": true
+            },
+            {
+              "name": "rep 05: replay",
+              "want": "no-op",
+              "got": "{Status:Completed NoOp:true ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-05}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 06: new request before the alert (positive control)",
+              "want": "reached",
+              "got": "ok status=200 body=origin-allowed",
+              "pass": true
+            },
+            {
+              "name": "rep 06: IsolatePod",
+              "want": "Completed",
+              "got": "{Status:Completed NoOp:false ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-06}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 06: stream up before the alert",
+              "want": "lines both ways in the second before it",
+              "got": "up 44, down 44",
+              "pass": true
+            },
+            {
+              "name": "rep 06: pod labelled",
+              "want": "true",
+              "got": "true",
+              "pass": true
+            },
+            {
+              "name": "rep 06: established connection cut",
+              "want": "nothing either way for 5 s within 60 s of the alert",
+              "got": "{LastUpMS:29167.2 LastDownMS:29358.2 Stopped:true CutMS:29358.2}",
+              "pass": true
+            },
+            {
+              "name": "rep 06: cut within 1 s (requirement)",
+              "want": "last line \u003c= 1000 ms after the alert",
+              "got": "29358.2 ms (up 29167.2, down 29358.2)",
+              "pass": false
+            },
+            {
+              "name": "rep 06: control stream kept flowing",
+              "want": "no gap over 1000 ms either way, not closed",
+              "got": "gaps up 377.6 ms, down 27.0 ms, closed false",
+              "pass": true
+            },
+            {
+              "name": "rep 06: new request after the cut",
+              "want": "fails",
+              "got": "connect_error=dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+              "pass": true
+            },
+            {
+              "name": "rep 06: replay",
+              "want": "no-op",
+              "got": "{Status:Completed NoOp:true ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-06}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 07: new request before the alert (positive control)",
+              "want": "reached",
+              "got": "ok status=200 body=origin-allowed",
+              "pass": true
+            },
+            {
+              "name": "rep 07: IsolatePod",
+              "want": "Completed",
+              "got": "{Status:Completed NoOp:false ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-07}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 07: stream up before the alert",
+              "want": "lines both ways in the second before it",
+              "got": "up 42, down 41",
+              "pass": true
+            },
+            {
+              "name": "rep 07: pod labelled",
+              "want": "true",
+              "got": "true",
+              "pass": true
+            },
+            {
+              "name": "rep 07: established connection cut",
+              "want": "nothing either way for 5 s within 60 s of the alert",
+              "got": "{LastUpMS:24074 LastDownMS:24232 Stopped:true CutMS:24232}",
+              "pass": true
+            },
+            {
+              "name": "rep 07: cut within 1 s (requirement)",
+              "want": "last line \u003c= 1000 ms after the alert",
+              "got": "24232.0 ms (up 24074.0, down 24232.0)",
+              "pass": false
+            },
+            {
+              "name": "rep 07: control stream kept flowing",
+              "want": "no gap over 1000 ms either way, not closed",
+              "got": "gaps up 358.7 ms, down 29.0 ms, closed false",
+              "pass": true
+            },
+            {
+              "name": "rep 07: new request after the cut",
+              "want": "fails",
+              "got": "connect_error=dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+              "pass": true
+            },
+            {
+              "name": "rep 07: replay",
+              "want": "no-op",
+              "got": "{Status:Completed NoOp:true ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-07}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 08: new request before the alert (positive control)",
+              "want": "reached",
+              "got": "ok status=200 body=origin-allowed",
+              "pass": true
+            },
+            {
+              "name": "rep 08: IsolatePod",
+              "want": "Completed",
+              "got": "{Status:Completed NoOp:false ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-08}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 08: stream up before the alert",
+              "want": "lines both ways in the second before it",
+              "got": "up 40, down 40",
+              "pass": true
+            },
+            {
+              "name": "rep 08: pod labelled",
+              "want": "true",
+              "got": "true",
+              "pass": true
+            },
+            {
+              "name": "rep 08: established connection cut",
+              "want": "nothing either way for 5 s within 60 s of the alert",
+              "got": "{LastUpMS:32249.4 LastDownMS:32452.4 Stopped:true CutMS:32452.4}",
+              "pass": true
+            },
+            {
+              "name": "rep 08: cut within 1 s (requirement)",
+              "want": "last line \u003c= 1000 ms after the alert",
+              "got": "32452.4 ms (up 32249.4, down 32452.4)",
+              "pass": false
+            },
+            {
+              "name": "rep 08: control stream kept flowing",
+              "want": "no gap over 1000 ms either way, not closed",
+              "got": "gaps up 392.1 ms, down 28.0 ms, closed false",
+              "pass": true
+            },
+            {
+              "name": "rep 08: new request after the cut",
+              "want": "fails",
+              "got": "connect_error=dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+              "pass": true
+            },
+            {
+              "name": "rep 08: replay",
+              "want": "no-op",
+              "got": "{Status:Completed NoOp:true ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-08}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 09: new request before the alert (positive control)",
+              "want": "reached",
+              "got": "ok status=200 body=origin-allowed",
+              "pass": true
+            },
+            {
+              "name": "rep 09: IsolatePod",
+              "want": "Completed",
+              "got": "{Status:Completed NoOp:false ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-09}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 09: stream up before the alert",
+              "want": "lines both ways in the second before it",
+              "got": "up 35, down 35",
+              "pass": true
+            },
+            {
+              "name": "rep 09: pod labelled",
+              "want": "true",
+              "got": "true",
+              "pass": true
+            },
+            {
+              "name": "rep 09: established connection cut",
+              "want": "nothing either way for 5 s within 60 s of the alert",
+              "got": "{LastUpMS:14253.8 LastDownMS:14465.8 Stopped:true CutMS:14465.8}",
+              "pass": true
+            },
+            {
+              "name": "rep 09: cut within 1 s (requirement)",
+              "want": "last line \u003c= 1000 ms after the alert",
+              "got": "14465.8 ms (up 14253.8, down 14465.8)",
+              "pass": false
+            },
+            {
+              "name": "rep 09: control stream kept flowing",
+              "want": "no gap over 1000 ms either way, not closed",
+              "got": "gaps up 411.3 ms, down 30.3 ms, closed false",
+              "pass": true
+            },
+            {
+              "name": "rep 09: new request after the cut",
+              "want": "fails",
+              "got": "connect_error=dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+              "pass": true
+            },
+            {
+              "name": "rep 09: replay",
+              "want": "no-op",
+              "got": "{Status:Completed NoOp:true ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-09}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 10: new request before the alert (positive control)",
+              "want": "reached",
+              "got": "ok status=200 body=origin-allowed",
+              "pass": true
+            },
+            {
+              "name": "rep 10: IsolatePod",
+              "want": "Completed",
+              "got": "{Status:Completed NoOp:false ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-10}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 10: stream up before the alert",
+              "want": "lines both ways in the second before it",
+              "got": "up 30, down 30",
+              "pass": true
+            },
+            {
+              "name": "rep 10: pod labelled",
+              "want": "true",
+              "got": "true",
+              "pass": true
+            },
+            {
+              "name": "rep 10: established connection cut",
+              "want": "nothing either way for 5 s within 60 s of the alert",
+              "got": "{LastUpMS:16208.9 LastDownMS:16430.9 Stopped:true CutMS:16430.9}",
+              "pass": true
+            },
+            {
+              "name": "rep 10: cut within 1 s (requirement)",
+              "want": "last line \u003c= 1000 ms after the alert",
+              "got": "16430.9 ms (up 16208.9, down 16430.9)",
+              "pass": false
+            },
+            {
+              "name": "rep 10: control stream kept flowing",
+              "want": "no gap over 1000 ms either way, not closed",
+              "got": "gaps up 450.8 ms, down 48.0 ms, closed false",
+              "pass": true
+            },
+            {
+              "name": "rep 10: new request after the cut",
+              "want": "fails",
+              "got": "connect_error=dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+              "pass": true
+            },
+            {
+              "name": "rep 10: replay",
+              "want": "no-op",
+              "got": "{Status:Completed NoOp:true ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-10}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 11: new request before the alert (positive control)",
+              "want": "reached",
+              "got": "ok status=200 body=origin-allowed",
+              "pass": true
+            },
+            {
+              "name": "rep 11: IsolatePod",
+              "want": "Completed",
+              "got": "{Status:Completed NoOp:false ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-11}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "rep 11: stream up before the alert",
+              "want": "lines both ways in the second before it",
+              "got": "up 50, down 49",
+              "pass": true
+            },
+            {
+              "name": "rep 11: pod labelled",
+              "want": "true",
+              "got": "true",
+              "pass": true
+            },
+            {
+              "name": "rep 11: established connection cut",
+              "want": "nothing either way for 5 s within 60 s of the alert",
+              "got": "{LastUpMS:9938.2 LastDownMS:10146.2 Stopped:true CutMS:10146.2}",
+              "pass": true
+            },
+            {
+              "name": "rep 11: cut within 1 s (requirement)",
+              "want": "last line \u003c= 1000 ms after the alert",
+              "got": "10146.2 ms (up 9938.2, down 10146.2)",
+              "pass": false
+            },
+            {
+              "name": "rep 11: control stream kept flowing",
+              "want": "no gap over 1000 ms either way, not closed",
+              "got": "gaps up 427.3 ms, down 27.0 ms, closed false",
+              "pass": true
+            },
+            {
+              "name": "rep 11: new request after the cut",
+              "want": "fails",
+              "got": "connect_error=dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+              "pass": true
+            },
+            {
+              "name": "rep 11: replay",
+              "want": "no-op",
+              "got": "{Status:Completed NoOp:true ApprovalNeeded:false Resource:{Type:pod ID:warden-lab/q-11}} \u003cnil\u003e",
+              "pass": true
+            },
+            {
+              "name": "origin log",
+              "want": "only the new-before requests",
+              "got": "",
+              "pass": true
+            }
+          ],
+          "control": {
+            "ip": "10.42.0.147",
+            "pod": "q-ctl",
+            "runtime_handler": "runsc-netstack",
+            "stream": "ctl-d4deeca6734b"
+          },
+          "loadavg_end": "11.39 11.37 8.77 10/6788 2142886",
+          "loadavg_start": "11.76 9.57 6.78 15/6745 1945418",
+          "max_watch_s": 60,
+          "nproc": 24,
+          "origin_allowed_paths": [
+            "allowed.warden.test/qb-q00-d4deeca6734b",
+            "allowed.warden.test/qb-q01-d4deeca6734b",
+            "allowed.warden.test/qb-q02-d4deeca6734b",
+            "allowed.warden.test/qb-q03-d4deeca6734b",
+            "allowed.warden.test/qb-q04-d4deeca6734b",
+            "allowed.warden.test/qb-q05-d4deeca6734b",
+            "allowed.warden.test/qb-q06-d4deeca6734b",
+            "allowed.warden.test/qb-q07-d4deeca6734b",
+            "allowed.warden.test/qb-q08-d4deeca6734b",
+            "allowed.warden.test/qb-q09-d4deeca6734b",
+            "allowed.warden.test/qb-q10-d4deeca6734b",
+            "allowed.warden.test/qb-q11-d4deeca6734b"
+          ],
+          "policies": [
+            {
+              "file": "policies/cilium/default-deny.yaml",
+              "names": [
+                "warden-sandbox-default-deny"
+              ],
+              "realized_after_ms": 405.5,
+              "revision": 62
+            },
+            {
+              "file": "policies/cilium/egress-proxy.yaml",
+              "names": [
+                "warden-sandbox-to-egress-proxy",
+                "warden-egress-proxy"
+              ],
+              "realized_after_ms": 387.9,
+              "revision": 64
+            },
+            {
+              "file": "policies/cilium/quarantine.yaml",
+              "names": [
+                "warden-quarantine"
+              ],
+              "realized_after_ms": 425.9,
+              "revision": 65
+            }
+          ],
+          "proxy_image": "sha256:0ca959846659403e7273526abfef31ec2e910c3a1735fcf73323eaa5cc80ed5e",
+          "quiet_s": 5,
+          "reps": 12,
+          "reps_detail": [
+            {
+              "control_max_gap_ms": {
+                "down": 25,
+                "up": 253.1
+              },
+              "cut": {
+                "LastUpMS": 12665.2,
+                "LastDownMS": 12879.2,
+                "Stopped": true,
+                "CutMS": 12879.2
+              },
+              "handle_ms": 24,
+              "identity": {
+                "after": 46292,
+                "before": 63475,
+                "first_poll_with_label_ms": 12677,
+                "last_poll_without_label_ms": 12443.4,
+                "polls": 52
+              },
+              "ip": "10.42.0.167",
+              "lines_after_alert": {
+                "down": 640,
+                "up": 632
+              },
+              "loadavg": "12.16 9.81 6.92 11/6800 1951160",
+              "new_after": {
+                "key": "new-after",
+                "ok": false,
+                "connect_error": "dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+                "ms": 3000.18
+              },
+              "new_before": {
+                "key": "new-before",
+                "ok": true,
+                "status": 200,
+                "body": "origin-allowed",
+                "ms": 3.169
+              },
+              "pod": "q-00",
+              "probe_saw_close_ms": 0,
+              "runtime_handler": "runsc-netstack",
+              "stream": "q00-d4deeca6734b",
+              "watch_ms": 18456.2
+            },
+            {
+              "control_max_gap_ms": {
+                "down": 32,
+                "up": 277.6
+              },
+              "cut": {
+                "LastUpMS": 28402.2,
+                "LastDownMS": 28622.2,
+                "Stopped": true,
+                "CutMS": 28622.2
+              },
+              "handle_ms": 18.3,
+              "identity": {
+                "after": 53689,
+                "before": 321,
+                "first_poll_with_label_ms": 28399.6,
+                "last_poll_without_label_ms": 28150.5,
+                "polls": 116
+              },
+              "ip": "10.42.0.88",
+              "lines_after_alert": {
+                "down": 1421,
+                "up": 1421
+              },
+              "loadavg": "13.25 10.29 7.17 11/6847 1962085",
+              "new_after": {
+                "key": "new-after",
+                "ok": false,
+                "connect_error": "dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+                "ms": 3000.475
+              },
+              "new_before": {
+                "key": "new-before",
+                "ok": true,
+                "status": 200,
+                "body": "origin-allowed",
+                "ms": 2.348
+              },
+              "pod": "q-01",
+              "probe_saw_close_ms": 0,
+              "runtime_handler": "runsc-netstack",
+              "stream": "q01-d4deeca6734b",
+              "watch_ms": 33672.8
+            },
+            {
+              "control_max_gap_ms": {
+                "down": 26.3,
+                "up": 270.3
+              },
+              "cut": {
+                "LastUpMS": 27714.2,
+                "LastDownMS": 27953.2,
+                "Stopped": true,
+                "CutMS": 27953.2
+              },
+              "handle_ms": 20,
+              "identity": {
+                "after": 16436,
+                "before": 61278,
+                "first_poll_with_label_ms": 27752.1,
+                "last_poll_without_label_ms": 27496.9,
+                "polls": 115
+              },
+              "ip": "10.42.0.151",
+              "lines_after_alert": {
+                "down": 1387,
+                "up": 1373
+              },
+              "loadavg": "12.75 10.54 7.39 11/6854 1984920",
+              "new_after": {
+                "key": "new-after",
+                "ok": false,
+                "connect_error": "dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+                "ms": 3000.43
+              },
+              "new_before": {
+                "key": "new-before",
+                "ok": true,
+                "status": 200,
+                "body": "origin-allowed",
+                "ms": 2.308
+              },
+              "pod": "q-02",
+              "probe_saw_close_ms": 0,
+              "runtime_handler": "runsc-netstack",
+              "stream": "q02-d4deeca6734b",
+              "watch_ms": 33243.4
+            },
+            {
+              "control_max_gap_ms": {
+                "down": 30,
+                "up": 318.6
+              },
+              "cut": {
+                "LastUpMS": 28737.9,
+                "LastDownMS": 28966.9,
+                "Stopped": true,
+                "CutMS": 28966.9
+              },
+              "handle_ms": 25.5,
+              "identity": {
+                "after": 29321,
+                "before": 13075,
+                "first_poll_with_label_ms": 28787.1,
+                "last_poll_without_label_ms": 28558.9,
+                "polls": 120
+              },
+              "ip": "10.42.0.150",
+              "lines_after_alert": {
+                "down": 1438,
+                "up": 1437
+              },
+              "loadavg": "11.99 10.61 7.53 12/6852 2003788",
+              "new_after": {
+                "key": "new-after",
+                "ok": false,
+                "connect_error": "dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+                "ms": 3000.96
+              },
+              "new_before": {
+                "key": "new-before",
+                "ok": true,
+                "status": 200,
+                "body": "origin-allowed",
+                "ms": 2.413
+              },
+              "pod": "q-03",
+              "probe_saw_close_ms": 0,
+              "runtime_handler": "runsc-netstack",
+              "stream": "q03-d4deeca6734b",
+              "watch_ms": 34742.5
+            },
+            {
+              "control_max_gap_ms": {
+                "down": 28,
+                "up": 314.8
+              },
+              "cut": {
+                "LastUpMS": 26638,
+                "LastDownMS": 26864,
+                "Stopped": true,
+                "CutMS": 26864
+              },
+              "handle_ms": 24.8,
+              "identity": {
+                "after": 16911,
+                "before": 14961,
+                "first_poll_with_label_ms": 26528,
+                "last_poll_without_label_ms": 26265.7,
+                "polls": 110
+              },
+              "ip": "10.42.0.240",
+              "lines_after_alert": {
+                "down": 1333,
+                "up": 1332
+              },
+              "loadavg": "11.22 10.62 7.68 11/6892 2024278",
+              "new_after": {
+                "key": "new-after",
+                "ok": false,
+                "connect_error": "dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+                "ms": 3000.681
+              },
+              "new_before": {
+                "key": "new-before",
+                "ok": true,
+                "status": 200,
+                "body": "origin-allowed",
+                "ms": 2.486
+              },
+              "pod": "q-04",
+              "probe_saw_close_ms": 0,
+              "runtime_handler": "runsc-netstack",
+              "stream": "q04-d4deeca6734b",
+              "watch_ms": 32007.9
+            },
+            {
+              "control_max_gap_ms": {
+                "down": 25,
+                "up": 341.7
+              },
+              "cut": {
+                "LastUpMS": 20066.8,
+                "LastDownMS": 20302.8,
+                "Stopped": true,
+                "CutMS": 20302.8
+              },
+              "handle_ms": 25.2,
+              "identity": {
+                "after": 46050,
+                "before": 62755,
+                "first_poll_with_label_ms": 19923.6,
+                "last_poll_without_label_ms": 19672.1,
+                "polls": 83
+              },
+              "ip": "10.42.0.107",
+              "lines_after_alert": {
+                "down": 1007,
+                "up": 965
+              },
+              "loadavg": "11.54 10.76 7.86 10/6854 2041944",
+              "new_after": {
+                "key": "new-after",
+                "ok": false,
+                "connect_error": "dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+                "ms": 3000.31
+              },
+              "new_before": {
+                "key": "new-before",
+                "ok": true,
+                "status": 200,
+                "body": "origin-allowed",
+                "ms": 5.743
+              },
+              "pod": "q-05",
+              "probe_saw_close_ms": 0,
+              "runtime_handler": "runsc-netstack",
+              "stream": "q05-d4deeca6734b",
+              "watch_ms": 25308.5
+            },
+            {
+              "control_max_gap_ms": {
+                "down": 27,
+                "up": 377.6
+              },
+              "cut": {
+                "LastUpMS": 29167.2,
+                "LastDownMS": 29358.2,
+                "Stopped": true,
+                "CutMS": 29358.2
+              },
+              "handle_ms": 26.3,
+              "identity": {
+                "after": 12251,
+                "before": 59938,
+                "first_poll_with_label_ms": 29094.4,
+                "last_poll_without_label_ms": 28840.6,
+                "polls": 120
+              },
+              "ip": "10.42.0.127",
+              "lines_after_alert": {
+                "down": 1456,
+                "up": 1458
+              },
+              "loadavg": "11.47 10.83 7.97 10/6866 2056196",
+              "new_after": {
+                "key": "new-after",
+                "ok": false,
+                "connect_error": "dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+                "ms": 3000.301
+              },
+              "new_before": {
+                "key": "new-before",
+                "ok": true,
+                "status": 200,
+                "body": "origin-allowed",
+                "ms": 1.942
+              },
+              "pod": "q-06",
+              "probe_saw_close_ms": 0,
+              "runtime_handler": "runsc-netstack",
+              "stream": "q06-d4deeca6734b",
+              "watch_ms": 34920.8
+            },
+            {
+              "control_max_gap_ms": {
+                "down": 29,
+                "up": 358.7
+              },
+              "cut": {
+                "LastUpMS": 24074,
+                "LastDownMS": 24232,
+                "Stopped": true,
+                "CutMS": 24232
+              },
+              "handle_ms": 26.5,
+              "identity": {
+                "after": 23582,
+                "before": 23024,
+                "first_poll_with_label_ms": 24039.1,
+                "last_poll_without_label_ms": 23790.4,
+                "polls": 99
+              },
+              "ip": "10.42.0.32",
+              "lines_after_alert": {
+                "down": 1203,
+                "up": 1204
+              },
+              "loadavg": "12.60 11.23 8.23 12/6891 2076915",
+              "new_after": {
+                "key": "new-after",
+                "ok": false,
+                "connect_error": "dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+                "ms": 3000.846
+              },
+              "new_before": {
+                "key": "new-before",
+                "ok": true,
+                "status": 200,
+                "body": "origin-allowed",
+                "ms": 5.525
+              },
+              "pod": "q-07",
+              "probe_saw_close_ms": 0,
+              "runtime_handler": "runsc-netstack",
+              "stream": "q07-d4deeca6734b",
+              "watch_ms": 29962.6
+            },
+            {
+              "control_max_gap_ms": {
+                "down": 28,
+                "up": 392.1
+              },
+              "cut": {
+                "LastUpMS": 32249.4,
+                "LastDownMS": 32452.4,
+                "Stopped": true,
+                "CutMS": 32452.4
+              },
+              "handle_ms": 26.6,
+              "identity": {
+                "after": 4952,
+                "before": 21394,
+                "first_poll_with_label_ms": 32194.6,
+                "last_poll_without_label_ms": 31951.7,
+                "polls": 134
+              },
+              "ip": "10.42.0.227",
+              "lines_after_alert": {
+                "down": 1610,
+                "up": 1613
+              },
+              "loadavg": "12.40 11.37 8.40 11/6863 2093239",
+              "new_after": {
+                "key": "new-after",
+                "ok": false,
+                "connect_error": "dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+                "ms": 3000.401
+              },
+              "new_before": {
+                "key": "new-before",
+                "ok": true,
+                "status": 200,
+                "body": "origin-allowed",
+                "ms": 2.559
+              },
+              "pod": "q-08",
+              "probe_saw_close_ms": 0,
+              "runtime_handler": "runsc-netstack",
+              "stream": "q08-d4deeca6734b",
+              "watch_ms": 37817.5
+            },
+            {
+              "control_max_gap_ms": {
+                "down": 30.3,
+                "up": 411.3
+              },
+              "cut": {
+                "LastUpMS": 14253.8,
+                "LastDownMS": 14465.8,
+                "Stopped": true,
+                "CutMS": 14465.8
+              },
+              "handle_ms": 16.4,
+              "identity": {
+                "after": 12520,
+                "before": 6138,
+                "first_poll_with_label_ms": 14136.4,
+                "last_poll_without_label_ms": 13893.2,
+                "polls": 59
+              },
+              "ip": "10.42.0.199",
+              "lines_after_alert": {
+                "down": 718,
+                "up": 713
+              },
+              "loadavg": "11.86 11.40 8.56 10/6842 2114131",
+              "new_after": {
+                "key": "new-after",
+                "ok": false,
+                "connect_error": "dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+                "ms": 3000.182
+              },
+              "new_before": {
+                "key": "new-before",
+                "ok": true,
+                "status": 200,
+                "body": "origin-allowed",
+                "ms": 2.058
+              },
+              "pod": "q-09",
+              "probe_saw_close_ms": 0,
+              "runtime_handler": "runsc-netstack",
+              "stream": "q09-d4deeca6734b",
+              "watch_ms": 19537
+            },
+            {
+              "control_max_gap_ms": {
+                "down": 48,
+                "up": 450.8
+              },
+              "cut": {
+                "LastUpMS": 16208.9,
+                "LastDownMS": 16430.9,
+                "Stopped": true,
+                "CutMS": 16430.9
+              },
+              "handle_ms": 26,
+              "identity": {
+                "after": 4480,
+                "before": 36403,
+                "first_poll_with_label_ms": 16187,
+                "last_poll_without_label_ms": 15959,
+                "polls": 66
+              },
+              "ip": "10.42.0.178",
+              "lines_after_alert": {
+                "down": 815,
+                "up": 811
+              },
+              "loadavg": "11.66 11.40 8.64 16/6871 2124466",
+              "new_after": {
+                "key": "new-after",
+                "ok": false,
+                "connect_error": "dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+                "ms": 3001.116
+              },
+              "new_before": {
+                "key": "new-before",
+                "ok": true,
+                "status": 200,
+                "body": "origin-allowed",
+                "ms": 2.32
+              },
+              "pod": "q-10",
+              "probe_saw_close_ms": 0,
+              "runtime_handler": "runsc-netstack",
+              "stream": "q10-d4deeca6734b",
+              "watch_ms": 22337.7
+            },
+            {
+              "control_max_gap_ms": {
+                "down": 27,
+                "up": 427.3
+              },
+              "cut": {
+                "LastUpMS": 9938.2,
+                "LastDownMS": 10146.2,
+                "Stopped": true,
+                "CutMS": 10146.2
+              },
+              "handle_ms": 26.2,
+              "identity": {
+                "after": 54958,
+                "before": 57131,
+                "first_poll_with_label_ms": 9916.5,
+                "last_poll_without_label_ms": 9678.3,
+                "polls": 42
+              },
+              "ip": "10.42.0.13",
+              "lines_after_alert": {
+                "down": 504,
+                "up": 496
+              },
+              "loadavg": "11.40 11.36 8.71 10/6877 2135732",
+              "new_after": {
+                "key": "new-after",
+                "ok": false,
+                "connect_error": "dial tcp: lookup warden-egress.warden-system.svc.cluster.local.: i/o timeout",
+                "ms": 3000.114
+              },
+              "new_before": {
+                "key": "new-before",
+                "ok": true,
+                "status": 200,
+                "body": "origin-allowed",
+                "ms": 2.616
+              },
+              "pod": "q-11",
+              "probe_saw_close_ms": 0,
+              "runtime_handler": "runsc-netstack",
+              "stream": "q11-d4deeca6734b",
+              "watch_ms": 15368.4
+            }
+          ],
+          "requirement": "every rep: the established connection carries nothing either way from 1000 ms after the alert on",
+          "responder_rbac": {
+            "create pods/exec warden-lab": false,
+            "delete ciliumclusterwidenetworkpolicies": false,
+            "delete pods warden-lab": false,
+            "get pods warden-lab": true,
+            "get secrets warden-lab": false,
+            "patch pods kube-system": false,
+            "patch pods warden-lab": true
+          },
+          "started": "2026-11-13T16:14:18Z",
+          "stream_every_ms": "20",
+          "summary": {
+            "alert_to_cut_ms": {
+              "max": 32452.4,
+              "min": 10146.2,
+              "n": 12,
+              "p50": 24232,
+              "p95": 32452.4
+            },
+            "alert_to_identity_with_label_ms": {
+              "max": 32194.6,
+              "min": 9916.5,
+              "n": 12,
+              "p50": 24039.1,
+              "p95": 32194.6
+            },
+            "alert_to_last_down_line_ms": {
+              "max": 32452.4,
+              "min": 10146.2,
+              "n": 12,
+              "p50": 24232,
+              "p95": 32452.4
+            },
+            "alert_to_last_up_line_ms": {
+              "max": 32249.4,
+              "min": 9938.2,
+              "n": 12,
+              "p50": 24074,
+              "p95": 32249.4
+            },
+            "cut": "12/12",
+            "cut_within_1s": "0/12",
+            "handle_ms": {
+              "max": 26.6,
+              "min": 16.4,
+              "n": 12,
+              "p50": 25.2,
+              "p95": 26.6
+            },
+            "percentiles": "nearest rank"
+          }
+        }
+--- FAIL: TestQuarantineCutsEstablishedConnections (448.86s)
+FAIL
+FAIL	warden/controlplane/internal/ciliumlab	454.570s
+FAIL
+make: *** [Makefile:203: test-cilium] Error 1
+exit 2
+# 2026-11-13T08:21:52-08:00
+11.17 11.32 8.80 12/6639 2146524

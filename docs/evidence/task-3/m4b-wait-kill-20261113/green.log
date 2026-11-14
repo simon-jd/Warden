@@ -1,0 +1,20 @@
+# GREEN: the same tests after the fix (Kill and track no longer hold r.mu during a teardown)
+# 2026-11-13T18:13:21Z head 8ea53cb  M runtimes/gvisor/gvisor.go  M runtimes/gvisor/gvisor_test.go ?? docs/evidence/task-3/m4b-wait-kill-20261113/ 
+$ go test -count=1 -v -run '^(TestWaitDuringKillHonoursItsContext|TestLogsAndTimingsDuringKillAnswer|TestWaitDuringKillReturnsAfterTheTeardown)$' ./runtimes/gvisor
+=== RUN   TestWaitDuringKillHonoursItsContext
+--- PASS: TestWaitDuringKillHonoursItsContext (0.06s)
+=== RUN   TestLogsAndTimingsDuringKillAnswer
+--- PASS: TestLogsAndTimingsDuringKillAnswer (0.01s)
+=== RUN   TestWaitDuringKillReturnsAfterTheTeardown
+--- PASS: TestWaitDuringKillReturnsAfterTheTeardown (0.21s)
+PASS
+ok  	warden/runtimes/gvisor	0.278s
+exit 0
+
+$ go test -race -count=3 -shuffle=on ./runtimes/gvisor/...
+ok  	warden/runtimes/gvisor	8.915s
+?   	warden/runtimes/gvisor/cmd/warden-gvisor-init	[no test files]
+ok  	warden/runtimes/gvisor/lab/nodeinit	1.011s
+?   	warden/runtimes/gvisor/lab/pause	[no test files]
+ok  	warden/runtimes/gvisor/supervisor	1.036s
+exit 0

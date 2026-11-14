@@ -1,0 +1,19 @@
+{
+  "source": "8c8e9edf4a269effb155ae027b703cd9dc770836",
+  "command": [
+    "python3",
+    "-B",
+    "scripts/firecracker_recovery.py",
+    "cleanup-inspect",
+    "--reviewed-exact-scene",
+    "--other-service-memory-bytes",
+    "0"
+  ],
+  "started_at": "2026-10-24T23:34:12.584546+00:00",
+  "ended_at": "2026-10-24T23:34:14.288162+00:00",
+  "duration_seconds": 1.722495,
+  "exit_code": 0,
+  "log_bytes": 138,
+  "log_sha256": "f7566144e404ed423e0ee3f689fbb905883a149e50097161b29795cd60249d6c",
+  "scope": "reviewed pre-daemon material-only cleanup; original scene and Q retained"
+}

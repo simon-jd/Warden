@@ -1,0 +1,175 @@
+{
+  "added_functions": [
+    "histories",
+    "second_operation_document",
+    "second_predecessor"
+  ],
+  "affected_class_tests": {
+    "HistoryBindingTests": 8,
+    "OperationBindingTests": 6,
+    "WorkflowTests": 5
+  },
+  "bindings": {
+    "runtimes/firecracker/driver.go": {
+      "bytes": 9027,
+      "sha256": "4132c95539e1eca6f95d0b288b5b24c1263cb89a39b2d12656b7d9b1ca648dd7"
+    },
+    "runtimes/firecracker/identity.go": {
+      "bytes": 5278,
+      "sha256": "b96416588f72a2a26023e268ff26f74329005773811bcc78f7b232b6e2e932fd"
+    },
+    "runtimes/firecracker/process.go": {
+      "bytes": 1766,
+      "sha256": "c5bd0e2dc5cb78475659410689118931e75d848fd53c386b0a9beda94eb38861"
+    },
+    "runtimes/firecracker/vm.go": {
+      "bytes": 11123,
+      "sha256": "b6d892dd1ef51d2a7c06a7eb5d4b545c79a503fb52f08a2e95d073bc7bc72bee"
+    },
+    "runtimes/gate/gate.go": {
+      "bytes": 8507,
+      "sha256": "0b5a5b140a7124c9d2a65567694e5b662d13bb99b7fdcd1cedadc434273f8284"
+    },
+    "scripts/azure_guard.py": {
+      "bytes": 27828,
+      "sha256": "303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48"
+    },
+    "scripts/firecracker_code.py": {
+      "bytes": 5257,
+      "sha256": "56abda58b8a822b7bc1ce7311025763878e7110c2d4cfabd84203dce556db4dd"
+    },
+    "scripts/firecracker_device_receipt.py": {
+      "bytes": 9016,
+      "sha256": "c9d10f1cea6f60a15a7d70b818121538b93b76e5d42a94eb3fbe62594855da4b"
+    },
+    "scripts/firecracker_lab.py": {
+      "bytes": 32100,
+      "sha256": "551ba57ba4081155a612d0282a9a9299910390c67322b2042041642d45cafb0b"
+    },
+    "scripts/firecracker_recovery_init.py": {
+      "bytes": 14633,
+      "sha256": "72675e91ac22ab3f1607fc5f21b90db18fc8c115e9a50bd8a48761cf70c8c9b2"
+    },
+    "scripts/k3s_lab.py": {
+      "bytes": 23176,
+      "sha256": "65b746e1bc715203b56b98f85517a9bc109f0d19984a36455d308da03489167e"
+    },
+    "scripts/runtime_lab_docker.py": {
+      "bytes": 17520,
+      "sha256": "affadf0269b18f4352902801c2992e7a5cf14b57639d62be173a8619185f5773"
+    },
+    "scripts/runtime_lab_paths.py": {
+      "bytes": 7395,
+      "sha256": "0ce3287feab8197839cf2e7e1cf297fd5cad0e740069023b188e4c366b643f84"
+    },
+    "scripts/test_firecracker_recovery_init.py": {
+      "bytes": 12811,
+      "sha256": "78cc1d28223ceaa8c5b9f433dce41c08f328f13a9f9e2af950cddc7f5d893776"
+    }
+  },
+  "changed_existing": [
+    "execute_phase",
+    "operation_document",
+    "operation_read"
+  ],
+  "fix_base": "2b86368b294b8621c91204bf5449066b12e83cc1",
+  "immediate_prior_index": {
+    "artifacts_verified": 7,
+    "bytes": 1262,
+    "older_indices_followed": 0,
+    "path": "docs/evidence/task-4/recovery-static-abi/d8f54d90d77465f97c7d1d0d7327fa36d7ad4cf7/evidence-index.json",
+    "sha256": "6af9b78cfc2619541465797636ea8821c766621229e68823ee318527d2720aca"
+  },
+  "no_actual_scene_or_material_execution": true,
+  "other_ast_unchanged": true,
+  "other_test_ast_unchanged": true,
+  "parent": "05110d80665c2bb9dab8d8affdb3604f5bc8bf95",
+  "public_ruling_prerequisites": {
+    "controller-third-recovery-rulings.md": {
+      "bytes": 21221,
+      "sha256": "7ea2ae5b4afb40266af60092eab97882efc711b6adbd0ba7b70e86366574b55f"
+    },
+    "public-abi-closure-v2.json": {
+      "bytes": 1575,
+      "sha256": "52bbeda5b0fb8a2660070bdbe4f2895ff20c7c5c58dad6d94fafed3003bc99f0"
+    },
+    "public-package-preflight-v2.json": {
+      "bytes": 1868,
+      "sha256": "7b00eefc25160cf768c2a5be0e810b6d8c34786fa0d32f867fd46464dba8e93b"
+    }
+  },
+  "source": "0c7dedbf38499ee991f879e93e43b9f5df9bb7f4",
+  "source_files": {
+    "docs/firecracker-recovery.md": {
+      "bytes": 23969,
+      "mode": "0644",
+      "sha256": "eb4e13e569ddc15c08ec0ffb08468bc12b395f21044e9c88856112db8690e593"
+    },
+    "scripts/firecracker_recovery.py": {
+      "bytes": 74609,
+      "mode": "0644",
+      "sha256": "cccb3378b92816dc5242fd79e72df5fc79fcda338b8f20d34c5a9ca655a8453b"
+    },
+    "scripts/test_firecracker_recovery.py": {
+      "bytes": 77494,
+      "mode": "0644",
+      "sha256": "cc01fa21e5c80aa2286725f3276e7437196ce874435943efb8ae4acc4ed3571d"
+    }
+  },
+  "tested_source": "0c7dedbf38499ee991f879e93e43b9f5df9bb7f4",
+  "unchanged_classes": [
+    "Scene",
+    "RuntimeMaterial"
+  ],
+  "unchanged_functions": [
+    "sha",
+    "admitted",
+    "project_rest",
+    "verify_records",
+    "create_args",
+    "validate_labels",
+    "inspect_profile",
+    "build_archive",
+    "bounded_command",
+    "docker",
+    "dependencies",
+    "cleanup_helper",
+    "read_private",
+    "check_anchor",
+    "exact_absence",
+    "project_lock",
+    "private_directory",
+    "save",
+    "load",
+    "current_charges",
+    "image_charge",
+    "account",
+    "source_sha",
+    "public_directory",
+    "open_public",
+    "held_hash",
+    "select_stdlib",
+    "host_abi",
+    "runtime_inputs",
+    "validate_result",
+    "file_sha",
+    "directory_shape",
+    "private_snapshot",
+    "validate_admission",
+    "predecessor",
+    "phase_binding",
+    "bound_account",
+    "new_phase",
+    "validate_phase_state",
+    "state_read",
+    "check_image",
+    "check_archive",
+    "helper_absent",
+    "cleanup_phase",
+    "restored_metadata",
+    "full_postflight",
+    "run_helper",
+    "main"
+  ],
+  "workflow_delta": "one predecessor() to histories() call"
+}

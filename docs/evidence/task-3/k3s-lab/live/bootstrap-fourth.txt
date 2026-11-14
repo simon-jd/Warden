@@ -1,0 +1,34 @@
+{"owned_image_charge": 0, "outstanding_charge": 0}
+{"additional_bytes": "6000000000", "at": "2026-10-24T18:09:18Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 306974355456, "project_allocated_bytes": 3027075072, "service_memory_bytes": "7000000000"}
+{"rootfs_bytes": 496048182, "archive_bytes": 496619520, "manifest_sha256": "1d1a5fc35fad7db5b0d9c6f3ed27984ab7d80c6a11cf7b744e1a7e50fc434869"}
+{"owned_image_charge": 0, "outstanding_charge": 0}
+{"additional_bytes": "6000000000", "at": "2026-10-24T18:09:28Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 306477514752, "project_allocated_bytes": 3523809280, "service_memory_bytes": "7000000000"}
+{"image": "sha256:2504a55c791dba7ca00cadae8b11f937aea70ac9149243eb83e590d343bc44a3", "image_size_bytes": 685374913, "labels": {"owner": "codex-warden", "project": "warden", "session": "b5370b6ce57638aee676a14c3c272592", "ttl": "2026-10-24T19:09:18Z"}}
+{"owned_container": "9a22e3c1817441fa2c4f50616e68a333d2a06c98641d430a05a810ea3f7cac50", "mode": "bootstrap"}
+{"code": "timeout", "stage": "node-startup"}
+k3s lab failed: TimeoutError
+k3s lab failed: PermissionError
+Command exited with non-zero status 2
+	Command being timed: "python3 -B scripts/k3s_lab.py bootstrap --other-service-memory-bytes 0 --reviewed-live-profile"
+	User time (seconds): 8.74
+	System time (seconds): 1.44
+	Percent of CPU this job got: 3%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:28.70
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 804248
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2
+	Minor (reclaiming a frame) page faults: 456699
+	Voluntary context switches: 18937
+	Involuntary context switches: 222
+	Swaps: 0
+	File system inputs: 168
+	File system outputs: 970232
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 2

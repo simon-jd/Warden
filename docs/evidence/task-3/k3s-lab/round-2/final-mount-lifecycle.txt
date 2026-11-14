@@ -1,0 +1,8 @@
+$ /usr/bin/python3 -B -m unittest discover -s scripts -p test_k3s_lab.py -k content_drift -v
+test_mount_smoke_content_drift_preserves_objects_and_charge (test_k3s_lab.LabTest.test_mount_smoke_content_drift_preserves_objects_and_charge) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+OK
+exit=0

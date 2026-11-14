@@ -1,0 +1,8 @@
+--- FAIL: TestReapPermanentlyRevokesDelayedStartAcrossInstances (0.00s)
+    gate_test.go:46: gate directory must be private mode 0700
+--- FAIL: TestInflightLaunchBlocksReapUntilBoundedTimeout (0.00s)
+    gate_test.go:68: gate directory must be private mode 0700
+FAIL
+FAIL	warden/runtimes/gate	0.002s
+ok  	warden/controlplane/internal/runs	0.095s
+FAIL

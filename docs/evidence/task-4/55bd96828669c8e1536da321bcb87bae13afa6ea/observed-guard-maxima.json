@@ -1,0 +1,20 @@
+{
+  "max_disk_guard": {
+    "log": "55bd96828669c8e1536da321bcb87bae13afa6ea/abi.log",
+    "at": "2026-10-24T20:18:36Z",
+    "project": 3728699392,
+    "additional": 5358690742,
+    "total": 9087390134,
+    "service_memory": 3000000000
+  },
+  "max_service_guard": {
+    "log": "55bd96828669c8e1536da321bcb87bae13afa6ea/abi.log",
+    "at": "2026-10-24T20:18:32Z",
+    "project": 3728691200,
+    "additional": 5000000000,
+    "total": 8728691200,
+    "service_memory": 3000000000
+  },
+  "definition": "observed conservative guard charges, not peak RSS or live VM memory measurements",
+  "checks_count": 52
+}

@@ -1,0 +1,24 @@
+{
+  "changed_source_snapshots": [
+    "scripts/identity_cache_capture.py",
+    "scripts/identity_cache_maintenance.py",
+    "scripts/identity_cache_observe.py",
+    "scripts/test_identity_cache_control.py"
+  ],
+  "command": [
+    "python3",
+    "-B",
+    "docs/evidence/task-6/controller-operations-cover-07/run.py"
+  ],
+  "dispatch_base": "86d8d1424f77113722a826b1e9cecda7da26d67b",
+  "limits": {
+    "address_bytes": 536870912,
+    "cpu_seconds": 30,
+    "file_bytes": 33554432,
+    "wall_seconds": 45
+  },
+  "live_cache_access": false,
+  "source_commit_at_launch": "835600b611b631502b158b5037b8078921277f10",
+  "started_utc": "2026-10-25T12:28:22.552872+00:00",
+  "test_target": "test_identity_cache_control only, unittest in process"
+}

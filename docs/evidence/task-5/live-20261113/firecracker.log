@@ -1,0 +1,74 @@
+{"owned_image_charge": 929288740, "outstanding": 0, "additional": 5000000000, "service_memory": 5000000000}
+{"additional_bytes": "5929288740", "at": "2026-11-14T00:40:57Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 121663475712, "project_allocated_bytes": 1374191616, "service_memory_bytes": "5000000000"}
+{"owned_image_charge": 929288740, "outstanding": 5000000000, "additional": 0, "service_memory": 5000000000}
+{"additional_bytes": "5929288740", "at": "2026-11-14T00:40:58Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 121663463424, "project_allocated_bytes": 1374195712, "service_memory_bytes": "5000000000"}
+{"owned_image_charge": 1302223158, "outstanding": 5000000000, "additional": 0, "service_memory": 5000000000}
+{"additional_bytes": "6302223158", "at": "2026-11-14T00:41:03Z", "download_bytes": "0", "event": "local-preflight", "free_bytes": 121663455232, "project_allocated_bytes": 1374199808, "service_memory_bytes": "5000000000"}
+{"inspected_host_config": {"Binds": null, "ContainerIDFile": "", "LogConfig": {"Type": "json-file", "Config": {"max-file": "2", "max-size": "10m"}}, "NetworkMode": "none", "PortBindings": {}, "RestartPolicy": {"Name": "no", "MaximumRetryCount": 0}, "AutoRemove": false, "VolumeDriver": "", "VolumesFrom": null, "ConsoleSize": [0, 0], "CapAdd": ["CAP_CHOWN", "CAP_DAC_OVERRIDE", "CAP_KILL", "CAP_MKNOD", "CAP_SETGID", "CAP_SETUID", "CAP_SYS_ADMIN", "CAP_SYS_CHROOT"], "CapDrop": ["ALL"], "CgroupnsMode": "private", "Dns": null, "DnsOptions": [], "DnsSearch": [], "ExtraHosts": null, "GroupAdd": null, "IpcMode": "private", "Cgroup": "", "Links": null, "OomScoreAdj": 0, "PidMode": "", "Privileged": false, "PublishAllPorts": false, "ReadonlyRootfs": true, "SecurityOpt": ["no-new-privileges", "apparmor=unconfined", "seccomp=unconfined"], "Tmpfs": {"/run": "rw,nosuid,nodev,size=64m", "/tmp": "rw,nosuid,nodev,size=64m"}, "UTSMode": "", "UsernsMode": "", "ShmSize": 67108864, "Runtime": "runc", "Isolation": "", "CpuShares": 0, "Memory": 4000000000, "NanoCpus": 2000000000, "CgroupParent": "", "BlkioWeight": 0, "BlkioWeightDevice": [], "BlkioDeviceReadBps": [], "BlkioDeviceWriteBps": [], "BlkioDeviceReadIOps": [], "BlkioDeviceWriteIOps": [], "CpuPeriod": 0, "CpuQuota": 0, "CpuRealtimePeriod": 0, "CpuRealtimeRuntime": 0, "CpusetCpus": "", "CpusetMems": "", "Devices": [{"PathOnHost": "/dev/kvm", "PathInContainer": "/dev/kvm", "CgroupPermissions": "rw"}], "DeviceCgroupRules": null, "DeviceRequests": null, "MemoryReservation": 0, "MemorySwap": 4000000000, "MemorySwappiness": null, "OomKillDisable": false, "PidsLimit": 512, "Ulimits": null, "CpuCount": 0, "CpuPercent": 0, "IOMaximumIOps": 0, "IOMaximumBandwidth": 0, "Mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/task5-fc-wt/.cache/warden-lab/docker-firecracker-5981a1880d288414761365bbf5b9dfbb/live", "Target": "/opt/warden/session", "ReadOnly": true, "BindOptions": {"Propagation": "rprivate"}}], "MaskedPaths": ["/proc/acpi", "/proc/asound", "/proc/interrupts", "/proc/kcore", "/proc/keys", "/proc/latency_stats", "/proc/sched_debug", "/proc/scsi", "/proc/timer_list", "/proc/timer_stats", "/sys/devices/virtual/powercap", "/sys/firmware", "/sys/devices/system/cpu/cpu0/thermal_throttle", "/sys/devices/system/cpu/cpu1/thermal_throttle", "/sys/devices/system/cpu/cpu2/thermal_throttle", "/sys/devices/system/cpu/cpu3/thermal_throttle", "/sys/devices/system/cpu/cpu4/thermal_throttle", "/sys/devices/system/cpu/cpu5/thermal_throttle", "/sys/devices/system/cpu/cpu6/thermal_throttle", "/sys/devices/system/cpu/cpu7/thermal_throttle", "/sys/devices/system/cpu/cpu8/thermal_throttle", "/sys/devices/system/cpu/cpu9/thermal_throttle", "/sys/devices/system/cpu/cpu10/thermal_throttle", "/sys/devices/system/cpu/cpu11/thermal_throttle", "/sys/devices/system/cpu/cpu12/thermal_throttle", "/sys/devices/system/cpu/cpu13/thermal_throttle", "/sys/devices/system/cpu/cpu14/thermal_throttle", "/sys/devices/system/cpu/cpu15/thermal_throttle", "/sys/devices/system/cpu/cpu16/thermal_throttle", "/sys/devices/system/cpu/cpu17/thermal_throttle", "/sys/devices/system/cpu/cpu18/thermal_throttle", "/sys/devices/system/cpu/cpu19/thermal_throttle", "/sys/devices/system/cpu/cpu20/thermal_throttle", "/sys/devices/system/cpu/cpu21/thermal_throttle", "/sys/devices/system/cpu/cpu22/thermal_throttle", "/sys/devices/system/cpu/cpu23/thermal_throttle", "/sys/devices/system/cpu/cpu24/thermal_throttle", "/sys/devices/system/cpu/cpu25/thermal_throttle", "/sys/devices/system/cpu/cpu26/thermal_throttle", "/sys/devices/system/cpu/cpu27/thermal_throttle", "/sys/devices/system/cpu/cpu28/thermal_throttle", "/sys/devices/system/cpu/cpu29/thermal_throttle", "/sys/devices/system/cpu/cpu30/thermal_throttle", "/sys/devices/system/cpu/cpu31/thermal_throttle"], "ReadonlyPaths": ["/proc/bus", "/proc/fs", "/proc/irq", "/proc/sys", "/proc/sysrq-trigger"]}, "inspected_mounts": [{"Type": "bind", "Source": "/home/postedism/Desktop/Warden/.cache/task5-fc-wt/.cache/warden-lab/docker-firecracker-5981a1880d288414761365bbf5b9dfbb/live", "Destination": "/opt/warden/session", "Mode": "", "RW": false, "Propagation": "rprivate"}]}
+exit status 1
+{"kind":"warden-device-receipt-v1","pid":1,"cgroup_ns":"cgroup:[4026533595]","mount_ns":"mnt:[4026533590]","device":30,"inode":5821015,"mount_id":977,"policy_version":"warden-tun-deny-v1","policy_sha256":"bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404"}
+{"device_policy_query_effective":false,"flags":2,"ids":[56159]}
+{"device_policy_query_effective":true,"flags":0,"ids":[56159]}
+{"device_policy_query_effective":false,"flags":2,"ids":[56159,56160]}
+{"device_policy_query_effective":true,"flags":0,"ids":[56159,56160]}
+device policy verified: version=warden-tun-deny-v1 sha256=bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404 program_id=56160; TUN rw EPERM, basics and KVM API12; no VM from probe
+=== RUN   TestFirecrackerConformance
+=== RUN   TestFirecrackerConformance/ForkBombCappedByPids
+    suite.go:61: real guest mode=fork exit={Code:0 LogsTruncated:false PidsMaxEvents:1 PeakPids:32 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS fork
+=== RUN   TestFirecrackerConformance/RootfsReadOnly
+    suite.go:61: real guest mode=readonly exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:4 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS readonly
+=== RUN   TestFirecrackerConformance/NoNetworkByDefault
+    suite.go:61: real guest mode=network exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:4 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS network
+=== RUN   TestFirecrackerConformance/RunsAsNonRoot
+    suite.go:61: real guest mode=uid exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:4 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS uid
+=== RUN   TestFirecrackerConformance/TimeoutKillsProcessGroup
+    suite.go:61: real guest mode=timeout exit={Code:137 LogsTruncated:false PidsMaxEvents:0 PeakPids:6 DroppedLogBytes:0 OOMKilled:false TimedOut:true CgroupEmpty:true} logs=READY timeout
+=== RUN   TestFirecrackerConformance/MemoryLimitOOMKilled
+    suite.go:61: real guest mode=oom exit={Code:137 LogsTruncated:false PidsMaxEvents:0 PeakPids:5 DroppedLogBytes:0 OOMKilled:true TimedOut:false CgroupEmpty:true} logs=READY oom
+=== RUN   TestFirecrackerConformance/SeccompBlocksMountAndPtrace
+    suite.go:61: real guest mode=seccomp exit={Code:0 LogsTruncated:false PidsMaxEvents:0 PeakPids:4 DroppedLogBytes:0 OOMKilled:false TimedOut:false CgroupEmpty:true} logs=PASS seccomp
+=== RUN   TestFirecrackerConformance/IsolationMatrix
+    lab.go:67: arp-spoof on firecracker: blocked (no success signal in the complete output) run NTJP7GRBWCARWJDO2DFZUTEXN4
+    lab.go:67: disk-fill on firecracker: error (probe objective or denial not recorded) run JGLENE72WYABOALYHBDRUJAD34
+    lab.go:69: disk-fill on firecracker: no verdict: probe objective or denial not recorded
+    lab.go:67: dns-exfil on firecracker: error (probe objective or denial not recorded) run 6IUEWXYUENTT5ANWOYRYQZCXEE
+    lab.go:69: dns-exfil on firecracker: no verdict: probe objective or denial not recorded
+    lab.go:67: fork-bomb on firecracker: blocked (no success signal in the complete output) run B4KTVOMC6ELJHIGGT74TZ6GM4I
+    lab.go:67: kernel-module on firecracker: blocked (no success signal in the complete output) run PX2I4MVVK6SLAN5C2SGDHODNDQ
+    lab.go:67: memory-exhaustion on firecracker: blocked (no success signal in the complete output) run BN7GR3KLOGXMQYQADLWXX4ZGIM
+    lab.go:67: metadata-host on firecracker: blocked (no success signal in the complete output) run GWROYCKFZVJCW7SJMNOI3W2T2Q
+    lab.go:67: metadata-ip on firecracker: blocked (no success signal in the complete output) run KEGCCBJB3J4QVA3UEQVBQCHNHU
+    lab.go:67: mount-unshare on firecracker: blocked (no success signal in the complete output) run 2Y33TKNASSH22GKUIT3LPRSLEI
+    lab.go:67: proc-leak on firecracker: error (probe objective or denial not recorded) run JFX3LMQDYPBC5DAHABUFII5O7U
+    lab.go:69: proc-leak on firecracker: no verdict: probe objective or denial not recorded
+    lab.go:67: ptrace on firecracker: blocked (no success signal in the complete output) run K3Y2DG7MUACSJRYYZDA6HCTN4U
+    lab.go:67: raw-socket on firecracker: blocked (no success signal in the complete output) run YAKDHWEP2OQN4U2NUNFWR7TZRY
+    lab.go:67: reverse-shell on firecracker: error (probe objective or denial not recorded) run WAWU2MNVILD3ACMVGYCCBB2CDQ
+    lab.go:69: reverse-shell on firecracker: no verdict: probe objective or denial not recorded
+    lab.go:67: sys-leak on firecracker: error (probe objective or denial not recorded) run ZEHKG2NMVVUMEQR4DYXEPQWB4E
+    lab.go:69: sys-leak on firecracker: no verdict: probe objective or denial not recorded
+--- FAIL: TestFirecrackerConformance (19.98s)
+    --- PASS: TestFirecrackerConformance/ForkBombCappedByPids (0.83s)
+    --- PASS: TestFirecrackerConformance/RootfsReadOnly (0.86s)
+    --- PASS: TestFirecrackerConformance/NoNetworkByDefault (0.83s)
+    --- PASS: TestFirecrackerConformance/RunsAsNonRoot (0.84s)
+    --- PASS: TestFirecrackerConformance/TimeoutKillsProcessGroup (2.73s)
+    --- PASS: TestFirecrackerConformance/MemoryLimitOOMKilled (0.83s)
+    --- PASS: TestFirecrackerConformance/SeccompBlocksMountAndPtrace (0.79s)
+    --- FAIL: TestFirecrackerConformance/IsolationMatrix (11.91s)
+FAIL
+known-owner VMM/worker pidfds reaped; cgroup populated=0; owned data and FDs retired; metadata released
+failed run cleaned: own containers/images removed, outer cgroup gone, session operator-owned; reservation released
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/.cache/task5-fc-wt/scripts/firecracker_lab.py", line 424, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/postedism/Desktop/Warden/.cache/task5-fc-wt/scripts/firecracker_lab.py", line 423, in main
+    else:execute(args.mode,args.other_service_memory_bytes)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/.cache/task5-fc-wt/scripts/firecracker_lab.py", line 382, in execute
+    log=device_gate.run()
+  File "/home/postedism/Desktop/Warden/.cache/task5-fc-wt/scripts/firecracker_device_receipt.py", line 134, in run
+    if self.child.wait(timeout=10)!=0:raise RuntimeError('owned device-policy outer failed')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: owned device-policy outer failed

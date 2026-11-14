@@ -1,0 +1,25 @@
+# Task 6: which source each committed Entra run JSON really came from (written 2026-11-12, review fix round 1)
+# The run JSONs are unchanged. Their "source" field came from source_state() in scripts/entra_oidc_live.py, which ran
+# `git status --porcelain --untracked-files=no`: untracked files were invisible, so an uncommitted new script did not
+# make a run "dirty". Fixed in b64ff73 (commit, changed tracked files and untracked files are all recorded now).
+# Times are UTC; commit times from `git log --format=%cI`.
+
+entra-oidc-live-20261110-run1.json   records 47dd091, tracked_changes false; ran 01:18:07Z-01:18:14Z.
+  Its driver scripts/entra_oidc_live.py was untracked then: it was first committed in 7795d87 at 01:18:50Z, 36 s after
+  the run finished. So the run's source is 47dd091 plus that then-untracked script; which version of the script ran is
+  not recorded (7795d87's version is the closest committed one).
+entra-unassign-20261110-run1.json    records 7795d87, tracked_changes true; ran 01:23:10Z-01:23:43Z.
+  The tracked change was the unassign mode in entra_oidc_live.py, and scripts/entra_token_probe.py (the fresh-token
+  probe the mode calls) was untracked; both were committed in 6890dbd at 01:32:41Z, after the run.
+entra-oidc-live-20261110-run2.json   records 6283e49, tracked_changes false; ran 02:38:36Z-02:38:40Z.
+entra-oidc-expired-20261110-run1.json records 6283e49, tracked_changes false; ran 02:38:08Z-02:38:12Z.
+  Untracked files at that time are not known for these two.
+
+# Units: in entra-unassign-20261110-run1.json two checks hold seconds in their "ms" field: "Entra refuses new tokens
+# after unassignment (3 in a row)" = 12.51 (s) and "fresh token from Entra after assigning again" = 8.7 (s); they match
+# unassign_to_stable_refusal_s and reassign_to_first_token_s. Fixed for future runs in ab96af3.
+# Probe outcomes: all 7 unassign samples in that run were conclusive (4 tokens, then 3 x AADSTS50105), so the counting of
+# failed probes as refusals (fixed in fb33cc1) did not affect it. The expired run has same_user true (required since 0dc2eba).
+# Tokens: two different delegated tokens were used. One (iat 01:12:56Z, exp 02:37:11Z, exp - iat 5055 s) in run1, in the
+# unassign run and as the expired token; the other (iat 02:33:09Z, exp - iat 4080 s) in run2 and as the expired run's
+# fresh control.

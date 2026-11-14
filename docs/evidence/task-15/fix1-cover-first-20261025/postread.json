@@ -1,0 +1,22 @@
+{
+  "status.txt": {
+    "bytes": 117,
+    "sha256": "eb21a45d63eed79ea13840b1e0ed44902b43a5544c7723164d633d1785304c58",
+    "uid": 1000,
+    "mode": "0o600",
+    "nlink": 1
+  },
+  "unittest.txt": {
+    "bytes": 1845,
+    "sha256": "6882676be90b43ac2042a3761595d13f91a4a0f8c2e632dfdf3903ff10aec078",
+    "uid": 1000,
+    "mode": "0o600",
+    "nlink": 1
+  },
+  "namespace": "/tmp/warden-task15-fix1-cover-237cac53-18981ab8",
+  "frozen_inputs_unchanged": 6,
+  "source_bytes": 44608,
+  "children_created_by_caller": false,
+  "cryptographic_acceptance": "UNRUN",
+  "docker_build": "UNRUN"
+}

@@ -1,0 +1,37 @@
+test_lost_create_response_keeps_durable_labels_envelope_and_charge (test_firecracker_recovery.WorkflowTests.test_lost_create_response_keeps_durable_labels_envelope_and_charge) ... ERROR
+test_restore_receipt_cannot_release_charge_or_claim_retirement (test_firecracker_recovery.WorkflowTests.test_restore_receipt_cannot_release_charge_or_claim_retirement) ... FAIL
+
+======================================================================
+ERROR: test_lost_create_response_keeps_durable_labels_envelope_and_charge (test_firecracker_recovery.WorkflowTests.test_lost_create_response_keeps_durable_labels_envelope_and_charge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 273, in test_lost_create_response_keeps_durable_labels_envelope_and_charge
+    with self.assertRaises(TimeoutError): recovery.execute_phase(Mock(), 'inspect', 0, 'c' * 40)
+                                          ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery.py", line 518, in execute_phase
+    raise ValueError('unimplemented_phase')
+ValueError: unimplemented_phase
+
+======================================================================
+FAIL: test_restore_receipt_cannot_release_charge_or_claim_retirement (test_firecracker_recovery.WorkflowTests.test_restore_receipt_cannot_release_charge_or_claim_retirement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 238, in test_restore_receipt_cannot_release_charge_or_claim_retirement
+    self.assertEqual(recovery.validate_result('restore-traversal', recovery.encode(value), 'a' * 64, inventory), value)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery.py", line 514, in validate_result
+    raise ValueError('unimplemented_result')
+ValueError: unimplemented_result
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 239, in test_restore_receipt_cannot_release_charge_or_claim_retirement
+    except ValueError as error: self.fail('physical-only receipt refused: ' + str(error))
+                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: physical-only receipt refused: unimplemented_result
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=1, errors=1)

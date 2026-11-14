@@ -1,0 +1,98 @@
+{
+  "changed_existing": {
+    "docs/evidence/task-6/continuation-controller-operations-execution-plan.md": {
+      "allocated_bytes": 90112,
+      "bytes": 90095,
+      "sha256": "e3996d2be4ffb4b3bd684ca46316766b306d54a7b7a514ab9bfc170990019892"
+    },
+    "scripts/identity_cache_control.py": {
+      "allocated_bytes": 8192,
+      "bytes": 5684,
+      "sha256": "b0d50167c80a66b3f6e1858ae4a5ff97f24dd74f79898236ecbd1c6f1bff6457"
+    }
+  },
+  "dispatch_base": "ba87a3cb2a73a30309914792c14765fc7a622b20",
+  "old_runtime": {
+    "docs/evidence/task-6/controller-cache-continuation-v1-20261025-material-admission.json": {
+      "metadata": {
+        "st_atime_ns": 1792952072678141200,
+        "st_ctime_ns": 1792952072652141367,
+        "st_dev": 66307,
+        "st_gid": 1000,
+        "st_ino": 54047573,
+        "st_mode": 33152,
+        "st_mtime_ns": 1792952072652141367,
+        "st_nlink": 1,
+        "st_size": 16337,
+        "st_uid": 1000
+      },
+      "sha256": "096e07d726946d983dad6bb79e05279cd076e0bb28eb174cf866cbcff3922899"
+    },
+    "docs/evidence/task-6/controller-cache-continuation-v1-20261025-material-diagnostic-tool.json": {
+      "metadata": {
+        "st_atime_ns": 1792952334924457878,
+        "st_ctime_ns": 1792952121290829163,
+        "st_dev": 66307,
+        "st_gid": 1000,
+        "st_ino": 54047581,
+        "st_mode": 33204,
+        "st_mtime_ns": 1792952121290829163,
+        "st_nlink": 1,
+        "st_size": 11794,
+        "st_uid": 1000
+      },
+      "sha256": "615166aa30025d8ecff2cbc2e7c2df111314c9a4c3f2002b6a42028357d7d77f"
+    },
+    "docs/evidence/task-6/controller-cache-continuation-v1-20261025-material-receipt.json": {
+      "metadata": {
+        "st_atime_ns": 1792952116610859203,
+        "st_ctime_ns": 1792952116603513932,
+        "st_dev": 66307,
+        "st_gid": 1000,
+        "st_ino": 54047578,
+        "st_mode": 33152,
+        "st_mtime_ns": 1792952116603513932,
+        "st_nlink": 1,
+        "st_size": 2126,
+        "st_uid": 1000
+      },
+      "sha256": "f468f3046f4ec904cfd9107fd063952269f2d778a375d98f5188ab3b7353ab0a"
+    },
+    "docs/evidence/task-6/controller-cache-continuation-v1-20261025-material-root-proof-reader-tool.json": {
+      "metadata": {
+        "st_atime_ns": 1792952334925457871,
+        "st_ctime_ns": 1792952119123843072,
+        "st_dev": 66307,
+        "st_gid": 1000,
+        "st_ino": 54047579,
+        "st_mode": 33204,
+        "st_mtime_ns": 1792952119123843072,
+        "st_nlink": 1,
+        "st_size": 3582,
+        "st_uid": 1000
+      },
+      "sha256": "2f7c0c8120e884781a78b5da943a928a59a93821f27c27b186b2492a88d7d36d"
+    },
+    "docs/evidence/task-6/controller-cache-continuation-v1-20261025-material-root-reconcile-tool.json": {
+      "absent": true
+    },
+    "docs/evidence/task-6/controller-cache-continuation-v1-20261025-material-root-tool.json": {
+      "metadata": {
+        "st_atime_ns": 1792952334925457871,
+        "st_ctime_ns": 1792952119219842456,
+        "st_dev": 66307,
+        "st_gid": 1000,
+        "st_ino": 54047580,
+        "st_mode": 33204,
+        "st_mtime_ns": 1792952119219842456,
+        "st_nlink": 1,
+        "st_size": 2119,
+        "st_uid": 1000
+      },
+      "sha256": "606a02ca1085c4c7c07883c1f218490c049960f0e6c44b5a74fb57c8d7cd25a3"
+    },
+    "docs/evidence/task-6/controller-cache-continuation-v1-20261025-material-terminal.json": {
+      "absent": true
+    }
+  }
+}

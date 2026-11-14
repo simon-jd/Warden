@@ -1,0 +1,84 @@
+{
+ "alerts_imported": 3,
+ "checks": {
+  "binding_for_every_run": true,
+  "collector_errors_drops_zero": true,
+  "coverage_dropped_events": 0,
+  "coverage_healthy": true,
+  "every_gvisor_sandbox_seen_starting": true,
+  "no_platform_alert_imported": true,
+  "observation_exit_0": true,
+  "runs_inside_window": true
+ },
+ "collector_counts": {
+  "collector_errors": 0,
+  "collector_restarts": 0,
+  "dropped_error": 0,
+  "dropped_host": 0,
+  "dropped_malformed": 0,
+  "dropped_other_container": 4,
+  "dropped_other_lab_owned": 0,
+  "dropped_other_lab_pod": 0,
+  "dropped_overflow": 0,
+  "dropped_unresolved": 0,
+  "duplicates": 0,
+  "health_events": 3,
+  "pending": 0,
+  "platform_alerts": 4379,
+  "received": 4673,
+  "warden_alerts": 287
+ },
+ "per_runtime": {
+  "metrics-gvisor.json": {
+   "alerts_on_failed_or_skipped_executions": 0,
+   "execution_count": 14,
+   "execution_detection": {
+    "denominator": 1,
+    "numerator": 0,
+    "rate": 0.0
+   },
+   "latency_ns": {
+    "method": "nearest-rank",
+    "p50": null,
+    "p95": null,
+    "sample_count": 0
+   }
+  },
+  "metrics-runc.json": {
+   "alerts_on_failed_or_skipped_executions": 3,
+   "execution_count": 14,
+   "execution_detection": {
+    "denominator": 0,
+    "numerator": 0,
+    "rate": null
+   },
+   "latency_ns": {
+    "method": "nearest-rank",
+    "p50": null,
+    "p95": null,
+    "sample_count": 0
+   }
+  },
+  "metrics.json": {
+   "alerts_on_failed_or_skipped_executions": 3,
+   "execution_count": 28,
+   "execution_detection": {
+    "denominator": 1,
+    "numerator": 0,
+    "rate": 0.0
+   },
+   "latency_ns": {
+    "method": "nearest-rank",
+    "p50": null,
+    "p95": null,
+    "sample_count": 0
+   }
+  }
+ },
+ "runc_lab_session": "e1a3d65f478b6102b302421e14e78dae",
+ "window": {
+  "end": "2026-11-14T15:30:41.450588000Z",
+  "session": "20261114T152748Z",
+  "start": "2026-11-14T15:27:56.720054334Z"
+ }
+}

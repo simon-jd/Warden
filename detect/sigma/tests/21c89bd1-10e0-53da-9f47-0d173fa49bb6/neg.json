@@ -1,0 +1,33 @@
+{
+  "activity_id": 2,
+  "category_uid": 6,
+  "class_uid": 6003,
+  "type_uid": 600302,
+  "severity_id": 0,
+  "time": 1767225600000,
+  "metadata": {
+    "version": "1.3.0",
+    "product": {
+      "name": "Kubernetes Audit",
+      "vendor_name": "Kubernetes"
+    },
+    "uid": "b5e59d5c-a1e4-5b34-aab5-e15069b152a7"
+  },
+  "unmapped": {
+    "objectRef": {
+      "resource": "secrets"
+    }
+  },
+  "api": {
+    "operation": "get"
+  },
+  "actor": {
+    "user": {
+      "uid": "system:serviceaccount:warden-lab:secret-reader"
+    }
+  },
+  "src_endpoint": {
+    "ip": "192.0.2.10"
+  },
+  "status_id": 1
+}

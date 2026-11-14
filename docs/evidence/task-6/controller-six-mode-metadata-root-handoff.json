@@ -1,0 +1,42 @@
+{
+  "scope": "basic new-scope provenance/package preparation only; no tests or old hash campaign",
+  "provenance": {
+    "request": {
+      "cmd": "python3 -I -S -B - <<'PY'\nimport hashlib,json,pathlib,subprocess\np=pathlib.Path('.')\nhead='a014316793dc6d611dde768f2f10c97d4c5f0833';base='ac0bf10feca7825bd81f3d20f896763d6ae003cd'\ndef git(*args):return subprocess.check_output(['/usr/bin/git',*args])\nassert git('rev-parse','HEAD').decode().strip()==head\nassert not git('diff','--cached','--name-only')\nidxp='docs/evidence/task-6/controller-six-mode-metadata-index.json'\ni=json.loads((p/idxp).read_bytes());assert len(i['rows'])==12\nchanged=set(git('diff','--name-only',base+'..'+head).decode().splitlines())\nassert changed=={x['path'] for x in i['rows']}|{idxp}\nassert git('rev-list','--count',base+'..'+head).strip()==b'2'\nfor x in i['rows']:\n b=(p/x['path']).read_bytes()\n assert len(b)==x['bytes'] and hashlib.sha256(b).hexdigest()==x['sha256'],x['path']\n assert b==git('show',head+':'+x['path']),x['path']\nr=(p/'docs/evidence/task-6/controller-six-mode-metadata-report.md').read_bytes()\nassert r==(p/'.superpowers/sdd/2-warden-security-plan/task-6-six-mode-metadata-report.md').read_bytes()\nplan='docs/evidence/task-6/continuation-controller-operations-execution-plan.md'\nold=git('show',base+':'+plan);assert len(old)==109113 and (p/plan).read_bytes().startswith(old)\nprint(json.dumps({'state':'PASS','head':head,'base':base,'commits':2,'changed_paths':13,'narrow_index_rows':12,'report_bytes':len(r),'report_sha256':hashlib.sha256(r).hexdigest(),'empty_index':True,'plan_original_prefix_bytes':len(old),'scope':'basic new-scope provenance only; no tests, imports, old source/hash campaign or actual admission'},sort_keys=True))\nPY",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "yield_time_ms": 10000,
+      "max_output_tokens": 2000
+    },
+    "response": {
+      "chunk_id": "73c47d",
+      "wall_time_seconds": 0.000007926,
+      "exit_code": 0,
+      "original_token_count": 115,
+      "output": "{\"base\": \"ac0bf10feca7825bd81f3d20f896763d6ae003cd\", \"changed_paths\": 13, \"commits\": 2, \"empty_index\": true, \"head\": \"a014316793dc6d611dde768f2f10c97d4c5f0833\", \"narrow_index_rows\": 12, \"plan_original_prefix_bytes\": 109113, \"report_bytes\": 18825, \"report_sha256\": \"6896fb847f5718231cbc15352f26d0a8df0b0775e4b9c3fd92cc179de0174ba4\", \"scope\": \"basic new-scope provenance only; no tests, imports, old source/hash campaign or actual admission\", \"state\": \"PASS\"}\n"
+    }
+  },
+  "package": {
+    "request": {
+      "cmd": "bash /home/postedism/.codex/.tmp/plugins/plugins/superpowers/skills/subagent-driven-development/scripts/review-package 2-warden-security-plan.md ac0bf10feca7825bd81f3d20f896763d6ae003cd a014316793dc6d611dde768f2f10c97d4c5f0833 .superpowers/sdd/2-warden-security-plan/review-six-mode-ac0bf10..a014316.diff",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "yield_time_ms": 10000,
+      "max_output_tokens": 2000
+    },
+    "response": {
+      "chunk_id": "941405",
+      "wall_time_seconds": 0.000022614,
+      "exit_code": 0,
+      "original_token_count": 28,
+      "output": "wrote .superpowers/sdd/2-warden-security-plan/review-six-mode-ac0bf10..a014316.diff: 2 commit(s), 441320 bytes\n"
+    },
+    "bytes": 441320,
+    "sha256": "bc4cbf84400c6f719369e237348b9f530fd5536aa01670eda84e3512eb484643"
+  },
+  "authority": false
+}

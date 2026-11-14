@@ -1,0 +1,151 @@
+INERT FUTURE COMMAND TEXT. Root FULL read/ruling required. Do not source/run now.
+
+Root executes sequentially with ONE outer absolute deadline D=t0+90s starting
+before A1 interpreter spawn. Root retains each original Popen/pidfd and exact
+return, stdout/stderr (<=1MiB each); no shell wrappers, PID search or PG signals.
+No new reusable supervisor. A1 no child. A2/B are DIRECT children of root's
+existing owner, never grandchildren of A1. UNKNOWN stops all subsequent work.
+
+A1 argv: ["/usr/bin/python3","-I","-B","-c", <the literal body below>]
+cwd: /home/postedism/Desktop/Warden
+clean env: PATH=/usr/bin:/bin, HOME=<same repo>, LANG=C.UTF-8,
+T11_END_MONO=<root D-20>, T11_R_BYTES=<fresh ordinary R excluding Q>.
+Before spawn: root fresh MemAvailable>=5,000,000,000B and project resident
+reservations9GB+3GB+1GB<=16GB; fresh disk accounting R+5GB+2366195648<=12GB.
+Interpreter limits: CPU55s, AS1GB, FSIZE200000000B, NOFILE128, core0.
+Root A1 stop-work atD-30; reserve10s termination/reap inside A1 cutoffD-20.
+Body also stops I/O atD-30. No child, daemon, package/build command or remote code.
+
+import hashlib, math, os, pathlib, resource, signal, time, urllib.request, urllib.parse, tarfile
+resource.setrlimit(resource.RLIMIT_CPU,(55,55))
+resource.setrlimit(resource.RLIMIT_AS,(1000000000,1000000000))
+resource.setrlimit(resource.RLIMIT_FSIZE,(200000000,200000000))
+resource.setrlimit(resource.RLIMIT_NOFILE,(128,128))
+resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+D=float(os.environ['T11_END_MONO'])
+R=int(os.environ['T11_R_BYTES'])
+assert math.isfinite(D) and 0<=R and R+5000000000+2366195648<=12000000000
+assert D-time.monotonic()>15
+stop=D-10
+
+def expired(signum,frame): raise TimeoutError('A1 work deadline; retain partial')
+signal.signal(signal.SIGALRM,expired)
+signal.setitimer(signal.ITIMER_REAL,stop-time.monotonic())
+
+def check():
+    if time.monotonic()>=stop: raise TimeoutError('A1 deadline; retain partial')
+
+repo=pathlib.Path('/home/postedism/Desktop/Warden')
+assert pathlib.Path.cwd()==repo
+base=repo/'.cache'
+assert base.is_dir() and not base.is_symlink()
+# Root separately verifies trusted ancestors, ownership and ordinary inventory.
+work=base/'task11'
+if not work.exists(): work.mkdir(mode=0o700)
+assert work.is_dir() and not work.is_symlink()
+dest=work/'material-0.45.0'
+dest.mkdir(mode=0o700) # exclusive: existing destination fails, no removal/reuse
+archive=dest/'vector-0.45.0-x86_64-unknown-linux-musl.tar.gz'
+url='https://github.com/vectordotdev/vector/releases/download/v0.45.0/vector-0.45.0-x86_64-unknown-linux-musl.tar.gz'
+expected='0588f529200befa3237481255b9b7715316de73d626e1d01042e054f92205c71'
+
+class OfficialRedirect(urllib.request.HTTPRedirectHandler):
+    max_redirections=3
+    def redirect_request(self,req,fp,code,msg,headers,newurl):
+        p=urllib.parse.urlsplit(newurl)
+        if p.scheme!='https' or p.hostname not in {'github.com','release-assets.githubusercontent.com'}:
+            raise ValueError('unexpected archive redirect')
+        return super().redirect_request(req,fp,code,msg,headers,newurl)
+
+opener=urllib.request.build_opener(OfficialRedirect())
+h=hashlib.sha256(); n=0
+with opener.open(url,timeout=5) as response, archive.open('xb') as out:
+    assert response.status==200
+    declared=response.headers.get('Content-Length')
+    if declared is not None: assert 0<int(declared)<=50000000
+    while True:
+        check(); block=response.read(65536)
+        if not block: break
+        n+=len(block)
+        if n>50000000: raise ValueError('archive byte cap')
+        out.write(block); h.update(block)
+check()
+assert n>0 and h.hexdigest()==expected, 'publisher digest mismatch; retain archive'
+h=hashlib.sha256()
+with archive.open('rb') as saved:
+    while True:
+        check(); block=saved.read(65536)
+        if not block: break
+        h.update(block)
+assert h.hexdigest()==expected, 'saved archive mismatch; retain originals'
+# No extraction before full publisher digest equality.
+unpack=dest/'unpack'; unpack.mkdir(mode=0o700)
+seen=set(); sizes=0; dirpaths=set(); files=0; vector=[]
+with tarfile.open(archive,'r:gz') as tf:
+    for m in tf:
+        check()
+        raw=m.name
+        parts=raw.rstrip('/').split('/')
+        if not raw or raw.startswith('/') or '\\' in raw or any(p in {'','..','.'} for p in parts):
+            raise ValueError('unsafe member path')
+        if len(raw.encode())>4096 or len(parts)>8 or raw in seen:
+            raise ValueError('member path/count refusal')
+        seen.add(raw)
+        if len(seen)>4352: raise ValueError('member count cap')
+        dp=parts if m.isdir() else parts[:-1]
+        dirpaths.update(tuple(dp[:i]) for i in range(1,len(dp)+1))
+        if len(dirpaths)>256: raise ValueError('all-directory cap')
+        target=unpack.joinpath(*parts)
+        if m.isdir():
+            target.mkdir(parents=True,exist_ok=True,mode=0o700)
+        elif m.isfile():
+            files+=1; sizes+=m.size
+            if files>4096 or m.size<0 or sizes>200000000: raise ValueError('unpack cap')
+            target.parent.mkdir(parents=True,exist_ok=True,mode=0o700)
+            src=tf.extractfile(m)
+            if src is None: raise ValueError('missing member')
+            left=m.size
+            with src, target.open('xb') as out:
+                while left:
+                    check(); block=src.read(min(65536,left))
+                    if not block: raise ValueError('truncated member')
+                    out.write(block); left-=len(block)
+            if parts[-2:]==['bin','vector']: vector.append(target)
+        else: raise ValueError('link/device/unsupported member')
+check()
+assert len(vector)==1, 'expected sole bin/vector member'
+V=vector[0]
+with V.open('rb') as src: header=src.read(20)
+assert header[:6]==b'\x7fELF\x02\x01' and header[18:20]==b'\x3e\x00', 'not x86_64 ELF'
+V.chmod(0o700)
+print('ARCHIVE_BYTES',n,'UNPACK_BYTES',sizes,'PUBLISHER_SHA256',expected)
+print('VECTOR_ABSOLUTE_PATH',str(V))
+# No cleanup: retain exact archive/extracted files/output on success or failure.
+
+END A1 BODY
+
+A2 only after known A1 normal0, publisher digest equality and root byte/disk
+read of extraction result. Root supplies V as the sole printed absolute path
+under this exclusive task destination, never PATH lookup or arbitrary user path.
+argv=[V,"--version"], cwd=repo, stdin=DEVNULL, stdout/stderr exclusive owned
+regular files (combined<=1MiB), clean env PATH=/usr/bin:/bin, HOME=<repo>,
+TMPDIR=<exact owned tmp <=64MiB>, LANG=C.UTF-8, VECTOR_THREADS=2.
+Root direct-child limits CPU3s/AS3GB/FSIZE1MiB/NOFILE128/core0.
+Root work cutoff min(spawn+10s,D-5); cleanup/reap completes byD.
+Expected normal0 and version0.45.0 in actual output; no exact build-date invention.
+Root keeps Popen and pidfd when available. Read bounded output only after known
+terminal. Timeout: first retain partial bytes/TimeoutExpired; pidfd TERM (or
+retained unreaped Popen authority), bounded wait, KILL if needed, reap; no
+communicate after deadline. Unknown child/tool terminal=>STOP/retain originals.
+
+B IS LATER, NOT PART OF MATERIAL ADMISSION: after SOURCE/test dispatch only.
+Fresh root R/Q/remaining-peak split, MemAvailable/free disk required again.
+Root direct argv=[V,"test", *sorted(glob("detect/ocsf/tests/*.toml"))].
+Before spawn reject zero paths/zero named tests, freeze exact expanded list;
+only00-topology defines coherent topology; no secrets backend/remote import.
+Same cwd/clean env/tmp; direct-child CPU45s/AS3GB/FSIZE1MiB/NOFILE128/core0,
+VECTOR_THREADS=2, output<=1MiB. Whole60s from BEFORE setup/interpreter work,
+cutoff50s leaves10s root-owned TERM/wait/KILL/reap. No readiness counters.
+RED requires normal nonzero CONFIG plus named expected-object assertion failure;
+parse/build/missing-file/empty-suite/timeout/resource failures are NOT RED.
+No tests run here. Real positive cover/backpressure requires separate dispatch.

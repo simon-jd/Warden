@@ -1,0 +1,417 @@
+{
+  "pre": {
+    "request": {
+      "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C python3 -I -S -B docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/metadata.py pre 8bf623b6b5fc04a1d2c0a979a274cfeb3f643f51",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "yield_time_ms": 1000,
+      "max_output_tokens": 18000
+    },
+    "initial": {
+      "chunk_id": "cab2d5",
+      "wall_time_seconds": 0.000010593,
+      "exit_code": 0,
+      "original_token_count": 6134,
+      "output": "{\"candidate\": \"// @exec: {\\\"yield_time_ms\\\":30000,\\\"max_output_tokens\\\":2000}\\nconst K='controller-cache-continuation-v1-20261025-approval-writer';\\nconst W='/home/postedism/Desktop/Warden';\\nconst AUDIT=W+'/docs/evidence/task-6/controller-approval-writer-audit-20261025.json';\\nfunction own(o,k){return Object.hasOwn(o,k);}\\nfunction plain(o){return o!==null&&typeof o==='object'&&!Array.isArray(o)&&Object.getPrototypeOf(o)===Object.prototype;}\\nfunction hex(s,n){return typeof s==='string'&&s.length===n&&/^[0-9a-f]+$/.test(s);}\\nconst data=load(K+'-data');\\nif(load(K+'-admitted')!==true||load(K+'-attempt')!==undefined)throw Error('closed/no retry');\\nif(!plain(data)||Reflect.ownKeys(data).length!==3||\\n   !['source_commit','program_sha256','summary_proof_json'].every(k=>own(data,k))||\\n   !hex(data.source_commit,40)||!hex(data.program_sha256,64))throw Error('typed data');\\nconst proofRE=/^\\\\{\\\"bytes\\\":([1-9][0-9]*),\\\"metadata\\\":\\\\[((?:0|[1-9][0-9]*)(?:,(?:0|[1-9][0-9]*)){9})\\\\],\\\"sha256\\\":\\\"([0-9a-f]{64})\\\"\\\\}$/;\\nfunction proof(s,approval=false){\\n if(typeof s!=='string')throw Error('proof type');\\n const m=proofRE.exec(s);if(!m||m[0]!==s)throw Error('canonical proof');\\n const n=BigInt(m[1]),v=m[2].split(',').map(BigInt);\\n if(n>65536n||v[0]<=0n||v[1]<=0n||v[2]!==1000n||v[3]!==1000n||\\n    v[5]!==1n||v[6]!==n||!(approval?[33152n]:[33152n,33188n]).includes(v[4]))throw Error('proof metadata');\\n return s;\\n}\\nconst input=proof(data.summary_proof_json);\\nconst body=String.raw`import time\\nM0=time.monotonic_ns();B0=time.clock_gettime_ns(time.CLOCK_BOOTTIME);A0=time.monotonic_ns()\\nimport os,sys,signal,resource\\ndef need(ok):\\n if not ok:raise ValueError('approval refusal')\\ndef check():\\n u=time.monotonic_ns();b=time.clock_gettime_ns(time.CLOCK_BOOTTIME);a=time.monotonic_ns()\\n need(0<=a-u<=100000000 and 0<=a-M0<=30000000000 and 0<=b-B0<=30000000000)\\n need(max(B0-A0,b-a)<=min(B0-M0,b-u))\\n return a\\nsignal.signal(signal.SIGALRM,lambda *_:os._exit(124))\\nneed(0<=A0-M0<=100000000)\\ncheck();signal.setitimer(signal.ITIMER_REAL,(30000000000-(time.monotonic_ns()-M0))/1000000000)\\nfor k,n in ((resource.RLIMIT_CPU,5),(resource.RLIMIT_AS,134217728),(resource.RLIMIT_FSIZE,1048576)):\\n soft,hard=resource.getrlimit(k);need(hard==resource.RLIM_INFINITY or hard>=n);resource.setrlimit(k,(n,n))\\nimport json,hashlib,stat,re\\nos.umask(0o077)\\ndef pairs(items):\\n d={}\\n for k,v in items:need(k not in d);d[k]=v\\n return d\\ndef invalid(_):raise ValueError('noninteger/nonfinite JSON')\\ndef parse(b):return json.loads(b,object_pairs_hook=pairs,parse_float=invalid,parse_constant=invalid)\\ndef raw(v):return (json.dumps(v,sort_keys=True,separators=(',',':'),allow_nan=False)+'\\\\n').encode()\\ndef meta(s):return [getattr(s,'st_'+k) for k in ('dev','ino','uid','gid','mode','nlink','size','mtime_ns','ctime_ns','blocks')]\\ndef sha(b):return hashlib.sha256(b).hexdigest()\\nfds=[];dirs=[]\\ndef keep(fd):fds.append(fd);return fd\\ndef parents():\\n for parent,name,fd,before in dirs:\\n  now=os.fstat(fd);need(meta(now)[:6]==before[:6])\\n  if parent is not None:need(meta(os.stat(name,dir_fd=parent,follow_symlinks=False))==meta(now))\\n check()\\ndef path_read(name,mode):\\n check();parents()\\n fd=keep(os.open(name,os.O_RDONLY|os.O_NOFOLLOW|os.O_CLOEXEC|os.O_NONBLOCK,dir_fd=public))\\n s=os.fstat(fd);need(stat.S_ISREG(s.st_mode) and s.st_uid==s.st_gid==1000 and s.st_nlink==1 and s.st_dev==os.fstat(public).st_dev and stat.S_IMODE(s.st_mode) in mode and 0<s.st_size<=65536)\\n data=os.pread(fd,65537,0);need(len(data)==s.st_size and meta(os.fstat(fd))==meta(s) and meta(os.stat(name,dir_fd=public,follow_symlinks=False))==meta(s))\\n check();return fd,data,meta(s)\\ndef same(fd,name,data,m):\\n check();parents()\\n need(meta(os.fstat(fd))==m and meta(os.stat(name,dir_fd=public,follow_symlinks=False))==m and os.pread(fd,65537,0)==data)\\n need(meta(os.fstat(fd))==m and meta(os.stat(name,dir_fd=public,follow_symlinks=False))==m)\\n check()\\ntry:\\n need(os.getuid()==os.geteuid()==os.getgid()==os.getegid()==1000 and len(sys.argv)==2)\\n expected=parse(sys.argv[1]);need(type(expected) is dict and set(expected)=={'sha256','bytes','metadata'})\\n need(type(expected['sha256']) is str and re.fullmatch('[0-9a-f]{64}',expected['sha256']) is not None and type(expected['bytes']) is int and 0<expected['bytes']<=65536)\\n need(type(expected['metadata']) is list and len(expected['metadata'])==10 and all(type(x) is int and x>=0 for x in expected['metadata']))\\n flags=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\\n public=keep(os.open('/',flags));dirs.append((None,None,public,meta(os.fstat(public))))\\n for part in ('home','postedism','Desktop','Warden','docs','evidence','task-6'):\\n  parent=public;public=keep(os.open(part,flags,dir_fd=parent));s=os.fstat(public)\\n  need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((parent,part,public,meta(s)))\\n summary='controller-cache-continuation-v1-20261025-capture-summary.json'\\n approval='cache-continuation-checkpoint-approval-20261025.json'\\n sf,data,sm=path_read(summary,(0o600,0o644))\\n need(expected=={'sha256':sha(data),'bytes':len(data),'metadata':sm})\\n value=parse(data)\\n need(type(value) is dict and set(value)=={'version','state','binding','writer_basis','captured_at','checkpoint_sha256','checkpoint_bytes'})\\n need(type(value['version']) is int and value['version']==1 and value['state']=='checkpoint-captured-not-approved')\\n need(type(value['binding']) is dict and type(value['writer_basis']) is str and 0<len(value['writer_basis'].encode())<=4096 and type(value['captured_at']) is str)\\n need(type(value['checkpoint_sha256']) is str and re.fullmatch('[0-9a-f]{64}',value['checkpoint_sha256']) is not None and type(value['checkpoint_bytes']) is int and 0<value['checkpoint_bytes']<=16000000)\\n need(data==raw(value)) # accepted source's canonical serializer\\n old=b'\\\"state\\\":\\\"checkpoint-captured-not-approved\\\"';need(data.count(old)==1)\\n approved=data.replace(old,b'\\\"state\\\":\\\"approved\\\"',1)\\n want=dict(value);want['state']='approved';need(parse(approved)==want and len(approved)<=65536)\\n same(sf,summary,data,sm)\\n af=keep(os.open(approval,os.O_RDWR|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW|os.O_CLOEXEC,0o600,dir_fd=public))\\n created=meta(os.fstat(af));need(created[2]==created[3]==1000 and created[4]==stat.S_IFREG|0o600 and created[5]==1)\\n same(sf,summary,data,sm);offset=0\\n while offset<len(approved):\\n  check();n=os.write(af,approved[offset:]);need(n>0);offset+=n\\n check();os.fsync(af);check();final=meta(os.fstat(af))\\n need(final[:6]==created[:6] and final[6]==len(approved))\\n same(af,approval,approved,final);same(sf,summary,data,sm)\\n os.fsync(public);check()\\n same(af,approval,approved,final);same(sf,summary,data,sm)\\n rf,readback,rm=path_read(approval,(0o600,));need(rm==final and readback==approved)\\n same(af,approval,approved,final);same(rf,approval,approved,final);same(sf,summary,data,sm)\\n output={'approval':{'bytes':len(approved),'metadata':final,'sha256':sha(approved)}}\\n sys.stdout.write(raw(output).decode());sys.stdout.flush()\\n same(af,approval,approved,final);same(rf,approval,approved,final);same(sf,summary,data,sm)\\n check()\\nexcept BaseException:\\n raise SystemExit(1)\\nfinally:\\n for fd in reversed(fds):os.close(fd)\\ncheck()\\n`;\\nconst request={cmd:\\\"exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C python3 -I -S -B - '\\\"+input+\\\"' <<'PY'\\\\n\\\"+body+\\\"PY\\\",\\n workdir:W,shell:'/bin/bash',login:false,tty:false,yield_time_ms:1000,max_output_tokens:2000,\\n sandbox_permissions:'require_escalated',justification:'\\u4ee5\\u9879\\u76ee\\u666e\\u901aUID1000\\u8fd0\\u884c\\u5df2\\u5ba1\\u67e5\\u7684Warden\\u56fa\\u5b9a\\u63a7\\u5236\\u5668\\u6b65\\u9aa4\\uff1b\\u4e0d\\u4f7f\\u7528sudo\\u6216\\u4fee\\u6539\\u5bbf\\u4e3b\\u7f51\\u7edc\\u3002'};\\nconst S={state:'pending',data,events:[],audit_event:null};\\nfunction persist(){store(K+'-attempt',S);}\\npersist(); // permanent one-attempt interlock, before any native invocation\\nfunction bytes(s){let n=0;for(const c of s){const x=c.codePointAt(0);n+=x<128?1:x<2048?2:x<65536?3:4;}return n;}\\nfunction valid(r){\\n  exactJSON(r); // Retain first; refuse unsupported values before reading fields.\\n const keys=['output','wall_time_seconds','chunk_id','original_token_count','exit_code','session_id'];\\n if(!plain(r)||Reflect.ownKeys(r).length!==Object.keys(r).length||Object.keys(r).some(k=>!keys.includes(k))||\\n    typeof r.output!=='string'||bytes(r.output)>65536||!Number.isFinite(r.wall_time_seconds)||r.wall_time_seconds<0)throw Error('response');\\n if(own(r,'chunk_id')&&(typeof r.chunk_id!=='string'||!r.chunk_id.length||r.chunk_id.length>128))throw Error('chunk');\\n if(own(r,'original_token_count')&&(!Number.isSafeInteger(r.original_token_count)||r.original_token_count<0||r.original_token_count>2000))throw Error('truncation');\\n if(own(r,'exit_code')){\\n  if(own(r,'session_id')||!Number.isSafeInteger(r.exit_code)||r.exit_code!==0)throw Error('not normal0');\\n  return false;\\n }\\n if(!Number.isSafeInteger(r.session_id)||r.session_id<=0)throw Error('session');\\n return true;\\n}\\nasync function call(tool,q){\\n if(S.events.length>=32)throw Error('event limit');\\n const e={seq:S.events.length,tool,request:q};S.events.push(e);persist();\\n const r=await(tool==='exec_command'?tools.exec_command(q):tools.write_stdin(q));\\n e.response=r;persist();return valid(r);\\n}\\nlet approval=null;\\ntry{\\n let running=await call('exec_command',request);\\n const id=running?S.events[0].response.session_id:undefined;\\n while(running){\\n  if(S.events.length>=32||S.events.at(-1).response.session_id!==id)throw Error('stop');\\n  running=await call('write_stdin',{session_id:id,chars:'',yield_time_ms:45000,max_output_tokens:2000});\\n  if(running&&S.events.at(-1).response.session_id!==id)throw Error('session changed');\\n }\\n if(S.events.some(e=>!own(e,'response')))throw Error('missing response');\\n const out=S.events.map(e=>e.response.output).join('');\\n if(!out.startsWith('{\\\"approval\\\":')||!out.endsWith('}\\\\n'))throw Error('sole output');\\n approval=proof(out.slice(12,-2),true);\\n S.state='normal0-proof-returned';\\n}catch(error){approval=null;S.state='unknown-retain-no-pins';}\\nS.approval_proof_json=approval;persist();\\n// Non-authority audit only. Reject non-JSON data instead of silently dropping it.\\nfunction exactJSON(value){\\n const seen=new Set();\\n function check(v){\\n  if(v===null||typeof v==='string'||typeof v==='boolean')return;\\n  if(typeof v==='number'){\\n   if(!Number.isFinite(v)||Object.is(v,-0))throw Error('unrepresentable number');return;\\n  }\\n  if(typeof v!=='object'||seen.has(v))throw Error('unserializable');\\n  const array=Array.isArray(v),proto=Object.getPrototypeOf(v);\\n  if(proto!==(array?Array.prototype:Object.prototype))throw Error('nonplain');\\n  for(let p=v;p!==null;p=Object.getPrototypeOf(p))\\n   if(Object.getOwnPropertyDescriptor(p,'toJSON'))throw Error('serialization hook');\\n  seen.add(v);\\n  const keys=Reflect.ownKeys(v);\\n  if(array){\\n   const n=Object.getOwnPropertyDescriptor(v,'length').value;\\n   if(keys.length!==n+1)throw Error('array fields');\\n   for(let i=0;i<n;i++){\\n    const d=Object.getOwnPropertyDescriptor(v,String(i));\\n    if(!d||!Object.hasOwn(d,'value')||!d.enumerable)throw Error('array data');\\n    check(d.value);\\n   }\\n  }else{\\n   for(const k of keys){\\n    const d=Object.getOwnPropertyDescriptor(v,k);\\n    if(typeof k!=='string'||!Object.hasOwn(d,'value')||!d.enumerable)throw Error('object data');\\n    check(d.value);\\n   }\\n  }\\n  seen.delete(v);\\n }\\n check(value);return JSON.stringify(value);\\n}\\ntry{\\n const audit={version:1,kind:'approval-writer-audit',authority:false,\\n  source_commit:data.source_commit,program_sha256:data.program_sha256,\\n  summary_proof_json:input,approval_proof_json:approval,state:S.state,\\n  events:S.events,Q_released:false};\\n const textBody=exactJSON(audit)+'\\\\n';\\n if(bytes(textBody)>65536)throw Error('audit overflow');\\n const patch='*** Begin Patch\\\\n*** Add File: '+AUDIT+'\\\\n'+\\n  textBody.slice(0,-1).split('\\\\n').map(line=>'+'+line).join('\\\\n')+'\\\\n*** End Patch';\\n if(S.audit_event!==null)throw Error('audit already attempted');\\n S.audit_event={seq:0,tool:'apply_patch',request:patch};persist();\\n // Prior root gate established absence/quiescence. Consumed before await.\\n const r=await tools.apply_patch(patch);\\n S.audit_event.response=r;persist();\\n if(!plain(r)||Reflect.ownKeys(r).length!==0)throw Error('unknown patch result');\\n S.state=approval===null?'unknown-audit-recorded-no-pins':'normal0-audit-recorded';persist();\\n text({state:S.state,audit_actual_return:r,authority:false,Q_released:false});\\n}catch(error){\\n S.state='unknown-outer-retention-only-no-pins';persist();\\n text({state:S.state,authority:false,Q_released:false});\\n}\\n\", \"fixture\": \"// Pure generated values only; every caller capability is an explicit local fake.\\nconst AsyncFunction=Object.getPrototypeOf(async function(){}).constructor;\\nconst caller=new AsyncFunction('tools','store','load','notify','text',candidate);\\nconst K='controller-cache-continuation-v1-20261025-approval-writer';\\nconst big='9007199254740993123';\\nconst proof='{\\\"bytes\\\":1234,\\\"metadata\\\":[1,2,1000,1000,33152,1,1234,'+big+','+big+',8],\\\"sha256\\\":\\\"'+'a'.repeat(64)+'\\\"}';\\nconst data={source_commit:'b'.repeat(40),program_sha256:'c'.repeat(64),summary_proof_json:proof};\\nconst good='{\\\"approval\\\":'+proof+'}\\\\n';\\nfunction assert(ok,message){if(!ok)throw Error(message);}\\nfunction bytes(s){let n=0;for(const c of s){const x=c.codePointAt(0);n+=x<128?1:x<2048?2:x<65536?3:4;}return n;}\\nfunction clone(x,memo=new Map()){\\n if(x===null||typeof x!=='object')return x;if(memo.has(x))return memo.get(x);\\n const y=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));\\n Object.setPrototypeOf(y,Object.getPrototypeOf(x));memo.set(x,y);\\n for(const k of Reflect.ownKeys(x)){\\n  const d=Object.getOwnPropertyDescriptor(x,k);if(Object.hasOwn(d,'value'))d.value=clone(d.value,memo);Object.defineProperty(y,k,d);\\n }return y;\\n}\\nfunction bodyOf(s){\\n const lines=s.split('\\\\n');assert(lines[0]==='*** Begin Patch'&&lines[1]==='*** Add File: /home/postedism/Desktop/Warden/docs/evidence/task-6/controller-approval-writer-audit-20261025.json'&&lines.at(-1)==='*** End Patch','fixed patch framing');\\n return lines.slice(2,-1).map(v=>{assert(v[0]==='+','patch line');return v.slice(1);}).join('\\\\n')+'\\\\n';\\n}\\nconst abnormal=['negative-wall','negative-exit','negative-nested','array-accessor','array-hook','array-hole','array-extra','object-accessor','object-hook','undefined','bigint','nonfinite','cycle'];\\nconst names=mode==='red'?['negative-wall','array-accessor','array-hook']:[\\n 'immediate','session','absent','initial-throw','poll-throw','nonzero','changed-session','invalid-session','terminal-session','truncation','unknown-json','bad-type','extra-output','32-running','large-proof',\\n ...abnormal,'audit-65536','audit-65537','patch-null','patch-array','patch-nonempty','patch-foreign','patch-throw'];\\nconst results=[];let nativeTotal=0,patchTotal=0;\\nfor(const name of names){\\n const memory=new Map(),snapshots=[],native=[],patches=[],outputs=[];\\n memory.set(K+'-data',data);if(name!=='absent')memory.set(K+'-admitted',true);\\n let hits=0,original,patchOriginal;\\n function store(key,value){assert(key===K+'-attempt','local state only');memory.set(key,value);snapshots.push(clone(value));}\\n function load(key){assert([K+'-attempt',K+'-admitted',K+'-data'].includes(key),'local key only');return memory.get(key);}\\n function reply(output=good){return {output,wall_time_seconds:0,exit_code:0};}\\n function malformed(){\\n  let r=reply();\\n  if(name==='negative-wall')r.wall_time_seconds=-0;\\n  if(name==='negative-exit')r.exit_code=-0;\\n  if(name==='negative-nested')r.extra={n:-0};\\n  if(name==='array-accessor'){r=[];Object.defineProperty(r,'0',{get(){hits++;return hits;},enumerable:true});}\\n  if(name==='array-hook'){r=['actual-invalid'];const p=Object.create(Array.prototype);Object.defineProperty(p,'toJSON',{value(){hits++;return {replaced:true};}});Object.setPrototypeOf(r,p);}\\n  if(name==='array-hole')r=new Array(1);\\n  if(name==='array-extra'){r=['actual'];r.extra='retained';}\\n  if(name==='object-accessor')Object.defineProperty(r,'output',{get(){hits++;return good;},enumerable:true});\\n  if(name==='object-hook')r.toJSON=function(){hits++;return {replaced:true};};\\n  if(name==='undefined')r=undefined;\\n  if(name==='bigint')r.extra=1n;\\n  if(name==='nonfinite')r.extra=Infinity;\\n  if(name==='cycle')r.extra=r;\\n  return r;\\n }\\n const fakeTools={\\n  exec_command:async request=>{\\n   const pending=memory.get(K+'-attempt').events.at(-1);\\n   assert(pending.request===request&&!Object.hasOwn(pending,'response'),'request before await');\\n   assert(request.workdir==='/home/postedism/Desktop/Warden'&&request.shell==='/bin/bash'&&request.login===false&&request.tty===false&&request.yield_time_ms===1000&&request.max_output_tokens===2000&&request.sandbox_permissions==='require_escalated'&&!Object.hasOwn(request,'prefix_rule'),'fixed request profile');\\n   assert(request.cmd.startsWith('exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C python3 '+(mode==='red'?'-B':'-I -S -B')+\\\" - '\\\"+proof+\\\"' <<'PY'\\\\n\\\"),'exact flags/data');\\n   native.push({tool:'exec_command',request});\\n   if(name==='initial-throw')throw Error('fixture throw');\\n   if(['session','poll-throw','changed-session','32-running'].includes(name))return original={output:'',wall_time_seconds:0,session_id:17};\\n   if(abnormal.includes(name))return original=malformed();\\n   let r=reply();\\n   if(name==='nonzero')r.exit_code=1;\\n   if(name==='invalid-session'){delete r.exit_code;r.session_id=0;}\\n   if(name==='terminal-session')r.session_id=17;\\n   if(name==='truncation')r.original_token_count=2001;\\n   if(name==='unknown-json')r.extra={retained:'\\u00e9\\\"\\\\\\\\\\\\n'};\\n   if(name==='bad-type')r.output=17;\\n   if(name==='extra-output')r.output=good+'extra\\\\n';\\n   if(name.startsWith('audit-')){\\n    r.extra='\\u00e9\\\"\\\\\\\\\\\\n';const target=Number(name.slice(6));\\n    const audit={version:1,kind:'approval-writer-audit',authority:false,source_commit:data.source_commit,program_sha256:data.program_sha256,summary_proof_json:proof,approval_proof_json:null,state:'unknown-retain-no-pins',events:[{seq:0,tool:'exec_command',request,response:r}],Q_released:false};\\n    const pad=target-bytes(JSON.stringify(audit)+'\\\\n');assert(pad>0,'positive boundary pad');r.extra+='x'.repeat(pad);\\n   }\\n   return original=r;\\n  },\\n  write_stdin:async request=>{\\n   const pending=memory.get(K+'-attempt').events.at(-1);\\n   assert(pending.request===request&&!Object.hasOwn(pending,'response'),'poll before await');\\n   assert(request.session_id===17&&request.chars===''&&request.yield_time_ms===45000&&request.max_output_tokens===2000,'fixed empty poll');native.push({tool:'write_stdin',request});\\n   if(name==='poll-throw')throw Error('fixture poll throw');\\n   if(name==='changed-session')return {output:'',wall_time_seconds:0,session_id:18};\\n   if(name==='32-running')return {output:'',wall_time_seconds:0,session_id:17};\\n   return reply();\\n  },\\n  apply_patch:async request=>{\\n   const pending=memory.get(K+'-attempt').audit_event;\\n   assert(pending.request===request&&!Object.hasOwn(pending,'response')&&patches.length===0,'one consumed patch before await');\\n   const body=bodyOf(request);patches.push({request,body});\\n   if(name==='patch-throw')throw Error('fixture patch throw');\\n   return patchOriginal=name==='patch-null'?null:name==='patch-array'?[]:name==='patch-nonempty'?{x:1}:name==='patch-foreign'?Object.create(null):{};\\n  }\\n };\\n let thrown=false;try{await caller(fakeTools,store,load,()=>{throw Error('unexpected notify');},v=>outputs.push(clone(v)));}catch(e){thrown=true;}\\n const state=memory.get(K+'-attempt');\\n if(name==='absent')assert(thrown&&!state&&native.length===0&&patches.length===0,'closed interlock');\\n else{\\n  assert(!thrown&&state&&outputs.length===1&&outputs[0].authority===false&&outputs[0].Q_released===false,'nonauthority result');\\n  assert(native.length<=32&&patches.length<=1,'bounded calls');\\n  if(!name.includes('throw')||name==='patch-throw')assert(state.events[0].response===original,'original identity retained');\\n  for(const events of [state.events,state.audit_event?[state.audit_event]:[]])assert(events.every((e,i)=>Object.hasOwn(e,'response')||i===events.length-1),'pending last only');\\n  if(name==='initial-throw'||name==='poll-throw')assert(!Object.hasOwn(state.events.at(-1),'response'),'no fabricated response');\\n  if(name==='32-running')assert(native.length===32&&state.approval_proof_json===null,'no33rd call/approval');\\n  if(mode==='red'){\\n   assert(patches.length===1,'old serializes witness');const saved=JSON.parse(patches[0].body).events[0].response;\\n   if(name==='negative-wall')assert(Object.is(original.wall_time_seconds,-0)&&!Object.is(saved.wall_time_seconds,-0),'genuine negative-zero RED');\\n   if(name==='array-accessor')assert(hits>=2&&saved[0]===hits,'genuine accessor RED');\\n   if(name==='array-hook')assert(hits===1&&saved.replaced===true,'genuine inherited-hook RED');\\n  }else if(abnormal.includes(name)){\\n   assert(patches.length===0&&hits===0&&state.state==='unknown-outer-retention-only-no-pins'&&state.approval_proof_json===null,'unsupported outer-only, no hook/getter');\\n   const s=snapshots.at(-1).events[0].response;\\n   if(original&&typeof original==='object')assert(Object.getPrototypeOf(s)===Object.getPrototypeOf(original),'snapshot prototype');\\n   if(name==='negative-wall')assert(Object.is(s.wall_time_seconds,-0),'snapshot -0');\\n   if(name==='array-accessor')assert(Object.getOwnPropertyDescriptor(s,'0').get===Object.getOwnPropertyDescriptor(original,'0').get,'snapshot getter');\\n   if(name==='cycle')assert(s.extra===s,'snapshot cycle');\\n  }else if(name==='audit-65537')assert(patches.length===0&&state.state==='unknown-outer-retention-only-no-pins','over boundary outer-only');\\n  else{\\n   assert(patches.length===1,'one audit');const saved=JSON.parse(patches[0].body);\\n   assert(Object.keys(saved).sort().join(',')==='Q_released,approval_proof_json,authority,events,kind,program_sha256,source_commit,state,summary_proof_json,version','unchanged audit keys');\\n   assert(saved.summary_proof_json===proof&&patches[0].body.includes(big),'lossless large proof');\\n   if(name==='audit-65536')assert(bytes(patches[0].body)===65536,'exact allowed boundary');\\n   if(name==='unknown-json')assert(saved.events[0].response.extra.retained===original.extra.retained,'JSON unknown field retained');\\n   const normal=['immediate','session','large-proof'].includes(name);\\n   if(normal)assert(state.state==='normal0-audit-recorded'&&state.approval_proof_json===proof,'normal exact chain');\\n   else if(name.startsWith('patch-')){\\n    assert(state.state==='unknown-outer-retention-only-no-pins','patch failure no followup');\\n    if(name==='patch-throw')assert(!Object.hasOwn(state.audit_event,'response'),'patch pending');\\n    else assert(state.audit_event.response===patchOriginal,'actual patch return retained');\\n   }else assert(state.approval_proof_json===null&&state.state==='unknown-audit-recorded-no-pins','invalid response never approves');\\n  }\\n }\\n nativeTotal+=native.length;patchTotal+=patches.length;\\n results.push({name,native_calls:native.length,patch_calls:patches.length,hook_calls:hits,state:state?state.state:'closed',audit_bytes:patches.length?bytes(patches[0].body):null,passed:mode!=='red',expected_regression_observed:mode==='red'});\\n}\\nreturn {tests_run:results.length,failures:mode==='red'?results.length:0,errors:0,skipped:0,cases:results,total_fake_native_calls:nativeTotal,total_fake_patch_calls:patchTotal,actual_nested_tools:0,actual_interlocks:false,limits:'finite pure JS only; native CPU/AS/45s not measured'};\\n\", \"mode\": \"green\", \"receipt\": {\"code\": {\"candidate\": {\"bytes\": 12373, \"path\": \"docs/evidence/task-6/controller-caller-integrity-fix5-approval-candidate.js\", \"sha256\": \"7441ed1a8acf65caed11aa3621c4ec9768ab9d2e2f8424c7ada9bc8ec51710d0\"}, \"fixture\": {\"bytes\": 10877, \"path\": \"docs/evidence/task-6/controller-caller-integrity-fix5-approval-fixture.js\", \"sha256\": \"8a0cc3ffa15a99eb5b0541512c0dae74e5bc58b6f8d670ed170876a9007ee89b\"}}, \"controller_files\": 2, \"elapsed_seconds\": 0.010858395020477474, \"equal\": null, \"limits\": {\"address_bytes\": 536870912, \"cpu_seconds\": 30, \"file_bytes\": 33554432, \"wall_seconds\": 45}, \"phase\": \"pre\", \"source_files\": 150, \"timing_scope\": \"metadata recorder only; JS isolate and interpreter startup not measured\"}}\n"
+    },
+    "polls": [],
+    "final": {
+      "chunk_id": "cab2d5",
+      "wall_time_seconds": 0.000010593,
+      "exit_code": 0,
+      "original_token_count": 6134,
+      "output": "{\"candidate\": \"// @exec: {\\\"yield_time_ms\\\":30000,\\\"max_output_tokens\\\":2000}\\nconst K='controller-cache-continuation-v1-20261025-approval-writer';\\nconst W='/home/postedism/Desktop/Warden';\\nconst AUDIT=W+'/docs/evidence/task-6/controller-approval-writer-audit-20261025.json';\\nfunction own(o,k){return Object.hasOwn(o,k);}\\nfunction plain(o){return o!==null&&typeof o==='object'&&!Array.isArray(o)&&Object.getPrototypeOf(o)===Object.prototype;}\\nfunction hex(s,n){return typeof s==='string'&&s.length===n&&/^[0-9a-f]+$/.test(s);}\\nconst data=load(K+'-data');\\nif(load(K+'-admitted')!==true||load(K+'-attempt')!==undefined)throw Error('closed/no retry');\\nif(!plain(data)||Reflect.ownKeys(data).length!==3||\\n   !['source_commit','program_sha256','summary_proof_json'].every(k=>own(data,k))||\\n   !hex(data.source_commit,40)||!hex(data.program_sha256,64))throw Error('typed data');\\nconst proofRE=/^\\\\{\\\"bytes\\\":([1-9][0-9]*),\\\"metadata\\\":\\\\[((?:0|[1-9][0-9]*)(?:,(?:0|[1-9][0-9]*)){9})\\\\],\\\"sha256\\\":\\\"([0-9a-f]{64})\\\"\\\\}$/;\\nfunction proof(s,approval=false){\\n if(typeof s!=='string')throw Error('proof type');\\n const m=proofRE.exec(s);if(!m||m[0]!==s)throw Error('canonical proof');\\n const n=BigInt(m[1]),v=m[2].split(',').map(BigInt);\\n if(n>65536n||v[0]<=0n||v[1]<=0n||v[2]!==1000n||v[3]!==1000n||\\n    v[5]!==1n||v[6]!==n||!(approval?[33152n]:[33152n,33188n]).includes(v[4]))throw Error('proof metadata');\\n return s;\\n}\\nconst input=proof(data.summary_proof_json);\\nconst body=String.raw`import time\\nM0=time.monotonic_ns();B0=time.clock_gettime_ns(time.CLOCK_BOOTTIME);A0=time.monotonic_ns()\\nimport os,sys,signal,resource\\ndef need(ok):\\n if not ok:raise ValueError('approval refusal')\\ndef check():\\n u=time.monotonic_ns();b=time.clock_gettime_ns(time.CLOCK_BOOTTIME);a=time.monotonic_ns()\\n need(0<=a-u<=100000000 and 0<=a-M0<=30000000000 and 0<=b-B0<=30000000000)\\n need(max(B0-A0,b-a)<=min(B0-M0,b-u))\\n return a\\nsignal.signal(signal.SIGALRM,lambda *_:os._exit(124))\\nneed(0<=A0-M0<=100000000)\\ncheck();signal.setitimer(signal.ITIMER_REAL,(30000000000-(time.monotonic_ns()-M0))/1000000000)\\nfor k,n in ((resource.RLIMIT_CPU,5),(resource.RLIMIT_AS,134217728),(resource.RLIMIT_FSIZE,1048576)):\\n soft,hard=resource.getrlimit(k);need(hard==resource.RLIM_INFINITY or hard>=n);resource.setrlimit(k,(n,n))\\nimport json,hashlib,stat,re\\nos.umask(0o077)\\ndef pairs(items):\\n d={}\\n for k,v in items:need(k not in d);d[k]=v\\n return d\\ndef invalid(_):raise ValueError('noninteger/nonfinite JSON')\\ndef parse(b):return json.loads(b,object_pairs_hook=pairs,parse_float=invalid,parse_constant=invalid)\\ndef raw(v):return (json.dumps(v,sort_keys=True,separators=(',',':'),allow_nan=False)+'\\\\n').encode()\\ndef meta(s):return [getattr(s,'st_'+k) for k in ('dev','ino','uid','gid','mode','nlink','size','mtime_ns','ctime_ns','blocks')]\\ndef sha(b):return hashlib.sha256(b).hexdigest()\\nfds=[];dirs=[]\\ndef keep(fd):fds.append(fd);return fd\\ndef parents():\\n for parent,name,fd,before in dirs:\\n  now=os.fstat(fd);need(meta(now)[:6]==before[:6])\\n  if parent is not None:need(meta(os.stat(name,dir_fd=parent,follow_symlinks=False))==meta(now))\\n check()\\ndef path_read(name,mode):\\n check();parents()\\n fd=keep(os.open(name,os.O_RDONLY|os.O_NOFOLLOW|os.O_CLOEXEC|os.O_NONBLOCK,dir_fd=public))\\n s=os.fstat(fd);need(stat.S_ISREG(s.st_mode) and s.st_uid==s.st_gid==1000 and s.st_nlink==1 and s.st_dev==os.fstat(public).st_dev and stat.S_IMODE(s.st_mode) in mode and 0<s.st_size<=65536)\\n data=os.pread(fd,65537,0);need(len(data)==s.st_size and meta(os.fstat(fd))==meta(s) and meta(os.stat(name,dir_fd=public,follow_symlinks=False))==meta(s))\\n check();return fd,data,meta(s)\\ndef same(fd,name,data,m):\\n check();parents()\\n need(meta(os.fstat(fd))==m and meta(os.stat(name,dir_fd=public,follow_symlinks=False))==m and os.pread(fd,65537,0)==data)\\n need(meta(os.fstat(fd))==m and meta(os.stat(name,dir_fd=public,follow_symlinks=False))==m)\\n check()\\ntry:\\n need(os.getuid()==os.geteuid()==os.getgid()==os.getegid()==1000 and len(sys.argv)==2)\\n expected=parse(sys.argv[1]);need(type(expected) is dict and set(expected)=={'sha256','bytes','metadata'})\\n need(type(expected['sha256']) is str and re.fullmatch('[0-9a-f]{64}',expected['sha256']) is not None and type(expected['bytes']) is int and 0<expected['bytes']<=65536)\\n need(type(expected['metadata']) is list and len(expected['metadata'])==10 and all(type(x) is int and x>=0 for x in expected['metadata']))\\n flags=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC\\n public=keep(os.open('/',flags));dirs.append((None,None,public,meta(os.fstat(public))))\\n for part in ('home','postedism','Desktop','Warden','docs','evidence','task-6'):\\n  parent=public;public=keep(os.open(part,flags,dir_fd=parent));s=os.fstat(public)\\n  need(s.st_uid in (0,1000) and not s.st_mode&0o022);dirs.append((parent,part,public,meta(s)))\\n summary='controller-cache-continuation-v1-20261025-capture-summary.json'\\n approval='cache-continuation-checkpoint-approval-20261025.json'\\n sf,data,sm=path_read(summary,(0o600,0o644))\\n need(expected=={'sha256':sha(data),'bytes':len(data),'metadata':sm})\\n value=parse(data)\\n need(type(value) is dict and set(value)=={'version','state','binding','writer_basis','captured_at','checkpoint_sha256','checkpoint_bytes'})\\n need(type(value['version']) is int and value['version']==1 and value['state']=='checkpoint-captured-not-approved')\\n need(type(value['binding']) is dict and type(value['writer_basis']) is str and 0<len(value['writer_basis'].encode())<=4096 and type(value['captured_at']) is str)\\n need(type(value['checkpoint_sha256']) is str and re.fullmatch('[0-9a-f]{64}',value['checkpoint_sha256']) is not None and type(value['checkpoint_bytes']) is int and 0<value['checkpoint_bytes']<=16000000)\\n need(data==raw(value)) # accepted source's canonical serializer\\n old=b'\\\"state\\\":\\\"checkpoint-captured-not-approved\\\"';need(data.count(old)==1)\\n approved=data.replace(old,b'\\\"state\\\":\\\"approved\\\"',1)\\n want=dict(value);want['state']='approved';need(parse(approved)==want and len(approved)<=65536)\\n same(sf,summary,data,sm)\\n af=keep(os.open(approval,os.O_RDWR|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW|os.O_CLOEXEC,0o600,dir_fd=public))\\n created=meta(os.fstat(af));need(created[2]==created[3]==1000 and created[4]==stat.S_IFREG|0o600 and created[5]==1)\\n same(sf,summary,data,sm);offset=0\\n while offset<len(approved):\\n  check();n=os.write(af,approved[offset:]);need(n>0);offset+=n\\n check();os.fsync(af);check();final=meta(os.fstat(af))\\n need(final[:6]==created[:6] and final[6]==len(approved))\\n same(af,approval,approved,final);same(sf,summary,data,sm)\\n os.fsync(public);check()\\n same(af,approval,approved,final);same(sf,summary,data,sm)\\n rf,readback,rm=path_read(approval,(0o600,));need(rm==final and readback==approved)\\n same(af,approval,approved,final);same(rf,approval,approved,final);same(sf,summary,data,sm)\\n output={'approval':{'bytes':len(approved),'metadata':final,'sha256':sha(approved)}}\\n sys.stdout.write(raw(output).decode());sys.stdout.flush()\\n same(af,approval,approved,final);same(rf,approval,approved,final);same(sf,summary,data,sm)\\n check()\\nexcept BaseException:\\n raise SystemExit(1)\\nfinally:\\n for fd in reversed(fds):os.close(fd)\\ncheck()\\n`;\\nconst request={cmd:\\\"exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C python3 -I -S -B - '\\\"+input+\\\"' <<'PY'\\\\n\\\"+body+\\\"PY\\\",\\n workdir:W,shell:'/bin/bash',login:false,tty:false,yield_time_ms:1000,max_output_tokens:2000,\\n sandbox_permissions:'require_escalated',justification:'\\u4ee5\\u9879\\u76ee\\u666e\\u901aUID1000\\u8fd0\\u884c\\u5df2\\u5ba1\\u67e5\\u7684Warden\\u56fa\\u5b9a\\u63a7\\u5236\\u5668\\u6b65\\u9aa4\\uff1b\\u4e0d\\u4f7f\\u7528sudo\\u6216\\u4fee\\u6539\\u5bbf\\u4e3b\\u7f51\\u7edc\\u3002'};\\nconst S={state:'pending',data,events:[],audit_event:null};\\nfunction persist(){store(K+'-attempt',S);}\\npersist(); // permanent one-attempt interlock, before any native invocation\\nfunction bytes(s){let n=0;for(const c of s){const x=c.codePointAt(0);n+=x<128?1:x<2048?2:x<65536?3:4;}return n;}\\nfunction valid(r){\\n  exactJSON(r); // Retain first; refuse unsupported values before reading fields.\\n const keys=['output','wall_time_seconds','chunk_id','original_token_count','exit_code','session_id'];\\n if(!plain(r)||Reflect.ownKeys(r).length!==Object.keys(r).length||Object.keys(r).some(k=>!keys.includes(k))||\\n    typeof r.output!=='string'||bytes(r.output)>65536||!Number.isFinite(r.wall_time_seconds)||r.wall_time_seconds<0)throw Error('response');\\n if(own(r,'chunk_id')&&(typeof r.chunk_id!=='string'||!r.chunk_id.length||r.chunk_id.length>128))throw Error('chunk');\\n if(own(r,'original_token_count')&&(!Number.isSafeInteger(r.original_token_count)||r.original_token_count<0||r.original_token_count>2000))throw Error('truncation');\\n if(own(r,'exit_code')){\\n  if(own(r,'session_id')||!Number.isSafeInteger(r.exit_code)||r.exit_code!==0)throw Error('not normal0');\\n  return false;\\n }\\n if(!Number.isSafeInteger(r.session_id)||r.session_id<=0)throw Error('session');\\n return true;\\n}\\nasync function call(tool,q){\\n if(S.events.length>=32)throw Error('event limit');\\n const e={seq:S.events.length,tool,request:q};S.events.push(e);persist();\\n const r=await(tool==='exec_command'?tools.exec_command(q):tools.write_stdin(q));\\n e.response=r;persist();return valid(r);\\n}\\nlet approval=null;\\ntry{\\n let running=await call('exec_command',request);\\n const id=running?S.events[0].response.session_id:undefined;\\n while(running){\\n  if(S.events.length>=32||S.events.at(-1).response.session_id!==id)throw Error('stop');\\n  running=await call('write_stdin',{session_id:id,chars:'',yield_time_ms:45000,max_output_tokens:2000});\\n  if(running&&S.events.at(-1).response.session_id!==id)throw Error('session changed');\\n }\\n if(S.events.some(e=>!own(e,'response')))throw Error('missing response');\\n const out=S.events.map(e=>e.response.output).join('');\\n if(!out.startsWith('{\\\"approval\\\":')||!out.endsWith('}\\\\n'))throw Error('sole output');\\n approval=proof(out.slice(12,-2),true);\\n S.state='normal0-proof-returned';\\n}catch(error){approval=null;S.state='unknown-retain-no-pins';}\\nS.approval_proof_json=approval;persist();\\n// Non-authority audit only. Reject non-JSON data instead of silently dropping it.\\nfunction exactJSON(value){\\n const seen=new Set();\\n function check(v){\\n  if(v===null||typeof v==='string'||typeof v==='boolean')return;\\n  if(typeof v==='number'){\\n   if(!Number.isFinite(v)||Object.is(v,-0))throw Error('unrepresentable number');return;\\n  }\\n  if(typeof v!=='object'||seen.has(v))throw Error('unserializable');\\n  const array=Array.isArray(v),proto=Object.getPrototypeOf(v);\\n  if(proto!==(array?Array.prototype:Object.prototype))throw Error('nonplain');\\n  for(let p=v;p!==null;p=Object.getPrototypeOf(p))\\n   if(Object.getOwnPropertyDescriptor(p,'toJSON'))throw Error('serialization hook');\\n  seen.add(v);\\n  const keys=Reflect.ownKeys(v);\\n  if(array){\\n   const n=Object.getOwnPropertyDescriptor(v,'length').value;\\n   if(keys.length!==n+1)throw Error('array fields');\\n   for(let i=0;i<n;i++){\\n    const d=Object.getOwnPropertyDescriptor(v,String(i));\\n    if(!d||!Object.hasOwn(d,'value')||!d.enumerable)throw Error('array data');\\n    check(d.value);\\n   }\\n  }else{\\n   for(const k of keys){\\n    const d=Object.getOwnPropertyDescriptor(v,k);\\n    if(typeof k!=='string'||!Object.hasOwn(d,'value')||!d.enumerable)throw Error('object data');\\n    check(d.value);\\n   }\\n  }\\n  seen.delete(v);\\n }\\n check(value);return JSON.stringify(value);\\n}\\ntry{\\n const audit={version:1,kind:'approval-writer-audit',authority:false,\\n  source_commit:data.source_commit,program_sha256:data.program_sha256,\\n  summary_proof_json:input,approval_proof_json:approval,state:S.state,\\n  events:S.events,Q_released:false};\\n const textBody=exactJSON(audit)+'\\\\n';\\n if(bytes(textBody)>65536)throw Error('audit overflow');\\n const patch='*** Begin Patch\\\\n*** Add File: '+AUDIT+'\\\\n'+\\n  textBody.slice(0,-1).split('\\\\n').map(line=>'+'+line).join('\\\\n')+'\\\\n*** End Patch';\\n if(S.audit_event!==null)throw Error('audit already attempted');\\n S.audit_event={seq:0,tool:'apply_patch',request:patch};persist();\\n // Prior root gate established absence/quiescence. Consumed before await.\\n const r=await tools.apply_patch(patch);\\n S.audit_event.response=r;persist();\\n if(!plain(r)||Reflect.ownKeys(r).length!==0)throw Error('unknown patch result');\\n S.state=approval===null?'unknown-audit-recorded-no-pins':'normal0-audit-recorded';persist();\\n text({state:S.state,audit_actual_return:r,authority:false,Q_released:false});\\n}catch(error){\\n S.state='unknown-outer-retention-only-no-pins';persist();\\n text({state:S.state,authority:false,Q_released:false});\\n}\\n\", \"fixture\": \"// Pure generated values only; every caller capability is an explicit local fake.\\nconst AsyncFunction=Object.getPrototypeOf(async function(){}).constructor;\\nconst caller=new AsyncFunction('tools','store','load','notify','text',candidate);\\nconst K='controller-cache-continuation-v1-20261025-approval-writer';\\nconst big='9007199254740993123';\\nconst proof='{\\\"bytes\\\":1234,\\\"metadata\\\":[1,2,1000,1000,33152,1,1234,'+big+','+big+',8],\\\"sha256\\\":\\\"'+'a'.repeat(64)+'\\\"}';\\nconst data={source_commit:'b'.repeat(40),program_sha256:'c'.repeat(64),summary_proof_json:proof};\\nconst good='{\\\"approval\\\":'+proof+'}\\\\n';\\nfunction assert(ok,message){if(!ok)throw Error(message);}\\nfunction bytes(s){let n=0;for(const c of s){const x=c.codePointAt(0);n+=x<128?1:x<2048?2:x<65536?3:4;}return n;}\\nfunction clone(x,memo=new Map()){\\n if(x===null||typeof x!=='object')return x;if(memo.has(x))return memo.get(x);\\n const y=Array.isArray(x)?[]:Object.create(Object.getPrototypeOf(x));\\n Object.setPrototypeOf(y,Object.getPrototypeOf(x));memo.set(x,y);\\n for(const k of Reflect.ownKeys(x)){\\n  const d=Object.getOwnPropertyDescriptor(x,k);if(Object.hasOwn(d,'value'))d.value=clone(d.value,memo);Object.defineProperty(y,k,d);\\n }return y;\\n}\\nfunction bodyOf(s){\\n const lines=s.split('\\\\n');assert(lines[0]==='*** Begin Patch'&&lines[1]==='*** Add File: /home/postedism/Desktop/Warden/docs/evidence/task-6/controller-approval-writer-audit-20261025.json'&&lines.at(-1)==='*** End Patch','fixed patch framing');\\n return lines.slice(2,-1).map(v=>{assert(v[0]==='+','patch line');return v.slice(1);}).join('\\\\n')+'\\\\n';\\n}\\nconst abnormal=['negative-wall','negative-exit','negative-nested','array-accessor','array-hook','array-hole','array-extra','object-accessor','object-hook','undefined','bigint','nonfinite','cycle'];\\nconst names=mode==='red'?['negative-wall','array-accessor','array-hook']:[\\n 'immediate','session','absent','initial-throw','poll-throw','nonzero','changed-session','invalid-session','terminal-session','truncation','unknown-json','bad-type','extra-output','32-running','large-proof',\\n ...abnormal,'audit-65536','audit-65537','patch-null','patch-array','patch-nonempty','patch-foreign','patch-throw'];\\nconst results=[];let nativeTotal=0,patchTotal=0;\\nfor(const name of names){\\n const memory=new Map(),snapshots=[],native=[],patches=[],outputs=[];\\n memory.set(K+'-data',data);if(name!=='absent')memory.set(K+'-admitted',true);\\n let hits=0,original,patchOriginal;\\n function store(key,value){assert(key===K+'-attempt','local state only');memory.set(key,value);snapshots.push(clone(value));}\\n function load(key){assert([K+'-attempt',K+'-admitted',K+'-data'].includes(key),'local key only');return memory.get(key);}\\n function reply(output=good){return {output,wall_time_seconds:0,exit_code:0};}\\n function malformed(){\\n  let r=reply();\\n  if(name==='negative-wall')r.wall_time_seconds=-0;\\n  if(name==='negative-exit')r.exit_code=-0;\\n  if(name==='negative-nested')r.extra={n:-0};\\n  if(name==='array-accessor'){r=[];Object.defineProperty(r,'0',{get(){hits++;return hits;},enumerable:true});}\\n  if(name==='array-hook'){r=['actual-invalid'];const p=Object.create(Array.prototype);Object.defineProperty(p,'toJSON',{value(){hits++;return {replaced:true};}});Object.setPrototypeOf(r,p);}\\n  if(name==='array-hole')r=new Array(1);\\n  if(name==='array-extra'){r=['actual'];r.extra='retained';}\\n  if(name==='object-accessor')Object.defineProperty(r,'output',{get(){hits++;return good;},enumerable:true});\\n  if(name==='object-hook')r.toJSON=function(){hits++;return {replaced:true};};\\n  if(name==='undefined')r=undefined;\\n  if(name==='bigint')r.extra=1n;\\n  if(name==='nonfinite')r.extra=Infinity;\\n  if(name==='cycle')r.extra=r;\\n  return r;\\n }\\n const fakeTools={\\n  exec_command:async request=>{\\n   const pending=memory.get(K+'-attempt').events.at(-1);\\n   assert(pending.request===request&&!Object.hasOwn(pending,'response'),'request before await');\\n   assert(request.workdir==='/home/postedism/Desktop/Warden'&&request.shell==='/bin/bash'&&request.login===false&&request.tty===false&&request.yield_time_ms===1000&&request.max_output_tokens===2000&&request.sandbox_permissions==='require_escalated'&&!Object.hasOwn(request,'prefix_rule'),'fixed request profile');\\n   assert(request.cmd.startsWith('exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C python3 '+(mode==='red'?'-B':'-I -S -B')+\\\" - '\\\"+proof+\\\"' <<'PY'\\\\n\\\"),'exact flags/data');\\n   native.push({tool:'exec_command',request});\\n   if(name==='initial-throw')throw Error('fixture throw');\\n   if(['session','poll-throw','changed-session','32-running'].includes(name))return original={output:'',wall_time_seconds:0,session_id:17};\\n   if(abnormal.includes(name))return original=malformed();\\n   let r=reply();\\n   if(name==='nonzero')r.exit_code=1;\\n   if(name==='invalid-session'){delete r.exit_code;r.session_id=0;}\\n   if(name==='terminal-session')r.session_id=17;\\n   if(name==='truncation')r.original_token_count=2001;\\n   if(name==='unknown-json')r.extra={retained:'\\u00e9\\\"\\\\\\\\\\\\n'};\\n   if(name==='bad-type')r.output=17;\\n   if(name==='extra-output')r.output=good+'extra\\\\n';\\n   if(name.startsWith('audit-')){\\n    r.extra='\\u00e9\\\"\\\\\\\\\\\\n';const target=Number(name.slice(6));\\n    const audit={version:1,kind:'approval-writer-audit',authority:false,source_commit:data.source_commit,program_sha256:data.program_sha256,summary_proof_json:proof,approval_proof_json:null,state:'unknown-retain-no-pins',events:[{seq:0,tool:'exec_command',request,response:r}],Q_released:false};\\n    const pad=target-bytes(JSON.stringify(audit)+'\\\\n');assert(pad>0,'positive boundary pad');r.extra+='x'.repeat(pad);\\n   }\\n   return original=r;\\n  },\\n  write_stdin:async request=>{\\n   const pending=memory.get(K+'-attempt').events.at(-1);\\n   assert(pending.request===request&&!Object.hasOwn(pending,'response'),'poll before await');\\n   assert(request.session_id===17&&request.chars===''&&request.yield_time_ms===45000&&request.max_output_tokens===2000,'fixed empty poll');native.push({tool:'write_stdin',request});\\n   if(name==='poll-throw')throw Error('fixture poll throw');\\n   if(name==='changed-session')return {output:'',wall_time_seconds:0,session_id:18};\\n   if(name==='32-running')return {output:'',wall_time_seconds:0,session_id:17};\\n   return reply();\\n  },\\n  apply_patch:async request=>{\\n   const pending=memory.get(K+'-attempt').audit_event;\\n   assert(pending.request===request&&!Object.hasOwn(pending,'response')&&patches.length===0,'one consumed patch before await');\\n   const body=bodyOf(request);patches.push({request,body});\\n   if(name==='patch-throw')throw Error('fixture patch throw');\\n   return patchOriginal=name==='patch-null'?null:name==='patch-array'?[]:name==='patch-nonempty'?{x:1}:name==='patch-foreign'?Object.create(null):{};\\n  }\\n };\\n let thrown=false;try{await caller(fakeTools,store,load,()=>{throw Error('unexpected notify');},v=>outputs.push(clone(v)));}catch(e){thrown=true;}\\n const state=memory.get(K+'-attempt');\\n if(name==='absent')assert(thrown&&!state&&native.length===0&&patches.length===0,'closed interlock');\\n else{\\n  assert(!thrown&&state&&outputs.length===1&&outputs[0].authority===false&&outputs[0].Q_released===false,'nonauthority result');\\n  assert(native.length<=32&&patches.length<=1,'bounded calls');\\n  if(!name.includes('throw')||name==='patch-throw')assert(state.events[0].response===original,'original identity retained');\\n  for(const events of [state.events,state.audit_event?[state.audit_event]:[]])assert(events.every((e,i)=>Object.hasOwn(e,'response')||i===events.length-1),'pending last only');\\n  if(name==='initial-throw'||name==='poll-throw')assert(!Object.hasOwn(state.events.at(-1),'response'),'no fabricated response');\\n  if(name==='32-running')assert(native.length===32&&state.approval_proof_json===null,'no33rd call/approval');\\n  if(mode==='red'){\\n   assert(patches.length===1,'old serializes witness');const saved=JSON.parse(patches[0].body).events[0].response;\\n   if(name==='negative-wall')assert(Object.is(original.wall_time_seconds,-0)&&!Object.is(saved.wall_time_seconds,-0),'genuine negative-zero RED');\\n   if(name==='array-accessor')assert(hits>=2&&saved[0]===hits,'genuine accessor RED');\\n   if(name==='array-hook')assert(hits===1&&saved.replaced===true,'genuine inherited-hook RED');\\n  }else if(abnormal.includes(name)){\\n   assert(patches.length===0&&hits===0&&state.state==='unknown-outer-retention-only-no-pins'&&state.approval_proof_json===null,'unsupported outer-only, no hook/getter');\\n   const s=snapshots.at(-1).events[0].response;\\n   if(original&&typeof original==='object')assert(Object.getPrototypeOf(s)===Object.getPrototypeOf(original),'snapshot prototype');\\n   if(name==='negative-wall')assert(Object.is(s.wall_time_seconds,-0),'snapshot -0');\\n   if(name==='array-accessor')assert(Object.getOwnPropertyDescriptor(s,'0').get===Object.getOwnPropertyDescriptor(original,'0').get,'snapshot getter');\\n   if(name==='cycle')assert(s.extra===s,'snapshot cycle');\\n  }else if(name==='audit-65537')assert(patches.length===0&&state.state==='unknown-outer-retention-only-no-pins','over boundary outer-only');\\n  else{\\n   assert(patches.length===1,'one audit');const saved=JSON.parse(patches[0].body);\\n   assert(Object.keys(saved).sort().join(',')==='Q_released,approval_proof_json,authority,events,kind,program_sha256,source_commit,state,summary_proof_json,version','unchanged audit keys');\\n   assert(saved.summary_proof_json===proof&&patches[0].body.includes(big),'lossless large proof');\\n   if(name==='audit-65536')assert(bytes(patches[0].body)===65536,'exact allowed boundary');\\n   if(name==='unknown-json')assert(saved.events[0].response.extra.retained===original.extra.retained,'JSON unknown field retained');\\n   const normal=['immediate','session','large-proof'].includes(name);\\n   if(normal)assert(state.state==='normal0-audit-recorded'&&state.approval_proof_json===proof,'normal exact chain');\\n   else if(name.startsWith('patch-')){\\n    assert(state.state==='unknown-outer-retention-only-no-pins','patch failure no followup');\\n    if(name==='patch-throw')assert(!Object.hasOwn(state.audit_event,'response'),'patch pending');\\n    else assert(state.audit_event.response===patchOriginal,'actual patch return retained');\\n   }else assert(state.approval_proof_json===null&&state.state==='unknown-audit-recorded-no-pins','invalid response never approves');\\n  }\\n }\\n nativeTotal+=native.length;patchTotal+=patches.length;\\n results.push({name,native_calls:native.length,patch_calls:patches.length,hook_calls:hits,state:state?state.state:'closed',audit_bytes:patches.length?bytes(patches[0].body):null,passed:mode!=='red',expected_regression_observed:mode==='red'});\\n}\\nreturn {tests_run:results.length,failures:mode==='red'?results.length:0,errors:0,skipped:0,cases:results,total_fake_native_calls:nativeTotal,total_fake_patch_calls:patchTotal,actual_nested_tools:0,actual_interlocks:false,limits:'finite pure JS only; native CPU/AS/45s not measured'};\\n\", \"mode\": \"green\", \"receipt\": {\"code\": {\"candidate\": {\"bytes\": 12373, \"path\": \"docs/evidence/task-6/controller-caller-integrity-fix5-approval-candidate.js\", \"sha256\": \"7441ed1a8acf65caed11aa3621c4ec9768ab9d2e2f8424c7ada9bc8ec51710d0\"}, \"fixture\": {\"bytes\": 10877, \"path\": \"docs/evidence/task-6/controller-caller-integrity-fix5-approval-fixture.js\", \"sha256\": \"8a0cc3ffa15a99eb5b0541512c0dae74e5bc58b6f8d670ed170876a9007ee89b\"}}, \"controller_files\": 2, \"elapsed_seconds\": 0.010858395020477474, \"equal\": null, \"limits\": {\"address_bytes\": 536870912, \"cpu_seconds\": 30, \"file_bytes\": 33554432, \"wall_seconds\": 45}, \"phase\": \"pre\", \"source_files\": 150, \"timing_scope\": \"metadata recorder only; JS isolate and interpreter startup not measured\"}}\n"
+    }
+  },
+  "isolate_result": {
+    "tests_run": 35,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "cases": [
+      {
+        "name": "immediate",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "normal0-audit-recorded",
+        "audit_bytes": 7315,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "session",
+        "native_calls": 2,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "normal0-audit-recorded",
+        "audit_bytes": 7495,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "absent",
+        "native_calls": 0,
+        "patch_calls": 0,
+        "hook_calls": 0,
+        "state": "closed",
+        "audit_bytes": null,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "initial-throw",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-audit-recorded-no-pins",
+        "audit_bytes": 6879,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "poll-throw",
+        "native_calls": 2,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-audit-recorded-no-pins",
+        "audit_bytes": 7059,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "nonzero",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-audit-recorded-no-pins",
+        "audit_bytes": 7137,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "changed-session",
+        "native_calls": 2,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-audit-recorded-no-pins",
+        "audit_bytes": 7122,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "invalid-session",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-audit-recorded-no-pins",
+        "audit_bytes": 7138,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "terminal-session",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-audit-recorded-no-pins",
+        "audit_bytes": 7153,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "truncation",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-audit-recorded-no-pins",
+        "audit_bytes": 7165,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "unknown-json",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-audit-recorded-no-pins",
+        "audit_bytes": 7169,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "bad-type",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-audit-recorded-no-pins",
+        "audit_bytes": 6940,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "extra-output",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-audit-recorded-no-pins",
+        "audit_bytes": 7144,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "32-running",
+        "native_calls": 32,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-audit-recorded-no-pins",
+        "audit_bytes": 12544,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "large-proof",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "normal0-audit-recorded",
+        "audit_bytes": 7315,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "negative-wall",
+        "native_calls": 1,
+        "patch_calls": 0,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": null,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "negative-exit",
+        "native_calls": 1,
+        "patch_calls": 0,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": null,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "negative-nested",
+        "native_calls": 1,
+        "patch_calls": 0,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": null,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "array-accessor",
+        "native_calls": 1,
+        "patch_calls": 0,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": null,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "array-hook",
+        "native_calls": 1,
+        "patch_calls": 0,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": null,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "array-hole",
+        "native_calls": 1,
+        "patch_calls": 0,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": null,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "array-extra",
+        "native_calls": 1,
+        "patch_calls": 0,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": null,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "object-accessor",
+        "native_calls": 1,
+        "patch_calls": 0,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": null,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "object-hook",
+        "native_calls": 1,
+        "patch_calls": 0,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": null,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "undefined",
+        "native_calls": 1,
+        "patch_calls": 0,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": null,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "bigint",
+        "native_calls": 1,
+        "patch_calls": 0,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": null,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "nonfinite",
+        "native_calls": 1,
+        "patch_calls": 0,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": null,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "cycle",
+        "native_calls": 1,
+        "patch_calls": 0,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": null,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "audit-65536",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-audit-recorded-no-pins",
+        "audit_bytes": 65536,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "audit-65537",
+        "native_calls": 1,
+        "patch_calls": 0,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": null,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "patch-null",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": 7315,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "patch-array",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": 7315,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "patch-nonempty",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": 7315,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "patch-foreign",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": 7315,
+        "passed": true,
+        "expected_regression_observed": false
+      },
+      {
+        "name": "patch-throw",
+        "native_calls": 1,
+        "patch_calls": 1,
+        "hook_calls": 0,
+        "state": "unknown-outer-retention-only-no-pins",
+        "audit_bytes": 7315,
+        "passed": true,
+        "expected_regression_observed": false
+      }
+    ],
+    "total_fake_native_calls": 68,
+    "total_fake_patch_calls": 20,
+    "actual_nested_tools": 0,
+    "actual_interlocks": false,
+    "limits": "finite pure JS only; native CPU/AS/45s not measured"
+  },
+  "post": {
+    "request": {
+      "cmd": "exec /usr/bin/env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C python3 -I -S -B docs/evidence/task-6/controller-caller-integrity-fix5-approval-js-cover-01/metadata.py post 8bf623b6b5fc04a1d2c0a979a274cfeb3f643f51",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "yield_time_ms": 1000,
+      "max_output_tokens": 3000
+    },
+    "initial": {
+      "chunk_id": "1c42dc",
+      "wall_time_seconds": 0.00000845,
+      "exit_code": 0,
+      "original_token_count": 181,
+      "output": "{\"receipt\": {\"code\": {\"candidate\": {\"bytes\": 12373, \"path\": \"docs/evidence/task-6/controller-caller-integrity-fix5-approval-candidate.js\", \"sha256\": \"7441ed1a8acf65caed11aa3621c4ec9768ab9d2e2f8424c7ada9bc8ec51710d0\"}, \"fixture\": {\"bytes\": 10877, \"path\": \"docs/evidence/task-6/controller-caller-integrity-fix5-approval-fixture.js\", \"sha256\": \"8a0cc3ffa15a99eb5b0541512c0dae74e5bc58b6f8d670ed170876a9007ee89b\"}}, \"controller_files\": 2, \"elapsed_seconds\": 0.010268404032103717, \"equal\": true, \"limits\": {\"address_bytes\": 536870912, \"cpu_seconds\": 30, \"file_bytes\": 33554432, \"wall_seconds\": 45}, \"phase\": \"post\", \"source_files\": 150, \"timing_scope\": \"metadata recorder only; JS isolate and interpreter startup not measured\"}}\n"
+    },
+    "polls": [],
+    "final": {
+      "chunk_id": "1c42dc",
+      "wall_time_seconds": 0.00000845,
+      "exit_code": 0,
+      "original_token_count": 181,
+      "output": "{\"receipt\": {\"code\": {\"candidate\": {\"bytes\": 12373, \"path\": \"docs/evidence/task-6/controller-caller-integrity-fix5-approval-candidate.js\", \"sha256\": \"7441ed1a8acf65caed11aa3621c4ec9768ab9d2e2f8424c7ada9bc8ec51710d0\"}, \"fixture\": {\"bytes\": 10877, \"path\": \"docs/evidence/task-6/controller-caller-integrity-fix5-approval-fixture.js\", \"sha256\": \"8a0cc3ffa15a99eb5b0541512c0dae74e5bc58b6f8d670ed170876a9007ee89b\"}}, \"controller_files\": 2, \"elapsed_seconds\": 0.010268404032103717, \"equal\": true, \"limits\": {\"address_bytes\": 536870912, \"cpu_seconds\": 30, \"file_bytes\": 33554432, \"wall_seconds\": 45}, \"phase\": \"post\", \"source_files\": 150, \"timing_scope\": \"metadata recorder only; JS isolate and interpreter startup not measured\"}}\n"
+    }
+  }
+}

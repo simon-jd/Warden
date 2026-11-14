@@ -1,0 +1,60 @@
+test_actual_grype_configuration_must_prove_unfiltered_scan (task15_fix1_tests.AssessScanTests.test_actual_grype_configuration_must_prove_unfiltered_scan) ... FAIL
+test_severity_must_be_valid_before_release_decision (task15_fix1_tests.AssessScanTests.test_severity_must_be_valid_before_release_decision) ... FAIL
+
+======================================================================
+FAIL: test_actual_grype_configuration_must_prove_unfiltered_scan (task15_fix1_tests.AssessScanTests.test_actual_grype_configuration_must_prove_unfiltered_scan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_supplychain.py", line 168, in test_actual_grype_configuration_must_prove_unfiltered_scan
+    self.assertEqual(unexpectedly_accepted, [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['empty profile', 'missing only-fixed', 'm[521 chars]ons'] != []
+
+First list contains 22 additional elements.
+First extra element 0:
+'empty profile'
+
++ []
+- ['empty profile',
+-  'missing only-fixed',
+-  'missing only-notfixed',
+-  'missing ignore-wontfix',
+-  'missing ignore',
+-  'missing exclude',
+-  'missing vex-documents',
+-  'missing vex-add',
+-  'missing include-matcher-suppressions',
+-  'missing match-upstream-kernel-headers',
+-  'unsafe only-fixed',
+-  'unsafe only-notfixed',
+-  'unsafe ignore-wontfix',
+-  'unsafe ignore',
+-  'unsafe exclude',
+-  'unsafe vex-documents',
+-  'unsafe vex-add',
+-  'unsafe include-matcher-suppressions',
+-  'unsafe match-upstream-kernel-headers',
+-  'wrong type only-fixed',
+-  'wrong type exclude',
+-  'wrong type include-matcher-suppressions']
+
+======================================================================
+FAIL: test_severity_must_be_valid_before_release_decision (task15_fix1_tests.AssessScanTests.test_severity_must_be_valid_before_release_decision)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_supplychain.py", line 184, in test_severity_must_be_valid_before_release_decision
+    self.assertEqual(unexpectedly_accepted, [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['missing', 'null', 'empty', 'invalid', 'boolean', 'number', 'list', 'mapping'] != []
+
+First list contains 8 additional elements.
+First extra element 0:
+'missing'
+
+- ['missing', 'null', 'empty', 'invalid', 'boolean', 'number', 'list', 'mapping']
++ []
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=2)

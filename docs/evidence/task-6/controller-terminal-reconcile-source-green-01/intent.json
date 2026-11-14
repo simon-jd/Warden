@@ -1,0 +1,27 @@
+{
+  "changed_source_snapshots": [
+    "scripts/identity_cache_control.py",
+    "scripts/identity_cache_observe.py",
+    "scripts/test_identity_cache_control.py",
+    "docs/evidence/task-6/controller-cache-continuation-outer-invoker-20261025.py",
+    "docs/evidence/task-6/test_controller_cache_continuation_invoker_20261025.py"
+  ],
+  "command": [
+    "python3",
+    "-B",
+    "docs/evidence/task-6/controller-terminal-reconcile-source-green-01/run.py"
+  ],
+  "dispatch_base": "0766662fd4dd88b9e77812554909898a71b96e13",
+  "limits": {
+    "address_bytes": 536870912,
+    "cpu_seconds": 30,
+    "file_bytes": 33554432,
+    "wall_seconds": 45
+  },
+  "live_cache_access": false,
+  "source_commit_at_launch": null,
+  "started_utc": "2026-10-25T15:18:08.782553+00:00",
+  "test_target": "amended controller and invoker reconciliation generated fixtures",
+  "tested_prefix_sha256": "7b46ff9acbebfc9d3cae6e9d5b80c0d2c7cdc0a082cbdb3a486021ff250a51aa",
+  "timing_scope": "earliest measured entry; interpreter startup and essential timer bootstrap externally unbounded"
+}

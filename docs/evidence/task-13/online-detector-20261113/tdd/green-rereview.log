@@ -1,0 +1,9 @@
+# GREEN, second re-review (2026-11-14T05:00:39Z)
+$ taskset -c 0-7,16-31 python3 -E -s -B -m unittest detect.falco.test_collector detect.falco.test_recorder detect.falco.test_bindings detect.falco.test_detector detect.falco.test_benign detect.falco.test_review
+Ran 104 tests in 5.711s
+OK
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -s scripts -t scripts -p "test_k3s_gvisor_lab.py"
+Ran 37 tests in 38.332s
+OK
+$ shellcheck -S warning scripts/k3s_gvisor_lab.sh
+shellcheck: clean

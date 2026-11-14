@@ -1,0 +1,58 @@
+"""Supply-chain policy rendering and complete Grype scan assessment.
+
+First RED stage: valid inputs fail closed until the full implementation lands.
+No policy, signature, network request, or file is produced by this module.
+"""
+
+from collections.abc import Mapping
+import re
+
+
+_DIGEST = re.compile(r"sha256:[0-9a-f]{64}\Z")
+_BINDING_FIELDS = ("repository", "ref", "image_repository", "image_digest")
+
+
+def _reject(reason):
+    return {"status": "rejected", "accepted": False, "reason": reason, "policies": None}
+
+
+def render_binding(binding):
+    """Return bound admission policies only for a complete trusted binding."""
+    if not isinstance(binding, Mapping):
+        return _reject("binding must be a mapping")
+    if any(not isinstance(binding.get(key), str) or not binding[key].strip()
+           for key in _BINDING_FIELDS):
+        return _reject("repository, ref, image_repository and image_digest are required")
+    if not _DIGEST.fullmatch(binding["image_digest"]):
+        return _reject("image_digest must be a canonical sha256 digest")
+    if not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", binding["repository"]):
+        return _reject("repository must be an owner/name pair")
+    if not binding["ref"].startswith("refs/") or any(c.isspace() for c in binding["ref"]):
+        return _reject("ref must be a full Git ref")
+    if any(c.isspace() for c in binding["image_repository"]):
+        return _reject("image_repository must be an OCI repository")
+    return {"status": "unimplemented", "accepted": False,
+            "reason": "bound admission rendering pending", "policies": None}
+
+
+def assess_scan(report, image_digest):
+    """Assess one unfiltered Grype JSON document for a pinned image digest."""
+    if not isinstance(image_digest, str) or not _DIGEST.fullmatch(image_digest):
+        return {"status": "rejected", "release_allowed": False,
+                "block_reasons": ["invalid image digest"], "fixable_critical": [], "kev_cves": []}
+    if not isinstance(report, Mapping) or not isinstance(report.get("matches"), list):
+        return {"status": "rejected", "release_allowed": False,
+                "block_reasons": ["complete matches array required"],
+                "fixable_critical": [], "kev_cves": []}
+    if not isinstance(report.get("ignoredMatches"), list) or report["ignoredMatches"]:
+        return {"status": "rejected", "release_allowed": False,
+                "block_reasons": ["ignoredMatches must be present and empty"],
+                "fixable_critical": [], "kev_cves": []}
+    descriptor = report.get("descriptor")
+    if not isinstance(descriptor, Mapping) or not isinstance(descriptor.get("db"), Mapping) or not descriptor["db"]:
+        return {"status": "rejected", "release_allowed": False,
+                "block_reasons": ["Grype DB evidence missing"],
+                "fixable_critical": [], "kev_cves": []}
+    return {"status": "unimplemented", "release_allowed": False,
+            "block_reasons": ["complete scan assessment pending"],
+            "fixable_critical": [], "kev_cves": []}

@@ -1,0 +1,46 @@
+{
+  "aggregate_fetched_response_bytes_including_auth": 7984,
+  "bounds": {
+    "address_space_bytes": 268435456,
+    "alarm_seconds": 55,
+    "allocated_bytes": 1572864,
+    "cpu_seconds": 15,
+    "response_bytes": 1048576,
+    "wall_seconds": 60
+  },
+  "elapsed_seconds": 1.076766,
+  "error": "RuntimeError: redirect rejected; no alternate endpoint permitted",
+  "no_execution_or_next_admission": true,
+  "no_layers_fetched": true,
+  "response_records": [
+    {
+      "bytes": 5495,
+      "content_length": null,
+      "content_type": "application/json",
+      "docker_content_digest": null,
+      "label": "auth",
+      "sha256": "sha256:4c0d4d1e5992864a6075268c628243a9c134677ed1d0a68ae45f5737c7ddd73f",
+      "status": 200
+    },
+    {
+      "bytes": 493,
+      "content_length": "493",
+      "content_type": "application/vnd.oci.image.index.v1+json",
+      "docker_content_digest": "sha256:713bb146f1a7c97ebc70e13d259f77ff36f2c5d00f3145677816af5af9bd1530",
+      "label": "index",
+      "sha256": "sha256:713bb146f1a7c97ebc70e13d259f77ff36f2c5d00f3145677816af5af9bd1530",
+      "status": 200
+    },
+    {
+      "bytes": 1996,
+      "content_length": "1996",
+      "content_type": "application/vnd.oci.image.manifest.v1+json",
+      "docker_content_digest": "sha256:7b088327f38b3d5d2dac1855b2722ab398dbfe32d38929b4a9599d740d746d8b",
+      "label": "manifest",
+      "sha256": "sha256:7b088327f38b3d5d2dac1855b2722ab398dbfe32d38929b4a9599d740d746d8b",
+      "status": 200
+    }
+  ],
+  "status": "FAILED",
+  "summary": {}
+}

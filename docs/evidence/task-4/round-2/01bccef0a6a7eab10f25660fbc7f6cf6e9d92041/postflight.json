@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-24T21:08:05.514386+00:00",
+  "source": "01bccef0a6a7eab10f25660fbc7f6cf6e9d92041",
+  "uid": 1000,
+  "preflight": {
+    "additional_bytes": "0",
+    "at": "2026-10-24T21:08:05Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 272072065024,
+    "project_allocated_bytes": 3833872384,
+    "service_memory_bytes": "1000000000"
+  },
+  "owned_images_all": [],
+  "owned_containers_all": [],
+  "outstanding_bytes": 0,
+  "configured_resident_services_bytes": 0,
+  "host_allowance_bytes": 1000000000,
+  "protected_sysctls": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "protected_baseline_match": true,
+  "vm_executed": false,
+  "tenant_executed": false,
+  "prepare_or_abi_executed_this_round": false,
+  "mount_smoke_or_remount_executed_this_round": false
+}

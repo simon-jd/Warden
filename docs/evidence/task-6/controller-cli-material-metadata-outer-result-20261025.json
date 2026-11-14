@@ -1,0 +1,19 @@
+{
+  "chunk_id": "28d877",
+  "command": "/usr/bin/python3 -B docs/evidence/task-6/controller-cli-material-metadata-command-20261025.py",
+  "command_sha256": "4dd6d365b7c1ae2532f168abdd791ef5aa8d86ecf30e6ce5cbc8b23a62364cb5",
+  "exit_code": 0,
+  "login": false,
+  "ordinary_uid_gid": 1000,
+  "producer": "root transcript terminal corroboration",
+  "receipt_bytes": 2357,
+  "receipt_sha256": "fee2eca9ebe71e728c45e251999538ee6a8a24d2f872e18b2022eee6b56edf97",
+  "recorded_tool_wall_time_seconds": 9.488e-06,
+  "recorded_utc": "2026-10-25T13:32:28.192314+00:00",
+  "sandbox_permissions": "require_escalated",
+  "scope": "public metadata only; no Docker execution or daemon/config/HOME/private data read",
+  "session_id": null,
+  "stdout_representation": "tool printed the complete JSON receipt; this record preserves terminal metadata, not reconstructed raw stdout",
+  "tool": "exec_command",
+  "version": 1
+}

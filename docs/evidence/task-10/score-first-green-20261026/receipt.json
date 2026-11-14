@@ -1,0 +1,20 @@
+{
+  "absence_basis": "ECHILD only under exact new-session + local subreaper + frozen no-setpgid/setsid child chain; no generalized host/quiescence authority; unknown adoption/group escape is STOP",
+  "base_head_root_attested": "1916aad69d310b690cea6ec58212399b6da72f31",
+  "cleanup_error": null,
+  "combined_output_bytes": 4740,
+  "elapsed_seconds": 20.411656372016296,
+  "go_returncode": 0,
+  "leader_reaped_after_all_signals": true,
+  "output_sha256": "00c8db98dc44986dcd0f72f98c094c681629048e8089904a31538f6a168df8f4",
+  "owned_group_absent": true,
+  "peak_observed_work_allocated_bytes": 210771968,
+  "process_cleanup_ok": true,
+  "reason": null,
+  "result": "COMPONENT_GREEN",
+  "retained_accounting": "full reserved work allowance until separately bounded inventory",
+  "retained_work_path": "/home/postedism/Desktop/Warden/.superpowers/sdd/2-warden-security-plan/task10-dns-score-first-green-20261026/green-run/work",
+  "scope": "DNS scoring only; no full Task10 acceptance",
+  "work_removed": false,
+  "work_retained_charged": true
+}

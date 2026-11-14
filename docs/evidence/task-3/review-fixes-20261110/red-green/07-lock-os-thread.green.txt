@@ -1,0 +1,6 @@
+# GREEN: the same test with runtime.LockOSThread() first in payload()
+# 2026-11-10T20:38:48-08:00
+=== RUN   TestPayloadLocksItsThreadBeforeChangingCredentials
+--- PASS: TestPayloadLocksItsThreadBeforeChangingCredentials (0.00s)
+ok  	warden/runtimes/gvisor/supervisor	0.003s
+exit: 0

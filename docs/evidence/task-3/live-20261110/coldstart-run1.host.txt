@@ -1,0 +1,36 @@
+run: coldstart-run1
+command: make test-gvisor GVISOR_COLD_STARTS=100 GVISOR_OUT=/home/postedism/Desktop/Warden-task3/docs/evidence/task-3/live-20261110/cold-starts-100.jsonl  (worktree wrapper .cache/mk.sh: GOFLAGS adds -buildvcs=false)
+start: 2026-11-10T17:10:59-08:00
+head: 277050d44302c6aa310fd1bf386b1b4006b47cc8
+git status --short:
+?? docs/evidence/task-3/live-20261110/
+uname: 7.0.0-42-generic
+nproc: 32
+loadavg start: 9.73 7.79 6.32 15/5721 86276
+warden docker objects before:
+end: 2026-11-10T17:16:38-08:00
+loadavg end: 6.68 8.20 7.13 7/5769 167036
+make exit: 0
+warden docker objects after:
+lab host snapshot before (protected sysctls, module list hash):
+  vm.overcommit_memory=1
+  vm.panic_on_oom=0
+  kernel.panic=10
+  kernel.panic_on_oops=1
+  kernel.keys.root_maxkeys=1000000
+  kernel.keys.root_maxbytes=25000000
+  fs.inotify.max_user_instances=512
+  fs.inotify.max_user_watches=524288
+  net.ipv4.ip_forward=1
+  modules_sha256=cab784bf7955f739e4ae0d452fffc0e39be77bd61d80bba799ef32eb81cb982d
+lab host snapshot after:
+  vm.overcommit_memory=1
+  vm.panic_on_oom=0
+  kernel.panic=10
+  kernel.panic_on_oops=1
+  kernel.keys.root_maxkeys=1000000
+  kernel.keys.root_maxbytes=25000000
+  fs.inotify.max_user_instances=512
+  fs.inotify.max_user_watches=524288
+  net.ipv4.ip_forward=1
+  modules_sha256=cab784bf7955f739e4ae0d452fffc0e39be77bd61d80bba799ef32eb81cb982d

@@ -1,0 +1,30 @@
+# UNAPPLIED ONLY: do not patch consumed caller/wrapper/freeze in place.
+# Attempt1 native18b94d: INFRASTRUCTURE_FAILURE, fixed SDK tool unavailable:
+# pkg/tool/linux_amd64/buildid; no_run_directory_created=true. Root postflight
+# 386031 confirmed buildid absent; no Go/descendants/tests ran. Not semantic RED.
+# Capability reduction only: remove buildid from BOTH preflight and allowlist.
+# Targets/line numbers below refer exactly to the immutable attempted packet.
+# Any later candidate needs ROOT permission, a fresh namespace/path binding,
+# exact freeze and fresh admission. No retry, SDK mutation or execution granted.
+--- .superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/caller.py
++++ .superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/caller.py
+@@ -121,7 +121,7 @@
+         p = ROOT + '/' + item['path']
+         if os.path.islink(p) or os.stat(p).st_size != item['bytes'] or sha(p) != item['sha256']:
+             raise RuntimeError('frozen input changed: ' + item['path'])
+-    for binary in ('bin/go', 'pkg/tool/linux_amd64/compile', 'pkg/tool/linux_amd64/link', 'pkg/tool/linux_amd64/asm', 'pkg/tool/linux_amd64/buildid'):
++    for binary in ('bin/go', 'pkg/tool/linux_amd64/compile', 'pkg/tool/linux_amd64/link', 'pkg/tool/linux_amd64/asm'):
+         if not os.path.isfile(SDK + '/' + binary) or not os.access(SDK + '/' + binary, os.X_OK):
+             raise RuntimeError('fixed SDK tool unavailable: ' + binary)
+     # Fresh target is a one-shot marker. No retries or reuse of prior work/cache.
+--- .superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/limit_child.py
++++ .superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/limit_child.py
+@@ -16,7 +16,7 @@
+     raise SystemExit('invalid child wrapper invocation')
+ mode, program = sys.argv[1:3]
+ if mode == 'tool':
+-    permitted = {SDK + '/pkg/tool/linux_amd64/' + name for name in ('compile', 'asm', 'link', 'buildid')}
++    permitted = {SDK + '/pkg/tool/linux_amd64/' + name for name in ('compile', 'asm', 'link')}
+     if program not in permitted:
+         raise SystemExit('unexpected Go tool; stop without fallback')
+ else:

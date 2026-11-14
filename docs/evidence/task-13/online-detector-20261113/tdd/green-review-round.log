@@ -1,0 +1,10 @@
+# GREEN, the review round (2026-11-14T04:27:21Z); one benign test expectation changed with the default to the host instance only (--other-service-memory-bytes is 1 GiB)
+$ taskset -c 0-7,16-31 python3 -E -s -B -m unittest detect.falco.test_collector detect.falco.test_recorder detect.falco.test_bindings detect.falco.test_detector detect.falco.test_benign detect.falco.test_review
+Ran 90 tests in 6.264s
+OK
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -s scripts -t scripts -p "test_makefile.py"
+Ran 9 tests in 0.167s
+OK
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -s scripts -t scripts -p "test_k3s_gvisor_lab.py"
+Ran 36 tests in 39.786s
+OK

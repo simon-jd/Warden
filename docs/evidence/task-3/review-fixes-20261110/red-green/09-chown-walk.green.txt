@@ -1,0 +1,6 @@
+# GREEN: the new test against the real releaseFailedSession
+# 2026-11-10T20:36:10-08:00
+=== RUN   TestReleaseFailedSessionDropsVMDataAndReturnsOwnership
+--- PASS: TestReleaseFailedSessionDropsVMDataAndReturnsOwnership (0.00s)
+ok  	warden/runtimes/firecracker	0.004s
+exit: 0

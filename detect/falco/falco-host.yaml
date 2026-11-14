@@ -1,0 +1,8 @@
+# The host instance (Falco 0.45.2): the modern eBPF probe, no kernel module.
+# These are the stock engine values, written out so they cannot drift.
+engine:
+  kind: modern_ebpf
+  modern_ebpf:
+    cpus_for_each_buffer: 2
+    buf_size_preset: 4
+    drop_failed_exit: false

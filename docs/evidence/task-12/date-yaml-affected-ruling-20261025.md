@@ -1,0 +1,17 @@
+# 原Task12 date/YAML最小受影响验证
+
+root08abaf全文读取并归档首个完整批次FAILED输出9942B，985c6a全文读取17035B五native事件；旧3310B caller已消费、FAILED namespace/状态和原source-freeze保留。7个测试报告ok，包括实际32规则转换和64fixture合同；三个AdapterEdgeTest在适配器调用前因合法YAML date无法JSON序列化而出现6 errors，因此整体仍FAILED，原compiled/markdown/summary未生成，不补造。
+
+原唯一作者只改test_contract.py三个方法中的四个json.dumps调用为yaml.safe_dump(...,sort_keys=False)。root75ce9c核对三行diff，+84B（14203→14287），REFERENCE_RULE、断言、其他测试及137项其余SOURCE不变。新版测试SHA d5ddb93e755bed28ca863ae8690c70d41a4d91737777ccae8d895f31acab13de；新734B差异清单另存，旧freeze未覆盖。此为原Task12普通TDD测试数据修正，不是新阶段、Task6额度或新独立review轮。
+
+root5b956f全文核对3999B affected caller；53a117限定核对生产summarize_rules/render_markdown只处理tag和文本，不调用catalog编译。准一次仅含原AdapterEdgeTest三个方法（含原4subtests）的验证，不能loadTestsFromModule、运行已过7case/catalog或Task11。先只核对本次changed文件/caller/旧失败输出，再同native fresh磁盘Q5GB+134217728/常驻预留10GB/MemAvailable≥2GB/UID1000/全新namespace门禁；whole60/CPU45/AS1GB/output1MiB/tmp16/run16MiB不变。
+
+成功后仅用现有生产API从32个未变规则tag生成markdown，明确转换PASS引用原整体FAILED批次中已通过的32-rule catalogue测试；本次不重编catalog、不重建丢失queryJSON、不宣称indexed/live成功。产物只在本run，root全文读取实际输出后才授公开字节复制/提交。任何failure/unknown/resource/timeout或自动审批拒绝立即停止，不调cap、不换工具入口或actor绕过。
+
+先前自动审批拒绝原文保留；同一正常审批通道一次重提交08abaf已获准执行，固定reaper00:15:53Z确认本项目RG不存在。父会话用户明确“有额度,你继续”，Goal active不pause。此处恢复原授权，不扩预算/Q/宿主或原Task6/11/16边界；完整Task12和Goal均未完成。
+
+实际交回：990f46三固定文件核对normal0；1ef489 fresh R4467396608+Q5000000000+134217728=9601614336≤12000000000，5dec8b UID1000/MemAvailable85614993408/新namespace不存在。唯一ffb9ce normal0（0.162秒）恰3项AdapterEdgeTest全部PASS，0failures/errors/skips；71e750正常读取原始输出，cleanup1/tmp已不存在。6047B输出SHA cf3b0124a130212001ebd19581f7e972d84401cc3b7a0ee1fbc2215eba88b096；5748B实际矩阵SHA 4afc44dc25af7db91293fce7c8bdb47598a0b040c86c4c475db1479eb12f9f75。queries.json不存在，未重构。
+
+root714c0c正常审批下全文读取输出/矩阵并只读归档六个原件；662244+89cfaa全文读取26848B五native事件，确认精确caller及已知终态。[本次root原始读归档工具事件](affected-root-postread-20261025.json)与[六原件](local-cover-affected-first-20261025/)保留。32规则/20tagged/12unassigned/15related techniques均为标签统计；转换PASS引用初批整体FAILED中原catalog通过，不是此次重跑。indexed/live均UNRUN。
+
+root接受这一受影响修正，授权原作者将实际矩阵逐字节复制到最终公开路径、按明确SOURCE/EVIDENCE列表本地提交并写完整报告/镜像，然后交回索引。尚未独立审查，不接受为整个Task12完成；不扩大原Task6/16/BP额度或解锁任何实际backend/云/宿主操作。

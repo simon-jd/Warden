@@ -1,0 +1,94 @@
+=== RUN   TestIdempotencyKeyReturnsSameRun
+    api_test.go:36: create status=404 body=404 page not found
+--- FAIL: TestIdempotencyKeyReturnsSameRun (0.02s)
+=== RUN   TestCrossTenantReadDenied
+    api_test.go:42: create status=404 body=404 page not found
+--- FAIL: TestCrossTenantReadDenied (0.02s)
+=== RUN   TestConcurrentIdempotency
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:49: 404 404 page not found
+        
+    api_test.go:50: runs=0 err=ERROR: relation "runs" does not exist (SQLSTATE 42P01)
+--- FAIL: TestConcurrentIdempotency (0.04s)
+=== RUN   TestIdempotencyPayloadAndTenantScope
+    api_test.go:55: create status=404 body=404 page not found
+--- FAIL: TestIdempotencyPayloadAndTenantScope (0.03s)
+=== RUN   TestQueuedRunPersistsSecureDefaults
+    api_test.go:63: create status=404 body=404 page not found
+--- FAIL: TestQueuedRunPersistsSecureDefaults (0.02s)
+=== RUN   TestAuthenticationFailsClosed
+    api_test.go:73: token="" status=404
+--- FAIL: TestAuthenticationFailsClosed (0.02s)
+=== RUN   TestInvalidRequestsRejectedWithoutWrites
+    api_test.go:79: case 0 status=404 body=404 page not found
+    api_test.go:79: case 1 status=404 body=404 page not found
+    api_test.go:79: case 2 status=404 body=404 page not found
+    api_test.go:79: case 3 status=404 body=404 page not found
+    api_test.go:79: case 4 status=404 body=404 page not found
+    api_test.go:79: case 5 status=404 body=404 page not found
+    api_test.go:79: case 6 status=404 body=404 page not found
+    api_test.go:79: case 7 status=404 body=404 page not found
+    api_test.go:79: case 8 status=404 body=404 page not found
+    api_test.go:79: case 9 status=404 body=404 page not found
+    api_test.go:79: case 10 status=404 body=404 page not found
+    api_test.go:79: case 11 status=404 body=404 page not found
+    api_test.go:79: case 12 status=404 body=404 page not found
+    api_test.go:79: case 13 status=404 body=404 page not found
+    api_test.go:79: case 14 status=404 body=404 page not found
+    api_test.go:80: missing idempotency key status=404
+    api_test.go:81: oversized status=404
+    api_test.go:82: invalid requests wrote runs=0 err=ERROR: relation "runs" does not exist (SQLSTATE 42P01)
+--- FAIL: TestInvalidRequestsRejectedWithoutWrites (0.03s)
+=== RUN   TestCreateRollsBackWhenAuditFails
+    api_test.go:86: ERROR: relation "audit_entries" does not exist (SQLSTATE 42P01)
+--- FAIL: TestCreateRollsBackWhenAuditFails (0.04s)
+FAIL
+FAIL	warden/controlplane/internal/api	0.223s
+=== RUN   TestAuditChainDetectsTamper
+    audit_test.go:16: audit append not implemented
+--- FAIL: TestAuditChainDetectsTamper (0.02s)
+=== RUN   TestAppendOnlyGuards
+    audit_test.go:24: audit append not implemented
+--- FAIL: TestAppendOnlyGuards (0.02s)
+=== RUN   TestConcurrentAppendAndCanonicalHash
+    audit_test.go:30: audit append not implemented
+--- FAIL: TestConcurrentAppendAndCanonicalHash (0.02s)
+=== RUN   TestAppendSnapshotsPayloadAndRejectsAmbiguity
+    audit_test.go:39: audit append not implemented
+--- FAIL: TestAppendSnapshotsPayloadAndRejectsAmbiguity (0.02s)
+FAIL
+FAIL	warden/controlplane/internal/audit	0.086s
+?   	warden/controlplane/internal/runs	[no test files]
+?   	warden/controlplane/internal/store	[no test files]
+?   	warden/controlplane/internal/tenant	[no test files]
+?   	warden/controlplane/internal/testutil	[no test files]
+FAIL

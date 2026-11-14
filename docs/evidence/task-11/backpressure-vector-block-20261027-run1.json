@@ -1,0 +1,393 @@
+{
+  "alert": {
+    "errors": 0,
+    "firing": [],
+    "first_discard_epoch": null,
+    "first_seen": null,
+    "polls": 121,
+    "prometheus": {
+      "container": "warden-bp-prom-a12e1b2c",
+      "image": "prom/prometheus:v3.14.0",
+      "removed": true,
+      "rules_loaded": [
+        "WardenVectorBufferDiscarded",
+        "WardenVectorNormalizationError"
+      ],
+      "targets": [
+        "127.0.0.1:58145",
+        "127.0.0.1:35987"
+      ],
+      "targets_up": [
+        "http://127.0.0.1:35987/metrics",
+        "http://127.0.0.1:58145/metrics"
+      ]
+    }
+  },
+  "config": {
+    "base_rate": 20,
+    "buffer_max_size": 268435488,
+    "burst_events": 24000,
+    "burst_rate": 200,
+    "hops": 2,
+    "line_bytes": 16384,
+    "when_full": "block"
+  },
+  "failures": [],
+  "load": {
+    "loadavg_end": [
+      7.73779296875,
+      6.15234375,
+      6.11083984375
+    ],
+    "loadavg_start": [
+      3.8388671875,
+      5.80859375,
+      6.04833984375
+    ],
+    "nproc": 32
+  },
+  "metrics": {
+    "buffer_byte_size_max": 134204984.0,
+    "buffer_byte_size_min": 165600.0,
+    "buffer_discarded_events_total": 0.0,
+    "buffer_events_max": 8107.0,
+    "component_discarded_events_total": 0.0,
+    "negative_gauge_samples": 0,
+    "samples": 520
+  },
+  "metrics_aggregator": {
+    "buffer_byte_size_max": 131057040.0,
+    "buffer_byte_size_min": 0.0,
+    "buffer_discarded_events_total": 0.0,
+    "buffer_events_max": 7938.0,
+    "component_discarded_events_total": 0.0,
+    "negative_gauge_samples": 0,
+    "samples": 520
+  },
+  "occupancy": {
+    "disk_bytes_max": 153473912,
+    "rss_bytes_max": 167747584,
+    "samples": 275,
+    "series_t_disk_rss": [
+      [
+        0.5,
+        24,
+        50601984
+      ],
+      [
+        5.5,
+        24,
+        51924992
+      ],
+      [
+        10.51,
+        1440744,
+        62599168
+      ],
+      [
+        15.51,
+        3080184,
+        65970176
+      ],
+      [
+        20.51,
+        17698992,
+        90820608
+      ],
+      [
+        25.52,
+        34287280,
+        95731712
+      ],
+      [
+        30.52,
+        50842080,
+        90501120
+      ],
+      [
+        35.52,
+        67397248,
+        85827584
+      ],
+      [
+        40.52,
+        83968976,
+        86368256
+      ],
+      [
+        45.53,
+        100540296,
+        97087488
+      ],
+      [
+        50.53,
+        117095144,
+        93036544
+      ],
+      [
+        55.53,
+        133666456,
+        102866944
+      ],
+      [
+        60.54,
+        16008712,
+        104116224
+      ],
+      [
+        65.54,
+        32580480,
+        88891392
+      ],
+      [
+        70.54,
+        49152128,
+        90398720
+      ],
+      [
+        75.55,
+        65706792,
+        86343680
+      ],
+      [
+        80.55,
+        82293968,
+        88268800
+      ],
+      [
+        85.56,
+        98864112,
+        87080960
+      ],
+      [
+        90.56,
+        115416992,
+        88702976
+      ],
+      [
+        95.56,
+        131970392,
+        89059328
+      ],
+      [
+        100.57,
+        137846816,
+        88461312
+      ],
+      [
+        105.57,
+        30855344,
+        164823040
+      ],
+      [
+        110.57,
+        47426200,
+        121331712
+      ],
+      [
+        115.57,
+        63996136,
+        108257280
+      ],
+      [
+        120.58,
+        80549680,
+        106352640
+      ],
+      [
+        125.58,
+        97070208,
+        103346176
+      ],
+      [
+        130.58,
+        113557760,
+        106139648
+      ],
+      [
+        135.59,
+        130160560,
+        103079936
+      ]
+    ]
+  },
+  "occupancy_aggregator": {
+    "disk_bytes_max": 147419008,
+    "rss_bytes_max": 510357504,
+    "samples": 275,
+    "series_t_disk_rss": [
+      [
+        0.7,
+        24,
+        51662848
+      ],
+      [
+        5.7,
+        24,
+        52719616
+      ],
+      [
+        10.71,
+        1370624,
+        68087808
+      ],
+      [
+        15.71,
+        2741176,
+        71639040
+      ],
+      [
+        20.71,
+        14744760,
+        122691584
+      ],
+      [
+        25.71,
+        31304384,
+        130232320
+      ],
+      [
+        30.72,
+        47896904,
+        132071424
+      ],
+      [
+        35.72,
+        64456400,
+        129290240
+      ],
+      [
+        40.72,
+        81065432,
+        125898752
+      ],
+      [
+        45.73,
+        97641440,
+        131555328
+      ],
+      [
+        50.73,
+        114217456,
+        132595712
+      ],
+      [
+        55.73,
+        130826488,
+        134803456
+      ],
+      [
+        60.74,
+        134144992,
+        140001280
+      ],
+      [
+        65.74,
+        134144992,
+        130899968
+      ],
+      [
+        70.74,
+        134144992,
+        123678720
+      ],
+      [
+        75.75,
+        134144992,
+        115687424
+      ],
+      [
+        80.76,
+        134144992,
+        105439232
+      ],
+      [
+        85.76,
+        134144992,
+        105611264
+      ],
+      [
+        90.76,
+        134144992,
+        102744064
+      ],
+      [
+        95.76,
+        134144992,
+        103501824
+      ],
+      [
+        100.77,
+        134144992,
+        104603648
+      ],
+      [
+        105.77,
+        34026488,
+        504348672
+      ],
+      [
+        110.77,
+        50585984,
+        457519104
+      ],
+      [
+        115.78,
+        67178504,
+        443596800
+      ],
+      [
+        120.78,
+        83754512,
+        442617856
+      ],
+      [
+        125.78,
+        100314008,
+        447389696
+      ],
+      [
+        130.79,
+        116906528,
+        461488128
+      ],
+      [
+        135.79,
+        133499072,
+        450686976
+      ]
+    ]
+  },
+  "peer_requests": {
+    "ok": 512,
+    "rejected": 80
+  },
+  "reconcile": {
+    "duplicates": 0,
+    "lost": 0,
+    "received_unique": 24199,
+    "sent": 24199,
+    "unexpected_ids": 0
+  },
+  "released_by_block": true,
+  "scratch_bytes": 135497827,
+  "sender": {
+    "baseline_sent": 199,
+    "blocked_total_s": 4.06,
+    "burst_sent": 24000,
+    "http_errors": 0,
+    "longest_block_s": 4.06,
+    "sent": 24199
+  },
+  "source": "vector",
+  "timeline_s": {
+    "burst_end": 130.0122803929262,
+    "burst_start": 10.00293660897296,
+    "drain_end": 131.5161072090268,
+    "release": 94.20182969397865
+  },
+  "vector_stderr_tail": {
+    "vector-agent.stderr": "2026-10-28T03:34:20.187563Z  WARN source{component_kind=\"source\" component_id=fixture component_type=http_server}: vector::config::source: Enabling `acknowledgements` on sources themselves is deprecated in favor of enabling them in the sink configuration, and will be removed in a future version. component_id=\"fixture\"\n",
+    "vector-aggregator.stderr": "Retrying after response.] is being suppressed to avoid flooding.\n2026-10-28T03:35:30.187118Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] has been suppressed 7 times.\n2026-10-28T03:35:30.187138Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Retrying after response. reason=Http Status: 503 Service Unavailable internal_log_rate_limit=true\n2026-10-28T03:35:30.256145Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] is being suppressed to avoid flooding.\n2026-10-28T03:35:40.271590Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] has been suppressed 8 times.\n2026-10-28T03:35:40.271605Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Retrying after response. reason=Http Status: 503 Service Unavailable internal_log_rate_limit=true\n2026-10-28T03:35:42.227632Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] is being suppressed to avoid flooding.\n2026-10-28T03:35:51.525954Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] has been suppressed 9 times.\n2026-10-28T03:35:51.525970Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Retrying after response. reason=Http Status: 503 Service Unavailable internal_log_rate_limit=true\n2026-10-28T03:35:52.051989Z  WARN sink{component_kind=\"sink\" component_id=os_api component_type=http}: vector::sinks::util::retries: Internal log [Retrying after response.] is being suppressed to avoid flooding.\n"
+  }
+}

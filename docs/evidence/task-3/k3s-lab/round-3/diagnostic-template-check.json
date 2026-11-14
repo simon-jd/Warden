@@ -1,0 +1,68 @@
+{
+  "matches": [
+    {
+      "line_number": 32,
+      "fixed_matches": [
+        "Dynamic",
+        "listener",
+        "certificate",
+        "no",
+        "cached"
+      ]
+    },
+    {
+      "line_number": 39,
+      "fixed_matches": [
+        "no",
+        "runtime",
+        "not ready"
+      ]
+    },
+    {
+      "line_number": 70,
+      "fixed_matches": [
+        "Failed to write kubeconfig symlink",
+        "mkdir /etc/rancher/k3s",
+        "failed",
+        "read-only file system"
+      ]
+    },
+    {
+      "line_number": 74,
+      "fixed_matches": [
+        "no",
+        "runtime",
+        "not ready"
+      ]
+    },
+    {
+      "line_number": 75,
+      "fixed_matches": []
+    },
+    {
+      "line_number": 81,
+      "fixed_matches": [
+        "configuration"
+      ]
+    },
+    {
+      "line_number": 84,
+      "fixed_matches": [
+        "no",
+        "check",
+        "io.containerd",
+        "failed"
+      ]
+    },
+    {
+      "line_number": 173,
+      "fixed_matches": [
+        "mkdir /var/run",
+        "nri",
+        "failed",
+        "read-only file system"
+      ]
+    }
+  ],
+  "raw_persisted": false
+}

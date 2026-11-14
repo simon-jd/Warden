@@ -1,0 +1,144 @@
+{
+  "base": "798bf98da93cd17d557d43efae0c60b44791fadf",
+  "status": "INERT_NOT_EXECUTED",
+  "source": {
+    "respond/actions.go": {
+      "bytes": 6655,
+      "sha256": "7224f114e7b9ef5aa926e43299a54fe01f9e90da329b6cd49d953a28bbbf2b02"
+    },
+    "respond/executor.go": {
+      "bytes": 7875,
+      "sha256": "6d15826ba07181d05d3b4a1b7791726d37011d983ae538f4228c1c0fa89e4698"
+    },
+    "respond/ledger.go": {
+      "bytes": 6462,
+      "sha256": "2ace72087ba4e421db40dd6398f86585808563c51ce9eeb505fe35985c330f68"
+    },
+    "respond/executor_test.go": {
+      "bytes": 19211,
+      "sha256": "aadc94db405e2a970737b19ecfddb0eb790f84be3fd59aaa97fd312d8b3bee0e"
+    },
+    "respond/ledger_test.go": {
+      "bytes": 11531,
+      "sha256": "42e7431cb64c459caf3057691d6a2a169998fa675dc9db3f0f6f42d3d569cb94"
+    },
+    "respond/README.md": {
+      "bytes": 6179,
+      "sha256": "bd8ed3778a133c78f870d3993339c2427dfcbb176ad3b17b232a1fc36f46e2af"
+    },
+    "respond/playbooks/suspend-tenant.yaml": {
+      "bytes": 179,
+      "sha256": "8cdfbdfdfe5bac22452006f0af89b22e9f50a05a32a454e081db114b6402acfa"
+    }
+  },
+  "module_inputs": {
+    "go.mod": {
+      "bytes": 2483,
+      "sha256": "bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa"
+    },
+    "go.sum": {
+      "bytes": 11340,
+      "sha256": "cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0"
+    }
+  },
+  "tests": {
+    "TestPlaybookIdempotentPerAlert": [],
+    "TestDestructiveRequiresApproval": [],
+    "TestDryRunMakesNoChanges": [],
+    "TestConcurrentDuplicateAndCloseRetainsLock": [],
+    "TestApprovalBindingAndIdentityFailuresDoNotReserve": [
+      "tenant",
+      "alert",
+      "rule",
+      "playbook",
+      "steps",
+      "action",
+      "resource-type",
+      "resource-id",
+      "same-subject",
+      "alias",
+      "empty-principal",
+      "control-principal",
+      "requester-role",
+      "approver-role",
+      "future",
+      "expired",
+      "too-long",
+      "zero-time"
+    ],
+    "TestMissingPortsAndAuthorityErrorsFailClosed": [
+      "nil-authority",
+      "nil-client",
+      "error",
+      "panic",
+      "cancel",
+      "empty-proof",
+      "large-proof",
+      "large-requester"
+    ],
+    "TestTenantResourceAndTriggerIsolation": [
+      "tenant",
+      "resource",
+      "type",
+      "rule",
+      "alert"
+    ],
+    "TestConfigurationCopiedAndPreviewUnwired": [],
+    "TestClientErrorPanicAndCooperativeCancellationStayUnknown": [
+      "error",
+      "panic",
+      "cancel",
+      "deadline"
+    ],
+    "TestCancelledBeforeReservationAndAfterIntent": [],
+    "TestApprovalExpiresAfterIntentDoesNotMutate": [],
+    "TestStrictPlaybookParserAndKnownActionSubset": [],
+    "TestPoisonedJournalRetainsInFlightLock": [],
+    "TestDurableIncompleteIntentSuppressesRestart": [],
+    "TestDurableBindingConflictAndTenantKeys": [],
+    "TestCorruptJournalFailsClosedWithoutRepair": [
+      "short-prefix",
+      "oversized-record",
+      "short-payload",
+      "checksum",
+      "complete-without-intent",
+      "duplicate-intent",
+      "duplicate-complete",
+      "wrong-fingerprint",
+      "version",
+      "bad-digest",
+      "bad-status",
+      "unknown-key",
+      "duplicate-key",
+      "case-alias"
+    ],
+    "TestPrivateJournalPathAndPermissions": [
+      "directory-mode",
+      "file-mode",
+      "symlink-file",
+      "symlink-parent",
+      "hardlink",
+      "fifo",
+      "oversized"
+    ],
+    "TestJournalCapacityDoesNotEvictExistingAlerts": [],
+    "TestIntentReservesCompletionSpace": [],
+    "TestPartialWriteAndSyncFailuresSuppressAttempts": [
+      "intent-write",
+      "intent-sync",
+      "completion-write",
+      "completion-sync"
+    ],
+    "TestClientSeesDurableIntentAndJournalExcludesSecrets": []
+  },
+  "expected": {
+    "source_files": 7,
+    "source_bytes": 58092,
+    "top_level_tests": 21,
+    "named_subtests": 60,
+    "reported_cases": 81,
+    "failures": 0,
+    "skips": 0
+  },
+  "scope": "Original Task14 local one-step SuspendTenant component only; real identity/adapters/multistep/live and Goal remain OPEN."
+}

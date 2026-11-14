@@ -1,0 +1,181 @@
+2026-11-14T01:31:28+0000: Falco version: 0.43.1 (x86_64)
+2026-11-14T01:31:28+0000: Falco initialized with configuration files:
+2026-11-14T01:31:28+0000:    /etc/falco/config.d/90-feas.yaml | schema validation: ok
+2026-11-14T01:31:28+0000:    /etc/falco/config.d/falco.container_plugin.yaml | schema validation: ok
+2026-11-14T01:31:28+0000:    /etc/falco/config.d/falco.iso8601_timeformat.yaml | schema validation: ok
+2026-11-14T01:31:28+0000:    /etc/falco/falco.yaml | schema validation: ok
+2026-11-14T01:31:28+0000: System info: Linux version 7.0.0-42-generic (buildd@lcy02-amd64-049) (x86_64-linux-gnu-gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, GNU ld (GNU Binutils for Ubuntu) 2.46) #42-Ubuntu SMP PREEMPT_DYNAMIC Thu Oct 15 08:06:44 UTC 2026
+2026-11-14T01:31:28+0000: Loaded plugin 'container@0.6.4' from file /usr/share/falco/plugins/libcontainer.so
+2026-11-14T01:31:28+0000: [libs]: container: Enabled 'podman' container engine.
+2026-11-14T01:31:28+0000: [libs]: container: * enabled container runtime socket at '/host/run/podman/podman.sock'
+2026-11-14T01:31:28+0000: [libs]: container: Enabled 'docker' container engine.
+2026-11-14T01:31:28+0000: [libs]: container: * enabled container runtime socket at '/host/var/run/docker.sock'
+2026-11-14T01:31:28+0000: [libs]: container: Enabled 'cri' container engine.
+2026-11-14T01:31:28+0000: [libs]: container: * enabled container runtime socket at '/host/run/containerd/containerd.sock'
+2026-11-14T01:31:28+0000: [libs]: container: * enabled container runtime socket at '/host/run/crio/crio.sock'
+2026-11-14T01:31:28+0000: [libs]: container: * enabled container runtime socket at '/host/run/k3s/containerd/containerd.sock'
+2026-11-14T01:31:28+0000: [libs]: container: * enabled container runtime socket at '/host/run/host-containerd/containerd.sock'
+2026-11-14T01:31:28+0000: [libs]: container: Enabled 'containerd' container engine.
+2026-11-14T01:31:28+0000: [libs]: container: * enabled container runtime socket at '/host/run/host-containerd/containerd.sock'
+2026-11-14T01:31:28+0000: [libs]: container: Enabled 'lxc' container engine.
+2026-11-14T01:31:28+0000: [libs]: container: Enabled 'libvirt_lxc' container engine.
+2026-11-14T01:31:28+0000: [libs]: container: Enabled 'bpm' container engine.
+2026-11-14T01:31:28+0000: Loading rules from:
+2026-11-14T01:31:28+0000:    /etc/falco/falco_rules.yaml | schema validation: ok
+2026-11-14T01:31:28+0000:    /etc/falco/falco_rules.local.yaml | schema validation: none
+2026-11-14T01:31:28+0000: The chosen syscall buffer dimension is: 8388608 bytes (8 MBs)
+2026-11-14T01:31:28+0000: Setting metrics interval to 10s, equivalent to 10000 (ms)
+2026-11-14T01:31:28+0000: Loaded event sources: syscall
+2026-11-14T01:31:28+0000: Enabled event sources: syscall
+2026-11-14T01:31:28+0000: Opening 'syscall' source with modern BPF probe.
+2026-11-14T01:31:28+0000: One ring buffer every '2' CPUs.
+2026-11-14T01:31:28+0000: [libs]: Trying to open the right engine!
+2026-11-14T01:31:30+0000: [libs]: libbpf: prog 'signal_deliver': BPF program load failed: Permission denied
+2026-11-14T01:31:30+0000: [libs]: libbpf: prog 'signal_deliver': -- BEGIN PROG LOAD LOG --
+0: R1=ctx() R10=fp0
+; int BPF_PROG(signal_deliver, int sig, struct kernel_siginfo *info, struct k_sigaction *ka) { @ signal_deliver.bpf.c:15
+0: (79) r9 = *(u64 *)(r1 +8)
+func 'signal_deliver' arg1 has btf_id 128802 type STRUCT 'kernel_siginfo'
+marking pointer arg1 as scalar as it may encode error1: R1=ctx() R9=scalar()
+1: (79) r8 = *(u64 *)(r1 +0)          ; R1=ctx() R8=scalar()
+2: (b7) r1 = 0                        ; R1=0
+; uint32_t key = 0; @ maps_getters.h:21
+3: (63) *(u32 *)(r10 -4) = r1         ; R1=0 R10=fp0 fp-8=0000????
+4: (bf) r2 = r10                      ; R2=fp0 R10=fp0
+5: (07) r2 += -4                      ; R2=fp-4
+; return bpf_map_lookup_elem(&capture_settings, &key); @ maps_getters.h:22
+8: (85) call bpf_map_lookup_elem#1    ; R0=map_value(map=capture_setting,ks=4,vs=32)
+; if(settings == NULL) { @ maps_getters.h:45
+9: (15) if r0 == 0x0 goto pc+2        ; R0=map_value(map=capture_setting,ks=4,vs=32)
+; return settings->dropping_mode; @ maps_getters.h:49
+10: (71) r1 = *(u8 *)(r0 +12)         ; R0=map_value(map=capture_setting,ks=4,vs=32) R1=scalar(smin=smin32=0,smax=umax=smax32=umax32=255,var_off=(0x0; 0xff))
+; if(maps__get_dropping_mode()) { @ signal_deliver.bpf.c:17
+11: (55) if r1 != 0x0 goto pc+187     ; R1=0
+; uint32_t cpu_id = (uint32_t)bpf_get_smp_processor_id(); @ maps_getters.h:205
+12: (85) call bpf_get_smp_processor_id#8      ; R0=scalar(smin=smin32=0,smax=umax=smax32=umax32=31,var_off=(0x0; 0x1f))
+13: (63) *(u32 *)(r10 -4) = r0        ; R0=scalar(smin=smin32=0,smax=umax=smax32=umax32=31,var_off=(0x0; 0x1f)) R10=fp0 fp-8=mmmm????
+14: (bf) r2 = r10                     ; R2=fp0 R10=fp0
+15: (07) r2 += -4                     ; R2=fp-4
+; return (struct ringbuf_map *)bpf_map_lookup_elem(&ringbuf_maps, &cpu_id); @ maps_getters.h:206
+18: (85) call bpf_map_lookup_elem#1   ; R0=map_value_or_null(id=1,map=ringbuf_maps,ks=4,vs=4)
+19: (bf) r6 = r0                      ; R0=map_value_or_null(id=1,map=ringbuf_maps,ks=4,vs=4) R6=map_value_or_null(id=1,map=ringbuf_maps,ks=4,vs=4)
+; if(!rb) { @ ringbuf_store_params.h:100
+20: (15) if r6 == 0x0 goto pc+178     ; R6=map_ptr(ks=0,vs=0)
+; uint32_t cpu_id = (uint32_t)bpf_get_smp_processor_id(); @ maps_getters.h:196
+21: (85) call bpf_get_smp_processor_id#8      ; R0=scalar(smin=smin32=0,smax=umax=smax32=umax32=31,var_off=(0x0; 0x1f))
+22: (63) *(u32 *)(r10 -4) = r0        ; R0=scalar(smin=smin32=0,smax=umax=smax32=umax32=31,var_off=(0x0; 0x1f)) R10=fp0 fp-8=mmmm????
+23: (bf) r2 = r10                     ; R2=fp0 R10=fp0
+24: (07) r2 += -4                     ; R2=fp-4
+; return (struct counter_map *)bpf_map_lookup_elem(&counter_maps, &cpu_id); @ maps_getters.h:197
+27: (85) call bpf_map_lookup_elem#1   ; R0=map_value_or_null(id=2,map=counter_maps,ks=4,vs=104)
+28: (bf) r7 = r0                      ; R0=map_value_or_null(id=2,map=counter_maps,ks=4,vs=104) R7=map_value_or_null(id=2,map=counter_maps,ks=4,vs=104)
+; if(!counter) { @ ringbuf_store_params.h:108
+29: (15) if r7 == 0x0 goto pc+169     ; R7=map_value(map=counter_maps,ks=4,vs=104)
+30: (7b) *(u64 *)(r10 -16) = r8       ; R8=scalar(id=3) R10=fp0 fp-16=scalar(id=3)
+; counter->n_evts++; @ ringbuf_store_params.h:114
+31: (79) r1 = *(u64 *)(r7 +0)         ; R1=scalar() R7=map_value(map=counter_maps,ks=4,vs=104)
+32: (07) r1 += 1                      ; R1=scalar()
+33: (7b) *(u64 *)(r7 +0) = r1         ; R1=scalar() R7=map_value(map=counter_maps,ks=4,vs=104)
+34: (b7) r8 = 0                       ; R8=0
+; uint8_t *space = bpf_ringbuf_reserve(rb, event_size, 0); @ ringbuf_store_params.h:119
+35: (bf) r1 = r6                      ; R1=map_ptr(ks=0,vs=0) R6=map_ptr(ks=0,vs=0)
+36: (b7) r2 = 49                      ; R2=49
+37: (b7) r3 = 0                       ; R3=0
+38: (85) call bpf_ringbuf_reserve#131         ; R0=ringbuf_mem_or_null(id=5,ref_obj_id=5,sz=49) refs=5
+39: (bf) r6 = r0                      ; R0=ringbuf_mem_or_null(id=5,ref_obj_id=5,sz=49) R6=ringbuf_mem_or_null(id=5,ref_obj_id=5,sz=49) refs=5
+; if(!space) { @ ringbuf_store_params.h:120
+40: (55) if r6 != 0x0 goto pc+4 45: R0=ringbuf_mem(ref_obj_id=5,sz=49) R6=ringbuf_mem(ref_obj_id=5,sz=49) R7=map_value(map=counter_maps,ks=4,vs=104) R8=0 R9=scalar() R10=fp0 fp-8=mmmm???? fp-16=scalar() refs=5
+; return g_event_params_table[event_id]; @ maps_getters.h:171
+47: (71) r7 = *(u8 *)(r1 +232)        ; R1=map_value(map=bpf_prob.rodata,ks=4,vs=689472,off=16) R7=3 refs=5
+; uint32_t key = 0; @ maps_getters.h:21
+48: (63) *(u32 *)(r10 -4) = r8        ; R8=0 R10=fp0 fp-8=0000???? refs=5
+49: (bf) r2 = r10                     ; R2=fp0 R10=fp0 refs=5
+50: (07) r2 += -4                     ; R2=fp-4 refs=5
+; return bpf_map_lookup_elem(&capture_settings, &key); @ maps_getters.h:22
+53: (85) call bpf_map_lookup_elem#1   ; R0=map_value(map=capture_setting,ks=4,vs=32) refs=5
+; if(settings == NULL) { @ maps_getters.h:27
+54: (15) if r0 == 0x0 goto pc+1       ; R0=map_value(map=capture_setting,ks=4,vs=32) refs=5
+; return settings->boot_time; @ maps_getters.h:31
+55: (79) r8 = *(u64 *)(r0 +0)         ; R0=map_value(map=capture_setting,ks=4,vs=32) R8=scalar() refs=5
+; hdr->ts = maps__get_boot_time() + bpf_ktime_get_boot_ns(); @ ringbuf_store_params.h:144
+56: (85) call bpf_ktime_get_boot_ns#125       ; R0=scalar() refs=5
+57: (0f) r0 += r8                     ; R0=scalar() R8=scalar() refs=5
+58: (bf) r1 = r0                      ; R0=scalar(id=6) R1=scalar(id=6) refs=5
+59: (77) r1 >>= 56                    ; R1=scalar(smin=smin32=0,smax=umax=smax32=umax32=255,var_off=(0x0; 0xff)) refs=5
+60: (73) *(u8 *)(r6 +7) = r1          ; R1=scalar(smin=smin32=0,smax=umax=smax32=umax32=255,var_off=(0x0; 0xff)) R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+61: (bf) r1 = r0                      ; R0=scalar(id=6) R1=scalar(id=6) refs=5
+62: (77) r1 >>= 48                    ; R1=scalar(smin=smin32=0,smax=umax=smax32=umax32=0xffff,var_off=(0x0; 0xffff)) refs=5
+63: (73) *(u8 *)(r6 +6) = r1          ; R1=scalar(smin=smin32=0,smax=umax=smax32=umax32=0xffff,var_off=(0x0; 0xffff)) R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+64: (bf) r1 = r0                      ; R0=scalar(id=6) R1=scalar(id=6) refs=5
+65: (77) r1 >>= 40                    ; R1=scalar(smin=smin32=0,smax=umax=smax32=umax32=0xffffff,var_off=(0x0; 0xffffff)) refs=5
+66: (73) *(u8 *)(r6 +5) = r1          ; R1=scalar(smin=smin32=0,smax=umax=smax32=umax32=0xffffff,var_off=(0x0; 0xffffff)) R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+67: (bf) r1 = r0                      ; R0=scalar(id=6) R1=scalar(id=6) refs=5
+70: (bf) r1 = r0                      ; R0=scalar(id=6) R1=scalar(id=6) refs=5
+73: (bf) r1 = r0                      ; R0=scalar(id=6) R1=scalar(id=6) refs=5
+76: (73) *(u8 *)(r6 +0) = r0          ; R0=scalar(id=6) R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+79: (85) call bpf_get_current_pid_tgid#14     ; R0=scalar() refs=5
+; hdr->nparams = nparams; @ ringbuf_store_params.h:147
+80: (73) *(u8 *)(r6 +22) = r7         ; R6=ringbuf_mem(ref_obj_id=5,sz=49) R7=3 refs=5
+81: (b7) r1 = 232                     ; R1=232 refs=5
+; hdr->type = ringbuf->event_type; @ ringbuf_store_params.h:146
+82: (73) *(u8 *)(r6 +20) = r1         ; R1=232 R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+83: (b7) r1 = 49                      ; R1=49 refs=5
+; hdr->len = ringbuf->reserved_event_size; @ ringbuf_store_params.h:148
+84: (73) *(u8 *)(r6 +16) = r1         ; R1=49 R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+85: (bf) r1 = r0                      ; R0=scalar(id=7) R1=scalar(id=7) refs=5
+88: (bf) r1 = r0                      ; R0=scalar(id=7) R1=scalar(id=7) refs=5
+91: (73) *(u8 *)(r6 +8) = r0          ; R0=scalar(id=7) R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+94: (b7) r2 = 0                       ; R2=0 refs=5
+; hdr->nparams = nparams; @ ringbuf_store_params.h:147
+95: (73) *(u8 *)(r6 +25) = r2         ; R2=0 R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+96: (73) *(u8 *)(r6 +24) = r2         ; R2=0 R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+97: (73) *(u8 *)(r6 +23) = r2         ; R2=0 R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+; hdr->type = ringbuf->event_type; @ ringbuf_store_params.h:146
+98: (73) *(u8 *)(r6 +21) = r2         ; R2=0 R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+99: (73) *(u8 *)(r6 +15) = r2         ; R2=0 R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+100: (73) *(u8 *)(r6 +14) = r2        ; R2=0 R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+101: (73) *(u8 *)(r6 +13) = r2        ; R2=0 R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+102: (73) *(u8 *)(r6 +12) = r2        ; R2=0 R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+; hdr->len = ringbuf->reserved_event_size; @ ringbuf_store_params.h:148
+103: (73) *(u8 *)(r6 +19) = r2        ; R2=0 R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+104: (73) *(u8 *)(r6 +18) = r2        ; R2=0 R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+105: (73) *(u8 *)(r6 +17) = r2        ; R2=0 R6=ringbuf_mem(ref_obj_id=5,sz=49) refs=5
+; ringbuf->payload_pos = sizeof(struct ppm_evt_hdr) + nparams * sizeof(uint16_t); @ ringbuf_store_params.h:150
+106: (bf) r1 = r7                     ; R1=3 R7=3 refs=5
+107: (67) r1 <<= 1                    ; R1=6 refs=5
+108: (79) r5 = *(u64 *)(r10 -16)      ; R5=scalar(id=8) R10=fp0 fp-16=scalar(id=8) refs=5
+; if(info != NULL) { @ signal_deliver.bpf.c:33
+109: (15) if r9 == 0x0 goto pc+23     ; R9=scalar(umin=1) refs=5
+; int BPF_PROG(signal_deliver, int sig, struct kernel_siginfo *info, struct k_sigaction *ka) { @ signal_deliver.bpf.c:15
+110: (bf) r3 = r5                     ; R3=scalar(id=8) R5=scalar(id=8) refs=5
+; switch(sig) { @ signal_deliver.bpf.c:34
+113: (25) if r3 > 0x14 goto pc+87     ; R3=scalar(smin=smin32=0,smax=umax=smax32=umax32=20,var_off=(0x0; 0x1f)) refs=5
+114: (b7) r4 = 1                      ; R4=1 refs=5
+115: (6f) r4 <<= r3                   ; R3=scalar(smin=smin32=0,smax=umax=smax32=umax32=20,var_off=(0x0; 0x1f)) R4=scalar() refs=5
+116: (57) r4 &= 1081358               ; R4=scalar(smin=smin32=0,smax=umax=smax32=umax32=0x10800e,var_off=(0x0; 0x10800e)) refs=5
+117: (55) if r4 != 0x0 goto pc+5      ; R4=0 refs=5
+118: (15) if r3 == 0x9 goto pc+9      ; R3=scalar(smin=smin32=0,smax=umax=smax32=umax32=20,var_off=(0x0; 0x1f)) refs=5
+119: (15) if r3 == 0x11 goto pc+1     ; R3=scalar(smin=smin32=0,smax=umax=smax32=umax32=20,var_off=(0x0; 0x1f)) refs=5
+120: (05) goto pc+80
+; if(sig >= SIGRTMIN && sig <= SIGRTMAX) { @ signal_deliver.bpf.c:63
+201: (bf) r3 = r5                     ; R3=scalar(id=8) R5=scalar(id=8) refs=5
+202: (07) r3 += -32                   ; R3=scalar(id=8-32) refs=5
+205: (25) if r3 > 0x21 goto pc-73     ; R3=scalar(smin=smin32=0,smax=umax=smax32=umax32=33,var_off=(0x0; 0x3f)) refs=5
+206: (b7) r2 = 16                     ; R2=16 refs=5
+207: (05) goto pc-79
+; if(si_code == SI_USER || si_code == SI_QUEUE || si_code <= 0) { @ signal_deliver.bpf.c:45
+129: (0f) r9 += r2                    ; R2=16 R9=scalar() refs=5
+130: (61) r2 = *(u32 *)(r9 +0)
+R9 invalid mem access 'scalar'
+processed 127 insns (limit 1000000) max_states_per_insn 0 total_states 9 peak_states 9 mark_read 0
+-- END PROG LOAD LOG --
+2026-11-14T01:31:30+0000: [libs]: libbpf: prog 'signal_deliver': failed to load: -13
+2026-11-14T01:31:30+0000: [libs]: libbpf: failed to load object 'bpf_probe'
+2026-11-14T01:31:30+0000: [libs]: libbpf: failed to load BPF skeleton 'bpf_probe': -13
+2026-11-14T01:31:30+0000: [libs]: libpman: failed to load BPF object (errno: 13 | message: Permission denied)
+2026-11-14T01:31:30+0000: [libs]: libpman: unable to set interesting syscall at index 134 as 0! (errno: 9 | message: Bad file descriptor)
+2026-11-14T01:31:30+0000: An error occurred in an event source, forcing termination...
+Error: Initialization issues during scap_init
+Events detected: 0
+Rule counts by severity:
+Triggered rules by rule name:

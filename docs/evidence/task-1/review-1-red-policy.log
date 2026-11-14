@@ -1,0 +1,71 @@
+=== RUN   TestTenantPolicyDefaultsDenyRelaxation
+    api_test.go:330: no-policy fields="network":"allowlist","allow_domains":["api.example.com"] status=201 want403
+    api_test.go:330: no-policy fields="limits":{"cpu":1.01} status=201 want403
+    api_test.go:330: no-policy fields="limits":{"memory_mib":513} status=201 want403
+    api_test.go:330: no-policy fields="limits":{"pids":129} status=201 want403
+    api_test.go:330: no-policy fields="limits":{"timeout_s":301} status=201 want403
+    api_test.go:333: runs count=5 want=0 err=<nil>
+    api_test.go:333: audit_entries count=5 want=0 err=<nil>
+    api_test.go:330: no-policy fields="network":"allowlist","allow_domains":["api.example.com"] status=201 want403
+    api_test.go:330: no-policy fields="limits":{"cpu":1.01} status=201 want403
+    api_test.go:330: no-policy fields="limits":{"memory_mib":513} status=201 want403
+    api_test.go:330: no-policy fields="limits":{"pids":129} status=201 want403
+    api_test.go:330: no-policy fields="limits":{"timeout_s":301} status=201 want403
+    api_test.go:333: runs count=5 want=0 err=<nil>
+    api_test.go:333: audit_entries count=5 want=0 err=<nil>
+--- FAIL: TestTenantPolicyDefaultsDenyRelaxation (0.12s)
+=== RUN   TestTenantPolicyAllowsExplicitScopedRelaxation
+    api_test.go:367: denial 0 status=201
+    api_test.go:367: denial 1 status=201
+    api_test.go:367: denial 2 status=201
+    api_test.go:367: denial 3 status=201
+    api_test.go:367: denial 4 status=201
+    api_test.go:367: denial 5 status=201
+    api_test.go:370: runs count=7 want=1 err=<nil>
+    api_test.go:370: audit_entries count=7 want=1 err=<nil>
+--- FAIL: TestTenantPolicyAllowsExplicitScopedRelaxation (0.06s)
+=== RUN   TestTenantPolicyLookupFailsClosed
+    api_test.go:411: provider 0 status=201 want503
+    api_test.go:413: runs count=1 want=0 err=<nil>
+    api_test.go:413: audit_entries count=1 want=0 err=<nil>
+    api_test.go:411: provider 1 status=201 want503
+    api_test.go:413: runs count=1 want=0 err=<nil>
+    api_test.go:413: audit_entries count=1 want=0 err=<nil>
+    api_test.go:411: provider 2 status=201 want503
+    api_test.go:413: runs count=1 want=0 err=<nil>
+    api_test.go:413: audit_entries count=1 want=0 err=<nil>
+    api_test.go:411: provider 3 status=201 want503
+    api_test.go:413: runs count=1 want=0 err=<nil>
+    api_test.go:413: audit_entries count=1 want=0 err=<nil>
+    api_test.go:411: provider 4 status=201 want503
+    api_test.go:413: runs count=1 want=0 err=<nil>
+    api_test.go:413: audit_entries count=1 want=0 err=<nil>
+    api_test.go:411: provider 5 status=201 want503
+    api_test.go:413: runs count=1 want=0 err=<nil>
+    api_test.go:413: audit_entries count=1 want=0 err=<nil>
+    api_test.go:411: provider 6 status=201 want503
+    api_test.go:413: runs count=1 want=0 err=<nil>
+    api_test.go:413: audit_entries count=1 want=0 err=<nil>
+--- FAIL: TestTenantPolicyLookupFailsClosed (0.26s)
+=== RUN   TestTenantPolicyCannotComeFromRequest
+    api_test.go:441: header selected privileged policy status=201
+    api_test.go:443: runs count=1 want=0 err=<nil>
+    api_test.go:443: audit_entries count=1 want=0 err=<nil>
+--- FAIL: TestTenantPolicyCannotComeFromRequest (0.04s)
+=== RUN   TestTenantPolicyRecheckedOnIdempotentReplay
+    api_test.go:466: revoked replay status=201
+    api_test.go:470: failed lookup replay status=201
+--- FAIL: TestTenantPolicyRecheckedOnIdempotentReplay (0.04s)
+=== RUN   TestTenantPolicyRuntimeAndPartialLimits
+    api_test.go:483: unapproved runtime/limit status=201
+    api_test.go:483: unapproved runtime/limit status=201
+    api_test.go:483: unapproved runtime/limit status=201
+    api_test.go:489: runs count=4 want=1 err=<nil>
+    api_test.go:489: audit_entries count=4 want=1 err=<nil>
+    api_test.go:494: empty runtime set status=201
+    api_test.go:496: runs count=1 want=0 err=<nil>
+    api_test.go:496: audit_entries count=1 want=0 err=<nil>
+--- FAIL: TestTenantPolicyRuntimeAndPartialLimits (0.09s)
+FAIL
+FAIL	warden/controlplane/internal/api	0.625s
+FAIL

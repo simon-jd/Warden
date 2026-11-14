@@ -1,0 +1,111 @@
+{
+  "utc": "2026-10-24T22:25:09.986363+00:00",
+  "source": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f",
+  "scope": "Independent read-only failed-boot metadata check; original cgroup path gone and objects absent, but no Gate/VM original-owner retirement proof, no accounting release, no private content read.",
+  "session_path": ".cache/warden-lab/docker-firecracker-89c9296e79ce14c5dd30e0d5e4772f1d",
+  "parent_directory": {
+    "device": 66307,
+    "inode": 56377605,
+    "uid": 1000,
+    "mode": "0o700"
+  },
+  "live_directory": {
+    "device": 66307,
+    "inode": 56377608,
+    "uid": 0,
+    "mode": "0o700",
+    "contents_not_read": true
+  },
+  "identity": {
+    "image": "sha256:31f091d0b413b74df4d0b7ea43da1e827b2e2ed2a9c37ec62e583ee505f82938",
+    "image_bytes": 148194205,
+    "labels": {
+      "owner": "codex-warden",
+      "project": "warden",
+      "session": "89c9296e79ce14c5dd30e0d5e4772f1d",
+      "task": "firecracker",
+      "ttl": "2026-10-24T23:22:48.630773+00:00"
+    },
+    "mode": "boot",
+    "source": "95fa55dc0ce97d3e1b99a255a84f80e96972c71f"
+  },
+  "binding": {
+    "binding": {
+      "device": 66307,
+      "inode": 56377608,
+      "source": "/home/postedism/Desktop/Warden/.cache/warden-lab/docker-firecracker-89c9296e79ce14c5dd30e0d5e4772f1d/live",
+      "uid": 1000
+    },
+    "host_mount_ns": "mnt:[4026531832]"
+  },
+  "receipt": {
+    "container": "360a5600d95920d39dc8c482dc60df635ec26e0a9580770e6612358ee817c078",
+    "host_cgroup": "0::/system.slice/docker-360a5600d95920d39dc8c482dc60df635ec26e0a9580770e6612358ee817c078.scope",
+    "host_pid": 2432414,
+    "host_starttime": 67832627,
+    "image": "sha256:31f091d0b413b74df4d0b7ea43da1e827b2e2ed2a9c37ec62e583ee505f82938",
+    "outer": {
+      "cgroup_ns": "cgroup:[4026537031]",
+      "device": 30,
+      "inode": 2116013,
+      "kind": "warden-device-receipt-v1",
+      "mount_id": 9736,
+      "mount_ns": "mnt:[4026536060]",
+      "pid": 1,
+      "policy_sha256": "bd958d0d3ab7193f91cb14013f9ce53ddd88c46ab6cba89337b7e4eeb6e74404",
+      "policy_version": "warden-tun-deny-v1"
+    },
+    "parent_identity": [
+      30,
+      75,
+      0
+    ],
+    "target_identity": [
+      30,
+      2116013,
+      0
+    ]
+  },
+  "absence": {
+    "container": "360a5600d95920d39dc8c482dc60df635ec26e0a9580770e6612358ee817c078",
+    "target_identity": [
+      30,
+      2116013,
+      0
+    ],
+    "parent_identity": [
+      30,
+      75,
+      0
+    ],
+    "exact_original_entry_absent": true,
+    "meaning": "exact owned cgroup path removed; not synchronous kernel allocator GC"
+  },
+  "independent_exact_entry_absent": true,
+  "charge": {
+    "version": 1,
+    "reserved_bytes": 5000000000,
+    "released": false
+  },
+  "owned_images_all": [],
+  "owned_containers_all": [],
+  "outstanding_bytes": 5000000000,
+  "ordinary_full_guard": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "guard refused: [Errno 13] Permission denied: '/home/postedism/Desktop/Warden/.cache/warden-lab/docker-firecracker-89c9296e79ce14c5dd30e0d5e4772f1d/live'\n"
+  },
+  "protected_sysctls": {
+    "vm/overcommit_memory": "1",
+    "vm/panic_on_oom": "0",
+    "kernel/panic": "10",
+    "kernel/panic_on_oops": "1",
+    "kernel/keys/root_maxkeys": "1000000",
+    "kernel/keys/root_maxbytes": "25000000"
+  },
+  "protected_baseline_match": true,
+  "actual_vmm_started": true,
+  "actual_guest_kernel_started": true,
+  "guest_ready": false,
+  "task4_accepted": false
+}

@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-26T07:32:40.358242+00:00",
+  "R": 5102800896,
+  "extra_full_old_holds_and_next_fullGo_plus_implementationprep": 6754843648,
+  "total": 11857644544,
+  "disk_cap": 12000000000,
+  "output_copy_Git_subreserve": 41943040,
+  "new_Git_increment_upper": 33554432,
+  "temp_index_copy_upper": 655360,
+  "object_baseline": 34947072,
+  "scope": "Task9 semanticRED/provenance evidence only; Task15 closedcap unchanged",
+  "source": "coordinator_agent",
+  "human_response": false,
+  "grounded_in_existing_user_scope": true
+}

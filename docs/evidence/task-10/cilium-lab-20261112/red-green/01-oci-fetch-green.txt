@@ -1,0 +1,16 @@
+# GREEN: scripts/test_oci_fetch.py with scripts/oci_fetch.py (the 2026-11-10 attempt's copy)
+# head 7d11cdf, 2026-11-12T19:36:10-08:00
+?? docs/evidence/task-10/cilium-lab-20261112/
+?? scripts/oci_fetch.py
+?? scripts/test_oci_fetch.py
+test_archive_has_the_pinned_platform_image_and_its_name (test_oci_fetch.FetchTest.test_archive_has_the_pinned_platform_image_and_its_name) ... ok
+test_reference_needs_a_digest_and_maps_docker_hub (test_oci_fetch.FetchTest.test_reference_needs_a_digest_and_maps_docker_hub) ... ok
+test_tampered_blob_writes_nothing (test_oci_fetch.FetchTest.test_tampered_blob_writes_nothing) ... ok
+test_token_is_not_sent_to_the_redirect_target (test_oci_fetch.FetchTest.test_token_is_not_sent_to_the_redirect_target) ... ok
+test_wrong_pin_writes_nothing (test_oci_fetch.FetchTest.test_wrong_pin_writes_nothing) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.022s
+
+OK
+exit=0

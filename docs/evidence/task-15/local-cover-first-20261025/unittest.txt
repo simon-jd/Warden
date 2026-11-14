@@ -1,0 +1,20 @@
+test_clean_complete_scan_allows_local_semantics_only (task15_supplychain_tests.AssessScanTests.test_clean_complete_scan_allows_local_semantics_only) ... ok
+test_fixable_critical_blocks_unfiltered_scan (task15_supplychain_tests.AssessScanTests.test_fixable_critical_blocks_unfiltered_scan) ... ok
+test_grype_omitted_zero_ignored_matches_is_complete (task15_supplychain_tests.AssessScanTests.test_grype_omitted_zero_ignored_matches_is_complete) ... ok
+test_grype_self_report_without_catalog_rejected (task15_supplychain_tests.AssessScanTests.test_grype_self_report_without_catalog_rejected) ... ok
+test_ignored_matches_rejected (task15_supplychain_tests.AssessScanTests.test_ignored_matches_rejected) ... ok
+test_incomplete_provider_or_scan_configuration_rejected (task15_supplychain_tests.AssessScanTests.test_incomplete_provider_or_scan_configuration_rejected) ... ok
+test_missing_db_evidence_rejected (task15_supplychain_tests.AssessScanTests.test_missing_db_evidence_rejected) ... ok
+test_not_fixed_kev_still_blocks (task15_supplychain_tests.AssessScanTests.test_not_fixed_kev_still_blocks) ... ok
+test_related_kev_cve_is_not_lost (task15_supplychain_tests.AssessScanTests.test_related_kev_cve_is_not_lost) ... ok
+test_stale_db_or_catalog_rejected (task15_supplychain_tests.AssessScanTests.test_stale_db_or_catalog_rejected) ... ok
+test_wrong_image_digest_rejected (task15_supplychain_tests.AssessScanTests.test_wrong_image_digest_rejected) ... ok
+test_checked_in_unbound_templates_always_deny (task15_supplychain_tests.RenderBindingTests.test_checked_in_unbound_templates_always_deny) ... ok
+test_malformed_digest_rejected_without_policy (task15_supplychain_tests.RenderBindingTests.test_malformed_digest_rejected_without_policy) ... ok
+test_missing_binding_rejected_without_policy (task15_supplychain_tests.RenderBindingTests.test_missing_binding_rejected_without_policy) ... ok
+test_valid_binding_covers_every_image_and_exact_identity (task15_supplychain_tests.RenderBindingTests.test_valid_binding_covers_every_image_and_exact_identity) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.001s
+
+OK

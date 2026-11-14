@@ -1,0 +1,211 @@
+{
+  "status": {
+    "status": "UNKNOWN:RuntimeError:pg_not_ready",
+    "elapsed": 30.243113161996007,
+    "old_task16": "UNTOUCHED_UNKNOWN",
+    "evidence_bytes": 27185,
+    "owned_names_attempted": [
+      "warden-task9-red-20261025-b-pg"
+    ],
+    "owner_label": "429a378591ab037ee471aa89d25ceb00",
+    "cli_group_cleanup_known": true
+  },
+  "event_count": 236,
+  "unique_events": [
+    {
+      "first_event": 1,
+      "last_event": 236,
+      "count": 2,
+      "event": {
+        "args": [
+          "container",
+          "inspect",
+          "--format",
+          "{{.Name}}",
+          "warden-task9-red-20261025-b-pg"
+        ],
+        "rc": 1,
+        "out": "\n",
+        "err": "Error response from daemon: No such container: warden-task9-red-20261025-b-pg\n",
+        "failure": ""
+      }
+    },
+    {
+      "first_event": 2,
+      "last_event": 2,
+      "count": 1,
+      "event": {
+        "args": [
+          "container",
+          "inspect",
+          "--format",
+          "{{.Name}}",
+          "warden-task9-red-20261025-b-go"
+        ],
+        "rc": 1,
+        "out": "\n",
+        "err": "Error response from daemon: No such container: warden-task9-red-20261025-b-go\n",
+        "failure": ""
+      }
+    },
+    {
+      "first_event": 3,
+      "last_event": 3,
+      "count": 1,
+      "event": {
+        "args": [
+          "run",
+          "--pull=never",
+          "--name",
+          "warden-task9-red-20261025-b-pg",
+          "--cidfile",
+          "/home/postedism/Desktop/Warden/.cache/task9-first-red-20261025-b/warden-task9-red-20261025-b-pg.cid",
+          "--label",
+          "warden.test=task9",
+          "--label",
+          "warden.owner=429a378591ab037ee471aa89d25ceb00",
+          "--network",
+          "none",
+          "--read-only",
+          "--cap-drop",
+          "ALL",
+          "--security-opt",
+          "no-new-privileges",
+          "--user",
+          "postgres",
+          "--memory",
+          "512m",
+          "--memory-swap",
+          "512m",
+          "--pids-limit",
+          "96",
+          "--cpus",
+          "2",
+          "--shm-size",
+          "1m",
+          "--log-driver",
+          "none",
+          "-d",
+          "--tmpfs",
+          "/var/lib/postgresql:rw,noexec,nosuid,nodev,size=192m,mode=1777",
+          "--tmpfs",
+          "/tmp:rw,noexec,nosuid,nodev,size=8m,mode=1777",
+          "--mount",
+          "type=bind,src=/home/postedism/Desktop/Warden/.cache/task9-first-red-20261025-b/socket,dst=/var/run/postgresql",
+          "-e",
+          "PGDATA=/var/lib/postgresql/task9",
+          "-e",
+          "POSTGRES_DB=warden_test",
+          "-e",
+          "POSTGRES_HOST_AUTH_METHOD=trust",
+          "sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873",
+          "postgres",
+          "-c",
+          "listen_addresses=",
+          "-c",
+          "unix_socket_directories=/var/run/postgresql",
+          "-c",
+          "unix_socket_permissions=0777",
+          "-c",
+          "shared_buffers=32MB",
+          "-c",
+          "max_connections=20",
+          "-c",
+          "max_parallel_workers=0",
+          "-c",
+          "dynamic_shared_memory_type=mmap",
+          "-c",
+          "max_wal_size=32MB",
+          "-c",
+          "min_wal_size=32MB"
+        ],
+        "rc": 0,
+        "out": "211a8a9f3b2947ce76a5c229d664c779c1b981d87fe1ce2ec6075e5d1f5a29ff\n",
+        "err": "",
+        "failure": ""
+      }
+    },
+    {
+      "first_event": 4,
+      "last_event": 234,
+      "count": 2,
+      "event": {
+        "args": [
+          "container",
+          "inspect",
+          "--format",
+          "{{ index .Config.Labels \"warden.owner\" }}",
+          "warden-task9-red-20261025-b-pg"
+        ],
+        "rc": 0,
+        "out": "429a378591ab037ee471aa89d25ceb00\n",
+        "err": "",
+        "failure": ""
+      }
+    },
+    {
+      "first_event": 5,
+      "last_event": 6,
+      "count": 2,
+      "event": {
+        "args": [
+          "exec",
+          "--user",
+          "postgres",
+          "warden-task9-red-20261025-b-pg",
+          "/bin/sh",
+          "-c",
+          "test \"$(cat /proc/1/comm)\" = postgres && exec pg_isready -h /var/run/postgresql -U postgres -d warden_test -t 1"
+        ],
+        "rc": 1,
+        "out": "",
+        "err": "",
+        "failure": ""
+      }
+    },
+    {
+      "first_event": 7,
+      "last_event": 233,
+      "count": 227,
+      "event": {
+        "args": [
+          "exec",
+          "--user",
+          "postgres",
+          "warden-task9-red-20261025-b-pg",
+          "/bin/sh",
+          "-c",
+          "test \"$(cat /proc/1/comm)\" = postgres && exec pg_isready -h /var/run/postgresql -U postgres -d warden_test -t 1"
+        ],
+        "rc": 1,
+        "out": "",
+        "err": "Error response from daemon: container 211a8a9f3b2947ce76a5c229d664c779c1b981d87fe1ce2ec6075e5d1f5a29ff is not running\n",
+        "failure": ""
+      }
+    },
+    {
+      "first_event": 235,
+      "last_event": 235,
+      "count": 1,
+      "event": {
+        "args": [
+          "rm",
+          "-f",
+          "-v",
+          "warden-task9-red-20261025-b-pg"
+        ],
+        "rc": 0,
+        "out": "warden-task9-red-20261025-b-pg\n",
+        "err": "",
+        "failure": ""
+      }
+    }
+  ],
+  "raw_files": 472,
+  "raw_bytes": 27185,
+  "full_events_preserved_bytes": 106009,
+  "original_read_4eb0b4": "Truncated, not claimed fullread. This parses every event and prints every unique exact event with multiplicities.",
+  "only_created_pg_known_removed": true,
+  "go_run_events": 0,
+  "namespace_allocated_bytes": 10448896
+}

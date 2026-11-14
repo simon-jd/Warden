@@ -1,0 +1,153 @@
+?   	warden/controlplane/cmd/warden-api	[no test files]
+=== RUN   TestIdempotencyKeyReturnsSameRun
+--- PASS: TestIdempotencyKeyReturnsSameRun (0.07s)
+=== RUN   TestCrossTenantReadDenied
+--- PASS: TestCrossTenantReadDenied (0.07s)
+=== RUN   TestConcurrentIdempotency
+--- PASS: TestConcurrentIdempotency (0.08s)
+=== RUN   TestIdempotencyPayloadAndTenantScope
+--- PASS: TestIdempotencyPayloadAndTenantScope (0.09s)
+=== RUN   TestQueuedRunPersistsSecureDefaults
+--- PASS: TestQueuedRunPersistsSecureDefaults (0.07s)
+=== RUN   TestAuthenticationFailsClosed
+--- PASS: TestAuthenticationFailsClosed (0.06s)
+=== RUN   TestInvalidRequestsRejectedWithoutWrites
+--- PASS: TestInvalidRequestsRejectedWithoutWrites (0.08s)
+=== RUN   TestCreateRollsBackWhenAuditFails
+--- PASS: TestCreateRollsBackWhenAuditFails (0.06s)
+=== RUN   TestRejectsCaseAliasedFields
+--- PASS: TestRejectsCaseAliasedFields (0.05s)
+=== RUN   TestRejectsNullCommandArguments
+--- PASS: TestRejectsNullCommandArguments (0.06s)
+=== RUN   TestRejectsIPAllowlistEntries
+--- PASS: TestRejectsIPAllowlistEntries (0.06s)
+=== RUN   TestTenantPolicyDefaultsDenyRelaxation
+--- PASS: TestTenantPolicyDefaultsDenyRelaxation (0.11s)
+=== RUN   TestTenantPolicyAllowsExplicitScopedRelaxation
+--- PASS: TestTenantPolicyAllowsExplicitScopedRelaxation (0.07s)
+=== RUN   TestTenantPolicyLookupFailsClosed
+--- PASS: TestTenantPolicyLookupFailsClosed (0.44s)
+=== RUN   TestTenantPolicyCannotComeFromRequest
+--- PASS: TestTenantPolicyCannotComeFromRequest (0.06s)
+=== RUN   TestTenantPolicyRecheckedOnIdempotentReplay
+--- PASS: TestTenantPolicyRecheckedOnIdempotentReplay (0.05s)
+=== RUN   TestTenantPolicyRuntimeAndPartialLimits
+--- PASS: TestTenantPolicyRuntimeAndPartialLimits (0.10s)
+PASS
+ok  	warden/controlplane/internal/api	2.593s
+=== RUN   TestAuditChainDetectsTamper
+--- PASS: TestAuditChainDetectsTamper (0.10s)
+=== RUN   TestAppendOnlyGuards
+--- PASS: TestAppendOnlyGuards (0.06s)
+=== RUN   TestConcurrentAppendAndCanonicalHash
+--- PASS: TestConcurrentAppendAndCanonicalHash (0.20s)
+=== RUN   TestAppendSnapshotsPayloadAndRejectsAmbiguity
+--- PASS: TestAppendSnapshotsPayloadAndRejectsAmbiguity (0.07s)
+=== RUN   TestVerifyDetectsHeadSequenceRollback
+--- PASS: TestVerifyDetectsHeadSequenceRollback (0.07s)
+PASS
+ok  	warden/controlplane/internal/audit	1.512s
+?   	warden/controlplane/internal/canonical	[no test files]
+?   	warden/controlplane/internal/runs	[no test files]
+?   	warden/controlplane/internal/store	[no test files]
+?   	warden/controlplane/internal/tenant	[no test files]
+?   	warden/controlplane/internal/testutil	[no test files]
+?   	warden/policies/seccomp	[no test files]
+?   	warden/runtimes	[no test files]
+?   	warden/runtimes/conformance	[no test files]
+?   	warden/runtimes/conformance/guest	[no test files]
+=== RUN   TestDrainWaitsForTailAfterExitBeforeCancel
+--- PASS: TestDrainWaitsForTailAfterExitBeforeCancel (0.02s)
+=== RUN   TestDrainTimeoutReturnsTruncationError
+--- PASS: TestDrainTimeoutReturnsTruncationError (0.02s)
+=== RUN   TestSocketRejectsSymlinkAliases
+=== RUN   TestSocketRejectsSymlinkAliases/socket
+=== RUN   TestSocketRejectsSymlinkAliases/parent
+=== RUN   TestSocketRejectsSymlinkAliases/dangling
+--- PASS: TestSocketRejectsSymlinkAliases (0.00s)
+    --- PASS: TestSocketRejectsSymlinkAliases/socket (0.00s)
+    --- PASS: TestSocketRejectsSymlinkAliases/parent (0.00s)
+    --- PASS: TestSocketRejectsSymlinkAliases/dangling (0.00s)
+=== RUN   TestSocketRejectsRegularFileAndWrongDaemon
+--- PASS: TestSocketRejectsRegularFileAndWrongDaemon (0.00s)
+=== RUN   TestSocketAcceptsOwnedDedicatedUnixListener
+--- PASS: TestSocketAcceptsOwnedDedicatedUnixListener (0.00s)
+=== RUN   TestLogOverflowReportsDroppedBytes
+--- PASS: TestLogOverflowReportsDroppedBytes (0.00s)
+=== RUN   TestPauseIsAllowedWhileMountRemainsDenied
+--- PASS: TestPauseIsAllowedWhileMountRemainsDenied (0.00s)
+=== RUN   TestPidsEvidenceNeedsEventsAndRealLimitPeak
+--- PASS: TestPidsEvidenceNeedsEventsAndRealLimitPeak (0.00s)
+=== RUN   TestSocketRejectsUntrustedOwnershipAndWritableParents
+--- PASS: TestSocketRejectsUntrustedOwnershipAndWritableParents (0.00s)
+=== RUN   TestSocketRevalidationRejectsAliasAfterConstruction
+--- PASS: TestSocketRevalidationRejectsAliasAfterConstruction (0.00s)
+=== RUN   TestPidsEvidenceRejectsMalformedAndBackwardsCounters
+--- PASS: TestPidsEvidenceRejectsMalformedAndBackwardsCounters (0.00s)
+=== RUN   TestContainerdClientDialsOnlyAuthenticatedListener
+--- PASS: TestContainerdClientDialsOnlyAuthenticatedListener (0.01s)
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/mutable-image
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/traversal-id
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/allowlist-unimplemented
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/none-with-domains
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/zero-memory
+=== RUN   TestRejectsUnsafeLaunchBeforeConnecting/empty-cmd
+--- PASS: TestRejectsUnsafeLaunchBeforeConnecting (0.00s)
+    --- PASS: TestRejectsUnsafeLaunchBeforeConnecting/mutable-image (0.00s)
+    --- PASS: TestRejectsUnsafeLaunchBeforeConnecting/traversal-id (0.00s)
+    --- PASS: TestRejectsUnsafeLaunchBeforeConnecting/allowlist-unimplemented (0.00s)
+    --- PASS: TestRejectsUnsafeLaunchBeforeConnecting/none-with-domains (0.00s)
+    --- PASS: TestRejectsUnsafeLaunchBeforeConnecting/zero-memory (0.00s)
+    --- PASS: TestRejectsUnsafeLaunchBeforeConnecting/empty-cmd (0.00s)
+=== RUN   TestOCISecurityAndResourceEnforcement
+--- PASS: TestOCISecurityAndResourceEnforcement (0.00s)
+=== RUN   TestBoundedLogsDiscardOverflowWithoutBlocking
+--- PASS: TestBoundedLogsDiscardOverflowWithoutBlocking (0.00s)
+=== RUN   TestCgroupRejectsSymlinkEscape
+--- PASS: TestCgroupRejectsSymlinkEscape (0.00s)
+=== RUN   TestKillWaitsForEntireSubtree
+--- PASS: TestKillWaitsForEntireSubtree (0.03s)
+=== RUN   TestWaitCancellationDoesNotCancelLifecycle
+--- PASS: TestWaitCancellationDoesNotCancelLifecycle (0.00s)
+=== RUN   TestTimeoutKillsAndReportsCleanupFailure
+--- PASS: TestTimeoutKillsAndReportsCleanupFailure (0.00s)
+=== RUN   TestNaturalExitKillsResidualProcesses
+--- PASS: TestNaturalExitKillsResidualProcesses (0.00s)
+=== RUN   TestRejectsSharedDaemonConfiguration
+--- PASS: TestRejectsSharedDaemonConfiguration (0.00s)
+=== RUN   TestStartHonorsCanceledSetupWithoutConnecting
+--- PASS: TestStartHonorsCanceledSetupWithoutConnecting (0.00s)
+=== RUN   TestCgroupMalformedEventsFailClosed
+--- PASS: TestCgroupMalformedEventsFailClosed (0.00s)
+=== RUN   TestOCIDevicePolicyDeniesHostDevices
+--- PASS: TestOCIDevicePolicyDeniesHostDevices (0.00s)
+=== RUN   TestReapRejectsUncontrolledRunIDBeforeConnecting
+--- PASS: TestReapRejectsUncontrolledRunIDBeforeConnecting (0.00s)
+=== RUN   TestClosedExitChannelNeverReportsSuccess
+--- PASS: TestClosedExitChannelNeverReportsSuccess (0.00s)
+=== RUN   TestConformance
+=== RUN   TestConformance/ForkBombCappedByPids
+    suite.go:35: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden
+=== RUN   TestConformance/RootfsReadOnly
+    suite.go:35: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden
+=== RUN   TestConformance/NoNetworkByDefault
+    suite.go:35: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden
+=== RUN   TestConformance/RunsAsNonRoot
+    suite.go:35: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden
+=== RUN   TestConformance/TimeoutKillsProcessGroup
+    suite.go:35: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden
+=== RUN   TestConformance/MemoryLimitOOMKilled
+    suite.go:35: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden
+=== RUN   TestConformance/SeccompBlocksMountAndPtrace
+    suite.go:35: NOT EXECUTED: requires dedicated warden-lab daemon/node; shared host forbidden
+--- PASS: TestConformance (0.00s)
+    --- SKIP: TestConformance/ForkBombCappedByPids (0.00s)
+    --- SKIP: TestConformance/RootfsReadOnly (0.00s)
+    --- SKIP: TestConformance/NoNetworkByDefault (0.00s)
+    --- SKIP: TestConformance/RunsAsNonRoot (0.00s)
+    --- SKIP: TestConformance/TimeoutKillsProcessGroup (0.00s)
+    --- SKIP: TestConformance/MemoryLimitOOMKilled (0.00s)
+    --- SKIP: TestConformance/SeccompBlocksMountAndPtrace (0.00s)
+PASS
+ok  	warden/runtimes/runc	1.102s

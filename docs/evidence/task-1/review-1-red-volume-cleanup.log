@@ -1,0 +1,4 @@
+go version go1.26.10 linux/amd64
+Observed harness container: c6b472d583696e15492c16132e1ed2daf270479d9e23f5969577f343728d5ce5
+Observed container Mount.Name: 0ea3fcb6371b24f27c4c55cf8d41eaf7c379047c5d9e040010d4c20e4d8ea356
+FAIL: captured volume remains after harness exit: 0ea3fcb6371b24f27c4c55cf8d41eaf7c379047c5d9e040010d4c20e4d8ea356

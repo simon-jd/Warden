@@ -1,0 +1,22 @@
+{
+  "changed_source_snapshots": [
+    "scripts/identity_cache_continue.py",
+    "scripts/test_identity_cache_continue.py"
+  ],
+  "command": [
+    "python3",
+    "-B",
+    "docs/evidence/task-6/continuation-fix2-cover-03/run.py"
+  ],
+  "dispatch_base": "1fb644b1a6b00165bb08e4447ba7550241b729f5",
+  "limits": {
+    "address_bytes": 536870912,
+    "cpu_seconds": 30,
+    "file_bytes": 33554432,
+    "wall_seconds": 45
+  },
+  "live_cache_access": false,
+  "source_commit_at_launch": "4c369be5aa5072a549ec34ba987a912646855d7e",
+  "started_utc": "2026-10-25T11:30:32.386977+00:00",
+  "test_target": "test_identity_cache_continue only, unittest in process"
+}

@@ -1,0 +1,32 @@
+FFF
+======================================================================
+FAIL: test_host_unknown_and_stopped_targets_refused (test_runtime_lab_api.ApiTopologyTests.test_host_unknown_and_stopped_targets_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_api.py", line 13, in setUp
+    def setUp(self): self.assertIsNotNone(SPEC,'private API/PG topology is missing')
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : private API/PG topology is missing
+
+======================================================================
+FAIL: test_owned_private_pg_is_removed_after_outer_failure (test_runtime_lab_api.ApiTopologyTests.test_owned_private_pg_is_removed_after_outer_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_api.py", line 13, in setUp
+    def setUp(self): self.assertIsNotNone(SPEC,'private API/PG topology is missing')
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : private API/PG topology is missing
+
+======================================================================
+FAIL: test_wrong_cached_digest_never_creates (test_runtime_lab_api.ApiTopologyTests.test_wrong_cached_digest_never_creates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_api.py", line 13, in setUp
+    def setUp(self): self.assertIsNotNone(SPEC,'private API/PG topology is missing')
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : private API/PG topology is missing
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)

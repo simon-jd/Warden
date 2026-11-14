@@ -1,0 +1,324 @@
+# Azure guard review fix round 1: RED and GREEN logs (D11 61e6c60, D3 9904007)
+# Review fix round 1 (2026-11-12, worktree cloud-identity, home-ubuntu). Each RED was run on the commit named in its
+# header with only the new or changed tests applied, before the fix; GREEN after the fix. Logs copied verbatim from the
+# run (kept outside the repo until now); test IDs are made up; the real subscription ID never appears (D11 uses <SUB>).
+
+################ D11: azure_guard reads the expected subscription from the untracked .cache/azure-subscription (61e6c60)
+
+======== d11-red.log
+# D11 RED (rerun with the final tests) at 7067f3b: HEAD's azure_guard.py, the final test file with the real subscription ID as SUB (replaced by <SUB> below), 2026-11-12T17:28:06Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_azure_guard.py -v
+test_api_failure_is_not_absence (test_azure_guard.AzureGuardTests.test_api_failure_is_not_absence) ... ok
+test_changed_resource_or_show_failure_aborts_before_delete (test_azure_guard.AzureGuardTests.test_changed_resource_or_show_failure_aborts_before_delete) ... ok
+test_concurrent_reservations_cannot_overbook (test_azure_guard.AzureGuardTests.test_concurrent_reservations_cannot_overbook) ... ok
+test_default_expiry_still_deletes_owned_resource_with_lost_extra_binding (test_azure_guard.AzureGuardTests.test_default_expiry_still_deletes_owned_resource_with_lost_extra_binding) ... ok
+test_disk_share_is_24_gb (test_azure_guard.AzureGuardTests.test_disk_share_is_24_gb) ... ok
+test_down_checks_ownership_and_rejects_protected_target (test_azure_guard.AzureGuardTests.test_down_checks_ownership_and_rejects_protected_target) ... ok
+test_down_dry_run_and_real_fake_boundary (test_azure_guard.AzureGuardTests.test_down_dry_run_and_real_fake_boundary) ... ok
+test_down_records_deletion_without_refund (test_azure_guard.AzureGuardTests.test_down_records_deletion_without_refund) ... ok
+test_download_requires_fifty_gb_plus_size_only_above_five_gb (test_azure_guard.AzureGuardTests.test_download_requires_fifty_gb_plus_size_only_above_five_gb) ... ok
+test_dry_run_never_mutates (test_azure_guard.AzureGuardTests.test_dry_run_never_mutates) ... ok
+test_duplicate_api_id_is_rejected_before_delete (test_azure_guard.AzureGuardTests.test_duplicate_api_id_is_rejected_before_delete) ... ok
+test_exact_expiry_deletes_only_full_scoped_id (test_azure_guard.AzureGuardTests.test_exact_expiry_deletes_only_full_scoped_id) ... ok
+test_fractional_hour_rate_rounding_can_be_read_back (test_azure_guard.AzureGuardTests.test_fractional_hour_rate_rounding_can_be_read_back) ... ok
+test_future_ttl_is_retained (test_azure_guard.AzureGuardTests.test_future_ttl_is_retained) ... ok
+test_guard_source_pins_no_subscription_id (test_azure_guard.AzureGuardTests.test_guard_source_pins_no_subscription_id) ... FAIL
+test_invalid_quote_or_plan_fails_closed (test_azure_guard.AzureGuardTests.test_invalid_quote_or_plan_fails_closed) ... ok
+test_keyvault_profile_requires_future_exact_priced_support (test_azure_guard.AzureGuardTests.test_keyvault_profile_requires_future_exact_priced_support) ... ok
+test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) ... ok
+test_ledger_names_its_subscription_only_by_digest (test_azure_guard.AzureGuardTests.test_ledger_names_its_subscription_only_by_digest) ... FAIL
+test_local_preflight_rejects_resource_excess (test_azure_guard.AzureGuardTests.test_local_preflight_rejects_resource_excess) ... ok
+test_missing_group_is_safe_noop (test_azure_guard.AzureGuardTests.test_missing_group_is_safe_noop) ... ok
+test_missing_or_unsafe_scope_file_fails_closed (test_azure_guard.AzureGuardTests.test_missing_or_unsafe_scope_file_fails_closed) ... 
+  test_missing_or_unsafe_scope_file_fails_closed (test_azure_guard.AzureGuardTests.test_missing_or_unsafe_scope_file_fails_closed) (case='missing') ... FAIL
+  test_missing_or_unsafe_scope_file_fails_closed (test_azure_guard.AzureGuardTests.test_missing_or_unsafe_scope_file_fails_closed) (case='group-writable') ... FAIL
+  test_missing_or_unsafe_scope_file_fails_closed (test_azure_guard.AzureGuardTests.test_missing_or_unsafe_scope_file_fails_closed) (case='not-a-guid') ... FAIL
+  test_missing_or_unsafe_scope_file_fails_closed (test_azure_guard.AzureGuardTests.test_missing_or_unsafe_scope_file_fails_closed) (case='symlink') ... FAIL
+  test_missing_or_unsafe_scope_file_fails_closed (test_azure_guard.AzureGuardTests.test_missing_or_unsafe_scope_file_fails_closed) (case='two-lines') ... FAIL
+test_multiple_operation_meters_can_cover_reads_and_writes (test_azure_guard.AzureGuardTests.test_multiple_operation_meters_can_cover_reads_and_writes) ... ok
+test_nonpositive_quantities_and_invalid_ledger_never_reserve (test_azure_guard.AzureGuardTests.test_nonpositive_quantities_and_invalid_ledger_never_reserve) ... ok
+test_operation_coverage_cannot_use_capacity_meter (test_azure_guard.AzureGuardTests.test_operation_coverage_cannot_use_capacity_meter) ... ok
+test_over_budget_or_duplicate_does_not_write (test_azure_guard.AzureGuardTests.test_over_budget_or_duplicate_does_not_write) ... ok
+test_ownership_or_scope_corruption_never_deletes (test_azure_guard.AzureGuardTests.test_ownership_or_scope_corruption_never_deletes) ... ok
+test_real_archived_storage_quote_cannot_price_different_declared_profile (test_azure_guard.AzureGuardTests.test_real_archived_storage_quote_cannot_price_different_declared_profile) ... ok
+test_real_archived_storage_quote_selects_base_tier (test_azure_guard.AzureGuardTests.test_real_archived_storage_quote_selects_base_tier) ... ok
+test_reservation_exact_540_boundary_and_document (test_azure_guard.AzureGuardTests.test_reservation_exact_540_boundary_and_document) ... ok
+test_session_end_uses_reservation_binding_and_keeps_cost (test_azure_guard.AzureGuardTests.test_session_end_uses_reservation_binding_and_keeps_cost) ... ok
+test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) ... ok
+test_supported_s4_disk_prices_each_allowed_size (test_azure_guard.AzureGuardTests.test_supported_s4_disk_prices_each_allowed_size) ... ok
+test_target_environment_cannot_redirect_pinned_scope (test_azure_guard.AzureGuardTests.test_target_environment_cannot_redirect_pinned_scope) ... ok
+test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) ... ok
+test_unbound_high_price_future_resource_is_retained (test_azure_guard.AzureGuardTests.test_unbound_high_price_future_resource_is_retained) ... ok
+test_unreadable_project_tree_is_not_zero_disk_usage (test_azure_guard.AzureGuardTests.test_unreadable_project_tree_is_not_zero_disk_usage) ... ok
+test_unresolved_cleanup_prevents_deletion_of_other_candidates_even_in_dry_run (test_azure_guard.AzureGuardTests.test_unresolved_cleanup_prevents_deletion_of_other_candidates_even_in_dry_run) ... ok
+test_vm_batch_aggregates_quota_before_reservation (test_azure_guard.AzureGuardTests.test_vm_batch_aggregates_quota_before_reservation) ... ok
+test_vm_compute_billing_and_linux_product_must_match (test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) ... ok
+test_vm_quota_missing_exhausted_or_not_six_is_refused (test_azure_guard.AzureGuardTests.test_vm_quota_missing_exhausted_or_not_six_is_refused) ... ok
+test_vm_reservation_checks_six_core_region_quota (test_azure_guard.AzureGuardTests.test_vm_reservation_checks_six_core_region_quota) ... ok
+test_wrong_account_fails_closed (test_azure_guard.AzureGuardTests.test_wrong_account_fails_closed) ... ok
+test_wrong_service_cannot_be_labeled_storage_cost (test_azure_guard.AzureGuardTests.test_wrong_service_cannot_be_labeled_storage_cost) ... ok
+
+======================================================================
+FAIL: test_guard_source_pins_no_subscription_id (test_azure_guard.AzureGuardTests.test_guard_source_pins_no_subscription_id)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_azure_guard.py", line 567, in test_guard_source_pins_no_subscription_id
+    self.assertTrue(guids == [], f'{len(guids)} GUID literal(s) in azure_guard.py')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : 1 GUID literal(s) in azure_guard.py
+
+======================================================================
+FAIL: test_ledger_names_its_subscription_only_by_digest (test_azure_guard.AzureGuardTests.test_ledger_names_its_subscription_only_by_digest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_azure_guard.py", line 602, in test_ledger_names_its_subscription_only_by_digest
+    self.assertNotIn('subscription', data)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'subscription' unexpectedly found in {'version': 1, 'subscription': '<SUB>', 'group': 'rg-warden-lab', 'reservations': [{'reservation': 'd9a17aa5-e405-42a1-8d94-2f0131f763ac', 'session': 'session-1', 'id': '/subscriptions/<SUB>/resourceGroups/rg-warden-lab/providers/Microsoft.Storage/storageAccounts/warden1', 'kind': 'storage', 'sku': 'Hot LRS', 'region': 'westus2', 'start': '2026-10-24T04:00:00Z', 'end': '2026-10-24T05:00:00Z', 'estimate_usd': '0.03', 'deleted_at': None, 'tags': {'project': 'warden', 'owner': 'codex-warden', 'ttl': '2026-10-24T05:00:00Z', 'est_usd_per_hour': '0.030000000000', 'warden_session': 'session-1', 'warden_reservation': 'd9a17aa5-e405-42a1-8d94-2f0131f763ac'}, 'components': [{'category': 'storage_capacity', 'price_usd': '0.01', 'quantity': '1', 'unit': '1 GB/Month', 'selector': {'meterId': 'storage_capacity', 'meterName': 'Hot LRS Data Stored', 'serviceName': 'Storage', 'productName': 'General Block Blob v2', 'skuName': 'Hot LRS', 'armSkuName': '', 'armRegionName': 'westus2', 'unitOfMeasure': '1 GB/Month'}, 'quote_sha256': '605ca940ceacdfdf24f39ee2e68dd6b0e17266e4c29121cb2a6919afa89c934e', 'quote_source_path': '/tmp/tmpyk0r7c60/quote.json', 'quote_url': 'https://prices.azure.com/api/retail/prices?currencyCode=USD', 'retrieved_at': '2026-10-24T03:00:00Z'}, {'category': 'storage_operations', 'price_usd': '0.01', 'quantity': '1', 'unit': '10K', 'selector': {'meterId': 'storage_operations', 'meterName': 'Hot Read Operations', 'serviceName': 'Storage', 'productName': 'General Block Blob v2', 'skuName': 'Hot LRS', 'armSkuName': '', 'armRegionName': 'westus2', 'unitOfMeasure': '10K'}, 'quote_sha256': '605ca940ceacdfdf24f39ee2e68dd6b0e17266e4c29121cb2a6919afa89c934e', 'quote_source_path': '/tmp/tmpyk0r7c60/quote.json', 'quote_url': 'https://prices.azure.com/api/retail/prices?currencyCode=USD', 'retrieved_at': '2026-10-24T03:00:00Z'}, {'category': 'logs', 'price_usd': '0.01', 'quantity': '1', 'unit': '1 GB/Month', 'selector': {'meterId': 'logs', 'meterName': 'Hot LRS Data Stored', 'serviceName': 'Storage', 'productName': 'General Block Blob v2', 'skuName': 'Hot LRS', 'armSkuName': '', 'armRegionName': 'westus2', 'unitOfMeasure': '1 GB/Month'}, 'quote_sha256': '605ca940ceacdfdf24f39ee2e68dd6b0e17266e4c29121cb2a6919afa89c934e', 'quote_source_path': '/tmp/tmpyk0r7c60/quote.json', 'quote_url': 'https://prices.azure.com/api/retail/prices?currencyCode=USD', 'retrieved_at': '2026-10-24T03:00:00Z'}], 'configuration': {'product': 'General Block Blob v2'}}]}
+
+======================================================================
+FAIL: test_missing_or_unsafe_scope_file_fails_closed (test_azure_guard.AzureGuardTests.test_missing_or_unsafe_scope_file_fails_closed) (case='missing')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_azure_guard.py", line 592, in test_missing_or_unsafe_scope_file_fails_closed
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_missing_or_unsafe_scope_file_fails_closed (test_azure_guard.AzureGuardTests.test_missing_or_unsafe_scope_file_fails_closed) (case='group-writable')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_azure_guard.py", line 592, in test_missing_or_unsafe_scope_file_fails_closed
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_missing_or_unsafe_scope_file_fails_closed (test_azure_guard.AzureGuardTests.test_missing_or_unsafe_scope_file_fails_closed) (case='not-a-guid')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_azure_guard.py", line 592, in test_missing_or_unsafe_scope_file_fails_closed
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_missing_or_unsafe_scope_file_fails_closed (test_azure_guard.AzureGuardTests.test_missing_or_unsafe_scope_file_fails_closed) (case='symlink')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_azure_guard.py", line 592, in test_missing_or_unsafe_scope_file_fails_closed
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_missing_or_unsafe_scope_file_fails_closed (test_azure_guard.AzureGuardTests.test_missing_or_unsafe_scope_file_fails_closed) (case='two-lines')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_azure_guard.py", line 592, in test_missing_or_unsafe_scope_file_fails_closed
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 44 tests in 8.464s
+
+FAILED (failures=7)
+
+======== d11-green.log
+# D11 GREEN, 2026-11-12T17:28:21Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_azure_guard.py -v
+test_api_failure_is_not_absence (test_azure_guard.AzureGuardTests.test_api_failure_is_not_absence) ... ok
+test_changed_resource_or_show_failure_aborts_before_delete (test_azure_guard.AzureGuardTests.test_changed_resource_or_show_failure_aborts_before_delete) ... ok
+test_concurrent_reservations_cannot_overbook (test_azure_guard.AzureGuardTests.test_concurrent_reservations_cannot_overbook) ... ok
+test_default_expiry_still_deletes_owned_resource_with_lost_extra_binding (test_azure_guard.AzureGuardTests.test_default_expiry_still_deletes_owned_resource_with_lost_extra_binding) ... ok
+test_disk_share_is_24_gb (test_azure_guard.AzureGuardTests.test_disk_share_is_24_gb) ... ok
+test_down_checks_ownership_and_rejects_protected_target (test_azure_guard.AzureGuardTests.test_down_checks_ownership_and_rejects_protected_target) ... ok
+test_down_dry_run_and_real_fake_boundary (test_azure_guard.AzureGuardTests.test_down_dry_run_and_real_fake_boundary) ... ok
+test_down_records_deletion_without_refund (test_azure_guard.AzureGuardTests.test_down_records_deletion_without_refund) ... ok
+test_download_requires_fifty_gb_plus_size_only_above_five_gb (test_azure_guard.AzureGuardTests.test_download_requires_fifty_gb_plus_size_only_above_five_gb) ... ok
+test_dry_run_never_mutates (test_azure_guard.AzureGuardTests.test_dry_run_never_mutates) ... ok
+test_duplicate_api_id_is_rejected_before_delete (test_azure_guard.AzureGuardTests.test_duplicate_api_id_is_rejected_before_delete) ... ok
+test_exact_expiry_deletes_only_full_scoped_id (test_azure_guard.AzureGuardTests.test_exact_expiry_deletes_only_full_scoped_id) ... ok
+test_fractional_hour_rate_rounding_can_be_read_back (test_azure_guard.AzureGuardTests.test_fractional_hour_rate_rounding_can_be_read_back) ... ok
+test_future_ttl_is_retained (test_azure_guard.AzureGuardTests.test_future_ttl_is_retained) ... ok
+test_guard_source_pins_no_subscription_id (test_azure_guard.AzureGuardTests.test_guard_source_pins_no_subscription_id) ... ok
+test_invalid_quote_or_plan_fails_closed (test_azure_guard.AzureGuardTests.test_invalid_quote_or_plan_fails_closed) ... ok
+test_keyvault_profile_requires_future_exact_priced_support (test_azure_guard.AzureGuardTests.test_keyvault_profile_requires_future_exact_priced_support) ... ok
+test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) ... ok
+test_ledger_names_its_subscription_only_by_digest (test_azure_guard.AzureGuardTests.test_ledger_names_its_subscription_only_by_digest) ... ok
+test_local_preflight_rejects_resource_excess (test_azure_guard.AzureGuardTests.test_local_preflight_rejects_resource_excess) ... ok
+test_missing_group_is_safe_noop (test_azure_guard.AzureGuardTests.test_missing_group_is_safe_noop) ... ok
+test_missing_or_unsafe_scope_file_fails_closed (test_azure_guard.AzureGuardTests.test_missing_or_unsafe_scope_file_fails_closed) ... ok
+test_multiple_operation_meters_can_cover_reads_and_writes (test_azure_guard.AzureGuardTests.test_multiple_operation_meters_can_cover_reads_and_writes) ... ok
+test_nonpositive_quantities_and_invalid_ledger_never_reserve (test_azure_guard.AzureGuardTests.test_nonpositive_quantities_and_invalid_ledger_never_reserve) ... ok
+test_operation_coverage_cannot_use_capacity_meter (test_azure_guard.AzureGuardTests.test_operation_coverage_cannot_use_capacity_meter) ... ok
+test_over_budget_or_duplicate_does_not_write (test_azure_guard.AzureGuardTests.test_over_budget_or_duplicate_does_not_write) ... ok
+test_ownership_or_scope_corruption_never_deletes (test_azure_guard.AzureGuardTests.test_ownership_or_scope_corruption_never_deletes) ... ok
+test_real_archived_storage_quote_cannot_price_different_declared_profile (test_azure_guard.AzureGuardTests.test_real_archived_storage_quote_cannot_price_different_declared_profile) ... ok
+test_real_archived_storage_quote_selects_base_tier (test_azure_guard.AzureGuardTests.test_real_archived_storage_quote_selects_base_tier) ... ok
+test_reservation_exact_540_boundary_and_document (test_azure_guard.AzureGuardTests.test_reservation_exact_540_boundary_and_document) ... ok
+test_session_end_uses_reservation_binding_and_keeps_cost (test_azure_guard.AzureGuardTests.test_session_end_uses_reservation_binding_and_keeps_cost) ... ok
+test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) ... ok
+test_supported_s4_disk_prices_each_allowed_size (test_azure_guard.AzureGuardTests.test_supported_s4_disk_prices_each_allowed_size) ... ok
+test_target_environment_cannot_redirect_pinned_scope (test_azure_guard.AzureGuardTests.test_target_environment_cannot_redirect_pinned_scope) ... ok
+test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) ... ok
+test_unbound_high_price_future_resource_is_retained (test_azure_guard.AzureGuardTests.test_unbound_high_price_future_resource_is_retained) ... ok
+test_unreadable_project_tree_is_not_zero_disk_usage (test_azure_guard.AzureGuardTests.test_unreadable_project_tree_is_not_zero_disk_usage) ... ok
+test_unresolved_cleanup_prevents_deletion_of_other_candidates_even_in_dry_run (test_azure_guard.AzureGuardTests.test_unresolved_cleanup_prevents_deletion_of_other_candidates_even_in_dry_run) ... ok
+test_vm_batch_aggregates_quota_before_reservation (test_azure_guard.AzureGuardTests.test_vm_batch_aggregates_quota_before_reservation) ... ok
+test_vm_compute_billing_and_linux_product_must_match (test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) ... ok
+test_vm_quota_missing_exhausted_or_not_six_is_refused (test_azure_guard.AzureGuardTests.test_vm_quota_missing_exhausted_or_not_six_is_refused) ... ok
+test_vm_reservation_checks_six_core_region_quota (test_azure_guard.AzureGuardTests.test_vm_reservation_checks_six_core_region_quota) ... ok
+test_wrong_account_fails_closed (test_azure_guard.AzureGuardTests.test_wrong_account_fails_closed) ... ok
+test_wrong_service_cannot_be_labeled_storage_cost (test_azure_guard.AzureGuardTests.test_wrong_service_cannot_be_labeled_storage_cost) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 7.278s
+
+OK
+
+################ D3: ledger rows for the Entra directory objects; render reproduces the committed markdown (9904007)
+
+======== d3-red.log
+# D3 (ledger rows for the Entra objects) RED at b64ff73: new tests and the new docs/azure-spend.json/.md, old scripts/azure_guard.py, 2026-11-12T23:21:40Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_azure_guard.py -v -k directory_object -k committed_ledger
+test_committed_ledger_renders_to_the_committed_markdown (test_azure_guard.AzureGuardTests.test_committed_ledger_renders_to_the_committed_markdown) ... FAIL
+test_directory_objects_render_as_zero_cost_rows (test_azure_guard.AzureGuardTests.test_directory_objects_render_as_zero_cost_rows) ... FAIL
+test_priced_or_malformed_directory_object_is_refused (test_azure_guard.AzureGuardTests.test_priced_or_malformed_directory_object_is_refused) ... 
+  test_priced_or_malformed_directory_object_is_refused (test_azure_guard.AzureGuardTests.test_priced_or_malformed_directory_object_is_refused) (case='priced') ... FAIL
+  test_priced_or_malformed_directory_object_is_refused (test_azure_guard.AzureGuardTests.test_priced_or_malformed_directory_object_is_refused) (case='missing-field') ... FAIL
+  test_priced_or_malformed_directory_object_is_refused (test_azure_guard.AzureGuardTests.test_priced_or_malformed_directory_object_is_refused) (case='extra-field') ... FAIL
+  test_priced_or_malformed_directory_object_is_refused (test_azure_guard.AzureGuardTests.test_priced_or_malformed_directory_object_is_refused) (case='empty-field') ... FAIL
+  test_priced_or_malformed_directory_object_is_refused (test_azure_guard.AzureGuardTests.test_priced_or_malformed_directory_object_is_refused) (case='price-date') ... FAIL
+
+======================================================================
+FAIL: test_committed_ledger_renders_to_the_committed_markdown (test_azure_guard.AzureGuardTests.test_committed_ledger_renders_to_the_committed_markdown)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_azure_guard.py", line 646, in test_committed_ledger_renders_to_the_committed_markdown
+    self.assertEqual(p.returncode, 0, p.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : b'Traceback (most recent call last):\n  File "<string>", line 1, in <module>\n    import sys; from scripts import azure_guard as g; data = g.parse_json(open("docs/azure-spend.json", "rb").read()); g.directory_objects(data); sys.stdout.buffer.write(g.markdown(data).encode())\n                                                                                                                       ^^^^^^^^^^^^^^^^^^^\nAttributeError: module \'scripts.azure_guard\' has no attribute \'directory_objects\'\n'
+
+======================================================================
+FAIL: test_directory_objects_render_as_zero_cost_rows (test_azure_guard.AzureGuardTests.test_directory_objects_render_as_zero_cost_rows)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_azure_guard.py", line 624, in test_directory_objects_render_as_zero_cost_rows
+    self.assertIn('| 14 run9 | warden-lab-x：应用1、服务主体1 | 2026-11-11T00:00:00Z | 2026-11-11T00:10:00Z | 0 | '
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                  'Retail Prices API：没有对应的计量 | 2026-11-12T06:42:01Z | evidence/task-14/x.txt |\n', md)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '| 14 run9 | warden-lab-x：应用1、服务主体1 | 2026-11-11T00:00:00Z | 2026-11-11T00:10:00Z | 0 | Retail Prices API：没有对应的计量 | 2026-11-12T06:42:01Z | evidence/task-14/x.txt |\n' not found in '# Warden Azure估算台账\n\n约束：[AZURE-BUDGET.md](../AZURE-BUDGET.md)。总上限$6.00；开通硬门槛$5.40（90%）。\n本项目已承诺新增估算：**$0.00**；剩余估算额度：**$5.40**。\n这是累计承诺估算，不是实际账单。删除资源不会返还承诺；消费API金额为空，不能声明实际免费。\n权威记录为同目录azure-spend.json；本表由工具在项目锁内生成，JSON先落盘。\n\n| 资源/ID | SKU | 区域 | 单价/单位及Retail API原始路径 | 开始UTC | 计划结束UTC | 承诺估算USD | 实际删除UTC |\n|---|---|---|---|---|---|---|---|\n\n## 开通前规则与边界\n\n- 精确Retail API meter/region/SKU/USD/Consumption/单位，原始报价快照与获取时间保留在JSON及其旁边的quotes目录；不默认免费层为0。\n- 在任何创建前预留全部适用VM、OS HDD Standard_LRS 30–32GB、IP、网络、存储容量/操作、AKS基础计量与日志；锁内校验累计≤$5.40。\n- 仅rg-warden-lab，所有资源（包括组）四标签齐全；rg-mlinfra-westus永远不可修改/删除；不设置订阅级提醒。\n- >$0.02/h同会话销毁；结束时使用本会话reservation绑定清理。删除时间仅表示已收到Azure删除成功响应，费用不归零。\n- 工具只做预留，不会创建资源；AKS node RG超出当前授权，AKS继续门禁。部署代码必须独立审查成本覆盖、使用量上限和配额后才可开通。\n- 2026-10-23至2026-11-12：未开通Azure资源；留有记录的reaper运行结果都是rg-warden-lab不存在（group-absent，见evidence/azure-budget、evidence/task-6/entra-objects-20261110.txt、evidence/task-14/azure-entra-objects-20261111.txt）。\n- Task 6、8、14只建过Entra目录对象（应用注册和服务主体，名字以warden-lab-开头、标签project=warden，测完即删）。它们不是订阅资源，不在rg-warden-lab里，所以不进上表，按$0计。2026-11-12核对（记录见evidence/task-14/azure-entra-objects-20261111.txt）：Retail Prices API里Entra相关的计量只有Domain Services、External ID、Verified ID、SCIM provisioning API和B2C/B2X，没有按应用注册或服务主体计费的；按令牌计费的只有External ID的M2M计量（$0.001/个），微软文档写明它只适用于外部租户，这个学校租户是工作区租户（tenantType AAD），订阅里也没有External ID或B2C的计费关联资源。如果M2M计量适用，Task 14三次演练换到的6632个令牌约$6.63，会超出上限。这次核对是在演练之后做的，不是之前。\n'
+
+======================================================================
+FAIL: test_priced_or_malformed_directory_object_is_refused (test_azure_guard.AzureGuardTests.test_priced_or_malformed_directory_object_is_refused) (case='priced')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_azure_guard.py", line 636, in test_priced_or_malformed_directory_object_is_refused
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_priced_or_malformed_directory_object_is_refused (test_azure_guard.AzureGuardTests.test_priced_or_malformed_directory_object_is_refused) (case='missing-field')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_azure_guard.py", line 636, in test_priced_or_malformed_directory_object_is_refused
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_priced_or_malformed_directory_object_is_refused (test_azure_guard.AzureGuardTests.test_priced_or_malformed_directory_object_is_refused) (case='extra-field')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_azure_guard.py", line 636, in test_priced_or_malformed_directory_object_is_refused
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_priced_or_malformed_directory_object_is_refused (test_azure_guard.AzureGuardTests.test_priced_or_malformed_directory_object_is_refused) (case='empty-field')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_azure_guard.py", line 636, in test_priced_or_malformed_directory_object_is_refused
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_priced_or_malformed_directory_object_is_refused (test_azure_guard.AzureGuardTests.test_priced_or_malformed_directory_object_is_refused) (case='price-date')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden-cloud/scripts/test_azure_guard.py", line 636, in test_priced_or_malformed_directory_object_is_refused
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.330s
+
+FAILED (failures=7)
+
+======== d3-green.log
+# D3 (ledger rows for the Entra objects) GREEN, 2026-11-12T23:21:49Z
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_azure_guard.py -v
+test_api_failure_is_not_absence (test_azure_guard.AzureGuardTests.test_api_failure_is_not_absence) ... ok
+test_changed_resource_or_show_failure_aborts_before_delete (test_azure_guard.AzureGuardTests.test_changed_resource_or_show_failure_aborts_before_delete) ... ok
+test_committed_ledger_renders_to_the_committed_markdown (test_azure_guard.AzureGuardTests.test_committed_ledger_renders_to_the_committed_markdown) ... ok
+test_concurrent_reservations_cannot_overbook (test_azure_guard.AzureGuardTests.test_concurrent_reservations_cannot_overbook) ... ok
+test_default_expiry_still_deletes_owned_resource_with_lost_extra_binding (test_azure_guard.AzureGuardTests.test_default_expiry_still_deletes_owned_resource_with_lost_extra_binding) ... ok
+test_directory_objects_render_as_zero_cost_rows (test_azure_guard.AzureGuardTests.test_directory_objects_render_as_zero_cost_rows) ... ok
+test_disk_share_is_24_gb (test_azure_guard.AzureGuardTests.test_disk_share_is_24_gb) ... ok
+test_down_checks_ownership_and_rejects_protected_target (test_azure_guard.AzureGuardTests.test_down_checks_ownership_and_rejects_protected_target) ... ok
+test_down_dry_run_and_real_fake_boundary (test_azure_guard.AzureGuardTests.test_down_dry_run_and_real_fake_boundary) ... ok
+test_down_records_deletion_without_refund (test_azure_guard.AzureGuardTests.test_down_records_deletion_without_refund) ... ok
+test_download_requires_fifty_gb_plus_size_only_above_five_gb (test_azure_guard.AzureGuardTests.test_download_requires_fifty_gb_plus_size_only_above_five_gb) ... ok
+test_dry_run_never_mutates (test_azure_guard.AzureGuardTests.test_dry_run_never_mutates) ... ok
+test_duplicate_api_id_is_rejected_before_delete (test_azure_guard.AzureGuardTests.test_duplicate_api_id_is_rejected_before_delete) ... ok
+test_exact_expiry_deletes_only_full_scoped_id (test_azure_guard.AzureGuardTests.test_exact_expiry_deletes_only_full_scoped_id) ... ok
+test_fractional_hour_rate_rounding_can_be_read_back (test_azure_guard.AzureGuardTests.test_fractional_hour_rate_rounding_can_be_read_back) ... ok
+test_future_ttl_is_retained (test_azure_guard.AzureGuardTests.test_future_ttl_is_retained) ... ok
+test_guard_source_pins_no_subscription_id (test_azure_guard.AzureGuardTests.test_guard_source_pins_no_subscription_id) ... ok
+test_invalid_quote_or_plan_fails_closed (test_azure_guard.AzureGuardTests.test_invalid_quote_or_plan_fails_closed) ... ok
+test_keyvault_profile_requires_future_exact_priced_support (test_azure_guard.AzureGuardTests.test_keyvault_profile_requires_future_exact_priced_support) ... ok
+test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) ... ok
+test_ledger_names_its_subscription_only_by_digest (test_azure_guard.AzureGuardTests.test_ledger_names_its_subscription_only_by_digest) ... ok
+test_local_preflight_rejects_resource_excess (test_azure_guard.AzureGuardTests.test_local_preflight_rejects_resource_excess) ... ok
+test_missing_group_is_safe_noop (test_azure_guard.AzureGuardTests.test_missing_group_is_safe_noop) ... ok
+test_missing_or_unsafe_scope_file_fails_closed (test_azure_guard.AzureGuardTests.test_missing_or_unsafe_scope_file_fails_closed) ... ok
+test_multiple_operation_meters_can_cover_reads_and_writes (test_azure_guard.AzureGuardTests.test_multiple_operation_meters_can_cover_reads_and_writes) ... ok
+test_nonpositive_quantities_and_invalid_ledger_never_reserve (test_azure_guard.AzureGuardTests.test_nonpositive_quantities_and_invalid_ledger_never_reserve) ... ok
+test_operation_coverage_cannot_use_capacity_meter (test_azure_guard.AzureGuardTests.test_operation_coverage_cannot_use_capacity_meter) ... ok
+test_over_budget_or_duplicate_does_not_write (test_azure_guard.AzureGuardTests.test_over_budget_or_duplicate_does_not_write) ... ok
+test_ownership_or_scope_corruption_never_deletes (test_azure_guard.AzureGuardTests.test_ownership_or_scope_corruption_never_deletes) ... ok
+test_priced_or_malformed_directory_object_is_refused (test_azure_guard.AzureGuardTests.test_priced_or_malformed_directory_object_is_refused) ... ok
+test_real_archived_storage_quote_cannot_price_different_declared_profile (test_azure_guard.AzureGuardTests.test_real_archived_storage_quote_cannot_price_different_declared_profile) ... ok
+test_real_archived_storage_quote_selects_base_tier (test_azure_guard.AzureGuardTests.test_real_archived_storage_quote_selects_base_tier) ... ok
+test_reservation_exact_540_boundary_and_document (test_azure_guard.AzureGuardTests.test_reservation_exact_540_boundary_and_document) ... ok
+test_session_end_uses_reservation_binding_and_keeps_cost (test_azure_guard.AzureGuardTests.test_session_end_uses_reservation_binding_and_keeps_cost) ... ok
+test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) ... ok
+test_supported_s4_disk_prices_each_allowed_size (test_azure_guard.AzureGuardTests.test_supported_s4_disk_prices_each_allowed_size) ... ok
+test_target_environment_cannot_redirect_pinned_scope (test_azure_guard.AzureGuardTests.test_target_environment_cannot_redirect_pinned_scope) ... ok
+test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) ... ok
+test_unbound_high_price_future_resource_is_retained (test_azure_guard.AzureGuardTests.test_unbound_high_price_future_resource_is_retained) ... ok
+test_unreadable_project_tree_is_not_zero_disk_usage (test_azure_guard.AzureGuardTests.test_unreadable_project_tree_is_not_zero_disk_usage) ... ok
+test_unresolved_cleanup_prevents_deletion_of_other_candidates_even_in_dry_run (test_azure_guard.AzureGuardTests.test_unresolved_cleanup_prevents_deletion_of_other_candidates_even_in_dry_run) ... ok
+test_vm_batch_aggregates_quota_before_reservation (test_azure_guard.AzureGuardTests.test_vm_batch_aggregates_quota_before_reservation) ... ok
+test_vm_compute_billing_and_linux_product_must_match (test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) ... ok
+test_vm_quota_missing_exhausted_or_not_six_is_refused (test_azure_guard.AzureGuardTests.test_vm_quota_missing_exhausted_or_not_six_is_refused) ... ok
+test_vm_reservation_checks_six_core_region_quota (test_azure_guard.AzureGuardTests.test_vm_reservation_checks_six_core_region_quota) ... ok
+test_wrong_account_fails_closed (test_azure_guard.AzureGuardTests.test_wrong_account_fails_closed) ... ok
+test_wrong_service_cannot_be_labeled_storage_cost (test_azure_guard.AzureGuardTests.test_wrong_service_cannot_be_labeled_storage_cost) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 7.990s
+
+OK
+$ python3 -B scripts/azure_guard.py render   # the real ledger, under the project lock; then git diff --stat docs/azure-spend.md
+exit 0
+ docs/azure-spend.md | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)

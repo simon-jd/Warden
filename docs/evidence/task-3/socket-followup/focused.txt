@@ -1,0 +1,11 @@
+=== RUN   TestSocketAcceptsOwnedDedicatedUnixListener
+--- PASS: TestSocketAcceptsOwnedDedicatedUnixListener (0.00s)
+=== RUN   TestSocketRevalidationRejectsAliasAfterConstruction
+--- PASS: TestSocketRevalidationRejectsAliasAfterConstruction (0.00s)
+=== RUN   TestContainerdClientDialsOnlyAuthenticatedListener
+--- PASS: TestContainerdClientDialsOnlyAuthenticatedListener (0.00s)
+=== RUN   TestStartHonorsCanceledSetupWithoutConnecting
+--- PASS: TestStartHonorsCanceledSetupWithoutConnecting (0.00s)
+=== RUN   TestReapRejectsUncontrolledRunIDBeforeConnecting
+--- PASS: TestReapRejectsUncontrolledRunIDBeforeConnecting (0.00s)
+PASS

@@ -1,0 +1,34 @@
+{
+  "recorded_at": "2026-10-24T04:01:43Z",
+  "command": "python3 -B scripts/runtime_lab_docker.py run --other-service-memory-bytes 0 --reviewed-live-profile",
+  "exit_code": 0,
+  "runner_code_commit": "ff6c1e2658de22586546089fd522726d0e9bb243",
+  "execution_head": "d44821bde4bd11cf6e1f0e398f85fcf222f6999b",
+  "tests_passed": [
+    "ForkBombCappedByPids",
+    "RootfsReadOnly",
+    "NoNetworkByDefault",
+    "RunsAsNonRoot",
+    "TimeoutKillsProcessGroup",
+    "MemoryLimitOOMKilled",
+    "SeccompBlocksMountAndPtrace"
+  ],
+  "tests_skipped": 0,
+  "dedicated_snapshot_remove_records": 7,
+  "input_hashes_checked_against_manifest": {
+    ".cache/warden-lab/runc.test": "f078d6298075c11a39fe34d6fe753a1f432663d72933d0f9954f4bcffd8fc680",
+    ".cache/warden-lab/probe.oci.tar": "1cef5af8d3883ee3ae8cadfefa4dd853d40e232ee702f59092320e2e9966ae82",
+    "scripts/runtime_lab_runner.py": "3de7baa8523d3a1147599f7302033dfac1394a865c9fb0bd60fa6e889055faec",
+    "scripts/runtime_lab_paths.py": "58a93236d89435ccd0f7beb073df7eb84c6f639e52ae762d731d3c09e44140b3",
+    "scripts/runtime_lab_docker_init.py": "0f11c22191400c7b3b5973f6a3618566a1c3739296095205a52fe8f51065fdcf"
+  },
+  "evidence_sha256": {
+    "charge.json": "c5ced6d249cdcfd88a9e175300cea5330af501c2e78a99298e9df52ddd8bfd27",
+    "containerd.log": "6969d5eb5ac6cfc5268f3e43d7b61d8eedc12c373e0fb9d4a8d205b1a30fe2a6",
+    "containerd.toml": "2980cf510421b66d4262bd8363ad51a6f46011c3000fc8541665813354d39f8d",
+    "identity.json": "3e10bf6329a3260b65001b1c215750efc125a48a3bcba52d6d8df1aa40c7e097",
+    "manifest.json": "7a43e968aef9f24811c78cfd5c972504c67d39248fe0a1b5797ab23329877be5",
+    "post-run.json": "e89da8bae68f5119c995dd6d8f836b832ad904afa212ebdcd6f52f3fce2e68e2",
+    "../lab-conformance.txt": "5187e97624686b1047b4d4d1a6fc7aec72500bcdc33e534776de554b4cdfe945"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "docs/evidence/task-6/continuation-controller-operations-execution-plan.md": {
+    "allocated_bytes": 61440,
+    "bytes": 60832,
+    "sha256": "8aa73aeb2bb2a5156cb4b0f53c726985322fb653ec5ce4e6336a2816ac26df99"
+  },
+  "docs/evidence/task-6/controller-terminal-reconcile-substage-report.md": {
+    "allocated_bytes": 28672,
+    "bytes": 27169,
+    "sha256": "ec5588a4f3a9d0530889bc2e91b5f8161da2cb311b0c299588fed4c3c0eef5d2"
+  }
+}

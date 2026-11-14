@@ -1,0 +1,6 @@
+test_failed_helper_preserves_only_bounded_typed_refusal_evidence (test_firecracker_recovery.WorkflowTests.test_failed_helper_preserves_only_bounded_typed_refusal_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK

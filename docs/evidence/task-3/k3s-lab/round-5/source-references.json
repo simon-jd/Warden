@@ -1,0 +1,104 @@
+[
+  {
+    "file": "dynamic-cafile.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/staging/src/k8s.io/apiserver/pkg/server/dynamiccertificates/dynamic_cafile_content.go",
+    "bytes": 8678,
+    "sha256": "93151b951d9509aa1b65d7fa0ea4002d74fc10a28c35f360e64a4f2b6bc6d38c"
+  },
+  {
+    "file": "dynamic-serving.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/staging/src/k8s.io/apiserver/pkg/server/dynamiccertificates/dynamic_serving_content.go",
+    "bytes": 7107,
+    "sha256": "39ab584a95c4a2106c73f5b6e7857c99373be2719cf18a3aee0d40b09d2679fa"
+  },
+  {
+    "file": "plugin-watcher.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/pkg/kubelet/pluginmanager/pluginwatcher/plugin_watcher.go",
+    "bytes": 6596,
+    "sha256": "3e7d0d06876d88cd46a51c71ed7169a77c36565db9bc9bb33cdf1f4440c1e23d"
+  },
+  {
+    "file": "file-linux.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/pkg/kubelet/config/file_linux.go",
+    "bytes": 3858,
+    "sha256": "6f6f65ce81431c9329ab812af0f33dbb9648535acaa3034db8c7e26c504b7877"
+  },
+  {
+    "file": "kubelet.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/pkg/kubelet/kubelet.go",
+    "bytes": 150558,
+    "sha256": "ad21daa16cdf45fc746f5f149b46dd5a601e942badecc4dcbc7949a8dfdc1384"
+  },
+  {
+    "file": "cri-plugin.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/containerd/v2.3.4-k3s1.36/plugins/cri/runtime/plugin.go",
+    "bytes": 8653,
+    "sha256": "9b02fc39b0f849851f58f07ff3e58363d6768281dfeea9791424468bdb92d6a9"
+  },
+  {
+    "file": "cri-service.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/containerd/v2.3.4-k3s1.36/internal/cri/server/service.go",
+    "bytes": 18588,
+    "sha256": "f711b6f23a9affc9849295faf08f05f2f0adffd01954582e69aa7a96ec8e9e66"
+  },
+  {
+    "file": "cni-conf-syncer.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/containerd/v2.3.4-k3s1.36/internal/cri/server/cni_conf_syncer.go",
+    "bytes": 4228,
+    "sha256": "9f499e1fd8855416f3fad948e4bdd2cace6d66761b81ef48e1e1e6d71079b1ca"
+  },
+  {
+    "file": "cri-service-linux.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/containerd/v2.3.4-k3s1.36/internal/cri/server/service_linux.go",
+    "bytes": 3565,
+    "sha256": "6e2a5469baed39901f071b586853a58a5ac255aa7a2e3613be3b57f81a2b70cc"
+  },
+  {
+    "file": "k3s-containerd.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/pkg/agent/containerd/containerd.go",
+    "bytes": 18264,
+    "sha256": "7f4058e7bc39e42194ad5f4eca6ab232855425eb48c47073bcb80ac60b7f91db"
+  },
+  {
+    "file": "k3s-run.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/pkg/agent/run.go",
+    "bytes": 20011,
+    "sha256": "f2ea7a906fbc5ec7ab7b89b8793b72cbc59278e0dedcb8509c497c800a942c81"
+  },
+  {
+    "file": "fsnotify-inotify.go",
+    "url": "https://raw.githubusercontent.com/fsnotify/fsnotify/v1.9.0/backend_inotify.go",
+    "bytes": 15066,
+    "sha256": "cf073b95e3ab072a0c2beed5ff972481a79ffea340fd7cafcf064a5667782e1c"
+  },
+  {
+    "file": "volume-plugins.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/pkg/volume/plugins.go",
+    "bytes": 39432,
+    "sha256": "70a37115001c75bb1deca20d28572377faac0ff7e29c273923292c406efda95d"
+  },
+  {
+    "file": "flexvolume-probe.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/kubernetes/v1.36.5-k3s1/pkg/volume/flexvolume/probe.go",
+    "bytes": 9308,
+    "sha256": "71208ea0cf03ca9889f7edc704bc1a90c3b48dc02c4260a719c1892db74d3c1f"
+  },
+  {
+    "file": "containerd-server.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/containerd/v2.3.4-k3s1.36/cmd/containerd/server/server.go",
+    "bytes": 14110,
+    "sha256": "eac4ab2cf48241d2b06971cae18d971e582a59db0b7437e57ae81e2debedc5a2"
+  },
+  {
+    "file": "k3s-cri.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/k3s/v1.36.5%2Bk3s1/pkg/agent/cri/cri.go",
+    "bytes": 1607,
+    "sha256": "b9c4041128cafddab6664a2df3e6ca8fba28028cc52c3eaeef38ccf6ec556989"
+  },
+  {
+    "file": "cri-grpc-plugin.go",
+    "url": "https://raw.githubusercontent.com/k3s-io/containerd/v2.3.4-k3s1.36/plugins/cri/cri.go",
+    "bytes": 8562,
+    "sha256": "daebd07a133ed4894312f0f439c603435266fd121a9d6a1096b9dfacae80af3f"
+  }
+]

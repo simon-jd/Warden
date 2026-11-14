@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-26T09:07:55.342303+00:00",
+  "decision": "ACCEPT_AFFECTED_COMPONENT_COVER_NOT_DEPLOYMENT",
+  "round": "R1/5",
+  "actual_native": "0ef95b/session98998 -> 245883 running -> bcf872 known0",
+  "postflight_native": "full read and source/material verified, retained in native-requests-and-results.json",
+  "top_level_tests": 4,
+  "subcases": 1,
+  "go_rc": 0,
+  "package_seconds": 0.004,
+  "elapsed_seconds": 18.83090820396319,
+  "events": 19,
+  "raw_files": 38,
+  "raw_bytes": 7535,
+  "source_and_projection15_unchanged": true,
+  "all_cached_material_and_original_F_unchanged": true,
+  "owned_CIDs": {
+    "warden-task9-r1-cover-20261026-a-pg": "0ad191f901fde8ba3821b5cbfcd36d1799a346660ac8f8c682162fe923360790",
+    "warden-task9-r1-cover-20261026-a-go": "cb7b5bca3b51c23a746649c73e0e076a8ec74c59936177f8fac36191a065f6e2"
+  },
+  "owner_label": "15984c40f8bf2daf80f6c40667688a85",
+  "each_rm0_then_exact_absence": true,
+  "cli_group_cleanup_known": true,
+  "namespace_allocation": 9527296,
+  "namespace_retained": true,
+  "warnings": "Unchanged PG locale/trust/socket-permission warnings: M1 deferred, all raw preserved. No live Kubernetes/RBAC or authenticated identity evidence.",
+  "counters": {
+    "original_business": "2/2 SPENT",
+    "restored_business_RED": "1/1 SPENT accepted",
+    "PG_diagnostic": "3/3 SPENT",
+    "metadata": "1/1 SPENT historical UNKNOWN_FAILURE unchanged",
+    "first_GREEN": "1/1 SPENT accepted",
+    "migration_v2": "1/1 SPENT accepted",
+    "R1_new_RED": "1/1 SPENT accepted",
+    "R1_affected_cover": "1/1 SPENT accepted"
+  },
+  "source_fix_acceptance": "PENDING same independent reviewer after report and SOURCE-only commit",
+  "task16": "UNKNOWN9GB and Q5GB unchanged; no scans or old profile replay",
+  "provenance": {
+    "source": "root_agent_in_existing_user_scope",
+    "human_response": false
+  }
+}

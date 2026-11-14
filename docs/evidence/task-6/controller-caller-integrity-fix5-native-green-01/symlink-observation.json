@@ -1,0 +1,49 @@
+{
+  "approval_exists": true,
+  "approval_symlink": true,
+  "exit_code": 1,
+  "name": "symlink",
+  "passed": true,
+  "sentinel_observed": false,
+  "stderr": "FIXTURE_TELEMETRY {\"counts\": {\"blocked\": 2, \"fsyncs\": 0, \"opens\": 9, \"preads\": 2, \"root_routes\": 1, \"writes\": 0}, \"flags\": {\"dont_write_bytecode\": 1, \"isolated\": 1, \"no_site\": 1}, \"held_remaining\": 0, \"injected\": false, \"limits\": {\"as\": [134217728, 134217728], \"cpu\": [5, 5], \"fsize\": [1048576, 1048576]}, \"origins\": {\"json\": \"/usr/lib/python3.14/json/__init__.py\", \"resource\": \"/usr/lib/python3.14/lib-dynload/resource.cpython-314-x86_64-linux-gnu.so\", \"signal\": \"/usr/lib/python3.14/signal.py\"}, \"site_loaded\": false}\n",
+  "stdout": "",
+  "summary_unchanged": true,
+  "telemetry": {
+    "counts": {
+      "blocked": 2,
+      "fsyncs": 0,
+      "opens": 9,
+      "preads": 2,
+      "root_routes": 1,
+      "writes": 0
+    },
+    "flags": {
+      "dont_write_bytecode": 1,
+      "isolated": 1,
+      "no_site": 1
+    },
+    "held_remaining": 0,
+    "injected": false,
+    "limits": {
+      "as": [
+        134217728,
+        134217728
+      ],
+      "cpu": [
+        5,
+        5
+      ],
+      "fsize": [
+        1048576,
+        1048576
+      ]
+    },
+    "origins": {
+      "json": "/usr/lib/python3.14/json/__init__.py",
+      "resource": "/usr/lib/python3.14/lib-dynload/resource.cpython-314-x86_64-linux-gnu.so",
+      "signal": "/usr/lib/python3.14/signal.py"
+    },
+    "site_loaded": false
+  },
+  "timed_out": false
+}

@@ -1,0 +1,45 @@
+test_restore_changes_only_directory_fds_deepest_first_and_preserves_files (test_firecracker_recovery_init.InventoryFixture.test_restore_changes_only_directory_fds_deepest_first_and_preserves_files) ... FAIL
+test_immutable_inventory_ingress_binds_source_helper_and_digest (test_firecracker_recovery_init.InventoryFixture.test_immutable_inventory_ingress_binds_source_helper_and_digest) ... FAIL
+
+======================================================================
+FAIL: test_restore_changes_only_directory_fds_deepest_first_and_preserves_files (test_firecracker_recovery_init.InventoryFixture.test_restore_changes_only_directory_fds_deepest_first_and_preserves_files)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 112, in test_restore_changes_only_directory_fds_deepest_first_and_preserves_files
+    recovery.restore(held, expected, lambda rw: calls.append('rw' if rw else 'ro'))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery_init.py", line 156, in restore
+    raise ValueError('directory restoration not implemented')
+ValueError: directory restoration not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 113, in test_restore_changes_only_directory_fds_deepest_first_and_preserves_files
+    except ValueError as error: self.fail('valid restoration refused: ' + str(error))
+                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: valid restoration refused: directory restoration not implemented
+
+======================================================================
+FAIL: test_immutable_inventory_ingress_binds_source_helper_and_digest (test_firecracker_recovery_init.InventoryFixture.test_immutable_inventory_ingress_binds_source_helper_and_digest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 139, in test_immutable_inventory_ingress_binds_source_helper_and_digest
+    try: value = recovery.validate_inventory(raw, 'a' * 64)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery_init.py", line 128, in validate_inventory
+    raise ValueError('recovery inventory validation not implemented')
+ValueError: recovery inventory validation not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery_init.py", line 140, in test_immutable_inventory_ingress_binds_source_helper_and_digest
+    except ValueError as error: self.fail('valid inventory ingress refused: ' + str(error))
+                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: valid inventory ingress refused: recovery inventory validation not implemented
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+FAILED (failures=2)

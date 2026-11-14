@@ -1,0 +1,13 @@
+$ python3 -I -B -m unittest discover -s scripts -t scripts -p test_makefile.py -v   # after the AKS targets
+test_aks_target_runs_each_task7_test_through_the_drill (test_makefile.MakefileGoTargetsTest.test_aks_target_runs_each_task7_test_through_the_drill) ... ok
+test_cilium_target_runs_the_live_package_on_a_cilium_lab (test_makefile.MakefileGoTargetsTest.test_cilium_target_runs_the_live_package_on_a_cilium_lab) ... ok
+test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) ... ok
+test_failed_go_list_stops_test_and_vet (test_makefile.MakefileGoTargetsTest.test_failed_go_list_stops_test_and_vet) ... ok
+test_go_test_gets_listed_packages_without_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_go_test_gets_listed_packages_without_vcs_stamping) ... ok
+test_no_packages_left_is_a_failure (test_makefile.MakefileGoTargetsTest.test_no_packages_left_is_a_failure) ... ok
+test_writable_ancestor_of_the_test_temp_dir_stops_test_go (test_makefile.MakefileGoTargetsTest.test_writable_ancestor_of_the_test_temp_dir_stops_test_go) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.148s
+
+OK

@@ -1,0 +1,83 @@
+[
+  {
+    "kind": "freeze-and-ruling",
+    "request": {
+      "cmd": "/usr/bin/python3 -I -B - <<'PY'\nfrom pathlib import Path\nimport ast,hashlib,os\nroot=Path.cwd()\nassert root==Path('/home/postedism/Desktop/Warden') and os.getuid()==1000\nassert not os.path.lexists('/tmp/warden-task15-fix1-red-18981ab8-22c7197f')\nraw=(root/'.superpowers/sdd/2-warden-security-plan/task-15-fix1-red-caller.md').read_bytes()\nassert len(raw)==6540 and hashlib.sha256(raw).hexdigest()=='2d4c1abfe57b009bbfbaaa5b98f5729477908555e93705d5daf070af53f701d3'\nstart=b\"/usr/bin/timeout --signal=TERM --kill-after=1s 89s /usr/bin/python3 -I -B - <<'PY'\\n\"\nassert raw.count(start)==1\nbody=raw.split(start,1)[1].split(b'\\nPY\\n```',1)[0]+b'\\n'\ntree=ast.parse(body)\nnode=next(n for n in tree.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='frozen' for t in n.targets))\ninputs=ast.literal_eval(node.value)\nfolder=root/'docs/evidence/task-15/fix1-red-first-20261025'\nfolder.mkdir()\nfor name,(size,h) in inputs.items():\n    b=(root/name).read_bytes()\n    assert len(b)==size and hashlib.sha256(b).hexdigest()==h\n    with (folder/(Path(name).name+'.txt')).open('xb') as f:f.write(b)\nfor path,b in ((folder/'inert-caller.md',raw),(folder/'command.py.txt',body),(root/'.superpowers/sdd/2-warden-security-plan/task-15-fix1-red-admitted.py.txt',body)):\n    with path.open('xb') as f:f.write(b)\nwith (root/'docs/evidence/task-15/fix1-red-static-ruling-20261025.md').open('x') as f:f.write('''# Task15 \u539ffix1/5\u65b0\u56de\u5f52\u9996\u6b21RED\u51c6\u5165\\n\\nroot235537\u5168\u6587\u8bfb\u53d66540B caller\u4e0e13828B\u6d4b\u8bd5\u3002\u53ea\u6709\u771f\u5b9eGrype profile fixture\u53caI2/I3\u4e24\u65b0\u76f4\u63a5\u751f\u4ea7\u51fd\u6570\u56de\u5f52\u6539\u53d8\uff0c\u751f\u4ea715169B\u65e7SHA22c7197f\u4fdd\u6301\uff1b\u6ca1\u6709\u6d4b\u8bd5/Go/CLI\u6216Git\u5b9e\u9645\u3002\u4e24\u65b0\u805a\u5408\u6d4b\u8bd5\u5148\u6536\u96c6\u4e0d\u5b89\u5168\u914d\u7f6e/\u975e\u6cd5severity\u7684\u5b9e\u9645accepted\u5217\u8868\uff0c\u65ad\u8a00\u5e94\u4e3a\u7a7a\uff1b\u4e0d\u662f\u6d4b\u8bd5\u590d\u5236\u751f\u4ea7\u5224\u65ad\u3002\u5408\u6cd5Unknown\u63a7\u5236\u5728\u4fee\u590d\u540e\u5b8c\u6574\u8986\u76d6\u3002\\n\\n\u4ec5\u51c6\u4e0b\u4e00\u6b21\u65e2\u6709azure_guard.py fresh\u6210\u529f\u540eroot\u6267\u884c\u9010\u5b57Python body\u4e00\u6b21\uff0cstdin\u6362\u540c\u5b57\u8282.py.txt\uff1b\u4e24\u6307\u5b9a\u65b9\u6cd5\u5e94\u5404\u4e00\u4e2a\u4e1a\u52a1\u65ad\u8a00FAIL\u30010error/skip\u3002caller exit0\u4ec5\u8868\u793a\u89c2\u6d4b\u5230RED\uff0c\u4e0d\u80fd\u5f53\u6d4b\u8bd5GREEN\uff1broot\u987b\u5168\u6587\u770b\u539flog/status\u300289+1/\u5185\u90e888\u3001AS1GiBCPU45FSIZE32MiBNOFILE64CORE0\uff1bfull new256MiB\u53e6\u52a0\u5df2\u7559\u4e24/tmp\u4fdd\u5b88128KiB\u548cQ5GB\uff0coldUNKNOWN9GB+new1GiB<=16GB\u3002\u539fnew\u8def\u5f84\u5148\u8bc1\u4e0d\u5b58\u5728\u518d\u539f\u5b50mkdir\uff0c\u5931\u8d25\u4fdd\u7559\u4e0d\u91cd\u8bd5\u3002\\n\\n\u4e0d\u91cd\u8dd1\u65e715/renderer/\u5176\u4ed6Task\uff0c\u65e0\u5b50\u8fdb\u7a0b/\u7f51\u7edc/\u670d\u52a1/\u4e91/host/GPU/HOME/umask/CLI\u6a21\u5f0f\u53d8\u66f4\u3002\u539f\u5ba1\u67e5\u5931\u8d25/\u4e24\u4e2a\u65e7raw\u6811\u53ca\u5168\u90e8\u65e7\u989d\u5ea6/\u73b0\u573a/Q\u4fdd\u6301\u3002\u53ea\u6709root\u63a5\u53d7\u771f\u5b9eRED\u540e\u624d\u6388I1/I2/I3\u6700\u5c0f\u4ea7\u54c1\u4fee\u6b63\u548c\u4e00\u6b21affected cover\uff1bSOURCE/index\u4ecd\u539f\u4f5c\u8005\uff0c\u5f53\u524d\u65e0\u63d0\u4ea4\u6216\u81ea\u52a8\u540e\u7eed\u51c6\u5165\u3002\u5168Task15/Goal OPEN active\u3002\\n''')\nprint('body_bytes',len(body),'body_sha256',hashlib.sha256(body).hexdigest(),'inputs',len(inputs),'new_namespace_absent',True)\nPY",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "max_output_tokens": 1300,
+      "sandbox_permissions": "require_escalated",
+      "justification": "Freeze the reviewed Task15 fix1 two-regression body and pre-fix input snapshots in new evidence, preserving all old failures; record conditional root admission without running tests."
+    },
+    "result": {
+      "chunk_id": "30aa99",
+      "wall_time_seconds": 3.287e-05,
+      "exit_code": 0,
+      "original_token_count": 32,
+      "output": "body_bytes 3820 body_sha256 9816cf4947e25c16daf1312a7d2315bc4d482f615e78f5b9c164e377146823e6 inputs 2 new_namespace_absent True\n"
+    }
+  },
+  {
+    "kind": "fresh-guard",
+    "request": {
+      "cmd": "set -e\nulimit -c 0\nulimit -n 64\nulimit -v 262144\nulimit -f 8192\nulimit -t 20\n/usr/bin/timeout --signal=TERM --kill-after=5s 40s /usr/bin/python3 -I -B - <<'PY'\nfrom pathlib import Path\nimport os,runpy,stat,sys\nassert os.getuid()==1000\nheld=0\nfor basename in ('warden-task15-first-red-9ffe58a9-b5d6dcbd','warden-task15-green-22c7197f-968f62de'):\n    n=Path('/tmp')/basename\n    for p in (n,n/'status.txt',n/'unittest.txt'):\n        st=p.lstat()\n        assert st.st_uid==1000 and not stat.S_ISLNK(st.st_mode)\n        held+=st.st_blocks*512\nassert held<=131072\nassert not os.path.lexists('/tmp/warden-task15-fix1-red-18981ab8-22c7197f')\nmem=next(int(x.split()[1])*1024 for x in Path('/proc/meminfo').read_text().splitlines() if x.startswith('MemAvailable:'))\nassert mem>=1073741824\nprint({'retained_two_tmp_allocated_bytes':held,'retained_reserve_bytes':131072,'MemAvailable_bytes':mem,'new_namespace_absent':True},flush=True)\nsys.argv=['scripts/azure_guard.py','preflight','--additional-bytes','5268566528','--service-memory-bytes','10073741824','--download-bytes','0']\nrunpy.run_path('scripts/azure_guard.py',run_name='__main__')\nPY",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "max_output_tokens": 1800,
+      "sandbox_permissions": "require_escalated",
+      "justification": "Perform Task15 fix1's bounded fresh resource guard, retaining both prior /tmp trees, Q 5GB and old UNKNOWN 9GB, before the two new regression tests."
+    },
+    "result": {
+      "chunk_id": "d3720b",
+      "wall_time_seconds": 0.27116116,
+      "exit_code": 0,
+      "original_token_count": 92,
+      "output": "{'retained_two_tmp_allocated_bytes': 16384, 'retained_reserve_bytes': 131072, 'MemAvailable_bytes': 94267662336, 'new_namespace_absent': True}\n{\"additional_bytes\": \"5268566528\", \"at\": \"2026-10-26T03:39:46Z\", \"download_bytes\": \"0\", \"event\": \"local-preflight\", \"free_bytes\": 253056647168, \"project_allocated_bytes\": 5031534592, \"service_memory_bytes\": \"10073741824\"}\n"
+    }
+  },
+  {
+    "kind": "sole-fix1-red",
+    "request": {
+      "cmd": "/usr/bin/timeout --signal=TERM --kill-after=1s 89s /usr/bin/python3 -I -B .superpowers/sdd/2-warden-security-plan/task-15-fix1-red-admitted.py.txt",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "max_output_tokens": 1800,
+      "yield_time_ms": 1000,
+      "sandbox_permissions": "require_escalated",
+      "justification": "Run the exact Task15 fix1 two-regression caller once after guard d3720b; expected exit 0 means two genuine semantic assertion failures were observed, not GREEN or admission PASS."
+    },
+    "result": {
+      "chunk_id": "52361c",
+      "wall_time_seconds": 1.4553e-05,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    }
+  },
+  {
+    "kind": "root-full-postread",
+    "request": {
+      "cmd": "/usr/bin/python3 -I -B - <<'PY'\nfrom pathlib import Path\nimport ast,hashlib,json,os,stat\nroot=Path.cwd()\nn=Path('/tmp/warden-task15-fix1-red-18981ab8-22c7197f')\nst=n.lstat()\nassert stat.S_ISDIR(st.st_mode) and st.st_uid==1000 and stat.S_IMODE(st.st_mode)==0o700\nfd=os.open(n,os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW)\nmeta={}\nfor name in ('status.txt','unittest.txt'):\n    f=os.open(name,os.O_RDONLY|os.O_NOFOLLOW,dir_fd=fd)\n    st=os.fstat(f)\n    assert stat.S_ISREG(st.st_mode) and st.st_uid==1000 and st.st_nlink==1 and 0<st.st_size<65536 and stat.S_IMODE(st.st_mode)==0o600\n    with os.fdopen(f,'rb') as stream:b=stream.read(65536)\n    assert len(b)==st.st_size\n    with (root/'docs/evidence/task-15/fix1-red-first-20261025'/name).open('xb') as out:out.write(b)\n    meta[name]={'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'uid':st.st_uid,'mode':oct(stat.S_IMODE(st.st_mode)),'nlink':st.st_nlink}\n    print('FULL '+name+' BEGIN\\n'+b.decode()+'FULL '+name+' END')\nos.close(fd)\ntree=ast.parse((root/'.superpowers/sdd/2-warden-security-plan/task-15-fix1-red-admitted.py.txt').read_bytes())\nnode=next(n for n in tree.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='frozen' for t in n.targets))\nfrozen=ast.literal_eval(node.value)\nfor name,(size,h) in frozen.items():\n    b=(root/name).read_bytes()\n    assert len(b)==size and hashlib.sha256(b).hexdigest()==h\nmeta.update({'namespace':str(n),'frozen_inputs_unchanged':len(frozen),'children_created_by_caller':False,'cryptographic_acceptance':'UNRUN'})\nwith (root/'docs/evidence/task-15/fix1-red-first-20261025/postread.json').open('x') as f:json.dump(meta,f,indent=2);f.write('\\n')\nprint(json.dumps(meta))\nPY",
+      "workdir": "/home/postedism/Desktop/Warden",
+      "shell": "/bin/bash",
+      "login": false,
+      "tty": false,
+      "max_output_tokens": 6500,
+      "sandbox_permissions": "require_escalated",
+      "justification": "Read and archive complete actual Task15 fix1 RED logs through strict owner/single-link/no-follow checks and verify the two pre-fix input hashes stayed unchanged."
+    },
+    "result": {
+      "chunk_id": "a433a0",
+      "wall_time_seconds": 3.2763e-05,
+      "exit_code": 0,
+      "original_token_count": 832,
+      "output": "FULL status.txt BEGIN\nSTARTED; real crypto cases UNRUN\ntests=2 failures=2 errors=0 skips=0\nEXPECTED I2/I3 SEMANTIC RED; crypto UNRUN\nFULL status.txt END\nFULL unittest.txt BEGIN\ntest_actual_grype_configuration_must_prove_unfiltered_scan (task15_fix1_tests.AssessScanTests.test_actual_grype_configuration_must_prove_unfiltered_scan) ... FAIL\ntest_severity_must_be_valid_before_release_decision (task15_fix1_tests.AssessScanTests.test_severity_must_be_valid_before_release_decision) ... FAIL\n\n======================================================================\nFAIL: test_actual_grype_configuration_must_prove_unfiltered_scan (task15_fix1_tests.AssessScanTests.test_actual_grype_configuration_must_prove_unfiltered_scan)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/scripts/test_supplychain.py\", line 168, in test_actual_grype_configuration_must_prove_unfiltered_scan\n    self.assertEqual(unexpectedly_accepted, [])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: ['empty profile', 'missing only-fixed', 'm[521 chars]ons'] != []\n\nFirst list contains 22 additional elements.\nFirst extra element 0:\n'empty profile'\n\n+ []\n- ['empty profile',\n-  'missing only-fixed',\n-  'missing only-notfixed',\n-  'missing ignore-wontfix',\n-  'missing ignore',\n-  'missing exclude',\n-  'missing vex-documents',\n-  'missing vex-add',\n-  'missing include-matcher-suppressions',\n-  'missing match-upstream-kernel-headers',\n-  'unsafe only-fixed',\n-  'unsafe only-notfixed',\n-  'unsafe ignore-wontfix',\n-  'unsafe ignore',\n-  'unsafe exclude',\n-  'unsafe vex-documents',\n-  'unsafe vex-add',\n-  'unsafe include-matcher-suppressions',\n-  'unsafe match-upstream-kernel-headers',\n-  'wrong type only-fixed',\n-  'wrong type exclude',\n-  'wrong type include-matcher-suppressions']\n\n======================================================================\nFAIL: test_severity_must_be_valid_before_release_decision (task15_fix1_tests.AssessScanTests.test_severity_must_be_valid_before_release_decision)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/scripts/test_supplychain.py\", line 184, in test_severity_must_be_valid_before_release_decision\n    self.assertEqual(unexpectedly_accepted, [])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: ['missing', 'null', 'empty', 'invalid', 'boolean', 'number', 'list', 'mapping'] != []\n\nFirst list contains 8 additional elements.\nFirst extra element 0:\n'missing'\n\n- ['missing', 'null', 'empty', 'invalid', 'boolean', 'number', 'list', 'mapping']\n+ []\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nFAILED (failures=2)\nFULL unittest.txt END\n{\"status.txt\": {\"bytes\": 111, \"sha256\": \"3993f48fc726cc1ef9f43db60f1d780a63edffef17a255e813e6f5467d0e27a7\", \"uid\": 1000, \"mode\": \"0o600\", \"nlink\": 1}, \"unittest.txt\": {\"bytes\": 2656, \"sha256\": \"fbf771a2947530c94bc40d98689973080738b9a3bd28855f8cb77c4a79e92f90\", \"uid\": 1000, \"mode\": \"0o600\", \"nlink\": 1}, \"namespace\": \"/tmp/warden-task15-fix1-red-18981ab8-22c7197f\", \"frozen_inputs_unchanged\": 2, \"children_created_by_caller\": false, \"cryptographic_acceptance\": \"UNRUN\"}\n"
+    }
+  }
+]

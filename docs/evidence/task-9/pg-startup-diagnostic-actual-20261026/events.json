@@ -1,0 +1,167 @@
+[
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{{.Name}}",
+      "warden-task9-pg-diag-20261026-a"
+    ],
+    "rc": 1,
+    "out": "\n",
+    "err": "Error response from daemon: No such container: warden-task9-pg-diag-20261026-a\n",
+    "failure": ""
+  },
+  {
+    "args": [
+      "run",
+      "--pull=never",
+      "--name",
+      "warden-task9-pg-diag-20261026-a",
+      "--cidfile",
+      "/home/postedism/Desktop/Warden/.cache/task9-pg-startup-diagnostic-20261026-a/warden-task9-pg-diag-20261026-a.cid",
+      "--label",
+      "warden.test=task9",
+      "--label",
+      "warden.owner=00070c9067462be4a2b41027198ba11c",
+      "--network",
+      "none",
+      "--read-only",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges",
+      "--user",
+      "postgres",
+      "--memory",
+      "512m",
+      "--memory-swap",
+      "512m",
+      "--pids-limit",
+      "96",
+      "--cpus",
+      "2",
+      "--shm-size",
+      "1m",
+      "--log-driver",
+      "local",
+      "--log-opt",
+      "max-size=1m",
+      "--log-opt",
+      "max-file=1",
+      "-d",
+      "--tmpfs",
+      "/var/lib/postgresql:rw,noexec,nosuid,nodev,size=192m,mode=1777",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,nodev,size=8m,mode=1777",
+      "--mount",
+      "type=bind,src=/home/postedism/Desktop/Warden/.cache/task9-pg-startup-diagnostic-20261026-a/socket,dst=/var/run/postgresql",
+      "-e",
+      "PGDATA=/var/lib/postgresql/task9",
+      "-e",
+      "POSTGRES_DB=warden_test",
+      "-e",
+      "POSTGRES_HOST_AUTH_METHOD=trust",
+      "sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873",
+      "postgres",
+      "-c",
+      "listen_addresses=",
+      "-c",
+      "unix_socket_directories=/var/run/postgresql",
+      "-c",
+      "unix_socket_permissions=0777",
+      "-c",
+      "shared_buffers=32MB",
+      "-c",
+      "max_connections=20",
+      "-c",
+      "max_parallel_workers=0",
+      "-c",
+      "dynamic_shared_memory_type=mmap",
+      "-c",
+      "max_wal_size=32MB",
+      "-c",
+      "min_wal_size=32MB"
+    ],
+    "rc": 125,
+    "out": "3305aff74c4112e0ecedeb6e9edde0f2a82714087b77d4593f5dfe0c2b9c949a\n",
+    "err": "docker: Error response from daemon: failed to create task for container: failed to initialize logging driver: compression cannot be enabled when max file count is 1\n\nRun 'docker run --help' for more information\n",
+    "failure": ""
+  },
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{\"id\":{{json .Id}},\"name\":{{json .Name}},\"owner\":{{json (index .Config.Labels \"warden.owner\")}}}",
+      "3305aff74c4112e0ecedeb6e9edde0f2a82714087b77d4593f5dfe0c2b9c949a"
+    ],
+    "rc": 0,
+    "out": "{\"id\":\"3305aff74c4112e0ecedeb6e9edde0f2a82714087b77d4593f5dfe0c2b9c949a\",\"name\":\"/warden-task9-pg-diag-20261026-a\",\"owner\":\"00070c9067462be4a2b41027198ba11c\"}\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{{json .State}}",
+      "3305aff74c4112e0ecedeb6e9edde0f2a82714087b77d4593f5dfe0c2b9c949a"
+    ],
+    "rc": 0,
+    "out": "{\"Status\":\"created\",\"Running\":false,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":0,\"ExitCode\":128,\"Error\":\"failed to create task for container: failed to initialize logging driver: compression cannot be enabled when max file count is 1\",\"StartedAt\":\"0001-01-01T00:00:00Z\",\"FinishedAt\":\"0001-01-01T00:00:00Z\"}\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "logs",
+      "--tail",
+      "80",
+      "3305aff74c4112e0ecedeb6e9edde0f2a82714087b77d4593f5dfe0c2b9c949a"
+    ],
+    "rc": 1,
+    "out": "",
+    "err": "Error response from daemon: compression cannot be enabled when max file count is 1\n",
+    "failure": ""
+  },
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{\"id\":{{json .Id}},\"name\":{{json .Name}},\"owner\":{{json (index .Config.Labels \"warden.owner\")}}}",
+      "3305aff74c4112e0ecedeb6e9edde0f2a82714087b77d4593f5dfe0c2b9c949a"
+    ],
+    "rc": 0,
+    "out": "{\"id\":\"3305aff74c4112e0ecedeb6e9edde0f2a82714087b77d4593f5dfe0c2b9c949a\",\"name\":\"/warden-task9-pg-diag-20261026-a\",\"owner\":\"00070c9067462be4a2b41027198ba11c\"}\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "rm",
+      "-f",
+      "-v",
+      "3305aff74c4112e0ecedeb6e9edde0f2a82714087b77d4593f5dfe0c2b9c949a"
+    ],
+    "rc": 0,
+    "out": "3305aff74c4112e0ecedeb6e9edde0f2a82714087b77d4593f5dfe0c2b9c949a\n",
+    "err": "",
+    "failure": ""
+  },
+  {
+    "args": [
+      "container",
+      "inspect",
+      "--format",
+      "{{.Name}}",
+      "warden-task9-pg-diag-20261026-a"
+    ],
+    "rc": 1,
+    "out": "\n",
+    "err": "Error response from daemon: No such container: warden-task9-pg-diag-20261026-a\n",
+    "failure": ""
+  }
+]

@@ -1,0 +1,321 @@
+test_real_archived_storage_quote_cannot_price_different_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_real_archived_storage_quote_cannot_price_different_declared_profile) ... 
+  test_real_archived_storage_quote_cannot_price_different_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_real_archived_storage_quote_cannot_price_different_declared_profile) (field='sku') ... FAIL
+  test_real_archived_storage_quote_cannot_price_different_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_real_archived_storage_quote_cannot_price_different_declared_profile) (field='product') ... FAIL
+test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) ... 
+  test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) (category='storage_capacity', field='skuName') ... FAIL
+  test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) (category='storage_capacity', field='productName') ... FAIL
+  test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) (category='storage_operations', field='skuName') ... FAIL
+  test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) (category='storage_operations', field='productName') ... FAIL
+  test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) (category='logs', field='skuName') ... FAIL
+  test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) (category='logs', field='productName') ... FAIL
+test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) ... 
+  test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=30, sku='S1 LRS') ... FAIL
+  test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=30, sku='S2 LRS') ... FAIL
+  test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=30, sku='S3 LRS') ... FAIL
+  test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=31, sku='S1 LRS') ... FAIL
+  test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=31, sku='S2 LRS') ... FAIL
+  test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=31, sku='S3 LRS') ... FAIL
+  test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=32, sku='S1 LRS') ... FAIL
+  test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=32, sku='S2 LRS') ... FAIL
+  test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=32, sku='S3 LRS') ... FAIL
+test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) ... FAIL
+test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) ... 
+  test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) (billing='spot') ... FAIL
+  test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) (billing='reservation') ... FAIL
+  test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) (billing=None) ... FAIL
+  test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) (field='productName') ... FAIL
+  test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) (field='skuName') ... FAIL
+  test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) (field='meterName') ... FAIL
+test_keyvault_profile_requires_future_exact_priced_support (scripts.test_azure_guard.AzureGuardTests.test_keyvault_profile_requires_future_exact_priced_support) ... FAIL
+test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (scripts.test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) ... 
+  test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (scripts.test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) (field='warden_reservation', value=None) ... FAIL
+  test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (scripts.test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) (field='warden_reservation', value='changed') ... FAIL
+  test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (scripts.test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) (field='warden_session', value='changed') ... FAIL
+  test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (scripts.test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) (field='est_usd_per_hour', value='0') ... FAIL
+  test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (scripts.test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) (field='owner', value='other') ... FAIL
+  test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (scripts.test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) (field='project', value=None) ... FAIL
+test_default_expiry_still_deletes_owned_resource_with_lost_extra_binding (scripts.test_azure_guard.AzureGuardTests.test_default_expiry_still_deletes_owned_resource_with_lost_extra_binding) ... ok
+
+======================================================================
+FAIL: test_real_archived_storage_quote_cannot_price_different_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_real_archived_storage_quote_cannot_price_different_declared_profile) (field='sku')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 155, in test_real_archived_storage_quote_cannot_price_different_declared_profile
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_real_archived_storage_quote_cannot_price_different_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_real_archived_storage_quote_cannot_price_different_declared_profile) (field='product')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 156, in test_real_archived_storage_quote_cannot_price_different_declared_profile
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) (category='storage_capacity', field='skuName')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 164, in test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile
+    self.assertNotEqual(self.reserve(plan).returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) (category='storage_capacity', field='productName')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 165, in test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) (category='storage_operations', field='skuName')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 165, in test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) (category='storage_operations', field='productName')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 165, in test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) (category='logs', field='skuName')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 165, in test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile (scripts.test_azure_guard.AzureGuardTests.test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile) (category='logs', field='productName')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 165, in test_storage_quote_sku_or_product_cannot_disagree_with_declared_profile
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=30, sku='S1 LRS')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 174, in test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product
+    self.assertNotEqual(self.reserve(plan).returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=30, sku='S2 LRS')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 175, in test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=30, sku='S3 LRS')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 175, in test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=31, sku='S1 LRS')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 175, in test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=31, sku='S2 LRS')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 175, in test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=31, sku='S3 LRS')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 175, in test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=32, sku='S1 LRS')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 175, in test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=32, sku='S2 LRS')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 175, in test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product) (size=32, sku='S3 LRS')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 175, in test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product (scripts.test_azure_guard.AzureGuardTests.test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 179, in test_thirty_to_thirty_two_gb_disk_cannot_use_s1_to_s3_or_other_product
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) (billing='spot')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 186, in test_vm_compute_billing_and_linux_product_must_match
+    self.assertNotEqual(self.reserve(plan).returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) (billing='reservation')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 187, in test_vm_compute_billing_and_linux_product_must_match
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) (billing=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 187, in test_vm_compute_billing_and_linux_product_must_match
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) (field='productName')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 194, in test_vm_compute_billing_and_linux_product_must_match
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) (field='skuName')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 194, in test_vm_compute_billing_and_linux_product_must_match
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) (field='meterName')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 194, in test_vm_compute_billing_and_linux_product_must_match
+    self.assertFalse(self.state.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_keyvault_profile_requires_future_exact_priced_support (scripts.test_azure_guard.AzureGuardTests.test_keyvault_profile_requires_future_exact_priced_support)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 203, in test_keyvault_profile_requires_future_exact_priced_support
+    self.assertNotEqual(self.reserve(plan).returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (scripts.test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) (field='warden_reservation', value=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 222, in test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (scripts.test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) (field='warden_reservation', value='changed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 222, in test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (scripts.test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) (field='warden_session', value='changed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 222, in test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (scripts.test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) (field='est_usd_per_hour', value='0')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 222, in test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (scripts.test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) (field='owner', value='other')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 222, in test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+======================================================================
+FAIL: test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting (scripts.test_azure_guard.AzureGuardTests.test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting) (field='project', value=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 222, in test_known_high_cost_session_lost_binding_reports_incomplete_without_deleting
+    self.assertNotEqual(p.returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 7 tests in 3.680s
+
+FAILED (failures=31)

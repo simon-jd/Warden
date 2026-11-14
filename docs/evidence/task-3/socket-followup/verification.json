@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-24T06:23:52.119438+00:00",
+  "head": "0be4325b8362114daac107000300ead4220d5734",
+  "uid": 1000,
+  "initial_umask": "Umask:\t0002",
+  "test_process_umask": "0077",
+  "binary": ".cache/warden-lab/runc.test",
+  "binary_sha256": "549b93ec4a32f266610606ec9777d5c5418c9a486dace68543cf1591a60be383",
+  "command": [
+    "/home/postedism/Desktop/Warden/.cache/warden-lab/runc.test",
+    "-test.v",
+    "-test.count=1",
+    "-test.run=^(TestSocketAcceptsOwnedDedicatedUnixListener|TestSocketRevalidationRejectsAliasAfterConstruction|TestContainerdClientDialsOnlyAuthenticatedListener|TestStartHonorsCanceledSetupWithoutConnecting|TestReapRejectsUncontrolledRunIDBeforeConnecting)$"
+  ],
+  "exit_code": 0,
+  "runc_source_unchanged_since": "f232b0d",
+  "scope": "Focused diagnosis only; retained standalone binary, no code or validator changes.",
+  "archived_binary_input_manifest": "docs/evidence/task-3/api-code-manifest.json",
+  "archived_binary_input_key": "opt/warden/input/runc.test",
+  "archived_binary_sha256_matches": true
+}

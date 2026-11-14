@@ -1,0 +1,202 @@
+# INERT PG_ONLY: ECC existing unspent ONE validation; total diagnostics become3.
+# Prior FIRST_RED2/2, diagnostics2/2 and metadata1/1 remain SPENT; no Go/tests.
+# Root FULLREAD/freeze/fresh normal admission required; no execution granted here.
+# Outer: timeout --signal=TERM --kill-after=4s 86s python3 -B -
+# Work deadline65, cleanup deadline82, status85, whole90. No execution authorized.
+import hashlib,json,os,pathlib,resource,selectors,signal,stat,subprocess,sys,time
+T=time.monotonic(); W=pathlib.Path('/home/postedism/Desktop/Warden')
+D=W/'.superpowers/sdd/2-warden-security-plan'
+M=D/'task-9-material-manifest.json'
+F=D/'task-9-first-red-source-freeze.json' # Exact hashes below; future execution still needs fresh admission
+N=W/'.cache/task9-pg-initdb-mmap-validation-20261026-a'
+IMAGE='sha256:77f585114c32fbca283dc835b0596f4e52b51b4c6662d7810b2f4084f60a1873'
+PG='warden-task9-pg-initdb-mmap-20261026-a'
+MAXOUT=131072; seen=0; events=[]; attempted=[]; status='UNKNOWN'; interrupted=False; callno=0; cli_safe=True; OWN=None; created=False
+resource.setrlimit(resource.RLIMIT_AS,(268435456,4294967296)) # parent soft cap; child may raise only its own soft limit
+resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+resource.setrlimit(resource.RLIMIT_FSIZE,(41943040,41943040))
+def term(sig,frame):
+ global interrupted
+ interrupted=True
+signal.signal(signal.SIGTERM,term)
+def digest(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def checked(rel,expected):
+ p=W/rel
+ assert not pathlib.PurePosixPath(rel).is_absolute() and '..' not in pathlib.PurePosixPath(rel).parts
+ q=W
+ for part in pathlib.PurePosixPath(rel).parts:
+  q=q/part; assert not q.is_symlink()
+ assert p.is_file() and digest(p)==expected
+ return p
+def cli_limits():
+ resource.setrlimit(resource.RLIMIT_AS,(4294967296,4294967296))
+ resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+ resource.setrlimit(resource.RLIMIT_CPU,(20,20))
+
+def cli(args,deadline):
+ global seen,callno,cli_safe
+ if not cli_safe:raise RuntimeError('prior_cli_cleanup_unknown')
+ if time.monotonic()>=deadline or (interrupted and deadline<=T+65): raise RuntimeError('deadline')
+ callno+=1
+ argv=['/usr/bin/docker','--config',str(N/'docker'),*args]
+ env={'PATH':'/usr/bin:/bin','DOCKER_HOST':'unix:///var/run/docker.sock','GOMAXPROCS':'2','GOMEMLIMIT':'256MiB'}
+ raw={k:open(N/('cli-%03d-%s.raw'%(callno,k)),'xb',buffering=0) for k in ['out','err']}
+ cli_safe=False
+ p=subprocess.Popen(argv,env=env,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,stderr=subprocess.PIPE,start_new_session=True,preexec_fn=cli_limits)
+ sel=selectors.DefaultSelector(); buffers={'out':bytearray(),'err':bytearray()}; failure=''
+ for pipe,key in [(p.stdout,'out'),(p.stderr,'err')]:
+  os.set_blocking(pipe.fileno(),False);sel.register(pipe,selectors.EVENT_READ,key)
+ def peek():return os.waitid(os.P_PID,p.pid,os.WEXITED|os.WNOHANG|os.WNOWAIT)
+ try:
+  while sel.get_map() or peek() is None:
+   if time.monotonic()>=deadline:failure='cli_timeout';break
+   for k,_ in sel.select(.05):
+    b=os.read(k.fileobj.fileno(),8192)
+    if not b:sel.unregister(k.fileobj);k.fileobj.close();continue
+    keep=b[:max(0,MAXOUT-seen)];seen+=len(keep)
+    raw[k.data].write(keep);buffers[k.data].extend(keep)
+    if len(keep)!=len(b):failure='output_cap';break
+   if failure:break
+ finally:
+  sel.close()
+  for f in raw.values():f.close()
+  # Retain unreaped session leader until group signals; only this owned CLI.
+  for sig in [signal.SIGTERM,signal.SIGKILL]:
+   try:os.killpg(p.pid,sig)
+   except ProcessLookupError:pass
+  until=min(deadline+.5,T+83)
+  while peek() is None and time.monotonic()<until:time.sleep(.01)
+  if peek() is None:raise RuntimeError('cli_cleanup_unknown')
+  rc=p.wait(timeout=max(.01,until-time.monotonic()))
+  try:os.killpg(p.pid,0)
+  except ProcessLookupError:pass
+  else:raise RuntimeError('cli_group_unknown')
+ cli_safe=True
+ event={'args':args,'rc':rc,'out':buffers['out'].decode('utf8','replace'),'err':buffers['err'].decode('utf8','replace'),'failure':failure}
+ events.append(event)
+ if failure:raise RuntimeError(failure)
+ return event
+
+def must(args,deadline):
+ e=cli(args,deadline)
+ if e['rc']!=0:raise RuntimeError('docker_failed')
+ return e
+
+def absent(name,deadline):
+ e=cli(['container','inspect','--format','{{.Name}}',name],deadline)
+ expected=['Error: No such container: '+name+'\n','Error response from daemon: No such container: '+name+'\n','Error: No such object: '+name+'\n']
+ if e['rc']!=1 or e['out'] not in ['', '\n'] or e['err'] not in expected:raise RuntimeError('container_not_proven_absent')
+
+def common(name,memory,pids):
+ return ['run','--pull=never','--name',name,'--cidfile',str(N/(name+'.cid')),'--label','warden.test=task9','--label','warden.owner='+OWN,'--network','none','--read-only','--cap-drop','ALL','--security-opt','no-new-privileges','--user','postgres','--memory',memory,'--memory-swap',memory,'--pids-limit',pids,'--cpus','2','--shm-size','1m','--log-driver','local','--log-opt','max-size=1m','--log-opt','max-file=1','--log-opt','compress=false']
+
+def bind(src,dst,readonly=True):
+ return ['--mount','type=bind,src='+str(src)+',dst='+dst+(',readonly' if readonly else '')]
+
+CID=None; ready=False; readiness_result='NOT_ATTEMPTED'; runtime_state=None
+runtime_exit=None; cause_known_or_unknown='UNKNOWN'; cause_evidence=None
+state_observed=False; logs_observed=False; cleanup_known=False; failures=[]
+
+def bind_owned(deadline):
+ global CID
+ p=N/(PG+'.cid')
+ if p.is_symlink() or not p.is_file():raise RuntimeError('owned_cidfile_missing')
+ raw=p.read_bytes()
+ if len(raw) not in [64,65] or (len(raw)==65 and raw[-1:]!=b'\n'):raise RuntimeError('owned_cidfile_invalid')
+ candidate=raw[:64].decode('ascii')
+ if any(c not in '0123456789abcdef' for c in candidate):raise RuntimeError('owned_cidfile_invalid')
+ if CID is not None and CID!=candidate:raise RuntimeError('owned_cid_changed')
+ template='{"id":{{json .Id}},"name":{{json .Name}},"owner":{{json (index .Config.Labels "warden.owner")}}}'
+ e=must(['container','inspect','--format',template,candidate],deadline)
+ identity=json.loads(e['out'])
+ if e['err'] or identity!={'id':candidate,'name':'/'+PG,'owner':OWN}:raise RuntimeError('owned_identity_mismatch')
+ CID=candidate
+ return CID
+
+try:
+ assert os.getuid()==1000 and os.geteuid()==1000 and not os.path.lexists(N)
+ assert digest(M)=='1ca3cbfa3cf4a3ba960dc4ced03f8eb24d2e8429e9ae5e7b0e34d3d08b54fbbd'
+ assert digest(F)=='8f498b9220b29dd8b26753950a1896631265df3a6e2a3abf810872eb2e5be6a8'
+ freeze=json.loads(F.read_text())
+ assert freeze['phase']=='FIRST_RED' and len(freeze['source'])==12
+ assert freeze['material_sha256']==digest(M)
+ # Preserve historical 12-source freeze; no SDK/module/artifact rehash or copy.
+ for rel,h in freeze['source'].items():checked(rel,h)
+ N.mkdir(mode=0o700);created=True;OWN=os.urandom(16).hex()
+ for d in ['docker','socket']:(N/d).mkdir(mode=0o755)
+ # Host parent N0700 isolates the nonroot PG's writable socket directory.
+ (N/'socket').chmod(0o777)
+ assert not os.path.lexists(N/(PG+'.cid'))
+ absent(PG,min(T+12,time.monotonic()+2))
+ assert time.monotonic()<T+15
+ pgargs=common(PG,'512m','96')+['-d','--tmpfs','/var/lib/postgresql:rw,noexec,nosuid,nodev,size=192m,mode=1777','--tmpfs','/tmp:rw,noexec,nosuid,nodev,size=8m,mode=1777']+bind(N/'socket','/var/run/postgresql',False)+['-e','PGDATA=/var/lib/postgresql/task9','-e','POSTGRES_DB=warden_test','-e','POSTGRES_HOST_AUTH_METHOD=trust','-e','POSTGRES_INITDB_ARGS=-c dynamic_shared_memory_type=mmap',IMAGE,'postgres','-c','listen_addresses=','-c','unix_socket_directories=/var/run/postgresql','-c','unix_socket_permissions=0777','-c','shared_buffers=32MB','-c','max_connections=20','-c','max_parallel_workers=0','-c','dynamic_shared_memory_type=mmap','-c','max_wal_size=32MB','-c','min_wal_size=32MB']
+ attempted.append(PG)
+ started=must(pgargs,min(T+22,time.monotonic()+6))
+ bind_owned(min(T+24,time.monotonic()+2))
+ if started['out'] not in [CID,CID+'\n'] or started['err']:raise RuntimeError('run_cid_receipt_mismatch')
+ readiness_result='DEADLINE_NOT_READY'
+ while time.monotonic()<T+30:
+  e=cli(['exec','--user','postgres',CID,'/bin/sh','-c','test "$(cat /proc/1/comm)" = postgres && exec pg_isready -h /var/run/postgresql -U postgres -d warden_test -t 1'],min(T+31,time.monotonic()+2))
+  if e['rc']==0:ready=True;readiness_result='FINAL_POSTGRES_READY';break
+  stopped=['Error response from daemon: container '+CID+' is not running\n','Error response from daemon: Container '+CID+' is not running\n']
+  if e['rc']==1 and e['out']=='' and e['err'] in stopped:
+   readiness_result='EXACT_OWNED_CID_NOT_RUNNING';break
+  if e['rc'] not in [1,2] or e['err']:raise RuntimeError('readiness_unknown')
+  time.sleep(.1)
+except BaseException as exc:
+ failures.append('work:'+type(exc).__name__+':'+str(exc))
+finally:
+ # Capture State AND tail80 on both ready and not-ready paths, before cleanup.
+ # Ownership/CID/label/name must be established even after a partial run receipt.
+ owned=False
+ if attempted and cli_safe:
+  try:
+   bind_owned(min(T+60,time.monotonic()+2));owned=True
+  except BaseException as exc:failures.append('identity:'+type(exc).__name__+':'+str(exc))
+ if owned and cli_safe:
+  try:
+   state_event=cli(['container','inspect','--format','{{json .State}}',CID],min(T+62,time.monotonic()+2))
+   if state_event['rc']!=0 or state_event['err']:raise RuntimeError('state_observation_failed')
+   runtime_state=json.loads(state_event['out'])
+   if not isinstance(runtime_state,dict) or type(runtime_state.get('Running')) is not bool or type(runtime_state.get('ExitCode')) is not int:raise RuntimeError('state_shape_unknown')
+   runtime_exit=None if runtime_state['Running'] else runtime_state['ExitCode']
+   state_observed=True
+   if runtime_state.get('OOMKilled') is True:
+    cause_known_or_unknown='KNOWN_OOM_KILLED';cause_evidence='State.OOMKilled=true'
+   elif isinstance(runtime_state.get('Error'),str) and runtime_state['Error']:
+    cause_known_or_unknown='KNOWN_DAEMON_STATE_ERROR';cause_evidence=runtime_state['Error']
+   else:cause_known_or_unknown='UNKNOWN_REQUIRES_ROOT_LOG_REVIEW'
+  except BaseException as exc:failures.append('state:'+type(exc).__name__+':'+str(exc))
+ if owned and cli_safe:
+  try:
+   log_event=cli(['logs','--tail','80',CID],min(T+65,time.monotonic()+3))
+   if log_event['rc']!=0:raise RuntimeError('log_observation_failed')
+   logs_observed=True
+  except BaseException as exc:failures.append('logs:'+type(exc).__name__+':'+str(exc))
+ # No further work/Go/tests. Only this CID, its name, and owned CLI groups.
+ if attempted and cli_safe:
+  try:
+   if not (N/(PG+'.cid')).exists():
+    absent(PG,min(T+78,time.monotonic()+2));cleanup_known=True
+   else:
+    bind_owned(min(T+78,time.monotonic()+2))
+    must(['rm','-f','-v',CID],min(T+80,time.monotonic()+4))
+    absent(PG,min(T+82,time.monotonic()+2));cleanup_known=True
+  except BaseException as exc:failures.append('cleanup:'+type(exc).__name__+':'+str(exc))
+ elif not attempted:cleanup_known=True
+ if not cli_safe:failures.append('owned_cli_cleanup_unknown_STOP')
+ if interrupted:failures.append('external_TERM')
+ if time.monotonic()>=T+85:failures.append('status_deadline')
+ if 'freeze' in locals():
+  try:
+   for rel,h in freeze['source'].items():checked(rel,h)
+   assert digest(M)==freeze['material_sha256'] and digest(F)=='8f498b9220b29dd8b26753950a1896631265df3a6e2a3abf810872eb2e5be6a8'
+  except BaseException as exc:failures.append('source_or_freeze:'+type(exc).__name__+':'+str(exc))
+ receipt_complete=state_observed and logs_observed and cleanup_known and cli_safe and not failures
+ status='DIAGNOSTIC_RECEIPT_COMPLETE' if receipt_complete else 'UNKNOWN_FAILURE'
+ result={'phase':'DIAGNOSTIC_ONLY','diagnostic_allowance':'1/1','first_red':'SPENT_2/2_UNCHANGED','status':status,'receipt_complete':receipt_complete,'pg_ready':ready,'readiness_result':readiness_result,'runtime_state':runtime_state,'runtime_exit':runtime_exit,'cause_known_or_unknown':cause_known_or_unknown,'cause_evidence':cause_evidence,'state_observed':state_observed,'logs_observed':logs_observed,'failures':failures,'cleanup_known':cleanup_known,'cli_group_cleanup_known':cli_safe,'CID':CID,'owner_label':OWN,'owned_name':PG,'evidence_bytes':seen,'elapsed':time.monotonic()-T,'old_task16':'UNTOUCHED_UNKNOWN'}
+ if created:
+  (N/'events.json').write_text(json.dumps(events,indent=2)+'\n')
+  (N/'status.json').write_text(json.dumps(result,indent=2)+'\n')
+ print(json.dumps(result))
+sys.exit(0 if status=='DIAGNOSTIC_RECEIPT_COMPLETE' else 2)

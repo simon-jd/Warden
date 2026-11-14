@@ -1,0 +1,114 @@
+# Task 6: Entra objects created and deleted for the real-IdP check (all owned by the signed-in user)
+# Redacted: tenant ID -> <tenant-id>, user object ID -> <user-oid>. terraform 1.17.1, hashicorp/azuread 3.10.0, state in .cache (not in git).
+# Redacted 2026-11-12: another project's identifiers -> placeholders (<other-project-app>, <other-project-app-2>, <other-project-app-id>, <other-project-app-object-id>, <other-project-key>, <other-project>, <other-project-owner>, <other-project-storage>); counts and structure unchanged.
+
+### terraform apply (apply_start=2026-11-11T01:16:37Z .. 2026-11-11T01:16:41Z)
+azuread_application.api: Creating...
+azuread_application.api: Creation complete after 2s [id=/applications/00000000-0000-0000-0000-000000000002]
+azuread_application_identifier_uri.api: Creating...
+azuread_application_pre_authorized.clients["04b07795-8ddb-461a-bbee-02f9e1bf7b46"]: Creating...
+azuread_service_principal.api: Creating...
+azuread_application_identifier_uri.api: Creation complete after 0s [id=/applications/00000000-0000-0000-0000-000000000002/identifierUris/YXBpOi8vMDAwMDAwMDAtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAx]
+azuread_application_pre_authorized.clients["04b07795-8ddb-461a-bbee-02f9e1bf7b46"]: Creation complete after 1s [id=00000000-0000-0000-0000-000000000002/preAuthorizedApplication/04b07795-8ddb-461a-bbee-02f9e1bf7b46]
+azuread_service_principal.api: Creation complete after 2s [id=/servicePrincipals/00000000-0000-0000-0000-000000000003]
+Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
+Outputs:
+application_object_id = "00000000-0000-0000-0000-000000000002"
+oidc_audience = "00000000-0000-0000-0000-000000000001"
+oidc_issuer = "https://login.microsoftonline.com/<tenant-id>/v2.0"
+oidc_jwks_url = "https://login.microsoftonline.com/<tenant-id>/discovery/v2.0/keys"
+scope = "api://00000000-0000-0000-0000-000000000001/warden.access"
+service_principal_object_id = "00000000-0000-0000-0000-000000000003"
+
+### az ad app show (read back after create)
+{
+  "appId": "00000000-0000-0000-0000-000000000001",
+  "createdDateTime": "2026-11-11T01:16:38Z",
+  "displayName": "warden-lab-api",
+  "federated": null,
+  "id": "00000000-0000-0000-0000-000000000002",
+  "identifierUris": [
+    "api://00000000-0000-0000-0000-000000000001"
+  ],
+  "keyCredentials": [],
+  "passwordCredentials": [],
+  "preAuthorized": [
+    {
+      "appId": "04b07795-8ddb-461a-bbee-02f9e1bf7b46",
+      "delegatedPermissionIds": [
+        "eb84a779-51cc-4ba7-af01-55dc258737a7"
+      ]
+    }
+  ],
+  "requestedAccessTokenVersion": 2,
+  "scopes": [
+    {
+      "id": "eb84a779-51cc-4ba7-af01-55dc258737a7",
+      "isEnabled": true,
+      "type": "User",
+      "value": "warden.access"
+    }
+  ],
+  "signInAudience": "AzureADMyOrg",
+  "tags": [
+    "project=warden",
+    "owner=codex-warden",
+    "ttl=2026-11-11T06:00:00Z",
+    "est_usd_per_hour=0"
+  ]
+}
+
+### az ad sp show (read back after create); Graph beta createdDateTime 2026-11-11T01:16:40Z
+{
+  "appId": "00000000-0000-0000-0000-000000000001",
+  "appRoleAssignmentRequired": true,
+  "displayName": "warden-lab-api",
+  "id": "00000000-0000-0000-0000-000000000003",
+  "keyCredentials": [],
+  "passwordCredentials": [],
+  "servicePrincipalType": "Application",
+  "tags": [
+    "project=warden",
+    "owner=codex-warden",
+    "ttl=2026-11-11T06:00:00Z",
+    "est_usd_per_hour=0"
+  ]
+}
+
+### terraform destroy (2026-11-11T02:38:50Z .. 2026-11-11T02:39:37Z)
+azuread_application_pre_authorized.clients["04b07795-8ddb-461a-bbee-02f9e1bf7b46"]: Destroying... [id=00000000-0000-0000-0000-000000000002/preAuthorizedApplication/04b07795-8ddb-461a-bbee-02f9e1bf7b46]
+azuread_application_identifier_uri.api: Destroying... [id=/applications/00000000-0000-0000-0000-000000000002/identifierUris/YXBpOi8vMDAwMDAwMDAtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAx]
+azuread_service_principal.api: Destroying... [id=/servicePrincipals/00000000-0000-0000-0000-000000000003]
+azuread_application_pre_authorized.clients["04b07795-8ddb-461a-bbee-02f9e1bf7b46"]: Destruction complete after 0s
+azuread_application_identifier_uri.api: Destruction complete after 1s
+azuread_service_principal.api: Destruction complete after 21s
+azuread_application.api: Destroying... [id=/applications/00000000-0000-0000-0000-000000000002]
+azuread_application.api: Destruction complete after 22s
+Destroy complete! Resources: 4 destroyed.
+
+### deletion check (objects gone; recycle-bin entries read by exact ID; --show-mine lists no warden-lab- app)
+### 2026-11-11T02:39:50Z az ad app show --id 00000000-0000-0000-0000-000000000002
+ERROR: Resource '00000000-0000-0000-0000-000000000002' does not exist or one of its queried reference-property objects are not present.
+### 2026-11-11T02:39:51Z az ad sp show --id 00000000-0000-0000-0000-000000000003
+ERROR: Resource '00000000-0000-0000-0000-000000000003' does not exist or one of its queried reference-property objects are not present.
+### 2026-11-11T02:39:52Z GET /v1.0/directory/deletedItems/00000000-0000-0000-0000-000000000002
+{"@odata.type": "#microsoft.graph.application", "id": "00000000-0000-0000-0000-000000000002", "displayName": "warden-lab-api", "deletedDateTime": "2026-11-11T02:39:16Z"}
+### 2026-11-11T02:39:52Z GET /v1.0/directory/deletedItems/00000000-0000-0000-0000-000000000003
+{"@odata.type": "#microsoft.graph.servicePrincipal", "id": "00000000-0000-0000-0000-000000000003", "displayName": "warden-lab-api", "deletedDateTime": "2026-11-11T02:38:55Z"}
+### 2026-11-11T02:39:53Z az ad app list --show-mine
+[
+  {
+    "appId": "<other-project-app-id>",
+    "displayName": "<other-project-app>",
+    "id": "<other-project-app-object-id>",
+    "tags": [
+      "ttl=project-end",
+      "owner=<other-project-owner>",
+      "project=<other-project>"
+    ]
+  }
+]
+
+### scripts/azure_reaper.sh at session start and end (subscription ID redacted)
+{"at": "2026-11-11T01:04:03Z", "event": "group-absent", "id": "/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab"}
+{"at": "2026-11-11T02:40:09Z", "event": "group-absent", "id": "/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab"}

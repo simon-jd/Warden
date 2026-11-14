@@ -1,0 +1,58 @@
+Press Ctrl-C to quit
+time=2026-11-13T08:02:13.972227136Z level=info msg="Initializing dissection cache..."
+xx drop (Unsupported L3 protocol) flow 0x0 to endpoint 0, ifindex 41, file bpf_lxc.c:1832, , identity 547->unknown: :: -> ff02::1:ff98:3b5f icmp NeighborSolicitation
+xx drop (Unsupported L3 protocol) flow 0x0 to endpoint 0, ifindex 41, file bpf_lxc.c:1832, , identity 547->unknown: fe80::d85a:e2ff:fe98:3b5f -> ff02::16 icmp 143(0)
+xx drop (Unsupported L3 protocol) flow 0x0 to endpoint 0, ifindex 41, file bpf_lxc.c:1832, , identity 547->unknown: fe80::d85a:e2ff:fe98:3b5f -> ff02::2 icmp RouterSolicitation
+xx drop (Unsupported L3 protocol) flow 0x0 to endpoint 0, ifindex 41, file bpf_lxc.c:1832, , identity 547->unknown: fe80::d85a:e2ff:fe98:3b5f -> ff02::16 icmp 143(0)
+xx drop (Unsupported L3 protocol) flow 0x0 to endpoint 0, ifindex 41, file bpf_lxc.c:1832, , identity 547->unknown: fe80::d85a:e2ff:fe98:3b5f -> ff02::2 icmp RouterSolicitation
+xx drop (Unsupported L3 protocol) flow 0x0 to endpoint 0, ifindex 41, file bpf_lxc.c:1832, , identity 547->unknown: fe80::d85a:e2ff:fe98:3b5f -> ff02::2 icmp RouterSolicitation
+xx drop (Unsupported L3 protocol) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1832, , identity 57053->unknown: :: -> ff02::16 icmp 143(0)
+xx drop (Unsupported L3 protocol) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1832, , identity 57053->unknown: :: -> ff02::16 icmp 143(0)
+xx drop (Unsupported L3 protocol) flow 0x0 to endpoint 0, ifindex 45, file bpf_lxc.c:1832, , identity 5282->unknown: :: -> ff02::1:ffeb:b80e icmp NeighborSolicitation
+xx drop (Unsupported L3 protocol) flow 0x0 to endpoint 0, ifindex 45, file bpf_lxc.c:1832, , identity 5282->unknown: :: -> ff02::16 icmp 143(0)
+xx drop (Unsupported L3 protocol) flow 0x0 to endpoint 0, ifindex 45, file bpf_lxc.c:1832, , identity 5282->unknown: :: -> ff02::16 icmp 143(0)
+xx drop (Unsupported L3 protocol) flow 0x0 to endpoint 0, ifindex 47, file bpf_lxc.c:1832, , identity 4424->unknown: :: -> ff02::16 icmp 143(0)
+xx drop (Unsupported L3 protocol) flow 0x0 to endpoint 0, ifindex 47, file bpf_lxc.c:1832, , identity 4424->unknown: :: -> ff02::16 icmp 143(0)
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 43, file bpf_lxc.c:2401, , identity 57053->547: 10.42.0.67:64665 -> 10.42.0.180:3128 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 43, file bpf_lxc.c:2401, , identity 57053->547: 10.42.0.67:64665 -> 10.42.0.180:3128 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 43, file bpf_lxc.c:2401, , identity 57053->547: 10.42.0.67:16629 -> 10.42.0.180:3128 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 43, file bpf_lxc.c:2401, , identity 57053->547: 10.42.0.67:16629 -> 10.42.0.180:3128 tcp SYN
+xx drop (Unsupported L3 protocol) flow 0x0 to endpoint 0, ifindex 41, file bpf_lxc.c:1832, , identity 547->unknown: fe80::d85a:e2ff:fe98:3b5f -> ff02::2 icmp RouterSolicitation
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 43, file bpf_lxc.c:2401, , identity 57053->547: 10.42.0.67:58586 -> 10.42.0.180:3128 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 43, file bpf_lxc.c:2401, , identity 57053->547: 10.42.0.67:58586 -> 10.42.0.180:3128 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 43, file bpf_lxc.c:2401, , identity 57053->547: 10.42.0.67:58586 -> 10.42.0.180:3128 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 43, file bpf_lxc.c:2401, , identity 57053->547: 10.42.0.67:63740 -> 10.42.0.180:3128 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 43, file bpf_lxc.c:2401, , identity 57053->547: 10.42.0.67:63740 -> 10.42.0.180:3128 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 43, file bpf_lxc.c:2401, , identity 57053->547: 10.42.0.67:59406 -> 10.42.0.180:3128 tcp ACK
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->world: 10.42.0.67:50889 -> 198.18.18.20:80 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->host: 10.42.0.67:19074 -> 192.168.192.10:6443 tcp ACK
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->world: 10.42.0.67:46986 -> 198.18.18.22:443 tcp ACK
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->host: 10.42.0.67:37059 -> 192.168.192.10:6443 tcp ACK
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 45, file bpf_lxc.c:2401, , identity 5282->547: 10.42.0.172:27485 -> 10.42.0.180:3128 tcp ACK
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->world: 10.42.0.67:50889 -> 198.18.18.20:80 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->world: 10.42.0.67:50889 -> 198.18.18.20:80 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->world: 10.42.0.67:31177 -> 198.18.18.21:80 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->world: 10.42.0.67:31177 -> 198.18.18.21:80 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->world: 10.42.0.67:31177 -> 198.18.18.21:80 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->world: 10.42.0.67:56977 -> 198.18.18.22:443 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->world: 10.42.0.67:56977 -> 198.18.18.22:443 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->world: 10.42.0.67:35613 -> 198.18.18.40:53 udp
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->host: 10.42.0.67:55183 -> 192.168.192.10:6443 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->host: 10.42.0.67:55183 -> 192.168.192.10:6443 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 43, file bpf_lxc.c:2401, , identity 57053->547: 10.42.0.67:59406 -> 10.42.0.180:3128 tcp ACK
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->host: 10.42.0.67:55183 -> 192.168.192.10:6443 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->host: 10.42.0.67:17444 -> 192.168.192.10:6443 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->world: 10.42.0.67:46986 -> 198.18.18.22:443 tcp ACK
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->host: 10.42.0.67:19074 -> 192.168.192.10:6443 tcp ACK
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->host: 10.42.0.67:37059 -> 192.168.192.10:6443 tcp ACK
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 45, file bpf_lxc.c:2401, , identity 5282->547: 10.42.0.172:27485 -> 10.42.0.180:3128 tcp ACK
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->host: 10.42.0.67:17444 -> 192.168.192.10:6443 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->host: 10.42.0.67:17444 -> 192.168.192.10:6443 tcp SYN
+xx drop (Policy denied by denylist) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->16777234: 10.42.0.67:47373 -> 169.254.169.254:80 tcp SYN
+xx drop (Policy denied by denylist) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->16777234: 10.42.0.67:47373 -> 169.254.169.254:80 tcp SYN
+xx drop (Policy denied by denylist) flow 0x0 to endpoint 0, ifindex 43, file bpf_lxc.c:1654, , identity 57053->16777234: 10.42.0.67:47373 -> 169.254.169.254:80 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 45, file bpf_lxc.c:2401, , identity 5282->547: 10.42.0.172:55660 -> 10.42.0.180:3128 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 45, file bpf_lxc.c:2401, , identity 5282->547: 10.42.0.172:55660 -> 10.42.0.180:3128 tcp SYN
+xx drop (Unsupported L3 protocol) flow 0x0 to endpoint 0, ifindex 41, file bpf_lxc.c:1832, , identity 547->unknown: fe80::d85a:e2ff:fe98:3b5f -> ff02::2 icmp RouterSolicitation
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 45, file bpf_lxc.c:2401, , identity 5282->547: 10.42.0.172:19820 -> 10.42.0.180:3128 tcp SYN
+xx drop (Policy denied) flow 0x0 to endpoint 1818, ifindex 45, file bpf_lxc.c:2401, , identity 5282->547: 10.42.0.172:19820 -> 10.42.0.180:3128 tcp SYN

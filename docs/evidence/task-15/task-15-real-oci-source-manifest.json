@@ -1,0 +1,174 @@
+{
+  "schema": "warden.task15.real-oci-readiness.source-snapshot.v1",
+  "reviewed_source_commit": "f5ebf06100660ae930d33b0bdb5acfc9fde97eb1",
+  "purpose": "Exact proposed private-repository build and policy source allowlist; no upload has occurred.",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "bytes": 257,
+      "sha256": "eaa6f1331a6f1c3ea3b886b15022f9bf5d23d674fe0b089b8f6932f9d5d11de9"
+    },
+    {
+      "path": ".github/workflows/build.yml",
+      "bytes": 7612,
+      "sha256": "5a45bbea80b358c4c8fc8467f683a006e6cb9b696dcbb77927bb376734a06427"
+    },
+    {
+      "path": "controlplane/Dockerfile",
+      "bytes": 801,
+      "sha256": "ccc26e9888ccb042a1d95d17c26ab0194134388c119c0b0ba8faac4f34d42cc9"
+    },
+    {
+      "path": "controlplane/cmd/warden-api/main.go",
+      "bytes": 2716,
+      "sha256": "0757c07c653fa63c68e2b7fac5b228e4127eb9a7aeba286fb264c62332e818a7"
+    },
+    {
+      "path": "controlplane/internal/api/api.go",
+      "bytes": 3007,
+      "sha256": "23ef624ad25c005b74770ab8e10783f0b8784645079c8ffeeec94a31ae35271a"
+    },
+    {
+      "path": "controlplane/internal/audit/audit.go",
+      "bytes": 4307,
+      "sha256": "0cb775bb602fcdcdefe405a8587d11aa4dac79e018d457c1328c7f00eb932439"
+    },
+    {
+      "path": "controlplane/internal/canonical/json.go",
+      "bytes": 1942,
+      "sha256": "06b2298c869c69fa0877e120f4a14fd3942f5e5c60a0c79032bcb7ffcd8261a0"
+    },
+    {
+      "path": "controlplane/internal/runs/execution.go",
+      "bytes": 8280,
+      "sha256": "c51f603ae01bbdc29d2166f1bdde235b8a566a076545cd49f2775939f65298b7"
+    },
+    {
+      "path": "controlplane/internal/runs/policy.go",
+      "bytes": 3747,
+      "sha256": "c7dee18859b6ef5394d54060eb05c8a282d9b2a7b2709ff7b63deed94792762b"
+    },
+    {
+      "path": "controlplane/internal/runs/runs.go",
+      "bytes": 8162,
+      "sha256": "873f31f39e7ee0da23699e0bb95d2f7d993269c1c1e7a078a7e9de5f06efc3da"
+    },
+    {
+      "path": "controlplane/internal/scheduler/config.go",
+      "bytes": 3385,
+      "sha256": "5a567f0b1c8ba7615a2350cb1f316de8d77e36477ee38aa47959fff38d9b7c30"
+    },
+    {
+      "path": "controlplane/internal/scheduler/scheduler.go",
+      "bytes": 10804,
+      "sha256": "7da31a4beb0f05440fa8a29e1aefbedbccb65a24bc35652c5b3b03dbf07727f9"
+    },
+    {
+      "path": "controlplane/internal/store/migrations/001_init.sql",
+      "bytes": 1417,
+      "sha256": "f0630b47de866d358a9290b746a2017be1275e83780ede92b22e61617e6c76d8"
+    },
+    {
+      "path": "controlplane/internal/store/migrations/002_execution.sql",
+      "bytes": 962,
+      "sha256": "6d0bd9ff177a820520a77ef2c9b8392a89567a8663497342aeb0ce8d128a350d"
+    },
+    {
+      "path": "controlplane/internal/store/store.go",
+      "bytes": 1220,
+      "sha256": "45fe51e464def685c03f2ed808d9541b4e9df26d05e9f841cc7ae6e9dae31605"
+    },
+    {
+      "path": "controlplane/internal/tenant/tenant.go",
+      "bytes": 378,
+      "sha256": "9db4c0c158ca71efd1f87417191ddc37a68b1c7427ab98cf1d9d2e3ffb8cccbc"
+    },
+    {
+      "path": "go.mod",
+      "bytes": 2483,
+      "sha256": "bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa"
+    },
+    {
+      "path": "go.sum",
+      "bytes": 11340,
+      "sha256": "cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0"
+    },
+    {
+      "path": "policies/kyverno/block-kev.yaml",
+      "bytes": 600,
+      "sha256": "c40f729e6a64e39449afdf4cd4fcaf699ccde6cbf80f8d6d65b30f6a98059005"
+    },
+    {
+      "path": "policies/kyverno/verify-images.yaml",
+      "bytes": 650,
+      "sha256": "9b0b0a606cc9db0f1e065d896ef8919b6a2e5cfbd93f8ba8e723e6dc3ec66165"
+    },
+    {
+      "path": "policies/seccomp/default.json",
+      "bytes": 3478,
+      "sha256": "ab9e3171bf73398c0c42fa894d4dcd171f4cc35e00b8736f358a5e5885b57e53"
+    },
+    {
+      "path": "policies/seccomp/policy.go",
+      "bytes": 148,
+      "sha256": "a630e9fd32f2d678509de8a2be9f368841707be30794777d510a8bbedf23fbf1"
+    },
+    {
+      "path": "runtimes/gate/admission.go",
+      "bytes": 1919,
+      "sha256": "3aabb68f81513df1a571da54f371a114aa552a8b79c693e45ad807318f70d1fc"
+    },
+    {
+      "path": "runtimes/gate/gate.go",
+      "bytes": 8507,
+      "sha256": "0b5a5b140a7124c9d2a65567694e5b662d13bb99b7fdcd1cedadc434273f8284"
+    },
+    {
+      "path": "runtimes/gate/retirement.go",
+      "bytes": 13854,
+      "sha256": "962cfa63ac1f252e95375c63d076f079abc6ddf0a851b6b61f5b76f55b9c428f"
+    },
+    {
+      "path": "runtimes/runc/driver.go",
+      "bytes": 6113,
+      "sha256": "03553fcef14b58060129d3a16ae5ee012df9777699664ad289fffd232efe86f4"
+    },
+    {
+      "path": "runtimes/runc/handle.go",
+      "bytes": 3130,
+      "sha256": "3f6179e7e7b6ca7a72bc77053deb8be1eef6923483dc08da9b64ea4637e7fd65"
+    },
+    {
+      "path": "runtimes/runc/pids.go",
+      "bytes": 906,
+      "sha256": "9873b884e0d50178a9bd2eb6bd09a2ad912ee3d5778f83f775c5b319e4a6b084"
+    },
+    {
+      "path": "runtimes/runc/recovery.go",
+      "bytes": 1614,
+      "sha256": "bc6e1a9bf59dbbebe8178d441889fca4f320e2af9fc336f816ed53ad5742dd59"
+    },
+    {
+      "path": "runtimes/runc/runc.go",
+      "bytes": 6580,
+      "sha256": "ce83552620dfe20baca8e20019ba1f171eac5147fbd9b58eb8a9b663bb45503b"
+    },
+    {
+      "path": "runtimes/runc/socket.go",
+      "bytes": 3399,
+      "sha256": "273f48854a0293341c18046c0af03fa1285aa034ef93ba690b921faf63c1f218"
+    },
+    {
+      "path": "runtimes/runtime.go",
+      "bytes": 757,
+      "sha256": "8ac5e48f274292e74f9cd19d30f4e50b5ce8a772884f2ef361d3a2eec3af7f2b"
+    },
+    {
+      "path": "scripts/supplychain.py",
+      "bytes": 16426,
+      "sha256": "237cac53e63b83bada908cffb9703a1492f3c06794516f8629d5527377320c28"
+    }
+  ],
+  "total_files": 33,
+  "total_bytes": 140901
+}

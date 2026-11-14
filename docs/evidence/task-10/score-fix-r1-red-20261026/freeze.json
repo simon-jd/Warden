@@ -1,0 +1,92 @@
+{
+  "base_head_root_attested": "e2fbb97f05f4d062e7a310f23a3907b4be127cc6",
+  "files": [
+    {
+      "bytes": 5141,
+      "path": "detect/dns_exfil/score.go",
+      "sha256": "0a9e6854c04985ec8dc517191016df2949af5ba8c85849e4b1bbe217f46053d3"
+    },
+    {
+      "bytes": 10264,
+      "path": "detect/dns_exfil/exfil_test.go",
+      "sha256": "c9d6c654ade6ba5b8e478f851cba8910a8b7dde87bc71d07a27249e305326a6c"
+    },
+    {
+      "bytes": 2483,
+      "path": "go.mod",
+      "sha256": "bad0afe37cbccb1da689ac5cff6dfd7edf741a977bcfa0d9d56928b91c6fa3aa"
+    },
+    {
+      "bytes": 11340,
+      "path": "go.sum",
+      "sha256": "cf5570603c6b110aad01b4a6c8f99874f62a1f8394a5d109bb7b06b1b5efbaa0"
+    },
+    {
+      "bytes": 36,
+      "path": ".cache/go-mod/golang.org/toolchain@v0.0.1-go1.26.10.linux-amd64/VERSION",
+      "sha256": "3f3fbe1bb9146eb51957d11386aabb1016b0cb389b8cb551e831abefc77ee54f"
+    },
+    {
+      "bytes": 157,
+      "path": ".cache/go-mod/golang.org/x/net@v0.61.0/go.mod",
+      "sha256": "7bbcec6b6af859939ec01bbe5234e556c867bf80e171abc23ad16c2c8e3951fe"
+    },
+    {
+      "bytes": 6711,
+      "path": ".cache/go-mod/golang.org/x/net@v0.61.0/publicsuffix/list.go",
+      "sha256": "f15f57281ee2efc1cde449d489d199547e8bb0d736ff81caf10467784728e05f"
+    },
+    {
+      "bytes": 1836,
+      "path": ".cache/go-mod/golang.org/x/net@v0.61.0/publicsuffix/table.go",
+      "sha256": "00add19ece14eec90b1320a81dc2c680474e88255e08df82f2d942bcf414979a"
+    },
+    {
+      "bytes": 32334,
+      "path": ".cache/go-mod/golang.org/x/net@v0.61.0/publicsuffix/data/text",
+      "sha256": "9b649c8a6aeabdb8971286d07683a20dc00e406a99631f960e0a47bb85df4af8"
+    },
+    {
+      "bytes": 52665,
+      "path": ".cache/go-mod/golang.org/x/net@v0.61.0/publicsuffix/data/nodes",
+      "sha256": "47ed63d4f3763b7e4515345e1f06054d3bff97c6175a6f53466218e633a0b9cb"
+    },
+    {
+      "bytes": 3744,
+      "path": ".cache/go-mod/golang.org/x/net@v0.61.0/publicsuffix/data/children",
+      "sha256": "761402a681757153843a161c71955577e76a5ef96abc1a845d20a9a96304bfb7"
+    },
+    {
+      "bytes": 14230,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-fix-r1-red-20261026/caller.py",
+      "sha256": "f8e4fc32afdf7e8a22726ee730e6a64b7b0b076656f57a772d98c98ad09a0c44"
+    },
+    {
+      "bytes": 1680,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-fix-r1-red-20261026/limit_child.py",
+      "sha256": "00d1548aa120f96593f32a0a3fad6734fafed9fae2d5bfc1957f7ee8e88d53e0"
+    },
+    {
+      "bytes": 159,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-fix-r1-red-20261026/isolated.go.mod",
+      "sha256": "ab13da096721305be7e5d83ce9ef53df32c01fd8798224aad6409f48c4955fad"
+    },
+    {
+      "bytes": 3986,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/exact.diff",
+      "sha256": "c62abb607108b837a49df6b1e9ed4d9d1cfba8825dbd18f49fd1ef7a2a2f78ea"
+    },
+    {
+      "bytes": 2863,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/telemetry-note.md",
+      "sha256": "281065235a8f3a9d4cb4be1e6707f30be5b05130044999944331342609fe9249"
+    },
+    {
+      "bytes": 5341,
+      "path": ".superpowers/sdd/2-warden-security-plan/task10-dns-score-telemetry-prep-20261026/preservation.json",
+      "sha256": "4fbde7e3f78ab4b582a7a55a6f31678b9b026ca3ff60fb32a721f5ba2849b241"
+    }
+  ],
+  "phase": "TASK10_ORIGINAL_R1_5_RED_PREPARED_NOT_EXECUTED",
+  "prior_freeze_sha256": "1442cc8e3eb83ad1c764a2c214d0bacc05faf3c23263cafb8d925a99f0a94ef6"
+}

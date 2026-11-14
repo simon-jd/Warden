@@ -1,0 +1,40 @@
+{
+  "observations": [
+    {
+      "log": "history-policy-red.log",
+      "additional_bytes": "512000000",
+      "at": "2026-10-24T21:39:48Z",
+      "download_bytes": "0",
+      "event": "local-preflight",
+      "free_bytes": 271477440512,
+      "project_allocated_bytes": 3920310272,
+      "service_memory_bytes": "2000000000",
+      "conservative_disk_bytes": 4432310272
+    },
+    {
+      "log": "history-policy-green.log",
+      "additional_bytes": "512000000",
+      "at": "2026-10-24T21:47:13Z",
+      "download_bytes": "0",
+      "event": "local-preflight",
+      "free_bytes": 272259702784,
+      "project_allocated_bytes": 3922759680,
+      "service_memory_bytes": "2000000000",
+      "conservative_disk_bytes": 4434759680
+    },
+    {
+      "log": "code-tests.log",
+      "additional_bytes": "512000000",
+      "at": "2026-10-24T21:53:36Z",
+      "download_bytes": "0",
+      "event": "local-preflight",
+      "free_bytes": 272260775936,
+      "project_allocated_bytes": 3925430272,
+      "service_memory_bytes": "2000000000",
+      "conservative_disk_bytes": 4437430272
+    }
+  ],
+  "max_conservative_disk_bytes": 4437430272,
+  "max_service_memory_bytes": 2000000000,
+  "meaning": "Configured admission accounting, not measured peak RSS; all own images and outstanding zero in each saved profile log."
+}

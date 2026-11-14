@@ -1,0 +1,75 @@
+--- SOURCE_BASE_1eb3ccb/controlplane/internal/jit/bindings_test.go
++++ controlplane/internal/jit/bindings_test.go
+@@ -1,6 +1,7 @@
+ package jit
+ 
+ import (
++	"bytes"
+ 	"context"
+ 	"encoding/json"
+ 	"errors"
+@@ -36,6 +37,7 @@
+ 	calls []string
+ 	keepDeleted bool
+ 	conflictClear bool
++	deleteFailures int
+ }
+ func (a *apiFixture) RoundTrip(req *http.Request) (*http.Response, error) {
+ 	a.calls = append(a.calls, req.Method)
+@@ -62,6 +64,13 @@
+ 		if err := json.NewDecoder(req.Body).Decode(&o); err != nil { a.t.Fatal(err) }
+ 		if metaString(o, "uid") != metaString(*a.object, "uid") || metaString(o, "resourceVersion") != metaString(*a.object, "resourceVersion") { return response(http.StatusConflict, `{}`), nil }
+ 		if len(o.Subjects) == 0 && a.conflictClear { a.conflictClear = false; return response(http.StatusConflict, `{}`), nil }
++		// Kubernetes storage may return an unchanged resourceVersion when the
++		// serialized update is identical. A no-op must not manufacture a fence.
++		proposed, err := json.Marshal(o)
++		if err != nil { a.t.Fatal(err) }
++		stored, err := json.Marshal(a.object)
++		if err != nil { a.t.Fatal(err) }
++		if bytes.Equal(proposed, stored) { return encode(), nil }
+ 		a.version++
+ 		o.Metadata["resourceVersion"] = raw(strconv.Itoa(a.version))
+ 		a.object = &o
+@@ -71,6 +80,7 @@
+ 		if err := json.NewDecoder(req.Body).Decode(&opts); err != nil { a.t.Fatal(err) }
+ 		if a.object == nil { return response(http.StatusNotFound, `{}`), nil }
+ 		if opts.Preconditions.UID != metaString(*a.object, "uid") || opts.Preconditions.ResourceVersion != metaString(*a.object, "resourceVersion") || len(a.object.Subjects) != 0 { a.t.Fatal("delete lacks current UID/version or prior clearing") }
++		if a.deleteFailures > 0 { a.deleteFailures--; return response(http.StatusServiceUnavailable, `{}`), nil }
+ 		if !a.keepDeleted { a.object = nil }
+ 		return response(http.StatusAccepted, `{}`), nil
+ 	}
+@@ -148,3 +158,34 @@
+ 	k = adapter(t, roundTripFunc(func(*http.Request) (*http.Response, error) { return response(http.StatusCreated, strings.Repeat(" ", maxBindingBody+1)), nil }))
+ 	if _, err := k.Reserve(context.Background(), adapterTarget()); !errors.Is(err, ErrUnavailable) { t.Fatal("oversized response accepted") }
+ }
++
++
++func TestKubernetesEmptyReservationCleanup(t *testing.T) {
++	api := &apiFixture{t: t}
++	k, target := adapter(t, api), adapterTarget()
++	r, err := k.Reserve(context.Background(), target)
++	if err != nil { t.Fatal("reservation prerequisite:", err) }
++	// Prove the fixture's no-op response before exercising production Remove.
++	_, status, err := k.call(context.Background(), http.MethodPut, target, false, *api.object)
++	if err != nil || status != http.StatusOK || metaString(*api.object, "resourceVersion") != r.ResourceVersion { t.Fatal("no-op version prerequisite failed") }
++	if err = k.Remove(context.Background(), target, r); err != nil || api.object != nil {
++		t.Errorf("empty reservation cleanup must reach DELETE: error=%v retained=%t", err, api.object != nil)
++	}
++}
++
++func TestKubernetesRemovalRetryAfterClearAndDeleteFailure(t *testing.T) {
++	api := &apiFixture{t: t, deleteFailures: 1}
++	k, target := adapter(t, api), adapterTarget()
++	r, err := k.Reserve(context.Background(), target)
++	if err != nil { t.Fatal("reservation prerequisite:", err) }
++	if err = k.Activate(context.Background(), target, r); err != nil { t.Fatal("activation prerequisite:", err) }
++	activeVersion := metaString(*api.object, "resourceVersion")
++	if err = k.Remove(context.Background(), target, r); err == nil { t.Fatal("delete failure prerequisite was not observed") }
++	if api.object == nil || len(api.object.Subjects) != 0 || api.deleteFailures != 0 || metaString(*api.object, "resourceVersion") == activeVersion { t.Fatal("clear-then-failed-delete prerequisite failed") }
++	clearedVersion := metaString(*api.object, "resourceVersion")
++	_, status, err := k.call(context.Background(), http.MethodPut, target, false, *api.object)
++	if err != nil || status != http.StatusOK || metaString(*api.object, "resourceVersion") != clearedVersion { t.Fatal("cleared no-op version prerequisite failed") }
++	if err = k.Remove(context.Background(), target, r); err != nil || api.object != nil {
++		t.Errorf("cleanup retry after cleared binding must reach DELETE: error=%v retained=%t", err, api.object != nil)
++	}
++}

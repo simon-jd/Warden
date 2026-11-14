@@ -1,0 +1,15 @@
+$ go test -count=1 ./identity/workload   # tests only, no workload.go yet
+# warden/identity/workload [warden/identity/workload.test]
+identity/workload/workload_test.go:35:38: undefined: AssertionType
+identity/workload/workload_test.go:56:7: undefined: Exchanger
+identity/workload/workload_test.go:72:12: undefined: Claims
+identity/workload/workload_test.go:76:18: undefined: Lifetime
+identity/workload/workload_test.go:79:9: undefined: Public
+identity/workload/workload_test.go:89:7: undefined: Exchanger
+identity/workload/workload_test.go:91:9: undefined: Error
+identity/workload/workload_test.go:101:7: undefined: Exchanger
+identity/workload/workload_test.go:111:16: undefined: Claims
+identity/workload/workload_test.go:122:34: undefined: Error
+identity/workload/workload_test.go:111:16: too many errors
+FAIL	warden/identity/workload [build failed]
+FAIL

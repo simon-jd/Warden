@@ -1,0 +1,21 @@
+...EE
+======================================================================
+ERROR: test_owned_retirement_cleanup_reaps_and_propagates_data_failure (test_runtime_lab_cleanup.RetirementCleanupTests.test_owned_retirement_cleanup_reaps_and_propagates_data_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_cleanup.py", line 104, in test_owned_retirement_cleanup_reaps_and_propagates_data_failure
+    from runtime_lab_runner import retirement_cleanup
+ImportError: cannot import name 'retirement_cleanup' from 'runtime_lab_runner' (/home/postedism/Desktop/Warden/scripts/runtime_lab_runner.py)
+
+======================================================================
+ERROR: test_populated_node_does_not_delete_data (test_runtime_lab_cleanup.RetirementCleanupTests.test_populated_node_does_not_delete_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_runtime_lab_cleanup.py", line 115, in test_populated_node_does_not_delete_data
+    from runtime_lab_runner import retirement_cleanup
+ImportError: cannot import name 'retirement_cleanup' from 'runtime_lab_runner' (/home/postedism/Desktop/Warden/scripts/runtime_lab_runner.py)
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.011s
+
+FAILED (errors=2)

@@ -1,0 +1,26 @@
+{
+  "source": "0c7dedbf38499ee991f879e93e43b9f5df9bb7f4",
+  "scope": "Actual capless inspection PASS and user-pause shutdown, no restoration",
+  "files": {
+    "README.md": {
+      "bytes": 2915,
+      "sha256": "6704443188a87f15ea9c537625b8266564a7505b2b0c1a534d77fa4be5af0765"
+    },
+    "controller-third-recovery-command.py": {
+      "bytes": 3449,
+      "sha256": "0fb889dc1a1a9b45e2a6fef02a35c1c07cf68ad160609c4110eee5eabcb56d90"
+    },
+    "inspect-meta.json": {
+      "bytes": 989,
+      "sha256": "0b338d20e9b0be96506552d1389a339e1bcc45d5f315311a7c628f4a0fb9ff4c"
+    },
+    "inspect.log": {
+      "bytes": 132,
+      "sha256": "a6355bd58157e7f428f1d535b96aeb338110fee11afcb8e830de4526fb762343"
+    },
+    "pause-shutdown-audit.json": {
+      "bytes": 1287,
+      "sha256": "c8060ac16f344bf76e861eec17237aabe5ef79e968e24ecb5f7af3ba3b29210d"
+    }
+  }
+}

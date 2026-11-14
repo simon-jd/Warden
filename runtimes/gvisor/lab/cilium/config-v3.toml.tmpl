@@ -1,0 +1,19 @@
+{{ template "base" . }}
+
+# Cilium mode: two gVisor handlers. "runsc" is the Task 3 one (network=none,
+# what the gVisor driver's runs use); "runsc-netstack" gives the sandbox
+# gVisor's own network stack on the pod's veth, so Cilium's policies apply
+# to it (RuntimeClass gvisor-netstack, created by the lab in this mode only).
+[plugins.'io.containerd.cri.v1.runtime'.containerd.runtimes.runsc]
+  runtime_type = "io.containerd.runsc.v1"
+
+[plugins.'io.containerd.cri.v1.runtime'.containerd.runtimes.runsc.options]
+  TypeUrl = "io.containerd.runsc.v1.options"
+  ConfigPath = "/etc/containerd/runsc.toml"
+
+[plugins.'io.containerd.cri.v1.runtime'.containerd.runtimes.runsc-netstack]
+  runtime_type = "io.containerd.runsc.v1"
+
+[plugins.'io.containerd.cri.v1.runtime'.containerd.runtimes.runsc-netstack.options]
+  TypeUrl = "io.containerd.runsc.v1.options"
+  ConfigPath = "/etc/containerd/runsc-netstack.toml"

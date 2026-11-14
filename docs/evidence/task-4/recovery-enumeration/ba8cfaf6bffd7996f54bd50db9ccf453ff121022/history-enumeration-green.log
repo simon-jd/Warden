@@ -1,0 +1,8 @@
+test_enumeration_never_implicitly_follows_omitted_link_targets (test_firecracker_recovery.MaterialPolicyTests.test_enumeration_never_implicitly_follows_omitted_link_targets) ... ok
+test_nofollow_enumeration_refuses_unknown_links_and_types_and_keeps_directory_exclusions (test_firecracker_recovery.MaterialPolicyTests.test_nofollow_enumeration_refuses_unknown_links_and_types_and_keeps_directory_exclusions) ... ok
+test_nofollow_enumeration_rejects_directory_replacement_before_descent (test_firecracker_recovery.MaterialPolicyTests.test_nofollow_enumeration_rejects_directory_replacement_before_descent) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.011s
+
+OK

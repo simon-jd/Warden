@@ -1,0 +1,12 @@
+{
+  "candidate": {
+    "bytes": 12373,
+    "path": "docs/evidence/task-6/controller-caller-integrity-fix5-approval-candidate.js",
+    "sha256": "7441ed1a8acf65caed11aa3621c4ec9768ab9d2e2f8424c7ada9bc8ec51710d0"
+  },
+  "fixture": {
+    "bytes": 10877,
+    "path": "docs/evidence/task-6/controller-caller-integrity-fix5-approval-fixture.js",
+    "sha256": "8a0cc3ffa15a99eb5b0541512c0dae74e5bc58b6f8d670ed170876a9007ee89b"
+  }
+}

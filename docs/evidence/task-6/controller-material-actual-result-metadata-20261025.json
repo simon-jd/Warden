@@ -1,0 +1,53 @@
+{
+  "admission.json": {
+    "bytes": 16337,
+    "dev": 66307,
+    "gid": 1000,
+    "ino": 54047573,
+    "mode": "0o600",
+    "nlink": 1,
+    "uid": 1000
+  },
+  "diagnostic-tool.json": {
+    "bytes": 11794,
+    "dev": 66307,
+    "gid": 1000,
+    "ino": 54047581,
+    "mode": "0o664",
+    "nlink": 1,
+    "uid": 1000
+  },
+  "receipt.json": {
+    "bytes": 2126,
+    "dev": 66307,
+    "gid": 1000,
+    "ino": 54047578,
+    "mode": "0o600",
+    "nlink": 1,
+    "uid": 1000
+  },
+  "root-proof-reader-tool.json": {
+    "bytes": 3582,
+    "dev": 66307,
+    "gid": 1000,
+    "ino": 54047579,
+    "mode": "0o664",
+    "nlink": 1,
+    "uid": 1000
+  },
+  "root-reconcile-tool.json": {
+    "absent": true
+  },
+  "root-tool.json": {
+    "bytes": 2119,
+    "dev": 66307,
+    "gid": 1000,
+    "ino": 54047580,
+    "mode": "0o664",
+    "nlink": 1,
+    "uid": 1000
+  },
+  "terminal.json": {
+    "absent": true
+  }
+}

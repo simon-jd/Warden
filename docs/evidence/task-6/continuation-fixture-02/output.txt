@@ -1,0 +1,19 @@
+test_all_fixed_entry_arguments_refused_before_filesystem (test_identity_cache_continue.ContinuationTests.test_all_fixed_entry_arguments_refused_before_filesystem) ... ok
+test_bad_checkpoint_hash_or_binding_has_no_mutation (test_identity_cache_continue.ContinuationTests.test_bad_checkpoint_hash_or_binding_has_no_mutation) ... ok
+test_capture_is_exclusive_and_cannot_replace_checkpoint (test_identity_cache_continue.ContinuationTests.test_capture_is_exclusive_and_cannot_replace_checkpoint) ... ok
+test_changed_source_is_rejected (test_identity_cache_continue.ContinuationTests.test_changed_source_is_rejected) ... ok
+test_durable_stage_file_and_parent_failures_retain_state (test_identity_cache_continue.ContinuationTests.test_durable_stage_file_and_parent_failures_retain_state) ... ok
+test_existing_stage_journal_blocks_without_chmod (test_identity_cache_continue.ContinuationTests.test_existing_stage_journal_blocks_without_chmod) ... ok
+test_live_change_after_checkpoint_is_rejected (test_identity_cache_continue.ContinuationTests.test_live_change_after_checkpoint_is_rejected) ... ok
+test_missing_and_unknown_and_hardlink_rejected (test_identity_cache_continue.ContinuationTests.test_missing_and_unknown_and_hardlink_rejected) ... ok
+test_missing_approval_refuses_before_private_journal_read (test_identity_cache_continue.ContinuationTests.test_missing_approval_refuses_before_private_journal_read) ... ok
+test_nonprefix_and_suffix_ctime_change_refused (test_identity_cache_continue.ContinuationTests.test_nonprefix_and_suffix_ctime_change_refused) ... ok
+test_old_intent_hash_mismatch_rejected (test_identity_cache_continue.ContinuationTests.test_old_intent_hash_mismatch_rejected) ... ok
+test_replaced_root_does_not_follow_symlink (test_identity_cache_continue.ContinuationTests.test_replaced_root_does_not_follow_symlink) ... ok
+test_success_preserves_metadata_siblings_and_old_intent_and_fsyncs_every_target (test_identity_cache_continue.ContinuationTests.test_success_preserves_metadata_siblings_and_old_intent_and_fsyncs_every_target) ... ok
+test_wrong_history_terminal_is_rejected_even_with_matching_history_hash (test_identity_cache_continue.ContinuationTests.test_wrong_history_terminal_is_rejected_even_with_matching_history_hash) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.354s
+
+OK

@@ -1,0 +1,37 @@
+{
+  "request": {
+    "cmd": "bash scripts/azure_reaper.sh",
+    "shell": "/bin/bash",
+    "login": false,
+    "tty": false,
+    "workdir": "/home/postedism/Desktop/Warden",
+    "sandbox_permissions": "require_escalated",
+    "justification": "Required Warden session-end TTL reaper, exact original no-args bash scripts/azure_reaper.sh/UID1000/normal approval route. Prior denials and endedUNKNOWN stay immutable. New independent scope proof was fully trusted-read609e72/a91f4f and locally committedc2bf4a6; same exact command approvedf12d3e→ffccc9 and currentstartae5078 RGabsent09:54:59Z. Current ab2504 just verified wrapper115B SHA8334c343107c59ef2db2f59b508e2caee6dca3647db8d63ebc10fe0ecc5671d6 and guard27828B SHA303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48 unchanged. Hardcoded Students subscription<subscription-id>/RG rg-warden-lab; wrapper onlyreap/noargs; defaults sessionNone selects only expired project=warden/owner=codex-warden UTCttl; full resourceID/no nested scopes, all candidate ids/tags re-shown before any deletion; unknown/change refuses, no down/protectedrg-mlinfra-westus path. Budget2.3 requires start/end. Commits sinceproof onlydocs and two DNSsource paths; no Azure creation/spend. If rejected STOP action immediately, preserve exactreason, no SSH/directaz/alternatewrapper/actor/repeated submission.",
+    "max_output_tokens": 2000,
+    "yield_time_ms": 1000
+  },
+  "native": {
+    "chunk_id": "307c57",
+    "wall_time_seconds": 0.752681367,
+    "exit_code": 0,
+    "original_token_count": 37,
+    "output": "{\"at\": \"2026-10-26T10:38:56Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+  },
+  "current_script_hash_read_native": {
+    "chunk_id": "ab2504",
+    "wall_time_seconds": 1.8453e-05,
+    "exit_code": 0,
+    "original_token_count": 313,
+    "output": "{\"args\": [\"status\", \"--short\", \"--untracked-files=normal\"], \"rc\": 0, \"stdout\": \" M docs/STATUS.md\\n M scripts/firecracker_code.py\\n?? detect/tests/\\n?? docs/evidence/azure-budget/reaper-task10-first-green-start-20261026.json\\n?? docs/evidence/task-10/integration-existing-boundary-20261026.json\\n?? docs/evidence/task-10/report-score-component-20261026.md\\n?? docs/evidence/task-10/review-r1-ruling-20261026.json\\n?? docs/evidence/task-10/review-score-component-20261026.md\\n?? docs/evidence/task-10/score-first-green-20261026/\\n?? docs/evidence/task-10/score-first-green-admission-20261026.json\\n?? docs/evidence/task-10/score-fix-r1-cover-20261026/\\n?? docs/evidence/task-10/score-fix-r1-cover-admission-20261026.json\\n?? docs/evidence/task-10/score-fix-r1-red-20261026/\\n?? docs/evidence/task-10/score-fix-r1-red-admission-20261026.json\\n?? docs/evidence/task-10/source-commit-and-initial-review-20261026.json\\n?? vuln/\\n\", \"stderr\": \"\"}\n{\"args\": [\"diff\", \"--cached\", \"--name-only\"], \"rc\": 0, \"stdout\": \"\", \"stderr\": \"\"}\nREAPER_STILL_FIXED scripts/azure_reaper.sh 115 8334c343107c59ef2db2f59b508e2caee6dca3647db8d63ebc10fe0ecc5671d6\nREAPER_STILL_FIXED scripts/azure_guard.py 27828 303980a3eb5bc2c7a53ae2be985ac29c643b73d4df907e094f8cface2489eb48\n"
+  },
+  "historical_scope_proof": "committedc2bf4a6; prior denial artifacts remain unchanged",
+  "observation": "2026-10-26T10:38:56Z group absent",
+  "no_Azure_creation_this_turn": true,
+  "cumulative_commitment_estimate_usd": 0,
+  "not_a_bill": true,
+  "protected_group_untouched": true,
+  "provenance": {
+    "source": "root_agent_in_existing_user_scope",
+    "human_response": false
+  }
+}

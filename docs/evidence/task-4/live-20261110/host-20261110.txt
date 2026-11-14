@@ -1,0 +1,7 @@
+# 采集时间 2026-11-10 16:19:57 PST
+hostname postedism-ubuntu-system-selfuse
+kernel 7.0.0-42-generic
+boot_time 2026-11-07 23:22:07  # 本次所有运行都在这次开机之后，内核相同
+cpu 13th Gen Intel(R) Core(TM) i9-13900K nproc 32
+MemTotal:       129209044 kB
+docker 29.9.2 cgroup_driver systemd cgroup_version 2

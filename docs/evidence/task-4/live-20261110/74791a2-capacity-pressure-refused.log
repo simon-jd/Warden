@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/.cache/fc-wt/scripts/firecracker_lab.py", line 410, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/postedism/Desktop/Warden/.cache/fc-wt/scripts/firecracker_lab.py", line 409, in main
+    else:execute(args.mode,args.other_service_memory_bytes)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/.cache/fc-wt/scripts/firecracker_lab.py", line 333, in execute
+    guard(RESERVE,memory)
+    ~~~~~^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/.cache/fc-wt/scripts/firecracker_lab.py", line 102, in guard
+    if own is None:raise ValueError('other Warden container present')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: other Warden container present

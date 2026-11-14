@@ -1,0 +1,6 @@
+.tools/
+.cache/
+.env
+*.test
+coverage.out
+docs/azure-spend.json.lock

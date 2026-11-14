@@ -1,0 +1,35 @@
+[
+  {
+    "run": "red",
+    "additional_bytes": "5512000000",
+    "at": "2026-10-25T08:58:43Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 266058637312,
+    "project_allocated_bytes": 4191817728,
+    "service_memory_bytes": "3000000000",
+    "total_charged_disk": 9703817728
+  },
+  {
+    "run": "green",
+    "additional_bytes": "5512000000",
+    "at": "2026-10-25T09:00:17Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 266041438208,
+    "project_allocated_bytes": 4192120832,
+    "service_memory_bytes": "3000000000",
+    "total_charged_disk": 9704120832
+  },
+  {
+    "run": "cover",
+    "additional_bytes": "5512000000",
+    "at": "2026-10-25T09:01:20Z",
+    "download_bytes": "0",
+    "event": "local-preflight",
+    "free_bytes": 266039681024,
+    "project_allocated_bytes": 4192636928,
+    "service_memory_bytes": "3000000000",
+    "total_charged_disk": 9704636928
+  }
+]

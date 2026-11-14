@@ -1,0 +1,16 @@
+{
+  "initial": {
+    "chunk_id": "7e63ec",
+    "wall_time_seconds": 1.00120084,
+    "session_id": 44153,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "completion": {
+    "chunk_id": "20f6e9",
+    "wall_time_seconds": 0.000010946,
+    "exit_code": 0,
+    "original_token_count": 213,
+    "output": "{\"changed_source_snapshots\": [\"scripts/identity_cache_continue.py\", \"scripts/test_identity_cache_continue.py\"], \"command\": [\"python3\", \"-B\", \"docs/evidence/task-6/continuation-fix2-cover-03/run.py\"], \"completion_requires_process_exit_zero\": true, \"dispatch_base\": \"1fb644b1a6b00165bb08e4447ba7550241b729f5\", \"duration_seconds\": 1.6270892380271107, \"errors\": 0, \"exit_code\": 0, \"failures\": 0, \"limits\": {\"address_bytes\": 536870912, \"cpu_seconds\": 30, \"file_bytes\": 33554432, \"wall_seconds\": 45}, \"live_cache_access\": false, \"skipped\": 0, \"source_commit_at_launch\": \"4c369be5aa5072a549ec34ba987a912646855d7e\", \"source_files\": 145, \"source_unchanged\": true, \"started_utc\": \"2026-10-25T11:30:32.386977+00:00\", \"test_target\": \"test_identity_cache_continue only, unittest in process\", \"tests_run\": 48, \"whole_wall_until_receipt_seconds\": 1.6291407339740545}\n"
+  }
+}

@@ -1,0 +1,25 @@
+test_private_records_anchor_replacement_and_exact_absence (test_firecracker_recovery.BoundaryTests.test_private_records_anchor_replacement_and_exact_absence) ... FAIL
+
+======================================================================
+FAIL: test_private_records_anchor_replacement_and_exact_absence (test_firecracker_recovery.BoundaryTests.test_private_records_anchor_replacement_and_exact_absence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 158, in test_private_records_anchor_replacement_and_exact_absence
+    self.assertEqual(recovery.read_private(fd, 'record.json'), b'{"safe":1}\n')
+                     ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/postedism/Desktop/Warden/scripts/firecracker_recovery.py", line 313, in read_private
+    raise ValueError('private metadata read not implemented')
+ValueError: private metadata read not implemented
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_firecracker_recovery.py", line 161, in test_private_records_anchor_replacement_and_exact_absence
+    except ValueError as error: self.fail('valid owned metadata refused: ' + str(error))
+                                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: valid owned metadata refused: private metadata read not implemented
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

@@ -1,0 +1,33 @@
+{
+  "fixed_template_classification": [
+    {
+      "line_number": 32,
+      "matched_fixed_templates": [
+        "certificate_cache"
+      ]
+    },
+    {
+      "line_number": 39,
+      "matched_fixed_templates": [
+        "core_initializing"
+      ]
+    },
+    {
+      "line_number": 74,
+      "matched_fixed_templates": [
+        "core_initializing"
+      ]
+    },
+    {
+      "line_number": 81,
+      "matched_fixed_templates": []
+    },
+    {
+      "line_number": 84,
+      "matched_fixed_templates": [
+        "fsverity_unsupported"
+      ]
+    }
+  ],
+  "raw_persisted": false
+}

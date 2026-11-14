@@ -1,0 +1,15 @@
+test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match) ... FAIL
+
+======================================================================
+FAIL: test_vm_compute_billing_and_linux_product_must_match (scripts.test_azure_guard.AzureGuardTests.test_vm_compute_billing_and_linux_product_must_match)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_azure_guard.py", line 191, in test_vm_compute_billing_and_linux_product_must_match
+    self.assertNotEqual(self.reserve(plan).returncode, 0)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0
+
+----------------------------------------------------------------------
+Ran 1 test in 0.218s
+
+FAILED (failures=1)

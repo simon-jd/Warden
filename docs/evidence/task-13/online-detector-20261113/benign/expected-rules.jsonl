@@ -1,0 +1,2 @@
+{"execution_id": "benign-runc-lab-session", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "benign-gvisor-run", "rule_id": "PTRACE attached to process"}

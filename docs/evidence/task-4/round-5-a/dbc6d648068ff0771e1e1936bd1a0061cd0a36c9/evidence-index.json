@@ -1,0 +1,115 @@
+{
+  "source": "dbc6d648068ff0771e1e1936bd1a0061cd0a36c9",
+  "tested_source": "dbc6d648068ff0771e1e1936bd1a0061cd0a36c9",
+  "scope": "Final-round A implementation/native fixtures only; no actual package/ABI/Docker/private-scene/Go/B operations; history logs are working-tree observations",
+  "files": {
+    "README.md": {
+      "bytes": 8512,
+      "sha256": "69d597acab79d45bf00c6a5eb65d9649bc1decf3e124f8e47c15663543badbac"
+    },
+    "evidence-verification.log": {
+      "bytes": 3028,
+      "sha256": "f75490710bd1e52ee8f716e90888806cead6fc7598e4dddea5c2581e91b30dfe"
+    },
+    "history-anchor-green.log": {
+      "bytes": 262,
+      "sha256": "34cd2661d59c13422b9628b6cfa1da73f8ca820bb293cf48eb271099d1cf4554"
+    },
+    "history-anchor-red.log": {
+      "bytes": 1641,
+      "sha256": "3986ad5ffc7ca163e8ebef7df3555ad93e5fb845720689875c7e7e7e6c4cd025"
+    },
+    "history-atime-green.log": {
+      "bytes": 259,
+      "sha256": "827b11500d815f90d81ee32eb43f1843bc071718f7f0d868c907dde53211c3ce"
+    },
+    "history-atime-red.log": {
+      "bytes": 1699,
+      "sha256": "b60c33570f9674901939a3ccf02efb8ae9dfe7ba8be1f92e679d004ccc1d8b67"
+    },
+    "history-boundary-green.log": {
+      "bytes": 637,
+      "sha256": "afe9c9ac741ec1c1333c9773ca01f710bdb09126c862ef5c2ae8379f97411355"
+    },
+    "history-boundary-red.log": {
+      "bytes": 4672,
+      "sha256": "837cfc707ce8873a59a75496825c0a82529895df0d12634498ac0505cf25ca65"
+    },
+    "history-focused-inventory-red.log": {
+      "bytes": 3307,
+      "sha256": "89ec9f39ccad3f4fbf09c9460afc83bb1fc99a80629a34e632375812950d5c6b"
+    },
+    "history-helper-green.log": {
+      "bytes": 2324,
+      "sha256": "2e3ce4ee8770346cfda836143e9d6dd08a8fe3e6a2ba101250c356417a7c8d55"
+    },
+    "history-host-green.log": {
+      "bytes": 2321,
+      "sha256": "7a4bf09595fa6b6ce80c243863f73a90ce6b6c2b9eb563bb0b3a1bb6a74e19b1"
+    },
+    "history-host-red.log": {
+      "bytes": 6479,
+      "sha256": "53566acfe73c9e021e492b07554abf23bf3b4bf936eba0423c599213638b3662"
+    },
+    "history-ingress-green.log": {
+      "bytes": 290,
+      "sha256": "0e26b20706ec44b9dccaef91729c94582643af6bab7359f01654ab4de0875f2f"
+    },
+    "history-inventory-green.log": {
+      "bytes": 454,
+      "sha256": "2ad85f4240edd6593d4045c478cc9125fb9377005815733190dab27bc517b1d2"
+    },
+    "history-inventory-red.log": {
+      "bytes": 6977,
+      "sha256": "a9948631065f1c63945e0e69318bfa884f5439842790e6d9de4715e0a3cfd442"
+    },
+    "history-postflight-green.log": {
+      "bytes": 494,
+      "sha256": "94d7b0e4002ae01f6052f8c8c1538366a239d55b4a40d7703a5e9ca757143c75"
+    },
+    "history-profile-green.log": {
+      "bytes": 574,
+      "sha256": "c39a65dcbfd26ac5dd4c91e72e202ce0f176024106747ab1caf3b2afb9649a21"
+    },
+    "history-profile-red.log": {
+      "bytes": 2992,
+      "sha256": "96c59b514dac966b68cf77b5aae9d0ba29159f4f39ddd557eff62fdf840651bc"
+    },
+    "history-refusal-green.log": {
+      "bytes": 276,
+      "sha256": "92fe66ed84efc0a132b3674a8254f11d7c5e3f33b1efb2229a3722695a72a335"
+    },
+    "history-refusal-red.log": {
+      "bytes": 995,
+      "sha256": "aa5e30f99672137a80f5c4fcb8f094583dc8d68f069224865ca53473cd2621df"
+    },
+    "history-restore-red.log": {
+      "bytes": 3392,
+      "sha256": "62fc2dbab8090e8ffee2e95cfdb2f9c8413258a36b55259db2255c403ec46052"
+    },
+    "history-workflow-green.log": {
+      "bytes": 456,
+      "sha256": "a6408ebb9d41fc6e1e040c8a4276f6eb91a3c1b842b526cfe40e51f3ef1d4472"
+    },
+    "history-workflow-red.log": {
+      "bytes": 2802,
+      "sha256": "00480ad5fde3b67262bd1fdd7dbefd7b7d3e6b8a37b2b442670ecad39f8b3620"
+    },
+    "old-evidence-verification.json": {
+      "bytes": 3028,
+      "sha256": "f75490710bd1e52ee8f716e90888806cead6fc7598e4dddea5c2581e91b30dfe"
+    },
+    "python-tests.log": {
+      "bytes": 4626,
+      "sha256": "2650f9ded7ff1b088352900fc4bb9e10593f0d7f2dade54635ff486d5375cfe4"
+    },
+    "source-manifest.json": {
+      "bytes": 11730,
+      "sha256": "27f3813617936b7e309f4a1d572b4f1cf2eecedca2a307524f675279198640ca"
+    },
+    "verify-command.py": {
+      "bytes": 2801,
+      "sha256": "3271e737ac6be03455ff87deeec0531d814b8c81a98217f0e3e35eab3ad70548"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+test_accounting_excludes_only_exact_reserved_child_and_counts_all_images (test_k3s_lab_recovery.RecoveryHostTest.test_accounting_excludes_only_exact_reserved_child_and_counts_all_images) ... ERROR
+test_budget_preserves_six_gb_plus_images_and_helper_charge (test_k3s_lab_recovery.RecoveryHostTest.test_budget_preserves_six_gb_plus_images_and_helper_charge) ... ok
+test_profile_uses_retained_image_and_only_two_capabilities (test_k3s_lab_recovery.RecoveryHostTest.test_profile_uses_retained_image_and_only_two_capabilities) ... ok
+test_exact_private_files_removed_without_reading_contents_or_public_files (test_k3s_lab_recovery.RecoveryTest.test_exact_private_files_removed_without_reading_contents_or_public_files) ... ok
+test_replacement_during_remount_preserves_both_directories (test_k3s_lab_recovery.RecoveryTest.test_replacement_during_remount_preserves_both_directories) ... ok
+test_wrong_private_shape_never_remounts_or_deletes (test_k3s_lab_recovery.RecoveryTest.test_wrong_private_shape_never_remounts_or_deletes) ... ok
+
+======================================================================
+ERROR: test_accounting_excludes_only_exact_reserved_child_and_counts_all_images (test_k3s_lab_recovery.RecoveryHostTest.test_accounting_excludes_only_exact_reserved_child_and_counts_all_images)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/postedism/Desktop/Warden/scripts/test_k3s_lab_recovery.py", line 107, in test_accounting_excludes_only_exact_reserved_child_and_counts_all_images
+    self.assertEqual(host.allocated_project(), expected)
+                     ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/postedism/Desktop/Warden/scripts/k3s_lab_recover.py", line 107, in allocated_project
+    fd = trusted_directory(str(ROOT), os.getuid())
+  File "/home/postedism/Desktop/Warden/scripts/runtime_lab_paths.py", line 25, in trusted_directory
+    raise ValueError('untrusted directory owner')
+ValueError: untrusted directory owner
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.009s
+
+FAILED (errors=1)

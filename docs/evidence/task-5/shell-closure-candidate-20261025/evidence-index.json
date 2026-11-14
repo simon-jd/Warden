@@ -1,0 +1,21 @@
+{
+  "scope": "Fixed public installed-material closure metadata only; no shell or attack execution",
+  "files": {
+    "README.md": {
+      "bytes": 1197,
+      "sha256": "af3864f860b15142f4f085a6c01af30754562d857d09f4088d58a0ef004eda03"
+    },
+    "controller-readonly-v1.py": {
+      "bytes": 4196,
+      "sha256": "47fa0e303733a3097ccc17779ce842b381a257e22d93b37b0d781b3bc91d404a"
+    },
+    "controller-readonly-v2.py": {
+      "bytes": 4351,
+      "sha256": "583bbd1392201415001c48de71ebad096f7dd446e7049215c497ff239443a669"
+    },
+    "metadata.json": {
+      "bytes": 3707,
+      "sha256": "f96c090f75a1a0ad2535d5718ac9963ccdfa4d091b3e1164c258311af7df59df"
+    }
+  }
+}

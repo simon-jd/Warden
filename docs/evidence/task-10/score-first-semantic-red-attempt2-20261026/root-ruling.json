@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-26T09:45:51.009804+00:00",
+  "decision": "ACCEPT_TASK10_SCORING_COMPONENT_SEMANTIC_RED",
+  "total_caller_attempt": 2,
+  "current_caller_allowance": "2/2 SPENT, no third RED caller/replay",
+  "prior_attempt1": "18b94d known1 preflight missingbuildid noRun/noGo INFRASTRUCTURE_FAILURE preserved, never relabelled",
+  "native": "a4a752/session96698 ->58336a known0",
+  "actual_Go_rc": 1,
+  "whole_seconds": 12.101651713019237,
+  "package_seconds": 0.01,
+  "raw_bytes": 294,
+  "raw_sha256": "b9f035ef569870515a6b07c9b64021bd0ba89d62225f24907dd16609021cb3e8",
+  "fixture": "Reconstructed4096B,128 legalTXT questions in31.75s, first31mean4.529606776303; then expected DNS score alert got nil at production Score stub",
+  "not_environment_RED": true,
+  "all17_inputs_stage_and_SDK_pins_unchanged": true,
+  "both_work_owned_telemetry_modes": "off newline unchanged",
+  "process_cleanup": "leader held WNOWAIT through all group signals; reaped known then same-group ECHILD under isolated frozen chain; native0 final status after fsync; no old PID/host quiescence claim",
+  "namespace_final_allocated": 60510208,
+  "namespace_files": 888,
+  "namespace_dirs": 269,
+  "largest_file": 13366088,
+  "observed_peak_work": 118288384,
+  "namespace_retained": true,
+  "new_UNKNOWN_memory": false,
+  "old_UNKNOWN9GB_Q5GB_and_all_holds": "unchanged",
+  "root_preparation_authority": "ordinary local existing Goal scope; no new human response or cloud/host permission",
+  "author_counter": {
+    "cumulative_prep": 196608,
+    "original_cap": 262144,
+    "remaining": 65536
+  },
+  "next": "Original author only implements scoring component plus inert one firstGREEN covering TestDNSScore cases, then root FULLREAD/fresh one GREEN and mandatory independent review; no author execution or sourceacceptance now",
+  "full_Task10": "OPEN actual transport/collector/HTTP/SNI/Cilium/Envoy/runc; scoring fixture is not packet transmission",
+  "Task9": "Component-only accepted, no suite replay; realidentity/RBAC/supervisedexpiry remain open",
+  "provenance": {
+    "source": "root_agent_in_existing_user_scope",
+    "human_response": false
+  }
+}

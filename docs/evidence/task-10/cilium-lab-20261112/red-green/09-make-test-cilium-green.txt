@@ -1,0 +1,22 @@
+# 2026-11-12T23:45:02-08:00 head 69e14f0; git status --short:
+ M Makefile
+ M scripts/test_makefile.py
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run1-1945/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2-attempt1/
+?? docs/evidence/task-10/cilium-lab-20261112/lab-run2/
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/09-make-test-cilium-green-attempt1-test-bug.txt
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/09-make-test-cilium-green.txt
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/09-make-test-cilium-red.txt
+$ taskset -c 0-7,16-31 python3 -I -B -m unittest discover -v -s scripts -t scripts -p test_makefile.py
+test_cilium_target_runs_the_live_package_on_a_cilium_lab (test_makefile.MakefileGoTargetsTest.test_cilium_target_runs_the_live_package_on_a_cilium_lab) ... ok
+test_every_go_command_disables_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_every_go_command_disables_vcs_stamping) ... ok
+test_failed_go_list_stops_test_and_vet (test_makefile.MakefileGoTargetsTest.test_failed_go_list_stops_test_and_vet) ... ok
+test_go_test_gets_listed_packages_without_vcs_stamping (test_makefile.MakefileGoTargetsTest.test_go_test_gets_listed_packages_without_vcs_stamping) ... ok
+test_no_packages_left_is_a_failure (test_makefile.MakefileGoTargetsTest.test_no_packages_left_is_a_failure) ... ok
+test_writable_ancestor_of_the_test_temp_dir_stops_test_go (test_makefile.MakefileGoTargetsTest.test_writable_ancestor_of_the_test_temp_dir_stops_test_go) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.143s
+
+OK
+exit 0

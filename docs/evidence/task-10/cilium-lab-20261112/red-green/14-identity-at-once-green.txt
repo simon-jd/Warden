@@ -1,0 +1,12 @@
+# 2026-11-13T08:26:29-08:00 head 5bca9b6; git status --short:
+ M controlplane/internal/ciliumlab/policy_test.go
+ M runtimes/gvisor/lab/cilium/values.yaml
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/14-identity-at-once-green.txt
+?? docs/evidence/task-10/cilium-lab-20261112/red-green/14-identity-at-once-red.txt
+$ go test -count=1 -run '.' ./controlplane/internal/ciliumlab
+ok  	warden/controlplane/internal/ciliumlab	0.005s
+exit 0
+$ .tools/helm/helm template cilium .tools/cilium/cilium-1.20.4.tgz --namespace kube-system -f runtimes/gvisor/lab/cilium/values.yaml --set k8sServiceHost=192.168.192.10 | grep -nE "identity-change-grace-period|identity-max-jitter"
+61:  # identity-change-grace-period is the grace period that needs to pass
+66:  identity-change-grace-period: "0s"
+320:  identity-max-jitter: 0s

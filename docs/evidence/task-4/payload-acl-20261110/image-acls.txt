@@ -1,0 +1,48 @@
+$ debugfs -R 'ea_list /' payload-lab.ext4
+debugfs 1.47.2 (1-Jan-2025)
+Extended attributes:
+  system.posix_acl_default (28) = 01 00 00 00 01 00 07 00 02 00 05 00 e9 03 00 00 04 00 05 00 10 00 05 00 20 00 05 00 
+  system.posix_acl_access (28) = 01 00 00 00 01 00 07 00 02 00 05 00 e9 03 00 00 04 00 05 00 10 00 00 00 20 00 00 00 
+$ debugfs -R 'ea_list /warden-probe' payload-lab.ext4
+debugfs 1.47.2 (1-Jan-2025)
+Extended attributes:
+  system.posix_acl_access (28) = 01 00 00 00 01 00 05 00 02 00 05 00 e9 03 00 00 04 00 05 00 10 00 05 00 20 00 05 00 
+$ debugfs -R 'ea_list /agent' payload-lab.ext4
+debugfs 1.47.2 (1-Jan-2025)
+/agent: File not found by ext2_lookup 
+$ debugfs -R 'ea_list /payload' payload-lab.ext4
+debugfs 1.47.2 (1-Jan-2025)
+/payload: File not found by ext2_lookup 
+$ debugfs -R 'ea_list /' agent-lab.ext4
+debugfs 1.47.2 (1-Jan-2025)
+Extended attributes:
+  system.posix_acl_default (28) = 01 00 00 00 01 00 07 00 02 00 05 00 e9 03 00 00 04 00 05 00 10 00 05 00 20 00 05 00 
+  system.posix_acl_access (28) = 01 00 00 00 01 00 07 00 02 00 05 00 e9 03 00 00 04 00 05 00 10 00 00 00 20 00 00 00 
+$ debugfs -R 'ea_list /warden-probe' agent-lab.ext4
+debugfs 1.47.2 (1-Jan-2025)
+/warden-probe: File not found by ext2_lookup 
+$ debugfs -R 'ea_list /agent' agent-lab.ext4
+debugfs 1.47.2 (1-Jan-2025)
+Extended attributes:
+  system.posix_acl_access (28) = 01 00 00 00 01 00 05 00 02 00 05 00 e9 03 00 00 04 00 05 00 10 00 05 00 20 00 05 00 
+$ debugfs -R 'ea_list /payload' agent-lab.ext4
+debugfs 1.47.2 (1-Jan-2025)
+Extended attributes:
+  system.posix_acl_default (28) = 01 00 00 00 01 00 07 00 02 00 05 00 e9 03 00 00 04 00 05 00 10 00 05 00 20 00 05 00 
+  system.posix_acl_access (28) = 01 00 00 00 01 00 07 00 02 00 05 00 e9 03 00 00 04 00 05 00 10 00 05 00 20 00 05 00 
+
+$ getfacl -p ~/Desktop/Warden/.cache/fc-wt/.cache/firecracker-code
+# file: /home/postedism/Desktop/Warden/.cache/fc-wt/.cache/firecracker-code
+# owner: postedism
+# group: postedism
+user::rwx
+user:grokbot:r-x	#effective:---
+group::r-x	#effective:---
+mask::---
+other::---
+default:user::rwx
+default:user:grokbot:r-x
+default:group::r-x
+default:mask::r-x
+default:other::r-x
+

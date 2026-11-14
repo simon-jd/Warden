@@ -1,0 +1,14 @@
+"""OCSF-to-OpenSearch adapter boundary; initial semantic TDD stub.
+
+No local event matcher belongs here. Conversion is not OpenSearch execution.
+"""
+
+from sigma.collection import SigmaCollection
+
+
+def convert_rule(text: str) -> list[str]:
+    """Parse one valid Sigma rule; query generation is intentionally pending."""
+    collection = SigmaCollection.from_yaml(text, collect_errors=False)
+    if len(collection.rules) != 1:
+        raise ValueError("exactly one Sigma rule is required")
+    return []

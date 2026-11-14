@@ -1,0 +1,260 @@
+{
+  "actuals": "No tests/cache/privatebody/host/cloud/identity operations; actual source gate and all operation/resource gates remain pending.",
+  "at_utc": "2026-10-25T11:34:40.611132+00:00",
+  "dispatch_base": "1fb644b1a6b00165bb08e4447ba7550241b729f5",
+  "head": "abd3c570ab51c6cd82e4be59d0c01c8b58e8dad6",
+  "new_artifacts_including_index": 31,
+  "new_evidence_bytes": 331263,
+  "old_report_prefix_identical": true,
+  "previous_review_head": "a51a923321ed4bd91936fc0afd84ed3eb2d92210",
+  "report_append_bytes": 7941,
+  "review_view": {
+    "full_bytes": 424757,
+    "full_path": ".superpowers/sdd/2-warden-security-plan/review-a51a923..abd3c57.diff",
+    "full_sha256": "ef7fd8d4b2ad0061fcfd2c44c52a4af683d9628d281c0c921db5105e0e0817da",
+    "omitted_exact_duplicate_bodies": [
+      {
+        "block_sha256": "52b3a796904fc738af96df2211a851586996639273dde66efca9f98811067d37",
+        "body_bytes": 15455,
+        "body_sha256": "ed6aa9a2eb83cde19ba2be1c8f564c116ec100265ebd4ca6346d2ed506c5697d",
+        "identical_body_kept_at": "docs/evidence/task-6/continuation-fix2-cover-03/post-source.json",
+        "path": "docs/evidence/task-6/continuation-fix2-cover-03/pre-source.json"
+      },
+      {
+        "block_sha256": "84a151e8c56983d36027285d84429944dfe43c3f7cbd5192d0622a944c7bbc89",
+        "body_bytes": 25135,
+        "body_sha256": "02d27512ecbdd498e0151b81a4f343686f8db128dc2f9ec8d508de7bf7cd93aa",
+        "identical_body_kept_at": "docs/evidence/task-6/continuation-fix2-cover-03/changed-source/scripts/identity_cache_continue.py",
+        "path": "docs/evidence/task-6/continuation-fix2-green-02/changed-source/scripts/identity_cache_continue.py"
+      },
+      {
+        "block_sha256": "35728d32275391a03a01abd331bb5acec9287cca56111101adc25ea5fc3a729d",
+        "body_bytes": 30179,
+        "body_sha256": "f622a016825a5daaeb5234bce7386120f211bbba336c4115ae4d9d320b6b9338",
+        "identical_body_kept_at": "docs/evidence/task-6/continuation-fix2-cover-03/changed-source/scripts/test_identity_cache_continue.py",
+        "path": "docs/evidence/task-6/continuation-fix2-green-02/changed-source/scripts/test_identity_cache_continue.py"
+      },
+      {
+        "block_sha256": "107d22a4887206d2a21297ff2e11c8b0a8dcd40f9d9535535deea65cbe0f2802",
+        "body_bytes": 15455,
+        "body_sha256": "ed6aa9a2eb83cde19ba2be1c8f564c116ec100265ebd4ca6346d2ed506c5697d",
+        "identical_body_kept_at": "docs/evidence/task-6/continuation-fix2-cover-03/post-source.json",
+        "path": "docs/evidence/task-6/continuation-fix2-green-02/post-source.json"
+      },
+      {
+        "block_sha256": "a69165295d0faf8e754e75ad477b6e7a655bf269b96e46570509b957e6037729",
+        "body_bytes": 15455,
+        "body_sha256": "ed6aa9a2eb83cde19ba2be1c8f564c116ec100265ebd4ca6346d2ed506c5697d",
+        "identical_body_kept_at": "docs/evidence/task-6/continuation-fix2-cover-03/post-source.json",
+        "path": "docs/evidence/task-6/continuation-fix2-green-02/pre-source.json"
+      },
+      {
+        "block_sha256": "5a54e2988ae44a45ea61e1d010f923357335f54d0bbe22fe4cf02d54372027f5",
+        "body_bytes": 15900,
+        "body_sha256": "6b35ab936b519682f48757b2809b5f2c5eae931a0926c432a2a0bdc6138fb319",
+        "identical_body_kept_at": "docs/evidence/task-6/continuation-fix2-green-02/baseline.json",
+        "path": "docs/evidence/task-6/continuation-fix2-red-01/baseline.json"
+      },
+      {
+        "block_sha256": "4921bea67a5ec4f4713d77a0c746c739ec28bf09f89145797fa449e894d62959",
+        "body_bytes": 30179,
+        "body_sha256": "f622a016825a5daaeb5234bce7386120f211bbba336c4115ae4d9d320b6b9338",
+        "identical_body_kept_at": "docs/evidence/task-6/continuation-fix2-cover-03/changed-source/scripts/test_identity_cache_continue.py",
+        "path": "docs/evidence/task-6/continuation-fix2-red-01/changed-source/scripts/test_identity_cache_continue.py"
+      },
+      {
+        "block_sha256": "07e6076c494411ceb68f65f8e943047bb306cd68cc30654d9c874ef4f3591edf",
+        "body_bytes": 15455,
+        "body_sha256": "05f5a8d42344ff4d64c7215426a85c9511928c8c50910719d8744eac637f3501",
+        "identical_body_kept_at": "docs/evidence/task-6/continuation-fix2-red-01/post-source.json",
+        "path": "docs/evidence/task-6/continuation-fix2-red-01/pre-source.json"
+      },
+      {
+        "block_sha256": "0b496af7bc9c02eed3943924e928e74ed243b53230e79385a465e50bf76d78e7",
+        "body_bytes": 3899,
+        "body_sha256": "b0e34008e1747e13145f76121da005c0ca9d64eed231cc1047c07ab00592c7fc",
+        "identical_body_kept_at": "docs/evidence/task-6/continuation-fix2-green-02/run.py",
+        "path": "docs/evidence/task-6/continuation-fix2-red-01/run.py"
+      }
+    ],
+    "retained_blocks": [
+      {
+        "block_sha256": "574f59c072d820791429a714d899045b4cf840736666eec38ad0dcb34f75510e",
+        "path": "docs/STATUS.md"
+      },
+      {
+        "block_sha256": "e66850bbde2b625c201cd00cf7787416d7af2c93ee9c46344181eff476b11bfb",
+        "path": "docs/evidence/plan-review.md"
+      },
+      {
+        "block_sha256": "8607ae72fb9a448a4d501164dc85891ce2577222d11a06fd1abb712d091bc138",
+        "path": "docs/evidence/task-6/cache-continuation-controller-rulings.md"
+      },
+      {
+        "block_sha256": "37923957426c95cf8135789a51ea3574dec245bfe2045ba64cc088489d884579",
+        "path": "docs/evidence/task-6/cache-continuation-substage-report.md"
+      },
+      {
+        "block_sha256": "0e0bc3cfe5699a36e5660f856638d93f8a53b72a14973e80093a94e1e043fb5a",
+        "path": "docs/evidence/task-6/continuation-fix2-artifact-sizes.json"
+      },
+      {
+        "block_sha256": "70f0fc0596b8b3a57ab57954fc9e4b3e97194611ad5b57055873d0fb0f12cdea",
+        "path": "docs/evidence/task-6/continuation-fix2-cover-03/baseline.json"
+      },
+      {
+        "block_sha256": "fdbe09b9cf4a6749262bf0e02ecf8bd23204387de0c5ac528bf50cddba2116a8",
+        "path": "docs/evidence/task-6/continuation-fix2-cover-03/changed-source/scripts/identity_cache_continue.py"
+      },
+      {
+        "block_sha256": "28c52af23312075b96ba3d02e412244bcc0b505e3e60f6f200b953f3c8ec16c5",
+        "path": "docs/evidence/task-6/continuation-fix2-cover-03/changed-source/scripts/test_identity_cache_continue.py"
+      },
+      {
+        "block_sha256": "9c041d14a9a068930cf31bdb249fd891d333192a5ce4c7cee44e4b0388442bb8",
+        "path": "docs/evidence/task-6/continuation-fix2-cover-03/commit-comparison.json"
+      },
+      {
+        "block_sha256": "459558610d61a83775cb52d39aec9cc33a721c5adbc492f05b188385b9c80d27",
+        "path": "docs/evidence/task-6/continuation-fix2-cover-03/intent.json"
+      },
+      {
+        "block_sha256": "c65dcdff1098359c19fe72162847d1fe3ccc2cc837e8ea222dda8704b66c6a53",
+        "path": "docs/evidence/task-6/continuation-fix2-cover-03/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "8d82a5891bd8edc6e63b7ccd7903c8f3f7344dd027c64c8d63d4ac1d26a241e0",
+        "path": "docs/evidence/task-6/continuation-fix2-cover-03/output.txt"
+      },
+      {
+        "block_sha256": "2b814af2b9ca39872f223e7704b3b222643640c0343de24328efbce86825e8b2",
+        "path": "docs/evidence/task-6/continuation-fix2-cover-03/post-source.json"
+      },
+      {
+        "block_sha256": "c81b66462191bb082ba7302ecbbb398660faf80d1a585f01ed28d42501dd3629",
+        "path": "docs/evidence/task-6/continuation-fix2-cover-03/receipt.json"
+      },
+      {
+        "block_sha256": "dee62ee25a4db875612ec32cd62d4376f608a1ddfa8e2b2cd1abbc86f80a473b",
+        "path": "docs/evidence/task-6/continuation-fix2-cover-03/run.py"
+      },
+      {
+        "block_sha256": "b7119b99e1f7c5a76b7fd1bc704703b17428cf6b98975f5d3a17754b73612071",
+        "path": "docs/evidence/task-6/continuation-fix2-green-02/baseline.json"
+      },
+      {
+        "block_sha256": "2b7c5e9b69768ff00683d47ef77d5e97f5f9c98fb96c2dfd2aca5275b6e069b0",
+        "path": "docs/evidence/task-6/continuation-fix2-green-02/intent.json"
+      },
+      {
+        "block_sha256": "865902ac160deee80ca28678c095de4c39f19befc6504c8ceb57b683bb704e4a",
+        "path": "docs/evidence/task-6/continuation-fix2-green-02/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "84b86e9db4b222d21deca0fe6cf5aa92d1e3acd2e82e40890ed0492c9771af10",
+        "path": "docs/evidence/task-6/continuation-fix2-green-02/output.txt"
+      },
+      {
+        "block_sha256": "a1327cd0c6481d839d6bb8e26805157e47d87fee3c0d133e73bbf216209b4db8",
+        "path": "docs/evidence/task-6/continuation-fix2-green-02/receipt.json"
+      },
+      {
+        "block_sha256": "213d67e60e21af71b3f768426270587b9a5002d41f453a0a7ba7bbd427d84967",
+        "path": "docs/evidence/task-6/continuation-fix2-green-02/run.py"
+      },
+      {
+        "block_sha256": "9bb1703482694c37e3c874827b04dad079d0f4d63bfa14c04f1d5701479bad42",
+        "path": "docs/evidence/task-6/continuation-fix2-red-01/intent.json"
+      },
+      {
+        "block_sha256": "4c88a2ae514d4b8ca7ef6b350648dff5e72130b33273acf18867ed3a63d4444b",
+        "path": "docs/evidence/task-6/continuation-fix2-red-01/outer-tool-result.json"
+      },
+      {
+        "block_sha256": "8d49fb69a2a61021d7220fbc5400c39e672428fc203f9924c67cf81ae9ff5af4",
+        "path": "docs/evidence/task-6/continuation-fix2-red-01/output.txt"
+      },
+      {
+        "block_sha256": "1e1d4138fac16d911c4a11df092156b7171623eb5ac9d424db4e324ad8d41ed4",
+        "path": "docs/evidence/task-6/continuation-fix2-red-01/post-source.json"
+      },
+      {
+        "block_sha256": "7bb1601cd3da8dbcaa08ba1a1409a10c16a9fcbb6810e8ef1713876b36c59364",
+        "path": "docs/evidence/task-6/continuation-fix2-red-01/receipt.json"
+      },
+      {
+        "block_sha256": "857a8bf1a26f658d7e73c204895e80c7646677328a3f7d3fcdb2e476fbda268d",
+        "path": "docs/evidence/task-6/controller-continuation-verification-20261025.json"
+      },
+      {
+        "block_sha256": "57fdc44058829d60fbc56c8156d8b15c3e099a45cc9f7c2eb9710a8618be78f6",
+        "path": "docs/evidence/task-6/controller-continuation-verification-command-20261025.py"
+      },
+      {
+        "block_sha256": "6c9e293f501cb4c4f6d9d01f642d191a62926f47bfd425e88dec073362ae39ef",
+        "path": "docs/evidence/task-6/review-continuation-substage.md"
+      },
+      {
+        "block_sha256": "fff351352e757a6f9927bea7df31b544c19cd5a9bc4000ad33c7fece0a00a8f1",
+        "path": "scripts/identity_cache_continue.py"
+      },
+      {
+        "block_sha256": "995c4b868ada705529725cb1c20a04cf3b85946f1e0099385523fea6e989d71d",
+        "path": "scripts/test_identity_cache_continue.py"
+      }
+    ],
+    "view_bytes": 254999,
+    "view_path": ".superpowers/sdd/2-warden-security-plan/review-a51a923..abd3c57-deduplicated-view.diff",
+    "view_sha256": "e832a3b18e601620466cefa1c3c9e0c56e572bc7dce693610d5c0be1e4070651"
+  },
+  "runs": [
+    {
+      "changed_snapshots": [
+        "scripts/test_identity_cache_continue.py"
+      ],
+      "duration_seconds": 0.2864917600527406,
+      "exit_code": 1,
+      "failures": 4,
+      "outer_exit_code": 1,
+      "pre_post_sha256": "05f5a8d42344ff4d64c7215426a85c9511928c8c50910719d8744eac637f3501",
+      "source_files": 145,
+      "stage": "continuation-fix2-red-01",
+      "tests": 4,
+      "whole_wall_until_receipt_seconds": 0.2884044140810147
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_continue.py",
+        "scripts/test_identity_cache_continue.py"
+      ],
+      "duration_seconds": 0.22348464198876172,
+      "exit_code": 0,
+      "failures": 0,
+      "outer_exit_code": 0,
+      "pre_post_sha256": "ed6aa9a2eb83cde19ba2be1c8f564c116ec100265ebd4ca6346d2ed506c5697d",
+      "source_files": 145,
+      "stage": "continuation-fix2-green-02",
+      "tests": 4,
+      "whole_wall_until_receipt_seconds": 0.22539618308655918
+    },
+    {
+      "changed_snapshots": [
+        "scripts/identity_cache_continue.py",
+        "scripts/test_identity_cache_continue.py"
+      ],
+      "duration_seconds": 1.6270892380271107,
+      "exit_code": 0,
+      "failures": 0,
+      "outer_exit_code": 0,
+      "pre_post_sha256": "ed6aa9a2eb83cde19ba2be1c8f564c116ec100265ebd4ca6346d2ed506c5697d",
+      "source_files": 145,
+      "stage": "continuation-fix2-cover-03",
+      "tests": 48,
+      "whole_wall_until_receipt_seconds": 1.6291407339740545
+    }
+  ],
+  "source": "4c369be5aa5072a549ec34ba987a912646855d7e",
+  "source_files": 145,
+  "status": "PASS",
+  "unchanged_dependency_files": 143
+}

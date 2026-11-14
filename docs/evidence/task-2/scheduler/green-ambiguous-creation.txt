@@ -1,0 +1,10 @@
+?   	warden/controlplane/cmd/warden-api	[no test files]
+ok  	warden/controlplane/internal/api	1.271s
+ok  	warden/controlplane/internal/audit	0.407s
+?   	warden/controlplane/internal/canonical	[no test files]
+ok  	warden/controlplane/internal/runs	0.218s
+ok  	warden/controlplane/internal/scheduler	2.225s
+ok  	warden/controlplane/internal/store	0.086s
+?   	warden/controlplane/internal/tenant	[no test files]
+?   	warden/controlplane/internal/testutil	[no test files]
+ok  	warden/runtimes/gate	0.044s

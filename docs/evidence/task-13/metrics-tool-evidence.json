@@ -1,0 +1,101 @@
+{
+  "description": "Exact exposed exec_command request/return values. output is the tool's combined stdout/stderr as received; separate streams were not exposed. Requests were stored before awaiting each call. No test session IDs were returned, so no polling occurred.",
+  "calls": [
+    {
+      "name": "task13_red",
+      "request": {
+        "cmd": "env -i PATH=/usr/bin:/bin LANG=C.UTF-8 /bin/bash --noprofile --norc -c 'ulimit -t 20; ulimit -v 262144; ulimit -f 2048; exec timeout --signal=TERM --kill-after=3s 45s /usr/bin/python3 -B -m unittest discover -s detect/report -p test_detection_metrics.py -v'",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Run the authorized Task13 bounded pure-stdlib fixture RED test as UID 1000.",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 6000
+      },
+      "return": {
+        "chunk_id": "376d11",
+        "wall_time_seconds": 0.000012346,
+        "exit_code": 1,
+        "original_token_count": 225,
+        "output": "test_metrics_on_fixture (test_detection_metrics.MetricsTests.test_metrics_on_fixture) ... FAIL\n\n======================================================================\nFAIL: test_metrics_on_fixture (test_detection_metrics.MetricsTests.test_metrics_on_fixture)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/detect/report/test_detection_metrics.py\", line 18, in test_metrics_on_fixture\n    self.assertEqual(report.get(\"execution_detection\"), {\"numerator\": 2, \"denominator\": 3, \"rate\": 2 / 3})\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != {'numerator': 2, 'denominator': 3, 'rate': 0.6666666666666666}\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (failures=1)\n"
+      }
+    },
+    {
+      "name": "task13_green",
+      "request": {
+        "cmd": "env -i PATH=/usr/bin:/bin LANG=C.UTF-8 /bin/bash --noprofile --norc -c 'ulimit -t 20; ulimit -v 262144; ulimit -f 2048; exec timeout --signal=TERM --kill-after=3s 45s /usr/bin/python3 -B -m unittest discover -s detect/report -p test_detection_metrics.py -v'",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Run the authorized Task13 bounded pure-stdlib tests against the frozen metrics source as UID 1000.",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 6000
+      },
+      "return": {
+        "chunk_id": "4dac25",
+        "wall_time_seconds": 0.000008233,
+        "exit_code": 1,
+        "original_token_count": 799,
+        "output": "test_cli_in_process_deterministic_json_and_no_partial_output (test_detection_metrics.MetricsTests.test_cli_in_process_deterministic_json_and_no_partial_output) ... ok\ntest_conflicting_id_includes_every_execution_field (test_detection_metrics.MetricsTests.test_conflicting_id_includes_every_execution_field) ... ok\ntest_correlation_is_mandatory_and_nonnegative (test_detection_metrics.MetricsTests.test_correlation_is_mandatory_and_nonnegative) ... ok\ntest_empty_zero_latency_and_censor_at_cutoff (test_detection_metrics.MetricsTests.test_empty_zero_latency_and_censor_at_cutoff) ... ok\ntest_failed_skipped_and_repeated_techniques (test_detection_metrics.MetricsTests.test_failed_skipped_and_repeated_techniques) ... ok\ntest_ingestion_file_and_count_caps_with_owned_small_files (test_detection_metrics.MetricsTests.test_ingestion_file_and_count_caps_with_owned_small_files) ... ok\ntest_invalid_normal_annotations_window_and_options (test_detection_metrics.MetricsTests.test_invalid_normal_annotations_window_and_options) ... ok\ntest_invalid_timestamps (test_detection_metrics.MetricsTests.test_invalid_timestamps) ... ok\ntest_jsonl_strict_decoding_and_real_record_byte_bound (test_detection_metrics.MetricsTests.test_jsonl_strict_decoding_and_real_record_byte_bound) ... \n  test_jsonl_strict_decoding_and_real_record_byte_bound (test_detection_metrics.MetricsTests.test_jsonl_strict_decoding_and_real_record_byte_bound) (payload=b'[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[') ... FAIL\ntest_metrics_on_fixture (test_detection_metrics.MetricsTests.test_metrics_on_fixture) ... ok\ntest_nearest_rank_and_technique_minimum (test_detection_metrics.MetricsTests.test_nearest_rank_and_technique_minimum) ... ok\ntest_normal_annotations_deduplicate_without_claiming_coverage (test_detection_metrics.MetricsTests.test_normal_annotations_deduplicate_without_claiming_coverage) ... ok\ntest_offsets_and_nanoseconds_without_float_rounding (test_detection_metrics.MetricsTests.test_offsets_and_nanoseconds_without_float_rounding) ... ok\ntest_order_deduplication_no_mutation_and_first_alert (test_detection_metrics.MetricsTests.test_order_deduplication_no_mutation_and_first_alert) ... ok\ntest_strict_record_fields_types_ids_and_techniques (test_detection_metrics.MetricsTests.test_strict_record_fields_types_ids_and_techniques) ... ok\n\n======================================================================\nFAIL: test_jsonl_strict_decoding_and_real_record_byte_bound (test_detection_metrics.MetricsTests.test_jsonl_strict_decoding_and_real_record_byte_bound) (payload=b'[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/postedism/Desktop/Warden/detect/report/test_detection_metrics.py\", line 164, in test_jsonl_strict_decoding_and_real_record_byte_bound\n    with self.subTest(payload=payload[:50]), self.assertRaises(metrics.MetricsError):\n                                             ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: MetricsError not raised\n\n----------------------------------------------------------------------\nRan 15 tests in 0.004s\n\nFAILED (failures=1)\n"
+      }
+    },
+    {
+      "name": "task13_final_green",
+      "request": {
+        "cmd": "env -i PATH=/usr/bin:/bin LANG=C.UTF-8 /bin/bash --noprofile --norc -c 'ulimit -t 20; ulimit -v 262144; ulimit -f 2048; exec timeout --signal=TERM --kill-after=3s 45s /usr/bin/python3 -B -m unittest discover -s detect/report -p test_detection_metrics.py -v'",
+        "workdir": "/home/postedism/Desktop/Warden",
+        "shell": "/bin/bash",
+        "login": false,
+        "tty": false,
+        "sandbox_permissions": "require_escalated",
+        "justification": "Run the authorized affected Task13 stdlib suite after ordinary ingestion behavior fixes and renewed source freeze, as UID 1000.",
+        "yield_time_ms": 1000,
+        "max_output_tokens": 6000
+      },
+      "return": {
+        "chunk_id": "fda152",
+        "wall_time_seconds": 0.000008796,
+        "exit_code": 0,
+        "original_token_count": 552,
+        "output": "test_cli_in_process_deterministic_json_and_no_partial_output (test_detection_metrics.MetricsTests.test_cli_in_process_deterministic_json_and_no_partial_output) ... ok\ntest_conflicting_id_includes_every_execution_field (test_detection_metrics.MetricsTests.test_conflicting_id_includes_every_execution_field) ... ok\ntest_correlation_is_mandatory_and_nonnegative (test_detection_metrics.MetricsTests.test_correlation_is_mandatory_and_nonnegative) ... ok\ntest_empty_zero_latency_and_censor_at_cutoff (test_detection_metrics.MetricsTests.test_empty_zero_latency_and_censor_at_cutoff) ... ok\ntest_failed_skipped_and_repeated_techniques (test_detection_metrics.MetricsTests.test_failed_skipped_and_repeated_techniques) ... ok\ntest_ingestion_file_and_count_caps_with_owned_small_files (test_detection_metrics.MetricsTests.test_ingestion_file_and_count_caps_with_owned_small_files) ... ok\ntest_invalid_normal_annotations_window_and_options (test_detection_metrics.MetricsTests.test_invalid_normal_annotations_window_and_options) ... ok\ntest_invalid_timestamps (test_detection_metrics.MetricsTests.test_invalid_timestamps) ... ok\ntest_jsonl_strict_decoding_and_real_record_byte_bound (test_detection_metrics.MetricsTests.test_jsonl_strict_decoding_and_real_record_byte_bound) ... ok\ntest_metrics_on_fixture (test_detection_metrics.MetricsTests.test_metrics_on_fixture) ... ok\ntest_nearest_rank_and_technique_minimum (test_detection_metrics.MetricsTests.test_nearest_rank_and_technique_minimum) ... ok\ntest_normal_annotations_deduplicate_without_claiming_coverage (test_detection_metrics.MetricsTests.test_normal_annotations_deduplicate_without_claiming_coverage) ... ok\ntest_offsets_and_nanoseconds_without_float_rounding (test_detection_metrics.MetricsTests.test_offsets_and_nanoseconds_without_float_rounding) ... ok\ntest_order_deduplication_no_mutation_and_first_alert (test_detection_metrics.MetricsTests.test_order_deduplication_no_mutation_and_first_alert) ... ok\ntest_strict_record_fields_types_ids_and_techniques (test_detection_metrics.MetricsTests.test_strict_record_fields_types_ids_and_techniques) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.003s\n\nOK\n"
+      }
+    },
+    {
+      "name": "task13_freeze",
+      "request": {
+        "cmd": "sha256sum detect/report/detection_metrics.py detect/report/test_detection_metrics.py detect/report/fixtures/metrics/README.md detect/report/fixtures/metrics/executions.jsonl detect/report/fixtures/metrics/alerts.jsonl",
+        "max_output_tokens": 6000
+      },
+      "return": {
+        "chunk_id": "657a55",
+        "wall_time_seconds": 0.00001348,
+        "exit_code": 0,
+        "original_token_count": 135,
+        "output": "cb47d4bfee84572e13fae778500999889edac6909db5b4f29eea520dcfab1ee3  detect/report/detection_metrics.py\n6c214419a6fea1ab1db1421461030dc08a9132c4bcd2085d3437bb7cdc8378cb  detect/report/test_detection_metrics.py\nac4cd62ad753de5d11e9d7eee092b7ae9080fff6868fe29014181c52f32200bc  detect/report/fixtures/metrics/README.md\nd860670353d77f0dee374a28f7c8bc768f498403eb0e083b382bd61b7d127549  detect/report/fixtures/metrics/executions.jsonl\n606af9f7c388d628050824aaa5036b7b4b011917f113e6aecfe13c280ec6119b  detect/report/fixtures/metrics/alerts.jsonl\n"
+      }
+    }
+  ],
+  "red_skeleton": "\"\"\"Metrics for an explicitly correlated, caller-supplied emulation cohort.\"\"\"\n\n\ndef compute_metrics(executions, alerts, observed_until, **kwargs):\n    \"\"\"Return cohort metrics (implementation follows the genuine RED test).\"\"\"\n    return {}\n",
+  "setup_diagnostic": {
+    "request": {
+      "cmd": "git status --short && git rev-parse HEAD && rg --files -g AGENTS.md -g '*.py' detect/report .agents .codex",
+      "max_output_tokens": 6000
+    },
+    "return": {
+      "chunk_id": "cb8ad2",
+      "wall_time_seconds": 0.000011484,
+      "exit_code": 2,
+      "original_token_count": 35,
+      "output": " M scripts/firecracker_code.py\n?? vuln/\n31074496b5ba320a86466f07b838c57359444dd0\nrg: detect/report: No such file or directory (os error 2)\n"
+    }
+  },
+  "initial_freeze": {
+    "module_sha256": "f5531dab33b4f76a761ddda223863e21161764afa56ebbb29192b2fe6fc16cbd",
+    "test_sha256": "77db8032af4a8cf425026f96d2270e15c98a89f00aac4716aa4fc89c3834d28d",
+    "note": "Initial freeze preceded the one-failure suite; final freeze exact request and return retained in calls."
+  }
+}

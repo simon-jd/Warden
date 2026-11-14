@@ -1,0 +1,329 @@
+[
+  {
+    "name": "wrong_product",
+    "document_id": "9658ba06-f0a6-551e-914f-ace43c417267",
+    "expected_match": false,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 6,
+      "category_uid": 4,
+      "class_uid": 4001,
+      "type_uid": 400106,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "unmapped": {
+        "acl_id": "synthetic-acl",
+        "rule": "synthetic-rule",
+        "protocol": 6,
+        "direction": "O",
+        "flow_state": "B",
+        "encryption_state": "X",
+        "source": "vnet",
+        "log_guid": "synthetic-guid",
+        "tuple_index": 0,
+        "record_fields": {},
+        "traffic_counts": [
+          "1",
+          "64",
+          "0",
+          "0"
+        ]
+      },
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Synthetic Other Product",
+          "vendor_name": "Microsoft"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.100",
+        "port": 40000
+      },
+      "dst_endpoint": {
+        "ip": "203.0.113.77",
+        "port": 22
+      }
+    }
+  },
+  {
+    "name": "wrong_class",
+    "document_id": "9ad3a3d9-977f-5822-9bdd-a84a46ed4c0a",
+    "expected_match": false,
+    "scope": "deliberately_wrong_class_query_edge",
+    "event": {
+      "activity_id": 6,
+      "category_uid": 4,
+      "class_uid": 9999,
+      "type_uid": 400106,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "unmapped": {
+        "acl_id": "synthetic-acl",
+        "rule": "synthetic-rule",
+        "protocol": 6,
+        "direction": "O",
+        "flow_state": "B",
+        "encryption_state": "X",
+        "source": "vnet",
+        "log_guid": "synthetic-guid",
+        "tuple_index": 0,
+        "record_fields": {},
+        "traffic_counts": [
+          "1",
+          "64",
+          "0",
+          "0"
+        ]
+      },
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure VNet Flow Logs",
+          "vendor_name": "Microsoft"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.100",
+        "port": 40000
+      },
+      "dst_endpoint": {
+        "ip": "203.0.113.77",
+        "port": 22
+      }
+    }
+  },
+  {
+    "name": "missing_action_field",
+    "document_id": "58b40c0b-2e2c-5e5d-880d-9ceb2606f8fb",
+    "expected_match": false,
+    "scope": "deliberately_missing_field_query_edge",
+    "event": {
+      "activity_id": 6,
+      "category_uid": 4,
+      "class_uid": 4001,
+      "type_uid": 400106,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "unmapped": {
+        "acl_id": "synthetic-acl",
+        "rule": "synthetic-rule",
+        "protocol": 6,
+        "direction": "O",
+        "flow_state": "B",
+        "encryption_state": "X",
+        "source": "vnet",
+        "log_guid": "synthetic-guid",
+        "tuple_index": 0,
+        "record_fields": {},
+        "traffic_counts": [
+          "1",
+          "64",
+          "0",
+          "0"
+        ]
+      },
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure VNet Flow Logs",
+          "vendor_name": "Microsoft"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.100",
+        "port": 40000
+      },
+      "dst_endpoint": {
+        "ip": "203.0.113.77"
+      }
+    }
+  },
+  {
+    "name": "reserved_identifier_value",
+    "document_id": "28d2c481-e4aa-5404-99c5-b38cf5fb5254",
+    "expected_match": true,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 6,
+      "category_uid": 4,
+      "class_uid": 4001,
+      "type_uid": 400106,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "unmapped": {
+        "acl_id": "synthetic-acl",
+        "rule": "synthetic-rule",
+        "protocol": 6,
+        "direction": "O",
+        "flow_state": "B",
+        "encryption_state": "X",
+        "source": "vnet",
+        "log_guid": "pos OR class_uid:9999 *",
+        "tuple_index": 0,
+        "record_fields": {},
+        "traffic_counts": [
+          "1",
+          "64",
+          "0",
+          "0"
+        ]
+      },
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure VNet Flow Logs",
+          "vendor_name": "Microsoft"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.100",
+        "port": 40000
+      },
+      "dst_endpoint": {
+        "ip": "203.0.113.77",
+        "port": 22
+      }
+    }
+  },
+  {
+    "name": "string_case_variant",
+    "document_id": "d1e04034-775e-596b-9728-3d4a9abfbd68",
+    "expected_match": true,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 6,
+      "category_uid": 4,
+      "class_uid": 4001,
+      "type_uid": 400106,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "unmapped": {
+        "acl_id": "synthetic-acl",
+        "rule": "synthetic-rule",
+        "protocol": 6,
+        "direction": "o",
+        "flow_state": "B",
+        "encryption_state": "X",
+        "source": "vnet",
+        "log_guid": "synthetic-guid",
+        "tuple_index": 0,
+        "record_fields": {},
+        "traffic_counts": [
+          "1",
+          "64",
+          "0",
+          "0"
+        ]
+      },
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure VNet Flow Logs",
+          "vendor_name": "Microsoft"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.100",
+        "port": 40000
+      },
+      "dst_endpoint": {
+        "ip": "203.0.113.77",
+        "port": 22
+      }
+    }
+  },
+  {
+    "name": "near_miss",
+    "document_id": "6d3a85d4-9827-5ee9-b9be-3d29be285172",
+    "expected_match": false,
+    "scope": "future_opensearch_query",
+    "event": {
+      "activity_id": 6,
+      "category_uid": 4,
+      "class_uid": 4001,
+      "type_uid": 400106,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "unmapped": {
+        "acl_id": "synthetic-acl",
+        "rule": "synthetic-rule",
+        "protocol": 6,
+        "direction": "I",
+        "flow_state": "B",
+        "encryption_state": "X",
+        "source": "vnet",
+        "log_guid": "synthetic-guid",
+        "tuple_index": 0,
+        "record_fields": {},
+        "traffic_counts": [
+          "1",
+          "64",
+          "0",
+          "0"
+        ]
+      },
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure VNet Flow Logs",
+          "vendor_name": "Microsoft"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.100",
+        "port": 40000
+      },
+      "dst_endpoint": {
+        "ip": "203.0.113.77",
+        "port": 22
+      }
+    }
+  },
+  {
+    "name": "missing_allowlist_field",
+    "document_id": "0e13ff50-a755-5e8d-8d2e-2ded2d7d3838",
+    "expected_match": false,
+    "scope": "deliberately_missing_field_query_edge",
+    "event": {
+      "activity_id": 6,
+      "category_uid": 4,
+      "class_uid": 4001,
+      "type_uid": 400106,
+      "severity_id": 0,
+      "time": 1767225600000,
+      "unmapped": {
+        "acl_id": "synthetic-acl",
+        "rule": "synthetic-rule",
+        "protocol": 6,
+        "direction": "O",
+        "flow_state": "B",
+        "encryption_state": "X",
+        "source": "vnet",
+        "log_guid": "synthetic-guid",
+        "tuple_index": 0,
+        "record_fields": {},
+        "traffic_counts": [
+          "1",
+          "64",
+          "0",
+          "0"
+        ]
+      },
+      "metadata": {
+        "version": "1.3.0",
+        "product": {
+          "name": "Azure VNet Flow Logs",
+          "vendor_name": "Microsoft"
+        }
+      },
+      "src_endpoint": {
+        "ip": "192.0.2.100",
+        "port": 40000
+      },
+      "dst_endpoint": {
+        "port": 22
+      }
+    }
+  }
+]

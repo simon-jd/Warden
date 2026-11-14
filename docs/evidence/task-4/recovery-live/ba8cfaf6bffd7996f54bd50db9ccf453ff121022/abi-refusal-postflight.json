@@ -1,0 +1,39 @@
+{
+  "source": "ba8cfaf6bffd7996f54bd50db9ccf453ff121022",
+  "state": "material-pending",
+  "new_phase_metadata_files": [
+    "admission-material.json",
+    "provenance.json",
+    "state.json"
+  ],
+  "tar_image_or_helper_created": false,
+  "owned_images_containers": 0,
+  "settled": false,
+  "success": false,
+  "original_Q_bytes": 5000000000,
+  "original_Q_released": false,
+  "live": {
+    "dev": 66307,
+    "ino": 56377608,
+    "uid": 0,
+    "mode": "0o700"
+  },
+  "fresh_necessary_recovery_admission": {
+    "kind": "exact-scene-recovery-admission-v1",
+    "rest_allocated_bytes": 4017897472,
+    "original_opaque_charge": 5000000000,
+    "all_outstanding_bytes": 5000000000,
+    "all_owned_image_charge": 0,
+    "prospective_helper_growth": 736000000,
+    "disk_bytes": 9753897472,
+    "resident_bytes": 1256000000,
+    "ordinary_guard_pass": false,
+    "free_bytes": 269902249984,
+    "utc": "2026-10-25T00:11:12.236313+00:00"
+  },
+  "private_live_entries_read": false,
+  "ordinary_full_guard": "blocked_by_unchanged_opaque_live",
+  "original_owner_retirement": "cleanup_pending",
+  "creation_outcome": "unknown",
+  "never_reopen": true
+}

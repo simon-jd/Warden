@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-26T08:49:18.915244+00:00",
+  "kind": "ROOT_FIX_ROUND1_RED_ADMISSION_ONCE",
+  "source_base": "1eb3ccb257d5faffa35a6438c550639b4fe76859",
+  "caller_bytes": 15856,
+  "caller_sha256": "7fb69f64992273468521138c22244c63c5e60ed09b9c23e3e6d12d3b86b01911",
+  "packet_sha256": "7bf336b5a7c9f5cb7c6c70f8ae236b8a716662eff1148624e5be81821760c9d0",
+  "source_freeze_sha256": "9361774dbe5d0c58cc37c83ad1c4016e35ae5daf0052ea11b8a29ea302a26aec",
+  "tests": [
+    "TestKubernetesEmptyReservationCleanup",
+    "TestKubernetesRemovalRetryAfterClearAndDeleteFailure"
+  ],
+  "markers": [
+    "empty reservation cleanup must reach DELETE:",
+    "cleanup retry after cleared binding must reach DELETE:"
+  ],
+  "source_count": 15,
+  "only_test_changed_from_accepted_first_green": true,
+  "all_material_and_mainreport_verified": true,
+  "namespace_absent": true,
+  "R": 5125648384,
+  "other_holds": 5003801088,
+  "full_new_disk": 1750780416,
+  "total": 11880229888,
+  "headroom": 119770112,
+  "disk_cap": 12000000000,
+  "resident": 15500000000,
+  "resident_cap": 16000000000,
+  "old_UNKNOWN": 9000000000,
+  "bounds": {
+    "whole": 90,
+    "work": 65,
+    "GoCLI": 59,
+    "cleanup": 82,
+    "status": 85,
+    "raw": 131072
+  },
+  "initial_source_prep_closed_net": 237568,
+  "round1_new_net": 24576,
+  "round1_new_cap": 65536,
+  "start_reaper": "851e76 known0 RGabsent08:48:24Z, original normal route",
+  "ruling": "Only two new I1 no-op HTTP-contract regressions, original Round1/5; production unchanged. No old successful suite/PG diagnostic/metadata replay. Only exact business assertions can be RED. No cluster/RBAC/identity acceptance or new authority.",
+  "provenance": {
+    "source": "root_agent_in_existing_user_scope",
+    "human_response": false
+  }
+}

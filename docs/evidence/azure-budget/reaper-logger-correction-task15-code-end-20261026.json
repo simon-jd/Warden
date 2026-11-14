@@ -1,0 +1,17 @@
+{
+  "request": "bash scripts/azure_reaper.sh",
+  "initial": {
+    "chunk_id": "5171b3",
+    "wall_time_seconds": 1.000621671,
+    "session_id": 14158,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "completion": {
+    "chunk_id": "4d958a",
+    "wall_time_seconds": 0.000007098,
+    "exit_code": 0,
+    "original_token_count": 37,
+    "output": "{\"at\": \"2026-10-26T05:31:37Z\", \"event\": \"group-absent\", \"id\": \"/subscriptions/<subscription-id>/resourceGroups/rg-warden-lab\"}\n"
+  }
+}

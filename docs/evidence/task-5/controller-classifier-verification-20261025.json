@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-25T09:05:16.957839+00:00",
+  "source": "6cedf69d7da82e7fd2cd80c69d5d9bfb5b0024aa",
+  "base": "b765fe109251ed7579386a70d5655c7e4edcccdd",
+  "evidence": "8319b458c6a01daa51409b2476376173bc875b99",
+  "source_files_verified": 3,
+  "indexed_new_artifacts_verified": 19,
+  "frozen_cover_before_after_source_hashes_match": true,
+  "recorded_frozen_tests": {
+    "top_level_pass": 6,
+    "subtest_pass": 53,
+    "fail": 0,
+    "skip": 0
+  },
+  "historical_red_green_pre_run_file_hashes_unavailable": true,
+  "red_stub_snapshot_unavailable": true,
+  "historical_provenance_not_reconstructed": true,
+  "tests_rerun_by_controller": false,
+  "ordinary_postflight": {
+    "ordinary_full_guard": {
+      "additional_bytes": "5000000000",
+      "at": "2026-10-25T09:05:16Z",
+      "download_bytes": "0",
+      "event": "local-preflight",
+      "free_bytes": 266030436352,
+      "project_allocated_bytes": 4193374208,
+      "service_memory_bytes": "1000000000"
+    },
+    "protected_sysctls": {
+      "vm/overcommit_memory": "1",
+      "vm/panic_on_oom": "0",
+      "kernel/panic": "10",
+      "kernel/panic_on_oops": "1",
+      "kernel/keys/root_maxkeys": "1000000",
+      "kernel/keys/root_maxbytes": "25000000"
+    },
+    "protected_baseline_match": true,
+    "original_owner_retirement": "cleanup_pending",
+    "creation_outcome": "unknown",
+    "never_reopen": true,
+    "reserved_bytes": 5000000000,
+    "released": false
+  },
+  "original_scene_metadata_unchanged": true,
+  "owned_images_and_containers": 0,
+  "Q_released": false,
+  "fixture_authorship": "subagent /root/matrix_classifier, not human and not real attack evidence",
+  "actual_matrix_cells_run": 0,
+  "task5_complete": false,
+  "goal_complete": false,
+  "semantic_review": "independent classifier review pending"
+}

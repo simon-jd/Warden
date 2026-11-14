@@ -1,0 +1,18 @@
+# Task 6: first assignment of the signed-in user to warden-lab-api (service principal 00000000-0000-0000-0000-000000000003)
+# app_role_assignment_required = true. Redacted: tenant ID, user object ID, trace/correlation IDs, assignment ID (it encodes the user object ID).
+
+### 2026-11-11T01:16:55Z before assignment: az account get-access-token --scope api://00000000-0000-0000-0000-000000000001/warden.access
+ERROR: AADSTS50105: Your administrator has configured the application warden-lab-api ('<id>') to block users unless they are specifically granted ('assigned') access to the application.  The signed in user '{EUII Hidden}' is blocked because they are not a direct member of a group with access, nor had access directly assigned by an administrator. Please contact your administrator to assign access to this application. Trace ID: <id> Correlation ID: <id> Timestamp: 2026-11-11 01:16:56Z
+
+### POST https://graph.microsoft.com/v1.0/servicePrincipals/00000000-0000-0000-0000-000000000003/appRoleAssignedTo (principal = signed-in user, appRoleId = default)
+{
+  "appRoleId": "00000000-0000-0000-0000-000000000000",
+  "createdDateTime": "2026-11-11T01:17:05.8999264Z",
+  "id": "<assignment-id>",
+  "principalType": "User",
+  "resourceDisplayName": "warden-lab-api"
+}
+
+### timing (local clock, UTC); then az account get-access-token every 2 s until it succeeds
+assign_request=2026-11-11T01:17:05.627Z
+first_token_after_assign=2026-11-11T01:17:56.788Z attempts=23 elapsed_s=51.16
