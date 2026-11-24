@@ -1,0 +1,6 @@
+taskset -c 0-7,16-31 scripts/kind_lab.sh status --audit
+node warden-lab-control-plane: running since 2026-11-14T19:58:56.747669746Z, cpuset 0-7,16-31
+network warden-kind-lab: present
+kubeconfig: /home/postedism/Desktop/Warden-t13c/.cache/kind-warden-lab/kubeconfig.json
+namespace warden-lab: Active {"kubernetes.io/metadata.name":"warden-lab","owner":"warden-lab","project":"warden"}
+audit log: /home/postedism/Desktop/Warden-t13c/.cache/kind-warden-lab/audit/audit.log, 1703150 bytes

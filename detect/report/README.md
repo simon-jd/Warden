@@ -55,11 +55,14 @@ files. Input authenticity and binding trust need external validation.
 An empty source produces an empty alert file and **does not prove detector
 coverage**. A metrics row saying `not_detected_by_cutoff` means no supplied
 correlated alert by that time; a separate collector outage can explain it.
-For Stratus, first establish API audit/Falco collection and obtain trusted pod
-UID/container-to-run bindings from the unique `warden_run_id` label. Raw audit
-requests alone are not alerts; run them through an actual configured detector
-and retain its rule result. Do not relabel raw telemetry or expected events as
-real detections.
+For Stratus, the k8saudit Falco instance reads the kind audit lab's API audit
+log, and `audit_alert_import.py` attributes its alerts by the run's label
+(`warden.dev/run`, `warden_run_id`) or namespace inside the run's
+`started_at`..`finished_at` from the wrapper's `receipt.json`
+([runbook](../../docs/falco-detector.md#scoring-the-run-record-and-attribution)).
+Raw audit requests alone are not alerts; run them through an actual configured
+detector and retain its rule result. Do not relabel raw telemetry or expected
+events as real detections.
 
 ## Seven-day normal-operation ledger
 

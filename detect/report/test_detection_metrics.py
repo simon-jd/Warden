@@ -172,7 +172,7 @@ class MetricsTests(unittest.TestCase):
 
     def test_ingestion_file_and_count_caps_with_owned_small_files(self):
         # Lower only constants to exercise the real read branches under FSIZE 2MiB.
-        self.assertEqual((metrics.MAX_FILE_BYTES, metrics.MAX_RECORDS), (16 * 1024 * 1024, 100000))
+        self.assertEqual((metrics.MAX_FILE_BYTES, metrics.MAX_RECORDS), (256 * 1024 * 1024, 1000000))
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "synthetic.jsonl"
             path.write_bytes(b"{}\n{}\n")

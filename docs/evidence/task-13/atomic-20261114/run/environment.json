@@ -1,0 +1,20 @@
+{
+ "docker_default_runtime": "runc",
+ "docker_server": "29.9.3",
+ "kernel": "7.0.0-42-generic",
+ "runc": [
+  "runc version 1.5.2"
+ ],
+ "target_image": {
+  "architecture": "amd64",
+  "created": "2026-09-18T21:20:38.103397332Z",
+  "id": "sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55",
+  "os": "linux",
+  "repo_digests": [
+   "ubuntu@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55"
+  ],
+  "repo_tags": [
+   "ubuntu:24.04"
+  ]
+ }
+}

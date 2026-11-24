@@ -427,7 +427,7 @@ class ResolverTest(Base):
             Path(root, 'system.slice', 'docker-%s.scope' % OTHER, 'inner', LAB_POD).mkdir(parents=True)
             docker = FakeDocker({node: {'Id': node, 'Name': '/warden-k3s-gvisor', 'Config': {'Labels': {'project': 'warden'}}},
                                  OTHER: {'Id': OTHER, 'Name': '/theirs', 'Config': {'Labels': {'project': 'other'}}}})
-            docker.running = lambda labels: [node] if labels == {'project': 'warden'} else []
+            docker.running = lambda labels: [node] if labels == {'project': 'warden'} else [node, OTHER]
             kube = FakeKube([pod('warden-lab', 'run-a', 'a' * 64, {'warden.dev/run': 'rA'}),
                              pod('default', 'control', 'b' * 64, {'warden.dev/run': 'rB'})])
             r = collector.Resolver(docker=docker, kube=kube, cgroup_root=root)
@@ -439,7 +439,83 @@ class ResolverTest(Base):
             d = r.resolve(infra[:12])
             self.assertEqual((d.warden, d.klass), (True, 'node'))
             self.assertIsNone(r.resolve('9' * 12), 'a pod no list shows is unknown, so dropped after the deadline')
-            self.assertIsNone(r.resolve(LAB_POD[:12]), 'nested in a container that is not Warden\'s: unknown, so dropped')
+            d = r.resolve(LAB_POD[:12])
+            self.assertEqual((d.warden, d.resolver, d.detail['inside']), (False, 'cgroup-other', 'theirs'),
+                             'nested in a container that is not Warden\'s: that container\'s, another\'s')
+
+    def kind_node(self, root, node, inner, labels):
+        """A kind node's pod container cgroup, as kubelet's systemd driver names it."""
+        uid = uid_of('kind-pod').replace('-', '_')
+        Path(root, 'system.slice', 'docker-%s.scope' % node, 'kubelet.slice', 'kubelet-kubepods.slice',
+             'kubelet-kubepods-besteffort.slice', 'kubelet-kubepods-besteffort-pod%s.slice' % uid,
+             'cri-containerd-%s.scope' % inner).mkdir(parents=True)
+        return {'Id': node, 'Name': '/' + labels.pop('name'), 'Config': {'Labels': labels}}
+
+    def test_nested_in_a_container_that_is_not_wardens_is_another_containers(self):
+        # The kind audit lab's node, another project's kind node: their pods'
+        # containerd IDs are known to no API the collector asks.
+        node, inner = 'e' * 64, '5d6e7f809a1b' + '3' * 52
+        with tempfile.TemporaryDirectory() as root:
+            inspect = self.kind_node(root, node, inner, {'name': 'materialflow-control-plane', 'io.x-k8s.kind.cluster': 'materialflow'})
+            docker = FakeDocker({node: inspect})
+            docker.running = lambda labels: [] if labels == {'project': 'warden'} else [node]
+            r = collector.Resolver(docker=docker, kube=FakeKube([]), cgroup_root=root)
+            d = r.resolve(inner[:12])
+            self.assertEqual((d.warden, d.resolver, d.full_id, d.run_id, d.detail), (False, 'cgroup-other', inner, None,
+                                                                                    {'inside': 'materialflow-control-plane'}))
+            with tempfile.TemporaryDirectory() as out:
+                sink = collector.Sink(out)
+                self.addCleanup(sink.close)
+                c = collector.Collector('host', sink, r, 20, Clock())
+                c.feed(raw(event(inner[:12], extra={'proc.cmdline': SECRET})))
+                counts = c.snapshot()
+                self.assertEqual((counts['dropped_other_container'], counts['dropped_other_nested'], counts['pending'],
+                                  counts['dropped_unresolved']), (1, 1, 0, 0))
+                self.assertFalse(Path(out, 'alerts.jsonl').exists())
+                self.assertNotIn(SECRET.encode(), b''.join(p.read_bytes() for p in Path(out).rglob('*') if p.is_file()))
+
+    def test_a_warden_container_comes_first(self):
+        # The same cgroup ID below a Warden node and below another container
+        # (contrived, but it fixes the order): the Warden node's rules decide,
+        # the pod first, then the node; an ID of a Warden pod not listed yet
+        # stays unknown (retried) and is never another container's.
+        warden_node, theirs = 'd' * 64, 'e' * 64
+        infra, unlisted = '8c918fd05c04' + '2' * 52, '4c918fd05c04' + '4' * 52
+        with tempfile.TemporaryDirectory() as root:
+            Path(root, 'system.slice', 'docker-%s.scope' % warden_node, 'k3s', infra).mkdir(parents=True)
+            Path(root, 'system.slice', 'docker-%s.scope' % warden_node, 'kubepods', 'pod' + uid_of('later'), unlisted).mkdir(parents=True)
+            for inner in (infra, unlisted):
+                Path(root, 'system.slice', 'docker-%s.scope' % theirs, 'kubelet.slice', inner).mkdir(parents=True)
+            docker = FakeDocker({warden_node: {'Id': warden_node, 'Name': '/warden-k3s-gvisor', 'Config': {'Labels': {'project': 'warden'}}},
+                                 theirs: {'Id': theirs, 'Name': '/materialflow-control-plane', 'Config': {'Labels': {}}}})
+            docker.running = lambda labels: [warden_node] if labels == {'project': 'warden'} else [warden_node, theirs]
+            r = collector.Resolver(docker=docker, kube=FakeKube([]), cgroup_root=root)
+            d = r.resolve(infra[:12])
+            self.assertEqual((d.warden, d.resolver, d.klass), (True, 'cgroup', 'node'))
+            self.assertIsNone(r.resolve(unlisted[:12]), 'a Warden pod not listed yet: retried, not another container\'s')
+
+    def test_found_nowhere_stays_unresolved_and_is_dropped_after_the_deadline(self):
+        node = 'e' * 64
+        with tempfile.TemporaryDirectory() as root:
+            inspect = self.kind_node(root, node, '6' * 64, {'name': 'materialflow-control-plane'})
+            docker = FakeDocker({node: inspect})
+            docker.running = lambda labels: [] if labels == {'project': 'warden'} else [node]
+            r = collector.Resolver(docker=docker, kube=FakeKube([]), cgroup_root=root)
+            self.assertIsNone(r.resolve('7' * 12))
+            with tempfile.TemporaryDirectory() as out:
+                sink = collector.Sink(out)
+                self.addCleanup(sink.close)
+                clock = Clock()
+                c = collector.Collector('host', sink, r, 20, clock)
+                c.feed(raw(event('7' * 12)))
+                self.assertEqual(c.snapshot()['pending'], 1)
+                clock.t = 19.9
+                c.tick()
+                self.assertEqual((c.snapshot()['pending'], c.snapshot()['dropped_unresolved']), (1, 0))
+                clock.t = 20
+                c.tick()
+                counts = c.snapshot()
+                self.assertEqual((counts['pending'], counts['dropped_unresolved'], counts['dropped_other_container']), (0, 1, 0))
 
     def test_pod_sandboxes_seen_by_the_pod_watch_resolve_after_they_are_gone(self):
         # The pod watch records each pod's sandbox cgroup while it exists; an

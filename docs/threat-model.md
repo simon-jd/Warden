@@ -136,7 +136,8 @@ durable buffers, backpressure/loss counters and alerting; see [acceptance](ACCEP
 ### C12 Detection and response
 
 Pending Tasks12–14: >=30 rules with positive/negative cases, real query execution,
-ATT&CK coverage, seven-day false positives, detection latency and measured response.
+ATT&CK coverage, detection latency and measured response. The seven-day false-positive
+window on the host detector is measured ([evidence](evidence/task-13/seven-day-20261116/README.md)).
 Response requires persistent idempotency, dry-run and second-identity approval
 for destructive actions. [Evidence destinations and gaps](evidence/README.md#pending-integrations)
 and [required tests](ACCEPTANCE.md) remain open; no operational efficacy is claimed.

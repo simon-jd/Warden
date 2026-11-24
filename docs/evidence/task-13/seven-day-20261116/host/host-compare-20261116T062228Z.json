@@ -1,0 +1,31 @@
+{
+ "after": "2026-11-24T05:08:27Z",
+ "before": "2026-11-16T06:22:28Z",
+ "modules_added": [
+  "act_gact",
+  "af_packet_diag",
+  "cls_u32",
+  "mptcp_diag",
+  "netlink_diag",
+  "raw_diag",
+  "sch_ingress",
+  "unix_diag",
+  "xsk_diag"
+ ],
+ "modules_removed": [],
+ "sysctls_changed": {},
+ "volatile_sysctls_changed": [
+  "fs.dentry-state",
+  "fs.file-nr",
+  "fs.inode-nr",
+  "fs.inode-state",
+  "fs.quota.cache_hits",
+  "fs.quota.drops",
+  "fs.quota.lookups",
+  "fs.quota.syncs",
+  "kernel.ns_last_pid",
+  "kernel.perf_event_max_sample_rate",
+  "kernel.pty.nr",
+  "net.netfilter.nf_conntrack_count"
+ ]
+}

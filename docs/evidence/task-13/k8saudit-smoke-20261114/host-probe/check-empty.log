@@ -1,0 +1,13 @@
+$ make kind-audit-check-empty   # fresh lab
+taskset -c 0-7,16-31 scripts/kind_lab.sh check-empty --audit
+{"empty": true, "left": [], "namespace": "warden-lab", "types_checked": 29}
+exit 0
+$ make kind-audit-check-empty   # after creating ConfigMap check-empty-probe
+taskset -c 0-7,16-31 scripts/kind_lab.sh check-empty --audit
+{"empty": false, "left": ["ConfigMap/check-empty-probe"], "namespace": "warden-lab", "types_checked": 29}
+make: *** [Makefile:356: kind-audit-check-empty] Error 1
+exit 2
+$ make kind-audit-check-empty   # after deleting it
+taskset -c 0-7,16-31 scripts/kind_lab.sh check-empty --audit
+{"empty": true, "left": [], "namespace": "warden-lab", "types_checked": 29}
+exit 0

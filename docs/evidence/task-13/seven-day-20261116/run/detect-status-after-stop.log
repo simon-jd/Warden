@@ -1,0 +1,21 @@
+state: {"session": "20261116T062228Z", "started_at": "2026-11-16T06:22:28Z", "stopped_at": "2026-11-24T05:08:27Z", "up": false}
+host: container absent; collector inactive
+  last heartbeat 2026-11-24T05:08:26.923356504Z: {"collector_errors": 0, "collector_restarts": 0, "dropped_error": 0, "dropped_host": 6859, "dropped_malformed": 0, "dropped_other_container": 559249, "dropped_other_lab_owned": 0, "dropped_other_lab_pod": 0, "dropped_other_nested": 0, "dropped_overflow": 0, "dropped_unresolved": 0, "duplicates": 0, "health_events": 11446, "pending": 0, "platform_alerts": 312417, "received": 909179, "warden_alerts": 19208}
+warden-detect-benign.timer: inactive
+warden-detect-seven-day-stop.timer: inactive
+seven-day plan: {
+ "benign_every_s": 3600,
+ "benign_first_after_s": 120,
+ "cpuset": "0-7",
+ "runtimes": [
+  "runc",
+  "gvisor"
+ ],
+ "session": "20261116T062228Z",
+ "sources": [
+  "falco-host"
+ ],
+ "stop_after_s": 605700,
+ "window_end": "2026-11-23T06:22:36.637725377Z",
+ "window_start": "2026-11-16T06:22:36.637725377Z"
+}

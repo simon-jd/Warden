@@ -4,8 +4,9 @@
     benign.py --session <detector session> [--only runc|gvisor]
 
 Both run the existing conformance suite (runtimes/conformance, seven probes)
-through the real Warden drivers, under taskset -c 0-7,16-31, with the lab
-containers pinned to the same CPUs (WARDEN_LAB_CPUSET):
+through the real Warden drivers, under taskset -c detector.CPUSET (0-7,16-31
+unless WARDEN_CPUSET says otherwise), with the lab containers pinned to the
+same CPUs (WARDEN_LAB_CPUSET):
 
 * runc: scripts/runtime_lab_docker.py run, the runc lab (Task 2). Its memory
   guard is told about the two Falco containers' limits.

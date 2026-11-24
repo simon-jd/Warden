@@ -1,0 +1,227 @@
+{
+ "pooled_detected_runs": {
+  "arrival_after_start": {
+   "max": 0.111,
+   "min": 0.045,
+   "n": 20,
+   "p50": 0.066,
+   "p95": 0.107
+  },
+  "event_after_start": {
+   "max": 0.109,
+   "min": 0.039,
+   "n": 20,
+   "p50": 0.058,
+   "p95": 0.098
+  },
+  "first_alert_delivery": {
+   "max": 0.021,
+   "min": 0.003,
+   "n": 20,
+   "p50": 0.008,
+   "p95": 0.011
+  }
+ },
+ "tests": [
+  {
+   "alerts_on_failed_runs": 0,
+   "arrival_after_start": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "atomic_guid": "486e88ea-4f56-470f-9b57-3f4d73f39133",
+   "detected": 0,
+   "event_after_start": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "first_alert_delivery": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "n": 5,
+   "name": "Hostname Discovery",
+   "rules_fired": {},
+   "succeeded": 5,
+   "technique": "T1082",
+   "test": "hostname"
+  },
+  {
+   "alerts_on_failed_runs": 0,
+   "arrival_after_start": {
+    "max": 0.107,
+    "min": 0.045,
+    "n": 5,
+    "p50": 0.053,
+    "p95": 0.107
+   },
+   "atomic_guid": "46959285-906d-40fa-9437-5a439accd878",
+   "detected": 5,
+   "event_after_start": {
+    "max": 0.097,
+    "min": 0.041,
+    "n": 5,
+    "p50": 0.043,
+    "p95": 0.097
+   },
+   "first_alert_delivery": {
+    "max": 0.01,
+    "min": 0.003,
+    "n": 5,
+    "p50": 0.006,
+    "p95": 0.01
+   },
+   "n": 5,
+   "name": "Discover Private SSH Keys",
+   "rules_fired": {
+    "Search Private Keys or Passwords": 5
+   },
+   "succeeded": 5,
+   "technique": "T1552.004",
+   "test": "ssh-key-discovery"
+  },
+  {
+   "alerts_on_failed_runs": 0,
+   "arrival_after_start": {
+    "max": 0.111,
+    "min": 0.049,
+    "n": 5,
+    "p50": 0.07,
+    "p95": 0.111
+   },
+   "atomic_guid": "7c247dc7-5128-4643-907b-73a76d9135c3",
+   "detected": 5,
+   "event_after_start": {
+    "max": 0.109,
+    "min": 0.043,
+    "n": 5,
+    "p50": 0.06,
+    "p95": 0.109
+   },
+   "first_alert_delivery": {
+    "max": 0.011,
+    "min": 0.003,
+    "n": 5,
+    "p50": 0.009,
+    "p95": 0.011
+   },
+   "n": 5,
+   "name": "Copy Private SSH Keys with CP",
+   "rules_fired": {
+    "Search Private Keys or Passwords": 5
+   },
+   "succeeded": 5,
+   "technique": "T1552.004",
+   "test": "ssh-key-copy"
+  },
+  {
+   "alerts_on_failed_runs": 0,
+   "arrival_after_start": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "atomic_guid": "37807632-d3da-442e-8c2e-00f44928ff8f",
+   "detected": 0,
+   "event_after_start": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "first_alert_delivery": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "n": 5,
+   "name": "Find AWS credentials",
+   "rules_fired": {},
+   "succeeded": 0,
+   "technique": "T1552.001",
+   "test": "aws-credentials"
+  },
+  {
+   "alerts_on_failed_runs": 0,
+   "arrival_after_start": {
+    "max": 0.103,
+    "min": 0.051,
+    "n": 5,
+    "p50": 0.066,
+    "p95": 0.103
+   },
+   "atomic_guid": "085fe567-ac84-47c7-ac4c-2688ce28265b",
+   "detected": 5,
+   "event_after_start": {
+    "max": 0.098,
+    "min": 0.044,
+    "n": 5,
+    "p50": 0.062,
+    "p95": 0.098
+   },
+   "first_alert_delivery": {
+    "max": 0.009,
+    "min": 0.004,
+    "n": 5,
+    "p50": 0.007,
+    "p95": 0.009
+   },
+   "n": 5,
+   "name": "Examine password complexity policy - Ubuntu",
+   "rules_fired": {
+    "Read sensitive file untrusted": 5
+   },
+   "succeeded": 5,
+   "technique": "T1201",
+   "test": "password-policy"
+  },
+  {
+   "alerts_on_failed_runs": 0,
+   "arrival_after_start": {
+    "max": 0.083,
+    "min": 0.047,
+    "n": 5,
+    "p50": 0.073,
+    "p95": 0.083
+   },
+   "atomic_guid": "039b4b10-2900-404b-b67f-4b6d49aa6499",
+   "detected": 5,
+   "event_after_start": {
+    "max": 0.074,
+    "min": 0.039,
+    "n": 5,
+    "p50": 0.058,
+    "p95": 0.074
+   },
+   "first_alert_delivery": {
+    "max": 0.021,
+    "min": 0.004,
+    "n": 5,
+    "p50": 0.009,
+    "p95": 0.021
+   },
+   "n": 5,
+   "name": "Overwrite and delete a file with shred",
+   "rules_fired": {
+    "Remove Bulk Data from Disk": 5
+   },
+   "succeeded": 5,
+   "technique": "T1070.004",
+   "test": "shred"
+  }
+ ]
+}

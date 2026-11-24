@@ -1,0 +1,8 @@
+{
+ "decisions_by_the_collector_resolver": {
+  "cgroup-other warden=False inside=materialflow-control-plane": 40
+ },
+ "nested_container_cgroups": 40,
+ "node": "materialflow-control-plane",
+ "note": "Each nested containerd ID (12-character prefix, as Falco reports it) resolved with the collector's own Resolver against the live Docker API and /sys/fs/cgroup; IDs not recorded."
+}

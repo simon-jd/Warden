@@ -1,0 +1,40 @@
+Captured 2026-11-24 05:06:59 UTC (Mon 2026-11-23 21:06:59 PST), before the manual stop, with
+`make detect-status`, `systemctl --user list-timers 'warden-*'` and `systemctl --user show
+warden-detect-seven-day-stop.timer` (copied from the session's terminal output; the transient
+timer no longer exists).
+
+state: {"session": "20261116T062228Z", "started_at": "2026-11-16T06:22:28Z", "stopped_at": null, "up": true}
+host: container running since 2026-11-16T06:22:28.241118016Z; collector active
+  last heartbeat 2026-11-24T05:06:32.227798138Z: {"collector_errors": 0, "collector_restarts": 0, "dropped_error": 0, "dropped_host": 6827, "dropped_malformed": 0, "dropped_other_container": 559249, "dropped_other_lab_owned": 0, "dropped_other_lab_pod": 0, "dropped_other_nested": 0, "dropped_overflow": 0, "dropped_unresolved": 0, "duplicates": 0, "health_events": 11445, "pending": 0, ...}
+warden-detect-benign.timer: active
+warden-detect-seven-day-stop.timer: active
+
+NEXT                          LEFT LAST                           PASSED UNIT                               ACTIVATES
+Mon 2026-11-23 21:33:22 PST  26min Mon 2026-11-23 20:33:22 PST 33min ago warden-detect-benign.timer         warden-detect-benign.service
+Sun 2026-11-29 16:45:59 PST 5 days -                                   - warden-detect-seven-day-stop.timer warden-detect-seven-day-stop.service
+
+warden-detect-seven-day-stop.timer:
+InactiveExitTimestamp=Sun 2026-11-15 22:22:36 PST
+ActiveEnterTimestamp=Sun 2026-11-15 22:22:36 PST
+TimersMonotonic={ OnActiveUSec=1w 15min ; next_elapse=3w 17h 23min 51.995113s }
+NextElapseUSecMonotonic=3w 17h 23min 51.995113s
+LastTriggerUSec=
+Persistent=no
+
+warden-detect-benign.timer:
+ActiveEnterTimestamp=Sun 2026-11-15 22:22:36 PST
+TimersMonotonic={ OnUnitActiveUSec=1h ; next_elapse=2w 1d 22h 11min 14.305051s }
+TimersMonotonic={ OnActiveUSec=2min ; next_elapse=2w 17h 10min 51.994693s }
+LastTriggerUSec=Mon 2026-11-23 20:33:22 PST
+
+Host since 2026-11-07 23:22:07 PST (uptime -s); user manager since 2026-11-07 23:22:32 PST;
+Docker active since 2026-11-11 10:08:50 PST, NRestarts=0; warden-detect-falco-host started
+2026-11-16T06:22:28.241118016Z, RestartCount=0; no suspend or hibernate entry in the journal since 2026-11-16.
+
+The last four reloads before the stop was found (user-manager journal, PST). Every earlier reload had re-based the
+waiting stop timer too (run/user-manager-reloads.journal); the last one set the time shown above:
+Nov 22 16:30:54 Reload requested from client PID 1353046 ('systemctl') (unit sponsoratlas-airflow-end.service)
+Nov 22 16:30:57 Reload requested from client PID 1353282 ('systemctl') (unit sponsoratlas-airflow-end.service)
+Nov 22 16:30:59 Reload requested from client PID 1353354 ('systemctl') (unit sponsoratlas-airflow-end.service)
+Nov 22 16:30:59 Reload requested from client PID 1353402 ('systemctl') (unit sponsoratlas-airflow-end.service)
+16:30:59 PST + 1w 15min = Sun 2026-11-29 16:45:59 PST, the NEXT shown above.

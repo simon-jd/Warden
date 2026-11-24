@@ -1,0 +1,73 @@
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Disallowed K8s User"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Create Disallowed Pod"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Create Privileged Pod"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Create Sensitive Mount Pod"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Create HostNetwork Pod"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Create HostPid Pod"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Create HostIPC Pod"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Create NodePort Service"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Create/Modify Configmap With Private Credentials"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Anonymous Request Allowed"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Attach/Exec Pod"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "port-forward"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "EphemeralContainers Created"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Create Disallowed Namespace"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Pod Created in Kube Namespace"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Service Account Created in Kube Namespace"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "System ClusterRole Modified/Deleted"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Attach to cluster-admin Role"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "ClusterRole With Wildcard Created"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "ClusterRole With Write Privileges Created"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "ClusterRole With Pod Exec Created"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s Deployment Created"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s Deployment Deleted"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s Service Created"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s Service Deleted"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s ConfigMap Created"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s ConfigMap Deleted"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s Namespace Created"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s Namespace Deleted"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s Serviceaccount Created"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s Serviceaccount Deleted"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s Role Created"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s Role Deleted"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s ClusterRole Created"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s ClusterRole Deleted"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s RoleBinding Created"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s RoleBinding Deleted"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s ClusterRoleBinding Created"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s ClusterRoleBinding Deleted"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s Secret Created"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s Secret Deleted"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s Secret Get Successfully"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "K8s Secret Get Unsuccessfully Tried"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "All K8s Audit Events"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Full K8s Administrative Access"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Ingress Object without TLS Certificate Created"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Untrusted Node Successfully Joined the Cluster"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Untrusted Node Unsuccessfully Tried to Join the Cluster"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Run shell untrusted"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "System user interactive"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Terminal shell in container"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Clear Log Activities"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Packet socket created in container"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "PTRACE attached to process"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Find AWS Credentials"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "smoke-993ab7fa4afc10927db207f2", "rule_id": "Fileless execution via memfd_create"}

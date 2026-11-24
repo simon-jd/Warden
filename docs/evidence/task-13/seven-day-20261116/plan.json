@@ -1,0 +1,16 @@
+{
+ "benign_every_s": 3600,
+ "benign_first_after_s": 120,
+ "cpuset": "0-7",
+ "runtimes": [
+  "runc",
+  "gvisor"
+ ],
+ "session": "20261116T062228Z",
+ "sources": [
+  "falco-host"
+ ],
+ "stop_after_s": 605700,
+ "window_end": "2026-11-23T06:22:36.637725377Z",
+ "window_start": "2026-11-16T06:22:36.637725377Z"
+}

@@ -1,0 +1,7 @@
+36442220 host/alerts.jsonl
+1091397237 host/platform-alerts.jsonl
+176457310 host/scoping.jsonl
+31143376 host/health.jsonl
+16321428 host/heartbeats.jsonl
+1694962 host/registry.jsonl
+61586909 seven-day/normal-alerts.jsonl

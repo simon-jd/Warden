@@ -2,7 +2,8 @@
 	test-opensearch test-egress test-egress-runc test-vault test-kyverno test-kind test-gvisor test-identity test-cilium test-terraform terraform-plugins test-azure-respond \
 	azure-down azure-preflight test-azure-budget \
 	aks-probe aks-drill-plan aks-drill-up aks-drill-status aks-drill-down test-aks azure-teardown-check \
-	detect-up detect-status detect-down detect-purge detect-smoke detect-seven-day-start
+	detect-up detect-status detect-down detect-purge detect-smoke detect-seven-day-start \
+	kind-audit-up kind-audit-status kind-audit-check-empty kind-audit-down
 
 # One entry point for every offline suite, using project-local toolchains only
 # (.tools/, restored by `make tools`). Live, cloud and GPU tests are skipped
@@ -90,7 +91,8 @@ test-python:
 	$(PY_REPO) -m unittest detect.report.test_coverage detect.report.test_detection_metrics detect.report.test_detection_report \
 		detect.report.test_alert_import detect.report.test_observation detect.tests.backpressure_test \
 		detect.falco.test_collector detect.falco.test_recorder detect.falco.test_bindings detect.falco.test_detector \
-		detect.falco.test_benign detect.falco.test_review
+		detect.falco.test_benign detect.falco.test_review attacks.atomic.test_emulate attacks.stratus.test_emulate \
+		detect.falco.test_audit_collector detect.report.test_audit_alert_import
 
 test-sigma: $(TOOLS)/py/.lock-sha256
 	$(VENV_PY) -E -s -B -m unittest detect.sigma.test_contract detect.sigma.test_rules
@@ -316,11 +318,21 @@ fmt: $(GO)
 # and gVisor (up, actions, down) and writes the evidence to DETECT_OUT.
 # detect-seven-day-start starts the seven-day window only with
 # CONFIRM=seven-day and no DRY_RUN (any value); otherwise it is a dry run.
-DETECT := taskset -c 0-7,16-31 python3 -I -B detect/falco/detector.py
+# DETECT_K8SAUDIT=1 also starts the k8saudit instance (Falco 0.45.2 with the
+# k8saudit and json plugins and the stock k8s_audit_rules.yaml), which reads
+# the kind audit lab's API audit log: bring the lab up first
+# (make kind-audit-up). The seven-day window does not use it.
+# WARDEN_CPUSET=<cpu list> moves the detector, its units and the window's labs
+# to other CPUs (the seven-day timers keep it).
+WARDEN_CPUSET ?= 0-7,16-31
+export WARDEN_CPUSET
+DETECT := taskset -c $(WARDEN_CPUSET) python3 -I -B detect/falco/detector.py
 $(TOOLS)/falco/.complete:
 	scripts/restore-tools.sh falco
-detect-up: $(TOOLS)/falco/.complete
-	$(DETECT) up$(if $(filter 1,$(DETECT_GVISOR_ENGINE)), --gvisor-engine,)
+$(TOOLS)/falco-k8saudit/.complete:
+	scripts/restore-tools.sh falco-k8saudit
+detect-up: $(TOOLS)/falco/.complete $(if $(filter 1,$(DETECT_K8SAUDIT)),$(TOOLS)/falco-k8saudit/.complete,)
+	$(DETECT) up$(if $(filter 1,$(DETECT_GVISOR_ENGINE)), --gvisor-engine,)$(if $(filter 1,$(DETECT_K8SAUDIT)), --k8saudit,)
 detect-status:
 	$(DETECT) status
 detect-down:
@@ -331,6 +343,23 @@ detect-smoke: $(TOOLS)/falco/.complete
 	taskset -c 0-7,16-31 python3 -I -B detect/falco/smoke.py all --out $(abspath $(or $(DETECT_OUT),.cache/detect/smoke))
 detect-seven-day-start: $(TOOLS)/falco/.complete
 	$(DETECT) seven-day-start $(if $(and $(filter seven-day,$(CONFIRM)),$(if $(DRY_RUN),,1)),--confirm seven-day,--dry-run)
+
+# Task 13's kind audit lab (scripts/kind_lab.sh --audit, docs/falco-detector.md):
+# the cluster warden-lab with API audit logging into
+# .cache/kind-warden-lab/audit/audit.log, its node on CPUs 0-7,16-31. down
+# deletes the cluster, its network and kubeconfigs and keeps the audit logs.
+KIND_AUDIT := taskset -c 0-7,16-31 scripts/kind_lab.sh
+kind-audit-up:
+	$(KIND_AUDIT) up --audit
+kind-audit-status:
+	$(KIND_AUDIT) status --audit
+# Exit 0 only if the namespace warden-lab holds nothing of an earlier run:
+# call it before each run (the audit importer's namespace match ignores who
+# made a request).
+kind-audit-check-empty:
+	$(KIND_AUDIT) check-empty --audit
+kind-audit-down:
+	$(KIND_AUDIT) down --audit
 
 # rg-mlinfra-westus is always protected. No target/scope override is accepted.
 azure-down:

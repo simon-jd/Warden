@@ -1,0 +1,17 @@
+{"class": "node", "disposition": "false_positive", "process": "bridge", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "false_positive", "process": "cat", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "false_positive", "process": "containerd", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "false_positive", "process": "containerd-shim", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "false_positive", "process": "ctr", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "false_positive", "process": "exe", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "false_positive", "process": "find", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "false_positive", "process": "host-local", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "false_positive", "process": "k3s-server", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "false_positive", "process": "kubectl", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "false_positive", "process": "loopback", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "false_positive", "process": "modprobe", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "false_positive", "process": "runc", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "false_positive", "process": "umount", "rule": "Drop and execute new binary in container"}
+{"class": "node", "disposition": "false_positive", "process": "unpigz", "rule": "Drop and execute new binary in container"}
+{"class": "sandbox", "disposition": "true_positive", "process": "warden-probe", "rule": "PTRACE anti-debug attempt"}
+{"class": "platform", "disposition": "false_positive", "process": "gvisor_sentry", "rule": "PTRACE attached to process"}

@@ -1,0 +1,26 @@
+Events detected: 3
+Rule counts by severity:
+   NOTICE: 1
+   INFO: 2
+Triggered rules by rule name:
+   Attach/Exec Pod: 1
+   K8s Serviceaccount Created: 1
+   K8s Serviceaccount Deleted: 1
+2026-11-14T18:48:53+0000: Falco version: 0.45.2 (x86_64)
+2026-11-14T18:48:53+0000: Falco initialized with configuration files:
+2026-11-14T18:48:53+0000:    /etc/falco/config.d/90-warden.yaml | schema validation: failed for <root>[program_output]: Missing required property 'program'.
+2026-11-14T18:48:53+0000:    /etc/falco/config.d/91-warden-engine.yaml | schema validation: ok
+2026-11-14T18:48:53+0000:    /etc/falco/falco.yaml | schema validation: ok
+2026-11-14T18:48:53+0000: [libs]: Cannot read host init process proc root: 2
+2026-11-14T18:48:53+0000: Loaded plugin 'k8saudit@0.18.0' from file /warden-plugins/libk8saudit.so
+2026-11-14T18:48:53+0000: Loaded plugin 'json@0.7.4' from file /warden-plugins/libjson.so
+2026-11-14T18:48:53+0000: [libs]: Cannot read host init process proc root: 2
+2026-11-14T18:48:53+0000: [libs]: Cannot read host init process proc root: 2
+2026-11-14T18:48:53+0000: Loading rules from:
+2026-11-14T18:48:53+0000:    /warden-plugins/k8s_audit_rules.yaml | schema validation: ok
+2026-11-14T18:48:53+0000: Setting metrics interval to 60s, equivalent to 60000 (ms)
+2026-11-14T18:48:53+0000: Loaded event sources: syscall, k8s_audit
+2026-11-14T18:48:53+0000: Enabled event sources: k8s_audit
+2026-11-14T18:48:53+0000: Opening 'k8s_audit' source with plugin 'k8saudit'
+2026-11-14T18:48:53+0000: [libs]: Trying to open the right engine!
+2026-11-14T18:49:37+0000: SIGINT received, exiting...

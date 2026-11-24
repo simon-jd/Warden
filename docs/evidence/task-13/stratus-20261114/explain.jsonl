@@ -1,0 +1,46 @@
+{"end": "2026-11-15T07:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T06:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T08:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T07:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T09:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T08:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T10:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T09:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T11:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T10:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T12:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T11:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T13:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T12:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T14:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T13:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T15:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T14:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T16:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T15:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T17:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T16:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T18:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T17:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T19:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T18:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T20:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T19:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T21:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T20:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T22:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T21:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T23:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T22:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-16T00:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-15T23:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-16T01:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-16T00:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-16T02:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-16T01:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-16T03:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-16T02:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-16T04:52:29.233635309Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-16T03:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-16T05:44:08.120215163Z", "reasons": [], "source_id": "falco-host", "start": "2026-11-16T04:52:29.233635309Z", "workloads": {"gvisor": 0, "runc": 0}}
+{"end": "2026-11-15T07:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T06:52:29.233635309Z"}
+{"end": "2026-11-15T08:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T07:52:29.233635309Z"}
+{"end": "2026-11-15T09:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T08:52:29.233635309Z"}
+{"end": "2026-11-15T10:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T09:52:29.233635309Z"}
+{"end": "2026-11-15T11:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T10:52:29.233635309Z"}
+{"end": "2026-11-15T12:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T11:52:29.233635309Z"}
+{"end": "2026-11-15T13:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T12:52:29.233635309Z"}
+{"end": "2026-11-15T14:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T13:52:29.233635309Z"}
+{"end": "2026-11-15T15:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T14:52:29.233635309Z"}
+{"end": "2026-11-15T16:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T15:52:29.233635309Z"}
+{"end": "2026-11-15T17:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T16:52:29.233635309Z"}
+{"end": "2026-11-15T18:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T17:52:29.233635309Z"}
+{"end": "2026-11-15T19:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T18:52:29.233635309Z"}
+{"end": "2026-11-15T20:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T19:52:29.233635309Z"}
+{"end": "2026-11-15T21:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T20:52:29.233635309Z"}
+{"end": "2026-11-15T22:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T21:52:29.233635309Z"}
+{"end": "2026-11-15T23:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T22:52:29.233635309Z"}
+{"end": "2026-11-16T00:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-15T23:52:29.233635309Z"}
+{"end": "2026-11-16T01:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-16T00:52:29.233635309Z"}
+{"end": "2026-11-16T02:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-16T01:52:29.233635309Z"}
+{"end": "2026-11-16T03:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-16T02:52:29.233635309Z"}
+{"end": "2026-11-16T04:52:29.233635309Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-16T03:52:29.233635309Z"}
+{"end": "2026-11-16T05:44:08.120215163Z", "reasons": [], "source_id": "falco-k8saudit", "start": "2026-11-16T04:52:29.233635309Z"}

@@ -1,0 +1,187 @@
+{
+ "alerts_imported": 65,
+ "audit_session_sha256": "20095cdb58eb2a188560f85958a69b23b4ae510e8581a20a8802cc944dc00fca",
+ "checks": {
+  "check_empty_before_every_run": true,
+  "downloads_match_reference": true,
+  "dropped_events": 13383,
+  "empty_again_after_every_run": true,
+  "every_alert_joined_to_audit_feed_and_arrival": true,
+  "every_failed_detonation_read_cold_and_skipped_cleanup": true,
+  "every_receipt_has_correlation_id": true,
+  "every_successful_detonation_cleaned_once": true,
+  "failed_detonations_only_create_admin_clusterrole_known": true,
+  "forty_runs_five_per_technique": true,
+  "host_alerts_kept": 0,
+  "host_coverage_healthy": true,
+  "host_pending_at_cutoff": 0,
+  "host_unresolved_after_cutoff": 0,
+  "inventory_as_at_start_before_every_run": true,
+  "k8saudit_coverage_healthy": true,
+  "known_objects_absent_before_every_run": true,
+  "known_objects_deleted_after_every_create_admin_clusterrole_run": true,
+  "no_module_or_sysctl_change": true,
+  "no_nonzero_cleanup": true,
+  "no_token_or_private_key_in_evidence": true,
+  "nothing_unexpected_left": true,
+  "round_complete": true,
+  "runs_inside_window": true
+ },
+ "host_counts": {
+  "collector_errors": 0,
+  "collector_restarts": 0,
+  "dropped_error": 0,
+  "dropped_host": 97,
+  "dropped_malformed": 0,
+  "dropped_other_container": 47761,
+  "dropped_other_lab_owned": 0,
+  "dropped_other_lab_pod": 0,
+  "dropped_other_nested": 15,
+  "dropped_overflow": 0,
+  "dropped_unresolved": 0,
+  "duplicates": 0,
+  "health_events": 1373,
+  "pending": 0,
+  "platform_alerts": 0,
+  "received": 49231,
+  "warden_alerts": 0
+ },
+ "k8saudit_alerts_kept": 297,
+ "k8saudit_counts": {
+  "alerts": 297,
+  "audit_bytes_fed": 262148497,
+  "audit_lines_fed": 270505,
+  "audit_oversize": 0,
+  "audit_truncations": 0,
+  "audit_unparsed": 0,
+  "collector_errors": 0,
+  "collector_restarts": 0,
+  "dropped_malformed": 0,
+  "dropped_other_source": 0,
+  "dropped_overflow": 0,
+  "duplicates": 0,
+  "feed_reader_gone": 1,
+  "health_events": 1372,
+  "received": 1669
+ },
+ "leaked": [],
+ "metrics": {
+  "metrics-all-rounds.json": {
+   "alerts_on_failed_or_skipped_executions": 18,
+   "execution_count": 98,
+   "execution_detection": {
+    "denominator": 61,
+    "numerator": 45,
+    "rate": 0.7377049180327869
+   },
+   "latency_ns": {
+    "method": "nearest-rank",
+    "p50": 1191780000,
+    "p95": 3668312000,
+    "sample_count": 45
+   },
+   "technique_detection": {
+    "denominator": 11,
+    "numerator": 7,
+    "rate": 0.6363636363636364
+   }
+  },
+  "metrics-written-rules.json": {
+   "alerts_on_failed_or_skipped_executions": 15,
+   "execution_count": 30,
+   "execution_detection": {
+    "denominator": 25,
+    "numerator": 20,
+    "rate": 0.8
+   },
+   "latency_ns": {
+    "method": "nearest-rank",
+    "p50": 3293573000,
+    "p95": 3728687000,
+    "sample_count": 20
+   },
+   "technique_detection": {
+    "denominator": 4,
+    "numerator": 3,
+    "rate": 0.75
+   }
+  },
+  "metrics.json": {
+   "alerts_on_failed_or_skipped_executions": 15,
+   "execution_count": 40,
+   "execution_detection": {
+    "denominator": 35,
+    "numerator": 25,
+    "rate": 0.7142857142857143
+   },
+   "latency_ns": {
+    "method": "nearest-rank",
+    "p50": 3241560000,
+    "p95": 3728687000,
+    "sample_count": 25
+   },
+   "technique_detection": {
+    "denominator": 6,
+    "numerator": 4,
+    "rate": 0.6666666666666666
+   }
+  }
+ },
+ "pooled_detected_runs": {
+  "execution_detection": {
+   "denominator": 35,
+   "numerator": 25,
+   "rate": 0.7142857142857143
+  },
+  "latency_ns": {
+   "method": "nearest-rank",
+   "p50": 3241560000,
+   "p95": 3728687000,
+   "sample_count": 25
+  },
+  "start_to_alerts_file": {
+   "max": 3.804,
+   "min": 1.156,
+   "n": 25,
+   "p50": 3.271,
+   "p95": 3.744
+  },
+  "start_to_event": {
+   "max": 3.795,
+   "min": 1.14,
+   "n": 25,
+   "p50": 3.242,
+   "p95": 3.729
+  },
+  "start_to_fed": {
+   "max": 3.797,
+   "min": 1.149,
+   "n": 25,
+   "p50": 3.249,
+   "p95": 3.731
+  },
+  "start_to_request_received": {
+   "max": 3.791,
+   "min": 1.137,
+   "n": 25,
+   "p50": 3.236,
+   "p95": 3.688
+  },
+  "written_rules_execution_detection": {
+   "denominator": 25,
+   "numerator": 20,
+   "rate": 0.8
+  },
+  "written_rules_latency_ns": {
+   "method": "nearest-rank",
+   "p50": 3293573000,
+   "p95": 3728687000,
+   "sample_count": 20
+  }
+ },
+ "window": {
+  "end": "2026-11-16T05:44:08.120215163Z",
+  "session": "20261115T065213Z",
+  "start": "2026-11-15T06:52:29.233635309Z"
+ }
+}

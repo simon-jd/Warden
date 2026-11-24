@@ -1,0 +1,1002 @@
+[
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 1,
+  "lock_files": 0,
+  "out": "01-create-admin-clusterrole",
+  "providers_found": 0,
+  "technique": "k8s.persistence.create-admin-clusterrole",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.7.1/linux_amd64/terraform-provider-kubernetes_v2.7.1_x5",
+    "reference": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "sha256": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "what": "hashicorp/kubernetes 2.7.1"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.privilege-escalation.privileged-pod/da67723b-68ae-41b8-87c6-ef9e2072cc59/.terraform.lock.hcl",
+    "reference": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "sha256": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.7.1: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 2,
+  "lock_files": 1,
+  "out": "02-privileged-pod",
+  "providers_found": 1,
+  "technique": "k8s.privilege-escalation.privileged-pod",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.13.0/linux_amd64/terraform-provider-kubernetes_v2.13.0_x5",
+    "reference": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "sha256": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "what": "hashicorp/kubernetes 2.13.0"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.credential-access.steal-serviceaccount-token/55f75167-3c91-4e02-9961-ab4eec667cc5/.terraform.lock.hcl",
+    "reference": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "sha256": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.13.0: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 3,
+  "lock_files": 1,
+  "out": "03-steal-serviceaccount-token",
+  "providers_found": 1,
+  "technique": "k8s.credential-access.steal-serviceaccount-token",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.7.1/linux_amd64/terraform-provider-kubernetes_v2.7.1_x5",
+    "reference": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "sha256": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "what": "hashicorp/kubernetes 2.7.1"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.privilege-escalation.hostpath-volume/0ff49478-7bcc-4a6d-b9b4-26eb450a0562/.terraform.lock.hcl",
+    "reference": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "sha256": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.7.1: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 4,
+  "lock_files": 1,
+  "out": "04-hostpath-volume",
+  "providers_found": 1,
+  "technique": "k8s.privilege-escalation.hostpath-volume",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.13.0/linux_amd64/terraform-provider-kubernetes_v2.13.0_x5",
+    "reference": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "sha256": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "what": "hashicorp/kubernetes 2.13.0"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.privilege-escalation.nodes-proxy/71185abb-fdc6-4d81-9064-907d8f050494/.terraform.lock.hcl",
+    "reference": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "sha256": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.13.0: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 5,
+  "lock_files": 1,
+  "out": "05-nodes-proxy",
+  "providers_found": 1,
+  "technique": "k8s.privilege-escalation.nodes-proxy",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 6,
+  "lock_files": 0,
+  "out": "06-dump-secrets",
+  "providers_found": 0,
+  "technique": "k8s.credential-access.dump-secrets",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 7,
+  "lock_files": 0,
+  "out": "07-create-token",
+  "providers_found": 0,
+  "technique": "k8s.persistence.create-token",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 8,
+  "lock_files": 0,
+  "out": "08-create-client-certificate",
+  "providers_found": 0,
+  "technique": "k8s.persistence.create-client-certificate",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.7.1/linux_amd64/terraform-provider-kubernetes_v2.7.1_x5",
+    "reference": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "sha256": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "what": "hashicorp/kubernetes 2.7.1"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.privilege-escalation.privileged-pod/bf9486b6-4f98-49ed-a081-14c234b3b4cd/.terraform.lock.hcl",
+    "reference": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "sha256": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.7.1: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 9,
+  "lock_files": 1,
+  "out": "09-privileged-pod",
+  "providers_found": 1,
+  "technique": "k8s.privilege-escalation.privileged-pod",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.13.0/linux_amd64/terraform-provider-kubernetes_v2.13.0_x5",
+    "reference": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "sha256": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "what": "hashicorp/kubernetes 2.13.0"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.credential-access.steal-serviceaccount-token/a99be7e3-7ccd-40c3-8dff-ee12e1912df7/.terraform.lock.hcl",
+    "reference": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "sha256": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.13.0: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 10,
+  "lock_files": 1,
+  "out": "10-steal-serviceaccount-token",
+  "providers_found": 1,
+  "technique": "k8s.credential-access.steal-serviceaccount-token",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.7.1/linux_amd64/terraform-provider-kubernetes_v2.7.1_x5",
+    "reference": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "sha256": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "what": "hashicorp/kubernetes 2.7.1"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.privilege-escalation.hostpath-volume/ef1f400f-0fa2-486d-afd6-d2da9f38ecdd/.terraform.lock.hcl",
+    "reference": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "sha256": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.7.1: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 11,
+  "lock_files": 1,
+  "out": "11-hostpath-volume",
+  "providers_found": 1,
+  "technique": "k8s.privilege-escalation.hostpath-volume",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.13.0/linux_amd64/terraform-provider-kubernetes_v2.13.0_x5",
+    "reference": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "sha256": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "what": "hashicorp/kubernetes 2.13.0"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.privilege-escalation.nodes-proxy/fdf9138f-e32f-4a53-832a-f10b388b7a8a/.terraform.lock.hcl",
+    "reference": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "sha256": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.13.0: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 12,
+  "lock_files": 1,
+  "out": "12-nodes-proxy",
+  "providers_found": 1,
+  "technique": "k8s.privilege-escalation.nodes-proxy",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 13,
+  "lock_files": 0,
+  "out": "13-dump-secrets",
+  "providers_found": 0,
+  "technique": "k8s.credential-access.dump-secrets",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 14,
+  "lock_files": 0,
+  "out": "14-create-token",
+  "providers_found": 0,
+  "technique": "k8s.persistence.create-token",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 15,
+  "lock_files": 0,
+  "out": "15-create-client-certificate",
+  "providers_found": 0,
+  "technique": "k8s.persistence.create-client-certificate",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 16,
+  "lock_files": 0,
+  "out": "16-create-admin-clusterrole",
+  "providers_found": 0,
+  "technique": "k8s.persistence.create-admin-clusterrole",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.13.0/linux_amd64/terraform-provider-kubernetes_v2.13.0_x5",
+    "reference": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "sha256": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "what": "hashicorp/kubernetes 2.13.0"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.credential-access.steal-serviceaccount-token/cde1c56c-5da4-4dbe-8ef0-3afe1de20971/.terraform.lock.hcl",
+    "reference": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "sha256": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.13.0: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 17,
+  "lock_files": 1,
+  "out": "17-steal-serviceaccount-token",
+  "providers_found": 1,
+  "technique": "k8s.credential-access.steal-serviceaccount-token",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.7.1/linux_amd64/terraform-provider-kubernetes_v2.7.1_x5",
+    "reference": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "sha256": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "what": "hashicorp/kubernetes 2.7.1"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.privilege-escalation.hostpath-volume/7a420ae4-51cc-4aaa-af7b-ac630524cd2c/.terraform.lock.hcl",
+    "reference": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "sha256": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.7.1: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 18,
+  "lock_files": 1,
+  "out": "18-hostpath-volume",
+  "providers_found": 1,
+  "technique": "k8s.privilege-escalation.hostpath-volume",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.13.0/linux_amd64/terraform-provider-kubernetes_v2.13.0_x5",
+    "reference": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "sha256": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "what": "hashicorp/kubernetes 2.13.0"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.privilege-escalation.nodes-proxy/e9bac895-f5a2-4b4c-a7d3-f68908343c43/.terraform.lock.hcl",
+    "reference": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "sha256": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.13.0: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 19,
+  "lock_files": 1,
+  "out": "19-nodes-proxy",
+  "providers_found": 1,
+  "technique": "k8s.privilege-escalation.nodes-proxy",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 20,
+  "lock_files": 0,
+  "out": "20-dump-secrets",
+  "providers_found": 0,
+  "technique": "k8s.credential-access.dump-secrets",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 21,
+  "lock_files": 0,
+  "out": "21-create-token",
+  "providers_found": 0,
+  "technique": "k8s.persistence.create-token",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 22,
+  "lock_files": 0,
+  "out": "22-create-client-certificate",
+  "providers_found": 0,
+  "technique": "k8s.persistence.create-client-certificate",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 23,
+  "lock_files": 0,
+  "out": "23-create-admin-clusterrole",
+  "providers_found": 0,
+  "technique": "k8s.persistence.create-admin-clusterrole",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.7.1/linux_amd64/terraform-provider-kubernetes_v2.7.1_x5",
+    "reference": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "sha256": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "what": "hashicorp/kubernetes 2.7.1"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.privilege-escalation.privileged-pod/c2aa552b-cd21-4006-8260-7810f34522e0/.terraform.lock.hcl",
+    "reference": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "sha256": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.7.1: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 24,
+  "lock_files": 1,
+  "out": "24-privileged-pod",
+  "providers_found": 1,
+  "technique": "k8s.privilege-escalation.privileged-pod",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.7.1/linux_amd64/terraform-provider-kubernetes_v2.7.1_x5",
+    "reference": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "sha256": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "what": "hashicorp/kubernetes 2.7.1"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.privilege-escalation.hostpath-volume/058c58d6-0210-4517-b75c-74b4ed431512/.terraform.lock.hcl",
+    "reference": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "sha256": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.7.1: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 25,
+  "lock_files": 1,
+  "out": "25-hostpath-volume",
+  "providers_found": 1,
+  "technique": "k8s.privilege-escalation.hostpath-volume",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.13.0/linux_amd64/terraform-provider-kubernetes_v2.13.0_x5",
+    "reference": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "sha256": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "what": "hashicorp/kubernetes 2.13.0"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.privilege-escalation.nodes-proxy/bf9a3521-f332-428b-b6f9-a76fce8bf411/.terraform.lock.hcl",
+    "reference": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "sha256": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.13.0: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 26,
+  "lock_files": 1,
+  "out": "26-nodes-proxy",
+  "providers_found": 1,
+  "technique": "k8s.privilege-escalation.nodes-proxy",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 27,
+  "lock_files": 0,
+  "out": "27-dump-secrets",
+  "providers_found": 0,
+  "technique": "k8s.credential-access.dump-secrets",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 28,
+  "lock_files": 0,
+  "out": "28-create-token",
+  "providers_found": 0,
+  "technique": "k8s.persistence.create-token",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 29,
+  "lock_files": 0,
+  "out": "29-create-client-certificate",
+  "providers_found": 0,
+  "technique": "k8s.persistence.create-client-certificate",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 30,
+  "lock_files": 0,
+  "out": "30-create-admin-clusterrole",
+  "providers_found": 0,
+  "technique": "k8s.persistence.create-admin-clusterrole",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.7.1/linux_amd64/terraform-provider-kubernetes_v2.7.1_x5",
+    "reference": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "sha256": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "what": "hashicorp/kubernetes 2.7.1"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.privilege-escalation.privileged-pod/15e70833-4460-4005-b84f-5df5c9453f75/.terraform.lock.hcl",
+    "reference": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "sha256": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.7.1: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 31,
+  "lock_files": 1,
+  "out": "31-privileged-pod",
+  "providers_found": 1,
+  "technique": "k8s.privilege-escalation.privileged-pod",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.13.0/linux_amd64/terraform-provider-kubernetes_v2.13.0_x5",
+    "reference": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "sha256": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "what": "hashicorp/kubernetes 2.13.0"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.credential-access.steal-serviceaccount-token/a6c6226e-83e7-4c5e-ab36-13152df7d250/.terraform.lock.hcl",
+    "reference": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "sha256": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.13.0: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 32,
+  "lock_files": 1,
+  "out": "32-steal-serviceaccount-token",
+  "providers_found": 1,
+  "technique": "k8s.credential-access.steal-serviceaccount-token",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.13.0/linux_amd64/terraform-provider-kubernetes_v2.13.0_x5",
+    "reference": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "sha256": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "what": "hashicorp/kubernetes 2.13.0"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.privilege-escalation.nodes-proxy/3e1a2513-bf43-4f4c-9f66-e7c872d91c62/.terraform.lock.hcl",
+    "reference": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "sha256": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.13.0: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 33,
+  "lock_files": 1,
+  "out": "33-nodes-proxy",
+  "providers_found": 1,
+  "technique": "k8s.privilege-escalation.nodes-proxy",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 34,
+  "lock_files": 0,
+  "out": "34-dump-secrets",
+  "providers_found": 0,
+  "technique": "k8s.credential-access.dump-secrets",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 35,
+  "lock_files": 0,
+  "out": "35-create-token",
+  "providers_found": 0,
+  "technique": "k8s.persistence.create-token",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 36,
+  "lock_files": 0,
+  "out": "36-create-client-certificate",
+  "providers_found": 0,
+  "technique": "k8s.persistence.create-client-certificate",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   }
+  ],
+  "index": 37,
+  "lock_files": 0,
+  "out": "37-create-admin-clusterrole",
+  "providers_found": 0,
+  "technique": "k8s.persistence.create-admin-clusterrole",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.7.1/linux_amd64/terraform-provider-kubernetes_v2.7.1_x5",
+    "reference": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "sha256": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "what": "hashicorp/kubernetes 2.7.1"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.privilege-escalation.privileged-pod/c43abb01-1756-41ed-9462-15354ac211b3/.terraform.lock.hcl",
+    "reference": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "sha256": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.7.1: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 38,
+  "lock_files": 1,
+  "out": "38-privileged-pod",
+  "providers_found": 1,
+  "technique": "k8s.privilege-escalation.privileged-pod",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.13.0/linux_amd64/terraform-provider-kubernetes_v2.13.0_x5",
+    "reference": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "sha256": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+    "what": "hashicorp/kubernetes 2.13.0"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.credential-access.steal-serviceaccount-token/73e9c881-fc08-491b-97e9-96b750af02f9/.terraform.lock.hcl",
+    "reference": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "sha256": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.13.0: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 39,
+  "lock_files": 1,
+  "out": "39-steal-serviceaccount-token",
+  "providers_found": 1,
+  "technique": "k8s.credential-access.steal-serviceaccount-token",
+  "terraform_found": 1,
+  "watch_errors": []
+ },
+ {
+  "checked": [
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/terraform",
+    "reference": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "sha256": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911",
+    "what": "terraform 1.3.10"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/plugin-cache/registry.terraform.io/hashicorp/kubernetes/2.7.1/linux_amd64/terraform-provider-kubernetes_v2.7.1_x5",
+    "reference": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "sha256": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+    "what": "hashicorp/kubernetes 2.7.1"
+   },
+   {
+    "match": true,
+    "path": "home/.stratus-red-team/k8s.privilege-escalation.hostpath-volume/d050e205-dcec-48a5-92e1-fe568964ec0f/.terraform.lock.hcl",
+    "reference": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "sha256": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a",
+    "what": "lock file registry.terraform.io/hashicorp/kubernetes 2.7.1: zh of the linux_amd64 zip"
+   }
+  ],
+  "index": 40,
+  "lock_files": 1,
+  "out": "40-hostpath-volume",
+  "providers_found": 1,
+  "technique": "k8s.privilege-escalation.hostpath-volume",
+  "terraform_found": 1,
+  "watch_errors": []
+ }
+]

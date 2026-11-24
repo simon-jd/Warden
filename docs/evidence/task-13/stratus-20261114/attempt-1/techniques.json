@@ -1,0 +1,152 @@
+{
+ "pooled_detected_runs": {
+  "execution_detection": {
+   "denominator": 1,
+   "numerator": 1,
+   "rate": 1.0
+  },
+  "latency_ns": {
+   "method": "nearest-rank",
+   "p50": 3092234000,
+   "p95": 3092234000,
+   "sample_count": 1
+  },
+  "start_to_alerts_file": {
+   "max": 3.114,
+   "min": 3.114,
+   "n": 1,
+   "p50": 3.114,
+   "p95": 3.114
+  },
+  "start_to_event": {
+   "max": 3.092,
+   "min": 3.092,
+   "n": 1,
+   "p50": 3.092,
+   "p95": 3.092
+  },
+  "start_to_fed": {
+   "max": 3.101,
+   "min": 3.101,
+   "n": 1,
+   "p50": 3.101,
+   "p95": 3.101
+  },
+  "start_to_request_received": {
+   "max": 3.087,
+   "min": 3.087,
+   "n": 1,
+   "p50": 3.087,
+   "p95": 3.087
+  },
+  "written_rules_execution_detection": {
+   "denominator": 1,
+   "numerator": 1,
+   "rate": 1.0
+  },
+  "written_rules_latency_ns": {
+   "method": "nearest-rank",
+   "p50": 3092234000,
+   "p95": 3092234000,
+   "sample_count": 1
+  }
+ },
+ "techniques": [
+  {
+   "alerts_by_actor": {
+    "ClusterRole With Wildcard Created by stratus": 1,
+    "K8s ClusterRoleBinding Created by stratus": 1,
+    "Service Account Created in Kube Namespace by stratus": 1
+   },
+   "alerts_on_failed_runs": {
+    "ClusterRole With Wildcard Created": 1,
+    "K8s ClusterRoleBinding Created": 1,
+    "Service Account Created in Kube Namespace": 1
+   },
+   "alerts_on_succeeded_runs": {},
+   "detected": 0,
+   "failed": 1,
+   "first_alert_rules": [],
+   "n": 1,
+   "no_rule_written": false,
+   "start_to_alerts_file": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "start_to_event": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "start_to_fed": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "start_to_request_received": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "succeeded": 0,
+   "technique": "k8s.persistence.create-admin-clusterrole",
+   "technique_id": "T1098.006"
+  },
+  {
+   "alerts_by_actor": {
+    "Create Privileged Pod by stratus": 1
+   },
+   "alerts_on_failed_runs": {},
+   "alerts_on_succeeded_runs": {
+    "Create Privileged Pod": 1
+   },
+   "detected": 1,
+   "failed": 0,
+   "first_alert_rules": [
+    "Create Privileged Pod"
+   ],
+   "n": 1,
+   "no_rule_written": false,
+   "start_to_alerts_file": {
+    "max": 3.114,
+    "min": 3.114,
+    "n": 1,
+    "p50": 3.114,
+    "p95": 3.114
+   },
+   "start_to_event": {
+    "max": 3.092,
+    "min": 3.092,
+    "n": 1,
+    "p50": 3.092,
+    "p95": 3.092
+   },
+   "start_to_fed": {
+    "max": 3.101,
+    "min": 3.101,
+    "n": 1,
+    "p50": 3.101,
+    "p95": 3.101
+   },
+   "start_to_request_received": {
+    "max": 3.087,
+    "min": 3.087,
+    "n": 1,
+    "p50": 3.087,
+    "p95": 3.087
+   },
+   "succeeded": 1,
+   "technique": "k8s.privilege-escalation.privileged-pod",
+   "technique_id": "T1611"
+  }
+ ]
+}

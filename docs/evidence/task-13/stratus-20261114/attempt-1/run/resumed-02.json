@@ -1,0 +1,40 @@
+{
+ "after_run": 1,
+ "check_empty_after": {
+  "finished_at": "2026-11-14T20:16:09.445391784Z",
+  "result": {
+   "empty": true,
+   "left": [],
+   "namespace": "warden-lab",
+   "types_checked": 29
+  },
+  "returncode": 0,
+  "started_at": "2026-11-14T20:16:09.242191527Z",
+  "stderr": ""
+ },
+ "inventory_difference_after": {},
+ "note": "Run 1 (create-admin-clusterrole): detonation returned 1 (the expected failure on Kubernetes >= 1.24: no legacy token Secret), and the wrapper's separate stratus cleanup returned 1. Stratus v2.38.0 (runner.go): the technique has no Terraform prerequisites, so warm-up sets no state and a failed detonation leaves it COLD; CleanUp on a COLD technique returns 'is already COLD and should already be clean' without reverting, so neither the cleanup inside detonate --cleanup nor the separate one removed the ClusterRole, the ClusterRoleBinding and the ServiceAccount in kube-system. Deleted here by exact name, between runs (outside any run window).",
+ "restored": true,
+ "steps": [
+  {
+   "command": "kubectl delete clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb --wait=true --timeout=60s",
+   "finished_at": "2026-11-14T20:16:08.825008047Z",
+   "output": "clusterrolebinding.rbac.authorization.k8s.io \"stratus-red-team-crb\" deleted",
+   "returncode": 0
+  },
+  {
+   "command": "kubectl delete clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole --wait=true --timeout=60s",
+   "finished_at": "2026-11-14T20:16:08.862426373Z",
+   "output": "clusterrole.rbac.authorization.k8s.io \"stratus-red-team-clusterrole\" deleted",
+   "returncode": 0
+  },
+  {
+   "command": "kubectl delete serviceaccount/stratus-red-team-serviceaccount --wait=true --timeout=60s -n kube-system",
+   "finished_at": "2026-11-14T20:16:08.896359015Z",
+   "output": "serviceaccount \"stratus-red-team-serviceaccount\" deleted from kube-system namespace",
+   "returncode": 0
+  }
+ ],
+ "stopped": "cleanup returned 1",
+ "technique": "k8s.persistence.create-admin-clusterrole"
+}

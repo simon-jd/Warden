@@ -1,0 +1,78 @@
+[
+ {
+  "alert_id": "falco-a88f310c3bf01295408447dd89a11cd869590d01e5576f0f90b479422b8688bc",
+  "audit_id": "f49ddc5b-77f4-48f8-b809-045bdc412e8d",
+  "event_time": "2026-11-14T18:49:16.038832000Z",
+  "event_to_fed_s": 0.001693,
+  "fed_at": "2026-11-14T18:49:16.040524608Z",
+  "fed_to_alerts_file_s": 0.029131,
+  "label": "smoke-993ab7fa4afc10927db207f2",
+  "matched_by": [
+   "label",
+   "namespace"
+  ],
+  "namespace": "warden-lab",
+  "read_at": "2026-11-14T18:49:16.069477950Z",
+  "request_received_at": "2026-11-14T18:49:16.036311Z",
+  "request_uri": "/api/v1/namespaces/warden-lab/serviceaccounts?fieldManager=kubectl-create&fieldValidation=Strict",
+  "rule": "K8s Serviceaccount Created",
+  "stage": "ResponseComplete",
+  "start_to_alerts_file_s": 0.401725,
+  "start_to_event_s": 0.370902,
+  "start_to_fed_s": 0.372595,
+  "start_to_request_received_s": 0.368381,
+  "user_agent": "kubectl/v1.36.5 (linux/amd64) kubernetes/ad950d1",
+  "verb": "create",
+  "written_at": "2026-11-14T18:49:16.069655127Z"
+ },
+ {
+  "alert_id": "falco-94e8339e72183c624a2229e462b2acef6f836abf47b291756d088a90cb7c13c3",
+  "audit_id": "1e329269-c77c-4345-8fbf-dc2e81478a26",
+  "event_time": "2026-11-14T18:49:16.082831000Z",
+  "event_to_fed_s": 0.008248,
+  "fed_at": "2026-11-14T18:49:16.091078734Z",
+  "fed_to_alerts_file_s": 0.011268,
+  "label": null,
+  "matched_by": [
+   "namespace"
+  ],
+  "namespace": "warden-lab",
+  "read_at": "2026-11-14T18:49:16.102200872Z",
+  "request_received_at": "2026-11-14T18:49:16.082002Z",
+  "request_uri": "/api/v1/namespaces/warden-lab/pods/smoke-10927db207f2/exec?command=cat&command=%2Fetc%2Fhostname&container=busybox&stderr=true&stdout=true",
+  "rule": "Attach/Exec Pod",
+  "stage": "ResponseStarted",
+  "start_to_alerts_file_s": 0.434417,
+  "start_to_event_s": 0.414901,
+  "start_to_fed_s": 0.423149,
+  "start_to_request_received_s": 0.414072,
+  "user_agent": "kubectl/v1.36.5 (linux/amd64) kubernetes/ad950d1",
+  "verb": "get",
+  "written_at": "2026-11-14T18:49:16.102346420Z"
+ },
+ {
+  "alert_id": "falco-9a58b360ca4e6cccbf34d97d17eb3ec9ca24757437a3f36517bfea53f58ff619",
+  "audit_id": "504e625f-39df-4202-aa73-79fe4380a8ff",
+  "event_time": "2026-11-14T18:49:16.223208000Z",
+  "event_to_fed_s": 0.009389,
+  "fed_at": "2026-11-14T18:49:16.232597264Z",
+  "fed_to_alerts_file_s": 0.030764,
+  "label": null,
+  "matched_by": [
+   "namespace"
+  ],
+  "namespace": "warden-lab",
+  "read_at": "2026-11-14T18:49:16.263230173Z",
+  "request_received_at": "2026-11-14T18:49:16.221024Z",
+  "request_uri": "/api/v1/namespaces/warden-lab/serviceaccounts/smoke-sa-10927db207f2",
+  "rule": "K8s Serviceaccount Deleted",
+  "stage": "ResponseComplete",
+  "start_to_alerts_file_s": 0.595432,
+  "start_to_event_s": 0.555278,
+  "start_to_fed_s": 0.564668,
+  "start_to_request_received_s": 0.553094,
+  "user_agent": "kubectl/v1.36.5 (linux/amd64) kubernetes/ad950d1",
+  "verb": "delete",
+  "written_at": "2026-11-14T18:49:16.263361640Z"
+ }
+]

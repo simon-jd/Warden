@@ -1,0 +1,27 @@
+taskset -c 0-7,16-31 scripts/kind_lab.sh up --audit
+Creating cluster "warden-lab" ...
+ • Ensuring node image (kindest/node:v1.34.11) 🖼️  ...
+WARNING: Overriding docker network due to KIND_EXPERIMENTAL_DOCKER_NETWORK
+WARNING: Here be dragons! This is not supported currently.
+ ✓ Ensuring node image (kindest/node:v1.34.11) 🖼️
+ • Preparing nodes 📦   ...
+ ✓ Preparing nodes 📦 
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Starting control-plane 🕹️
+ • Installing CNI 🔌  ...
+ ✓ Installing CNI 🔌
+ • Installing StorageClass 💾  ...
+ ✓ Installing StorageClass 💾
+ • Waiting ≤ 3m0s for control-plane = Ready ⏳  ...
+ ✓ Waiting ≤ 3m0s for control-plane = Ready ⏳
+ • Ready after 16s 💚
+Set kubectl context to "kind-warden-lab"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-warden-lab --kubeconfig /home/postedism/Desktop/Warden-t13c/.cache/kind-warden-lab/kubeconfig
+
+Have a question, bug, or feature request? Let us know! https://kind.sigs.k8s.io/#community 🙂
+warden-lab-control-plane: cpuset 0-7,16-31 (docker update --cpuset-cpus 0-7,16-31)
+kind audit lab up: audit log /home/postedism/Desktop/Warden-t13c/.cache/kind-warden-lab/audit/audit.log, kubeconfig /home/postedism/Desktop/Warden-t13c/.cache/kind-warden-lab/kubeconfig.json, namespace warden-lab

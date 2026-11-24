@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """Warden's online detector on home-ubuntu: a pinned Falco container and its collector.
 
-    detector.py up [--gvisor-engine]  start the host instance and its collector
+    detector.py up [--gvisor-engine] [--k8saudit]
+                                 start the host instance and its collector
                                  (--gvisor-engine also the gVisor-engine
-                                 instance; opt-in, broken upstream)
+                                 instance; opt-in, broken upstream;
+                                 --k8saudit also the k8saudit instance for
+                                 the kind audit lab)
     detector.py status           what runs, the last heartbeat and the counts
     detector.py down             stop them; compare the host's modules and sysctls
     detector.py purge            down, then remove the images, the socket volume and the FIFOs
@@ -25,10 +28,17 @@ Instances (docs/falco-detector.md):
   gVisor engine, unprivileged with no capabilities, fed by the k3s lab's runsc
   when the lab is up with --falco. It exits at the first event
   (falcosecurity/libs#3074), so it is not part of the default detector.
+* k8saudit (opt-in, --k8saudit): Falco 0.45.2 with the k8saudit 0.18.0 and
+  json 0.7.4 plugins and the stock k8s_audit_rules.yaml of the plugins' tag
+  plugins/k8saudit/v0.18.0, all pinned by SHA-256 (scripts/restore-tools.sh
+  falco-k8saudit) and checked before up. It reads the API audit log of the
+  kind audit lab (scripts/kind_lab.sh up --audit) through audit_collector.py,
+  which also keeps its alerts; no system call source, no capabilities, no
+  network.
 
 Both images are pinned by digest (scripts/restore-tools.sh falco), loaded
 into Docker from .tools/falco and run by image ID. Each container is pinned
-to CPUs 0-7,16-31, has memory and pid limits and a rotated log (json-file,
+to CPUs 0-7,16-31 (WARDEN_CPUSET overrides that), has memory and pid limits and a rotated log (json-file,
 10 MiB x 3) that holds only Falco's own messages: alerts go to the
 collector's FIFO. The rules are each image's stock falco_rules.yaml. Every
 object carries owner=warden-lab and warden.detect/role=falco; nothing
@@ -42,6 +52,7 @@ import json
 import os
 from pathlib import Path
 import re
+import stat
 import subprocess
 import sys
 import time
@@ -51,13 +62,37 @@ import recorder  # noqa: E402  (this directory, made explicit: the units run pyt
 import review  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
-CPUSET = '0-7,16-31'
+# The CPUs everything here runs on: the make targets' taskset, the Falco
+# containers, the collector, benign and stop units, and the labs
+# (WARDEN_LAB_CPUSET). WARDEN_CPUSET overrides the default for a host whose
+# other CPUs are taken; the seven-day timers pass it on with --setenv, so their
+# python sees the same list, and the plan records it.
+DEFAULT_CPUSET = '0-7,16-31'
+CPUSET = os.environ.get('WARDEN_CPUSET') or DEFAULT_CPUSET
+if not re.fullmatch(r'[0-9]+(?:-[0-9]+)?(?:,[0-9]+(?:-[0-9]+)?)*', CPUSET):
+    raise SystemExit('WARDEN_CPUSET must be a CPU list such as 0-7,16-31, not %r' % CPUSET)
 DETECT = ROOT / '.cache/detect'
 STATE = DETECT / 'state'
 RUNDIR = DETECT / 'run'
 DATA = DETECT / 'data'
 TOOLS = ROOT / '.tools/falco'
 LAB_KUBECONFIG = ROOT / '.cache/k3s-gvisor/lab/kubeconfig'
+# The kind audit lab's API audit log (scripts/kind_lab.sh up --audit).
+KIND_AUDIT_LOG = ROOT / '.cache/kind-warden-lab/audit/audit.log'
+K8SAUDIT_TOOLS = ROOT / '.tools/falco-k8saudit'
+# The kind audit lab's node containers: kind's cluster label, and the names
+# attacks/stratus/emulate.py accepts.
+KIND_AUDIT_CLUSTER = ('io.x-k8s.kind.cluster', 'warden-lab')
+KIND_AUDIT_NODE = re.compile(r'warden-lab-(control-plane[0-9]*|worker[0-9]*)')
+# What scripts/restore-tools.sh falco-k8saudit unpacks: the two plugin
+# libraries from the official release archives (download.falco.org, the same
+# bytes as the ghcr.io/falcosecurity/plugins artifacts' layers) and the
+# rules file at the tag plugins/k8saudit/v0.18.0. up refuses any other bytes.
+K8SAUDIT_FILES = {
+    'libk8saudit.so': '4c28b1bd3b12c5743d70d824055ed147cf3ab355c6d9b4b166959b3b28881acd',
+    'libjson.so': '4009cbf7301efa36425ee58e3d281a16b3f13055d78729beec036fd3238b78c5',
+    'k8s_audit_rules.yaml': 'fa53280e337db6edaeb44cf49fbd1be4349f3c48e3cd0017c2575097df901a1e',
+}
 CONFIG = ROOT / 'detect/falco'
 RUNSC = ROOT / '.tools/gvisor/runsc'
 VOLUME = 'warden-detect-gvisor'
@@ -78,8 +113,16 @@ INSTANCES = {
         'image': 'sha256:9f3e058ce652ecf98aa2b4d8a41e80385b08ecb17d3153bb1d1a03a406378a31',
         'archive': 'falco-0.43.1.oci.tar', 'memory': 512 << 20, 'pids': 256, 'engine': 'falco-gvisor.yaml',
         'source_id': 'falco-gvisor', 'runtime': 'gvisor', 'snapshot_gap': None},
+    'k8saudit': {
+        'container': 'warden-detect-falco-k8saudit', 'unit': 'warden-detect-collector-k8saudit',
+        'ref': 'docker.io/falcosecurity/falco:0.45.2@sha256:1562a643953f938e02f47319b5214d93a235f11f646d60e9b8a516fd5a64698e',
+        'image': 'sha256:27a94a2841d872ec5ff158f2c86a9d87b0b74503d0445d63cbd57d6d1545e102',
+        'archive': 'falco-0.45.2.oci.tar', 'memory': 512 << 20, 'pids': 256, 'engine': 'falco-k8saudit.yaml',
+        'source_id': 'falco-k8saudit', 'runtime': 'kind', 'snapshot_gap': 150},
 }
 DEFAULT_ENGINES = ('host',)
+# The FIFOs each instance's collector creates in RUNDIR/<instance>/.
+FIFOS = {'host': ('alerts.fifo',), 'gvisor': ('alerts.fifo',), 'k8saudit': ('alerts.fifo', 'audit.fifo')}
 # The resident memory the benign runc lab run must count besides its own.
 FALCO_MEMORY = INSTANCES['host']['memory']
 LAB_SCRIPT = ROOT / 'scripts/k3s_gvisor_lab.sh'
@@ -157,6 +200,13 @@ def falco_args(instance, session, gid):
                  # tracefs, read-only: the probe's TOCTOU programs look up the
                  # syscalls tracepoints there.
                  *mount('/sys/kernel/tracing', '/sys/kernel/tracing')]
+    elif instance == 'k8saudit':
+        # No capabilities: the FIFOs are opened through the user's group.
+        # config.d is an empty tmpfs that holds only Warden's two files, so
+        # the image's container plugin is not loaded.
+        args += ['--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', '--group-add', str(gid),
+                 '--tmpfs', '/tmp:rw,nosuid,nodev,size=16m', '--tmpfs', '/etc/falco/config.d:rw,nosuid,nodev,noexec,size=64k',
+                 *mount(K8SAUDIT_TOOLS, '/warden-plugins')]
     else:
         args += ['--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', '--group-add', str(gid),
                  '--tmpfs', '/tmp:rw,nosuid,nodev,size=16m', '--tmpfs', '/run/warden-runsc-root:rw,nosuid,nodev,size=1m',
@@ -167,12 +217,21 @@ def falco_args(instance, session, gid):
              *mount(CONFIG / spec['engine'], '/etc/falco/config.d/91-warden-engine.yaml'),
              *mount(RUNDIR / instance, '/warden-detect-out', readonly=False),
              spec['image'], '/usr/bin/falco']
+    if instance == 'k8saudit':
+        args += ['--enable-source', 'k8s_audit', '-r', '/warden-plugins/k8s_audit_rules.yaml']
     return args
 
 
 def collector_args(instance, session, gid):
     """systemd-run arguments for one collector (a transient user service)."""
     spec = INSTANCES[instance]
+    if instance == 'k8saudit':
+        argv = ['/usr/bin/taskset', '-c', CPUSET, '/usr/bin/python3', '-I', '-B', str(CONFIG / 'audit_collector.py'),
+                '--audit-log', str(KIND_AUDIT_LOG), '--audit-fifo', str(RUNDIR / instance / 'audit.fifo'),
+                '--fifo', str(RUNDIR / instance / 'alerts.fifo'), '--fifo-gid', str(gid),
+                '--out', str(DATA / session / instance), '--falco-container', spec['container']]
+        return ['--unit', spec['unit'], '--collect', '--quiet', '--property=TimeoutStopSec=60', '--property=Restart=on-failure',
+                '--property=RestartSec=2s', '--', *argv]
     argv = ['/usr/bin/taskset', '-c', CPUSET, '/usr/bin/python3', '-I', '-B', str(CONFIG / 'collector.py'),
             '--instance', instance, '--fifo', str(RUNDIR / instance / 'alerts.fifo'), '--out', str(DATA / session / instance),
             '--falco-container', spec['container'], '--kubeconfig', str(LAB_KUBECONFIG)]
@@ -268,6 +327,32 @@ def ensure_volume(host):
     host.docker(['volume', 'create', *sum((['--label', '%s=%s' % kv] for kv in LABELS.items()), []), VOLUME])
 
 
+def file_sha256(path):
+    digest = hashlib.sha256()
+    with open(path, 'rb') as source:
+        for block in iter(lambda: source.read(1 << 20), b''):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def check_k8saudit_inputs():
+    """The pinned plugins and rules, and the kind audit lab's audit log."""
+    for name, want in K8SAUDIT_FILES.items():
+        path = K8SAUDIT_TOOLS / name
+        if not path.is_file() or path.is_symlink():
+            raise RuntimeError('%s missing: run scripts/restore-tools.sh falco-k8saudit' % path)
+        got = file_sha256(path)
+        if got != want:
+            raise RuntimeError('%s is not the pinned file (sha256 %s, want %s)' % (path, got, want))
+    try:
+        info = os.lstat(KIND_AUDIT_LOG)
+    except FileNotFoundError:
+        info = None
+    if info is None or not stat.S_ISREG(info.st_mode) or info.st_uid != os.getuid():
+        raise RuntimeError('%s is not this user\'s regular file: bring the kind audit lab up first '
+                           '(scripts/kind_lab.sh up --audit)' % KIND_AUDIT_LOG)
+
+
 def unit_active(host, unit):
     return host.systemctl(['is-active', '--quiet', unit], check=False).returncode == 0
 
@@ -286,6 +371,8 @@ def up(host, out=print, engines=DEFAULT_ENGINES):
     for path in needed:
         if not path.is_file():
             raise RuntimeError('%s missing' % path)
+    if 'k8saudit' in engines:
+        check_k8saudit_inputs()
     ensure_images(host, engines)
     now = host.now()
     session = now.strftime('%Y%m%dT%H%M%SZ')
@@ -304,8 +391,9 @@ def up(host, out=print, engines=DEFAULT_ENGINES):
     try:
         for instance in engines:
             host.systemd_run(collector_args(instance, session, gid))
+        fifos = [RUNDIR / i / name for i in engines for name in FIFOS[i]]
         for _ in range(100):
-            if all((RUNDIR / i / 'alerts.fifo').exists() for i in engines):
+            if all(fifo.exists() for fifo in fifos):
                 break
             host.sleep(0.1)
         else:
@@ -328,7 +416,8 @@ def up(host, out=print, engines=DEFAULT_ENGINES):
 
 def wait_ready(host, session, engines=DEFAULT_ENGINES, timeout=150):
     """Up when the host instance's first metrics snapshot arrived (and, with
-    the gVisor engine, that engine listens on its socket)."""
+    the gVisor engine, that engine listens on its socket; with the k8saudit
+    instance, that instance opened its source and wrote its first snapshot)."""
     deadline = time.monotonic() + timeout
     health = DATA / session / 'host' / 'health.jsonl'
     while True:
@@ -343,24 +432,31 @@ def wait_ready(host, session, engines=DEFAULT_ENGINES, timeout=150):
             logs = host.docker(['logs', INSTANCES['gvisor']['container']], check=False)
             gvisor = "Opening 'syscall' source with gVisor" in logs.stdout + logs.stderr
         snapshot = health.exists() and 'Falco internal: metrics snapshot' in health.read_text()
-        if gvisor and snapshot:
+        audit = True
+        if 'k8saudit' in engines:
+            logs = host.docker(['logs', INSTANCES['k8saudit']['container']], check=False)
+            audit_health = DATA / session / 'k8saudit' / 'health.jsonl'
+            audit = ("Opening 'k8s_audit' source with plugin 'k8saudit'" in logs.stdout + logs.stderr and
+                     audit_health.exists() and 'Falco internal: metrics snapshot' in audit_health.read_text())
+        if gvisor and snapshot and audit:
             return
         if time.monotonic() > deadline:
-            raise RuntimeError('detector not ready after %ss (gvisor engine %s, host snapshot %s)' % (timeout, gvisor, snapshot))
+            raise RuntimeError('detector not ready after %ss (gvisor engine %s, host snapshot %s, k8saudit %s)' % (
+                timeout, gvisor, snapshot, audit))
         host.sleep(2)
 
 
-def flush(host, session, timeout=60):
-    """Have the host collector write a heartbeat now (SIGUSR1) and wait for it."""
-    beats = DATA / session / 'host' / 'heartbeats.jsonl'
+def flush(host, session, timeout=60, instance='host'):
+    """Have an instance's collector write a heartbeat now (SIGUSR1) and wait for it."""
+    beats = DATA / session / instance / 'heartbeats.jsonl'
     before = len(beats.read_text().splitlines()) if beats.exists() else 0
-    host.systemctl(['kill', '--signal=SIGUSR1', INSTANCES['host']['unit']])
+    host.systemctl(['kill', '--signal=SIGUSR1', INSTANCES[instance]['unit']])
     deadline = time.monotonic() + timeout
     while time.monotonic() < deadline:
         if beats.exists() and len(beats.read_text().splitlines()) > before:
             return
         host.sleep(0.5)
-    raise RuntimeError('the host collector wrote no heartbeat after SIGUSR1')
+    raise RuntimeError('the %s collector wrote no heartbeat after SIGUSR1' % instance)
 
 
 def jsonl_rows(path):
@@ -382,6 +478,22 @@ def first_healthy_point(host, session, timeout=180):
                 return point
         host.sleep(2)
     raise RuntimeError('no counting metrics snapshot and heartbeat after %ss' % timeout)
+
+
+def audit_ready_point(host, session, timeout=180):
+    """The k8saudit instance's first healthy point: the first heartbeat, after
+    its first metrics snapshot, in which Falco runs and the feed is writing
+    into the plugin's open FIFO."""
+    d = DATA / session / 'k8saudit'
+    deadline = time.monotonic() + timeout
+    while time.monotonic() < deadline:
+        if any(r.get('rule') == recorder.METRICS_RULE for _, r in jsonl_rows(d / 'health.jsonl')):
+            flush(host, session, instance='k8saudit')
+            beat = jsonl_rows(d / 'heartbeats.jsonl')[-1][1]
+            if (beat.get('falco') or {}).get('running') and (beat.get('feed') or {}).get('alive') and beat['feed'].get('fifo_open'):
+                return beat['time']
+        host.sleep(2)
+    raise RuntimeError('the k8saudit instance had no healthy heartbeat after %ss' % timeout)
 
 
 def clean_labs(host, runtimes=('runc', 'gvisor'), out=print):
@@ -479,9 +591,10 @@ def purge(host, out=print):
             out('image %s removed' % spec['image'])
     if RUNDIR.exists():
         for instance in INSTANCES:
-            fifo = RUNDIR / instance / 'alerts.fifo'
-            if fifo.exists():
-                fifo.unlink()
+            for name in FIFOS[instance]:
+                fifo = RUNDIR / instance / name
+                if fifo.exists():
+                    fifo.unlink()
             if (RUNDIR / instance).exists():
                 (RUNDIR / instance).rmdir()
         RUNDIR.rmdir()
@@ -515,10 +628,11 @@ def seven_day_commands(session):
     stop_after = int((WINDOW + timedelta(minutes=15)).total_seconds())
     benign = ['--unit', BENIGN_UNIT, '--collect', '--on-active=120', '--on-unit-active=3600',
               '--timer-property=AccuracySec=1s', '--property=RuntimeMaxSec=3000', '--property=KillSignal=SIGTERM',
-              '--property=TimeoutStopSec=300', '--',
+              '--property=TimeoutStopSec=300', '--setenv=WARDEN_CPUSET=%s' % CPUSET, '--',
               '/usr/bin/taskset', '-c', CPUSET, '/usr/bin/python3', '-I', '-B', str(CONFIG / 'benign.py'),
               '--session', session]
-    stop = ['--unit', STOP_UNIT, '--collect', '--on-active=%d' % stop_after, '--timer-property=AccuracySec=1s', '--',
+    stop = ['--unit', STOP_UNIT, '--collect', '--on-active=%d' % stop_after, '--timer-property=AccuracySec=1s',
+            '--setenv=WARDEN_CPUSET=%s' % CPUSET, '--',
             '/usr/bin/taskset', '-c', CPUSET, '/usr/bin/python3', '-I', '-B', str(CONFIG / 'detector.py'), 'seven-day-stop']
     return benign, stop
 
@@ -531,6 +645,11 @@ def seven_day_start(host, confirm=None, out=print):
     warden = host.docker(['ps', '-a', '--filter', 'label=project=warden', '--format', '{{.Names}}']).stdout.split()
     if warden:
         raise RuntimeError('Warden lab containers exist (%s); bring every lab down first' % ', '.join(warden))
+    # The kind audit lab's nodes carry kind's labels, not project=warden.
+    kind = set(host.docker(['ps', '-a', '--filter', 'label=%s=%s' % KIND_AUDIT_CLUSTER, '--format', '{{.Names}}']).stdout.split())
+    kind |= {name for name in host.docker(['ps', '-a', '--format', '{{.Names}}']).stdout.split() if KIND_AUDIT_NODE.fullmatch(name)}
+    if kind:
+        raise RuntimeError('kind audit lab nodes exist (%s); make kind-audit-down first' % ', '.join(sorted(kind)))
     for unit in (BENIGN_UNIT + '.timer', STOP_UNIT + '.timer'):
         if unit_active(host, unit):
             raise RuntimeError('%s is already active' % unit)
@@ -557,7 +676,7 @@ def seven_day_start(host, confirm=None, out=print):
         benign, stop = seven_day_commands(state['session'])
         plan = {'session': state['session'], 'window_start': start, 'window_end': end, 'sources': ['falco-host'],
                 'runtimes': ['runc', 'gvisor'], 'benign_every_s': 3600, 'benign_first_after_s': 120,
-                'stop_after_s': int((WINDOW + timedelta(minutes=15)).total_seconds())}
+                'stop_after_s': int((WINDOW + timedelta(minutes=15)).total_seconds()), 'cpuset': CPUSET}
         (STATE / 'seven-day.json').write_text(json.dumps(plan, indent=1, sort_keys=True) + '\n')
         host.systemd_run(benign)
         try:
@@ -635,11 +754,12 @@ def main(argv=None):
     parser.add_argument('--dry-run', action='store_true', help='seven-day-start: only print what it would do')
     parser.add_argument('--confirm', help='seven-day-start: must be "seven-day" to really start')
     parser.add_argument('--gvisor-engine', action='store_true', help='up: also the opt-in gVisor-engine instance')
+    parser.add_argument('--k8saudit', action='store_true', help='up: also the k8saudit instance (the kind audit lab)')
     args = parser.parse_args(argv)
     host = Host()
     try:
         if args.command == 'up':
-            up(host, engines=('host', 'gvisor') if args.gvisor_engine else DEFAULT_ENGINES)
+            up(host, engines=('host',) + (('gvisor',) if args.gvisor_engine else ()) + (('k8saudit',) if args.k8saudit else ()))
         elif args.command == 'down':
             down(host)
         elif args.command == 'status':

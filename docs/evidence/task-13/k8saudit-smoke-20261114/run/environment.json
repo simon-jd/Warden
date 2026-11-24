@@ -1,0 +1,26 @@
+{
+ "kind": "kind v0.33.0 go1.26.7 linux/amd64",
+ "kubectl": "v1.36.5",
+ "kubernetes": [
+  {
+   "kubelet": "v1.34.11",
+   "name": "warden-lab-control-plane",
+   "runtime": "containerd://2.3.4"
+  }
+ ],
+ "node_container": {
+  "cpuset_cpus": "0-7,16-31",
+  "image": "kindest/node:v1.34.11@sha256:44e222ee2132dab25ff87301682f89eb82c7880ea3a1bf543bfe9708fd08d67d",
+  "image_id": "sha256:44e222ee2132dab25ff87301682f89eb82c7880ea3a1bf543bfe9708fd08d67d",
+  "labels": {
+   "io.x-k8s.kind.cluster": "warden-lab",
+   "io.x-k8s.kind.role": "control-plane"
+  },
+  "name": "warden-lab-control-plane",
+  "started_at": "2026-11-14T18:48:21.991231137Z"
+ },
+ "tools_receipts": {
+  "falco-k8saudit/receipt.json": "c1c0a64e919e9090f46a3a02c35b2b244e8c60e76ef94f8531b4e46f601dce63",
+  "stratus/receipt.json": "b54566ae77e4b143794d0998242f69131eebd6aafb4c83414442df5a5070ebe2"
+ }
+}

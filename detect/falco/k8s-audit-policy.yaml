@@ -1,0 +1,32 @@
+# API audit policy of the kind audit lab (scripts/kind_lab.sh up --audit),
+# read by the k8saudit Falco instance (docs/falco-detector.md).
+#
+# Every request is logged once it has completed (ResponseComplete) and, for
+# long-running requests such as exec, when its response started
+# (ResponseStarted; the stock "Attach/Exec Pod" rule reads that stage).
+# RequestReceived is left out: no stock rule reads it.
+apiVersion: audit.k8s.io/v1
+kind: Policy
+omitStages:
+  - RequestReceived
+rules:
+  # Objects whose request or response bodies carry credentials or keys:
+  # metadata only, so no token, key or secret value reaches the log.
+  - level: Metadata
+    resources:
+      - group: ""
+        resources: [secrets, configmaps, serviceaccounts/token]
+      - group: authentication.k8s.io
+        resources: [tokenreviews]
+      - group: certificates.k8s.io
+  # Large status bodies and high-volume coordination objects that no stock
+  # rule reads the body of: metadata only.
+  - level: Metadata
+    resources:
+      - group: ""
+        resources: [nodes/status, pods/status, events]
+      - group: events.k8s.io
+      - group: coordination.k8s.io
+  # Everything else with its request body: the stock rules read
+  # requestObject (a pod's containers, a role's rules, a binding's role).
+  - level: Request

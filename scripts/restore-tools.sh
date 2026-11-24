@@ -4,7 +4,7 @@
 # there, otherwise downloaded from its official release URL and checked
 # against a pinned SHA-256. Nothing is installed outside the project.
 #
-#   scripts/restore-tools.sh go|vector|python|kyverno|kind|k3s|gvisor|terraform|helm|cilium|kubectl|falco
+#   scripts/restore-tools.sh go|vector|python|kyverno|kind|k3s|gvisor|terraform|helm|cilium|kubectl|falco|falco-k8saudit|stratus
 set -euo pipefail
 root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
 tools=$root/.tools
@@ -68,6 +68,51 @@ CILIUM_IMAGES=(
 FALCO_IMAGES=(
   falco-0.45.2=docker.io/falcosecurity/falco:0.45.2@sha256:1562a643953f938e02f47319b5214d93a235f11f646d60e9b8a516fd5a64698e
   falco-0.43.1=docker.io/falcosecurity/falco:0.43.1@sha256:b4166a61f41e2fa638c041cac881d8bb32c284e3aaf282fdfed80f15f6eb55e3
+)
+
+# Task 13's k8saudit instance (detect/falco/detector.py --k8saudit): the
+# k8saudit and json plugins from their official release archives on
+# download.falco.org. Each archive is byte for byte the linux/amd64 layer of
+# the falcoctl artifact on ghcr.io, checked on 2026-11-14:
+#   ghcr.io/falcosecurity/plugins/plugin/k8saudit:0.18.0@sha256:ca794b24fee51095579b63b4e8a57030de6e3a8489bcd11d1960aa26a021308f
+#     (linux/amd64 manifest sha256:ecfeb737816523d949660404d7a1a4a1dbcaecf785bfb84a1c48a06e899ebb85)
+#   ghcr.io/falcosecurity/plugins/plugin/json:0.7.4@sha256:b867a72796552499e3212f5b7af51cbeb5587348041f72d6f2131c575f6fb312
+#     (linux/amd64 manifest sha256:9f898f44312dd433ca507190e759277b34d7558cf4a378f97e9b46d705da5f72)
+# The rules are the stock k8s_audit_rules.yaml at the tag
+# plugins/k8saudit/v0.18.0 (commit 43ec9491..., git blob 89401e29...).
+# detector.py checks the unpacked files' SHA-256 before every up.
+K8SAUDIT_VERSION=0.18.0
+K8SAUDIT_SHA256=180046ef8a1cf49fb042d86a51dc2a01e1fd19cc9b31a469bcca2272c2e0abcb
+FALCO_JSON_VERSION=0.7.4
+FALCO_JSON_SHA256=d1370d6387f9ae0d622cad3673701aac4d9e61a78e3af77089146dc111972117
+K8SAUDIT_RULES_COMMIT=43ec9491a5bf25140868a182734a022625eeb9dd
+K8SAUDIT_RULES_SHA256=fa53280e337db6edaeb44cf49fbd1be4349f3c48e3cd0017c2575097df901a1e
+
+# Task 13's Stratus round on the kind audit lab (attacks/stratus): the
+# official Stratus Red Team release (DataDog/stratus-red-team v2.38.0, tag
+# object a345abf0..., commit df3316f6...; the archive's SHA-256 from the
+# release's checksums.txt and the GitHub API asset digest), the Terraform its
+# warm-up runs (1.3.10, the version Stratus pins in
+# v2/pkg/stratus/runner/terraform.go), the hashicorp/kubernetes providers the
+# techniques' main.tf pin (2.7.1, 2.13.0, unpacked as a filesystem-mirror
+# layout), and the pod image the lab loads (scripts/kind_lab.sh up --audit).
+# The wrapper uses only the Stratus binary from here (with --stratus-sha256)
+# and the pod image through the lab. Stratus downloads Terraform itself, and
+# Terraform downloads the providers, into each run's HOME on every run; the
+# Terraform and provider copies here are reference hashes for checking those
+# downloads afterwards (docs/falco-detector.md). Their SHA-256 are from their
+# SHA256SUMS files, whose .sig verified against HashiCorp's key
+# C874 011F 0AB4 0511 0D02 1055 3436 5D94 72D7 468F on 2026-11-14.
+STRATUS_VERSION=2.38.0
+STRATUS_SHA256=2f0a971c7d8f5fb32a598f70b79c954d7aee72740d352947a78d348b00fb09a3
+STRATUS_TERRAFORM_VERSION=1.3.10
+STRATUS_TERRAFORM_SHA256=2e3931c3db6999cdd4c7e55227cb877c6946d1f52923d7d057036d2827311402
+STRATUS_PROVIDERS=(
+  2.7.1=c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a
+  2.13.0=953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe
+)
+STRATUS_IMAGES=(
+  busybox-1.37.0=docker.io/library/busybox:1.37.0@sha256:a7dbc319b1438115a207e11930dc4bb3e643dcb3ec0bdd694bb36cd8fad289ec
 )
 
 check_sha() { # file expected
@@ -253,6 +298,109 @@ restore_falco() {
   rm -rf "$dest" && mv "$dest.tmp" "$dest"
 }
 
+# The two plugin libraries and the rules file, each checked against its pin.
+restore_falco_k8saudit() {
+  local dest=$tools/falco-k8saudit dl=$cache/falco-plugins-download
+  [[ -f $dest/.complete ]] && return 0
+  rm -rf "$dest.tmp" && mkdir -p "$dest.tmp" "$dl"
+  local name sha tgz lib
+  for entry in "k8saudit-$K8SAUDIT_VERSION=$K8SAUDIT_SHA256=libk8saudit.so" "json-$FALCO_JSON_VERSION=$FALCO_JSON_SHA256=libjson.so"; do
+    name=${entry%%=*}; sha=${entry#*=}; lib=${sha#*=}; sha=${sha%%=*}
+    tgz=$dl/dl-$name-linux-x86_64.tar.gz
+    [[ -f $tgz ]] || curl -fsSL "https://download.falco.org/plugins/stable/$name-linux-x86_64.tar.gz" -o "$tgz"
+    check_sha "$tgz" "$sha"
+    tar -xzf "$tgz" -C "$dest.tmp" --no-same-owner "$lib"
+  done
+  local rules=$dl/k8s_audit_rules.yaml
+  [[ -f $rules ]] || curl -fsSL "https://raw.githubusercontent.com/falcosecurity/plugins/$K8SAUDIT_RULES_COMMIT/plugins/k8saudit/rules/k8s_audit_rules.yaml" -o "$rules"
+  check_sha "$rules" "$K8SAUDIT_RULES_SHA256"
+  cp "$rules" "$dest.tmp/k8s_audit_rules.yaml"
+  # Read by an unprivileged Falco container without capabilities.
+  chmod 0644 "$dest.tmp"/*; chmod 0755 "$dest.tmp"
+  python3 -I -c '
+import hashlib, json, os, sys
+dest, version, json_version, commit = sys.argv[1:5]
+files = {n: hashlib.sha256(open(os.path.join(dest, n), "rb").read()).hexdigest() for n in sorted(os.listdir(dest))}
+print(json.dumps({"k8saudit": version, "json": json_version, "rules_commit": commit,
+                  "sources": ["https://download.falco.org/plugins/stable/k8saudit-%s-linux-x86_64.tar.gz" % version,
+                              "https://download.falco.org/plugins/stable/json-%s-linux-x86_64.tar.gz" % json_version,
+                              "https://raw.githubusercontent.com/falcosecurity/plugins/%s/plugins/k8saudit/rules/k8s_audit_rules.yaml" % commit],
+                  "archive_sha256": dict(zip(("k8saudit", "json"), sys.argv[5:7])), "files_sha256": files}, indent=1, sort_keys=True))
+' "$dest.tmp" "$K8SAUDIT_VERSION" "$FALCO_JSON_VERSION" "$K8SAUDIT_RULES_COMMIT" "$K8SAUDIT_SHA256" "$FALCO_JSON_SHA256" >"$dl/receipt.json"
+  mv "$dl/receipt.json" "$dest.tmp/receipt.json"
+  chmod 0644 "$dest.tmp/receipt.json"
+  touch "$dest.tmp/.complete"
+  rm -rf "$dest" && mv "$dest.tmp" "$dest"
+}
+
+# Stratus, its Terraform, the providers as an unpacked filesystem mirror and
+# the pod image; receipt.json lists every archive's and file's SHA-256.
+restore_stratus() {
+  local dest=$tools/stratus dl=$cache/stratus-download tfdl=$cache/stratus-terraform-download
+  [[ -f $dest/.complete ]] && return 0
+  rm -rf "$dest.tmp" && mkdir -p "$dest.tmp/terraform" "$dest.tmp/images" "$dl" "$tfdl"
+  local tgz=$dl/stratus-red-team_Linux_x86_64.tar.gz
+  [[ -f $tgz ]] || curl -fsSL "https://github.com/DataDog/stratus-red-team/releases/download/v$STRATUS_VERSION/stratus-red-team_Linux_x86_64.tar.gz" -o "$tgz"
+  check_sha "$tgz" "$STRATUS_SHA256"
+  tar -xzf "$tgz" -C "$dest.tmp" --no-same-owner stratus
+  chmod 0755 "$dest.tmp/stratus"
+  local zip=$tfdl/terraform_${STRATUS_TERRAFORM_VERSION}_linux_amd64.zip
+  [[ -f $zip ]] || curl -fsSL "https://releases.hashicorp.com/terraform/$STRATUS_TERRAFORM_VERSION/terraform_${STRATUS_TERRAFORM_VERSION}_linux_amd64.zip" -o "$zip"
+  check_sha "$zip" "$STRATUS_TERRAFORM_SHA256"
+  python3 -I -c 'import sys, zipfile; zipfile.ZipFile(sys.argv[1]).extract("terraform", sys.argv[2])' "$zip" "$dest.tmp/terraform"
+  chmod 0755 "$dest.tmp/terraform/terraform"
+  local entry version sha dir
+  for entry in "${STRATUS_PROVIDERS[@]}"; do
+    version=${entry%%=*}; sha=${entry#*=}
+    zip=$tfdl/terraform-provider-kubernetes_${version}_linux_amd64.zip
+    [[ -f $zip ]] || curl -fsSL "https://releases.hashicorp.com/terraform-provider-kubernetes/$version/terraform-provider-kubernetes_${version}_linux_amd64.zip" -o "$zip"
+    check_sha "$zip" "$sha"
+    dir=$dest.tmp/providers/registry.terraform.io/hashicorp/kubernetes/$version/linux_amd64
+    mkdir -p "$dir"
+    python3 -I -c '
+import sys, zipfile
+z = zipfile.ZipFile(sys.argv[1])
+names = [n for n in z.namelist() if n.startswith("terraform-provider-kubernetes_")]
+if len(names) != 1:
+    sys.exit("want one provider executable in %s, got %s" % (sys.argv[1], names))
+z.extract(names[0], sys.argv[2])' "$zip" "$dir"
+    chmod 0755 "$dir"/terraform-provider-kubernetes_*
+  done
+  for entry in "${STRATUS_IMAGES[@]}"; do
+    python3 -I -B "$root/scripts/oci_fetch.py" "${entry#*=}" "$dest.tmp/images/${entry%%=*}.oci.tar" \
+      >"$dest.tmp/images/${entry%%=*}.receipt.json"
+  done
+  python3 -I -c '
+import hashlib, json, os, sys
+dest = sys.argv[1]
+files = {}
+for top, dirs, names in os.walk(dest):
+    dirs.sort()
+    for n in sorted(names):
+        path = os.path.join(top, n)
+        with open(path, "rb") as f:
+            h = hashlib.sha256()
+            for block in iter(lambda: f.read(1 << 20), b""):
+                h.update(block)
+        files[os.path.relpath(path, dest)] = h.hexdigest()
+providers = dict(p.split("=") for p in sys.argv[7].split())
+print(json.dumps({"stratus": sys.argv[2], "stratus_archive_sha256": sys.argv[3], "terraform": sys.argv[4],
+                  "terraform_zip_sha256": sys.argv[5], "providers_zip_sha256": providers,
+                  "images": sys.argv[6].split(), "files_sha256": files,
+                  "stratus_tag": {"tag": "v" + sys.argv[2], "tag_object": "a345abf00594b648bdd02c87d608f9588a93d20f",
+                                  "commit": "df3316f6f73a219eba715a505f2b4742a9cce197"},
+                  "hashicorp_signing_key": "C874 011F 0AB4 0511 0D02 1055 3436 5D94 72D7 468F",
+                  "sources": ["https://github.com/DataDog/stratus-red-team/releases/download/v%s/stratus-red-team_Linux_x86_64.tar.gz" % sys.argv[2],
+                              "https://releases.hashicorp.com/terraform/%s/terraform_%s_linux_amd64.zip" % (sys.argv[4], sys.argv[4])]
+                             + ["https://releases.hashicorp.com/terraform-provider-kubernetes/%s/terraform-provider-kubernetes_%s_linux_amd64.zip"
+                                % (v, v) for v in sorted(providers)]}, indent=1, sort_keys=True))
+' "$dest.tmp" "$STRATUS_VERSION" "$STRATUS_SHA256" "$STRATUS_TERRAFORM_VERSION" "$STRATUS_TERRAFORM_SHA256" \
+    "${STRATUS_IMAGES[*]}" "${STRATUS_PROVIDERS[*]}" >"$dl/receipt.json"
+  mv "$dl/receipt.json" "$dest.tmp/receipt.json"
+  touch "$dest.tmp/.complete"
+  rm -rf "$dest" && mv "$dest.tmp" "$dest"
+}
+
 restore_terraform() {
   local dest=$tools/terraform name=terraform_${TERRAFORM_VERSION}_linux_amd64.zip
   [[ -x $dest/terraform ]] && return 0
@@ -299,5 +447,7 @@ case "${1:-}" in
   cilium) restore_cilium ;;
   kubectl) restore_kubectl ;;
   falco) restore_falco ;;
-  *) echo "usage: $0 go|vector|python|kyverno|kind|k3s|gvisor|terraform|helm|cilium|kubectl|falco" >&2; exit 2 ;;
+  falco-k8saudit) restore_falco_k8saudit ;;
+  stratus) restore_stratus ;;
+  *) echo "usage: $0 go|vector|python|kyverno|kind|k3s|gvisor|terraform|helm|cilium|kubectl|falco|falco-k8saudit|stratus" >&2; exit 2 ;;
 esac

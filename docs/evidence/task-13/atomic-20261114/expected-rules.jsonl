@@ -1,0 +1,750 @@
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "System user interactive"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "System user interactive"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "System user interactive"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "System user interactive"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "System user interactive"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-428c99260ab5416847cf9c0b-shred", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "System user interactive"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-7116af4488ce737d812772e2-hostname", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "System user interactive"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "System user interactive"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "System user interactive"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "System user interactive"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-e231acc2ac91598b30b27c04-shred", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "System user interactive"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "System user interactive"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "System user interactive"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "System user interactive"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "System user interactive"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-b83698e23fb56002ad873746-shred", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "System user interactive"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "System user interactive"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "System user interactive"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "System user interactive"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-ea19aef598891f64fb49c231-password-policy", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "System user interactive"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-12de27c8b27fb3e306a65578-shred", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "System user interactive"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "System user interactive"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "System user interactive"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "System user interactive"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "System user interactive"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-dacd0a7befd939da577f29eb-shred", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "System user interactive"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "System user interactive"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "System user interactive"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "System user interactive"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials", "rule_id": "Fileless execution via memfd_create"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Directory traversal monitored file read"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Read sensitive file trusted after startup"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Read sensitive file untrusted"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Run shell untrusted"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "System user interactive"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Terminal shell in container"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Contact K8S API Server From Container"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Netcat Remote Code Execution in Container"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Search Private Keys or Passwords"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Clear Log Activities"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Remove Bulk Data from Disk"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Create Symlink Over Sensitive Files"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Create Hardlink Over Sensitive Files"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Packet socket created in container"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Redirect STDOUT/STDIN to Network Connection in Container"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Linux Kernel Module Injection Detected"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Debugfs Launched in Privileged Container"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Detect release_agent File Container Escapes"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "PTRACE attached to process"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "PTRACE anti-debug attempt"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Find AWS Credentials"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Execution from /dev/shm"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Drop and execute new binary in container"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Disallowed SSH Connection Non Standard Port"}
+{"execution_id": "atomic-778af59f738d5f79a59b361d-password-policy", "rule_id": "Fileless execution via memfd_create"}

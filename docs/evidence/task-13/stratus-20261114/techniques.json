@@ -1,0 +1,430 @@
+{
+ "pooled_detected_runs": {
+  "execution_detection": {
+   "denominator": 35,
+   "numerator": 25,
+   "rate": 0.7142857142857143
+  },
+  "latency_ns": {
+   "method": "nearest-rank",
+   "p50": 3241560000,
+   "p95": 3728687000,
+   "sample_count": 25
+  },
+  "start_to_alerts_file": {
+   "max": 3.804,
+   "min": 1.156,
+   "n": 25,
+   "p50": 3.271,
+   "p95": 3.744
+  },
+  "start_to_event": {
+   "max": 3.795,
+   "min": 1.14,
+   "n": 25,
+   "p50": 3.242,
+   "p95": 3.729
+  },
+  "start_to_fed": {
+   "max": 3.797,
+   "min": 1.149,
+   "n": 25,
+   "p50": 3.249,
+   "p95": 3.731
+  },
+  "start_to_request_received": {
+   "max": 3.791,
+   "min": 1.137,
+   "n": 25,
+   "p50": 3.236,
+   "p95": 3.688
+  },
+  "written_rules_execution_detection": {
+   "denominator": 25,
+   "numerator": 20,
+   "rate": 0.8
+  },
+  "written_rules_latency_ns": {
+   "method": "nearest-rank",
+   "p50": 3293573000,
+   "p95": 3728687000,
+   "sample_count": 20
+  }
+ },
+ "techniques": [
+  {
+   "alerts_by_actor": {},
+   "alerts_on_failed_runs": {},
+   "alerts_on_succeeded_runs": {},
+   "detected": 0,
+   "failed": 0,
+   "first_alert_rules": [],
+   "n": 5,
+   "no_rule_written": true,
+   "start_to_alerts_file": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "start_to_event": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "start_to_fed": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "start_to_request_received": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "succeeded": 5,
+   "technique": "k8s.credential-access.dump-secrets",
+   "technique_id": "T1552.007"
+  },
+  {
+   "alerts_by_actor": {
+    "Attach/Exec Pod by stratus": 5,
+    "K8s Serviceaccount Created by kubelet": 5,
+    "K8s Serviceaccount Created by terraform": 5,
+    "K8s Serviceaccount Deleted by terraform": 5
+   },
+   "alerts_on_failed_runs": {},
+   "alerts_on_succeeded_runs": {
+    "Attach/Exec Pod": 5,
+    "K8s Serviceaccount Created": 10,
+    "K8s Serviceaccount Deleted": 5
+   },
+   "detected": 5,
+   "failed": 0,
+   "first_alert_rules": [
+    "K8s Serviceaccount Created"
+   ],
+   "n": 5,
+   "no_rule_written": false,
+   "start_to_alerts_file": {
+    "max": 3.428,
+    "min": 3.111,
+    "n": 5,
+    "p50": 3.267,
+    "p95": 3.428
+   },
+   "start_to_event": {
+    "max": 3.403,
+    "min": 3.087,
+    "n": 5,
+    "p50": 3.232,
+    "p95": 3.403
+   },
+   "start_to_fed": {
+    "max": 3.413,
+    "min": 3.096,
+    "n": 5,
+    "p50": 3.241,
+    "p95": 3.413
+   },
+   "start_to_request_received": {
+    "max": 3.398,
+    "min": 3.085,
+    "n": 5,
+    "p50": 3.227,
+    "p95": 3.398
+   },
+   "succeeded": 5,
+   "technique": "k8s.credential-access.steal-serviceaccount-token",
+   "technique_id": "T1528"
+  },
+  {
+   "alerts_by_actor": {
+    "ClusterRole With Wildcard Created by stratus": 5,
+    "K8s ClusterRoleBinding Created by stratus": 5,
+    "Service Account Created in Kube Namespace by stratus": 5
+   },
+   "alerts_on_failed_runs": {
+    "ClusterRole With Wildcard Created": 5,
+    "K8s ClusterRoleBinding Created": 5,
+    "Service Account Created in Kube Namespace": 5
+   },
+   "alerts_on_succeeded_runs": {},
+   "detected": 0,
+   "failed": 5,
+   "first_alert_rules": [],
+   "n": 5,
+   "no_rule_written": false,
+   "start_to_alerts_file": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "start_to_event": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "start_to_fed": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "start_to_request_received": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "succeeded": 0,
+   "technique": "k8s.persistence.create-admin-clusterrole",
+   "technique_id": "T1098.006"
+  },
+  {
+   "alerts_by_actor": {},
+   "alerts_on_failed_runs": {},
+   "alerts_on_succeeded_runs": {},
+   "detected": 0,
+   "failed": 0,
+   "first_alert_rules": [],
+   "n": 5,
+   "no_rule_written": false,
+   "start_to_alerts_file": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "start_to_event": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "start_to_fed": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "start_to_request_received": {
+    "max": null,
+    "min": null,
+    "n": 0,
+    "p50": null,
+    "p95": null
+   },
+   "succeeded": 5,
+   "technique": "k8s.persistence.create-client-certificate",
+   "technique_id": "T1649"
+  },
+  {
+   "alerts_by_actor": {
+    "Service Account Created in Kube Namespace by stratus": 5
+   },
+   "alerts_on_failed_runs": {},
+   "alerts_on_succeeded_runs": {
+    "Service Account Created in Kube Namespace": 5
+   },
+   "detected": 5,
+   "failed": 0,
+   "first_alert_rules": [
+    "Service Account Created in Kube Namespace"
+   ],
+   "n": 5,
+   "no_rule_written": true,
+   "start_to_alerts_file": {
+    "max": 1.337,
+    "min": 1.156,
+    "n": 5,
+    "p50": 1.2,
+    "p95": 1.337
+   },
+   "start_to_event": {
+    "max": 1.301,
+    "min": 1.14,
+    "n": 5,
+    "p50": 1.192,
+    "p95": 1.301
+   },
+   "start_to_fed": {
+    "max": 1.307,
+    "min": 1.149,
+    "n": 5,
+    "p50": 1.193,
+    "p95": 1.307
+   },
+   "start_to_request_received": {
+    "max": 1.298,
+    "min": 1.137,
+    "n": 5,
+    "p50": 1.189,
+    "p95": 1.298
+   },
+   "succeeded": 5,
+   "technique": "k8s.persistence.create-token",
+   "technique_id": "T1098"
+  },
+  {
+   "alerts_by_actor": {
+    "Create Sensitive Mount Pod by stratus": 5
+   },
+   "alerts_on_failed_runs": {},
+   "alerts_on_succeeded_runs": {
+    "Create Sensitive Mount Pod": 5
+   },
+   "detected": 5,
+   "failed": 0,
+   "first_alert_rules": [
+    "Create Sensitive Mount Pod"
+   ],
+   "n": 5,
+   "no_rule_written": false,
+   "start_to_alerts_file": {
+    "max": 3.694,
+    "min": 3.271,
+    "n": 5,
+    "p50": 3.371,
+    "p95": 3.694
+   },
+   "start_to_event": {
+    "max": 3.668,
+    "min": 3.242,
+    "n": 5,
+    "p50": 3.342,
+    "p95": 3.668
+   },
+   "start_to_fed": {
+    "max": 3.669,
+    "min": 3.249,
+    "n": 5,
+    "p50": 3.351,
+    "p95": 3.669
+   },
+   "start_to_request_received": {
+    "max": 3.659,
+    "min": 3.236,
+    "n": 5,
+    "p50": 3.338,
+    "p95": 3.659
+   },
+   "succeeded": 5,
+   "technique": "k8s.privilege-escalation.hostpath-volume",
+   "technique_id": "T1611"
+  },
+  {
+   "alerts_by_actor": {
+    "K8s Serviceaccount Created by stratus": 5,
+    "K8s Serviceaccount Created by terraform": 5,
+    "K8s Serviceaccount Deleted by terraform": 5
+   },
+   "alerts_on_failed_runs": {},
+   "alerts_on_succeeded_runs": {
+    "K8s Serviceaccount Created": 10,
+    "K8s Serviceaccount Deleted": 5
+   },
+   "detected": 5,
+   "failed": 0,
+   "first_alert_rules": [
+    "K8s Serviceaccount Created"
+   ],
+   "n": 5,
+   "no_rule_written": false,
+   "start_to_alerts_file": {
+    "max": 3.338,
+    "min": 3.131,
+    "n": 5,
+    "p50": 3.217,
+    "p95": 3.338
+   },
+   "start_to_event": {
+    "max": 3.294,
+    "min": 3.097,
+    "n": 5,
+    "p50": 3.198,
+    "p95": 3.294
+   },
+   "start_to_fed": {
+    "max": 3.302,
+    "min": 3.098,
+    "n": 5,
+    "p50": 3.203,
+    "p95": 3.302
+   },
+   "start_to_request_received": {
+    "max": 3.289,
+    "min": 3.094,
+    "n": 5,
+    "p50": 3.195,
+    "p95": 3.289
+   },
+   "succeeded": 5,
+   "technique": "k8s.privilege-escalation.nodes-proxy",
+   "technique_id": "T1609"
+  },
+  {
+   "alerts_by_actor": {
+    "Create Privileged Pod by stratus": 5
+   },
+   "alerts_on_failed_runs": {},
+   "alerts_on_succeeded_runs": {
+    "Create Privileged Pod": 5
+   },
+   "detected": 5,
+   "failed": 0,
+   "first_alert_rules": [
+    "Create Privileged Pod"
+   ],
+   "n": 5,
+   "no_rule_written": false,
+   "start_to_alerts_file": {
+    "max": 3.804,
+    "min": 3.514,
+    "n": 5,
+    "p50": 3.695,
+    "p95": 3.804
+   },
+   "start_to_event": {
+    "max": 3.795,
+    "min": 3.497,
+    "n": 5,
+    "p50": 3.662,
+    "p95": 3.795
+   },
+   "start_to_fed": {
+    "max": 3.797,
+    "min": 3.504,
+    "n": 5,
+    "p50": 3.663,
+    "p95": 3.797
+   },
+   "start_to_request_received": {
+    "max": 3.791,
+    "min": 3.494,
+    "n": 5,
+    "p50": 3.644,
+    "p95": 3.791
+   },
+   "succeeded": 5,
+   "technique": "k8s.privilege-escalation.privileged-pod",
+   "technique_id": "T1611"
+  }
+ ]
+}

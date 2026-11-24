@@ -33,7 +33,10 @@ cgroup nested inside a running Warden container's: the k3s node's pod
 sandboxes, where runsc's sentry runs. There the pod decides first (only a
 warden-lab pod with warden.dev/run is Warden's; the smoke's control pod is
 not, although it runs in the Warden node); a cgroup of the node in no pod is
-the node's own infrastructure. Every kept alert gets a container class:
+the node's own infrastructure. An ID no Warden container has, but nested in
+another running container's cgroup (the pods of a kind node that is not
+Warden's), is that other container's: counted, never kept, and not left to
+be dropped as unresolved. Every kept alert gets a container class:
 sandbox (a Warden run), node (the k3s node) or lab (other lab containers).
 
 heartbeats.jsonl gets one record every --heartbeat seconds, and at once on
@@ -72,10 +75,12 @@ WARDEN_NAMESPACE = 'warden-lab'
 RUN_LABEL = 'warden.dev/run'
 # dropped_other_container counts every other container's alert; of those,
 # dropped_other_lab_owned are containers labelled owner=warden-lab without
-# project=warden (the detector's own Falco containers, the smoke's control)
-# and dropped_other_lab_pod are k3s lab pods outside warden-lab.
+# project=warden (the detector's own Falco containers, the smoke's control),
+# dropped_other_lab_pod are k3s lab pods outside warden-lab, and
+# dropped_other_nested are cgroups nested in a container that is not
+# Warden's (the pods of a kind node: the kind audit lab's, another project's).
 COUNTERS = ('received', 'warden_alerts', 'platform_alerts', 'health_events', 'duplicates', 'dropped_host',
-            'dropped_other_container', 'dropped_other_lab_owned', 'dropped_other_lab_pod', 'dropped_unresolved',
+            'dropped_other_container', 'dropped_other_lab_owned', 'dropped_other_lab_pod', 'dropped_other_nested', 'dropped_unresolved',
             'dropped_error', 'dropped_malformed', 'dropped_overflow', 'collector_errors', 'collector_restarts')
 # (rule, proc.name) of what every gVisor sandbox does at start, in its pod
 # sandbox's cgroup: platform start-up, not an alert of the run.
@@ -389,15 +394,9 @@ class Resolver:
     def _from_pods(self, short):
         return {full: d for full, d in self.pods.items() if full.startswith(short)}
 
-    def _nested(self, short):
-        """A cgroup named with this ID inside a running Warden container's:
-        its pod decides first, else it is that container's."""
-        if self.cgroup_root is None or self.docker is None:
-            return {}
-        try:
-            parents = self.docker.running({'project': 'warden'})
-        except OSError:
-            return {}
+    def _scan(self, short, parents):
+        """{full ID: (parent, pod uid or None)} of the cgroups named with this
+        ID below the parents' scopes."""
         found = {}
         for parent in parents:
             for top in cgroup_tops(self.cgroup_root, [parent]):
@@ -408,6 +407,21 @@ class Resolver:
                                 path = os.path.relpath(os.path.join(directory, name), top)
                                 match = POD_DIR.search(path)
                                 found[full] = (parent, match.group(1).replace('_', '-') if match else None)
+        return found
+
+    def _nested(self, short):
+        """A cgroup named with this ID inside a running container's. Inside a
+        Warden container's, its pod decides first, else it is that
+        container's. Only if no Warden container has it: inside any other
+        running container's (another project's kind node, the kind audit
+        lab's node), it is another container's."""
+        if self.cgroup_root is None or self.docker is None:
+            return {}
+        try:
+            parents = self.docker.running({'project': 'warden'})
+        except OSError:
+            return {}
+        found = self._scan(short, parents)
         with self.lock:
             self.nested_seen.update(found)
             for full, seen in self.nested_seen.items():
@@ -436,6 +450,18 @@ class Resolver:
             else:
                 decisions[full] = Decision(True, 'cgroup', full, owner.run_id, {'inside': inside, 'project': 'warden'},
                                            owner.klass)
+        if found:
+            return decisions  # Warden's, or its pod is not listed yet: retried, never another's
+        try:
+            others = [c for c in self.docker.running({}) if c not in parents]
+        except OSError:
+            return {}
+        for full, (parent, _) in self._scan(short, others).items():
+            inspect = self.docker.inspect(parent)
+            owner = docker_decision(inspect) if inspect else None
+            if owner is None or owner.warden:
+                continue
+            decisions[full] = Decision(False, 'cgroup-other', full, None, {'inside': owner.detail.get('name')})
         return decisions
 
     def resolve(self, short):
@@ -611,6 +637,8 @@ class Collector:
             self.count('dropped_other_container')
             if decision.resolver in ('k8s', 'cgroup-pod'):
                 self.count('dropped_other_lab_pod')
+            elif decision.resolver == 'cgroup-other':
+                self.count('dropped_other_nested')
             elif decision.detail.get('owner') == 'warden-lab':
                 self.count('dropped_other_lab_owned')
             return

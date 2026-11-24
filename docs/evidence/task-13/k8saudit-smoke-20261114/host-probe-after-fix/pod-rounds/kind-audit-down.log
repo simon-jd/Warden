@@ -1,0 +1,4 @@
+taskset -c 0-7,16-31 scripts/kind_lab.sh down --audit
+Deleting cluster "warden-lab" ...
+Deleted nodes: ["warden-lab-control-plane"]
+kind audit lab down; audit logs kept in /home/postedism/Desktop/Warden-t13c/.cache/kind-warden-lab/audit

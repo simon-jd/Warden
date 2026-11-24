@@ -1,0 +1,180 @@
+{
+ "alerts": 293549,
+ "false_positive": 293372,
+ "groups": [
+  {
+   "class": "node",
+   "count": 2478,
+   "disposition": "false_positive",
+   "false_positive": 2478,
+   "process": "bridge",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 0
+  },
+  {
+   "class": "node",
+   "count": 177,
+   "disposition": "false_positive",
+   "false_positive": 177,
+   "process": "cat",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 0
+  },
+  {
+   "class": "node",
+   "count": 354,
+   "disposition": "false_positive",
+   "false_positive": 354,
+   "process": "containerd",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 0
+  },
+  {
+   "class": "node",
+   "count": 177,
+   "disposition": "false_positive",
+   "false_positive": 177,
+   "process": "containerd-shim",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 0
+  },
+  {
+   "class": "node",
+   "count": 1770,
+   "disposition": "false_positive",
+   "false_positive": 1770,
+   "process": "ctr",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 0
+  },
+  {
+   "class": "node",
+   "count": 1062,
+   "disposition": "false_positive",
+   "false_positive": 1062,
+   "process": "exe",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 0
+  },
+  {
+   "class": "node",
+   "count": 1239,
+   "disposition": "false_positive",
+   "false_positive": 1239,
+   "process": "find",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 0
+  },
+  {
+   "class": "node",
+   "count": 2478,
+   "disposition": "false_positive",
+   "false_positive": 2478,
+   "process": "host-local",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 0
+  },
+  {
+   "class": "node",
+   "count": 354,
+   "disposition": "false_positive",
+   "false_positive": 354,
+   "process": "k3s-server",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 0
+  },
+  {
+   "class": "node",
+   "count": 2486,
+   "disposition": "false_positive",
+   "false_positive": 2486,
+   "process": "kubectl",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 0
+  },
+  {
+   "class": "node",
+   "count": 2478,
+   "disposition": "false_positive",
+   "false_positive": 2478,
+   "process": "loopback",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 0
+  },
+  {
+   "class": "node",
+   "count": 1062,
+   "disposition": "false_positive",
+   "false_positive": 1062,
+   "process": "modprobe",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 0
+  },
+  {
+   "class": "node",
+   "count": 177,
+   "disposition": "false_positive",
+   "false_positive": 177,
+   "process": "runc",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 0
+  },
+  {
+   "class": "node",
+   "count": 177,
+   "disposition": "false_positive",
+   "false_positive": 177,
+   "process": "umount",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 0
+  },
+  {
+   "class": "node",
+   "count": 354,
+   "disposition": "false_positive",
+   "false_positive": 354,
+   "process": "unpigz",
+   "rule": "Drop and execute new binary in container",
+   "true_positive": 0,
+   "unreviewed": 0
+  },
+  {
+   "class": "sandbox",
+   "count": 177,
+   "disposition": "true_positive",
+   "false_positive": 0,
+   "process": "warden-probe",
+   "rule": "PTRACE anti-debug attempt",
+   "true_positive": 177,
+   "unreviewed": 0
+  },
+  {
+   "class": "platform",
+   "count": 276549,
+   "disposition": "false_positive",
+   "false_positive": 276549,
+   "process": "gvisor_sentry",
+   "rule": "PTRACE attached to process",
+   "true_positive": 0,
+   "unreviewed": 0
+  }
+ ],
+ "limitation": "Dispositions are the reviewer's; unmapped groups stay unreviewed.",
+ "true_positive": 177,
+ "unmatched_mappings": [],
+ "unreviewed": 0
+}

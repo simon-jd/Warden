@@ -1,0 +1,2 @@
+{"executed_at": "2026-11-14T19:59:56.110615Z", "execution_id": "stratus-eb23baf0-9c03-4891-9643-9bd4e4563af4", "outcome": "failed", "run_id": "stratus-eb23baf0-9c03-4891-9643-9bd4e4563af4", "technique_id": "T1098.006"}
+{"executed_at": "2026-11-14T20:16:14.969283Z", "execution_id": "stratus-1005d2e4-5233-4f52-b7b1-cdd98bed5ecc", "outcome": "succeeded", "run_id": "stratus-1005d2e4-5233-4f52-b7b1-cdd98bed5ecc", "technique_id": "T1611"}

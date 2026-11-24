@@ -158,3 +158,25 @@ The production listeners and OpenSearch endpoint are loopback defaults; remote
 deployment requires an explicitly reviewed transport/authentication design.
 No real collector, cluster policy, OpenSearch request, cloud service or daemon
 is exercised by the synthetic golden/buffer tests.
+
+## Task 13: run records for the Kubernetes audit path
+
+The k8saudit Falco instance (`detect/falco`, runbook [falco-detector.md](../docs/falco-detector.md#the-kubernetes-audit-path-k8saudit-instance-and-kind-audit-lab)) reads the kind audit lab's API audit log. `detect/report/audit_alert_import.py` attributes its alerts to runs, from the files `attacks/stratus/emulate.py` writes in each run's new output directory:
+
+| File | Fields the importer and metrics read | Format |
+|---|---|---|
+| `receipt.json` | `run_id` = `execution_id` (`stratus-<correlation_id>`), `started_at`, `finished_at`, `namespace` (`warden-lab`); `correlation_id` (optional in the contract; the wrapper at `795c5db` writes it) | one JSON object; times RFC3339 UTC with an explicit offset |
+| `executions.jsonl` | `execution_id`, `run_id`, `technique_id`, `executed_at` (= `started_at`), `outcome` (`succeeded` iff the detonation returned 0) | one JSON object per line |
+
+`correlation_id` is the field the wrapper should record: the UUID it passes to every Stratus command of the run as `STRATUS_RED_TEAM_CORRELATION_ID`, in canonical lowercase form (`str(uuid.uuid4())`). Stratus sends `stratus-red-team_<correlation_id>` as the User-Agent of each API request. Stratus v2.38.0 replaces a value that is not a UUID with a random one it records nowhere, so the run ID itself does not work.
+
+Without a receipt, a driver can supply the same records directly (`--runs`), one JSON object per line with exactly `execution_id`, `run_id`, `namespaces` (list), `start`, `end`, and optionally `correlation_id`.
+
+An alert belongs to a run if its event time is inside `[started_at, finished_at]` and either:
+- its User-Agent has Stratus's token `stratus-red-team_<correlation_id>`, delimited by the start, the end or a character that cannot be part of it (any namespace, cluster-scoped too; this wins over another run's namespace);
+- a run label of the request body equals the run ID (`warden.dev/run` and `warden_run_id`, both on the wrapper's pods with the run ID as value); or
+- its target namespace is the run's.
+
+The namespace match ignores who made the request, so `warden-lab` must be empty when a run starts: `make kind-audit-check-empty` before each run. Kubernetes' own namespaces are refused as run namespaces.
+
+The Stratus round is scored on k8saudit alerts only: its rule map is drawn from the 48 stock k8saudit rules, without the 25 stock syscall rules. Host syscall alerts from the kind lab's pods count as another container's and are never kept (runbook).

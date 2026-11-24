@@ -1,0 +1,20 @@
+{
+ "current_context": "kind-warden-lab",
+ "guard_kubeconfig": "passed",
+ "guard_namespace": "passed",
+ "guard_nodes": "passed",
+ "kubeconfig_mode": "0o600",
+ "namespace_labels": {
+  "kubernetes.io/metadata.name": "warden-lab",
+  "owner": "warden-lab",
+  "project": "warden"
+ },
+ "nodes": [
+  "warden-lab-control-plane"
+ ],
+ "server_host": "127.0.0.1",
+ "user_fields": [
+  "client-certificate-data",
+  "client-key-data"
+ ]
+}

@@ -1,0 +1,53 @@
+# The k8saudit instance (Falco 0.45.2): Kubernetes API audit events of the
+# kind audit lab (scripts/kind_lab.sh up --audit), mounted by
+# detect/falco/detector.py as /etc/falco/config.d/91-warden-engine.yaml after
+# falco-common.yaml. The instance's config.d is a tmpfs holding only these
+# two files, so the image's container plugin is not loaded. No system call
+# source: Falco runs with --enable-source k8s_audit and
+# -r /warden-plugins/k8s_audit_rules.yaml, the stock rules file of the
+# plugins' tag plugins/k8saudit/v0.18.0, pinned and unchanged.
+#
+# Events come from detect/falco/audit_collector.py, which follows the API
+# server's audit log and writes each complete line into the FIFO below; the
+# plugin reads it as a plain file (its open_params is a path, not a URL), so
+# the instance needs no network and no capabilities.
+engine:
+  kind: nodriver
+time_format_iso_8601: true
+# The plugins read nothing of the host's /proc.
+plugins_hostinfo: false
+load_plugins: [k8saudit, json]
+plugins:
+  - name: k8saudit
+    library_path: /warden-plugins/libk8saudit.so
+    # The plugin's defaults (maxEventSize 262144), except useAsync: in a
+    # probe on a throwaway lab (2026-11-14; its outputs were not kept), its
+    # asynchronous field extraction (default true) let an alert reach the
+    # collector 0.3 to 1.2 s after its audit line was fed, against 10 to 31 ms
+    # without it (about the plugin SDK's 30 ms batch timeout).
+    # The collector forwards no line of 64 KiB or more: the plugin's reader
+    # stops at its first longer line (bufio.Scanner's default limit), which
+    # would end the source.
+    init_config:
+      useAsync: false
+    open_params: /warden-detect-out/audit.fifo
+  - name: json
+    library_path: /warden-plugins/libjson.so
+# Fields added to every k8s_audit alert's output_fields, so that
+# detect/report/audit_alert_import.py can attribute it to a run and join it
+# to its audit event: the target namespace (not every stock output names
+# it), the two run labels attacks/stratus/emulate.py puts on its pods
+# (warden.dev/run, JSON pointer escape ~1 for its "/", and warden_run_id,
+# both the run ID; read from the request body, so absent for a request
+# without one, such as an exec), the audit ID and the User-Agent.
+# extra_fields change neither the rules, their conditions nor their output
+# text.
+append_output:
+  - match:
+      source: k8s_audit
+    extra_fields:
+      - ka.target.namespace
+      - jevt.value[/requestObject/metadata/labels/warden.dev~1run]
+      - jevt.value[/requestObject/metadata/labels/warden_run_id]
+      - ka.auditid
+      - ka.useragent

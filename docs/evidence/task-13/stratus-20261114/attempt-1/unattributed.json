@@ -1,0 +1,5 @@
+{
+ "K8s ClusterRole Deleted | outside every run window | - | kubectl": 1,
+ "K8s ClusterRoleBinding Deleted | outside every run window | - | kubectl": 1,
+ "K8s Serviceaccount Deleted | outside every run window | kube-system | kubectl": 1
+}

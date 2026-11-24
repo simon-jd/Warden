@@ -1,0 +1,1012 @@
+[
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-429dd38f6ef506e287275afe32e181bb8f377bba817e769cbe2c0be8fa6801c0",
+    "alerted_at": "2026-11-14T17:23:33.767373951Z",
+    "arrived_at": "2026-11-14T17:23:33.773831895Z",
+    "rule_id": "Search Private Keys or Passwords"
+   }
+  ],
+  "arrival_after_start_s": 0.089,
+  "arrivals_watched": 1,
+  "atomic_guid": "46959285-906d-40fa-9437-5a439accd878",
+  "binding": {
+   "container_id": "23b6e685997ec8b645460872bc9fa6bd0b53535fe23a422ba01c4949d43e9d89",
+   "end": "2026-11-14T17:23:33.903512Z",
+   "execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery",
+   "run_id": "atomic-a851d1c953765f760e5ea1b0",
+   "start": "2026-11-14T17:23:33.684997Z"
+  },
+  "container_id": "23b6e685997ec8b645460872bc9fa6bd0b53535fe23a422ba01c4949d43e9d89",
+  "event_after_start_s": 0.082,
+  "execution_id": "atomic-a851d1c953765f760e5ea1b0-ssh-key-discovery",
+  "finished_at": "2026-11-14T17:23:33.903512Z",
+  "index": 1,
+  "metrics_latency_s": 0.082,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 1,
+  "run_id": "atomic-a851d1c953765f760e5ea1b0",
+  "started_at": "2026-11-14T17:23:33.684997Z",
+  "status": "detected",
+  "technique": "T1552.004",
+  "test": "ssh-key-discovery",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-b30d10d60c17437901f95f3d7d14b5d177e8a6250a21954e9a9dcd919a5857a9",
+    "alerted_at": "2026-11-14T17:23:46.370526503Z",
+    "arrived_at": "2026-11-14T17:23:46.373627766Z",
+    "rule_id": "Search Private Keys or Passwords"
+   }
+  ],
+  "arrival_after_start_s": 0.049,
+  "arrivals_watched": 1,
+  "atomic_guid": "7c247dc7-5128-4643-907b-73a76d9135c3",
+  "binding": {
+   "container_id": "2f2ed86d8bdb0b7e563d3787844ab3e7e6d7c357f72834a9e5c9b68f9f2b5c61",
+   "end": "2026-11-14T17:23:46.489890Z",
+   "execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy",
+   "run_id": "atomic-544c09b7276b902014c0646d",
+   "start": "2026-11-14T17:23:46.325061Z"
+  },
+  "container_id": "2f2ed86d8bdb0b7e563d3787844ab3e7e6d7c357f72834a9e5c9b68f9f2b5c61",
+  "event_after_start_s": 0.045,
+  "execution_id": "atomic-544c09b7276b902014c0646d-ssh-key-copy",
+  "finished_at": "2026-11-14T17:23:46.489890Z",
+  "index": 2,
+  "metrics_latency_s": 0.045,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 1,
+  "run_id": "atomic-544c09b7276b902014c0646d",
+  "started_at": "2026-11-14T17:23:46.325061Z",
+  "status": "detected",
+  "technique": "T1552.004",
+  "test": "ssh-key-copy",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [],
+  "arrival_after_start_s": null,
+  "arrivals_watched": 0,
+  "atomic_guid": "37807632-d3da-442e-8c2e-00f44928ff8f",
+  "binding": {
+   "container_id": "40abf51bbae576a9ad892e5940040f91fb39b3fddd4c0a641374042022417873",
+   "end": "2026-11-14T17:23:59.165833Z",
+   "execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials",
+   "run_id": "atomic-2d61ff5867bd1eaf02fec384",
+   "start": "2026-11-14T17:23:58.998939Z"
+  },
+  "container_id": "40abf51bbae576a9ad892e5940040f91fb39b3fddd4c0a641374042022417873",
+  "event_after_start_s": null,
+  "execution_id": "atomic-2d61ff5867bd1eaf02fec384-aws-credentials",
+  "finished_at": "2026-11-14T17:23:59.165833Z",
+  "index": 3,
+  "metrics_latency_s": null,
+  "outcome": "failed",
+  "returncode": 1,
+  "round": 1,
+  "run_id": "atomic-2d61ff5867bd1eaf02fec384",
+  "started_at": "2026-11-14T17:23:58.998939Z",
+  "status": "excluded_outcome",
+  "technique": "T1552.001",
+  "test": "aws-credentials",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-adafcb67c2901dec609076cec5970f4c598d3badd16528807bfbf26680de0df1",
+    "alerted_at": "2026-11-14T17:24:11.820788541Z",
+    "arrived_at": "2026-11-14T17:24:11.824998535Z",
+    "rule_id": "Read sensitive file untrusted"
+   }
+  ],
+  "arrival_after_start_s": 0.066,
+  "arrivals_watched": 1,
+  "atomic_guid": "085fe567-ac84-47c7-ac4c-2688ce28265b",
+  "binding": {
+   "container_id": "d448e29380ea1d24e5ed6da6a16f56d4020ab548bd1357f1adb24c49b3e2a6ff",
+   "end": "2026-11-14T17:24:11.824410Z",
+   "execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy",
+   "run_id": "atomic-f505818bcacbf2eed8804fb5",
+   "start": "2026-11-14T17:24:11.758995Z"
+  },
+  "container_id": "d448e29380ea1d24e5ed6da6a16f56d4020ab548bd1357f1adb24c49b3e2a6ff",
+  "event_after_start_s": 0.062,
+  "execution_id": "atomic-f505818bcacbf2eed8804fb5-password-policy",
+  "finished_at": "2026-11-14T17:24:11.824410Z",
+  "index": 4,
+  "metrics_latency_s": 0.062,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 1,
+  "run_id": "atomic-f505818bcacbf2eed8804fb5",
+  "started_at": "2026-11-14T17:24:11.758995Z",
+  "status": "detected",
+  "technique": "T1201",
+  "test": "password-policy",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-da150ff6f2df0e845a3e05f2bf495739fd1140171d0ffe9687e55f959bacf9ac",
+    "alerted_at": "2026-11-14T17:24:24.615917172Z",
+    "arrived_at": "2026-11-14T17:24:24.636722914Z",
+    "rule_id": "Remove Bulk Data from Disk"
+   }
+  ],
+  "arrival_after_start_s": 0.079,
+  "arrivals_watched": 1,
+  "atomic_guid": "039b4b10-2900-404b-b67f-4b6d49aa6499",
+  "binding": {
+   "container_id": "20c32a14a36d1b2a9ab8ad81d33cd24e50ead709bf06a56082ab9cf9257cc3f3",
+   "end": "2026-11-14T17:24:24.622473Z",
+   "execution_id": "atomic-428c99260ab5416847cf9c0b-shred",
+   "run_id": "atomic-428c99260ab5416847cf9c0b",
+   "start": "2026-11-14T17:24:24.557715Z"
+  },
+  "container_id": "20c32a14a36d1b2a9ab8ad81d33cd24e50ead709bf06a56082ab9cf9257cc3f3",
+  "event_after_start_s": 0.058,
+  "execution_id": "atomic-428c99260ab5416847cf9c0b-shred",
+  "finished_at": "2026-11-14T17:24:24.622473Z",
+  "index": 5,
+  "metrics_latency_s": 0.058,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 1,
+  "run_id": "atomic-428c99260ab5416847cf9c0b",
+  "started_at": "2026-11-14T17:24:24.557715Z",
+  "status": "detected",
+  "technique": "T1070.004",
+  "test": "shred",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [],
+  "arrival_after_start_s": null,
+  "arrivals_watched": 0,
+  "atomic_guid": "486e88ea-4f56-470f-9b57-3f4d73f39133",
+  "binding": {
+   "container_id": "67a948d916d045bb5ed0d56c43aa3551662306dd83435a92f85cf4a7fc05398a",
+   "end": "2026-11-14T17:24:37.137766Z",
+   "execution_id": "atomic-7116af4488ce737d812772e2-hostname",
+   "run_id": "atomic-7116af4488ce737d812772e2",
+   "start": "2026-11-14T17:24:37.069614Z"
+  },
+  "container_id": "67a948d916d045bb5ed0d56c43aa3551662306dd83435a92f85cf4a7fc05398a",
+  "event_after_start_s": null,
+  "execution_id": "atomic-7116af4488ce737d812772e2-hostname",
+  "finished_at": "2026-11-14T17:24:37.137766Z",
+  "index": 6,
+  "metrics_latency_s": null,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 1,
+  "run_id": "atomic-7116af4488ce737d812772e2",
+  "started_at": "2026-11-14T17:24:37.069614Z",
+  "status": "not_detected_by_cutoff",
+  "technique": "T1082",
+  "test": "hostname",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-6f7edb82bbe441512fc3354d1bd09af99d0d6cae258e0ac3c35f8bf8d6b521f8",
+    "alerted_at": "2026-11-14T17:24:49.892865560Z",
+    "arrived_at": "2026-11-14T17:24:49.902983095Z",
+    "rule_id": "Search Private Keys or Passwords"
+   }
+  ],
+  "arrival_after_start_s": 0.07,
+  "arrivals_watched": 1,
+  "atomic_guid": "7c247dc7-5128-4643-907b-73a76d9135c3",
+  "binding": {
+   "container_id": "8e08bcb1bfed6f7f5622318593c6ee26039beca71e9e5dd8b1c0994f88ab574b",
+   "end": "2026-11-14T17:24:49.998382Z",
+   "execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy",
+   "run_id": "atomic-a0ca63ea87cbff4278fd04d4",
+   "start": "2026-11-14T17:24:49.833029Z"
+  },
+  "container_id": "8e08bcb1bfed6f7f5622318593c6ee26039beca71e9e5dd8b1c0994f88ab574b",
+  "event_after_start_s": 0.06,
+  "execution_id": "atomic-a0ca63ea87cbff4278fd04d4-ssh-key-copy",
+  "finished_at": "2026-11-14T17:24:49.998382Z",
+  "index": 7,
+  "metrics_latency_s": 0.06,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 2,
+  "run_id": "atomic-a0ca63ea87cbff4278fd04d4",
+  "started_at": "2026-11-14T17:24:49.833029Z",
+  "status": "detected",
+  "technique": "T1552.004",
+  "test": "ssh-key-copy",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [],
+  "arrival_after_start_s": null,
+  "arrivals_watched": 0,
+  "atomic_guid": "37807632-d3da-442e-8c2e-00f44928ff8f",
+  "binding": {
+   "container_id": "c34e3c9d83eb72532f7d323d4cda82507f3b728f0109345ee3a33ddfee88cd31",
+   "end": "2026-11-14T17:25:02.858665Z",
+   "execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials",
+   "run_id": "atomic-6afb735021c0dd27e34c4fcd",
+   "start": "2026-11-14T17:25:02.642714Z"
+  },
+  "container_id": "c34e3c9d83eb72532f7d323d4cda82507f3b728f0109345ee3a33ddfee88cd31",
+  "event_after_start_s": null,
+  "execution_id": "atomic-6afb735021c0dd27e34c4fcd-aws-credentials",
+  "finished_at": "2026-11-14T17:25:02.858665Z",
+  "index": 8,
+  "metrics_latency_s": null,
+  "outcome": "failed",
+  "returncode": 1,
+  "round": 2,
+  "run_id": "atomic-6afb735021c0dd27e34c4fcd",
+  "started_at": "2026-11-14T17:25:02.642714Z",
+  "status": "excluded_outcome",
+  "technique": "T1552.001",
+  "test": "aws-credentials",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-a3c796d80fe1efafa0af4dcf205855d54f10bb5459cfa2b956d6376d32924028",
+    "alerted_at": "2026-11-14T17:25:15.567511033Z",
+    "arrived_at": "2026-11-14T17:25:15.572664599Z",
+    "rule_id": "Read sensitive file untrusted"
+   }
+  ],
+  "arrival_after_start_s": 0.103,
+  "arrivals_watched": 1,
+  "atomic_guid": "085fe567-ac84-47c7-ac4c-2688ce28265b",
+  "binding": {
+   "container_id": "5d2cf1deb7e28a9479594887802a3d698881b7f4b63a9f4bb336f815fdf15e2d",
+   "end": "2026-11-14T17:25:15.587550Z",
+   "execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy",
+   "run_id": "atomic-62b68bc0b86769dde1284e87",
+   "start": "2026-11-14T17:25:15.469438Z"
+  },
+  "container_id": "5d2cf1deb7e28a9479594887802a3d698881b7f4b63a9f4bb336f815fdf15e2d",
+  "event_after_start_s": 0.098,
+  "execution_id": "atomic-62b68bc0b86769dde1284e87-password-policy",
+  "finished_at": "2026-11-14T17:25:15.587550Z",
+  "index": 9,
+  "metrics_latency_s": 0.098,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 2,
+  "run_id": "atomic-62b68bc0b86769dde1284e87",
+  "started_at": "2026-11-14T17:25:15.469438Z",
+  "status": "detected",
+  "technique": "T1201",
+  "test": "password-policy",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-569814e82fc3cb1604080a1b69497fb09d638b90ca885a7e78f38702f2a921f7",
+    "alerted_at": "2026-11-14T17:25:28.392450364Z",
+    "arrived_at": "2026-11-14T17:25:28.401859197Z",
+    "rule_id": "Remove Bulk Data from Disk"
+   }
+  ],
+  "arrival_after_start_s": 0.083,
+  "arrivals_watched": 1,
+  "atomic_guid": "039b4b10-2900-404b-b67f-4b6d49aa6499",
+  "binding": {
+   "container_id": "979816c5a70148d4abea07cee25e59ff588bf47e2c99df1858c791f5b4b94006",
+   "end": "2026-11-14T17:25:28.437904Z",
+   "execution_id": "atomic-e231acc2ac91598b30b27c04-shred",
+   "run_id": "atomic-e231acc2ac91598b30b27c04",
+   "start": "2026-11-14T17:25:28.318706Z"
+  },
+  "container_id": "979816c5a70148d4abea07cee25e59ff588bf47e2c99df1858c791f5b4b94006",
+  "event_after_start_s": 0.074,
+  "execution_id": "atomic-e231acc2ac91598b30b27c04-shred",
+  "finished_at": "2026-11-14T17:25:28.437904Z",
+  "index": 10,
+  "metrics_latency_s": 0.074,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 2,
+  "run_id": "atomic-e231acc2ac91598b30b27c04",
+  "started_at": "2026-11-14T17:25:28.318706Z",
+  "status": "detected",
+  "technique": "T1070.004",
+  "test": "shred",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [],
+  "arrival_after_start_s": null,
+  "arrivals_watched": 0,
+  "atomic_guid": "486e88ea-4f56-470f-9b57-3f4d73f39133",
+  "binding": {
+   "container_id": "ffed68a0dfbd453ccfbcc0ab2e618a36a8f10c375322ee30be1f7be468275fd7",
+   "end": "2026-11-14T17:25:41.084064Z",
+   "execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname",
+   "run_id": "atomic-6aa90cbc3960c0a458a6ba4d",
+   "start": "2026-11-14T17:25:40.968834Z"
+  },
+  "container_id": "ffed68a0dfbd453ccfbcc0ab2e618a36a8f10c375322ee30be1f7be468275fd7",
+  "event_after_start_s": null,
+  "execution_id": "atomic-6aa90cbc3960c0a458a6ba4d-hostname",
+  "finished_at": "2026-11-14T17:25:41.084064Z",
+  "index": 11,
+  "metrics_latency_s": null,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 2,
+  "run_id": "atomic-6aa90cbc3960c0a458a6ba4d",
+  "started_at": "2026-11-14T17:25:40.968834Z",
+  "status": "not_detected_by_cutoff",
+  "technique": "T1082",
+  "test": "hostname",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-1b728ac0bbc53b022cf7914688fe29396daf9444c4bf8e9e83d17963c7779cc9",
+    "alerted_at": "2026-11-14T17:25:53.487817278Z",
+    "arrived_at": "2026-11-14T17:25:53.497551428Z",
+    "rule_id": "Search Private Keys or Passwords"
+   }
+  ],
+  "arrival_after_start_s": 0.053,
+  "arrivals_watched": 1,
+  "atomic_guid": "46959285-906d-40fa-9437-5a439accd878",
+  "binding": {
+   "container_id": "466af9725eac7733f472103ae75620fa5852825ad75f1e0f845e9fb746c69acf",
+   "end": "2026-11-14T17:25:53.659462Z",
+   "execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery",
+   "run_id": "atomic-5485602b7181edb593d7b0f4",
+   "start": "2026-11-14T17:25:53.444539Z"
+  },
+  "container_id": "466af9725eac7733f472103ae75620fa5852825ad75f1e0f845e9fb746c69acf",
+  "event_after_start_s": 0.043,
+  "execution_id": "atomic-5485602b7181edb593d7b0f4-ssh-key-discovery",
+  "finished_at": "2026-11-14T17:25:53.659462Z",
+  "index": 12,
+  "metrics_latency_s": 0.043,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 2,
+  "run_id": "atomic-5485602b7181edb593d7b0f4",
+  "started_at": "2026-11-14T17:25:53.444539Z",
+  "status": "detected",
+  "technique": "T1552.004",
+  "test": "ssh-key-discovery",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [],
+  "arrival_after_start_s": null,
+  "arrivals_watched": 0,
+  "atomic_guid": "37807632-d3da-442e-8c2e-00f44928ff8f",
+  "binding": {
+   "container_id": "f038d66f3910219b7f822122f7110063c4ca6794cdecaf75f01b3e35b0730982",
+   "end": "2026-11-14T17:26:06.342241Z",
+   "execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials",
+   "run_id": "atomic-4f5ad5ba447d4a616088ad50",
+   "start": "2026-11-14T17:26:06.127493Z"
+  },
+  "container_id": "f038d66f3910219b7f822122f7110063c4ca6794cdecaf75f01b3e35b0730982",
+  "event_after_start_s": null,
+  "execution_id": "atomic-4f5ad5ba447d4a616088ad50-aws-credentials",
+  "finished_at": "2026-11-14T17:26:06.342241Z",
+  "index": 13,
+  "metrics_latency_s": null,
+  "outcome": "failed",
+  "returncode": 1,
+  "round": 3,
+  "run_id": "atomic-4f5ad5ba447d4a616088ad50",
+  "started_at": "2026-11-14T17:26:06.127493Z",
+  "status": "excluded_outcome",
+  "technique": "T1552.001",
+  "test": "aws-credentials",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-c4c56dd6e27688239725b0d7c29986b723a2d60eddc8b62e448d4c2aba87bf19",
+    "alerted_at": "2026-11-14T17:26:18.773945272Z",
+    "arrived_at": "2026-11-14T17:26:18.781537046Z",
+    "rule_id": "Read sensitive file untrusted"
+   }
+  ],
+  "arrival_after_start_s": 0.051,
+  "arrivals_watched": 1,
+  "atomic_guid": "085fe567-ac84-47c7-ac4c-2688ce28265b",
+  "binding": {
+   "container_id": "719da5b2d784951d8d3906dc6c8616b05a40e3c80c1831b736645c40270cd5df",
+   "end": "2026-11-14T17:26:18.794983Z",
+   "execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy",
+   "run_id": "atomic-1649aed893b8f9ec6184c47e",
+   "start": "2026-11-14T17:26:18.730072Z"
+  },
+  "container_id": "719da5b2d784951d8d3906dc6c8616b05a40e3c80c1831b736645c40270cd5df",
+  "event_after_start_s": 0.044,
+  "execution_id": "atomic-1649aed893b8f9ec6184c47e-password-policy",
+  "finished_at": "2026-11-14T17:26:18.794983Z",
+  "index": 14,
+  "metrics_latency_s": 0.044,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 3,
+  "run_id": "atomic-1649aed893b8f9ec6184c47e",
+  "started_at": "2026-11-14T17:26:18.730072Z",
+  "status": "detected",
+  "technique": "T1201",
+  "test": "password-policy",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-b752aa28bb66b5dbfaea388bedf3cde04a744953f3ebaac20da5301ad258a616",
+    "alerted_at": "2026-11-14T17:26:31.431552056Z",
+    "arrived_at": "2026-11-14T17:26:31.435255613Z",
+    "rule_id": "Remove Bulk Data from Disk"
+   }
+  ],
+  "arrival_after_start_s": 0.047,
+  "arrivals_watched": 1,
+  "atomic_guid": "039b4b10-2900-404b-b67f-4b6d49aa6499",
+  "binding": {
+   "container_id": "2a3ce404241485fb46511e9384ec60e28d924f1492efa77b48e2cda13647d5d3",
+   "end": "2026-11-14T17:26:31.452796Z",
+   "execution_id": "atomic-b83698e23fb56002ad873746-shred",
+   "run_id": "atomic-b83698e23fb56002ad873746",
+   "start": "2026-11-14T17:26:31.387801Z"
+  },
+  "container_id": "2a3ce404241485fb46511e9384ec60e28d924f1492efa77b48e2cda13647d5d3",
+  "event_after_start_s": 0.044,
+  "execution_id": "atomic-b83698e23fb56002ad873746-shred",
+  "finished_at": "2026-11-14T17:26:31.452796Z",
+  "index": 15,
+  "metrics_latency_s": 0.044,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 3,
+  "run_id": "atomic-b83698e23fb56002ad873746",
+  "started_at": "2026-11-14T17:26:31.387801Z",
+  "status": "detected",
+  "technique": "T1070.004",
+  "test": "shred",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [],
+  "arrival_after_start_s": null,
+  "arrivals_watched": 0,
+  "atomic_guid": "486e88ea-4f56-470f-9b57-3f4d73f39133",
+  "binding": {
+   "container_id": "73876a1bb8f412c3db9bff20a45a4ad32ed933445b4451da97ff6f83163e516a",
+   "end": "2026-11-14T17:26:43.916841Z",
+   "execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname",
+   "run_id": "atomic-67b8a6950c6278aa3ee074cc",
+   "start": "2026-11-14T17:26:43.852047Z"
+  },
+  "container_id": "73876a1bb8f412c3db9bff20a45a4ad32ed933445b4451da97ff6f83163e516a",
+  "event_after_start_s": null,
+  "execution_id": "atomic-67b8a6950c6278aa3ee074cc-hostname",
+  "finished_at": "2026-11-14T17:26:43.916841Z",
+  "index": 16,
+  "metrics_latency_s": null,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 3,
+  "run_id": "atomic-67b8a6950c6278aa3ee074cc",
+  "started_at": "2026-11-14T17:26:43.852047Z",
+  "status": "not_detected_by_cutoff",
+  "technique": "T1082",
+  "test": "hostname",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-a690c8d27f66fcfda0e76e23894c02c5e06bd986dc15b9631a9ab6665483b742",
+    "alerted_at": "2026-11-14T17:26:56.346471731Z",
+    "arrived_at": "2026-11-14T17:26:56.349509085Z",
+    "rule_id": "Search Private Keys or Passwords"
+   }
+  ],
+  "arrival_after_start_s": 0.045,
+  "arrivals_watched": 1,
+  "atomic_guid": "46959285-906d-40fa-9437-5a439accd878",
+  "binding": {
+   "container_id": "80ca2c264c3eb354987a07fac3211ff16c8a2f5896489c94e29f33fdb3ec2704",
+   "end": "2026-11-14T17:26:56.469247Z",
+   "execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery",
+   "run_id": "atomic-ee8a6a1820ccb6329f28868e",
+   "start": "2026-11-14T17:26:56.304088Z"
+  },
+  "container_id": "80ca2c264c3eb354987a07fac3211ff16c8a2f5896489c94e29f33fdb3ec2704",
+  "event_after_start_s": 0.042,
+  "execution_id": "atomic-ee8a6a1820ccb6329f28868e-ssh-key-discovery",
+  "finished_at": "2026-11-14T17:26:56.469247Z",
+  "index": 17,
+  "metrics_latency_s": 0.042,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 3,
+  "run_id": "atomic-ee8a6a1820ccb6329f28868e",
+  "started_at": "2026-11-14T17:26:56.304088Z",
+  "status": "detected",
+  "technique": "T1552.004",
+  "test": "ssh-key-discovery",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-bcd5ad402c44886334aa2ba66907f6b429d9ebff6a2aa13464988f36ac3722bd",
+    "alerted_at": "2026-11-14T17:27:08.984135619Z",
+    "arrived_at": "2026-11-14T17:27:08.995125614Z",
+    "rule_id": "Search Private Keys or Passwords"
+   }
+  ],
+  "arrival_after_start_s": 0.083,
+  "arrivals_watched": 1,
+  "atomic_guid": "7c247dc7-5128-4643-907b-73a76d9135c3",
+  "binding": {
+   "container_id": "027063bbc6bd0e46848d8971261516641e9de69fb5673dd3ecc984e429fe1169",
+   "end": "2026-11-14T17:27:09.127719Z",
+   "execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy",
+   "run_id": "atomic-3b1d2c28a89025e674337cfa",
+   "start": "2026-11-14T17:27:08.912035Z"
+  },
+  "container_id": "027063bbc6bd0e46848d8971261516641e9de69fb5673dd3ecc984e429fe1169",
+  "event_after_start_s": 0.072,
+  "execution_id": "atomic-3b1d2c28a89025e674337cfa-ssh-key-copy",
+  "finished_at": "2026-11-14T17:27:09.127719Z",
+  "index": 18,
+  "metrics_latency_s": 0.072,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 3,
+  "run_id": "atomic-3b1d2c28a89025e674337cfa",
+  "started_at": "2026-11-14T17:27:08.912035Z",
+  "status": "detected",
+  "technique": "T1552.004",
+  "test": "ssh-key-copy",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-ad636b134e5dc6f830f6fd7a912e97356b38a0b0f9d0f614b429757f2cb5f93d",
+    "alerted_at": "2026-11-14T17:27:22.014295211Z",
+    "arrived_at": "2026-11-14T17:27:22.020984291Z",
+    "rule_id": "Read sensitive file untrusted"
+   }
+  ],
+  "arrival_after_start_s": 0.075,
+  "arrivals_watched": 1,
+  "atomic_guid": "085fe567-ac84-47c7-ac4c-2688ce28265b",
+  "binding": {
+   "container_id": "22848004d9459fdda446cfa82acc34d520e786c8b6b2f87bd8608243b90db23d",
+   "end": "2026-11-14T17:27:22.064702Z",
+   "execution_id": "atomic-ea19aef598891f64fb49c231-password-policy",
+   "run_id": "atomic-ea19aef598891f64fb49c231",
+   "start": "2026-11-14T17:27:21.945947Z"
+  },
+  "container_id": "22848004d9459fdda446cfa82acc34d520e786c8b6b2f87bd8608243b90db23d",
+  "event_after_start_s": 0.068,
+  "execution_id": "atomic-ea19aef598891f64fb49c231-password-policy",
+  "finished_at": "2026-11-14T17:27:22.064702Z",
+  "index": 19,
+  "metrics_latency_s": 0.068,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 4,
+  "run_id": "atomic-ea19aef598891f64fb49c231",
+  "started_at": "2026-11-14T17:27:21.945947Z",
+  "status": "detected",
+  "technique": "T1201",
+  "test": "password-policy",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-4bcc85f2e5630d85612c928ac17df3507ef568e8af4f96d667d2485c74a15c04",
+    "alerted_at": "2026-11-14T17:27:34.811990828Z",
+    "arrived_at": "2026-11-14T17:27:34.820325630Z",
+    "rule_id": "Remove Bulk Data from Disk"
+   }
+  ],
+  "arrival_after_start_s": 0.047,
+  "arrivals_watched": 1,
+  "atomic_guid": "039b4b10-2900-404b-b67f-4b6d49aa6499",
+  "binding": {
+   "container_id": "7e61746b32b87e94c820dda450a9fbe44ffa49c630e0fe45429e04e6b6293e69",
+   "end": "2026-11-14T17:27:34.838937Z",
+   "execution_id": "atomic-12de27c8b27fb3e306a65578-shred",
+   "run_id": "atomic-12de27c8b27fb3e306a65578",
+   "start": "2026-11-14T17:27:34.772965Z"
+  },
+  "container_id": "7e61746b32b87e94c820dda450a9fbe44ffa49c630e0fe45429e04e6b6293e69",
+  "event_after_start_s": 0.039,
+  "execution_id": "atomic-12de27c8b27fb3e306a65578-shred",
+  "finished_at": "2026-11-14T17:27:34.838937Z",
+  "index": 20,
+  "metrics_latency_s": 0.039,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 4,
+  "run_id": "atomic-12de27c8b27fb3e306a65578",
+  "started_at": "2026-11-14T17:27:34.772965Z",
+  "status": "detected",
+  "technique": "T1070.004",
+  "test": "shred",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [],
+  "arrival_after_start_s": null,
+  "arrivals_watched": 0,
+  "atomic_guid": "486e88ea-4f56-470f-9b57-3f4d73f39133",
+  "binding": {
+   "container_id": "79e59814e060a334601c3654365c7f9ac91d7e6e452aba56050351e433a5a22f",
+   "end": "2026-11-14T17:27:47.269467Z",
+   "execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname",
+   "run_id": "atomic-5e0ab25d66d7be00d17cfb9c",
+   "start": "2026-11-14T17:27:47.204682Z"
+  },
+  "container_id": "79e59814e060a334601c3654365c7f9ac91d7e6e452aba56050351e433a5a22f",
+  "event_after_start_s": null,
+  "execution_id": "atomic-5e0ab25d66d7be00d17cfb9c-hostname",
+  "finished_at": "2026-11-14T17:27:47.269467Z",
+  "index": 21,
+  "metrics_latency_s": null,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 4,
+  "run_id": "atomic-5e0ab25d66d7be00d17cfb9c",
+  "started_at": "2026-11-14T17:27:47.204682Z",
+  "status": "not_detected_by_cutoff",
+  "technique": "T1082",
+  "test": "hostname",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-8bf8be3ff43a167015f35d41b2bcef32d23f22da34060bba536a37d61226cf9c",
+    "alerted_at": "2026-11-14T17:27:59.705506785Z",
+    "arrived_at": "2026-11-14T17:27:59.709623340Z",
+    "rule_id": "Search Private Keys or Passwords"
+   }
+  ],
+  "arrival_after_start_s": 0.045,
+  "arrivals_watched": 1,
+  "atomic_guid": "46959285-906d-40fa-9437-5a439accd878",
+  "binding": {
+   "container_id": "8f16762a25385c7029778d84fb1bdd5acde10b8abc0528aa682986881a0ff335",
+   "end": "2026-11-14T17:27:59.829521Z",
+   "execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery",
+   "run_id": "atomic-9752e1ac1c0176a1d053c533",
+   "start": "2026-11-14T17:27:59.664665Z"
+  },
+  "container_id": "8f16762a25385c7029778d84fb1bdd5acde10b8abc0528aa682986881a0ff335",
+  "event_after_start_s": 0.041,
+  "execution_id": "atomic-9752e1ac1c0176a1d053c533-ssh-key-discovery",
+  "finished_at": "2026-11-14T17:27:59.829521Z",
+  "index": 22,
+  "metrics_latency_s": 0.041,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 4,
+  "run_id": "atomic-9752e1ac1c0176a1d053c533",
+  "started_at": "2026-11-14T17:27:59.664665Z",
+  "status": "detected",
+  "technique": "T1552.004",
+  "test": "ssh-key-discovery",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-f48ef90d84a7f4dcdd683fd3f0283b3fc3bdbda996e343c6b5923aeb6b607a55",
+    "alerted_at": "2026-11-14T17:28:12.285907040Z",
+    "arrived_at": "2026-11-14T17:28:12.295113517Z",
+    "rule_id": "Search Private Keys or Passwords"
+   }
+  ],
+  "arrival_after_start_s": 0.053,
+  "arrivals_watched": 1,
+  "atomic_guid": "7c247dc7-5128-4643-907b-73a76d9135c3",
+  "binding": {
+   "container_id": "a36d07300803ea6ffdc4aeca507be05dccb54b98ea771b771dac67376b803985",
+   "end": "2026-11-14T17:28:12.457980Z",
+   "execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy",
+   "run_id": "atomic-c80407dbd7311e02833d6d79",
+   "start": "2026-11-14T17:28:12.242530Z"
+  },
+  "container_id": "a36d07300803ea6ffdc4aeca507be05dccb54b98ea771b771dac67376b803985",
+  "event_after_start_s": 0.043,
+  "execution_id": "atomic-c80407dbd7311e02833d6d79-ssh-key-copy",
+  "finished_at": "2026-11-14T17:28:12.457980Z",
+  "index": 23,
+  "metrics_latency_s": 0.043,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 4,
+  "run_id": "atomic-c80407dbd7311e02833d6d79",
+  "started_at": "2026-11-14T17:28:12.242530Z",
+  "status": "detected",
+  "technique": "T1552.004",
+  "test": "ssh-key-copy",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [],
+  "arrival_after_start_s": null,
+  "arrivals_watched": 0,
+  "atomic_guid": "37807632-d3da-442e-8c2e-00f44928ff8f",
+  "binding": {
+   "container_id": "e29d6300f7ea2614410d285889c52bd1a1172798b5b0443cff5ad159c3f43d64",
+   "end": "2026-11-14T17:28:25.065902Z",
+   "execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials",
+   "run_id": "atomic-84d7b8e7ad5ce2e4474984d5",
+   "start": "2026-11-14T17:28:24.850740Z"
+  },
+  "container_id": "e29d6300f7ea2614410d285889c52bd1a1172798b5b0443cff5ad159c3f43d64",
+  "event_after_start_s": null,
+  "execution_id": "atomic-84d7b8e7ad5ce2e4474984d5-aws-credentials",
+  "finished_at": "2026-11-14T17:28:25.065902Z",
+  "index": 24,
+  "metrics_latency_s": null,
+  "outcome": "failed",
+  "returncode": 1,
+  "round": 4,
+  "run_id": "atomic-84d7b8e7ad5ce2e4474984d5",
+  "started_at": "2026-11-14T17:28:24.850740Z",
+  "status": "excluded_outcome",
+  "technique": "T1552.001",
+  "test": "aws-credentials",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-980e3b854715a3a9cf2e2aba5563cc6e91cc66a5fc5690024f503bb4bac58d81",
+    "alerted_at": "2026-11-14T17:28:37.998204141Z",
+    "arrived_at": "2026-11-14T17:28:38.007482136Z",
+    "rule_id": "Remove Bulk Data from Disk"
+   }
+  ],
+  "arrival_after_start_s": 0.073,
+  "arrivals_watched": 1,
+  "atomic_guid": "039b4b10-2900-404b-b67f-4b6d49aa6499",
+  "binding": {
+   "container_id": "936165e433265bbf75ec6a45137d046e95f35c730d510b825d5ccbe1d2f072d0",
+   "end": "2026-11-14T17:28:38.003263Z",
+   "execution_id": "atomic-dacd0a7befd939da577f29eb-shred",
+   "run_id": "atomic-dacd0a7befd939da577f29eb",
+   "start": "2026-11-14T17:28:37.934746Z"
+  },
+  "container_id": "936165e433265bbf75ec6a45137d046e95f35c730d510b825d5ccbe1d2f072d0",
+  "event_after_start_s": 0.063,
+  "execution_id": "atomic-dacd0a7befd939da577f29eb-shred",
+  "finished_at": "2026-11-14T17:28:38.003263Z",
+  "index": 25,
+  "metrics_latency_s": 0.063,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 5,
+  "run_id": "atomic-dacd0a7befd939da577f29eb",
+  "started_at": "2026-11-14T17:28:37.934746Z",
+  "status": "detected",
+  "technique": "T1070.004",
+  "test": "shred",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [],
+  "arrival_after_start_s": null,
+  "arrivals_watched": 0,
+  "atomic_guid": "486e88ea-4f56-470f-9b57-3f4d73f39133",
+  "binding": {
+   "container_id": "c17d4c35dc966a6d418d9ea0965b88b7ff356826d548cd9b98cdaed30da03e76",
+   "end": "2026-11-14T17:28:50.632991Z",
+   "execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname",
+   "run_id": "atomic-3229a46e40ce3ffeb8d7993c",
+   "start": "2026-11-14T17:28:50.567708Z"
+  },
+  "container_id": "c17d4c35dc966a6d418d9ea0965b88b7ff356826d548cd9b98cdaed30da03e76",
+  "event_after_start_s": null,
+  "execution_id": "atomic-3229a46e40ce3ffeb8d7993c-hostname",
+  "finished_at": "2026-11-14T17:28:50.632991Z",
+  "index": 26,
+  "metrics_latency_s": null,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 5,
+  "run_id": "atomic-3229a46e40ce3ffeb8d7993c",
+  "started_at": "2026-11-14T17:28:50.567708Z",
+  "status": "not_detected_by_cutoff",
+  "technique": "T1082",
+  "test": "hostname",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-920134e1d62a4dc6916286b7807c2847f2a013753bc64b2ac65d37af05d88ac0",
+    "alerted_at": "2026-11-14T17:29:03.185045170Z",
+    "arrived_at": "2026-11-14T17:29:03.194974423Z",
+    "rule_id": "Search Private Keys or Passwords"
+   }
+  ],
+  "arrival_after_start_s": 0.107,
+  "arrivals_watched": 1,
+  "atomic_guid": "46959285-906d-40fa-9437-5a439accd878",
+  "binding": {
+   "container_id": "92f03f33de06a9ea0aed96338a04795f8f154c7eb5e002a574cffecec029c091",
+   "end": "2026-11-14T17:29:03.304169Z",
+   "execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery",
+   "run_id": "atomic-7e506a0e160dd858a5a8f3b0",
+   "start": "2026-11-14T17:29:03.088084Z"
+  },
+  "container_id": "92f03f33de06a9ea0aed96338a04795f8f154c7eb5e002a574cffecec029c091",
+  "event_after_start_s": 0.097,
+  "execution_id": "atomic-7e506a0e160dd858a5a8f3b0-ssh-key-discovery",
+  "finished_at": "2026-11-14T17:29:03.304169Z",
+  "index": 27,
+  "metrics_latency_s": 0.097,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 5,
+  "run_id": "atomic-7e506a0e160dd858a5a8f3b0",
+  "started_at": "2026-11-14T17:29:03.088084Z",
+  "status": "detected",
+  "technique": "T1552.004",
+  "test": "ssh-key-discovery",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-b333915957252664e0566412093ba9bbfa70c44e6ebddd61484633595aecd589",
+    "alerted_at": "2026-11-14T17:29:16.025001140Z",
+    "arrived_at": "2026-11-14T17:29:16.027543272Z",
+    "rule_id": "Search Private Keys or Passwords"
+   }
+  ],
+  "arrival_after_start_s": 0.111,
+  "arrivals_watched": 1,
+  "atomic_guid": "7c247dc7-5128-4643-907b-73a76d9135c3",
+  "binding": {
+   "container_id": "e195baae3d4cc3703198538f397debc204d6a723f27e924ec99aeafa50d27853",
+   "end": "2026-11-14T17:29:16.133494Z",
+   "execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy",
+   "run_id": "atomic-01311715f3e743774fcd4b63",
+   "start": "2026-11-14T17:29:15.916189Z"
+  },
+  "container_id": "e195baae3d4cc3703198538f397debc204d6a723f27e924ec99aeafa50d27853",
+  "event_after_start_s": 0.109,
+  "execution_id": "atomic-01311715f3e743774fcd4b63-ssh-key-copy",
+  "finished_at": "2026-11-14T17:29:16.133494Z",
+  "index": 28,
+  "metrics_latency_s": 0.109,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 5,
+  "run_id": "atomic-01311715f3e743774fcd4b63",
+  "started_at": "2026-11-14T17:29:15.916189Z",
+  "status": "detected",
+  "technique": "T1552.004",
+  "test": "ssh-key-copy",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [],
+  "arrival_after_start_s": null,
+  "arrivals_watched": 0,
+  "atomic_guid": "37807632-d3da-442e-8c2e-00f44928ff8f",
+  "binding": {
+   "container_id": "16935aab98a8c44ffedfa09283c85c638f6ba2cf3c99533ca21531019bb46586",
+   "end": "2026-11-14T17:29:28.778960Z",
+   "execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials",
+   "run_id": "atomic-ea50be5b6eb6aed38c7fed2f",
+   "start": "2026-11-14T17:29:28.613772Z"
+  },
+  "container_id": "16935aab98a8c44ffedfa09283c85c638f6ba2cf3c99533ca21531019bb46586",
+  "event_after_start_s": null,
+  "execution_id": "atomic-ea50be5b6eb6aed38c7fed2f-aws-credentials",
+  "finished_at": "2026-11-14T17:29:28.778960Z",
+  "index": 29,
+  "metrics_latency_s": null,
+  "outcome": "failed",
+  "returncode": 1,
+  "round": 5,
+  "run_id": "atomic-ea50be5b6eb6aed38c7fed2f",
+  "started_at": "2026-11-14T17:29:28.613772Z",
+  "status": "excluded_outcome",
+  "technique": "T1552.001",
+  "test": "aws-credentials",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ },
+ {
+  "alerts": [
+   {
+    "alert_id": "falco-1115c12ebc8fcbb1b44e7d1ab0e6c9899617f231625d6e76d4cc25b78eeec9c4",
+    "alerted_at": "2026-11-14T17:29:41.446620585Z",
+    "arrived_at": "2026-11-14T17:29:41.455779492Z",
+    "rule_id": "Read sensitive file untrusted"
+   }
+  ],
+  "arrival_after_start_s": 0.053,
+  "arrivals_watched": 1,
+  "atomic_guid": "085fe567-ac84-47c7-ac4c-2688ce28265b",
+  "binding": {
+   "container_id": "ebaeb2572f0fddadf41b2615c9ff394b6f5a7c2887523f6613f25fc0ea1c1804",
+   "end": "2026-11-14T17:29:41.467748Z",
+   "execution_id": "atomic-778af59f738d5f79a59b361d-password-policy",
+   "run_id": "atomic-778af59f738d5f79a59b361d",
+   "start": "2026-11-14T17:29:41.402928Z"
+  },
+  "container_id": "ebaeb2572f0fddadf41b2615c9ff394b6f5a7c2887523f6613f25fc0ea1c1804",
+  "event_after_start_s": 0.044,
+  "execution_id": "atomic-778af59f738d5f79a59b361d-password-policy",
+  "finished_at": "2026-11-14T17:29:41.467748Z",
+  "index": 30,
+  "metrics_latency_s": 0.044,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 5,
+  "run_id": "atomic-778af59f738d5f79a59b361d",
+  "started_at": "2026-11-14T17:29:41.402928Z",
+  "status": "detected",
+  "technique": "T1201",
+  "test": "password-policy",
+  "watch_errors": [],
+  "wrapper_binding_container_matches": true
+ }
+]

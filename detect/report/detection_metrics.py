@@ -14,9 +14,11 @@ import stat
 import sys
 
 
-MAX_FILE_BYTES = 16 * 1024 * 1024
+# The seven-day window of 2026-11-16 kept 293,549 normal alerts in a 61.6 MB file (stock rules, untuned);
+# the earlier 16 MiB / 100,000 bounds could not read one window. These leave about 3x headroom.
+MAX_FILE_BYTES = 256 * 1024 * 1024
 MAX_RECORD_BYTES = 65536
-MAX_RECORDS = 100000
+MAX_RECORDS = 1000000
 SECOND = 1_000_000_000
 DAY = 86400 * SECOND
 SEVEN_DAYS = 7 * DAY

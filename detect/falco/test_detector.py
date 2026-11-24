@@ -59,10 +59,11 @@ class FakeHost:
         if unit == self.fail_unit:
             raise RuntimeError('systemd-run failed for ' + unit)
         self.units.add(unit + '.timer' if any(a.startswith('--on-active') for a in args) else unit)
-        if '--fifo' in args:
-            fifo = Path(args[args.index('--fifo') + 1])
-            if not fifo.exists():
-                os.mkfifo(fifo)
+        for flag in ('--fifo', '--audit-fifo'):
+            if flag in args:
+                fifo = Path(args[args.index(flag) + 1])
+                if not fifo.exists():
+                    os.mkfifo(fifo)
         return Result('')
 
     def systemctl(self, args, check=True):
@@ -76,6 +77,12 @@ class FakeHost:
             beats = detector.DATA / session / 'host' / 'heartbeats.jsonl'
             with open(beats, 'a') as out:
                 out.write(json.dumps({'time': FLUSHED, 'falco': {'running': True}, 'counts': {}}) + '\n')
+        if args[0] == 'kill' and args[-1] == detector.INSTANCES['k8saudit']['unit']:
+            session = detector.load_state()['session']
+            beats = detector.DATA / session / 'k8saudit' / 'heartbeats.jsonl'
+            with open(beats, 'a') as out:
+                out.write(json.dumps({'time': FLUSHED, 'falco': {'running': True}, 'counts': {},
+                                      'feed': {'alive': True, 'fifo_open': True}}) + '\n')
         return Result('')
 
     def docker(self, args, check=True, timeout=120):
@@ -111,9 +118,15 @@ class FakeHost:
                 health = detector.DATA / session / 'host' / 'health.jsonl'
                 health.write_text(json.dumps({'rule': 'Falco internal: metrics snapshot', 'time': '2026-11-14T02:00:06Z',
                                               'output_fields': {'scap.n_evts': 5000, 'scap.n_drops': 0}}) + '\n')
+            if name == detector.INSTANCES['k8saudit']['container']:
+                session = labels['warden.detect/session']
+                health = detector.DATA / session / 'k8saudit' / 'health.jsonl'
+                health.write_text(json.dumps({'rule': 'Falco internal: metrics snapshot', 'time': '2026-11-14T02:00:06Z',
+                                              'source': 'internal', 'output_fields': {'falco.num_evts': 0}}) + '\n')
             return Result(name[-1] * 64 + '\n')
         if args[0] == 'logs':
-            return Result("Opening 'syscall' source with gVisor. Configuration path: x\n")
+            return Result("Opening 'syscall' source with gVisor. Configuration path: x\n"
+                          "Opening 'k8s_audit' source with plugin 'k8saudit'\n")
         if args[0] == 'stop':
             self.containers[args[-1]]['State']['Running'] = False
             return Result('')
@@ -153,8 +166,17 @@ class Base(unittest.TestCase):
         for spec in detector.INSTANCES.values():
             (base / 'tools' / spec['archive']).write_bytes(b'')
         (base / 'runsc').write_bytes(b'')
+        # Stand-ins for the k8saudit plugins and rules, pinned to their own
+        # digests, and the kind audit lab's audit log.
+        (base / 'k8saudit').mkdir()
+        pins = {}
+        for name in detector.K8SAUDIT_FILES:
+            (base / 'k8saudit' / name).write_bytes(name.encode())
+            pins[name] = detector.file_sha256(base / 'k8saudit' / name)
+        (base / 'audit.log').write_bytes(b'')
         for name, value in (('DETECT', base), ('STATE', base / 'state'), ('RUNDIR', base / 'run'), ('DATA', base / 'data'),
-                            ('TOOLS', base / 'tools'), ('RUNSC', base / 'runsc')):
+                            ('TOOLS', base / 'tools'), ('RUNSC', base / 'runsc'), ('K8SAUDIT_TOOLS', base / 'k8saudit'),
+                            ('K8SAUDIT_FILES', pins), ('KIND_AUDIT_LOG', base / 'audit.log')):
             patcher = mock.patch.object(detector, name, value)
             patcher.start()
             self.addCleanup(patcher.stop)
@@ -209,6 +231,43 @@ class FalcoArgsTest(Base):
         self.assertFalse([m for m in mounts if 'docker.sock' in m or '/proc' in m])
         self.assertEqual(args[-2:], [detector.INSTANCES['gvisor']['image'], '/usr/bin/falco'])
 
+    def test_k8saudit_instance_has_no_privileges_and_no_network(self):
+        args = detector.falco_args('k8saudit', 'S', 1234)
+        self.assertNotIn('--privileged', args)
+        self.assertEqual(option(args, '--cap-drop'), ['ALL'])
+        self.assertNotIn('--cap-add', args)
+        self.assertEqual(option(args, '--security-opt'), ['no-new-privileges'])
+        self.assertEqual(option(args, '--group-add'), ['1234'])
+        self.assertEqual(option(args, '--network'), ['none'])
+        self.assertEqual(option(args, '--cpuset-cpus'), ['0-7,16-31'])
+        self.assertEqual(option(args, '--memory'), [str(512 << 20)])
+        self.assertIn('--read-only', args)
+        self.assertIn('/etc/falco/config.d:rw,nosuid,nodev,noexec,size=64k', option(args, '--tmpfs'),
+                      'only Warden\'s two config files: not the image\'s container plugin')
+        mounts = option(args, '--mount')
+        self.assertIn('type=bind,src=%s,dst=/warden-plugins,readonly' % detector.K8SAUDIT_TOOLS, mounts)
+        self.assertIn('type=bind,src=%s,dst=/etc/falco/config.d/91-warden-engine.yaml,readonly'
+                      % (detector.CONFIG / 'falco-k8saudit.yaml'), mounts)
+        writable = [m for m in mounts if not m.endswith(',readonly')]
+        self.assertEqual(writable, ['type=bind,src=%s,dst=/warden-detect-out' % (detector.RUNDIR / 'k8saudit')])
+        self.assertFalse([m for m in mounts if 'docker.sock' in m or '/proc' in m or 'kind-warden-lab' in m])
+        self.assertEqual(args[-6:], [detector.INSTANCES['k8saudit']['image'], '/usr/bin/falco', '--enable-source', 'k8s_audit',
+                                     '-r', '/warden-plugins/k8s_audit_rules.yaml'])
+        self.assertEqual(detector.INSTANCES['k8saudit']['image'], detector.INSTANCES['host']['image'])
+
+    def test_k8saudit_collector_unit(self):
+        unit = detector.collector_args('k8saudit', 'S', 1000)
+        argv = unit[unit.index('--') + 1:]
+        self.assertEqual(argv[:7], ['/usr/bin/taskset', '-c', '0-7,16-31', '/usr/bin/python3', '-I', '-B',
+                                    str(detector.CONFIG / 'audit_collector.py')])
+        self.assertEqual(option(argv, '--audit-log'), [str(detector.KIND_AUDIT_LOG)])
+        self.assertEqual(option(argv, '--audit-fifo'), [str(detector.RUNDIR / 'k8saudit' / 'audit.fifo')])
+        self.assertEqual(option(argv, '--fifo'), [str(detector.RUNDIR / 'k8saudit' / 'alerts.fifo')])
+        self.assertEqual(option(argv, '--fifo-gid'), ['1000'])
+        self.assertEqual(option(argv, '--out'), [str(detector.DATA / 'S' / 'k8saudit')])
+        self.assertEqual(option(unit, '--unit'), ['warden-detect-collector-k8saudit'])
+        self.assertIn('--property=Restart=on-failure', unit[:unit.index('--')])
+
     def test_collector_units(self):
         host = detector.collector_args('host', 'S', 1000)
         argv = host[host.index('--') + 1:]
@@ -250,11 +309,39 @@ class ConfigTest(Base):
         sink = pod_init['trace_session']['sinks'][0]
         self.assertEqual(sink['config']['endpoint'], '/warden-detect/gvisor.sock')
 
+    def test_k8saudit_engine(self):
+        text = self.text('falco-k8saudit.yaml')
+        for line in ('  kind: nodriver', 'load_plugins: [k8saudit, json]', '    library_path: /warden-plugins/libk8saudit.so',
+                     '    library_path: /warden-plugins/libjson.so', '    open_params: /warden-detect-out/audit.fifo',
+                     '      useAsync: false', 'plugins_hostinfo: false'):
+            self.assertIn(line, text)
+        self.assertNotRegex(text, r'(?m)^(rules_files|rules):', 'the rules file is given with -r and is stock')
+        self.assertNotIn('extra_output', text, 'the stock output text stays as it is')
+        from detect.report import audit_alert_import
+        appended = re.findall(r'(?m)^      - (\S+)$', text.split('append_output:')[1])
+        self.assertEqual(appended, ['ka.target.namespace', *audit_alert_import.LABEL_FIELDS, 'ka.auditid', 'ka.useragent'])
+        self.assertEqual(audit_alert_import.NAMESPACE_FIELD, 'ka.target.namespace')
+
+    def test_audit_policy_keeps_credentials_out_of_the_log(self):
+        policy = self.text('k8s-audit-policy.yaml')
+        self.assertIn('omitStages:\n  - RequestReceived', policy)
+        metadata = policy.split('level: Metadata')[1].split('- level:')[0]
+        for resource in ('secrets', 'configmaps', 'serviceaccounts/token'):
+            self.assertIn(resource, metadata)
+        self.assertIn('authentication.k8s.io', metadata)
+        self.assertIn('certificates.k8s.io', metadata)
+        self.assertNotIn('RequestResponse', policy, 'no response bodies: a token request\'s response is the token')
+        self.assertTrue(policy.rstrip().endswith('- level: Request'), 'the catch-all keeps request bodies for the stock rules')
+
     def test_pins_match_restore_tools(self):
         text = (ROOT / 'scripts/restore-tools.sh').read_text()
         pinned = dict(re.findall(r'^\s+(falco-[0-9.]+)=(\S+)$', text, re.M))
         for spec in detector.INSTANCES.values():
             self.assertEqual(pinned.get(spec['archive'][:-len('.oci.tar')]), spec['ref'], spec['archive'])
+        self.assertIn('K8SAUDIT_VERSION=0.18.0', text)
+        self.assertIn('FALCO_JSON_VERSION=0.7.4', text)
+        self.assertIn('K8SAUDIT_RULES_COMMIT=43ec9491a5bf25140868a182734a022625eeb9dd', text)
+        self.assertEqual(sorted(detector.K8SAUDIT_FILES), ['k8s_audit_rules.yaml', 'libjson.so', 'libk8saudit.so'])
 
 
 class LifecycleTest(Base):
@@ -286,6 +373,31 @@ class LifecycleTest(Base):
         self.assertEqual(oct(os.stat(detector.RUNDIR / 'gvisor').st_mode & 0o777), '0o710')
         detector.down(self.host, self.out.append)
         self.assertEqual((self.host.containers, self.host.volumes), ({}, {}))
+
+    def test_the_k8saudit_instance_is_opt_in(self):
+        state = detector.up(self.host, self.out.append, engines=('host', 'k8saudit'))
+        self.assertEqual(state['instances'], ['host', 'k8saudit'])
+        self.assertEqual(sorted(self.host.containers), ['warden-detect-falco-host', 'warden-detect-falco-k8saudit'])
+        self.assertEqual(self.host.units, {'warden-detect-collector-host', 'warden-detect-collector-k8saudit'})
+        self.assertEqual(oct(os.stat(detector.RUNDIR / 'k8saudit').st_mode & 0o777), '0o710')
+        self.assertTrue((detector.RUNDIR / 'k8saudit' / 'audit.fifo').exists())
+        self.assertEqual(detector.audit_ready_point(self.host, state['session']), FLUSHED)
+        detector.down(self.host, self.out.append)
+        self.assertEqual((self.host.containers, self.host.units), ({}, set()))
+        self.assertTrue((detector.DATA / state['session'] / 'k8saudit' / 'falco.log').exists())
+        detector.purge(self.host, self.out.append)
+        self.assertFalse(detector.RUNDIR.exists())
+
+    def test_k8saudit_up_refuses_unpinned_plugins_or_no_audit_lab(self):
+        (detector.K8SAUDIT_TOOLS / 'libk8saudit.so').write_bytes(b'something else')
+        with self.assertRaisesRegex(RuntimeError, 'not the pinned file'):
+            detector.up(self.host, self.out.append, engines=('host', 'k8saudit'))
+        (detector.K8SAUDIT_TOOLS / 'libk8saudit.so').write_bytes(b'libk8saudit.so')
+        detector.KIND_AUDIT_LOG.unlink()
+        with self.assertRaisesRegex(RuntimeError, 'kind audit lab'):
+            detector.up(self.host, self.out.append, engines=('host', 'k8saudit'))
+        self.assertEqual([c for c in self.host.of('docker') if c[0] == 'run'], [])
+        self.assertEqual(self.host.of('systemd-run'), [])
 
     def test_up_refuses_an_image_that_is_not_the_pinned_one(self):
         self.host.images = set()
@@ -410,6 +522,20 @@ class SevenDayTest(Base):
         with self.assertRaisesRegex(RuntimeError, 'is up'):
             detector.seven_day_start(self.host, confirm='seven-day', out=self.out.append)
 
+    def test_refuses_while_the_kind_audit_lab_has_a_node(self):
+        for name, labels in (('warden-lab-control-plane', {'io.x-k8s.kind.cluster': 'warden-lab'}),
+                             ('warden-lab-worker2', {}), ('renamed-node', {'io.x-k8s.kind.cluster': 'warden-lab'})):
+            with self.subTest(name=name):
+                self.host.containers = {name: {'Config': {'Labels': labels}, 'State': {'Running': False}}}
+                with self.assertRaisesRegex(RuntimeError, 'kind audit lab nodes exist'):
+                    detector.seven_day_start(self.host, confirm='seven-day', out=self.out.append)
+                with self.assertRaisesRegex(RuntimeError, 'kind audit lab nodes exist'):
+                    detector.seven_day_start(self.host, confirm=None, out=self.out.append)
+        self.host.containers = {'materialflow-control-plane': {'Config': {'Labels': {'io.x-k8s.kind.cluster': 'materialflow'}},
+                                                               'State': {'Running': True}}}
+        self.assertIsNone(detector.seven_day_start(self.host, confirm=None, out=self.out.append), "another project's kind cluster")
+        self.assertEqual(self.host.of('systemd-run'), [])
+
     def test_start_begins_at_the_first_healthy_point_and_arms_both_timers(self):
         plan = detector.seven_day_start(self.host, confirm='seven-day', out=self.out.append)
         runs = [c for c in self.host.of('run')]
@@ -423,6 +549,24 @@ class SevenDayTest(Base):
         argv = benign[benign.index('--') + 1:]
         self.assertEqual(argv[:3], ['/usr/bin/taskset', '-c', '0-7,16-31'])
         self.assertEqual(option(argv, '--session'), [plan['session']])
+
+    def test_both_timers_carry_the_cpuset_and_the_plan_records_it(self):
+        plan = detector.seven_day_start(self.host, confirm='seven-day', out=self.out.append)
+        self.assertEqual(plan['cpuset'], '0-7,16-31')
+        for unit in self.host.of('systemd-run')[1:]:
+            self.assertIn('--setenv=WARDEN_CPUSET=0-7,16-31', unit[:unit.index('--')])
+
+    def test_warden_cpuset_overrides_the_cpus_and_is_checked(self):
+        import subprocess
+        import sys
+        code = 'import sys; sys.path.insert(0, %r); import detector; print(detector.CPUSET)' % str(Path(detector.__file__).parent)
+        env = {'PATH': '/usr/bin:/bin', 'WARDEN_CPUSET': '0-7'}
+        got = subprocess.run([sys.executable, '-I', '-B', '-c', code], env=env, capture_output=True, text=True)
+        self.assertEqual((got.returncode, got.stdout.strip()), (0, '0-7'))
+        env['WARDEN_CPUSET'] = '0-7;rm'
+        bad = subprocess.run([sys.executable, '-I', '-B', '-c', code], env=env, capture_output=True, text=True)
+        self.assertNotEqual(bad.returncode, 0)
+        self.assertIn('WARDEN_CPUSET must be a CPU list', bad.stderr)
 
     def test_a_failed_second_timer_undoes_the_first_and_the_detector(self):
         self.host.fail_unit = 'warden-detect-seven-day-stop'

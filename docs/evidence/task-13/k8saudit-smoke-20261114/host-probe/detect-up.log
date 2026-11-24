@@ -1,0 +1,2 @@
+taskset -c 0-7,16-31 python3 -I -B detect/falco/detector.py up
+detector up (host): session 20261114T191251Z, data in /home/postedism/Desktop/Warden-t13c/.cache/detect/data/20261114T191251Z

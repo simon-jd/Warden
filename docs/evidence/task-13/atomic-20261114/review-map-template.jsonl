@@ -1,0 +1,3 @@
+{"class": "sandbox", "disposition": "unreviewed", "process": "cat", "rule": "Read sensitive file untrusted"}
+{"class": "sandbox", "disposition": "unreviewed", "process": "shred", "rule": "Remove Bulk Data from Disk"}
+{"class": "sandbox", "disposition": "unreviewed", "process": "find", "rule": "Search Private Keys or Passwords"}

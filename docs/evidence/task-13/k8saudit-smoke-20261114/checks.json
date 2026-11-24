@@ -1,0 +1,107 @@
+{
+ "alerts": [
+  {
+   "event_to_fed_s": 0.001693,
+   "fed_to_alerts_file_s": 0.029131,
+   "matched_by": [
+    "label",
+    "namespace"
+   ],
+   "rule": "K8s Serviceaccount Created",
+   "start_to_alerts_file_s": 0.401725,
+   "start_to_event_s": 0.370902
+  },
+  {
+   "event_to_fed_s": 0.008248,
+   "fed_to_alerts_file_s": 0.011268,
+   "matched_by": [
+    "namespace"
+   ],
+   "rule": "Attach/Exec Pod",
+   "start_to_alerts_file_s": 0.434417,
+   "start_to_event_s": 0.414901
+  },
+  {
+   "event_to_fed_s": 0.009389,
+   "fed_to_alerts_file_s": 0.030764,
+   "matched_by": [
+    "namespace"
+   ],
+   "rule": "K8s Serviceaccount Deleted",
+   "start_to_alerts_file_s": 0.595432,
+   "start_to_event_s": 0.555278
+  }
+ ],
+ "audit_session_sha256": "328f5422aaacedf4ee457afa384c09058567451f0d7bc5a37f66665b16064756",
+ "checks": {
+  "attach_exec_pod_fired": true,
+  "cleanup_succeeded": true,
+  "detected": true,
+  "dropped_events": 0,
+  "every_alert_joined_to_audit_feed_and_arrival": true,
+  "host_coverage_healthy": true,
+  "host_pending_at_cutoff": 3,
+  "host_unresolved_after_cutoff": 3,
+  "k8saudit_coverage_healthy": true,
+  "kubeconfig_mode_0600": true,
+  "no_module_or_sysctl_change": true,
+  "no_token_or_private_key_in_evidence": true,
+  "run_inside_window": true,
+  "run_succeeded": true,
+  "wrapper_guards_passed": true
+ },
+ "execution_detection": {
+  "denominator": 1,
+  "numerator": 1,
+  "rate": 1.0
+ },
+ "host_alerts_kept": 0,
+ "host_counts": {
+  "collector_errors": 0,
+  "collector_restarts": 0,
+  "dropped_error": 0,
+  "dropped_host": 0,
+  "dropped_malformed": 0,
+  "dropped_other_container": 43,
+  "dropped_other_lab_owned": 0,
+  "dropped_other_lab_pod": 0,
+  "dropped_overflow": 0,
+  "dropped_unresolved": 3,
+  "duplicates": 0,
+  "health_events": 1,
+  "pending": 0,
+  "platform_alerts": 0,
+  "received": 47,
+  "warden_alerts": 0
+ },
+ "k8saudit_alerts_kept": 3,
+ "k8saudit_counts": {
+  "alerts": 3,
+  "audit_bytes_fed": 145360,
+  "audit_lines_fed": 150,
+  "audit_oversize": 0,
+  "audit_truncations": 0,
+  "audit_unparsed": 0,
+  "collector_errors": 0,
+  "collector_restarts": 0,
+  "dropped_malformed": 0,
+  "dropped_other_source": 0,
+  "dropped_overflow": 0,
+  "duplicates": 0,
+  "feed_reader_gone": 1,
+  "health_events": 1,
+  "received": 4
+ },
+ "latency_ns": {
+  "method": "nearest-rank",
+  "p50": 370902322,
+  "p95": 370902322,
+  "sample_count": 1
+ },
+ "leaked": [],
+ "window": {
+  "end": "2026-11-14T18:49:35.208506271Z",
+  "session": "20261114T184853Z",
+  "start": "2026-11-14T18:49:08.691794571Z"
+ }
+}

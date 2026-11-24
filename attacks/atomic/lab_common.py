@@ -19,13 +19,19 @@ def checked_tool(value):
     return str(path)
 
 
-def digest(path):
+def digest(path, *, max_bytes=256 * 1024 * 1024):
+    if type(max_bytes) is not int or not 0 < max_bytes <= 512 * 1024 * 1024:
+        raise ValueError('digest size bound must be at most 512 MiB')
     path = Path(path)
-    if path.is_symlink() or not path.is_file() or path.stat().st_size > 256 * 1024 * 1024:
+    if path.is_symlink() or not path.is_file() or path.stat().st_size > max_bytes:
         raise ValueError('bounded regular non-symlink file required')
     hasher = hashlib.sha256()
     with path.open('rb') as stream:
+        total = 0
         for block in iter(lambda: stream.read(1024 * 1024), b''):
+            total += len(block)
+            if total > max_bytes:
+                raise ValueError('bounded regular non-symlink file required')
             hasher.update(block)
     return hasher.hexdigest()
 
@@ -50,33 +56,63 @@ def prepare_output(directory):
     return path
 
 
-def command(argv, *, env=None, timeout=60):
-    # Only explicit argument arrays; no host shell. Output goes to a bounded
-    # temporary file so a noisy tool cannot exhaust memory or evidence storage.
-    import tempfile
+def command(argv, *, env=None, timeout=60, file_limit_bytes=8 * 1024 * 1024):
+    """Run one process group with separate file-write and captured-output limits."""
     import resource
+    import selectors
     import signal
+    import time
+
+    output_limit = 8 * 1024 * 1024
+    if type(file_limit_bytes) is not int or not 0 < file_limit_bytes <= 512 * 1024 * 1024:
+        raise ValueError('file write bound must be at most 512 MiB')
 
     def limits():
-        os.setsid()
         _, hard = resource.getrlimit(resource.RLIMIT_FSIZE)
-        cap = min(8 * 1024 * 1024, hard) if hard != resource.RLIM_INFINITY else 8 * 1024 * 1024
+        cap = min(file_limit_bytes, hard) if hard != resource.RLIM_INFINITY else file_limit_bytes
         resource.setrlimit(resource.RLIMIT_FSIZE, (cap, cap))
 
-    with tempfile.TemporaryFile() as capture:
-        process = subprocess.Popen(argv, env=env, stdout=capture, stderr=subprocess.STDOUT,
-                                   preexec_fn=limits)
-        try:
-            code = process.wait(timeout=timeout)
-        except subprocess.TimeoutExpired:
+    process = subprocess.Popen(argv, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                               preexec_fn=limits, start_new_session=True)
+    output = bytearray()
+    outcome = None
+    deadline = time.monotonic() + timeout
+    try:
+        with selectors.DefaultSelector() as selector:
+            selector.register(process.stdout, selectors.EVENT_READ)
+            while True:
+                remaining = deadline - time.monotonic()
+                if remaining <= 0 or not selector.select(remaining):
+                    outcome = 124
+                    break
+                data = os.read(process.stdout.fileno(), 65536)
+                if not data:
+                    break
+                available = output_limit - len(output)
+                output.extend(data[:available])
+                if len(data) > available:
+                    outcome = 125
+                    break
+        if outcome is None:
+            try:
+                outcome = process.wait(timeout=max(0, deadline - time.monotonic()))
+            except subprocess.TimeoutExpired:
+                outcome = 124
+        if outcome in (124, 125):
+            try:
+                os.killpg(process.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+        process.wait()
+        return outcome, output.decode('utf-8', errors='replace')
+    finally:
+        if process.poll() is None:
             try:
                 os.killpg(process.pid, signal.SIGKILL)
             except ProcessLookupError:
                 pass
             process.wait()
-            code = 124
-        capture.seek(0)
-        return code, capture.read(8 * 1024 * 1024).decode('utf-8', errors='replace')
+        process.stdout.close()
 
 
 def clean_environment():

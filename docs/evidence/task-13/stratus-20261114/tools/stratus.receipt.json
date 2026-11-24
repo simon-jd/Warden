@@ -1,0 +1,33 @@
+{
+ "files_sha256": {
+  "images/busybox-1.37.0.oci.tar": "6291e98854c3eca31543b4794395b67ca325f9b9a90f7a69ce12e5e82753c664",
+  "images/busybox-1.37.0.receipt.json": "5147169f06fc741312ac51ab304bc6c70ac4df8c1fca10768eea8997d6f17233",
+  "providers/registry.terraform.io/hashicorp/kubernetes/2.13.0/linux_amd64/terraform-provider-kubernetes_v2.13.0_x5": "674f8201ae86367f03680b2bcc693453f84489233f97b293b9a7aacbc828969a",
+  "providers/registry.terraform.io/hashicorp/kubernetes/2.7.1/linux_amd64/terraform-provider-kubernetes_v2.7.1_x5": "c49ac4c77ba4513b0f7f3822e9addb64bd9acfe0e19a1ed205021b611477bb50",
+  "stratus": "376ceff19c170194f6adbc2f883e8b5658e99a13cb1057f0ab118524411d57bb",
+  "terraform/terraform": "5127488095348ec8064730d9818f31d5ff186b837bad655f5b6fb5f621f54911"
+ },
+ "hashicorp_signing_key": "C874 011F 0AB4 0511 0D02 1055 3436 5D94 72D7 468F",
+ "images": [
+  "busybox-1.37.0=docker.io/library/busybox:1.37.0@sha256:a7dbc319b1438115a207e11930dc4bb3e643dcb3ec0bdd694bb36cd8fad289ec"
+ ],
+ "providers_zip_sha256": {
+  "2.13.0": "953a964b93e8c50db2da81463fe25e42a04d77abb841d386eda153035a384efe",
+  "2.7.1": "c50d661782175d50ea4952fe943b0e4a3e33c27aa69e5ff21b3cbfa513e90d0a"
+ },
+ "sources": [
+  "https://github.com/DataDog/stratus-red-team/releases/download/v2.38.0/stratus-red-team_Linux_x86_64.tar.gz",
+  "https://releases.hashicorp.com/terraform/1.3.10/terraform_1.3.10_linux_amd64.zip",
+  "https://releases.hashicorp.com/terraform-provider-kubernetes/2.13.0/terraform-provider-kubernetes_2.13.0_linux_amd64.zip",
+  "https://releases.hashicorp.com/terraform-provider-kubernetes/2.7.1/terraform-provider-kubernetes_2.7.1_linux_amd64.zip"
+ ],
+ "stratus": "2.38.0",
+ "stratus_archive_sha256": "2f0a971c7d8f5fb32a598f70b79c954d7aee72740d352947a78d348b00fb09a3",
+ "stratus_tag": {
+  "commit": "df3316f6f73a219eba715a505f2b4742a9cce197",
+  "tag": "v2.38.0",
+  "tag_object": "a345abf00594b648bdd02c87d608f9588a93d20f"
+ },
+ "terraform": "1.3.10",
+ "terraform_zip_sha256": "2e3931c3db6999cdd4c7e55227cb877c6946d1f52923d7d057036d2827311402"
+}

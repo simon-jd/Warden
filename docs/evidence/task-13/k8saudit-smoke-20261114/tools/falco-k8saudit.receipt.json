@@ -1,0 +1,19 @@
+{
+ "archive_sha256": {
+  "json": "d1370d6387f9ae0d622cad3673701aac4d9e61a78e3af77089146dc111972117",
+  "k8saudit": "180046ef8a1cf49fb042d86a51dc2a01e1fd19cc9b31a469bcca2272c2e0abcb"
+ },
+ "files_sha256": {
+  "k8s_audit_rules.yaml": "fa53280e337db6edaeb44cf49fbd1be4349f3c48e3cd0017c2575097df901a1e",
+  "libjson.so": "4009cbf7301efa36425ee58e3d281a16b3f13055d78729beec036fd3238b78c5",
+  "libk8saudit.so": "4c28b1bd3b12c5743d70d824055ed147cf3ab355c6d9b4b166959b3b28881acd"
+ },
+ "json": "0.7.4",
+ "k8saudit": "0.18.0",
+ "rules_commit": "43ec9491a5bf25140868a182734a022625eeb9dd",
+ "sources": [
+  "https://download.falco.org/plugins/stable/k8saudit-0.18.0-linux-x86_64.tar.gz",
+  "https://download.falco.org/plugins/stable/json-0.7.4-linux-x86_64.tar.gz",
+  "https://raw.githubusercontent.com/falcosecurity/plugins/43ec9491a5bf25140868a182734a022625eeb9dd/plugins/k8saudit/rules/k8s_audit_rules.yaml"
+ ]
+}

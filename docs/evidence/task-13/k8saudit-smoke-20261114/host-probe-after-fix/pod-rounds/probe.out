@@ -1,0 +1,4 @@
+{"growth": {"collector_errors": 0, "dropped_host": 0, "dropped_other_container": 0, "dropped_other_nested": 0, "dropped_unresolved": 0, "received": 0, "warden_alerts": 0}, "pending_at_end": 0, "phase": "idle"}
+{"growth": {"collector_errors": 0, "dropped_host": 0, "dropped_other_container": 3, "dropped_other_nested": 3, "dropped_unresolved": 0, "received": 4, "warden_alerts": 0}, "pending_at_end": 0, "phase": "pod-1"}
+{"growth": {"collector_errors": 0, "dropped_host": 0, "dropped_other_container": 3, "dropped_other_nested": 3, "dropped_unresolved": 0, "received": 3, "warden_alerts": 0}, "pending_at_end": 0, "phase": "pod-2"}
+{"growth": {"collector_errors": 0, "dropped_host": 0, "dropped_other_container": 3, "dropped_other_nested": 3, "dropped_unresolved": 0, "received": 3, "warden_alerts": 0}, "pending_at_end": 0, "phase": "pod-3"}

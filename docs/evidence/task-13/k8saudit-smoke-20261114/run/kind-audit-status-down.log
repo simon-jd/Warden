@@ -1,0 +1,5 @@
+taskset -c 0-7,16-31 scripts/kind_lab.sh status --audit
+node warden-lab-control-plane: absent
+network warden-kind-lab: absent
+kubeconfig: absent
+audit log: /home/postedism/Desktop/Warden-t13c/.cache/kind-warden-lab/audit/audit.log, 2096879 bytes

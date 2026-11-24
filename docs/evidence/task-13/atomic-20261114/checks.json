@@ -1,0 +1,124 @@
+{
+ "alerts_imported": 20,
+ "checks": {
+  "binding_for_every_execution": true,
+  "collector_errors_drops_zero": true,
+  "coverage_dropped_events": 0,
+  "coverage_healthy": true,
+  "every_imported_alert_arrival_watched": true,
+  "every_target_removed_before_cutoff": true,
+  "no_platform_alert_imported": true,
+  "observation_exit_0": true,
+  "runs_inside_window": true,
+  "thirty_runs_five_per_test": true,
+  "wrapper_and_registry_bind_the_same_container": true
+ },
+ "collector_counts": {
+  "collector_errors": 0,
+  "collector_restarts": 0,
+  "dropped_error": 0,
+  "dropped_host": 0,
+  "dropped_malformed": 0,
+  "dropped_other_container": 0,
+  "dropped_other_lab_owned": 0,
+  "dropped_other_lab_pod": 0,
+  "dropped_overflow": 0,
+  "dropped_unresolved": 0,
+  "duplicates": 0,
+  "health_events": 7,
+  "pending": 0,
+  "platform_alerts": 0,
+  "received": 27,
+  "warden_alerts": 20
+ },
+ "metrics": {
+  "metrics-both-rounds.json": {
+   "alerts_on_failed_or_skipped_executions": 3,
+   "execution_count": 58,
+   "execution_detection": {
+    "denominator": 26,
+    "numerator": 20,
+    "rate": 0.7692307692307693
+   },
+   "latency_ns": {
+    "method": "nearest-rank",
+    "p50": 58202172,
+    "p95": 98073033,
+    "sample_count": 20
+   },
+   "technique_detection": {
+    "denominator": 5,
+    "numerator": 3,
+    "rate": 0.6
+   }
+  },
+  "metrics-without-control.json": {
+   "alerts_on_failed_or_skipped_executions": 0,
+   "execution_count": 25,
+   "execution_detection": {
+    "denominator": 20,
+    "numerator": 20,
+    "rate": 1.0
+   },
+   "latency_ns": {
+    "method": "nearest-rank",
+    "p50": 58202172,
+    "p95": 98073033,
+    "sample_count": 20
+   },
+   "technique_detection": {
+    "denominator": 3,
+    "numerator": 3,
+    "rate": 1.0
+   }
+  },
+  "metrics.json": {
+   "alerts_on_failed_or_skipped_executions": 0,
+   "execution_count": 30,
+   "execution_detection": {
+    "denominator": 25,
+    "numerator": 20,
+    "rate": 0.8
+   },
+   "latency_ns": {
+    "method": "nearest-rank",
+    "p50": 58202172,
+    "p95": 98073033,
+    "sample_count": 20
+   },
+   "technique_detection": {
+    "denominator": 4,
+    "numerator": 3,
+    "rate": 0.75
+   }
+  }
+ },
+ "pooled_detected_runs": {
+  "arrival_after_start": {
+   "max": 0.111,
+   "min": 0.045,
+   "n": 20,
+   "p50": 0.066,
+   "p95": 0.107
+  },
+  "event_after_start": {
+   "max": 0.109,
+   "min": 0.039,
+   "n": 20,
+   "p50": 0.058,
+   "p95": 0.098
+  },
+  "first_alert_delivery": {
+   "max": 0.021,
+   "min": 0.003,
+   "n": 20,
+   "p50": 0.008,
+   "p95": 0.011
+  }
+ },
+ "window": {
+  "end": "2026-11-14T17:30:10.034079181Z",
+  "session": "20261114T172313Z",
+  "start": "2026-11-14T17:23:25.976914495Z"
+ }
+}

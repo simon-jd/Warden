@@ -1,0 +1,119 @@
+{
+ "checkout": "none (no working tree); blobless, depth 1; only the blobs below are local",
+ "commit": "a0e3f9bc69fed2fd711bd1f1aa87a40c33482fe6",
+ "commit_date": "2026-11-06T23:36:18Z",
+ "fetch": [
+  "git clone --filter=blob:none --depth 1 --no-checkout --single-branch --branch master https://github.com/redcanaryco/atomic-red-team.git atomic-red-team",
+  "git -C atomic-red-team show a0e3f9bc69fed2fd711bd1f1aa87a40c33482fe6:<path>   (fetches that one blob)"
+ ],
+ "fetched_at": "2026-11-14T17:10:37Z",
+ "name": "redcanaryco/atomic-red-team",
+ "note": "reviewed_files are the YAMLs of the Atomics attacks/atomic/emulate.py accepts; other_local_blobs were read only to choose them. A remote URL and hashes are reproducibility controls, not a signature.",
+ "origin": "https://github.com/redcanaryco/atomic-red-team.git",
+ "other_local_blobs": [
+  {
+   "blob": "96dc0626fbc314c4cfbb9d07f15f261511c50bb7",
+   "bytes": 7764,
+   "path": "atomics/T1003.007/T1003.007.yaml",
+   "sha256": "594be0908087456bf4d06826bc507598dcb73c6ceb958a91411209bb8fcdfe21"
+  },
+  {
+   "blob": "30aff7755a210b952fe023b484788c264eb7470c",
+   "bytes": 3249,
+   "path": "atomics/T1003.008/T1003.008.yaml",
+   "sha256": "1ffdbc515bca1ab79da13ca66fadc28a3bddce789eba7181f005c19970534ae9"
+  },
+  {
+   "blob": "271a58c89a7ffbcebf4893bd7a768996b315cbba",
+   "bytes": 12923,
+   "path": "atomics/T1059.004/T1059.004.yaml",
+   "sha256": "2a26f69f3fdcf6f3f2135d4405a184cfd365ed662c42f71fd4a1aa978b018021"
+  },
+  {
+   "blob": "a9fa7aa051bdca2969e17e10bd863024be7523b1",
+   "bytes": 6809,
+   "path": "atomics/T1070.003/T1070.003.yaml",
+   "sha256": "56534665c9e374a2a3094b9b7092d0149e84a1131e0d197b9a48aa9f3a131394"
+  },
+  {
+   "blob": "0dad3f2829b6616e6ed77d21ddfce99b023624bf",
+   "bytes": 1983,
+   "path": "atomics/T1070/T1070.yaml",
+   "sha256": "37c22e74be02c2f03cdc2c86ec06c4ac0271227c66dbbf359cdeefaad215a5de"
+  },
+  {
+   "blob": "1c71c0baedf7db649acf3ed63befed81cf94207f",
+   "bytes": 6768,
+   "path": "atomics/T1087.001/T1087.001.yaml",
+   "sha256": "19ed67c896923e99e03f5ed824d71e680f03134f8e66b3e7eed513ca1261432c"
+  },
+  {
+   "blob": "c29737e5eec0db7fd8154250d356081e8ca65883",
+   "bytes": 757,
+   "path": "atomics/T1098.004/T1098.004.yaml",
+   "sha256": "a5cb55ee0288d0d752397f115bb6c836ba06bd4588ea0462b4ece1b079836cb0"
+  },
+  {
+   "blob": "48baa53d6f3432e5b92316b969f4b9112cd9b351",
+   "bytes": 9653,
+   "path": "atomics/T1222.002/T1222.002.yaml",
+   "sha256": "f453e844306df372cf600ddd59d15626a83d3dd83cd5a4b3e5fe5175b4204f3b"
+  },
+  {
+   "blob": "f5069ddad5f07c7466f50e6f8c508d51bbfb7d5f",
+   "bytes": 6877,
+   "path": "atomics/T1485/T1485.yaml",
+   "sha256": "249df529aaa4a4b7da3c9fed8b040f84ad15eafe60c6aa8e6eb427effbc9d013"
+  },
+  {
+   "blob": "bb2e56734f822a4bd98fe6b489231f91724fe3af",
+   "bytes": 5937,
+   "path": "atomics/T1548.001/T1548.001.yaml",
+   "sha256": "7293e124172dc6ebe02e24fc2f6d022c59a1484443e08433ef338a3231a537df"
+  },
+  {
+   "blob": "67a38feb2ef9a79519de83988d313ee7d1c76bc3",
+   "bytes": 7153,
+   "path": "atomics/T1564.001/T1564.001.yaml",
+   "sha256": "0fc9a300e42f1bf45a405c62f70c636d49c06d4f75945af0d245b90a044b29a4"
+  },
+  {
+   "blob": "66b471c46505a8dc283fe93af83f422bea0a9f8c",
+   "bytes": 5250,
+   "path": "atomics/T1620/T1620.yaml",
+   "sha256": "40707b59cdbcaa589b52745635342a879a6f027cfa31d695e0493256c4a2f21f"
+  }
+ ],
+ "reviewed_files": [
+  {
+   "blob": "115a557b7e6ff7a7f57ea664e3dee13418f33604",
+   "bytes": 8814,
+   "path": "atomics/T1070.004/T1070.004.yaml",
+   "sha256": "534149f33c0bb85caa1bf2b1185109a87925bef66228aa27c6ef6ca3ff8f8183"
+  },
+  {
+   "blob": "d3b1a55251c7c0077d824bc8d8ab9d9fe5f16a35",
+   "bytes": 27412,
+   "path": "atomics/T1082/T1082.yaml",
+   "sha256": "227c971954b4da7bcac0ebc5b6e04644298bc7aa62a5a56df96c0904c0eb3e06"
+  },
+  {
+   "blob": "74a5e96b2f8b43eb0bd9d683cc35faabbb8bece7",
+   "bytes": 5546,
+   "path": "atomics/T1201/T1201.yaml",
+   "sha256": "05dfb2c337a59b346961a726f4c45f94e8055cd8c32d2287a897b166ba451168"
+  },
+  {
+   "blob": "f6dc284ff33c57cdad9f66947cf2ac230a2c41fe",
+   "bytes": 23843,
+   "path": "atomics/T1552.001/T1552.001.yaml",
+   "sha256": "f4c98593fe1e51d67876d393ae4004a22ea22e36f2f32329959fdd045246597f"
+  },
+  {
+   "blob": "267357e1160d5ea5e9c4a428040669f73ed76d21",
+   "bytes": 19913,
+   "path": "atomics/T1552.004/T1552.004.yaml",
+   "sha256": "79de610b85209b985d7617ef8c2d271d416d6ec623177f903c167a057e57f117"
+  }
+ ]
+}

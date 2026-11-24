@@ -1,0 +1,68 @@
+{
+ "cleanup_returncode": 0,
+ "execution_id": "smoke-993ab7fa4afc10927db207f2",
+ "finished_at": "2026-11-14T18:49:16.225019019Z",
+ "namespace": "warden-lab",
+ "pod_events": [
+  {
+   "message": "Successfully assigned warden-lab/smoke-10927db207f2 to warden-lab-control-plane",
+   "reason": "Scheduled"
+  },
+  {
+   "message": "Container image \"docker.io/library/busybox@sha256:66a6306db78bf2dbf3487f293aa8d6990d8e506fdffab9cc43fe422becf886e4\" already present on machine",
+   "reason": "Pulled"
+  },
+  {
+   "message": "Created container: busybox",
+   "reason": "Created"
+  },
+  {
+   "message": "Started container busybox",
+   "reason": "Started"
+  }
+ ],
+ "pod_image": "docker.io/library/busybox@sha256:66a6306db78bf2dbf3487f293aa8d6990d8e506fdffab9cc43fe422becf886e4",
+ "returncode": 0,
+ "run_id": "smoke-993ab7fa4afc10927db207f2",
+ "source": "warden-k8saudit-smoke",
+ "started_at": "2026-11-14T18:49:15.667929678Z",
+ "steps": [
+  {
+   "command": "kubectl create -f - (Pod smoke-10927db207f2, labelled)",
+   "finished_at": "2026-11-14T18:49:15.734633447Z",
+   "output": "pod/smoke-10927db207f2 created",
+   "returncode": 0
+  },
+  {
+   "command": "kubectl wait --for=condition=Ready pod/smoke-10927db207f2",
+   "finished_at": "2026-11-14T18:49:15.976642036Z",
+   "output": "pod/smoke-10927db207f2 condition met",
+   "returncode": 0
+  },
+  {
+   "command": "kubectl create -f - (ServiceAccount smoke-sa-10927db207f2, labelled)",
+   "finished_at": "2026-11-14T18:49:16.039518872Z",
+   "output": "serviceaccount/smoke-sa-10927db207f2 created",
+   "returncode": 0
+  },
+  {
+   "command": "kubectl exec -n warden-lab smoke-10927db207f2 -- cat /etc/hostname",
+   "finished_at": "2026-11-14T18:49:16.105470869Z",
+   "output": "smoke-10927db207f2",
+   "returncode": 0
+  },
+  {
+   "command": "kubectl delete pod smoke-10927db207f2",
+   "finished_at": "2026-11-14T18:49:16.185141063Z",
+   "output": "pod \"smoke-10927db207f2\" deleted from warden-lab namespace",
+   "returncode": 0
+  },
+  {
+   "command": "kubectl delete serviceaccount smoke-sa-10927db207f2",
+   "finished_at": "2026-11-14T18:49:16.224982470Z",
+   "output": "serviceaccount \"smoke-sa-10927db207f2\" deleted from warden-lab namespace",
+   "returncode": 0
+  }
+ ],
+ "technique": "benign kubectl exec smoke (no Stratus technique)"
+}

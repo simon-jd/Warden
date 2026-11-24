@@ -1,0 +1,48 @@
+Disallowed K8s User
+Create Disallowed Pod
+Create Privileged Pod
+Create Sensitive Mount Pod
+Create HostNetwork Pod
+Create HostPid Pod
+Create HostIPC Pod
+Create NodePort Service
+Create/Modify Configmap With Private Credentials
+Anonymous Request Allowed
+Attach/Exec Pod
+port-forward
+EphemeralContainers Created
+Create Disallowed Namespace
+Pod Created in Kube Namespace
+Service Account Created in Kube Namespace
+System ClusterRole Modified/Deleted
+Attach to cluster-admin Role
+ClusterRole With Wildcard Created
+ClusterRole With Write Privileges Created
+ClusterRole With Pod Exec Created
+K8s Deployment Created
+K8s Deployment Deleted
+K8s Service Created
+K8s Service Deleted
+K8s ConfigMap Created
+K8s ConfigMap Deleted
+K8s Namespace Created
+K8s Namespace Deleted
+K8s Serviceaccount Created
+K8s Serviceaccount Deleted
+K8s Role Created
+K8s Role Deleted
+K8s ClusterRole Created
+K8s ClusterRole Deleted
+K8s RoleBinding Created
+K8s RoleBinding Deleted
+K8s ClusterRoleBinding Created
+K8s ClusterRoleBinding Deleted
+K8s Secret Created
+K8s Secret Deleted
+K8s Secret Get Successfully
+K8s Secret Get Unsuccessfully Tried
+All K8s Audit Events
+Full K8s Administrative Access
+Ingress Object without TLS Certificate Created
+Untrusted Node Successfully Joined the Cluster
+Untrusted Node Unsuccessfully Tried to Join the Cluster

@@ -1,0 +1,161 @@
+{
+ "alerts_imported": 4,
+ "audit_session_sha256": "152f7e761142f5c68a88844f1c14d60a6358fb3cfab22f8ca6f926e65399a9f0",
+ "checks": {
+  "check_empty_before_every_run": true,
+  "downloads_match_reference": true,
+  "dropped_events": 0,
+  "empty_again_after_every_run": true,
+  "every_alert_joined_to_audit_feed_and_arrival": true,
+  "every_cleanup_returned_0": false,
+  "every_receipt_has_correlation_id": true,
+  "forty_runs_five_per_technique": false,
+  "host_alerts_kept": 0,
+  "host_coverage_healthy": true,
+  "host_pending_at_cutoff": 0,
+  "host_unresolved_after_cutoff": 0,
+  "k8saudit_coverage_healthy": true,
+  "no_module_or_sysctl_change": true,
+  "no_token_or_private_key_in_evidence": true,
+  "nothing_left_outside_namespace": false,
+  "round_complete": false,
+  "runs_inside_window": true
+ },
+ "host_counts": {
+  "collector_errors": 0,
+  "collector_restarts": 0,
+  "dropped_error": 0,
+  "dropped_host": 0,
+  "dropped_malformed": 0,
+  "dropped_other_container": 1626,
+  "dropped_other_lab_owned": 0,
+  "dropped_other_lab_pod": 0,
+  "dropped_other_nested": 0,
+  "dropped_overflow": 0,
+  "dropped_unresolved": 0,
+  "duplicates": 0,
+  "health_events": 19,
+  "pending": 0,
+  "platform_alerts": 0,
+  "received": 1645,
+  "warden_alerts": 0
+ },
+ "k8saudit_alerts_kept": 7,
+ "k8saudit_counts": {
+  "alerts": 7,
+  "audit_bytes_fed": 3673215,
+  "audit_lines_fed": 3785,
+  "audit_oversize": 0,
+  "audit_truncations": 0,
+  "audit_unparsed": 0,
+  "collector_errors": 0,
+  "collector_restarts": 0,
+  "dropped_malformed": 0,
+  "dropped_other_source": 0,
+  "dropped_overflow": 0,
+  "duplicates": 0,
+  "feed_reader_gone": 1,
+  "health_events": 19,
+  "received": 26
+ },
+ "leaked": [],
+ "metrics": {
+  "metrics-written-rules.json": {
+   "alerts_on_failed_or_skipped_executions": 3,
+   "execution_count": 2,
+   "execution_detection": {
+    "denominator": 1,
+    "numerator": 1,
+    "rate": 1.0
+   },
+   "latency_ns": {
+    "method": "nearest-rank",
+    "p50": 3092234000,
+    "p95": 3092234000,
+    "sample_count": 1
+   },
+   "technique_detection": {
+    "denominator": 1,
+    "numerator": 1,
+    "rate": 1.0
+   }
+  },
+  "metrics.json": {
+   "alerts_on_failed_or_skipped_executions": 3,
+   "execution_count": 2,
+   "execution_detection": {
+    "denominator": 1,
+    "numerator": 1,
+    "rate": 1.0
+   },
+   "latency_ns": {
+    "method": "nearest-rank",
+    "p50": 3092234000,
+    "p95": 3092234000,
+    "sample_count": 1
+   },
+   "technique_detection": {
+    "denominator": 1,
+    "numerator": 1,
+    "rate": 1.0
+   }
+  }
+ },
+ "pooled_detected_runs": {
+  "execution_detection": {
+   "denominator": 1,
+   "numerator": 1,
+   "rate": 1.0
+  },
+  "latency_ns": {
+   "method": "nearest-rank",
+   "p50": 3092234000,
+   "p95": 3092234000,
+   "sample_count": 1
+  },
+  "start_to_alerts_file": {
+   "max": 3.114,
+   "min": 3.114,
+   "n": 1,
+   "p50": 3.114,
+   "p95": 3.114
+  },
+  "start_to_event": {
+   "max": 3.092,
+   "min": 3.092,
+   "n": 1,
+   "p50": 3.092,
+   "p95": 3.092
+  },
+  "start_to_fed": {
+   "max": 3.101,
+   "min": 3.101,
+   "n": 1,
+   "p50": 3.101,
+   "p95": 3.101
+  },
+  "start_to_request_received": {
+   "max": 3.087,
+   "min": 3.087,
+   "n": 1,
+   "p50": 3.087,
+   "p95": 3.087
+  },
+  "written_rules_execution_detection": {
+   "denominator": 1,
+   "numerator": 1,
+   "rate": 1.0
+  },
+  "written_rules_latency_ns": {
+   "method": "nearest-rank",
+   "p50": 3092234000,
+   "p95": 3092234000,
+   "sample_count": 1
+  }
+ },
+ "window": {
+  "end": "2026-11-14T20:17:27.891423358Z",
+  "session": "20261114T195926Z",
+  "start": "2026-11-14T19:59:46.294683641Z"
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "kind": "kind v0.33.0 go1.26.7 linux/amd64",
+ "kubeconfig_mode": "0o600",
+ "kubectl": "v1.36.5",
+ "kubernetes": [
+  {
+   "kubelet": "v1.34.11",
+   "name": "warden-lab-control-plane",
+   "runtime": "containerd://2.3.4"
+  }
+ ],
+ "node_container": {
+  "cpuset_cpus": "0-7,16-31",
+  "image": "kindest/node:v1.34.11@sha256:44e222ee2132dab25ff87301682f89eb82c7880ea3a1bf543bfe9708fd08d67d",
+  "image_id": "sha256:44e222ee2132dab25ff87301682f89eb82c7880ea3a1bf543bfe9708fd08d67d",
+  "name": "warden-lab-control-plane",
+  "started_at": "2026-11-14T19:58:56.747669746Z"
+ },
+ "pod_image": "docker.io/library/busybox@sha256:66a6306db78bf2dbf3487f293aa8d6990d8e506fdffab9cc43fe422becf886e4",
+ "stratus_sha256": "376ceff19c170194f6adbc2f883e8b5658e99a13cb1057f0ab118524411d57bb",
+ "tools_receipts_sha256": {
+  "falco-k8saudit/receipt.json": "c1c0a64e919e9090f46a3a02c35b2b244e8c60e76ef94f8531b4e46f601dce63",
+  "stratus/receipt.json": "b54566ae77e4b143794d0998242f69131eebd6aafb4c83414442df5a5070ebe2"
+ },
+ "wrapper_commit_files_sha256": {
+  "attacks/atomic/lab_common.py": "ad689e7bf21c5df6c8e9c426b2d175f823fa421a4ed3acfd59fd0ac8e57b54f3",
+  "attacks/stratus/emulate.py": "039480c2d9528bb33542c0de675a68db19cc997f6ac03ad7239e4ebd703b7594",
+  "attacks/stratus/run.sh": "902ad0ac352d2e6caaf77cf465de35c16d15f7ab1ff79c4862a6290de328724e"
+ }
+}

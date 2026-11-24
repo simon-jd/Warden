@@ -1,0 +1,137 @@
+[
+ {
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-14T19:59:57.183706000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "clusterroles",
+    "rule": "ClusterRole With Wildcard Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-14T19:59:57.185724000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "Service Account Created in Kube Namespace",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-14T19:59:57.188040000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "clusterrolebindings",
+    "rule": "K8s ClusterRoleBinding Created",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_returncode": 1,
+  "correlation_id": "eb23baf0-9c03-4891-9643-9bd4e4563af4",
+  "duration_s": 61.238,
+  "finished_at": "2026-11-14T20:00:57.348382Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id"
+   ],
+   "resource": "clusterroles",
+   "rule": "ClusterRole With Wildcard Created",
+   "verb": "create"
+  },
+  "index": 1,
+  "left_outside_namespace": {
+   "cluster/clusterrolebindings": {
+    "added": [
+     "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb"
+    ],
+    "removed": []
+   },
+   "cluster/clusterroles": {
+    "added": [
+     "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole"
+    ],
+    "removed": []
+   },
+   "kube-system/serviceaccounts": {
+    "added": [
+     "serviceaccount/stratus-red-team-serviceaccount"
+    ],
+    "removed": []
+   }
+  },
+  "metrics_latency_s": null,
+  "outcome": "failed",
+  "returncode": 1,
+  "round": 1,
+  "run_id": "stratus-eb23baf0-9c03-4891-9643-9bd4e4563af4",
+  "start_to_alerts_file_s": 1.096,
+  "start_to_event_s": 1.073,
+  "start_to_fed_s": 1.079,
+  "start_to_request_received_s": 1.071,
+  "started_at": "2026-11-14T19:59:56.110615Z",
+  "status": "excluded_outcome",
+  "technique": "k8s.persistence.create-admin-clusterrole",
+  "technique_id": "T1098.006",
+  "wrapper_exit": 1
+ },
+ {
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-14T20:16:18.061517000Z",
+    "matched_by": [
+     "correlation_id",
+     "label",
+     "namespace"
+    ],
+    "resource": "pods",
+    "rule": "Create Privileged Pod",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_returncode": 1,
+  "correlation_id": "1005d2e4-5233-4f52-b7b1-cdd98bed5ecc",
+  "duration_s": 3.71,
+  "finished_at": "2026-11-14T20:16:18.679540Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id",
+    "label",
+    "namespace"
+   ],
+   "resource": "pods",
+   "rule": "Create Privileged Pod",
+   "verb": "create"
+  },
+  "index": 2,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.092,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 1,
+  "run_id": "stratus-1005d2e4-5233-4f52-b7b1-cdd98bed5ecc",
+  "start_to_alerts_file_s": 3.114,
+  "start_to_event_s": 3.092,
+  "start_to_fed_s": 3.101,
+  "start_to_request_received_s": 3.087,
+  "started_at": "2026-11-14T20:16:14.969283Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.privileged-pod",
+  "technique_id": "T1611",
+  "wrapper_exit": 1
+ }
+]

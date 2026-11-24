@@ -1,0 +1,46 @@
+Sat Nov 14 19:59:39 2026: [container-engine] [warn]: initial container listing interrupted: unfinished containers and namespaces will be recovered in the background, their events carry no metadata until then engine=docker socket=/host/var/run/docker.sock timeout=10s inspected=274 not_inspected=105 namespaces_not_enumerated=0
+Events detected: 1626
+Rule counts by severity:
+   CRITICAL: 1624
+   NOTICE: 2
+Triggered rules by rule name:
+   Packet socket created in container: 2
+   Drop and execute new binary in container: 1624
+2026-11-14T19:59:27+0000: Falco version: 0.45.2 (x86_64)
+2026-11-14T19:59:27+0000: Falco initialized with configuration files:
+2026-11-14T19:59:27+0000:    /etc/falco/config.d/90-warden.yaml | schema validation: failed for <root>[program_output]: Missing required property 'program'.
+2026-11-14T19:59:27+0000:    /etc/falco/config.d/91-warden-engine.yaml | schema validation: ok
+2026-11-14T19:59:27+0000:    /etc/falco/config.d/falco.container_plugin.yaml | schema validation: ok
+2026-11-14T19:59:27+0000:    /etc/falco/config.d/falco.iso8601_timeformat.yaml | schema validation: ok
+2026-11-14T19:59:27+0000:    /etc/falco/falco.yaml | schema validation: ok
+2026-11-14T19:59:27+0000: System info: Linux version 7.0.0-42-generic (buildd@lcy02-amd64-049) (x86_64-linux-gnu-gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, GNU ld (GNU Binutils for Ubuntu) 2.46) #42-Ubuntu SMP PREEMPT_DYNAMIC Thu Oct 15 08:06:44 UTC 2026
+2026-11-14T19:59:27+0000: Loaded plugin 'container@0.7.6' from file /usr/share/falco/plugins/libcontainer.so
+2026-11-14T19:59:27+0000: [libs]: container: Enabled 'podman' container engine.
+2026-11-14T19:59:27+0000: [libs]: container: * enabled container runtime socket at '/host/run/podman/podman.sock'
+2026-11-14T19:59:27+0000: [libs]: container: Enabled 'docker' container engine.
+2026-11-14T19:59:27+0000: [libs]: container: * enabled container runtime socket at '/host/var/run/docker.sock'
+2026-11-14T19:59:27+0000: [libs]: container: Enabled 'cri' container engine.
+2026-11-14T19:59:27+0000: [libs]: container: * enabled container runtime socket at '/host/run/containerd/containerd.sock'
+2026-11-14T19:59:27+0000: [libs]: container: * enabled container runtime socket at '/host/run/crio/crio.sock'
+2026-11-14T19:59:27+0000: [libs]: container: * enabled container runtime socket at '/host/run/k3s/containerd/containerd.sock'
+2026-11-14T19:59:27+0000: [libs]: container: * enabled container runtime socket at '/host/run/host-containerd/containerd.sock'
+2026-11-14T19:59:27+0000: [libs]: container: Enabled 'containerd' container engine.
+2026-11-14T19:59:27+0000: [libs]: container: * enabled container runtime socket at '/host/run/host-containerd/containerd.sock'
+2026-11-14T19:59:27+0000: [libs]: container: Enabled 'lxc' container engine.
+2026-11-14T19:59:27+0000: [libs]: container: Enabled 'libvirt_lxc' container engine.
+2026-11-14T19:59:27+0000: [libs]: container: Enabled 'bpm' container engine.
+2026-11-14T19:59:27+0000: Loading rules from:
+2026-11-14T19:59:27+0000:    /etc/falco/falco_rules.yaml | schema validation: ok
+2026-11-14T19:59:27+0000:    /etc/falco/falco_rules.local.yaml | schema validation: none
+2026-11-14T19:59:27+0000: The chosen syscall buffer dimension is: 8388608 bytes (8 MBs)
+2026-11-14T19:59:27+0000: Setting metrics interval to 60s, equivalent to 60000 (ms)
+2026-11-14T19:59:27+0000: Loaded event sources: syscall
+2026-11-14T19:59:27+0000: Enabled event sources: syscall
+2026-11-14T19:59:27+0000: Opening 'syscall' source with modern BPF probe.
+2026-11-14T19:59:27+0000: One ring buffer every '2' CPUs.
+2026-11-14T19:59:27+0000: [libs]: Trying to open the right engine!
+2026-11-14T19:59:27+0000: [libs]: libpman: disabled BPF iterators (not running in the root PID namespace, or failed to determine it)
+2026-11-14T20:17:28+0000: SIGINT received, exiting...
+Syscall event drop monitoring:
+   - event drop detected: 0 occurrences
+   - num times actions taken: 0

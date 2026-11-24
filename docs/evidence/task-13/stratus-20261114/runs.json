@@ -1,0 +1,2887 @@
+[
+ {
+  "admin_known_failure": "create-admin-clusterrole: detonation 1; stratus status read COLD, so the fallback cleanup was skipped; no Stratus state left for the technique; nothing left but its known objects",
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:52:32.640415000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "clusterroles",
+    "rule": "ClusterRole With Wildcard Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:52:32.642792000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "Service Account Created in Kube Namespace",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:52:32.645551000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "clusterrolebindings",
+    "rule": "K8s ClusterRoleBinding Created",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "skipped already COLD",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": "COLD",
+  "correlation_id": "a5af2b3f-ca51-4713-bed5-a9d0f966fe62",
+  "duration_s": 61.457,
+  "finished_at": "2026-11-15T06:53:32.673240Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id"
+   ],
+   "resource": "clusterroles",
+   "rule": "ClusterRole With Wildcard Created",
+   "verb": "create"
+  },
+  "index": 1,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": {
+   "after": {
+    "check_empty": {
+     "finished_at": "2026-11-15T06:53:34.444526740Z",
+     "result": {
+      "empty": true,
+      "left": [],
+      "namespace": "warden-lab",
+      "types_checked": 29
+     },
+     "returncode": 0,
+     "started_at": "2026-11-15T06:53:34.215082443Z",
+     "stderr": ""
+    },
+    "inventory": {},
+    "known_absent": {
+     "all_absent": true,
+     "lookups": [
+      {
+       "command": "kubectl get clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb --ignore-not-found -o name",
+       "name": "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb",
+       "present": false,
+       "returncode": 0,
+       "scope": "cluster/clusterrolebindings",
+       "stderr": ""
+      },
+      {
+       "command": "kubectl get clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole --ignore-not-found -o name",
+       "name": "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole",
+       "present": false,
+       "returncode": 0,
+       "scope": "cluster/clusterroles",
+       "stderr": ""
+      },
+      {
+       "command": "kubectl get serviceaccount/stratus-red-team-serviceaccount --ignore-not-found -o name -n kube-system",
+       "name": "serviceaccount/stratus-red-team-serviceaccount",
+       "present": false,
+       "returncode": 0,
+       "scope": "kube-system/serviceaccounts",
+       "stderr": ""
+      }
+     ]
+    }
+   },
+   "left": {
+    "cluster/clusterrolebindings": [
+     "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb"
+    ],
+    "cluster/clusterroles": [
+     "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole"
+    ],
+    "kube-system/serviceaccounts": [
+     "serviceaccount/stratus-red-team-serviceaccount"
+    ]
+   },
+   "steps": [
+    {
+     "command": "kubectl delete clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb --wait=true --timeout=60s",
+     "finished_at": "2026-11-15T06:53:33.628589120Z",
+     "name": "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb",
+     "output": "clusterrolebinding.rbac.authorization.k8s.io \"stratus-red-team-crb\" deleted",
+     "returncode": 0,
+     "scope": "cluster/clusterrolebindings"
+    },
+    {
+     "command": "kubectl delete clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole --wait=true --timeout=60s",
+     "finished_at": "2026-11-15T06:53:33.673312437Z",
+     "name": "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole",
+     "output": "clusterrole.rbac.authorization.k8s.io \"stratus-red-team-clusterrole\" deleted",
+     "returncode": 0,
+     "scope": "cluster/clusterroles"
+    },
+    {
+     "command": "kubectl delete serviceaccount/stratus-red-team-serviceaccount --wait=true --timeout=60s -n kube-system",
+     "finished_at": "2026-11-15T06:53:33.714426945Z",
+     "name": "serviceaccount/stratus-red-team-serviceaccount",
+     "output": "serviceaccount \"stratus-red-team-serviceaccount\" deleted from kube-system namespace",
+     "returncode": 0,
+     "scope": "kube-system/serviceaccounts"
+    }
+   ]
+  },
+  "left_outside_namespace": {
+   "cluster/clusterrolebindings": {
+    "added": [
+     "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb"
+    ],
+    "removed": []
+   },
+   "cluster/clusterroles": {
+    "added": [
+     "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole"
+    ],
+    "removed": []
+   },
+   "kube-system/serviceaccounts": {
+    "added": [
+     "serviceaccount/stratus-red-team-serviceaccount"
+    ],
+    "removed": []
+   }
+  },
+  "metrics_latency_s": null,
+  "outcome": "failed",
+  "returncode": 1,
+  "round": 1,
+  "run_id": "stratus-a5af2b3f-ca51-4713-bed5-a9d0f966fe62",
+  "start_to_alerts_file_s": 1.459,
+  "start_to_event_s": 1.425,
+  "start_to_fed_s": 1.431,
+  "start_to_request_received_s": 1.422,
+  "started_at": "2026-11-15T06:52:31.215904Z",
+  "status": "excluded_outcome",
+  "technique": "k8s.persistence.create-admin-clusterrole",
+  "technique_id": "T1098.006",
+  "unexpected_left": {},
+  "wrapper_exit": 1
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:53:39.272084000Z",
+    "matched_by": [
+     "correlation_id",
+     "label",
+     "namespace"
+    ],
+    "resource": "pods",
+    "rule": "Create Privileged Pod",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "da67723b-68ae-41b8-87c6-ef9e2072cc59",
+  "duration_s": 4.349,
+  "finished_at": "2026-11-15T06:53:39.825551Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id",
+    "label",
+    "namespace"
+   ],
+   "resource": "pods",
+   "rule": "Create Privileged Pod",
+   "verb": "create"
+  },
+  "index": 2,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.795,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 1,
+  "run_id": "stratus-da67723b-68ae-41b8-87c6-ef9e2072cc59",
+  "start_to_alerts_file_s": 3.804,
+  "start_to_event_s": 3.795,
+  "start_to_fed_s": 3.797,
+  "start_to_request_received_s": 3.791,
+  "started_at": "2026-11-15T06:53:35.476661Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.privileged-pod",
+  "technique_id": "T1611",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T06:53:45.121244000Z",
+    "matched_by": [
+     "label",
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "kubelet",
+    "event_time": "2026-11-15T06:53:45.309795000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts/token",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:53:46.687309000Z",
+    "matched_by": [
+     "correlation_id",
+     "namespace"
+    ],
+    "resource": "pods/exec",
+    "rule": "Attach/Exec Pod",
+    "verb": "create"
+   },
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T06:54:23.008170000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Deleted",
+    "verb": "delete"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "55f75167-3c91-4e02-9961-ab4eec667cc5",
+  "duration_s": 41.223,
+  "finished_at": "2026-11-15T06:54:23.028968Z",
+  "first_alert": {
+   "actor": "terraform",
+   "matched_by": [
+    "label",
+    "namespace"
+   ],
+   "resource": "serviceaccounts",
+   "rule": "K8s Serviceaccount Created",
+   "verb": "create"
+  },
+  "index": 3,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.315,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 1,
+  "run_id": "stratus-55f75167-3c91-4e02-9961-ab4eec667cc5",
+  "start_to_alerts_file_s": 3.329,
+  "start_to_event_s": 3.315,
+  "start_to_fed_s": 3.316,
+  "start_to_request_received_s": 3.313,
+  "started_at": "2026-11-15T06:53:41.806028Z",
+  "status": "detected",
+  "technique": "k8s.credential-access.steal-serviceaccount-token",
+  "technique_id": "T1528",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:54:27.881158000Z",
+    "matched_by": [
+     "correlation_id",
+     "label",
+     "namespace"
+    ],
+    "resource": "pods",
+    "rule": "Create Sensitive Mount Pod",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "0ff49478-7bcc-4a6d-b9b4-26eb450a0562",
+  "duration_s": 3.839,
+  "finished_at": "2026-11-15T06:54:28.478920Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id",
+    "label",
+    "namespace"
+   ],
+   "resource": "pods",
+   "rule": "Create Sensitive Mount Pod",
+   "verb": "create"
+  },
+  "index": 4,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.242,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 1,
+  "run_id": "stratus-0ff49478-7bcc-4a6d-b9b4-26eb450a0562",
+  "start_to_alerts_file_s": 3.271,
+  "start_to_event_s": 3.242,
+  "start_to_fed_s": 3.249,
+  "start_to_request_received_s": 3.236,
+  "started_at": "2026-11-15T06:54:24.639598Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.hostpath-volume",
+  "technique_id": "T1611",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T06:54:33.582950000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:54:33.717987000Z",
+    "matched_by": [
+     "correlation_id",
+     "namespace"
+    ],
+    "resource": "serviceaccounts/token",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T06:54:34.420518000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Deleted",
+    "verb": "delete"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "71185abb-fdc6-4d81-9064-907d8f050494",
+  "duration_s": 4.048,
+  "finished_at": "2026-11-15T06:54:34.448443Z",
+  "first_alert": {
+   "actor": "terraform",
+   "matched_by": [
+    "namespace"
+   ],
+   "resource": "serviceaccounts",
+   "rule": "K8s Serviceaccount Created",
+   "verb": "create"
+  },
+  "index": 5,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.182,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 1,
+  "run_id": "stratus-71185abb-fdc6-4d81-9064-907d8f050494",
+  "start_to_alerts_file_s": 3.201,
+  "start_to_event_s": 3.182,
+  "start_to_fed_s": 3.185,
+  "start_to_request_received_s": 3.18,
+  "started_at": "2026-11-15T06:54:30.400785Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.nodes-proxy",
+  "technique_id": "T1609",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "5d7262b5-cadb-44da-81dc-26b4bf55df59",
+  "duration_s": 1.245,
+  "finished_at": "2026-11-15T06:54:37.530316Z",
+  "first_alert": null,
+  "index": 6,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": null,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 1,
+  "run_id": "stratus-5d7262b5-cadb-44da-81dc-26b4bf55df59",
+  "start_to_alerts_file_s": null,
+  "start_to_event_s": null,
+  "start_to_fed_s": null,
+  "start_to_request_received_s": null,
+  "started_at": "2026-11-15T06:54:36.285349Z",
+  "status": "not_detected_by_cutoff",
+  "technique": "k8s.credential-access.dump-secrets",
+  "technique_id": "T1552.007",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:54:40.780797000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "serviceaccounts/token",
+    "rule": "Service Account Created in Kube Namespace",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "89e5d4ce-bc86-4fe0-bbe8-51a2d54646c8",
+  "duration_s": 1.303,
+  "finished_at": "2026-11-15T06:54:40.783304Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id"
+   ],
+   "resource": "serviceaccounts/token",
+   "rule": "Service Account Created in Kube Namespace",
+   "verb": "create"
+  },
+  "index": 7,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 1.3,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 1,
+  "run_id": "stratus-89e5d4ce-bc86-4fe0-bbe8-51a2d54646c8",
+  "start_to_alerts_file_s": 1.337,
+  "start_to_event_s": 1.3,
+  "start_to_fed_s": 1.302,
+  "start_to_request_received_s": 1.297,
+  "started_at": "2026-11-15T06:54:39.480417Z",
+  "status": "detected",
+  "technique": "k8s.persistence.create-token",
+  "technique_id": "T1098",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "ae43d06e-c035-4cd7-8023-6e1a75632811",
+  "duration_s": 3.235,
+  "finished_at": "2026-11-15T06:54:46.072802Z",
+  "first_alert": null,
+  "index": 8,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": null,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 1,
+  "run_id": "stratus-ae43d06e-c035-4cd7-8023-6e1a75632811",
+  "start_to_alerts_file_s": null,
+  "start_to_event_s": null,
+  "start_to_fed_s": null,
+  "start_to_request_received_s": null,
+  "started_at": "2026-11-15T06:54:42.837880Z",
+  "status": "not_detected_by_cutoff",
+  "technique": "k8s.persistence.create-client-certificate",
+  "technique_id": "T1649",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:54:51.759301000Z",
+    "matched_by": [
+     "correlation_id",
+     "label",
+     "namespace"
+    ],
+    "resource": "pods",
+    "rule": "Create Privileged Pod",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "bf9486b6-4f98-49ed-a081-14c234b3b4cd",
+  "duration_s": 4.083,
+  "finished_at": "2026-11-15T06:54:52.345491Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id",
+    "label",
+    "namespace"
+   ],
+   "resource": "pods",
+   "rule": "Create Privileged Pod",
+   "verb": "create"
+  },
+  "index": 9,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.497,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 2,
+  "run_id": "stratus-bf9486b6-4f98-49ed-a081-14c234b3b4cd",
+  "start_to_alerts_file_s": 3.514,
+  "start_to_event_s": 3.497,
+  "start_to_fed_s": 3.504,
+  "start_to_request_received_s": 3.494,
+  "started_at": "2026-11-15T06:54:48.261995Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.privileged-pod",
+  "technique_id": "T1611",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T06:54:57.413328000Z",
+    "matched_by": [
+     "label",
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "kubelet",
+    "event_time": "2026-11-15T06:54:57.715236000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts/token",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:54:58.983654000Z",
+    "matched_by": [
+     "correlation_id",
+     "namespace"
+    ],
+    "resource": "pods/exec",
+    "rule": "Attach/Exec Pod",
+    "verb": "create"
+   },
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T06:55:35.210182000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Deleted",
+    "verb": "delete"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "a99be7e3-7ccd-40c3-8dff-ee12e1912df7",
+  "duration_s": 41.045,
+  "finished_at": "2026-11-15T06:55:35.230403Z",
+  "first_alert": {
+   "actor": "terraform",
+   "matched_by": [
+    "label",
+    "namespace"
+   ],
+   "resource": "serviceaccounts",
+   "rule": "K8s Serviceaccount Created",
+   "verb": "create"
+  },
+  "index": 10,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.228,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 2,
+  "run_id": "stratus-a99be7e3-7ccd-40c3-8dff-ee12e1912df7",
+  "start_to_alerts_file_s": 3.267,
+  "start_to_event_s": 3.228,
+  "start_to_fed_s": 3.232,
+  "start_to_request_received_s": 3.173,
+  "started_at": "2026-11-15T06:54:54.185253Z",
+  "status": "detected",
+  "technique": "k8s.credential-access.steal-serviceaccount-token",
+  "technique_id": "T1528",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:55:40.605185000Z",
+    "matched_by": [
+     "correlation_id",
+     "label",
+     "namespace"
+    ],
+    "resource": "pods",
+    "rule": "Create Sensitive Mount Pod",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "ef1f400f-0fa2-486d-afd6-d2da9f38ecdd",
+  "duration_s": 4.217,
+  "finished_at": "2026-11-15T06:55:41.153646Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id",
+    "label",
+    "namespace"
+   ],
+   "resource": "pods",
+   "rule": "Create Sensitive Mount Pod",
+   "verb": "create"
+  },
+  "index": 11,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.668,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 2,
+  "run_id": "stratus-ef1f400f-0fa2-486d-afd6-d2da9f38ecdd",
+  "start_to_alerts_file_s": 3.694,
+  "start_to_event_s": 3.668,
+  "start_to_fed_s": 3.669,
+  "start_to_request_received_s": 3.659,
+  "started_at": "2026-11-15T06:55:36.936873Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.hostpath-volume",
+  "technique_id": "T1611",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T06:55:46.453197000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:55:46.585690000Z",
+    "matched_by": [
+     "correlation_id",
+     "namespace"
+    ],
+    "resource": "serviceaccounts/token",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T06:55:47.351006000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Deleted",
+    "verb": "delete"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "fdf9138f-e32f-4a53-832a-f10b388b7a8a",
+  "duration_s": 4.131,
+  "finished_at": "2026-11-15T06:55:47.378249Z",
+  "first_alert": {
+   "actor": "terraform",
+   "matched_by": [
+    "namespace"
+   ],
+   "resource": "serviceaccounts",
+   "rule": "K8s Serviceaccount Created",
+   "verb": "create"
+  },
+  "index": 12,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.206,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 2,
+  "run_id": "stratus-fdf9138f-e32f-4a53-832a-f10b388b7a8a",
+  "start_to_alerts_file_s": 3.235,
+  "start_to_event_s": 3.206,
+  "start_to_fed_s": 3.216,
+  "start_to_request_received_s": 3.201,
+  "started_at": "2026-11-15T06:55:43.247074Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.nodes-proxy",
+  "technique_id": "T1609",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "39d33f46-4f45-4155-9ff2-fc8c1db60773",
+  "duration_s": 1.108,
+  "finished_at": "2026-11-15T06:55:50.176955Z",
+  "first_alert": null,
+  "index": 13,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": null,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 2,
+  "run_id": "stratus-39d33f46-4f45-4155-9ff2-fc8c1db60773",
+  "start_to_alerts_file_s": null,
+  "start_to_event_s": null,
+  "start_to_fed_s": null,
+  "start_to_request_received_s": null,
+  "started_at": "2026-11-15T06:55:49.068551Z",
+  "status": "not_detected_by_cutoff",
+  "technique": "k8s.credential-access.dump-secrets",
+  "technique_id": "T1552.007",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:55:53.173882000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "serviceaccounts/token",
+    "rule": "Service Account Created in Kube Namespace",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "b29ecc5a-828e-4699-a5c3-012ff89479f5",
+  "duration_s": 1.302,
+  "finished_at": "2026-11-15T06:55:53.174987Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id"
+   ],
+   "resource": "serviceaccounts/token",
+   "rule": "Service Account Created in Kube Namespace",
+   "verb": "create"
+  },
+  "index": 14,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 1.301,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 2,
+  "run_id": "stratus-b29ecc5a-828e-4699-a5c3-012ff89479f5",
+  "start_to_alerts_file_s": 1.335,
+  "start_to_event_s": 1.301,
+  "start_to_fed_s": 1.307,
+  "start_to_request_received_s": 1.298,
+  "started_at": "2026-11-15T06:55:51.872934Z",
+  "status": "detected",
+  "technique": "k8s.persistence.create-token",
+  "technique_id": "T1098",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "24d137bd-ef99-4d08-ae81-76cfd097ddc5",
+  "duration_s": 3.218,
+  "finished_at": "2026-11-15T06:55:58.263693Z",
+  "first_alert": null,
+  "index": 15,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": null,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 2,
+  "run_id": "stratus-24d137bd-ef99-4d08-ae81-76cfd097ddc5",
+  "start_to_alerts_file_s": null,
+  "start_to_event_s": null,
+  "start_to_fed_s": null,
+  "start_to_request_received_s": null,
+  "started_at": "2026-11-15T06:55:55.045442Z",
+  "status": "not_detected_by_cutoff",
+  "technique": "k8s.persistence.create-client-certificate",
+  "technique_id": "T1649",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": "create-admin-clusterrole: detonation 1; stratus status read COLD, so the fallback cleanup was skipped; no Stratus state left for the technique; nothing left but its known objects",
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:56:01.014538000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "clusterroles",
+    "rule": "ClusterRole With Wildcard Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:56:01.038982000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "Service Account Created in Kube Namespace",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:56:01.041369000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "clusterrolebindings",
+    "rule": "K8s ClusterRoleBinding Created",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "skipped already COLD",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": "COLD",
+  "correlation_id": "01d23d0b-03dc-4183-9974-bb55074ec075",
+  "duration_s": 61.133,
+  "finished_at": "2026-11-15T06:57:01.069326Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id"
+   ],
+   "resource": "clusterroles",
+   "rule": "ClusterRole With Wildcard Created",
+   "verb": "create"
+  },
+  "index": 16,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": {
+   "after": {
+    "check_empty": {
+     "finished_at": "2026-11-15T06:57:02.634181997Z",
+     "result": {
+      "empty": true,
+      "left": [],
+      "namespace": "warden-lab",
+      "types_checked": 29
+     },
+     "returncode": 0,
+     "started_at": "2026-11-15T06:57:02.401535020Z",
+     "stderr": ""
+    },
+    "inventory": {},
+    "known_absent": {
+     "all_absent": true,
+     "lookups": [
+      {
+       "command": "kubectl get clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb --ignore-not-found -o name",
+       "name": "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb",
+       "present": false,
+       "returncode": 0,
+       "scope": "cluster/clusterrolebindings",
+       "stderr": ""
+      },
+      {
+       "command": "kubectl get clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole --ignore-not-found -o name",
+       "name": "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole",
+       "present": false,
+       "returncode": 0,
+       "scope": "cluster/clusterroles",
+       "stderr": ""
+      },
+      {
+       "command": "kubectl get serviceaccount/stratus-red-team-serviceaccount --ignore-not-found -o name -n kube-system",
+       "name": "serviceaccount/stratus-red-team-serviceaccount",
+       "present": false,
+       "returncode": 0,
+       "scope": "kube-system/serviceaccounts",
+       "stderr": ""
+      }
+     ]
+    }
+   },
+   "left": {
+    "cluster/clusterrolebindings": [
+     "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb"
+    ],
+    "cluster/clusterroles": [
+     "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole"
+    ],
+    "kube-system/serviceaccounts": [
+     "serviceaccount/stratus-red-team-serviceaccount"
+    ]
+   },
+   "steps": [
+    {
+     "command": "kubectl delete clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb --wait=true --timeout=60s",
+     "finished_at": "2026-11-15T06:57:01.807938922Z",
+     "name": "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb",
+     "output": "clusterrolebinding.rbac.authorization.k8s.io \"stratus-red-team-crb\" deleted",
+     "returncode": 0,
+     "scope": "cluster/clusterrolebindings"
+    },
+    {
+     "command": "kubectl delete clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole --wait=true --timeout=60s",
+     "finished_at": "2026-11-15T06:57:01.854356832Z",
+     "name": "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole",
+     "output": "clusterrole.rbac.authorization.k8s.io \"stratus-red-team-clusterrole\" deleted",
+     "returncode": 0,
+     "scope": "cluster/clusterroles"
+    },
+    {
+     "command": "kubectl delete serviceaccount/stratus-red-team-serviceaccount --wait=true --timeout=60s -n kube-system",
+     "finished_at": "2026-11-15T06:57:01.897022128Z",
+     "name": "serviceaccount/stratus-red-team-serviceaccount",
+     "output": "serviceaccount \"stratus-red-team-serviceaccount\" deleted from kube-system namespace",
+     "returncode": 0,
+     "scope": "kube-system/serviceaccounts"
+    }
+   ]
+  },
+  "left_outside_namespace": {
+   "cluster/clusterrolebindings": {
+    "added": [
+     "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb"
+    ],
+    "removed": []
+   },
+   "cluster/clusterroles": {
+    "added": [
+     "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole"
+    ],
+    "removed": []
+   },
+   "kube-system/serviceaccounts": {
+    "added": [
+     "serviceaccount/stratus-red-team-serviceaccount"
+    ],
+    "removed": []
+   }
+  },
+  "metrics_latency_s": null,
+  "outcome": "failed",
+  "returncode": 1,
+  "round": 2,
+  "run_id": "stratus-01d23d0b-03dc-4183-9974-bb55074ec075",
+  "start_to_alerts_file_s": 1.116,
+  "start_to_event_s": 1.078,
+  "start_to_fed_s": 1.081,
+  "start_to_request_received_s": 1.075,
+  "started_at": "2026-11-15T06:55:59.936368Z",
+  "status": "excluded_outcome",
+  "technique": "k8s.persistence.create-admin-clusterrole",
+  "technique_id": "T1098.006",
+  "unexpected_left": {},
+  "wrapper_exit": 1
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T06:57:07.174788000Z",
+    "matched_by": [
+     "label",
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "kubelet",
+    "event_time": "2026-11-15T06:57:07.444834000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts/token",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:57:07.934811000Z",
+    "matched_by": [
+     "correlation_id",
+     "namespace"
+    ],
+    "resource": "pods/exec",
+    "rule": "Attach/Exec Pod",
+    "verb": "create"
+   },
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T06:57:44.160761000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Deleted",
+    "verb": "delete"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "cde1c56c-5da4-4dbe-8ef0-3afe1de20971",
+  "duration_s": 40.41,
+  "finished_at": "2026-11-15T06:57:44.181629Z",
+  "first_alert": {
+   "actor": "terraform",
+   "matched_by": [
+    "label",
+    "namespace"
+   ],
+   "resource": "serviceaccounts",
+   "rule": "K8s Serviceaccount Created",
+   "verb": "create"
+  },
+  "index": 17,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.403,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 3,
+  "run_id": "stratus-cde1c56c-5da4-4dbe-8ef0-3afe1de20971",
+  "start_to_alerts_file_s": 3.428,
+  "start_to_event_s": 3.403,
+  "start_to_fed_s": 3.413,
+  "start_to_request_received_s": 3.398,
+  "started_at": "2026-11-15T06:57:03.771829Z",
+  "status": "detected",
+  "technique": "k8s.credential-access.steal-serviceaccount-token",
+  "technique_id": "T1528",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:57:49.621853000Z",
+    "matched_by": [
+     "correlation_id",
+     "label",
+     "namespace"
+    ],
+    "resource": "pods",
+    "rule": "Create Sensitive Mount Pod",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "7a420ae4-51cc-4aaa-af7b-ac630524cd2c",
+  "duration_s": 3.936,
+  "finished_at": "2026-11-15T06:57:50.215752Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id",
+    "label",
+    "namespace"
+   ],
+   "resource": "pods",
+   "rule": "Create Sensitive Mount Pod",
+   "verb": "create"
+  },
+  "index": 18,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.342,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 3,
+  "run_id": "stratus-7a420ae4-51cc-4aaa-af7b-ac630524cd2c",
+  "start_to_alerts_file_s": 3.371,
+  "start_to_event_s": 3.342,
+  "start_to_fed_s": 3.351,
+  "start_to_request_received_s": 3.338,
+  "started_at": "2026-11-15T06:57:46.279394Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.hostpath-volume",
+  "technique_id": "T1611",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T06:57:55.400629000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:57:55.563158000Z",
+    "matched_by": [
+     "correlation_id",
+     "namespace"
+    ],
+    "resource": "serviceaccounts/token",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T06:57:56.281508000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Deleted",
+    "verb": "delete"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "e9bac895-f5a2-4b4c-a7d3-f68908343c43",
+  "duration_s": 4.104,
+  "finished_at": "2026-11-15T06:57:56.307076Z",
+  "first_alert": {
+   "actor": "terraform",
+   "matched_by": [
+    "namespace"
+   ],
+   "resource": "serviceaccounts",
+   "rule": "K8s Serviceaccount Created",
+   "verb": "create"
+  },
+  "index": 19,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.198,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 3,
+  "run_id": "stratus-e9bac895-f5a2-4b4c-a7d3-f68908343c43",
+  "start_to_alerts_file_s": 3.217,
+  "start_to_event_s": 3.198,
+  "start_to_fed_s": 3.203,
+  "start_to_request_received_s": 3.195,
+  "started_at": "2026-11-15T06:57:52.202768Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.nodes-proxy",
+  "technique_id": "T1609",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "a9bfa6bc-1b67-4de2-b198-194fd1a47f55",
+  "duration_s": 1.128,
+  "finished_at": "2026-11-15T06:57:59.267056Z",
+  "first_alert": null,
+  "index": 20,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": null,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 3,
+  "run_id": "stratus-a9bfa6bc-1b67-4de2-b198-194fd1a47f55",
+  "start_to_alerts_file_s": null,
+  "start_to_event_s": null,
+  "start_to_fed_s": null,
+  "start_to_request_received_s": null,
+  "started_at": "2026-11-15T06:57:58.139360Z",
+  "status": "not_detected_by_cutoff",
+  "technique": "k8s.credential-access.dump-secrets",
+  "technique_id": "T1552.007",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:58:02.146384000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "serviceaccounts/token",
+    "rule": "Service Account Created in Kube Namespace",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "741670a1-4a63-4b65-bfa1-3b9add559fc9",
+  "duration_s": 1.152,
+  "finished_at": "2026-11-15T06:58:02.158377Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id"
+   ],
+   "resource": "serviceaccounts/token",
+   "rule": "Service Account Created in Kube Namespace",
+   "verb": "create"
+  },
+  "index": 21,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 1.14,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 3,
+  "run_id": "stratus-741670a1-4a63-4b65-bfa1-3b9add559fc9",
+  "start_to_alerts_file_s": 1.156,
+  "start_to_event_s": 1.14,
+  "start_to_fed_s": 1.149,
+  "start_to_request_received_s": 1.137,
+  "started_at": "2026-11-15T06:58:01.006165Z",
+  "status": "detected",
+  "technique": "k8s.persistence.create-token",
+  "technique_id": "T1098",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "2f19b72c-fc46-4900-b0d8-7da324b9a491",
+  "duration_s": 3.292,
+  "finished_at": "2026-11-15T06:58:07.158088Z",
+  "first_alert": null,
+  "index": 22,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": null,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 3,
+  "run_id": "stratus-2f19b72c-fc46-4900-b0d8-7da324b9a491",
+  "start_to_alerts_file_s": null,
+  "start_to_event_s": null,
+  "start_to_fed_s": null,
+  "start_to_request_received_s": null,
+  "started_at": "2026-11-15T06:58:03.866164Z",
+  "status": "not_detected_by_cutoff",
+  "technique": "k8s.persistence.create-client-certificate",
+  "technique_id": "T1649",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": "create-admin-clusterrole: detonation 1; stratus status read COLD, so the fallback cleanup was skipped; no Stratus state left for the technique; nothing left but its known objects",
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:58:10.512571000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "clusterroles",
+    "rule": "ClusterRole With Wildcard Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:58:10.514921000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "Service Account Created in Kube Namespace",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:58:10.516940000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "clusterrolebindings",
+    "rule": "K8s ClusterRoleBinding Created",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "skipped already COLD",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": "COLD",
+  "correlation_id": "43089b8c-7aad-4172-98e4-2d2dba7c54e3",
+  "duration_s": 61.274,
+  "finished_at": "2026-11-15T06:59:10.547221Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id"
+   ],
+   "resource": "clusterroles",
+   "rule": "ClusterRole With Wildcard Created",
+   "verb": "create"
+  },
+  "index": 23,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": {
+   "after": {
+    "check_empty": {
+     "finished_at": "2026-11-15T06:59:12.492730017Z",
+     "result": {
+      "empty": true,
+      "left": [],
+      "namespace": "warden-lab",
+      "types_checked": 29
+     },
+     "returncode": 0,
+     "started_at": "2026-11-15T06:59:12.271725146Z",
+     "stderr": ""
+    },
+    "inventory": {},
+    "known_absent": {
+     "all_absent": true,
+     "lookups": [
+      {
+       "command": "kubectl get clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb --ignore-not-found -o name",
+       "name": "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb",
+       "present": false,
+       "returncode": 0,
+       "scope": "cluster/clusterrolebindings",
+       "stderr": ""
+      },
+      {
+       "command": "kubectl get clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole --ignore-not-found -o name",
+       "name": "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole",
+       "present": false,
+       "returncode": 0,
+       "scope": "cluster/clusterroles",
+       "stderr": ""
+      },
+      {
+       "command": "kubectl get serviceaccount/stratus-red-team-serviceaccount --ignore-not-found -o name -n kube-system",
+       "name": "serviceaccount/stratus-red-team-serviceaccount",
+       "present": false,
+       "returncode": 0,
+       "scope": "kube-system/serviceaccounts",
+       "stderr": ""
+      }
+     ]
+    }
+   },
+   "left": {
+    "cluster/clusterrolebindings": [
+     "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb"
+    ],
+    "cluster/clusterroles": [
+     "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole"
+    ],
+    "kube-system/serviceaccounts": [
+     "serviceaccount/stratus-red-team-serviceaccount"
+    ]
+   },
+   "steps": [
+    {
+     "command": "kubectl delete clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb --wait=true --timeout=60s",
+     "finished_at": "2026-11-15T06:59:11.700219689Z",
+     "name": "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb",
+     "output": "clusterrolebinding.rbac.authorization.k8s.io \"stratus-red-team-crb\" deleted",
+     "returncode": 0,
+     "scope": "cluster/clusterrolebindings"
+    },
+    {
+     "command": "kubectl delete clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole --wait=true --timeout=60s",
+     "finished_at": "2026-11-15T06:59:11.745907575Z",
+     "name": "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole",
+     "output": "clusterrole.rbac.authorization.k8s.io \"stratus-red-team-clusterrole\" deleted",
+     "returncode": 0,
+     "scope": "cluster/clusterroles"
+    },
+    {
+     "command": "kubectl delete serviceaccount/stratus-red-team-serviceaccount --wait=true --timeout=60s -n kube-system",
+     "finished_at": "2026-11-15T06:59:11.787906595Z",
+     "name": "serviceaccount/stratus-red-team-serviceaccount",
+     "output": "serviceaccount \"stratus-red-team-serviceaccount\" deleted from kube-system namespace",
+     "returncode": 0,
+     "scope": "kube-system/serviceaccounts"
+    }
+   ]
+  },
+  "left_outside_namespace": {
+   "cluster/clusterrolebindings": {
+    "added": [
+     "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb"
+    ],
+    "removed": []
+   },
+   "cluster/clusterroles": {
+    "added": [
+     "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole"
+    ],
+    "removed": []
+   },
+   "kube-system/serviceaccounts": {
+    "added": [
+     "serviceaccount/stratus-red-team-serviceaccount"
+    ],
+    "removed": []
+   }
+  },
+  "metrics_latency_s": null,
+  "outcome": "failed",
+  "returncode": 1,
+  "round": 3,
+  "run_id": "stratus-43089b8c-7aad-4172-98e4-2d2dba7c54e3",
+  "start_to_alerts_file_s": 1.267,
+  "start_to_event_s": 1.24,
+  "start_to_fed_s": 1.24,
+  "start_to_request_received_s": 1.235,
+  "started_at": "2026-11-15T06:58:09.272941Z",
+  "status": "excluded_outcome",
+  "technique": "k8s.persistence.create-admin-clusterrole",
+  "technique_id": "T1098.006",
+  "unexpected_left": {},
+  "wrapper_exit": 1
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:59:17.209196000Z",
+    "matched_by": [
+     "correlation_id",
+     "label",
+     "namespace"
+    ],
+    "resource": "pods",
+    "rule": "Create Privileged Pod",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "c2aa552b-cd21-4006-8260-7810f34522e0",
+  "duration_s": 4.228,
+  "finished_at": "2026-11-15T06:59:17.775191Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id",
+    "label",
+    "namespace"
+   ],
+   "resource": "pods",
+   "rule": "Create Privileged Pod",
+   "verb": "create"
+  },
+  "index": 24,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.662,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 3,
+  "run_id": "stratus-c2aa552b-cd21-4006-8260-7810f34522e0",
+  "start_to_alerts_file_s": 3.695,
+  "start_to_event_s": 3.662,
+  "start_to_fed_s": 3.663,
+  "start_to_request_received_s": 3.644,
+  "started_at": "2026-11-15T06:59:13.547650Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.privileged-pod",
+  "technique_id": "T1611",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:59:23.696319000Z",
+    "matched_by": [
+     "correlation_id",
+     "label",
+     "namespace"
+    ],
+    "resource": "pods",
+    "rule": "Create Sensitive Mount Pod",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "058c58d6-0210-4517-b75c-74b4ed431512",
+  "duration_s": 4.219,
+  "finished_at": "2026-11-15T06:59:24.339728Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id",
+    "label",
+    "namespace"
+   ],
+   "resource": "pods",
+   "rule": "Create Sensitive Mount Pod",
+   "verb": "create"
+  },
+  "index": 25,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.576,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 4,
+  "run_id": "stratus-058c58d6-0210-4517-b75c-74b4ed431512",
+  "start_to_alerts_file_s": 3.613,
+  "start_to_event_s": 3.576,
+  "start_to_fed_s": 3.581,
+  "start_to_request_received_s": 3.548,
+  "started_at": "2026-11-15T06:59:20.120643Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.hostpath-volume",
+  "technique_id": "T1611",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T06:59:29.608508000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:59:29.768571000Z",
+    "matched_by": [
+     "correlation_id",
+     "namespace"
+    ],
+    "resource": "serviceaccounts/token",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T06:59:30.417581000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Deleted",
+    "verb": "delete"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "bf9a3521-f332-428b-b6f9-a76fce8bf411",
+  "duration_s": 3.933,
+  "finished_at": "2026-11-15T06:59:30.443795Z",
+  "first_alert": {
+   "actor": "terraform",
+   "matched_by": [
+    "namespace"
+   ],
+   "resource": "serviceaccounts",
+   "rule": "K8s Serviceaccount Created",
+   "verb": "create"
+  },
+  "index": 26,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.097,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 4,
+  "run_id": "stratus-bf9a3521-f332-428b-b6f9-a76fce8bf411",
+  "start_to_alerts_file_s": 3.131,
+  "start_to_event_s": 3.097,
+  "start_to_fed_s": 3.098,
+  "start_to_request_received_s": 3.094,
+  "started_at": "2026-11-15T06:59:26.511104Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.nodes-proxy",
+  "technique_id": "T1609",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "13886bca-d6e8-4a1a-939f-65e60b06815e",
+  "duration_s": 1.162,
+  "finished_at": "2026-11-15T06:59:33.572050Z",
+  "first_alert": null,
+  "index": 27,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": null,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 4,
+  "run_id": "stratus-13886bca-d6e8-4a1a-939f-65e60b06815e",
+  "start_to_alerts_file_s": null,
+  "start_to_event_s": null,
+  "start_to_fed_s": null,
+  "start_to_request_received_s": null,
+  "started_at": "2026-11-15T06:59:32.409570Z",
+  "status": "not_detected_by_cutoff",
+  "technique": "k8s.credential-access.dump-secrets",
+  "technique_id": "T1552.007",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:59:36.455299000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "serviceaccounts/token",
+    "rule": "Service Account Created in Kube Namespace",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "13bf6186-c162-4702-b402-d2fa8fac21cf",
+  "duration_s": 1.195,
+  "finished_at": "2026-11-15T06:59:36.458691Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id"
+   ],
+   "resource": "serviceaccounts/token",
+   "rule": "Service Account Created in Kube Namespace",
+   "verb": "create"
+  },
+  "index": 28,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 1.192,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 4,
+  "run_id": "stratus-13bf6186-c162-4702-b402-d2fa8fac21cf",
+  "start_to_alerts_file_s": 1.2,
+  "start_to_event_s": 1.192,
+  "start_to_fed_s": 1.193,
+  "start_to_request_received_s": 1.189,
+  "started_at": "2026-11-15T06:59:35.263519Z",
+  "status": "detected",
+  "technique": "k8s.persistence.create-token",
+  "technique_id": "T1098",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "da242337-075d-4b6f-a364-d911a1f693f9",
+  "duration_s": 3.17,
+  "finished_at": "2026-11-15T06:59:41.850799Z",
+  "first_alert": null,
+  "index": 29,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": null,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 4,
+  "run_id": "stratus-da242337-075d-4b6f-a364-d911a1f693f9",
+  "start_to_alerts_file_s": null,
+  "start_to_event_s": null,
+  "start_to_fed_s": null,
+  "start_to_request_received_s": null,
+  "started_at": "2026-11-15T06:59:38.680590Z",
+  "status": "not_detected_by_cutoff",
+  "technique": "k8s.persistence.create-client-certificate",
+  "technique_id": "T1649",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": "create-admin-clusterrole: detonation 1; stratus status read COLD, so the fallback cleanup was skipped; no Stratus state left for the technique; nothing left but its known objects",
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:59:44.742973000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "clusterroles",
+    "rule": "ClusterRole With Wildcard Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:59:44.745533000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "Service Account Created in Kube Namespace",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T06:59:44.747543000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "clusterrolebindings",
+    "rule": "K8s ClusterRoleBinding Created",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "skipped already COLD",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": "COLD",
+  "correlation_id": "3beb1cd6-7c09-4e5a-92d6-cbf300dd2f1d",
+  "duration_s": 61.296,
+  "finished_at": "2026-11-15T07:00:44.777016Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id"
+   ],
+   "resource": "clusterroles",
+   "rule": "ClusterRole With Wildcard Created",
+   "verb": "create"
+  },
+  "index": 30,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": {
+   "after": {
+    "check_empty": {
+     "finished_at": "2026-11-15T07:00:46.726466473Z",
+     "result": {
+      "empty": true,
+      "left": [],
+      "namespace": "warden-lab",
+      "types_checked": 29
+     },
+     "returncode": 0,
+     "started_at": "2026-11-15T07:00:46.501960303Z",
+     "stderr": ""
+    },
+    "inventory": {},
+    "known_absent": {
+     "all_absent": true,
+     "lookups": [
+      {
+       "command": "kubectl get clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb --ignore-not-found -o name",
+       "name": "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb",
+       "present": false,
+       "returncode": 0,
+       "scope": "cluster/clusterrolebindings",
+       "stderr": ""
+      },
+      {
+       "command": "kubectl get clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole --ignore-not-found -o name",
+       "name": "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole",
+       "present": false,
+       "returncode": 0,
+       "scope": "cluster/clusterroles",
+       "stderr": ""
+      },
+      {
+       "command": "kubectl get serviceaccount/stratus-red-team-serviceaccount --ignore-not-found -o name -n kube-system",
+       "name": "serviceaccount/stratus-red-team-serviceaccount",
+       "present": false,
+       "returncode": 0,
+       "scope": "kube-system/serviceaccounts",
+       "stderr": ""
+      }
+     ]
+    }
+   },
+   "left": {
+    "cluster/clusterrolebindings": [
+     "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb"
+    ],
+    "cluster/clusterroles": [
+     "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole"
+    ],
+    "kube-system/serviceaccounts": [
+     "serviceaccount/stratus-red-team-serviceaccount"
+    ]
+   },
+   "steps": [
+    {
+     "command": "kubectl delete clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb --wait=true --timeout=60s",
+     "finished_at": "2026-11-15T07:00:45.929526700Z",
+     "name": "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb",
+     "output": "clusterrolebinding.rbac.authorization.k8s.io \"stratus-red-team-crb\" deleted",
+     "returncode": 0,
+     "scope": "cluster/clusterrolebindings"
+    },
+    {
+     "command": "kubectl delete clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole --wait=true --timeout=60s",
+     "finished_at": "2026-11-15T07:00:45.970148641Z",
+     "name": "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole",
+     "output": "clusterrole.rbac.authorization.k8s.io \"stratus-red-team-clusterrole\" deleted",
+     "returncode": 0,
+     "scope": "cluster/clusterroles"
+    },
+    {
+     "command": "kubectl delete serviceaccount/stratus-red-team-serviceaccount --wait=true --timeout=60s -n kube-system",
+     "finished_at": "2026-11-15T07:00:46.011745919Z",
+     "name": "serviceaccount/stratus-red-team-serviceaccount",
+     "output": "serviceaccount \"stratus-red-team-serviceaccount\" deleted from kube-system namespace",
+     "returncode": 0,
+     "scope": "kube-system/serviceaccounts"
+    }
+   ]
+  },
+  "left_outside_namespace": {
+   "cluster/clusterrolebindings": {
+    "added": [
+     "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb"
+    ],
+    "removed": []
+   },
+   "cluster/clusterroles": {
+    "added": [
+     "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole"
+    ],
+    "removed": []
+   },
+   "kube-system/serviceaccounts": {
+    "added": [
+     "serviceaccount/stratus-red-team-serviceaccount"
+    ],
+    "removed": []
+   }
+  },
+  "metrics_latency_s": null,
+  "outcome": "failed",
+  "returncode": 1,
+  "round": 4,
+  "run_id": "stratus-3beb1cd6-7c09-4e5a-92d6-cbf300dd2f1d",
+  "start_to_alerts_file_s": 1.293,
+  "start_to_event_s": 1.262,
+  "start_to_fed_s": 1.269,
+  "start_to_request_received_s": 1.255,
+  "started_at": "2026-11-15T06:59:43.481181Z",
+  "status": "excluded_outcome",
+  "technique": "k8s.persistence.create-admin-clusterrole",
+  "technique_id": "T1098.006",
+  "unexpected_left": {},
+  "wrapper_exit": 1
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T07:00:51.356231000Z",
+    "matched_by": [
+     "correlation_id",
+     "label",
+     "namespace"
+    ],
+    "resource": "pods",
+    "rule": "Create Privileged Pod",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "15e70833-4460-4005-b84f-5df5c9453f75",
+  "duration_s": 4.074,
+  "finished_at": "2026-11-15T07:00:51.871873Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id",
+    "label",
+    "namespace"
+   ],
+   "resource": "pods",
+   "rule": "Create Privileged Pod",
+   "verb": "create"
+  },
+  "index": 31,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.559,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 4,
+  "run_id": "stratus-15e70833-4460-4005-b84f-5df5c9453f75",
+  "start_to_alerts_file_s": 3.593,
+  "start_to_event_s": 3.559,
+  "start_to_fed_s": 3.566,
+  "start_to_request_received_s": 3.552,
+  "started_at": "2026-11-15T07:00:47.797582Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.privileged-pod",
+  "technique_id": "T1611",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T07:00:56.904389000Z",
+    "matched_by": [
+     "label",
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "kubelet",
+    "event_time": "2026-11-15T07:00:57.144635000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts/token",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T07:00:58.467823000Z",
+    "matched_by": [
+     "correlation_id",
+     "namespace"
+    ],
+    "resource": "pods/exec",
+    "rule": "Attach/Exec Pod",
+    "verb": "create"
+   },
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T07:01:34.760731000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Deleted",
+    "verb": "delete"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "a6c6226e-83e7-4c5e-ab36-13152df7d250",
+  "duration_s": 41.112,
+  "finished_at": "2026-11-15T07:01:34.783706Z",
+  "first_alert": {
+   "actor": "terraform",
+   "matched_by": [
+    "label",
+    "namespace"
+   ],
+   "resource": "serviceaccounts",
+   "rule": "K8s Serviceaccount Created",
+   "verb": "create"
+  },
+  "index": 32,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.232,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 4,
+  "run_id": "stratus-a6c6226e-83e7-4c5e-ab36-13152df7d250",
+  "start_to_alerts_file_s": 3.261,
+  "start_to_event_s": 3.232,
+  "start_to_fed_s": 3.241,
+  "start_to_request_received_s": 3.227,
+  "started_at": "2026-11-15T07:00:53.672167Z",
+  "status": "detected",
+  "technique": "k8s.credential-access.steal-serviceaccount-token",
+  "technique_id": "T1528",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T07:01:40.093132000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T07:01:40.243413000Z",
+    "matched_by": [
+     "correlation_id",
+     "namespace"
+    ],
+    "resource": "serviceaccounts/token",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T07:01:40.992086000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Deleted",
+    "verb": "delete"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "3e1a2513-bf43-4f4c-9f66-e7c872d91c62",
+  "duration_s": 4.22,
+  "finished_at": "2026-11-15T07:01:41.020037Z",
+  "first_alert": {
+   "actor": "terraform",
+   "matched_by": [
+    "namespace"
+   ],
+   "resource": "serviceaccounts",
+   "rule": "K8s Serviceaccount Created",
+   "verb": "create"
+  },
+  "index": 33,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.294,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 5,
+  "run_id": "stratus-3e1a2513-bf43-4f4c-9f66-e7c872d91c62",
+  "start_to_alerts_file_s": 3.338,
+  "start_to_event_s": 3.294,
+  "start_to_fed_s": 3.302,
+  "start_to_request_received_s": 3.289,
+  "started_at": "2026-11-15T07:01:36.799559Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.nodes-proxy",
+  "technique_id": "T1609",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "552e41ba-d60b-45f5-8ae3-967c18ba3532",
+  "duration_s": 1.395,
+  "finished_at": "2026-11-15T07:01:44.561716Z",
+  "first_alert": null,
+  "index": 34,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": null,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 5,
+  "run_id": "stratus-552e41ba-d60b-45f5-8ae3-967c18ba3532",
+  "start_to_alerts_file_s": null,
+  "start_to_event_s": null,
+  "start_to_fed_s": null,
+  "start_to_request_received_s": null,
+  "started_at": "2026-11-15T07:01:43.166235Z",
+  "status": "not_detected_by_cutoff",
+  "technique": "k8s.credential-access.dump-secrets",
+  "technique_id": "T1552.007",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T07:01:47.651892000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "serviceaccounts/token",
+    "rule": "Service Account Created in Kube Namespace",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "ba617a8d-41b8-41bf-8773-0fecb03d4827",
+  "duration_s": 1.171,
+  "finished_at": "2026-11-15T07:01:47.654804Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id"
+   ],
+   "resource": "serviceaccounts/token",
+   "rule": "Service Account Created in Kube Namespace",
+   "verb": "create"
+  },
+  "index": 35,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 1.168,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 5,
+  "run_id": "stratus-ba617a8d-41b8-41bf-8773-0fecb03d4827",
+  "start_to_alerts_file_s": 1.176,
+  "start_to_event_s": 1.168,
+  "start_to_fed_s": 1.171,
+  "start_to_request_received_s": 1.166,
+  "started_at": "2026-11-15T07:01:46.483889Z",
+  "status": "detected",
+  "technique": "k8s.persistence.create-token",
+  "technique_id": "T1098",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "a2e76b8c-4bab-49fe-9d51-96856923c19c",
+  "duration_s": 3.475,
+  "finished_at": "2026-11-15T07:01:52.842963Z",
+  "first_alert": null,
+  "index": 36,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": null,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 5,
+  "run_id": "stratus-a2e76b8c-4bab-49fe-9d51-96856923c19c",
+  "start_to_alerts_file_s": null,
+  "start_to_event_s": null,
+  "start_to_fed_s": null,
+  "start_to_request_received_s": null,
+  "started_at": "2026-11-15T07:01:49.368013Z",
+  "status": "not_detected_by_cutoff",
+  "technique": "k8s.persistence.create-client-certificate",
+  "technique_id": "T1649",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": "create-admin-clusterrole: detonation 1; stratus status read COLD, so the fallback cleanup was skipped; no Stratus state left for the technique; nothing left but its known objects",
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T07:01:55.821879000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "clusterroles",
+    "rule": "ClusterRole With Wildcard Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T07:01:55.823698000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "Service Account Created in Kube Namespace",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T07:01:55.826043000Z",
+    "matched_by": [
+     "correlation_id"
+    ],
+    "resource": "clusterrolebindings",
+    "rule": "K8s ClusterRoleBinding Created",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "skipped already COLD",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": "COLD",
+  "correlation_id": "d2200f64-774e-447b-8453-ce80aab81580",
+  "duration_s": 61.25,
+  "finished_at": "2026-11-15T07:02:55.852065Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id"
+   ],
+   "resource": "clusterroles",
+   "rule": "ClusterRole With Wildcard Created",
+   "verb": "create"
+  },
+  "index": 37,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": {
+   "after": {
+    "check_empty": {
+     "finished_at": "2026-11-15T07:02:57.890672317Z",
+     "result": {
+      "empty": true,
+      "left": [],
+      "namespace": "warden-lab",
+      "types_checked": 29
+     },
+     "returncode": 0,
+     "started_at": "2026-11-15T07:02:57.658171916Z",
+     "stderr": ""
+    },
+    "inventory": {},
+    "known_absent": {
+     "all_absent": true,
+     "lookups": [
+      {
+       "command": "kubectl get clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb --ignore-not-found -o name",
+       "name": "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb",
+       "present": false,
+       "returncode": 0,
+       "scope": "cluster/clusterrolebindings",
+       "stderr": ""
+      },
+      {
+       "command": "kubectl get clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole --ignore-not-found -o name",
+       "name": "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole",
+       "present": false,
+       "returncode": 0,
+       "scope": "cluster/clusterroles",
+       "stderr": ""
+      },
+      {
+       "command": "kubectl get serviceaccount/stratus-red-team-serviceaccount --ignore-not-found -o name -n kube-system",
+       "name": "serviceaccount/stratus-red-team-serviceaccount",
+       "present": false,
+       "returncode": 0,
+       "scope": "kube-system/serviceaccounts",
+       "stderr": ""
+      }
+     ]
+    }
+   },
+   "left": {
+    "cluster/clusterrolebindings": [
+     "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb"
+    ],
+    "cluster/clusterroles": [
+     "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole"
+    ],
+    "kube-system/serviceaccounts": [
+     "serviceaccount/stratus-red-team-serviceaccount"
+    ]
+   },
+   "steps": [
+    {
+     "command": "kubectl delete clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb --wait=true --timeout=60s",
+     "finished_at": "2026-11-15T07:02:57.013613785Z",
+     "name": "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb",
+     "output": "clusterrolebinding.rbac.authorization.k8s.io \"stratus-red-team-crb\" deleted",
+     "returncode": 0,
+     "scope": "cluster/clusterrolebindings"
+    },
+    {
+     "command": "kubectl delete clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole --wait=true --timeout=60s",
+     "finished_at": "2026-11-15T07:02:57.059796929Z",
+     "name": "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole",
+     "output": "clusterrole.rbac.authorization.k8s.io \"stratus-red-team-clusterrole\" deleted",
+     "returncode": 0,
+     "scope": "cluster/clusterroles"
+    },
+    {
+     "command": "kubectl delete serviceaccount/stratus-red-team-serviceaccount --wait=true --timeout=60s -n kube-system",
+     "finished_at": "2026-11-15T07:02:57.167190385Z",
+     "name": "serviceaccount/stratus-red-team-serviceaccount",
+     "output": "serviceaccount \"stratus-red-team-serviceaccount\" deleted from kube-system namespace",
+     "returncode": 0,
+     "scope": "kube-system/serviceaccounts"
+    }
+   ]
+  },
+  "left_outside_namespace": {
+   "cluster/clusterrolebindings": {
+    "added": [
+     "clusterrolebinding.rbac.authorization.k8s.io/stratus-red-team-crb"
+    ],
+    "removed": []
+   },
+   "cluster/clusterroles": {
+    "added": [
+     "clusterrole.rbac.authorization.k8s.io/stratus-red-team-clusterrole"
+    ],
+    "removed": []
+   },
+   "kube-system/serviceaccounts": {
+    "added": [
+     "serviceaccount/stratus-red-team-serviceaccount"
+    ],
+    "removed": []
+   }
+  },
+  "metrics_latency_s": null,
+  "outcome": "failed",
+  "returncode": 1,
+  "round": 5,
+  "run_id": "stratus-d2200f64-774e-447b-8453-ce80aab81580",
+  "start_to_alerts_file_s": 1.251,
+  "start_to_event_s": 1.22,
+  "start_to_fed_s": 1.222,
+  "start_to_request_received_s": 1.218,
+  "started_at": "2026-11-15T07:01:54.601792Z",
+  "status": "excluded_outcome",
+  "technique": "k8s.persistence.create-admin-clusterrole",
+  "technique_id": "T1098.006",
+  "unexpected_left": {},
+  "wrapper_exit": 1
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T07:03:02.620769000Z",
+    "matched_by": [
+     "correlation_id",
+     "label",
+     "namespace"
+    ],
+    "resource": "pods",
+    "rule": "Create Privileged Pod",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "c43abb01-1756-41ed-9462-15354ac211b3",
+  "duration_s": 4.294,
+  "finished_at": "2026-11-15T07:03:03.185796Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id",
+    "label",
+    "namespace"
+   ],
+   "resource": "pods",
+   "rule": "Create Privileged Pod",
+   "verb": "create"
+  },
+  "index": 38,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.729,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 5,
+  "run_id": "stratus-c43abb01-1756-41ed-9462-15354ac211b3",
+  "start_to_alerts_file_s": 3.744,
+  "start_to_event_s": 3.729,
+  "start_to_fed_s": 3.731,
+  "start_to_request_received_s": 3.688,
+  "started_at": "2026-11-15T07:02:58.892082Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.privileged-pod",
+  "technique_id": "T1611",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T07:03:08.293798000Z",
+    "matched_by": [
+     "label",
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "kubelet",
+    "event_time": "2026-11-15T07:03:08.574346000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts/token",
+    "rule": "K8s Serviceaccount Created",
+    "verb": "create"
+   },
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T07:03:09.852184000Z",
+    "matched_by": [
+     "correlation_id",
+     "namespace"
+    ],
+    "resource": "pods/exec",
+    "rule": "Attach/Exec Pod",
+    "verb": "create"
+   },
+   {
+    "actor": "terraform",
+    "event_time": "2026-11-15T07:03:46.075950000Z",
+    "matched_by": [
+     "namespace"
+    ],
+    "resource": "serviceaccounts",
+    "rule": "K8s Serviceaccount Deleted",
+    "verb": "delete"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "73e9c881-fc08-491b-97e9-96b750af02f9",
+  "duration_s": 40.891,
+  "finished_at": "2026-11-15T07:03:46.097606Z",
+  "first_alert": {
+   "actor": "terraform",
+   "matched_by": [
+    "label",
+    "namespace"
+   ],
+   "resource": "serviceaccounts",
+   "rule": "K8s Serviceaccount Created",
+   "verb": "create"
+  },
+  "index": 39,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.087,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 5,
+  "run_id": "stratus-73e9c881-fc08-491b-97e9-96b750af02f9",
+  "start_to_alerts_file_s": 3.111,
+  "start_to_event_s": 3.087,
+  "start_to_fed_s": 3.096,
+  "start_to_request_received_s": 3.085,
+  "started_at": "2026-11-15T07:03:05.206719Z",
+  "status": "detected",
+  "technique": "k8s.credential-access.steal-serviceaccount-token",
+  "technique_id": "T1528",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ },
+ {
+  "admin_known_failure": null,
+  "alerts": [
+   {
+    "actor": "stratus",
+    "event_time": "2026-11-15T07:03:51.452848000Z",
+    "matched_by": [
+     "correlation_id",
+     "label",
+     "namespace"
+    ],
+    "resource": "pods",
+    "rule": "Create Sensitive Mount Pod",
+    "verb": "create"
+   }
+  ],
+  "check_empty_after": 0,
+  "check_empty_after_attempts": 1,
+  "check_empty_before": 0,
+  "cleanup_invoked": false,
+  "cleanup_mode": "detonate --cleanup",
+  "cleanup_returncode": 0,
+  "cleanup_status_state": null,
+  "correlation_id": "d050e205-dcec-48a5-92e1-fe568964ec0f",
+  "duration_s": 3.832,
+  "finished_at": "2026-11-15T07:03:52.027160Z",
+  "first_alert": {
+   "actor": "stratus",
+   "matched_by": [
+    "correlation_id",
+    "label",
+    "namespace"
+   ],
+   "resource": "pods",
+   "rule": "Create Sensitive Mount Pod",
+   "verb": "create"
+  },
+  "index": 40,
+  "inventory_before_run": {},
+  "known_absent_before": true,
+  "known_deleted": null,
+  "left_outside_namespace": {},
+  "metrics_latency_s": 3.258,
+  "outcome": "succeeded",
+  "returncode": 0,
+  "round": 5,
+  "run_id": "stratus-d050e205-dcec-48a5-92e1-fe568964ec0f",
+  "start_to_alerts_file_s": 3.272,
+  "start_to_event_s": 3.258,
+  "start_to_fed_s": 3.266,
+  "start_to_request_received_s": 3.251,
+  "started_at": "2026-11-15T07:03:48.194710Z",
+  "status": "detected",
+  "technique": "k8s.privilege-escalation.hostpath-volume",
+  "technique_id": "T1611",
+  "unexpected_left": {},
+  "wrapper_exit": 0
+ }
+]

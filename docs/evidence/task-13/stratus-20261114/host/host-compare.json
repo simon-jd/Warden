@@ -1,0 +1,20 @@
+{
+ "after": "2026-11-16T05:44:13Z",
+ "before": "2026-11-15T06:52:13Z",
+ "modules_added": [],
+ "modules_removed": [],
+ "sysctls_changed": {},
+ "volatile_sysctls_changed": [
+  "fs.dentry-state",
+  "fs.file-nr",
+  "fs.inode-nr",
+  "fs.inode-state",
+  "fs.quota.cache_hits",
+  "fs.quota.drops",
+  "fs.quota.lookups",
+  "fs.quota.syncs",
+  "kernel.ns_last_pid",
+  "kernel.pty.nr",
+  "net.netfilter.nf_conntrack_count"
+ ]
+}
